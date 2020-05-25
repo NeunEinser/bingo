@@ -1,0 +1,13 @@
+{
+    "providers": [
+        {
+            "type": "bitmap",
+            "file": "bingo:font/bingo_card_background.png",
+            "ascent": 39,
+            "height": 104,
+            "chars": [
+                "a"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,24 @@
+{
+	"bingo.got_item": "[%s] %s got [%s]",
+	"bingo.got_blackout": "[%s] %s got a blackout!",
+	"bingo.got_20_no_bingo": "[%s] %s got a 20 no bingo!",
+	
+	"bingo.got_bingo.row": "[%s] %s got a bingo in row %s!",
+	"bingo.got_bingo.col": "[%s] %s got a bingo in col %s!",
+	"bingo.got_bingo.diag.top_left": "[%s] %s got a bingo from top left to bottom right!",
+	"bingo.got_bingo.diag.bottom_left": "[%s] %s got a bingo from bottom left to top right!",
+	
+	"bingo.got_bingo.double.col_row": "[%s] %s got a double bingo in row %s and col %s!",
+	"bingo.got_bingo.double.col_diag.top_left": "[%s] %s got a double bingo in col %s and from top left to bottom right!",
+	"bingo.got_bingo.double.col_diag.bottom_left": "[%s] %s got a double bingo in col %s and from bottom left to top right!",
+	"bingo.got_bingo.double.row_diag.top_left": "[%s] %s got a double bingo in row %s and from top left to bottom right!",
+	"bingo.got_bingo.double.row_diag.bottom_left": "[%s] %s got a double bingo in row %s and from bottom left to top right!",
+	"bingo.got_bingo.double.diags": "[%s] %s got a double bingo in both diagonals!",
+	
+	"bingo.got_bingo.triple.top_left": "[%s] %s got a triple bingo in col %s, row %s and from top left to bottom right!",
+	"bingo.got_bingo.triple.bottom_left": "[%s] %s got a triple bingo in col %s, row %s and from bottom left to top right!",
+	"bingo.got_bingo.triple.col_diags": "[%s] %s got a triple bingo in col %s and both diagonals!",
+	"bingo.got_bingo.triple.row_diags": "[%s] %s got a triple bingo in row %s and both diagonals!",
+	
+	"bingo.got_bingo.triple.quadruple": "[%s] %s got a quadruple bingo!"
+}
