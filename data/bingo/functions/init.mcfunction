@@ -377,8 +377,8 @@ scoreboard players set @e[tag=bingo_fermented_spider_eye] bingo_weight 1
 
 ## hopper
 summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0034"', Tags: ["bingo_hopper", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-scoreboard players set @e[tag=bingo_tnt_minecart] bingo_category_1 23
-scoreboard players set @e[tag=bingo_tnt_minecart] bingo_weight 1
+scoreboard players set @e[tag=bingo_hopper] bingo_category_1 23
+scoreboard players set @e[tag=bingo_hopper] bingo_weight 1
 
 summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0035"', Tags: ["bingo_hopper_minecart", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
 scoreboard players set @e[tag=bingo_hopper_minecart] bingo_category_1 23
