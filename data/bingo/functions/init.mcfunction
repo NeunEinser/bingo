@@ -384,13 +384,13 @@ summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0035"', Tags: ["bingo
 scoreboard players set @e[tag=bingo_hopper_minecart] bingo_category_1 23
 scoreboard players set @e[tag=bingo_hopper_minecart] bingo_weight 1
 
+summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0037"', Tags: ["bingo_chest_minecart", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
+scoreboard players set @e[tag=bingo_chest_minecart] bingo_category_1 23
+scoreboard players set @e[tag=bingo_chest_minecart] bingo_weight 1
+
 ## furnance minecart (single)
 summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0036"', Tags: ["bingo_furnance_minecart", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
 scoreboard players set @e[tag=bingo_furnance_minecart] bingo_weight 1
-
-## chest minecart (single)
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0037"', Tags: ["bingo_chest_minecart", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-scoreboard players set @e[tag=bingo_chest_minecart] bingo_weight 1
 
 ## heart of the pillager
 summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0049"', Tags: ["bingo_heart_of_the_sea", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}

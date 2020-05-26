@@ -16,6 +16,7 @@ execute as @e[tag=bingo_selectable] if score @s bingo_category_1 = @e[tag=bingo_
 execute as @e[tag=bingo_selectable] if score @s bingo_category_1 = @e[tag=bingo_selected, limit=1] bingo_category_2 run tag @s remove bingo_selectable
 execute as @e[tag=bingo_selectable] if score @s bingo_category_2 = @e[tag=bingo_selected, limit=1] bingo_category_1 run tag @s remove bingo_selectable
 execute as @e[tag=bingo_selectable] if score @s bingo_category_2 = @e[tag=bingo_selected, limit=1] bingo_category_2 run tag @s remove bingo_selectable
+tag @e[tag=bingo_selected] remove bingo_selectable
 
 scoreboard players add $i bingo_tmp 1
 execute if score $i bingo_tmp matches ..24 run function bingo:card_generation/generate_slot
