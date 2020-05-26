@@ -1,0 +1,1 @@
+scoreboard players operation $cur_seed random_main = $seed random_main
