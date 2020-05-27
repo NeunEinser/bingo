@@ -413,3 +413,9 @@ scoreboard players set @e[tag=bingo_magma_block] bingo_weight 1
 ## Bed (single)
 summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0050"', Tags: ["bingo_red_bed", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
 scoreboard players set @e[tag=bingo_red_bed] bingo_weight 1
+
+# spawn aecs for item border
+kill @e[tag=bingo_item_border]
+
+summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\uFFFE"', Tags: ["bingo_item_border", "bingo_completed_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
+summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\uFFFF"', Tags: ["bingo_item_border", "bingo_uncompleted_item", "bingo_got_slot0", "bingo_got_slot1", "bingo_got_slot2", "bingo_got_slot3", "bingo_got_slot4", "bingo_got_slot5", "bingo_got_slot6", "bingo_got_slot7", "bingo_got_slot8", "bingo_got_slot9", "bingo_got_slot10", "bingo_got_slot11", "bingo_got_slot12", "bingo_got_slot13", "bingo_got_slot14", "bingo_got_slot15", "bingo_got_slot16", "bingo_got_slot17", "bingo_got_slot18", "bingo_got_slot19", "bingo_got_slot20", "bingo_got_slot21", "bingo_got_slot22", "bingo_got_slot23", "bingo_got_slot24"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
