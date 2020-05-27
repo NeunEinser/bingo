@@ -3,4 +3,5 @@ title @a actionbar [{"translate": "space.285"}, {"text": "a", "font": "bingo:car
 #right: 285
 
 scoreboard players enable @a seed
-execute as @p[scores={seed=-2147483648..}] run function bingo:generate_card_from_seed
+execute as @p[scores={seed=..-1}] run function bingo:generate_card_from_seed
+execute as @p[scores={seed=1..}] run function bingo:generate_card_from_seed
