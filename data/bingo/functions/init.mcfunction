@@ -118,9 +118,9 @@ summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u000c"', Tags: ["bingo
 scoreboard players set @e[tag=bingo_fern] bingo_category_1 5
 scoreboard players set @e[tag=bingo_fern] bingo_weight 1
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u000d"', Tags: ["bingo_vines", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-scoreboard players set @e[tag=bingo_vines] bingo_category_1 5
-scoreboard players set @e[tag=bingo_vines] bingo_weight 1
+summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u000d"', Tags: ["bingo_vine", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
+scoreboard players set @e[tag=bingo_vine] bingo_category_1 5
+scoreboard players set @e[tag=bingo_vine] bingo_weight 1
 
 summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0045"', Tags: ["bingo_seagrass", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
 scoreboard players set @e[tag=bingo_seagrass] bingo_category_1 5
@@ -130,9 +130,9 @@ summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0048"', Tags: ["bingo
 scoreboard players set @e[tag=bingo_mossy_stone_bricks] bingo_category_1 5
 scoreboard players set @e[tag=bingo_mossy_stone_bricks] bingo_weight 1
 
-## rails (single)
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u000e"', Tags: ["bingo_rails", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-scoreboard players set @e[tag=bingo_rails] bingo_weight 1
+## rail (single)
+summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u000e"', Tags: ["bingo_rail", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
+scoreboard players set @e[tag=bingo_rail] bingo_weight 1
 
 ## flint
 summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0010"', Tags: ["bingo_flint", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
@@ -162,10 +162,10 @@ scoreboard players set @e[tag=bingo_slime_ball] bingo_category_1 9
 scoreboard players set @e[tag=bingo_slime_ball] bingo_weight 1
 
 ## gunpowder-related & compass/sugar-related
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0015"', Tags: ["bingo_fireworks_rocket", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-scoreboard players set @e[tag=bingo_fireworks_rocket] bingo_category_1 10
-scoreboard players set @e[tag=bingo_fireworks_rocket] bingo_category_2 11
-scoreboard players set @e[tag=bingo_fireworks_rocket] bingo_weight 1
+summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0015"', Tags: ["bingo_firework_rocket", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
+scoreboard players set @e[tag=bingo_firework_rocket] bingo_category_1 10
+scoreboard players set @e[tag=bingo_firework_rocket] bingo_category_2 11
+scoreboard players set @e[tag=bingo_firework_rocket] bingo_weight 1
 
 summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0032"', Tags: ["bingo_gunpowder", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
 scoreboard players set @e[tag=bingo_gunpowder] bingo_category_1 10
@@ -203,9 +203,9 @@ summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0018"', Tags: ["bingo
 scoreboard players set @e[tag=bingo_saddle] bingo_category_1 14
 scoreboard players set @e[tag=bingo_saddle] bingo_weight 1
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0019"', Tags: ["bingo_nametag", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-scoreboard players set @e[tag=bingo_nametag] bingo_category_1 14
-scoreboard players set @e[tag=bingo_nametag] bingo_weight 1
+summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0019"', Tags: ["bingo_name_tag", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
+scoreboard players set @e[tag=bingo_name_tag] bingo_category_1 14
+scoreboard players set @e[tag=bingo_name_tag] bingo_weight 1
 
 summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u002f"', Tags: ["bingo_enchanted_book", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
 scoreboard players set @e[tag=bingo_enchanted_book] bingo_category_1 14
@@ -294,9 +294,9 @@ summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0028"', Tags: ["bingo
 scoreboard players set @e[tag=bingo_golden_sword] bingo_category_1 20
 scoreboard players set @e[tag=bingo_golden_sword] bingo_weight 1
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u000f"', Tags: ["bingo_powered_rails", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-scoreboard players set @e[tag=bingo_powered_rails] bingo_category_1 20
-scoreboard players set @e[tag=bingo_powered_rails] bingo_weight 1
+summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u000f"', Tags: ["bingo_powered_rail", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
+scoreboard players set @e[tag=bingo_powered_rail] bingo_category_1 20
+scoreboard players set @e[tag=bingo_powered_rail] bingo_weight 1
 
 summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0029"', Tags: ["bingo_clock", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
 scoreboard players set @e[tag=bingo_clock] bingo_category_1 20
@@ -346,14 +346,14 @@ scoreboard players set @e[tag=bingo_gray_dye] bingo_category_1 26
 scoreboard players set @e[tag=bingo_gray_dye] bingo_category_2 27
 scoreboard players set @e[tag=bingo_gray_dye] bingo_weight 1
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u003b"', Tags: ["bingo_cactus_green", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-scoreboard players set @e[tag=bingo_cactus_green] bingo_category_1 28
-scoreboard players set @e[tag=bingo_cactus_green] bingo_weight 1
+summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u003b"', Tags: ["bingo_green_dye", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
+scoreboard players set @e[tag=bingo_green_dye] bingo_category_1 28
+scoreboard players set @e[tag=bingo_green_dye] bingo_weight 1
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u003c"', Tags: ["bingo_lime_green", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-scoreboard players set @e[tag=bingo_lime_green] bingo_category_1 27
-scoreboard players set @e[tag=bingo_lime_green] bingo_category_2 28
-scoreboard players set @e[tag=bingo_lime_green] bingo_weight 1
+summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u003c"', Tags: ["bingo_lime_dye", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
+scoreboard players set @e[tag=bingo_lime_dye] bingo_category_1 27
+scoreboard players set @e[tag=bingo_lime_dye] bingo_category_2 28
+scoreboard players set @e[tag=bingo_lime_dye] bingo_weight 1
 
 summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u003d"', Tags: ["bingo_lapis_lazuli", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
 scoreboard players set @e[tag=bingo_lapis_lazuli] bingo_category_1 29
@@ -399,9 +399,9 @@ summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0049"', Tags: ["bingo
 scoreboard players set @e[tag=bingo_heart_of_the_sea] bingo_category_1 31
 scoreboard players set @e[tag=bingo_heart_of_the_sea] bingo_weight 1
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u004f"', Tags: ["bingo_omnious_banner", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-scoreboard players set @e[tag=bingo_omnious_banner] bingo_category_1 31
-scoreboard players set @e[tag=bingo_omnious_banner] bingo_weight 1
+summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u004f"', Tags: ["bingo_ominous_banner", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
+scoreboard players set @e[tag=bingo_ominous_banner] bingo_category_1 31
+scoreboard players set @e[tag=bingo_ominous_banner] bingo_weight 1
 
 ## Magma Block (single)
 summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u004c"', Tags: ["bingo_magma_block", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
@@ -409,5 +409,5 @@ scoreboard players set @e[tag=bingo_magma_block] bingo_category_1 31
 scoreboard players set @e[tag=bingo_magma_block] bingo_weight 1
 
 ## Bed (single)
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0050"', Tags: ["bingo_bed", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-scoreboard players set @e[tag=bingo_bed] bingo_weight 1
+summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0050"', Tags: ["bingo_red_bed", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
+scoreboard players set @e[tag=bingo_red_bed] bingo_weight 1
