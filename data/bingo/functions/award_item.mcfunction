@@ -1,5 +1,5 @@
-tag @p[tag=bingo_got_item] add bingo_successful_got_item
-scoreboard players add @p[tag=bingo_got_item] bingo_item_count 1
+tag @a[tag=bingo_got_item, limit=1] add bingo_successful_got_item
+scoreboard players add @a[tag=bingo_got_item, limit=1] bingo_item_count 1
 
 execute if entity @s[scores={bingo_slot_id=0}] as @p[tag=bingo_got_item] run tag @s add bingo_got_slot0
 execute if entity @s[scores={bingo_slot_id=1}] as @p[tag=bingo_got_item] run tag @s add bingo_got_slot1
@@ -30,3 +30,4 @@ execute if entity @s[scores={bingo_slot_id=21}] as @p[tag=bingo_got_item] run ta
 execute if entity @s[scores={bingo_slot_id=22}] as @p[tag=bingo_got_item] run tag @s add bingo_got_slot22
 execute if entity @s[scores={bingo_slot_id=23}] as @p[tag=bingo_got_item] run tag @s add bingo_got_slot23
 execute if entity @s[scores={bingo_slot_id=24}] as @p[tag=bingo_got_item] run tag @s add bingo_got_slot24
+
