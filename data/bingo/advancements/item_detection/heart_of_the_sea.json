@@ -1,0 +1,14 @@
+{
+	"parent": "bingo:item_detection/root",
+	"criteria": {
+		"item_gotten": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"item": "minecraft:heart_of_the_sea"
+			}
+		}
+	},
+	"rewards": {
+		"function": "bingo:item_detection/heart_of_the_sea"
+	}
+}

@@ -1,0 +1,14 @@
+{
+	"parent": "bingo:item_detection/root",
+	"criteria": {
+		"item_gotten": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"item": "minecraft:flint_and_steel"
+			}
+		}
+	},
+	"rewards": {
+		"function": "bingo:item_detection/flint_and_steel"
+	}
+}
