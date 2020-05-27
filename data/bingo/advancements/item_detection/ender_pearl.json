@@ -4,11 +4,15 @@
 		"item_gotten": {
 			"trigger": "minecraft:inventory_changed",
 			"conditions": {
-				"item": "minecraft:blast_furnance"
+				"items": [
+					{
+						"item": "minecraft:ender_pearl"
+					}
+				]
 			}
 		}
 	},
 	"rewards": {
-		"function": "bingo:item_detection/blast_furnance"
+		"function": "bingo:item_detection/ender_pearl"
 	}
 }

@@ -4,7 +4,11 @@
 		"item_gotten": {
 			"trigger": "minecraft:inventory_changed",
 			"conditions": {
-				"item": "minecraft:cod"
+				"items": [
+					{
+						"item": "minecraft:cod"
+					}
+				]
 			}
 		}
 	},

@@ -4,11 +4,15 @@
 		"item_gotten": {
 			"trigger": "minecraft:inventory_changed",
 			"conditions": {
-				"item": "minecraft:melon_block"
+				"items": [
+					{
+						"item": "minecraft:cookie"
+					}
+				]
 			}
 		}
 	},
 	"rewards": {
-		"function": "bingo:item_detection/melon_block"
+		"function": "bingo:item_detection/cookie"
 	}
 }

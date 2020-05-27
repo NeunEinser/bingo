@@ -4,7 +4,11 @@
 		"item_gotten": {
 			"trigger": "minecraft:inventory_changed",
 			"conditions": {
-				"item": "minecraft:gray_dye"
+				"items": [
+					{
+						"item": "minecraft:gray_dye"
+					}
+				]
 			}
 		}
 	},

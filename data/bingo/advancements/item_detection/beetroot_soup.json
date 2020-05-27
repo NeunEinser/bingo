@@ -6,13 +6,13 @@
 			"conditions": {
 				"items": [
 					{
-						"item": "minecraft:heart_of_the_sea"
+						"item": "minecraft:beetroot_soup"
 					}
 				]
 			}
 		}
 	},
 	"rewards": {
-		"function": "bingo:item_detection/heart_of_the_sea"
+		"function": "bingo:item_detection/beetroot_soup"
 	}
 }

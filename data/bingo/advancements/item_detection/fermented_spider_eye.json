@@ -4,7 +4,11 @@
 		"item_gotten": {
 			"trigger": "minecraft:inventory_changed",
 			"conditions": {
-				"item": "minecraft:fermented_spider_eye"
+				"items": [
+					{
+						"item": "minecraft:fermented_spider_eye"
+					}
+				]
 			}
 		}
 	},

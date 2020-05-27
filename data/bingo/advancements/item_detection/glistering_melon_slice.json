@@ -4,7 +4,11 @@
 		"item_gotten": {
 			"trigger": "minecraft:inventory_changed",
 			"conditions": {
-				"item": "minecraft:glistering_melon_slice"
+				"items": [
+					{
+						"item": "minecraft:glistering_melon_slice"
+					}
+				]
 			}
 		}
 	},

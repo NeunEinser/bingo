@@ -4,7 +4,11 @@
 		"item_gotten": {
 			"trigger": "minecraft:inventory_changed",
 			"conditions": {
-				"item": "minecraft:purple_dye"
+				"items": [
+					{
+						"item": "minecraft:purple_dye"
+					}
+				]
 			}
 		}
 	},

@@ -4,7 +4,11 @@
 		"item_gotten": {
 			"trigger": "minecraft:inventory_changed",
 			"conditions": {
-				"item": "minecraft:pumpkin_seeds"
+				"items": [
+					{
+						"item": "minecraft:pumpkin_seeds"
+					}
+				]
 			}
 		}
 	},

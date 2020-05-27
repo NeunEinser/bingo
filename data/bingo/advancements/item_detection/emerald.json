@@ -4,7 +4,11 @@
 		"item_gotten": {
 			"trigger": "minecraft:inventory_changed",
 			"conditions": {
-				"item": "minecraft:emerald"
+				"items": [
+					{
+						"item": "minecraft:emerald"
+					}
+				]
 			}
 		}
 	},

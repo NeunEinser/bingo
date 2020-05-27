@@ -4,7 +4,11 @@
 		"item_gotten": {
 			"trigger": "minecraft:inventory_changed",
 			"conditions": {
-				"item": "minecraft:spruce_sapling"
+				"items": [
+					{
+						"item": "minecraft:spruce_sapling"
+					}
+				]
 			}
 		}
 	},

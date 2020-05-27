@@ -4,7 +4,11 @@
 		"item_gotten": {
 			"trigger": "minecraft:inventory_changed",
 			"conditions": {
-				"item": "minecraft:oak_sign"
+				"items": [
+					{
+						"item": "minecraft:oak_sign"
+					}
+				]
 			}
 		}
 	},

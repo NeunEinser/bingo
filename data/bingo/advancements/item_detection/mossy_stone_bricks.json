@@ -4,7 +4,11 @@
 		"item_gotten": {
 			"trigger": "minecraft:inventory_changed",
 			"conditions": {
-				"item": "minecraft:mossy_stone_bricks"
+				"items": [
+					{
+						"item": "minecraft:mossy_stone_bricks"
+					}
+				]
 			}
 		}
 	},

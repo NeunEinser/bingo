@@ -4,11 +4,15 @@
 		"item_gotten": {
 			"trigger": "minecraft:inventory_changed",
 			"conditions": {
-				"item": "minecraft:furnance_minecart"
+				"items": [
+					{
+						"item": "minecraft:blast_furnace"
+					}
+				]
 			}
 		}
 	},
 	"rewards": {
-		"function": "bingo:item_detection/furnance_minecart"
+		"function": "bingo:item_detection/blast_furnace"
 	}
 }

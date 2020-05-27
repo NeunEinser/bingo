@@ -4,7 +4,11 @@
 		"item_gotten": {
 			"trigger": "minecraft:inventory_changed",
 			"conditions": {
-				"item": "minecraft:melon_slice"
+				"items": [
+					{
+						"item": "minecraft:melon_slice"
+					}
+				]
 			}
 		}
 	},
