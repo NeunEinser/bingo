@@ -1,0 +1,2 @@
+execute if entity @s[scores={bingo_slot_id=..3}] run function bingo:award_item/bin_search_slot_id/below_4
+execute if entity @s[scores={bingo_slot_id=4..}] run function bingo:award_item/bin_search_slot_id/4_5_or_6

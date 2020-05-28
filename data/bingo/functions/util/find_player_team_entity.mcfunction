@@ -1,0 +1,16 @@
+execute if entity @s[team=bingo_aqua] run tag @e[tag=bingo_completed_item, tag=bingo_aqua, limit=1] add bingo_current_team
+execute if entity @s[team=bingo_black] run tag @e[tag=bingo_completed_item, tag=bingo_black, limit=1] add bingo_current_team
+execute if entity @s[team=bingo_blue] run tag @e[tag=bingo_completed_item, tag=bingo_blue, limit=1] add bingo_current_team
+execute if entity @s[team=bingo_dark_aqua] run tag @e[tag=bingo_completed_item, tag=bingo_dark_aqua, limit=1] add bingo_current_team
+execute if entity @s[team=bingo_dark_blue] run tag @e[tag=bingo_completed_item, tag=bingo_dark_blue, limit=1] add bingo_current_team
+execute if entity @s[team=bingo_dark_gray] run tag @e[tag=bingo_completed_item, tag=bingo_dark_gray, limit=1] add bingo_current_team
+execute if entity @s[team=bingo_dark_green] run tag @e[tag=bingo_completed_item, tag=bingo_dark_green, limit=1] add bingo_current_team
+execute if entity @s[team=bingo_dark_purple] run tag @e[tag=bingo_completed_item, tag=bingo_dark_purple, limit=1] add bingo_current_team
+execute if entity @s[team=bingo_dark_red] run tag @e[tag=bingo_completed_item, tag=bingo_dark_red, limit=1] add bingo_current_team
+execute if entity @s[team=bingo_gold] run tag @e[tag=bingo_completed_item, tag=bingo_gold, limit=1] add bingo_current_team
+execute if entity @s[team=bingo_gray] run tag @e[tag=bingo_completed_item, tag=bingo_gray, limit=1] add bingo_current_team
+execute if entity @s[team=bingo_green] run tag @e[tag=bingo_completed_item, tag=bingo_green, limit=1] add bingo_current_team
+execute if entity @s[team=bingo_light_purple] run tag @e[tag=bingo_completed_item, tag=bingo_light_purple, limit=1] add bingo_current_team
+execute if entity @s[team=bingo_red] run tag @e[tag=bingo_completed_item, tag=bingo_red, limit=1] add bingo_current_team
+execute if entity @s[team=bingo_white] run tag @e[tag=bingo_completed_item, tag=bingo_white, limit=1] add bingo_current_team
+execute if entity @s[team=bingo_yellow] run tag @e[tag=bingo_completed_item, tag=bingo_yellow, limit=1] add bingo_current_team
