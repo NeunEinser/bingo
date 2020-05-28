@@ -1,3 +1,3 @@
-scoreboard players remove @e[tag=bingo_selectable] bingo_tmp 1
+scoreboard players remove @e[type=minecraft:area_effect_cloud, tag=bingo_selectable] bingo_tmp 1
 
-tag @e[scores={bingo_tmp=1..}] remove bingo_skipped
+tag @e[type=minecraft:area_effect_cloud, scores={bingo_tmp=1..}] remove bingo_skipped

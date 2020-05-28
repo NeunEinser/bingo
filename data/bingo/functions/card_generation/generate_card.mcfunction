@@ -28,9 +28,9 @@ tag @a remove bingo_got_slot22
 tag @a remove bingo_got_slot23
 tag @a remove bingo_got_slot24
 
-tag @e[tag=bingo_item] add bingo_selectable
+tag @e[type=minecraft:area_effect_cloud, tag=bingo_item] add bingo_selectable
 
-scoreboard players reset @e[tag=bingo_item] bingo_slot_id
+scoreboard players reset @e[type=minecraft:area_effect_cloud, tag=bingo_item] bingo_slot_id
 scoreboard players set $i bingo_tmp 0
 function bingo:card_generation/generate_slot
 
