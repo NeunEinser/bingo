@@ -1,0 +1,16 @@
+execute if entity @s[team=bingo_aqua] run function bingo:find_player_team/aqua
+execute if entity @s[team=bingo_black] run function bingo:find_player_team/black
+execute if entity @s[team=bingo_blue] run function bingo:find_player_team/blue
+execute if entity @s[team=bingo_dark_aqua] run function bingo:find_player_team/dark_aqua
+execute if entity @s[team=bingo_dark_blue] run function bingo:find_player_team/dark_blue
+execute if entity @s[team=bingo_dark_gray] run function bingo:find_player_team/dark_gray
+execute if entity @s[team=bingo_dark_green] run function bingo:find_player_team/dark_green
+execute if entity @s[team=bingo_dark_purple] run function bingo:find_player_team/dark_purple
+execute if entity @s[team=bingo_dark_red] run function bingo:find_player_team/dark_red
+execute if entity @s[team=bingo_gold] run function bingo:find_player_team/gold
+execute if entity @s[team=bingo_gray] run function bingo:find_player_team/gray
+execute if entity @s[team=bingo_green] run function bingo:find_player_team/green
+execute if entity @s[team=bingo_light_purple] run function bingo:find_player_team/light_purple
+execute if entity @s[team=bingo_red] run function bingo:find_player_team/red
+execute if entity @s[team=bingo_white] run function bingo:find_player_team/white
+execute if entity @s[team=bingo_yellow] run function bingo:find_player_team/yellow
