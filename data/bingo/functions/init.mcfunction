@@ -1,5 +1,5 @@
 #setup objectives
-scoreboard objectives remove seed
+scoreboard objectives remove bingo_seed
 scoreboard objectives remove bingo_item_count
 scoreboard objectives remove bingo_slot_id
 scoreboard objectives remove bingo_weight
@@ -9,7 +9,7 @@ scoreboard objectives remove bingo_tmp
 #DONT reset stats
 #scoreboard objectives remove bingo_stats
 
-scoreboard objectives add seed trigger "Trigger for setting the seed value"
+scoreboard objectives add bingo_seed trigger "Trigger for setting the seed value"
 scoreboard objectives add bingo_item_count dummy "Amount of items a player has received"
 scoreboard objectives add bingo_slot_id dummy "Id for the slot this item is currently in"
 scoreboard players set $next_id bingo_id 0

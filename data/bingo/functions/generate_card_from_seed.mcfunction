@@ -1,6 +1,6 @@
 
-scoreboard players operation $seed random_main = @s seed
-scoreboard players reset @s seed
+scoreboard players operation $seed random_main = @s bingo_seed
+scoreboard players reset @s bingo_seed
 
 function random:set_seed
 
