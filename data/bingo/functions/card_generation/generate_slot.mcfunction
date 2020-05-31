@@ -1,22 +1,33 @@
+# select category
+#bingo_tmp = category
+scoreboard players operation $max_val random_main > @e[type=minecraft:area_effect_cloud, tag=bingo_selectable] bingo_tmp
+scoreboard players add $max_val random_main 1
+
+function random:next_int
+tag @e[type=minecraft:area_effect_cloud, tag=bingo_in_category] remove bingo_in_category
+execute as @e[type=minecraft:area_effect_cloud, tag=bingo_selectable] if score @s bingo_tmp = $result random_main run tag @s add bingo_in_category
+execute unless entity @e[type=minecraft:area_effect_cloud, tag=bingo_in_category, limit=1] run function bingo:card_generation/get_different_category
+
 scoreboard players set $max_val random_main 0
-scoreboard players operation $max_val random_main += @e[type=minecraft:area_effect_cloud, tag=bingo_selectable] bingo_weight
+execute as @e[type=minecraft:area_effect_cloud, tag=bingo_in_category] run function bingo:card_generation/prepare_item_in_selected_category
 function random:next_int
 
-tag @e[type=minecraft:area_effect_cloud, tag=bingo_selected] remove bingo_selected
-tag @e[type=minecraft:area_effect_cloud, tag=bingo_selectable] remove bingo_skipped
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_selectable] run scoreboard players operation @s bingo_tmp = @s bingo_weight
+# prepare scores for find item
+say @e[type=minecraft:area_effect_cloud, tag=bingo_in_category]
+execute store result score $items bingo_tmp if entity @e[type=minecraft:area_effect_cloud, tag=bingo_in_category]
 scoreboard players operation $item bingo_tmp = $result random_main
+execute if score $item bingo_tmp >= $items bingo_tmp run function bingo:card_generation/find_item_page
+
+tellraw @a ["item: ", {"score": {"name": "$item", "objective": "bingo_tmp"}}, ", items: ", {"score": {"name": "$items", "objective": "bingo_tmp"}}, ", result: ", {"score": {"name": "$result", "objective": "random_main"}}, ", max_val: ", {"score": {"name": "$max_val", "objective": "random_main"}}]
+
 
 function bingo:card_generation/find_item
 
-scoreboard players operation @e[type=minecraft:area_effect_cloud, tag=bingo_selected] bingo_slot_id = $i bingo_tmp
+execute as @e[type=minecraft:area_effect_cloud, tag=bingo_in_category, tag=bingo_selected] run function bingo:card_generation/set_slot_id
 
 #remove items with the same category from pool 
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_selectable] if score @s bingo_category_1 = @e[type=minecraft:area_effect_cloud, tag=bingo_selected, limit=1] bingo_category_1 run tag @s remove bingo_selectable
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_selectable] if score @s bingo_category_1 = @e[type=minecraft:area_effect_cloud, tag=bingo_selected, limit=1] bingo_category_2 run tag @s remove bingo_selectable
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_selectable] if score @s bingo_category_2 = @e[type=minecraft:area_effect_cloud, tag=bingo_selected, limit=1] bingo_category_1 run tag @s remove bingo_selectable
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_selectable] if score @s bingo_category_2 = @e[type=minecraft:area_effect_cloud, tag=bingo_selected, limit=1] bingo_category_2 run tag @s remove bingo_selectable
-tag @e[type=minecraft:area_effect_cloud, tag=bingo_selected] remove bingo_selectable
+execute as @e[type=minecraft:area_effect_cloud, tag=bingo_in_category] run function bingo:card_generation/mark_item_as_unselectable
+execute as @e[type=minecraft:area_effect_cloud, tag=bingo_selectable] if score @s bingo_tmp > $result random_main run scoreboard players remove @s bingo_tmp 1
 
 scoreboard players add $i bingo_tmp 1
 execute if score $i bingo_tmp matches ..24 run function bingo:card_generation/generate_slot
