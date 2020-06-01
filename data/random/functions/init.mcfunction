@@ -1,6 +1,6 @@
 scoreboard objectives remove random_main
 scoreboard objectives add random_main dummy "Pseudo Random Number Generator"
-scoreboard players set $a random_main 2147483629
+scoreboard players set $a random_main 48271
 scoreboard players set $m random_main 2147483647
 scoreboard players set $c random_main 0
 scoreboard players set 2 random_main 2
