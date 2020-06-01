@@ -1,5 +1,6 @@
 # select category
 #bingo_tmp = category
+scoreboard players set $max_val random_main 0
 scoreboard players operation $max_val random_main > @e[type=minecraft:area_effect_cloud, tag=bingo_selectable] bingo_tmp
 scoreboard players add $max_val random_main 1
 
