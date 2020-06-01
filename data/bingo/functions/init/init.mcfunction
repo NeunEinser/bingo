@@ -469,7 +469,7 @@ scoreboard players operation @e[type=minecraft:area_effect_cloud, tag=bingo_ferm
 scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_fermented_spider_eye, tag=bingo_additional_category] bingo_category 22
 scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_fermented_spider_eye, tag=bingo_additional_category] bingo_weight 1
 
-## apple & gold
+## apple
 summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0025"', Tags: ["bingo_apple", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
 execute as @e[type=minecraft:area_effect_cloud, tag=bingo_apple] run function bingo:init/set_id
 scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_apple] bingo_category 19
@@ -479,11 +479,8 @@ summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0026"', Tags: ["bingo
 execute as @e[type=minecraft:area_effect_cloud, tag=bingo_golden_apple] run function bingo:init/set_id
 scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_golden_apple] bingo_category 19
 scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_golden_apple] bingo_weight 1
-summon minecraft:area_effect_cloud ~ 0 ~ {Tags: ["bingo_golden_apple", "bingo_item", "bingo_additional_category"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-scoreboard players operation @e[type=minecraft:area_effect_cloud, tag=bingo_golden_apple, tag=bingo_additional_category] bingo_id = $current bingo_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_golden_apple, tag=bingo_additional_category] bingo_category 20
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_golden_apple, tag=bingo_additional_category] bingo_weight 1
 
+## gold
 summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0027"', Tags: ["bingo_golden_shovel", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
 execute as @e[type=minecraft:area_effect_cloud, tag=bingo_golden_shovel] run function bingo:init/set_id
 scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_golden_shovel] bingo_category 20
