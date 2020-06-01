@@ -1,2 +1,2 @@
 scoreboard players operation $id bingo_tmp = @s bingo_id
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_selectable, tag=!bingo_additional_category] if score @s bingo_id = $id bingo_tmp run scoreboard players operation @s bingo_slot_id = $i bingo_tmp
+execute as @e[type=minecraft:area_effect_cloud, tag=bingo_item, tag=!bingo_additional_category] if score @s bingo_id = $id bingo_tmp run scoreboard players operation @s bingo_slot_id = $i bingo_tmp

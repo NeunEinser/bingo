@@ -11,6 +11,7 @@ execute unless entity @e[type=minecraft:area_effect_cloud, tag=bingo_in_category
 
 scoreboard players set $max_val random_main 0
 execute as @e[type=minecraft:area_effect_cloud, tag=bingo_in_category] run function bingo:card_generation/prepare_item_in_selected_category
+execute as @e[type=minecraft:area_effect_cloud, tag=bingo_selectable] if score @s bingo_tmp > $result random_main run scoreboard players remove @s bingo_tmp 1
 function random:next_int
 
 # prepare scores for find item
@@ -23,8 +24,6 @@ function bingo:card_generation/find_item
 execute as @e[type=minecraft:area_effect_cloud, tag=bingo_in_category, tag=bingo_selected] run function bingo:card_generation/set_slot_id
 
 #remove items with the same category from pool 
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_in_category] run function bingo:card_generation/mark_item_as_unselectable
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_selectable] if score @s bingo_tmp > $result random_main run scoreboard players remove @s bingo_tmp 1
 
 scoreboard players add $i bingo_tmp 1
 execute if score $i bingo_tmp matches ..24 run function bingo:card_generation/generate_slot
