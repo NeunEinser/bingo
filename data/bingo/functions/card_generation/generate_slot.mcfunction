@@ -13,14 +13,10 @@ execute as @e[type=minecraft:area_effect_cloud, tag=bingo_in_category] run funct
 function random:next_int
 
 # prepare scores for find item
-say @e[type=minecraft:area_effect_cloud, tag=bingo_in_category]
 execute store result score $items bingo_tmp if entity @e[type=minecraft:area_effect_cloud, tag=bingo_in_category]
 scoreboard players operation $item bingo_tmp = $result random_main
+
 execute if score $item bingo_tmp >= $items bingo_tmp run function bingo:card_generation/find_item_page
-
-tellraw @a ["item: ", {"score": {"name": "$item", "objective": "bingo_tmp"}}, ", items: ", {"score": {"name": "$items", "objective": "bingo_tmp"}}, ", result: ", {"score": {"name": "$result", "objective": "random_main"}}, ", max_val: ", {"score": {"name": "$max_val", "objective": "random_main"}}]
-
-
 function bingo:card_generation/find_item
 
 execute as @e[type=minecraft:area_effect_cloud, tag=bingo_in_category, tag=bingo_selected] run function bingo:card_generation/set_slot_id
