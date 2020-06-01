@@ -318,7 +318,7 @@ scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_painting] 
 scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_painting] bingo_weight 1
 
 summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0050"', Tags: ["bingo_red_bed", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_painting] run function bingo:init/set_id
+execute as @e[type=minecraft:area_effect_cloud, tag=bingo_red_bed] run function bingo:init/set_id
 scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_painting] bingo_category 14
 scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_red_bed] bingo_weight 1
 
@@ -524,6 +524,7 @@ scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_compass] b
 scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_compass] bingo_weight 1
 
 summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u002c"', Tags: ["bingo_map", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
+execute as @e[type=minecraft:area_effect_cloud, tag=bingo_map] run function bingo:init/set_id
 scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_map] bingo_category 24
 scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_map] bingo_weight 1
 
