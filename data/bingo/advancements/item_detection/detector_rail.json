@@ -1,0 +1,18 @@
+{
+	"parent": "bingo:item_detection/root",
+	"criteria": {
+		"item_gotten": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"item": "minecraft:detector_rail"
+					}
+				]
+			}
+		}
+	},
+	"rewards": {
+		"function": "bingo:item_detection/detector_rail"
+	}
+}

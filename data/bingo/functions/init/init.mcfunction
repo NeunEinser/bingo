@@ -115,10 +115,13 @@ summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\uFFFF"', Tags: ["bingo
 #29: lapis
 #30: furnace iron
 #31: cactus bone
-#32: cauldron (single)
-#33: heart of the sea (single)
-#34: magma block (single)
-#35: ominous banner (single)
+#32: simple iron
+#33: warm ocean
+#34: snow
+#35: taiga
+#36: heart of the sea (single)
+#37: magma block (single)
+#38: ominous banner (single)
 
 # spawn aecs for item registry
 kill @e[type=minecraft:area_effect_cloud, tag=bingo_item]
@@ -127,7 +130,12 @@ kill @e[type=minecraft:area_effect_cloud, tag=bingo_item]
 summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0001"', Tags: ["bingo_pumpkin_seeds", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
 execute as @e[type=minecraft:area_effect_cloud, tag=bingo_pumpkin_seeds] run function bingo:init/set_id
 scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_pumpkin_seeds] bingo_category 0
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_pumpkin_seeds] bingo_weight 2
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_pumpkin_seeds] bingo_weight 1
+
+summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0054"', Tags: ["bingo_jack_o_lantern", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
+execute as @e[type=minecraft:area_effect_cloud, tag=bingo_jack_o_lantern] run function bingo:init/set_id
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_jack_o_lantern] bingo_category 0
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_jack_o_lantern] bingo_weight 2
 
 summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0002"', Tags: ["bingo_pumpkin_pie", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
 execute as @e[type=minecraft:area_effect_cloud, tag=bingo_pumpkin_pie] run function bingo:init/set_id
@@ -157,7 +165,7 @@ scoreboard players operation @e[type=minecraft:area_effect_cloud, tag=bingo_cake
 scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_cake, tag=bingo_additional_category] bingo_category 2
 scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_cake, tag=bingo_additional_category] bingo_weight 1
 
-## sapling
+## sapling & jungle
 summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0005"', Tags: ["bingo_acacia_sapling", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
 execute as @e[type=minecraft:area_effect_cloud, tag=bingo_acacia_sapling] run function bingo:init/set_id
 scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_acacia_sapling] bingo_category 3
@@ -168,7 +176,25 @@ execute as @e[type=minecraft:area_effect_cloud, tag=bingo_spruce_sapling] run fu
 scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_spruce_sapling] bingo_category 3
 scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_spruce_sapling] bingo_weight 1
 
-## jungle
+summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0060"', Tags: ["bingo_birch_sapling", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
+execute as @e[type=minecraft:area_effect_cloud, tag=bingo_birch_sapling] run function bingo:init/set_id
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_birch_sapling] bingo_category 3
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_birch_sapling] bingo_weight 1
+
+summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0061"', Tags: ["bingo_dark_oak_sapling", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
+execute as @e[type=minecraft:area_effect_cloud, tag=bingo_dark_oak_sapling] run function bingo:init/set_id
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_dark_oak_sapling] bingo_category 3
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_dark_oak_sapling] bingo_weight 1
+
+summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0062"', Tags: ["bingo_jungle_sapling", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
+execute as @e[type=minecraft:area_effect_cloud, tag=bingo_jungle_sapling] run function bingo:init/set_id
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_jungle_sapling] bingo_category 3
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_jungle_sapling] bingo_weight 1
+summon minecraft:area_effect_cloud ~ 0 ~ {Tags: ["bingo_jungle_sapling", "bingo_item", "bingo_additional_category"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
+scoreboard players operation @e[type=minecraft:area_effect_cloud, tag=bingo_jungle_sapling, tag=bingo_additional_category] bingo_id = $current bingo_id
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_jungle_sapling, tag=bingo_additional_category] bingo_category 4
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_jungle_sapling, tag=bingo_additional_category] bingo_weight 1
+
 summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0007"', Tags: ["bingo_cocoa_beans", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
 execute as @e[type=minecraft:area_effect_cloud, tag=bingo_cocoa_beans] run function bingo:init/set_id
 scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_cocoa_beans] bingo_category 4
@@ -194,16 +220,11 @@ execute as @e[type=minecraft:area_effect_cloud, tag=bingo_melon] run function bi
 scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_melon] bingo_category 4
 scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_melon] bingo_weight 1
 
-## shearable
+## shearable & taiga
 summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u000b"', Tags: ["bingo_dead_bush", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
 execute as @e[type=minecraft:area_effect_cloud, tag=bingo_dead_bush] run function bingo:init/set_id
 scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_dead_bush] bingo_category 5
 scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_dead_bush] bingo_weight 1
-
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u000c"', Tags: ["bingo_fern", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_fern] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_fern] bingo_category 5
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_fern] bingo_weight 1
 
 summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u000d"', Tags: ["bingo_vine", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
 execute as @e[type=minecraft:area_effect_cloud, tag=bingo_vine] run function bingo:init/set_id
@@ -220,6 +241,36 @@ execute as @e[type=minecraft:area_effect_cloud, tag=bingo_mossy_stone_bricks] ru
 scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_mossy_stone_bricks] bingo_category 5
 scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_mossy_stone_bricks] bingo_weight 1
 
+summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u000c"', Tags: ["bingo_fern", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
+execute as @e[type=minecraft:area_effect_cloud, tag=bingo_fern] run function bingo:init/set_id
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_fern] bingo_category 5
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_fern] bingo_weight 1
+summon minecraft:area_effect_cloud ~ 0 ~ {Tags: ["bingo_fern", "bingo_item", "bingo_additional_category"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
+scoreboard players operation @e[type=minecraft:area_effect_cloud, tag=bingo_fern, tag=bingo_additional_category] bingo_id = $current bingo_id
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_fern, tag=bingo_additional_category] bingo_category 35
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_fern, tag=bingo_additional_category] bingo_weight 1
+
+summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u006a"', Tags: ["bingo_sweet_berries", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
+execute as @e[type=minecraft:area_effect_cloud, tag=bingo_sweet_berries] run function bingo:init/set_id
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_sweet_berries] bingo_category 35
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_sweet_berries] bingo_weight 1
+
+## rails
+summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u000e"', Tags: ["bingo_rail", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
+execute as @e[type=minecraft:area_effect_cloud, tag=bingo_rail] run function bingo:init/set_id
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_rail] bingo_category 6
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_rail] bingo_weight 1
+
+summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0063"', Tags: ["bingo_detector_rail", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
+execute as @e[type=minecraft:area_effect_cloud, tag=bingo_rail] run function bingo:init/set_id
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_rail] bingo_category 6
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_rail] bingo_weight 1
+
+summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0064"', Tags: ["bingo_activator_rail", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
+execute as @e[type=minecraft:area_effect_cloud, tag=bingo_rail] run function bingo:init/set_id
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_rail] bingo_category 6
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_rail] bingo_weight 1
+
 ## flint
 summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0010"', Tags: ["bingo_flint", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
 execute as @e[type=minecraft:area_effect_cloud, tag=bingo_flint] run function bingo:init/set_id
@@ -231,7 +282,7 @@ execute as @e[type=minecraft:area_effect_cloud, tag=bingo_flint_and_steel] run f
 scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_flint_and_steel] bingo_category 7
 scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_flint_and_steel] bingo_weight 1
 
-## fish
+## fish & warm ocean
 summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0012"', Tags: ["bingo_cod", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
 execute as @e[type=minecraft:area_effect_cloud, tag=bingo_cod] run function bingo:init/set_id
 scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_cod] bingo_category 8
@@ -240,7 +291,40 @@ scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_cod] bingo
 summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0046"', Tags: ["bingo_cod_bucket", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
 execute as @e[type=minecraft:area_effect_cloud, tag=bingo_cod_bucket] run function bingo:init/set_id
 scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_cod_bucket] bingo_category 8
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_cod_bucket] bingo_weight 1
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_cod_bucket] bingo_weight 2
+
+summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0065"', Tags: ["bingo_salmon", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
+execute as @e[type=minecraft:area_effect_cloud, tag=bingo_salmon] run function bingo:init/set_id
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_salmon] bingo_category 8
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_salmon] bingo_weight 1
+
+summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0066"', Tags: ["bingo_salmon_bucket", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
+execute as @e[type=minecraft:area_effect_cloud, tag=bingo_salmon_bucket] run function bingo:init/set_id
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_salmon_bucket] bingo_category 8
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_salmon_bucket] bingo_weight 2
+
+summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0067"', Tags: ["bingo_tropical_fish", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
+execute as @e[type=minecraft:area_effect_cloud, tag=bingo_tropical_fish] run function bingo:init/set_id
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_tropical_fish] bingo_category 8
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_tropical_fish] bingo_weight 1
+summon minecraft:area_effect_cloud ~ 0 ~ {Tags: ["bingo_tropical_fish", "bingo_item", "bingo_additional_category"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
+scoreboard players operation @e[type=minecraft:area_effect_cloud, tag=bingo_tropical_fish, tag=bingo_additional_category] bingo_id = $current bingo_id
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_tropical_fish, tag=bingo_additional_category] bingo_category 33
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_tropical_fish, tag=bingo_additional_category] bingo_weight 1
+
+summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0068"', Tags: ["bingo_tropical_fish_bucket", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
+execute as @e[type=minecraft:area_effect_cloud, tag=bingo_tropical_fish_bucket] run function bingo:init/set_id
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_tropical_fish_bucket] bingo_category 8
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_tropical_fish_bucket] bingo_weight 2
+summon minecraft:area_effect_cloud ~ 0 ~ {Tags: ["bingo_tropical_fish_bucket", "bingo_item", "bingo_additional_category"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
+scoreboard players operation @e[type=minecraft:area_effect_cloud, tag=bingo_tropical_fish_bucket, tag=bingo_additional_category] bingo_id = $current bingo_id
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_tropical_fish_bucket, tag=bingo_additional_category] bingo_category 33
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_tropical_fish_bucket, tag=bingo_additional_category] bingo_weight 1
+
+summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u005f"', Tags: ["bingo_sea_pickle", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
+execute as @e[type=minecraft:area_effect_cloud, tag=bingo_sea_pickle] run function bingo:init/set_id
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_sea_pickle] bingo_category 33
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_sea_pickle] bingo_weight 2
 
 ## enderslime
 summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0013"', Tags: ["bingo_ender_pearl", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
@@ -268,6 +352,15 @@ summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0041"', Tags: ["bingo
 execute as @e[type=minecraft:area_effect_cloud, tag=bingo_glass_bottle] run function bingo:init/set_id
 scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_glass_bottle] bingo_category 11
 scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_glass_bottle] bingo_weight 1
+
+summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0055"', Tags: ["bingo_tnt", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
+execute as @e[type=minecraft:area_effect_cloud, tag=bingo_tnt] run function bingo:init/set_id
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_tnt] bingo_category 10
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_tnt] bingo_weight 1
+summon minecraft:area_effect_cloud ~ 0 ~ {Tags: ["bingo_tnt", "bingo_item", "bingo_additional_category"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
+scoreboard players operation @e[type=minecraft:area_effect_cloud, tag=bingo_tnt, tag=bingo_additional_category] bingo_id = $current bingo_id
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_tnt, tag=bingo_additional_category] bingo_category 11
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_tnt, tag=bingo_additional_category] bingo_weight 1
 
 summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0033"', Tags: ["bingo_tnt_minecart", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
 execute as @e[type=minecraft:area_effect_cloud, tag=bingo_tnt_minecart] run function bingo:init/set_id
@@ -398,6 +491,11 @@ execute as @e[type=minecraft:area_effect_cloud, tag=bingo_lapis_lazuli] run func
 scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_lapis_lazuli] bingo_category 29
 scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_lapis_lazuli] bingo_weight 1
 
+summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0056"', Tags: ["bingo_lapis_block", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
+execute as @e[type=minecraft:area_effect_cloud, tag=bingo_lapis_block] run function bingo:init/set_id
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_lapis_block] bingo_category 29
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_lapis_block] bingo_weight 1
+
 summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u003f"', Tags: ["bingo_purple_dye", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
 execute as @e[type=minecraft:area_effect_cloud, tag=bingo_purple_dye] run function bingo:init/set_id
 scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_purple_dye] bingo_category 29
@@ -413,20 +511,30 @@ scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_cyan_dye, 
 scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_cyan_dye, tag=bingo_additional_category] bingo_weight 1
 
 ## diamond
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u001d"', Tags: ["bingo_diamond", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_diamond] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_diamond] bingo_category 16
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_diamond] bingo_weight 2
-
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u001e"', Tags: ["bingo_diamond_hoe", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_diamond_hoe] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_diamond_hoe] bingo_category 16
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_diamond_hoe] bingo_weight 1
+summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0059"', Tags: ["bingo_diamond_sword", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
+execute as @e[type=minecraft:area_effect_cloud, tag=bingo_diamond_sword] run function bingo:init/set_id
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_diamond_sword] bingo_category 16
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_diamond_sword] bingo_weight 1
 
 summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u001f"', Tags: ["bingo_diamond_axe", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
 execute as @e[type=minecraft:area_effect_cloud, tag=bingo_diamond_axe] run function bingo:init/set_id
 scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_diamond_axe] bingo_category 16
 scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_diamond_axe] bingo_weight 1
+
+summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u005a"', Tags: ["bingo_diamond_pickaxe", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
+execute as @e[type=minecraft:area_effect_cloud, tag=bingo_diamond_pickaxe] run function bingo:init/set_id
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_diamond_pickaxe] bingo_category 16
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_diamond_pickaxe] bingo_weight 1
+
+summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u001d"', Tags: ["bingo_diamond_shovel", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
+execute as @e[type=minecraft:area_effect_cloud, tag=bingo_diamond_shovel] run function bingo:init/set_id
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_diamond_shovel] bingo_category 16
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_diamond_shovel] bingo_weight 2
+
+summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u001e"', Tags: ["bingo_diamond_hoe", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
+execute as @e[type=minecraft:area_effect_cloud, tag=bingo_diamond_hoe] run function bingo:init/set_id
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_diamond_hoe] bingo_category 16
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_diamond_hoe] bingo_weight 1
 
 summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0044"', Tags: ["bingo_obsidian", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
 execute as @e[type=minecraft:area_effect_cloud, tag=bingo_obsidian] run function bingo:init/set_id
@@ -453,7 +561,12 @@ scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_brick] bin
 summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0023"', Tags: ["bingo_mushroom_stew", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
 execute as @e[type=minecraft:area_effect_cloud, tag=bingo_mushroom_stew] run function bingo:init/set_id
 scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_mushroom_stew] bingo_category 18
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_mushroom_stew] bingo_weight 2
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_mushroom_stew] bingo_weight 1
+
+summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0069"', Tags: ["bingo_suspicious_stew", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
+execute as @e[type=minecraft:area_effect_cloud, tag=bingo_suspicious_stew] run function bingo:init/set_id
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_suspicious_stew] bingo_category 18
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_suspicious_stew] bingo_weight 2
 
 summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0030"', Tags: ["bingo_spider_eye", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
 execute as @e[type=minecraft:area_effect_cloud, tag=bingo_spider_eye] run function bingo:init/set_id
@@ -481,15 +594,30 @@ scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_golden_app
 scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_golden_apple] bingo_weight 1
 
 ## gold
+summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0028"', Tags: ["bingo_golden_sword", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
+execute as @e[type=minecraft:area_effect_cloud, tag=bingo_golden_sword] run function bingo:init/set_id
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_golden_sword] bingo_category 20
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_golden_sword] bingo_weight 1
+
+summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u005c"', Tags: ["bingo_golden_axe", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
+execute as @e[type=minecraft:area_effect_cloud, tag=bingo_golden_axe] run function bingo:init/set_id
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_golden_axe] bingo_category 20
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_golden_axe] bingo_weight 1
+
+summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u005d"', Tags: ["bingo_golden_pickaxe", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
+execute as @e[type=minecraft:area_effect_cloud, tag=bingo_golden_pickaxe] run function bingo:init/set_id
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_golden_pickaxe] bingo_category 20
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_golden_pickaxe] bingo_weight 1
+
 summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0027"', Tags: ["bingo_golden_shovel", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
 execute as @e[type=minecraft:area_effect_cloud, tag=bingo_golden_shovel] run function bingo:init/set_id
 scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_golden_shovel] bingo_category 20
 scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_golden_shovel] bingo_weight 1
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0028"', Tags: ["bingo_golden_sword", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_golden_sword] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_golden_sword] bingo_category 20
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_golden_sword] bingo_weight 1
+summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u005e"', Tags: ["bingo_golden_hoe", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
+execute as @e[type=minecraft:area_effect_cloud, tag=bingo_golden_hoe] run function bingo:init/set_id
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_golden_hoe] bingo_category 20
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_golden_hoe] bingo_weight 1
 
 summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u000f"', Tags: ["bingo_powered_rail", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
 execute as @e[type=minecraft:area_effect_cloud, tag=bingo_powered_rail] run function bingo:init/set_id
@@ -555,35 +683,44 @@ execute as @e[type=minecraft:area_effect_cloud, tag=bingo_blast_furnace] run fun
 scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_blast_furnace] bingo_category 30
 scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_blast_furnace] bingo_weight 1
 
-
-## rail (single)
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u000e"', Tags: ["bingo_rail", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_rail] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_rail] bingo_category 6
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_rail] bingo_weight 1
-
-## cauldron (single)
+## simple iron
 summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0017"', Tags: ["bingo_cauldron", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
 execute as @e[type=minecraft:area_effect_cloud, tag=bingo_cauldron] run function bingo:init/set_id
 scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_cauldron] bingo_category 32
 scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_cauldron] bingo_weight 1
 
+summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0040"', Tags: ["bingo_iron_block", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
+execute as @e[type=minecraft:area_effect_cloud, tag=bingo_iron_block] run function bingo:init/set_id
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_iron_block] bingo_category 32
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_iron_block] bingo_weight 1
+
+## snow
+summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0052"', Tags: ["bingo_snow", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
+execute as @e[type=minecraft:area_effect_cloud, tag=bingo_snow] run function bingo:init/set_id
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_snow] bingo_category 34
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_snow] bingo_weight 1
+
+summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0053"', Tags: ["bingo_snow_block", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
+execute as @e[type=minecraft:area_effect_cloud, tag=bingo_snow_block] run function bingo:init/set_id
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_snow_block] bingo_category 34
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_snow_block] bingo_weight 1
+
 ## heart of the sea (single)
 summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0049"', Tags: ["bingo_heart_of_the_sea", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
 execute as @e[type=minecraft:area_effect_cloud, tag=bingo_heart_of_the_sea] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_heart_of_the_sea] bingo_category 33
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_heart_of_the_sea] bingo_category 36
 scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_heart_of_the_sea] bingo_weight 1
 
 ## Magma Block (single)
 summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u004c"', Tags: ["bingo_magma_block", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
 execute as @e[type=minecraft:area_effect_cloud, tag=bingo_magma_block] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_magma_block] bingo_category 34
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_magma_block] bingo_category 37
 scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_magma_block] bingo_weight 1
 
 ## pillager banner (single)
 summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u004f"', Tags: ["bingo_ominous_banner", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
 execute as @e[type=minecraft:area_effect_cloud, tag=bingo_ominous_banner] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_ominous_banner] bingo_category 35
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_ominous_banner] bingo_category 38
 scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_ominous_banner] bingo_weight 1
 # regenerate card
 scoreboard players operation $seed random_main = Seed bingo_stats

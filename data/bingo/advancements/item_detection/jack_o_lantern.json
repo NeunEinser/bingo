@@ -1,0 +1,18 @@
+{
+	"parent": "bingo:item_detection/root",
+	"criteria": {
+		"item_gotten": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"item": "minecraft:jack_o_lantern"
+					}
+				]
+			}
+		}
+	},
+	"rewards": {
+		"function": "bingo:item_detection/jack_o_lantern"
+	}
+}

@@ -6,13 +6,13 @@
 			"conditions": {
 				"items": [
 					{
-						"item": "minecraft:sugar"
+						"item": "minecraft:tnt"
 					}
 				]
 			}
 		}
 	},
 	"rewards": {
-		"function": "bingo:item_detection/sugar"
+		"function": "bingo:item_detection/tnt"
 	}
 }

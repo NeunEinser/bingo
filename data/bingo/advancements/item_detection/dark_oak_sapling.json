@@ -1,0 +1,18 @@
+{
+	"parent": "bingo:item_detection/root",
+	"criteria": {
+		"item_gotten": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"item": "minecraft:dark_oak_sapling"
+					}
+				]
+			}
+		}
+	},
+	"rewards": {
+		"function": "bingo:item_detection/dark_oak_sapling"
+	}
+}

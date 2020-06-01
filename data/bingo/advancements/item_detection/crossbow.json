@@ -6,13 +6,13 @@
 			"conditions": {
 				"items": [
 					{
-						"item": "minecraft:diamond"
+						"item": "minecraft:crossbow"
 					}
 				]
 			}
 		}
 	},
 	"rewards": {
-		"function": "bingo:item_detection/diamond"
+		"function": "bingo:item_detection/crossbow"
 	}
 }

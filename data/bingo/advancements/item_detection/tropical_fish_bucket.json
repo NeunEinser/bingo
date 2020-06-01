@@ -6,13 +6,13 @@
 			"conditions": {
 				"items": [
 					{
-						"item": "minecraft:oak_sign"
+						"item": "minecraft:tropical_fish_bucket"
 					}
 				]
 			}
 		}
 	},
 	"rewards": {
-		"function": "bingo:item_detection/oak_sign"
+		"function": "bingo:item_detection/tropical_fish_bucket"
 	}
 }
