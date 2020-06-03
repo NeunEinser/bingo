@@ -21,9 +21,7 @@ scoreboard players operation $item bingo_tmp = $result random_main
 execute if score $item bingo_tmp >= $items bingo_tmp run function bingo:card_generation/find_item_page
 function bingo:card_generation/find_item
 
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_in_category, tag=bingo_selected] run function bingo:card_generation/set_slot_id
-
-#remove items with the same category from pool 
+execute as @e[type=minecraft:area_effect_cloud, tag=bingo_selectable] if score @s bingo_id = $id bingo_tmp run function bingo:card_generation/apply_selection_to_slot
 
 scoreboard players add $i bingo_tmp 1
 execute if score $i bingo_tmp matches ..24 run function bingo:card_generation/generate_slot
