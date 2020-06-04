@@ -1,2 +1,0 @@
-execute if entity @s[scores={bingo_slot_id=13}] as @e[type=minecraft:area_effect_cloud, tag=bingo_current_team, limit=1] unless entity @s[tag=bingo_got_slot13] run function bingo:award_item/bin_search_slot_id/13
-execute if entity @s[scores={bingo_slot_id=14}] as @e[type=minecraft:area_effect_cloud, tag=bingo_current_team, limit=1] unless entity @s[tag=bingo_got_slot14] run function bingo:award_item/bin_search_slot_id/14
