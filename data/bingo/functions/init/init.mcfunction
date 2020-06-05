@@ -5,8 +5,6 @@ scoreboard objectives remove bingo_slot_id
 scoreboard objectives remove bingo_weight
 scoreboard objectives remove bingo_id
 scoreboard objectives remove bingo_category
-scoreboard objectives remove bingo_category_1
-scoreboard objectives remove bingo_category_2
 scoreboard objectives remove bingo_tmp
 scoreboard objectives remove bingo_tmp_2
 scoreboard objectives remove bingo_const
