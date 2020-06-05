@@ -31,12 +31,12 @@ team add bingo_dark_aqua
 team add bingo_dark_blue
 team add bingo_dark_gray
 team add bingo_dark_green
-team add bingo_dark_purple
+team add bingo_dark_purpl
 team add bingo_dark_red
 team add bingo_gold
 team add bingo_gray
 team add bingo_green
-team add bingo_light_purple
+team add bingo_light_purp
 team add bingo_red
 team add bingo_white
 team add bingo_yellow
@@ -49,12 +49,12 @@ team modify bingo_dark_aqua color dark_aqua
 team modify bingo_dark_blue color dark_blue
 team modify bingo_dark_gray color dark_gray
 team modify bingo_dark_green color dark_green
-team modify bingo_dark_purple color dark_purple
+team modify bingo_dark_purpl color dark_purple
 team modify bingo_dark_red color dark_red
 team modify bingo_gold color gold
 team modify bingo_gray color gray
 team modify bingo_green color green
-team modify bingo_light_purple color light_purple
+team modify bingo_light_purp color light_purple
 team modify bingo_red color red
 team modify bingo_white color white
 team modify bingo_yellow color yellow
