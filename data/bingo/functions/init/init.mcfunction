@@ -217,7 +217,7 @@ summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u000d"', Tags: ["bingo
 execute as @e[type=minecraft:area_effect_cloud, tag=bingo_vine] run function bingo:init/set_id
 scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_vine] bingo_category 5
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0012"', Tags: ["bingo_seagrass", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
+summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0058"', Tags: ["bingo_seagrass", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
 execute as @e[type=minecraft:area_effect_cloud, tag=bingo_seagrass] run function bingo:init/set_id
 scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_seagrass] bingo_category 5
 
@@ -257,6 +257,10 @@ scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_flint] bin
 summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0011"', Tags: ["bingo_flint_and_steel", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
 execute as @e[type=minecraft:area_effect_cloud, tag=bingo_flint_and_steel] run function bingo:init/set_id
 scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_flint_and_steel] bingo_category 7
+
+summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0012"', Tags: ["bingo_arrow", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
+execute as @e[type=minecraft:area_effect_cloud, tag=bingo_arrow] run function bingo:init/set_id
+scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_arrow] bingo_category 7
 
 ## fish & warm ocean
 summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0042"', Tags: ["bingo_cod", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
