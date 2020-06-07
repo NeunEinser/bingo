@@ -1,16 +1,20 @@
 {
-    "type": "bingo:noon",
-    "generator": {
-        "type": "minecraft:flat",
-        "settings": {
-            "biome": "minecraft:the_void",
-            "layers": [
-                 {
-                    "block": "minecraft:barrier",
-                    "height": 64
-                 }
-            ],
-            "structures": {"structures":{}}
-        }
-    }
+	"type": "bingo:noon",
+	"generator": {
+		"type": "minecraft:flat",
+		"settings": {
+			"biome": "minecraft:the_void",
+			"layers": [
+				 {
+					"block": "minecraft:air",
+					"height": 63
+				 },
+				 {
+					"block": "minecraft:barrier",
+					"height": 1
+				 }
+			],
+			"structures": {"structures":{}}
+		}
+	}
 }
