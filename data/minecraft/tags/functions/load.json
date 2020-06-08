@@ -1,6 +1,7 @@
 {
 	"values": [
 		"bingo:init/init",
-		"random:init"
+		"random:init",
+		"math:init"
 	]
 }
