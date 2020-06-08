@@ -1,7 +1,4 @@
-execute store result score $raw timer_main run worldborder get
-execute if score $raw timer_main matches 50000000.. run function timer:internal/prevent_overflow
-
-scoreboard players operation $raw timer_main -= $start timer_main
+function timer:internal/read_raw
 
 scoreboard players operation $millis timer_main = $raw timer_main
 scoreboard players operation $seconds timer_main = $millis timer_main
