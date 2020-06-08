@@ -66,10 +66,13 @@ data modify storage bingo:main categories append value {name: "village", transla
 data modify storage bingo:main categories append value {name: "warm_ocean", translateableName: '{"translate": "bingo.category.warm_ocean"}'}
 data modify storage bingo:main categories append value {name: "wool", translateableName: '{"translate": "bingo.category.wool"}'}
 
-
 # items
 data modify storage bingo:tmp item set value {id: "minecraft:pumpkin_seeds", itemTextComponent: '{"translate": "item.minecraft.pumpkin_seeds", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:pumpkin_seeds"}}}', icon: '"\\u0001"', clearCommand: ["clear @a[tag=bingo_clear_pumpkin_seeds] minecraft:pumpkin_seeds 1", "tag remove @a bingo_clear_pumpkin_seeds"], categories: 1, weight: 1}
 data modify storage bingo:main categories[{name:"pumpkin"}].items append from storage bingo:tmp item
+
+data modify storage bingo:tmp item set value {id: "minecraft:pumpkin_pie", itemTextComponent: '{"translate": "item.minecraft.pumpkin_pie", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:pumpkin_pie"}}}', icon: '"\\u0002"', clearCommand: ["clear @a[tag=bingo_clear_pumpkin_pie] minecraft:pumpkin_pie 1", "tag remove @a bingo_clear_pumpkin_pie"], categories: 2, weight: 1}
+data modify storage bingo:main categories[{name:"pumpkin"}].items append from storage bingo:tmp item
+data modify storage bingo:main categories[{name:"egg"}].items append from storage bingo:tmp item
 
 data modify storage bingo:tmp item set value {id: "minecraft:egg", itemTextComponent: '{"translate": "item.minecraft.egg", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:egg"}}}', icon: '"\\u0003"', clearCommand: ["clear @a[tag=bingo_clear_egg] minecraft:egg 1", "tag remove @a bingo_clear_egg"], categories: 1, weight: 1}
 data modify storage bingo:main categories[{name:"egg"}].items append from storage bingo:tmp item
@@ -188,10 +191,6 @@ data modify storage bingo:main categories[{name:"gold"}].items append from stora
 data modify storage bingo:tmp item set value {id: "minecraft:clock", itemTextComponent: '{"translate": "item.minecraft.clock", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:clock"}}}', icon: '"\\u0029"', clearCommand: ["clear @a[tag=bingo_clear_clock] minecraft:clock 1", "tag remove @a bingo_clear_clock"], categories: 1, weight: 1}
 data modify storage bingo:main categories[{name:"gold"}].items append from storage bingo:tmp item
 
-data modify storage bingo:tmp item set value {id: "minecraft:pumpkin_pie", itemTextComponent: '{"translate": "item.minecraft.pumpkin_pie", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:pumpkin_pie"}}}', icon: '"\\u002F"', clearCommand: ["clear @a[tag=bingo_clear_pumpkin_pie] minecraft:pumpkin_pie 1", "tag remove @a bingo_clear_pumpkin_pie"], categories: 2, weight: 1}
-data modify storage bingo:main categories[{name:"pumpkin"}].items append from storage bingo:tmp item
-data modify storage bingo:main categories[{name:"egg"}].items append from storage bingo:tmp item
-
 data modify storage bingo:tmp item set value {id: "minecraft:repeater", itemTextComponent: '{"translate": "block.minecraft.repeater", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:repeater"}}}', icon: '"\\u002a"', clearCommand: ["clear @a[tag=bingo_clear_repeater] minecraft:repeater 1", "tag remove @a bingo_clear_repeater"], categories: 1, weight: 1}
 data modify storage bingo:main categories[{name:"redstone"}].items append from storage bingo:tmp item
 
@@ -287,7 +286,7 @@ data modify storage bingo:tmp item set value {id: "minecraft:tropical_fish", ite
 data modify storage bingo:main categories[{name:"fish"}].items append from storage bingo:tmp item
 data modify storage bingo:main categories[{name:"warm_ocean"}].items append from storage bingo:tmp item
 
-data modify storage bingo:tmp item set value {id: "minecraft:tropical_fish_bucket", itemTextComponent: '{"translate": "item.minecraft.tropical_fish_bucket", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:tropical_fish_bucket"}}}', icon: '"\\u0046"', clearCommand: ["clear @a[tag=bingo_clear_tropical_fish_bucket] minecraft:tropical_fish_bucket 1", "tag remove @a bingo_clear_tropical_fish_bucket"], categories: 2, weight: 1}
+data modify storage bingo:tmp item set value {id: "minecraft:tropical_fish_bucket", itemTextComponent: '{"translate": "item.minecraft.tropical_fish_bucket", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:tropical_fish_bucket"}}}', icon: '"\\u0047"', clearCommand: ["clear @a[tag=bingo_clear_tropical_fish_bucket] minecraft:tropical_fish_bucket 1", "tag remove @a bingo_clear_tropical_fish_bucket"], categories: 2, weight: 1}
 data modify storage bingo:main categories[{name:"fish"}].items append from storage bingo:tmp item
 data modify storage bingo:main categories[{name:"warm_ocean"}].items append from storage bingo:tmp item
 
@@ -297,7 +296,7 @@ data modify storage bingo:main categories[{name:"sapling"}].items append from st
 data modify storage bingo:tmp item set value {id: "minecraft:dark_oak_sapling", itemTextComponent: '{"translate": "block.minecraft.dark_oak_sapling", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:dark_oak_sapling"}}}', icon: '"\\u0049"', clearCommand: ["clear @a[tag=bingo_clear_dark_oak_sapling] minecraft:dark_oak_sapling 1", "tag remove @a bingo_clear_dark_oak_sapling"], categories: 1, weight: 1}
 data modify storage bingo:main categories[{name:"sapling"}].items append from storage bingo:tmp item
 
-data modify storage bingo:tmp item set value {id: "minecraft:jungle_sapling", itemTextComponent: '{"translate": "block.minecraft.jungle_sapling", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:jungle_sapling"}}}', icon: '"\\u0049"', clearCommand: ["clear @a[tag=bingo_clear_jungle_sapling] minecraft:jungle_sapling 1", "tag remove @a bingo_clear_jungle_sapling"], categories: 2, weight: 1}
+data modify storage bingo:tmp item set value {id: "minecraft:jungle_sapling", itemTextComponent: '{"translate": "block.minecraft.jungle_sapling", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:jungle_sapling"}}}', icon: '"\\u004a"', clearCommand: ["clear @a[tag=bingo_clear_jungle_sapling] minecraft:jungle_sapling 1", "tag remove @a bingo_clear_jungle_sapling"], categories: 2, weight: 1}
 data modify storage bingo:main categories[{name:"sapling"}].items append from storage bingo:tmp item
 data modify storage bingo:main categories[{name:"jungle"}].items append from storage bingo:tmp item
 
@@ -374,9 +373,6 @@ data modify storage bingo:main categories[{name:"cactus_bone"}].items append fro
 data modify storage bingo:tmp item set value {id: "minecraft:blast_furnace", itemTextComponent: '{"translate": "block.minecraft.blast_furnace", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:blast_furnace"}}}', icon: '"\\u0109"', clearCommand: ["clear @a[tag=bingo_clear_blast_furnace] minecraft:blast_furnace 1", "tag remove @a bingo_clear_blast_furnace"], categories: 1, weight: 1}
 data modify storage bingo:main categories[{name:"furnace_iron"}].items append from storage bingo:tmp item
 
-data modify storage bingo:tmp item set value {id: "minecraft:jack_o_lantern", itemTextComponent: '{"translate": "block.minecraft.jack_o_lantern", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:jack_o_lantern"}}}', icon: '"\\u010F"', clearCommand: ["clear @a[tag=bingo_clear_jack_o_lantern] minecraft:jack_o_lantern 1", "tag remove @a bingo_clear_jack_o_lantern"], categories: 1, weight: 1}
-data modify storage bingo:main categories[{name:"pumpkin"}].items append from storage bingo:tmp item
-
 data modify storage bingo:tmp item set value {id: "minecraft:ominous_banner", itemTextComponent: '{"translate": "block.minecraft.ominous_banner", "color": "gold", "italic": true, "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:white_banner", "tag": "{BlockEntityTag: {Patterns: [{Pattern: \'mr\', Color: 9}, {Pattern: \'bs\', Color: 8}, {Pattern: \'cs\', Color: 7}, {Pattern: \'bo\', Color: 8}, {Pattern: \'ms\', Color: 15}, {Pattern: \'hh\', Color: 8}, {Pattern: \'mc\', Color: 8}, {Pattern: \'bo\', Color: 15}]}, display: {Name: \'{\\"color\\":\\"gold\\",\\"translate\\":\\"block.minecraft.ominous_banner\\"}\'}}"}}}', icon: '"\\u010a"', clearCommand: ['clear @a[tag=bingo_clear_ominous_banner] minecraft:white_banner{BlockEntityTag: {Patterns: [{Pattern: "mr", Color: 9}, {Pattern: "bs", Color: 8}, {Pattern: "cs", Color: 7}, {Pattern: "bo", Color: 8}, {Pattern: "ms", Color: 15}, {Pattern: "hh", Color: 8}, {Pattern: "mc", Color: 8}, {Pattern: "bo", Color: 15}]}, display: {Name: \'{"color":"gold","translate":"block.minecraft.ominous_banner"}\'}} 1', "tag remove @a bingo_clear_ominous_banner"], categories: 1, weight: 1}
 data modify storage bingo:main categories[{name:"ominous_banner"}].items append from storage bingo:tmp item
 
@@ -391,6 +387,9 @@ data modify storage bingo:main categories[{name:"snow"}].items append from stora
 
 data modify storage bingo:tmp item set value {id: "minecraft:snow_block", itemTextComponent: '{"translate": "block.minecraft.snow_block", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:snow_block"}}}', icon: '"\\u010e"', clearCommand: ["clear @a[tag=bingo_clear_snow_block] minecraft:snow_block 1", "tag remove @a bingo_clear_snow_block"], categories: 1, weight: 1}
 data modify storage bingo:main categories[{name:"snow"}].items append from storage bingo:tmp item
+
+data modify storage bingo:tmp item set value {id: "minecraft:jack_o_lantern", itemTextComponent: '{"translate": "block.minecraft.jack_o_lantern", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:jack_o_lantern"}}}', icon: '"\\u010f"', clearCommand: ["clear @a[tag=bingo_clear_jack_o_lantern] minecraft:jack_o_lantern 1", "tag remove @a bingo_clear_jack_o_lantern"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"pumpkin"}].items append from storage bingo:tmp item
 
 data modify storage bingo:tmp item set value {id: "minecraft:tnt", itemTextComponent: '{"translate": "block.minecraft.tnt", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:tnt"}}}', icon: '"\\u0110"', clearCommand: ["clear @a[tag=bingo_clear_tnt] minecraft:tnt 1", "tag remove @a bingo_clear_tnt"], categories: 2, weight: 1}
 data modify storage bingo:main categories[{name:"gunpowder"}].items append from storage bingo:tmp item
