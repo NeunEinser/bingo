@@ -22,622 +22,411 @@ scoreboard objectives add bingo_tmp_2 dummy "Temporary values #2"
 scoreboard objectives add bingo_stats dummy "Minecraft Bingo"
 scoreboard objectives setdisplay sidebar bingo_stats
 
-# setup teams
-## add
-team add bingo_aqua
-team add bingo_black
-team add bingo_blue
-team add bingo_dark_aqua
-team add bingo_dark_blue
-team add bingo_dark_gray
-team add bingo_dark_green
-team add bingo_dark_purpl
-team add bingo_dark_red
-team add bingo_gold
-team add bingo_gray
-team add bingo_green
-team add bingo_light_purp
-team add bingo_red
-team add bingo_white
-team add bingo_yellow
+execute in bingo:lobby positioned 0 0 0 run function bingo:init/setup_lobby
 
-## set colors
-team modify bingo_aqua color aqua
-team modify bingo_black color black
-team modify bingo_blue color blue
-team modify bingo_dark_aqua color dark_aqua
-team modify bingo_dark_blue color dark_blue
-team modify bingo_dark_gray color dark_gray
-team modify bingo_dark_green color dark_green
-team modify bingo_dark_purpl color dark_purple
-team modify bingo_dark_red color dark_red
-team modify bingo_gold color gold
-team modify bingo_gray color gray
-team modify bingo_green color green
-team modify bingo_light_purp color light_purple
-team modify bingo_red color red
-team modify bingo_white color white
-team modify bingo_yellow color yellow
+# categories
+data remove storage bingo:main categories
+data modify storage bingo:main categories append value {name: "apple", translateableName: '{"translate": "bingo.category.apple"}'}
+data modify storage bingo:main categories append value {name: "bow", translateableName: '{"translate": "bingo.category.bow"}'}
+data modify storage bingo:main categories append value {name: "brick", translateableName: '{"translate": "bingo.category.bricks"}'}
+data modify storage bingo:main categories append value {name: "cactus", translateableName: '{"translate": "bingo.category.cactus"}'}
+data modify storage bingo:main categories append value {name: "cactus_bone", translateableName: '{"translate": "bingo.category.cactus_bone"}'}
+data modify storage bingo:main categories append value {name: "chest_iron", translateableName: '{"translate": "bingo.category.chest_iron"}'}
+data modify storage bingo:main categories append value {name: "chest_loot", translateableName: '{"translate": "bingo.category.chest_loot"}'}
+data modify storage bingo:main categories append value {name: "compass", translateableName: '{"translate": "bingo.category.compass"}'}
+data modify storage bingo:main categories append value {name: "diamond", translateableName: '{"translate": "bingo.category.diamond"}'}
+data modify storage bingo:main categories append value {name: "egg", translateableName: '{"translate": "bingo.category.egg"}'}
+data modify storage bingo:main categories append value {name: "enderslime", translateableName: '{"translate": "bingo.category.enderslime"}'}
+data modify storage bingo:main categories append value {name: "fish", translateableName: '{"translate": "bingo.category.fish"}'}
+data modify storage bingo:main categories append value {name: "flint", translateableName: '{"translate": "bingo.category.flint"}'}
+data modify storage bingo:main categories append value {name: "furnace_iron", translateableName: '{"translate": "bingo.category.furnace_iron"}'}
+data modify storage bingo:main categories append value {name: "gold", translateableName: '{"translate": "bingo.category.gold"}'}
+data modify storage bingo:main categories append value {name: "gunpowder", translateableName: '{"translate": "bingo.category.gunpowder"}'}
+data modify storage bingo:main categories append value {name: "heart_of_the_sea", translateableName: '{"translate": "bingo.category.heart_of_the_sea"}'}
+data modify storage bingo:main categories append value {name: "ink", translateableName: '{"translate": "bingo.category.ink"}'}
+data modify storage bingo:main categories append value {name: "ink_bone", translateableName: '{"translate": "bingo.category.ink_bone"}'}
+data modify storage bingo:main categories append value {name: "jungle", translateableName: '{"translate": "bingo.category.jungle"}'}
+data modify storage bingo:main categories append value {name: "lapis", translateableName: '{"translate": "bingo.category.lapis"}'}
+data modify storage bingo:main categories append value {name: "leather", translateableName: '{"translate": "bingo.category.leather"}'}
+data modify storage bingo:main categories append value {name: "magma_block", translateableName: '{"translate": "bingo.category.magma_block"}'}
+data modify storage bingo:main categories append value {name: "milk", translateableName: '{"translate": "bingo.category.milk"}'}
+data modify storage bingo:main categories append value {name: "mushroom", translateableName: '{"translate": "bingo.category.mushroom"}'}
+data modify storage bingo:main categories append value {name: "ominous_banner", translateableName: '{"translate": "bingo.category.ominous_banner"}'}
+data modify storage bingo:main categories append value {name: "pumpkin", translateableName: '{"translate": "bingo.category.pumpkin"}'}
+data modify storage bingo:main categories append value {name: "rail", translateableName: '{"translate": "bingo.category.rail"}'}
+data modify storage bingo:main categories append value {name: "redstone", translateableName: '{"translate": "bingo.category.redstone"}'}
+data modify storage bingo:main categories append value {name: "sand", translateableName: '{"translate": "bingo.category.sand"}'}
+data modify storage bingo:main categories append value {name: "sapling", translateableName: '{"translate": "bingo.category.sapling"}'}
+data modify storage bingo:main categories append value {name: "shearable", translateableName: '{"translate": "bingo.category.shearable"}'}
+data modify storage bingo:main categories append value {name: "simple_iron", translateableName: '{"translate": "bingo.category.simple_iron"}'}
+data modify storage bingo:main categories append value {name: "snow", translateableName: '{"translate": "bingo.category.snow"}'}
+data modify storage bingo:main categories append value {name: "spider", translateableName: '{"translate": "bingo.category.spider"}'}
+data modify storage bingo:main categories append value {name: "taiga", translateableName: '{"translate": "bingo.category.taiga"}'}
+data modify storage bingo:main categories append value {name: "village", translateableName: '{"translate": "bingo.category.village"}'}
+data modify storage bingo:main categories append value {name: "warm_ocean", translateableName: '{"translate": "bingo.category.warm_ocean"}'}
+data modify storage bingo:main categories append value {name: "wool", translateableName: '{"translate": "bingo.category.wool"}'}
 
-## spawn aecs
-kill @e[type=minecraft:area_effect_cloud, tag=bingo_item_border]
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '{"text": "\\uFFFE", "color": "aqua"}', Tags: ["bingo_item_border", "bingo_completed_item", "bingo_aqua"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '{"text": "\\uFFFE", "color": "black"}', Tags: ["bingo_item_border", "bingo_completed_item", "bingo_black"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '{"text": "\\uFFFE", "color": "blue"}', Tags: ["bingo_item_border", "bingo_completed_item", "bingo_blue"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '{"text": "\\uFFFE", "color": "dark_aqua"}', Tags: ["bingo_item_border", "bingo_completed_item", "bingo_dark_aqua"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '{"text": "\\uFFFE", "color": "dark_blue"}', Tags: ["bingo_item_border", "bingo_completed_item", "bingo_dark_blue"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '{"text": "\\uFFFE", "color": "dark_gray"}', Tags: ["bingo_item_border", "bingo_completed_item", "bingo_dark_gray"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '{"text": "\\uFFFE", "color": "dark_green"}', Tags: ["bingo_item_border", "bingo_completed_item", "bingo_dark_green"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '{"text": "\\uFFFE", "color": "dark_purple"}', Tags: ["bingo_item_border", "bingo_completed_item", "bingo_dark_purple"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '{"text": "\\uFFFE", "color": "dark_red"}', Tags: ["bingo_item_border", "bingo_completed_item", "bingo_dark_red"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '{"text": "\\uFFFE", "color": "gold"}', Tags: ["bingo_item_border", "bingo_completed_item", "bingo_gold"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '{"text": "\\uFFFE", "color": "gray"}', Tags: ["bingo_item_border", "bingo_completed_item", "bingo_gray"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '{"text": "\\uFFFE", "color": "green"}', Tags: ["bingo_item_border", "bingo_completed_item", "bingo_green"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '{"text": "\\uFFFE", "color": "light_purple"}', Tags: ["bingo_item_border", "bingo_completed_item", "bingo_light_purple"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '{"text": "\\uFFFE", "color": "red"}', Tags: ["bingo_item_border", "bingo_completed_item", "bingo_red"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '{"text": "\\uFFFE", "color": "white"}', Tags: ["bingo_item_border", "bingo_completed_item", "bingo_white"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '{"text": "\\uFFFE", "color": "yellow"}', Tags: ["bingo_item_border", "bingo_completed_item", "bingo_yellow"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\uFFFF"', Tags: ["bingo_item_border", "bingo_current_team", "bingo_uncompleted_item", "bingo_got_slot0", "bingo_got_slot1", "bingo_got_slot2", "bingo_got_slot3", "bingo_got_slot4", "bingo_got_slot5", "bingo_got_slot6", "bingo_got_slot7", "bingo_got_slot8", "bingo_got_slot9", "bingo_got_slot10", "bingo_got_slot11", "bingo_got_slot12", "bingo_got_slot13", "bingo_got_slot14", "bingo_got_slot15", "bingo_got_slot16", "bingo_got_slot17", "bingo_got_slot18", "bingo_got_slot19", "bingo_got_slot20", "bingo_got_slot21", "bingo_got_slot22", "bingo_got_slot23", "bingo_got_slot24"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-
-# categories:
-#00: pumpkin
-#01: egg
-#02: milk
-#03: sapling
-#04: jungle
-#05: shearable
-#06: rail (single)
-#07: flint
-#08: fish
-#09: enderslime
-#10: gunpowder
-#11: glass
-#12: chest_loot
-#13: village
-#14: wool
-#15: leather
-#16: diamond
-#17: bricks
-#18: mushrooms
-#19: apple
-#20: gold
-#21: book
-#22: spider
-#23: chest iron
-#24: compass
-#25: redstone
-#26: ink
-#27: ink bone
-#28: cactus green
-#29: lapis
-#30: furnace iron
-#31: cactus bone
-#32: simple iron
-#33: warm ocean
-#34: snow
-#35: taiga
-#36: bow
-#37: heart of the sea (single)
-#38: magma block (single)
-#39: ominous banner (single)
-
-# spawn aecs for item registry
-kill @e[type=minecraft:area_effect_cloud, tag=bingo_item]
-
+# items
 ## pumpkin & milk & egg
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0001"', Tags: ["bingo_pumpkin_seeds", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_pumpkin_seeds] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_pumpkin_seeds] bingo_category 0
+data modify storage bingo:tmp item set value {id: "minecraft:pumpkin_seeds", itemTextComponent: '{"translate": "item.minecraft.pumpkin_seeds", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:pumpkin_seeds"}}}', icon: '"\\u0001"', clearCommand: ["clear @a[tag=bingo_clear_pumpkin_seeds] minecraft:pumpkin_seeds 1", "tag remove @a bingo_clear_pumpkin_seeds"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"pumpkin"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u010f"', Tags: ["bingo_jack_o_lantern", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_jack_o_lantern] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_jack_o_lantern] bingo_category 0
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_jack_o_lantern] bingo_weight 2
+data modify storage bingo:tmp item set value {id: "minecraft:jack_o_lantern", itemTextComponent: '{"translate": "block.minecraft.jack_o_lantern", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:jack_o_lantern"}}}', icon: '"\\u010F"', clearCommand: ["clear @a[tag=bingo_clear_jack_o_lantern] minecraft:jack_o_lantern 1", "tag remove @a bingo_clear_jack_o_lantern"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"pumpkin"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0002"', Tags: ["bingo_pumpkin_pie", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_pumpkin_pie] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_pumpkin_pie] bingo_category 0
-summon minecraft:area_effect_cloud ~ 0 ~ {Tags: ["bingo_pumpkin_pie", "bingo_item", "bingo_additional_category"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-scoreboard players operation @e[type=minecraft:area_effect_cloud, tag=bingo_pumpkin_pie, tag=bingo_additional_category] bingo_id = $current bingo_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_pumpkin_pie, tag=bingo_additional_category] bingo_category 1
+data modify storage bingo:tmp item set value {id: "minecraft:pumpkin_pie", itemTextComponent: '{"translate": "item.minecraft.pumpkin_pie", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:pumpkin_pie"}}}', icon: '"\\u002F"', clearCommand: ["clear @a[tag=bingo_clear_pumpkin_pie] minecraft:pumpkin_pie 1", "tag remove @a bingo_clear_pumpkin_pie"], categories: 2, weight: 1}
+data modify storage bingo:main categories[{name:"pumpkin"}].items append from storage bingo:tmp item
+data modify storage bingo:main categories[{name:"egg"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0003"', Tags: ["bingo_egg", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_egg] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_egg] bingo_category 1
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_egg] bingo_weight 2
+data modify storage bingo:tmp item set value {id: "minecraft:egg", itemTextComponent: '{"translate": "item.minecraft.egg", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:egg"}}}', icon: '"\\u0003"', clearCommand: ["clear @a[tag=bingo_clear_egg] minecraft:egg 1", "tag remove @a bingo_clear_egg"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"egg"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0016"', Tags: ["bingo_milk_bucket", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_milk_bucket] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_milk_bucket] bingo_category 2
+data modify storage bingo:tmp item set value {id: "minecraft:milk_bucket", itemTextComponent: '{"translate": "item.minecraft.milk_bucket", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:milk_bucket"}}}', icon: '"\\u0016"', clearCommand: ["clear @a[tag=bingo_clear_milk_bucket] minecraft:milk_bucket 1", "tag remove @a bingo_clear_milk_bucket"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"milk"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0004"', Tags: ["bingo_cake", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_cake] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_cake] bingo_category 1
-summon minecraft:area_effect_cloud ~ 0 ~ {Tags: ["bingo_cake", "bingo_item", "bingo_additional_category"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-scoreboard players operation @e[type=minecraft:area_effect_cloud, tag=bingo_cake, tag=bingo_additional_category] bingo_id = $current bingo_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_cake, tag=bingo_additional_category] bingo_category 2
+data modify storage bingo:tmp item set value {id: "minecraft:cake", itemTextComponent: '{"translate": "bingo.minecraft.cake", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:cake"}}}', icon: '"\\u0004"', clearCommand: ["clear @a[tag=bingo_clear_cake] minecraft:cake 1", "tag remove @a bingo_clear_cake"], categories: 2, weight: 1}
+data modify storage bingo:main categories[{name:"egg"}].items append from storage bingo:tmp item
+data modify storage bingo:main categories[{name:"milk"}].items append from storage bingo:tmp item
 
 ## sapling & jungle
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0005"', Tags: ["bingo_acacia_sapling", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_acacia_sapling] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_acacia_sapling] bingo_category 3
+data modify storage bingo:tmp item set value {id: "minecraft:acacia_sapling", itemTextComponent: '{"translate": "block.minecraft.acacia_sapling", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:acacia_sapling"}}}', icon: '"\\u0005"', clearCommand: ["clear @a[tag=bingo_clear_acacia_sapling] minecraft:acacia_sapling 1", "tag remove @a bingo_clear_acacia_sapling"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"sapling"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0006"', Tags: ["bingo_spruce_sapling", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_spruce_sapling] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_spruce_sapling] bingo_category 3
+data modify storage bingo:tmp item set value {id: "minecraft:spruce_sapling", itemTextComponent: '{"translate": "block.minecraft.spruce_sapling", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:spruce_sapling"}}}', icon: '"\\u0006"', clearCommand: ["clear @a[tag=bingo_clear_spruce_sapling] minecraft:spruce_sapling 1", "tag remove @a bingo_clear_spruce_sapling"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"sapling"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0048"', Tags: ["bingo_birch_sapling", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_birch_sapling] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_birch_sapling] bingo_category 3
+data modify storage bingo:tmp item set value {id: "minecraft:birch_sapling", itemTextComponent: '{"translate": "block.minecraft.birch_sapling", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:birch_sapling"}}}', icon: '"\\u0048"', clearCommand: ["clear @a[tag=bingo_clear_birch_sapling] minecraft:birch_sapling 1", "tag remove @a bingo_clear_birch_sapling"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"sapling"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0049"', Tags: ["bingo_dark_oak_sapling", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_dark_oak_sapling] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_dark_oak_sapling] bingo_category 3
+data modify storage bingo:tmp item set value {id: "minecraft:dark_oak_sapling", itemTextComponent: '{"translate": "block.minecraft.dark_oak_sapling", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:dark_oak_sapling"}}}', icon: '"\\u0049"', clearCommand: ["clear @a[tag=bingo_clear_dark_oak_sapling] minecraft:dark_oak_sapling 1", "tag remove @a bingo_clear_dark_oak_sapling"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"sapling"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u004a"', Tags: ["bingo_jungle_sapling", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_jungle_sapling] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_jungle_sapling] bingo_category 3
-summon minecraft:area_effect_cloud ~ 0 ~ {Tags: ["bingo_jungle_sapling", "bingo_item", "bingo_additional_category"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-scoreboard players operation @e[type=minecraft:area_effect_cloud, tag=bingo_jungle_sapling, tag=bingo_additional_category] bingo_id = $current bingo_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_jungle_sapling, tag=bingo_additional_category] bingo_category 4
+data modify storage bingo:tmp item set value {id: "minecraft:jungle_sapling", itemTextComponent: '{"translate": "block.minecraft.jungle_sapling", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:jungle_sapling"}}}', icon: '"\\u0049"', clearCommand: ["clear @a[tag=bingo_clear_jungle_sapling] minecraft:jungle_sapling 1", "tag remove @a bingo_clear_jungle_sapling"], categories: 2, weight: 1}
+data modify storage bingo:main categories[{name:"sapling"}].items append from storage bingo:tmp item
+data modify storage bingo:main categories[{name:"jungle"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0056"', Tags: ["bingo_bamboo", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_bamboo] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_bamboo] bingo_category 4
+data modify storage bingo:tmp item set value {id: "minecraft:bamboo", itemTextComponent: '{"translate": "block.minecraft.bamboo", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:bamboo"}}}', icon: '"\\u0056"', clearCommand: ["clear @a[tag=bingo_clear_bamboo] minecraft:bamboo 1", "tag remove @a bingo_clear_bamboo"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"jungle"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0007"', Tags: ["bingo_cocoa_beans", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_cocoa_beans] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_cocoa_beans] bingo_category 4
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_cocoa_beans] bingo_weight 2
+data modify storage bingo:tmp item set value {id: "minecraft:cocoa_beans", itemTextComponent: '{"translate": "item.minecraft.cocoa_beans", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:cocoa_beans"}}}', icon: '"\\u0007"', clearCommand: ["clear @a[tag=bingo_clear_cocoa_beans] minecraft:cocoa_beans 1", "tag remove @a bingo_clear_cocoa_beans"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"jungle"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0008"', Tags: ["bingo_cookie", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_cookie] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_cookie] bingo_category 4
+data modify storage bingo:tmp item set value {id: "minecraft:cookie", itemTextComponent: '{"translate": "item.minecraft.cookie", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:cookie"}}}', icon: '"\\u0008"', clearCommand: ["clear @a[tag=bingo_clear_cookie] minecraft:cookie 1", "tag remove @a bingo_clear_cookie"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"jungle"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0009"', Tags: ["bingo_melon_slice", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_melon_slice] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_melon_slice] bingo_category 4
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_melon_slice] bingo_weight 2
+data modify storage bingo:tmp item set value {id: "minecraft:melon_slice", itemTextComponent: '{"translate": "item.minecraft.melon_slice", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:melon_slice"}}}', icon: '"\\u0009"', clearCommand: ["clear @a[tag=bingo_clear_melon_slice] minecraft:melon_slice 1", "tag remove @a bingo_clear_melon_slice"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"jungle"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u000a"', Tags: ["bingo_glistering_melon_slice", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_glistering_melon_slice] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_glistering_melon_slice] bingo_category 4
+data modify storage bingo:tmp item set value {id: "minecraft:glistering_melon_slice", itemTextComponent: '{"translate": "item.minecraft.glistering_melon_slice", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:glistering_melon_slice"}}}', icon: '"\\u000a"', clearCommand: ["clear @a[tag=bingo_clear_glistering_melon_slice] minecraft:glistering_melon_slice 1", "tag remove @a bingo_clear_glistering_melon_slice"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"jungle"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0104"', Tags: ["bingo_melon", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_melon] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_melon] bingo_category 4
+data modify storage bingo:tmp item set value {id: "minecraft:melon", itemTextComponent: '{"translate": "block.minecraft.melon", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:melon"}}}', icon: '"\\u0104"', clearCommand: ["clear @a[tag=bingo_clear_melon] minecraft:melon 1", "tag remove @a bingo_clear_melon"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"jungle"}].items append from storage bingo:tmp item
 
 ## shearable & taiga
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u000b"', Tags: ["bingo_dead_bush", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_dead_bush] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_dead_bush] bingo_category 5
+data modify storage bingo:tmp item set value {id: "minecraft:dead_bush", itemTextComponent: '{"translate": "block.minecraft.dead_bush", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:dead_bush"}}}', icon: '"\\u000b"', clearCommand: ["clear @a[tag=bingo_clear_dead_bush] minecraft:dead_bush 1", "tag remove @a bingo_clear_dead_bush"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"shearable"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u000d"', Tags: ["bingo_vine", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_vine] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_vine] bingo_category 5
+data modify storage bingo:tmp item set value {id: "minecraft:vine", itemTextComponent: '{"translate": "block.minecraft.vine", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:vine"}}}', icon: '"\\u000d"', clearCommand: ["clear @a[tag=bingo_clear_vine] minecraft:vine 1", "tag remove @a bingo_clear_vine"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"shearable"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0058"', Tags: ["bingo_seagrass", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_seagrass] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_seagrass] bingo_category 5
+data modify storage bingo:tmp item set value {id: "minecraft:sea_grass", itemTextComponent: '{"translate": "block.minecraft.sea_grass", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:sea_grass"}}}', icon: '"\\u0058"', clearCommand: ["clear @a[tag=bingo_clear_sea_grass] minecraft:sea_grass 1", "tag remove @a bingo_clear_sea_grass"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"shearable"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0105"', Tags: ["bingo_mossy_stone_bricks", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_mossy_stone_bricks] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_mossy_stone_bricks] bingo_category 5
+data modify storage bingo:tmp item set value {id: "minecraft:mossy_stone_bricks", itemTextComponent: '{"translate": "block.minecraft.mossy_stone_bricks", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:mossy_stone_bricks"}}}', icon: '"\\u0105"', clearCommand: ["clear @a[tag=bingo_clear_mossy_stone_bricks] minecraft:mossy_stone_bricks 1", "tag remove @a bingo_clear_mossy_stone_bricks"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"shearable"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u000c"', Tags: ["bingo_fern", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_fern] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_fern] bingo_category 5
-summon minecraft:area_effect_cloud ~ 0 ~ {Tags: ["bingo_fern", "bingo_item", "bingo_additional_category"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-scoreboard players operation @e[type=minecraft:area_effect_cloud, tag=bingo_fern, tag=bingo_additional_category] bingo_id = $current bingo_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_fern, tag=bingo_additional_category] bingo_category 35
+data modify storage bingo:tmp item set value {id: "minecraft:fern", itemTextComponent: '{"translate": "block.minecraft.fern", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:fern"}}}', icon: '"\\u000c"', clearCommand: ["clear @a[tag=bingo_clear_fern] minecraft:fern 1", "tag remove @a bingo_clear_fern"], categories: 2, weight: 1}
+data modify storage bingo:main categories[{name:"shearable"}].items append from storage bingo:tmp item
+data modify storage bingo:main categories[{name:"taiga"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u004f"', Tags: ["bingo_sweet_berries", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_sweet_berries] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_sweet_berries] bingo_category 35
+data modify storage bingo:tmp item set value {id: "minecraft:sweet_berries", itemTextComponent: '{"translate": "block.minecraft.sweet_berries", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:sweet_berries"}}}', icon: '"\\u004f"', clearCommand: ["clear @a[tag=bingo_clear_sweet_berries] minecraft:sweet_berries 1", "tag remove @a bingo_clear_sweet_berries"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"taiga"}].items append from storage bingo:tmp item
 
 ## rails
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u000e"', Tags: ["bingo_rail", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_rail] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_rail] bingo_category 6
+data modify storage bingo:tmp item set value {id: "minecraft:rail", itemTextComponent: '{"translate": "block.minecraft.rail", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:rail"}}}', icon: '"\\u000e"', clearCommand: ["clear @a[tag=bingo_clear_rail] minecraft:rail 1", "tag remove @a bingo_clear_rail"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"rail"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u004b"', Tags: ["bingo_detector_rail", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_rail] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_rail] bingo_category 6
+data modify storage bingo:tmp item set value {id: "minecraft:detector_rail", itemTextComponent: '{"translate": "block.minecraft.detector_rail", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:detector_rail"}}}', icon: '"\\u004b"', clearCommand: ["clear @a[tag=bingo_clear_detector_rail] minecraft:detector_rail 1", "tag remove @a bingo_clear_detector_rail"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"rail"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u004c"', Tags: ["bingo_activator_rail", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_rail] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_rail] bingo_category 6
+data modify storage bingo:tmp item set value {id: "minecraft:activator_rail", itemTextComponent: '{"translate": "block.minecraft.activator_rail", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:activator_rail"}}}', icon: '"\\u004c"', clearCommand: ["clear @a[tag=bingo_clear_activator_rail] minecraft:activator_rail 1", "tag remove @a bingo_clear_activator_rail"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"rail"}].items append from storage bingo:tmp item
 
 ## flint
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0010"', Tags: ["bingo_flint", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_flint] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_flint] bingo_category 7
+data modify storage bingo:tmp item set value {id: "minecraft:flint", itemTextComponent: '{"translate": "item.minecraft.flint", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:flint"}}}', icon: '"\\u0010"', clearCommand: ["clear @a[tag=bingo_clear_flint] minecraft:flint 1", "tag remove @a bingo_clear_flint"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"flint"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0011"', Tags: ["bingo_flint_and_steel", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_flint_and_steel] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_flint_and_steel] bingo_category 7
+data modify storage bingo:tmp item set value {id: "minecraft:flint_and_steel", itemTextComponent: '{"translate": "item.minecraft.flint_and_steel", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:flint_and_steel"}}}', icon: '"\\u0011"', clearCommand: ["clear @a[tag=bingo_clear_flint_and_steel] minecraft:flint_and_steel 1", "tag remove @a bingo_clear_flint_and_steel"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"flint"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0012"', Tags: ["bingo_arrow", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_arrow] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_arrow] bingo_category 7
+data modify storage bingo:tmp item set value {id: "minecraft:arrow", itemTextComponent: '{"translate": "item.minecraft.arrow", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:arrow"}}}', icon: '"\\u0012"', clearCommand: ["clear @a[tag=bingo_clear_arrow] minecraft:arrow 1", "tag remove @a bingo_clear_arrow"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"flint"}].items append from storage bingo:tmp item
 
 ## fish & warm ocean
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0042"', Tags: ["bingo_cod", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_cod] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_cod] bingo_category 8
+data modify storage bingo:tmp item set value {id: "minecraft:cod", itemTextComponent: '{"translate": "item.minecraft.cod", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:cod"}}}', icon: '"\\u0042"', clearCommand: ["clear @a[tag=bingo_clear_cod] minecraft:cod 1", "tag remove @a bingo_clear_cod"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"fish"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0043"', Tags: ["bingo_cod_bucket", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_cod_bucket] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_cod_bucket] bingo_category 8
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_cod_bucket] bingo_weight 2
+data modify storage bingo:tmp item set value {id: "minecraft:cod_bucket", itemTextComponent: '{"translate": "item.minecraft.cod_bucket", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:cod_bucket"}}}', icon: '"\\u0043"', clearCommand: ["clear @a[tag=bingo_clear_cod_bucket] minecraft:cod_bucket 1", "tag remove @a bingo_clear_cod_bucket"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"fish"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0044"', Tags: ["bingo_salmon", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_salmon] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_salmon] bingo_category 8
+data modify storage bingo:tmp item set value {id: "minecraft:salmon", itemTextComponent: '{"translate": "item.minecraft.salmon", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:salmon"}}}', icon: '"\\u0044"', clearCommand: ["clear @a[tag=bingo_clear_salmon] minecraft:salmon 1", "tag remove @a bingo_clear_salmon"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"fish"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0045"', Tags: ["bingo_salmon_bucket", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_salmon_bucket] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_salmon_bucket] bingo_category 8
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_salmon_bucket] bingo_weight 2
+data modify storage bingo:tmp item set value {id: "minecraft:salmon_bucket", itemTextComponent: '{"translate": "item.minecraft.salmon_bucket", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:salmon_bucket"}}}', icon: '"\\u0045"', clearCommand: ["clear @a[tag=bingo_clear_salmon_bucket] minecraft:salmon_bucket 1", "tag remove @a bingo_clear_salmon_bucket"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"fish"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0046"', Tags: ["bingo_tropical_fish", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_tropical_fish] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_tropical_fish] bingo_category 8
-summon minecraft:area_effect_cloud ~ 0 ~ {Tags: ["bingo_tropical_fish", "bingo_item", "bingo_additional_category"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-scoreboard players operation @e[type=minecraft:area_effect_cloud, tag=bingo_tropical_fish, tag=bingo_additional_category] bingo_id = $current bingo_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_tropical_fish, tag=bingo_additional_category] bingo_category 33
+data modify storage bingo:tmp item set value {id: "minecraft:tropical_fish", itemTextComponent: '{"translate": "item.minecraft.tropical_fish", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:tropical_fish"}}}', icon: '"\\u0046"', clearCommand: ["clear @a[tag=bingo_clear_tropical_fish] minecraft:tropical_fish 1", "tag remove @a bingo_clear_tropical_fish"], categories: 2, weight: 1}
+data modify storage bingo:main categories[{name:"fish"}].items append from storage bingo:tmp item
+data modify storage bingo:main categories[{name:"warm_ocean"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0047"', Tags: ["bingo_tropical_fish_bucket", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_tropical_fish_bucket] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_tropical_fish_bucket] bingo_category 8
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_tropical_fish_bucket] bingo_weight 2
-summon minecraft:area_effect_cloud ~ 0 ~ {Tags: ["bingo_tropical_fish_bucket", "bingo_item", "bingo_additional_category"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-scoreboard players operation @e[type=minecraft:area_effect_cloud, tag=bingo_tropical_fish_bucket, tag=bingo_additional_category] bingo_id = $current bingo_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_tropical_fish_bucket, tag=bingo_additional_category] bingo_category 33
+data modify storage bingo:tmp item set value {id: "minecraft:tropical_fish_bucket", itemTextComponent: '{"translate": "item.minecraft.tropical_fish_bucket", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:tropical_fish_bucket"}}}', icon: '"\\u0046"', clearCommand: ["clear @a[tag=bingo_clear_tropical_fish_bucket] minecraft:tropical_fish_bucket 1", "tag remove @a bingo_clear_tropical_fish_bucket"], categories: 2, weight: 1}
+data modify storage bingo:main categories[{name:"fish"}].items append from storage bingo:tmp item
+data modify storage bingo:main categories[{name:"warm_ocean"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0057"', Tags: ["bingo_sea_pickle", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_sea_pickle] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_sea_pickle] bingo_category 33
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_sea_pickle] bingo_weight 2
+data modify storage bingo:tmp item set value {id: "minecraft:sea_pickle", itemTextComponent: '{"translate": "item.minecraft.sea_pickle", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:sea_pickle"}}}', icon: '"\\u0057"', clearCommand: ["clear @a[tag=bingo_clear_sea_pickle] minecraft:sea_pickle 1", "tag remove @a bingo_clear_sea_pickle"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"warm_ocean"}].items append from storage bingo:tmp item
 
 ## enderslime
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0013"', Tags: ["bingo_ender_pearl", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_ender_pearl] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_ender_pearl] bingo_category 9
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_ender_pearl] bingo_weight 2
+data modify storage bingo:tmp item set value {id: "minecraft:ender_pearl", itemTextComponent: '{"translate": "item.minecraft.ender_pearl", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:ender_pearl"}}}', icon: '"\\u0013"', clearCommand: ["clear @a[tag=bingo_clear_ender_pearl] minecraft:ender_pearl 1", "tag remove @a bingo_clear_ender_pearl"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"enderslime"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0014"', Tags: ["bingo_slime_ball", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_slime_ball] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_slime_ball] bingo_category 9
+data modify storage bingo:tmp item set value {id: "minecraft:slime_ball", itemTextComponent: '{"translate": "item.minecraft.slime_ball", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:slime_ball"}}}', icon: '"\\u0014"', clearCommand: ["clear @a[tag=bingo_clear_slime_ball] minecraft:slime_ball 1", "tag remove @a bingo_clear_slime_ball"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"enderslime"}].items append from storage bingo:tmp item
 
 ## gunpowder & glass
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0015"', Tags: ["bingo_firework_rocket", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_firework_rocket] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_firework_rocket] bingo_category 10
+data modify storage bingo:tmp item set value {id: "minecraft:firework_rocket", itemTextComponent: '{"translate": "item.minecraft.firework_rocket", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:firework_rocket"}}}', icon: '"\\u0015"', clearCommand: ["clear @a[tag=bingo_clear_firework_rocket] minecraft:firework_rocket 1", "tag remove @a bingo_clear_firework_rocket"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"gunpowder"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0032"', Tags: ["bingo_gunpowder", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_gunpowder] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_gunpowder] bingo_category 10
+data modify storage bingo:tmp item set value {id: "minecraft:gunpowder", itemTextComponent: '{"translate": "item.minecraft.gunpowder", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:gunpowder"}}}', icon: '"\\u0032"', clearCommand: ["clear @a[tag=bingo_clear_gunpowder] minecraft:gunpowder 1", "tag remove @a bingo_clear_gunpowder"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"gunpowder"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0041"', Tags: ["bingo_glass_bottle", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_glass_bottle] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_glass_bottle] bingo_category 11
+data modify storage bingo:tmp item set value {id: "minecraft:glass_bottle", itemTextComponent: '{"translate": "item.minecraft.glass_bottle", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:glass_bottle"}}}', icon: '"\\u0041"', clearCommand: ["clear @a[tag=bingo_clear_glass_bottle] minecraft:glass_bottle 1", "tag remove @a bingo_clear_glass_bottle"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"sand"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0110"', Tags: ["bingo_tnt", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_tnt] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_tnt] bingo_category 10
-summon minecraft:area_effect_cloud ~ 0 ~ {Tags: ["bingo_tnt", "bingo_item", "bingo_additional_category"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-scoreboard players operation @e[type=minecraft:area_effect_cloud, tag=bingo_tnt, tag=bingo_additional_category] bingo_id = $current bingo_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_tnt, tag=bingo_additional_category] bingo_category 11
+data modify storage bingo:tmp item set value {id: "minecraft:tnt", itemTextComponent: '{"translate": "block.minecraft.tnt", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:tnt"}}}', icon: '"\\u0110"', clearCommand: ["clear @a[tag=bingo_clear_tnt] minecraft:tnt 1", "tag remove @a bingo_clear_tnt"], categories: 2, weight: 1}
+data modify storage bingo:main categories[{name:"gunpowder"}].items append from storage bingo:tmp item
+data modify storage bingo:main categories[{name:"sand"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0033"', Tags: ["bingo_tnt_minecart", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_tnt_minecart] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_tnt_minecart] bingo_category 10
-summon minecraft:area_effect_cloud ~ 0 ~ {Tags: ["bingo_tnt_minecart", "bingo_item", "bingo_additional_category"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-scoreboard players operation @e[type=minecraft:area_effect_cloud, tag=bingo_tnt_minecart, tag=bingo_additional_category] bingo_id = $current bingo_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_tnt_minecart, tag=bingo_additional_category] bingo_category 11
+data modify storage bingo:tmp item set value {id: "minecraft:tnt_minecart", itemTextComponent: '{"translate": "item.minecraft.tnt_minecart", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:tnt_minecart"}}}', icon: '"\\u0033"', clearCommand: ["clear @a[tag=bingo_clear_tnt_minecart] minecraft:tnt_minecart 1", "tag remove @a bingo_clear_tnt_minecart"], categories: 2, weight: 1}
+data modify storage bingo:main categories[{name:"gunpowder"}].items append from storage bingo:tmp item
+data modify storage bingo:main categories[{name:"sand"}].items append from storage bingo:tmp item
 
 ## chest loot & village
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0018"', Tags: ["bingo_saddle", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_saddle] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_saddle] bingo_category 12
+data modify storage bingo:tmp item set value {id: "minecraft:saddle", itemTextComponent: '{"translate": "item.minecraft.saddle", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:saddle"}}}', icon: '"\\u0018"', clearCommand: ["clear @a[tag=bingo_clear_saddle] minecraft:saddle 1", "tag remove @a bingo_clear_saddle"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"chest_loot"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0019"', Tags: ["bingo_name_tag", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_name_tag] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_name_tag] bingo_category 12
+data modify storage bingo:tmp item set value {id: "minecraft:name_tag", itemTextComponent: '{"translate": "item.minecraft.name_tag", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:name_tag"}}}', icon: '"\\u0019"', clearCommand: ["clear @a[tag=bingo_clear_name_tag] minecraft:name_tag 1", "tag remove @a bingo_clear_name_tag"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"chest_loot"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u002f"', Tags: ["bingo_enchanted_book", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_enchanted_book] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_enchanted_book] bingo_category 12
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_enchanted_book] bingo_weight 2
+data modify storage bingo:tmp item set value {id: "minecraft:enchanted_book", itemTextComponent: '{"translate": "item.minecraft.enchanted_book", "color": "yellow", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:enchanted_book"}}}', icon: '"\\u002f"', clearCommand: ["clear @a[tag=bingo_clear_enchanted_book] minecraft:enchanted_book 1", "tag remove @a bingo_clear_enchanted_book"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"chest_loot"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0024"', Tags: ["bingo_beetroot_soup", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_beetroot_soup] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_beetroot_soup] bingo_category 12
-summon minecraft:area_effect_cloud ~ 0 ~ {Tags: ["bingo_beetroot_soup", "bingo_item", "bingo_additional_category"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-scoreboard players operation @e[type=minecraft:area_effect_cloud, tag=bingo_beetroot_soup, tag=bingo_additional_category] bingo_id = $current bingo_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_beetroot_soup, tag=bingo_additional_category] bingo_category 13
+data modify storage bingo:tmp item set value {id: "minecraft:beetroot_soup", itemTextComponent: '{"translate": "item.minecraft.beetroot_soup", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:beetroot_soup"}}}', icon: '"\\u0024"', clearCommand: ["clear @a[tag=bingo_clear_beetroot_soup] minecraft:beetroot_soup 1", "tag remove @a bingo_clear_beetroot_soup"], categories: 2, weight: 1}
+data modify storage bingo:main categories[{name:"chest_loot"}].items append from storage bingo:tmp item
+data modify storage bingo:main categories[{name:"village"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u001c"', Tags: ["bingo_emerald", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_emerald] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_emerald] bingo_category 13
+data modify storage bingo:tmp item set value {id: "minecraft:emerald", itemTextComponent: '{"translate": "item.minecraft.emerald", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:emerald"}}}', icon: '"\\u001c"', clearCommand: ["clear @a[tag=bingo_clear_emerald] minecraft:emerald 1", "tag remove @a bingo_clear_emerald"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"village"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u004e"', Tags: ["bingo_bell", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_bell] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_bell] bingo_category 13
+data modify storage bingo:tmp item set value {id: "minecraft:bell", itemTextComponent: '{"translate": "block.minecraft.bell", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:bell"}}}', icon: '"\\u004e"', clearCommand: ["clear @a[tag=bingo_clear_bell] minecraft:bell 1", "tag remove @a bingo_clear_bell"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"village"}].items append from storage bingo:tmp item
 
 ## wool
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u001a"', Tags: ["bingo_painting", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_painting] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_painting] bingo_category 14
+data modify storage bingo:tmp item set value {id: "minecraft:painting", itemTextComponent: '{"translate": "item.minecraft.painting", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:painting"}}}', icon: '"\\u001a"', clearCommand: ["clear @a[tag=bingo_clear_painting] minecraft:painting 1", "tag remove @a bingo_clear_painting"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"wool"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u010b"', Tags: ["bingo_red_bed", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_red_bed] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_painting] bingo_category 14
+data modify storage bingo:tmp item set value {id: "minecraft:red_bed", itemTextComponent: '{"translate": "item.minecraft.red_bed", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:red_bed"}}}', icon: '"\\u010b"', clearCommand: ["clear @a[tag=bingo_clear_red_bed] minecraft:red_bed 1", "tag remove @a bingo_clear_red_bed"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"wool"}].items append from storage bingo:tmp item
 
-## leather & dyes
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u001b"', Tags: ["bingo_item_frame", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_item_frame] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_item_frame] bingo_category 15
+## leather & bone & dyes
+data modify storage bingo:tmp item set value {id: "minecraft:item_frame", itemTextComponent: '{"translate": "item.minecraft.item_frame", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:item_frame"}}}', icon: '"\\u001b"', clearCommand: ["clear @a[tag=bingo_clear_item_frame] minecraft:item_frame 1", "tag remove @a bingo_clear_item_frame"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"leather"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u002d"', Tags: ["bingo_book", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_book] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_book] bingo_category 15
+data modify storage bingo:tmp item set value {id: "minecraft:book", itemTextComponent: '{"translate": "item.minecraft.book", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:book"}}}', icon: '"\\u002d"', clearCommand: ["clear @a[tag=bingo_clear_book] minecraft:book 1", "tag remove @a bingo_clear_book"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"leather"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0102"', Tags: ["bingo_bookshelf", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_bookshelf] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_bookshelf] bingo_category 15
+data modify storage bingo:tmp item set value {id: "minecraft:bookshelf", itemTextComponent: '{"translate": "block.minecraft.bookshelf", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:bookshelf"}}}', icon: '"\\u0102"', clearCommand: ["clear @a[tag=bingo_clear_bookshelf] minecraft:bookshelf 1", "tag remove @a bingo_clear_bookshelf"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"leather"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0039"', Tags: ["bingo_ink_sac", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_ink_sac] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_ink_sac] bingo_category 26
+data modify storage bingo:tmp item set value {id: "minecraft:ink_sac", itemTextComponent: '{"translate": "item.minecraft.ink_sac", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:ink_sac"}}}', icon: '"\\u0039"', clearCommand: ["clear @a[tag=bingo_clear_ink_sac] minecraft:ink_sac 1", "tag remove @a bingo_clear_ink_sac"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"ink"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u002e"', Tags: ["bingo_writable_book", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_writable_book] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_writable_book] bingo_category 15
-summon minecraft:area_effect_cloud ~ 0 ~ {Tags: ["bingo_writable_book", "bingo_item", "bingo_additional_category"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-scoreboard players operation @e[type=minecraft:area_effect_cloud, tag=bingo_writable_book, tag=bingo_additional_category] bingo_id = $current bingo_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_writable_book, tag=bingo_additional_category] bingo_category 26
+data modify storage bingo:tmp item set value {id: "minecraft:writable_book", itemTextComponent: '{"translate": "item.minecraft.writable_book", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:writable_book"}}}', icon: '"\\u002e"', clearCommand: ["clear @a[tag=bingo_clear_writable_book] minecraft:writable_book 1", "tag remove @a bingo_clear_writable_book"], categories: 2, weight: 1}
+data modify storage bingo:main categories[{name:"leather"}].items append from storage bingo:tmp item
+data modify storage bingo:main categories[{name:"ink"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0038"', Tags: ["bingo_bone", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_bone] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_bone] bingo_category 27
-summon minecraft:area_effect_cloud ~ 0 ~ {Tags: ["bingo_bone", "bingo_item", "bingo_additional_category"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-scoreboard players operation @e[type=minecraft:area_effect_cloud, tag=bingo_bone, tag=bingo_additional_category] bingo_id = $current bingo_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_bone, tag=bingo_additional_category] bingo_category 31
+data modify storage bingo:tmp item set value {id: "minecraft:bone", itemTextComponent: '{"translate": "item.minecraft.bone", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:bone"}}}', icon: '"\\u0038"', clearCommand: ["clear @a[tag=bingo_clear_bone] minecraft:bone 1", "tag remove @a bingo_clear_bone"], categories: 2, weight: 1}
+data modify storage bingo:main categories[{name:"ink_bone"}].items append from storage bingo:tmp item
+data modify storage bingo:main categories[{name:"cactus_bone"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0108"', Tags: ["bingo_bone_block", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_bone_block] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_bone_block] bingo_category 27
-summon minecraft:area_effect_cloud ~ 0 ~ {Tags: ["bingo_bone_block", "bingo_item", "bingo_additional_category"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-scoreboard players operation @e[type=minecraft:area_effect_cloud, tag=bingo_bone_block, tag=bingo_additional_category] bingo_id = $current bingo_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_bone_block, tag=bingo_additional_category] bingo_category 31
+data modify storage bingo:tmp item set value {id: "minecraft:bone_block", itemTextComponent: '{"translate": "block.minecraft.bone_block", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:bone_block"}}}', icon: '"\\u0108"', clearCommand: ["clear @a[tag=bingo_clear_bone_block] minecraft:bone_block 1", "tag remove @a bingo_clear_bone_block"], categories: 2, weight: 1}
+data modify storage bingo:main categories[{name:"ink_bone"}].items append from storage bingo:tmp item
+data modify storage bingo:main categories[{name:"cactus_bone"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u003a"', Tags: ["bingo_gray_dye", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_gray_dye] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_gray_dye] bingo_category 26
-summon minecraft:area_effect_cloud ~ 0 ~ {Tags: ["bingo_gray_dye", "bingo_item", "bingo_additional_category"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-scoreboard players operation @e[type=minecraft:area_effect_cloud, tag=bingo_gray_dye, tag=bingo_additional_category] bingo_id = $current bingo_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_gray_dye, tag=bingo_additional_category] bingo_category 27
+data modify storage bingo:tmp item set value {id: "minecraft:gray_dye", itemTextComponent: '{"translate": "item.minecraft.gray_dye", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:gray_dye"}}}', icon: '"\\u003a"', clearCommand: ["clear @a[tag=bingo_clear_gray_dye] minecraft:gray_dye 1", "tag remove @a bingo_clear_gray_dye"], categories: 2, weight: 1}
+data modify storage bingo:main categories[{name:"ink"}].items append from storage bingo:tmp item
+data modify storage bingo:main categories[{name:"ink_bone"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u003b"', Tags: ["bingo_green_dye", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_green_dye] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_green_dye] bingo_category 28
+data modify storage bingo:tmp item set value {id: "minecraft:green_dye", itemTextComponent: '{"translate": "item.minecraft.green_dye", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:green_dye"}}}', icon: '"\\u003b"', clearCommand: ["clear @a[tag=bingo_clear_green_dye] minecraft:green_dye 1", "tag remove @a bingo_clear_green_dye"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"cactus"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u003c"', Tags: ["bingo_lime_dye", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_lime_dye] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_lime_dye] bingo_category 28
-summon minecraft:area_effect_cloud ~ 0 ~ {Tags: ["bingo_lime_dye", "bingo_item", "bingo_additional_category"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-scoreboard players operation @e[type=minecraft:area_effect_cloud, tag=bingo_lime_dye, tag=bingo_additional_category] bingo_id = $current bingo_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_lime_dye, tag=bingo_additional_category] bingo_category 31
+data modify storage bingo:tmp item set value {id: "minecraft:lime_dye", itemTextComponent: '{"translate": "item.minecraft.lime_dye", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:lime_dye"}}}', icon: '"\\u003c"', clearCommand: ["clear @a[tag=bingo_clear_lime_dye] minecraft:lime_dye 1", "tag remove @a bingo_clear_lime_dye"], categories: 2, weight: 1}
+data modify storage bingo:main categories[{name:"cactus"}].items append from storage bingo:tmp item
+data modify storage bingo:main categories[{name:"cactus_bone"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u003d"', Tags: ["bingo_lapis_lazuli", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_lapis_lazuli] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_lapis_lazuli] bingo_category 29
+data modify storage bingo:tmp item set value {id: "minecraft:lapis_lazuli", itemTextComponent: '{"translate": "item.minecraft.lapis_lazuli", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:lapis_lazuli"}}}', icon: '"\\u003d"', clearCommand: ["clear @a[tag=bingo_clear_lapis_lazuli] minecraft:lapis_lazuli 1", "tag remove @a bingo_clear_lapis_lazuli"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"lapis"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0111"', Tags: ["bingo_lapis_block", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_lapis_block] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_lapis_block] bingo_category 29
+data modify storage bingo:tmp item set value {id: "minecraft:lapis_block", itemTextComponent: '{"translate": "block.minecraft.lapis_block", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:lapis_block"}}}', icon: '"\\u0111"', clearCommand: ["clear @a[tag=bingo_clear_lapis_block] minecraft:lapis_block 1", "tag remove @a bingo_clear_lapis_block"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"lapis"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u003f"', Tags: ["bingo_purple_dye", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_purple_dye] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_purple_dye] bingo_category 29
+data modify storage bingo:tmp item set value {id: "minecraft:purple_dye", itemTextComponent: '{"translate": "item.minecraft.purple_dye", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:purple_dye"}}}', icon: '"\\u003f"', clearCommand: ["clear @a[tag=bingo_clear_purple_dye] minecraft:purple_dye 1", "tag remove @a bingo_clear_purple_dye"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"lapis"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u003e"', Tags: ["bingo_cyan_dye", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_cyan_dye] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_cyan_dye] bingo_category 28
-summon minecraft:area_effect_cloud ~ 0 ~ {Tags: ["bingo_cyan_dye", "bingo_item", "bingo_additional_category"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-scoreboard players operation @e[type=minecraft:area_effect_cloud, tag=bingo_cyan_dye, tag=bingo_additional_category] bingo_id = $current bingo_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_cyan_dye, tag=bingo_additional_category] bingo_category 29
+data modify storage bingo:tmp item set value {id: "minecraft:cyan_dye", itemTextComponent: '{"translate": "item.minecraft.cyan_dye", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:cyan_dye"}}}', icon: '"\\u003e"', clearCommand: ["clear @a[tag=bingo_clear_cyan_dye] minecraft:cyan_dye 1", "tag remove @a bingo_clear_cyan_dye"], categories: 2, weight: 1}
+data modify storage bingo:main categories[{name:"lapis"}].items append from storage bingo:tmp item
+data modify storage bingo:main categories[{name:"cactus"}].items append from storage bingo:tmp item
 
 ## diamond
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0050"', Tags: ["bingo_diamond_sword", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_diamond_sword] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_diamond_sword] bingo_category 16
+data modify storage bingo:tmp item set value {id: "minecraft:diamond_sword", itemTextComponent: '{"translate": "item.minecraft.diamond_sword", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:diamond_sword"}}}', icon: '"\\u0050"', clearCommand: ["clear @a[tag=bingo_clear_diamond_sword] minecraft:diamond_sword 1", "tag remove @a bingo_clear_diamond_sword"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"diamond"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u001f"', Tags: ["bingo_diamond_axe", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_diamond_axe] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_diamond_axe] bingo_category 16
+data modify storage bingo:tmp item set value {id: "minecraft:diamond_axe", itemTextComponent: '{"translate": "item.minecraft.diamond_axe", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:diamond_axe"}}}', icon: '"\\u001f"', clearCommand: ["clear @a[tag=bingo_clear_diamond_axe] minecraft:diamond_axe 1", "tag remove @a bingo_clear_diamond_axe"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"diamond"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0051"', Tags: ["bingo_diamond_pickaxe", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_diamond_pickaxe] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_diamond_pickaxe] bingo_category 16
+data modify storage bingo:tmp item set value {id: "minecraft:diamond_pickaxe", itemTextComponent: '{"translate": "item.minecraft.diamond_pickaxe", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:diamond_pickaxe"}}}', icon: '"\\u0051"', clearCommand: ["clear @a[tag=bingo_clear_diamond_pickaxe] minecraft:diamond_pickaxe 1", "tag remove @a bingo_clear_diamond_pickaxe"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"diamond"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u001d"', Tags: ["bingo_diamond_shovel", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_diamond_shovel] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_diamond_shovel] bingo_category 16
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_diamond_shovel] bingo_weight 2
+data modify storage bingo:tmp item set value {id: "minecraft:diamond_shovel", itemTextComponent: '{"translate": "item.minecraft.diamond_shovel", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:diamond_shovel"}}}', icon: '"\\u001d"', clearCommand: ["clear @a[tag=bingo_clear_diamond_shovel] minecraft:diamond_shovel 1", "tag remove @a bingo_clear_diamond_shovel"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"diamond"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u001e"', Tags: ["bingo_diamond_hoe", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_diamond_hoe] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_diamond_hoe] bingo_category 16
+data modify storage bingo:tmp item set value {id: "minecraft:diamond_hoe", itemTextComponent: '{"translate": "item.minecraft.diamond_hoe", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:diamond_hoe"}}}', icon: '"\\u001e"', clearCommand: ["clear @a[tag=bingo_clear_diamond_hoe] minecraft:diamond_hoe 1", "tag remove @a bingo_clear_diamond_hoe"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"diamond"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0103"', Tags: ["bingo_obsidian", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_obsidian] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_obsidian] bingo_category 16
+data modify storage bingo:tmp item set value {id: "minecraft:obsidian", itemTextComponent: '{"translate": "block.minecraft.obsidian", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:obsidian"}}}', icon: '"\\u0103"', clearCommand: ["clear @a[tag=bingo_clear_obsidian] minecraft:obsidian 1", "tag remove @a bingo_clear_obsidian"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"diamond"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0106"', Tags: ["bingo_jukebox", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_jukebox] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_jukebox] bingo_category 16
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_jukebox] bingo_weight 2
+data modify storage bingo:tmp item set value {id: "minecraft:jukebox", itemTextComponent: '{"translate": "block.minecraft.jukebox", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:jukebox"}}}', icon: '"\\u0106"', clearCommand: ["clear @a[tag=bingo_clear_jukebox] minecraft:jukebox 1", "tag remove @a bingo_clear_jukebox"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"diamond"}].items append from storage bingo:tmp item
 
 ## bricks
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0021"', Tags: ["bingo_flower_pot", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_flower_pot] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_flower_pot] bingo_category 17
+data modify storage bingo:tmp item set value {id: "minecraft:flower_pot", itemTextComponent: '{"translate": "block.minecraft.flower_pot", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:flower_pot"}}}', icon: '"\\u0021"', clearCommand: ["clear @a[tag=bingo_clear_flower_pot] minecraft:flower_pot 1", "tag remove @a bingo_clear_flower_pot"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"brick"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0022"', Tags: ["bingo_brick", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_brick] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_brick] bingo_category 17
+data modify storage bingo:tmp item set value {id: "minecraft:brick", itemTextComponent: '{"translate": "item.minecraft.brick", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:brick"}}}', icon: '"\\u0022"', clearCommand: ["clear @a[tag=bingo_clear_brick] minecraft:brick 1", "tag remove @a bingo_clear_brick"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"brick"}].items append from storage bingo:tmp item
 
 ## mushrooms & spider eyes
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0023"', Tags: ["bingo_mushroom_stew", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_mushroom_stew] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_mushroom_stew] bingo_category 18
+data modify storage bingo:tmp item set value {id: "minecraft:mushroom_stew", itemTextComponent: '{"translate": "item.minecraft.mushroom_stew", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:mushroom_stew"}}}', icon: '"\\u0023"', clearCommand: ["clear @a[tag=bingo_clear_mushroom_stew] minecraft:mushroom_stew 1", "tag remove @a bingo_clear_mushroom_stew"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"mushroom"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0040"', Tags: ["bingo_suspicious_stew", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_suspicious_stew] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_suspicious_stew] bingo_category 18
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_suspicious_stew] bingo_weight 2
+data modify storage bingo:tmp item set value {id: "minecraft:suspicious_stew", itemTextComponent: '{"translate": "item.minecraft.suspicious_stew", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:suspicious_stew"}}}', icon: '"\\u0040"', clearCommand: ["clear @a[tag=bingo_clear_suspicious_stew] minecraft:suspicious_stew 1", "tag remove @a bingo_clear_suspicious_stew"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"mushroom"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0030"', Tags: ["bingo_spider_eye", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_spider_eye] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_spider_eye] bingo_category 22
+data modify storage bingo:tmp item set value {id: "minecraft:spider_eye", itemTextComponent: '{"translate": "item.minecraft.spider_eye", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:spider_eye"}}}', icon: '"\\u0030"', clearCommand: ["clear @a[tag=bingo_clear_spider_eye] minecraft:spider_eye 1", "tag remove @a bingo_clear_spider_eye"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"spider"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0031"', Tags: ["bingo_fermented_spider_eye", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_fermented_spider_eye] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_fermented_spider_eye] bingo_category 18
-summon minecraft:area_effect_cloud ~ 0 ~ {Tags: ["bingo_fermented_spider_eye", "bingo_item", "bingo_additional_category"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-scoreboard players operation @e[type=minecraft:area_effect_cloud, tag=bingo_fermented_spider_eye, tag=bingo_additional_category] bingo_id = $current bingo_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_fermented_spider_eye, tag=bingo_additional_category] bingo_category 22
+data modify storage bingo:tmp item set value {id: "minecraft:fermented_spider_eye", itemTextComponent: '{"translate": "item.minecraft.fermented_spider_eye", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:fermented_spider_eye"}}}', icon: '"\\u0031"', clearCommand: ["clear @a[tag=bingo_clear_fermented_spider_eye] minecraft:fermented_spider_eye 1", "tag remove @a bingo_clear_fermented_spider_eye"], categories: 2, weight: 1}
+data modify storage bingo:main categories[{name:"spider"}].items append from storage bingo:tmp item
+data modify storage bingo:main categories[{name:"mushroom"}].items append from storage bingo:tmp item
 
 ## apple
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0025"', Tags: ["bingo_apple", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_apple] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_apple] bingo_category 19
+data modify storage bingo:tmp item set value {id: "minecraft:apple", itemTextComponent: '{"translate": "item.minecraft.apple", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:apple"}}}', icon: '"\\u0025"', clearCommand: ["clear @a[tag=bingo_clear_apple] minecraft:apple 1", "tag remove @a bingo_clear_apple"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"apple"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0026"', Tags: ["bingo_golden_apple", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_golden_apple] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_golden_apple] bingo_category 19
+data modify storage bingo:tmp item set value {id: "minecraft:golden_apple", itemTextComponent: '{"translate": "item.minecraft.golden_apple", "color": "aqua", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:golden_apple"}}}', icon: '"\\u0026"', clearCommand: ["clear @a[tag=bingo_clear_golden_apple] minecraft:golden_apple 1", "tag remove @a bingo_clear_golden_apple"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"apple"}].items append from storage bingo:tmp item
 
 ## gold
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0028"', Tags: ["bingo_golden_sword", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_golden_sword] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_golden_sword] bingo_category 20
+data modify storage bingo:tmp item set value {id: "minecraft:golden_sword", itemTextComponent: '{"translate": "item.minecraft.golden_sword", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:golden_sword"}}}', icon: '"\\u0028"', clearCommand: ["clear @a[tag=bingo_clear_golden_sword] minecraft:golden_sword 1", "tag remove @a bingo_clear_golden_sword"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"gold"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0052"', Tags: ["bingo_golden_axe", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_golden_axe] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_golden_axe] bingo_category 20
+data modify storage bingo:tmp item set value {id: "minecraft:golden_axe", itemTextComponent: '{"translate": "item.minecraft.golden_axe", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:golden_axe"}}}', icon: '"\\u0052"', clearCommand: ["clear @a[tag=bingo_clear_golden_axe] minecraft:golden_axe 1", "tag remove @a bingo_clear_golden_axe"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"gold"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0053"', Tags: ["bingo_golden_pickaxe", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_golden_pickaxe] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_golden_pickaxe] bingo_category 20
+data modify storage bingo:tmp item set value {id: "minecraft:golden_pickaxe", itemTextComponent: '{"translate": "item.minecraft.golden_pickaxe", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:golden_pickaxe"}}}', icon: '"\\u0053"', clearCommand: ["clear @a[tag=bingo_clear_golden_pickaxe] minecraft:golden_pickaxe 1", "tag remove @a bingo_clear_golden_pickaxe"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"gold"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0027"', Tags: ["bingo_golden_shovel", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_golden_shovel] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_golden_shovel] bingo_category 20
+data modify storage bingo:tmp item set value {id: "minecraft:golden_shovel", itemTextComponent: '{"translate": "item.minecraft.golden_shovel", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:golden_shovel"}}}', icon: '"\\u0027"', clearCommand: ["clear @a[tag=bingo_clear_golden_shovel] minecraft:golden_shovel 1", "tag remove @a bingo_clear_golden_shovel"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"gold"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0054"', Tags: ["bingo_golden_hoe", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_golden_hoe] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_golden_hoe] bingo_category 20
+data modify storage bingo:tmp item set value {id: "minecraft:golden_hoe", itemTextComponent: '{"translate": "item.minecraft.golden_hoe", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:golden_hoe"}}}', icon: '"\\u0054"', clearCommand: ["clear @a[tag=bingo_clear_golden_hoe] minecraft:golden_hoe 1", "tag remove @a bingo_clear_golden_hoe"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"gold"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u000f"', Tags: ["bingo_powered_rail", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_powered_rail] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_powered_rail] bingo_category 20
+data modify storage bingo:tmp item set value {id: "minecraft:powered_rail", itemTextComponent: '{"translate": "block.minecraft.powered_rail", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:powered_rail"}}}', icon: '"\\u000f"', clearCommand: ["clear @a[tag=bingo_clear_powered_rail] minecraft:powered_rail 1", "tag remove @a bingo_clear_powered_rail"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"gold"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0029"', Tags: ["bingo_clock", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_clock] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_clock] bingo_category 20
+data modify storage bingo:tmp item set value {id: "minecraft:clock", itemTextComponent: '{"translate": "item.minecraft.clock", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:clock"}}}', icon: '"\\u0029"', clearCommand: ["clear @a[tag=bingo_clear_clock] minecraft:clock 1", "tag remove @a bingo_clear_clock"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"gold"}].items append from storage bingo:tmp item
 
 ## redstone
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u002a"', Tags: ["bingo_repeater", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_repeater] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_repeater] bingo_category 25
+data modify storage bingo:tmp item set value {id: "minecraft:repeater", itemTextComponent: '{"translate": "block.minecraft.repeater", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:repeater"}}}', icon: '"\\u002a"', clearCommand: ["clear @a[tag=bingo_clear_repeater] minecraft:repeater 1", "tag remove @a bingo_clear_repeater"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"redstone"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0101"', Tags: ["bingo_redstone_block", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_redstone_block] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_redstone_block] bingo_category 25
+data modify storage bingo:tmp item set value {id: "minecraft:redstone_block", itemTextComponent: '{"translate": "block.minecraft.redstone_block", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:redstone_block"}}}', icon: '"\\u0101"', clearCommand: ["clear @a[tag=bingo_clear_redstone_block] minecraft:redstone_block 1", "tag remove @a bingo_clear_redstone_block"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"redstone"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u010c"', Tags: ["bingo_target", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_target] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_target] bingo_category 25
+data modify storage bingo:tmp item set value {id: "minecraft:target", itemTextComponent: '{"translate": "block.minecraft.target", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:target"}}}', icon: '"\\u010c"', clearCommand: ["clear @a[tag=bingo_clear_target] minecraft:target 1", "tag remove @a bingo_clear_target"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"redstone"}].items append from storage bingo:tmp item
 
 ## compass
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u002b"', Tags: ["bingo_compass", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_compass] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_compass] bingo_category 24
+data modify storage bingo:tmp item set value {id: "minecraft:compass", itemTextComponent: '{"translate": "item.minecraft.compass", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:compass"}}}', icon: '"\\u002b"', clearCommand: ["clear @a[tag=bingo_clear_compass] minecraft:compass 1", "tag remove @a bingo_clear_compass"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"compass"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u002c"', Tags: ["bingo_map", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_map] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_map] bingo_category 24
+data modify storage bingo:tmp item set value {id: "minecraft:map", itemTextComponent: '{"translate": "item.minecraft.map", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:map"}}}', icon: '"\\u002c"', clearCommand: ["clear @a[tag=bingo_clear_map] minecraft:map 1", "tag remove @a bingo_clear_map"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"compass"}].items append from storage bingo:tmp item
 
 ## chest iron
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0034"', Tags: ["bingo_hopper", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_hopper] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_hopper] bingo_category 23
+data modify storage bingo:tmp item set value {id: "minecraft:hopper", itemTextComponent: '{"translate": "block.minecraft.hopper", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:hopper"}}}', icon: '"\\u0034"', clearCommand: ["clear @a[tag=bingo_clear_hopper] minecraft:hopper 1", "tag remove @a bingo_clear_hopper"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"chest_iron"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0035"', Tags: ["bingo_hopper_minecart", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_hopper_minecart] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_hopper_minecart] bingo_category 23
+data modify storage bingo:tmp item set value {id: "minecraft:hopper_minecart", itemTextComponent: '{"translate": "item.minecraft.hopper_minecart", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:hopper_minecart"}}}', icon: '"\\u0035"', clearCommand: ["clear @a[tag=bingo_clear_hopper_minecart] minecraft:hopper_minecart 1", "tag remove @a bingo_clear_hopper_minecart"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"chest_iron"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0037"', Tags: ["bingo_chest_minecart", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_chest_minecart] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_chest_minecart] bingo_category 23
+data modify storage bingo:tmp item set value {id: "minecraft:chest_minecart", itemTextComponent: '{"translate": "item.minecraft.chest_minecart", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:chest_minecart"}}}', icon: '"\\u0037"', clearCommand: ["clear @a[tag=bingo_clear_chest_minecart] minecraft:chest_minecart 1", "tag remove @a bingo_clear_chest_minecart"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"chest_iron"}].items append from storage bingo:tmp item
 
 ## furnace iron
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0036"', Tags: ["bingo_furnace_minecart", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_furnace_minecart] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_furnace_minecart] bingo_category 30
+data modify storage bingo:tmp item set value {id: "minecraft:furnace_minecart", itemTextComponent: '{"translate": "item.minecraft.furnace_minecart", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:furnace_minecart"}}}', icon: '"\\u0036"', clearCommand: ["clear @a[tag=bingo_clear_furnace_minecart] minecraft:furnace_minecart 1", "tag remove @a bingo_clear_furnace_minecart"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"furnace_iron"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0109"', Tags: ["bingo_blast_furnace", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_blast_furnace] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_blast_furnace] bingo_category 30
+data modify storage bingo:tmp item set value {id: "minecraft:blast_furnace", itemTextComponent: '{"translate": "block.minecraft.blast_furnace", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:blast_furnace"}}}', icon: '"\\u0109"', clearCommand: ["clear @a[tag=bingo_clear_blast_furnace] minecraft:blast_furnace 1", "tag remove @a bingo_clear_blast_furnace"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"furnace_iron"}].items append from storage bingo:tmp item
 
 ## simple iron
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0017"', Tags: ["bingo_cauldron", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_cauldron] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_cauldron] bingo_category 32
+data modify storage bingo:tmp item set value {id: "minecraft:cauldron", itemTextComponent: '{"translate": "item.minecraft.cauldron", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:cauldron"}}}', icon: '"\\u0017"', clearCommand: ["clear @a[tag=bingo_clear_cauldron] minecraft:cauldron 1", "tag remove @a bingo_clear_cauldron"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"simple_iron"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0100"', Tags: ["bingo_iron_block", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_iron_block] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_iron_block] bingo_category 32
+data modify storage bingo:tmp item set value {id: "minecraft:iron_block", itemTextComponent: '{"translate": "item.minecraft.iron_block", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:iron_block"}}}', icon: '"\\u0100"', clearCommand: ["clear @a[tag=bingo_clear_iron_block] minecraft:iron_block 1", "tag remove @a bingo_clear_iron_block"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"simple_iron"}].items append from storage bingo:tmp item
 
 ## snow
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u010d"', Tags: ["bingo_snow", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_snow] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_snow] bingo_category 34
+data modify storage bingo:tmp item set value {id: "minecraft:snow", itemTextComponent: '{"translate": "block.minecraft.snow", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:snow"}}}', icon: '"\\u010d"', clearCommand: ["clear @a[tag=bingo_clear_snow] minecraft:snow 1", "tag remove @a bingo_clear_snow"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"snow"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u010e"', Tags: ["bingo_snow_block", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_snow_block] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_snow_block] bingo_category 34
+data modify storage bingo:tmp item set value {id: "minecraft:snow_block", itemTextComponent: '{"translate": "block.minecraft.snow_block", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:snow_block"}}}', icon: '"\\u010e"', clearCommand: ["clear @a[tag=bingo_clear_snow_block] minecraft:snow_block 1", "tag remove @a bingo_clear_snow_block"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"snow"}].items append from storage bingo:tmp item
 
 ## bow
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0055"', Tags: ["bingo_crossbow", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_crossbow] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_crossbow] bingo_category 36
+data modify storage bingo:tmp item set value {id: "minecraft:crossbow", itemTextComponent: '{"translate": "item.minecraft.crossbow", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:crossbow"}}}', icon: '"\\u0055"', clearCommand: ["clear @a[tag=bingo_clear_crossbow] minecraft:crossbow 1", "tag remove @a bingo_clear_crossbow"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"bow"}].items append from storage bingo:tmp item
 
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0112"', Tags: ["bingo_dispenser", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_dispenser] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_dispenser] bingo_category 36
+data modify storage bingo:tmp item set value {id: "minecraft:dispenser", itemTextComponent: '{"translate": "block.minecraft.dispenser", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:dispenser"}}}', icon: '"\\u0112"', clearCommand: ["clear @a[tag=bingo_clear_dispenser] minecraft:dispenser 1", "tag remove @a bingo_clear_dispenser"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"bow"}].items append from storage bingo:tmp item
 
 ## heart of the sea (single)
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u004d"', Tags: ["bingo_heart_of_the_sea", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_heart_of_the_sea] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_heart_of_the_sea] bingo_category 37
+data modify storage bingo:tmp item set value {id: "minecraft:heart_of_the_sea", itemTextComponent: '{"translate": "item.minecraft.heart_of_the_sea", "color": "yellow", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:heart_of_the_sea"}}}', icon: '"\\u004d"', clearCommand: ["clear @a[tag=bingo_clear_heart_of_the_sea] minecraft:heart_of_the_sea 1", "tag remove @a bingo_clear_heart_of_the_sea"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"heart_of_the_sea"}].items append from storage bingo:tmp item
 
 ## Magma Block (single)
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u0107"', Tags: ["bingo_magma_block", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_magma_block] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_magma_block] bingo_category 38
+data modify storage bingo:tmp item set value {id: "minecraft:magma_block", itemTextComponent: '{"translate": "block.minecraft.magma_block", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:magma_block"}}}', icon: '"\\u0107"', clearCommand: ["clear @a[tag=bingo_clear_magma_block] minecraft:magma_block 1", "tag remove @a bingo_clear_magma_block"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"magma_block"}].items append from storage bingo:tmp item
 
 ## pillager banner (single)
-summon minecraft:area_effect_cloud ~ 0 ~ {CustomName: '"\\u010a"', Tags: ["bingo_ominous_banner", "bingo_item"], Age: -2147483648, Duration: -1, WaitTime: -2147483648}
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_ominous_banner] run function bingo:init/set_id
-scoreboard players set @e[type=minecraft:area_effect_cloud, tag=bingo_ominous_banner] bingo_category 39
-
-# set default weight
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_item] unless score @s bingo_weight matches 1.. run scoreboard players set @s bingo_weight 1
+data modify storage bingo:tmp item set value {id: "minecraft:ominous_banner", itemTextComponent: '{"translate": "block.minecraft.ominous_banner", "color": "gold", "italic": true, "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:white_banner", "tag": "{BlockEntityTag: {Patterns: [{Pattern: \'mr\', Color: 9}, {Pattern: \'bs\', Color: 8}, {Pattern: \'cs\', Color: 7}, {Pattern: \'bo\', Color: 8}, {Pattern: \'ms\', Color: 15}, {Pattern: \'hh\', Color: 8}, {Pattern: \'mc\', Color: 8}, {Pattern: \'bo\', Color: 15}]}, display: {Name: \'{\\"color\\":\\"gold\\",\\"translate\\":\\"block.minecraft.ominous_banner\\"}\'}}"}}}', icon: '"\\u010a"', clearCommand: ['clear @a[tag=bingo_clear_ominous_banner] minecraft:white_banner{BlockEntityTag: {Patterns: [{Pattern: "mr", Color: 9}, {Pattern: "bs", Color: 8}, {Pattern: "cs", Color: 7}, {Pattern: "bo", Color: 8}, {Pattern: "ms", Color: 15}, {Pattern: "hh", Color: 8}, {Pattern: "mc", Color: 8}, {Pattern: "bo", Color: 15}]}, display: {Name: \'{"color":"gold","translate":"block.minecraft.ominous_banner"}\'}} 1', "tag remove @a bingo_clear_ominous_banner"], categories: 1, weight: 1}
+data modify storage bingo:main categories[{name:"ominous_banner"}].items append from storage bingo:tmp item
 
 # regenerate card
 scoreboard players operation $seed random_main = Seed bingo_stats

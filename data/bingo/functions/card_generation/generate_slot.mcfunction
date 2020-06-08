@@ -1,27 +1,34 @@
 # select category
-#bingo_tmp = category
-scoreboard players set $max_val random_main 0
-scoreboard players operation $max_val random_main > @e[type=minecraft:area_effect_cloud, tag=bingo_selectable] bingo_tmp
-scoreboard players add $max_val random_main 1
+execute store result score $max_val random_main run data get storage bingo:tmp categories
 
 function random:next_int
-tag @e[type=minecraft:area_effect_cloud, tag=bingo_in_category] remove bingo_in_category
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_selectable] if score @s bingo_tmp = $result random_main run tag @s add bingo_in_category
-execute unless entity @e[type=minecraft:area_effect_cloud, tag=bingo_in_category, limit=1] run function bingo:card_generation/get_different_category
+scoreboard players operation $cat bingo_tmp = $result random_main
+scoreboard players set $weight_multiplier bingo_tmp 1
+scoreboard players set $total_weight bingo_tmp 0
+data remove storage bingo:tmp items
+function bingo:card_generation/category/find_category
 
-scoreboard players set $max_val random_main 0
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_in_category] run function bingo:card_generation/prepare_item_in_selected_category
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_selectable] if score @s bingo_tmp > $result random_main run scoreboard players remove @s bingo_tmp 1
+tellraw @a {"storage": "bingo:tmp", "nbt": "items"}
+
+# select item
+scoreboard players operation $max_val random_main = $total_weight bingo_tmp
 function random:next_int
 
-# prepare scores for find item
-execute store result score $items bingo_tmp if entity @e[type=minecraft:area_effect_cloud, tag=bingo_in_category]
-scoreboard players operation $item bingo_tmp = $result random_main
+scoreboard players set $position bingo_tmp 0
+function bingo:card_generation/item/find_item
 
-execute if score $item bingo_tmp >= $items bingo_tmp run function bingo:card_generation/find_item_page
-function bingo:card_generation/find_item
+data modify storage bingo:tmp item set from storage bingo:tmp items[0]
+data remove storage bingo:tmp items[0]
 
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_selectable] if score @s bingo_id = $id bingo_tmp run function bingo:card_generation/apply_selection_to_slot
+execute store result score $size bingo_tmp run data get storage bingo:tmp items
+execute if score $size bingo_tmp matches 1.. run function bingo:card_generation/item/clean_up
 
+# copy to slot
+execute store result score $categories bingo_tmp run data get storage bingo:tmp item.categories
+execute if score $categories bingo_tmp matches 2.. run data modify storage bingo:card_generation usedItems append from storage bingo:tmp item.id
+
+data modify storage bingo:card_generation slots append from storage bingo:tmp item
+
+# next slot
 scoreboard players add $i bingo_tmp 1
 execute if score $i bingo_tmp matches ..24 run function bingo:card_generation/generate_slot

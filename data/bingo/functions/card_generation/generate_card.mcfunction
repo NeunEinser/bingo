@@ -1,6 +1,12 @@
 scoreboard players operation Seed bingo_stats = $seed random_main
 
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_item] run function bingo:card_generation/setup_item
+tellraw @a "#################################################################"
+tellraw @a ["seed: ", {"score": {"objective": "random_main", "name": "$seed"}}]
+
+data modify storage bingo:tmp categories set from storage bingo:main categories
+data remove storage bingo:card_generation usedItems
+data remove storage bingo:card_generation forbiddenItems
+data remove storage bingo:card_generation slots
 
 scoreboard players set $i bingo_tmp 0
 function bingo:card_generation/generate_slot
