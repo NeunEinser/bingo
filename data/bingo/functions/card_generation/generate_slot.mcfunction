@@ -30,7 +30,7 @@ execute if score $categories bingo_tmp matches 2.. run data modify storage bingo
 data modify storage bingo:tmp slot.item set from storage bingo:tmp item
 execute store result storage bingo:tmp slot.id int 1 run scoreboard players get $i bingo_tmp 
 
-data modify storage bingo:card_generation slots append from storage bingo:tmp slot
+data modify storage bingo:card slots append from storage bingo:tmp slot
 
 # next slot
 scoreboard players add $i bingo_tmp 1
