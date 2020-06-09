@@ -8,8 +8,6 @@ scoreboard players set $total_weight bingo_tmp 0
 data remove storage bingo:tmp items
 function bingo:card_generation/category/find_category
 
-tellraw @a {"storage": "bingo:tmp", "nbt": "items"}
-
 # select item
 scoreboard players operation $max_val random_main = $total_weight bingo_tmp
 function random:next_int
