@@ -1,2 +1,0 @@
-execute if entity @s[scores={bingo_slot_id=..6}] run function bingo:item_detection/find_slot/bin_search_slot_id/below_7
-execute if entity @s[scores={bingo_slot_id=7..}] run function bingo:item_detection/find_slot/bin_search_slot_id/above_6_below_13

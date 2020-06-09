@@ -1,2 +1,0 @@
-clear @a[tag=bingo_clear_glistering_melon_slice] minecraft:glistering_melon_slice 1
-tag @a remove bingo_clear_glistering_melon_slice

@@ -1,9 +1,2 @@
-function bingo:find_player_team
-tag @s add bingo_got_item
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_furnace_minecart, scores={bingo_slot_id=0..}, limit=1] run function bingo:item_detection/find_slot/main
-
-execute if entity @s[tag=bingo_successful_got_item] run function bingo:item_detection/award_item/furnace_minecart
-
-tag @s remove bingo_got_item
-tag @s remove bingo_successful_got_item
-tag @a remove bingo_in_current_team
+execute store success score $success bingo_tmp run data modify storage bingo:tmp slot set from storage bingo:card_generation slots[{item:{id:"minecraft:furnace_minecart"}}]
+execute if score $success bingo_tmp matches 1 run function bingo:item_detection/announce/item
