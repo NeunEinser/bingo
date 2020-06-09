@@ -1,0 +1,2 @@
+data merge storage timer:display {internal:{secondSeperator:[], seconds:'[{"score":{"name": "$seconds", "objective": "timer_main"}}, {"storage": "timer:display", "nbt": "internal.secondSeperator", "interpret": true}]'}}
+execute if score $blocks_per_second timer_main matches 10.. run function timer:internal/display/add_milis
