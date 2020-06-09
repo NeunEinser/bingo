@@ -13,6 +13,6 @@
 		}
 	},
 	"rewards": {
-		"function": "bingo:item_detection/spider_eye"
+		"function": "bingo:item_detection/items/spider_eye"
 	}
 }

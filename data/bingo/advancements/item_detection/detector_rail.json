@@ -13,6 +13,6 @@
 		}
 	},
 	"rewards": {
-		"function": "bingo:item_detection/detector_rail"
+		"function": "bingo:item_detection/items/detector_rail"
 	}
 }

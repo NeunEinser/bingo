@@ -13,6 +13,6 @@
 		}
 	},
 	"rewards": {
-		"function": "bingo:item_detection/redstone_block"
+		"function": "bingo:item_detection/items/redstone_block"
 	}
 }

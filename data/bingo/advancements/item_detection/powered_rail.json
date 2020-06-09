@@ -13,6 +13,6 @@
 		}
 	},
 	"rewards": {
-		"function": "bingo:item_detection/powered_rail"
+		"function": "bingo:item_detection/items/powered_rail"
 	}
 }

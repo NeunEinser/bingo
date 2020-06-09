@@ -13,6 +13,6 @@
 		}
 	},
 	"rewards": {
-		"function": "bingo:item_detection/dead_bush"
+		"function": "bingo:item_detection/items/dead_bush"
 	}
 }

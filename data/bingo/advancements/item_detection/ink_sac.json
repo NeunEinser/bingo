@@ -13,6 +13,6 @@
 		}
 	},
 	"rewards": {
-		"function": "bingo:item_detection/ink_sac"
+		"function": "bingo:item_detection/items/ink_sac"
 	}
 }

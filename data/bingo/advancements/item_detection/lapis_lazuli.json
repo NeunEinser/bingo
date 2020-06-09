@@ -13,6 +13,6 @@
 		}
 	},
 	"rewards": {
-		"function": "bingo:item_detection/lapis_lazuli"
+		"function": "bingo:item_detection/items/lapis_lazuli"
 	}
 }

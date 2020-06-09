@@ -13,6 +13,6 @@
 		}
 	},
 	"rewards": {
-		"function": "bingo:item_detection/repeater"
+		"function": "bingo:item_detection/items/repeater"
 	}
 }

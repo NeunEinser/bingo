@@ -13,6 +13,6 @@
 		}
 	},
 	"rewards": {
-		"function": "bingo:item_detection/mossy_stone_bricks"
+		"function": "bingo:item_detection/items/mossy_stone_bricks"
 	}
 }

@@ -13,6 +13,6 @@
 		}
 	},
 	"rewards": {
-		"function": "bingo:item_detection/obsidian"
+		"function": "bingo:item_detection/items/obsidian"
 	}
 }

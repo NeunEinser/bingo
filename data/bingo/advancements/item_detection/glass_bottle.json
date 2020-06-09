@@ -13,6 +13,6 @@
 		}
 	},
 	"rewards": {
-		"function": "bingo:item_detection/glass_bottle"
+		"function": "bingo:item_detection/items/glass_bottle"
 	}
 }

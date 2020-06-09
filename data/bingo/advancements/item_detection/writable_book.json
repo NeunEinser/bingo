@@ -13,6 +13,6 @@
 		}
 	},
 	"rewards": {
-		"function": "bingo:item_detection/writable_book"
+		"function": "bingo:item_detection/items/writable_book"
 	}
 }

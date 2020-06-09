@@ -14,6 +14,6 @@
 		}
 	},
 	"rewards": {
-		"function": "bingo:item_detection/ominous_banner"
+		"function": "bingo:item_detection/items/ominous_banner"
 	}
 }

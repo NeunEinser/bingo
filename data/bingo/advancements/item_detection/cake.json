@@ -13,6 +13,6 @@
 		}
 	},
 	"rewards": {
-		"function": "bingo:item_detection/cake"
+		"function": "bingo:item_detection/items/cake"
 	}
 }

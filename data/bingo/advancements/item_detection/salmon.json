@@ -13,6 +13,6 @@
 		}
 	},
 	"rewards": {
-		"function": "bingo:item_detection/salmon"
+		"function": "bingo:item_detection/items/salmon"
 	}
 }

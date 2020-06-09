@@ -13,6 +13,6 @@
 		}
 	},
 	"rewards": {
-		"function": "bingo:item_detection/heart_of_the_sea"
+		"function": "bingo:item_detection/items/heart_of_the_sea"
 	}
 }

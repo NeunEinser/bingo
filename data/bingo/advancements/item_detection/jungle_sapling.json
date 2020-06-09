@@ -13,6 +13,6 @@
 		}
 	},
 	"rewards": {
-		"function": "bingo:item_detection/jungle_sapling"
+		"function": "bingo:item_detection/items/jungle_sapling"
 	}
 }

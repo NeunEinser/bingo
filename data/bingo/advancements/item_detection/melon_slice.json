@@ -13,6 +13,6 @@
 		}
 	},
 	"rewards": {
-		"function": "bingo:item_detection/melon_slice"
+		"function": "bingo:item_detection/items/melon_slice"
 	}
 }

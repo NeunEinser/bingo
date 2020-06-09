@@ -13,6 +13,6 @@
 		}
 	},
 	"rewards": {
-		"function": "bingo:item_detection/milk_bucket"
+		"function": "bingo:item_detection/items/milk_bucket"
 	}
 }

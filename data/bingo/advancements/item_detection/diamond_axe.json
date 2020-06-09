@@ -13,6 +13,6 @@
 		}
 	},
 	"rewards": {
-		"function": "bingo:item_detection/diamond_axe"
+		"function": "bingo:item_detection/items/diamond_axe"
 	}
 }

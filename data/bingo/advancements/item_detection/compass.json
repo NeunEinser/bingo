@@ -13,6 +13,6 @@
 		}
 	},
 	"rewards": {
-		"function": "bingo:item_detection/compass"
+		"function": "bingo:item_detection/items/compass"
 	}
 }

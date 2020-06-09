@@ -13,6 +13,6 @@
 		}
 	},
 	"rewards": {
-		"function": "bingo:item_detection/beetroot_soup"
+		"function": "bingo:item_detection/items/beetroot_soup"
 	}
 }

@@ -13,6 +13,6 @@
 		}
 	},
 	"rewards": {
-		"function": "bingo:item_detection/enchanted_book"
+		"function": "bingo:item_detection/items/enchanted_book"
 	}
 }

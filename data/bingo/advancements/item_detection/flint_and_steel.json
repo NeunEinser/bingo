@@ -13,6 +13,6 @@
 		}
 	},
 	"rewards": {
-		"function": "bingo:item_detection/flint_and_steel"
+		"function": "bingo:item_detection/items/flint_and_steel"
 	}
 }

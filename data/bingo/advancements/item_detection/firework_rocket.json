@@ -13,6 +13,6 @@
 		}
 	},
 	"rewards": {
-		"function": "bingo:item_detection/firework_rocket"
+		"function": "bingo:item_detection/items/firework_rocket"
 	}
 }

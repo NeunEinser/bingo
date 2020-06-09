@@ -13,6 +13,6 @@
 		}
 	},
 	"rewards": {
-		"function": "bingo:item_detection/dark_oak_sapling"
+		"function": "bingo:item_detection/items/dark_oak_sapling"
 	}
 }

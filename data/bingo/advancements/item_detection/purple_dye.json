@@ -13,6 +13,6 @@
 		}
 	},
 	"rewards": {
-		"function": "bingo:item_detection/purple_dye"
+		"function": "bingo:item_detection/items/purple_dye"
 	}
 }

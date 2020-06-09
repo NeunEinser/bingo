@@ -13,6 +13,6 @@
 		}
 	},
 	"rewards": {
-		"function": "bingo:item_detection/sea_pickle"
+		"function": "bingo:item_detection/items/sea_pickle"
 	}
 }

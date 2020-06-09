@@ -13,6 +13,6 @@
 		}
 	},
 	"rewards": {
-		"function": "bingo:item_detection/suspicious_stew"
+		"function": "bingo:item_detection/items/suspicious_stew"
 	}
 }

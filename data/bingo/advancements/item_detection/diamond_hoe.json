@@ -13,6 +13,6 @@
 		}
 	},
 	"rewards": {
-		"function": "bingo:item_detection/diamond_hoe"
+		"function": "bingo:item_detection/items/diamond_hoe"
 	}
 }

@@ -13,6 +13,6 @@
 		}
 	},
 	"rewards": {
-		"function": "bingo:item_detection/gray_dye"
+		"function": "bingo:item_detection/items/gray_dye"
 	}
 }

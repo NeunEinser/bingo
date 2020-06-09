@@ -13,6 +13,6 @@
 		}
 	},
 	"rewards": {
-		"function": "bingo:item_detection/red_bed"
+		"function": "bingo:item_detection/items/red_bed"
 	}
 }

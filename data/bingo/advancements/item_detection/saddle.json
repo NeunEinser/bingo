@@ -13,6 +13,6 @@
 		}
 	},
 	"rewards": {
-		"function": "bingo:item_detection/saddle"
+		"function": "bingo:item_detection/items/saddle"
 	}
 }

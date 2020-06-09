@@ -13,6 +13,6 @@
 		}
 	},
 	"rewards": {
-		"function": "bingo:item_detection/golden_axe"
+		"function": "bingo:item_detection/items/golden_axe"
 	}
 }

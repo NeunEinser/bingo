@@ -13,6 +13,6 @@
 		}
 	},
 	"rewards": {
-		"function": "bingo:item_detection/egg"
+		"function": "bingo:item_detection/items/egg"
 	}
 }

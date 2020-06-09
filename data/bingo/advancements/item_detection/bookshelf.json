@@ -13,6 +13,6 @@
 		}
 	},
 	"rewards": {
-		"function": "bingo:item_detection/bookshelf"
+		"function": "bingo:item_detection/items/bookshelf"
 	}
 }

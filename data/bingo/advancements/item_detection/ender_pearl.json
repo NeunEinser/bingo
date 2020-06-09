@@ -13,6 +13,6 @@
 		}
 	},
 	"rewards": {
-		"function": "bingo:item_detection/ender_pearl"
+		"function": "bingo:item_detection/items/ender_pearl"
 	}
 }

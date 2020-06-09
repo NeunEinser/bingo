@@ -13,6 +13,6 @@
 		}
 	},
 	"rewards": {
-		"function": "bingo:item_detection/cod_bucket"
+		"function": "bingo:item_detection/items/cod_bucket"
 	}
 }

@@ -13,6 +13,6 @@
 		}
 	},
 	"rewards": {
-		"function": "bingo:item_detection/fermented_spider_eye"
+		"function": "bingo:item_detection/items/fermented_spider_eye"
 	}
 }

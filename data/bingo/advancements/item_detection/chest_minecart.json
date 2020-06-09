@@ -13,6 +13,6 @@
 		}
 	},
 	"rewards": {
-		"function": "bingo:item_detection/chest_minecart"
+		"function": "bingo:item_detection/items/chest_minecart"
 	}
 }

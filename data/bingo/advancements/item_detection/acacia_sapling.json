@@ -13,6 +13,6 @@
 		}
 	},
 	"rewards": {
-		"function": "bingo:item_detection/acacia_sapling"
+		"function": "bingo:item_detection/items/acacia_sapling"
 	}
 }

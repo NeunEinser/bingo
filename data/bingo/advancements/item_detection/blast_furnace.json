@@ -13,6 +13,6 @@
 		}
 	},
 	"rewards": {
-		"function": "bingo:item_detection/blast_furnace"
+		"function": "bingo:item_detection/items/blast_furnace"
 	}
 }

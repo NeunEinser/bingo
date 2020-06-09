@@ -13,6 +13,6 @@
 		}
 	},
 	"rewards": {
-		"function": "bingo:item_detection/cauldron"
+		"function": "bingo:item_detection/items/cauldron"
 	}
 }

@@ -13,6 +13,6 @@
 		}
 	},
 	"rewards": {
-		"function": "bingo:item_detection/golden_pickaxe"
+		"function": "bingo:item_detection/items/golden_pickaxe"
 	}
 }

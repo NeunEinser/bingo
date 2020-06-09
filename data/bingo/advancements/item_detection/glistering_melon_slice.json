@@ -13,6 +13,6 @@
 		}
 	},
 	"rewards": {
-		"function": "bingo:item_detection/glistering_melon_slice"
+		"function": "bingo:item_detection/items/glistering_melon_slice"
 	}
 }
