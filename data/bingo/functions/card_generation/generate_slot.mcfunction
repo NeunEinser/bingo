@@ -27,7 +27,10 @@ execute if score $size bingo_tmp matches 1.. run function bingo:card_generation/
 execute store result score $categories bingo_tmp run data get storage bingo:tmp item.categories
 execute if score $categories bingo_tmp matches 2.. run data modify storage bingo:card_generation usedItems append from storage bingo:tmp item.id
 
-data modify storage bingo:card_generation slots append from storage bingo:tmp item
+data modify storage bingo:tmp slot.item set from storage bingo:tmp item
+execute store result storage bingo:tmp slot.id int 1 run scoreboard players get $i bingo_tmp 
+
+data modify storage bingo:card_generation slots append from storage bingo:tmp slot
 
 # next slot
 scoreboard players add $i bingo_tmp 1
