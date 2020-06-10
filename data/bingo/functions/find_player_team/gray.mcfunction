@@ -1,2 +1,2 @@
-tag @e[type=minecraft:area_effect_cloud, tag=bingo_completed_item, tag=bingo_gray, limit=1] add bingo_current_team
+data modify storage bingo:tmp team set from storage bingo:card teams[{id:"bingo:gray"}]
 tag @a[team=bingo_gray] add bingo_in_current_team
