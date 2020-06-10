@@ -21,11 +21,11 @@ scoreboard objectives add bingo_tmp dummy "Temporary values"
 scoreboard objectives add bingo_tmp_2 dummy "Temporary values #2"
 scoreboard objectives add bingo_stats dummy "Minecraft Bingo"
 #scoreboard objectives setdisplay sidebar bingo_stats
+scoreboard players set 4 bingo_const 4
+scoreboard players set 5 bingo_const 5
+scoreboard players set 6 bingo_const 6
 
 execute in bingo:lobby positioned 0 0 0 run function bingo:init/setup_lobby
-
-# setup teams
-
 
 # setup teams
 ## add

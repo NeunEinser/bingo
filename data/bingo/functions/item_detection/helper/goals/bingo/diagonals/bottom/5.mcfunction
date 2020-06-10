@@ -1,0 +1,2 @@
+execute store success score $success bingo_tmp run data modify storage bingo:tmp icon set from storage bingo:tmp slots[20]
+execute if score $success bingo_tmp matches 0 run scoreboard players add $diag bingo_tmp 2
