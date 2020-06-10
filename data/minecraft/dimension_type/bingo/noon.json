@@ -5,7 +5,11 @@
 	"ultrawarm": false,
 	"natural": true,
 	"shrunk": false,
-	"ender_dragon": false,
-	"biome_zoomer": "FuzzyOffsetConstantColumnBiomeZoomer",
+	"piglin_safe": true,
+	"bed_works": true,
+	"respawn_anchor_works": true,
+	"has_raids": false,
+	"logical_height": 256,
+	"infiniburn": "minecraft:infiniburn_overworld",
 	"ambient_light": 0.0
 }
