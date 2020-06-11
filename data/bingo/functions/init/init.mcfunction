@@ -1,24 +1,18 @@
 # setup objectives
 scoreboard objectives remove bingo_seed
-scoreboard objectives remove bingo_item_count
-scoreboard objectives remove bingo_slot_id
 scoreboard objectives remove bingo_weight
 scoreboard objectives remove bingo_id
 scoreboard objectives remove bingo_category
 scoreboard objectives remove bingo_tmp
-scoreboard objectives remove bingo_tmp_2
 scoreboard objectives remove bingo_const
 #DONT reset stats
 #scoreboard objectives remove bingo_stats
 
 scoreboard objectives add bingo_seed trigger "Trigger for setting the seed value"
-scoreboard objectives add bingo_item_count dummy "Amount of items a player has received"
-scoreboard objectives add bingo_slot_id dummy "Id for the slot this item is currently in"
 scoreboard objectives add bingo_weight dummy "Weight for the rng to pick this item"
 scoreboard objectives add bingo_id dummy
 scoreboard objectives add bingo_category dummy "Category id of this item"
 scoreboard objectives add bingo_tmp dummy "Temporary values"
-scoreboard objectives add bingo_tmp_2 dummy "Temporary values #2"
 scoreboard objectives add bingo_stats dummy "Minecraft Bingo"
 #scoreboard objectives setdisplay sidebar bingo_stats
 scoreboard players set 4 bingo_const 4
