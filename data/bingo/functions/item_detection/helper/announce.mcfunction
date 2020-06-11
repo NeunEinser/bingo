@@ -22,6 +22,6 @@ data modify storage bingo:commands queue append from storage bingo:card slots[{s
 data modify storage bingo:commands queue append value "function bingo:item_detection/helper/tag_players_for_item_clear"
 data modify storage bingo:commands queue append from storage bingo:card slots[{selected: true}].item.clearCommand[1]
 data modify storage bingo:commands queue append value "tag @a remove bingo_clear"
-data modify storage bingo:commands queue append value "data modify storage bingo:card slots[{item:{selected: true}}].selected set value false"
+data modify storage bingo:commands queue append value "data modify storage bingo:card slots[{selected: true}].selected set value false"
 
 function bingo:run_command_from_string/run
