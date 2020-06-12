@@ -212,7 +212,7 @@ data modify storage bingo:tmp item set value {id: "bingo:milk_bucket", item: {id
 data modify storage bingo:main categories[{name:"milk"}].items append from storage bingo:tmp item
 
 ## 0017: cauldron
-data modify storage bingo:tmp item set value {id: "bingo:cauldron", item: {id: "minecraft:cauldron"}, textComponent: '{"translate": "item.minecraft.cauldron", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:cauldron"}}}', icon: '"\\u0017"', clearCommand: ['data modify storage bingo:card slots[{item:{id: "bingo:cauldron"}}].selected set value true', "clear @a[tag=bingo_clear] minecraft:cauldron 1"] , categories: 1, weight: 1}
+data modify storage bingo:tmp item set value {id: "bingo:cauldron", item: {id: "minecraft:cauldron"}, textComponent: '{"translate": "block.minecraft.cauldron", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:cauldron"}}}', icon: '"\\u0017"', clearCommand: ['data modify storage bingo:card slots[{item:{id: "bingo:cauldron"}}].selected set value true', "clear @a[tag=bingo_clear] minecraft:cauldron 1"] , categories: 1, weight: 1}
 data modify storage bingo:main categories[{name:"simple_iron"}].items append from storage bingo:tmp item
 
 ## 0018: saddle
@@ -483,7 +483,7 @@ data modify storage bingo:tmp item set value {id: "bingo:sea_grass", item: {id: 
 data modify storage bingo:main categories[{name:"shearable"}].items append from storage bingo:tmp item
 
 ## 0100: iron_block
-data modify storage bingo:tmp item set value {id: "bingo:iron_block", item: {id: "minecraft:iron_block"}, textComponent: '{"translate": "item.minecraft.iron_block", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:iron_block"}}}', icon: '"\\u0100"', clearCommand: ['data modify storage bingo:card slots[{item:{id: "bingo:iron_block"}}].selected set value true', "clear @a[tag=bingo_clear] minecraft:iron_block 1"] , categories: 1, weight: 1}
+data modify storage bingo:tmp item set value {id: "bingo:iron_block", item: {id: "minecraft:iron_block"}, textComponent: '{"translate": "block.minecraft.iron_block", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:iron_block"}}}', icon: '"\\u0100"', clearCommand: ['data modify storage bingo:card slots[{item:{id: "bingo:iron_block"}}].selected set value true', "clear @a[tag=bingo_clear] minecraft:iron_block 1"] , categories: 1, weight: 1}
 data modify storage bingo:main categories[{name:"simple_iron"}].items append from storage bingo:tmp item
 
 ## 0101: redstone_block
