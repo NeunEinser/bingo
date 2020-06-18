@@ -13,7 +13,9 @@ scoreboard objectives add bingo_tmp dummy "Temporary values"
 scoreboard objectives add bingo_stats dummy "Minecraft Bingo"
 scoreboard objectives add bingo_const dummy "Constant Table"
 scoreboard objectives add bingo_commands dummy "Scoreboard for run_command_from_string"
-#scoreboard objectives setdisplay sidebar bingo_stats
+scoreboard objectives add bingo_card_pos trigger
+scoreboard objectives setdisplay sidebar bingo_stats
+
 scoreboard players set 2 bingo_const 2
 scoreboard players set 4 bingo_const 4
 scoreboard players set 5 bingo_const 5
