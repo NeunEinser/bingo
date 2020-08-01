@@ -4,8 +4,7 @@ scoreboard objectives remove bingo_id
 scoreboard objectives remove bingo_tmp
 scoreboard objectives remove bingo_const
 scoreboard objectives remove bingo_commands
-#DONT reset stats
-#scoreboard objectives remove bingo_stats
+scoreboard objectives remove bingo_preference
 
 scoreboard objectives add bingo_seed trigger "Trigger for setting the seed value"
 scoreboard objectives add bingo_id dummy "Unique player IDs"
@@ -14,6 +13,7 @@ scoreboard objectives add bingo_stats dummy "Minecraft Bingo"
 scoreboard objectives add bingo_const dummy "Constant Table"
 scoreboard objectives add bingo_commands dummy "Scoreboard for run_command_from_string"
 scoreboard objectives add bingo_card_pos trigger
+scoreboard objectives add bingo_preference trigger
 scoreboard objectives setdisplay sidebar bingo_stats
 
 scoreboard players set 2 bingo_const 2
