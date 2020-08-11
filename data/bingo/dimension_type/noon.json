@@ -4,7 +4,7 @@
 	"has_ceiling": false,
 	"ultrawarm": false,
 	"natural": true,
-	"shrunk": false,
+	"coordinate_scale": 1,
 	"piglin_safe": true,
 	"bed_works": true,
 	"respawn_anchor_works": true,
