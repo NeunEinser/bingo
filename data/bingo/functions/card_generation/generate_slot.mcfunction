@@ -28,7 +28,11 @@ execute if score $categories bingo_tmp matches 2.. run data modify storage bingo
 data modify storage bingo:tmp slot.item set from storage bingo:tmp item
 execute store result storage bingo:tmp slot.id int 1 run scoreboard players get $i bingo_tmp 
 
-data modify storage bingo:card slots append from storage bingo:tmp slot
+data modify storage bingo:card slots append from storage bingo:tmp 
+
+# set item to frame
+data modify storage bingo:tmp item.item.Count set value 1b
+execute as @e[type=minecraft:item_frame, tag=bingo_card_frame] if score @s bingo_frame_id = $i bingo_tmp run data modify entity @s Item set from storage bingo:tmp item.item
 
 # next slot
 scoreboard players add $i bingo_tmp 1

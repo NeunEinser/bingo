@@ -1,4 +1,18 @@
 {
+	"bingo.lobby.card_generation.random_card.sign.line1": "",
+	"bingo.lobby.card_generation.random_card.sign.line2": "Generate",
+	"bingo.lobby.card_generation.random_card.sign.line3": "Random Card",
+	"bingo.lobby.card_generation.random_card.sign.line4": "",
+
+	"bingo.lobby.card_generation.from_seed.sign.line1": "",
+	"bingo.lobby.card_generation.from_seed.sign.line2": "Generate Card",
+	"bingo.lobby.card_generation.from_seed.sign.line3": "From Seed",
+	"bingo.lobby.card_generation.from_seed.sign.line4": "",
+
+	"bingo.lobby.card_generation.from_seed.instructions": "%s to receieve the command for setting the seed. Add the numeric seed at the very end of the command.",
+	"bingo.lobby.card_generation.from_seed.instructions.link": "Click here",
+	"bingo.lobby.card_generation.from_seed.explanation": "The seed determines which items generate on the card and where you spawn. You can use this for competitive races using the same seed.",
+
 	"bingo.got_item": "[%s] %s got [%s]",
 	"bingo.got_blackout": "[%s] %s got a blackout!",
 	"bingo.got_20_no_bingo": "[%s] %s got a 20 no bingo!",
