@@ -17,5 +17,3 @@ scoreboard players enable @a bingo_settings
 # mark card frame
 execute as @e[type=minecraft:item_frame, tag=bingo_card_frame, nbt=!{Item: {}}] at @s run function bingo:card_frames/on_item_removed
 execute as @e[type=minecraft:item_frame, tag=bingo_card_frame, nbt=!{ItemRotation: 0b}] at @s run function bingo:card_frames/on_rotation_changed
-
-kill @e[type=minecraft:item, nbt={Item:{tag:{bingo:{frameItem: true}}}}]

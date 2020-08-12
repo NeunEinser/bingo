@@ -3,7 +3,6 @@ scoreboard players operation $i bingo_tmp = @s bingo_frame_id
 function bingo:card_frames/find_item
 
 data modify storage bingo:tmp item.Count set value 1b
-data modify storage bingo:tmp item.tag.bingo.frameItem set value true
 data modify entity @s Item set from storage bingo:tmp item
 
 execute if block ~ ~ ~-1 minecraft:red_concrete run tag @s add bingo_unmark
