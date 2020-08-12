@@ -1,0 +1,38 @@
+{
+	"bingo.lobby.card_generation.random_card.sign.line1": "",
+	"bingo.lobby.card_generation.random_card.sign.line2": "Zufällige Karte",
+	"bingo.lobby.card_generation.random_card.sign.line3": "generieren",
+	"bingo.lobby.card_generation.random_card.sign.line4": "",
+
+	"bingo.lobby.card_generation.from_seed.sign.line1": "Karte von",
+	"bingo.lobby.card_generation.from_seed.sign.line2": "Seed",
+	"bingo.lobby.card_generation.from_seed.sign.line3": "generieren",
+	"bingo.lobby.card_generation.from_seed.sign.line4": "",
+
+	"bingo.lobby.card_generation.from_seed.instructions": "%s, um ein Befehl zum Setzten des Seeds zu erhalten. Füge den numerischen Seed am Ende des Befehls hinzu.",
+	"bingo.lobby.card_generation.from_seed.instructions.link": "Hier klicken",
+	"bingo.lobby.card_generation.from_seed.explanation": "Der Seed bestimmt die Gegenstände auf der Bingokarte und den Spawnpunkt. Dies kann zum Beispiel für Rennen verwendet werden, bei denen alle Teilnehmer den selben Seed verwenden.",
+
+	"bingo.got_item": "[%2$s] %3$s erhielt [%4$s]",
+	"bingo.got_blackout": "[%1$s] %2$s erzielte(n) ein Blackout!",
+	"bingo.got_20_no_bingo": "[%1$s] %2$s erzielte(n) ein 20-ohne-Bingo!",
+	
+	"bingo.got_bingo.row": "[%1$s] %2$s erzielte(n) ein Bingo in Zeile %3$s!",
+	"bingo.got_bingo.col": "[%1$s] %2$s erzielte(n) ein Bingo in Spalte %3$s!",
+	"bingo.got_bingo.diag.top_left": "[%1$s] %2$s erzielte(n) ein Bingo diagonal von oben links nach unten rechts!",
+	"bingo.got_bingo.diag.bottom_left": "[%1$s] %2$s erzielte(n) ein Bingo diagonal von unten links nach oben rechts!",
+	
+	"bingo.got_bingo.double.col_row": "[%1$s] %2$s erzielte(n) ein Doppel-Bingo in Zeile %3$s und Spalze %4$s!",
+	"bingo.got_bingo.double.col_diag.top_left": "[%1$s] %2$s erzielte(n) ein Doppel-Bingo in Spalte %3$s und diagonal von oben links nach unten rechts!",
+	"bingo.got_bingo.double.col_diag.bottom_left": "[%1$s] %2$s erzielte(n) ein Doppel-Bingo in Spalte %3$s und diagonal von unten links nach oben rechts!",
+	"bingo.got_bingo.double.row_diag.top_left": "[%s] % erzielte(n) ein Doppel-Bingo in Zeile %3$s und diagonal von oben links nach unten rechts!",
+	"bingo.got_bingo.double.row_diag.bottom_left": "[%1$s] %2$s erzielte(n) ein Doppel-Bingo in Zeile %3$s und diagonal von unten links nach oben rechts!",
+	"bingo.got_bingo.double.diags": "[%1$s] %2$s erzielte(n) ein Doppel-Bingo in beiden Diagonalen!",
+	
+	"bingo.got_bingo.triple.top_left": "[%1$s] %2$s erzielte(n) ein Dreifach-Bingo in Spalte %3$s, Zeile %4$s und diagonal von oben links nach unten rechts!",
+	"bingo.got_bingo.triple.bottom_left": "[%1$s] %2$s erzielte(n) ein Dreifach-Bingo in Spalte %3$s, Zeile %4$s und diagonal von unten links nach oben rechts!!",
+	"bingo.got_bingo.triple.col_diags": "[%1$s] %2$s erzielte(n) ein Dreifach-Bingo in Spalte %3$s und beiden Diagonalen!",
+	"bingo.got_bingo.triple.row_diags": "[%1$s] %2$s erzielte(n) ein Dreifach-Bingo in Zeile %3$s und beiden Diagonalen!",
+	
+	"bingo.got_bingo.triple.quadruple": "[%1$s] %2$s erzielte(n) ein Vierfach-Bingo!"
+}

@@ -11,28 +11,28 @@
 
 	"bingo.lobby.card_generation.from_seed.instructions": "%s to receieve the command for setting the seed. Add the numeric seed at the very end of the command.",
 	"bingo.lobby.card_generation.from_seed.instructions.link": "Click here",
-	"bingo.lobby.card_generation.from_seed.explanation": "The seed determines which items generate on the card and where you spawn. You can use this for competitive races using the same seed.",
+	"bingo.lobby.card_generation.from_seed.explanation": "The seed determines which items generate on the bingo card and where you spawn. You can use this for example for competitive races, where everyone is using the same seed.",
 
-	"bingo.got_item": "[%s] %s got [%s]",
-	"bingo.got_blackout": "[%s] %s got a blackout!",
-	"bingo.got_20_no_bingo": "[%s] %s got a 20 no bingo!",
+	"bingo.got_item": "[%2$s] %3$s got [%4$s]",
+	"bingo.got_blackout": "[%1$s] %2$s got a blackout!",
+	"bingo.got_20_no_bingo": "[%1$s] %2$s got a 20 no bingo!",
 	
-	"bingo.got_bingo.row": "[%s] %s got a bingo in row %s!",
-	"bingo.got_bingo.col": "[%s] %s got a bingo in col %s!",
-	"bingo.got_bingo.diag.top_left": "[%s] %s got a bingo from top left to bottom right!",
-	"bingo.got_bingo.diag.bottom_left": "[%s] %s got a bingo from bottom left to top right!",
+	"bingo.got_bingo.row": "[%1$s] %2$s got a bingo in row %3$s!",
+	"bingo.got_bingo.col": "[%1$s] %2$s got a bingo in col %3$s!",
+	"bingo.got_bingo.diag.top_left": "[%1$s] %2$s got a bingo from top left to bottom right!",
+	"bingo.got_bingo.diag.bottom_left": "[%1$s] %2$s got a bingo from bottom left to top right!",
 	
-	"bingo.got_bingo.double.col_row": "[%s] %s got a double bingo in row %s and col %s!",
-	"bingo.got_bingo.double.col_diag.top_left": "[%s] %s got a double bingo in col %s and from top left to bottom right!",
-	"bingo.got_bingo.double.col_diag.bottom_left": "[%s] %s got a double bingo in col %s and from bottom left to top right!",
-	"bingo.got_bingo.double.row_diag.top_left": "[%s] %s got a double bingo in row %s and from top left to bottom right!",
-	"bingo.got_bingo.double.row_diag.bottom_left": "[%s] %s got a double bingo in row %s and from bottom left to top right!",
-	"bingo.got_bingo.double.diags": "[%s] %s got a double bingo in both diagonals!",
+	"bingo.got_bingo.double.col_row": "[%1$s] %2$s got a double bingo in row %3$s and col %4$s!",
+	"bingo.got_bingo.double.col_diag.top_left": "[%1$s] %2$s got a double bingo in col %3$s and from top left to bottom right!",
+	"bingo.got_bingo.double.col_diag.bottom_left": "[%1$s] %2$s got a double bingo in col %3$s and from bottom left to top right!",
+	"bingo.got_bingo.double.row_diag.top_left": "[%1$s] %2$s got a double bingo in row %3$s and from top left to bottom right!",
+	"bingo.got_bingo.double.row_diag.bottom_left": "[%1$s] %2$s got a double bingo in row %3$s and from bottom left to top right!",
+	"bingo.got_bingo.double.diags": "[%1$s] %2$s got a double bingo in both diagonals!",
 	
-	"bingo.got_bingo.triple.top_left": "[%s] %s got a triple bingo in col %s, row %s and from top left to bottom right!",
-	"bingo.got_bingo.triple.bottom_left": "[%s] %s got a triple bingo in col %s, row %s and from bottom left to top right!",
-	"bingo.got_bingo.triple.col_diags": "[%s] %s got a triple bingo in col %s and both diagonals!",
-	"bingo.got_bingo.triple.row_diags": "[%s] %s got a triple bingo in row %s and both diagonals!",
+	"bingo.got_bingo.triple.top_left": "[%1$s] %2$s got a triple bingo in col %3$s, row %s and from top left to bottom right!",
+	"bingo.got_bingo.triple.bottom_left": "[%1$s] %2$s got a triple bingo in col %3$s, row %s and from bottom left to top right!",
+	"bingo.got_bingo.triple.col_diags": "[%1$s] %2$s got a triple bingo in col %3$s and both diagonals!",
+	"bingo.got_bingo.triple.row_diags": "[%1$s] %2$s got a triple bingo in row %3$s and both diagonals!",
 	
-	"bingo.got_bingo.triple.quadruple": "[%s] %s got a quadruple bingo!"
+	"bingo.got_bingo.triple.quadruple": "[%1$s] %2$s got a quadruple bingo!"
 }
