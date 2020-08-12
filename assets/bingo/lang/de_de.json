@@ -13,7 +13,7 @@
 	"bingo.lobby.card_generation.from_seed.instructions.link": "Hier klicken",
 	"bingo.lobby.card_generation.from_seed.explanation": "Der Seed bestimmt die Gegenstände auf der Bingokarte und den Spawnpunkt. Dies kann zum Beispiel für Rennen verwendet werden, bei denen alle Teilnehmer den selben Seed verwenden.",
 
-	"bingo.got_item": "[%2$s] %3$s erhielt [%4$s]",
+	"bingo.got_item": "[%1$s] %2$s erhielt [%3$s]",
 	"bingo.got_blackout": "[%1$s] %2$s erzielte(n) ein Blackout!",
 	"bingo.got_20_no_bingo": "[%1$s] %2$s erzielte(n) ein 20-ohne-Bingo!",
 	

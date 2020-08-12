@@ -484,8 +484,8 @@ data modify storage bingo:main categories[{name:"jungle"}].items append from sto
 data modify storage bingo:tmp item set value {id: "bingo:sea_pickle", item: {id: "minecraft:sea_pickle"}, textComponent: '{"translate": "item.minecraft.sea_pickle", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:sea_pickle"}}}', icon: '"\\u0057"', clearCommand: ['data modify storage bingo:card slots[{item:{id: "bingo:sea_pickle"}}].selected set value true', "clear @a[tag=bingo_clear] minecraft:sea_pickle 1"] , categories: 1, weight: 1}
 data modify storage bingo:main categories[{name:"warm_ocean"}].items append from storage bingo:tmp item
 
-## 0058: sea_grass
-data modify storage bingo:tmp item set value {id: "bingo:sea_grass", item: {id: "minecraft:sea_grass"}, textComponent: '{"translate": "block.minecraft.sea_grass", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:sea_grass"}}}', icon: '"\\u0058"', clearCommand: ['data modify storage bingo:card slots[{item:{id: "bingo:sea_grass"}}].selected set value true', "clear @a[tag=bingo_clear] minecraft:sea_grass 1"] , categories: 1, weight: 1}
+## 0058: seagrass
+data modify storage bingo:tmp item set value {id: "bingo:seagrass", item: {id: "minecraft:seagrass"}, textComponent: '{"translate": "block.minecraft.seagrass", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:seagrass"}}}', icon: '"\\u0058"', clearCommand: ['data modify storage bingo:card slots[{item:{id: "bingo:seagrass"}}].selected set value true', "clear @a[tag=bingo_clear] minecraft:seagrass 1"] , categories: 1, weight: 1}
 data modify storage bingo:main categories[{name:"shearable"}].items append from storage bingo:tmp item
 
 ## 0100: iron_block
