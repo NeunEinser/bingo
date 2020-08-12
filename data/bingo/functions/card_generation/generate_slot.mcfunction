@@ -32,6 +32,7 @@ data modify storage bingo:card slots append from storage bingo:tmp slot
 
 # set item to frame
 data modify storage bingo:tmp item.item.Count set value 1b
+data modify storage bingo:tmp item.item.tag.bingo.frameItem set value true
 execute as @e[type=minecraft:item_frame, tag=bingo_card_frame] if score @s bingo_frame_id = $i bingo_tmp run data modify entity @s Item set from storage bingo:tmp item.item
 
 # next slot

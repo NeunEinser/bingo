@@ -1,4 +1,4 @@
-summon minecraft:item_frame ~ ~ ~ {Facing: 3b, Invulnerable: true, Tags: ["bingo_card_frame", "bingo_new"]}
+summon minecraft:item_frame ~ ~ ~ {Facing: 3b, Tags: ["bingo_card_frame", "bingo_new"]}
 scoreboard players operation @e[type=minecraft:item_frame, tag=bingo_card_frame, tag=bingo_new] bingo_frame_id = $i bingo_tmp
 
 tag @e[type=minecraft:item_frame, tag=bingo_card_frame] remove bingo_new
