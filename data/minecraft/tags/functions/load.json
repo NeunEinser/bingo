@@ -1,8 +1,8 @@
 {
 	"values": [
 		"bingo:init/init",
-		"random:init",
-		"math:init",
-		"timer:init"
+		"random:internal/init",
+		"math:internal/init",
+		"timer:internal/init"
 	]
 }
