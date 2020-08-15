@@ -5,19 +5,23 @@ scoreboard objectives remove bingo_frame_id
 scoreboard objectives remove bingo_tmp
 scoreboard objectives remove bingo_const
 scoreboard objectives remove bingo_commands
-scoreboard objectives remove bingo_preference
+scoreboard objectives remove bingo_schedule
+scoreboard objectives remove bingo_menu_page
+scoreboard objectives remove bingo_pref
 scoreboard objectives remove bingo_settings
 
-scoreboard objectives add bingo_seed trigger "Trigger for setting the seed value"
+scoreboard objectives add bingo_seed trigger "Seed Change Trigger"
 scoreboard objectives add bingo_id dummy "Unique player IDs"
 scoreboard objectives add bingo_frame_id dummy "Unique IDs for the item frames in the lobby"
 scoreboard objectives add bingo_tmp dummy "Temporary values"
 scoreboard objectives add bingo_stats dummy "Minecraft Bingo"
 scoreboard objectives add bingo_const dummy "Constant Table"
 scoreboard objectives add bingo_commands dummy "Scoreboard for run_command_from_string"
-scoreboard objectives add bingo_card_pos trigger
-scoreboard objectives add bingo_preference trigger
-scoreboard objectives add bingo_settings trigger
+scoreboard objectives add bingo_schedule dummy "Next scheduled text to display"
+scoreboard objectives add bingo_menu_page dummy "Player Settings Configuration Selection Page"
+scoreboard objectives add bingo_card_pos trigger "Change Crad Position"
+scoreboard objectives add bingo_pref trigger "Switch Preferences Page"
+scoreboard objectives add bingo_settings trigger "Change Settings"
 scoreboard objectives setdisplay sidebar bingo_stats
 
 scoreboard players set 2 bingo_const 2
@@ -26,6 +30,15 @@ scoreboard players set 5 bingo_const 5
 scoreboard players set 6 bingo_const 6
 
 execute in bingo:lobby positioned 0 0 0 run function bingo:init/setup_lobby
+
+# setup default player configurations
+data remove storage bingo:player configurations
+data modify storage bingo:player configurations append value {name: '{"translate": "bingo.lobby.settings.player.configuration.empty"}', inventory: [], effects: [], fixed: true}
+data modify storage bingo:player configurations append value {name: '{"translate": "bingo.lobby.settings.player.configuration.night_vision"}', inventory: [], effects: [{Id:16b, Amplifier: 0b, Duration: 2147483647, Ambient: 0b, ShowParticles: 0b, ShowIcon:0b}], selected: true}
+data modify storage bingo:player configurations append value {name: '{"translate": "bingo.lobby.settings.player.configuration.boats"}', inventory: [{Slot: 8b, id: "minecraft:oak_boat", Count: 1b}, {Slot: 17b, id: "minecraft:oak_boat", Count: 1b}, {Slot: 26b, id: "minecraft:oak_boat", Count: 1b}, {Slot: 35b, id: "minecraft:oak_boat", Count: 1b}], effects: [{Id:16b, Amplifier: 0b, Duration: 2147483647, Ambient: 0b, ShowParticles: 0b, ShowIcon:0b}]}
+data modify storage bingo:player configurations append value {name: '{"translate": "bingo.lobby.settings.player.configuration.elytra"}', inventory: [{Slot: 8b, id: "minecraft:firework_rocket", Count: 64b}, {Slot: 102b, id: "minecraft:elytra", Count: 1b, tag: {Unbreakable: true}}], effects: [{Id:16b, Amplifier: 0b, Duration: 2147483647, Ambient: 0b, ShowParticles: 0b, ShowIcon:0b}]}
+data modify storage bingo:player configurations append value {name: '{"translate": "bingo.lobby.settings.player.configuration.frostwalker"}', inventory: [{Slot: 100b, id: "minecraft:leather_boots", Count: 1b, tag: {Unbreakable: true, Enchantments:[{lvl: 2s, id: "minecraft:frost_walker"}]}}], effects: [{Id:16b, Amplifier: 0b, Duration: 2147483647, Ambient: 0b, ShowParticles: 0b, ShowIcon:0b}]}
+data modify storage bingo:player configurations append value {name: '{"translate": "bingo.lobby.settings.player.configuration.underwater"}', inventory: [{Slot: 100b, id: "minecraft:leather_boots", Count: 1b, tag: {Unbreakable: true, Enchantments:[{lvl: 3s, id: "minecraft:depth_strider"}]}}], effects: [{Id:13b, Amplifier: 0b, Duration: 2147483647, Ambient: 0b, ShowParticles: 0b, ShowIcon:0b}, {Id:16b, Amplifier: 0b, Duration: 2147483647, Ambient: 0b, ShowParticles: 0b, ShowIcon:0b}]}
 
 # setup teams
 ## add

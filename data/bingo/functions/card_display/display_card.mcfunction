@@ -1,4 +1,4 @@
-function bingo:find_player_team
+function bingo:util/find_player_team
 function timer:store_current_time
 
 scoreboard players enable @s bingo_card_pos
