@@ -1,3 +1,9 @@
+#declare storage bingo:main
+#declare storage bingo:card
+#declare storage bingo:card_generation
+#declare storage bingo:commands
+#declare storage bingo:tmp
+
 # setup objectives
 scoreboard objectives remove bingo_seed
 scoreboard objectives remove bingo_id
