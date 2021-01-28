@@ -1,2 +1,2 @@
 setblock ~ ~ ~ minecraft:chain_command_block[facing=east]{auto: true}
-scoreboard players add $x bingo_commands 1
+scoreboard players add $x bingo.commands 1

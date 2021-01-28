@@ -1,5 +1,5 @@
-scoreboard players set $stash_prev bingo_tmp 1
-scoreboard players set $first bingo_tmp 5
+scoreboard players set $stash_prev bingo.tmp 1
+scoreboard players set $first bingo.tmp 5
 function bingo:lobby/player_settings/find_config
 
 function bingo:lobby/player_settings/save/copy_data_to_config

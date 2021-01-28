@@ -1,8 +1,8 @@
 effect clear @s
 clear @s
 
-scoreboard players set $allow_fixed bingo_tmp 1
-scoreboard players set $first bingo_tmp 14
+scoreboard players set $allow_fixed bingo.tmp 1
+scoreboard players set $first bingo.tmp 14
 function bingo:lobby/player_settings/find_config
 
 setblock 0 63 0 minecraft:shulker_box{Items:[{Slot:0b, id: "minecraft:barrier",  Count:1b}]}

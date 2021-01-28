@@ -1,2 +1,2 @@
-execute if score $mody bingo_commands matches 0 run function bingo:run_command_from_string/next_positive_z
-execute if score $mody bingo_commands matches 1 run function bingo:run_command_from_string/next_negative_z
+execute if score $mody bingo.commands matches 0 run function bingo:run_command_from_string/next_positive_z
+execute if score $mody bingo.commands matches 1 run function bingo:run_command_from_string/next_negative_z

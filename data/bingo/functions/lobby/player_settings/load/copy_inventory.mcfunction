@@ -1,4 +1,4 @@
-execute store result score $slot bingo_tmp run data get storage bingo:tmp playerConfigs[0].inventory[0].Slot
+execute store result score $slot bingo.tmp run data get storage bingo:tmp playerConfigs[0].inventory[0].Slot
 
 data modify storage bingo:tmp playerConfigs[0].inventory[0].Slot set value 0b
 tellraw @a {"storage": "bingo:tmp", "nbt": "playerConfigs[0].inventory[0]"}

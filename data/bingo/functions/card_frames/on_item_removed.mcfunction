@@ -1,5 +1,5 @@
 data modify storage bingo:tmp slots set from storage bingo:card slots
-scoreboard players operation $i bingo_tmp = @s bingo_frame_id
+scoreboard players operation $i bingo.tmp = @s bingo.frame_id
 function bingo:card_frames/find_item
 
 data modify storage bingo:tmp item.Count set value 1b

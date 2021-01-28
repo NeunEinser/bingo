@@ -16,9 +16,23 @@
 	"datapack.lint.eol": "LF",
 	"datapack.lint.idOmitDefaultNamespace": ["warning", false],
 	"datapack.lint.nameOfNbtCompoundTagKeys": ["warning", "camelCase"],
-	"datapack.lint.nameOfObjectives": ["warning", "snake_case"],
+	"datapack.lint.nameOfObjectives": [
+		"warning",
+		{
+			"label": "namespace.snake_case",
+			"parts": [ "snake_case", "snake_case" ],
+			"sep": "."
+		}
+	],
 	"datapack.lint.nameOfTags": ["warning", "snake_case"],
-	"datapack.lint.nameOfTeams": ["warning", "snake_case"],
+	"datapack.lint.nameOfTeams": [
+		"warning",
+		{
+			"label": "namespace.snake_case",
+			"parts": [ "snake_case", "snake_case" ],
+			"sep": "."
+		}
+	],
 	"datapack.lint.nbtArrayBracketSpacing": { "inside": 0 },
 	"datapack.lint.nbtArrayCommaSpacing": { "before": 0, "after": 1 },
 	"datapack.lint.nbtArrayLengthCheck": ["error", true],

@@ -6,35 +6,35 @@
 #declare storage bingo:tmp
 
 # setup objectives
-scoreboard objectives remove bingo_seed
-scoreboard objectives remove bingo_id
-scoreboard objectives remove bingo_frame_id
-scoreboard objectives remove bingo_tmp
-scoreboard objectives remove bingo_const
-scoreboard objectives remove bingo_commands
-scoreboard objectives remove bingo_schedule
-scoreboard objectives remove bingo_menu_page
-scoreboard objectives remove bingo_pref
-scoreboard objectives remove bingo_settings
+scoreboard objectives remove bingo.seed
+scoreboard objectives remove bingo.id
+scoreboard objectives remove bingo.frame_id
+scoreboard objectives remove bingo.tmp
+scoreboard objectives remove bingo.const
+scoreboard objectives remove bingo.commands
+scoreboard objectives remove bingo.schedule
+scoreboard objectives remove bingo.menu_page
+scoreboard objectives remove bingo.pref
+scoreboard objectives remove bingo.settings
 
-scoreboard objectives add bingo_seed trigger "Seed Change Trigger"
-scoreboard objectives add bingo_id dummy "Unique player IDs"
-scoreboard objectives add bingo_frame_id dummy "Unique IDs for the item frames in the lobby"
-scoreboard objectives add bingo_tmp dummy "Temporary values"
-scoreboard objectives add bingo_stats dummy "Minecraft Bingo"
-scoreboard objectives add bingo_const dummy "Constant Table"
-scoreboard objectives add bingo_commands dummy "Scoreboard for run_command_from_string"
-scoreboard objectives add bingo_schedule dummy "Next scheduled text to display"
-scoreboard objectives add bingo_menu_page dummy "Player Settings Configuration Selection Page"
-scoreboard objectives add bingo_card_pos trigger "Change Crad Position"
-scoreboard objectives add bingo_pref trigger "Switch Preferences Page"
-scoreboard objectives add bingo_settings trigger "Change Settings"
-scoreboard objectives setdisplay sidebar bingo_stats
+scoreboard objectives add bingo.seed trigger "Seed Change Trigger"
+scoreboard objectives add bingo.id dummy "Unique player IDs"
+scoreboard objectives add bingo.frame_id dummy "Unique IDs for the item frames in the lobby"
+scoreboard objectives add bingo.tmp dummy "Temporary values"
+scoreboard objectives add bingo.stats dummy "Minecraft Bingo"
+scoreboard objectives add bingo.const dummy "Constant Table"
+scoreboard objectives add bingo.commands dummy "Scoreboard for run_command_from_string"
+scoreboard objectives add bingo.schedule dummy "Next scheduled text to display"
+scoreboard objectives add bingo.menu_page dummy "Player Settings Configuration Selection Page"
+scoreboard objectives add bingo.card_pos trigger "Change Crad Position"
+scoreboard objectives add bingo.pref trigger "Switch Preferences Page"
+scoreboard objectives add bingo.settings trigger "Change Settings"
+scoreboard objectives setdisplay sidebar bingo.stats
 
-scoreboard players set 2 bingo_const 2
-scoreboard players set 4 bingo_const 4
-scoreboard players set 5 bingo_const 5
-scoreboard players set 6 bingo_const 6
+scoreboard players set 2 bingo.const 2
+scoreboard players set 4 bingo.const 4
+scoreboard players set 5 bingo.const 5
+scoreboard players set 6 bingo.const 6
 
 execute in bingo:lobby positioned 0 0 0 run function bingo:init/setup_lobby
 
@@ -49,40 +49,40 @@ execute in bingo:lobby positioned 0 0 0 run function bingo:init/setup_lobby
 
 # setup teams
 ## add
-team add bingo_aqua
-team add bingo_black
-team add bingo_blue
-team add bingo_dark_aqua
-team add bingo_dark_blue
-team add bingo_dark_gray
-team add bingo_dark_green
-team add bingo_dark_purpl
-team add bingo_dark_red
-team add bingo_gold
-team add bingo_gray
-team add bingo_green
-team add bingo_light_purp
-team add bingo_red
-team add bingo_white
-team add bingo_yellow
+team add bingo.aqua
+team add bingo.black
+team add bingo.blue
+team add bingo.dark_aqua
+team add bingo.dark_blue
+team add bingo.dark_gray
+team add bingo.dark_green
+team add bingo.dark_purpl
+team add bingo.dark_red
+team add bingo.gold
+team add bingo.gray
+team add bingo.green
+team add bingo.light_purp
+team add bingo.red
+team add bingo.white
+team add bingo.yellow
 
 ## set colors
-team modify bingo_aqua color aqua
-team modify bingo_black color black
-team modify bingo_blue color blue
-team modify bingo_dark_aqua color dark_aqua
-team modify bingo_dark_blue color dark_blue
-team modify bingo_dark_gray color dark_gray
-team modify bingo_dark_green color dark_green
-team modify bingo_dark_purpl color dark_purple
-team modify bingo_dark_red color dark_red
-team modify bingo_gold color gold
-team modify bingo_gray color gray
-team modify bingo_green color green
-team modify bingo_light_purp color light_purple
-team modify bingo_red color red
-team modify bingo_white color white
-team modify bingo_yellow color yellow
+team modify bingo.aqua color aqua
+team modify bingo.black color black
+team modify bingo.blue color blue
+team modify bingo.dark_aqua color dark_aqua
+team modify bingo.dark_blue color dark_blue
+team modify bingo.dark_gray color dark_gray
+team modify bingo.dark_green color dark_green
+team modify bingo.dark_purpl color dark_purple
+team modify bingo.dark_red color dark_red
+team modify bingo.gold color gold
+team modify bingo.gray color gray
+team modify bingo.green color green
+team modify bingo.light_purp color light_purple
+team modify bingo.red color red
+team modify bingo.white color white
+team modify bingo.yellow color yellow
 
 ## setup storage
 data remove storage bingo:card teams
@@ -587,7 +587,7 @@ data modify storage bingo:tmp item set value {id: "bingo:dispenser", item: {id: 
 data modify storage bingo:main categories[{name:"bow"}].items append from storage bingo:tmp item
 
 # regenerate card
-scoreboard players operation $seed random_main = Seed bingo_stats
+scoreboard players operation $seed random_main = Seed bingo.stats
 function random:set_seed
 
 function bingo:card_generation/generate_card

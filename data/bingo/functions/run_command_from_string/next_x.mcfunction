@@ -1,2 +1,2 @@
-execute if score $modz bingo_commands = $mody bingo_commands run function bingo:run_command_from_string/next_positive_x
-execute unless score $modz bingo_commands = $mody bingo_commands run function bingo:run_command_from_string/next_negative_x
+execute if score $modz bingo.commands = $mody bingo.commands run function bingo:run_command_from_string/next_positive_x
+execute unless score $modz bingo.commands = $mody bingo.commands run function bingo:run_command_from_string/next_negative_x

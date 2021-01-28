@@ -1,2 +1,2 @@
-scoreboard players operation @s bingo_id = $next bingo_id
-scoreboard players add $next bingo_id 1
+scoreboard players operation @s bingo.id = $next bingo.id
+scoreboard players add $next bingo.id 1
