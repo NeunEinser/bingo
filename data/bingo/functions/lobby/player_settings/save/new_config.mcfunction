@@ -5,6 +5,6 @@ data modify storage bingo:tmp uuid set from entity @s Thrower
 kill @s
 execute as @a run function bingo:util/match_uuid
 
-execute as @a[tag=bingo_uuid, limit=1] run function bingo:lobby/player_settings/save/copy_data_to_config
-execute as @a[tag=bingo_uuid, limit=1] run tellraw @s {"translate": "bingo.lobby.settings.player.save.new.success", "with": [{"storage": "bingo:player", "nbt": "configurations[-1].name", "interpret": true}]}
-tag @a[tag=bingo_uuid, limit=1] remove bingo_uuid
+execute as @a[tag=bingo.uuid, limit=1] run function bingo:lobby/player_settings/save/copy_data_to_config
+execute as @a[tag=bingo.uuid, limit=1] run tellraw @s {"translate": "bingo.lobby.settings.player.save.new.success", "with": [{"storage": "bingo:player", "nbt": "configurations[-1].name", "interpret": true}]}
+tag @a[tag=bingo.uuid, limit=1] remove bingo.uuid

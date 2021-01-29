@@ -1,3 +1,5 @@
+#declare tag bingo.in_current_team
+
 execute if entity @s[team=bingo.aqua] run function bingo:util/find_player_team/aqua
 execute if entity @s[team=bingo.black] run function bingo:util/find_player_team/black
 execute if entity @s[team=bingo.blue] run function bingo:util/find_player_team/blue

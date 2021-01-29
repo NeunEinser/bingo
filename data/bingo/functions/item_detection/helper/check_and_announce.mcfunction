@@ -5,4 +5,4 @@ execute if score $success bingo.tmp matches 1 run function bingo:item_detection/
 
 data modify storage bingo:card slots[{selected: true}].selected set value false
 data modify storage bingo:card teams[{selected: true}] set value false
-tag @a remove bingo_in_current_team
+tag @a remove bingo.in_current_team

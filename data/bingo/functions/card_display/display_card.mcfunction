@@ -26,4 +26,4 @@ title @s actionbar [{"translate":"space.46"},{"storage":"bingo:tmp","nbt":"timeS
 
 # cleanup
 data modify storage bingo:card teams[{selected: true}] set value false
-tag @a remove bingo_in_current_team
+tag @a remove bingo.in_current_team

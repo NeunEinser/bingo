@@ -1,3 +1,3 @@
-execute at @e[type=minecraft:area_effect_cloud, tag=bingo_command, limit=1] run data modify storage bingo:commands queue prepend from block ~ ~ ~ Command
-execute unless entity @e[type=minecraft:area_effect_cloud, tag=bingo_command, limit=1] in bingo:lobby run function bingo:run_command_from_string/init_new_run
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo_command, limit=1] at @s run function bingo:run_command_from_string/iter
+execute at @e[type=minecraft:area_effect_cloud, tag=bingo.command, limit=1] run data modify storage bingo:commands queue prepend from block ~ ~ ~ Command
+execute unless entity @e[type=minecraft:area_effect_cloud, tag=bingo.command, limit=1] in bingo:lobby run function bingo:run_command_from_string/init_new_run
+execute as @e[type=minecraft:area_effect_cloud, tag=bingo.command, limit=1] at @s run function bingo:run_command_from_string/iter

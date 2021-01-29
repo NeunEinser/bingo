@@ -10,7 +10,7 @@ setblock 8 65 -8 minecraft:redstone_block
 setblock 4 62 4 minecraft:barrier
 setblock 4 63 4 minecraft:chiseled_quartz_block
 
-kill @e[type=minecraft:item_frame, tag=bingo_card_frame]
+kill @e[type=minecraft:item_frame, tag=bingo.card_frame]
 scoreboard players set $i bingo.tmp 0
 execute positioned -2 68 -11 run function bingo:init/spawn_card_preview_frames
 

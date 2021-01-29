@@ -11,7 +11,7 @@ scoreboard players add $items bingo.tmp 1
 execute store result storage bingo:card teams[{selected: true}].itemCount int 1 run scoreboard players get $items bingo.tmp
 
 execute if score $has_bingo bingo.tmp matches 0 run function bingo:item_detection/helper/goals/detect_bingo
-execute if score $items bingo.tmp matches 25 run tellraw @a {"translate": "bingo.got_blackout", "with": [{"storage": "timer:display", "nbt": "\"hh:mm:ss.s\"", "interpret": true}, {"selector": "@a[tag=bingo_in_current_team]"}]}
+execute if score $items bingo.tmp matches 25 run tellraw @a {"translate": "bingo.got_blackout", "with": [{"storage": "timer:display", "nbt": "\"hh:mm:ss.s\"", "interpret": true}, {"selector": "@a[tag=bingo.in_current_team]"}]}
 
 # clear item
 #You srsly can't append from a score directly?!
@@ -21,7 +21,7 @@ data modify storage bingo:card slots[{selected: true}].players append from stora
 data modify storage bingo:commands queue append from storage bingo:card slots[{selected: true}].item.clearCommand[0]
 data modify storage bingo:commands queue append value "function bingo:item_detection/helper/tag_players_for_item_clear"
 data modify storage bingo:commands queue append from storage bingo:card slots[{selected: true}].item.clearCommand[1]
-data modify storage bingo:commands queue append value "tag @a remove bingo_clear"
+data modify storage bingo:commands queue append value "tag @a remove bingo.clear"
 data modify storage bingo:commands queue append value "data modify storage bingo:card slots[{selected: true}].selected set value false"
 
 function bingo:run_command_from_string/run

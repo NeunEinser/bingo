@@ -21,7 +21,7 @@ scoreboard players reset @a bingo.settings
 scoreboard players enable @a bingo.settings
 
 # mark card frame
-execute as @e[type=minecraft:item_frame, tag=bingo_card_frame, nbt=!{Item: {}}] at @s run function bingo:card_frames/on_item_removed
-execute as @e[type=minecraft:item_frame, tag=bingo_card_frame, nbt=!{ItemRotation: 0b}] at @s run function bingo:card_frames/on_rotation_changed
+execute as @e[type=minecraft:item_frame, tag=bingo.card_frame, nbt=!{Item: {}}] at @s run function bingo:card_frames/on_item_removed
+execute as @e[type=minecraft:item_frame, tag=bingo.card_frame, nbt=!{ItemRotation: 0b}] at @s run function bingo:card_frames/on_rotation_changed
 
 function bingo:lobby/set_signs
