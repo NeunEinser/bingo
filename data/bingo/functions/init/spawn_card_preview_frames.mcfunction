@@ -1,3 +1,8 @@
+
+#>
+# @private
+#declare tag bingo.new
+
 summon minecraft:item_frame ~ ~ ~ {Facing: 3b, Tags: ["bingo.card_frame", "bingo.new"], Item:{id:"minecraft:barrier", Count: 1b}, ItemDropChance: 0.0f}
 scoreboard players operation @e[type=minecraft:item_frame, tag=bingo.card_frame, tag=bingo.new] bingo.frame_id = $i bingo.tmp
 
