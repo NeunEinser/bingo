@@ -1,3 +1,20 @@
+#> bingo:util/find_player_team
+#
+# Marks the current player's team in the bingo:card storage and adds the tag
+# bingo.in_current_team to all teammates.
+#
+# This is used to be able to read or modify the current player's team's progress
+# and to be able to announce reaching a goal with all members of a certain team.
+#
+# @internal
+# @context entity Player who's team should be selected as the current team
+# @output tag bingo.in_currennt_team
+
+#>
+# A member of the currently selected team.
+# Used as output by bingo:util/find_player_team.
+# May only be set by that function.
+# @internal
 #declare tag bingo.in_current_team
 
 execute if entity @s[team=bingo.aqua] run function bingo:util/find_player_team/aqua

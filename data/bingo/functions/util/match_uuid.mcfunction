@@ -1,7 +1,28 @@
-#Tags @s with bingo.uuid, if @s has the same UUID as bingo:tmp
-#declare tag bingo.uuid
+#> bingo:util/match_uuid
+#
+# Tags @s with bingo.uuid if the uuid of that entity matches the input.
+#
+# @internal
+# @input storage temp.bingo:input/uuid
+# @output tag bingo.uuid_match
+# @context entity Entity to check
+#>
+# @private
+#declare score_holder $match_uuid.success
 
-data modify storage bingo:tmp uuidCopy set from storage bingo:tmp uuid
-execute store success score $success bingo.tmp run data modify storage bingo:tmp uuidCopy set from entity @s UUID
+#>
+# Output tag for bingo:util/match_uuid
+# May only be set by this function
+#
+# @internal
+#declare tag bingo.uuid_match
+#>
+# Input for bingo:util/match_uuid
+# May only be read by this function
+#
+# @internal
+#declare storage temp.bingo:input/uuid
 
-execute if score $success bingo.tmp matches 0 run tag @s add bingo.uuid
+execute store success score $match_uuid.success bingo.tmp run data modify storage temp.bingo:input/uuid uuid set from entity @s UUID
+
+execute if score $match_uuid.success bingo.tmp matches 0 run tag @s add bingo.uuid_match
