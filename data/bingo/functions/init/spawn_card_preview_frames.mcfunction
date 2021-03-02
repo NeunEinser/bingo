@@ -1,4 +1,17 @@
-
+#> bingo:init/spawn_card_preview_frames
+#
+# Iterates 25 times to spawn 25 item frames to be used for displaying the crad
+# in the lobby.
+#
+# Already creates each frame at the correct location
+#
+# @within
+# 	function bingo:init/setup_lobby
+# 	function bingo:init/spawn_card_preview_frames
+# @context
+# 	dimension bingo:lobby
+# 	location Location where next item frame needs to be placed, starting from
+# 		top left
 #>
 # @private
 #declare score_holder $init/spawn_card_preview_frames.mod
