@@ -1,3 +1,18 @@
+#> bingo:preferences/show_preferences
+#
+# Shows the preferences page the player just selected.
+#
+# 1: Main page
+# 2: Change card position page
+# 3: Change card position - Right of hotbar (Select attack indicator setting)
+# 4: Change card position - Left edge (Select GUI Scale)
+# 5: Right card position - Left edge (Select GUI Scale)
+#
+# @within function bingo:lobby/tick
+# @context entity Player who triggered bingo.pref
+
+#TODO make translatable
+
 tellraw @s[scores={bingo.pref=1}] ["\n\n\n=== ", {"text": "Change Prefernces", "bold": true, "color": "green"}, " ===\n\n[", {"text": "Change Card Position", "color":"#00c3ff", "clickEvent": {"action": "run_command", "value": "/trigger bingo.pref set 2"}, "hoverEvent": {"action": "show_text", "contents": "Changes where on the screen the Bingo card is displayed"}}, "]"]
 
 tellraw @s[scores={bingo.pref=2}] ["\n\n\n=== ",{"text":"Change Card Position","bold":true,"color":"green"}," ===\n\n[",{"text":"Left of Hotbar","color":"#00c3ff","clickEvent":{"action":"run_command","value":"/trigger bingo.card_pos set 0"},"hoverEvent":{"action":"show_text","contents":"Postions the Bingo card left of the hotbar."}},"]\n[",{"text":"Right of Hotbar","color":"#00c3ff","clickEvent":{"action":"run_command","value":"/trigger bingo.pref set 3"},"hoverEvent":{"action":"show_text","contents":"Postions the Bingo card right of the hotbar."}},"]\n[",{"text":"Left Edge","color":"#00c3ff","clickEvent":{"action":"run_command","value":"/trigger bingo.pref set 4"},"hoverEvent":{"action":"show_text","contents":["Postions the Bingo card on the left edge of the screen.\n",{"text":"Only works properly on a 16:9 display.","color":"yellow"}]}},"]\n[",{"text":"Right Edge","color":"#00c3ff","clickEvent":{"action":"run_command","value":"/trigger bingo.pref set 5"},"hoverEvent":{"action":"show_text","contents":["Postions the Bingo card on the right edge of the screen.\n",{"text":"Only works properly on a 16:9 display.","color":"yellow"}]}},"]\n\n[",{"text":"Back","color":"#00c3ff","clickEvent":{"action":"run_command","value":"/trigger bingo.pref set 1"},"hoverEvent":{"action":"show_text","contents":"Go back to previous page"}},"]"]
@@ -8,4 +23,4 @@ tellraw @s[scores={bingo.pref=4}] ["\n\n\n=== ",{"text":"Change Card Position","
 
 tellraw @s[scores={bingo.pref=5}] ["\n\n\n=== ",{"text":"Change Card Position","bold":true,"color":"green"}," ===\n- ",{"text":"Right Edge","bold":true},"\n",{"text":"Only works properly on a 16:9 display.","color":"yellow"},"\n",{"text":"This setting requires more information about your Minecraft settings.\nPlease take a look at your GUI Scale setting in Options -> Video Settings. In case it is set to auto, please cycle the setting to find the scale auto is using.\nPlease choose one of the following:"},"\n\n[",{"text":"GUI Scale: 1","color":"#00c3ff","clickEvent":{"action":"run_command","value":"/trigger bingo.card_pos set 10"},"hoverEvent":{"action":"show_text","contents":"Aligns the Bingo card to the left edge for GUI Scale 1."}},"]\n[",{"text":"GUI Scale: 2","color":"#00c3ff","clickEvent":{"action":"run_command","value":"/trigger bingo.card_pos set 11"},"hoverEvent":{"action":"show_text","contents":"Aligns the Bingo card to the left edge for GUI Scale 2."}},"]\n[",{"text":"GUI Scale: 3","color":"#00c3ff","clickEvent":{"action":"run_command","value":"/trigger bingo.card_pos set 12"},"hoverEvent":{"action":"show_text","contents":"Aligns the Bingo card to the left edge for GUI Scale 3."}},"]\n[",{"text":"GUI Scale: 4","color":"#00c3ff","clickEvent":{"action":"run_command","value":"/trigger bingo.card_pos set 13"},"hoverEvent":{"action":"show_text","contents":"Aligns the Bingo card to the left edge for GUI Scale 4."}},"]\n\n[",{"text":"Back","color":"#00c3ff","clickEvent":{"action":"run_command","value":"/trigger bingo.pref set 2"},"hoverEvent":{"action":"show_text","contents":"Go back to previous page"}},"]"]
 
-scoreaoard peayers reset @s bingo.pref
+scoreboard players reset @s bingo.pref
