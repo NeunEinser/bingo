@@ -14,19 +14,24 @@
 # 		top left
 #>
 # @private
-#declare score_holder $init/spawn_card_preview_frames.mod
+#declare score_holder $card_frames/spawn.row
 #>
 # @private
 #declare tag bingo.new
+#>
+# @within
+# 	function bingo:init/setup_lobby
+# 	function bingo:init/spawn_card_preview_frames
+#declare score_holder $card_frames/spawn.i
 
 summon minecraft:item_frame ~ ~ ~ {Facing: 3b, Tags: ["bingo.card_frame", "bingo.new"], Item:{id:"minecraft:barrier", Count: 1b}, ItemDropChance: 0.0f}
-scoreboard players operation @e[type=minecraft:item_frame, tag=bingo.card_frame, tag=bingo.new] bingo.frame_id = $init/spawn_card_preview_frames.i bingo.tmp
+scoreboard players operation @e[type=minecraft:item_frame, tag=bingo.card_frame, tag=bingo.new] bingo.frame_id = $card_frames/spawn.i bingo.tmp
 
 tag @e[type=minecraft:item_frame, tag=bingo.card_frame] remove bingo.new
 
-scoreboard players add $init/spawn_card_preview_frames.i bingo.tmp 1
-scoreboard players operation $init/spawn_card_preview_frames.mod bingo.tmp = $init/spawn_card_preview_frames.i bingo.tmp
-scoreboard players operation $init/spawn_card_preview_frames.mod bingo.tmp %= 5 bingo.const
+scoreboard players add $card_frames/spawn.i bingo.tmp 1
+scoreboard players operation $card_frames/spawn.row bingo.tmp = $card_frames/spawn.i bingo.tmp
+scoreboard players operation $card_frames/spawn.row bingo.tmp %= 5 bingo.const
 
-execute if score $init/spawn_card_preview_frames.i bingo.tmp matches ..24 if score $init/spawn_card_preview_frames.mod bingo.tmp matches 1.. positioned ~1 ~ ~ run function bingo:init/spawn_card_preview_frames
-execute if score $init/spawn_card_preview_frames.i bingo.tmp matches ..24 if score $init/spawn_card_preview_frames.mod bingo.tmp matches 0 positioned ~-4 ~-1 ~ run function bingo:init/spawn_card_preview_frames
+execute if score $card_frames/spawn.i bingo.tmp matches ..24 if score $card_frames/spawn.row bingo.tmp matches 1.. positioned ~1 ~ ~ run function bingo:init/spawn_card_preview_frames
+execute if score $card_frames/spawn.i bingo.tmp matches ..24 if score $card_frames/spawn.row bingo.tmp matches 0 positioned ~-4 ~-1 ~ run function bingo:init/spawn_card_preview_frames
