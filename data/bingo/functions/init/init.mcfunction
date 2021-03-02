@@ -35,9 +35,16 @@ scoreboard objectives add bingo.pref trigger "Switch Preferences Page"
 scoreboard objectives add bingo.settings trigger "Change Settings"
 scoreboard objectives setdisplay sidebar bingo.stats
 
+#declare score_holder 2
 scoreboard players set 2 bingo.const 2
+
+#declare score_holder 4
 scoreboard players set 4 bingo.const 4
+
+#declare score_holder 5
 scoreboard players set 5 bingo.const 5
+
+#declare score_holder 6
 scoreboard players set 6 bingo.const 6
 
 execute in bingo:lobby positioned 0 0 0 run function bingo:init/setup_lobby
@@ -591,6 +598,8 @@ data modify storage bingo:tmp item set value {id: "bingo:dispenser", item: {id: 
 data modify storage bingo:main categories[{name:"bow"}].items append from storage bingo:tmp item
 
 # regenerate card
+
+#declare score_holder Seed
 scoreboard players operation $seed random_main = Seed bingo.stats
 function random:set_seed
 
