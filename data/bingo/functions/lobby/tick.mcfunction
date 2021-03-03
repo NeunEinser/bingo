@@ -9,12 +9,7 @@ execute as @a[scores={bingo.pref=..-1}] run function bingo:preferences/show_pref
 execute as @a[scores={bingo.pref=1..}] run function bingo:preferences/show_preferences
 
 #change settings
-execute if entity @a[limit=1, scores={bingo.settings=1}] run function bingo:card_generation/random_card
-tellraw @a[limit=1, scores={bingo.settings=2}] [{"translate": "bingo.lobby.card_generation.from_seed.instructions", "with": [{"translate": "bingo.lobby.card_generation.from_seed.instructions.link", "color":"#00c3ff", "clickEvent": {"action": "suggest_command", "value": "/trigger bingo.seed set "}}]}, "\n", {"translate": "bingo.lobby.card_generation.from_seed.explanation", "italic": true, "color": "gray"}]
-execute as @a[scores={bingo.settings=3}] run function bingo:lobby/player_settings/initialize_tutorial
-execute as @a[scores={bingo.settings=4}] run function bingo:lobby/player_settings/save/print_first_page
 execute as @a[scores={bingo.settings=5..12}] run function bingo:lobby/player_settings/save/do_action
-execute as @a[scores={bingo.settings=13}] run function bingo:lobby/player_settings/load/print_first_page
 execute as @a[scores={bingo.settings=14..20}] run function bingo:lobby/player_settings/load/do_action
 execute as @e[type=minecraft:item, nbt={Item:{id:"minecraft:name_tag", tag:{bingo:{newConfig: true}}}}] if data entity @s Item.tag.display.Name run function bingo:lobby/player_settings/save/new_config
 scoreboard players reset @a bingo.settings
