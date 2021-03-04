@@ -123,12 +123,6 @@ scoreboard objectives add bingo.tmp dummy
 scoreboard objectives add bingo.const dummy
 
 #>
-# This objective is used by run_command_from_string.
-#
-# @internal
-scoreboard objectives add bingo.commands dummy
-
-#>
 # This objective is used to spread certain longer text messages across multiple
 # messages.
 #

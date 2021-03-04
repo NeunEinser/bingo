@@ -18,10 +18,10 @@ execute if score $items bingo.tmp matches 25 run tellraw @a {"translate": "bingo
 execute store result storage bingo:tmp player int 1 run scoreboard players get @s bingo.id
 data modify storage bingo:card slots[{selected: true}].players append from storage bingo:tmp player
 
-data modify storage bingo:commands queue append from storage bingo:card slots[{selected: true}].item.clearCommand[0]
-data modify storage bingo:commands queue append value "function bingo:item_detection/helper/tag_players_for_item_clear"
-data modify storage bingo:commands queue append from storage bingo:card slots[{selected: true}].item.clearCommand[1]
-data modify storage bingo:commands queue append value "tag @a remove bingo.clear"
-data modify storage bingo:commands queue append value "data modify storage bingo:card slots[{selected: true}].selected set value false"
+data modify storage temp:bingo.input/command_queue queue append from storage bingo:card slots[{selected: true}].item.clearCommand[0]
+data modify storage temp:bingo.input/command_queue queue append value "function bingo:item_detection/helper/tag_players_for_item_clear"
+data modify storage temp:bingo.input/command_queue queue append from storage bingo:card slots[{selected: true}].item.clearCommand[1]
+data modify storage temp:bingo.input/command_queue queue append value "tag @a remove bingo.clear"
+data modify storage temp:bingo.input/command_queue queue append value "data modify storage bingo:card slots[{selected: true}].selected set value false"
 
-function bingo:run_command_from_string/run
+function bingo:command_queue/run
