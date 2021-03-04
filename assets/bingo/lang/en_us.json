@@ -21,7 +21,7 @@
 	"bingo.lobby.settings.player.tutorial.part1": "These settings allow you to manipulate with which items and effects the player spawns.\nAll potion effects are permanent.",
 	"bingo.lobby.settings.player.tutorial.part2": "There are already some pre-configured presets you can use by clicking the “Select/Preview Config” sign to the right.",
 	"bingo.lobby.settings.player.tutorial.part3": "To make your own configuration, simply change the items in your own inventory or drink a potion to add a permanent status effect. To get rid of your effects, use milk.",
-	"bingo.lobby.settings.player.tutorial.part4": "Stand on the chiseled quartz block to gain creative mode for easy access to all the items.\nIf you are an operator, or in singleplayer, you can also use the /give and /effect commands.",
+	"bingo.lobby.settings.player.tutorial.part4": "Stand on the chiseled quartz block to gain creative mode for easy access to all the items.\nIf you are an operator, or are playing singleplayer, you can also use the /give and /effect commands.",
 	"bingo.lobby.settings.player.tutorial.part5": "Don't forget to save your configuration when you are done - otherwise it won't be saved or selected.",
 
 	"bingo.lobby.settings.player.save.sign.line1": "Player",
