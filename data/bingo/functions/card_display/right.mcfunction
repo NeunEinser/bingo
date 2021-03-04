@@ -1,3 +1,11 @@
+#> bingo:card_display/right
+# Adds spaces for displaying the card on the right side, depending on
+# preferences
+#
+# @within function bingo:card_display/display_card
+
+#TODO consider different screen sizes. Currently only a width of 1920 px is supported
+
 #next to hotbar
 execute if score @s bingo.card_pos matches 8 run data merge storage bingo:tmp {cardOffset:'{"translate":"space.91"}',cardNegOffset:'{"translate":"space.-91"}'}
 #next to attack indicator

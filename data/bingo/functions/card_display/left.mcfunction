@@ -1,3 +1,10 @@
+#> bingo:card_display/left
+# Adds spaces for displaying the card on the left side, depending on preferences
+#
+# @within function bingo:card_display/display_card
+
+#TODO consider different screen sizes. Currently only a width of 1920 px is supported
+
 #next to hotbar
 execute if score @s[predicate=!bingo:has_item_in_offhand] bingo.card_pos matches 0 run data merge storage bingo:tmp {cardOffset:'{"translate":"space.-195"}',cardNegOffset:'{"translate":"space.195"}'}
 execute if score @s[predicate=bingo:has_item_in_offhand] bingo.card_pos matches 0 run data merge storage bingo:tmp {cardOffset:'{"translate":"space.-224"}',cardNegOffset:'{"translate":"space.224"}'}
