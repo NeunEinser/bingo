@@ -7,8 +7,9 @@ scoreboard players enable @s bingo.card_pos
 execute store result score $y bingo.tmp run data get entity @s Pos[1]
 
 data modify storage bingo:tmp ySpaces set value [""]
-execute if score $y bingo.tmp matches ..99 run data modify storage bingo:tmp ySpaces append value ""
-execute if score $y bingo.tmp matches ..9 run data modify storage bingo:tmp ySpaces append value ""
+execute if score $y bingo.tmp matches 0..99 run data modify storage bingo:tmp ySpaces append value ""
+execute if score $y bingo.tmp matches 0..9 run data modify storage bingo:tmp ySpaces append value ""
+execute if score $y bingo.tmp matches -9..-1 run data modify storage bingo:tmp ySpaces append value ""
 
 data modify storage bingo:tmp timeSpaces set value []
 execute if score $hours timer_main matches ..99 run data modify storage bingo:tmp timeSpaces append value ""
