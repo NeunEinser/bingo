@@ -4,9 +4,6 @@
 #declare tag bingo.new
 #>
 # @private
-#declare tag bingo.unmark
-#>
-# @private
 #declare tag bingo.potion_applier
 
 effect clear @s
