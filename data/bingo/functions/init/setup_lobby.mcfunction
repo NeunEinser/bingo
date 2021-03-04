@@ -11,8 +11,8 @@
 forceload add -8 -8 7 7
 
 # card generation
-setblock -3 64 -12 minecraft:structure_block[mode=load]{mode:"LOAD",name:"bingo:lobby/card_generation"}
-setblock -3 65 -12 minecraft:redstone_block
+setblock -7 64 -12 minecraft:structure_block[mode=load]{mode:"LOAD",name:"bingo:lobby/card_generation"}
+setblock -7 65 -12 minecraft:redstone_block
 
 # settings
 setblock 8 64 -8 minecraft:structure_block[mode=load]{mode:"LOAD",name:"bingo:lobby/settings"}
