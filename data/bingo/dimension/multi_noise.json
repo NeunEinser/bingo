@@ -13,7 +13,7 @@
 			},
 			"altitude_noise": {
 				"firstOctave": -7,
-				"amplitudes": [ 0, 5, -10, 0.1, -1, 1 ]
+				"amplitudes": [ 0, -6, -1, 2, 0.5, 10 ]
 			},
 			"humidity_noise": {
 				"firstOctave": -7,
