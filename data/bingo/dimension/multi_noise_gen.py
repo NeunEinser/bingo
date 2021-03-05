@@ -9,21 +9,24 @@ def write_biome(name, temperature, altitude, humidity, weirdness, offset):
 	file.write('\n\t\t\t\t\t\t"weirdness": {},'.format(weirdness))
 	file.write('\n\t\t\t\t\t\t"offset": {}\n\t\t\t\t\t}}\n\t\t\t\t}}'.format(offset))
 def write_biome_list (temperature, climate_biomes, hill_biomes, iterations):
+	iterations = int(iterations / len(climate_biomes))
+
 	for i in range(iterations):
-		print(i)
 		cur_biomes = climate_biomes.copy()
 		cur_hill_biomes = hill_biomes.copy()
 		step = 4.0 / (iterations * len(climate_biomes))
 
 		for j in range (len(cur_biomes)):
 			biome_index = random.randint(0, len(cur_biomes) - 1)
-			write_biome(cur_biomes[biome_index], temperature, 0.1, 2.0 - ((i * len(climate_biomes) + j) * step), 0, 0)
+			humidity = 2.0 - ((i * len(climate_biomes) + j + 0.5) * step)
+
+			write_biome(cur_biomes[biome_index], temperature, 0.1, humidity, 0, 0)
 			file.write(',')
 
 			hill_biome = cur_hill_biomes[biome_index]
 			if isinstance(hill_biome, list):
 				hill_biome = hill_biome[random.randint(0, len(hill_biome) - 1)]
-			write_biome(hill_biome, temperature, 2, 2.0 - ((i * len(climate_biomes) + j) * step), 0, 0)
+			write_biome(hill_biome, temperature, 2, humidity, 0, 0)
 
 			cur_biomes.remove(cur_biomes[biome_index])
 			cur_hill_biomes.remove(cur_hill_biomes[biome_index])
@@ -31,7 +34,7 @@ def write_biome_list (temperature, climate_biomes, hill_biomes, iterations):
 				file.write(',')
 
 file = open(os.path.dirname(__file__) + "/multi_noise.json", "w")
-file.write('{\n\t"type": "minecraft:overworld",\n\t"generator": {\n\t\t"type": "minecraft:noise",\n\t\t"seed": 91,\n\t\t"settings": "minecraft:overworld",\n\t\t"biome_source": {\n\t\t\t"type": "minecraft:multi_noise",\n\t\t\t"seed": 91,\n\t\t\t"temperature_noise": {\n\t\t\t\t"firstOctave": -8,\n\t\t\t\t"amplitudes": [ 0, 0, 7, -2 ]\n\t\t\t},\n\t\t\t"altitude_noise": {\n\t\t\t\t"firstOctave": -7,\n\t\t\t\t"amplitudes": [ 0, 5, -10, 0.1, -1, 1 ]\n\t\t\t},\n\t\t\t"humidity_noise": {\n\t\t\t\t"firstOctave": -8,\n\t\t\t\t"amplitudes": [ 1.5, 1, -1.5, 0, 1.5, 1.1, -1.5, 0.5 ]\n\t\t\t},\n\t\t\t"weirdness_noise": {\n\t\t\t\t"firstOctave": -6,\n\t\t\t\t"amplitudes": [ 3 ]\n\t\t\t},\n\t\t\t"biomes": [')
+file.write('{\n\t"type": "minecraft:overworld",\n\t"generator": {\n\t\t"type": "minecraft:noise",\n\t\t"seed": 91,\n\t\t"settings": "minecraft:overworld",\n\t\t"biome_source": {\n\t\t\t"type": "minecraft:multi_noise",\n\t\t\t"seed": 91,\n\t\t\t"temperature_noise": {\n\t\t\t\t"firstOctave": -8,\n\t\t\t\t"amplitudes": [ 0, 0, 7, -2 ]\n\t\t\t},\n\t\t\t"altitude_noise": {\n\t\t\t\t"firstOctave": -7,\n\t\t\t\t"amplitudes": [ 0, 5, -10, 0.1, -1, 1 ]\n\t\t\t},\n\t\t\t"humidity_noise": {\n\t\t\t\t"firstOctave": -5,\n\t\t\t\t"amplitudes": [ 1.5, 1, -1.5, 0, 1.5, 1.1, -1.5, 0.5 ]\n\t\t\t},\n\t\t\t"weirdness_noise": {\n\t\t\t\t"firstOctave": -6,\n\t\t\t\t"amplitudes": [ 3 ]\n\t\t\t},\n\t\t\t"biomes": [')
 
 warm_biomes = [
 	"minecraft:desert", "minecraft:desert", "minecraft:desert",
