@@ -425,7 +425,7 @@
 					}
 				},
 				{
-					"biome": "minecraft:lukewarm_ocean",
+					"biome": "minecraft:warm_ocean",
 					"parameters": {
 						"temperature": 0.6,
 						"altitude": -0.25,
@@ -435,7 +435,7 @@
 					}
 				},
 				{
-					"biome": "minecraft:deep_lukewarm_ocean",
+					"biome": "minecraft:mushroom_fields",
 					"parameters": {
 						"temperature": 0.6,
 						"altitude": -1.3,
@@ -445,7 +445,7 @@
 					}
 				},
 				{
-					"biome": "minecraft:warm_ocean",
+					"biome": "minecraft:lukewarm_ocean",
 					"parameters": {
 						"temperature": 0.6,
 						"altitude": -0.25,
@@ -455,7 +455,7 @@
 					}
 				},
 				{
-					"biome": "minecraft:deep_warm_ocean",
+					"biome": "minecraft:deep_lukewarm_ocean",
 					"parameters": {
 						"temperature": 0.6,
 						"altitude": -1.3,
@@ -1225,67 +1225,67 @@
 					}
 				},
 				{
+					"biome": "minecraft:ocean",
+					"parameters": {
+						"temperature": 0.25,
+						"altitude": -0.25,
+						"humidity": 1.4444444444444444,
+						"weirdness": 0,
+						"offset": 0
+					}
+				},
+				{
+					"biome": "minecraft:mushroom_fields",
+					"parameters": {
+						"temperature": 0.25,
+						"altitude": -1.3,
+						"humidity": 1.4444444444444444,
+						"weirdness": 0,
+						"offset": 0
+					}
+				},
+				{
+					"biome": "minecraft:ocean",
+					"parameters": {
+						"temperature": 0.25,
+						"altitude": -0.25,
+						"humidity": 1.2222222222222223,
+						"weirdness": 0,
+						"offset": 0
+					}
+				},
+				{
+					"biome": "minecraft:deep_ocean",
+					"parameters": {
+						"temperature": 0.25,
+						"altitude": -1.3,
+						"humidity": 1.2222222222222223,
+						"weirdness": 0,
+						"offset": 0
+					}
+				},
+				{
+					"biome": "minecraft:ocean",
+					"parameters": {
+						"temperature": 0.25,
+						"altitude": -0.25,
+						"humidity": 1.0,
+						"weirdness": 0,
+						"offset": 0
+					}
+				},
+				{
+					"biome": "minecraft:deep_ocean",
+					"parameters": {
+						"temperature": 0.25,
+						"altitude": -1.3,
+						"humidity": 1.0,
+						"weirdness": 0,
+						"offset": 0
+					}
+				},
+				{
 					"biome": "minecraft:cold_ocean",
-					"parameters": {
-						"temperature": 0.25,
-						"altitude": -0.25,
-						"humidity": 1.4444444444444444,
-						"weirdness": 0,
-						"offset": 0
-					}
-				},
-				{
-					"biome": "minecraft:deep_cold_ocean",
-					"parameters": {
-						"temperature": 0.25,
-						"altitude": -1.3,
-						"humidity": 1.4444444444444444,
-						"weirdness": 0,
-						"offset": 0
-					}
-				},
-				{
-					"biome": "minecraft:ocean",
-					"parameters": {
-						"temperature": 0.25,
-						"altitude": -0.25,
-						"humidity": 1.2222222222222223,
-						"weirdness": 0,
-						"offset": 0
-					}
-				},
-				{
-					"biome": "minecraft:deep_ocean",
-					"parameters": {
-						"temperature": 0.25,
-						"altitude": -1.3,
-						"humidity": 1.2222222222222223,
-						"weirdness": 0,
-						"offset": 0
-					}
-				},
-				{
-					"biome": "minecraft:ocean",
-					"parameters": {
-						"temperature": 0.25,
-						"altitude": -0.25,
-						"humidity": 1.0,
-						"weirdness": 0,
-						"offset": 0
-					}
-				},
-				{
-					"biome": "minecraft:deep_ocean",
-					"parameters": {
-						"temperature": 0.25,
-						"altitude": -1.3,
-						"humidity": 1.0,
-						"weirdness": 0,
-						"offset": 0
-					}
-				},
-				{
-					"biome": "minecraft:ocean",
 					"parameters": {
 						"temperature": 0.25,
 						"altitude": -0.25,
@@ -1295,7 +1295,7 @@
 					}
 				},
 				{
-					"biome": "minecraft:deep_ocean",
+					"biome": "minecraft:deep_cold_ocean",
 					"parameters": {
 						"temperature": 0.25,
 						"altitude": -1.3,
@@ -1995,7 +1995,7 @@
 					}
 				},
 				{
-					"biome": "minecraft:deep_cold_ocean",
+					"biome": "minecraft:mushroom_fields",
 					"parameters": {
 						"temperature": -0.25,
 						"altitude": -1.3,
@@ -2795,7 +2795,7 @@
 					}
 				},
 				{
-					"biome": "minecraft:deep_frozen_ocean",
+					"biome": "minecraft:mushroom_fields",
 					"parameters": {
 						"temperature": -0.6,
 						"altitude": -1.3,

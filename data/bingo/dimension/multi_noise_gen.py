@@ -43,7 +43,7 @@ def write_biome_list(temperature, climate_biomes, hill_biomes, altitude, hill_al
 def write_biome_list_for_temperature (temperature, climate_biomes, hill_biomes, ocean_biomes, deep_ocean_biomes, special_biome, special_hill_biome, special_biome_iteration, iterations):
 	write_biome_list(temperature, climate_biomes, hill_biomes, 0.1, 2, special_biome, special_hill_biome, special_biome_iteration, iterations)
 	file.write(",")
-	write_biome_list(temperature, ocean_biomes, deep_ocean_biomes, -0.25, -1.3, None, None, None, iterations)
+	write_biome_list(temperature, ocean_biomes, deep_ocean_biomes, -0.25, -1.3, ocean_biomes[0], "minecraft:mushroom_fields", 2, iterations)
 
 file = open(os.path.dirname(__file__) + "/multi_noise.json", "w")
 file.write('{\n\t"type": "minecraft:overworld",\n\t"generator": {\n\t\t"type": "minecraft:noise",\n\t\t"seed": 91,\n\t\t"settings": "minecraft:overworld",\n\t\t"biome_source": {\n\t\t\t"type": "minecraft:multi_noise",\n\t\t\t"seed": 91,\n\t\t\t"temperature_noise": {\n\t\t\t\t"firstOctave": -8,\n\t\t\t\t"amplitudes": [ 0, 0, 7, -2 ]\n\t\t\t},\n\t\t\t"altitude_noise": {\n\t\t\t\t"firstOctave": -7,\n\t\t\t\t"amplitudes": [ 0, -6, -1, 2, 0.5, 10 ]\n\t\t\t},\n\t\t\t"humidity_noise": {\n\t\t\t\t"firstOctave": -7,\n\t\t\t\t"amplitudes": [ 2.1, 1, -1.5, 0, 1.5, 1.1, -1.5, 0.5 ]\n\t\t\t},\n\t\t\t"weirdness_noise": {\n\t\t\t\t"firstOctave": -6,\n\t\t\t\t"amplitudes": [ 3 ]\n\t\t\t},\n\t\t\t"biomes": [')
