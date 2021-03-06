@@ -49,7 +49,7 @@
 # $hours is 0 or higher and contains the hour part.
 #
 # @api
-scoreboard objectives add 91.timer.main dummy
+scoreboard objectives add 91.timer.time dummy
 #>
 # This score holder contains the raw time with the selected percision.
 #
