@@ -18,19 +18,33 @@
 	"datapack.lint.nameOfNbtCompoundTagKeys": null, //["warning", "camelCase"],
 	"datapack.lint.nameOfObjectives": [
 		"warning",
-		{
-			"label": "namespace.snake_case",
-			"parts": [ "snake_case", "snake_case" ],
-			"sep": "."
-		}
+		[
+			{
+				"label": "bingo.snake_case",
+				"parts": [ "/bingo/", "snake_case" ],
+				"sep": "."
+			},
+			{
+				"label": "author.name_space.snake_case",
+				"parts": [ "snake_case", "snake_case", "snake_case" ],
+				"sep": "."
+			}
+		]
 	],
 	"datapack.lint.nameOfTags": [
 		"warning",
-		{
-			"label": "namespace.snake_case",
-			"parts": [ "snake_case", "snake_case" ],
-			"sep": "."
-		}
+		[
+			{
+				"label": "bingo.snake_case",
+				"parts": [ "/bingo/", "snake_case" ],
+				"sep": "."
+			},
+			{
+				"label": "author.name_space.snake_case",
+				"parts": [ "snake_case", "snake_case", "snake_case" ],
+				"sep": "."
+			}
+		]
 	],
 	"datapack.lint.nameOfTeams": [
 		"warning",

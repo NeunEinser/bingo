@@ -1,13 +1,13 @@
 function neun_einser.timer:internal/read_raw
 
-scoreboard players operation $millis timer_main = $raw timer_main
-scoreboard players operation $seconds timer_main = $millis timer_main
-scoreboard players operation $seconds timer_main /= $blocks_per_second timer_main
-scoreboard players operation $minutes timer_main = $seconds timer_main
-scoreboard players operation $minutes timer_main /= 60 timer_const
-scoreboard players operation $hours timer_main = $minutes timer_main
-scoreboard players operation $hours timer_main /= 60 timer_const
+scoreboard players operation $millis 91.timer.main = $raw 91.timer.main
+scoreboard players operation $seconds 91.timer.main = $millis 91.timer.main
+scoreboard players operation $seconds 91.timer.main /= $blocks_per_second 91.timer.main
+scoreboard players operation $minutes 91.timer.main = $seconds 91.timer.main
+scoreboard players operation $minutes 91.timer.main /= 60 91.timer.const
+scoreboard players operation $hours 91.timer.main = $minutes 91.timer.main
+scoreboard players operation $hours 91.timer.main /= 60 91.timer.const
 
-scoreboard players operation $millis timer_main %= $blocks_per_second timer_main
-scoreboard players operation $seconds timer_main %= 60 timer_const
-scoreboard players operation $minutes timer_main %= 60 timer_const
+scoreboard players operation $millis 91.timer.main %= $blocks_per_second 91.timer.main
+scoreboard players operation $seconds 91.timer.main %= 60 91.timer.const
+scoreboard players operation $minutes 91.timer.main %= 60 91.timer.const
