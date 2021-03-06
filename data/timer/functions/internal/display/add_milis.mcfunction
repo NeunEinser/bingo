@@ -1,3 +1,0 @@
-data merge storage timer:display {internal:{secondSeperator: ["."], millis: '[{"storage": "timer:display", "nbt": "internal.secondSeperator", "interpret": true}, {"score":{"name": "$millis", "objective": "timer_main"}}]'}}
-execute if score $blocks_per_second timer_main matches 100.. if score $millis timer_main matches ..9 run data modify storage timer:display internal.secondSeperator append value "0"
-execute if score $blocks_per_second timer_main matches 1000 if score $millis timer_main matches ..99 run data modify storage timer:display internal.secondSeperator append value "0"

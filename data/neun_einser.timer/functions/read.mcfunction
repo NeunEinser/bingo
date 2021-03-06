@@ -1,4 +1,4 @@
-function timer:internal/read_raw
+function neun_einser.timer:internal/read_raw
 
 scoreboard players operation $millis timer_main = $raw timer_main
 scoreboard players operation $seconds timer_main = $millis timer_main
