@@ -15,7 +15,7 @@
 	"datapack.lint.blockStateTrailingComma": false,
 	"datapack.lint.eol": "LF",
 	"datapack.lint.idOmitDefaultNamespace": ["warning", false],
-	"datapack.lint.nameOfNbtCompoundTagKeys": ["warning", "camelCase"],
+	"datapack.lint.nameOfNbtCompoundTagKeys": null, //["warning", "camelCase"],
 	"datapack.lint.nameOfObjectives": [
 		"warning",
 		{
