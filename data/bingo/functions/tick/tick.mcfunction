@@ -14,3 +14,5 @@ execute in bingo:lobby run function bingo:lobby/tick
 
 # Assign each player a unique ID
 execute as @a unless score @s bingo.id matches -2147483648.. run function bingo:tick/set_player_id
+
+function neun_einser.timer:detect_pause

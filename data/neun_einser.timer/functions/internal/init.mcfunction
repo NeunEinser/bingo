@@ -99,9 +99,19 @@ scoreboard objectives add 91.timer.time dummy
 scoreboard objectives add 91.timer.intern dummy
 
 #>
+# Scoreboard used for temporary variables
+#
+# @internal
+scoreboard objectives add 91.timer.tmp dummy
+
+#>
 # @internal
 #declare score_holder 60
 scoreboard players set 60 91.timer.intern 60
+#>
+# @internal
+#declare score_holder 20
+scoreboard players set 20 91.timer.intern 20
 
 #>
 # Raw time the world border was started at. The worldborder typically starts at
