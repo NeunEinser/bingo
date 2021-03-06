@@ -1,5 +1,5 @@
 {
-	"type": "minecraft:overworld",
+	"type": "bingo:bright",
 	"generator": {
 		"type": "minecraft:noise",
 		"seed": 91,
