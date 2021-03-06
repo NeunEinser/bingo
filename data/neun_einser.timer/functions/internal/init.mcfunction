@@ -93,14 +93,29 @@ scoreboard objectives add 91.timer.main dummy
 #declare score_holder $hours
 
 #>
-# This scoreboard is used to store constant values.
+# Internal scoreboard for non-temporary memory
 #
 # @internal
-scoreboard objectives add 91.timer.const dummy
+scoreboard objectives add 91.timer.intern dummy
 
 #>
 # @internal
 #declare score_holder 60
-scoreboard players set 60 91.timer.const 60
+scoreboard players set 60 91.timer.intern 60
+
+#>
+# Raw time the world border was started at. The world border is reset once it
+# reaches a certain threshold to prevent it running out of blocks.
+# @internal
+#declare score_holder $start
+#>
+# Blocks the world border travels per second. Used for some internal
+# calculations.
+#
+# For example, if this was started with neun_einser.timer:start/millis, this
+# will be 1000.
+#
+# @internal
+#declare score_holder $blocks_per_second
 
 data merge storage neun_einser.timer:display {"hh:mm:ss.s": '[{"storage": "neun_einser.timer:display", "nbt": "internal.hours", "interpret": true}, {"storage": "neun_einser.timer:display", "nbt": "internal.minutes", "interpret": true}, {"storage": "neun_einser.timer:display", "nbt": "internal.seconds", "interpret": true}, {"storage": "neun_einser.timer:display", "nbt": "internal.millis", "interpret": true}]', "hh:mm:ss": '[{"storage": "neun_einser.timer:display", "nbt": "internal.hours", "interpret": true}, {"storage": "neun_einser.timer:display", "nbt": "internal.minutes", "interpret": true}, {"storage": "neun_einser.timer:display", "nbt": "internal.seconds", "interpret": true}]', "hh:mm": '[{"storage": "neun_einser.timer:display", "nbt": "internal.hours", "interpret": true}, {"storage": "neun_einser.timer:display", "nbt": "internal.minutes", "interpret": true}]'}
