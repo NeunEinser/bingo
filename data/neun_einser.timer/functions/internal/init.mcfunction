@@ -104,8 +104,13 @@ scoreboard objectives add 91.timer.intern dummy
 scoreboard players set 60 91.timer.intern 60
 
 #>
-# Raw time the world border was started at. The world border is reset once it
-# reaches a certain threshold to prevent it running out of blocks.
+# Raw time the world border was started at. The worldborder typically starts at
+# 50000000 and increases its size from there.
+#
+# Once the world border is about to hit the limit, it is reset to the starting
+# position and this value is decreased accordingly and might be negative
+# thereafter
+#
 # @internal
 #declare score_holder $start
 #>
