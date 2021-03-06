@@ -1,3 +1,3 @@
-data merge storage neun_einser.timer:display {internal:{minuteSeperator:[":"], minutes:'[{"storage": "neun_einser.timer:display", "nbt": "internal.hourSeperator", "interpret": true}, {"score":{"name": "$minutes", "objective": "timer_main"}}]'}}
-execute if score $seconds timer_main matches ..9 run data modify storage neun_einser.timer:display internal.minuteSeperator append value "0"
+data merge storage neun_einser.timer:display {internal:{minuteSeperator:[":"], minutes:'[{"storage": "neun_einser.timer:display", "nbt": "internal.hourSeperator", "interpret": true}, {"score":{"name": "$minutes", "objective": "91.timer.time"}}]'}}
+execute if score $seconds 91.timer.time matches ..9 run data modify storage neun_einser.timer:display internal.minuteSeperator append value "0"
 function neun_einser.timer:internal/display/add_seconds

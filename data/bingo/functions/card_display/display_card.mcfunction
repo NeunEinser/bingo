@@ -30,16 +30,16 @@ execute if score $card_display/display_card.y bingo.tmp matches -9..-1 run data 
 data modify storage bingo:tmp timeSpaces set value []
 
 #Characters are \uFB26. Has to be literal character in this case. Space width 6.
-execute if score $hours timer_main matches ..99 run data modify storage bingo:tmp timeSpaces append value ""
-execute if score $hours timer_main matches ..9 run data modify storage bingo:tmp timeSpaces append value ""
+execute if score $hours 91.timer.time matches ..99 run data modify storage bingo:tmp timeSpaces append value ""
+execute if score $hours 91.timer.time matches ..9 run data modify storage bingo:tmp timeSpaces append value ""
 #Character is \uFB28. Has to be literal character in this case. Space width 8.
-execute if score $hours timer_main matches 0 run data modify storage bingo:tmp timeSpaces append value ""
+execute if score $hours 91.timer.time matches 0 run data modify storage bingo:tmp timeSpaces append value ""
 #Character is \uFB26. Has to be literal character in this case. Space width 6.
-execute if score $hours timer_main matches 0 if score $minutes timer_main matches ..9 run data modify storage bingo:tmp timeSpaces append value ""
+execute if score $hours 91.timer.time matches 0 if score $minutes 91.timer.time matches ..9 run data modify storage bingo:tmp timeSpaces append value ""
 #Character is \uFB28. Has to be literal character in this case. Space width 8.
-execute if score $hours timer_main matches 0 if score $minutes timer_main matches 0 run data modify storage bingo:tmp timeSpaces append value ""
+execute if score $hours 91.timer.time matches 0 if score $minutes 91.timer.time matches 0 run data modify storage bingo:tmp timeSpaces append value ""
 #Character is \uFB26. Has to be literal character in this case. Space width 6.
-execute if score $hours timer_main matches 0 if score $minutes timer_main matches 0 if score $seconds timer_main matches ..9 run data modify storage bingo:tmp timeSpaces append value ""
+execute if score $hours 91.timer.time matches 0 if score $minutes 91.timer.time matches 0 if score $seconds 91.timer.time matches ..9 run data modify storage bingo:tmp timeSpaces append value ""
 
 # card
 execute if score @s bingo.card_pos matches ..7 run function bingo:card_display/left

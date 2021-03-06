@@ -1,2 +1,2 @@
-data merge storage neun_einser.timer:display {internal:{secondSeperator:[], seconds:'[{"storage": "neun_einser.timer:display", "nbt": "internal.minuteSeperator", "interpret": true}, {"score":{"name": "$seconds", "objective": "timer_main"}}]'}}
-execute if score $blocks_per_second timer_main matches 10.. run function neun_einser.timer:internal/display/add_milis
+data merge storage neun_einser.timer:display {internal:{secondSeperator:[], seconds:'[{"storage": "neun_einser.timer:display", "nbt": "internal.minuteSeperator", "interpret": true}, {"score":{"name": "$seconds", "objective": "91.timer.time"}}]'}}
+execute if score $blocks_per_second 91.timer.time matches 10.. run function neun_einser.timer:internal/display/add_milis
