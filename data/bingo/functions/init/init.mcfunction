@@ -197,6 +197,9 @@ scoreboard players set 5 bingo.const 5
 
 #declare score_holder 6
 scoreboard players set 6 bingo.const 6
+
+#declare score_holder 16
+scoreboard players set 16 bingo.const 16
 #endregion
 
 execute in bingo:lobby run function bingo:init/setup_lobby

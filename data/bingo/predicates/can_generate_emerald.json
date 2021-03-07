@@ -1,0 +1,35 @@
+{
+	"condition": "minecraft:alternative",
+	"terms": [
+		{
+			"condition": "minecraft:location_check",
+			"predicate": {
+				"biome": "minecraft:mountains"
+			}
+		},
+		{
+			"condition": "minecraft:location_check",
+			"predicate": {
+				"biome": "minecraft:wooded_mountains"
+			}
+		},
+		{
+			"condition": "minecraft:location_check",
+			"predicate": {
+				"biome": "minecraft:gravelly_mountains"
+			}
+		},
+		{
+			"condition": "minecraft:location_check",
+			"predicate": {
+				"biome": "minecraft:modified_gravelly_mountains"
+			}
+		},
+		{
+			"condition": "minecraft:location_check",
+			"predicate": {
+				"biome": "minecraft:mountain_edge"
+			}
+		}
+	]
+}
