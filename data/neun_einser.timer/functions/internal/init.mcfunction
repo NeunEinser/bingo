@@ -132,5 +132,15 @@ scoreboard players set 20 91.timer.intern 20
 #
 # @internal
 #declare score_holder $blocks_per_second
+#>
+# Ticks that have passed since last call of read_raw
+#
+# @internal
+#declare score_holder $ticks
+#>
+# The distance the world border had during the last tick read_raw was called.
+#
+# @internal
+#declare score_holder $last_worldborder_value
 
 data merge storage neun_einser.timer:display {"hh:mm:ss.s": '[{"storage": "neun_einser.timer:display", "nbt": "internal.hours", "interpret": true}, {"storage": "neun_einser.timer:display", "nbt": "internal.minutes", "interpret": true}, {"storage": "neun_einser.timer:display", "nbt": "internal.seconds", "interpret": true}, {"storage": "neun_einser.timer:display", "nbt": "internal.millis", "interpret": true}]', "hh:mm:ss": '[{"storage": "neun_einser.timer:display", "nbt": "internal.hours", "interpret": true}, {"storage": "neun_einser.timer:display", "nbt": "internal.minutes", "interpret": true}, {"storage": "neun_einser.timer:display", "nbt": "internal.seconds", "interpret": true}]', "hh:mm": '[{"storage": "neun_einser.timer:display", "nbt": "internal.hours", "interpret": true}, {"storage": "neun_einser.timer:display", "nbt": "internal.minutes", "interpret": true}]'}

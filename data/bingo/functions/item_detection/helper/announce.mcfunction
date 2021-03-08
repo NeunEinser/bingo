@@ -1,4 +1,4 @@
-execute in minecraft:overworld run function neun_einser.timer:store_current_time
+execute in bingo:lobby run function neun_einser.timer:store_current_time
 
 tellraw @a {"translate": "bingo.got_item", "with": [{"storage": "neun_einser.timer:display", "nbt": "\"hh:mm:ss.s\"", "interpret": true}, {"selector": "@s"}, {"storage": "bingo:card", "nbt": "slots[{selected: true}].item.textComponent", "interpret": true}]}
 

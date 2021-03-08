@@ -8,7 +8,7 @@
 # @within tag/function minecraft:tick
 # @handles #minecraft:tick
 
-function neun_einser.timer:detect_pause
+execute in bingo:lobby run function neun_einser.timer:detect_pause
 execute as @a run function bingo:card_display/display_card
 
 execute in bingo:lobby run function bingo:lobby/tick
