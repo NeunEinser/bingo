@@ -66,6 +66,11 @@
 #
 # @internal
 #declare tag bingo.clear
+#>
+# This tag marks a player who is at a location eligible for emerald generation.
+#
+# @internal
+#declare tag bingo.emerald
 #endregion
 
 #region setup objectives
