@@ -24,4 +24,4 @@ execute store result score $emerald_detection.chunkz bingo.tmp run data get enti
 scoreboard players operation $emerald_detection.chunkx bingo.tmp %= 16 bingo.const
 scoreboard players operation $emerald_detection.chunkz bingo.tmp %= 16 bingo.const
 
-function bingo:game/emerald_detection/move_x/0
+execute positioned ~ 0 ~ run function bingo:game/emerald_detection/move_x/0
