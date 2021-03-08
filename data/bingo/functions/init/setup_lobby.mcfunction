@@ -11,14 +11,14 @@
 forceload add -8 -8 7 7
 
 # card generation
-setblock -7 64 -12 minecraft:structure_block[mode=load]{mode:"LOAD", name:"bingo:lobby/card_generation", posY: -1}
-setblock -7 65 -12 minecraft:redstone_block
+setblock -9 64 -12 minecraft:structure_block[mode=load]{mode:"LOAD", name:"bingo:lobby/card_generation", posY: -1}
+setblock -9 65 -12 minecraft:redstone_block
 
 # settings
-setblock 8 64 -8 minecraft:structure_block[mode=load]{mode:"LOAD", name:"bingo:lobby/settings"}
-setblock 8 65 -8 minecraft:redstone_block
-setblock 4 62 4 minecraft:barrier
-setblock 4 63 4 minecraft:chiseled_quartz_block
+setblock 9 64 -12 minecraft:structure_block[mode=load]{mode:"LOAD", name:"bingo:lobby/settings"}
+setblock 9 65 -12 minecraft:redstone_block
+setblock 5 62 0 minecraft:barrier
+setblock 5 63 0 minecraft:chiseled_quartz_block
 
 kill @e[type=minecraft:item_frame, tag=bingo.card_frame]
 scoreboard players set $card_frames/spawn.i bingo.tmp 0

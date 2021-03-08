@@ -9,6 +9,11 @@
 	"bingo.lobby.card_generation.from_seed.sign.line3": "From Seed",
 	"bingo.lobby.card_generation.from_seed.sign.line4": "",
 
+	"bingo.lobby.card_generation.start_game.sign.line1": "",
+	"bingo.lobby.card_generation.start_game.sign.line2": "Start",
+	"bingo.lobby.card_generation.start_game.sign.line3": "Game",
+	"bingo.lobby.card_generation.start_game.sign.line4": "",
+
 	"bingo.lobby.card_generation.from_seed.instructions": "%s to receieve the command for setting the seed. Add the numeric seed at the very end of the command.",
 	"bingo.lobby.card_generation.from_seed.instructions.link": "Click here",
 	"bingo.lobby.card_generation.from_seed.explanation": "The seed determines which items generate on the bingo card and where you spawn. You can use this for example for competitive races, where everyone is using the same seed.",
