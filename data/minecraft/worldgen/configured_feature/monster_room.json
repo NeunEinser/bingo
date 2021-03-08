@@ -1,13 +1,23 @@
 {
+	
+	"type": "minecraft:decorated",
 	"config": {
-		"feature": {
+		"decorator": {
 			"config": {
+				"count": 100
+			},
+			"type": "minecraft:count"
+		},
+		"feature": {
+			"type": "minecraft:decorated",
+			"config": {
+				"decorator": {
+					"config": {},
+					"type": "minecraft:square"
+				},
 				"feature": {
+					"type": "minecraft:decorated",
 					"config": {
-						"feature": {
-							"config": {},
-							"type": "minecraft:monster_room"
-						},
 						"decorator": {
 							"config": {
 								"bottom_offset": 0,
@@ -15,23 +25,14 @@
 								"maximum": 256
 							},
 							"type": "minecraft:range"
+						},
+						"feature": {
+							"config": {},
+							"type": "minecraft:monster_room"
 						}
-					},
-					"type": "minecraft:decorated"
-				},
-				"decorator": {
-					"config": {},
-					"type": "minecraft:square"
+					}
 				}
-			},
-			"type": "minecraft:decorated"
-		},
-		"decorator": {
-			"config": {
-				"count": 100
-			},
-			"type": "minecraft:count"
+			}
 		}
-	},
-	"type": "minecraft:decorated"
+	}
 }

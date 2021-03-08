@@ -1,7 +1,7 @@
 {
+	"type": "minecraft:mineshaft",
 	"config": {
 		"probability": 0.0,
 		"type": "mesa"
-	},
-	"type": "minecraft:mineshaft"
+	}
 }
