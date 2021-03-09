@@ -191,20 +191,38 @@ scoreboard objectives add bingo.player_con trigger
 
 scoreboard objectives setdisplay sidebar bingo.stats
 
+#>
+# @internal
 #declare score_holder 2
 scoreboard players set 2 bingo.const 2
-
+#>
+# @internal
 #declare score_holder 4
 scoreboard players set 4 bingo.const 4
-
+#>
+# @internal
 #declare score_holder 5
 scoreboard players set 5 bingo.const 5
-
+#>
+# @internal
 #declare score_holder 6
 scoreboard players set 6 bingo.const 6
-
+#>
+# @internal
+#declare score_holder 10
+scoreboard players set 10 bingo.const 10
+#>
+# @internal
 #declare score_holder 16
 scoreboard players set 16 bingo.const 16
+#>
+# @internal
+#declare score_holder 9155
+scoreboard players set 9155 bingo.const 9155
+#>
+# @internal
+#declare score_holder 65536
+scoreboard players set 65536 bingo.const 65536
 #endregion
 
 execute in bingo:lobby run function bingo:init/setup_lobby

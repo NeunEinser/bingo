@@ -1,8 +1,8 @@
 {
 	"values": [
-		"bingo:init/init",
 		"random:internal/init",
 		"math:internal/init",
-		"neun_einser.timer:internal/init"
+		"neun_einser.timer:internal/init",
+		"bingo:init/init"
 	]
 }
