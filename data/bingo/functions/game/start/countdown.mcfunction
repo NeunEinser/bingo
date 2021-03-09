@@ -3,7 +3,7 @@
 # Count down at the start
 #
 # @within
-# 	function bingo:game/start/initialize_spawn_sequence
+# 	function bingo:game/start/end_of_skybox
 # 	function bingo:game/start/countdown
 
 execute if score $start_game.countdown bingo.tmp matches 1.. run tellraw @a {"score":{"name": "$start_game.countdown", "objective": "bingo.tmp"}}

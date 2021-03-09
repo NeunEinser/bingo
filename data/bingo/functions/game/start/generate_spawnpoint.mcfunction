@@ -16,10 +16,10 @@
 # Tag used for the aec which is moved to the random spawn coordinates
 # @private
 #declare tag bingo.spawn_position
+title @a times 1 2147483647 0
+tellraw @a "Preparing Spawn..."
 
 function random:next_int
-
-tellraw @a {"score": {"objective": "random_main", "name": "$result"}}
 
 # Spawn x: $result & 0xFFFF (signed)
 scoreboard players operation $game/start.spawnx bingo.tmp = $result random_main

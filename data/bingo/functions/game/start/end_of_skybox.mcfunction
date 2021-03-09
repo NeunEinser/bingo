@@ -1,8 +1,10 @@
-#> bingo:game/start/initialize_spawn_sequence
+#> bingo:game/start/end_of_skybox
 #
 # Starts the spawn sequence
 #
 # @within function bingo:game/start/spawn_skybox
+
+execute in bingo:multi_noise run forceload remove all
 
 execute at @a[limit=1] run setblock ~ ~-1 ~ minecraft:air
 effect give @a minecraft:resistance 1000000 255 true
