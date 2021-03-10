@@ -4,6 +4,7 @@ data modify storage bingo:tmp categories set from storage bingo:items categories
 data remove storage bingo:card_generation usedItems
 data remove storage bingo:card_generation forbiddenItems
 data remove storage bingo:card slots
+execute as @e[type=minecraft:item_frame, tag=bingo.card_frame] at @s run setblock ~ ~ ~-1 minecraft:barrier
 
 scoreboard players set $i bingo.tmp 0
 function bingo:card_generation/generate_slot
