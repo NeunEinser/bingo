@@ -33,6 +33,7 @@ summon minecraft:item_frame ~ ~ ~ {Facing: 3b, Tags: ["bingo.card_frame", "bingo
 scoreboard players operation @e[type=minecraft:item_frame, tag=bingo.card_frame, tag=bingo.new] bingo.frame_id = $card_frames/spawn.i bingo.tmp
 
 data modify storage temp:bingo.input/spawn_frames slots[0].item.item.Count set value 1b
+data modify storage temp:bingo.input/spawn_frames slots[0].item.item.tag.display.Name set from storage temp:bingo.input/spawn_frames slots[0].item.textComponent
 data modify entity @e[type=minecraft:item_frame, tag=bingo.new, limit=1] Item set from storage temp:bingo.input/spawn_frames slots[0].item.item
 data remove storage temp:bingo.input/spawn_frames slots[0]
 
