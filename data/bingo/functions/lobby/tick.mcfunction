@@ -1,3 +1,6 @@
+# New player
+execute as @a[team=] run function bingo:lobby/new_player
+
 # generate card from seed
 scoreboard players enable @a bingo.seed
 execute as @a[scores={bingo.seed=..-1}] run function bingo:card_generation/generate_from_seed

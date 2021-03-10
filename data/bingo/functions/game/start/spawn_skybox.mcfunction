@@ -16,9 +16,6 @@ effect give @a minecraft:jump_boost 1000000 128 true
 effect give @a minecraft:invisibility 1000000 0 true
 effect give @a minecraft:mining_fatigue 1000000 255 true
 effect give @a minecraft:saturation 1000000 255 true
-
-#TODO move to player registration
-recipe give @a *
 clear @a
 
 schedule function bingo:game/start/end_of_skybox 30s
