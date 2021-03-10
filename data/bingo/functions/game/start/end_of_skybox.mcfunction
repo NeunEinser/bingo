@@ -6,7 +6,7 @@
 
 execute in bingo:multi_noise run forceload remove all
 
-execute at @a[limit=1] run setblock ~ ~-1 ~ minecraft:air
+execute in bingo:multi_noise at @a[distance=0.., limit=1] run setblock ~ ~-1 ~ minecraft:air
 effect give @a minecraft:resistance 1000000 255 true
 
 #>

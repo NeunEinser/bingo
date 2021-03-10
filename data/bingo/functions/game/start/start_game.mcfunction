@@ -6,6 +6,7 @@
 
 execute as @a at @s run spawnpoint @s ~ ~ ~
 tellraw @a {"text": "GO!"}
+tellraw @a [{"translate": "bingo.game.go_to_lobby", "with": [{"translate": "bingo.game.go_to_lobby.click", "color": "#00c3ff", "clickEvent": {"action": "run_command", "value": "/trigger bingo.lobby"}}]}, "\n", {"translate": "bingo.game.go_to_lobby.hint", "color": "gray", "italic": true, "with": [{"text": "/trigger bingo.lobby", "color": "white", "italic": false, "clickEvent": {"action": "suggest_command", "value": "/trigger bingo.lobby"}}]}]
 execute as @a at @s run playsound minecraft:block.note_block.pling master @s ~ ~ ~ 1 1
 
 effect clear @a

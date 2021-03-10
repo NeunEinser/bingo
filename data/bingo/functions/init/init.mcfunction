@@ -77,6 +77,7 @@
 scoreboard objectives remove bingo.seed
 scoreboard objectives remove bingo.id
 scoreboard objectives remove bingo.frame_id
+scoreboard objectives remove bingo.lobby
 scoreboard objectives remove bingo.tmp
 scoreboard objectives remove bingo.const
 scoreboard objectives remove bingo.commands
@@ -99,6 +100,15 @@ scoreboard objectives add bingo.stats dummy "Minecraft Bingo"
 #
 # @internal
 scoreboard objectives add bingo.id dummy
+
+#>
+# This objective contains unique IDs for the item frames in the lobby.
+#
+# This is needed to identify the correct item frame to use for the current item
+# in card_generation.
+#
+# @internal
+scoreboard objectives add bingo.frame_id dummy
 
 #>
 # This objective contains unique IDs for the item frames in the lobby.
@@ -168,6 +178,13 @@ scoreboard objectives add bingo.state dummy
 #
 # @internal
 scoreboard objectives add bingo.menu_page dummy
+
+#>
+# Trigger objective for returning to the lobby.
+#
+# @internal
+# @user
+scoreboard objectives add bingo.lobby trigger
 
 #>
 # Trigger objective used to generate a bingo card with a set seed.

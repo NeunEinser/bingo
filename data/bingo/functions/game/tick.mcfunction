@@ -9,3 +9,6 @@
 
 execute in bingo:lobby run function neun_einser.timer:detect_pause
 execute as @a at @s run function bingo:game/emerald_detection/detect_emerald_chunk
+
+scoreboard players enable @a bingo.lobby
+execute as @a[scores={bingo.lobby=1}] run function bingo:game/go_to_lobby
