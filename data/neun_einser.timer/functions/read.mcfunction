@@ -1,4 +1,5 @@
-function neun_einser.timer:internal/read_raw
+scoreboard players set $raw 91.timer.time 0
+execute if score $blocks_per_second 91.timer.intern matches 1.. run function neun_einser.timer:internal/read_raw
 
 scoreboard players operation $millis 91.timer.time = $raw 91.timer.time
 scoreboard players operation $seconds 91.timer.time = $millis 91.timer.time
