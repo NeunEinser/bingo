@@ -62,11 +62,15 @@
 	"bingo.lobby.settings.player.configuration.frostwalker": "Night Vision + Frostwalker",
 	"bingo.lobby.settings.player.configuration.underwater": "Night Vision + Water Breathing + Depth Strider",
 
-
 	"bingo.lobby.settings.preferences.sign.line1": "",
 	"bingo.lobby.settings.preferences.sign.line2": "Change",
 	"bingo.lobby.settings.preferences.sign.line3": "Preferences",
 	"bingo.lobby.settings.preferences.sign.line4": "",
+
+	"bingo.lobby.team_selection.sign.line1": "",
+	"bingo.lobby.team_selection.sign.line2": "Switch",
+	"bingo.lobby.team_selection.sign.line3": "Team",
+	"bingo.lobby.team_selection.sign.line4": "",
 	
 
 	"bingo.got_item": "[%1$s] %2$s got [%3$s]",
