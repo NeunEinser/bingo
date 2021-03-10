@@ -86,5 +86,5 @@
 	"bingo.got_bingo.triple.col_diags": "[%1$s] %2$s got a triple bingo in col %3$s and both diagonals!",
 	"bingo.got_bingo.triple.row_diags": "[%1$s] %2$s got a triple bingo in row %3$s and both diagonals!",
 	
-	"bingo.got_bingo.triple.quadruple": "[%1$s] %2$s got a quadruple bingo!"
+	"bingo.got_bingo.quadruple": "[%1$s] %2$s got a quadruple bingo!"
 }

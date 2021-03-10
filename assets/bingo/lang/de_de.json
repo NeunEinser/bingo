@@ -34,5 +34,5 @@
 	"bingo.got_bingo.triple.col_diags": "[%1$s] %2$s erzielte(n) ein Dreifach-Bingo in Spalte %3$s und beiden Diagonalen!",
 	"bingo.got_bingo.triple.row_diags": "[%1$s] %2$s erzielte(n) ein Dreifach-Bingo in Zeile %3$s und beiden Diagonalen!",
 	
-	"bingo.got_bingo.triple.quadruple": "[%1$s] %2$s erzielte(n) ein Vierfach-Bingo!"
+	"bingo.got_bingo.quadruple": "[%1$s] %2$s erzielte(n) ein Vierfach-Bingo!"
 }
