@@ -11,19 +11,19 @@
 forceload add -8 -8 7 7
 
 # card generation
-setblock -9 64 -12 minecraft:structure_block[mode=load]{mode:"LOAD", name:"bingo:lobby/card_generation", posY: -1}
-setblock -9 65 -12 minecraft:redstone_block
+setblock -5 64 -14 minecraft:structure_block[mode=load]{mode:"LOAD", name:"bingo:lobby/card_generation"}
+setblock -5 65 -14 minecraft:redstone_block
 
 # settings
-setblock 9 64 -12 minecraft:structure_block[mode=load]{mode:"LOAD", name:"bingo:lobby/settings"}
-setblock 9 65 -12 minecraft:redstone_block
-setblock 5 62 0 minecraft:barrier
-setblock 5 63 0 minecraft:chiseled_quartz_block
+setblock 9 64 -8 minecraft:structure_block[mode=load]{mode:"LOAD", name:"bingo:lobby/settings"}
+setblock 9 65 -8 minecraft:redstone_block
+#setblock 5 62 0 minecraft:barrier
+#setblock 5 63 0 minecraft:chiseled_quartz_block
 
 kill @e[type=minecraft:item_frame, tag=bingo.card_frame]
 scoreboard players set $card_frames/spawn.i bingo.tmp 0
 data modify storage temp:bingo.input/spawn_frames slots set from storage bingo:card slots
-execute positioned -2 68 -11 run function bingo:init/spawn_card_preview_frames
+execute positioned -4 68 -13 run function bingo:init/spawn_card_preview_frames
 
 forceload remove -8 -8 7 7
 

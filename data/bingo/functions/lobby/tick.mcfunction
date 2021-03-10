@@ -1,6 +1,10 @@
 # New player
 execute as @a[team=] run function bingo:lobby/new_player
 
+# Float in front of card display
+execute as @a at @s if block ~ ~ ~ minecraft:void_air run effect give @s minecraft:levitation 1 255 true
+execute as @a at @s unless block ~ ~ ~ minecraft:void_air run effect clear @s minecraft:levitation
+
 # generate card from seed
 scoreboard players enable @a bingo.seed
 execute as @a[scores={bingo.seed=..-1}] run function bingo:card_generation/generate_from_seed
