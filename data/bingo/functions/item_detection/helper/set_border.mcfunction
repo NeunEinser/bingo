@@ -4,4 +4,4 @@ data remove storage bingo:tmp slots
 
 function bingo:item_detection/helper/find_slot
 
-execute store success score $success bingo.tmp run data modify storage bingo:tmp slots[-1] set from storage bingo:tmp team.completedBorder
+execute store success score $success bingo.tmp run data modify storage bingo:tmp slots[-1] set from storage bingo:card teams[{selected: true}].completedBorder
