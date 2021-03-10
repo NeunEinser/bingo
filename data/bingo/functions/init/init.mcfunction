@@ -256,6 +256,7 @@ scoreboard players set 65536 bingo.const 65536
 #endregion
 
 execute in bingo:lobby run function bingo:init/setup_lobby
+gamerule commandBlockOutput false
 
 # setup default player configurations
 #data remove storage bingo:player configurations
