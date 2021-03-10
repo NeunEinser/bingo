@@ -52,5 +52,5 @@ execute if data storage bingo:card slots run data modify storage bingo:tmp card 
 title @s actionbar [{"translate":"space.46"},{"storage":"bingo:tmp","nbt":"timeSpaces","interpret":true},{"storage":"neun_einser.timer:display","nbt":"hh:mm:ss","interpret":true,"font":"bingo:line1_shadow","color":"black"},{"translate":"space.-47"},{"storage":"bingo:tmp","nbt":"timeSpaces","interpret":true},{"storage":"neun_einser.timer:display","nbt":"hh:mm:ss","interpret":true,"font":"bingo:line1"},{"translate":"space.-29"},{"storage":"bingo:tmp","nbt":"ySpaces","interpret":true},{"text":"Y: ","font":"bingo:line2_shadow","color":"black","extra":[{"score":{"objective":"bingo.tmp","name":"$card_display/display_card.y"}}]},{"translate":"space.-31"},{"storage":"bingo:tmp","nbt":"ySpaces","interpret":true},{"text":"Y: ","font":"bingo:line2","extra":[{"storage": "bingo:tmp", "nbt": "y", "interpret": true}]},{"translate":"space.-91"},{"storage": "bingo:tmp", "nbt": "card", "interpret": true}]
 
 # cleanup
-data modify storage bingo:card teams[{selected: true}] set value false
+data modify storage bingo:card teams[{selected: true}].selected set value false
 tag @a remove bingo.in_current_team
