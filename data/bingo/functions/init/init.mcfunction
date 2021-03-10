@@ -410,15 +410,15 @@ data modify storage bingo:items categories[{name:"bingo:milk"}].items append fro
 
 ## 0017: cauldron
 data modify storage temp:bingo.init item set value {id: "bingo:cauldron", item: {id: "minecraft:cauldron"}, textComponent: '{"translate": "block.minecraft.cauldron", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:cauldron"}}}', icon: '"\\u0017"', clearCommand: ['data modify storage bingo:card slots[{item:{id: "bingo:cauldron"}}].selected set value true', "clear @a[tag=bingo.clear] minecraft:cauldron 1"] , categories: 1, weight: 1}
-data modify storage bingo:items categories[{name:"simple_iron"}].items append from storage temp:bingo.init item
+data modify storage bingo:items categories[{name:"bingo:simple_iron"}].items append from storage temp:bingo.init item
 
 ## 0018: saddle
 data modify storage temp:bingo.init item set value {id: "bingo:saddle", item: {id: "minecraft:saddle"}, textComponent: '{"translate": "item.minecraft.saddle", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:saddle"}}}', icon: '"\\u0018"', clearCommand: ['data modify storage bingo:card slots[{item:{id: "bingo:saddle"}}].selected set value true', "clear @a[tag=bingo.clear] minecraft:saddle 1"] , categories: 1, weight: 1}
-data modify storage bingo:items categories[{name:"chest_loot"}].items append from storage temp:bingo.init item
+data modify storage bingo:items categories[{name:"bingo:chest_loot"}].items append from storage temp:bingo.init item
 
 ## 0019: name_tag
 data modify storage temp:bingo.init item set value {id: "bingo:name_tag", item: {id: "minecraft:name_tag"}, textComponent: '{"translate": "item.minecraft.name_tag", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:name_tag"}}}', icon: '"\\u0019"', clearCommand: ['data modify storage bingo:card slots[{item:{id: "bingo:name_tag"}}].selected set value true', "clear @a[tag=bingo.clear] minecraft:name_tag 1"] , categories: 1, weight: 1}
-data modify storage bingo:items categories[{name:"chest_loot"}].items append from storage temp:bingo.init item
+data modify storage bingo:items categories[{name:"bingo:chest_loot"}].items append from storage temp:bingo.init item
 
 ## 001a: painting
 data modify storage temp:bingo.init item set value {id: "bingo:painting", item: {id: "minecraft:painting"}, textComponent: '{"translate": "item.minecraft.painting", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:painting"}}}', icon: '"\\u001a"', clearCommand: ['data modify storage bingo:card slots[{item:{id: "bingo:painting"}}].selected set value true', "clear @a[tag=bingo.clear] minecraft:painting 1"] , categories: 1, weight: 1}
@@ -458,7 +458,7 @@ data modify storage bingo:items categories[{name:"bingo:mushroom"}].items append
 
 ## 0024: beetroot_soup
 data modify storage temp:bingo.init item set value {id: "bingo:beetroot_soup", item: {id: "minecraft:beetroot_soup"}, textComponent: '{"translate": "item.minecraft.beetroot_soup", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:beetroot_soup"}}}', icon: '"\\u0024"', clearCommand: ['data modify storage bingo:card slots[{item:{id: "bingo:beetroot_soup"}}].selected set value true', "clear @a[tag=bingo.clear] minecraft:beetroot_soup 1"] , categories: 2, weight: 1}
-data modify storage bingo:items categories[{name:"chest_loot"}].items append from storage temp:bingo.init item
+data modify storage bingo:items categories[{name:"bingo:chest_loot"}].items append from storage temp:bingo.init item
 data modify storage bingo:items categories[{name:"bingo:village"}].items append from storage temp:bingo.init item
 
 ## 0025: apple
@@ -504,7 +504,7 @@ data modify storage bingo:items categories[{name:"bingo:ink"}].items append from
 
 ## 002f: enchanted_book
 data modify storage temp:bingo.init item set value {id: "bingo:enchanted_book", item: {id: "minecraft:enchanted_book"}, textComponent: '{"translate": "item.minecraft.enchanted_book", "color": "yellow", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:enchanted_book"}}}', icon: '"\\u002f"', clearCommand: ['data modify storage bingo:card slots[{item:{id: "bingo:enchanted_book"}}].selected set value true', "clear @a[tag=bingo.clear] minecraft:enchanted_book 1"] , categories: 1, weight: 1}
-data modify storage bingo:items categories[{name:"chest_loot"}].items append from storage temp:bingo.init item
+data modify storage bingo:items categories[{name:"bingo:chest_loot"}].items append from storage temp:bingo.init item
 
 ## 0030: spider_eye
 data modify storage temp:bingo.init item set value {id: "bingo:spider_eye", item: {id: "minecraft:spider_eye"}, textComponent: '{"translate": "item.minecraft.spider_eye", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:spider_eye"}}}', icon: '"\\u0030"', clearCommand: ['data modify storage bingo:card slots[{item:{id: "bingo:spider_eye"}}].selected set value true', "clear @a[tag=bingo.clear] minecraft:spider_eye 1"] , categories: 1, weight: 1}
@@ -526,24 +526,24 @@ data modify storage bingo:items categories[{name:"bingo:sand"}].items append fro
 
 ## 0034: hopper
 data modify storage temp:bingo.init item set value {id: "bingo:hopper", item: {id: "minecraft:hopper"}, textComponent: '{"translate": "block.minecraft.hopper", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:hopper"}}}', icon: '"\\u0034"', clearCommand: ['data modify storage bingo:card slots[{item:{id: "bingo:hopper"}}].selected set value true', "clear @a[tag=bingo.clear] minecraft:hopper 1"] , categories: 1, weight: 1}
-data modify storage bingo:items categories[{name:"chest_iron"}].items append from storage temp:bingo.init item
+data modify storage bingo:items categories[{name:"bingo:chest_iron"}].items append from storage temp:bingo.init item
 
 ## 0035: hopper_minecart
 data modify storage temp:bingo.init item set value {id: "bingo:hopper_minecart", item: {id: "minecraft:hopper_minecart"}, textComponent: '{"translate": "item.minecraft.hopper_minecart", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:hopper_minecart"}}}', icon: '"\\u0035"', clearCommand: ['data modify storage bingo:card slots[{item:{id: "bingo:hopper_minecart"}}].selected set value true', "clear @a[tag=bingo.clear] minecraft:hopper_minecart 1"] , categories: 1, weight: 1}
-data modify storage bingo:items categories[{name:"chest_iron"}].items append from storage temp:bingo.init item
+data modify storage bingo:items categories[{name:"bingo:chest_iron"}].items append from storage temp:bingo.init item
 
 ## 0036: furnace_minecart
 data modify storage temp:bingo.init item set value {id: "bingo:furnace_minecart", item: {id: "minecraft:furnace_minecart"}, textComponent: '{"translate": "item.minecraft.furnace_minecart", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:furnace_minecart"}}}', icon: '"\\u0036"', clearCommand: ['data modify storage bingo:card slots[{item:{id: "bingo:furnace_minecart"}}].selected set value true', "clear @a[tag=bingo.clear] minecraft:furnace_minecart 1"] , categories: 1, weight: 1}
-data modify storage bingo:items categories[{name:"furnace_iron"}].items append from storage temp:bingo.init item
+data modify storage bingo:items categories[{name:"bingo:furnace_iron"}].items append from storage temp:bingo.init item
 
 ## 0037: chest_minecart
 data modify storage temp:bingo.init item set value {id: "bingo:chest_minecart", item: {id: "minecraft:chest_minecart"}, textComponent: '{"translate": "item.minecraft.chest_minecart", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:chest_minecart"}}}', icon: '"\\u0037"', clearCommand: ['data modify storage bingo:card slots[{item:{id: "bingo:chest_minecart"}}].selected set value true', "clear @a[tag=bingo.clear] minecraft:chest_minecart 1"] , categories: 1, weight: 1}
-data modify storage bingo:items categories[{name:"chest_iron"}].items append from storage temp:bingo.init item
+data modify storage bingo:items categories[{name:"bingo:chest_iron"}].items append from storage temp:bingo.init item
 
 ## 0038: bone
 data modify storage temp:bingo.init item set value {id: "bingo:bone", item: {id: "minecraft:bone"}, textComponent: '{"translate": "item.minecraft.bone", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:bone"}}}', icon: '"\\u0038"', clearCommand: ['data modify storage bingo:card slots[{item:{id: "bingo:bone"}}].selected set value true', "clear @a[tag=bingo.clear] minecraft:bone 1"] , categories: 2, weight: 1}
-data modify storage bingo:items categories[{name:"ink_bone"}].items append from storage temp:bingo.init item
-data modify storage bingo:items categories[{name:"cactus_bone"}].items append from storage temp:bingo.init item
+data modify storage bingo:items categories[{name:"bingo:ink_bone"}].items append from storage temp:bingo.init item
+data modify storage bingo:items categories[{name:"bingo:cactus_bone"}].items append from storage temp:bingo.init item
 
 ## 0039: ink_sac
 data modify storage temp:bingo.init item set value {id: "bingo:ink_sac", item: {id: "minecraft:ink_sac"}, textComponent: '{"translate": "item.minecraft.ink_sac", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:ink_sac"}}}', icon: '"\\u0039"', clearCommand: ['data modify storage bingo:card slots[{item:{id: "bingo:ink_sac"}}].selected set value true', "clear @a[tag=bingo.clear] minecraft:ink_sac 1"] , categories: 1, weight: 1}
@@ -552,7 +552,7 @@ data modify storage bingo:items categories[{name:"bingo:ink"}].items append from
 ## 003a: gray_dye
 data modify storage temp:bingo.init item set value {id: "bingo:gray_dye", item: {id: "minecraft:gray_dye"}, textComponent: '{"translate": "item.minecraft.gray_dye", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:gray_dye"}}}', icon: '"\\u003a"', clearCommand: ['data modify storage bingo:card slots[{item:{id: "bingo:gray_dye"}}].selected set value true', "clear @a[tag=bingo.clear] minecraft:gray_dye 1"] , categories: 2, weight: 1}
 data modify storage bingo:items categories[{name:"bingo:ink"}].items append from storage temp:bingo.init item
-data modify storage bingo:items categories[{name:"ink_bone"}].items append from storage temp:bingo.init item
+data modify storage bingo:items categories[{name:"bingo:ink_bone"}].items append from storage temp:bingo.init item
 
 ## 003b: green_dye
 data modify storage temp:bingo.init item set value {id: "bingo:green_dye", item: {id: "minecraft:green_dye"}, textComponent: '{"translate": "item.minecraft.green_dye", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:green_dye"}}}', icon: '"\\u003b"', clearCommand: ['data modify storage bingo:card slots[{item:{id: "bingo:green_dye"}}].selected set value true', "clear @a[tag=bingo.clear] minecraft:green_dye 1"] , categories: 1, weight: 1}
@@ -561,7 +561,7 @@ data modify storage bingo:items categories[{name:"bingo:cactus"}].items append f
 ## 003c: lime_dye
 data modify storage temp:bingo.init item set value {id: "bingo:lime_dye", item: {id: "minecraft:lime_dye"}, textComponent: '{"translate": "item.minecraft.lime_dye", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:lime_dye"}}}', icon: '"\\u003c"', clearCommand: ['data modify storage bingo:card slots[{item:{id: "bingo:lime_dye"}}].selected set value true', "clear @a[tag=bingo.clear] minecraft:lime_dye 1"] , categories: 2, weight: 1}
 data modify storage bingo:items categories[{name:"bingo:cactus"}].items append from storage temp:bingo.init item
-data modify storage bingo:items categories[{name:"cactus_bone"}].items append from storage temp:bingo.init item
+data modify storage bingo:items categories[{name:"bingo:cactus_bone"}].items append from storage temp:bingo.init item
 
 ## 003d: lapis_lazuli
 data modify storage temp:bingo.init item set value {id: "bingo:lapis_lazuli", item: {id: "minecraft:lapis_lazuli"}, textComponent: '{"translate": "item.minecraft.lapis_lazuli", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:lapis_lazuli"}}}', icon: '"\\u003d"', clearCommand: ['data modify storage bingo:card slots[{item:{id: "bingo:lapis_lazuli"}}].selected set value true', "clear @a[tag=bingo.clear] minecraft:lapis_lazuli 1"] , categories: 1, weight: 1}
@@ -603,12 +603,12 @@ data modify storage bingo:items categories[{name:"bingo:fish"}].items append fro
 ## 0046: tropical_fish
 data modify storage temp:bingo.init item set value {id: "bingo:tropical_fish", item: {id: "minecraft:tropical_fish"}, textComponent: '{"translate": "item.minecraft.tropical_fish", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:tropical_fish"}}}', icon: '"\\u0046"', clearCommand: ['data modify storage bingo:card slots[{item:{id: "bingo:tropical_fish"}}].selected set value true', "clear @a[tag=bingo.clear] minecraft:tropical_fish 1"] , categories: 2, weight: 1}
 data modify storage bingo:items categories[{name:"bingo:fish"}].items append from storage temp:bingo.init item
-data modify storage bingo:items categories[{name:"warm_ocean"}].items append from storage temp:bingo.init item
+data modify storage bingo:items categories[{name:"bingo:warm_ocean"}].items append from storage temp:bingo.init item
 
 ## 0047: tropical_fish_bucket
 data modify storage temp:bingo.init item set value {id: "bingo:tropical_fish_bucket", item: {id: "minecraft:tropical_fish_bucket"}, textComponent: '{"translate": "item.minecraft.tropical_fish_bucket", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:tropical_fish_bucket"}}}', icon: '"\\u0047"', clearCommand: ['data modify storage bingo:card slots[{item:{id: "bingo:tropical_fish_bucket"}}].selected set value true', "clear @a[tag=bingo.clear] minecraft:tropical_fish_bucket 1"] , categories: 2, weight: 1}
 data modify storage bingo:items categories[{name:"bingo:fish"}].items append from storage temp:bingo.init item
-data modify storage bingo:items categories[{name:"warm_ocean"}].items append from storage temp:bingo.init item
+data modify storage bingo:items categories[{name:"bingo:warm_ocean"}].items append from storage temp:bingo.init item
 
 ## 0048: birch_sapling
 data modify storage temp:bingo.init item set value {id: "bingo:birch_sapling", item: {id: "minecraft:birch_sapling"}, textComponent: '{"translate": "block.minecraft.birch_sapling", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:birch_sapling"}}}', icon: '"\\u0048"', clearCommand: ['data modify storage bingo:card slots[{item:{id: "bingo:birch_sapling"}}].selected set value true', "clear @a[tag=bingo.clear] minecraft:birch_sapling 1"] , categories: 1, weight: 1}
@@ -633,7 +633,7 @@ data modify storage bingo:items categories[{name:"bingo:rail"}].items append fro
 
 ## 004d: heart_of_the_sea
 #data modify storage temp:bingo.init item set value {id: "bingo:heart_of_the_sea", item: {id: "minecraft:heart_of_the_sea"}, textComponent: '{"translate": "item.minecraft.heart_of_the_sea", "color": "yellow", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:heart_of_the_sea"}}}', icon: '"\\u004d"', clearCommand: ['data modify storage bingo:card slots[{item:{id: "bingo:heart_of_the_sea"}}].selected set value true', "clear @a[tag=bingo.clear] minecraft:heart_of_the_sea 1"] , categories: 1, weight: 1}
-#data modify storage bingo:items categories[{name:"heart_of_the_sea"}].items append from storage temp:bingo.init item
+#data modify storage bingo:items categories[{name:"bingo:heart_of_the_sea"}].items append from storage temp:bingo.init item
 
 ## 004e: bell
 data modify storage temp:bingo.init item set value {id: "bingo:bell", item: {id: "minecraft:bell"}, textComponent: '{"translate": "block.minecraft.bell", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:bell"}}}', icon: '"\\u004e"', clearCommand: ['data modify storage bingo:card slots[{item:{id: "bingo:bell"}}].selected set value true', "clear @a[tag=bingo.clear] minecraft:bell 1"] , categories: 1, weight: 1}
@@ -673,7 +673,7 @@ data modify storage bingo:items categories[{name:"bingo:jungle"}].items append f
 
 ## 0057: sea_pickle
 data modify storage temp:bingo.init item set value {id: "bingo:sea_pickle", item: {id: "minecraft:sea_pickle"}, textComponent: '{"translate": "block.minecraft.sea_pickle", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:sea_pickle"}}}', icon: '"\\u0057"', clearCommand: ['data modify storage bingo:card slots[{item:{id: "bingo:sea_pickle"}}].selected set value true', "clear @a[tag=bingo.clear] minecraft:sea_pickle 1"] , categories: 1, weight: 1}
-data modify storage bingo:items categories[{name:"warm_ocean"}].items append from storage temp:bingo.init item
+data modify storage bingo:items categories[{name:"bingo:warm_ocean"}].items append from storage temp:bingo.init item
 
 ## 0058: seagrass
 data modify storage temp:bingo.init item set value {id: "bingo:seagrass", item: {id: "minecraft:seagrass"}, textComponent: '{"translate": "block.minecraft.seagrass", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:seagrass"}}}', icon: '"\\u0058"', clearCommand: ['data modify storage bingo:card slots[{item:{id: "bingo:seagrass"}}].selected set value true', "clear @a[tag=bingo.clear] minecraft:seagrass 1"] , categories: 1, weight: 1}
@@ -681,7 +681,7 @@ data modify storage bingo:items categories[{name:"bingo:shearable"}].items appen
 
 ## 0100: iron_block
 data modify storage temp:bingo.init item set value {id: "bingo:iron_block", item: {id: "minecraft:iron_block"}, textComponent: '{"translate": "block.minecraft.iron_block", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:iron_block"}}}', icon: '"\\u0100"', clearCommand: ['data modify storage bingo:card slots[{item:{id: "bingo:iron_block"}}].selected set value true', "clear @a[tag=bingo.clear] minecraft:iron_block 1"] , categories: 1, weight: 1}
-data modify storage bingo:items categories[{name:"simple_iron"}].items append from storage temp:bingo.init item
+data modify storage bingo:items categories[{name:"bingo:simple_iron"}].items append from storage temp:bingo.init item
 
 ## 0101: redstone_block
 data modify storage temp:bingo.init item set value {id: "bingo:redstone_block", item: {id: "minecraft:redstone_block"}, textComponent: '{"translate": "block.minecraft.redstone_block", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:redstone_block"}}}', icon: '"\\u0101"', clearCommand: ['data modify storage bingo:card slots[{item:{id: "bingo:redstone_block"}}].selected set value true', "clear @a[tag=bingo.clear] minecraft:redstone_block 1"] , categories: 1, weight: 1}
@@ -709,20 +709,20 @@ data modify storage bingo:items categories[{name:"bingo:diamond"}].items append 
 
 ## 0107: magma_block
 data modify storage temp:bingo.init item set value {id: "bingo:magma_block", item: {id: "minecraft:magma_block"}, textComponent: '{"translate": "block.minecraft.magma_block", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:magma_block"}}}', icon: '"\\u0107"', clearCommand: ['data modify storage bingo:card slots[{item:{id: "bingo:magma_block"}}].selected set value true', "clear @a[tag=bingo.clear] minecraft:magma_block 1"] , categories: 1, weight: 1}
-data modify storage bingo:items categories[{name:"magma_block"}].items append from storage temp:bingo.init item
+data modify storage bingo:items categories[{name:"bingo:magma_block"}].items append from storage temp:bingo.init item
 
 ## 0108: bone_block
 data modify storage temp:bingo.init item set value {id: "bingo:bone_block", item: {id: "minecraft:bone_block"}, textComponent: '{"translate": "block.minecraft.bone_block", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:bone_block"}}}', icon: '"\\u0108"', clearCommand: ['data modify storage bingo:card slots[{item:{id: "bingo:bone_block"}}].selected set value true', "clear @a[tag=bingo.clear] minecraft:bone_block 1"] , categories: 2, weight: 1}
-data modify storage bingo:items categories[{name:"ink_bone"}].items append from storage temp:bingo.init item
-data modify storage bingo:items categories[{name:"cactus_bone"}].items append from storage temp:bingo.init item
+data modify storage bingo:items categories[{name:"bingo:ink_bone"}].items append from storage temp:bingo.init item
+data modify storage bingo:items categories[{name:"bingo:cactus_bone"}].items append from storage temp:bingo.init item
 
 ## 0109: blast_furnace
 data modify storage temp:bingo.init item set value {id: "bingo:blast_furnace", item: {id: "minecraft:blast_furnace"}, textComponent: '{"translate": "block.minecraft.blast_furnace", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:blast_furnace"}}}', icon: '"\\u0109"', clearCommand: ['data modify storage bingo:card slots[{item:{id: "bingo:blast_furnace"}}].selected set value true', "clear @a[tag=bingo.clear] minecraft:blast_furnace 1"] , categories: 1, weight: 1}
-data modify storage bingo:items categories[{name:"furnace_iron"}].items append from storage temp:bingo.init item
+data modify storage bingo:items categories[{name:"bingo:furnace_iron"}].items append from storage temp:bingo.init item
 
 ## 010a: ominous_banner
 #data modify storage temp:bingo.init item set value {id: "bingo:ominous_banner", item: {id: "minecraft:white_banner", tag: {BlockEntityTag: {Patterns: [{Pattern: "mr", Color: 9}, {Pattern: "bs", Color: 8}, {Pattern: "cs", Color: 7}, {Pattern: "bo", Color: 8}, {Pattern: "ms", Color: 15}, {Pattern: "hh", Color: 8}, {Pattern: "mc", Color: 8}, {Pattern: "bo", Color: 15}]}, display: {Name: '{"color":"gold","translate":"block.minecraft.ominous_banner"}'}}}, textComponent: '{"translate": "block.minecraft.ominous_banner", "color": "gold", "italic": true, "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:white_banner", "tag": "{BlockEntityTag: {Patterns: [{Pattern: \'mr\', Color: 9}, {Pattern: \'bs\', Color: 8}, {Pattern: \'cs\', Color: 7}, {Pattern: \'bo\', Color: 8}, {Pattern: \'ms\', Color: 15}, {Pattern: \'hh\', Color: 8}, {Pattern: \'mc\', Color: 8}, {Pattern: \'bo\', Color: 15}]}, display: {Name: \'{\\"color\\":\\"gold\\",\\"translate\\":\\"block.minecraft.ominous_banner\\"}\'}}"}}}', icon: '"\\u010a"', clearCommand: ['data modify storage bingo:card slots[{item:{id: "bingo:ominous_banner"}}].selected set value true', 'clear @a[tag=bingo.clear] minecraft:white_banner{BlockEntityTag: {Patterns: [{Pattern: "mr", Color: 9}, {Pattern: "bs", Color: 8}, {Pattern: "cs", Color: 7}, {Pattern: "bo", Color: 8}, {Pattern: "ms", Color: 15}, {Pattern: "hh", Color: 8}, {Pattern: "mc", Color: 8}, {Pattern: "bo", Color: 15}]}, display: {Name: \'{"color":"gold","translate":"block.minecraft.ominous_banner"}\'}} 1'], categories: 1, weight: 1}
-#data modify storage bingo:items categories[{name:"ominous_banner"}].items append from storage temp:bingo.init item
+#data modify storage bingo:items categories[{name:"bingo:ominous_banner"}].items append from storage temp:bingo.init item
 
 ## 010b: red_bed
 data modify storage temp:bingo.init item set value {id: "bingo:red_bed", item: {id: "minecraft:red_bed"}, textComponent: '{"translate": "block.minecraft.red_bed", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:red_bed"}}}', icon: '"\\u010b"', clearCommand: ['data modify storage bingo:card slots[{item:{id: "bingo:red_bed"}}].selected set value true', "clear @a[tag=bingo.clear] minecraft:red_bed 1"] , categories: 1, weight: 1}
