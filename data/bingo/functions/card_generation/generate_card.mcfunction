@@ -9,6 +9,9 @@ execute as @e[type=minecraft:item_frame, tag=bingo.card_frame] at @s run setbloc
 scoreboard players set $i bingo.tmp 0
 function bingo:card_generation/generate_slot
 
+function random:next_int
+execute store result storage bingo:card spawnLocation int 1 run scoreboard players get $result random_main
+
 # Reset teams
 data remove storage bingo:card teams
 data modify storage bingo:card teams append value {id: "bingo:aqua", completedBorder: '{"text": "\\uFFFE", "color": "aqua"}', slots:['"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"']}

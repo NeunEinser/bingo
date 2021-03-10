@@ -19,18 +19,16 @@
 title @a times 1 2147483647 0
 tellraw @a "Preparing Spawn..."
 
-function random:next_int
-
 # Spawn x: $result & 0xFFFF (signed)
 gamerule doDaylightCycle false
 time set 0
 
-scoreboard players operation $game/start.spawnx bingo.tmp = $result random_main
+execute store result score $game/start.spawnx bingo.tmp run data get storage bingo:card spawnLocation
 scoreboard players operation $game/start.spawnx bingo.tmp %= 65536 bingo.const
 execute if score $game/start.spawnx bingo.tmp matches 32768.. run scoreboard players remove $game/start.spawnx bingo.tmp 65536
 
 #Spawn z: $result >> 16
-scoreboard players operation $game/start.spawnz bingo.tmp = $result random_main
+execute store result score $game/start.spawnz bingo.tmp run data get storage bingo:card spawnLocation
 scoreboard players operation $game/start.spawnz bingo.tmp /= 65536 bingo.const
 
 execute in bingo:multi_noise run function bingo:game/start/move_x/0
