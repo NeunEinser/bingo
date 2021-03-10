@@ -1,5 +1,6 @@
 scoreboard players set $game_in_progress bingo.state 0
 execute in bingo:multi_noise as @a[distance=0..] in bingo:lobby run teleport @s 0 64 0
+execute in bingo:lobby run function neun_einser.timer:pause
 
 scoreboard players operation Seed bingo.stats = $seed random_main
 

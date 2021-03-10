@@ -1,3 +1,6 @@
 function neun_einser.timer:internal/read_raw
+scoreboard players set $start 91.timer.intern 0
 scoreboard players operation $start 91.timer.intern -= $raw 91.timer.time
-worldborder set 10000000
+
+scoreboard players add $start 91.timer.intern 1000
+worldborder set 1000
