@@ -8,11 +8,16 @@
 # @within tag/function minecraft:tick
 # @handles #minecraft:tick
 
-execute in bingo:lobby run function neun_einser.timer:detect_pause
 execute as @a run function bingo:card_display/display_card
 
-execute in bingo:lobby run function bingo:lobby/tick
-
 # Assign each player a unique ID
-execute as @a unless score @s bingo.id matches -2147483648.. run function bingo:tick/set_player_id
-execute as @a at @s run function bingo:game/emerald_detection/detect_emerald_chunk
+execute as @a unless score @s bingo.id matches -2147483648.. run function bingo:tick/new_player
+
+# change preferences
+scoreboard players enable @a bingo.pref
+execute as @a[scores={bingo.pref=..-1}] run function bingo:preferences/show_preferences
+execute as @a[scores={bingo.pref=1..}] run function bingo:preferences/show_preferences
+
+# Loop depending on game state
+execute if score $game_in_progress bingo.state matches 0 in bingo:lobby run function bingo:lobby/tick
+execute if score $game_in_progress bingo.state matches 1 run function bingo:game/tick

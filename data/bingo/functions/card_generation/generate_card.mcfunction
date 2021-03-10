@@ -1,3 +1,6 @@
+scoreboard players set $game_in_progress bingo.state 0
+execute in bingo:multi_noise as @a[distance=0..] in bingo:lobby run teleport @s 0 64 0
+
 scoreboard players operation Seed bingo.stats = $seed random_main
 
 data modify storage bingo:tmp categories set from storage bingo:items categories

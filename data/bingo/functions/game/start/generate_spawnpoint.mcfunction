@@ -16,6 +16,9 @@
 # Tag used for the aec which is moved to the random spawn coordinates
 # @private
 #declare tag bingo.spawn_position
+
+scoreboard players set $game_in_progress bingo.state 1
+
 title @a times 1 2147483647 0
 tellraw @a "Preparing Spawn..."
 

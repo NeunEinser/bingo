@@ -8,7 +8,7 @@
 # 4: Change card position - Left edge (Select GUI Scale)
 # 5: Right card position - Left edge (Select GUI Scale)
 #
-# @within function bingo:lobby/tick
+# @within function bingo:tick/tick
 # @context entity Player who triggered bingo.pref
 
 #TODO make translatable

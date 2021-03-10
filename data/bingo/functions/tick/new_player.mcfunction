@@ -1,15 +1,19 @@
-#> bingo:tick/set_player_id
+#> bingo:tick/new_player
 #
-# This function gives @s a unique player ID.
+# Function that is run for every new player
 #
-# @within function bingo:tick/**
-# @context entity Player to give the next ID
+# @within bingo:tick/tick
+
+team join bingo.dark_green
+recipe give @s *
+execute in bingo:lobby run teleport 0 64 0
+
+# Set player ID
 #>
 # Score holder which holds the next id.
 # This is part of the bingo.id objective
 #
 # @private
 #declare score_holder $next
-
 scoreboard players operation @s bingo.id = $next bingo.id
 scoreboard players add $next bingo.id 1
