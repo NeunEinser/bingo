@@ -22,6 +22,9 @@ tellraw @a "Preparing Spawn..."
 function random:next_int
 
 # Spawn x: $result & 0xFFFF (signed)
+gamerule doDaylightCycle false
+time set 0
+
 scoreboard players operation $game/start.spawnx bingo.tmp = $result random_main
 scoreboard players operation $game/start.spawnx bingo.tmp %= 65536 bingo.const
 execute if score $game/start.spawnx bingo.tmp matches 32768.. run scoreboard players remove $game/start.spawnx bingo.tmp 65536
