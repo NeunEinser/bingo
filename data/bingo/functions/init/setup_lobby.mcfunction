@@ -20,6 +20,11 @@ setblock 9 65 -8 minecraft:redstone_block
 #setblock 5 62 0 minecraft:barrier
 #setblock 5 63 0 minecraft:chiseled_quartz_block
 
+# Team selection
+setblock -18 64 -3 minecraft:structure_block[mode=load]{mode:"LOAD", name:"bingo:lobby/team_selection"}
+setblock -18 65 -3 minecraft:redstone_block
+
+# card frames
 kill @e[type=minecraft:item_frame, tag=bingo.card_frame]
 scoreboard players set $card_frames/spawn.i bingo.tmp 0
 data modify storage temp:bingo.input/spawn_frames slots set from storage bingo:card slots
