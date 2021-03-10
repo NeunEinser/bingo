@@ -75,7 +75,6 @@
 
 #region setup objectives
 scoreboard objectives remove bingo.seed
-scoreboard objectives remove bingo.id
 scoreboard objectives remove bingo.frame_id
 scoreboard objectives remove bingo.lobby
 scoreboard objectives remove bingo.tmp
@@ -162,6 +161,7 @@ scoreboard objectives add bingo.state dummy
 #
 # @internal
 #declare score_holder $game_in_progress
+scoreboard players add $game_in_progress bingo.state 0
 
 #>
 # This objective stores the page of a paginated tellraw a player is currently
