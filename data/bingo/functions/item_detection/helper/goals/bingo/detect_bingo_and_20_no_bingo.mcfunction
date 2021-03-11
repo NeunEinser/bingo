@@ -51,6 +51,8 @@ scoreboard players set $item_detect/bingo.row bingo.tmp 0
 scoreboard players set $item_detect/bingo.column bingo.tmp 0
 scoreboard players set $item_detect/bingo.diagonal bingo.tmp 0
 
+execute store result score $item_detect/bingo.slot bingo.tmp run data get storage bingo:card slots[{selected: true}].id
+
 scoreboard players operation $item_detect/bingo.item_column bingo.tmp = $item_detect/bingo.slot bingo.tmp
 scoreboard players operation $item_detect/bingo.item_column bingo.tmp %= 5 bingo.const
 
@@ -59,8 +61,6 @@ scoreboard players operation $item_detect/bingo.top_left bingo.tmp %= 6 bingo.co
 
 scoreboard players operation $item_detect/bingo.bottom_left bingo.tmp = $item_detect/bingo.slot bingo.tmp
 scoreboard players operation $item_detect/bingo.bottom_left bingo.tmp %= 4 bingo.const
-
-execute store result score $item_detect/bingo.slot bingo.tmp run data get storage bingo:card slots[{selected: true}].id
 
 # detect in rows
 execute if score $item_detect/bingo.slot bingo.tmp matches ..4 run function bingo:item_detection/helper/goals/bingo/row/1
