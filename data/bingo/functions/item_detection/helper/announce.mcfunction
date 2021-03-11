@@ -4,12 +4,12 @@ execute at @s run playsound minecraft:block.end_portal_frame.fill master @s ~ ~ 
 tellraw @a {"translate": "bingo.got_item", "with": [{"storage": "neun_einser.timer:display", "nbt": "\"hh:mm:ss.s\"", "interpret": true}, {"selector": "@s"}, {"storage": "bingo:card", "nbt": "slots[{selected: true}].item.textComponent", "interpret": true}]}
 
 data modify storage bingo:tmp slots append from storage bingo:tmp previousSlots[]
-data modify storage bingo:card teams[{selected: true}].slots set from storage bingo:tmp slots
+data modify storage bingo:card teams[-1].slots set from storage bingo:tmp slots
 
-execute store result score $has_bingo bingo.tmp run data get storage bingo:card teams[{selected: true}].hasBingo
-execute store result score $items bingo.tmp run data get storage bingo:card teams[{selected: true}].itemCount
+execute store result score $has_bingo bingo.tmp run data get storage bingo:card teams[-1].hasBingo
+execute store result score $items bingo.tmp run data get storage bingo:card teams[-1].itemCount
 scoreboard players add $items bingo.tmp 1
-execute store result storage bingo:card teams[{selected: true}].itemCount int 1 run scoreboard players get $items bingo.tmp
+execute store result storage bingo:card teams[-1].itemCount int 1 run scoreboard players get $items bingo.tmp
 
 execute if score $has_bingo bingo.tmp matches 0 run function bingo:item_detection/helper/goals/bingo/detect_bingo
 execute if score $items bingo.tmp matches 25 run function bingo:item_detection/helper/goals/announce_blackout

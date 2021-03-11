@@ -4,5 +4,7 @@
 #
 # @within function bingo:util/find_player_team
 
-data modify storage bingo:card teams[{id:"bingo:green"}].selected set value true
+data modify storage temp:bingo.find_team currentTeam set from storage bingo:card teams[{id: "bingo:green"}]
+data remove storage bingo:card teams[{id: "bingo:green"}]
+data modify storage bingo:card teams append from storage temp:bingo.find_team currentTeam
 tag @a[team=bingo.green] add bingo.in_current_team

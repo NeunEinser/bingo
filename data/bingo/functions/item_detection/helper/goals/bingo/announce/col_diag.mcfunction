@@ -4,4 +4,4 @@ execute if score $diag bingo.tmp matches 3 run tellraw @a {"translate":"bingo.go
 
 execute as @a[tag=bingo.in_current_team] at @s run function bingo:item_detection/helper/goals/completed_goal_effects
 
-data modify storage bingo:card teams[{selected: true}].hasBingo set value true
+data modify storage bingo:card teams[-1].hasBingo set value true
