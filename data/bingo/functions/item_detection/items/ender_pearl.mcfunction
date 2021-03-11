@@ -1,2 +1,13 @@
-execute store success score $success bingo.tmp if data storage bingo:card slots[{item:{id:"bingo:ender_pearl"}}] run data modify storage bingo:card slots[{item:{id:"bingo:ender_pearl"}}].selected set value true
-execute if score $success bingo.tmp matches 1 run function bingo:item_detection/helper/check_and_announce
+#> bingo:item_detection/items/ender_pearl
+#
+# Triggered when the player obtains a minecraft:ender_pearl
+#
+# @within advancement bingo:item_detection/ender_pearl
+# @handles advancement bingo:item_detection/ender_pearl
+
+#>
+# @private
+#declare score_holder $item_detect/ender_pearl.success
+
+execute store success score $item_detect/ender_pearl.success bingo.tmp if data storage bingo:card slots[{item:{id:"bingo:ender_pearl"}}] run data modify storage bingo:card slots[{item:{id:"bingo:ender_pearl"}}].selected set value true
+execute if score $item_detect/ender_pearl.success bingo.tmp matches 1 run function bingo:item_detection/helper/check_and_announce

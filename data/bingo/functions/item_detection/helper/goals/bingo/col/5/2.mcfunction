@@ -1,2 +1,10 @@
-execute store success score $success bingo.tmp run data modify storage bingo:tmp icon set from storage bingo:tmp slots[9]
-execute if score $success bingo.tmp matches 0 run function bingo:item_detection/helper/goals/bingo/col/5/3
+#> bingo:item_detection/helper/goals/bingo/col/5/2
+#
+# @within function bingo:item_detection/helper/goals/bingo/col/5
+
+#>
+# @private
+#declare score_holder $item_detect/bingo/col/5/2.success
+
+execute store success score $item_detect/bingo/col/5/2.success bingo.tmp run data modify storage temp:bingo.item_detect/bingo/col/5 icon set from storage temp:bingo.item_detect/bingo/col/5 slots[9]
+execute if score $item_detect/bingo/col/5/2.success bingo.tmp matches 1 run function bingo:item_detection/helper/goals/bingo/col/5/3

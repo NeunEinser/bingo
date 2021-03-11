@@ -150,14 +150,14 @@ scoreboard objectives add bingo.const dummy
 scoreboard objectives add bingo.schedule dummy
 
 #>
-# This objective holds the game state, such as wether a game is currently
+# This objective holds the game state, such as whether a game is currently
 # running
 #
 # @internal
 scoreboard objectives add bingo.state dummy
 
 #>
-# Wether a game is currently in progress.
+# Whether a game is currently in progress.
 #
 # @internal
 #declare score_holder $game_in_progress
