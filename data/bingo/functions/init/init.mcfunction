@@ -257,6 +257,7 @@ scoreboard players set 65536 bingo.const 65536
 
 execute in bingo:lobby run function bingo:init/setup_lobby
 gamerule commandBlockOutput false
+schedule function bingo:tick/clean_up 300s
 
 # setup default player configurations
 #data remove storage bingo:player configurations
