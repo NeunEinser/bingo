@@ -76,7 +76,7 @@
 	"datapack.lint.nbtListLengthCheck": [ "error", true ],
 	"datapack.lint.nbtListTrailingComma": false,
 	"datapack.lint.nbtLongSuffix": "l",
-	"datapack.lint.nbtPathQuote": ["warning", false],
+	"datapack.lint.nbtPathQuote": null,//["warning", false],
 	"datapack.lint.nbtPathQuoteType": ["error", "always double"], // single quotes should never be used here, see https://bugs.mojang.com/browse/MC-175504
 	"datapack.lint.nbtShortSuffix": "s",
 	"datapack.lint.nbtStringQuote": ["warning", true],
