@@ -324,7 +324,7 @@ data modify storage bingo:items categories append value {name: "bingo:flint", tr
 data modify storage bingo:items categories append value {name: "bingo:furnace_iron", translateableName: '{"translate": "bingo.category.furnace_iron"}'}
 data modify storage bingo:items categories append value {name: "bingo:gold", translateableName: '{"translate": "bingo.category.gold"}'}
 data modify storage bingo:items categories append value {name: "bingo:gunpowder", translateableName: '{"translate": "bingo.category.gunpowder"}'}
-#data modify storage bingo:items categories append value {name: "bingo:heart_of_the_sea", translateableName: '{"translate": "bingo.category.heart_of_the_sea"}'}
+data modify storage bingo:items categories append value {name: "bingo:heart_of_the_sea", translateableName: '{"translate": "bingo.category.heart_of_the_sea"}'}
 data modify storage bingo:items categories append value {name: "bingo:ink", translateableName: '{"translate": "bingo.category.ink"}'}
 data modify storage bingo:items categories append value {name: "bingo:ink_bone", translateableName: '{"translate": "bingo.category.ink_bone"}'}
 data modify storage bingo:items categories append value {name: "bingo:jungle", translateableName: '{"translate": "bingo.category.jungle"}'}
@@ -664,8 +664,8 @@ data modify storage temp:bingo.init item set value {id: "bingo:activator_rail", 
 data modify storage bingo:items categories[{name:"bingo:rail"}].items append from storage temp:bingo.init item
 
 ## 004d: heart_of_the_sea
-#data modify storage temp:bingo.init item set value {id: "bingo:heart_of_the_sea", item: {id: "minecraft:heart_of_the_sea"}, textComponent: '{"translate": "item.minecraft.heart_of_the_sea", "color": "yellow", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:heart_of_the_sea"}}}', icon: '"\\u004d"', clearCommand: "clear @a[tag=bingo.clear] minecraft:heart_of_the_sea 1", categories: 1, weight: 1}
-#data modify storage bingo:items categories[{name:"bingo:heart_of_the_sea"}].items append from storage temp:bingo.init item
+data modify storage temp:bingo.init item set value {id: "bingo:heart_of_the_sea", item: {id: "minecraft:heart_of_the_sea"}, textComponent: '{"translate": "item.minecraft.heart_of_the_sea", "color": "yellow", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:heart_of_the_sea"}}}', icon: '"\\u004d"', clearCommand: "clear @a[tag=bingo.clear] minecraft:heart_of_the_sea 1", categories: 1, weight: 1}
+data modify storage bingo:items categories[{name:"bingo:heart_of_the_sea"}].items append from storage temp:bingo.init item
 
 ## 004e: bell
 data modify storage temp:bingo.init item set value {id: "bingo:bell", item: {id: "minecraft:bell"}, textComponent: '{"translate": "block.minecraft.bell", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:bell"}}}', icon: '"\\u004e"', clearCommand: "clear @a[tag=bingo.clear] minecraft:bell 1", categories: 1, weight: 1}
