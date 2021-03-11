@@ -1,6 +1,6 @@
 {
 	"type": "minecraft:cave",
 	"config": {
-		"probability": 0.25
+		"probability": 0.16666666666666666666666666666667
 	}
 }
