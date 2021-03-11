@@ -48,10 +48,10 @@
 					"biome": "minecraft:beach",
 					"parameters": {
 						"temperature": 0.6,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": 1.8888888888888888,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -78,10 +78,10 @@
 					"biome": "minecraft:beach",
 					"parameters": {
 						"temperature": 0.6,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": 1.6666666666666667,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -108,10 +108,10 @@
 					"biome": "minecraft:beach",
 					"parameters": {
 						"temperature": 0.6,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": 1.4444444444444444,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -138,10 +138,10 @@
 					"biome": "minecraft:beach",
 					"parameters": {
 						"temperature": 0.6,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": 1.2222222222222223,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -168,10 +168,10 @@
 					"biome": "minecraft:beach",
 					"parameters": {
 						"temperature": 0.6,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": 1.0,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -198,10 +198,10 @@
 					"biome": "minecraft:beach",
 					"parameters": {
 						"temperature": 0.6,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": 0.7777777777777779,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -228,10 +228,10 @@
 					"biome": "minecraft:beach",
 					"parameters": {
 						"temperature": 0.6,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": 0.5555555555555556,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -258,10 +258,10 @@
 					"biome": "minecraft:beach",
 					"parameters": {
 						"temperature": 0.6,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": 0.3333333333333335,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -288,10 +288,10 @@
 					"biome": "minecraft:beach",
 					"parameters": {
 						"temperature": 0.6,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": 0.11111111111111116,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -318,10 +318,10 @@
 					"biome": "minecraft:beach",
 					"parameters": {
 						"temperature": 0.6,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": -0.11111111111111116,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -348,10 +348,10 @@
 					"biome": "minecraft:beach",
 					"parameters": {
 						"temperature": 0.6,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": -0.33333333333333304,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -378,10 +378,10 @@
 					"biome": "minecraft:beach",
 					"parameters": {
 						"temperature": 0.6,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": -0.5555555555555554,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -408,10 +408,10 @@
 					"biome": "minecraft:beach",
 					"parameters": {
 						"temperature": 0.6,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": -0.7777777777777777,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -438,10 +438,10 @@
 					"biome": "minecraft:beach",
 					"parameters": {
 						"temperature": 0.6,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": -1.0,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -468,10 +468,10 @@
 					"biome": "minecraft:beach",
 					"parameters": {
 						"temperature": 0.6,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": -1.2222222222222219,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -498,10 +498,10 @@
 					"biome": "minecraft:beach",
 					"parameters": {
 						"temperature": 0.6,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": -1.4444444444444442,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -528,10 +528,10 @@
 					"biome": "minecraft:beach",
 					"parameters": {
 						"temperature": 0.6,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": -1.6666666666666665,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -558,10 +558,10 @@
 					"biome": "minecraft:beach",
 					"parameters": {
 						"temperature": 0.6,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": -1.8888888888888888,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -988,10 +988,10 @@
 					"biome": "minecraft:beach",
 					"parameters": {
 						"temperature": 0.25,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": 1.8888888888888888,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -1018,10 +1018,10 @@
 					"biome": "minecraft:beach",
 					"parameters": {
 						"temperature": 0.25,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": 1.6666666666666667,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -1048,10 +1048,10 @@
 					"biome": "minecraft:stone_shore",
 					"parameters": {
 						"temperature": 0.25,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": 1.4444444444444444,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -1075,13 +1075,13 @@
 					}
 				},
 				{
-					"biome": "minecraft:stone_shore",
+					"biome": "minecraft:swamp",
 					"parameters": {
 						"temperature": 0.25,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": 1.2222222222222223,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -1108,10 +1108,10 @@
 					"biome": "minecraft:beach",
 					"parameters": {
 						"temperature": 0.25,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": 1.0,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -1138,10 +1138,10 @@
 					"biome": "minecraft:beach",
 					"parameters": {
 						"temperature": 0.25,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": 0.7777777777777779,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -1168,10 +1168,10 @@
 					"biome": "minecraft:beach",
 					"parameters": {
 						"temperature": 0.25,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": 0.5555555555555556,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -1195,13 +1195,13 @@
 					}
 				},
 				{
-					"biome": "minecraft:beach",
+					"biome": "minecraft:swamp",
 					"parameters": {
 						"temperature": 0.25,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": 0.3333333333333335,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -1228,10 +1228,10 @@
 					"biome": "minecraft:beach",
 					"parameters": {
 						"temperature": 0.25,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": 0.11111111111111116,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -1258,10 +1258,10 @@
 					"biome": "minecraft:beach",
 					"parameters": {
 						"temperature": 0.25,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": -0.11111111111111116,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -1285,13 +1285,13 @@
 					}
 				},
 				{
-					"biome": "minecraft:beach",
+					"biome": "minecraft:stone_shore",
 					"parameters": {
 						"temperature": 0.25,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": -0.33333333333333304,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -1318,10 +1318,10 @@
 					"biome": "minecraft:beach",
 					"parameters": {
 						"temperature": 0.25,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": -0.5555555555555554,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -1348,10 +1348,10 @@
 					"biome": "minecraft:swamp",
 					"parameters": {
 						"temperature": 0.25,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": -0.7777777777777777,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -1378,10 +1378,10 @@
 					"biome": "minecraft:stone_shore",
 					"parameters": {
 						"temperature": 0.25,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": -1.0,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -1408,10 +1408,10 @@
 					"biome": "minecraft:beach",
 					"parameters": {
 						"temperature": 0.25,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": -1.2222222222222219,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -1435,13 +1435,13 @@
 					}
 				},
 				{
-					"biome": "minecraft:stone_shore",
+					"biome": "minecraft:beach",
 					"parameters": {
 						"temperature": 0.25,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": -1.4444444444444442,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -1465,13 +1465,13 @@
 					}
 				},
 				{
-					"biome": "minecraft:stone_shore",
+					"biome": "minecraft:beach",
 					"parameters": {
 						"temperature": 0.25,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": -1.6666666666666665,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -1498,10 +1498,10 @@
 					"biome": "minecraft:beach",
 					"parameters": {
 						"temperature": 0.25,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": -1.8888888888888888,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -1888,10 +1888,10 @@
 					"biome": "minecraft:beach",
 					"parameters": {
 						"temperature": -0.25,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": 1.9,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -1918,10 +1918,10 @@
 					"biome": "minecraft:beach",
 					"parameters": {
 						"temperature": -0.25,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": 1.7,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -1945,13 +1945,13 @@
 					}
 				},
 				{
-					"biome": "minecraft:stone_shore",
+					"biome": "minecraft:beach",
 					"parameters": {
 						"temperature": -0.25,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": 1.5,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -1975,13 +1975,13 @@
 					}
 				},
 				{
-					"biome": "minecraft:beach",
+					"biome": "minecraft:stone_shore",
 					"parameters": {
 						"temperature": -0.25,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": 1.2999999999999998,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -2008,10 +2008,10 @@
 					"biome": "minecraft:beach",
 					"parameters": {
 						"temperature": -0.25,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": 1.1,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -2038,10 +2038,10 @@
 					"biome": "minecraft:beach",
 					"parameters": {
 						"temperature": -0.25,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": 0.8999999999999999,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -2068,10 +2068,10 @@
 					"biome": "minecraft:beach",
 					"parameters": {
 						"temperature": -0.25,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": 0.7,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -2095,13 +2095,13 @@
 					}
 				},
 				{
-					"biome": "minecraft:beach",
+					"biome": "minecraft:stone_shore",
 					"parameters": {
 						"temperature": -0.25,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": 0.5,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -2128,10 +2128,10 @@
 					"biome": "minecraft:beach",
 					"parameters": {
 						"temperature": -0.25,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": 0.2999999999999998,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -2158,10 +2158,10 @@
 					"biome": "minecraft:beach",
 					"parameters": {
 						"temperature": -0.25,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": 0.09999999999999987,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -2185,13 +2185,13 @@
 					}
 				},
 				{
-					"biome": "minecraft:stone_shore",
+					"biome": "minecraft:beach",
 					"parameters": {
 						"temperature": -0.25,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": -0.10000000000000009,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -2218,10 +2218,10 @@
 					"biome": "minecraft:beach",
 					"parameters": {
 						"temperature": -0.25,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": -0.30000000000000027,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -2248,10 +2248,10 @@
 					"biome": "minecraft:beach",
 					"parameters": {
 						"temperature": -0.25,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": -0.5,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -2278,10 +2278,10 @@
 					"biome": "minecraft:stone_shore",
 					"parameters": {
 						"temperature": -0.25,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": -0.7000000000000002,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -2308,10 +2308,10 @@
 					"biome": "minecraft:beach",
 					"parameters": {
 						"temperature": -0.25,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": -0.9000000000000004,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -2338,10 +2338,10 @@
 					"biome": "minecraft:beach",
 					"parameters": {
 						"temperature": -0.25,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": -1.1,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -2368,10 +2368,10 @@
 					"biome": "minecraft:beach",
 					"parameters": {
 						"temperature": -0.25,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": -1.3000000000000003,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -2398,10 +2398,10 @@
 					"biome": "minecraft:beach",
 					"parameters": {
 						"temperature": -0.25,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": -1.5,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -2425,13 +2425,13 @@
 					}
 				},
 				{
-					"biome": "minecraft:stone_shore",
+					"biome": "minecraft:beach",
 					"parameters": {
 						"temperature": -0.25,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": -1.7000000000000002,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -2455,13 +2455,13 @@
 					}
 				},
 				{
-					"biome": "minecraft:beach",
+					"biome": "minecraft:stone_shore",
 					"parameters": {
 						"temperature": -0.25,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": -1.9000000000000004,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -2888,10 +2888,10 @@
 					"biome": "minecraft:snowy_beach",
 					"parameters": {
 						"temperature": -0.6,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": 1.9,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -2918,10 +2918,10 @@
 					"biome": "minecraft:snowy_beach",
 					"parameters": {
 						"temperature": -0.6,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": 1.7,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -2948,10 +2948,10 @@
 					"biome": "minecraft:snowy_beach",
 					"parameters": {
 						"temperature": -0.6,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": 1.5,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -2978,10 +2978,10 @@
 					"biome": "minecraft:snowy_beach",
 					"parameters": {
 						"temperature": -0.6,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": 1.2999999999999998,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -3008,10 +3008,10 @@
 					"biome": "minecraft:snowy_beach",
 					"parameters": {
 						"temperature": -0.6,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": 1.1,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -3038,10 +3038,10 @@
 					"biome": "minecraft:snowy_beach",
 					"parameters": {
 						"temperature": -0.6,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": 0.8999999999999999,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -3068,10 +3068,10 @@
 					"biome": "minecraft:snowy_beach",
 					"parameters": {
 						"temperature": -0.6,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": 0.7,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -3098,10 +3098,10 @@
 					"biome": "minecraft:snowy_beach",
 					"parameters": {
 						"temperature": -0.6,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": 0.5,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -3128,10 +3128,10 @@
 					"biome": "minecraft:snowy_beach",
 					"parameters": {
 						"temperature": -0.6,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": 0.2999999999999998,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -3158,10 +3158,10 @@
 					"biome": "minecraft:snowy_beach",
 					"parameters": {
 						"temperature": -0.6,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": 0.09999999999999987,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -3188,10 +3188,10 @@
 					"biome": "minecraft:snowy_beach",
 					"parameters": {
 						"temperature": -0.6,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": -0.10000000000000009,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -3218,10 +3218,10 @@
 					"biome": "minecraft:snowy_beach",
 					"parameters": {
 						"temperature": -0.6,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": -0.30000000000000027,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -3248,10 +3248,10 @@
 					"biome": "minecraft:snowy_beach",
 					"parameters": {
 						"temperature": -0.6,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": -0.5,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -3278,10 +3278,10 @@
 					"biome": "minecraft:snowy_beach",
 					"parameters": {
 						"temperature": -0.6,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": -0.7000000000000002,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -3308,10 +3308,10 @@
 					"biome": "minecraft:snowy_beach",
 					"parameters": {
 						"temperature": -0.6,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": -0.9000000000000004,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -3338,10 +3338,10 @@
 					"biome": "minecraft:snowy_beach",
 					"parameters": {
 						"temperature": -0.6,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": -1.1,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -3368,10 +3368,10 @@
 					"biome": "minecraft:snowy_beach",
 					"parameters": {
 						"temperature": -0.6,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": -1.3000000000000003,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -3398,10 +3398,10 @@
 					"biome": "minecraft:snowy_beach",
 					"parameters": {
 						"temperature": -0.6,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": -1.5,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -3428,10 +3428,10 @@
 					"biome": "minecraft:snowy_beach",
 					"parameters": {
 						"temperature": -0.6,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": -1.7000000000000002,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{
@@ -3458,10 +3458,10 @@
 					"biome": "minecraft:snowy_beach",
 					"parameters": {
 						"temperature": -0.6,
-						"altitude": 0,
+						"altitude": -0.1,
 						"humidity": -1.9000000000000004,
 						"weirdness": 0,
-						"offset": 0
+						"offset": 0.01
 					}
 				},
 				{

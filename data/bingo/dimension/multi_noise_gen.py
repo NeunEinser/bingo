@@ -14,20 +14,22 @@ def write_biome_list(temperature, climate_biomes, hill_biomes, beach_biomes, alt
 	for i in range(biome_duplications):
 		cur_biomes = climate_biomes.copy()
 		cur_hill_biomes = hill_biomes.copy()
+		if beach_biomes is not None:
+			cur_beach_biomes = beach_biomes.copy()
 		step = 4.0 / (biome_duplications * len(climate_biomes))
 
 		for j in range (len(cur_biomes)):
 			iteration = i * len(climate_biomes) + j
 			biome_index = random.randint(0, len(cur_biomes) - 1)
 
-			biome = cur_biomes[biome_index]
-			hill_biome = cur_hill_biomes[biome_index]
 			if special_biome_iteration == iteration:
 				biome = special_biome
 				hill_biome = special_hill_biome
 			else:
-				cur_biomes.remove(biome)
-				cur_hill_biomes.remove(hill_biome)
+				biome = cur_biomes[biome_index]
+				hill_biome = cur_hill_biomes[biome_index]
+				del cur_biomes[biome_index]
+				del cur_hill_biomes[biome_index]
 
 			humidity = 2.0 - ((iteration + 0.5) * step)
 
@@ -40,12 +42,17 @@ def write_biome_list(temperature, climate_biomes, hill_biomes, beach_biomes, alt
 
 			if beach_biomes is not None:
 				file.write(",")
-				write_biome(beach_biomes[biome_index], temperature, beach_altitude, humidity, 0, 0)
+				if special_biome_iteration == iteration:
+					beach_biome = beach_biomes[0]
+				else:
+					beach_biome = cur_beach_biomes[biome_index]
+					del cur_beach_biomes[biome_index]
+				write_biome(beach_biome, temperature, beach_altitude, humidity, 0, 0.01)
 
 			if iteration < biome_duplications * len(climate_biomes) - 1:
 				file.write(',')
 def write_biome_list_for_temperature (temperature, climate_biomes, hill_biomes, ocean_biomes, deep_ocean_biomes, beach_biomes, special_biome, special_hill_biome, special_biome_iteration, iterations):
-	write_biome_list(temperature, climate_biomes, hill_biomes, beach_biomes, 0.1, 2, 0, special_biome, special_hill_biome, special_biome_iteration, iterations)
+	write_biome_list(temperature, climate_biomes, hill_biomes, beach_biomes, 0.1, 2, -0.1, special_biome, special_hill_biome, special_biome_iteration, iterations)
 	file.write(",")
 	write_biome_list(temperature, ocean_biomes, deep_ocean_biomes, None, -0.25, -0.5, None, ocean_biomes[0], "minecraft:mushroom_fields", 2, iterations)
 
