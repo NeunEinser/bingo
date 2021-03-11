@@ -11,6 +11,7 @@ execute as @a at @s run playsound minecraft:block.note_block.pling master @s ~ ~
 
 effect clear @a
 clear @a
+experience set @a 0
 gamerule doDaylightCycle true
 advancement revoke @a from bingo:item_detection/root
 execute in bingo:lobby run function neun_einser.timer:start/hundredth_of_second
