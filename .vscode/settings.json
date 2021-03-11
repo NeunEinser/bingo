@@ -64,7 +64,7 @@
 	"datapack.lint.nbtCompoundBracketSpacing": { "inside": 0 },
 	"datapack.lint.nbtCompoundColonSpacing": { "before": 0, "after": 1 },
 	"datapack.lint.nbtCompoundCommaSpacing": { "before": 0, "after": 1 },
-	"datapack.lint.nbtCompoundKeyQuote": ["warning", false],
+	"datapack.lint.nbtCompoundKeyQuote": null, //["warning", false],
 	"datapack.lint.nbtCompoundKeyQuoteType": ["warning", "prefer double"],
 	"datapack.lint.nbtCompoundSortKeys": null,
 	"datapack.lint.nbtCompoundTrailingComma": false,
