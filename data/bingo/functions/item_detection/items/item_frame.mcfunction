@@ -9,5 +9,5 @@
 # @private
 #declare score_holder $item_detect/item_frame.success
 
-execute store success score $item_detect/item_frame.success bingo.tmp if data storage bingo:card slots[{item:{id:"bingo:item_frame"}}] run data modify storage bingo:card slots[{item:{id:"bingo:item_frame"}}].selected set value true
+execute store success score $item_detect/item_frame.success bingo.tmp run data modify storage temp:bingo.input/item_detection slot set from storage bingo:card slots[{item:{id:"bingo:item_frame"}}]
 execute if score $item_detect/item_frame.success bingo.tmp matches 1 run function bingo:item_detection/helper/check_and_announce

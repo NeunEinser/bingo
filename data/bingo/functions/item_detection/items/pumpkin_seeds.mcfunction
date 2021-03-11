@@ -9,5 +9,5 @@
 # @private
 #declare score_holder $item_detect/pumpkin_seeds.success
 
-execute store success score $item_detect/pumpkin_seeds.success bingo.tmp if data storage bingo:card slots[{item:{id:"bingo:pumpkin_seeds"}}] run data modify storage bingo:card slots[{item:{id:"bingo:pumpkin_seeds"}}].selected set value true
+execute store success score $item_detect/pumpkin_seeds.success bingo.tmp run data modify storage temp:bingo.input/item_detection slot set from storage bingo:card slots[{item:{id:"bingo:pumpkin_seeds"}}]
 execute if score $item_detect/pumpkin_seeds.success bingo.tmp matches 1 run function bingo:item_detection/helper/check_and_announce

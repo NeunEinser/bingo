@@ -23,7 +23,7 @@
 # 	function bingo:item_detection/helper/set_border 
 #declare score_holder $item_detect/set_border.success
 
-execute store result score $item_detect/find_slot.slot_id bingo.tmp run data get storage bingo:card slots[{selected: true}].id
+execute store result score $item_detect/find_slot.slot_id bingo.tmp run data get storage temp:bingo.input/item_detection slot.id
 data modify storage temp:bingo.item_detection/set_border previousSlots set from storage bingo:card teams[-1].slots
 data remove storage temp:bingo.item_detection/set_border slots
 
