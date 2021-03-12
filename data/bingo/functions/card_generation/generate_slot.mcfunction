@@ -18,13 +18,9 @@ function bingo:card_generation/item/find_item
 data modify storage bingo:tmp item set from storage bingo:tmp items[0]
 data remove storage bingo:tmp items[0]
 
-execute store result score $size bingo.tmp run data get storage bingo:tmp items
-execute if score $size bingo.tmp matches 1.. run function bingo:card_generation/item/clean_up
+data modify storage bingo:card_generation forbiddenCategories append from storage bingo:tmp item.categories[]
 
 # copy to slot
-execute store result score $categories bingo.tmp run data get storage bingo:tmp item.categories
-execute if score $categories bingo.tmp matches 2.. run data modify storage bingo:card_generation usedItems append from storage bingo:tmp item.id
-
 data modify storage bingo:tmp slot.item set from storage bingo:tmp item
 execute store result storage bingo:tmp slot.id int 1 run scoreboard players get $i bingo.tmp
 
