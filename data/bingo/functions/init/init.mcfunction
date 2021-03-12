@@ -330,6 +330,7 @@ data modify storage bingo:items categories append value {name: "bingo:ink_bone",
 data modify storage bingo:items categories append value {name: "bingo:jungle", translateableName: '{"translate": "bingo.category.jungle"}'}
 data modify storage bingo:items categories append value {name: "bingo:lapis", translateableName: '{"translate": "bingo.category.lapis"}'}
 data modify storage bingo:items categories append value {name: "bingo:leather", translateableName: '{"translate": "bingo.category.leather"}'}
+data modify storage bingo:items categories append value {name: "bingo:lime", translateableName: '{"translate": "bingo.category.lime"}'}
 data modify storage bingo:items categories append value {name: "bingo:magma_block", translateableName: '{"translate": "bingo.category.magma_block"}'}
 data modify storage bingo:items categories append value {name: "bingo:milk", translateableName: '{"translate": "bingo.category.milk"}'}
 data modify storage bingo:items categories append value {name: "bingo:mushroom", translateableName: '{"translate": "bingo.category.mushroom"}'}
@@ -591,9 +592,10 @@ data modify storage temp:bingo.init item set value {id: "bingo:green_dye", item:
 data modify storage bingo:items categories[{name:"bingo:cactus"}].items append from storage temp:bingo.init item
 
 ## 003c: lime_dye
-data modify storage temp:bingo.init item set value {id: "bingo:lime_dye", item: {id: "minecraft:lime_dye"}, textComponent: '{"translate": "item.minecraft.lime_dye", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:lime_dye"}}}', icon: '"\\u003c"', clearCommand: "clear @a[tag=bingo.clear] minecraft:lime_dye 1", categories: ["bingo:cactus", "bingo:cactus_bone"], weight: 1}
+data modify storage temp:bingo.init item set value {id: "bingo:lime_dye", item: {id: "minecraft:lime_dye"}, textComponent: '{"translate": "item.minecraft.lime_dye", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:lime_dye"}}}', icon: '"\\u003c"', clearCommand: "clear @a[tag=bingo.clear] minecraft:lime_dye 1", categories: ["bingo:cactus", "bingo:cactus_bone", "bingo:lime"], weight: 1}
 data modify storage bingo:items categories[{name:"bingo:cactus"}].items append from storage temp:bingo.init item
 data modify storage bingo:items categories[{name:"bingo:cactus_bone"}].items append from storage temp:bingo.init item
+data modify storage bingo:items categories[{name:"bingo:lime"}].items append from storage temp:bingo.init item
 
 ## 003d: lapis_lazuli
 data modify storage temp:bingo.init item set value {id: "bingo:lapis_lazuli", item: {id: "minecraft:lapis_lazuli"}, textComponent: '{"translate": "item.minecraft.lapis_lazuli", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:lapis_lazuli"}}}', icon: '"\\u003d"', clearCommand: "clear @a[tag=bingo.clear] minecraft:lapis_lazuli 1", categories: ["bingo:lapis"], weight: 1}
@@ -704,8 +706,9 @@ data modify storage temp:bingo.init item set value {id: "bingo:bamboo", item: {i
 data modify storage bingo:items categories[{name:"bingo:jungle"}].items append from storage temp:bingo.init item
 
 ## 0057: sea_pickle
-data modify storage temp:bingo.init item set value {id: "bingo:sea_pickle", item: {id: "minecraft:sea_pickle"}, textComponent: '{"translate": "block.minecraft.sea_pickle", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:sea_pickle"}}}', icon: '"\\u0057"', clearCommand: "clear @a[tag=bingo.clear] minecraft:sea_pickle 1", categories: ["bingo:warm_ocean"], weight: 1}
+data modify storage temp:bingo.init item set value {id: "bingo:sea_pickle", item: {id: "minecraft:sea_pickle"}, textComponent: '{"translate": "block.minecraft.sea_pickle", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:sea_pickle"}}}', icon: '"\\u0057"', clearCommand: "clear @a[tag=bingo.clear] minecraft:sea_pickle 1", categories: ["bingo:warm_ocean", "bingo:lime"], weight: 1}
 data modify storage bingo:items categories[{name:"bingo:warm_ocean"}].items append from storage temp:bingo.init item
+data modify storage bingo:items categories[{name:"bingo:lime"}].items append from storage temp:bingo.init item
 
 ## 0058: seagrass
 data modify storage temp:bingo.init item set value {id: "bingo:seagrass", item: {id: "minecraft:seagrass"}, textComponent: '{"translate": "block.minecraft.seagrass", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:seagrass"}}}', icon: '"\\u0058"', clearCommand: "clear @a[tag=bingo.clear] minecraft:seagrass 1", categories: ["bingo:shearable"], weight: 1}
