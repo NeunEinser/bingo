@@ -253,6 +253,17 @@ scoreboard players set 9155 bingo.const 9155
 # @internal
 #declare score_holder 65536
 scoreboard players set 65536 bingo.const 65536
+
+#>
+# It is impossible to add this to a score, because Mojang thought you shouldn't
+# Add a negative score using scoreboard players add, and max int is 2147483647,
+# so you can't use remove either in this case.
+#
+# Why even differentiate between add and remove? Literally makes no sense at all
+#
+# @internal
+#declare score_holder -2147483648
+scoreboard players set -2147483648 bingo.const -2147483648
 #endregion
 
 execute in bingo:lobby run function bingo:init/setup_lobby
