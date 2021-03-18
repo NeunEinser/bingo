@@ -28,12 +28,6 @@ scoreboard players remove $detect_emerald/chunk.z bingo.tmp 2
 #declare score_holder $detect_emerald/chunk.tmp
 
 #>
-# Yes this function is that bad.
-#
-# @private
-#declare score_holder $detect_emerald/chunk.tmp2
-
-#>
 # @private
 #declare score_holder $detect_emerald/chunk.biomex_neg_offset
 scoreboard players operation $detect_emerald/chunk.biomex_neg_offset bingo.tmp = $detect_emerald/chunk.x bingo.tmp
@@ -104,6 +98,54 @@ scoreboard players remove $detect_emerald/chunk.biomey_mod_pos_off bingo.tmp 4
 #declare score_holder $detect_emerald/chunk.biomez_mod_pos_off
 scoreboard players operation $detect_emerald/chunk.biomez_mod_pos_off bingo.tmp = $detect_emerald/chunk.biomez_mod_neg_off bingo.tmp
 scoreboard players remove $detect_emerald/chunk.biomez_mod_pos_off bingo.tmp 4
+
+#>
+# This variable is needed to check for overflow after adding biomex_neg_offset
+#
+# @private
+#declare score_holder $detect_emerald/chunk.biomex_neg_o_chk
+scoreboard players set $detect_emerald/chunk.biomex_neg_o_chk bingo.tmp -2147483648
+scoreboard players operation $detect_emerald/chunk.biomex_neg_o_chk bingo.tmp += $detect_emerald/chunk.biomex_neg_offset bingo.tmp
+
+#>
+# This variable is needed to check for overflow after adding biomey_neg_offset
+#
+# @private
+#declare score_holder $detect_emerald/chunk.biomey_neg_o_chk
+scoreboard players set $detect_emerald/chunk.biomey_neg_o_chk bingo.tmp -2147483648
+scoreboard players operation $detect_emerald/chunk.biomey_neg_o_chk bingo.tmp += $detect_emerald/chunk.biomey_neg_offset bingo.tmp
+
+#>
+# This variable is needed to check for overflow after adding biomez_neg_offset
+#
+# @private
+#declare score_holder $detect_emerald/chunk.biomez_neg_o_chk
+scoreboard players set $detect_emerald/chunk.biomez_neg_o_chk bingo.tmp -2147483648
+scoreboard players operation $detect_emerald/chunk.biomez_neg_o_chk bingo.tmp += $detect_emerald/chunk.biomez_neg_offset bingo.tmp
+
+#>
+# This variable is needed to check for overflow after adding biomex_pos_offset
+#
+# @private
+#declare score_holder $detect_emerald/chunk.biomex_pos_o_chk
+scoreboard players set $detect_emerald/chunk.biomex_pos_o_chk bingo.tmp -2147483648
+scoreboard players operation $detect_emerald/chunk.biomex_pos_o_chk bingo.tmp += $detect_emerald/chunk.biomex_pos_offset bingo.tmp
+
+#>
+# This variable is needed to check for overflow after adding biomey_pos_offset
+#
+# @private
+#declare score_holder $detect_emerald/chunk.biomey_pos_o_chk
+scoreboard players set $detect_emerald/chunk.biomey_pos_o_chk bingo.tmp -2147483648
+scoreboard players operation $detect_emerald/chunk.biomey_pos_o_chk bingo.tmp += $detect_emerald/chunk.biomey_pos_offset bingo.tmp
+
+#>
+# This variable is needed to check for overflow after adding biomez_pos_offset
+#
+# @private
+#declare score_holder $detect_emerald/chunk.biomez_pos_o_chk
+scoreboard players set $detect_emerald/chunk.biomez_pos_o_chk bingo.tmp -2147483648
+scoreboard players operation $detect_emerald/chunk.biomez_pos_o_chk bingo.tmp += $detect_emerald/chunk.biomez_pos_offset bingo.tmp
 #endregion
 
 #region for loop setup
@@ -155,6 +197,20 @@ scoreboard players set $detect_emerald/chunk.seed_low bingo.tmp -1599338048
 #declare score_holder $detect_emerald/chunk.seed_high
 scoreboard players set $detect_emerald/chunk.seed_high bingo.tmp 2116576316
 
+# Add salt (in this case biome x neg offset)
+## If salt is negative, add 0xFFFF_FFFF to higher bits.
+execute if score $detect_emerald/chunk.biomex_neg_offset bingo.tmp matches ..-1 run scoreboard players remove $detect_emerald/chunk.seed_high bingo.tmp 1
+
+## Add lower salt bits with overflow detection
+scoreboard players operation $detect_emerald/chunk.seed_low bingo.tmp += $detect_emerald/chunk.biomex_neg_offset bingo.tmp
+execute if score $detect_emerald/chunk.seed_low bingo.tmp < $detect_emerald/chunk.biomex_pos_o_chk bingo.tmp run scoreboard players add $detect_emerald/chunk.seed_high bingo.tmp 1
+scoreboard players operation $detect_emerald/chunk.seed_low bingo.tmp += -2147483648 bingo.const
+#endregion
+
+#region LCG call 2:
+#       seed = seed * (seed * 6364136223846793005 + 1442695040888963407) + salt
+
+#region mult = seed * 6364136223846793005 + 1442695040888963407
 #>
 # After the addition, an overflow check takes place. That is result < right term
 # with an unsigned compare.
@@ -169,22 +225,6 @@ scoreboard players set $detect_emerald/chunk.seed_high bingo.tmp 2116576316
 #
 # @private
 #declare score_holder $detect_emerald/chunk.overflow_check
-
-# Add salt (in this case biome x)
-## If salt is negative, add 0xFFFF_FFFF to higher bits.
-execute if score $detect_emerald/chunk.biomex_neg_offset bingo.tmp matches ..-1 run scoreboard players remove $detect_emerald/chunk.seed_high bingo.tmp 1
-
-## Add lower salt bits with overflow detection
-scoreboard players operation $detect_emerald/chunk.seed_low bingo.tmp += $detect_emerald/chunk.biomex_neg_offset bingo.tmp
-scoreboard players set $detect_emerald/chunk.overflow_check bingo.tmp -2147483648
-scoreboard players operation $detect_emerald/chunk.overflow_check bingo.tmp += $detect_emerald/chunk.biomex_neg_offset bingo.tmp
-execute if score $detect_emerald/chunk.seed_low bingo.tmp < $detect_emerald/chunk.overflow_check bingo.tmp run scoreboard players add $detect_emerald/chunk.seed_high bingo.tmp 1
-scoreboard players operation $detect_emerald/chunk.seed_low bingo.tmp += -2147483648 bingo.const
-#endregion
-
-#region LCG call
-
-#region seed * 6364136223846793005
 
 #>
 # The lower bits of the multiplication result
@@ -226,12 +266,16 @@ execute if score $detect_emerald/chunk.seed_low_high bingo.tmp matches ..-1 run 
 # In the end, the result of these will be "in between" low and high
 
 #>
+# seed_low_low * other_low_high
+#
 # @private
 #declare score_holder $detect_emerald/chunk.middle1
 scoreboard players set $detect_emerald/chunk.middle1 bingo.tmp 19605
 scoreboard players operation $detect_emerald/chunk.middle1 bingo.tmp *= $detect_emerald/chunk.seed_low_low bingo.tmp
 
 #>
+# seed_low_high * other_low_low
+#
 # @private
 #declare score_holder $detect_emerald/chunk.middle2
 scoreboard players set $detect_emerald/chunk.middle2 bingo.tmp 32557
@@ -265,29 +309,654 @@ scoreboard players operation $detect_emerald/chunk.mult_low bingo.tmp *= $detect
 
 ## Add middle 1
 scoreboard players operation $detect_emerald/chunk.middle1 bingo.tmp *= 65536 bingo.const
-## Overflow detection (if mult_low < middle1, unsigned compare)
+### Overflow detection (if mult_low < middle1, unsigned compare)
 scoreboard players operation $detect_emerald/chunk.mult_low bingo.tmp += $detect_emerald/chunk.middle1 bingo.tmp
 scoreboard players operation $detect_emerald/chunk.middle1 bingo.tmp += -2147483648 bingo.const
 scoreboard players set $detect_emerald/chunk.overflow_check bingo.tmp -2147483648
 scoreboard players operation $detect_emerald/chunk.overflow_check bingo.tmp += $detect_emerald/chunk.mult_low bingo.tmp
 execute if score $detect_emerald/chunk.overflow_check bingo.tmp < $detect_emerald/chunk.middle1 bingo.tmp run scoreboard players add $detect_emerald/chunk.mult_high bingo.tmp 1
 
-## Add middle 2
+### Add middle 2
 scoreboard players operation $detect_emerald/chunk.middle2 bingo.tmp *= 65536 bingo.const
-## Overflow detection
+### Overflow detection
 scoreboard players operation $detect_emerald/chunk.mult_low bingo.tmp += $detect_emerald/chunk.middle2 bingo.tmp
 scoreboard players operation $detect_emerald/chunk.overflow_check bingo.tmp += $detect_emerald/chunk.middle2 bingo.tmp
 scoreboard players operation $detect_emerald/chunk.middle2 bingo.tmp += -2147483648 bingo.const
 execute if score $detect_emerald/chunk.overflow_check bingo.tmp < $detect_emerald/chunk.middle2 bingo.tmp run scoreboard players add $detect_emerald/chunk.mult_high bingo.tmp 1
-#endregion
 
-# Add c
+# Add c (1442695040888963407)
 scoreboard players remove $detect_emerald/chunk.mult_low bingo.tmp 144211633
 scoreboard players remove $detect_emerald/chunk.overflow_check bingo.tmp 144211633
-execute if score $detect_emerald/chunk.overflow_check bingo.tmp matches ..2003272016 run scoreboard players add $detect_emerald/chunk.mult_high bingo.tmp 1
+execute if score $detect_emerald/chunk.overflow_check bingo.tmp matches ..2003272015 run scoreboard players add $detect_emerald/chunk.mult_high bingo.tmp 1
 
 scoreboard players add $detect_emerald/chunk.mult_high bingo.tmp 335903614
+#endregion
 
 #region seed *= mult
+#>
+# The lower 16 bits of mult low
+#
+# @private
+#declare score_holder $detect_emerald/chunk.mult_low_low
+scoreboard players operation $detect_emerald/chunk.mult_low_low bingo.tmp = $detect_emerald/chunk.mult_low bingo.tmp
+scoreboard players operation $detect_emerald/chunk.mult_low_low bingo.tmp %= 65536 bingo.const
+
+#>
+# The higher 16 bits of mult low
+#
+# @private
+#declare score_holder $detect_emerald/chunk.mult_low_high
+scoreboard players operation $detect_emerald/chunk.mult_low_high bingo.tmp = $detect_emerald/chunk.mult_low bingo.tmp
+scoreboard players operation $detect_emerald/chunk.mult_low_high bingo.tmp /= 65536 bingo.const
+execute if score $detect_emerald/chunk.mult_low_high bingo.tmp matches ..-1 run scoreboard players add $detect_emerald/chunk.mult_low_high bingo.tmp 65536
+
+scoreboard players operation $detect_emerald/chunk.middle1 bingo.tmp = $detect_emerald/chunk.seed_low_low bingo.tmp
+scoreboard players operation $detect_emerald/chunk.middle1 bingo.tmp *= $detect_emerald/chunk.mult_low_high bingo.tmp
+
+scoreboard players operation $detect_emerald/chunk.middle2 bingo.tmp = $detect_emerald/chunk.seed_low_high bingo.tmp
+scoreboard players operation $detect_emerald/chunk.middle2 bingo.tmp *= $detect_emerald/chunk.mult_low_low bingo.tmp
+
+# Calculate high bits
+scoreboard players operation $detect_emerald/chunk.seed_high bingo.tmp *= $detect_emerald/chunk.mult_low bingo.tmp
+
+scoreboard players operation $detect_emerald/chunk.tmp bingo.tmp = $detect_emerald/chunk.mult_high bingo.tmp
+scoreboard players operation $detect_emerald/chunk.tmp bingo.tmp *= $detect_emerald/chunk.seed_low bingo.tmp
+scoreboard players operation $detect_emerald/chunk.seed_high bingo.tmp += $detect_emerald/chunk.tmp bingo.tmp
+
+scoreboard players operation $detect_emerald/chunk.tmp bingo.tmp = $detect_emerald/chunk.middle1 bingo.tmp
+scoreboard players operation $detect_emerald/chunk.tmp bingo.tmp /= 65536 bingo.const
+execute if score $detect_emerald/chunk.tmp bingo.tmp matches ..-1 run scoreboard players add $detect_emerald/chunk.tmp bingo.tmp 65536
+scoreboard players operation $detect_emerald/chunk.seed_high bingo.tmp += $detect_emerald/chunk.tmp bingo.tmp
+
+scoreboard players operation $detect_emerald/chunk.tmp bingo.tmp = $detect_emerald/chunk.middle2 bingo.tmp
+scoreboard players operation $detect_emerald/chunk.tmp bingo.tmp /= 65536 bingo.const
+execute if score $detect_emerald/chunk.tmp bingo.tmp matches ..-1 run scoreboard players add $detect_emerald/chunk.tmp bingo.tmp 65536
+scoreboard players operation $detect_emerald/chunk.seed_high bingo.tmp += $detect_emerald/chunk.tmp bingo.tmp
+
+scoreboard players operation $detect_emerald/chunk.tmp bingo.tmp = $detect_emerald/chunk.seed_low_high bingo.tmp
+scoreboard players operation $detect_emerald/chunk.tmp bingo.tmp *= $detect_emerald/chunk.mult_low_high bingo.tmp
+scoreboard players operation $detect_emerald/chunk.seed_high bingo.tmp += $detect_emerald/chunk.tmp bingo.tmp
+
+# Calculate low bits
+scoreboard players operation $detect_emerald/chunk.seed_low bingo.tmp = $detect_emerald/chunk.seed_low_low bingo.tmp
+scoreboard players operation $detect_emerald/chunk.seed_low bingo.tmp *= $detect_emerald/chunk.mult_low_low bingo.tmp
+
+## Add middle 1
+scoreboard players operation $detect_emerald/chunk.middle1 bingo.tmp *= 65536 bingo.const
+### Overflow detection (if mult_low < middle1, unsigned compare)
+scoreboard players operation $detect_emerald/chunk.seed_low bingo.tmp += $detect_emerald/chunk.middle1 bingo.tmp
+scoreboard players operation $detect_emerald/chunk.middle1 bingo.tmp += -2147483648 bingo.const
+scoreboard players set $detect_emerald/chunk.overflow_check bingo.tmp -2147483648
+scoreboard players operation $detect_emerald/chunk.overflow_check bingo.tmp += $detect_emerald/chunk.seed_low bingo.tmp
+execute if score $detect_emerald/chunk.overflow_check bingo.tmp < $detect_emerald/chunk.middle1 bingo.tmp run scoreboard players add $detect_emerald/chunk.seed_high bingo.tmp 1
+
+## Add middle 2
+scoreboard players operation $detect_emerald/chunk.middle2 bingo.tmp *= 65536 bingo.const
+### Overflow detection
+scoreboard players operation $detect_emerald/chunk.seed_low bingo.tmp += $detect_emerald/chunk.middle2 bingo.tmp
+scoreboard players operation $detect_emerald/chunk.overflow_check bingo.tmp += $detect_emerald/chunk.middle2 bingo.tmp
+scoreboard players operation $detect_emerald/chunk.middle2 bingo.tmp += -2147483648 bingo.const
+execute if score $detect_emerald/chunk.overflow_check bingo.tmp < $detect_emerald/chunk.middle2 bingo.tmp run scoreboard players add $detect_emerald/chunk.seed_high bingo.tmp 1
 #endregion
+
+#region seed += salt (in this case salt is biome y neg offset)
+## If salt is negative, add 0xFFFF_FFFF to higher bits.
+execute if score $detect_emerald/chunk.biomey_neg_offset bingo.tmp matches ..-1 run scoreboard players remove $detect_emerald/chunk.seed_high bingo.tmp 1
+
+## Add lower salt bits with overflow detection
+scoreboard players operation $detect_emerald/chunk.seed_low bingo.tmp += $detect_emerald/chunk.biomey_neg_offset bingo.tmp
+scoreboard players operation $detect_emerald/chunk.overflow_check bingo.tmp += $detect_emerald/chunk.biomey_neg_offset bingo.tmp
+execute if score $detect_emerald/chunk.overflow_check bingo.tmp < $detect_emerald/chunk.biomey_neg_o_chk bingo.tmp run scoreboard players add $detect_emerald/chunk.seed_high bingo.tmp 1
+#endregion
+
+#endregion
+
+#region LCG call 3:
+#       seed = seed * (seed * 6364136223846793005 + 1442695040888963407) + salt
+
+#region mult = seed * 6364136223846793005 + 1442695040888963407
+scoreboard players operation $detect_emerald/chunk.seed_low_low bingo.tmp = $detect_emerald/chunk.seed_low bingo.tmp
+scoreboard players operation $detect_emerald/chunk.seed_low_low bingo.tmp %= 65536 bingo.const
+
+scoreboard players operation $detect_emerald/chunk.seed_low_high bingo.tmp = $detect_emerald/chunk.seed_low bingo.tmp
+scoreboard players operation $detect_emerald/chunk.seed_low_high bingo.tmp /= 65536 bingo.const
+execute if score $detect_emerald/chunk.seed_low_high bingo.tmp matches ..-1 run scoreboard players add $detect_emerald/chunk.seed_low_high bingo.tmp 65536
+
+scoreboard players set $detect_emerald/chunk.middle1 bingo.tmp 19605
+scoreboard players operation $detect_emerald/chunk.middle1 bingo.tmp *= $detect_emerald/chunk.seed_low_low bingo.tmp
+
+scoreboard players set $detect_emerald/chunk.middle2 bingo.tmp 32557
+scoreboard players operation $detect_emerald/chunk.middle2 bingo.tmp *= $detect_emerald/chunk.seed_low_high bingo.tmp
+
+# Calculate high bits
+scoreboard players set $detect_emerald/chunk.mult_high bingo.tmp 1284865837
+scoreboard players operation $detect_emerald/chunk.mult_high bingo.tmp *= $detect_emerald/chunk.seed_high bingo.tmp
+
+scoreboard players set $detect_emerald/chunk.tmp bingo.tmp 1481765933
+scoreboard players operation $detect_emerald/chunk.tmp bingo.tmp *= $detect_emerald/chunk.seed_low bingo.tmp
+scoreboard players operation $detect_emerald/chunk.mult_high bingo.tmp += $detect_emerald/chunk.tmp bingo.tmp
+
+scoreboard players operation $detect_emerald/chunk.tmp bingo.tmp = $detect_emerald/chunk.middle1 bingo.tmp
+scoreboard players operation $detect_emerald/chunk.tmp bingo.tmp /= 65536 bingo.const
+execute if score $detect_emerald/chunk.tmp bingo.tmp matches ..-1 run scoreboard players add $detect_emerald/chunk.tmp bingo.tmp 65536
+scoreboard players operation $detect_emerald/chunk.mult_high bingo.tmp += $detect_emerald/chunk.tmp bingo.tmp
+
+scoreboard players operation $detect_emerald/chunk.tmp bingo.tmp = $detect_emerald/chunk.middle2 bingo.tmp
+scoreboard players operation $detect_emerald/chunk.tmp bingo.tmp /= 65536 bingo.const
+execute if score $detect_emerald/chunk.tmp bingo.tmp matches ..-1 run scoreboard players add $detect_emerald/chunk.tmp bingo.tmp 65536
+scoreboard players operation $detect_emerald/chunk.mult_high bingo.tmp += $detect_emerald/chunk.tmp bingo.tmp
+
+scoreboard players set $detect_emerald/chunk.tmp bingo.tmp 19605
+scoreboard players operation $detect_emerald/chunk.tmp bingo.tmp *= $detect_emerald/chunk.seed_low_high bingo.tmp
+scoreboard players operation $detect_emerald/chunk.mult_high bingo.tmp += $detect_emerald/chunk.tmp bingo.tmp
+
+# calculate low bits
+scoreboard players set $detect_emerald/chunk.mult_low bingo.tmp 32557
+scoreboard players operation $detect_emerald/chunk.mult_low bingo.tmp *= $detect_emerald/chunk.seed_low_low bingo.tmp
+
+## Add middle 1
+scoreboard players operation $detect_emerald/chunk.middle1 bingo.tmp *= 65536 bingo.const
+### Overflow detection (if mult_low < middle1, unsigned compare)
+scoreboard players operation $detect_emerald/chunk.mult_low bingo.tmp += $detect_emerald/chunk.middle1 bingo.tmp
+scoreboard players operation $detect_emerald/chunk.middle1 bingo.tmp += -2147483648 bingo.const
+scoreboard players set $detect_emerald/chunk.overflow_check bingo.tmp -2147483648
+scoreboard players operation $detect_emerald/chunk.overflow_check bingo.tmp += $detect_emerald/chunk.mult_low bingo.tmp
+execute if score $detect_emerald/chunk.overflow_check bingo.tmp < $detect_emerald/chunk.middle1 bingo.tmp run scoreboard players add $detect_emerald/chunk.mult_high bingo.tmp 1
+
+### Add middle 2
+scoreboard players operation $detect_emerald/chunk.middle2 bingo.tmp *= 65536 bingo.const
+### Overflow detection
+scoreboard players operation $detect_emerald/chunk.mult_low bingo.tmp += $detect_emerald/chunk.middle2 bingo.tmp
+scoreboard players operation $detect_emerald/chunk.overflow_check bingo.tmp += $detect_emerald/chunk.middle2 bingo.tmp
+scoreboard players operation $detect_emerald/chunk.middle2 bingo.tmp += -2147483648 bingo.const
+execute if score $detect_emerald/chunk.overflow_check bingo.tmp < $detect_emerald/chunk.middle2 bingo.tmp run scoreboard players add $detect_emerald/chunk.mult_high bingo.tmp 1
+
+# Add c (1442695040888963407)
+scoreboard players remove $detect_emerald/chunk.mult_low bingo.tmp 144211633
+scoreboard players remove $detect_emerald/chunk.overflow_check bingo.tmp 144211633
+execute if score $detect_emerald/chunk.overflow_check bingo.tmp matches ..2003272015 run scoreboard players add $detect_emerald/chunk.mult_high bingo.tmp 1
+
+scoreboard players add $detect_emerald/chunk.mult_high bingo.tmp 335903614
+#endregion
+
+#region seed *= mult
+scoreboard players operation $detect_emerald/chunk.mult_low_low bingo.tmp = $detect_emerald/chunk.mult_low bingo.tmp
+scoreboard players operation $detect_emerald/chunk.mult_low_low bingo.tmp %= 65536 bingo.const
+
+scoreboard players operation $detect_emerald/chunk.mult_low_high bingo.tmp = $detect_emerald/chunk.mult_low bingo.tmp
+scoreboard players operation $detect_emerald/chunk.mult_low_high bingo.tmp /= 65536 bingo.const
+execute if score $detect_emerald/chunk.mult_low_high bingo.tmp matches ..-1 run scoreboard players add $detect_emerald/chunk.mult_low_high bingo.tmp 65536
+
+scoreboard players operation $detect_emerald/chunk.middle1 bingo.tmp = $detect_emerald/chunk.seed_low_low bingo.tmp
+scoreboard players operation $detect_emerald/chunk.middle1 bingo.tmp *= $detect_emerald/chunk.mult_low_high bingo.tmp
+
+scoreboard players operation $detect_emerald/chunk.middle2 bingo.tmp = $detect_emerald/chunk.seed_low_high bingo.tmp
+scoreboard players operation $detect_emerald/chunk.middle2 bingo.tmp *= $detect_emerald/chunk.mult_low_low bingo.tmp
+
+# Calculate high bits
+scoreboard players operation $detect_emerald/chunk.seed_high bingo.tmp *= $detect_emerald/chunk.mult_low bingo.tmp
+
+scoreboard players operation $detect_emerald/chunk.tmp bingo.tmp = $detect_emerald/chunk.mult_high bingo.tmp
+scoreboard players operation $detect_emerald/chunk.tmp bingo.tmp *= $detect_emerald/chunk.seed_low bingo.tmp
+scoreboard players operation $detect_emerald/chunk.seed_high bingo.tmp += $detect_emerald/chunk.tmp bingo.tmp
+
+scoreboard players operation $detect_emerald/chunk.tmp bingo.tmp = $detect_emerald/chunk.middle1 bingo.tmp
+scoreboard players operation $detect_emerald/chunk.tmp bingo.tmp /= 65536 bingo.const
+execute if score $detect_emerald/chunk.tmp bingo.tmp matches ..-1 run scoreboard players add $detect_emerald/chunk.tmp bingo.tmp 65536
+scoreboard players operation $detect_emerald/chunk.seed_high bingo.tmp += $detect_emerald/chunk.tmp bingo.tmp
+
+scoreboard players operation $detect_emerald/chunk.tmp bingo.tmp = $detect_emerald/chunk.middle2 bingo.tmp
+scoreboard players operation $detect_emerald/chunk.tmp bingo.tmp /= 65536 bingo.const
+execute if score $detect_emerald/chunk.tmp bingo.tmp matches ..-1 run scoreboard players add $detect_emerald/chunk.tmp bingo.tmp 65536
+scoreboard players operation $detect_emerald/chunk.seed_high bingo.tmp += $detect_emerald/chunk.tmp bingo.tmp
+
+scoreboard players operation $detect_emerald/chunk.tmp bingo.tmp = $detect_emerald/chunk.seed_low_high bingo.tmp
+scoreboard players operation $detect_emerald/chunk.tmp bingo.tmp *= $detect_emerald/chunk.mult_low_high bingo.tmp
+scoreboard players operation $detect_emerald/chunk.seed_high bingo.tmp += $detect_emerald/chunk.tmp bingo.tmp
+
+# Calculate low bits
+scoreboard players operation $detect_emerald/chunk.seed_low bingo.tmp = $detect_emerald/chunk.seed_low_low bingo.tmp
+scoreboard players operation $detect_emerald/chunk.seed_low bingo.tmp *= $detect_emerald/chunk.mult_low_low bingo.tmp
+
+## Add middle 1
+scoreboard players operation $detect_emerald/chunk.middle1 bingo.tmp *= 65536 bingo.const
+### Overflow detection (if mult_low < middle1, unsigned compare)
+scoreboard players operation $detect_emerald/chunk.seed_low bingo.tmp += $detect_emerald/chunk.middle1 bingo.tmp
+scoreboard players operation $detect_emerald/chunk.middle1 bingo.tmp += -2147483648 bingo.const
+scoreboard players set $detect_emerald/chunk.overflow_check bingo.tmp -2147483648
+scoreboard players operation $detect_emerald/chunk.overflow_check bingo.tmp += $detect_emerald/chunk.seed_low bingo.tmp
+execute if score $detect_emerald/chunk.overflow_check bingo.tmp < $detect_emerald/chunk.middle1 bingo.tmp run scoreboard players add $detect_emerald/chunk.seed_high bingo.tmp 1
+
+## Add middle 2
+scoreboard players operation $detect_emerald/chunk.middle2 bingo.tmp *= 65536 bingo.const
+### Overflow detection
+scoreboard players operation $detect_emerald/chunk.seed_low bingo.tmp += $detect_emerald/chunk.middle2 bingo.tmp
+scoreboard players operation $detect_emerald/chunk.overflow_check bingo.tmp += $detect_emerald/chunk.middle2 bingo.tmp
+scoreboard players operation $detect_emerald/chunk.middle2 bingo.tmp += -2147483648 bingo.const
+execute if score $detect_emerald/chunk.overflow_check bingo.tmp < $detect_emerald/chunk.middle2 bingo.tmp run scoreboard players add $detect_emerald/chunk.seed_high bingo.tmp 1
+#endregion
+
+#region seed += salt (in this case salt is biome z neg offset)
+## If salt is negative, add 0xFFFF_FFFF to higher bits.
+execute if score $detect_emerald/chunk.biomez_neg_offset bingo.tmp matches ..-1 run scoreboard players remove $detect_emerald/chunk.seed_high bingo.tmp 1
+
+## Add lower salt bits with overflow detection
+scoreboard players operation $detect_emerald/chunk.seed_low bingo.tmp += $detect_emerald/chunk.biomez_neg_offset bingo.tmp
+scoreboard players operation $detect_emerald/chunk.overflow_check bingo.tmp += $detect_emerald/chunk.biomez_neg_offset bingo.tmp
+execute if score $detect_emerald/chunk.overflow_check bingo.tmp < $detect_emerald/chunk.biomez_neg_o_chk bingo.tmp run scoreboard players add $detect_emerald/chunk.seed_high bingo.tmp 1
+#endregion
+
+#endregion
+
+#region LCG call 4:
+#       seed = seed * (seed * 6364136223846793005 + 1442695040888963407) + salt
+
+#region mult = seed * 6364136223846793005 + 1442695040888963407
+scoreboard players operation $detect_emerald/chunk.seed_low_low bingo.tmp = $detect_emerald/chunk.seed_low bingo.tmp
+scoreboard players operation $detect_emerald/chunk.seed_low_low bingo.tmp %= 65536 bingo.const
+
+scoreboard players operation $detect_emerald/chunk.seed_low_high bingo.tmp = $detect_emerald/chunk.seed_low bingo.tmp
+scoreboard players operation $detect_emerald/chunk.seed_low_high bingo.tmp /= 65536 bingo.const
+execute if score $detect_emerald/chunk.seed_low_high bingo.tmp matches ..-1 run scoreboard players add $detect_emerald/chunk.seed_low_high bingo.tmp 65536
+
+scoreboard players set $detect_emerald/chunk.middle1 bingo.tmp 19605
+scoreboard players operation $detect_emerald/chunk.middle1 bingo.tmp *= $detect_emerald/chunk.seed_low_low bingo.tmp
+
+scoreboard players set $detect_emerald/chunk.middle2 bingo.tmp 32557
+scoreboard players operation $detect_emerald/chunk.middle2 bingo.tmp *= $detect_emerald/chunk.seed_low_high bingo.tmp
+
+# Calculate high bits
+scoreboard players set $detect_emerald/chunk.mult_high bingo.tmp 1284865837
+scoreboard players operation $detect_emerald/chunk.mult_high bingo.tmp *= $detect_emerald/chunk.seed_high bingo.tmp
+
+scoreboard players set $detect_emerald/chunk.tmp bingo.tmp 1481765933
+scoreboard players operation $detect_emerald/chunk.tmp bingo.tmp *= $detect_emerald/chunk.seed_low bingo.tmp
+scoreboard players operation $detect_emerald/chunk.mult_high bingo.tmp += $detect_emerald/chunk.tmp bingo.tmp
+
+scoreboard players operation $detect_emerald/chunk.tmp bingo.tmp = $detect_emerald/chunk.middle1 bingo.tmp
+scoreboard players operation $detect_emerald/chunk.tmp bingo.tmp /= 65536 bingo.const
+execute if score $detect_emerald/chunk.tmp bingo.tmp matches ..-1 run scoreboard players add $detect_emerald/chunk.tmp bingo.tmp 65536
+scoreboard players operation $detect_emerald/chunk.mult_high bingo.tmp += $detect_emerald/chunk.tmp bingo.tmp
+
+scoreboard players operation $detect_emerald/chunk.tmp bingo.tmp = $detect_emerald/chunk.middle2 bingo.tmp
+scoreboard players operation $detect_emerald/chunk.tmp bingo.tmp /= 65536 bingo.const
+execute if score $detect_emerald/chunk.tmp bingo.tmp matches ..-1 run scoreboard players add $detect_emerald/chunk.tmp bingo.tmp 65536
+scoreboard players operation $detect_emerald/chunk.mult_high bingo.tmp += $detect_emerald/chunk.tmp bingo.tmp
+
+scoreboard players set $detect_emerald/chunk.tmp bingo.tmp 19605
+scoreboard players operation $detect_emerald/chunk.tmp bingo.tmp *= $detect_emerald/chunk.seed_low_high bingo.tmp
+scoreboard players operation $detect_emerald/chunk.mult_high bingo.tmp += $detect_emerald/chunk.tmp bingo.tmp
+
+# calculate low bits
+scoreboard players set $detect_emerald/chunk.mult_low bingo.tmp 32557
+scoreboard players operation $detect_emerald/chunk.mult_low bingo.tmp *= $detect_emerald/chunk.seed_low_low bingo.tmp
+
+## Add middle 1
+scoreboard players operation $detect_emerald/chunk.middle1 bingo.tmp *= 65536 bingo.const
+### Overflow detection (if mult_low < middle1, unsigned compare)
+scoreboard players operation $detect_emerald/chunk.mult_low bingo.tmp += $detect_emerald/chunk.middle1 bingo.tmp
+scoreboard players operation $detect_emerald/chunk.middle1 bingo.tmp += -2147483648 bingo.const
+scoreboard players set $detect_emerald/chunk.overflow_check bingo.tmp -2147483648
+scoreboard players operation $detect_emerald/chunk.overflow_check bingo.tmp += $detect_emerald/chunk.mult_low bingo.tmp
+execute if score $detect_emerald/chunk.overflow_check bingo.tmp < $detect_emerald/chunk.middle1 bingo.tmp run scoreboard players add $detect_emerald/chunk.mult_high bingo.tmp 1
+
+### Add middle 2
+scoreboard players operation $detect_emerald/chunk.middle2 bingo.tmp *= 65536 bingo.const
+### Overflow detection
+scoreboard players operation $detect_emerald/chunk.mult_low bingo.tmp += $detect_emerald/chunk.middle2 bingo.tmp
+scoreboard players operation $detect_emerald/chunk.overflow_check bingo.tmp += $detect_emerald/chunk.middle2 bingo.tmp
+scoreboard players operation $detect_emerald/chunk.middle2 bingo.tmp += -2147483648 bingo.const
+execute if score $detect_emerald/chunk.overflow_check bingo.tmp < $detect_emerald/chunk.middle2 bingo.tmp run scoreboard players add $detect_emerald/chunk.mult_high bingo.tmp 1
+
+# Add c (1442695040888963407)
+scoreboard players remove $detect_emerald/chunk.mult_low bingo.tmp 144211633
+scoreboard players remove $detect_emerald/chunk.overflow_check bingo.tmp 144211633
+execute if score $detect_emerald/chunk.overflow_check bingo.tmp matches ..2003272015 run scoreboard players add $detect_emerald/chunk.mult_high bingo.tmp 1
+
+scoreboard players add $detect_emerald/chunk.mult_high bingo.tmp 335903614
+#endregion
+
+#region seed *= mult
+scoreboard players operation $detect_emerald/chunk.mult_low_low bingo.tmp = $detect_emerald/chunk.mult_low bingo.tmp
+scoreboard players operation $detect_emerald/chunk.mult_low_low bingo.tmp %= 65536 bingo.const
+
+scoreboard players operation $detect_emerald/chunk.mult_low_high bingo.tmp = $detect_emerald/chunk.mult_low bingo.tmp
+scoreboard players operation $detect_emerald/chunk.mult_low_high bingo.tmp /= 65536 bingo.const
+execute if score $detect_emerald/chunk.mult_low_high bingo.tmp matches ..-1 run scoreboard players add $detect_emerald/chunk.mult_low_high bingo.tmp 65536
+
+scoreboard players operation $detect_emerald/chunk.middle1 bingo.tmp = $detect_emerald/chunk.seed_low_low bingo.tmp
+scoreboard players operation $detect_emerald/chunk.middle1 bingo.tmp *= $detect_emerald/chunk.mult_low_high bingo.tmp
+
+scoreboard players operation $detect_emerald/chunk.middle2 bingo.tmp = $detect_emerald/chunk.seed_low_high bingo.tmp
+scoreboard players operation $detect_emerald/chunk.middle2 bingo.tmp *= $detect_emerald/chunk.mult_low_low bingo.tmp
+
+# Calculate high bits
+scoreboard players operation $detect_emerald/chunk.seed_high bingo.tmp *= $detect_emerald/chunk.mult_low bingo.tmp
+
+scoreboard players operation $detect_emerald/chunk.tmp bingo.tmp = $detect_emerald/chunk.mult_high bingo.tmp
+scoreboard players operation $detect_emerald/chunk.tmp bingo.tmp *= $detect_emerald/chunk.seed_low bingo.tmp
+scoreboard players operation $detect_emerald/chunk.seed_high bingo.tmp += $detect_emerald/chunk.tmp bingo.tmp
+
+scoreboard players operation $detect_emerald/chunk.tmp bingo.tmp = $detect_emerald/chunk.middle1 bingo.tmp
+scoreboard players operation $detect_emerald/chunk.tmp bingo.tmp /= 65536 bingo.const
+execute if score $detect_emerald/chunk.tmp bingo.tmp matches ..-1 run scoreboard players add $detect_emerald/chunk.tmp bingo.tmp 65536
+scoreboard players operation $detect_emerald/chunk.seed_high bingo.tmp += $detect_emerald/chunk.tmp bingo.tmp
+
+scoreboard players operation $detect_emerald/chunk.tmp bingo.tmp = $detect_emerald/chunk.middle2 bingo.tmp
+scoreboard players operation $detect_emerald/chunk.tmp bingo.tmp /= 65536 bingo.const
+execute if score $detect_emerald/chunk.tmp bingo.tmp matches ..-1 run scoreboard players add $detect_emerald/chunk.tmp bingo.tmp 65536
+scoreboard players operation $detect_emerald/chunk.seed_high bingo.tmp += $detect_emerald/chunk.tmp bingo.tmp
+
+scoreboard players operation $detect_emerald/chunk.tmp bingo.tmp = $detect_emerald/chunk.seed_low_high bingo.tmp
+scoreboard players operation $detect_emerald/chunk.tmp bingo.tmp *= $detect_emerald/chunk.mult_low_high bingo.tmp
+scoreboard players operation $detect_emerald/chunk.seed_high bingo.tmp += $detect_emerald/chunk.tmp bingo.tmp
+
+# Calculate low bits
+scoreboard players operation $detect_emerald/chunk.seed_low bingo.tmp = $detect_emerald/chunk.seed_low_low bingo.tmp
+scoreboard players operation $detect_emerald/chunk.seed_low bingo.tmp *= $detect_emerald/chunk.mult_low_low bingo.tmp
+
+## Add middle 1
+scoreboard players operation $detect_emerald/chunk.middle1 bingo.tmp *= 65536 bingo.const
+### Overflow detection (if mult_low < middle1, unsigned compare)
+scoreboard players operation $detect_emerald/chunk.seed_low bingo.tmp += $detect_emerald/chunk.middle1 bingo.tmp
+scoreboard players operation $detect_emerald/chunk.middle1 bingo.tmp += -2147483648 bingo.const
+scoreboard players set $detect_emerald/chunk.overflow_check bingo.tmp -2147483648
+scoreboard players operation $detect_emerald/chunk.overflow_check bingo.tmp += $detect_emerald/chunk.seed_low bingo.tmp
+execute if score $detect_emerald/chunk.overflow_check bingo.tmp < $detect_emerald/chunk.middle1 bingo.tmp run scoreboard players add $detect_emerald/chunk.seed_high bingo.tmp 1
+
+## Add middle 2
+scoreboard players operation $detect_emerald/chunk.middle2 bingo.tmp *= 65536 bingo.const
+### Overflow detection
+scoreboard players operation $detect_emerald/chunk.seed_low bingo.tmp += $detect_emerald/chunk.middle2 bingo.tmp
+scoreboard players operation $detect_emerald/chunk.overflow_check bingo.tmp += $detect_emerald/chunk.middle2 bingo.tmp
+scoreboard players operation $detect_emerald/chunk.middle2 bingo.tmp += -2147483648 bingo.const
+execute if score $detect_emerald/chunk.overflow_check bingo.tmp < $detect_emerald/chunk.middle2 bingo.tmp run scoreboard players add $detect_emerald/chunk.seed_high bingo.tmp 1
+#endregion
+
+#region seed += salt (in this case salt is biome x neg offset)
+## If salt is negative, add 0xFFFF_FFFF to higher bits.
+execute if score $detect_emerald/chunk.biomex_neg_offset bingo.tmp matches ..-1 run scoreboard players remove $detect_emerald/chunk.seed_high bingo.tmp 1
+
+## Add lower salt bits with overflow detection
+scoreboard players operation $detect_emerald/chunk.seed_low bingo.tmp += $detect_emerald/chunk.biomex_neg_offset bingo.tmp
+scoreboard players operation $detect_emerald/chunk.overflow_check bingo.tmp += $detect_emerald/chunk.biomex_neg_offset bingo.tmp
+execute if score $detect_emerald/chunk.overflow_check bingo.tmp < $detect_emerald/chunk.biomex_neg_o_chk bingo.tmp run scoreboard players add $detect_emerald/chunk.seed_high bingo.tmp 1
+#endregion
+
+#endregion
+
+#region LCG call 5:
+#       seed = seed * (seed * 6364136223846793005 + 1442695040888963407) + salt
+
+#region mult = seed * 6364136223846793005 + 1442695040888963407
+scoreboard players operation $detect_emerald/chunk.seed_low_low bingo.tmp = $detect_emerald/chunk.seed_low bingo.tmp
+scoreboard players operation $detect_emerald/chunk.seed_low_low bingo.tmp %= 65536 bingo.const
+
+scoreboard players operation $detect_emerald/chunk.seed_low_high bingo.tmp = $detect_emerald/chunk.seed_low bingo.tmp
+scoreboard players operation $detect_emerald/chunk.seed_low_high bingo.tmp /= 65536 bingo.const
+execute if score $detect_emerald/chunk.seed_low_high bingo.tmp matches ..-1 run scoreboard players add $detect_emerald/chunk.seed_low_high bingo.tmp 65536
+
+scoreboard players set $detect_emerald/chunk.middle1 bingo.tmp 19605
+scoreboard players operation $detect_emerald/chunk.middle1 bingo.tmp *= $detect_emerald/chunk.seed_low_low bingo.tmp
+
+scoreboard players set $detect_emerald/chunk.middle2 bingo.tmp 32557
+scoreboard players operation $detect_emerald/chunk.middle2 bingo.tmp *= $detect_emerald/chunk.seed_low_high bingo.tmp
+
+# Calculate high bits
+scoreboard players set $detect_emerald/chunk.mult_high bingo.tmp 1284865837
+scoreboard players operation $detect_emerald/chunk.mult_high bingo.tmp *= $detect_emerald/chunk.seed_high bingo.tmp
+
+scoreboard players set $detect_emerald/chunk.tmp bingo.tmp 1481765933
+scoreboard players operation $detect_emerald/chunk.tmp bingo.tmp *= $detect_emerald/chunk.seed_low bingo.tmp
+scoreboard players operation $detect_emerald/chunk.mult_high bingo.tmp += $detect_emerald/chunk.tmp bingo.tmp
+
+scoreboard players operation $detect_emerald/chunk.tmp bingo.tmp = $detect_emerald/chunk.middle1 bingo.tmp
+scoreboard players operation $detect_emerald/chunk.tmp bingo.tmp /= 65536 bingo.const
+execute if score $detect_emerald/chunk.tmp bingo.tmp matches ..-1 run scoreboard players add $detect_emerald/chunk.tmp bingo.tmp 65536
+scoreboard players operation $detect_emerald/chunk.mult_high bingo.tmp += $detect_emerald/chunk.tmp bingo.tmp
+
+scoreboard players operation $detect_emerald/chunk.tmp bingo.tmp = $detect_emerald/chunk.middle2 bingo.tmp
+scoreboard players operation $detect_emerald/chunk.tmp bingo.tmp /= 65536 bingo.const
+execute if score $detect_emerald/chunk.tmp bingo.tmp matches ..-1 run scoreboard players add $detect_emerald/chunk.tmp bingo.tmp 65536
+scoreboard players operation $detect_emerald/chunk.mult_high bingo.tmp += $detect_emerald/chunk.tmp bingo.tmp
+
+scoreboard players set $detect_emerald/chunk.tmp bingo.tmp 19605
+scoreboard players operation $detect_emerald/chunk.tmp bingo.tmp *= $detect_emerald/chunk.seed_low_high bingo.tmp
+scoreboard players operation $detect_emerald/chunk.mult_high bingo.tmp += $detect_emerald/chunk.tmp bingo.tmp
+
+# calculate low bits
+scoreboard players set $detect_emerald/chunk.mult_low bingo.tmp 32557
+scoreboard players operation $detect_emerald/chunk.mult_low bingo.tmp *= $detect_emerald/chunk.seed_low_low bingo.tmp
+
+## Add middle 1
+scoreboard players operation $detect_emerald/chunk.middle1 bingo.tmp *= 65536 bingo.const
+### Overflow detection (if mult_low < middle1, unsigned compare)
+scoreboard players operation $detect_emerald/chunk.mult_low bingo.tmp += $detect_emerald/chunk.middle1 bingo.tmp
+scoreboard players operation $detect_emerald/chunk.middle1 bingo.tmp += -2147483648 bingo.const
+scoreboard players set $detect_emerald/chunk.overflow_check bingo.tmp -2147483648
+scoreboard players operation $detect_emerald/chunk.overflow_check bingo.tmp += $detect_emerald/chunk.mult_low bingo.tmp
+execute if score $detect_emerald/chunk.overflow_check bingo.tmp < $detect_emerald/chunk.middle1 bingo.tmp run scoreboard players add $detect_emerald/chunk.mult_high bingo.tmp 1
+
+### Add middle 2
+scoreboard players operation $detect_emerald/chunk.middle2 bingo.tmp *= 65536 bingo.const
+### Overflow detection
+scoreboard players operation $detect_emerald/chunk.mult_low bingo.tmp += $detect_emerald/chunk.middle2 bingo.tmp
+scoreboard players operation $detect_emerald/chunk.overflow_check bingo.tmp += $detect_emerald/chunk.middle2 bingo.tmp
+scoreboard players operation $detect_emerald/chunk.middle2 bingo.tmp += -2147483648 bingo.const
+execute if score $detect_emerald/chunk.overflow_check bingo.tmp < $detect_emerald/chunk.middle2 bingo.tmp run scoreboard players add $detect_emerald/chunk.mult_high bingo.tmp 1
+
+# Add c (1442695040888963407)
+scoreboard players remove $detect_emerald/chunk.mult_low bingo.tmp 144211633
+scoreboard players remove $detect_emerald/chunk.overflow_check bingo.tmp 144211633
+execute if score $detect_emerald/chunk.overflow_check bingo.tmp matches ..2003272015 run scoreboard players add $detect_emerald/chunk.mult_high bingo.tmp 1
+
+scoreboard players add $detect_emerald/chunk.mult_high bingo.tmp 335903614
+#endregion
+
+#region seed *= mult
+scoreboard players operation $detect_emerald/chunk.mult_low_low bingo.tmp = $detect_emerald/chunk.mult_low bingo.tmp
+scoreboard players operation $detect_emerald/chunk.mult_low_low bingo.tmp %= 65536 bingo.const
+
+scoreboard players operation $detect_emerald/chunk.mult_low_high bingo.tmp = $detect_emerald/chunk.mult_low bingo.tmp
+scoreboard players operation $detect_emerald/chunk.mult_low_high bingo.tmp /= 65536 bingo.const
+execute if score $detect_emerald/chunk.mult_low_high bingo.tmp matches ..-1 run scoreboard players add $detect_emerald/chunk.mult_low_high bingo.tmp 65536
+
+scoreboard players operation $detect_emerald/chunk.middle1 bingo.tmp = $detect_emerald/chunk.seed_low_low bingo.tmp
+scoreboard players operation $detect_emerald/chunk.middle1 bingo.tmp *= $detect_emerald/chunk.mult_low_high bingo.tmp
+
+scoreboard players operation $detect_emerald/chunk.middle2 bingo.tmp = $detect_emerald/chunk.seed_low_high bingo.tmp
+scoreboard players operation $detect_emerald/chunk.middle2 bingo.tmp *= $detect_emerald/chunk.mult_low_low bingo.tmp
+
+# Calculate high bits
+scoreboard players operation $detect_emerald/chunk.seed_high bingo.tmp *= $detect_emerald/chunk.mult_low bingo.tmp
+
+scoreboard players operation $detect_emerald/chunk.tmp bingo.tmp = $detect_emerald/chunk.mult_high bingo.tmp
+scoreboard players operation $detect_emerald/chunk.tmp bingo.tmp *= $detect_emerald/chunk.seed_low bingo.tmp
+scoreboard players operation $detect_emerald/chunk.seed_high bingo.tmp += $detect_emerald/chunk.tmp bingo.tmp
+
+scoreboard players operation $detect_emerald/chunk.tmp bingo.tmp = $detect_emerald/chunk.middle1 bingo.tmp
+scoreboard players operation $detect_emerald/chunk.tmp bingo.tmp /= 65536 bingo.const
+execute if score $detect_emerald/chunk.tmp bingo.tmp matches ..-1 run scoreboard players add $detect_emerald/chunk.tmp bingo.tmp 65536
+scoreboard players operation $detect_emerald/chunk.seed_high bingo.tmp += $detect_emerald/chunk.tmp bingo.tmp
+
+scoreboard players operation $detect_emerald/chunk.tmp bingo.tmp = $detect_emerald/chunk.middle2 bingo.tmp
+scoreboard players operation $detect_emerald/chunk.tmp bingo.tmp /= 65536 bingo.const
+execute if score $detect_emerald/chunk.tmp bingo.tmp matches ..-1 run scoreboard players add $detect_emerald/chunk.tmp bingo.tmp 65536
+scoreboard players operation $detect_emerald/chunk.seed_high bingo.tmp += $detect_emerald/chunk.tmp bingo.tmp
+
+scoreboard players operation $detect_emerald/chunk.tmp bingo.tmp = $detect_emerald/chunk.seed_low_high bingo.tmp
+scoreboard players operation $detect_emerald/chunk.tmp bingo.tmp *= $detect_emerald/chunk.mult_low_high bingo.tmp
+scoreboard players operation $detect_emerald/chunk.seed_high bingo.tmp += $detect_emerald/chunk.tmp bingo.tmp
+
+# Calculate low bits
+scoreboard players operation $detect_emerald/chunk.seed_low bingo.tmp = $detect_emerald/chunk.seed_low_low bingo.tmp
+scoreboard players operation $detect_emerald/chunk.seed_low bingo.tmp *= $detect_emerald/chunk.mult_low_low bingo.tmp
+
+## Add middle 1
+scoreboard players operation $detect_emerald/chunk.middle1 bingo.tmp *= 65536 bingo.const
+### Overflow detection (if mult_low < middle1, unsigned compare)
+scoreboard players operation $detect_emerald/chunk.seed_low bingo.tmp += $detect_emerald/chunk.middle1 bingo.tmp
+scoreboard players operation $detect_emerald/chunk.middle1 bingo.tmp += -2147483648 bingo.const
+scoreboard players set $detect_emerald/chunk.overflow_check bingo.tmp -2147483648
+scoreboard players operation $detect_emerald/chunk.overflow_check bingo.tmp += $detect_emerald/chunk.seed_low bingo.tmp
+execute if score $detect_emerald/chunk.overflow_check bingo.tmp < $detect_emerald/chunk.middle1 bingo.tmp run scoreboard players add $detect_emerald/chunk.seed_high bingo.tmp 1
+
+## Add middle 2
+scoreboard players operation $detect_emerald/chunk.middle2 bingo.tmp *= 65536 bingo.const
+### Overflow detection
+scoreboard players operation $detect_emerald/chunk.seed_low bingo.tmp += $detect_emerald/chunk.middle2 bingo.tmp
+scoreboard players operation $detect_emerald/chunk.overflow_check bingo.tmp += $detect_emerald/chunk.middle2 bingo.tmp
+scoreboard players operation $detect_emerald/chunk.middle2 bingo.tmp += -2147483648 bingo.const
+execute if score $detect_emerald/chunk.overflow_check bingo.tmp < $detect_emerald/chunk.middle2 bingo.tmp run scoreboard players add $detect_emerald/chunk.seed_high bingo.tmp 1
+#endregion
+
+#region seed += salt (in this case salt is biome y neg offset)
+## If salt is negative, add 0xFFFF_FFFF to higher bits.
+execute if score $detect_emerald/chunk.biomey_neg_offset bingo.tmp matches ..-1 run scoreboard players remove $detect_emerald/chunk.seed_high bingo.tmp 1
+
+## Add lower salt bits with overflow detection
+scoreboard players operation $detect_emerald/chunk.seed_low bingo.tmp += $detect_emerald/chunk.biomey_neg_offset bingo.tmp
+scoreboard players operation $detect_emerald/chunk.overflow_check bingo.tmp += $detect_emerald/chunk.biomey_neg_offset bingo.tmp
+execute if score $detect_emerald/chunk.overflow_check bingo.tmp < $detect_emerald/chunk.biomey_neg_o_chk bingo.tmp run scoreboard players add $detect_emerald/chunk.seed_high bingo.tmp 1
+#endregion
+
+#endregion
+
+#region LCG call 6:
+#       seed = seed * (seed * 6364136223846793005 + 1442695040888963407) + salt
+
+#region mult = seed * 6364136223846793005 + 1442695040888963407
+scoreboard players operation $detect_emerald/chunk.seed_low_low bingo.tmp = $detect_emerald/chunk.seed_low bingo.tmp
+scoreboard players operation $detect_emerald/chunk.seed_low_low bingo.tmp %= 65536 bingo.const
+
+scoreboard players operation $detect_emerald/chunk.seed_low_high bingo.tmp = $detect_emerald/chunk.seed_low bingo.tmp
+scoreboard players operation $detect_emerald/chunk.seed_low_high bingo.tmp /= 65536 bingo.const
+execute if score $detect_emerald/chunk.seed_low_high bingo.tmp matches ..-1 run scoreboard players add $detect_emerald/chunk.seed_low_high bingo.tmp 65536
+
+scoreboard players set $detect_emerald/chunk.middle1 bingo.tmp 19605
+scoreboard players operation $detect_emerald/chunk.middle1 bingo.tmp *= $detect_emerald/chunk.seed_low_low bingo.tmp
+
+scoreboard players set $detect_emerald/chunk.middle2 bingo.tmp 32557
+scoreboard players operation $detect_emerald/chunk.middle2 bingo.tmp *= $detect_emerald/chunk.seed_low_high bingo.tmp
+
+# Calculate high bits
+scoreboard players set $detect_emerald/chunk.mult_high bingo.tmp 1284865837
+scoreboard players operation $detect_emerald/chunk.mult_high bingo.tmp *= $detect_emerald/chunk.seed_high bingo.tmp
+
+scoreboard players set $detect_emerald/chunk.tmp bingo.tmp 1481765933
+scoreboard players operation $detect_emerald/chunk.tmp bingo.tmp *= $detect_emerald/chunk.seed_low bingo.tmp
+scoreboard players operation $detect_emerald/chunk.mult_high bingo.tmp += $detect_emerald/chunk.tmp bingo.tmp
+
+scoreboard players operation $detect_emerald/chunk.tmp bingo.tmp = $detect_emerald/chunk.middle1 bingo.tmp
+scoreboard players operation $detect_emerald/chunk.tmp bingo.tmp /= 65536 bingo.const
+execute if score $detect_emerald/chunk.tmp bingo.tmp matches ..-1 run scoreboard players add $detect_emerald/chunk.tmp bingo.tmp 65536
+scoreboard players operation $detect_emerald/chunk.mult_high bingo.tmp += $detect_emerald/chunk.tmp bingo.tmp
+
+scoreboard players operation $detect_emerald/chunk.tmp bingo.tmp = $detect_emerald/chunk.middle2 bingo.tmp
+scoreboard players operation $detect_emerald/chunk.tmp bingo.tmp /= 65536 bingo.const
+execute if score $detect_emerald/chunk.tmp bingo.tmp matches ..-1 run scoreboard players add $detect_emerald/chunk.tmp bingo.tmp 65536
+scoreboard players operation $detect_emerald/chunk.mult_high bingo.tmp += $detect_emerald/chunk.tmp bingo.tmp
+
+scoreboard players set $detect_emerald/chunk.tmp bingo.tmp 19605
+scoreboard players operation $detect_emerald/chunk.tmp bingo.tmp *= $detect_emerald/chunk.seed_low_high bingo.tmp
+scoreboard players operation $detect_emerald/chunk.mult_high bingo.tmp += $detect_emerald/chunk.tmp bingo.tmp
+
+# calculate low bits
+scoreboard players set $detect_emerald/chunk.mult_low bingo.tmp 32557
+scoreboard players operation $detect_emerald/chunk.mult_low bingo.tmp *= $detect_emerald/chunk.seed_low_low bingo.tmp
+
+## Add middle 1
+scoreboard players operation $detect_emerald/chunk.middle1 bingo.tmp *= 65536 bingo.const
+### Overflow detection (if mult_low < middle1, unsigned compare)
+scoreboard players operation $detect_emerald/chunk.mult_low bingo.tmp += $detect_emerald/chunk.middle1 bingo.tmp
+scoreboard players operation $detect_emerald/chunk.middle1 bingo.tmp += -2147483648 bingo.const
+scoreboard players set $detect_emerald/chunk.overflow_check bingo.tmp -2147483648
+scoreboard players operation $detect_emerald/chunk.overflow_check bingo.tmp += $detect_emerald/chunk.mult_low bingo.tmp
+execute if score $detect_emerald/chunk.overflow_check bingo.tmp < $detect_emerald/chunk.middle1 bingo.tmp run scoreboard players add $detect_emerald/chunk.mult_high bingo.tmp 1
+
+### Add middle 2
+scoreboard players operation $detect_emerald/chunk.middle2 bingo.tmp *= 65536 bingo.const
+### Overflow detection
+scoreboard players operation $detect_emerald/chunk.mult_low bingo.tmp += $detect_emerald/chunk.middle2 bingo.tmp
+scoreboard players operation $detect_emerald/chunk.overflow_check bingo.tmp += $detect_emerald/chunk.middle2 bingo.tmp
+scoreboard players operation $detect_emerald/chunk.middle2 bingo.tmp += -2147483648 bingo.const
+execute if score $detect_emerald/chunk.overflow_check bingo.tmp < $detect_emerald/chunk.middle2 bingo.tmp run scoreboard players add $detect_emerald/chunk.mult_high bingo.tmp 1
+
+# Add c (1442695040888963407)
+scoreboard players remove $detect_emerald/chunk.mult_low bingo.tmp 144211633
+scoreboard players remove $detect_emerald/chunk.overflow_check bingo.tmp 144211633
+execute if score $detect_emerald/chunk.overflow_check bingo.tmp matches ..2003272015 run scoreboard players add $detect_emerald/chunk.mult_high bingo.tmp 1
+
+scoreboard players add $detect_emerald/chunk.mult_high bingo.tmp 335903614
+#endregion
+
+#region seed *= mult
+scoreboard players operation $detect_emerald/chunk.mult_low_low bingo.tmp = $detect_emerald/chunk.mult_low bingo.tmp
+scoreboard players operation $detect_emerald/chunk.mult_low_low bingo.tmp %= 65536 bingo.const
+
+scoreboard players operation $detect_emerald/chunk.mult_low_high bingo.tmp = $detect_emerald/chunk.mult_low bingo.tmp
+scoreboard players operation $detect_emerald/chunk.mult_low_high bingo.tmp /= 65536 bingo.const
+execute if score $detect_emerald/chunk.mult_low_high bingo.tmp matches ..-1 run scoreboard players add $detect_emerald/chunk.mult_low_high bingo.tmp 65536
+
+scoreboard players operation $detect_emerald/chunk.middle1 bingo.tmp = $detect_emerald/chunk.seed_low_low bingo.tmp
+scoreboard players operation $detect_emerald/chunk.middle1 bingo.tmp *= $detect_emerald/chunk.mult_low_high bingo.tmp
+
+scoreboard players operation $detect_emerald/chunk.middle2 bingo.tmp = $detect_emerald/chunk.seed_low_high bingo.tmp
+scoreboard players operation $detect_emerald/chunk.middle2 bingo.tmp *= $detect_emerald/chunk.mult_low_low bingo.tmp
+
+# Calculate high bits
+scoreboard players operation $detect_emerald/chunk.seed_high bingo.tmp *= $detect_emerald/chunk.mult_low bingo.tmp
+
+scoreboard players operation $detect_emerald/chunk.tmp bingo.tmp = $detect_emerald/chunk.mult_high bingo.tmp
+scoreboard players operation $detect_emerald/chunk.tmp bingo.tmp *= $detect_emerald/chunk.seed_low bingo.tmp
+scoreboard players operation $detect_emerald/chunk.seed_high bingo.tmp += $detect_emerald/chunk.tmp bingo.tmp
+
+scoreboard players operation $detect_emerald/chunk.tmp bingo.tmp = $detect_emerald/chunk.middle1 bingo.tmp
+scoreboard players operation $detect_emerald/chunk.tmp bingo.tmp /= 65536 bingo.const
+execute if score $detect_emerald/chunk.tmp bingo.tmp matches ..-1 run scoreboard players add $detect_emerald/chunk.tmp bingo.tmp 65536
+scoreboard players operation $detect_emerald/chunk.seed_high bingo.tmp += $detect_emerald/chunk.tmp bingo.tmp
+
+scoreboard players operation $detect_emerald/chunk.tmp bingo.tmp = $detect_emerald/chunk.middle2 bingo.tmp
+scoreboard players operation $detect_emerald/chunk.tmp bingo.tmp /= 65536 bingo.const
+execute if score $detect_emerald/chunk.tmp bingo.tmp matches ..-1 run scoreboard players add $detect_emerald/chunk.tmp bingo.tmp 65536
+scoreboard players operation $detect_emerald/chunk.seed_high bingo.tmp += $detect_emerald/chunk.tmp bingo.tmp
+
+scoreboard players operation $detect_emerald/chunk.tmp bingo.tmp = $detect_emerald/chunk.seed_low_high bingo.tmp
+scoreboard players operation $detect_emerald/chunk.tmp bingo.tmp *= $detect_emerald/chunk.mult_low_high bingo.tmp
+scoreboard players operation $detect_emerald/chunk.seed_high bingo.tmp += $detect_emerald/chunk.tmp bingo.tmp
+
+# Calculate low bits
+scoreboard players operation $detect_emerald/chunk.seed_low bingo.tmp = $detect_emerald/chunk.seed_low_low bingo.tmp
+scoreboard players operation $detect_emerald/chunk.seed_low bingo.tmp *= $detect_emerald/chunk.mult_low_low bingo.tmp
+
+## Add middle 1
+scoreboard players operation $detect_emerald/chunk.middle1 bingo.tmp *= 65536 bingo.const
+### Overflow detection (if mult_low < middle1, unsigned compare)
+scoreboard players operation $detect_emerald/chunk.seed_low bingo.tmp += $detect_emerald/chunk.middle1 bingo.tmp
+scoreboard players operation $detect_emerald/chunk.middle1 bingo.tmp += -2147483648 bingo.const
+scoreboard players set $detect_emerald/chunk.overflow_check bingo.tmp -2147483648
+scoreboard players operation $detect_emerald/chunk.overflow_check bingo.tmp += $detect_emerald/chunk.seed_low bingo.tmp
+execute if score $detect_emerald/chunk.overflow_check bingo.tmp < $detect_emerald/chunk.middle1 bingo.tmp run scoreboard players add $detect_emerald/chunk.seed_high bingo.tmp 1
+
+## Add middle 2
+scoreboard players operation $detect_emerald/chunk.middle2 bingo.tmp *= 65536 bingo.const
+### Overflow detection
+scoreboard players operation $detect_emerald/chunk.seed_low bingo.tmp += $detect_emerald/chunk.middle2 bingo.tmp
+scoreboard players operation $detect_emerald/chunk.overflow_check bingo.tmp += $detect_emerald/chunk.middle2 bingo.tmp
+scoreboard players operation $detect_emerald/chunk.middle2 bingo.tmp += -2147483648 bingo.const
+execute if score $detect_emerald/chunk.overflow_check bingo.tmp < $detect_emerald/chunk.middle2 bingo.tmp run scoreboard players add $detect_emerald/chunk.seed_high bingo.tmp 1
+#endregion
+
+#region seed += salt (in this case salt is biome z neg offset)
+## If salt is negative, add 0xFFFF_FFFF to higher bits.
+execute if score $detect_emerald/chunk.biomez_neg_offset bingo.tmp matches ..-1 run scoreboard players remove $detect_emerald/chunk.seed_high bingo.tmp 1
+
+## Add lower salt bits with overflow detection
+scoreboard players operation $detect_emerald/chunk.seed_low bingo.tmp += $detect_emerald/chunk.biomez_neg_offset bingo.tmp
+scoreboard players operation $detect_emerald/chunk.overflow_check bingo.tmp += $detect_emerald/chunk.biomez_neg_offset bingo.tmp
+execute if score $detect_emerald/chunk.overflow_check bingo.tmp < $detect_emerald/chunk.biomez_neg_o_chk bingo.tmp run scoreboard players add $detect_emerald/chunk.seed_high bingo.tmp 1
+#endregion
+
+#endregion
+
 #endregion
