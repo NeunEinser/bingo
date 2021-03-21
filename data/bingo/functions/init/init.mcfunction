@@ -79,7 +79,6 @@ scoreboard objectives remove bingo.frame_id
 scoreboard objectives remove bingo.lobby
 scoreboard objectives remove bingo.tmp
 scoreboard objectives remove bingo.const
-scoreboard objectives remove bingo.commands
 scoreboard objectives remove bingo.schedule
 scoreboard objectives remove bingo.menu_page
 scoreboard objectives remove bingo.pref
@@ -288,6 +287,7 @@ scoreboard players set -2147483648 bingo.const -2147483648
 
 execute in bingo:lobby run function bingo:init/setup_lobby
 gamerule commandBlockOutput false
+difficulty easy
 schedule function bingo:tick/clean_up 300s
 
 # setup default player configurations
