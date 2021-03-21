@@ -287,6 +287,7 @@ scoreboard players set -2147483648 bingo.const -2147483648
 
 execute in bingo:lobby run function bingo:init/setup_lobby
 gamerule commandBlockOutput false
+gamerule doWeatherCycle false
 difficulty easy
 schedule function bingo:tick/clean_up 300s
 
