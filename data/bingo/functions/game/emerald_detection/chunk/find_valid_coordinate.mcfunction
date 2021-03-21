@@ -11,6 +11,11 @@
 #
 # Decorations (like emeralds) depend on the raw biome values.
 #
+# This is awful code, horribly inlined. Do not attempt to read it. Treat it as a
+# blackbox. Ignore it.
+#
+# You have been warned.
+#
 # @within
 # 	function bingo:game/emerald_detection/chunk/*
 
