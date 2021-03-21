@@ -226,6 +226,10 @@ scoreboard objectives setdisplay sidebar bingo.stats
 scoreboard players set 2 bingo.const 2
 #>
 # @internal
+#declare score_holder 3
+scoreboard players set 3 bingo.const 3
+#>
+# @internal
 #declare score_holder 4
 scoreboard players set 4 bingo.const 4
 #>
