@@ -32,4 +32,4 @@ execute if score $chest_generation.row bingo.tmp matches 3.. run data modify blo
 execute if data storage temp:bingo.chest_generation category.items[-1] if score $chest_generation.row bingo.tmp matches 5 run function bingo:lobby/chest_generation/increment_column
 scoreboard players add $chest_generation.row bingo.tmp 1
 
-execute if data storage temp:bingo.chest_generation category.items[-1] run function bingo:lobby/chest_generation/items_iter
+execute if data storage temp:bingo.chest_generation category.items[-1] at @e[type=minecraft:area_effect_cloud, tag=bingo.item_chest_marker] run function bingo:lobby/chest_generation/items_iter

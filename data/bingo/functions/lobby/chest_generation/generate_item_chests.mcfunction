@@ -15,7 +15,9 @@
 #>
 # @within function bingo:lobby/chest_generation/*
 #declare score_holder $chest_generation.column
-scoreboard players set $chest_generation.column bingo.tmp 0
+scoreboard players set $chest_generation.column bingo.tmp -1
+
+data modify storage temp:bingo.chest_generation categories set from storage bingo:items categories
 
 setblock 0 64 0 minecraft:chest[type=left]
 setblock 1 64 0 minecraft:chest[type=right]
@@ -23,6 +25,3 @@ setblock 1 64 0 minecraft:chest[type=right]
 summon minecraft:area_effect_cloud 1 64 0 {Tags:["bingo.item_chest_marker"]}
 
 function bingo:lobby/chest_generation/category_iter
-
-data modify storage temp:bingo.chest_generation categories set from storage bingo:items categories
-
