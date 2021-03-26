@@ -359,7 +359,7 @@ data modify storage bingo:items categories append value {name: "bingo:enderslime
 data modify storage bingo:items categories append value {name: "bingo:fish", translateableName: '{"translate": "bingo.category.fish"}'}
 data modify storage bingo:items categories append value {name: "bingo:flint", translateableName: '{"translate": "bingo.category.flint"}'}
 data modify storage bingo:items categories append value {name: "bingo:furnace", translateableName: '{"translate": "bingo.category.furnace"}'}
-data modify storage bingo:items categories append value {name: "bingo:gold", translateableName: '{"translate": "bingo.category.gold"}'}
+data modify storage bingo:items categories append value {name: "bingo:gold_and_ruined_portal", translateableName: '{"translate": "bingo.category.gold_and_ruined_portal"}'}
 data modify storage bingo:items categories append value {name: "bingo:gunpowder", translateableName: '{"translate": "bingo.category.gunpowder"}'}
 data modify storage bingo:items categories append value {name: "bingo:heart_of_the_sea", translateableName: '{"translate": "bingo.category.heart_of_the_sea"}'}
 data modify storage bingo:items categories append value {name: "bingo:ink", translateableName: '{"translate": "bingo.category.ink"}'}
@@ -369,7 +369,6 @@ data modify storage bingo:items categories append value {name: "bingo:rabbit", t
 data modify storage bingo:items categories append value {name: "bingo:lapis", translateableName: '{"translate": "bingo.category.lapis"}'}
 data modify storage bingo:items categories append value {name: "bingo:leather", translateableName: '{"translate": "bingo.category.leather"}'}
 data modify storage bingo:items categories append value {name: "bingo:lime", translateableName: '{"translate": "bingo.category.lime"}'}
-data modify storage bingo:items categories append value {name: "bingo:magma_block", translateableName: '{"translate": "bingo.category.magma_block"}'}
 data modify storage bingo:items categories append value {name: "bingo:milk", translateableName: '{"translate": "bingo.category.milk"}'}
 data modify storage bingo:items categories append value {name: "bingo:mushroom", translateableName: '{"translate": "bingo.category.mushroom"}'}
 data modify storage bingo:items categories append value {name: "bingo:nine_smelts_one", translateableName: '{"translate": "bingo.category.nine_smelts_one"}'}
@@ -385,7 +384,6 @@ data modify storage bingo:items categories append value {name: "bingo:snow", tra
 data modify storage bingo:items categories append value {name: "bingo:spider", translateableName: '{"translate": "bingo.category.spider"}'}
 data modify storage bingo:items categories append value {name: "bingo:taiga", translateableName: '{"translate": "bingo.category.taiga"}'}
 #data modify storage bingo:items categories append value {name: "bingo:village", translateableName: '{"translate": "bingo.category.village"}'}
-data modify storage bingo:items categories append value {name: "bingo:warm_ocean", translateableName: '{"translate": "bingo.category.warm_ocean"}'}
 data modify storage bingo:items categories append value {name: "bingo:wheat", translateableName: '{"translate": "bingo.category.wheat"}'}
 data modify storage bingo:items categories append value {name: "bingo:wool", translateableName: '{"translate": "bingo.category.wool"}'}
 
@@ -451,8 +449,8 @@ data modify storage temp:bingo.init item set value {id: "bingo:rail", item: {id:
 data modify storage bingo:items categories[{name:"bingo:rail"}].items append from storage temp:bingo.init item
 
 ## 000f: powered_rail
-data modify storage temp:bingo.init item set value {id: "bingo:powered_rail", item: {id: "minecraft:powered_rail"}, textComponent: '{"translate": "block.minecraft.powered_rail", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:powered_rail"}}}', icon: '"\\u000f"', clearCommand: "clear @a[tag=bingo.clear] minecraft:powered_rail 1", categories: ["bingo:gold"], weight: 1}
-data modify storage bingo:items categories[{name:"bingo:gold"}].items append from storage temp:bingo.init item
+data modify storage temp:bingo.init item set value {id: "bingo:powered_rail", item: {id: "minecraft:powered_rail"}, textComponent: '{"translate": "block.minecraft.powered_rail", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:powered_rail"}}}', icon: '"\\u000f"', clearCommand: "clear @a[tag=bingo.clear] minecraft:powered_rail 1", categories: ["bingo:gold_and_ruined_portal"], weight: 1}
+data modify storage bingo:items categories[{name:"bingo:gold_and_ruined_portal"}].items append from storage temp:bingo.init item
 
 ## 0010: flint
 data modify storage temp:bingo.init item set value {id: "bingo:flint", item: {id: "minecraft:flint"}, textComponent: '{"translate": "item.minecraft.flint", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:flint"}}}', icon: '"\\u0010"', clearCommand: "clear @a[tag=bingo.clear] minecraft:flint 1", categories: ["bingo:flint"], weight: 1}
@@ -546,16 +544,16 @@ data modify storage temp:bingo.init item set value {id: "bingo:golden_apple", it
 data modify storage bingo:items categories[{name:"bingo:apple"}].items append from storage temp:bingo.init item
 
 ## 0027: golden_shovel
-data modify storage temp:bingo.init item set value {id: "bingo:golden_shovel", item: {id: "minecraft:golden_shovel"}, textComponent: '{"translate": "item.minecraft.golden_shovel", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:golden_shovel"}}}', icon: '"\\u0027"', clearCommand: "clear @a[tag=bingo.clear] minecraft:golden_shovel 1", categories: ["bingo:gold"], weight: 1}
-data modify storage bingo:items categories[{name:"bingo:gold"}].items append from storage temp:bingo.init item
+data modify storage temp:bingo.init item set value {id: "bingo:golden_shovel", item: {id: "minecraft:golden_shovel"}, textComponent: '{"translate": "item.minecraft.golden_shovel", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:golden_shovel"}}}', icon: '"\\u0027"', clearCommand: "clear @a[tag=bingo.clear] minecraft:golden_shovel 1", categories: ["bingo:gold_and_ruined_portal"], weight: 1}
+data modify storage bingo:items categories[{name:"bingo:gold_and_ruined_portal"}].items append from storage temp:bingo.init item
 
 ## 0028: golden_sword
-data modify storage temp:bingo.init item set value {id: "bingo:golden_sword", item: {id: "minecraft:golden_sword"}, textComponent: '{"translate": "item.minecraft.golden_sword", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:golden_sword"}}}', icon: '"\\u0028"', clearCommand: "clear @a[tag=bingo.clear] minecraft:golden_sword 1", categories: ["bingo:gold"], weight: 1}
-data modify storage bingo:items categories[{name:"bingo:gold"}].items append from storage temp:bingo.init item
+data modify storage temp:bingo.init item set value {id: "bingo:golden_sword", item: {id: "minecraft:golden_sword"}, textComponent: '{"translate": "item.minecraft.golden_sword", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:golden_sword"}}}', icon: '"\\u0028"', clearCommand: "clear @a[tag=bingo.clear] minecraft:golden_sword 1", categories: ["bingo:gold_and_ruined_portal"], weight: 1}
+data modify storage bingo:items categories[{name:"bingo:gold_and_ruined_portal"}].items append from storage temp:bingo.init item
 
 ## 0029: clock
-data modify storage temp:bingo.init item set value {id: "bingo:clock", item: {id: "minecraft:clock"}, textComponent: '{"translate": "item.minecraft.clock", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:clock"}}}', icon: '"\\u0029"', clearCommand: "clear @a[tag=bingo.clear] minecraft:clock 1", categories: ["bingo:gold"], weight: 1}
-data modify storage bingo:items categories[{name:"bingo:gold"}].items append from storage temp:bingo.init item
+data modify storage temp:bingo.init item set value {id: "bingo:clock", item: {id: "minecraft:clock"}, textComponent: '{"translate": "item.minecraft.clock", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:clock"}}}', icon: '"\\u0029"', clearCommand: "clear @a[tag=bingo.clear] minecraft:clock 1", categories: ["bingo:gold_and_ruined_portal"], weight: 1}
+data modify storage bingo:items categories[{name:"bingo:gold_and_ruined_portal"}].items append from storage temp:bingo.init item
 
 ## 002a: repeater
 data modify storage temp:bingo.init item set value {id: "bingo:repeater", item: {id: "minecraft:repeater"}, textComponent: '{"translate": "block.minecraft.repeater", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:repeater"}}}', icon: '"\\u002a"', clearCommand: "clear @a[tag=bingo.clear] minecraft:repeater 1", categories: ["bingo:redstone"], weight: 1}
@@ -678,14 +676,12 @@ data modify storage temp:bingo.init item set value {id: "bingo:salmon_bucket", i
 data modify storage bingo:items categories[{name:"bingo:fish"}].items append from storage temp:bingo.init item
 
 ## 0046: tropical_fish
-data modify storage temp:bingo.init item set value {id: "bingo:tropical_fish", item: {id: "minecraft:tropical_fish"}, textComponent: '{"translate": "item.minecraft.tropical_fish", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:tropical_fish"}}}', icon: '"\\u0046"', clearCommand: "clear @a[tag=bingo.clear] minecraft:tropical_fish 1", categories: ["bingo:fish", "bingo:warm_ocean"], weight: 1}
+data modify storage temp:bingo.init item set value {id: "bingo:tropical_fish", item: {id: "minecraft:tropical_fish"}, textComponent: '{"translate": "item.minecraft.tropical_fish", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:tropical_fish"}}}', icon: '"\\u0046"', clearCommand: "clear @a[tag=bingo.clear] minecraft:tropical_fish 1", categories: ["bingo:fish"], weight: 1}
 data modify storage bingo:items categories[{name:"bingo:fish"}].items append from storage temp:bingo.init item
-data modify storage bingo:items categories[{name:"bingo:warm_ocean"}].items append from storage temp:bingo.init item
 
 ## 0047: tropical_fish_bucket
-data modify storage temp:bingo.init item set value {id: "bingo:tropical_fish_bucket", item: {id: "minecraft:tropical_fish_bucket"}, textComponent: '{"translate": "item.minecraft.tropical_fish_bucket", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:tropical_fish_bucket"}}}', icon: '"\\u0047"', clearCommand: "clear @a[tag=bingo.clear] minecraft:tropical_fish_bucket 1", categories: ["bingo:fish", "bingo:warm_ocean"], weight: 1}
+data modify storage temp:bingo.init item set value {id: "bingo:tropical_fish_bucket", item: {id: "minecraft:tropical_fish_bucket"}, textComponent: '{"translate": "item.minecraft.tropical_fish_bucket", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:tropical_fish_bucket"}}}', icon: '"\\u0047"', clearCommand: "clear @a[tag=bingo.clear] minecraft:tropical_fish_bucket 1", categories: ["bingo:fish"], weight: 1}
 data modify storage bingo:items categories[{name:"bingo:fish"}].items append from storage temp:bingo.init item
-data modify storage bingo:items categories[{name:"bingo:warm_ocean"}].items append from storage temp:bingo.init item
 
 ## 0048: birch_sapling
 data modify storage temp:bingo.init item set value {id: "bingo:birch_sapling", item: {id: "minecraft:birch_sapling"}, textComponent: '{"translate": "block.minecraft.birch_sapling", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:birch_sapling"}}}', icon: '"\\u0048"', clearCommand: "clear @a[tag=bingo.clear] minecraft:birch_sapling 1", categories: ["bingo:sapling"], weight: 1}
@@ -729,16 +725,16 @@ data modify storage temp:bingo.init item set value {id: "bingo:diamond_pickaxe",
 data modify storage bingo:items categories[{name:"bingo:diamond"}].items append from storage temp:bingo.init item
 
 ## 0052: golden_axe
-data modify storage temp:bingo.init item set value {id: "bingo:golden_axe", item: {id: "minecraft:golden_axe"}, textComponent: '{"translate": "item.minecraft.golden_axe", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:golden_axe"}}}', icon: '"\\u0052"', clearCommand: "clear @a[tag=bingo.clear] minecraft:golden_axe 1", categories: ["bingo:gold"], weight: 1}
-data modify storage bingo:items categories[{name:"bingo:gold"}].items append from storage temp:bingo.init item
+data modify storage temp:bingo.init item set value {id: "bingo:golden_axe", item: {id: "minecraft:golden_axe"}, textComponent: '{"translate": "item.minecraft.golden_axe", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:golden_axe"}}}', icon: '"\\u0052"', clearCommand: "clear @a[tag=bingo.clear] minecraft:golden_axe 1", categories: ["bingo:gold_and_ruined_portal"], weight: 1}
+data modify storage bingo:items categories[{name:"bingo:gold_and_ruined_portal"}].items append from storage temp:bingo.init item
 
 ## 0053: golden_pickaxe
-data modify storage temp:bingo.init item set value {id: "bingo:golden_pickaxe", item: {id: "minecraft:golden_pickaxe"}, textComponent: '{"translate": "item.minecraft.golden_pickaxe", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:golden_pickaxe"}}}', icon: '"\\u0053"', clearCommand: "clear @a[tag=bingo.clear] minecraft:golden_pickaxe 1", categories: ["bingo:gold"], weight: 1}
-data modify storage bingo:items categories[{name:"bingo:gold"}].items append from storage temp:bingo.init item
+data modify storage temp:bingo.init item set value {id: "bingo:golden_pickaxe", item: {id: "minecraft:golden_pickaxe"}, textComponent: '{"translate": "item.minecraft.golden_pickaxe", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:golden_pickaxe"}}}', icon: '"\\u0053"', clearCommand: "clear @a[tag=bingo.clear] minecraft:golden_pickaxe 1", categories: ["bingo:gold_and_ruined_portal"], weight: 1}
+data modify storage bingo:items categories[{name:"bingo:gold_and_ruined_portal"}].items append from storage temp:bingo.init item
 
 ## 0054: golden_hoe
-data modify storage temp:bingo.init item set value {id: "bingo:golden_hoe", item: {id: "minecraft:golden_hoe"}, textComponent: '{"translate": "item.minecraft.golden_hoe", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:golden_hoe"}}}', icon: '"\\u0054"', clearCommand: "clear @a[tag=bingo.clear] minecraft:golden_hoe 1", categories: ["bingo:gold"], weight: 1}
-data modify storage bingo:items categories[{name:"bingo:gold"}].items append from storage temp:bingo.init item
+data modify storage temp:bingo.init item set value {id: "bingo:golden_hoe", item: {id: "minecraft:golden_hoe"}, textComponent: '{"translate": "item.minecraft.golden_hoe", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:golden_hoe"}}}', icon: '"\\u0054"', clearCommand: "clear @a[tag=bingo.clear] minecraft:golden_hoe 1", categories: ["bingo:gold_and_ruined_portal"], weight: 1}
+data modify storage bingo:items categories[{name:"bingo:gold_and_ruined_portal"}].items append from storage temp:bingo.init item
 
 ## 0055: crossbow
 data modify storage temp:bingo.init item set value {id: "bingo:crossbow", item: {id: "minecraft:crossbow"}, textComponent: '{"translate": "item.minecraft.crossbow", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:crossbow"}}}', icon: '"\\u0055"', clearCommand: "clear @a[tag=bingo.clear] minecraft:crossbow 1", categories: ["bingo:bow"], weight: 1}
@@ -749,8 +745,7 @@ data modify storage temp:bingo.init item set value {id: "bingo:bamboo", item: {i
 data modify storage bingo:items categories[{name:"bingo:jungle"}].items append from storage temp:bingo.init item
 
 ## 0057: sea_pickle
-data modify storage temp:bingo.init item set value {id: "bingo:sea_pickle", item: {id: "minecraft:sea_pickle"}, textComponent: '{"translate": "block.minecraft.sea_pickle", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:sea_pickle"}}}', icon: '"\\u0057"', clearCommand: "clear @a[tag=bingo.clear] minecraft:sea_pickle 1", categories: ["bingo:warm_ocean", "bingo:lime"], weight: 1}
-data modify storage bingo:items categories[{name:"bingo:warm_ocean"}].items append from storage temp:bingo.init item
+data modify storage temp:bingo.init item set value {id: "bingo:sea_pickle", item: {id: "minecraft:sea_pickle"}, textComponent: '{"translate": "block.minecraft.sea_pickle", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:sea_pickle"}}}', icon: '"\\u0057"', clearCommand: "clear @a[tag=bingo.clear] minecraft:sea_pickle 1", categories: ["bingo:lime"], weight: 1}
 data modify storage bingo:items categories[{name:"bingo:lime"}].items append from storage temp:bingo.init item
 
 ## 0058: seagrass
@@ -787,8 +782,8 @@ data modify storage temp:bingo.init item set value {id: "bingo:jukebox", item: {
 data modify storage bingo:items categories[{name:"bingo:diamond"}].items append from storage temp:bingo.init item
 
 ## 0107: magma_block
-data modify storage temp:bingo.init item set value {id: "bingo:magma_block", item: {id: "minecraft:magma_block"}, textComponent: '{"translate": "block.minecraft.magma_block", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:magma_block"}}}', icon: '"\\u0107"', clearCommand: "clear @a[tag=bingo.clear] minecraft:magma_block 1", categories: ["bingo:magma_block"], weight: 1}
-data modify storage bingo:items categories[{name:"bingo:magma_block"}].items append from storage temp:bingo.init item
+data modify storage temp:bingo.init item set value {id: "bingo:magma_block", item: {id: "minecraft:magma_block"}, textComponent: '{"translate": "block.minecraft.magma_block", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:magma_block"}}}', icon: '"\\u0107"', clearCommand: "clear @a[tag=bingo.clear] minecraft:magma_block 1", categories: ["bingo:gold_and_ruined_portal"], weight: 1}
+data modify storage bingo:items categories[{name:"bingo:gold_and_ruined_portal"}].items append from storage temp:bingo.init item
 
 ## 0108: bone_block
 data modify storage temp:bingo.init item set value {id: "bingo:bone_block", item: {id: "minecraft:bone_block"}, textComponent: '{"translate": "block.minecraft.bone_block", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:bone_block"}}}', icon: '"\\u0108"', clearCommand: "clear @a[tag=bingo.clear] minecraft:bone_block 1", categories: ["bingo:ink_bone", "bingo:cactus_bone"], weight: 1}
@@ -873,3 +868,31 @@ data modify storage bingo:items categories[{name:"bingo:flint"}].items append fr
 data modify storage temp:bingo.init item set value {id: "bingo:lectern", item: {id: "minecraft:lectern"}, textComponent: '{"translate": "block.minecraft.lectern", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:lectern"}}}', icon: '"\\u0000"', clearCommand: "clear @a[tag=bingo.clear] minecraft:lectern 1", categories: ["bingo:leather"], weight: 1}
 data modify storage bingo:items categories[{name:"bingo:leather"}].items append from storage temp:bingo.init item
 #data modify storage bingo:items categories[{name:"bingo:village"}].items append from storage temp:bingo.init item
+
+## : crying_obsidian
+#TODO incomplete
+data modify storage temp:bingo.init item set value {id: "bingo:crying_obsidian", item: {id: "minecraft:crying_obsidian"}, textComponent: '{"translate": "block.minecraft.crying_obsidian", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:crying_obsidian"}}}', icon: '"\\u0000"', clearCommand: "clear @a[tag=bingo.clear] minecraft:crying_obsidian 1", categories: ["bingo:diamond", "bingo:gold_and_ruined_portal"], weight: 1}
+data modify storage bingo:items categories[{name:"bingo:diamond"}].items append from storage temp:bingo.init item
+data modify storage bingo:items categories[{name:"bingo:gold_and_ruined_portal"}].items append from storage temp:bingo.init item
+
+## : gold_block
+#TODO incomplete
+data modify storage temp:bingo.init item set value {id: "bingo:gold_block", item: {id: "minecraft:gold_block"}, textComponent: '{"translate": "block.minecraft.gold_block", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:gold_block"}}}', icon: '"\\u0000"', clearCommand: "clear @a[tag=bingo.clear] minecraft:gold_block 1", categories: ["bingo:gold_and_ruined_portal", "nine_smelt_one"], weight: 1}
+data modify storage bingo:items categories[{name:"bingo:gold_and_ruined_portal"}].items append from storage temp:bingo.init item
+data modify storage bingo:items categories[{name:"bingo:nine_smelts_one"}].items append from storage temp:bingo.init item
+
+## : scaffolding
+#TODO incomplete
+data modify storage temp:bingo.init item set value {id: "bingo:scaffolding", item: {id: "minecraft:scaffolding"}, textComponent: '{"translate": "block.minecraft.scaffolding", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:scaffolding"}}}', icon: '"\\u0000"', clearCommand: "clear @a[tag=bingo.clear] minecraft:scaffolding 1", categories: ["bingo:jungle"], weight: 1}
+data modify storage bingo:items categories[{name:"bingo:jungle"}].items append from storage temp:bingo.init item
+
+## : piston
+#TODO incomplete
+data modify storage temp:bingo.init item set value {id: "bingo:piston", item: {id: "minecraft:piston"}, textComponent: '{"translate": "block.minecraft.piston", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:piston"}}}', icon: '"\\u0000"', clearCommand: "clear @a[tag=bingo.clear] minecraft:piston 1", categories: ["bingo:redstone"], weight: 1}
+data modify storage bingo:items categories[{name:"bingo:redstone"}].items append from storage temp:bingo.init item
+
+## : sticky_piston
+#TODO incomplete
+data modify storage temp:bingo.init item set value {id: "bingo:sticky_piston", item: {id: "minecraft:sticky_piston"}, textComponent: '{"translate": "block.minecraft.sticky_piston", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:sticky_piston"}}}', icon: '"\\u0000"', clearCommand: "clear @a[tag=bingo.clear] minecraft:sticky_piston 1", categories: ["bingo:redstone", "bingo:enderslime"], weight: 1}
+data modify storage bingo:items categories[{name:"bingo:redstone"}].items append from storage temp:bingo.init item
+data modify storage bingo:items categories[{name:"bingo:enderslime"}].items append from storage temp:bingo.init item
