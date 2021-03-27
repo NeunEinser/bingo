@@ -11,5 +11,5 @@ teleport @s ~ ~ ~
 setblock ~-1 ~ ~ minecraft:chest[type=left]
 setblock ~ ~ ~ minecraft:chest[type=right]
 
-scoreboard players set $chest_generation.column bingo.tmp 0
+scoreboard players set $chest_generation.column bingo.tmp 8
 scoreboard players set $chest_generation.row bingo.tmp 0
