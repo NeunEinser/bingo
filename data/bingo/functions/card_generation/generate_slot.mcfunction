@@ -1,16 +1,17 @@
 # select category
-execute store result score $max_val random_main run data get storage bingo:tmp categories
+execute store result score $max nn.math.rand run data get storage bingo:tmp categories
 
-function random:next_int
-scoreboard players operation $cat bingo.tmp = $result random_main
+function nope_name.math:rand/exe
+scoreboard players operation $cat bingo.tmp = $out nn.math.rand
 scoreboard players set $weight_multiplier bingo.tmp 1
 scoreboard players set $total_weight bingo.tmp 0
 data remove storage bingo:tmp items
 function bingo:card_generation/category/find_category
 
+
 # select item
-scoreboard players operation $max_val random_main = $total_weight bingo.tmp
-function random:next_int
+scoreboard players operation $max nn.math.rand = $total_weight bingo.tmp
+function nope_name.math:rand/exe
 
 scoreboard players set $position bingo.tmp 0
 function bingo:card_generation/item/find_item

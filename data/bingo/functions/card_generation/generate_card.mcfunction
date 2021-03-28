@@ -2,7 +2,7 @@ scoreboard players set $game_in_progress bingo.state 0
 execute in bingo:multi_noise as @a[distance=0..] in bingo:lobby run teleport @s 0 64 0
 execute in bingo:lobby run function neun_einser.timer:pause
 
-scoreboard players operation Seed bingo.stats = $seed random_main
+scoreboard players operation Seed bingo.stats = $seed nn.math.rand
 
 data remove storage bingo:tmp forbiddenCategories
 data modify storage bingo:tmp categories set from storage bingo:items categories
@@ -13,8 +13,8 @@ execute as @e[type=minecraft:item_frame, tag=bingo.card_frame] at @s run setbloc
 scoreboard players set $i bingo.tmp 0
 function bingo:card_generation/generate_slot
 
-function random:next_int
-execute store result storage bingo:card spawnLocation int 1 run scoreboard players get $result random_main
+function nope_name.math:rand/exe
+execute store result storage bingo:card spawnLocation int 1 run scoreboard players get $out nn.math.rand
 
 # Reset teams
 data remove storage bingo:card teams

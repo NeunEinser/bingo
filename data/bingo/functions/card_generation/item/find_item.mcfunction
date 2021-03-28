@@ -6,4 +6,4 @@ scoreboard players operation $weight bingo.tmp /= $categories bingo.tmp
 
 scoreboard players operation $position bingo.tmp += $weight bingo.tmp
 
-execute if score $position bingo.tmp <= $result random_main run function bingo:card_generation/item/next_item
+execute if score $position bingo.tmp <= $out nn.math.rand run function bingo:card_generation/item/next_item

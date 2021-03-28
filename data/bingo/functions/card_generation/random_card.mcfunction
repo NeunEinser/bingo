@@ -1,2 +1,2 @@
-function random:set_random_seed
+function nope_name.math:rand/set_random_seed
 function bingo:card_generation/generate_card

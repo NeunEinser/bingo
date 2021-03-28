@@ -1,8 +1,9 @@
 {
 	"values": [
-		"random:internal/init",
 		"math:internal/init",
 		"neun_einser.timer:internal/init",
-		"bingo:init/init"
+		"bingo:init/init",
+		"nope_name.math:rand/setup",
+		"nope_name.math:trig/setup"
 	]
 }
