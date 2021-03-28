@@ -18,7 +18,7 @@
 # announce
 execute in bingo:lobby run function neun_einser.timer:store_current_time
 
-execute at @s run playsound minecraft:block.end_portal_frame.fill master @s ~ ~ ~ 1 2
+execute as @a[tag=bingo.in_current_team] at @s run playsound minecraft:block.end_portal_frame.fill master @s ~ ~ ~ 1 2
 tellraw @a {"translate": "bingo.got_item", "with": [{"storage": "neun_einser.timer:display", "nbt": "\"hh:mm:ss.s\"", "interpret": true}, {"selector": "@s"}, {"storage": "temp:bingo.input/item_detection", "nbt": "slot.item.textComponent", "interpret": true}]}
 
 execute store result score $item_detect/announce.has_bingo bingo.tmp run data get storage bingo:card teams[-1].hasBingo
