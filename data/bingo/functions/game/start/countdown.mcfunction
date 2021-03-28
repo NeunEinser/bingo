@@ -13,3 +13,4 @@ execute if score $start_game.countdown bingo.tmp matches 0 run function bingo:ga
 
 scoreboard players remove $start_game.countdown bingo.tmp 1
 execute if score $start_game.countdown bingo.tmp matches 0.. run schedule function bingo:game/start/countdown 1s
+tellraw @a "[DEBUG] Scheduled function"

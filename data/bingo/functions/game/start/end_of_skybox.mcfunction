@@ -16,3 +16,4 @@ effect give @a minecraft:resistance 1000000 255 true
 scoreboard players set $start_game.countdown bingo.tmp 3
 
 schedule function bingo:game/start/countdown 3s
+tellraw @a "[DEBUG] Scheduled function"

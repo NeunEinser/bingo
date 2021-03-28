@@ -19,3 +19,4 @@ effect give @a minecraft:saturation 1000000 255 true
 clear @a
 
 schedule function bingo:game/start/end_of_skybox 30s
+tellraw @a "[DEBUG] Scheduled function"
