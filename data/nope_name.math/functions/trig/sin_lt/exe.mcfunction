@@ -30,6 +30,7 @@
 # @private
 #declare score_holder $tmp
 
+scoreboard players reset $out nn.math.trig
 scoreboard players operation $in nn.math.trig %= 360 nn.math.trig
 scoreboard players operation $tmp nn.math.trig = $in nn.math.trig
 scoreboard players operation $tmp nn.math.trig %= 180 nn.math.trig
