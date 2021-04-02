@@ -11,8 +11,7 @@
 #declare score_holder $item_detect/announce.has_bingo
 #>
 # @within
-# 	function bingo:item_detection/helper/announce
-# 	function bingo:item_detection/helper/goals/bingo/detect_bingo_and_20_no_bingo
+# 	function bingo:item_detection/helper/**
 #declare score_holder $item_detect/announce.items
 
 # announce

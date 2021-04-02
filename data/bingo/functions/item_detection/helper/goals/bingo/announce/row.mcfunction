@@ -4,7 +4,8 @@
 #
 # @within function bingo:item_detection/helper/goals/bingo/detect_bingo_and_20_no_bingo
 
-tellraw @a {"translate":"bingo.got_bingo.row", "with": [{"storage": "neun_einser.timer:display", "nbt": "\"hh:mm:ss.s\"", "interpret": true}, {"selector": "@a[tag=bingo.in_current_team]"}, {"score": {"name": "$item_detect/bingo.row", "objective": "bingo.tmp"}}]}
+execute unless score $item_detect/announce.items bingo.tmp matches 5 run tellraw @a {"translate":"bingo.got_bingo.row", "with": [{"storage": "neun_einser.timer:display", "nbt": "\"hh:mm:ss.s\"", "interpret": true}, {"selector": "@a[tag=bingo.in_current_team]"}, {"score": {"name": "$item_detect/bingo.row", "objective": "bingo.tmp"}}]}
+execute if score $item_detect/announce.items bingo.tmp matches 5 run tellraw @a {"translate":"bingo.got_sniper_bingo.row", "with": [{"storage": "neun_einser.timer:display", "nbt": "\"hh:mm:ss.s\"", "interpret": true}, {"selector": "@a[tag=bingo.in_current_team]"}, {"score": {"name": "$item_detect/bingo.row", "objective": "bingo.tmp"}}]}
 
 execute as @a[tag=bingo.in_current_team] at @s run function bingo:item_detection/helper/goals/completed_goal_effects
 

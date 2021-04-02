@@ -84,20 +84,39 @@
 	
 	"bingo.got_bingo.row": "[%1$s] %2$s got a bingo in row %3$s!",
 	"bingo.got_bingo.col": "[%1$s] %2$s got a bingo in col %3$s!",
-	"bingo.got_bingo.diag.top_left": "[%1$s] %2$s got a bingo from top left to bottom right!",
-	"bingo.got_bingo.diag.bottom_left": "[%1$s] %2$s got a bingo from bottom left to top right!",
+	"bingo.got_bingo.diag.top_left": "[%1$s] %2$s got a bingo in the top left to bottom right diagonal!",
+	"bingo.got_bingo.diag.bottom_left": "[%1$s] %2$s got a bingo in the bottom left to top right diagonal!",
 	
 	"bingo.got_bingo.double.col_row": "[%1$s] %2$s got a double bingo in row %3$s and col %4$s!",
-	"bingo.got_bingo.double.col_diag.top_left": "[%1$s] %2$s got a double bingo in col %3$s and from top left to bottom right!",
-	"bingo.got_bingo.double.col_diag.bottom_left": "[%1$s] %2$s got a double bingo in col %3$s and from bottom left to top right!",
-	"bingo.got_bingo.double.row_diag.top_left": "[%1$s] %2$s got a double bingo in row %3$s and from top left to bottom right!",
-	"bingo.got_bingo.double.row_diag.bottom_left": "[%1$s] %2$s got a double bingo in row %3$s and from bottom left to top right!",
+	"bingo.got_bingo.double.col_diag.top_left": "[%1$s] %2$s got a double bingo in col %3$s and the top left to bottom right diagonal!",
+	"bingo.got_bingo.double.col_diag.bottom_left": "[%1$s] %2$s got a double bingo in col %3$s and the bottom left to top right diagonal!",
+	"bingo.got_bingo.double.row_diag.top_left": "[%1$s] %2$s got a double bingo in row %3$s and the top left to bottom right diagonal!",
+	"bingo.got_bingo.double.row_diag.bottom_left": "[%1$s] %2$s got a double bingo in row %3$s and the bottom left to top right diagonal!",
 	"bingo.got_bingo.double.diags": "[%1$s] %2$s got a double bingo in both diagonals!",
 	
-	"bingo.got_bingo.triple.top_left": "[%1$s] %2$s got a triple bingo in col %3$s, row %s and from top left to bottom right!",
-	"bingo.got_bingo.triple.bottom_left": "[%1$s] %2$s got a triple bingo in col %3$s, row %s and from bottom left to top right!",
+	"bingo.got_bingo.triple.top_left": "[%1$s] %2$s got a triple bingo in col %3$s, row %s and the top left to bottom right diagonal!",
+	"bingo.got_bingo.triple.bottom_left": "[%1$s] %2$s got a triple bingo in col %3$s, row %s and the bottom left to top right diagonal!",
 	"bingo.got_bingo.triple.col_diags": "[%1$s] %2$s got a triple bingo in col %3$s and both diagonals!",
 	"bingo.got_bingo.triple.row_diags": "[%1$s] %2$s got a triple bingo in row %3$s and both diagonals!",
 	
-	"bingo.got_bingo.quadruple": "[%1$s] %2$s got a quadruple bingo!"
+	"bingo.got_bingo.quadruple": "[%1$s] %2$s got a quadruple bingo!",
+
+	"bingo.got_sniper_bingo.row": "[%1$s] %2$s got a sniper bingo in row %3$s!",
+	"bingo.got_sniper_bingo.col": "[%1$s] %2$s got a sniper bingo in col %3$s!",
+	"bingo.got_sniper_bingo.diag.top_left": "[%1$s] %2$s got a sniper bingo in the top left to bottom right diagonal!",
+	"bingo.got_sniper_bingo.diag.bottom_left": "[%1$s] %2$s got a sniper bingo in the bottom left to top right diagonal!",
+
+	"bingo.got_sniper_bingo.double.col_row": "[%1$s] %2$s got a sniper double bingo in row %3$s and col %4$s!",
+	"bingo.got_sniper_bingo.double.col_diag.top_left": "[%1$s] %2$s got a sniper double bingo in col %3$s and the top left to bottom right diagonal!",
+	"bingo.got_sniper_bingo.double.col_diag.bottom_left": "[%1$s] %2$s got a sniper double bingo in col %3$s and the bottom left to top right diagonal!",
+	"bingo.got_sniper_bingo.double.row_diag.top_left": "[%1$s] %2$s got a sniper double bingo in row %3$s and the top left to bottom right diagonal!",
+	"bingo.got_sniper_bingo.double.row_diag.bottom_left": "[%1$s] %2$s got a sniper double bingo in row %3$s and the bottom left to top right diagonal!",
+	"bingo.got_sniper_bingo.double.diags": "[%1$s] %2$s got a sniper double bingo in both diagonals!",
+
+	"bingo.got_sniper_bingo.triple.top_left": "[%1$s] %2$s got a sniper triple bingo in col %3$s, row %s and the top left to bottom right diagonal!",
+	"bingo.got_sniper_bingo.triple.bottom_left": "[%1$s] %2$s got a sniper triple bingo in col %3$s, row %s and the bottom left to top right diagonal!",
+	"bingo.got_sniper_bingo.triple.col_diags": "[%1$s] %2$s got a sniper triple bingo in col %3$s and both diagonals!",
+	"bingo.got_sniper_bingo.triple.row_diags": "[%1$s] %2$s got a sniper triple bingo in row %3$s and both diagonals!",
+
+	"bingo.got_sniper_bingo.quadruple": "[%1$s] %2$s got a sniper quadruple bingo!"
 }
