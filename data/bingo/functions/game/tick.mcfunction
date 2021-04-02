@@ -10,5 +10,7 @@
 #execute in bingo:lobby run function neun_einser.timer:detect_pause
 execute as @a at @s run function bingo:game/emerald_detection/chunk/detect
 
+tp @a[predicate=bingo:is_in_overworld] @e[type=minecraft:area_effect_cloud, tag=bingo.spawn, limit=1]
+
 scoreboard players enable @a bingo.lobby
 execute as @a[scores={bingo.lobby=1}] run function bingo:game/go_to_lobby
