@@ -78,7 +78,7 @@
 	"bingo.lobby.team_selection.sign.line4": "",
 	
 
-	"bingo.got_item": "[%1$s] %2$s got [%3$s]",
+	"bingo.got_item": "[%2$s | #%1$s] %3$s got [%4$s]",
 	"bingo.got_blackout": "[%1$s] %2$s got a blackout!",
 	"bingo.got_20_no_bingo": "[%1$s] %2$s got a 20 no bingo!",
 	
