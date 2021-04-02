@@ -1,7 +1,6 @@
 #> bingo:game/emerald_detection/chunk/move_x/0
 #
-# Checks if the biome in the relevant chunk corner (chunk coords 15 15) is a
-# biome eligible for emerald generation
+# Makes sure 8-bit is set for the x coordinate
 #
 # @context
 # 	entity Player

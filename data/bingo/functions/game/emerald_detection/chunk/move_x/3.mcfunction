@@ -1,5 +1,7 @@
 #> bingo:game/emerald_detection/chunk/move_x/3
 #
+# Makes sure 1-bit is not set for the x coordinate
+#
 # @context
 # 	entity Player
 # 	position @s

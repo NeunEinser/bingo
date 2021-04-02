@@ -1,5 +1,7 @@
 #> bingo:game/emerald_detection/chunk/move_z/0
 #
+# Makes sure 8-bit is set for the z coordinate
+#
 # @context
 # 	entity Player
 # 	position @s
