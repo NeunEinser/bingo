@@ -1,6 +1,6 @@
 function bingo:game/end
 
-scoreboard players operation Seed bingo.stats = $seed nn.math.rand
+scoreboard players operation $seed bingo.state = $seed nn.math.rand
 
 data remove storage bingo:tmp forbiddenCategories
 data modify storage bingo:tmp categories set from storage bingo:items categories

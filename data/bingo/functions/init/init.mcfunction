@@ -221,6 +221,17 @@ scoreboard objectives add bingo.player_con trigger
 scoreboard objectives setdisplay sidebar bingo.stats
 
 #>
+# The current game seed
+#
+# Stored in bingo.state
+#
+# @internal
+#declare score_holder $seed
+#>
+# @internal
+#declare score_holder -1
+scoreboard players set -1 bingo.const -1
+#>
 # @internal
 #declare score_holder 2
 scoreboard players set 2 bingo.const 2
@@ -242,10 +253,6 @@ scoreboard players set 5 bingo.const 5
 scoreboard players set 6 bingo.const 6
 #>
 # @internal
-#declare score_holder 9
-scoreboard players set 9 bingo.const 9
-#>
-# @internal
 #declare score_holder 10
 scoreboard players set 10 bingo.const 10
 #>
@@ -254,28 +261,8 @@ scoreboard players set 10 bingo.const 10
 scoreboard players set 16 bingo.const 16
 #>
 # @internal
-#declare score_holder 256
-scoreboard players set 256 bingo.const 256
-#>
-# @internal
-#declare score_holder 2560
-scoreboard players set 2560 bingo.const 2560
-#>
-# @internal
-#declare score_holder 1024
-scoreboard players set 1024 bingo.const 1024
-#>
-# @internal
-#declare score_holder 9155
-scoreboard players set 9155 bingo.const 9155
-#>
-# @internal
 #declare score_holder 65536
 scoreboard players set 65536 bingo.const 65536
-#>
-# @internal
-#declare score_holder 16777216
-scoreboard players set 16777216 bingo.const 16777216
 
 #>
 # It is impossible to add this to a score, because Mojang thought you shouldn't
