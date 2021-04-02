@@ -7,7 +7,7 @@
 #
 # @within function bingo:tick/tick
 
-execute in bingo:lobby run function neun_einser.timer:detect_pause
+#execute in bingo:lobby run function neun_einser.timer:detect_pause
 execute as @a at @s run function bingo:game/emerald_detection/chunk/detect
 
 scoreboard players enable @a bingo.lobby
