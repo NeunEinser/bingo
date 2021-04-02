@@ -5,16 +5,17 @@
 
 tellraw @a "Pre-generating Spawnpoint..."
 forceload add ~-20 ~-20 ~20 ~20
+fill ~-1 0 ~-1 ~1 129 ~1 minecraft:barrier replace #bingo:sky_box_chute_replaceables
+fill ~ 0 ~ ~ 129 ~ minecraft:air replace minecraft:barrier
 setblock ~ 127 ~ minecraft:barrier
 execute if block ~ 62 ~ minecraft:water run setblock ~ 62 ~ minecraft:dirt
 execute if block ~ 62 ~ minecraft:lava run setblock ~ 62 ~ minecraft:dirt
 
 tellraw @a "Loading terrain"
 teleport @a ~ 128 ~
-effect give @a minecraft:slowness 1000000 6 true
+gamemode adventure @a
 effect give @a minecraft:jump_boost 1000000 128 true
 effect give @a minecraft:invisibility 1000000 0 true
-effect give @a minecraft:mining_fatigue 1000000 255 true
 effect give @a minecraft:saturation 1000000 255 true
 clear @a
 

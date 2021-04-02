@@ -3,7 +3,7 @@
 # Sets the spawnpoint for all players and spawns a marker aec incase the player
 # respawns in the overworld
 #
-# @within function bingo:game/start/start_game
+# @within function bingo:game/start/countdown
 
 #>
 # @within function bingo:game/**
