@@ -19,5 +19,22 @@ effect give @a minecraft:invisibility 1000000 0 true
 effect give @a minecraft:saturation 1000000 255 true
 clear @a
 
+team modify bingo.aqua seeFriendlyInvisibles false
+team modify bingo.black seeFriendlyInvisibles false
+team modify bingo.blue seeFriendlyInvisibles false
+team modify bingo.dark_aqua seeFriendlyInvisibles false
+team modify bingo.dark_blue seeFriendlyInvisibles false
+team modify bingo.dark_gray seeFriendlyInvisibles false
+team modify bingo.dark_green seeFriendlyInvisibles false
+team modify bingo.dark_purpl seeFriendlyInvisibles false
+team modify bingo.dark_red seeFriendlyInvisibles false
+team modify bingo.gold seeFriendlyInvisibles false
+team modify bingo.gray seeFriendlyInvisibles false
+team modify bingo.green seeFriendlyInvisibles false
+team modify bingo.light_purp seeFriendlyInvisibles false
+team modify bingo.red seeFriendlyInvisibles false
+team modify bingo.white seeFriendlyInvisibles false
+team modify bingo.yellow seeFriendlyInvisibles false
+
 schedule function bingo:game/start/end_of_skybox 30s
 tellraw @a "[DEBUG] Scheduled function"

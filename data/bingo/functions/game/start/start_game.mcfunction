@@ -17,5 +17,22 @@ experience set @s 0 levels
 gamerule doDaylightCycle true
 advancement revoke @s from bingo:item_detection/root
 
+team modify bingo.aqua seeFriendlyInvisibles true
+team modify bingo.black seeFriendlyInvisibles true
+team modify bingo.blue seeFriendlyInvisibles true
+team modify bingo.dark_aqua seeFriendlyInvisibles true
+team modify bingo.dark_blue seeFriendlyInvisibles true
+team modify bingo.dark_gray seeFriendlyInvisibles true
+team modify bingo.dark_green seeFriendlyInvisibles true
+team modify bingo.dark_purpl seeFriendlyInvisibles true
+team modify bingo.dark_red seeFriendlyInvisibles true
+team modify bingo.gold seeFriendlyInvisibles true
+team modify bingo.gray seeFriendlyInvisibles true
+team modify bingo.green seeFriendlyInvisibles true
+team modify bingo.light_purp seeFriendlyInvisibles true
+team modify bingo.red seeFriendlyInvisibles true
+team modify bingo.white seeFriendlyInvisibles true
+team modify bingo.yellow seeFriendlyInvisibles true
+
 execute in bingo:lobby run function neun_einser.timer:start/hundredth_of_second
 execute at @s run fill ~-1 0 ~-1 ~1 129 ~1 minecraft:air replace minecraft:barrier
