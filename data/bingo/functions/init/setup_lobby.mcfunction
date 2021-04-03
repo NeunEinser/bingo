@@ -25,10 +25,7 @@ setblock -18 64 -3 minecraft:structure_block[mode=load]{mode:"LOAD", name:"bingo
 setblock -18 65 -3 minecraft:redstone_block
 
 # card frames
-kill @e[type=minecraft:item_frame, tag=bingo.card_frame]
-scoreboard players set $card_frames/spawn.i bingo.tmp 0
-data modify storage temp:bingo.input/spawn_frames slots set from storage bingo:card slots
-execute positioned -4 68 -13 run function bingo:init/spawn_card_preview_frames
+function bingo:card_frames/spawn
 
 forceload remove -8 -8 7 7
 

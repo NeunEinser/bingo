@@ -20,3 +20,12 @@ execute as @e[type=minecraft:item_frame, tag=bingo.card_frame, nbt=!{ItemRotatio
 
 # set signs
 function bingo:lobby/set_signs
+
+# regen item frames if neccasary
+#>
+# Used for counting the item frames
+#
+# @private
+#declare score_holder $lobby/loop.frame_count
+execute store result score $lobby/loop.frame_count bingo.tmp if entity @e[type=minecraft:item_frame, tag=bingo.card_frame]
+execute unless score $lobby/loop.frame_count bingo.tmp matches 25 run function bingo:card_frames/spawn
