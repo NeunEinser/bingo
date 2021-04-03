@@ -218,8 +218,6 @@ scoreboard objectives add bingo.pref trigger
 # @internal
 scoreboard objectives add bingo.player_con trigger
 
-scoreboard objectives setdisplay sidebar bingo.stats
-
 #>
 # The current game seed
 #

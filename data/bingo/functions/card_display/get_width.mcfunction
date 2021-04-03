@@ -4,7 +4,7 @@
 # the amount of padding spaces required.
 #
 # @within
-# 	function bingo:card_display/display_card
+# 	function bingo:card_display/display_if_seed_is_set
 # 	function bingo:card_display/get_width
 # @input score $card_display/width.number bingo.tmp The number to dertmain the
 # 	width from
@@ -17,7 +17,7 @@
 # The number to dertmain the width from
 #
 # @within
-# 	function bingo:card_display/display_card
+# 	function bingo:card_display/display_if_seed_is_set
 # 	function bingo:card_display/get_width
 #declare score_holder $card_display/width.number
 #>

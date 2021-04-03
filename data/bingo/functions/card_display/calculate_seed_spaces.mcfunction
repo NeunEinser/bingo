@@ -2,7 +2,7 @@
 #
 # This function calculates the seed spaces based on the width
 #
-# @within function bingo:card_display/display_card
+# @within function bingo:card_display/display_if_seed_is_set
 # @input score $card_display/width.width bingo.tmp
 # @output storage bingo:tmp seedSpaces
 
