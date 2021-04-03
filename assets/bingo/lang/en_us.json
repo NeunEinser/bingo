@@ -27,6 +27,9 @@
 	"bingo.lobby.card_generation.from_seed.instructions.link": "Click here",
 	"bingo.lobby.card_generation.from_seed.explanation": "The seed determines which items generate on the bingo card and where you spawn. You can use this for example for competitive races, where everyone is using the same seed.",
 
+	"bingo.lobby.card_generation.start_game.already_in_progress": "You cannot start a new game without generating a new card.",
+	"bingo.lobby.card_generation.start_game.no_card": "You cannot start a game without having generated a Bingo Card.",
+
 	"bingo.lobby.settings.player.tutorial.sign.line1": "Player",
 	"bingo.lobby.settings.player.tutorial.sign.line2": "",
 	"bingo.lobby.settings.player.tutorial.sign.line3": "Explanation on",

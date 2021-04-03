@@ -2,7 +2,7 @@
 #
 # Moves players to the spawnpoint
 #
-# @internal
+# @within function bingo:game/start/check_and_start
 
 #>
 # Spawnpoint x coordinate
