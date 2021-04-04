@@ -1,4 +1,4 @@
-#> bingo:game/start/generate_spawnpoint
+#> bingo:game/start/locate_spawnpoint
 #
 # Moves players to the spawnpoint
 #

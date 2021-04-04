@@ -2,7 +2,7 @@
 #
 # Starts the spawn sequence
 #
-# @within function bingo:game/start/spawn_skybox
+# @within function bingo:game/start/initilize_spawnpoint
 
 execute in bingo:multi_noise run forceload remove all
 

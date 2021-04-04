@@ -1,10 +1,11 @@
-#> bingo:game/start/spawn_skybox
+#> bingo:game/start/initilize_spawnpoint
 #
 # Spawns all players at the current position
 # @within function bingo:game/start/move_z/f
 
-tellraw @a "Pre-generating Spawnpoint..."
-forceload add ~-20 ~-20 ~20 ~20
+scoreboard players set $game_start/pre_gen.i bingo.tmp 0
+execute positioned ~-320 ~ ~ run function bingo:game/start/pre_generate_spawn
+
 fill ~-1 0 ~-1 ~1 129 ~1 minecraft:barrier replace #bingo:sky_box_chute_replaceables
 fill ~ 0 ~ ~ 129 ~ minecraft:air replace minecraft:barrier
 setblock ~ 127 ~ minecraft:barrier
