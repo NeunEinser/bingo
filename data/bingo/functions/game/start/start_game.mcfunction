@@ -12,7 +12,7 @@ execute at @s run playsound minecraft:block.note_block.pling master @s ~ ~ ~ 1 1
 
 effect clear @s
 clear @s
-gamemode adventure @s
+gamemode survival @s
 experience set @s 0 levels
 gamerule doDaylightCycle true
 advancement revoke @s from bingo:item_detection/root
