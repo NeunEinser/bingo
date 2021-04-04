@@ -6,7 +6,7 @@
 # 	function bingo:game/start/end_of_skybox
 # 	function bingo:game/start/countdown
 
-execute if score $start_game.countdown bingo.tmp matches 3 at @a[predicate=!bingo:is_in_lobby, limit=1] run function bingo:game/start/set_spawn
+execute if score $start_game.countdown bingo.tmp matches 3 at @a[predicate=!bingo:is_in_lobby, limit=1] align xz positioned ~0.5 ~ ~0.5 run function bingo:game/start/set_spawn
 
 execute if score $start_game.countdown bingo.tmp matches 1.. run tellraw @a {"score":{"name": "$start_game.countdown", "objective": "bingo.tmp"}}
 execute if score $start_game.countdown bingo.tmp matches 1.. as @a at @s run playsound minecraft:block.note_block.pling master @s ~ ~ ~ 1 2
