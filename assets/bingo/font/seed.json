@@ -3,8 +3,8 @@
 		{
 			"type": "bitmap",
 			"file": "bingo:font/seed.png",
-			"ascent": 12,
-			"height": 64,
+			"ascent": 11,
+			"height": 40,
 			"chars": [
 				"s"
 			]
