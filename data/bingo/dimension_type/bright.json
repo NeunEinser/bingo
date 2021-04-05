@@ -10,5 +10,5 @@
 	"has_raids": false,
 	"logical_height": 256,
 	"infiniburn": "minecraft:infiniburn_overworld",
-	"ambient_light": 0.05
+	"ambient_light": 0.125
 }
