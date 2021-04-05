@@ -32,6 +32,39 @@ data modify storage bingo:tmp item.item.Count set value 1b
 data modify storage bingo:tmp item.item.tag.display.Name set from storage bingo:tmp item.textComponent
 execute as @e[type=minecraft:item_frame, tag=bingo.card_frame] if score @s bingo.frame_id = $i bingo.tmp run data modify entity @s Item set from storage bingo:tmp item.item
 
+# Set item detection command blocks
+## detection command
+scoreboard players set $command_index bingo.tmp 6
+scoreboard players operation $command_index bingo.tmp *= $i bingo.tmp
+scoreboard players add $command_index bingo.tmp 1
+scoreboard players operation $x bingo.tmp = $command_index bingo.tmp
+scoreboard players operation $x bingo.tmp %= 16 bingo.const
+scoreboard players operation $z bingo.tmp = $command_index bingo.tmp
+scoreboard players operation $z bingo.tmp /= 16 bingo.const
+scoreboard players operation $zmod bingo.tmp = $z bingo.tmp
+scoreboard players operation $zmod bingo.tmp %= 2 bingo.const
+execute if score $zmod bingo.tmp matches 1 run scoreboard players remove $x bingo.tmp 15
+execute if score $zmod bingo.tmp matches 1 run scoreboard players operation $x bingo.tmp *= -1 bingo.const
+
+execute store result entity @e[type=minecraft:area_effect_cloud, tag=bingo.command_cloud, limit=1] Pos[0] double 1 run scoreboard players get $x bingo.tmp
+execute store result entity @e[type=minecraft:area_effect_cloud, tag=bingo.command_cloud, limit=1] Pos[2] double 1 run scoreboard players get $z bingo.tmp
+execute at @e[type=minecraft:area_effect_cloud, tag=bingo.command_cloud, limit=1] run data modify block ~ ~ ~ Command set from storage bingo:tmp item.detectCommand
+
+## clear command
+scoreboard players add $command_index bingo.tmp 4
+scoreboard players operation $x bingo.tmp = $command_index bingo.tmp
+scoreboard players operation $x bingo.tmp %= 16 bingo.const
+scoreboard players operation $z bingo.tmp = $command_index bingo.tmp
+scoreboard players operation $z bingo.tmp /= 16 bingo.const
+scoreboard players operation $zmod bingo.tmp = $z bingo.tmp
+scoreboard players operation $zmod bingo.tmp %= 2 bingo.const
+execute if score $zmod bingo.tmp matches 1 run scoreboard players remove $x bingo.tmp 15
+execute if score $zmod bingo.tmp matches 1 run scoreboard players operation $x bingo.tmp *= -1 bingo.const
+
+execute store result entity @e[type=minecraft:area_effect_cloud, tag=bingo.command_cloud, limit=1] Pos[0] double 1 run scoreboard players get $x bingo.tmp
+execute store result entity @e[type=minecraft:area_effect_cloud, tag=bingo.command_cloud, limit=1] Pos[2] double 1 run scoreboard players get $z bingo.tmp
+execute at @e[type=minecraft:area_effect_cloud, tag=bingo.command_cloud, limit=1] run data modify block ~ ~ ~ Command set from storage bingo:tmp item.clearCommand
+
 # next slot
 scoreboard players add $i bingo.tmp 1
 execute if score $i bingo.tmp matches ..24 run function bingo:card_generation/generate_slot

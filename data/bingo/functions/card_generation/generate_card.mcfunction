@@ -8,7 +8,35 @@ data remove storage bingo:card_generation forbiddenCategories
 data remove storage bingo:card slots
 execute as @e[type=minecraft:item_frame, tag=bingo.card_frame] at @s run setblock ~ ~ ~-1 minecraft:barrier
 
+execute in bingo:lobby run data modify block 0 0 0 auto set value false
+tag @a remove bingo.has_slot0
+tag @a remove bingo.has_slot1
+tag @a remove bingo.has_slot2
+tag @a remove bingo.has_slot3
+tag @a remove bingo.has_slot4
+tag @a remove bingo.has_slot5
+tag @a remove bingo.has_slot6
+tag @a remove bingo.has_slot7
+tag @a remove bingo.has_slot8
+tag @a remove bingo.has_slot9
+tag @a remove bingo.has_slot10
+tag @a remove bingo.has_slot11
+tag @a remove bingo.has_slot12
+tag @a remove bingo.has_slot13
+tag @a remove bingo.has_slot14
+tag @a remove bingo.has_slot15
+tag @a remove bingo.has_slot16
+tag @a remove bingo.has_slot17
+tag @a remove bingo.has_slot18
+tag @a remove bingo.has_slot19
+tag @a remove bingo.has_slot20
+tag @a remove bingo.has_slot21
+tag @a remove bingo.has_slot22
+tag @a remove bingo.has_slot23
+tag @a remove bingo.has_slot24
+
 scoreboard players set $i bingo.tmp 0
+execute in bingo:lobby run summon minecraft:area_effect_cloud 0 0 0 {Tags: ["bingo.command_cloud"]}
 function bingo:card_generation/generate_slot
 
 function nope_name.math:rand/exe

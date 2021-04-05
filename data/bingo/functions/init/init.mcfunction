@@ -43,6 +43,11 @@
 # 	item name.
 # icon: (String) Parsable text component that holds a charcter which is re-
 # 	textured to look like the item you require
+# detectCommand: (String) Command for detecting if the player has this item.
+# 	Has to set the player's bingo.has_item score. The command that is used in
+# 	default bingo follows the scheme
+# 	execute as @a store success score @s bingo.has_item run clear @s <item> 0,
+# 	though, a different command that sets the score would be acceptable, too
 # clearCommand: (String) Command for clearing the item from the player's
 # 	inventory. Should look like this: "clear @a[tag=bingo.clear] <item> 1
 # categories: (String List) List of category names. All categories referenced
@@ -103,23 +108,16 @@
 #endregion
 
 #region setup objectives
-scoreboard objectives remove bingo.seed
+scoreboard objectives remove bingo.const
+scoreboard objectives remove bingo.has_item
 scoreboard objectives remove bingo.frame_id
 scoreboard objectives remove bingo.lobby
-scoreboard objectives remove bingo.tmp
-scoreboard objectives remove bingo.const
-scoreboard objectives remove bingo.schedule
 scoreboard objectives remove bingo.menu_page
-scoreboard objectives remove bingo.pref
+scoreboard objectives remove bingo.seed
 scoreboard objectives remove bingo.settings
-
-#>
-# This objective is used to display certain stats when playing the game.
-#
-# This is the objective that will be visible on the sidebar by default.
-#
-# @public
-scoreboard objectives add bingo.stats dummy "Minecraft Bingo"
+scoreboard objectives remove bingo.schedule
+scoreboard objectives remove bingo.tmp
+scoreboard objectives remove bingo.pref
 
 #>
 # This objective contains unique player IDs, used to identify player-specific
@@ -145,6 +143,16 @@ scoreboard objectives add bingo.frame_id dummy
 #
 # @internal
 scoreboard objectives add bingo.frame_id dummy
+
+#>
+# This objective is used for item detection to store whether the detect command
+# succeeded for a player.
+#
+# Since this part of item detection uses command blocks, fake players cannot be
+# used here.
+#
+# @internal
+scoreboard objectives add bingo.has_item dummy
 
 #>
 # This objective is used for temporary calculations.

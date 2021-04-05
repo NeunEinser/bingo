@@ -15,7 +15,8 @@ clear @s
 gamemode survival @s
 experience set @s 0 levels
 gamerule doDaylightCycle true
-advancement revoke @s from bingo:item_detection/root
+
+execute in bingo:lobby run data modify block 0 0 0 auto set value true
 
 team modify bingo.aqua seeFriendlyInvisibles true
 team modify bingo.black seeFriendlyInvisibles true
