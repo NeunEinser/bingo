@@ -38,4 +38,3 @@ team modify bingo.white seeFriendlyInvisibles false
 team modify bingo.yellow seeFriendlyInvisibles false
 
 schedule function bingo:game/start/end_of_skybox 30s
-tellraw @a "[DEBUG] Scheduled function"

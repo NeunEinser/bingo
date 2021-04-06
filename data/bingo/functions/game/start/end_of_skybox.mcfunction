@@ -4,6 +4,12 @@
 #
 # @within function bingo:game/start/initilize_spawnpoint
 
+#>
+# @private
+#declare score_holder $end_of_skybox
+
+scoreboard players set $end_of_skybox bingo.debug_scdl 0
+
 execute in bingo:multi_noise run forceload remove all
 
 execute in bingo:multi_noise at @a[distance=0.., limit=1] run setblock ~ ~-1 ~ minecraft:air
@@ -16,4 +22,5 @@ effect give @a minecraft:resistance 1000000 255 true
 scoreboard players set $start_game.countdown bingo.tmp 3
 
 schedule function bingo:game/start/countdown 3s
-tellraw @a "[DEBUG] Scheduled function"
+
+scoreboard players set $end_of_skybox bingo.debug_scdl 1

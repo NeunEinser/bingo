@@ -216,6 +216,13 @@ scoreboard players add $game_in_progress bingo.state 0
 scoreboard objectives add bingo.menu_page dummy
 
 #>
+# Debug objective for determining if the end of a scheduled function was reached
+#
+# @internal
+scoreboard objectives add bingo.debug_scdl dummy "DEBUG Schedule"
+scoreboard objectives setdisplay sidebar bingo.debug_scdl
+
+#>
 # Trigger objective for returning to the lobby.
 #
 # @internal
