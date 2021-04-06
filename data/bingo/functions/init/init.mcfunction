@@ -326,6 +326,7 @@ gamerule doTraderSpawning false
 gamerule disableElytraMovementCheck true
 gamerule doPatrolSpawning false
 difficulty easy
+function bingo:card_display/display_card_schedule
 schedule function bingo:tick/clean_up 300s
 
 # setup default player configurations

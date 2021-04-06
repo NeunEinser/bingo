@@ -8,8 +8,6 @@
 # @within tag/function minecraft:tick
 # @handles #minecraft:tick
 
-execute as @a run function bingo:card_display/display_card
-
 # Assign each player a unique ID
 execute as @a unless score @s bingo.id matches -2147483648.. run function bingo:tick/new_player
 
