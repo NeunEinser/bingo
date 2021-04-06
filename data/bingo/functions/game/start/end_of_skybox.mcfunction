@@ -2,7 +2,7 @@
 #
 # Starts the spawn sequence
 #
-# @within function bingo:game/start/initilize_spawnpoint
+# @within function bingo:game/start/spawn_skybox
 
 #>
 # @private
