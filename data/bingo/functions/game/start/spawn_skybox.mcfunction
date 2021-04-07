@@ -2,7 +2,10 @@
 #
 # This function spawns the skybox after all chunks are generated
 #
-# @within function bingo:game/start/pre_generate_next_chunk
+# @within function bingo:game/start/pre_gen/generate_chunks_without_lag
+
+bossbar set bingo:start/pre_gen/progress visible false
+kill @e[type=minecraft:area_effect_cloud, tag=bingo.pre_gen_cloud, limit=1]
 
 fill ~-1 0 ~-1 ~1 129 ~1 minecraft:barrier replace #bingo:sky_box_chute_replaceables
 fill ~ 0 ~ ~ 129 ~ minecraft:air replace minecraft:barrier

@@ -303,6 +303,10 @@ scoreboard players set 10 bingo.const 10
 scoreboard players set 16 bingo.const 16
 #>
 # @internal
+#declare score_holder 41
+scoreboard players set 41 bingo.const 41
+#>
+# @internal
 #declare score_holder 65536
 scoreboard players set 65536 bingo.const 65536
 
@@ -317,6 +321,9 @@ scoreboard players set 65536 bingo.const 65536
 #declare score_holder -2147483648
 scoreboard players set -2147483648 bingo.const -2147483648
 #endregion
+
+bossbar add bingo:start/pre_gen/progress {"translate": "bingo.game.start.pre_gen_progress"}
+bossbar set bingo:start/pre_gen/progress color red
 
 execute in bingo:lobby run function bingo:init/setup_lobby
 gamerule commandBlockOutput false

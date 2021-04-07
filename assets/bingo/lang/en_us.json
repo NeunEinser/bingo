@@ -80,6 +80,7 @@
 	"bingo.lobby.team_selection.sign.line3": "Team",
 	"bingo.lobby.team_selection.sign.line4": "",
 	
+	"bingo.game.start.pre_gen_progress": "Pre-generating Chunks...",
 
 	"bingo.got_item": "[%2$s | #%1$s] %3$s got [%4$s]",
 	"bingo.got_blackout": "[%1$s] %2$s got a blackout!",
