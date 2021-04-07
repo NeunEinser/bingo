@@ -36,4 +36,4 @@ team modify bingo.white seeFriendlyInvisibles true
 team modify bingo.yellow seeFriendlyInvisibles true
 
 execute in bingo:lobby run function neun_einser.timer:start/hundredth_of_second
-execute at @s run fill ~-1 0 ~-1 ~1 129 ~1 minecraft:air replace minecraft:barrier
+execute at @s run fill ~-1 0 ~-1 ~1 130 ~1 minecraft:air replace minecraft:barrier

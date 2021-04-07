@@ -7,7 +7,7 @@
 bossbar set bingo:start/pre_gen/progress visible false
 kill @e[type=minecraft:area_effect_cloud, tag=bingo.pre_gen_cloud, limit=1]
 
-fill ~-1 0 ~-1 ~1 129 ~1 minecraft:barrier replace #bingo:sky_box_chute_replaceables
+fill ~-1 0 ~-1 ~1 130 ~1 minecraft:barrier replace #bingo:sky_box_chute_replaceables
 fill ~ 0 ~ ~ 129 ~ minecraft:air replace minecraft:barrier
 setblock ~ 127 ~ minecraft:barrier
 execute if block ~ 62 ~ minecraft:water run setblock ~ 62 ~ minecraft:dirt
