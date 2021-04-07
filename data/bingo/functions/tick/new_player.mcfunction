@@ -7,6 +7,7 @@
 team join bingo.dark_green
 recipe give @s *
 execute in bingo:lobby run teleport 0 64 0
+execute in bingo:lobby run spawnpoint @s 0 64 0
 
 # Set player ID
 #>
