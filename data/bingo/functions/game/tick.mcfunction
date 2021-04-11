@@ -26,7 +26,7 @@ execute store result score $game/tick.player_count bingo.tmp if entity @a[predic
 #declare score_holder $game/tick.sleeping_players
 execute store result score $game/tick.sleeping_players bingo.tmp if entity @a[predicate=!bingo:is_in_lobby, nbt={SleepTimer: 100s}]
 
-execute if score $game/tick.player_count bingo.tmp = $game/tick.sleeping_players bingo.tmp run function bingo:game/skip_night
+execute if score $game/tick.player_count bingo.tmp matches 1.. if score $game/tick.player_count bingo.tmp = $game/tick.sleeping_players bingo.tmp run function bingo:game/skip_night
 
 scoreboard players enable @a bingo.lobby
 execute as @a[scores={bingo.lobby=1}] run function bingo:game/go_to_lobby
