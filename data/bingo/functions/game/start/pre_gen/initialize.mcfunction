@@ -16,6 +16,7 @@ execute in bingo:lobby run function neun_einser.timer:start/millis
 bossbar set bingo:start/pre_gen/progress players @a
 bossbar set bingo:start/pre_gen/progress visible true
 bossbar set bingo:start/pre_gen/progress max 1681
+bossbar set bingo:start/pre_gen/progress value 0
 
 forceload add ~-320 ~-320
 summon minecraft:area_effect_cloud ~-320 ~ ~-320 {Duration: -1, Tags: ["bingo.pre_gen_cloud"]}
