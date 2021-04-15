@@ -4,7 +4,7 @@
 #
 # It also announces reaching a goal, when applicable
 #
-# @internal
+# @within function bingo:item_detection/check_and_announce
 
 #>
 # Storage that holds information about the currently selected slot
@@ -20,8 +20,6 @@
 # 	function bingo:item_detection/**
 #declare score_holder $item_detect/announce.items
 
-function bingo:util/find_player_team
-function bingo:item_detection/set_border
 execute in bingo:lobby run function neun_einser.timer:store_current_time
 scoreboard players reset @s bingo.has_item
 tag @s add bingo.clear

@@ -5,4 +5,4 @@
 # @internal
 
 tag @a remove bingo.clear
-tag @a remove bingo.in_current_team
+tag @a remove bingo.got_item
