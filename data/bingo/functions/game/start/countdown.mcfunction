@@ -21,6 +21,5 @@ execute if score $start_game.countdown bingo.schedule matches 0 as @a[predicate=
 
 scoreboard players remove $start_game.countdown bingo.schedule 1
 execute if score $start_game.countdown bingo.schedule matches 0.. run schedule function bingo:game/start/countdown 1s
-tellraw @a "[DEBUG] Scheduled function"
 
 scoreboard players set $countdown bingo.debug_scdl 1
