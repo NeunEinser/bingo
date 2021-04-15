@@ -11,7 +11,7 @@
 # @within function bingo:game/start/spawn_skybox
 #declare tag bingo.pre_gen_cloud
 
-scoreboard players set $game_start/pre_gen.i bingo.tmp 1
+scoreboard players set $game_start/pre_gen.i bingo.schedule 1
 execute in bingo:lobby run function neun_einser.timer:start/millis
 bossbar set bingo:start/pre_gen/progress players @a
 bossbar set bingo:start/pre_gen/progress visible true

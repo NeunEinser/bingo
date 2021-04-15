@@ -173,14 +173,7 @@ scoreboard objectives add bingo.tmp dummy
 scoreboard objectives add bingo.const dummy
 
 #>
-# This objective is used to spread certain longer text messages across multiple
-# messages.
-#
-# This objective will hold some sort of information about the next message a
-# certain text event is supposed to trigger.
-#
-# The values are real player names to support different players to be in
-# different stages of a message.
+# This objective is used to store information for scheduled events
 #
 # @internal
 scoreboard objectives add bingo.schedule dummy
@@ -220,7 +213,6 @@ scoreboard objectives add bingo.menu_page dummy
 #
 # @internal
 scoreboard objectives add bingo.debug_scdl dummy "DEBUG Schedule"
-scoreboard objectives setdisplay sidebar bingo.debug_scdl
 
 #>
 # Trigger objective for returning to the lobby.
@@ -334,7 +326,7 @@ gamerule disableElytraMovementCheck true
 gamerule doPatrolSpawning false
 difficulty easy
 function bingo:card_display/display_card_schedule
-schedule function bingo:tick/clean_up 300s
+function bingo:tick/clean_up
 
 # setup default player configurations
 #data remove storage bingo:player configurations

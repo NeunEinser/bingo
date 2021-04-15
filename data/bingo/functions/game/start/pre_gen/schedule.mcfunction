@@ -25,4 +25,4 @@ scoreboard players operation $game_start/pre_gen.start bingo.tmp = $raw 91.timer
 
 execute as @e[type=minecraft:area_effect_cloud, tag=bingo.pre_gen_cloud, limit=1] at @s run function bingo:game/start/pre_gen/set_position_and_generate_next
 
-execute store result bossbar bingo:start/pre_gen/progress value run scoreboard players get $game_start/pre_gen.i bingo.tmp
+execute store result bossbar bingo:start/pre_gen/progress value run scoreboard players get $game_start/pre_gen.i bingo.schedule

@@ -17,7 +17,7 @@
 # 	function bingo:game/start/pre_gen/generate_chunks_without_lag
 # 	function bingo:game/start/pre_gen/set_position_and_generate_next
 #declare score_holder $game_start/pre_gen.column
-scoreboard players operation $game_start/pre_gen.column bingo.tmp = $game_start/pre_gen.i bingo.tmp
+scoreboard players operation $game_start/pre_gen.column bingo.tmp = $game_start/pre_gen.i bingo.schedule
 scoreboard players operation $game_start/pre_gen.column bingo.tmp %= 41 bingo.const
 
 execute if score $game_start/pre_gen.column bingo.tmp matches 0 positioned ~-640 ~ ~16 run function bingo:game/start/pre_gen/generate_chunks_without_lag
