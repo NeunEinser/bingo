@@ -1,57 +1,57 @@
 #> bingo:init/register_items
-
+#
 # Registers all default bingo items.
-
+#
 # If you want to make an extension pack which adds more items, please make
 # another function in your own namespace and add it to the function tag
 # #bingo:register_items
-
+#
 # @within tag/function bingo:register_items
 # @handles #bingo:register_items
 
 # categories
-data modify storage bingo:items categories append value {name: "bingo:apple", translateableName: '{"translate": "bingo.category.apple"}'}
-data modify storage bingo:items categories append value {name: "bingo:bow", translateableName: '{"translate": "bingo.category.bow"}'}
-data modify storage bingo:items categories append value {name: "bingo:brick", translateableName: '{"translate": "bingo.category.bricks"}'}
-data modify storage bingo:items categories append value {name: "bingo:cactus", translateableName: '{"translate": "bingo.category.cactus"}'}
-data modify storage bingo:items categories append value {name: "bingo:cactus_bone", translateableName: '{"translate": "bingo.category.cactus_bone"}'}
-data modify storage bingo:items categories append value {name: "bingo:chest_iron", translateableName: '{"translate": "bingo.category.chest_iron"}'}
-data modify storage bingo:items categories append value {name: "bingo:chest_loot", translateableName: '{"translate": "bingo.category.chest_loot"}'}
-data modify storage bingo:items categories append value {name: "bingo:compass", translateableName: '{"translate": "bingo.category.compass"}'}
-data modify storage bingo:items categories append value {name: "bingo:diamond", translateableName: '{"translate": "bingo.category.diamond"}'}
-data modify storage bingo:items categories append value {name: "bingo:emerald", translateableName: '{"translate": "bingo.category.emerald"}'}
-data modify storage bingo:items categories append value {name: "bingo:egg", translateableName: '{"translate": "bingo.category.egg"}'}
-data modify storage bingo:items categories append value {name: "bingo:enderslime", translateableName: '{"translate": "bingo.category.enderslime"}'}
-data modify storage bingo:items categories append value {name: "bingo:fish", translateableName: '{"translate": "bingo.category.fish"}'}
-data modify storage bingo:items categories append value {name: "bingo:flint", translateableName: '{"translate": "bingo.category.flint"}'}
-data modify storage bingo:items categories append value {name: "bingo:furnace", translateableName: '{"translate": "bingo.category.furnace"}'}
-data modify storage bingo:items categories append value {name: "bingo:gold_and_ruined_portal", translateableName: '{"translate": "bingo.category.gold_and_ruined_portal"}'}
-data modify storage bingo:items categories append value {name: "bingo:gunpowder", translateableName: '{"translate": "bingo.category.gunpowder"}'}
-data modify storage bingo:items categories append value {name: "bingo:heart_of_the_sea", translateableName: '{"translate": "bingo.category.heart_of_the_sea"}'}
-data modify storage bingo:items categories append value {name: "bingo:ink", translateableName: '{"translate": "bingo.category.ink"}'}
-data modify storage bingo:items categories append value {name: "bingo:ink_bone", translateableName: '{"translate": "bingo.category.ink_bone"}'}
-data modify storage bingo:items categories append value {name: "bingo:jungle", translateableName: '{"translate": "bingo.category.jungle"}'}
-data modify storage bingo:items categories append value {name: "bingo:rabbit", translateableName: '{"translate": "bingo.category.rabbit"}'}
-data modify storage bingo:items categories append value {name: "bingo:lapis", translateableName: '{"translate": "bingo.category.lapis"}'}
-data modify storage bingo:items categories append value {name: "bingo:leather", translateableName: '{"translate": "bingo.category.leather"}'}
-data modify storage bingo:items categories append value {name: "bingo:lime", translateableName: '{"translate": "bingo.category.lime"}'}
-data modify storage bingo:items categories append value {name: "bingo:milk", translateableName: '{"translate": "bingo.category.milk"}'}
-data modify storage bingo:items categories append value {name: "bingo:mushroom", translateableName: '{"translate": "bingo.category.mushroom"}'}
-data modify storage bingo:items categories append value {name: "bingo:nine_smelts_one", translateableName: '{"translate": "bingo.category.nine_smelts_one"}'}
-#data modify storage bingo:items categories append value {name: "bingo:ominous_banner", translateableName: '{"translate": "bingo.category.ominous_banner"}'}
-data modify storage bingo:items categories append value {name: "bingo:pumpkin", translateableName: '{"translate": "bingo.category.pumpkin"}'}
-data modify storage bingo:items categories append value {name: "bingo:rail", translateableName: '{"translate": "bingo.category.rail"}'}
-data modify storage bingo:items categories append value {name: "bingo:redstone", translateableName: '{"translate": "bingo.category.redstone"}'}
-data modify storage bingo:items categories append value {name: "bingo:sand", translateableName: '{"translate": "bingo.category.sand"}'}
-data modify storage bingo:items categories append value {name: "bingo:sapling", translateableName: '{"translate": "bingo.category.sapling"}'}
-data modify storage bingo:items categories append value {name: "bingo:shearable", translateableName: '{"translate": "bingo.category.shearable"}'}
-data modify storage bingo:items categories append value {name: "bingo:simple_iron", translateableName: '{"translate": "bingo.category.simple_iron"}'}
-data modify storage bingo:items categories append value {name: "bingo:snow", translateableName: '{"translate": "bingo.category.snow"}'}
-data modify storage bingo:items categories append value {name: "bingo:spider", translateableName: '{"translate": "bingo.category.spider"}'}
-data modify storage bingo:items categories append value {name: "bingo:taiga", translateableName: '{"translate": "bingo.category.taiga"}'}
-#data modify storage bingo:items categories append value {name: "bingo:village", translateableName: '{"translate": "bingo.category.village"}'}
-data modify storage bingo:items categories append value {name: "bingo:wheat", translateableName: '{"translate": "bingo.category.wheat"}'}
-data modify storage bingo:items categories append value {name: "bingo:wool", translateableName: '{"translate": "bingo.category.wool"}'}
+data modify storage bingo:items categories append value {name: "bingo:apple", translatableName: '{"translate": "bingo.category.apple"}'}
+data modify storage bingo:items categories append value {name: "bingo:bow", translatableName: '{"translate": "bingo.category.bow"}'}
+data modify storage bingo:items categories append value {name: "bingo:brick", translatableName: '{"translate": "bingo.category.bricks"}'}
+data modify storage bingo:items categories append value {name: "bingo:cactus", translatableName: '{"translate": "bingo.category.cactus"}'}
+data modify storage bingo:items categories append value {name: "bingo:cactus_bone", translatableName: '{"translate": "bingo.category.cactus_bone"}'}
+data modify storage bingo:items categories append value {name: "bingo:chest_iron", translatableName: '{"translate": "bingo.category.chest_iron"}'}
+data modify storage bingo:items categories append value {name: "bingo:chest_loot", translatableName: '{"translate": "bingo.category.chest_loot"}'}
+data modify storage bingo:items categories append value {name: "bingo:compass", translatableName: '{"translate": "bingo.category.compass"}'}
+data modify storage bingo:items categories append value {name: "bingo:diamond", translatableName: '{"translate": "bingo.category.diamond"}'}
+data modify storage bingo:items categories append value {name: "bingo:emerald", translatableName: '{"translate": "bingo.category.emerald"}'}
+data modify storage bingo:items categories append value {name: "bingo:egg", translatableName: '{"translate": "bingo.category.egg"}'}
+data modify storage bingo:items categories append value {name: "bingo:enderslime", translatableName: '{"translate": "bingo.category.enderslime"}'}
+data modify storage bingo:items categories append value {name: "bingo:fish", translatableName: '{"translate": "bingo.category.fish"}'}
+data modify storage bingo:items categories append value {name: "bingo:flint", translatableName: '{"translate": "bingo.category.flint"}'}
+data modify storage bingo:items categories append value {name: "bingo:furnace", translatableName: '{"translate": "bingo.category.furnace"}'}
+data modify storage bingo:items categories append value {name: "bingo:gold_and_ruined_portal", translatableName: '{"translate": "bingo.category.gold_and_ruined_portal"}'}
+data modify storage bingo:items categories append value {name: "bingo:gunpowder", translatableName: '{"translate": "bingo.category.gunpowder"}'}
+data modify storage bingo:items categories append value {name: "bingo:heart_of_the_sea", translatableName: '{"translate": "bingo.category.heart_of_the_sea"}'}
+data modify storage bingo:items categories append value {name: "bingo:ink", translatableName: '{"translate": "bingo.category.ink"}'}
+data modify storage bingo:items categories append value {name: "bingo:ink_bone", translatableName: '{"translate": "bingo.category.ink_bone"}'}
+data modify storage bingo:items categories append value {name: "bingo:jungle", translatableName: '{"translate": "bingo.category.jungle"}'}
+data modify storage bingo:items categories append value {name: "bingo:rabbit", translatableName: '{"translate": "bingo.category.rabbit"}'}
+data modify storage bingo:items categories append value {name: "bingo:lapis", translatableName: '{"translate": "bingo.category.lapis"}'}
+data modify storage bingo:items categories append value {name: "bingo:leather", translatableName: '{"translate": "bingo.category.leather"}'}
+data modify storage bingo:items categories append value {name: "bingo:lime", translatableName: '{"translate": "bingo.category.lime"}'}
+data modify storage bingo:items categories append value {name: "bingo:milk", translatableName: '{"translate": "bingo.category.milk"}'}
+data modify storage bingo:items categories append value {name: "bingo:mushroom", translatableName: '{"translate": "bingo.category.mushroom"}'}
+data modify storage bingo:items categories append value {name: "bingo:nine_smelts_one", translatableName: '{"translate": "bingo.category.nine_smelts_one"}'}
+#data modify storage bingo:items categories append value {name: "bingo:ominous_banner", translatableName: '{"translate": "bingo.category.ominous_banner"}'}
+data modify storage bingo:items categories append value {name: "bingo:pumpkin", translatableName: '{"translate": "bingo.category.pumpkin"}'}
+data modify storage bingo:items categories append value {name: "bingo:rail", translatableName: '{"translate": "bingo.category.rail"}'}
+data modify storage bingo:items categories append value {name: "bingo:redstone", translatableName: '{"translate": "bingo.category.redstone"}'}
+data modify storage bingo:items categories append value {name: "bingo:sand", translatableName: '{"translate": "bingo.category.sand"}'}
+data modify storage bingo:items categories append value {name: "bingo:sapling", translatableName: '{"translate": "bingo.category.sapling"}'}
+data modify storage bingo:items categories append value {name: "bingo:shearable", translatableName: '{"translate": "bingo.category.shearable"}'}
+data modify storage bingo:items categories append value {name: "bingo:simple_iron", translatableName: '{"translate": "bingo.category.simple_iron"}'}
+data modify storage bingo:items categories append value {name: "bingo:snow", translatableName: '{"translate": "bingo.category.snow"}'}
+data modify storage bingo:items categories append value {name: "bingo:spider", translatableName: '{"translate": "bingo.category.spider"}'}
+data modify storage bingo:items categories append value {name: "bingo:taiga", translatableName: '{"translate": "bingo.category.taiga"}'}
+#data modify storage bingo:items categories append value {name: "bingo:village", translatableName: '{"translate": "bingo.category.village"}'}
+data modify storage bingo:items categories append value {name: "bingo:wheat", translatableName: '{"translate": "bingo.category.wheat"}'}
+data modify storage bingo:items categories append value {name: "bingo:wool", translatableName: '{"translate": "bingo.category.wool"}'}
 
 # items
 

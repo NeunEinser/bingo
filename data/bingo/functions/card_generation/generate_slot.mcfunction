@@ -28,8 +28,6 @@ execute store result storage bingo:tmp slot.id int 1 run scoreboard players get 
 data modify storage bingo:card slots append from storage bingo:tmp slot
 
 # set item to frame
-data modify storage bingo:tmp item.item.Count set value 1b
-data modify storage bingo:tmp item.item.tag.display.Name set from storage bingo:tmp item.textComponent
 execute as @e[type=minecraft:item_frame, tag=bingo.card_frame] if score @s bingo.frame_id = $i bingo.tmp run data modify entity @s Item set from storage bingo:tmp item.item
 
 # Set item detection command blocks

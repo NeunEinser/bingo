@@ -24,7 +24,6 @@ data modify storage temp:bingo.chest_generation item set from storage temp:bingo
 data remove storage temp:bingo.chest_generation category.items[-1]
 
 execute store result storage temp:bingo.chest_generation item.item.Slot byte 1 run scoreboard players get $chest_generation.slot bingo.tmp
-data modify storage temp:bingo.chest_generation item.item.Count set value 1b
 
 execute if score $chest_generation.row bingo.tmp matches ..2 run data modify block ~1 ~ ~ Items append from storage temp:bingo.chest_generation item.item
 execute if score $chest_generation.row bingo.tmp matches 3.. run data modify block ~ ~ ~ Items append from storage temp:bingo.chest_generation item.item

@@ -1,6 +1,6 @@
 #> bingo:lobby/chest_generation/next_chest
 #
-# Moves to the next chest and places the chest
+# Moves to the next chest position and places the chest there
 #
 # @within function bingo:lobby/chest_generation/increment_column
 # @context

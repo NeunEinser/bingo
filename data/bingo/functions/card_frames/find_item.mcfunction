@@ -38,7 +38,6 @@
 #declare storage temp:bingo.output/card_item
 
 execute if score $card_frames/find_item.slot_id bingo.tmp matches 0 run data modify storage temp:bingo.output/card_item found_item set from storage temp:bingo.input/card_item slots[0].item.item
-execute if score $card_frames/find_item.slot_id bingo.tmp matches 0 run data modify storage temp:bingo.output/card_item found_item.tag.display.Name set from storage temp:bingo.input/card_item slots[0].item.textComponent
 execute if score $card_frames/find_item.slot_id bingo.tmp matches 0 unless data storage temp:bingo.input/card_item slots[0].item.item run data modify storage temp:bingo.output/card_item found_item set value {id: "minecraft:barrier"}
 
 data remove storage temp:bingo.input/card_item slots[0]

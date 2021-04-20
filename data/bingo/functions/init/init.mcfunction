@@ -394,5 +394,7 @@ function #bingo:post_register_items
 # @within function bingo:init/*
 #declare storage temp:bingo.init
 data modify storage temp:bingo.init items set from storage bingo:items registry
+data remove storage bingo:items registry
+data remove storage bingo:items items
 
-function bingo:init/fill_categories
+function bingo:init/initialize_items

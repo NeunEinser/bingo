@@ -1,6 +1,6 @@
 #> bingo:lobby/chest_generation/generate_item_chests
 #
-# This function generates the item display chrsts in the lobby
+# This function generates the item display chests in the lobby
 #
 # @internal
 

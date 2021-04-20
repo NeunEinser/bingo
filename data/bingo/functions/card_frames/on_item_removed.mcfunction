@@ -19,7 +19,6 @@ data modify storage temp:bingo.input/card_item slots set from storage bingo:card
 scoreboard players operation $card_frames/find_item.slot_id bingo.tmp = @s bingo.frame_id
 function bingo:card_frames/find_item
 
-data modify storage temp:bingo.output/card_item found_item.Count set value 1b
 data modify entity @s Item set from storage temp:bingo.output/card_item found_item
 
 execute unless block ~ ~ ~-1 minecraft:red_concrete run tag @s add bingo.toggle_on
