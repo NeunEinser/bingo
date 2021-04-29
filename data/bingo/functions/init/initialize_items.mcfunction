@@ -11,14 +11,14 @@ data modify storage temp:bingo.init itemCategories set from storage temp:bingo.i
 
 function bingo:init/find_categories
 
-data modify storage temp:bingo.init items[-1].item.tag.display.Lore append value '[{"translate": "bingo.categories.header", "color": "gray", "italic": false}, ":"]'
+data modify storage temp:bingo.init items[-1].item.tag.display.Lore append value '{"translate": "bingo.categories.header", "color": "gray", "italic": false}'
 data modify storage temp:bingo.init itemCategories set from storage temp:bingo.init categories
 
 function bingo:init/add_category_names_to_lore
 
 data modify storage temp:bingo.init items[-1].item.tag.display.Lore append value '""'
 
-setblock 0 255 0 minecraft:oak_sign{Text1: '[{"translate": "bingo.items.weight", "color": "gray", "italic": false}, ": ", {"storage": "temp:bingo.init", "nbt": "items[-1].weight"}]'} 
+setblock 0 255 0 minecraft:oak_sign{Text1: '{"translate": "bingo.items.weight", "color": "gray", "italic": false, "with": [{"storage": "temp:bingo.init", "nbt": "items[-1].weight"}]}'} 
 data modify storage temp:bingo.init items[-1].item.tag.display.Lore append from block 0 255 0 Text1
 setblock ~ 255 ~ minecraft:air
 

@@ -79,6 +79,9 @@
 	"bingo.lobby.team_selection.sign.line2": "Switch",
 	"bingo.lobby.team_selection.sign.line3": "Team",
 	"bingo.lobby.team_selection.sign.line4": "",
+
+	"bingo.categories.header": "Categories:",
+	"bingo.items.weight": "Weight: %s",
 	
 	"bingo.game.start.pre_gen_progress": "Pre-generating Chunks...",
 
