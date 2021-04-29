@@ -29,11 +29,15 @@ data modify storage temp:bingo.init items[-1].item.tag.display.Name set from blo
 setblock ~ 255 ~ minecraft:air
 
 data modify storage temp:bingo.init categories[].items append from storage temp:bingo.init items[-1]
+data modify storage bingo:items categories append from storage temp:bingo.init skippedCategories[]
+data remove storage temp:bingo.init skippedCategories
+
+# Add category-specific weight, if item's category entries are compounds.
+execute if data storage temp:bingo.init items[-1].categories[0].id run function bingo:init/copy_category_specific
+
 data modify storage bingo:items items append from storage temp:bingo.init items[-1]
 
-data modify storage bingo:items categories append from storage temp:bingo.init skippedCategories[]
 data modify storage bingo:items categories append from storage temp:bingo.init categories[]
-data remove storage temp:bingo.init skippedCategories
 data remove storage temp:bingo.init categories
 
 data remove storage temp:bingo.init items[-1]

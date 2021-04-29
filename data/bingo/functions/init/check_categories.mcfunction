@@ -18,7 +18,8 @@
 #declare score_holder $init/find_cat.is_different
 
 data modify storage temp:bingo.init category set from storage bingo:items categories[-1].name
-execute store result score $init/find_cat.is_different bingo.tmp run data modify storage temp:bingo.init category set from storage temp:bingo.init checkCategories[-1]
+execute if data storage temp:bingo.init checkCategories[-1].id store success score $init/find_cat.is_different bingo.tmp run data modify storage temp:bingo.init category set from storage temp:bingo.init checkCategories[-1].id
+execute unless data storage temp:bingo.init checkCategories[-1].id store success score $init/find_cat.is_different bingo.tmp run data modify storage temp:bingo.init category set from storage temp:bingo.init checkCategories[-1]
 
 execute if score $init/find_cat.is_different bingo.tmp matches 1 run data modify storage temp:bingo.init checkedCategories append from storage temp:bingo.init checkCategories[-1]
 data remove storage temp:bingo.init checkCategories[-1]
