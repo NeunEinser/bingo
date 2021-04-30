@@ -3,7 +3,9 @@
 # This function sorts the next 2 elements into the array for the merge sort.
 #
 # @writes storage temp:bingo.chest_generation categories
-# @within function bingo:lobby/chest_generation/sort_categories/sort_by_length_odd
+# @within
+# 	function bingo:lobby/chest_generation/sort_categories/sort_by_length_odd
+# 	function bingo:lobby/chest_generation/sort_categories/write_in_order_odd
 
 #>
 # @private
@@ -24,3 +26,5 @@ execute if score $chest_generation/sort.a bingo.tmp >= $chest_generation/sort.b 
 
 data remove storage temp:bingo.chest_generation categories[-1]
 data remove storage temp:bingo.chest_generation categories[-1]
+
+execute if data storage temp:bingo.chest_generation categories[1] run function bingo:lobby/chest_generation/sort_categories/write_in_order_odd
