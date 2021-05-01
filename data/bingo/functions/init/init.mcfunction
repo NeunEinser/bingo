@@ -287,6 +287,10 @@ scoreboard players set 5 bingo.const 5
 scoreboard players set 6 bingo.const 6
 #>
 # @internal
+#declare score_holder 7
+scoreboard players set 7 bingo.const 7
+#>
+# @internal
 #declare score_holder 9
 scoreboard players set 9 bingo.const 9
 #>
@@ -297,6 +301,10 @@ scoreboard players set 10 bingo.const 10
 # @internal
 #declare score_holder 16
 scoreboard players set 16 bingo.const 16
+#>
+# @internal
+#declare score_holder 35
+scoreboard players set 35 bingo.const 35
 #>
 # @internal
 #declare score_holder 41

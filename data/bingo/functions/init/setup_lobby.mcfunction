@@ -209,201 +209,226 @@ forceload remove -8 -8 7 7
 
 forceload add 0 0
 ## Slot 0
-setblock 0 0 0 minecraft:repeating_command_block[facing=east]{auto: false, Command: "function bingo:item_detection/remove_tags"}
-setblock 1 0 0 minecraft:chain_command_block[facing=east]{auto: true}
-setblock 2 0 0 minecraft:chain_command_block[facing=east]{auto: true, Command: "data modify storage temp:bingo.input/item_detection slot set from storage bingo:card slots[0]"}
-setblock 3 0 0 minecraft:chain_command_block[facing=east]{auto: true, Command: "execute as @a[predicate=!bingo:is_in_lobby, scores={bingo.has_item=1}, tag=!bingo.has_slot0] run function bingo:item_detection/check_and_announce"}
-setblock 4 0 0 minecraft:chain_command_block[facing=east]{auto: true, Command: "tag @a[tag=bingo.got_item] add bingo.has_slot0"}
-setblock 5 0 0 minecraft:chain_command_block[facing=east]{auto: true}
+setblock 5 1 5 minecraft:repeating_command_block[facing=up]{auto: false, Command: "tag @a remove bingo.clear"}
+setblock 5 2 5 minecraft:chain_command_block[facing=up]{auto: true, Command: "tag @a remove bingo.got_item"}
+setblock 5 3 5 minecraft:chain_command_block[facing=up]{auto: true}
+setblock 5 4 5 minecraft:chain_command_block[facing=up]{auto: true, Command: "data modify storage temp:bingo.input/item_detection slot set from storage bingo:card slots[0]"}
+setblock 5 5 5 minecraft:chain_command_block[facing=up]{auto: true, Command: "execute as @a[predicate=!bingo:is_in_lobby, scores={bingo.has_item=1}, tag=!bingo.has_slot0] run function bingo:item_detection/check_and_announce"}
+setblock 5 6 5 minecraft:chain_command_block[facing=up]{auto: true, Command: "tag @a[tag=bingo.got_item] add bingo.has_slot0"}
+setblock 5 7 5 minecraft:chain_command_block[facing=east]{auto: true}
 
 ## Slot 1
-setblock 6 0 0 minecraft:chain_command_block[facing=east]{auto: true, Command: "function bingo:item_detection/remove_tags"}
-setblock 7 0 0 minecraft:chain_command_block[facing=east]{auto: true}
-setblock 8 0 0 minecraft:chain_command_block[facing=east]{auto: true, Command: "data modify storage temp:bingo.input/item_detection slot set from storage bingo:card slots[1]"}
-setblock 9 0 0 minecraft:chain_command_block[facing=east]{auto: true, Command: "execute as @a[predicate=!bingo:is_in_lobby, scores={bingo.has_item=1}, tag=!bingo.has_slot1] run function bingo:item_detection/check_and_announce"}
-setblock 10 0 0 minecraft:chain_command_block[facing=east]{auto: true, Command: "tag @a[tag=bingo.got_item] add bingo.has_slot1"}
-setblock 11 0 0 minecraft:chain_command_block[facing=east]{auto: true}
+setblock 6 7 5 minecraft:chain_command_block[facing=down]{auto: true, Command: "tag @a remove bingo.clear"}
+setblock 6 6 5 minecraft:chain_command_block[facing=down]{auto: true, Command: "tag @a remove bingo.got_item"}
+setblock 6 5 5 minecraft:chain_command_block[facing=down]{auto: true}
+setblock 6 4 5 minecraft:chain_command_block[facing=down]{auto: true, Command: "data modify storage temp:bingo.input/item_detection slot set from storage bingo:card slots[1]"}
+setblock 6 3 5 minecraft:chain_command_block[facing=down]{auto: true, Command: "execute as @a[predicate=!bingo:is_in_lobby, scores={bingo.has_item=1}, tag=!bingo.has_slot1] run function bingo:item_detection/check_and_announce"}
+setblock 6 2 5 minecraft:chain_command_block[facing=down]{auto: true, Command: "tag @a[tag=bingo.got_item] add bingo.has_slot1"}
+setblock 6 1 5 minecraft:chain_command_block[facing=east]{auto: true}
 
 ## Slot 2
-setblock 12 0 0 minecraft:chain_command_block[facing=east]{auto: true, Command: "function bingo:item_detection/remove_tags"}
-setblock 13 0 0 minecraft:chain_command_block[facing=east]{auto: true}
-setblock 14 0 0 minecraft:chain_command_block[facing=east]{auto: true, Command: "data modify storage temp:bingo.input/item_detection slot set from storage bingo:card slots[2]"}
-setblock 15 0 0 minecraft:chain_command_block[facing=south]{auto: true, Command: "execute as @a[predicate=!bingo:is_in_lobby, scores={bingo.has_item=1}, tag=!bingo.has_slot2] run function bingo:item_detection/check_and_announce"}
-setblock 15 0 1 minecraft:chain_command_block[facing=west]{auto: true, Command: "tag @a[tag=bingo.got_item] add bingo.has_slot2"}
-setblock 14 0 1 minecraft:chain_command_block[facing=west]{auto: true}
+setblock 7 1 5 minecraft:chain_command_block[facing=up]{auto: true, Command: "tag @a remove bingo.clear"}
+setblock 7 2 5 minecraft:chain_command_block[facing=up]{auto: true, Command: "tag @a remove bingo.got_item"}
+setblock 7 3 5 minecraft:chain_command_block[facing=up]{auto: true}
+setblock 7 4 5 minecraft:chain_command_block[facing=up]{auto: true, Command: "data modify storage temp:bingo.input/item_detection slot set from storage bingo:card slots[2]"}
+setblock 7 5 5 minecraft:chain_command_block[facing=up]{auto: true, Command: "execute as @a[predicate=!bingo:is_in_lobby, scores={bingo.has_item=1}, tag=!bingo.has_slot2] run function bingo:item_detection/check_and_announce"}
+setblock 7 6 5 minecraft:chain_command_block[facing=up]{auto: true, Command: "tag @a[tag=bingo.got_item] add bingo.has_slot2"}
+setblock 7 7 5 minecraft:chain_command_block[facing=east]{auto: true}
 
 ## Slot 3
-setblock 13 0 1 minecraft:chain_command_block[facing=west]{auto: true, Command: "function bingo:item_detection/remove_tags"}
-setblock 12 0 1 minecraft:chain_command_block[facing=west]{auto: true}
-setblock 11 0 1 minecraft:chain_command_block[facing=west]{auto: true, Command: "data modify storage temp:bingo.input/item_detection slot set from storage bingo:card slots[3]"}
-setblock 10 0 1 minecraft:chain_command_block[facing=west]{auto: true, Command: "execute as @a[predicate=!bingo:is_in_lobby, scores={bingo.has_item=1}, tag=!bingo.has_slot3] run function bingo:item_detection/check_and_announce"}
-setblock 9 0 1 minecraft:chain_command_block[facing=west]{auto: true, Command: "tag @a[tag=bingo.got_item] add bingo.has_slot3"}
-setblock 8 0 1 minecraft:chain_command_block[facing=west]{auto: true}
+setblock 8 7 5 minecraft:chain_command_block[facing=down]{auto: true, Command: "tag @a remove bingo.clear"}
+setblock 8 6 5 minecraft:chain_command_block[facing=down]{auto: true, Command: "tag @a remove bingo.got_item"}
+setblock 8 5 5 minecraft:chain_command_block[facing=down]{auto: true}
+setblock 8 4 5 minecraft:chain_command_block[facing=down]{auto: true, Command: "data modify storage temp:bingo.input/item_detection slot set from storage bingo:card slots[3]"}
+setblock 8 3 5 minecraft:chain_command_block[facing=down]{auto: true, Command: "execute as @a[predicate=!bingo:is_in_lobby, scores={bingo.has_item=1}, tag=!bingo.has_slot3] run function bingo:item_detection/check_and_announce"}
+setblock 8 2 5 minecraft:chain_command_block[facing=down]{auto: true, Command: "tag @a[tag=bingo.got_item] add bingo.has_slot3"}
+setblock 8 1 5 minecraft:chain_command_block[facing=east]{auto: true}
 
 ## Slot 4
-setblock 7 0 1 minecraft:chain_command_block[facing=west]{auto: true, Command: "function bingo:item_detection/remove_tags"}
-setblock 6 0 1 minecraft:chain_command_block[facing=west]{auto: true}
-setblock 5 0 1 minecraft:chain_command_block[facing=west]{auto: true, Command: "data modify storage temp:bingo.input/item_detection slot set from storage bingo:card slots[4]"}
-setblock 4 0 1 minecraft:chain_command_block[facing=west]{auto: true, Command: "execute as @a[predicate=!bingo:is_in_lobby, scores={bingo.has_item=1}, tag=!bingo.has_slot4] run function bingo:item_detection/check_and_announce"}
-setblock 3 0 1 minecraft:chain_command_block[facing=west]{auto: true, Command: "tag @a[tag=bingo.got_item] add bingo.has_slot4"}
-setblock 2 0 1 minecraft:chain_command_block[facing=west]{auto: true}
+setblock 9 1 5 minecraft:chain_command_block[facing=up]{auto: true, Command: "tag @a remove bingo.clear"}
+setblock 9 2 5 minecraft:chain_command_block[facing=up]{auto: true, Command: "tag @a remove bingo.got_item"}
+setblock 9 3 5 minecraft:chain_command_block[facing=up]{auto: true}
+setblock 9 4 5 minecraft:chain_command_block[facing=up]{auto: true, Command: "data modify storage temp:bingo.input/item_detection slot set from storage bingo:card slots[4]"}
+setblock 9 5 5 minecraft:chain_command_block[facing=up]{auto: true, Command: "execute as @a[predicate=!bingo:is_in_lobby, scores={bingo.has_item=1}, tag=!bingo.has_slot4] run function bingo:item_detection/check_and_announce"}
+setblock 9 6 5 minecraft:chain_command_block[facing=up]{auto: true, Command: "tag @a[tag=bingo.got_item] add bingo.has_slot4"}
+setblock 9 7 5 minecraft:chain_command_block[facing=south]{auto: true}
 
 ## Slot 5
-setblock 1 0 1 minecraft:chain_command_block[facing=west]{auto: true, Command: "function bingo:item_detection/remove_tags"}
-setblock 0 0 1 minecraft:chain_command_block[facing=south]{auto: true}
-setblock 0 0 2 minecraft:chain_command_block[facing=east]{auto: true, Command: "data modify storage temp:bingo.input/item_detection slot set from storage bingo:card slots[5]"}
-setblock 1 0 2 minecraft:chain_command_block[facing=east]{auto: true, Command: "execute as @a[predicate=!bingo:is_in_lobby, scores={bingo.has_item=1}, tag=!bingo.has_slot5] run function bingo:item_detection/check_and_announce"}
-setblock 2 0 2 minecraft:chain_command_block[facing=east]{auto: true, Command: "tag @a[tag=bingo.got_item] add bingo.has_slot5"}
-setblock 3 0 2 minecraft:chain_command_block[facing=east]{auto: true}
+setblock 9 7 6 minecraft:chain_command_block[facing=down]{auto: true, Command: "tag @a remove bingo.clear"}
+setblock 9 6 6 minecraft:chain_command_block[facing=down]{auto: true, Command: "tag @a remove bingo.got_item"}
+setblock 9 5 6 minecraft:chain_command_block[facing=down]{auto: true}
+setblock 9 4 6 minecraft:chain_command_block[facing=down]{auto: true, Command: "data modify storage temp:bingo.input/item_detection slot set from storage bingo:card slots[5]"}
+setblock 9 3 6 minecraft:chain_command_block[facing=down]{auto: true, Command: "execute as @a[predicate=!bingo:is_in_lobby, scores={bingo.has_item=1}, tag=!bingo.has_slot5] run function bingo:item_detection/check_and_announce"}
+setblock 9 2 6 minecraft:chain_command_block[facing=down]{auto: true, Command: "tag @a[tag=bingo.got_item] add bingo.has_slot5"}
+setblock 9 1 6 minecraft:chain_command_block[facing=west]{auto: true}
 
 ## Slot 6
-setblock 4 0 2 minecraft:chain_command_block[facing=east]{auto: true, Command: "function bingo:item_detection/remove_tags"}
-setblock 5 0 2 minecraft:chain_command_block[facing=east]{auto: true}
-setblock 6 0 2 minecraft:chain_command_block[facing=east]{auto: true, Command: "data modify storage temp:bingo.input/item_detection slot set from storage bingo:card slots[6]"}
-setblock 7 0 2 minecraft:chain_command_block[facing=east]{auto: true, Command: "execute as @a[predicate=!bingo:is_in_lobby, scores={bingo.has_item=1}, tag=!bingo.has_slot6] run function bingo:item_detection/check_and_announce"}
-setblock 8 0 2 minecraft:chain_command_block[facing=east]{auto: true, Command: "tag @a[tag=bingo.got_item] add bingo.has_slot6"}
-setblock 9 0 2 minecraft:chain_command_block[facing=east]{auto: true}
+setblock 8 1 6 minecraft:chain_command_block[facing=up]{auto: true, Command: "tag @a remove bingo.clear"}
+setblock 8 2 6 minecraft:chain_command_block[facing=up]{auto: true, Command: "tag @a remove bingo.got_item"}
+setblock 8 3 6 minecraft:chain_command_block[facing=up]{auto: true}
+setblock 8 4 6 minecraft:chain_command_block[facing=up]{auto: true, Command: "data modify storage temp:bingo.input/item_detection slot set from storage bingo:card slots[6]"}
+setblock 8 5 6 minecraft:chain_command_block[facing=up]{auto: true, Command: "execute as @a[predicate=!bingo:is_in_lobby, scores={bingo.has_item=1}, tag=!bingo.has_slot6] run function bingo:item_detection/check_and_announce"}
+setblock 8 6 6 minecraft:chain_command_block[facing=up]{auto: true, Command: "tag @a[tag=bingo.got_item] add bingo.has_slot6"}
+setblock 8 7 6 minecraft:chain_command_block[facing=west]{auto: true}
 
 ## Slot 7
-setblock 10 0 2 minecraft:chain_command_block[facing=east]{auto: true, Command: "function bingo:item_detection/remove_tags"}
-setblock 11 0 2 minecraft:chain_command_block[facing=east]{auto: true}
-setblock 12 0 2 minecraft:chain_command_block[facing=east]{auto: true, Command: "data modify storage temp:bingo.input/item_detection slot set from storage bingo:card slots[7]"}
-setblock 13 0 2 minecraft:chain_command_block[facing=east]{auto: true, Command: "execute as @a[predicate=!bingo:is_in_lobby, scores={bingo.has_item=1}, tag=!bingo.has_slot7] run function bingo:item_detection/check_and_announce"}
-setblock 14 0 2 minecraft:chain_command_block[facing=east]{auto: true, Command: "tag @a[tag=bingo.got_item] add bingo.has_slot7"}
-setblock 15 0 2 minecraft:chain_command_block[facing=south]{auto: true}
+setblock 7 7 6 minecraft:chain_command_block[facing=down]{auto: true, Command: "tag @a remove bingo.clear"}
+setblock 7 6 6 minecraft:chain_command_block[facing=down]{auto: true, Command: "tag @a remove bingo.got_item"}
+setblock 7 5 6 minecraft:chain_command_block[facing=down]{auto: true}
+setblock 7 4 6 minecraft:chain_command_block[facing=down]{auto: true, Command: "data modify storage temp:bingo.input/item_detection slot set from storage bingo:card slots[7]"}
+setblock 7 3 6 minecraft:chain_command_block[facing=down]{auto: true, Command: "execute as @a[predicate=!bingo:is_in_lobby, scores={bingo.has_item=1}, tag=!bingo.has_slot7] run function bingo:item_detection/check_and_announce"}
+setblock 7 2 6 minecraft:chain_command_block[facing=down]{auto: true, Command: "tag @a[tag=bingo.got_item] add bingo.has_slot7"}
+setblock 7 1 6 minecraft:chain_command_block[facing=west]{auto: true}
 
 ## Slot 8
-setblock 15 0 3 minecraft:chain_command_block[facing=west]{auto: true, Command: "function bingo:item_detection/remove_tags"}
-setblock 14 0 3 minecraft:chain_command_block[facing=west]{auto: true}
-setblock 13 0 3 minecraft:chain_command_block[facing=west]{auto: true, Command: "data modify storage temp:bingo.input/item_detection slot set from storage bingo:card slots[8]"}
-setblock 12 0 3 minecraft:chain_command_block[facing=west]{auto: true, Command: "execute as @a[predicate=!bingo:is_in_lobby, scores={bingo.has_item=1}, tag=!bingo.has_slot8] run function bingo:item_detection/check_and_announce"}
-setblock 11 0 3 minecraft:chain_command_block[facing=west]{auto: true, Command: "tag @a[tag=bingo.got_item] add bingo.has_slot8"}
-setblock 10 0 3 minecraft:chain_command_block[facing=west]{auto: true}
+setblock 6 1 6 minecraft:chain_command_block[facing=up]{auto: true, Command: "tag @a remove bingo.clear"}
+setblock 6 2 6 minecraft:chain_command_block[facing=up]{auto: true, Command: "tag @a remove bingo.got_item"}
+setblock 6 3 6 minecraft:chain_command_block[facing=up]{auto: true}
+setblock 6 4 6 minecraft:chain_command_block[facing=up]{auto: true, Command: "data modify storage temp:bingo.input/item_detection slot set from storage bingo:card slots[8]"}
+setblock 6 5 6 minecraft:chain_command_block[facing=up]{auto: true, Command: "execute as @a[predicate=!bingo:is_in_lobby, scores={bingo.has_item=1}, tag=!bingo.has_slot8] run function bingo:item_detection/check_and_announce"}
+setblock 6 6 6 minecraft:chain_command_block[facing=up]{auto: true, Command: "tag @a[tag=bingo.got_item] add bingo.has_slot8"}
+setblock 6 7 6 minecraft:chain_command_block[facing=west]{auto: true}
 
 ## Slot 9
-setblock 9 0 3 minecraft:chain_command_block[facing=west]{auto: true, Command: "function bingo:item_detection/remove_tags"}
-setblock 8 0 3 minecraft:chain_command_block[facing=west]{auto: true}
-setblock 7 0 3 minecraft:chain_command_block[facing=west]{auto: true, Command: "data modify storage temp:bingo.input/item_detection slot set from storage bingo:card slots[9]"}
-setblock 6 0 3 minecraft:chain_command_block[facing=west]{auto: true, Command: "execute as @a[predicate=!bingo:is_in_lobby, scores={bingo.has_item=1}, tag=!bingo.has_slot9] run function bingo:item_detection/check_and_announce"}
-setblock 5 0 3 minecraft:chain_command_block[facing=west]{auto: true, Command: "tag @a[tag=bingo.got_item] add bingo.has_slot9"}
-setblock 4 0 3 minecraft:chain_command_block[facing=west]{auto: true}
+setblock 5 7 6 minecraft:chain_command_block[facing=down]{auto: true, Command: "tag @a remove bingo.clear"}
+setblock 5 6 6 minecraft:chain_command_block[facing=down]{auto: true, Command: "tag @a remove bingo.got_item"}
+setblock 5 5 6 minecraft:chain_command_block[facing=down]{auto: true}
+setblock 5 4 6 minecraft:chain_command_block[facing=down]{auto: true, Command: "data modify storage temp:bingo.input/item_detection slot set from storage bingo:card slots[9]"}
+setblock 5 3 6 minecraft:chain_command_block[facing=down]{auto: true, Command: "execute as @a[predicate=!bingo:is_in_lobby, scores={bingo.has_item=1}, tag=!bingo.has_slot9] run function bingo:item_detection/check_and_announce"}
+setblock 5 2 6 minecraft:chain_command_block[facing=down]{auto: true, Command: "tag @a[tag=bingo.got_item] add bingo.has_slot9"}
+setblock 5 1 6 minecraft:chain_command_block[facing=south]{auto: true}
 
 ## Slot 10
-setblock 3 0 3 minecraft:chain_command_block[facing=west]{auto: true, Command: "function bingo:item_detection/remove_tags"}
-setblock 2 0 3 minecraft:chain_command_block[facing=west]{auto: true}
-setblock 1 0 3 minecraft:chain_command_block[facing=west]{auto: true, Command: "data modify storage temp:bingo.input/item_detection slot set from storage bingo:card slots[10]"}
-setblock 0 0 3 minecraft:chain_command_block[facing=south]{auto: true, Command: "execute as @a[predicate=!bingo:is_in_lobby, scores={bingo.has_item=1}, tag=!bingo.has_slot10] run function bingo:item_detection/check_and_announce"}
-setblock 0 0 4 minecraft:chain_command_block[facing=east]{auto: true, Command: "tag @a[tag=bingo.got_item] add bingo.has_slot10"}
-setblock 1 0 4 minecraft:chain_command_block[facing=east]{auto: true}
+setblock 5 1 7 minecraft:chain_command_block[facing=up]{auto: true, Command: "tag @a remove bingo.clear"}
+setblock 5 2 7 minecraft:chain_command_block[facing=up]{auto: true, Command: "tag @a remove bingo.got_item"}
+setblock 5 3 7 minecraft:chain_command_block[facing=up]{auto: true}
+setblock 5 4 7 minecraft:chain_command_block[facing=up]{auto: true, Command: "data modify storage temp:bingo.input/item_detection slot set from storage bingo:card slots[10]"}
+setblock 5 5 7 minecraft:chain_command_block[facing=up]{auto: true, Command: "execute as @a[predicate=!bingo:is_in_lobby, scores={bingo.has_item=1}, tag=!bingo.has_slot10] run function bingo:item_detection/check_and_announce"}
+setblock 5 6 7 minecraft:chain_command_block[facing=up]{auto: true, Command: "tag @a[tag=bingo.got_item] add bingo.has_slot10"}
+setblock 5 7 7 minecraft:chain_command_block[facing=east]{auto: true}
 
 ## Slot 11
-setblock 2 0 4 minecraft:chain_command_block[facing=east]{auto: true, Command: "function bingo:item_detection/remove_tags"}
-setblock 3 0 4 minecraft:chain_command_block[facing=east]{auto: true}
-setblock 4 0 4 minecraft:chain_command_block[facing=east]{auto: true, Command: "data modify storage temp:bingo.input/item_detection slot set from storage bingo:card slots[11]"}
-setblock 5 0 4 minecraft:chain_command_block[facing=east]{auto: true, Command: "execute as @a[predicate=!bingo:is_in_lobby, scores={bingo.has_item=1}, tag=!bingo.has_slot11] run function bingo:item_detection/check_and_announce"}
-setblock 6 0 4 minecraft:chain_command_block[facing=east]{auto: true, Command: "tag @a[tag=bingo.got_item] add bingo.has_slot11"}
-setblock 7 0 4 minecraft:chain_command_block[facing=east]{auto: true}
+setblock 6 7 7 minecraft:chain_command_block[facing=down]{auto: true, Command: "tag @a remove bingo.clear"}
+setblock 6 6 7 minecraft:chain_command_block[facing=down]{auto: true, Command: "tag @a remove bingo.got_item"}
+setblock 6 5 7 minecraft:chain_command_block[facing=down]{auto: true}
+setblock 6 4 7 minecraft:chain_command_block[facing=down]{auto: true, Command: "data modify storage temp:bingo.input/item_detection slot set from storage bingo:card slots[11]"}
+setblock 6 3 7 minecraft:chain_command_block[facing=down]{auto: true, Command: "execute as @a[predicate=!bingo:is_in_lobby, scores={bingo.has_item=1}, tag=!bingo.has_slot11] run function bingo:item_detection/check_and_announce"}
+setblock 6 2 7 minecraft:chain_command_block[facing=down]{auto: true, Command: "tag @a[tag=bingo.got_item] add bingo.has_slot11"}
+setblock 6 1 7 minecraft:chain_command_block[facing=east]{auto: true}
 
 ## Slot 12
-setblock 8 0 4 minecraft:chain_command_block[facing=east]{auto: true, Command: "function bingo:item_detection/remove_tags"}
-setblock 9 0 4 minecraft:chain_command_block[facing=east]{auto: true}
-setblock 10 0 4 minecraft:chain_command_block[facing=east]{auto: true, Command: "data modify storage temp:bingo.input/item_detection slot set from storage bingo:card slots[12]"}
-setblock 11 0 4 minecraft:chain_command_block[facing=east]{auto: true, Command: "execute as @a[predicate=!bingo:is_in_lobby, scores={bingo.has_item=1}, tag=!bingo.has_slot12] run function bingo:item_detection/check_and_announce"}
-setblock 12 0 4 minecraft:chain_command_block[facing=east]{auto: true, Command: "tag @a[tag=bingo.got_item] add bingo.has_slot12"}
-setblock 13 0 4 minecraft:chain_command_block[facing=east]{auto: true}
+setblock 7 1 7 minecraft:chain_command_block[facing=up]{auto: true, Command: "tag @a remove bingo.clear"}
+setblock 7 2 7 minecraft:chain_command_block[facing=up]{auto: true, Command: "tag @a remove bingo.got_item"}
+setblock 7 3 7 minecraft:chain_command_block[facing=up]{auto: true}
+setblock 7 4 7 minecraft:chain_command_block[facing=up]{auto: true, Command: "data modify storage temp:bingo.input/item_detection slot set from storage bingo:card slots[12]"}
+setblock 7 5 7 minecraft:chain_command_block[facing=up]{auto: true, Command: "execute as @a[predicate=!bingo:is_in_lobby, scores={bingo.has_item=1}, tag=!bingo.has_slot12] run function bingo:item_detection/check_and_announce"}
+setblock 7 6 7 minecraft:chain_command_block[facing=up]{auto: true, Command: "tag @a[tag=bingo.got_item] add bingo.has_slot12"}
+setblock 7 7 7 minecraft:chain_command_block[facing=east]{auto: true}
 
 ## Slot 13
-setblock 14 0 4 minecraft:chain_command_block[facing=east]{auto: true, Command: "function bingo:item_detection/remove_tags"}
-setblock 15 0 4 minecraft:chain_command_block[facing=south]{auto: true}
-setblock 15 0 5 minecraft:chain_command_block[facing=west]{auto: true, Command: "data modify storage temp:bingo.input/item_detection slot set from storage bingo:card slots[13]"}
-setblock 14 0 5 minecraft:chain_command_block[facing=west]{auto: true, Command: "execute as @a[predicate=!bingo:is_in_lobby, scores={bingo.has_item=1}, tag=!bingo.has_slot13] run function bingo:item_detection/check_and_announce"}
-setblock 13 0 5 minecraft:chain_command_block[facing=west]{auto: true, Command: "tag @a[tag=bingo.got_item] add bingo.has_slot13"}
-setblock 12 0 5 minecraft:chain_command_block[facing=west]{auto: true}
+setblock 8 7 7 minecraft:chain_command_block[facing=down]{auto: true, Command: "tag @a remove bingo.clear"}
+setblock 8 6 7 minecraft:chain_command_block[facing=down]{auto: true, Command: "tag @a remove bingo.got_item"}
+setblock 8 5 7 minecraft:chain_command_block[facing=down]{auto: true}
+setblock 8 4 7 minecraft:chain_command_block[facing=down]{auto: true, Command: "data modify storage temp:bingo.input/item_detection slot set from storage bingo:card slots[13]"}
+setblock 8 3 7 minecraft:chain_command_block[facing=down]{auto: true, Command: "execute as @a[predicate=!bingo:is_in_lobby, scores={bingo.has_item=1}, tag=!bingo.has_slot13] run function bingo:item_detection/check_and_announce"}
+setblock 8 2 7 minecraft:chain_command_block[facing=down]{auto: true, Command: "tag @a[tag=bingo.got_item] add bingo.has_slot13"}
+setblock 8 1 7 minecraft:chain_command_block[facing=east]{auto: true}
 
 ## Slot 14
-setblock 11 0 5 minecraft:chain_command_block[facing=west]{auto: true, Command: "function bingo:item_detection/remove_tags"}
-setblock 10 0 5 minecraft:chain_command_block[facing=west]{auto: true}
-setblock 9 0 5 minecraft:chain_command_block[facing=west]{auto: true, Command: "data modify storage temp:bingo.input/item_detection slot set from storage bingo:card slots[14]"}
-setblock 8 0 5 minecraft:chain_command_block[facing=west]{auto: true, Command: "execute as @a[predicate=!bingo:is_in_lobby, scores={bingo.has_item=1}, tag=!bingo.has_slot14] run function bingo:item_detection/check_and_announce"}
-setblock 7 0 5 minecraft:chain_command_block[facing=west]{auto: true, Command: "tag @a[tag=bingo.got_item] add bingo.has_slot14"}
-setblock 6 0 5 minecraft:chain_command_block[facing=west]{auto: true}
+setblock 9 1 7 minecraft:chain_command_block[facing=up]{auto: true, Command: "tag @a remove bingo.clear"}
+setblock 9 2 7 minecraft:chain_command_block[facing=up]{auto: true, Command: "tag @a remove bingo.got_item"}
+setblock 9 3 7 minecraft:chain_command_block[facing=up]{auto: true}
+setblock 9 4 7 minecraft:chain_command_block[facing=up]{auto: true, Command: "data modify storage temp:bingo.input/item_detection slot set from storage bingo:card slots[14]"}
+setblock 9 5 7 minecraft:chain_command_block[facing=up]{auto: true, Command: "execute as @a[predicate=!bingo:is_in_lobby, scores={bingo.has_item=1}, tag=!bingo.has_slot14] run function bingo:item_detection/check_and_announce"}
+setblock 9 6 7 minecraft:chain_command_block[facing=up]{auto: true, Command: "tag @a[tag=bingo.got_item] add bingo.has_slot14"}
+setblock 9 7 7 minecraft:chain_command_block[facing=south]{auto: true}
 
 ## Slot 15
-setblock 5 0 5 minecraft:chain_command_block[facing=west]{auto: true, Command: "function bingo:item_detection/remove_tags"}
-setblock 4 0 5 minecraft:chain_command_block[facing=west]{auto: true}
-setblock 3 0 5 minecraft:chain_command_block[facing=west]{auto: true, Command: "data modify storage temp:bingo.input/item_detection slot set from storage bingo:card slots[15]"}
-setblock 2 0 5 minecraft:chain_command_block[facing=west]{auto: true, Command: "execute as @a[predicate=!bingo:is_in_lobby, scores={bingo.has_item=1}, tag=!bingo.has_slot15] run function bingo:item_detection/check_and_announce"}
-setblock 1 0 5 minecraft:chain_command_block[facing=west]{auto: true, Command: "tag @a[tag=bingo.got_item] add bingo.has_slot15"}
-setblock 0 0 5 minecraft:chain_command_block[facing=south]{auto: true}
+setblock 9 7 8 minecraft:chain_command_block[facing=down]{auto: true, Command: "tag @a remove bingo.clear"}
+setblock 9 6 8 minecraft:chain_command_block[facing=down]{auto: true, Command: "tag @a remove bingo.got_item"}
+setblock 9 5 8 minecraft:chain_command_block[facing=down]{auto: true}
+setblock 9 4 8 minecraft:chain_command_block[facing=down]{auto: true, Command: "data modify storage temp:bingo.input/item_detection slot set from storage bingo:card slots[15]"}
+setblock 9 3 8 minecraft:chain_command_block[facing=down]{auto: true, Command: "execute as @a[predicate=!bingo:is_in_lobby, scores={bingo.has_item=1}, tag=!bingo.has_slot15] run function bingo:item_detection/check_and_announce"}
+setblock 9 2 8 minecraft:chain_command_block[facing=down]{auto: true, Command: "tag @a[tag=bingo.got_item] add bingo.has_slot15"}
+setblock 9 1 8 minecraft:chain_command_block[facing=west]{auto: true}
 
 ## Slot 16
-setblock 0 0 6 minecraft:chain_command_block[facing=east]{auto: true, Command: "function bingo:item_detection/remove_tags"}
-setblock 1 0 6 minecraft:chain_command_block[facing=east]{auto: true}
-setblock 2 0 6 minecraft:chain_command_block[facing=east]{auto: true, Command: "data modify storage temp:bingo.input/item_detection slot set from storage bingo:card slots[16]"}
-setblock 3 0 6 minecraft:chain_command_block[facing=east]{auto: true, Command: "execute as @a[predicate=!bingo:is_in_lobby, scores={bingo.has_item=1}, tag=!bingo.has_slot16] run function bingo:item_detection/check_and_announce"}
-setblock 4 0 6 minecraft:chain_command_block[facing=east]{auto: true, Command: "tag @a[tag=bingo.got_item] add bingo.has_slot16"}
-setblock 5 0 6 minecraft:chain_command_block[facing=east]{auto: true}
+setblock 8 1 8 minecraft:chain_command_block[facing=up]{auto: true, Command: "tag @a remove bingo.clear"}
+setblock 8 2 8 minecraft:chain_command_block[facing=up]{auto: true, Command: "tag @a remove bingo.got_item"}
+setblock 8 3 8 minecraft:chain_command_block[facing=up]{auto: true}
+setblock 8 4 8 minecraft:chain_command_block[facing=up]{auto: true, Command: "data modify storage temp:bingo.input/item_detection slot set from storage bingo:card slots[16]"}
+setblock 8 5 8 minecraft:chain_command_block[facing=up]{auto: true, Command: "execute as @a[predicate=!bingo:is_in_lobby, scores={bingo.has_item=1}, tag=!bingo.has_slot16] run function bingo:item_detection/check_and_announce"}
+setblock 8 6 8 minecraft:chain_command_block[facing=up]{auto: true, Command: "tag @a[tag=bingo.got_item] add bingo.has_slot16"}
+setblock 8 7 8 minecraft:chain_command_block[facing=west]{auto: true}
 
 ## Slot 17
-setblock 6 0 6 minecraft:chain_command_block[facing=east]{auto: true, Command: "function bingo:item_detection/remove_tags"}
-setblock 7 0 6 minecraft:chain_command_block[facing=east]{auto: true}
-setblock 8 0 6 minecraft:chain_command_block[facing=east]{auto: true, Command: "data modify storage temp:bingo.input/item_detection slot set from storage bingo:card slots[17]"}
-setblock 9 0 6 minecraft:chain_command_block[facing=east]{auto: true, Command: "execute as @a[predicate=!bingo:is_in_lobby, scores={bingo.has_item=1}, tag=!bingo.has_slot17] run function bingo:item_detection/check_and_announce"}
-setblock 10 0 6 minecraft:chain_command_block[facing=east]{auto: true, Command: "tag @a[tag=bingo.got_item] add bingo.has_slot17"}
-setblock 11 0 6 minecraft:chain_command_block[facing=east]{auto: true}
+setblock 7 7 8 minecraft:chain_command_block[facing=down]{auto: true, Command: "tag @a remove bingo.clear"}
+setblock 7 6 8 minecraft:chain_command_block[facing=down]{auto: true, Command: "tag @a remove bingo.got_item"}
+setblock 7 5 8 minecraft:chain_command_block[facing=down]{auto: true}
+setblock 7 4 8 minecraft:chain_command_block[facing=down]{auto: true, Command: "data modify storage temp:bingo.input/item_detection slot set from storage bingo:card slots[17]"}
+setblock 7 3 8 minecraft:chain_command_block[facing=down]{auto: true, Command: "execute as @a[predicate=!bingo:is_in_lobby, scores={bingo.has_item=1}, tag=!bingo.has_slot17] run function bingo:item_detection/check_and_announce"}
+setblock 7 2 8 minecraft:chain_command_block[facing=down]{auto: true, Command: "tag @a[tag=bingo.got_item] add bingo.has_slot17"}
+setblock 7 1 8 minecraft:chain_command_block[facing=west]{auto: true}
 
 ## Slot 18
-setblock 12 0 6 minecraft:chain_command_block[facing=east]{auto: true, Command: "function bingo:item_detection/remove_tags"}
-setblock 13 0 6 minecraft:chain_command_block[facing=east]{auto: true}
-setblock 14 0 6 minecraft:chain_command_block[facing=east]{auto: true, Command: "data modify storage temp:bingo.input/item_detection slot set from storage bingo:card slots[18]"}
-setblock 15 0 6 minecraft:chain_command_block[facing=south]{auto: true, Command: "execute as @a[predicate=!bingo:is_in_lobby, scores={bingo.has_item=1}, tag=!bingo.has_slot18] run function bingo:item_detection/check_and_announce"}
-setblock 15 0 7 minecraft:chain_command_block[facing=west]{auto: true, Command: "tag @a[tag=bingo.got_item] add bingo.has_slot18"}
-setblock 14 0 7 minecraft:chain_command_block[facing=west]{auto: true}
+setblock 6 1 8 minecraft:chain_command_block[facing=up]{auto: true, Command: "tag @a remove bingo.clear"}
+setblock 6 2 8 minecraft:chain_command_block[facing=up]{auto: true, Command: "tag @a remove bingo.got_item"}
+setblock 6 3 8 minecraft:chain_command_block[facing=up]{auto: true}
+setblock 6 4 8 minecraft:chain_command_block[facing=up]{auto: true, Command: "data modify storage temp:bingo.input/item_detection slot set from storage bingo:card slots[18]"}
+setblock 6 5 8 minecraft:chain_command_block[facing=up]{auto: true, Command: "execute as @a[predicate=!bingo:is_in_lobby, scores={bingo.has_item=1}, tag=!bingo.has_slot18] run function bingo:item_detection/check_and_announce"}
+setblock 6 6 8 minecraft:chain_command_block[facing=up]{auto: true, Command: "tag @a[tag=bingo.got_item] add bingo.has_slot18"}
+setblock 6 7 8 minecraft:chain_command_block[facing=west]{auto: true}
 
 ## Slot 19
-setblock 13 0 7 minecraft:chain_command_block[facing=west]{auto: true, Command: "function bingo:item_detection/remove_tags"}
-setblock 12 0 7 minecraft:chain_command_block[facing=west]{auto: true}
-setblock 11 0 7 minecraft:chain_command_block[facing=west]{auto: true, Command: "data modify storage temp:bingo.input/item_detection slot set from storage bingo:card slots[19]"}
-setblock 10 0 7 minecraft:chain_command_block[facing=west]{auto: true, Command: "execute as @a[predicate=!bingo:is_in_lobby, scores={bingo.has_item=1}, tag=!bingo.has_slot19] run function bingo:item_detection/check_and_announce"}
-setblock 9 0 7 minecraft:chain_command_block[facing=west]{auto: true, Command: "tag @a[tag=bingo.got_item] add bingo.has_slot19"}
-setblock 8 0 7 minecraft:chain_command_block[facing=west]{auto: true}
+setblock 5 7 8 minecraft:chain_command_block[facing=down]{auto: true, Command: "tag @a remove bingo.clear"}
+setblock 5 6 8 minecraft:chain_command_block[facing=down]{auto: true, Command: "tag @a remove bingo.got_item"}
+setblock 5 5 8 minecraft:chain_command_block[facing=down]{auto: true}
+setblock 5 4 8 minecraft:chain_command_block[facing=down]{auto: true, Command: "data modify storage temp:bingo.input/item_detection slot set from storage bingo:card slots[19]"}
+setblock 5 3 8 minecraft:chain_command_block[facing=down]{auto: true, Command: "execute as @a[predicate=!bingo:is_in_lobby, scores={bingo.has_item=1}, tag=!bingo.has_slot19] run function bingo:item_detection/check_and_announce"}
+setblock 5 2 8 minecraft:chain_command_block[facing=down]{auto: true, Command: "tag @a[tag=bingo.got_item] add bingo.has_slot19"}
+setblock 5 1 8 minecraft:chain_command_block[facing=south]{auto: true}
 
 ## Slot 20
-setblock 7 0 7 minecraft:chain_command_block[facing=west]{auto: true, Command: "function bingo:item_detection/remove_tags"}
-setblock 6 0 7 minecraft:chain_command_block[facing=west]{auto: true}
-setblock 5 0 7 minecraft:chain_command_block[facing=west]{auto: true, Command: "data modify storage temp:bingo.input/item_detection slot set from storage bingo:card slots[20]"}
-setblock 4 0 7 minecraft:chain_command_block[facing=west]{auto: true, Command: "execute as @a[predicate=!bingo:is_in_lobby, scores={bingo.has_item=1}, tag=!bingo.has_slot20] run function bingo:item_detection/check_and_announce"}
-setblock 3 0 7 minecraft:chain_command_block[facing=west]{auto: true, Command: "tag @a[tag=bingo.got_item] add bingo.has_slot20"}
-setblock 2 0 7 minecraft:chain_command_block[facing=west]{auto: true}
+setblock 5 1 9 minecraft:chain_command_block[facing=up]{auto: true, Command: "tag @a remove bingo.clear"}
+setblock 5 2 9 minecraft:chain_command_block[facing=up]{auto: true, Command: "tag @a remove bingo.got_item"}
+setblock 5 3 9 minecraft:chain_command_block[facing=up]{auto: true}
+setblock 5 4 9 minecraft:chain_command_block[facing=up]{auto: true, Command: "data modify storage temp:bingo.input/item_detection slot set from storage bingo:card slots[20]"}
+setblock 5 5 9 minecraft:chain_command_block[facing=up]{auto: true, Command: "execute as @a[predicate=!bingo:is_in_lobby, scores={bingo.has_item=1}, tag=!bingo.has_slot20] run function bingo:item_detection/check_and_announce"}
+setblock 5 6 9 minecraft:chain_command_block[facing=up]{auto: true, Command: "tag @a[tag=bingo.got_item] add bingo.has_slot20"}
+setblock 5 7 9 minecraft:chain_command_block[facing=east]{auto: true}
 
 ## Slot 21
-setblock 1 0 7 minecraft:chain_command_block[facing=west]{auto: true, Command: "function bingo:item_detection/remove_tags"}
-setblock 0 0 7 minecraft:chain_command_block[facing=south]{auto: true}
-setblock 0 0 8 minecraft:chain_command_block[facing=east]{auto: true, Command: "data modify storage temp:bingo.input/item_detection slot set from storage bingo:card slots[21]"}
-setblock 1 0 8 minecraft:chain_command_block[facing=east]{auto: true, Command: "execute as @a[predicate=!bingo:is_in_lobby, scores={bingo.has_item=1}, tag=!bingo.has_slot21] run function bingo:item_detection/check_and_announce"}
-setblock 2 0 8 minecraft:chain_command_block[facing=east]{auto: true, Command: "tag @a[tag=bingo.got_item] add bingo.has_slot21"}
-setblock 3 0 8 minecraft:chain_command_block[facing=east]{auto: true}
+setblock 6 7 9 minecraft:chain_command_block[facing=down]{auto: true, Command: "tag @a remove bingo.clear"}
+setblock 6 6 9 minecraft:chain_command_block[facing=down]{auto: true, Command: "tag @a remove bingo.got_item"}
+setblock 6 5 9 minecraft:chain_command_block[facing=down]{auto: true}
+setblock 6 4 9 minecraft:chain_command_block[facing=down]{auto: true, Command: "data modify storage temp:bingo.input/item_detection slot set from storage bingo:card slots[21]"}
+setblock 6 3 9 minecraft:chain_command_block[facing=down]{auto: true, Command: "execute as @a[predicate=!bingo:is_in_lobby, scores={bingo.has_item=1}, tag=!bingo.has_slot21] run function bingo:item_detection/check_and_announce"}
+setblock 6 2 9 minecraft:chain_command_block[facing=down]{auto: true, Command: "tag @a[tag=bingo.got_item] add bingo.has_slot21"}
+setblock 6 1 9 minecraft:chain_command_block[facing=east]{auto: true}
 
 ## Slot 22
-setblock 4 0 8 minecraft:chain_command_block[facing=east]{auto: true, Command: "function bingo:item_detection/remove_tags"}
-setblock 5 0 8 minecraft:chain_command_block[facing=east]{auto: true}
-setblock 6 0 8 minecraft:chain_command_block[facing=east]{auto: true, Command: "data modify storage temp:bingo.input/item_detection slot set from storage bingo:card slots[22]"}
-setblock 7 0 8 minecraft:chain_command_block[facing=east]{auto: true, Command: "execute as @a[predicate=!bingo:is_in_lobby, scores={bingo.has_item=1}, tag=!bingo.has_slot22] run function bingo:item_detection/check_and_announce"}
-setblock 8 0 8 minecraft:chain_command_block[facing=east]{auto: true, Command: "tag @a[tag=bingo.got_item] add bingo.has_slot22"}
-setblock 9 0 8 minecraft:chain_command_block[facing=east]{auto: true}
+setblock 7 1 9 minecraft:chain_command_block[facing=up]{auto: true, Command: "tag @a remove bingo.clear"}
+setblock 7 2 9 minecraft:chain_command_block[facing=up]{auto: true, Command: "tag @a remove bingo.got_item"}
+setblock 7 3 9 minecraft:chain_command_block[facing=up]{auto: true}
+setblock 7 4 9 minecraft:chain_command_block[facing=up]{auto: true, Command: "data modify storage temp:bingo.input/item_detection slot set from storage bingo:card slots[22]"}
+setblock 7 5 9 minecraft:chain_command_block[facing=up]{auto: true, Command: "execute as @a[predicate=!bingo:is_in_lobby, scores={bingo.has_item=1}, tag=!bingo.has_slot22] run function bingo:item_detection/check_and_announce"}
+setblock 7 6 9 minecraft:chain_command_block[facing=up]{auto: true, Command: "tag @a[tag=bingo.got_item] add bingo.has_slot22"}
+setblock 7 7 9 minecraft:chain_command_block[facing=east]{auto: true}
 
 ## Slot 23
-setblock 10 0 8 minecraft:chain_command_block[facing=east]{auto: true, Command: "function bingo:item_detection/remove_tags"}
-setblock 11 0 8 minecraft:chain_command_block[facing=east]{auto: true}
-setblock 12 0 8 minecraft:chain_command_block[facing=east]{auto: true, Command: "data modify storage temp:bingo.input/item_detection slot set from storage bingo:card slots[23]"}
-setblock 13 0 8 minecraft:chain_command_block[facing=east]{auto: true, Command: "execute as @a[predicate=!bingo:is_in_lobby, scores={bingo.has_item=1}, tag=!bingo.has_slot23] run function bingo:item_detection/check_and_announce"}
-setblock 14 0 8 minecraft:chain_command_block[facing=east]{auto: true, Command: "tag @a[tag=bingo.got_item] add bingo.has_slot23"}
-setblock 15 0 8 minecraft:chain_command_block[facing=south]{auto: true}
+setblock 8 7 9 minecraft:chain_command_block[facing=down]{auto: true, Command: "tag @a remove bingo.clear"}
+setblock 8 6 9 minecraft:chain_command_block[facing=down]{auto: true, Command: "tag @a remove bingo.got_item"}
+setblock 8 5 9 minecraft:chain_command_block[facing=down]{auto: true}
+setblock 8 4 9 minecraft:chain_command_block[facing=down]{auto: true, Command: "data modify storage temp:bingo.input/item_detection slot set from storage bingo:card slots[23]"}
+setblock 8 3 9 minecraft:chain_command_block[facing=down]{auto: true, Command: "execute as @a[predicate=!bingo:is_in_lobby, scores={bingo.has_item=1}, tag=!bingo.has_slot23] run function bingo:item_detection/check_and_announce"}
+setblock 8 2 9 minecraft:chain_command_block[facing=down]{auto: true, Command: "tag @a[tag=bingo.got_item] add bingo.has_slot23"}
+setblock 8 1 9 minecraft:chain_command_block[facing=east]{auto: true}
 
 ## Slot 24
-setblock 15 0 9 minecraft:chain_command_block[facing=west]{auto: true, Command: "function bingo:item_detection/remove_tags"}
-setblock 14 0 9 minecraft:chain_command_block[facing=west]{auto: true}
-setblock 13 0 9 minecraft:chain_command_block[facing=west]{auto: true, Command: "data modify storage temp:bingo.input/item_detection slot set from storage bingo:card slots[24]"}
-setblock 12 0 9 minecraft:chain_command_block[facing=west]{auto: true, Command: "execute as @a[predicate=!bingo:is_in_lobby, scores={bingo.has_item=1}, tag=!bingo.has_slot24] run function bingo:item_detection/check_and_announce"}
-setblock 11 0 9 minecraft:chain_command_block[facing=west]{auto: true, Command: "tag @a[tag=bingo.got_item] add bingo.has_slot24"}
-setblock 10 0 9 minecraft:chain_command_block[facing=west]{auto: true}
+setblock 9 1 9 minecraft:chain_command_block[facing=up]{auto: true, Command: "tag @a remove bingo.clear"}
+setblock 9 2 9 minecraft:chain_command_block[facing=up]{auto: true, Command: "tag @a remove bingo.got_item"}
+setblock 9 3 9 minecraft:chain_command_block[facing=up]{auto: true}
+setblock 9 4 9 minecraft:chain_command_block[facing=up]{auto: true, Command: "data modify storage temp:bingo.input/item_detection slot set from storage bingo:card slots[24]"}
+setblock 9 5 9 minecraft:chain_command_block[facing=up]{auto: true, Command: "execute as @a[predicate=!bingo:is_in_lobby, scores={bingo.has_item=1}, tag=!bingo.has_slot24] run function bingo:item_detection/check_and_announce"}
+setblock 9 6 9 minecraft:chain_command_block[facing=up]{auto: true, Command: "tag @a[tag=bingo.got_item] add bingo.has_slot24"}
+setblock 9 7 9 minecraft:chain_command_block[facing=up]{auto: true}
