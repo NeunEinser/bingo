@@ -6,10 +6,6 @@
 			"biome": "minecraft:the_void",
 			"layers": [
 				 {
-					"block": "minecraft:air",
-					"height": 63
-				 },
-				 {
 					"block": "minecraft:barrier",
 					"height": 1
 				 }

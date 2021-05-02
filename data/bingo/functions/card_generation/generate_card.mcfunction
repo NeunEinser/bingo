@@ -9,6 +9,133 @@ data remove storage bingo:card slots
 execute as @e[type=minecraft:item_frame, tag=bingo.card_frame] at @s run setblock ~ ~ ~-1 minecraft:barrier
 
 execute in bingo:lobby run data modify block 0 0 0 auto set value false
+
+#>
+# This tag marks a player who is in a team that obtained the item in slot 0.
+#
+# @private
+#declare tag bingo.has_slot0
+#>
+# This tag marks a player who is in a team that obtained the item in slot 1.
+#
+# @private
+#declare tag bingo.has_slot1
+#>
+# This tag marks a player who is in a team that obtained the item in slot 2.
+#
+# @private
+#declare tag bingo.has_slot2
+#>
+# This tag marks a player who is in a team that obtained the item in slot 3.
+#
+# @private
+#declare tag bingo.has_slot3
+#>
+# This tag marks a player who is in a team that obtained the item in slot 4.
+#
+# @private
+#declare tag bingo.has_slot4
+#>
+# This tag marks a player who is in a team that obtained the item in slot 5.
+#
+# @private
+#declare tag bingo.has_slot5
+#>
+# This tag marks a player who is in a team that obtained the item in slot 6.
+#
+# @private
+#declare tag bingo.has_slot6
+#>
+# This tag marks a player who is in a team that obtained the item in slot 7.
+#
+# @private
+#declare tag bingo.has_slot7
+#>
+# This tag marks a player who is in a team that obtained the item in slot 8.
+#
+# @private
+#declare tag bingo.has_slot8
+#>
+# This tag marks a player who is in a team that obtained the item in slot 9.
+#
+# @private
+#declare tag bingo.has_slot9
+#>
+# This tag marks a player who is in a team that obtained the item in slot 10.
+#
+# @private
+#declare tag bingo.has_slot10
+#>
+# This tag marks a player who is in a team that obtained the item in slot 11.
+#
+# @private
+#declare tag bingo.has_slot11
+#>
+# This tag marks a player who is in a team that obtained the item in slot 12.
+#
+# @private
+#declare tag bingo.has_slot12
+#>
+# This tag marks a player who is in a team that obtained the item in slot 13.
+#
+# @private
+#declare tag bingo.has_slot13
+#>
+# This tag marks a player who is in a team that obtained the item in slot 14.
+#
+# @private
+#declare tag bingo.has_slot14
+#>
+# This tag marks a player who is in a team that obtained the item in slot 15.
+#
+# @private
+#declare tag bingo.has_slot15
+#>
+# This tag marks a player who is in a team that obtained the item in slot 16.
+#
+# @private
+#declare tag bingo.has_slot16
+#>
+# This tag marks a player who is in a team that obtained the item in slot 17.
+#
+# @private
+#declare tag bingo.has_slot17
+#>
+# This tag marks a player who is in a team that obtained the item in slot 18.
+#
+# @private
+#declare tag bingo.has_slot18
+#>
+# This tag marks a player who is in a team that obtained the item in slot 19.
+#
+# @private
+#declare tag bingo.has_slot19
+#>
+# This tag marks a player who is in a team that obtained the item in slot 20.
+#
+# @private
+#declare tag bingo.has_slot20
+#>
+# This tag marks a player who is in a team that obtained the item in slot 21.
+#
+# @private
+#declare tag bingo.has_slot21
+#>
+# This tag marks a player who is in a team that obtained the item in slot 22.
+#
+# @private
+#declare tag bingo.has_slot22
+#>
+# This tag marks a player who is in a team that obtained the item in slot 23.
+#
+# @private
+#declare tag bingo.has_slot23
+#>
+# This tag marks a player who is in a team that obtained the item in slot 24.
+#
+# @private
+#declare tag bingo.has_slot24
+
 tag @a remove bingo.has_slot0
 tag @a remove bingo.has_slot1
 tag @a remove bingo.has_slot2

@@ -19,21 +19,9 @@
 # This storage is used to keep track of all items that are available in
 # Minecraft: Bingo.
 #
-# The registry array holds all items that are registered to the game. If you
-# want to add your own items to the item pool, please do so in a function
-# within your own namespace which is added to the function tag
-# #bingo:register_items
-#
-# In order to modify existing items, either added by the default bingo datapack,
-# or added by another extension pack, please use a function registered to the
-# function tag #bingo:post_register_items
-#
-# The items array should be considered read-only from other places.
-#
-# Additionally, this storage holds a categories array. If you want to add your
-# own items to own categories, you can do that in #bingo:register_items. If you
-# want to add existing items to new categories, you can register the categories
-# in #bingo:post_register_items as well.
+# The items array contains a list of all items that were registered. The
+# categories array holds all categories. Categories have an items array
+# containing the full item definition, like in the items array.
 #
 # Items have the following NBT structure:
 # id: (String) custom namespaced id to uniquly identify the item within bingo
@@ -64,6 +52,34 @@
 #
 # @api
 #declare storage bingo:items
+
+#>
+# This is the registry used to register things to Minecraft Bingo.
+#
+# To register new things in an extension pack, add your own function to the
+# function tag #bingo:fill_registries.
+#
+# To execute an action before the registries are processed but after all active
+# extension packs have registered everything, add a function to the function tag
+# #bingo:post_registration
+#
+# All registries are an array of the type of thing you want to register.
+#
+# Available registries:
+# categories: categories of Minecraft Bingo. NBT-Structure see storage
+# 	 definition of bingo:items
+# items: All items that are available. NBT-Structure see storage definition of
+# 	bingo:items
+# structures: Each entry holds a string representing a namespaced id of a
+# 	structure file to be added to the lobby. The center must be the corridor.
+# 	Add emptiness in case of unsymetric sizes.
+#
+# In order to modify existing items, either added by the default bingo datapack,
+# or added by another extension pack, please use a function registered to the
+# function tag #bingo:post_register_items
+#
+# The items array should be considered read-only from other places.
+#declare storage bingo:registries
 
 #>
 # This storage is used to store player configurations.
@@ -263,6 +279,10 @@ scoreboard objectives add bingo.player_con trigger
 #declare score_holder $seed
 #>
 # @internal
+#declare score_holder -2
+scoreboard players set -2 bingo.const -2
+#>
+# @internal
 #declare score_holder -1
 scoreboard players set -1 bingo.const -1
 #>
@@ -329,7 +349,6 @@ scoreboard players set -2147483648 bingo.const -2147483648
 bossbar add bingo:start/pre_gen/progress {"translate": "bingo.game.start.pre_gen_progress"}
 bossbar set bingo:start/pre_gen/progress color red
 
-execute in bingo:lobby run function bingo:init/setup_lobby
 gamerule commandBlockOutput false
 gamerule doWeatherCycle false
 gamerule doInsomnia false
@@ -389,7 +408,7 @@ team modify bingo.yellow color yellow
 # register items
 data remove storage bingo:items categories
 data remove storage bingo:items registry
-function #bingo:register_items
+function #bingo:fill_registries
 
 #>
 # Function tag for doing actions after the item registration, but before the
@@ -399,14 +418,21 @@ function #bingo:register_items
 # bingo item pool or from other extensio packs.
 #
 # @api
-#declare tag/function bingo:post_register_items
-function #bingo:post_register_items
+#declare tag/function bingo:post_registration
+function #bingo:post_registration
 
 #>
 # @within function bingo:init/*
 #declare storage temp:bingo.init
-data modify storage temp:bingo.init items set from storage bingo:items registry
-data remove storage bingo:items registry
+
+# initialize items
+data modify storage temp:bingo.init items set from storage bingo:registries items
+data modify storage bingo:items categories set from storage bingo:registries categories
+data remove storage bingo:registries categories
+data remove storage bingo:registries items
 data remove storage bingo:items items
 
 function bingo:init/initialize_items
+
+# spawn strcutures
+execute in bingo:lobby run function bingo:init/setup_lobby
