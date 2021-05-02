@@ -11,6 +11,35 @@
 # @within function bingo:lobby/tick
 # @context dimension bingo:lobby
 
+# Machinery
+setblock -3 3 7 minecraft:air
+setblock -3 3 7 minecraft:warped_wall_sign[facing=west]{Text1: '{"translate":"bingo.lobby.machinery.sign.line1", "bold":true, "color":"#8eedeb"}', Text2: '{"translate": "bingo.lobby.machinery.sign.line2", "color":"#8eedeb"}', Text3: '{"translate": "bingo.lobby.machinery.sign.line3", "color":"#8eedeb"}', Text4: '{"translate": "bingo.lobby.machinery.sign.line4", "color":"#8eedeb"}'}
+
+# Credits
+setblock -12 1 4 minecraft:air
+setblock -12 1 4 minecraft:warped_wall_sign[facing=south]{Text1: '[{"text":"Neun", "bold":true, "color":"red"}, {"text":"Einser", "bold":true, "color":"blue"}]', Text2: '{"translate": "bingo.lobby.credits.neun_einser.sign.line2", "color":"#8eedeb"}', Text3: '{"translate": "bingo.lobby.credits.neun_einser.sign.line3", "color":"#8eedeb"}', Text4: '{"translate": "bingo.lobby.credits.neun_einser.sign.line4", "color":"#8eedeb"}'}
+
+setblock -10 1 4 minecraft:air
+setblock -10 1 4 minecraft:warped_wall_sign[facing=south]{Text1: '{"text":"AmberW", "bold":true, "color":"#8eedeb"}', Text2: '{"translate": "bingo.lobby.credits.amber_wat.sign.line2", "color":"#8eedeb"}', Text3: '{"translate": "bingo.lobby.credits.amber_wat.sign.line3", "color":"#8eedeb"}', Text4: '{"translate": "bingo.lobby.credits.amber_wat.sign.line4", "color":"#8eedeb"}'}
+
+setblock -8 1 4 minecraft:air
+setblock -8 1 4 minecraft:warped_wall_sign[facing=south]{Text1: '{"text":"NOPEName", "bold":true, "color":"#8eedeb"}', Text2: '{"translate": "bingo.lobby.credits.nope_name.sign.line2", "color":"#8eedeb"}', Text3: '{"translate": "bingo.lobby.credits.nope_name.sign.line3", "color":"#8eedeb"}', Text4: '{"translate": "bingo.lobby.credits.nope_name.sign.line4", "color":"#8eedeb"}'}
+
+setblock -6 1 4 minecraft:air
+setblock -6 1 4 minecraft:warped_wall_sign[facing=south]{Text1: '{"text":"Lorgon111", "bold":true, "color":"#8eedeb"}', Text2: '{"translate": "bingo.lobby.credits.dr_brian_lorgon111.sign.line2", "color":"#8eedeb"}', Text3: '{"translate": "bingo.lobby.credits.dr_brian_lorgon111.sign.line3", "color":"#8eedeb"}', Text4: '{"translate": "bingo.lobby.credits.dr_brian_lorgon111.sign.line4", "color":"#8eedeb"}'}
+
+setblock -9 4 9 minecraft:air
+setblock -9 4 9 minecraft:warped_wall_sign[facing=north]{Text1: '{"translate": "bingo.lobby.credits.playtesters.sign.line1", "bold":true, "color":"#8eedeb"}', Text2: '{"translate": "bingo.lobby.credits.playtesters.sign.line2", "bold":true, "color":"#8eedeb"}', Text3: '{"translate": "bingo.lobby.credits.playtesters.sign.line3", "bold":true, "color":"#8eedeb"}', Text4: '{"translate": "bingo.lobby.credits.playtesters.sign.line4", "bold":true, "color":"#8eedeb"}'}
+setblock -5 2 9 minecraft:warped_wall_sign[facing=north]{Text2: '{"text":"no_leaf_", "bold":true, "color":"#8eedeb"}', Text3: '{"text":"clover", "bold":true, "color":"#8eedeb"}'}
+setblock -6 2 9 minecraft:warped_wall_sign[facing=north]{Text2: '{"text":"Tod_NL", "bold":true, "color":"#8eedeb"}'}
+setblock -7 2 9 minecraft:warped_wall_sign[facing=north]{Text2: '{"text":"lifeofchrome", "bold":true, "color":"#8eedeb"}'}
+setblock -8 2 9 minecraft:warped_wall_sign[facing=north]{Text2: '{"text":"CracaCroes", "bold":true, "color":"#8eedeb"}', Text3: '{"text":"Gazyy", "bold":true, "color":"#8eedeb"}'}
+setblock -9 2 9 minecraft:warped_wall_sign[facing=north]{Text2: '{"text":"ThomasTo", "bold":true, "color":"#8eedeb"}', Text3: '{"text":"Space", "bold":true, "color":"#8eedeb"}'}
+setblock -10 2 9 minecraft:warped_wall_sign[facing=north]{Text2: '{"text":"Zampone /", "bold":true, "color":"#8eedeb"}', Text3: '{"text":"ThatManZam", "bold":true, "color":"#8eedeb"}'}
+setblock -11 2 9 minecraft:warped_wall_sign[facing=north]{Text2: '{"text":"gothfaerie", "bold":true, "color":"#8eedeb"}'}
+setblock -12 2 9 minecraft:warped_wall_sign[facing=north]{Text2: '{"text":"Muffinshire", "bold":true, "color":"#8eedeb"}'}
+setblock -13 2 9 minecraft:warped_wall_sign[facing=north]{Text2: '{"text":"silentrob", "bold":true, "color":"#8eedeb"}'}
+
 setblock 7 65 -7 minecraft:air
 setblock 7 65 -7 minecraft:warped_wall_sign[facing=south]{Text1: '{"translate":"bingo.lobby.card_generation.start_game.sign.line1", "bold":true, "color":"#8eedeb", "clickEvent":{"action":"run_command","value":"/function bingo:game/start/check_and_start"}}', Text2:'{"translate":"bingo.lobby.card_generation.start_game.sign.line2", "bold":true, "color":"#8eedeb"}', Text3:'{"translate":"bingo.lobby.card_generation.start_game.sign.line3", "bold":true, "color":"#8eedeb"}', Text4:'{"translate":"bingo.lobby.card_generation.start_game.sign.line4", "bold":true, "color":"#8eedeb"}'}
 

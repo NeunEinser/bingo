@@ -3,6 +3,32 @@
 	"bingo.game.go_to_lobby.hint": "Hint: You can use the command %s at any time manually to return to the lobby as well.",
 	"bingo.game.go_to_lobby.click": "Click here",
 
+	"bingo.lobby.machinery.sign.line1": "Machinery",
+	"bingo.lobby.machinery.sign.line2": "",
+	"bingo.lobby.machinery.sign.line3": "Authorized",
+	"bingo.lobby.machinery.sign.line4": "personnel only",
+
+	"bingo.lobby.credits.neun_einser.sign.line2": "",
+	"bingo.lobby.credits.neun_einser.sign.line3": "All of Minecraft",
+	"bingo.lobby.credits.neun_einser.sign.line4": "Bingo v5",
+
+	"bingo.lobby.credits.amber_wat.sign.line2": "",
+	"bingo.lobby.credits.amber_wat.sign.line3": "Negative Space",
+	"bingo.lobby.credits.amber_wat.sign.line4": "Font",
+
+	"bingo.lobby.credits.nope_name.sign.line2": "",
+	"bingo.lobby.credits.nope_name.sign.line3": "Math utility",
+	"bingo.lobby.credits.nope_name.sign.line4": "datapack",
+
+	"bingo.lobby.credits.playtesters.sign.line1": "",
+	"bingo.lobby.credits.playtesters.sign.line2": "Wall of",
+	"bingo.lobby.credits.playtesters.sign.line3": "Playtesting",
+	"bingo.lobby.credits.playtesters.sign.line4": "",
+
+	"bingo.lobby.credits.dr_brian_lorgon111.sign.line2": "",
+	"bingo.lobby.credits.dr_brian_lorgon111.sign.line3": "Original Minecraft",
+	"bingo.lobby.credits.dr_brian_lorgon111.sign.line4": "Bingo creator",
+
 	"bingo.lobby.card_generation.random_card.sign.line1": "",
 	"bingo.lobby.card_generation.random_card.sign.line2": "Generate",
 	"bingo.lobby.card_generation.random_card.sign.line3": "Random Card",
