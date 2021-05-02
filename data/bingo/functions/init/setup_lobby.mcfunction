@@ -18,6 +18,7 @@ forceload add -16 -17 47 31
 setblock -1 1 -17 minecraft:structure_block[mode=load]{mode: "LOAD", ignoreEntities: true, integrity: 0f, posX: 1, posZ: 1}
 summon minecraft:area_effect_cloud -2 0 7 {Tags: ["bingo.structure_spawner"]}
 
+kill @e[type=minecraft:area_effect_cloud, tag= bingo.lobby_sign]
 execute as @e[type=minecraft:area_effect_cloud, tag=bingo.structure_spawner, limit=1] at @s run function bingo:init/spawn_structures
 
 setblock -1 1 -17 minecraft:air
