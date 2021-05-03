@@ -23,10 +23,25 @@ execute as @e[type=minecraft:area_effect_cloud, tag=bingo.structure_spawner, lim
 
 setblock -1 3 -17 minecraft:air
 
-setblock -2 2 -2 minecraft:structure_block[mode=load]{mode: "LOAD", name: "bingo:machinery"}
-setblock -2 3 -2 minecraft:redstone_block
-execute if block -2 2 -2 minecraft:structure_block run setblock -2 2 -2 minecraft:barrier
-execute if block -2 3 -2 minecraft:redstone_block run setblock -2 3 -2 minecraft:air
+setblock -3 2 -3 minecraft:structure_block[mode=load]{mode: "LOAD", name: "bingo:machinery", posX: 1, posZ: 1}
+setblock -3 3 -3 minecraft:redstone_block
+
+# Workaround for https://bugs.mojang.com/browse/MC-224771
+setblock -3 3 -3 minecraft:air
+setblock -3 3 -3 minecraft:redstone_block
+setblock -3 3 -3 minecraft:air
+setblock -3 3 -3 minecraft:redstone_block
+setblock -3 3 -3 minecraft:air
+setblock -3 3 -3 minecraft:redstone_block
+setblock -3 3 -3 minecraft:air
+setblock -3 3 -3 minecraft:redstone_block
+setblock -3 3 -3 minecraft:air
+setblock -3 3 -3 minecraft:redstone_block
+setblock -3 3 -3 minecraft:air
+setblock -3 3 -3 minecraft:redstone_block
+setblock -3 3 -3 minecraft:air
+
+setblock -3 2 -3 minecraft:air
 
 forceload remove all
 forceload add 0 0
