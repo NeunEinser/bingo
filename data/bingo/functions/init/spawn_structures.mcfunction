@@ -38,7 +38,7 @@ execute store result block ~-1 ~ ~ posX int 1 run scoreboard players get $init/l
 execute store result block ~-1 ~ ~ posZ int 1 run scoreboard players get $init/lobby.offsetz bingo.tmp
 setblock ~-1 ~1 ~ minecraft:redstone_block
 execute if block ~-1 ~ ~ minecraft:structure_block run setblock ~-1 ~ ~ minecraft:barrier
-execute if block ~-1 ~1 ~ minecraft:redstone_block run setblock ~-1 ~1 ~ minecraft:air
+execute if block ~-1 ~1 ~ minecraft:redstone_block run setblock ~-1 ~1 ~ minecraft:barrier
 
 execute store result score $init/lobby.posx bingo.tmp run data get entity @s Pos[0]
 scoreboard players operation $init/lobby.posx bingo.tmp += $init/lobby.offsetx bingo.tmp
