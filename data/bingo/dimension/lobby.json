@@ -7,7 +7,7 @@
 			"layers": [
 				 {
 					"block": "minecraft:barrier",
-					"height": 1
+					"height": 3
 				 }
 			],
 			"structures": {"structures":{}}

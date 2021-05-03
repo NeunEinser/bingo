@@ -53,7 +53,7 @@ execute if score $y bingo.tmp matches ..-1 run scoreboard players operation $y b
 execute if score $zmod bingo.tmp matches 1 run scoreboard players remove $x bingo.tmp 4
 execute if score $zmod bingo.tmp matches 1 run scoreboard players operation $x bingo.tmp *= -1 bingo.const
 
-scoreboard players add $y bingo.tmp 1
+scoreboard players add $y bingo.tmp 3
 scoreboard players add $x bingo.tmp 5
 scoreboard players add $z bingo.tmp 5
 
@@ -82,7 +82,7 @@ execute if score $y bingo.tmp matches ..-1 run scoreboard players operation $y b
 execute if score $zmod bingo.tmp matches 1 run scoreboard players remove $x bingo.tmp 4
 execute if score $zmod bingo.tmp matches 1 run scoreboard players operation $x bingo.tmp *= -1 bingo.const
 
-scoreboard players add $y bingo.tmp 1
+scoreboard players add $y bingo.tmp 3
 scoreboard players add $x bingo.tmp 5
 scoreboard players add $z bingo.tmp 5
 

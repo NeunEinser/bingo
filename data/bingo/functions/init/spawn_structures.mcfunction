@@ -20,14 +20,14 @@
 # @private
 #declare score_holder $init/lobby.posx
 
-data modify block -1 1 -17 name set from storage bingo:registries structures[0]
+data modify block -1 3 -17 name set from storage bingo:registries structures[0]
 
-setblock -1 2 -17 minecraft:redstone_block
-setblock -1 2 -17 minecraft:air
-execute store result score $init/lobby.offsetx bingo.tmp run data get block -1 1 -17 sizeX
+setblock -1 4 -17 minecraft:redstone_block
+setblock -1 4 -17 minecraft:air
+execute store result score $init/lobby.offsetx bingo.tmp run data get block -1 3 -17 sizeX
 scoreboard players operation $init/lobby.offsetx bingo.tmp *= -1 bingo.const
 scoreboard players add $init/lobby.offsetx bingo.tmp 1
-execute store result score $init/lobby.offsetz bingo.tmp run data get block -1 1 -17 sizeZ
+execute store result score $init/lobby.offsetz bingo.tmp run data get block -1 3 -17 sizeZ
 scoreboard players operation $init/lobby.offsetz bingo.tmp /= -2 bingo.const
 scoreboard players add $init/lobby.offsetz bingo.tmp 1
 
