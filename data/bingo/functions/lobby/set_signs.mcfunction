@@ -12,11 +12,6 @@
 # @context dimension bingo:lobby
 
 #>
-# @within
-# 	function bingo:lobby/set_signs
-# 	function bingo:init/setup_lobby
-#declare tag bingo.lobby_sign
-#>
 # @private
 #declare tag bingo.sign_machinery
 
