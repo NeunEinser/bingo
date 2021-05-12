@@ -63,16 +63,41 @@
 # @private
 #declare tag bingo.sign_credits_no_leaf_clover
 
+#>
+# @private
+#declare tag bingo.sign_credits_tools
+#>
+# @private
+#declare tag bingo.sign_credits_tools_vscode
+#>
+# @private
+#declare tag bingo.sign_credits_tools_datapackhelperplus
+#>
+# @private
+#declare tag bingo.sign_credits_tools_multinoise
+#>
+# @private
+#declare tag bingo.sign_credits_tools_nbtexplorer
+#>
+# @private
+#declare tag bingo.sign_credits_tools_nbtstudio
+#>
+# @private
+#declare tag bingo.sign_credits_tools_nbtviewer
+
 execute at @e[type=minecraft:area_effect_cloud, tag=bingo.lobby_sign] run setblock ~ ~ ~ minecraft:air
 
 # Machinery
 execute at @e[type=minecraft:area_effect_cloud, tag=bingo.sign_machinery, limit=1] run setblock ~ ~ ~ minecraft:warped_wall_sign[facing=west]{Text1: '{"translate":"bingo.lobby.machinery.sign.line1", "bold":true, "color":"#8eedeb"}', Text2: '{"translate": "bingo.lobby.machinery.sign.line2", "color":"#8eedeb"}', Text3: '{"translate": "bingo.lobby.machinery.sign.line3", "color":"#8eedeb"}', Text4: '{"translate": "bingo.lobby.machinery.sign.line4", "color":"#8eedeb"}'}
 
 # Credits
+## Main
 execute at @e[type=minecraft:area_effect_cloud, tag=bingo.sign_credits_neun_einser, limit=1] run setblock ~ ~ ~ minecraft:warped_wall_sign[facing=south]{Text1: '[{"text":"Neun", "bold":true, "color":"red"}, {"text":"Einser", "bold":true, "color":"blue"}]', Text2: '{"translate": "bingo.lobby.credits.neun_einser.sign.line2", "color":"#8eedeb"}', Text3: '{"translate": "bingo.lobby.credits.neun_einser.sign.line3", "color":"#8eedeb"}', Text4: '{"translate": "bingo.lobby.credits.neun_einser.sign.line4", "color":"#8eedeb"}'}
 execute at @e[type=minecraft:area_effect_cloud, tag=bingo.sign_credits_amber_wat, limit=1] run setblock ~ ~ ~ minecraft:warped_wall_sign[facing=south]{Text1: '{"text":"AmberW", "bold":true, "color":"#8eedeb"}', Text2: '{"translate": "bingo.lobby.credits.amber_wat.sign.line2", "color":"#8eedeb"}', Text3: '{"translate": "bingo.lobby.credits.amber_wat.sign.line3", "color":"#8eedeb"}', Text4: '{"translate": "bingo.lobby.credits.amber_wat.sign.line4", "color":"#8eedeb"}'}
 execute at @e[type=minecraft:area_effect_cloud, tag=bingo.sign_credits_nope_name, limit=1] run setblock ~ ~ ~ minecraft:warped_wall_sign[facing=south]{Text1: '{"text":"NOPEName", "bold":true, "color":"#8eedeb"}', Text2: '{"translate": "bingo.lobby.credits.nope_name.sign.line2", "color":"#8eedeb"}', Text3: '{"translate": "bingo.lobby.credits.nope_name.sign.line3", "color":"#8eedeb"}', Text4: '{"translate": "bingo.lobby.credits.nope_name.sign.line4", "color":"#8eedeb"}'}
 execute at @e[type=minecraft:area_effect_cloud, tag=bingo.sign_credits_dr_brian_lorgon111, limit=1] run setblock ~ ~ ~ minecraft:warped_wall_sign[facing=south]{Text1: '{"text":"Lorgon111", "bold":true, "color":"#8eedeb"}', Text2: '{"translate": "bingo.lobby.credits.dr_brian_lorgon111.sign.line2", "color":"#8eedeb"}', Text3: '{"translate": "bingo.lobby.credits.dr_brian_lorgon111.sign.line3", "color":"#8eedeb"}', Text4: '{"translate": "bingo.lobby.credits.dr_brian_lorgon111.sign.line4", "color":"#8eedeb"}'}
+
+## Playtesters
 execute at @e[type=minecraft:area_effect_cloud, tag=bingo.sign_credits_playtesters, limit=1] run setblock ~ ~ ~ minecraft:warped_wall_sign[facing=north]{Text1: '{"translate": "bingo.lobby.credits.playtesters.sign.line1", "bold":true, "color":"#8eedeb"}', Text2: '{"translate": "bingo.lobby.credits.playtesters.sign.line2", "bold":true, "color":"#8eedeb"}', Text3: '{"translate": "bingo.lobby.credits.playtesters.sign.line3", "bold":true, "color":"#8eedeb"}', Text4: '{"translate": "bingo.lobby.credits.playtesters.sign.line4", "bold":true, "color":"#8eedeb"}'}
 execute at @e[type=minecraft:area_effect_cloud, tag=bingo.sign_credits_no_leaf_clover, limit=1] run setblock ~ ~ ~ minecraft:warped_wall_sign[facing=north]{Text2: '{"text":"no_leaf_", "bold":true, "color":"#8eedeb"}', Text3: '{"text":"clover", "bold":true, "color":"#8eedeb"}'}
 execute at @e[type=minecraft:area_effect_cloud, tag=bingo.sign_credits_tod_nl, limit=1] run setblock ~ ~ ~ minecraft:warped_wall_sign[facing=north]{Text2: '{"text":"Tod_NL", "bold":true, "color":"#8eedeb"}'}
@@ -83,6 +108,15 @@ execute at @e[type=minecraft:area_effect_cloud, tag=bingo.sign_credits_zampone, 
 execute at @e[type=minecraft:area_effect_cloud, tag=bingo.sign_credits_gothfaerie, limit=1] run setblock ~ ~ ~ minecraft:warped_wall_sign[facing=north]{Text2: '{"text":"gothfaerie", "bold":true, "color":"#8eedeb"}'}
 execute at @e[type=minecraft:area_effect_cloud, tag=bingo.sign_credits_muffinshire, limit=1] run setblock ~ ~ ~ minecraft:warped_wall_sign[facing=north]{Text2: '{"text":"Muffinshire", "bold":true, "color":"#8eedeb"}'}
 execute at @e[type=minecraft:area_effect_cloud, tag=bingo.sign_credits_silentrob, limit=1] run setblock ~ ~ ~ minecraft:warped_wall_sign[facing=north]{Text2: '{"text":"silentrob", "bold":true, "color":"#8eedeb"}'}
+
+## Tools
+execute at @e[type=minecraft:area_effect_cloud, tag=bingo.sign_credits_tools, limit=1] run setblock ~ ~ ~ minecraft:warped_wall_sign[facing=east]{Text1: '{"translate": "bingo.lobby.credits.tools.sign.line1", "bold":true, "color":"#8eedeb"}', Text2: '{"translate": "bingo.lobby.credits.tools.sign.line2", "bold":true, "color":"#8eedeb"}', Text3: '{"translate": "bingo.lobby.credits.tools.sign.line3", "bold":true, "color":"#8eedeb"}', Text4: '{"translate": "bingo.lobby.credits.tools.sign.line4", "bold":true, "color":"#8eedeb"}'}
+execute at @e[type=minecraft:area_effect_cloud, tag=bingo.sign_credits_tools_vscode, limit=1] run setblock ~ ~ ~ minecraft:warped_wall_sign[facing=east]{Text1: '{"text": "Visual Studio", "bold":true, "color":"#8eedeb"}', Text2: '{"text": "Code", "bold":true, "color":"#8eedeb"}', Text3: '{"translate": "bingo.lobby.credits.tools.vscode.sign.line3", "color":"#8eedeb"}', Text4: '{"translate": "bingo.lobby.credits.tools.vscode.sign.line4", "color":"#8eedeb"}'}
+execute at @e[type=minecraft:area_effect_cloud, tag=bingo.sign_credits_tools_datapackhelperplus, limit=1] run setblock ~ ~ ~ minecraft:warped_wall_sign[facing=east]{Text1: '{"text": "Data Pack", "bold":true, "color":"#8eedeb"}', Text2: '{"text": "Helper Plus", "bold":true, "color":"#8eedeb"}', Text3: '{"translate": "bingo.lobby.credits.tools.datapack_helper_plus.sign.line3", "color":"#8eedeb"}', Text4: '{"translate": "bingo.lobby.credits.tools.datapack_helper_plus.sign.line4", "color":"#8eedeb"}'}
+execute at @e[type=minecraft:area_effect_cloud, tag=bingo.sign_credits_tools_multinoise, limit=1] run setblock ~ ~ ~ minecraft:warped_wall_sign[facing=east]{Text1: '{"text": "Multi Noise", "bold":true, "color":"#8eedeb"}', Text2: '{"text": "Visualizer", "bold":true, "color":"#8eedeb"}', Text3: '{"translate": "bingo.lobby.credits.tools.minecraft_multi_noise_visualizer.sign.line3", "color":"#8eedeb"}', Text4: '{"translate": "bingo.lobby.credits.tools.minecraft_multi_noise_visualizer.sign.line4", "color":"#8eedeb"}'}
+execute at @e[type=minecraft:area_effect_cloud, tag=bingo.sign_credits_tools_nbtexplorer, limit=1] run setblock ~ ~ ~ minecraft:warped_wall_sign[facing=east]{Text2: '{"text": "NBTExplorer", "bold":true, "color":"#8eedeb"}', Text3: '{"translate": "bingo.lobby.credits.tools.nbt_explorer.sign.line3", "color":"#8eedeb"}', Text4: '{"translate": "bingo.lobby.credits.tools.nbt_explorer.sign.line4", "color":"#8eedeb"}'}
+execute at @e[type=minecraft:area_effect_cloud, tag=bingo.sign_credits_tools_nbtstudio, limit=1] run setblock ~ ~ ~ minecraft:warped_wall_sign[facing=east]{Text2: '{"text": "NBT Studio", "bold":true, "color":"#8eedeb"}', Text3: '{"translate": "bingo.lobby.credits.tools.nbt_studio.sign.line3", "color":"#8eedeb"}', Text4: '{"translate": "bingo.lobby.credits.tools.nbt_studio.sign.line4", "color":"#8eedeb"}'}
+execute at @e[type=minecraft:area_effect_cloud, tag=bingo.sign_credits_tools_nbtviewer, limit=1] run setblock ~ ~ ~ minecraft:warped_wall_sign[facing=east]{Text2: '{"text": "NBT Viewer", "bold":true, "color":"#8eedeb"}', Text3: '{"translate": "bingo.lobby.credits.tools.nbt_viewer.sign.line3", "color":"#8eedeb"}', Text4: '{"translate": "bingo.lobby.credits.tools.nbt_viewer.sign.line4", "color":"#8eedeb"}'}
 
 setblock 7 65 -7 minecraft:air
 setblock 7 65 -7 minecraft:warped_wall_sign[facing=south]{Text1: '{"translate":"bingo.lobby.card_generation.start_game.sign.line1", "bold":true, "color":"#8eedeb", "clickEvent":{"action":"run_command","value":"/function bingo:game/start/check_and_start"}}', Text2:'{"translate":"bingo.lobby.card_generation.start_game.sign.line2", "bold":true, "color":"#8eedeb"}', Text3:'{"translate":"bingo.lobby.card_generation.start_game.sign.line3", "bold":true, "color":"#8eedeb"}', Text4:'{"translate":"bingo.lobby.card_generation.start_game.sign.line4", "bold":true, "color":"#8eedeb"}'}

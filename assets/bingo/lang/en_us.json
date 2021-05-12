@@ -20,14 +20,38 @@
 	"bingo.lobby.credits.nope_name.sign.line3": "Math utility",
 	"bingo.lobby.credits.nope_name.sign.line4": "datapack",
 
+	"bingo.lobby.credits.dr_brian_lorgon111.sign.line2": "",
+	"bingo.lobby.credits.dr_brian_lorgon111.sign.line3": "Original Minecraft",
+	"bingo.lobby.credits.dr_brian_lorgon111.sign.line4": "Bingo creator",
+
 	"bingo.lobby.credits.playtesters.sign.line1": "",
 	"bingo.lobby.credits.playtesters.sign.line2": "Wall of",
 	"bingo.lobby.credits.playtesters.sign.line3": "Playtesting",
 	"bingo.lobby.credits.playtesters.sign.line4": "",
 
-	"bingo.lobby.credits.dr_brian_lorgon111.sign.line2": "",
-	"bingo.lobby.credits.dr_brian_lorgon111.sign.line3": "Original Minecraft",
-	"bingo.lobby.credits.dr_brian_lorgon111.sign.line4": "Bingo creator",
+	"bingo.lobby.credits.tools.sign.line1": "",
+	"bingo.lobby.credits.tools.sign.line2": "Used",
+	"bingo.lobby.credits.tools.sign.line3": "Tools",
+	"bingo.lobby.credits.tools.sign.line4": "",
+
+	"bingo.lobby.credits.tools.vscode.sign.line3": "by",
+	"bingo.lobby.credits.tools.vscode.sign.line4": "Microsoft",
+
+	"bingo.lobby.credits.tools.datapack_helper_plus.sign.line3": "by",
+	"bingo.lobby.credits.tools.datapack_helper_plus.sign.line4": "SPGoding",
+
+	"bingo.lobby.credits.tools.minecraft_multi_noise_visualizer.sign.line3": "by",
+	"bingo.lobby.credits.tools.minecraft_multi_noise_visualizer.sign.line4": "Jochen Jacobs",
+
+	"bingo.lobby.credits.tools.nbt_explorer.sign.line3": "by",
+	"bingo.lobby.credits.tools.nbt_explorer.sign.line4": "Justin Aquadro",
+
+	"bingo.lobby.credits.tools.nbt_studio.sign.line3": "by tryashtar",
+	"bingo.lobby.credits.tools.nbt_studio.sign.line4": "",
+
+	"bingo.lobby.credits.tools.nbt_viewer.sign.line3": "by Misode",
+	"bingo.lobby.credits.tools.nbt_viewer.sign.line4": "",
+
 
 	"bingo.lobby.card_generation.random_card.sign.line1": "",
 	"bingo.lobby.card_generation.random_card.sign.line2": "Generate",
