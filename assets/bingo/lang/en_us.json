@@ -73,10 +73,10 @@
 	"bingo.lobby.card_generation.crafting_table.sign.line3": "Lookup",
 	"bingo.lobby.card_generation.crafting_table.sign.line4": "Device",
 
-	"bingo.lobby.card_generation.furnance.sign.line1": "Smelting",
-	"bingo.lobby.card_generation.furnance.sign.line2": "Recipe",
-	"bingo.lobby.card_generation.furnance.sign.line3": "Lookup",
-	"bingo.lobby.card_generation.furnance.sign.line4": "Device",
+	"bingo.lobby.card_generation.furnace.sign.line1": "Smelting",
+	"bingo.lobby.card_generation.furnace.sign.line2": "Recipe",
+	"bingo.lobby.card_generation.furnace.sign.line3": "Lookup",
+	"bingo.lobby.card_generation.furnace.sign.line4": "Device",
 
 	"bingo.lobby.card_generation.from_seed.instructions": "%s to receieve the command for setting the seed. Add the numeric seed at the very end of the command.",
 	"bingo.lobby.card_generation.from_seed.instructions.link": "Click here",
