@@ -121,6 +121,11 @@
 #
 # @internal
 #declare tag bingo.emerald
+#>
+# This tag is used for the area effect cloud marking the location for the skybox
+#
+# @internal
+#declare tag bingo.skybox_cloud
 #endregion
 
 #region setup objectives
@@ -202,11 +207,23 @@ scoreboard objectives add bingo.schedule dummy
 scoreboard objectives add bingo.state dummy
 
 #>
-# Whether a game is currently in progress.
+# The current game state
+# 0 = Lobby / Not in game
+# 1 = Starting / pre-game (i.e chunks generating or skybox phase)
+# 2 = Game started
 #
 # @internal
-#declare score_holder $game_in_progress
-scoreboard players add $game_in_progress bingo.state 0
+#declare score_holder $game_state
+scoreboard players add $game_state bingo.state 0
+#>
+# The status of pregeneration.
+# 0 = not started
+# 1 = started
+# 2 = completed
+#
+# @internal
+#declare score_holder $pregen_status
+scoreboard players add $pregen_status bingo.state 0
 
 #>
 # This objective stores the page of a paginated tellraw a player is currently
@@ -250,6 +267,12 @@ scoreboard objectives add bingo.seed trigger
 # @internal
 # @user
 scoreboard objectives add bingo.settings trigger
+#>
+# Whether pregen should automatically start after generating a new card.
+#
+# @internal
+#declare score_holder $automatically_pregen
+scoreboard players add $automatically_pregen bingo.settings 0
 
 #>
 # This objective holds the position preference of where a player's card should

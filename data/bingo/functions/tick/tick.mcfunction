@@ -18,4 +18,4 @@ execute as @a[scores={bingo.pref=1..}] run function bingo:preferences/show_prefe
 
 # Loop depending on game state
 execute if entity @a[predicate=bingo:is_in_lobby, limit=1] in bingo:lobby run function bingo:lobby/tick
-execute if score $game_in_progress bingo.state matches 1 run function bingo:game/tick
+execute if score $game_state bingo.state matches 2 run function bingo:game/tick

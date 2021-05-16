@@ -2,7 +2,9 @@
 #
 # Moves players to the spawnpoint
 #
-# @within function bingo:game/start/check_and_start
+# @within
+# 	function bingo:game/start/initialize_game_start
+# 	function bingo:card_generation/generate_card
 
 #>
 # Spawnpoint x coordinate
@@ -17,15 +19,13 @@
 # @private
 #declare tag bingo.spawn_position
 
-scoreboard players set $game_in_progress bingo.state 1
-
 title @a times 1 2147483647 0
-tellraw @a "Preparing Spawn..."
+execute if score $game_state bingo.state matches 1 run tellraw @a "Preparing Spawn..."
 
-# Spawn x: $result & 0xFFFF (signed)
 gamerule doDaylightCycle false
 time set 0
 
+# Spawn x: $result & 0xFFFF (signed)
 execute store result score $game/start.spawnx bingo.tmp run data get storage bingo:card spawnLocation
 scoreboard players operation $game/start.spawnx bingo.tmp %= 65536 bingo.const
 execute if score $game/start.spawnx bingo.tmp matches 32768.. run scoreboard players remove $game/start.spawnx bingo.tmp 65536
@@ -34,4 +34,4 @@ execute if score $game/start.spawnx bingo.tmp matches 32768.. run scoreboard pla
 execute store result score $game/start.spawnz bingo.tmp run data get storage bingo:card spawnLocation
 scoreboard players operation $game/start.spawnz bingo.tmp /= 65536 bingo.const
 
-execute in bingo:multi_noise run function bingo:game/start/move_x/0
+execute if score $pregen_status bingo.state matches 0 in bingo:multi_noise run function bingo:game/start/move_x/0

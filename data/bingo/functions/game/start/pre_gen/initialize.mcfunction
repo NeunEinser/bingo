@@ -11,10 +11,11 @@
 # @within function bingo:game/start/spawn_skybox
 #declare tag bingo.pre_gen_cloud
 
+scoreboard players set $pregen_status bingo.state 1
 scoreboard players set $game_start/pre_gen.i bingo.schedule 1
 execute in bingo:lobby run function neun_einser.timer:start/millis
 bossbar set bingo:start/pre_gen/progress players @a
-bossbar set bingo:start/pre_gen/progress visible true
+execute if score $game_state bingo.settings matches 1 run bossbar set bingo:start/pre_gen/progress visible true
 bossbar set bingo:start/pre_gen/progress max 1681
 bossbar set bingo:start/pre_gen/progress value 0
 

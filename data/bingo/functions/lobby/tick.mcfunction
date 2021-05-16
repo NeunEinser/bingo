@@ -10,6 +10,8 @@ execute as @a[scores={bingo.seed=1..}] run function bingo:card_generation/genera
 #change settings
 execute as @a[scores={bingo.settings=5..12}] run function bingo:lobby/player_settings/save/do_action
 execute as @a[scores={bingo.settings=14..20}] run function bingo:lobby/player_settings/load/do_action
+execute if entity @a[scores={bingo.settings=21}, limit=1] run scoreboard players set $automatically_pregen bingo.settings 1
+execute if entity @a[scores={bingo.settings=22}, limit=1] run scoreboard players set $automatically_pregen bingo.settings 0
 execute as @e[type=minecraft:item, nbt={Item:{id:"minecraft:name_tag", tag:{bingo:{newConfig: true}}}}] if data entity @s Item.tag.display.Name run function bingo:lobby/player_settings/save/new_config
 scoreboard players reset @a bingo.settings
 scoreboard players enable @a bingo.settings

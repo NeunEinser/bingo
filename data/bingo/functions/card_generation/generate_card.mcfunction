@@ -168,6 +168,7 @@ function bingo:card_generation/generate_slot
 
 function nope_name.math:rand/exe
 execute store result storage bingo:card spawnLocation int 1 run scoreboard players get $out nn.math.rand
+execute if score $automatically_pregen bingo.settings matches 1 run schedule function bingo:game/start/locate_spawnpoint 5s
 
 # Reset teams
 data remove storage bingo:card teams
