@@ -196,7 +196,7 @@
 	"bingo.lobby.tutorial.goals.blackout.heading": "Blackout",
 	"bingo.lobby.tutorial.goals.blackout": "A blackout is simply getting all of the 25 items.\n\nTry to be as efficient as possible, getting items from similar sources together and smelt while you are doing other stuff in the area.",
 	"bingo.lobby.tutorial.goals.20_no_bingo.heading": "20 No Bingo",
-	"bingo.lobby.tutorial.goals.20_no_bingo": "Get 20 items without achieving any Bingo.\n\\When planning, try to think about which items to avoid in order to achieve this goal. Beware of items you might pick up accidentally, such as arrows when fighting skeletons.",
+	"bingo.lobby.tutorial.goals.20_no_bingo": "Get 20 items without achieving any Bingo.\n\nWhen planning, try to think about which items to avoid in order to achieve this goal. Beware of items you might pick up accidentally, such as arrows when fighting skeletons.",
 	"bingo.lobby.tutorial.goals.multiple_bingo.heading": "Multi-Bingo",
 	"bingo.lobby.tutorial.goals.multiple_bingo": "For this goal, you need to get multiple bingos at once.\n\nYou do that by getting 4 items in intersecting rows, columns or diagonals and then get the item at the intersection last.\nThis includes double, triple and quadruple Bingo.",
 
