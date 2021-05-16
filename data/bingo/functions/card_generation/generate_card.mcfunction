@@ -8,7 +8,7 @@ data remove storage bingo:card_generation forbiddenCategories
 data remove storage bingo:card slots
 execute as @e[type=minecraft:item_frame, tag=bingo.card_frame] at @s run setblock ~ ~ ~-1 minecraft:barrier
 
-execute in bingo:lobby run data modify block 0 0 0 auto set value false
+execute in bingo:lobby run data modify block 5 3 5 auto set value false
 
 #>
 # This tag marks a player who is in a team that obtained the item in slot 0.

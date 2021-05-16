@@ -17,7 +17,7 @@ gamemode survival @s
 experience set @s 0 levels
 gamerule doDaylightCycle true
 
-execute in bingo:lobby run data modify block 0 0 0 auto set value true
+execute in bingo:lobby run data modify block 5 3 5 auto set value true
 
 team modify bingo.aqua seeFriendlyInvisibles true
 team modify bingo.black seeFriendlyInvisibles true
