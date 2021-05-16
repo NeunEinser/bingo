@@ -99,6 +99,58 @@
 # @private
 #declare tag bingo.sign_card_generation_start_game
 
+#>
+# @private
+#declare tag bingo.sign_settings_more_coming
+#>
+# @private
+#declare tag bingo.sign_settings_automatic_pregen
+#>
+# @private
+#declare tag bingo.sign_settings_preferences
+#>
+# @private
+#declare tag bingo.sign_tutorial_generate_chests
+#>
+# @private
+#declare tag bingo.sign_tutorial_generate_chests
+#>
+# @private
+#declare tag bingo.sign_tutorial_basics
+#>
+# @private
+#declare tag bingo.sign_tutorial_basics1
+#>
+# @private
+#declare tag bingo.sign_tutorial_basics2
+#>
+# @private
+#declare tag bingo.sign_tutorial_basics3
+#>
+# @private
+#declare tag bingo.sign_tutorial_basics4
+#>
+# @private
+#declare tag bingo.sign_tutorial_basics5
+#>
+# @private
+#declare tag bingo.sign_tutorial_basics6
+#>
+# @private
+#declare tag bingo.sign_tutorial_skybox
+#>
+# @private
+#declare tag bingo.sign_tutorial_get_tools
+#>
+# @private
+#declare tag bingo.sign_tutorial_game_info
+#>
+# @private
+#declare tag bingo.sign_tutorial_goal_lectern
+#>
+# @private
+#declare tag bingo.sign_tutorial_game_info_lectern
+
 execute at @e[type=minecraft:area_effect_cloud, tag=bingo.lobby_sign] run setblock ~ ~ ~ minecraft:air
 
 # Machinery
@@ -140,9 +192,25 @@ execute at @e[type=minecraft:area_effect_cloud, tag=bingo.sign_card_generation_r
 execute at @e[type=minecraft:area_effect_cloud, tag=bingo.sign_card_generation_from_seed, limit=1] run setblock ~ ~ ~ minecraft:warped_wall_sign[facing=south]{Text1: '{"translate":"bingo.lobby.card_generation.from_seed.sign.line1", "bold":true, "color":"#8eedeb", "clickEvent":{"action":"run_command","value":"/tellraw @s [{\\"translate\\": \\"bingo.lobby.card_generation.from_seed.instructions\\", \\"with\\": [{\\"translate\\": \\"bingo.lobby.card_generation.from_seed.instructions.link\\", \\"color\\":\\"#00c3ff\\", \\"clickEvent\\": {\\"action\\": \\"suggest_command\\", \\"value\\": \\"/trigger bingo.seed set \\"}}]}, \\"\\\\n\\", {\\"translate\\": \\"bingo.lobby.card_generation.from_seed.explanation\\", \\"italic\\": true, \\"color\\": \\"gray\\"}]"}}', Text2:'{"translate":"bingo.lobby.card_generation.from_seed.sign.line2", "bold":true, "color":"#8eedeb"}', Text3:'{"translate":"bingo.lobby.card_generation.from_seed.sign.line3", "bold":true, "color":"#8eedeb"}', Text4:'{"translate":"bingo.lobby.card_generation.from_seed.sign.line4", "bold":true, "color":"#8eedeb"}'}
 execute at @e[type=minecraft:area_effect_cloud, tag=bingo.sign_card_generation_start_game, limit=3] run setblock ~ ~ ~ minecraft:warped_wall_sign[facing=south]{Text1: '{"translate":"bingo.lobby.card_generation.start_game.sign.line1", "bold":true, "color":"#8eedeb", "clickEvent":{"action":"run_command","value":"/function bingo:game/start/check_and_start"}}', Text2:'{"translate":"bingo.lobby.card_generation.start_game.sign.line2", "bold":true, "color":"#8eedeb"}', Text3:'{"translate":"bingo.lobby.card_generation.start_game.sign.line3", "bold":true, "color":"#8eedeb"}', Text4:'{"translate":"bingo.lobby.card_generation.start_game.sign.line4", "bold":true, "color":"#8eedeb"}'}
 
+#Tutorial / Game Info / Settings
+## Settings
+execute at @e[type=minecraft:area_effect_cloud, tag=bingo.sign_settings_preferences, limit=1] run setblock ~ ~ ~ minecraft:warped_wall_sign[facing=south]{Text1: '{"translate":"bingo.lobby.settings.preferences.sign.line1", "bold":true, "color":"#8eedeb", "clickEvent":{"action":"run_command","value":"/trigger bingo.pref set 1"}}', Text2:'{"translate":"bingo.lobby.settings.preferences.sign.line2", "bold":true, "color":"#8eedeb"}', Text3:'{"translate":"bingo.lobby.settings.preferences.sign.line3", "bold":true, "color":"#8eedeb"}', Text4:'{"translate":"bingo.lobby.settings.preferences.sign.line4", "bold":true, "color":"#8eedeb"}'}
+execute at @e[type=minecraft:area_effect_cloud, tag=bingo.sign_settings_automatic_pregen, limit=1] run setblock ~ ~ ~ minecraft:warped_wall_sign[facing=south]{Text1: '{"translate":"bingo.lobby.settings.automatic_pregen.sign.line1", "bold":true, "color":"#8eedeb", "clickEvent":{"action":"run_command","value":"/trigger bingo.pref set 1"}}', Text2:'{"translate":"bingo.lobby.settings.automatic_pregen.sign.line2", "bold":true, "color":"#8eedeb"}', Text3:'{"translate":"bingo.lobby.settings.automatic_pregen.sign.line3", "bold":true, "color":"#8eedeb"}', Text4:'{"translate":"bingo.lobby.settings.automatic_pregen.sign.off", "color":"red"}'}
+execute at @e[type=minecraft:area_effect_cloud, tag=bingo.sign_settings_more_coming, limit=1] run setblock ~ ~ ~ minecraft:warped_wall_sign[facing=south]{Text2: '{"text":"More Settings", "bold":true, "color":"#8eedeb", "clickEvent":{"action":"run_command", "value": "/tellraw @s [{\\"text\\": \\"Do you want to change future settings? \\"}, {\\"text\\": \\"[Yes]\\", \\"color\\": \\"green\\", \\"clickEvent\\": {\\"action\\": \\"run_command\\", \\"value\\": \\"/tellraw @s {\\\\\\"text\\\\\\":\\\\\\"Error accessing the future. Please talk to your local time machine operator.\\\\\\", \\\\\\"obfuscated\\\\\\": true}\\"}}, {\\"text\\": \\" [No]\\", \\"color\\": \\"red\\", \\"clickEvent\\": {\\"action\\": \\"run_command\\", \\"value\\": \\"/tellraw @s {\\\\\\"text\\\\\\":\\\\\\"Good decision. Who knows, maybe these settings are awful.\\\\\\"}\\"}}]"}}', Text3:'{"text":"Coming Soon", "bold":true, "color":"#8eedeb"}'}
 
-setblock 8 65 -6 minecraft:air
-setblock 8 65 -6 minecraft:warped_wall_sign[facing=west]{Text1: '{"translate":"bingo.lobby.settings.preferences.sign.line1", "bold":true, "color":"#8eedeb", "clickEvent":{"action":"run_command","value":"/trigger bingo.pref set 1"}}', Text2:'{"translate":"bingo.lobby.settings.preferences.sign.line2", "bold":true, "color":"#8eedeb"}', Text3:'{"translate":"bingo.lobby.settings.preferences.sign.line3", "bold":true, "color":"#8eedeb"}', Text4:'{"translate":"bingo.lobby.settings.preferences.sign.line4", "bold":true, "color":"#8eedeb"}'}
+## Tutorial
+execute at @e[type=minecraft:area_effect_cloud, tag=bingo.sign_tutorial_generate_chests, limit=1] run setblock ~ ~ ~ minecraft:warped_wall_sign[facing=west]{Text1: '{"translate":"bingo.lobby.tutorial.generate_chests.sign.line1", "bold":true, "color":"#8eedeb", "clickEvent":{"action":"run_command","value":"/trigger bingo.pref set 1"}}', Text2:'{"translate":"bingo.lobby.tutorial.generate_chests.sign.line2", "bold":true, "color":"#8eedeb"}', Text3:'{"translate":"bingo.lobby.tutorial.generate_chests.sign.line3", "bold":true, "color":"#8eedeb"}', Text4:'{"translate":"bingo.lobby.tutorial.generate_chests.sign.line4", "bold":true, "color":"#8eedeb"}'}
+execute at @e[type=minecraft:area_effect_cloud, tag=bingo.sign_tutorial_basics, limit=1] run setblock ~ ~ ~ minecraft:warped_wall_sign[facing=north]{Text1: '{"translate":"bingo.lobby.tutorial.basics.sign.line1", "bold":true, "color":"#8eedeb", "clickEvent":{"action":"run_command","value":"/trigger bingo.pref set 1"}}', Text2:'{"translate":"bingo.lobby.tutorial.basics.sign.line2", "bold":true, "color":"#8eedeb"}', Text3:'{"translate":"bingo.lobby.tutorial.basics.sign.line3", "bold":true, "color":"#8eedeb"}', Text4:'{"translate":"bingo.lobby.tutorial.basics.sign.line4", "bold":true, "color":"#8eedeb"}'}
+execute at @e[type=minecraft:area_effect_cloud, tag=bingo.sign_tutorial_basics1, limit=1] run setblock ~ ~ ~ minecraft:warped_wall_sign[facing=north]{Text1: '{"translate":"bingo.lobby.tutorial.basics1.sign.line1", "color":"#8eedeb"}', Text2:'{"translate":"bingo.lobby.tutorial.basics1.sign.line2", "color":"#8eedeb"}', Text3:'{"translate":"bingo.lobby.tutorial.basics1.sign.line3", "color":"#8eedeb"}', Text4:'{"translate":"bingo.lobby.tutorial.basics1.sign.line4", "color":"#8eedeb"}'}
+execute at @e[type=minecraft:area_effect_cloud, tag=bingo.sign_tutorial_basics2, limit=1] run setblock ~ ~ ~ minecraft:warped_wall_sign[facing=north]{Text1: '{"translate":"bingo.lobby.tutorial.basics2.sign.line1", "color":"#8eedeb"}', Text2:'{"translate":"bingo.lobby.tutorial.basics2.sign.line2", "color":"#8eedeb"}', Text3:'{"translate":"bingo.lobby.tutorial.basics2.sign.line3", "color":"#8eedeb"}', Text4:'{"translate":"bingo.lobby.tutorial.basics2.sign.line4", "color":"#8eedeb"}'}
+execute at @e[type=minecraft:area_effect_cloud, tag=bingo.sign_tutorial_basics3, limit=1] run setblock ~ ~ ~ minecraft:warped_wall_sign[facing=north]{Text1: '{"translate":"bingo.lobby.tutorial.basics3.sign.line1", "color":"#8eedeb"}', Text2:'{"translate":"bingo.lobby.tutorial.basics3.sign.line2", "color":"#8eedeb"}', Text3:'{"translate":"bingo.lobby.tutorial.basics3.sign.line3", "color":"#8eedeb"}', Text4:'{"translate":"bingo.lobby.tutorial.basics3.sign.line4", "color":"#8eedeb"}'}
+execute at @e[type=minecraft:area_effect_cloud, tag=bingo.sign_tutorial_basics4, limit=1] run setblock ~ ~ ~ minecraft:warped_wall_sign[facing=north]{Text1: '{"translate":"bingo.lobby.tutorial.basics4.sign.line1", "color":"#8eedeb"}', Text2:'{"translate":"bingo.lobby.tutorial.basics4.sign.line2", "color":"#8eedeb"}', Text3:'{"translate":"bingo.lobby.tutorial.basics4.sign.line3", "color":"#8eedeb"}', Text4:'{"translate":"bingo.lobby.tutorial.basics4.sign.line4", "color":"#8eedeb"}'}
+execute at @e[type=minecraft:area_effect_cloud, tag=bingo.sign_tutorial_basics5, limit=1] run setblock ~ ~ ~ minecraft:warped_wall_sign[facing=north]{Text1: '{"translate":"bingo.lobby.tutorial.basics5.sign.line1", "color":"#8eedeb"}', Text2:'{"translate":"bingo.lobby.tutorial.basics5.sign.line2", "color":"#8eedeb"}', Text3:'{"translate":"bingo.lobby.tutorial.basics5.sign.line3", "color":"#8eedeb"}', Text4:'{"translate":"bingo.lobby.tutorial.basics5.sign.line4", "color":"#8eedeb"}'}
+execute at @e[type=minecraft:area_effect_cloud, tag=bingo.sign_tutorial_basics6, limit=1] run setblock ~ ~ ~ minecraft:warped_wall_sign[facing=north]{Text1: '{"translate":"bingo.lobby.tutorial.basics6.sign.line1", "color":"#8eedeb"}', Text2:'{"translate":"bingo.lobby.tutorial.basics6.sign.line2", "color":"#8eedeb"}', Text3:'{"translate":"bingo.lobby.tutorial.basics6.sign.line3", "color":"#8eedeb"}', Text4:'{"translate":"bingo.lobby.tutorial.basics6.sign.line4", "color":"#8eedeb"}'}
+execute at @e[type=minecraft:area_effect_cloud, tag=bingo.sign_tutorial_skybox, limit=1] run setblock ~ ~ ~ minecraft:warped_wall_sign[facing=south]{Text1: '{"translate":"bingo.lobby.tutorial.skybox.sign.line1", "color":"#8eedeb"}', Text2:'{"translate":"bingo.lobby.tutorial.skybox.sign.line2", "color":"#8eedeb"}', Text3:'{"translate":"bingo.lobby.tutorial.skybox.sign.line3", "color":"#8eedeb"}', Text4:'{"translate":"bingo.lobby.tutorial.skybox.sign.line4", "color":"#8eedeb"}'}
+execute at @e[type=minecraft:area_effect_cloud, tag=bingo.sign_tutorial_get_tools, limit=1] run setblock ~ ~ ~ minecraft:warped_wall_sign[facing=south]{Text1: '{"translate":"bingo.lobby.tutorial.get_tools.sign.line1", "color":"#8eedeb"}', Text2:'{"translate":"bingo.lobby.tutorial.get_tools.sign.line2", "color":"#8eedeb"}', Text3:'{"translate":"bingo.lobby.tutorial.get_tools.sign.line3", "color":"#8eedeb"}', Text4:'{"translate":"bingo.lobby.tutorial.get_tools.sign.line4", "color":"#8eedeb"}'}
 
-setblock 8 65 -2 minecraft:air
-setblock 8 65 -2 minecraft:warped_wall_sign[facing=west]{Text2: '{"text":"More Settings", "bold":true, "color":"#8eedeb", "clickEvent":{"action":"run_command", "value": "/tellraw @s [{\\"text\\": \\"Do you want to change future settings? \\"}, {\\"text\\": \\"[Yes]\\", \\"color\\": \\"green\\", \\"clickEvent\\": {\\"action\\": \\"run_command\\", \\"value\\": \\"/tellraw @s {\\\\\\"text\\\\\\":\\\\\\"Error accessing the future. Please talk to your local time machine operator.\\\\\\", \\\\\\"obfuscated\\\\\\": true}\\"}}, {\\"text\\": \\" [No]\\", \\"color\\": \\"red\\", \\"clickEvent\\": {\\"action\\": \\"run_command\\", \\"value\\": \\"/tellraw @s {\\\\\\"text\\\\\\":\\\\\\"Good decision. Who knows, maybe these settings are awful.\\\\\\"}\\"}}]"}}', Text3:'{"text":"Coming Soon", "bold":true, "color":"#8eedeb"}'}
+## Game info
+execute at @e[type=minecraft:area_effect_cloud, tag=bingo.sign_tutorial_game_info, limit=1] run setblock ~ ~ ~ minecraft:warped_wall_sign[facing=north]{Text1: '{"translate":"bingo.lobby.tutorial.game_info.sign.line1", "bold":true, "color":"#8eedeb"}', Text2:'{"translate":"bingo.lobby.tutorial.game_info.sign.line2", "bold":true, "color":"#8eedeb"}', Text3:'{"translate":"bingo.lobby.tutorial.game_info.sign.line3", "bold":true, "color":"#8eedeb"}', Text4:'{"translate":"bingo.lobby.tutorial.game_info.sign.line4", "bold":true, "color":"#8eedeb"}'}
+execute at @e[type=minecraft:area_effect_cloud, tag=bingo.sign_tutorial_goal_lectern, limit=1] run setblock ~ ~ ~ minecraft:warped_wall_sign[facing=north]{Text1: '{"translate":"bingo.lobby.tutorial.goals.sign.line1", "bold":true, "color":"#8eedeb"}', Text2:'{"translate":"bingo.lobby.tutorial.goals.sign.line2", "bold":true, "color":"#8eedeb"}', Text3:'{"translate":"bingo.lobby.tutorial.goals.sign.line3", "bold":true, "color":"#8eedeb"}', Text4:'{"translate":"bingo.lobby.tutorial.goals.sign.line4", "bold":true, "color":"#8eedeb"}'}
+execute at @e[type=minecraft:area_effect_cloud, tag=bingo.sign_tutorial_game_info_lectern, limit=1] run setblock ~ ~ ~ minecraft:warped_wall_sign[facing=north]{Text1: '{"translate":"bingo.lobby.tutorial.game_info.sign.line1", "bold":true, "color":"#8eedeb"}', Text2:'{"translate":"bingo.lobby.tutorial.game_info.sign.line2", "bold":true, "color":"#8eedeb"}', Text3:'{"translate":"bingo.lobby.tutorial.game_info.sign.line3", "bold":true, "color":"#8eedeb"}', Text4:'{"translate":"bingo.lobby.tutorial.game_info.sign.line4", "bold":true, "color":"#8eedeb"}'}

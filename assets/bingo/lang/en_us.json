@@ -130,6 +130,83 @@
 	"bingo.lobby.settings.preferences.sign.line3": "Preferences",
 	"bingo.lobby.settings.preferences.sign.line4": "",
 
+	"bingo.lobby.settings.automatic_pregen.sign.line1": "Automatically start",
+	"bingo.lobby.settings.automatic_pregen.sign.line2": "start pre-",
+	"bingo.lobby.settings.automatic_pregen.sign.line3": "generating terrain",
+	"bingo.lobby.settings.automatic_pregen.sign.on": "ON",
+	"bingo.lobby.settings.automatic_pregen.sign.off": "OFF",
+
+	"bingo.lobby.tutorial.generate_chests.sign.line1": "",
+	"bingo.lobby.tutorial.generate_chests.sign.line2": "Re-generate",
+	"bingo.lobby.tutorial.generate_chests.sign.line3": "Chests",
+	"bingo.lobby.tutorial.generate_chests.sign.line4": "",
+
+	"bingo.lobby.tutorial.basics.sign.line1": "",
+	"bingo.lobby.tutorial.basics.sign.line2": "Minecraft Bingo",
+	"bingo.lobby.tutorial.basics.sign.line3": "Basics",
+	"bingo.lobby.tutorial.basics.sign.line4": "",
+
+	"bingo.lobby.tutorial.basics1.sign.line1": "Minecraft",
+	"bingo.lobby.tutorial.basics1.sign.line2": "Bingo is an",
+	"bingo.lobby.tutorial.basics1.sign.line3": "item fetch",
+	"bingo.lobby.tutorial.basics1.sign.line4": "quest.",
+
+	"bingo.lobby.tutorial.basics2.sign.line1": "A bingo card is",
+	"bingo.lobby.tutorial.basics2.sign.line2": "a 5x5 grid with",
+	"bingo.lobby.tutorial.basics2.sign.line3": "each slot",
+	"bingo.lobby.tutorial.basics2.sign.line4": "picturing an item.",
+
+	"bingo.lobby.tutorial.basics3.sign.line1": "To unlock each",
+	"bingo.lobby.tutorial.basics3.sign.line2": "slot, obtain the",
+	"bingo.lobby.tutorial.basics3.sign.line3": "item contained",
+	"bingo.lobby.tutorial.basics3.sign.line4": "within it.",
+
+	"bingo.lobby.tutorial.basics4.sign.line1": "After generating",
+	"bingo.lobby.tutorial.basics4.sign.line2": "a card, you get",
+	"bingo.lobby.tutorial.basics4.sign.line3": "the chance to",
+	"bingo.lobby.tutorial.basics4.sign.line4": "analyze it.",
+
+	"bingo.lobby.tutorial.basics5.sign.line1": "When you are",
+	"bingo.lobby.tutorial.basics5.sign.line2": "done, simply",
+	"bingo.lobby.tutorial.basics5.sign.line3": "start the game",
+	"bingo.lobby.tutorial.basics5.sign.line4": "and enjoy :)",
+
+	"bingo.lobby.tutorial.basics6.sign.line1": "To the right,",
+	"bingo.lobby.tutorial.basics6.sign.line2": "you will find an",
+	"bingo.lobby.tutorial.basics6.sign.line3": "overview of goals",
+	"bingo.lobby.tutorial.basics6.sign.line4": "to go for.",
+
+	"bingo.lobby.tutorial.skybox.sign.line1": "When spawning in,",
+	"bingo.lobby.tutorial.skybox.sign.line2": "you get some time",
+	"bingo.lobby.tutorial.skybox.sign.line3": "in a skybox to",
+	"bingo.lobby.tutorial.skybox.sign.line4": "look around.",
+
+	"bingo.lobby.tutorial.goals.sign.line1": "",
+	"bingo.lobby.tutorial.goals.sign.line2": "Goals",
+	"bingo.lobby.tutorial.goals.sign.line3": "",
+	"bingo.lobby.tutorial.goals.sign.line4": "",
+	
+	"bingo.lobby.tutorial.goals.introduction.heading": "Goals",
+	"bingo.lobby.tutorial.goals.introduction": "In Minecraft Bingo, there are different kinds of goals to go for.\n\nWhen planning your run, you should decide what to go for beforehand.\n\nThe following pages detail all the goals that are detected.",
+	"bingo.lobby.tutorial.goals.bingo.heading": "Bingo",
+	"bingo.lobby.tutorial.goals.bingo": "For a Bingo, get all of the 5 items in any of the rows, columns or diagonals.\n\nFor considering which items to go for, you can use the marking functionality on the card in the lobby using left click and right click.",
+	"bingo.lobby.tutorial.goals.blackout.heading": "Blackout",
+	"bingo.lobby.tutorial.goals.blackout": "A blackout is simply getting all of the 25 items.\n\nTry to be as efficient as possible, getting items from similar sources together and smelt while you are doing other stuff in the area.",
+	"bingo.lobby.tutorial.goals.20_no_bingo.heading": "20 No Bingo",
+	"bingo.lobby.tutorial.goals.20_no_bingo": "Get 20 items without achieving any Bingo.\n\\When planning, try to think about which items to avoid in order to achieve this goal. Beware of items you might pick up accidentally, such as arrows when fighting skeletons.",
+	"bingo.lobby.tutorial.goals.multiple_bingo.heading": "Tiple-Bingo",
+	"bingo.lobby.tutorial.goals.multiple_bingo": "For this goal, you need to get multiple bingos at once.\n\nYou do that by getting 4 items in intersecting rows, columns or diagonals and then get the item at the intersection last.\nThis includes double, triple and quadruple Bingo.",
+
+	"bingo.lobby.tutorial.game_info.sign.line1": "",
+	"bingo.lobby.tutorial.game_info.sign.line2": "Game",
+	"bingo.lobby.tutorial.game_info.sign.line3": "Info",
+	"bingo.lobby.tutorial.game_info.sign.line4": "",
+
+	"bingo.lobby.tutorial.get_tools.sign.line1": "After starting,",
+	"bingo.lobby.tutorial.get_tools.sign.line2": "you will need to",
+	"bingo.lobby.tutorial.get_tools.sign.line3": "get basic gear",
+	"bingo.lobby.tutorial.get_tools.sign.line4": "first.",
+
 	"bingo.lobby.team_selection.sign.line1": "",
 	"bingo.lobby.team_selection.sign.line2": "Switch",
 	"bingo.lobby.team_selection.sign.line3": "Team",

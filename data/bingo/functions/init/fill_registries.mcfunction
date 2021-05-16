@@ -412,3 +412,4 @@ data remove storage bingo:registries structures
 
 data modify storage bingo:registries structures append value "bingo:credits"
 data modify storage bingo:registries structures append value "bingo:card_generation"
+data modify storage bingo:registries structures append value "bingo:tutorial"
