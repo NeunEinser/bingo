@@ -19,7 +19,8 @@ function bingo:card_generation/item/find_item
 data modify storage bingo:tmp item set from storage bingo:tmp items[0]
 data remove storage bingo:tmp items[0]
 
-data modify storage bingo:card_generation forbiddenCategories append from storage bingo:tmp item.categories[]
+execute if data storage bingo:tmp item.categories[].id run data modify storage bingo:card_generation forbiddenCategories append from storage bingo:tmp item.categories[].id
+execute unless data storage bingo:tmp item.categories[].id run data modify storage bingo:card_generation forbiddenCategories append from storage bingo:tmp item.categories[]
 
 # copy to slot
 data modify storage bingo:tmp slot.item set from storage bingo:tmp item

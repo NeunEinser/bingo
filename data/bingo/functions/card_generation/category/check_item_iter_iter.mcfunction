@@ -1,4 +1,5 @@
-data modify storage bingo:tmp category set from storage bingo:tmp itemCategories[-1]
+execute if data storage bingo:tmp itemCategories[-1].id run data modify storage bingo:tmp category set from storage bingo:tmp itemCategories[-1].id
+execute unless data storage bingo:tmp itemCategories[-1].id run data modify storage bingo:tmp category set from storage bingo:tmp itemCategories[-1]
 execute store success score $allowed bingo.tmp run data modify storage bingo:tmp category set from storage bingo:tmp forbiddenCategory
 
 data remove storage bingo:tmp itemCategories[-1]
