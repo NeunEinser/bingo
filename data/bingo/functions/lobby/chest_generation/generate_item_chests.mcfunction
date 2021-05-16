@@ -13,6 +13,10 @@
 #declare tag bingo.item_chest_marker
 
 #>
+# @private
+#declare tag bingo.chest_generation_marker
+
+#>
 # @within function bingo:lobby/chest_generation/*
 #declare score_holder $chest_generation.column
 scoreboard players set $chest_generation.column bingo.tmp -1
@@ -30,9 +34,4 @@ execute if score $chest_generation/sort/card.out bingo.tmp matches 0 run functio
 execute if score $chest_generation/sort/card.out bingo.tmp matches 1 run function bingo:lobby/chest_generation/sort_categories/sort_by_length_odd
 data modify storage temp:bingo.chest_generation categories set from storage temp:bingo.chest_generation mergeSort.odd[0]
 
-fill 0 64 0 1 255 0 minecraft:air
-
-setblock 0 64 0 minecraft:chest[type=left]
-setblock 1 64 0 minecraft:chest[type=right]
-
-execute positioned 0 64 0 run function bingo:lobby/chest_generation/category_iter
+execute at @e[type=minecraft:area_effect_cloud, tag=bingo.chest_generation_marker, limit=1] run function bingo:lobby/chest_generation/initialize_chests

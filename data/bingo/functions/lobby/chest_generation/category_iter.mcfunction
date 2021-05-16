@@ -3,7 +3,7 @@
 # One iteration for a category
 #
 # @within
-# 	function bingo:lobby/chest_generation/generate_item_chests
+# 	function bingo:lobby/chest_generation/initialize_chests
 # 	function bingo:lobby/chest_generation/category_iter
 
 #>
