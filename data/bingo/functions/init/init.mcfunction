@@ -379,6 +379,7 @@ scoreboard players set -2147483648 bingo.const -2147483648
 
 bossbar add bingo:start/pre_gen/progress {"translate": "bingo.game.start.pre_gen_progress"}
 bossbar set bingo:start/pre_gen/progress color red
+bossbar set bingo:start/pre_gen/progress visible false
 
 gamerule commandBlockOutput false
 gamerule doWeatherCycle false
