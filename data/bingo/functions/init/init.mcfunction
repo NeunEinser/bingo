@@ -223,6 +223,16 @@ scoreboard players add $game_state bingo.state 0
 # @internal
 #declare score_holder $pregen_status
 scoreboard players add $pregen_status bingo.state 0
+#>
+# Whether the lobby is already generated.
+#
+# Currently, the lobby only generates once to avoid bugs. This will change in
+# the future though.
+#
+# @internal
+#declare score_holder $lobby_generated
+scoreboard players add $lobby_generated bingo.state 0
+
 
 #>
 # This objective stores the page of a paginated tellraw a player is currently
@@ -457,4 +467,5 @@ data remove storage bingo:items items
 function bingo:init/initialize_items
 
 # spawn strcutures
-execute in bingo:lobby run function bingo:init/setup_lobby
+execute if score $lobby_generated bingo.state matches 0 in bingo:lobby run function bingo:init/setup_lobby
+scoreboard players set $lobby_generated bingo.state 1
