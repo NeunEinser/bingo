@@ -232,6 +232,11 @@
 	"bingo.lobby.team_selection.sign.line3": "Team",
 	"bingo.lobby.team_selection.sign.line4": "",
 
+	"bingo.lobby.end.sign.line1": "The Outside",
+	"bingo.lobby.end.sign.line2": "",
+	"bingo.lobby.end.sign.line3": "Danger!",
+	"bingo.lobby.end.sign.line4": "Stay Inside!",
+
 	"bingo.categories.header": "Categories:",
 	"bingo.items.weight": "Weight: %s",
 	

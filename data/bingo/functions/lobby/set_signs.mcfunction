@@ -151,6 +151,10 @@
 # @private
 #declare tag bingo.sign_tutorial_game_info_lectern
 
+#>
+# @private
+#declare tag bingo.sign_lobby_end_sign
+
 execute at @e[type=minecraft:area_effect_cloud, tag=bingo.lobby_sign] run setblock ~ ~ ~ minecraft:air
 
 # Machinery
@@ -215,3 +219,6 @@ execute at @e[type=minecraft:area_effect_cloud, tag=bingo.sign_tutorial_get_tool
 execute at @e[type=minecraft:area_effect_cloud, tag=bingo.sign_tutorial_game_info, limit=1] run setblock ~ ~ ~ minecraft:warped_wall_sign[facing=north]{Text1: '{"translate":"bingo.lobby.tutorial.game_info.sign.line1", "bold":true, "color":"#8eedeb"}', Text2:'{"translate":"bingo.lobby.tutorial.game_info.sign.line2", "bold":true, "color":"#8eedeb"}', Text3:'{"translate":"bingo.lobby.tutorial.game_info.sign.line3", "bold":true, "color":"#8eedeb"}', Text4:'{"translate":"bingo.lobby.tutorial.game_info.sign.line4", "bold":true, "color":"#8eedeb"}'}
 execute at @e[type=minecraft:area_effect_cloud, tag=bingo.sign_tutorial_goal_lectern, limit=1] run setblock ~ ~ ~ minecraft:warped_wall_sign[facing=north]{Text1: '{"translate":"bingo.lobby.tutorial.goals.sign.line1", "bold":true, "color":"#8eedeb"}', Text2:'{"translate":"bingo.lobby.tutorial.goals.sign.line2", "bold":true, "color":"#8eedeb"}', Text3:'{"translate":"bingo.lobby.tutorial.goals.sign.line3", "bold":true, "color":"#8eedeb"}', Text4:'{"translate":"bingo.lobby.tutorial.goals.sign.line4", "bold":true, "color":"#8eedeb"}'}
 execute at @e[type=minecraft:area_effect_cloud, tag=bingo.sign_tutorial_game_info_lectern, limit=1] run setblock ~ ~ ~ minecraft:warped_wall_sign[facing=north]{Text1: '{"translate":"bingo.lobby.tutorial.game_info.sign.line1", "bold":true, "color":"#8eedeb"}', Text2:'{"translate":"bingo.lobby.tutorial.game_info.sign.line2", "bold":true, "color":"#8eedeb"}', Text3:'{"translate":"bingo.lobby.tutorial.game_info.sign.line3", "bold":true, "color":"#8eedeb"}', Text4:'{"translate":"bingo.lobby.tutorial.game_info.sign.line4", "bold":true, "color":"#8eedeb"}'}
+
+# End
+execute at @e[type=minecraft:area_effect_cloud, tag=bingo.sign_lobby_end_sign, limit=1] run setblock ~ ~ ~ minecraft:warped_wall_sign[facing=east]{Text1: '{"translate":"bingo.lobby.end.sign.line1", "bold":true, "color":"#8eedeb"}', Text2:'{"translate":"bingo.lobby.end.sign.line2", "bold":true, "color":"#8eedeb"}', Text3:'{"translate":"bingo.lobby.end.sign.line3", "color":"#8eedeb"}', Text4:'{"translate":"bingo.lobby.end.sign.line4", "color":"#8eedeb"}'}

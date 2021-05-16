@@ -33,6 +33,9 @@ kill @e[type=minecraft:area_effect_cloud, tag=bingo.card_generation_frame_start]
 execute as @e[type=minecraft:area_effect_cloud, tag=bingo.structure_spawner, limit=1] at @s run function bingo:init/spawn_structures
 setblock -1 3 -17 minecraft:air
 
+execute at @e[type=minecraft:area_effect_cloud, tag=bingo.structure_spawner, limit=1] run setblock ~-1 3 ~-1 minecraft:structure_block[mode=load]{mode: "LOAD", name: "bingo:lobby_end"}
+execute at @e[type=minecraft:area_effect_cloud, tag=bingo.structure_spawner, limit=1] run setblock ~-1 4 ~-1 minecraft:redstone_block
+
 # Spawn machinery at hardcoded position
 setblock -4 1 -3 minecraft:structure_block[mode=load]{mode: "LOAD", name: "bingo:machinery", posX: 1, posZ: 1}
 setblock -4 2 -3 minecraft:redstone_block
