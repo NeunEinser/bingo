@@ -135,7 +135,7 @@
 	"bingo.lobby.settings.automatic_pregen.sign.line3": "generating terrain",
 	"bingo.lobby.settings.automatic_pregen.sign.on": "ON",
 	"bingo.lobby.settings.automatic_pregen.sign.off": "OFF",
-	"bingo.lobby.settings.automatic_pregen.info": "Changing this setting will start terrain pregeneration around spawnpoint 5 seconds after generaing a card, if no new card was generated in the meantime.\nNote that this may cause lag in the lobby while it is ongoing, making some functionallity in the lobby slow to react and unresponsive in some cases.",
+	"bingo.lobby.settings.automatic_pregen.info": "By default, terrain is pre-generated around spawn as soon as you hit the \"Start Game\" sign. When turning this setting on, pre-generation will automatically start 5 seconds after generating a new card. In case a new card is generated, the timer will restart, and a possible ungoing generation will be interrupted.\nNote that this may cause lag in the lobby while it is ongoing, making some functionallity in the lobby slow to react and unresponsive in some cases.",
 	"bingo.lobby.settings.automatic_pregen.turn_on": "Turn On",
 	"bingo.lobby.settings.automatic_pregen.turn_off": "Turn Off",
 
