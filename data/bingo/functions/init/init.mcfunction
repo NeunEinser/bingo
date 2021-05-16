@@ -131,7 +131,6 @@
 #region setup objectives
 scoreboard objectives remove bingo.const
 scoreboard objectives remove bingo.has_item
-scoreboard objectives remove bingo.frame_id
 scoreboard objectives remove bingo.lobby
 scoreboard objectives remove bingo.menu_page
 scoreboard objectives remove bingo.seed
