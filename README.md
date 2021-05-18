@@ -30,16 +30,18 @@ There are some custom world settings endabled, which means the world might look 
 ## Expansion Packs
 This is very much experimental and subject to many changes. The idea is that you can make and distribute expansion packs, which can be installed on top of the normal Bingo game.
 
-Currently, not much is possible yet. You can add new items using an expansion data pack and register new rooms for the lobby.
+Currently, not much is possible yet. You can add new items using an expansion data pack and register new rooms for the lobby.  
 Note that new structures will currently not be added to an existing world. This will change in the future.
 
+There will be more documentation about this, once it is more mature.
+
 ## Contributing
-Just make a pull request :D
-All functions should be documented using IMP doc.
+Just make a pull request :D  
+All functions should be documented using IMP doc.  
 It is recommended to use the VS code extension Datapack Helper Plus. There are some custom settings in this repository that will automatically be applied to your repository and ensure you follow my conventions.
 
 ## Credits
-NeunEinser: The map
-NOPEName: [nn_math](https://github.com/NOPEname/nn_math)
-AmberWat: [NegativeSpaceFont](https://github.com/AmberWat/NegativeSpaceFont/releases)
+NeunEinser: The map  
+NOPEName: [nn_math](https://github.com/NOPEname/nn_math)  
+AmberWat: [NegativeSpaceFont](https://github.com/AmberWat/NegativeSpaceFont/releases)  
 Lorgon111: Original idea.
