@@ -9,13 +9,5 @@
 # 	function bingo:init/init
 # 	function bingo:tick/clean_up
 
-#>
-# @private
-#declare score_holder $clean_up
-
-scoreboard players set $clean_up bingo.debug_scdl 0
-
 scoreboard players reset * bingo.tmp
 schedule function bingo:tick/clean_up 300s
-
-scoreboard players set $clean_up bingo.debug_scdl 1
