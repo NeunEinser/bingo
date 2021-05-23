@@ -39,4 +39,4 @@ execute if score $item_detect/announce.has_bingo bingo.tmp matches 0 run functio
 execute if score $item_detect/announce.items bingo.tmp matches 25 run function bingo:item_detection/goals/announce_blackout
 
 # Update card immediately
-function bingo:card_display/display_card_schedule
+function bingo:actionbar_display/display_card_schedule

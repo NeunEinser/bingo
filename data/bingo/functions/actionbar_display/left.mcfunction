@@ -1,7 +1,7 @@
-#> bingo:card_display/left
+#> bingo:actionbar_display/left
 # Adds spaces for displaying the card on the left side, depending on preferences
 #
-# @within function bingo:card_display/display_if_seed_is_set
+# @within function bingo:actionbar_display/display_if_seed_is_set
 
 #TODO consider different screen sizes. Currently only a width of 1920 px is supported
 

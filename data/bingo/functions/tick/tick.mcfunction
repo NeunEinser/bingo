@@ -3,7 +3,7 @@
 # This function is called every tick
 #
 # This contains some base logic, but most of the stuff happens in
-# bingo:card_display/display_card or GAMELOOP_TO_BE_IMPLEMENTED
+# bingo:actionbar_display/display_card or GAMELOOP_TO_BE_IMPLEMENTED
 #
 # @within tag/function minecraft:tick
 # @handles #minecraft:tick

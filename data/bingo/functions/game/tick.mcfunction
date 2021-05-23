@@ -3,7 +3,7 @@
 # This function is called every tick when a game is running
 #
 # This contains some base logic, but most of the stuff happens in
-# bingo:card_display/display_card or GAMELOOP_TO_BE_IMPLEMENTED
+# bingo:actionbar_display/display_card or GAMELOOP_TO_BE_IMPLEMENTED
 #
 # @within function bingo:tick/tick
 
