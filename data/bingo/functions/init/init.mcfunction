@@ -134,7 +134,6 @@ scoreboard objectives remove bingo.has_item
 scoreboard objectives remove bingo.lobby
 scoreboard objectives remove bingo.menu_page
 scoreboard objectives remove bingo.seed
-scoreboard objectives remove bingo.settings
 scoreboard objectives remove bingo.tmp
 scoreboard objectives remove bingo.pref
 
