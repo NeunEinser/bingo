@@ -25,7 +25,7 @@ There are some custom world settings endabled, which means the world might look 
 * **Caves**: Caves are increased from a 1/7 chance to 1/6 in Bingo. Ocean caves will not be flooded.
 * **Mineshafts**: Mineshafts are completely disabled and you will not find any.
 * **No -Ites**: Granite, Diorite and Andesite does not generate. The only purpose those rocks would have in Bingo is annoy players and clutter their inventory.
-* **Ambient Lightning**: You can see in the dark even without nightvision while still be able to tell darkness apart from light.
+* **Ambient Lighting**: You can see in the dark even without nightvision while still be able to tell darkness apart from light.
 * **No Nether**: Nether is blocked for the moment.
 
 
