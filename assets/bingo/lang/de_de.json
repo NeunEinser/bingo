@@ -10,7 +10,7 @@
 	"bingo.lobby.machinery.sign.line4": "Personal",
 
 	"bingo.lobby.credits.neun_einser.sign.line2": "",
-	"bingo.lobby.credits.neun_einser.sign.line3": "Alles an Minecraft",
+	"bingo.lobby.credits.neun_einser.sign.line3": "Alles von Minecraft",
 	"bingo.lobby.credits.neun_einser.sign.line4": "Bingo v5",
 
 	"bingo.lobby.credits.amber_wat.sign.line2": "",
@@ -52,7 +52,6 @@
 
 	"bingo.lobby.credits.tools.nbt_viewer.sign.line3": "von ",
 	"bingo.lobby.credits.tools.nbt_viewer.sign.line4": "Misode",
-
 
 	"bingo.lobby.card_generation.random_card.sign.line1": "",
 	"bingo.lobby.card_generation.random_card.sign.line2": "Zufällige Karte",
@@ -195,7 +194,7 @@
 	"bingo.lobby.tutorial.goals.bingo.heading": "Bingo",
 	"bingo.lobby.tutorial.goals.bingo": "Für ein Bingo erhalte alle 5 Items einer Zeile, Spalte oder Diagonalen.\n\nFür deine Planung kannst Du Items auf der Lobby Karte mit Linksklick markieren oder mit Rechtsklick die Markierung löschen.",
 	"bingo.lobby.tutorial.goals.blackout.heading": "Blackout",
-	"bingo.lobby.tutorial.goals.blackout": "Bei Blackout musst Du alle 25 Items der Karte erhalten.\n\nVersuche so effizient wie möglich zu sein, indem du von einem Ort mehrere Items erhälst und schmilzt, während Du andere Dinge in der Gegend machst.",
+	"bingo.lobby.tutorial.goals.blackout": "Bei Blackout musst Du einfach alle 25 Items der Karte erhalten.\n\nVersuche so effizient wie möglich zu sein, indem Du von einem Ort mehrere Items erhälst und schmilzt, während Du andere Dinge in der Gegend machst.",
 	"bingo.lobby.tutorial.goals.20_no_bingo.heading": "20 No Bingo",
 	"bingo.lobby.tutorial.goals.20_no_bingo": "Erhalte 20 Items ohne Bingo zu bekommen.\n\nÜberlege Dir, welche Items Du vermeiden musst, um das Ziel zu erreichen. Hüte Dich vor Items, die Du versehentlich aufnimmst wie z.B. Pfeile von Skeletten.",
 	"bingo.lobby.tutorial.goals.multiple_bingo.heading": "Multi-Bingo",
