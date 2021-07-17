@@ -221,6 +221,8 @@
 	"bingo.lobby.tutorial.game_info.world_gen.no_mineshafts": "Mineshafts turned out to be too overpowered, giving easy access to lots of chests. Thus they are disabled in Bingo.",
 	"bingo.lobby.tutorial.game_info.world_gen.ites.heading": "No ites: ",
 	"bingo.lobby.tutorial.game_info.world_gen.ites": "All stone variants like DiorITE, GranITE and AndesITE are completely removed from the generation in this version.\nThis is done to reduce inventory clutter.",
+	"bingo.lobby.tutorial.game_info.world_gen.ambient.heading": "Ambient lighting: ",
+	"bingo.lobby.tutorial.game_info.world_gen.ambient": "There is a dimension setting in place that lets you see in the dark similarily to the vanilla nether.\nThis works without night vision while you still are able to tell darkness apart from light to some degree.",
 
 	"bingo.lobby.tutorial.get_tools.sign.line1": "After starting,",
 	"bingo.lobby.tutorial.get_tools.sign.line2": "you will need to",
