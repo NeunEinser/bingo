@@ -22,8 +22,8 @@
 	"bingo.lobby.credits.nope_name.sign.line4": "datapack",
 
 	"bingo.lobby.credits.dr_brian_lorgon111.sign.line2": "",
-	"bingo.lobby.credits.dr_brian_lorgon111.sign.line3": "Original Minecraft",
-	"bingo.lobby.credits.dr_brian_lorgon111.sign.line4": "Bingo Schöpfer",
+	"bingo.lobby.credits.dr_brian_lorgon111.sign.line3": "Original Schöpfer",
+	"bingo.lobby.credits.dr_brian_lorgon111.sign.line4": "Minecraft Bingo",
 
 	"bingo.lobby.credits.playtesters.sign.line1": "",
 	"bingo.lobby.credits.playtesters.sign.line2": "Wand der",
@@ -198,7 +198,7 @@
 	"bingo.lobby.tutorial.goals.20_no_bingo.heading": "20 No Bingo",
 	"bingo.lobby.tutorial.goals.20_no_bingo": "Erhalte 20 Items ohne Bingo zu bekommen.\n\nÜberlege Dir, welche Items Du vermeiden musst, um das Ziel zu erreichen. Hüte Dich vor Items, die Du versehentlich aufnimmst wie z.B. Pfeile von Skeletten.",
 	"bingo.lobby.tutorial.goals.multiple_bingo.heading": "Multi-Bingo",
-	"bingo.lobby.tutorial.goals.multiple_bingo": "Für dieses Ziel musst Du mehrere Bingos mit einem Item bekommen.\n\nDu musst je 4 Items in sich überschneidenden Zeilen, Spalten oder Diagonalen erhalten und das Item auf der Kreuzung als Letztes.\nDies schließt Doppel-, Drei- oder Vierfach Bingo ein.",
+	"bingo.lobby.tutorial.goals.multiple_bingo": "Für dieses Ziel musst Du mehrere Bingos mit einem Item bekommen.\n\nDu musst in sich überschneidenden Zeilen, Spalten oder Diagonalen je 4 Items erhalten und das Item auf der Kreuzung als Letztes. Dies schließt Doppel-, Drei- oder Vierfach Bingo ein.",
 	
 	"bingo.lobby.tutorial.game_info.sign.line1": "",
 	"bingo.lobby.tutorial.game_info.sign.line2": "Spiel",
