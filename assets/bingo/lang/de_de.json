@@ -1,4 +1,3 @@
-// cls; pushd C:\github\bingo\assets\bingo\lang; $en = (gc .\en_us.json | ConvertFrom-Json -AsHashtable); $de = (gc .\de_de.json | ConvertFrom-Json -AsHashtable); popd;  $missing = @( $en.Keys | ? {-not $de.Keys.Contains($_) } ); $missing.Count; $missing | sort
 {
 	"bingo.game.go_to_lobby": "%s um zur Lobby zurückzukehren.",
 	"bingo.game.go_to_lobby.hint": "Hinweis: Du kannst jederzeit mit dem Befehl %s zur Lobby zurückkehren",
