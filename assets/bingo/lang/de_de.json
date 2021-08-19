@@ -277,7 +277,7 @@
 	"bingo.category.treasure_chest": "Übliches aus vergrabenen Schätzen",
 	"bingo.category.wheat": "Weizen",
 	"bingo.category.wool": "Wolle",
-	"bingo.items.weight": "Gewicht: %s",
+	"bingo.items.weight": "Gewichtung: %s",
 	
 	"bingo.game.start.pre_gen_progress": "Bereite Chunks vor...",
 
