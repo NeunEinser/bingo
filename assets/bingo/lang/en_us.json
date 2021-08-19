@@ -130,6 +130,17 @@
 	"bingo.lobby.settings.preferences.sign.line3": "Preferences",
 	"bingo.lobby.settings.preferences.sign.line4": "",
 
+	
+	"bingo.lobby.settings.more_coming.sign.line1": "",
+	"bingo.lobby.settings.more_coming.sign.line2": "More Settings",
+	"bingo.lobby.settings.more_coming.sign.line3": "",
+	"bingo.lobby.settings.more_coming.sign.line4": "",
+
+	"bingo.lobby.settings.more_coming.menu.title": "Do you want to change future settings? ",
+	"bingo.lobby.settings.more_coming.menu.yes": "[Yes]",
+	"bingo.lobby.settings.more_coming.menu.no": " [No]",
+	"bingo.lobby.settings.more_coming.menu.no_text": "Good decision. Who knows, maybe these settings are awful.",
+
 	"bingo.lobby.settings.automatic_pregen.sign.line1": "Automatically start",
 	"bingo.lobby.settings.automatic_pregen.sign.line2": "start pre-",
 	"bingo.lobby.settings.automatic_pregen.sign.line3": "generating terrain",
@@ -138,6 +149,44 @@
 	"bingo.lobby.settings.automatic_pregen.info": "By default, terrain is pre-generated around spawn as soon as you hit the \"Start Game\" sign. When turning this setting on, pre-generation will automatically start 5 seconds after generating a new card. In case a new card is generated, the timer will restart, and a possible ungoing generation will be interrupted.\nNote that this may cause lag in the lobby while it is ongoing, making some functionallity in the lobby slow to react and unresponsive in some cases.",
 	"bingo.lobby.settings.automatic_pregen.turn_on": "Turn On",
 	"bingo.lobby.settings.automatic_pregen.turn_off": "Turn Off",
+
+	
+
+	"bingo.lobby.menu.back": "Back",
+	"bingo.lobby.menu.back.hover": "Go back to previous page",
+
+	"bingo.lobby.preferences.menu.main.title": "Change Preferences",
+	
+	"bingo.lobby.preferences.menu.main.card_pos": "Change Card Position",
+	"bingo.lobby.preferences.menu.main.card_pos.hover": "Changes where on the screen the Bingo card is displayed",
+	
+	"bingo.lobby.preferences.menu.card_pos.title": "Change Card Position",
+
+	"bingo.lobby.preferences.menu.card_pos.left": "Left of Hotbar",
+	"bingo.lobby.preferences.menu.card_pos.left.hover": "Postions the Bingo card left of the hotbar.",
+
+	"bingo.lobby.preferences.menu.card_pos.right": "Right of Hotbar",
+	"bingo.lobby.preferences.menu.card_pos.right.hover": "Postions the Bingo card right of the hotbar.",
+	"bingo.lobby.preferences.menu.card_pos.right.info": "This setting requires more information about your Minecraft settings.\nPlease take a look at your Attack Indicator setting in Options -> Video Settings and choose one of the following:",
+
+	"bingo.lobby.preferences.menu.card_pos.right.indicator_hotbar":"Attack Indicator: Hotbar",
+	"bingo.lobby.preferences.menu.card_pos.right.indicator_hotbar.hover":"Adds an extra space to make room for the attack indicator next to the hotbar.",
+
+	"bingo.lobby.preferences.menu.card_pos.right.indicator_crosshair":"Attack Indicator: Crosshair or Off",
+	"bingo.lobby.preferences.menu.card_pos.right.indicator_crosshair.hover":"Positions the Bingo card directly next to the hotbar.",
+
+	"bingo.lobby.preferences.warning16_9": "Only works properly on a 16:9 display.",
+
+	"bingo.lobby.preferences.menu.card_pos.left_edge": "Left Edge",
+	"bingo.lobby.preferences.menu.card_pos.left_edge.hover": "Postions the Bingo card on the left edge of the screen.",
+	"bingo.lobby.preferences.menu.card_pos.left_edge.info": "This setting requires more information about your Minecraft settings.\nPlease take a look at your GUI Scale setting in Options -> Video Settings. In case it is set to auto, please cycle the setting to find the scale auto is using.\nPlease choose one of the following:",
+
+	"bingo.lobby.preferences.menu.card_pos.right_edge": "Right Edge",
+	"bingo.lobby.preferences.menu.card_pos.right_edge.hover": "Postions the Bingo card on the right edge of the screen.",
+
+	"bingo.lobby.preferences.gui_scale": "GUI Scale: %s",
+	"bingo.lobby.preferences.gui_scale.hover": "Aligns the Bingo card to the left edge for GUI Scale %s.",
+
 
 	"bingo.lobby.tutorial.generate_chests.sign.line1": "",
 	"bingo.lobby.tutorial.generate_chests.sign.line2": "Re-generate",

@@ -221,7 +221,7 @@
 	"bingo.lobby.tutorial.game_info.world_gen.no_mineshafts": "Minen haben sich als übermächtig gezeigt, da sie leichten Zufgriff auf viele Truhen geben. Minen sind daher ausgeschaltet in Bingo.",
 	"bingo.lobby.tutorial.game_info.world_gen.ites.heading": "Keine *ite: ",
 	"bingo.lobby.tutorial.game_info.world_gen.ites": "Alle Steinvarianten wie DiorIT, GranIT and AndesIT sind in dieser Version komplett entfernt.\nDadurch soll das Zumüllen des Inventars reduziert werden.",
-	"bingo.lobby.tutorial.game_info.world_gen.ambient.heading": "Umgebungsbeleuchtung: ",
+	"bingo.lobby.tutorial.game_info.world_gen.ambient.heading": "Umgebungs-\nbeleuchtung: ",
 	"bingo.lobby.tutorial.game_info.world_gen.ambient": "Du kannst im Dunkeln besser sehen, aber immer noch hell von dunkel unterscheiden.",
 
 	"bingo.lobby.tutorial.get_tools.sign.line1": "Nach dem Start",
