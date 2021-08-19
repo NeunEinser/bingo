@@ -304,22 +304,22 @@
 	
 	"bingo.got_bingo.quadruple": "[%1$s] %2$s erzielte(n) ein Vierfach-Bingo!",
 
-	"bingo.got_sniper_bingo.row": "[%1$s] %2$s erzielte(n) ein Sniper Bingo in Zeile %3$s!",
-	"bingo.got_sniper_bingo.col": "[%1$s] %2$s erzielte(n) ein Sniper Bingo in Spalte %3$s!",
-	"bingo.got_sniper_bingo.diag.top_left": "[%1$s] %2$s erzielte(n) ein Sniper Bingo diagonal von oben links nach unten rechts!",
-	"bingo.got_sniper_bingo.diag.bottom_left": "[%1$s] %2$s erzielte(n) ein Sniper Bingo diagonal von unten links nach oben rechts!",
+	"bingo.got_sniper_bingo.row": "[%1$s] %2$s erzielte(n) ein Sniper-Bingo in Zeile %3$s!",
+	"bingo.got_sniper_bingo.col": "[%1$s] %2$s erzielte(n) ein Sniper-Bingo in Spalte %3$s!",
+	"bingo.got_sniper_bingo.diag.top_left": "[%1$s] %2$s erzielte(n) ein Sniper-Bingo diagonal von oben links nach unten rechts!",
+	"bingo.got_sniper_bingo.diag.bottom_left": "[%1$s] %2$s erzielte(n) ein Sniper-Bingo diagonal von unten links nach oben rechts!",
 	
-	"bingo.got_sniper_bingo.double.col_row": "[%1$s] %2$s erzielte(n) ein Sniper Doppel-Bingo in Zeile %3$s und Spalte %4$s!",
-	"bingo.got_sniper_bingo.double.col_diag.top_left": "[%1$s] %2$s erzielte(n) ein Sniper Doppel-Bingo in Spalte %3$s und diagonal von oben links nach unten rechts!",
-	"bingo.got_sniper_bingo.double.col_diag.bottom_left": "[%1$s] %2$s erzielte(n) ein Sniper Doppel-Bingo in Spalte %3$s und diagonal von unten links nach oben rechts!",
-	"bingo.got_sniper_bingo.double.row_diag.top_left": "[%s] % erzielte(n) ein Sniper Doppel-Bingo in Zeile %3$s und diagonal von oben links nach unten rechts!",
-	"bingo.got_sniper_bingo.double.row_diag.bottom_left": "[%1$s] %2$s erzielte(n) ein Sniper Doppel-Bingo in Zeile %3$s und diagonal von unten links nach oben rechts!",
-	"bingo.got_sniper_bingo.double.diags": "[%1$s] %2$s erzielte(n) ein Sniper Doppel-Bingo in beiden Diagonalen!",
+	"bingo.got_sniper_bingo.double.col_row": "[%1$s] %2$s erzielte(n) ein Sniper-Doppel-Bingo in Zeile %3$s und Spalte %4$s!",
+	"bingo.got_sniper_bingo.double.col_diag.top_left": "[%1$s] %2$s erzielte(n) ein Sniper-Doppel-Bingo in Spalte %3$s und diagonal von oben links nach unten rechts!",
+	"bingo.got_sniper_bingo.double.col_diag.bottom_left": "[%1$s] %2$s erzielte(n) ein Sniper-Doppel-Bingo in Spalte %3$s und diagonal von unten links nach oben rechts!",
+	"bingo.got_sniper_bingo.double.row_diag.top_left": "[%s] % erzielte(n) ein Sniper-Doppel-Bingo in Zeile %3$s und diagonal von oben links nach unten rechts!",
+	"bingo.got_sniper_bingo.double.row_diag.bottom_left": "[%1$s] %2$s erzielte(n) ein Sniper-Doppel-Bingo in Zeile %3$s und diagonal von unten links nach oben rechts!",
+	"bingo.got_sniper_bingo.double.diags": "[%1$s] %2$s erzielte(n) ein Sniper-Doppel-Bingo in beiden Diagonalen!",
 	
-	"bingo.got_sniper_bingo.triple.top_left": "[%1$s] %2$s erzielte(n) ein Sniper Dreifach-Bingo in Spalte %3$s, Zeile %4$s und diagonal von oben links nach unten rechts!",
-	"bingo.got_sniper_bingo.triple.bottom_left": "[%1$s] %2$s erzielte(n) ein Sniper Dreifach-Bingo in Spalte %3$s, Zeile %4$s und diagonal von unten links nach oben rechts!!",
-	"bingo.got_sniper_bingo.triple.col_diags": "[%1$s] %2$s erzielte(n) ein Sniper Dreifach-Bingo in Spalte %3$s und beiden Diagonalen!",
-	"bingo.got_sniper_bingo.triple.row_diags": "[%1$s] %2$s erzielte(n) ein Sniper Dreifach-Bingo in Zeile %3$s und beiden Diagonalen!",
+	"bingo.got_sniper_bingo.triple.top_left": "[%1$s] %2$s erzielte(n) ein Sniper-Dreifach-Bingo in Spalte %3$s, Zeile %4$s und diagonal von oben links nach unten rechts!",
+	"bingo.got_sniper_bingo.triple.bottom_left": "[%1$s] %2$s erzielte(n) ein Sniper-Dreifach-Bingo in Spalte %3$s, Zeile %4$s und diagonal von unten links nach oben rechts!!",
+	"bingo.got_sniper_bingo.triple.col_diags": "[%1$s] %2$s erzielte(n) ein Sniper-Dreifach-Bingo in Spalte %3$s und beiden Diagonalen!",
+	"bingo.got_sniper_bingo.triple.row_diags": "[%1$s] %2$s erzielte(n) ein Sniper-Dreifach-Bingo in Zeile %3$s und beiden Diagonalen!",
 	
-	"bingo.got_sniper_bingo.quadruple": "[%1$s] %2$s erzielte(n) ein Sniper Vierfach-Bingo!"
+	"bingo.got_sniper_bingo.quadruple": "[%1$s] %2$s erzielte(n) ein Sniper-Vierfach-Bingo!"
 }
