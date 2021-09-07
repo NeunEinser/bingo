@@ -15,6 +15,7 @@ effect clear @s
 clear @s
 gamemode survival @s
 experience set @s 0 levels
+experience set @s 0 points
 gamerule doDaylightCycle true
 
 execute in bingo:lobby run data modify block 5 3 5 auto set value true

@@ -17,11 +17,17 @@ execute if block ~ 62 ~ minecraft:lava run setblock ~ 62 ~ minecraft:dirt
 
 tellraw @a "Loading terrain"
 teleport @a ~ 128 ~
+
+execute store result score $spawn_x bingo.state run data get entity @a[limit=1] Pos[0]
+execute store result score $spawn_z bingo.state run data get entity @a[limit=1] Pos[2]
+
 gamemode adventure @a
 effect give @a minecraft:jump_boost 1000000 128 true
 effect give @a minecraft:invisibility 1000000 0 true
 effect give @a minecraft:saturation 1000000 255 true
 clear @a
+experience set @s 0 levels
+experience set @s 0 points
 
 team modify bingo.aqua seeFriendlyInvisibles false
 team modify bingo.black seeFriendlyInvisibles false
