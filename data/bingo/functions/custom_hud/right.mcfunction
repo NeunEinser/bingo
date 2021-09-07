@@ -1,8 +1,8 @@
-#> bingo:actionbar_display/right
+#> bingo:custom_hud/right
 # Adds spaces for displaying the card on the right side, depending on
 # preferences
 #
-# @within function bingo:actionbar_display/display_if_seed_is_set
+# @within function bingo:custom_hud/display_if_seed_is_set
 
 #TODO consider different screen sizes. Currently only a width of 1920 px is supported
 

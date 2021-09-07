@@ -10,4 +10,5 @@
 # 	function bingo:tick/clean_up
 
 scoreboard players reset * bingo.tmp
+scoreboard players reset * bingo.io
 schedule function bingo:tick/clean_up 300s

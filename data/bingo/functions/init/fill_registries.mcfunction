@@ -406,3 +406,5 @@ data remove storage bingo:registries structures
 data modify storage bingo:registries structures append value "bingo:credits"
 data modify storage bingo:registries structures append value "bingo:card_generation"
 data modify storage bingo:registries structures append value "bingo:tutorial"
+
+data modify storage bingo:custom_hud components set value [{}, {}, {}, {}, {}, {}, {id: "bingo:player_position", line: 2}]

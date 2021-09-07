@@ -7,6 +7,7 @@
 # 	function bingo:game/start/initialize_game_start
 # @context position Spawn location
 
+kill @e[type=minecraft:area_effect_cloud, tag=bingo.skybox_cloud, limit=1]
 bossbar set bingo:start/pre_gen/progress visible false
 
 fill ~-1 0 ~-1 ~1 130 ~1 minecraft:barrier replace #bingo:sky_box_chute_replaceables
