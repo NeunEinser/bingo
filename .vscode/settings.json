@@ -31,6 +31,33 @@
 			}
 		]
 	],
+	"datapack.lint.nameOfScoreHolders": [
+		"warning",
+		[
+			{
+				"label": "$snake_case",
+				"prefix": "$",
+				"parts": "snake_case"
+			},
+			{
+				"label": "$semi/path/to_function.snake_case_name",
+				"prefix": "$",
+				"parts": [
+					{
+						"parts": "snake_case",
+						"sep": "/",
+						"allowMoreParts": true
+					},
+					"snake_case"
+				],
+				"sep": ".",
+			},
+			{
+				"label": "numeric constants",
+				"parts": "/^(?:0|-?[1-9][0-9]*)$/"
+			}
+		]
+	],
 	"datapack.lint.nameOfTags": [
 		"warning",
 		[
@@ -113,6 +140,7 @@
 	"datapack.lint.strictPredicateCheck": ["error", true],
 	"datapack.lint.strictRecipeCheck": ["error", true],
 	"datapack.lint.strictSoundEventCheck": ["error", "always"],
+	"datapack.lint.strictScoreHolderCheck": ["error", true],
 	"datapack.lint.strictStorageCheck": ["error", true],
 	"datapack.lint.strictTagCheck": ["error", true],
 	"datapack.lint.strictTeamCheck": ["error", true],

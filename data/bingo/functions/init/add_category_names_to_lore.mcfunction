@@ -8,7 +8,7 @@
 # 	function bingo:init/initialize_items
 # 	function bingo:init/add_category_names_to_lore
 
-setblock ~ 255 ~ minecraft:oak_sign{Text1: '[{"text": "  \\u2022 ", "color": "gray", "italic": false}, {"storage": "temp:bingo.init", "nbt": "itemCategories[-1].translatableName", "interpret": true}]'} 
+setblock ~ 255 ~ minecraft:oak_sign{Text1: '[{"text": "  • ", "color": "gray", "italic": false}, {"storage": "temp:bingo.init", "nbt": "itemCategories[-1].translatableName", "interpret": true}]'}
 data modify storage temp:bingo.init items[-1].item.tag.display.Lore append from block 0 255 0 Text1
 
 setblock ~ 255 ~ minecraft:air

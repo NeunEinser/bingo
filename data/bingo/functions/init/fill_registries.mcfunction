@@ -401,10 +401,9 @@ data modify storage bingo:registries items append value {id: "bingo:piston", ite
 data modify storage bingo:registries items append value {id: "bingo:sticky_piston", item: {id: "minecraft:sticky_piston"}, textComponent: '{"translate": "block.minecraft.sticky_piston", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:sticky_piston"}}}', icon: '"\\u011c"', detectCommand: "execute as @a store success score @s bingo.has_item run clear @s minecraft:sticky_piston 0", clearCommand: "clear @a[tag=bingo.clear] minecraft:sticky_piston 1", categories: ["bingo:redstone", "bingo:nighttime_mob_drops"], weight: 1}
 
 # structures
-data remove storage bingo:registries structures
-
 data modify storage bingo:registries structures append value "bingo:credits"
 data modify storage bingo:registries structures append value "bingo:card_generation"
 data modify storage bingo:registries structures append value "bingo:tutorial"
 
-data modify storage bingo:custom_hud components set value [{}, {}, {}, {}, {}, {}, {id: "bingo:player_position", line: 2}]
+# hud components
+data modify storage bingo:registries hud_components append value {id: "bingo:player_position", addByDefault: true, preferredColumn: 1, name: '{"translate": "bingo.custom_hud.components.player_position"}'}
