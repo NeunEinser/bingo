@@ -1,6 +1,7 @@
 #> bingo:custom_hud/components/player_position/tick
 #
-#
+# @within tag/function bingo:tick_hud_components
+# @handles #bingo:tick_hud_components
 
 #>
 # The x coordinate of the current player

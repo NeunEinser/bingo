@@ -4,8 +4,8 @@
 #
 # To register your own ite
 #
-# @within tag/function bingo:register_items
-# @handles #bingo:register_items
+# @within tag/function bingo:fill_registries
+# @handles #bingo:fill_registries
 
 # categories
 data modify storage bingo:registries categories append value {name: "bingo:apple", translatableName: '{"translate": "bingo.category.apple"}'}
