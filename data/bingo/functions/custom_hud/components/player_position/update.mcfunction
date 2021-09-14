@@ -21,7 +21,7 @@ scoreboard players operation @s bingo.pos_hash = $custom_hud/player_pos.hash bin
 execute if entity @s[predicate=!bingo:is_in_lobby] run scoreboard players operation $custom_hud/player_pos.x bingo.tmp -= $spawn_x bingo.state
 execute if entity @s[predicate=!bingo:is_in_lobby] run scoreboard players operation $custom_hud/player_pos.z bingo.tmp -= $spawn_z bingo.state
 
-data modify storage temp:bingo.custom_hud component set value {textComponent:'[{"storage": "bingo:custom_hud", "nbt": "params.bingo.player_position.x"}, " ", {"storage": "bingo:custom_hud", "nbt": "params.bingo.player_position.z"}]', changed: true, iconWidth: '{"translate": "space.10"}', iconSeperatorAlignLeft: '" "', iconSeperatorAlignRight: '" "'}
+data modify storage temp:bingo.custom_hud component set value {textComponent:'[{"storage": "bingo:custom_hud", "nbt": "params.bingo.player_position.x"}, " ", {"storage": "bingo:custom_hud", "nbt": "params.bingo.player_position.z"}]', changed: true}
 execute if score $custom_hud/player_pos.rot bingo.tmp matches 0 run data modify storage temp:bingo.custom_hud component.icon set value '"\\u0100"'
 execute if score $custom_hud/player_pos.rot bingo.tmp matches 1 run data modify storage temp:bingo.custom_hud component.icon set value '"\\u011F"'
 execute if score $custom_hud/player_pos.rot bingo.tmp matches 2 run data modify storage temp:bingo.custom_hud component.icon set value '"\\u011E"'
@@ -54,18 +54,6 @@ execute if score $custom_hud/player_pos.rot bingo.tmp matches 28 run data modify
 execute if score $custom_hud/player_pos.rot bingo.tmp matches 29 run data modify storage temp:bingo.custom_hud component.icon set value '"\\u0103"'
 execute if score $custom_hud/player_pos.rot bingo.tmp matches 30 run data modify storage temp:bingo.custom_hud component.icon set value '"\\u0102"'
 execute if score $custom_hud/player_pos.rot bingo.tmp matches 31 run data modify storage temp:bingo.custom_hud component.icon set value '"\\u0101"'
-
-execute if score $custom_hud/player_pos.line bingo.tmp matches 0 run data modify storage temp:bingo.custom_hud component.iconFont set value '{"text":"", "font": "bingo:compass/line0"}'
-execute if score $custom_hud/player_pos.line bingo.tmp matches 1 run data modify storage temp:bingo.custom_hud component.iconFont set value '{"text":"", "font": "bingo:compass/line1"}'
-execute if score $custom_hud/player_pos.line bingo.tmp matches 2 run data modify storage temp:bingo.custom_hud component.iconFont set value '{"text":"", "font": "bingo:compass/line2"}'
-execute if score $custom_hud/player_pos.line bingo.tmp matches 3 run data modify storage temp:bingo.custom_hud component.iconFont set value '{"text":"", "font": "bingo:compass/line3"}'
-execute if score $custom_hud/player_pos.line bingo.tmp matches 4 run data modify storage temp:bingo.custom_hud component.iconFont set value '{"text":"", "font": "bingo:compass/line4"}'
-execute if score $custom_hud/player_pos.line bingo.tmp matches 5 run data modify storage temp:bingo.custom_hud component.iconFont set value '{"text":"", "font": "bingo:compass/line5"}'
-execute if score $custom_hud/player_pos.line bingo.tmp matches 6 run data modify storage temp:bingo.custom_hud component.iconFont set value '{"text":"", "font": "bingo:compass/line6"}'
-execute if score $custom_hud/player_pos.line bingo.tmp matches 7 run data modify storage temp:bingo.custom_hud component.iconFont set value '{"text":"", "font": "bingo:compass/line7"}'
-execute if score $custom_hud/player_pos.line bingo.tmp matches 8 run data modify storage temp:bingo.custom_hud component.iconFont set value '{"text":"", "font": "bingo:compass/line8"}'
-execute if score $custom_hud/player_pos.line bingo.tmp matches 9 run data modify storage temp:bingo.custom_hud component.iconFont set value '{"text":"", "font": "bingo:compass/line9"}'
-execute if score $custom_hud/player_pos.line bingo.tmp matches 10 run data modify storage temp:bingo.custom_hud component.iconFont set value '{"text":"", "font": "bingo:compass/line10"}'
 
 scoreboard players operation $custom_hud/width.number bingo.io = $custom_hud/player_pos.x bingo.tmp
 scoreboard players set $custom_hud/width.padding bingo.io 73

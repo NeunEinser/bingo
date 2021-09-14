@@ -37,3 +37,5 @@ execute store result score $item_detect/announce.has_bingo bingo.tmp run data ge
 # detect goals
 execute if score $item_detect/announce.has_bingo bingo.tmp matches 0 run function bingo:item_detection/goals/bingo/detect_bingo_and_20_no_bingo
 execute if score $item_detect/announce.items bingo.tmp matches 25 run function bingo:item_detection/goals/announce_blackout
+
+scoreboard players set $update_card bingo.state 1

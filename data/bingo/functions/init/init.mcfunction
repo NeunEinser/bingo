@@ -341,6 +341,12 @@
 		#declare score_holder $last_tick
 		scoreboard players reset $last_tick bingo.state
 		#>
+		# Whether the card needs to be updated
+		#
+		# @internal
+		#declare score_holder $update_card
+		scoreboard players set $update_card bingo.state 1
+		#>
 		# @public
 		#declare score_holder -2
 		scoreboard players set -2 bingo.const -2
