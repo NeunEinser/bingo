@@ -14,7 +14,7 @@
 
 #>
 # @within function bingo:custom_hud/**
-#declare storage temp:bingo.custom_hud
+#declare storage tmp.bingo:custom_hud
 
 function bingo:util/find_player_team
 

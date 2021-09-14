@@ -77,6 +77,6 @@ execute unless score $custom_hud/player_pos.abs_z bingo.tmp matches 1000000.. if
 
 execute if score $custom_hud/player_pos.z bingo.tmp matches ..-1 run scoreboard players operation $custom_hud/player_pos.int_z bingo.tmp *= -1 bingo.const
 
-data modify storage temp:bingo.custom_hud component.textComponent set value '[{"storage": "bingo:custom_hud", "nbt": "params.bingo.player_position.x"}, " ", {"storage": "bingo:custom_hud", "nbt": "params.bingo.player_position.zInt"}, ".", {"storage": "bingo:custom_hud", "nbt": "params.bingo.player_position.zFillerZeros", "interpret": true}, {"storage": "bingo:custom_hud", "nbt": "params.bingo.player_position.zDec"}, {"storage": "bingo:custom_hud", "nbt": "params.bingo.player_position.zChar"}]'
+data modify storage tmp.bingo:custom_hud component.textComponent set value '[{"storage": "bingo:custom_hud", "nbt": "params.bingo.player_position.x"}, " ", {"storage": "bingo:custom_hud", "nbt": "params.bingo.player_position.zInt"}, ".", {"storage": "bingo:custom_hud", "nbt": "params.bingo.player_position.zFillerZeros", "interpret": true}, {"storage": "bingo:custom_hud", "nbt": "params.bingo.player_position.zDec"}, {"storage": "bingo:custom_hud", "nbt": "params.bingo.player_position.zChar"}]'
 execute store result storage bingo:custom_hud params.bingo.player_position.zInt int 1 run scoreboard players get $custom_hud/player_pos.int_z bingo.tmp
 execute store result storage bingo:custom_hud params.bingo.player_position.zDec int 1 run scoreboard players get $custom_hud/player_pos.dec_z bingo.tmp

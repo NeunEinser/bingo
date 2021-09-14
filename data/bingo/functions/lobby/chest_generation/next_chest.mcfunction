@@ -12,7 +12,7 @@ clone ~ ~ ~ ~1 254 ~ ~ ~1 ~ filtered minecraft:chest move
 #>
 # @private
 #declare score_holder $lobby/chest_gen.next_cat_length
-execute store result score $lobby/chest_gen.next_cat_length bingo.tmp run data get storage temp:bingo.chest_generation categories[-1].items
+execute store result score $lobby/chest_gen.next_cat_length bingo.tmp run data get storage tmp.bingo:chest_generation categories[-1].items
 
 execute unless score $lobby/chest_gen.next_cat_length bingo.tmp matches ..3 run setblock ~ ~ ~ minecraft:chest[type=left]
 execute unless score $lobby/chest_gen.next_cat_length bingo.tmp matches ..3 run setblock ~1 ~ ~ minecraft:chest[type=right]

@@ -1,7 +1,7 @@
 data modify storage bingo:player configurations append value {}
 data modify storage bingo:player configurations[-1].name set from entity @s Item.tag.display.Name
 
-data modify storage temp:bingo.input/uuid uuid set from entity @s Thrower
+data modify storage tmp.bingo:input/uuid uuid set from entity @s Thrower
 kill @s
 execute as @a run function bingo:util/match_uuid
 

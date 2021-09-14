@@ -7,7 +7,7 @@
 # 	function bingo:lobby/chest_generation/category_iter
 # 	function bingo:lobby/chest_generation/sort_items/sort_by_weight_odd
 
-execute if data storage temp:bingo.chest_generation category.items[1] run function bingo:lobby/chest_generation/sort_items/write_in_order_even
-execute unless data storage temp:bingo.chest_generation category.items[1] run function bingo:lobby/chest_generation/sort_items/write_single_even
+execute if data storage tmp.bingo:chest_generation category.items[1] run function bingo:lobby/chest_generation/sort_items/write_in_order_even
+execute unless data storage tmp.bingo:chest_generation category.items[1] run function bingo:lobby/chest_generation/sort_items/write_single_even
 
 function bingo:lobby/chest_generation/sort_items/merge_sort_odd

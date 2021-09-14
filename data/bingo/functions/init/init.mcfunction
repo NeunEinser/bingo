@@ -508,10 +508,10 @@ difficulty easy
 #region initialize items
 	#>
 	# @within function bingo:init/*
-	#declare storage temp:bingo.init
+	#declare storage tmp.bingo:init
 
 	# initialize items
-	data modify storage temp:bingo.init items set from storage bingo:registries items
+	data modify storage tmp.bingo:init items set from storage bingo:registries items
 	data modify storage bingo:items categories set from storage bingo:registries categories
 	data remove storage bingo:items items
 
@@ -523,31 +523,31 @@ difficulty easy
 	# @within
 	# 	function bingo:init/init
 	# 	function bingo:init/initialize_hud_components/*
-	#declare storage temp:bingo.init/hud
+	#declare storage tmp.bingo:init/hud
 	data modify storage bingo:custom_hud components set value []
 	data modify storage bingo:custom_hud components append from storage bingo:registries hud_components[]
 
-	data modify storage temp:bingo.init/hud columns set value [[], []]
-	data modify storage temp:bingo.init/hud whereSpace set value []
-	data modify storage temp:bingo.init/hud unpreferred set value []
+	data modify storage tmp.bingo:init/hud columns set value [[], []]
+	data modify storage tmp.bingo:init/hud whereSpace set value []
+	data modify storage tmp.bingo:init/hud unpreferred set value []
 	function bingo:init/initialize_hud_components/add_defaults
-	data modify storage temp:bingo.init/hud whereSpace append from storage temp:bingo.init/hud unpreferred[]
+	data modify storage tmp.bingo:init/hud whereSpace append from storage tmp.bingo:init/hud unpreferred[]
 
 	data modify storage bingo:custom_hud default set value []
-	data modify storage bingo:custom_hud default append from storage temp:bingo.init/hud columns[0][0]
-	data modify storage bingo:custom_hud default append from storage temp:bingo.init/hud columns[0][1]
-	data modify storage bingo:custom_hud default append from storage temp:bingo.init/hud columns[0][2]
-	data modify storage bingo:custom_hud default append from storage temp:bingo.init/hud columns[0][3]
-	data modify storage bingo:custom_hud default append from storage temp:bingo.init/hud columns[0][4]
-	data modify storage bingo:custom_hud default append from storage temp:bingo.init/hud columns[0][5]
+	data modify storage bingo:custom_hud default append from storage tmp.bingo:init/hud columns[0][0]
+	data modify storage bingo:custom_hud default append from storage tmp.bingo:init/hud columns[0][1]
+	data modify storage bingo:custom_hud default append from storage tmp.bingo:init/hud columns[0][2]
+	data modify storage bingo:custom_hud default append from storage tmp.bingo:init/hud columns[0][3]
+	data modify storage bingo:custom_hud default append from storage tmp.bingo:init/hud columns[0][4]
+	data modify storage bingo:custom_hud default append from storage tmp.bingo:init/hud columns[0][5]
 	execute unless data storage bingo:custom_hud default[5] run function bingo:init/initialize_hud_components/fill_default_col0
 	
-	data modify storage bingo:custom_hud default append from storage temp:bingo.init/hud columns[1][0]
-	data modify storage bingo:custom_hud default append from storage temp:bingo.init/hud columns[1][1]
-	data modify storage bingo:custom_hud default append from storage temp:bingo.init/hud columns[1][2]
-	data modify storage bingo:custom_hud default append from storage temp:bingo.init/hud columns[1][3]
-	data modify storage bingo:custom_hud default append from storage temp:bingo.init/hud columns[1][4]
-	data modify storage bingo:custom_hud default append from storage temp:bingo.init/hud columns[1][5]
+	data modify storage bingo:custom_hud default append from storage tmp.bingo:init/hud columns[1][0]
+	data modify storage bingo:custom_hud default append from storage tmp.bingo:init/hud columns[1][1]
+	data modify storage bingo:custom_hud default append from storage tmp.bingo:init/hud columns[1][2]
+	data modify storage bingo:custom_hud default append from storage tmp.bingo:init/hud columns[1][3]
+	data modify storage bingo:custom_hud default append from storage tmp.bingo:init/hud columns[1][4]
+	data modify storage bingo:custom_hud default append from storage tmp.bingo:init/hud columns[1][5]
 	execute unless data storage bingo:custom_hud default[11] run function bingo:init/initialize_hud_components/fill_default_col1
 
 	# Temporary, for now every player has the same components setup

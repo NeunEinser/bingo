@@ -51,7 +51,7 @@ scoreboard players set $item_detect/bingo.row bingo.tmp 0
 scoreboard players set $item_detect/bingo.column bingo.tmp 0
 scoreboard players set $item_detect/bingo.diagonal bingo.tmp 0
 
-execute store result score $item_detect/bingo.slot bingo.tmp run data get storage temp:bingo.input/item_detection slot.id
+execute store result score $item_detect/bingo.slot bingo.tmp run data get storage tmp.bingo:input/item_detection slot.id
 
 scoreboard players operation $item_detect/bingo.item_column bingo.tmp = $item_detect/bingo.slot bingo.tmp
 scoreboard players operation $item_detect/bingo.item_column bingo.tmp %= 5 bingo.const
