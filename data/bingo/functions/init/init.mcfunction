@@ -335,6 +335,12 @@
 		# @internal
 		#declare score_holder $seed
 		#>
+		# Time from last tick
+		#
+		# @internal
+		#declare score_holder $last_tick
+		scoreboard players reset $last_tick bingo.state
+		#>
 		# @public
 		#declare score_holder -2
 		scoreboard players set -2 bingo.const -2

@@ -8,6 +8,7 @@
 # @within tag/function minecraft:tick
 # @handles #minecraft:tick
 
+execute in bingo:lobby run function neun_einser.timer:store_current_time
 execute as @a run function bingo:custom_hud/tick
 
 # Assign each player a unique ID
@@ -21,3 +22,5 @@ execute as @a[scores={bingo.pref=1..}] run function bingo:preferences/show_prefe
 # Loop depending on game state
 execute if entity @a[predicate=bingo:is_in_lobby, limit=1] in bingo:lobby run function bingo:lobby/tick
 execute if score $game_state bingo.state matches 2 run function bingo:game/tick
+
+scoreboard players operation $last_tick bingo.state = $raw 91.timer.time

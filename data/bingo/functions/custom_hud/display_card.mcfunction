@@ -1,4 +1,4 @@
-#> bingo:custom_hud/display_if_seed_is_set
+#> bingo:custom_hud/display_card
 #
 # Calculates the width the seed's characters make up in order to be able to
 # display it with the correct padding in the action bar

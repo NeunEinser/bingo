@@ -12,10 +12,6 @@ execute store result score $custom_hud/player_pos.line bingo.tmp run data get st
 
 #>
 # @within function bingo:custom_hud/components/player_position/*
-#declare storage temp:bingo.custom_hud
-
-#>
-# @within function bingo:custom_hud/components/player_position/*
 #declare score_holder $custom_hud/player_pos.x_len
 #>
 # @within function bingo:custom_hud/components/player_position/*

@@ -1,5 +1,6 @@
 {
 	"values": [
+		"bingo:custom_hud/components/timer/tick",
 		"bingo:custom_hud/components/player_position/tick"
 	]
 }

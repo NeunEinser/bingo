@@ -406,4 +406,5 @@ data modify storage bingo:registries structures append value "bingo:card_generat
 data modify storage bingo:registries structures append value "bingo:tutorial"
 
 # hud components
+data modify storage bingo:registries hud_components append value {id: "bingo:timer", addByDefault: true, preferredColumn: 1, name: '{"translate": "bingo.custom_hud.components.timer"}'}
 data modify storage bingo:registries hud_components append value {id: "bingo:player_position", addByDefault: true, preferredColumn: 1, name: '{"translate": "bingo.custom_hud.components.player_position"}'}
