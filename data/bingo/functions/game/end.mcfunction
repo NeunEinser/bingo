@@ -14,4 +14,4 @@ kill @e[type=minecraft:area_effect_cloud, tag=bingo.spawn, limit=1]
 kill @e[type=minecraft:area_effect_cloud, tag=bingo.skybox_cloud, limit=1]
 scoreboard players set $pregen_status bingo.state 0
 execute in bingo:multi_noise run forceload remove all
-execute in bingo:lobby run function neun_einser.timer:pause
+execute in bingo:lobby run function neun_einser.timer:stop

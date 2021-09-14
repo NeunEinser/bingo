@@ -10,6 +10,7 @@
 
 execute in bingo:lobby run function neun_einser.timer:store_current_time
 execute as @a run function bingo:custom_hud/tick
+scoreboard players reset $update_card bingo.state
 
 # Assign each player a unique ID
 execute as @a unless score @s bingo.id matches -2147483648.. run function bingo:tick/new_player

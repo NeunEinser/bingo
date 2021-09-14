@@ -6,6 +6,7 @@
 #>
 # @private
 #declare score_holder $custom_hud/timer.last
+execute unless score $last_tick bingo.state matches -2147483648.. run function bingo:custom_hud/components/timer/update
 scoreboard players operation $custom_hud/timer.last bingo.tmp = $last_tick bingo.state
 scoreboard players operation $custom_hud/timer.last bingo.tmp /= 100 bingo.const
 #>
