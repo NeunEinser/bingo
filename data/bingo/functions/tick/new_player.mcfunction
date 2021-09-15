@@ -18,3 +18,7 @@ execute in bingo:lobby run spawnpoint @s -9 3 7
 #declare score_holder $next
 scoreboard players operation @s bingo.id = $next bingo.id
 scoreboard players add $next bingo.id 1
+
+data modify storage bingo:custom_hud players append value {}
+execute store result storage bingo:custom_hud players[-1].id int 1 run scoreboard players get @s bingo.id
+data modify storage bingo:custom_hud players[-1].components set from storage bingo:custom_hud default

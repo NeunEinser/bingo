@@ -8,7 +8,7 @@
 #>
 # @private
 #declare score_holder $custom_hud/player_pos.line
-execute store result score $custom_hud/player_pos.line bingo.tmp run data get storage bingo:custom_hud components[{id: "bingo:player_position"}].line
+execute store result score $custom_hud/player_pos.line bingo.tmp run data get storage bingo:custom_hud currentPlayer.components[{id: "bingo:player_position"}].line
 
 #>
 # @within function bingo:custom_hud/components/player_position/*
@@ -72,4 +72,4 @@ execute if score $custom_hud/width.characters bingo.io matches 12.. run function
 function bingo:custom_hud/calculate_padding
 
 data modify storage tmp.bingo:custom_hud component.padding set from storage io.bingo:custom_hud/padding padding
-data modify storage bingo:custom_hud components[{id: "bingo:player_position"}] merge from storage tmp.bingo:custom_hud component
+data modify storage bingo:custom_hud currentPlayer.components[{id: "bingo:player_position"}] merge from storage tmp.bingo:custom_hud component

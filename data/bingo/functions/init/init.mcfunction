@@ -549,9 +549,6 @@ difficulty easy
 	data modify storage bingo:custom_hud default append from storage tmp.bingo:init/hud columns[1][4]
 	data modify storage bingo:custom_hud default append from storage tmp.bingo:init/hud columns[1][5]
 	execute unless data storage bingo:custom_hud default[11] run function bingo:init/initialize_hud_components/fill_default_col1
-
-	# Temporary, for now every player has the same components setup
-	data modify storage bingo:custom_hud components set from storage bingo:custom_hud default
 #endregion
 
 # spawn strcutures

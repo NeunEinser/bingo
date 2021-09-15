@@ -9,4 +9,4 @@ function bingo:custom_hud/subtract_width
 
 function bingo:custom_hud/calculate_padding
 data modify storage tmp.bingo:custom_hud component.padding set from storage io.bingo:custom_hud/padding padding
-data modify storage bingo:custom_hud components[{id: "bingo:seed"}] merge from storage tmp.bingo:custom_hud component
+data modify storage bingo:custom_hud currentPlayer.components[{id: "bingo:seed"}] merge from storage tmp.bingo:custom_hud component
