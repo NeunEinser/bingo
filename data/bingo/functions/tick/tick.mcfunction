@@ -8,16 +8,17 @@
 # @within tag/function minecraft:tick
 # @handles #minecraft:tick
 
-scoreboard players enable @s bingo.card_pos
+scoreboard players enable @a bingo.card_pos
 execute in bingo:lobby run function neun_einser.timer:store_current_time
 
+# Assign each player a unique ID
+execute as @a unless score @s bingo.id matches -2147483648.. run function bingo:tick/new_player
+
+# custom hud
 data modify storage tmp.bingo:custom_hud handled set value []
 execute as @a run function bingo:custom_hud/tick
 data modify storage bingo:custom_hud players append from storage tmp.bingo:custom_hud handled[]
 scoreboard players reset $update_card bingo.state
-
-# Assign each player a unique ID
-execute as @a unless score @s bingo.id matches -2147483648.. run function bingo:tick/new_player
 
 # change preferences
 scoreboard players enable @a bingo.pref
