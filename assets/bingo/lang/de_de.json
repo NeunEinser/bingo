@@ -312,7 +312,7 @@
 	"bingo.got_sniper_bingo.double.col_row": "[%1$s] %2$s erzielte(n) ein Sniper-Doppel-Bingo in Zeile %3$s und Spalte %4$s!",
 	"bingo.got_sniper_bingo.double.col_diag.top_left": "[%1$s] %2$s erzielte(n) ein Sniper-Doppel-Bingo in Spalte %3$s und diagonal von oben links nach unten rechts!",
 	"bingo.got_sniper_bingo.double.col_diag.bottom_left": "[%1$s] %2$s erzielte(n) ein Sniper-Doppel-Bingo in Spalte %3$s und diagonal von unten links nach oben rechts!",
-	"bingo.got_sniper_bingo.double.row_diag.top_left": "[%s] % erzielte(n) ein Sniper-Doppel-Bingo in Zeile %3$s und diagonal von oben links nach unten rechts!",
+	"bingo.got_sniper_bingo.double.row_diag.top_left": "[%s] %s erzielte(n) ein Sniper-Doppel-Bingo in Zeile %s und diagonal von oben links nach unten rechts!",
 	"bingo.got_sniper_bingo.double.row_diag.bottom_left": "[%1$s] %2$s erzielte(n) ein Sniper-Doppel-Bingo in Zeile %3$s und diagonal von unten links nach oben rechts!",
 	"bingo.got_sniper_bingo.double.diags": "[%1$s] %2$s erzielte(n) ein Sniper-Doppel-Bingo in beiden Diagonalen!",
 	
