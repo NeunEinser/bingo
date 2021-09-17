@@ -491,6 +491,7 @@ difficulty easy
 	data remove storage bingo:registries items
 	data remove storage bingo:registries structures
 	data remove storage bingo:registries hud_components
+	data remove storage bingo:registries preferences
 	function #bingo:fill_registries
 
 	#>

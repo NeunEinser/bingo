@@ -22,8 +22,8 @@ scoreboard players reset $update_card bingo.state
 
 # change preferences
 scoreboard players enable @a bingo.pref
-execute as @a[scores={bingo.pref=..-1}] run function bingo:preferences/show_preferences
-execute as @a[scores={bingo.pref=1..}] run function bingo:preferences/show_preferences
+execute as @a[scores={bingo.pref=..-1}] run function bingo:preferences/exec
+execute as @a[scores={bingo.pref=1..}] run function bingo:preferences/exec
 
 # Loop depending on game state
 execute if entity @a[predicate=bingo:is_in_lobby, limit=1] in bingo:lobby run function bingo:lobby/tick
