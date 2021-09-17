@@ -1,10 +1,11 @@
-#> bingo:preferences/exec
+#> bingo:preferences/show
 #
 # Shows the preferences page the player just selected.
 #
 # @within function bingo:tick/tick
 # @context entity Player who triggered bingo.pref
 # @user
+# @reads storage bingo:registries preferences.custom_hud.main
 
 #>
 # This storage contains the menuOptions nbt, which can be modified in functions
@@ -25,7 +26,7 @@ execute if score @s bingo.pref matches 1 run data modify storage io.bingo:prefer
 execute if score @s bingo.pref matches 1 run function #bingo:preferences/main
 execute if score @s bingo.pref matches 1 run tellraw @s ["\n\n\n=== ", {"translate": "bingo.preferences.title", "bold": true, "color": "green"}, " ===\n\n", {"translate": "bingo.preferences.description", "color": "gray"}, "\n"]
 
-execute if score @s bingo.pref matches 5..9 run function bingo:preferences/custom_hud
+execute if score @s bingo.pref matches 5..11 run function bingo:preferences/custom_hud/show
 
-function bingo:preferences/print_menu_items
+execute if score @s bingo.pref matches 1..5 run function bingo:preferences/print_menu_items
 scoreboard players reset @s bingo.pref

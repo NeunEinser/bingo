@@ -246,14 +246,11 @@
 		# This objective stores the page of a paginated tellraw a player is currently
 		# at.
 		#
-		# This is used for the player configurations menu. It is impossible to display
-		# an arbitary amount of configurations due to some limitations with text
-		# components.
+		# This is for example used for the preferences menu. It would otherwise be
+		# impossible to display a generated list with clickable items, as the score
+		# values that are used for the trigger need to be hardcoded.
 		#
-		# Thus, we use an arbitary amount of pages with a fixed amount of entries
-		# instead.
-		#
-		# This scoreboard holds the page any specific player currently sees.
+		# This scoreboard holds the page the player currently sees.
 		#
 		# @internal
 		scoreboard objectives add bingo.menu_page dummy

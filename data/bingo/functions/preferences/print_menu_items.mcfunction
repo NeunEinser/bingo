@@ -1,9 +1,12 @@
 #> bingo:preferences/print_menu_items
 #
+# This function prints all entries for menu items within the menuOptions array
+#
 # @within
-# 	bingo:preferences/exec
+# 	bingo:preferences/show
 # 	bingo:preferences/print_menu_items
 # @context entity Player who triggered bingo.pref
+# @input storage io.bingo:preferences menuOptions
 
 # Work around for """WAI""" https://bugs.mojang.com/browse/MC-139625 :mad_neun:
 data modify storage tmp.bingo:preferences menuOption set from storage io.bingo:preferences menuOptions[0]
