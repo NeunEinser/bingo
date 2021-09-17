@@ -11,8 +11,10 @@ execute store result score $preferences/hud.total_count bingo.tmp run data get s
 # @private
 #declare score_holder $preferences/hud.enabled_count
 
+# Workaround for https://bugs.mojang.com/browse/MC-236889 :mad_neun:
 data modify storage tmp.bingo:preferences blankComponents set value []
 data modify storage tmp.bingo:preferences blankComponents append from storage bingo:custom_hud currentPlayer.components[{id: "bingo:blank"}]
+
 execute store result score $preferences/hud.enabled_count bingo.tmp run data get storage tmp.bingo:preferences blankComponents
 scoreboard players remove $preferences/hud.enabled_count bingo.tmp 12
 scoreboard players operation $preferences/hud.enabled_count bingo.tmp *= -1 bingo.const
