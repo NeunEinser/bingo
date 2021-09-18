@@ -351,6 +351,11 @@
 		# @internal
 		#declare score_holder $update_card
 		#>
+		# How many ticks ago the last actionbar update occured
+		#
+		# @internal
+		#declare score_holder $last_actionbar_update
+		#>
 		# @public
 		#declare score_holder -2
 		scoreboard players set -2 bingo.const -2
