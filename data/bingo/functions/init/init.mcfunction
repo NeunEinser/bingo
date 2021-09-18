@@ -412,16 +412,16 @@
 		scoreboard players set 100 bingo.const 100
 		#>
 		# @public
+		#declare score_holder 256
+		scoreboard players set 256 bingo.const 256
+		#>
+		# @public
+		#declare score_holder 512
+		scoreboard players set 512 bingo.const 512
+		#>
+		# @public
 		#declare score_holder 1000
 		scoreboard players set 1000 bingo.const 1000
-		#>
-		# @public
-		#declare score_holder 5792
-		scoreboard players set 5792 bingo.const 5792
-		#>
-		# @public
-		#declare score_holder 11584
-		scoreboard players set 11584 bingo.const 11584
 		#>
 		# @public
 		#declare score_holder 65536

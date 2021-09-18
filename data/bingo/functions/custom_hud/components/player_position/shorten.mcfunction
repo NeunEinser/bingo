@@ -11,7 +11,7 @@
 # In case only one of the coordinates needs to be shortened, the one with the
 # higher absolute value will be picked. 
 #
-# @within function bingo:custom_hud/components/player_position/update
+# @within function bingo:custom_hud/components/player_position/update_x_z
 # @context entity Player whose hud is currently being updated
 
 #>

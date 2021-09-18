@@ -46,6 +46,7 @@
 
 	"bingo.custom_hud.components.seed": "Bingo Seed",
 	"bingo.custom_hud.components.player_position": "X/Z coordinates",
+	"bingo.custom_hud.components.y_position": "Y coordinate",
 	"bingo.custom_hud.components.timer": "Timer",
 
 	"bingo.lobby.machinery.sign.line1": "Machinery",
