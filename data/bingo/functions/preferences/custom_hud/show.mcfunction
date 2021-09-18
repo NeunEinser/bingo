@@ -2,7 +2,9 @@
 #
 # Shows the currently selected custom hud menu page
 #
-# @within function bingo:preferences/show
+# @within
+# 	function bingo:preferences/show
+# 	function bingo:preferences/custom_hud/**
 # @context entity Player who triggered bingo.pref
 # @reads
 # 	storage bingo:custom_hud players
@@ -10,21 +12,28 @@
 # @writes torage bingo:custom_hud currentPlayer
 
 #>
-# @within function bingo:preferences/custom_hud/*
+# @within function bingo:preferences/custom_hud/**
 #declare storage tmp.bingo:preferences/hud
 
-data modify storage tmp.bingo:preferences/hud playerHuds set from storage bingo:custom_hud players
 data modify storage tmp.bingo:preferences/hud skippedHuds set value []
 function bingo:preferences/custom_hud/find_player
 data modify storage bingo:custom_hud currentPlayer set from storage tmp.bingo:preferences/hud skippedHuds[0]
+data remove storage tmp.bingo:preferences/hud skippedHuds[0]
 
 execute if score @s bingo.pref matches 5 run data modify storage io.bingo:preferences menuOptions set from storage bingo:registries preferences.custom_hud
 execute if score @s bingo.pref matches 5 run function #bingo:preferences/custom_hud
 execute if score @s bingo.pref matches 5 run tellraw @s ["\n\n\n=== ", {"translate": "bingo.preferences.custom_hud.title", "bold": true, "color": "green"}, " ===\n\n", {"translate": "bingo.preferences.custom_hud.description", "color": "gray"}, "\n"]
+execute if score @s bingo.pref matches 5 run data modify storage tmp.bingo:preferences back set value '["[", {"translate": "bingo.preferences.back", "color": "#00c3ff", "clickEvent": {"action": "run_command", "value": "/trigger bingo.pref"}}, "]"]'
 
 execute if score @s bingo.pref matches 6..8 run function bingo:preferences/custom_hud/show_disabled
 execute if score @s bingo.pref matches 9 run function bingo:preferences/custom_hud/show_col0
 execute if score @s bingo.pref matches 10 run function bingo:preferences/custom_hud/show_col1
+
+execute if score @s bingo.pref matches 12..31 run function bingo:preferences/custom_hud/add_disabled/exec
+execute if score @s bingo.pref matches 32..48 run function bingo:preferences/custom_hud/adjust_col/col0
+execute if score @s bingo.pref matches 49..65 run function bingo:preferences/custom_hud/adjust_col/col1
+
+execute if score @s bingo.pref matches 12..65 run scoreboard players set @s bingo.update_hud 1
 
 #>
 # @api
@@ -32,3 +41,7 @@ execute if score @s bingo.pref matches 10 run function bingo:preferences/custom_
 execute if score @s bingo.pref matches 11 run data modify storage io.bingo:preferences menuOptions set from storage bingo:registries preferences.adjust_card
 execute if score @s bingo.pref matches 11 run function #bingo:preferences/custom_hud/adjust_card
 execute if score @s bingo.pref matches 11 run tellraw @s ["\n\n\n=== ", {"translate": "bingo.preferences.custom_hud.adjust_card.title", "bold": true, "color": "green"}, " ===\n\n", {"translate": "bingo.preferences.custom_hud.adjust_card.description", "color": "gray"}, "\n"]
+
+data modify storage bingo:custom_hud players append from storage bingo:custom_hud currentPlayer
+data modify storage bingo:custom_hud players append from storage tmp.bingo:preferences/hud skippedHuds[]
+execute if score @s bingo.pref matches 11 run data modify storage tmp.bingo:preferences back set value '["[", {"translate": "bingo.preferences.back", "color": "#00c3ff", "clickEvent": {"action": "run_command", "value": "/trigger bingo.pref set 5"}}, "]"]'

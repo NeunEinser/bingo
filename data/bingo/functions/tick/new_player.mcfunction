@@ -22,3 +22,4 @@ scoreboard players add $next bingo.id 1
 data modify storage bingo:custom_hud players append value {}
 execute store result storage bingo:custom_hud players[-1].id int 1 run scoreboard players get @s bingo.id
 data modify storage bingo:custom_hud players[-1].components set from storage bingo:custom_hud default
+scoreboard players set @s bingo.update_hud 1

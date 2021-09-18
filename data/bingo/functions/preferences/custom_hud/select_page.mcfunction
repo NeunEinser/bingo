@@ -4,6 +4,7 @@
 #
 # @within
 # 	function bingo:preferences/custom_hud/show_disabled
+# 	function bingo:preferences/custom_hud/add_disabled/exec
 # 	function bingo:preferences/custom_hud/select_page
 # @context entity Player who triggered bingo.pref
 #
@@ -18,11 +19,13 @@
 #>
 # @within
 # 	function bingo:preferences/custom_hud/show_disabled
+# 	function bingo:preferences/custom_hud/add_disabled/*
 # 	function bingo:preferences/custom_hud/select_page
 #declare score_holder $preferences/hud.element
 #>
 # @within
 # 	function bingo:preferences/custom_hud/show_disabled
+# 	function bingo:preferences/custom_hud/add_disabled/*
 # 	function bingo:preferences/custom_hud/select_page
 #declare score_holder $preferences/hud.page
 
@@ -33,7 +36,7 @@ execute if score $preferences/hud.disabled bingo.tmp matches 1 if score $prefere
 data remove storage tmp.bingo:preferences/hud components[-1]
 
 execute if score $preferences/hud.disabled bingo.tmp matches 1 run scoreboard players add $preferences/hud.element bingo.tmp 1
+execute if score $preferences/hud.element bingo.tmp matches 10 run scoreboard players add $preferences/hud.page bingo.tmp 1
 scoreboard players operation $preferences/hud.element bingo.tmp %= 10 bingo.const
-execute if score $preferences/hud.element bingo.tmp matches 0 run scoreboard players add $preferences/hud.page bingo.tmp 1
 
 execute if score $preferences/hud.page bingo.tmp <= @s bingo.menu_page if data storage tmp.bingo:preferences/hud components[-1] run function bingo:preferences/custom_hud/select_page

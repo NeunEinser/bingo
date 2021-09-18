@@ -7,5 +7,3 @@
 #declare score_holder $init/hud.line
 
 data modify storage tmp.bingo:init/hud whereSpace append from storage tmp.bingo:init/hud cur
-data remove storage tmp.bingo:init/hud whereSpace[-1].preferredColumn
-data remove storage tmp.bingo:init/hud whereSpace[-1].addByDefault

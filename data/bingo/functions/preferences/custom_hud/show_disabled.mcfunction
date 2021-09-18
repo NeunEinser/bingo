@@ -2,7 +2,9 @@
 #
 # Shows the dialog for enableing disabled hud components
 #
-# @within function bingo:preferences/custom_hud/show
+# @within
+# 	function bingo:preferences/custom_hud/show
+# 	function bingo:preferences/custom_hud/add_disabled/exec
 # @context entity Player who triggered bingo.pref
 # @reads
 # 	storage bingo:custom_hud currentPlayer.components
@@ -67,3 +69,5 @@ scoreboard players add $preferences/hud.page_count bingo.tmp 1
 scoreboard players operation $preferences/hud.page bingo.tmp = @s bingo.menu_page
 scoreboard players add $preferences/hud.page bingo.tmp 1
 execute unless data storage tmp.bingo:preferences/hud {prev: '["[", {"translate": "bingo.preferences.previous", "color": "gray"}, "]"]', next: '["[", {"translate": "bingo.preferences.next", "color": "gray"}, "]"]'} run tellraw @s ["\n", {"storage": "tmp.bingo:preferences/hud", "nbt": "prev", "interpret": true}, " ", {"storage": "tmp.bingo:preferences/hud", "nbt": "next", "interpret": true}, " ", {"translate": "bingo.preferences.page", "with": [{"score": {"name": "$preferences/hud.page", "objective": "bingo.tmp"}}, {"score": {"name": "$preferences/hud.page_count", "objective": "bingo.tmp"}}]}]
+
+tellraw @s ["\n[", {"translate": "bingo.preferences.back", "color": "#00c3ff", "clickEvent": {"action": "run_command", "value": "/trigger bingo.pref set 5"}}, "]"]

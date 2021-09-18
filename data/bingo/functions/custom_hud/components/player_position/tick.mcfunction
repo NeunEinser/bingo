@@ -56,4 +56,5 @@ scoreboard players operation $custom_hud/player_pos.hash bingo.tmp += $custom_hu
 scoreboard players operation $custom_hud/player_pos.hash bingo.tmp *= 32 bingo.const
 scoreboard players operation $custom_hud/player_pos.hash bingo.tmp += $custom_hud/player_pos.rot bingo.tmp
 
-execute unless score @s bingo.pos_hash = $custom_hud/player_pos.hash bingo.tmp run function bingo:custom_hud/components/player_position/update
+execute unless score @s bingo.pos_hash = $custom_hud/player_pos.hash bingo.tmp if data storage bingo:custom_hud currentPlayer.components[{id: "bingo:player_position"}] run function bingo:custom_hud/components/player_position/update
+execute if score @s bingo.update_hud matches 1 if data storage bingo:custom_hud currentPlayer.components[{id: "bingo:player_position"}] run function bingo:custom_hud/components/player_position/update

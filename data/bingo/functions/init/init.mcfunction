@@ -171,6 +171,14 @@
 		#
 		# @public
 		scoreboard objectives add bingo.state dummy
+
+		#>
+		# Whether this player's hud needs to be forcefully updated entirely
+		# This is for example set when the player changes hud preferences. 
+		#
+		# @api
+		scoreboard objectives add bingo.update_hud dummy
+		scoreboard players set @a bingo.update_hud 1
 	#endregion
 
 	#region trigger objectives
@@ -342,7 +350,6 @@
 		#
 		# @internal
 		#declare score_holder $update_card
-		scoreboard players set $update_card bingo.state 1
 		#>
 		# @public
 		#declare score_holder -2
@@ -523,13 +530,17 @@ difficulty easy
 	# 	function bingo:init/initialize_hud_components/*
 	#declare storage tmp.bingo:init/hud
 	data modify storage bingo:custom_hud components set value []
-	data modify storage bingo:custom_hud components append from storage bingo:registries hud_components[]
 
 	data modify storage tmp.bingo:init/hud columns set value [[], []]
 	data modify storage tmp.bingo:init/hud whereSpace set value []
 	data modify storage tmp.bingo:init/hud unpreferred set value []
 	function bingo:init/initialize_hud_components/add_defaults
 	data modify storage tmp.bingo:init/hud whereSpace append from storage tmp.bingo:init/hud unpreferred[]
+
+	data modify storage bingo:custom_hud components set value []
+	data modify storage bingo:custom_hud components append from storage tmp.bingo:init/hud columns[0][]
+	data modify storage bingo:custom_hud components append from storage tmp.bingo:init/hud columns[1][]
+	data modify storage bingo:custom_hud components append from storage tmp.bingo:init/hud whereSpace[]
 
 	data modify storage bingo:custom_hud default set value []
 	data modify storage bingo:custom_hud default append from storage tmp.bingo:init/hud columns[0][0]
@@ -547,6 +558,9 @@ difficulty easy
 	data modify storage bingo:custom_hud default append from storage tmp.bingo:init/hud columns[1][4]
 	data modify storage bingo:custom_hud default append from storage tmp.bingo:init/hud columns[1][5]
 	execute unless data storage bingo:custom_hud default[11] run function bingo:init/initialize_hud_components/fill_default_col1
+	
+	data remove storage bingo:custom_hud default[].addByDefault
+	data remove storage bingo:custom_hud default[].preferredColumn
 #endregion
 
 # spawn strcutures

@@ -20,6 +20,7 @@
 
 function bingo:util/find_player_team
 
+data remove storage bingo:custom_hud currentPlayer
 data modify storage tmp.bingo:custom_hud skipped set value []
 function bingo:custom_hud/find_player
 data modify storage bingo:custom_hud players append from storage tmp.bingo:custom_hud skipped[]
@@ -43,4 +44,4 @@ title @s actionbar [{"translate":"space.-90","font":"space:default"},{"storage":
 
 data remove storage bingo:custom_hud currentPlayer.components[].changed
 data modify storage tmp.bingo:custom_hud handled prepend from storage bingo:custom_hud currentPlayer
-data remove storage bingo:custom_hud currentPlayer
+scoreboard players reset @s bingo.update_hud
