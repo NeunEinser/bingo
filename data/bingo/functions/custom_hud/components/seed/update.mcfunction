@@ -3,7 +3,8 @@
 # @within function bingo:custom_hud/components/seed/tick
 
 data modify storage tmp.bingo:custom_hud component set value {changed: true}
-scoreboard players operation $custom_hud/width.number bingo.io = $seed bingo.state
+scoreboard players reset $custom_hud/width.number bingo.io
+execute if score $seed bingo.state matches -2147483648.. run scoreboard players operation $custom_hud/width.number bingo.io = $seed bingo.state
 scoreboard players set $custom_hud/width.padding bingo.io 78
 function bingo:custom_hud/subtract_width
 

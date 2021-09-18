@@ -32,7 +32,7 @@
 execute if score $custom_hud/width.characters bingo.io matches 1.. run scoreboard players set $custom_hud/width.characters bingo.io 0
 
 scoreboard players remove $custom_hud/width.characters bingo.io 1
-scoreboard players remove $custom_hud/width.padding bingo.io 6
+execute if score $custom_hud/width.number bingo.io matches -2147483648.. run scoreboard players remove $custom_hud/width.padding bingo.io 6
 execute if score $custom_hud/width.number bingo.io matches ..-1 run scoreboard players remove $custom_hud/width.padding bingo.io 6
 execute if score $custom_hud/width.number bingo.io matches ..-1 run scoreboard players remove $custom_hud/width.characters bingo.io 1
 execute if score $custom_hud/width.number bingo.io matches ..-1 run scoreboard players operation $custom_hud/width.number bingo.io *= -1 bingo.const
