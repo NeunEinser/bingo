@@ -495,6 +495,24 @@ difficulty easy
 		team modify bingo.white color white
 		team modify bingo.yellow color yellow
 
+	## set completed backgrounds
+		data modify storage bingo:card completedBackgroundTemplates set value []
+		data modify storage bingo:card completedBackgroundTemplates append value ['"\\uf000"']
+		data modify storage bingo:card completedBackgroundTemplates append value ['"\\uf000"','"\\uf001"']
+		data modify storage bingo:card completedBackgroundTemplates append value ['"\\uf000"','"\\uf001"','"\\uf002"']
+		data modify storage bingo:card completedBackgroundTemplates append value ['"\\uf000"','"\\uf001"','"\\uf003"','"\\uf004"']
+		data modify storage bingo:card completedBackgroundTemplates append value ['"\\uf000"','"\\uf001"','"\\uf005"','"\\uf006"','"\\uf007"']
+		data modify storage bingo:card completedBackgroundTemplates append value ['"\\uf000"','"\\uf001"','"\\uf008"','"\\uf002"','"\\uf004"','"\\uf009"']
+		data modify storage bingo:card completedBackgroundTemplates append value ['"\\uf000"','"\\uf001"','"\\uf00a"','"\\uf00b"','"\\uf00c"','"\\uf00d"','"\\uf00e"']
+		data modify storage bingo:card completedBackgroundTemplates append value ['"\\uf000"','"\\uf001"','"\\uf00f"','"\\uf003"','"\\uf010"','"\\uf004"','"\\uf011"','"\\uf012"']
+		data modify storage bingo:card completedBackgroundTemplates append value ['"\\uf000"','"\\uf001"','"\\uf013"','"\\uf014"','"\\uf002"','"\\uf015"','"\\uf016"','"\\uf009"','"\\uf017"']
+		data modify storage bingo:card completedBackgroundTemplates append value ['"\\uf000"','"\\uf001"','"\\uf018"','"\\uf005"','"\\uf019"','"\\uf006"','"\\uf004"','"\\uf007"','"\\uf01a"','"\\uf01b"']
+		data modify storage bingo:card completedBackgroundTemplates append value ['"\\uf000"','"\\uf001"','"\\uf01c"','"\\uf01d"','"\\uf01e"','"\\uf01f"','"\\uf020"','"\\uf021"','"\\uf022"','"\\uf023"','"\\uf024"']
+		data modify storage bingo:card completedBackgroundTemplates append value ['"\\uf000"','"\\uf001"','"\\uf025"','"\\uf008"','"\\uf003"','"\\uf002"','"\\uf026"','"\\uf004"','"\\uf027"','"\\uf009"','"\\uf012"','"\\uf028"']
+		data modify storage bingo:card completedBackgroundTemplates append value ['"\\uf000"','"\\uf001"','"\\uf029"','"\\uf02a"','"\\uf02b"','"\\uf02c"','"\\uf02d"','"\\uf02e"','"\\uf02f"','"\\uf030"','"\\uf031"','"\\uf032"','"\\uf033"']
+		data modify storage bingo:card completedBackgroundTemplates append value ['"\\uf000"','"\\uf001"','"\\uf034"','"\\uf00a"','"\\uf035"','"\\uf00b"','"\\uf036"','"\\uf00c"','"\\uf004"','"\\uf00d"','"\\uf037"','"\\uf00e"','"\\uf038"','"\\uf039"']
+		data modify storage bingo:card completedBackgroundTemplates append value ['"\\uf000"','"\\uf001"','"\\uf03a"','"\\uf03b"','"\\uf005"','"\\uf03c"','"\\uf002"','"\\uf006"','"\\uf03d"','"\\uf03e"','"\\uf007"','"\\uf009"','"\\uf03f"','"\\uf01b"','"\\uf040"']
+		data modify storage bingo:card completedBackgroundTemplates append value ['"\\uf000"','"\\uf001"','"\\uf041"','"\\uf00f"','"\\uf042"','"\\uf003"','"\\uf043"','"\\uf010"','"\\uf044"','"\\uf004"','"\\uf045"','"\\uf011"','"\\uf046"','"\\uf012"','"\\uf047"','"\\uf048"']
 #region run registries
 	data remove storage bingo:registries categories
 	data remove storage bingo:registries items
