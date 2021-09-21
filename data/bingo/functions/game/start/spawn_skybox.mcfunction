@@ -7,6 +7,8 @@
 # 	function bingo:game/start/initialize_game_start
 # @context position Spawn location
 
+scoreboard players set $game_state bingo.state 2
+
 kill @e[type=minecraft:area_effect_cloud, tag=bingo.skybox_cloud, limit=1]
 bossbar set bingo:start/pre_gen/progress visible false
 function neun_einser.timer:stop

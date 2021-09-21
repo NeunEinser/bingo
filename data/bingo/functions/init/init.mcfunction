@@ -133,7 +133,6 @@
 	#
 	# @internal
 	#declare tag bingo.skybox_cloud
-
 	#region slots
 		#>
 		# This tag marks a player who is in a team that obtained the item in slot 0.
@@ -462,6 +461,16 @@
 		#		function bingo:init/init
 		#		function bingo:custom_hud/components/player_position/*
 		scoreboard objectives add bingo.pos_hash dummy
+
+		#>
+		# This objective is used to detect a player reconnecting
+		#
+		# @within
+		#		function bingo:init/init
+		#		function bingo:tick/tick
+		#		function bingo:util/player_join
+		scoreboard objectives add bingo.reconnect minecraft.custom:minecraft.leave_game
+
 	#endregion
 
 	#region internal holders

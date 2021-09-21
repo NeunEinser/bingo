@@ -12,7 +12,8 @@ scoreboard players enable @a bingo.card_pos
 execute in bingo:lobby run function neun_einser.timer:store_current_time
 
 # Assign each player a unique ID
-execute as @a unless score @s bingo.id matches -2147483648.. run function bingo:tick/new_player
+execute as @a[scores={bingo.reconnect=1}] run function #bingo:player_reconnect
+execute as @a unless score @s bingo.id matches -2147483648.. run function #bingo:new_player
 
 # custom hud
 data modify storage tmp.bingo:custom_hud handled set value []
@@ -27,6 +28,6 @@ execute as @a[scores={bingo.pref=1..}] run function bingo:preferences/show
 
 # Loop depending on game state
 execute if entity @a[predicate=bingo:is_in_lobby, limit=1] in bingo:lobby run function bingo:lobby/tick
-execute if score $game_state bingo.state matches 2 run function bingo:game/tick
+execute if score $game_state bingo.state matches 2.. run function bingo:game/tick
 
 scoreboard players operation $last_tick bingo.state = $raw 91.timer.time

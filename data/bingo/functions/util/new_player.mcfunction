@@ -1,8 +1,9 @@
-#> bingo:tick/new_player
+#> bingo:util/new_player
 #
 # Function that is run for every new player
 #
-# @within bingo:tick/tick
+# @within tag/function bingo:new_player
+# @handles #bingo:new_player
 
 team join bingo.dark_green
 recipe give @s *
