@@ -3,7 +3,7 @@
 # Tags @s with bingo.uuid if the uuid of that entity matches the input.
 #
 # @internal
-# @input storage tmp.bingo:input/uuid
+# @input storage tmp.bingo:uuid
 # @output tag bingo.uuid_match
 # @context entity Entity to check
 #>
@@ -21,8 +21,8 @@
 # May only be read by that function
 #
 # @internal
-#declare storage tmp.bingo:input/uuid
+#declare storage tmp.bingo:uuid
 
-execute store success score $match_uuid.success bingo.tmp run data modify storage tmp.bingo:input/uuid uuid set from entity @s UUID
+execute store success score $match_uuid.success bingo.tmp run data modify storage tmp.bingo:uuid uuid set from entity @s UUID
 
 execute if score $match_uuid.success bingo.tmp matches 0 run tag @s add bingo.uuid_match

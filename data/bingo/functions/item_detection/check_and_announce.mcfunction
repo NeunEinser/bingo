@@ -14,7 +14,7 @@
 #declare tag bingo.got_item
 
 function bingo:util/find_player_team
-function bingo:item_detection/set_border
+function bingo:item_detection/set_overlay
 tag @a[tag=bingo.in_current_team] add bingo.got_item
 
-execute if score $item_detect/set_border.success bingo.tmp matches 1 run function bingo:item_detection/announce
+execute if score $item_detect/set_overlay.success bingo.tmp matches 1 run function bingo:item_detection/announce

@@ -133,6 +133,184 @@
 	#
 	# @internal
 	#declare tag bingo.skybox_cloud
+
+	#region slots
+		#>
+		# This tag marks a player who is in a team that obtained the item in slot 0.
+		#
+		# @within
+		# 	function bingo:game/start/spawn_skybox
+		# 	structure bingo:machinery
+		#declare tag bingo.has_slot0
+		#>
+		# This tag marks a player who is in a team that obtained the item in slot 1.
+		#
+		# @within
+		# 	function bingo:game/start/spawn_skybox
+		# 	structure bingo:machinery
+		#declare tag bingo.has_slot1
+		#>
+		# This tag marks a player who is in a team that obtained the item in slot 2.
+		#
+		# @within
+		# 	function bingo:game/start/spawn_skybox
+		# 	structure bingo:machinery
+		#declare tag bingo.has_slot2
+		#>
+		# This tag marks a player who is in a team that obtained the item in slot 3.
+		#
+		# @within
+		# 	function bingo:game/start/spawn_skybox
+		# 	structure bingo:machinery
+		#declare tag bingo.has_slot3
+		#>
+		# This tag marks a player who is in a team that obtained the item in slot 4.
+		#
+		# @within
+		# 	function bingo:game/start/spawn_skybox
+		# 	structure bingo:machinery
+		#declare tag bingo.has_slot4
+		#>
+		# This tag marks a player who is in a team that obtained the item in slot 5.
+		#
+		# @within
+		# 	function bingo:game/start/spawn_skybox
+		# 	structure bingo:machinery
+		#declare tag bingo.has_slot5
+		#>
+		# This tag marks a player who is in a team that obtained the item in slot 6.
+		#
+		# @within
+		# 	function bingo:game/start/spawn_skybox
+		# 	structure bingo:machinery
+		#declare tag bingo.has_slot6
+		#>
+		# This tag marks a player who is in a team that obtained the item in slot 7.
+		#
+		# @within
+		# 	function bingo:game/start/spawn_skybox
+		# 	structure bingo:machinery
+		#declare tag bingo.has_slot7
+		#>
+		# This tag marks a player who is in a team that obtained the item in slot 8.
+		#
+		# @within
+		# 	function bingo:game/start/spawn_skybox
+		# 	structure bingo:machinery
+		#declare tag bingo.has_slot8
+		#>
+		# This tag marks a player who is in a team that obtained the item in slot 9.
+		#
+		# @within
+		# 	function bingo:game/start/spawn_skybox
+		# 	structure bingo:machinery
+		#declare tag bingo.has_slot9
+		#>
+		# This tag marks a player who is in a team that obtained the item in slot 10.
+		#
+		# @within
+		# 	function bingo:game/start/spawn_skybox
+		# 	structure bingo:machinery
+		#declare tag bingo.has_slot10
+		#>
+		# This tag marks a player who is in a team that obtained the item in slot 11.
+		#
+		# @within
+		# 	function bingo:game/start/spawn_skybox
+		# 	structure bingo:machinery
+		#declare tag bingo.has_slot11
+		#>
+		# This tag marks a player who is in a team that obtained the item in slot 12.
+		#
+		# @within
+		# 	function bingo:game/start/spawn_skybox
+		# 	structure bingo:machinery
+		#declare tag bingo.has_slot12
+		#>
+		# This tag marks a player who is in a team that obtained the item in slot 13.
+		#
+		# @within
+		# 	function bingo:game/start/spawn_skybox
+		# 	structure bingo:machinery
+		#declare tag bingo.has_slot13
+		#>
+		# This tag marks a player who is in a team that obtained the item in slot 14.
+		#
+		# @within
+		# 	function bingo:game/start/spawn_skybox
+		# 	structure bingo:machinery
+		#declare tag bingo.has_slot14
+		#>
+		# This tag marks a player who is in a team that obtained the item in slot 15.
+		#
+		# @within
+		# 	function bingo:game/start/spawn_skybox
+		# 	structure bingo:machinery
+		#declare tag bingo.has_slot15
+		#>
+		# This tag marks a player who is in a team that obtained the item in slot 16.
+		#
+		# @within
+		# 	function bingo:game/start/spawn_skybox
+		# 	structure bingo:machinery
+		#declare tag bingo.has_slot16
+		#>
+		# This tag marks a player who is in a team that obtained the item in slot 17.
+		#
+		# @within
+		# 	function bingo:game/start/spawn_skybox
+		# 	structure bingo:machinery
+		#declare tag bingo.has_slot17
+		#>
+		# This tag marks a player who is in a team that obtained the item in slot 18.
+		#
+		# @within
+		# 	function bingo:game/start/spawn_skybox
+		# 	structure bingo:machinery
+		#declare tag bingo.has_slot18
+		#>
+		# This tag marks a player who is in a team that obtained the item in slot 19.
+		#
+		# @within
+		# 	function bingo:game/start/spawn_skybox
+		# 	structure bingo:machinery
+		#declare tag bingo.has_slot19
+		#>
+		# This tag marks a player who is in a team that obtained the item in slot 20.
+		#
+		# @within
+		# 	function bingo:game/start/spawn_skybox
+		# 	structure bingo:machinery
+		#declare tag bingo.has_slot20
+		#>
+		# This tag marks a player who is in a team that obtained the item in slot 21.
+		#
+		# @within
+		# 	function bingo:game/start/spawn_skybox
+		# 	structure bingo:machinery
+		#declare tag bingo.has_slot21
+		#>
+		# This tag marks a player who is in a team that obtained the item in slot 22.
+		#
+		# @within
+		# 	function bingo:game/start/spawn_skybox
+		# 	structure bingo:machinery
+		#declare tag bingo.has_slot22
+		#>
+		# This tag marks a player who is in a team that obtained the item in slot 23.
+		#
+		# @within
+		# 	function bingo:game/start/spawn_skybox
+		# 	structure bingo:machinery
+		#declare tag bingo.has_slot23
+		#>
+		# This tag marks a player who is in a team that obtained the item in slot 24.
+		#
+		# @within
+		# 	function bingo:game/start/spawn_skybox
+		# 	structure bingo:machinery
+		#declare tag bingo.has_slot24
+	#endregion
 #endregion
 
 #region setup objectives
@@ -385,8 +563,8 @@
 		scoreboard players set 6 bingo.const 6
 		#>
 		# @public
-		#declare score_holder 7
-		scoreboard players set 7 bingo.const 7
+		#declare score_holder 8
+		scoreboard players set 8 bingo.const 8
 		#>
 		# @public
 		#declare score_holder 9
@@ -405,8 +583,8 @@
 		scoreboard players set 32 bingo.const 32
 		#>
 		# @public
-		#declare score_holder 35
-		scoreboard players set 35 bingo.const 35
+		#declare score_holder 40
+		scoreboard players set 40 bingo.const 40
 		#>
 		# @public
 		#declare score_holder 41

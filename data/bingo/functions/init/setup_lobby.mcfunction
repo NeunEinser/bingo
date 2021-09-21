@@ -37,26 +37,26 @@ execute at @e[type=minecraft:area_effect_cloud, tag=bingo.structure_spawner, lim
 execute at @e[type=minecraft:area_effect_cloud, tag=bingo.structure_spawner, limit=1] run setblock ~-1 4 ~-1 minecraft:redstone_block
 
 # Spawn machinery at hardcoded position
-setblock -4 1 -3 minecraft:structure_block[mode=load]{mode: "LOAD", name: "bingo:machinery", posX: 1, posZ: 1}
-setblock -4 2 -3 minecraft:redstone_block
+setblock -3 1 -3 minecraft:structure_block[mode=load]{mode: "LOAD", name: "bingo:machinery", posX: 1, posZ: 1}
+setblock -3 2 -3 minecraft:redstone_block
 data modify block -4 1 -3 ignoreEntities set value true
 
 ## Workaround for https://bugs.mojang.com/browse/MC-224771
-setblock -4 2 -3 minecraft:barrier
-setblock -4 2 -3 minecraft:redstone_block
-setblock -4 2 -3 minecraft:barrier
-setblock -4 2 -3 minecraft:redstone_block
-setblock -4 2 -3 minecraft:barrier
-setblock -4 2 -3 minecraft:redstone_block
-setblock -4 2 -3 minecraft:barrier
-setblock -4 2 -3 minecraft:redstone_block
-setblock -4 2 -3 minecraft:barrier
-setblock -4 2 -3 minecraft:redstone_block
-setblock -4 2 -3 minecraft:barrier
-setblock -4 2 -3 minecraft:redstone_block
-setblock -4 2 -3 minecraft:barrier
+setblock -3 2 -3 minecraft:barrier
+setblock -3 2 -3 minecraft:redstone_block
+setblock -3 2 -3 minecraft:barrier
+setblock -3 2 -3 minecraft:redstone_block
+setblock -3 2 -3 minecraft:barrier
+setblock -3 2 -3 minecraft:redstone_block
+setblock -3 2 -3 minecraft:barrier
+setblock -3 2 -3 minecraft:redstone_block
+setblock -3 2 -3 minecraft:barrier
+setblock -3 2 -3 minecraft:redstone_block
+setblock -3 2 -3 minecraft:barrier
+setblock -3 2 -3 minecraft:redstone_block
+setblock -3 2 -3 minecraft:barrier
 
-setblock -4 1 -3 minecraft:barrier
+setblock -3 1 -3 minecraft:barrier
 
 forceload remove all
 forceload add 0 0
