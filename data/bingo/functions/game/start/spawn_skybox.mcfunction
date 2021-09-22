@@ -20,6 +20,8 @@ execute if block ~ 62 ~ minecraft:water run setblock ~ 62 ~ minecraft:dirt
 execute if block ~ 62 ~ minecraft:lava run setblock ~ 62 ~ minecraft:dirt
 
 tellraw @a "Loading terrain"
+scoreboard players add $current_game_id bingo.game_id 1
+scoreboard players operation @a bingo.game_id = $current_game_id bingo.game_id
 teleport @a ~ 128 ~
 
 execute store result score $spawn_x bingo.state run data get entity @a[limit=1] Pos[0]

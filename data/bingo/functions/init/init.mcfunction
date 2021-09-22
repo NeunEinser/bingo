@@ -418,6 +418,19 @@
 		scoreboard objectives add bingo.frame_id dummy
 
 		#>
+		# This objective is used to keep track of the current game id. Players who
+		# joined during a different game are teleported back to the lobby.
+		#
+		# @internal
+		scoreboard objectives add bingo.game_id dummy
+		#>
+		# The current game id
+		#
+		# @internal
+		#declare score_holder $current_game_id
+		scoreboard players add $current_game_id bingo.game_id 0
+
+		#>
 		# This objective is used for item detection to store whether the detect command
 		# succeeded for a player.
 		#

@@ -18,8 +18,8 @@ execute store result score $custom_hud/player_pos.line bingo.tmp run data get st
 #declare score_holder $custom_hud/player_pos.z_len
 
 scoreboard players operation @s bingo.pos_hash = $custom_hud/player_pos.hash bingo.tmp
-execute if entity @s[predicate=!bingo:is_in_lobby] run scoreboard players operation $custom_hud/player_pos.x bingo.tmp -= $spawn_x bingo.state
-execute if entity @s[predicate=!bingo:is_in_lobby] run scoreboard players operation $custom_hud/player_pos.z bingo.tmp -= $spawn_z bingo.state
+execute if entity @s[predicate=bingo:is_in_game] run scoreboard players operation $custom_hud/player_pos.x bingo.tmp -= $spawn_x bingo.state
+execute if entity @s[predicate=bingo:is_in_game] run scoreboard players operation $custom_hud/player_pos.z bingo.tmp -= $spawn_z bingo.state
 
 data modify storage tmp.bingo:custom_hud component set value {textComponent:'[{"storage": "bingo:custom_hud", "nbt": "params.bingo.player_position.x"}, " ", {"storage": "bingo:custom_hud", "nbt": "params.bingo.player_position.z"}]', changed: true}
 execute if score $custom_hud/player_pos.rot bingo.tmp matches 0 run data modify storage tmp.bingo:custom_hud component.icon set value '"\\u0100"'
