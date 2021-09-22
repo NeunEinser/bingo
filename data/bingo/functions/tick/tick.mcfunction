@@ -8,7 +8,6 @@
 # @within tag/function minecraft:tick
 # @handles #minecraft:tick
 
-scoreboard players enable @a bingo.card_pos
 execute in bingo:lobby run function neun_einser.timer:store_current_time
 
 # Resource pack check
@@ -30,11 +29,6 @@ data modify storage tmp.bingo:custom_hud handled set value []
 execute as @a[predicate=!bingo:is_in_overworld] run function bingo:custom_hud/tick
 data modify storage bingo:custom_hud players append from storage tmp.bingo:custom_hud handled[]
 scoreboard players reset $update_card bingo.state
-
-# change preferences
-scoreboard players enable @a bingo.pref
-execute as @a[scores={bingo.pref=..-1}] run function bingo:preferences/show
-execute as @a[scores={bingo.pref=1..}] run function bingo:preferences/show
 
 # Loop depending on game state
 execute if entity @a[predicate=bingo:is_in_lobby, limit=1] in bingo:lobby run function bingo:lobby/tick

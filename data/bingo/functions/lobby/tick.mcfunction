@@ -1,3 +1,9 @@
+# change preferences
+execute as @a[scores={bingo.pref=..-1}] run function bingo:preferences/show
+execute as @a[scores={bingo.pref=1..}] run function bingo:preferences/show
+scoreboard players enable @a bingo.card_pos
+scoreboard players enable @a bingo.pref
+
 # Float in front of card display
 execute as @a at @s if block ~ ~ ~ minecraft:void_air run effect give @s minecraft:levitation 1 255 true
 execute as @a at @s unless block ~ ~ ~ minecraft:void_air run effect clear @s minecraft:levitation

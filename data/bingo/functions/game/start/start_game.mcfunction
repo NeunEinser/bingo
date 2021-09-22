@@ -11,6 +11,11 @@ tellraw @s {"text": "GO!"}
 tellraw @s [{"translate": "bingo.game.go_to_lobby", "with": [{"translate": "bingo.game.go_to_lobby.click", "color": "#00c3ff", "clickEvent": {"action": "run_command", "value": "/trigger bingo.lobby"}}]}, "\n", {"translate": "bingo.game.go_to_lobby.hint", "color": "gray", "italic": true, "with": [{"text": "/trigger bingo.lobby", "color": "white", "italic": false, "clickEvent": {"action": "suggest_command", "value": "/trigger bingo.lobby"}}]}]
 execute at @s run playsound minecraft:block.note_block.pling master @s ~ ~ ~ 1 1
 
+scoreboard players reset * bingo.card_pos
+scoreboard players reset * bingo.pref
+scoreboard players reset * bingo.seed
+scoreboard players reset * bingo.settings
+
 effect clear @s
 clear @s
 gamemode survival @s

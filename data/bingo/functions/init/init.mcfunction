@@ -389,7 +389,7 @@
 		# Trigger objective used in the player configuration dialogs.
 		#
 		# @internal
-		scoreboard objectives add bingo.player_con trigger
+		#scoreboard objectives add bingo.player_con trigger
 
 		#>
 		# This trigger is used for confirming that the resource pack is active

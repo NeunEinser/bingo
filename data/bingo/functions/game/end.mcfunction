@@ -4,6 +4,7 @@
 #
 # @internal
 
+scoreboard players reset * bingo.lobby
 scoreboard players set $game_state bingo.state 0
 scoreboard players reset $spawn_x bingo.state
 scoreboard players reset $spawn_z bingo.state
