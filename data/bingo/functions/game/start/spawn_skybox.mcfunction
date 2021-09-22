@@ -31,6 +31,7 @@ gamemode adventure @a
 effect give @a minecraft:jump_boost 1000000 128 true
 effect give @a minecraft:invisibility 1000000 0 true
 effect give @a minecraft:saturation 1000000 255 true
+effect give @a minecraft:weakness 1000000 255 true
 clear @a
 experience set @s 0 levels
 experience set @s 0 points
