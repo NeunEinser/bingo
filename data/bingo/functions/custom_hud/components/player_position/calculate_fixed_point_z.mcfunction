@@ -16,8 +16,8 @@ scoreboard players operation $custom_hud/player_pos.rem bingo.tmp %= 10 bingo.co
 scoreboard players operation $custom_hud/player_pos.rem bingo.tmp *= $custom_hud/player_pos.ten_pow bingo.tmp
 scoreboard players operation $custom_hud/player_pos.dec_z bingo.tmp += $custom_hud/player_pos.rem bingo.tmp
 
-execute unless score $custom_hud/player_pos.ten_pow bingo.tmp matches 1 if score $custom_hud/player_pos.rem bingo.tmp matches 0 run data modify storage bingo:custom_hud params.bingo.player_position.zFillerZeros append value "0"
-execute unless score $custom_hud/player_pos.rem bingo.tmp matches 0 run data modify storage bingo:custom_hud params.bingo.player_position.zFillerZeros set value [""]
+execute unless score $custom_hud/player_pos.ten_pow bingo.tmp matches 1 if score $custom_hud/player_pos.rem bingo.tmp matches 0 run data modify storage tmp.bingo:custom_hud zFillerZeros append value "0"
+execute unless score $custom_hud/player_pos.rem bingo.tmp matches 0 run data modify storage tmp.bingo:custom_hud zFillerZeros set value [""]
 
 scoreboard players operation $custom_hud/player_pos.int_z bingo.tmp /= 10 bingo.const
 

@@ -320,6 +320,7 @@
 #region setup objectives
 	scoreboard objectives remove bingo.const
 	scoreboard objectives remove bingo.has_item
+	scoreboard objectives remove bingo.hud_update
 	scoreboard objectives remove bingo.io
 	scoreboard objectives remove bingo.lobby
 	scoreboard objectives remove bingo.menu_page
@@ -488,6 +489,16 @@
 		scoreboard objectives add bingo.pos_hash dummy
 
 		#>
+		# The last time the hud was refeshed for each player
+		# #TODO rename to something like "last_hud_update" in 1.18 when the stupid
+		# # length limit is gone.
+		#
+		# @within
+		#		function bingo:init/init
+		#		function bingo:custom_hud/*
+		scoreboard objectives add bingo.hud_update dummy
+
+		#>
 		# This objective is used to detect a player reconnecting
 		#
 		# @within
@@ -562,11 +573,6 @@
 		#
 		# @internal
 		#declare score_holder $update_card
-		#>
-		# How many ticks ago the last actionbar update occured
-		#
-		# @internal
-		#declare score_holder $last_actionbar_update
 		#>
 		# @public
 		#declare score_holder -2

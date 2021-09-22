@@ -23,10 +23,10 @@ function #bingo:tick_hud_components
 
 execute if score $seed bingo.state matches -2147483648.. run function bingo:custom_hud/display_card
 
-scoreboard players add $last_actionbar_update bingo.state 1
+scoreboard players add @s bingo.hud_update 1
 
 execute if data storage bingo:custom_hud currentPlayer.components[{changed: true}] run function bingo:custom_hud/update_actionbar
-execute if score $last_actionbar_update bingo.state matches 40.. run function bingo:custom_hud/update_actionbar
+execute if score @s bingo.hud_update matches 40.. run function bingo:custom_hud/update_actionbar
 
 data remove storage bingo:custom_hud currentPlayer.components[].changed
 data modify storage tmp.bingo:custom_hud handled prepend from storage bingo:custom_hud currentPlayer

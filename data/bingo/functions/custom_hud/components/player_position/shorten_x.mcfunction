@@ -34,9 +34,9 @@ scoreboard players remove $custom_hud/width.characters bingo.io 1
 #   - Either k for kilo (width 5) or M for million (width 6)
 # Total is either 5 or 4
 execute if score $custom_hud/player_pos.abs_x bingo.tmp matches ..999999 run scoreboard players add $custom_hud/width.padding bingo.io 5
-execute if score $custom_hud/player_pos.abs_x bingo.tmp matches ..999999 run data modify storage bingo:custom_hud params.bingo.player_position.xChar set value "k"
+execute if score $custom_hud/player_pos.abs_x bingo.tmp matches ..999999 run data modify storage tmp.bingo:custom_hud xChar set value "k"
 execute unless score $custom_hud/player_pos.abs_x bingo.tmp matches ..999999 run scoreboard players add $custom_hud/width.padding bingo.io 4
-execute unless score $custom_hud/player_pos.abs_x bingo.tmp matches ..999999 run data modify storage bingo:custom_hud params.bingo.player_position.xChar set value "M"
+execute unless score $custom_hud/player_pos.abs_x bingo.tmp matches ..999999 run data modify storage tmp.bingo:custom_hud xChar set value "M"
 
 execute if score $custom_hud/width.characters bingo.tmp matches 12.. if score $custom_hud/player_pos.abs_x bingo.tmp >= $custom_hud/player_pos.abs_z bingo.tmp run function bingo:custom_hud/components/player_position/shorten_x_iter
 
@@ -69,7 +69,7 @@ scoreboard players operation $custom_hud/player_pos.int_x bingo.tmp = $custom_hu
 # 	function bingo:custom_hud/components/player_position/calculate_fixed_point_x
 #declare score_holder $custom_hud/player_pos.dec_x
 scoreboard players set $custom_hud/player_pos.dec_x bingo.tmp 0
-data modify storage bingo:custom_hud params.bingo.player_position.xFillerZeros set value [""]
+data modify storage tmp.bingo:custom_hud xFillerZeros set value [""]
 scoreboard players set $custom_hud/player_pos.ten_pow bingo.tmp 1
 scoreboard players operation $custom_hud/player_pos.decimal_digits bingo.tmp = $custom_hud/player_pos.removed_x bingo.tmp
 execute if score $custom_hud/player_pos.abs_x bingo.tmp matches 1000000.. run function bingo:custom_hud/components/player_position/calculate_fixed_point_x
@@ -77,7 +77,4 @@ execute unless score $custom_hud/player_pos.abs_x bingo.tmp matches 1000000.. if
 
 execute if score $custom_hud/player_pos.x bingo.tmp matches ..-1 run scoreboard players operation $custom_hud/player_pos.int_x bingo.tmp *= -1 bingo.const
 
-data modify storage tmp.bingo:custom_hud component.textComponent set value '[{"storage": "bingo:custom_hud", "nbt": "params.bingo.player_position.xInt"}, ".", {"storage": "bingo:custom_hud", "nbt": "params.bingo.player_position.xFillerZeros", "interpret": true}, {"storage": "bingo:custom_hud", "nbt": "params.bingo.player_position.xDec"}, {"storage": "bingo:custom_hud", "nbt": "params.bingo.player_position.xChar"}, " ", {"storage": "bingo:custom_hud", "nbt": "params.bingo.player_position.z"}]'
-
-execute store result storage bingo:custom_hud params.bingo.player_position.xInt int 1 run scoreboard players get $custom_hud/player_pos.int_x bingo.tmp
-execute store result storage bingo:custom_hud params.bingo.player_position.xDec int 1 run scoreboard players get $custom_hud/player_pos.dec_x bingo.tmp
+data modify storage io.bingo:custom_hud component.textComponent set value '[{"score": {"name": "$custom_hud/player_pos.int_x", "objective": "bingo.tmp"}}, ".", {"storage": "tmp.bingo:custom_hud", "nbt": "xFillerZeros", "interpret": true}, {"score": {"name": "$custom_hud/player_pos.dec_x", "objective": "bingo.tmp"}}, {"storage": "tmp.bingo:custom_hud", "nbt": "xChar"}, " ", {"score": {"name": "$custom_hud/player_pos.z", "objective": "bingo.tmp"}}]'
