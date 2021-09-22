@@ -27,4 +27,4 @@ execute store result score $game/tick.sleeping_players bingo.tmp if entity @a[pr
 execute if score $game/tick.player_count bingo.tmp matches 1.. if score $game/tick.player_count bingo.tmp = $game/tick.sleeping_players bingo.tmp run function bingo:game/skip_night
 
 scoreboard players enable @a bingo.lobby
-execute as @a[scores={bingo.lobby=1}] run function bingo:game/go_to_lobby
+execute as @a[scores={bingo.lobby=1}] run function bingo:util/go_to_lobby

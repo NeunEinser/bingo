@@ -7,8 +7,24 @@
 
 team join bingo.dark_green
 recipe give @s *
-execute in bingo:lobby run teleport @s -8.5 3 7.5 180 0
-execute in bingo:lobby run spawnpoint @s -9 3 7
+
+#>
+# @private
+#declare score_holder $new_player.request_resources
+
+# Detect second (or more) players in a LAN world
+execute store result score $new_player.request_resources bingo.tmp if entity @a
+scoreboard players remove $new_player.request_resources bingo.tmp 1
+
+# Detect the resource pack not being active server-side (So either we are on a
+# server, or resourcepack is missing in single player for some reason)
+summon minecraft:area_effect_cloud ~ ~ ~ {CustomName:'{"translate": "bingo.technical.detect_multiplayer"}'}
+execute if score $new_player.request_resources bingo.tmp matches 0 unless entity @e[name=Singleplayer, limit=1] run scoreboard players set $new_player.request_resources bingo.tmp 1
+scoreboard players set $new_player.request_resources bingo.tmp 1
+scoreboard players enable @s bingo.resources
+
+execute if score $new_player.request_resources bingo.tmp matches 0 run function bingo:util/go_to_lobby
+execute unless score $new_player.request_resources bingo.tmp matches 0 run gamemode adventure
 
 # Set player ID
 #>

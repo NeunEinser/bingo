@@ -1,8 +1,8 @@
-#> bingo:game/go_to_lobby
+#> bingo:util/go_to_lobby
 #
 # Moves @s to the lobby
 #
-# @within function bingo:game/tick
+# @internal
 # @context
 # 	entity The player who wants to go back to the lobby
 

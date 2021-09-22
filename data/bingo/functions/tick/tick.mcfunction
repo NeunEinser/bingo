@@ -15,9 +15,11 @@ execute in bingo:lobby run function neun_einser.timer:store_current_time
 execute as @a[scores={bingo.reconnect=1}] run function #bingo:player_reconnect
 execute as @a unless score @s bingo.id matches -2147483648.. run function #bingo:new_player
 
+execute as @a[scores={bingo.resources=1}] run function bingo:util/go_to_lobby
+
 # custom hud
 data modify storage tmp.bingo:custom_hud handled set value []
-execute as @a run function bingo:custom_hud/tick
+execute as @a[predicate=!bingo:is_in_overworld] run function bingo:custom_hud/tick
 data modify storage bingo:custom_hud players append from storage tmp.bingo:custom_hud handled[]
 scoreboard players reset $update_card bingo.state
 

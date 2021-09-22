@@ -1,4 +1,15 @@
 {
+	"%1074992263$s%1$s": "%2$s",
+	"bingo.technical.detect_multiplayer": "Singleplayer",
+
+	"%1074992263$s%2$s": "",
+	"%1074992263$sClick": "Click",
+	"%1074992263$sMe": "Me",
+	"%1074992263$s%3$s": "",
+	"bingo.resourcepack_check.go_to_lobby.part1": "The resourcepack was successfully enabled.",
+	"bingo.resourcepack_check.go_to_lobby.part2": "%s to go to the lobby.",
+	"bingo.resourcepack_check.go_to_lobby.click": "Click here",
+
 	"bingo.game.go_to_lobby": "%s to go back to the lobby.",
 	"bingo.game.go_to_lobby.hint": "Hint: You can use the command %s at any time manually to return to the lobby as well.",
 	"bingo.game.go_to_lobby.click": "Click here",
