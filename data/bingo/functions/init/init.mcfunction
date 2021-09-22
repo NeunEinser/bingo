@@ -644,6 +644,7 @@
 # Create overworld resourcepack check box
 	fill 0 0 0 2 3 2 minecraft:black_concrete outline
 	setblock 1 2 1 minecraft:warped_wall_sign{Text1: '{"translate":"%1074992263$s%2$s", "bold": true, "color":"#8eedeb", "clickEvent": {"action": "run_command", "value": "/tellraw @a {\\"translate\\": \\"%1074992263$s%1$s\\", \\"with\\": [[\\"\\",{\\"text\\": \\"The resourcepack is currently not enabled.\\", \\"color\\": \\"red\\"}, \\"\\\\nPlease download the Resourcepack \\", {\\"text\\": \\"here\\", \\"color\\": \\"#00c3ff\\", \\"clickEvent\\": {\\"action\\": \\"open_url\\", \\"value\\": \\"https://github.com/NeunEinser/bingo/releases/download/5.0-beta2/Resourcepack.zip\\"}}, \\" and enable it.\\"], [\\"\\", {\\"translate\\": \\"bingo.resourcepack_check.go_to_lobby.part1\\", \\"color\\": \\"green\\"}, \\"\\\\n\\", {\\"translate\\": \\"bingo.resourcepack_check.go_to_lobby.part2\\", \\"with\\": [{\\"translate\\": \\"bingo.resourcepack_check.go_to_lobby.click\\", \\"color\\": \\"#00c3ff\\", \\"clickEvent\\": {\\"action\\": \\"run_command\\", \\"value\\": \\"/trigger bingo.resources\\"}}]}]]}"}}', Text2:'{"translate":"%1074992263$sClick", "bold": true, "color":"#8eedeb"}', Text3:'{"translate":"%1074992263$sMe", "bold": true, "color":"#8eedeb"}', Text4:'{"translate":"%1074992263$s%3$s", "bold": true, "color":"#8eedeb"}'}
+	setblock 1 2 2 minecraft:sea_lantern
 	setworldspawn 1 1 1
 	gamerule spawnRadius 0
 

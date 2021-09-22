@@ -11,3 +11,4 @@ execute in bingo:lobby run teleport @s -8.5 3 7.5 180 0
 execute in bingo:lobby run spawnpoint @s -9 3 7
 execute at @s run spawnpoint
 scoreboard players reset @s bingo.lobby
+scoreboard players reset @s bingo.resources
