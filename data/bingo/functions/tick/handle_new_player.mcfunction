@@ -1,4 +1,4 @@
-#> bingo:util/new_player
+#> bingo:tick/handle_new_player
 #
 # Function that is run for every new player
 #
@@ -22,9 +22,7 @@ summon minecraft:area_effect_cloud ~ ~ ~ {CustomName:'{"translate": "bingo.techn
 execute if score $new_player.request_resources bingo.tmp matches 0 unless entity @e[name=DoNotTranslateThis, limit=1] run scoreboard players set $new_player.request_resources bingo.tmp 1
 
 execute if score $new_player.request_resources bingo.tmp matches 0 run function bingo:util/go_to_lobby
-execute unless score $new_player.request_resources bingo.tmp matches 0 run gamemode adventure
-execute unless score $new_player.request_resources bingo.tmp matches 0 run scoreboard players enable @s bingo.resources
-
+execute unless score $new_player.request_resources bingo.tmp matches 0 run function bingo:tick/resource_pack_check_setup
 # Set player ID
 #>
 # Score holder which holds the next id.

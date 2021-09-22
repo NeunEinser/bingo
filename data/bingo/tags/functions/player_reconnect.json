@@ -1,5 +1,5 @@
 {
 	"values": [
-		"bingo:util/player_join"
+		"bingo:tick/handle_player_join"
 	]
 }
