@@ -39,6 +39,7 @@ execute at @e[type=minecraft:area_effect_cloud, tag=bingo.structure_spawner, lim
 # Spawn machinery at hardcoded position
 setblock -3 1 -3 minecraft:structure_block[mode=load]{mode: "LOAD", name: "bingo:machinery", posX: 1, posZ: 1}
 setblock -3 2 -3 minecraft:redstone_block
+summon minecraft:area_effect_cloud -3 5 7 {Age: -2147483648, Duration: -1, WaitTime: -2147483648, Tags: ["bingo.lobby_sign", "bingo.sign_machinery"]}
 data modify block -4 1 -3 ignoreEntities set value true
 
 ## Workaround for https://bugs.mojang.com/browse/MC-224771
