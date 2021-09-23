@@ -20,13 +20,12 @@ data modify storage tmp.bingo:init items[-1].item.tag.display.Lore append value 
 
 setblock 0 255 0 minecraft:oak_sign{Text1: '{"translate": "bingo.items.weight", "color": "gray", "italic": false, "with": [{"storage": "tmp.bingo:init", "nbt": "items[-1].weight"}]}'} 
 data modify storage tmp.bingo:init items[-1].item.tag.display.Lore append from block 0 255 0 Text1
-setblock ~ 255 ~ minecraft:air
 
 data modify storage tmp.bingo:init items[-1].item.Count set value 1b
 
-setblock 0 255 0 minecraft:oak_sign{Text1: '{"storage": "tmp.bingo:init", "nbt": "items[-1].textComponent", "interpret": true, "italic": false}'} 
+data modify block 0 255 0 Text1 set value '{"storage": "tmp.bingo:init", "nbt": "items[-1].textComponent", "interpret": true, "italic": false}'
 data modify storage tmp.bingo:init items[-1].item.tag.display.Name set from block 0 255 0 Text1
-setblock ~ 255 ~ minecraft:air
+setblock 0 255 0 minecraft:air
 
 data modify storage tmp.bingo:init categories[].items append from storage tmp.bingo:init items[-1]
 data modify storage bingo:items categories append from storage tmp.bingo:init skippedCategories[]
