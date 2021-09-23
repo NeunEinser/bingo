@@ -12,3 +12,5 @@ execute in bingo:lobby run spawnpoint @s -9 3 7
 execute at @s run spawnpoint
 scoreboard players reset @s bingo.lobby
 scoreboard players reset @s bingo.resources
+
+gamemode survival

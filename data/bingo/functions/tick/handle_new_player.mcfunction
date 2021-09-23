@@ -23,6 +23,10 @@ execute if score $new_player.request_resources bingo.tmp matches 0 unless entity
 
 execute if score $new_player.request_resources bingo.tmp matches 0 run function bingo:util/go_to_lobby
 execute unless score $new_player.request_resources bingo.tmp matches 0 run function bingo:tick/resource_pack_check_setup
+execute unless score $new_player.request_resources bingo.tmp matches 0 run scoreboard players set $is_multiplayer bingo.state 1
+
+scoreboard players add @s bingo.operator 0
+
 # Set player ID
 #>
 # Score holder which holds the next id.

@@ -2,7 +2,7 @@
 #
 # Shows the preferences page the player just selected.
 #
-# @within function bingo:lobby/tick
+# @within function bingo:lobby/player_tick
 # @context entity Player who triggered bingo.pref
 # @user
 # @reads storage bingo:registries preferences.custom_hud.main

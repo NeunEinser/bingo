@@ -315,6 +315,251 @@
 		# 	structure bingo:machinery
 		#declare tag bingo.has_slot24
 	#endregion
+
+	#region lobby signs
+		#region machinery
+			#>
+			# @within
+			# 	function bingo:lobby/set_signs
+			# 	function bingo:init/setup_lobby
+			#declare tag bingo.sign_machinery
+		#endregion
+
+		#region credits
+			#>
+			# @within
+			# 	function bingo:lobby/set_signs
+			# 	structure bingo:credits
+			#declare tag bingo.sign_credits_neun_einser
+			#>
+			# @within
+			# 	function bingo:lobby/set_signs
+			# 	structure bingo:credits
+			#declare tag bingo.sign_credits_amber_wat
+			#>
+			# @within
+			# 	function bingo:lobby/set_signs
+			# 	structure bingo:credits
+			#declare tag bingo.sign_credits_nope_name
+			#>
+			# @within
+			# 	function bingo:lobby/set_signs
+			# 	structure bingo:credits
+			#declare tag bingo.sign_credits_dr_brian_lorgon111
+			#>
+			# @within
+			# 	function bingo:lobby/set_signs
+			# 	structure bingo:credits
+			#declare tag bingo.sign_credits_playtesters
+			#>
+			# @within
+			# 	function bingo:lobby/set_signs
+			# 	structure bingo:credits
+			#declare tag bingo.sign_credits_silentrob
+			#>
+			# @within
+			# 	function bingo:lobby/set_signs
+			# 	structure bingo:credits
+			#declare tag bingo.sign_credits_muffinshire
+			#>
+			# @within
+			# 	function bingo:lobby/set_signs
+			# 	structure bingo:credits
+			#declare tag bingo.sign_credits_gothfaerie
+			#>
+			# @within
+			# 	function bingo:lobby/set_signs
+			# 	structure bingo:credits
+			#declare tag bingo.sign_credits_zampone
+			#>
+			# @within
+			# 	function bingo:lobby/set_signs
+			# 	structure bingo:credits
+			#declare tag bingo.sign_credits_thomas_to_space
+			#>
+			# @within
+			# 	function bingo:lobby/set_signs
+			# 	structure bingo:credits
+			#declare tag bingo.sign_credits_craca_croes_gazyy
+			#>
+			# @within
+			# 	function bingo:lobby/set_signs
+			# 	structure bingo:credits
+			#declare tag bingo.sign_credits_lifeofchrome
+			#>
+			# @within
+			# 	function bingo:lobby/set_signs
+			# 	structure bingo:credits
+			#declare tag bingo.sign_credits_tod_nl
+			#>
+			# @within
+			# 	function bingo:lobby/set_signs
+			# 	structure bingo:credits
+			#declare tag bingo.sign_credits_no_leaf_clover
+
+			#>
+			# @within
+			# 	function bingo:lobby/set_signs
+			# 	structure bingo:credits
+			#declare tag bingo.sign_credits_tools
+			#>
+			# @within
+			# 	function bingo:lobby/set_signs
+			# 	structure bingo:credits
+			#declare tag bingo.sign_credits_tools_vscode
+			#>
+			# @within
+			# 	function bingo:lobby/set_signs
+			# 	structure bingo:credits
+			#declare tag bingo.sign_credits_tools_datapackhelperplus
+			#>
+			# @within
+			# 	function bingo:lobby/set_signs
+			# 	structure bingo:credits
+			#declare tag bingo.sign_credits_tools_multinoise
+			#>
+			# @within
+			# 	function bingo:lobby/set_signs
+			# 	structure bingo:credits
+			#declare tag bingo.sign_credits_tools_nbtexplorer
+			#>
+			# @within
+			# 	function bingo:lobby/set_signs
+			# 	structure bingo:credits
+			#declare tag bingo.sign_credits_tools_nbtstudio
+			#>
+			# @within
+			# 	function bingo:lobby/set_signs
+			# 	structure bingo:credits
+			#declare tag bingo.sign_credits_tools_nbtviewer
+		#endregion
+
+		#region crad generation
+			#>
+			# @within
+			# 	function bingo:lobby/set_signs
+			# 	structure bingo:card_generation
+			#declare tag bingo.sign_team_selection
+			#>
+			# @within
+			# 	function bingo:lobby/set_signs
+			# 	structure bingo:card_generation
+			#declare tag bingo.sign_card_generation_crafting_table
+			#>
+			# @within
+			# 	function bingo:lobby/set_signs
+			# 	structure bingo:card_generation
+			#declare tag bingo.sign_card_generation_furnace
+			#>
+			# @within
+			# 	function bingo:lobby/set_signs
+			# 	structure bingo:card_generation
+			#declare tag bingo.sign_card_generation_random_card
+			#>
+			# @within
+			# 	function bingo:lobby/set_signs
+			# 	structure bingo:card_generation
+			#declare tag bingo.sign_card_generation_from_seed
+			#>
+			# @within
+			# 	function bingo:lobby/set_signs
+			# 	structure bingo:card_generation
+			#declare tag bingo.sign_card_generation_start_game
+		#endregion
+
+		#region tutorial & settings
+			#>
+			# @within
+			# 	function bingo:lobby/set_signs
+			# 	structure bingo:tutorial
+			#declare tag bingo.sign_settings_more_coming
+			#>
+			# @within
+			# 	function bingo:lobby/set_signs
+			# 	structure bingo:tutorial
+			#declare tag bingo.sign_settings_automatic_pregen
+			#>
+			# @within
+			# 	function bingo:lobby/set_signs
+			# 	structure bingo:tutorial
+			#declare tag bingo.sign_settings_strict_mode
+			#>
+			# @within
+			# 	function bingo:lobby/set_signs
+			# 	structure bingo:tutorial
+			#declare tag bingo.sign_settings_preferences
+			#>
+			# @within
+			# 	function bingo:lobby/set_signs
+			# 	structure bingo:tutorial
+			#declare tag bingo.sign_tutorial_generate_chests
+			#>
+			# @within
+			# 	function bingo:lobby/set_signs
+			# 	structure bingo:tutorial
+			#declare tag bingo.sign_tutorial_generate_chests
+			#>
+			# @within
+			# 	function bingo:lobby/set_signs
+			# 	structure bingo:tutorial
+			#declare tag bingo.sign_tutorial_basics
+			#>
+			# @within
+			# 	function bingo:lobby/set_signs
+			# 	structure bingo:tutorial
+			#declare tag bingo.sign_tutorial_basics1
+			#>
+			# @within
+			# 	function bingo:lobby/set_signs
+			# 	structure bingo:tutorial
+			#declare tag bingo.sign_tutorial_basics2
+			#>
+			# @within
+			# 	function bingo:lobby/set_signs
+			# 	structure bingo:tutorial
+			#declare tag bingo.sign_tutorial_basics3
+			#>
+			# @within
+			# 	function bingo:lobby/set_signs
+			# 	structure bingo:tutorial
+			#declare tag bingo.sign_tutorial_basics4
+			#>
+			# @within
+			# 	function bingo:lobby/set_signs
+			# 	structure bingo:tutorial
+			#declare tag bingo.sign_tutorial_basics5
+			#>
+			# @within
+			# 	function bingo:lobby/set_signs
+			# 	structure bingo:tutorial
+			#declare tag bingo.sign_tutorial_basics6
+			#>
+			# @within
+			# 	function bingo:lobby/set_signs
+			# 	structure bingo:tutorial
+			#declare tag bingo.sign_tutorial_skybox
+			#>
+			# @within
+			# 	function bingo:lobby/set_signs
+			# 	structure bingo:tutorial
+			#declare tag bingo.sign_tutorial_get_tools
+			#>
+			# @within
+			# 	function bingo:lobby/set_signs
+			# 	structure bingo:tutorial
+			#declare tag bingo.sign_tutorial_game_info
+			#>
+			# @within
+			# 	function bingo:lobby/set_signs
+			# 	structure bingo:tutorial
+			#declare tag bingo.sign_tutorial_goal_lectern
+			#>
+			# @within
+			# 	function bingo:lobby/set_signs
+			# 	structure bingo:tutorial
+			#declare tag bingo.sign_tutorial_game_info_lectern
+		#endregion
+	#endregion
 #endregion
 
 #region setup objectives
@@ -355,6 +600,16 @@
 		#
 		# @public
 		scoreboard objectives add bingo.state dummy
+
+		#>
+		# This objective is set to 1 for players who confirmed their operator status in
+		# strict mode.
+		#
+		# This uses an objective rather than a tag so that it is possible to remove
+		# operators even when they are offline.
+		#
+		# @public
+		scoreboard objectives add bingo.operator dummy
 
 		#>
 		# Whether this player's hud needs to be forcefully updated entirely
@@ -509,16 +764,23 @@
 
 	#endregion
 
-	#region internal holders
+	#region score holders
 		#>
 		# The current game state
 		# 0 = Lobby / Not in game
-		# 1 = Starting / pre-game (i.e chunks generating or skybox phase)
-		# 2 = Game started
+		# 1 = Starting / pre-game
+		# 2 = Skybox phase
+		# 3 = Game started
 		#
 		# @public
 		#declare score_holder $game_state
 		scoreboard players add $game_state bingo.state 0
+		#>
+		# Whether this is multiplayer
+		#
+		# @public
+		#declare score_holder $is_multiplayer
+		scoreboard players add $is_multiplayer bingo.state 0
 		#>
 		# The status of pregeneration.
 		# 0 = not started
@@ -554,6 +816,12 @@
 		# @internal
 		#declare score_holder $automatically_pregen
 		scoreboard players add $automatically_pregen bingo.settings 0
+		#>
+		# Whether strict mode is turned on
+		#
+		# @internal
+		#declare score_holder $strict_mode
+		scoreboard players add $strict_mode bingo.settings 0
 
 		#>
 		# The current game seed

@@ -2,8 +2,7 @@
 #
 # This function prints the prompt for changing pregen behavior.
 #
-# @within bingo:lobby/set_signs
-# @user
+# @within bingo:lobby/settings/pregen_strict_mode_check
 # @context entity Player changing the setting
 
 tellraw @s [{"translate": "bingo.lobby.settings.pregen_behavior.info.on_game_start.prefix"}, {"translate": "bingo.lobby.settings.pregen_behavior.info.on_game_start", "color": "gray"}, "\n\n", {"translate": "bingo.lobby.settings.pregen_behavior.info.on_card_generation.prefix"}, {"translate": "bingo.lobby.settings.pregen_behavior.info.on_card_generation", "color": "gray"}, "\n"]
