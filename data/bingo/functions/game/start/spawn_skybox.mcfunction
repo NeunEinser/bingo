@@ -23,6 +23,10 @@ tellraw @a[tag=!bingo.resourcepack_check] "Loading terrain"
 scoreboard players add $current_game_id bingo.game_id 1
 scoreboard players operation @a[tag=!bingo.resourcepack_check] bingo.game_id = $current_game_id bingo.game_id
 teleport @a[tag=!bingo.resourcepack_check] ~ 128 ~
+#scoreboard players reset @a bingo.card_pos
+scoreboard players reset @a bingo.pref
+scoreboard players reset @a bingo.seed
+scoreboard players reset @a bingo.settings
 
 execute store result score $spawn_x bingo.state run data get entity @a[tag=!bingo.resourcepack_check, limit=1] Pos[0]
 execute store result score $spawn_z bingo.state run data get entity @a[tag=!bingo.resourcepack_check, limit=1] Pos[2]
