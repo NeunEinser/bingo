@@ -922,13 +922,8 @@
 
 # Create overworld resourcepack check box
 	fill 0 0 0 2 3 2 minecraft:black_concrete outline
-	setblock 1 2 2 minecraft:sea_lantern
 	setworldspawn 1 1 1
 	gamerule spawnRadius 0
-
-	## Fix light glitch
-	setblock 1 2 2 minecraft:black_concrete
-	setblock 1 2 2 minecraft:sea_lantern
 
 # Add pregen bossbar
 	bossbar add bingo:start/pre_gen/progress {"translate": "bingo.game.start.pre_gen_progress"}

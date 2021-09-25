@@ -11,3 +11,4 @@ effect give @s minecraft:weakness 1000000 255 true
 tag @s add bingo.resourcepack_check
 
 trigger bingo.resources
+setblock 1 2 2 minecraft:sea_lantern
