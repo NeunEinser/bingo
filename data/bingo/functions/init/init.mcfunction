@@ -920,9 +920,15 @@
 	#endregion
 #endregion
 
-# Create overworld resourcepack check box
+# Create overworld resourcepack check
+	#>
+	# @private
+	#declare tag bingo.detect_mp_aec
+
+	kill @e[type=minecraft:area_effect_cloud, tag=bingo.detect_mp_aec, limit=1]
+	summon minecraft:area_effect_cloud ~ ~ ~ {CustomName:'{"translate": "bingo.technical.detect_multiplayer"}', Age: -2147483648, Duration: -1, WaitTime: -2147483648, Tags: ["bingo.detect_mp_aec"]}
 	fill 0 0 0 2 3 2 minecraft:black_concrete outline
-	setworldspawn 1 1 1
+	setworldspawn 1 0 1
 	gamerule spawnRadius 0
 
 # Add pregen bossbar

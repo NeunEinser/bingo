@@ -8,22 +8,13 @@
 team join bingo.dark_green
 recipe give @s *
 
-#>
-# @private
-#declare score_holder $new_player.request_resources
+gamemode adventure
+scoreboard players set @s bingo.resources 1
+scoreboard players enable @s bingo.resources
+effect give @s minecraft:weakness 1000000 255 true
+tag @s add bingo.resourcepack_check
 
-# Detect second (or more) players in a LAN world
-execute store result score $new_player.request_resources bingo.tmp if entity @a
-scoreboard players remove $new_player.request_resources bingo.tmp 1
-
-# Detect the resource pack not being active server-side (So either we are on a
-# server, or resourcepack is missing in single player for some reason)
-summon minecraft:area_effect_cloud ~ ~ ~ {CustomName:'{"translate": "bingo.technical.detect_multiplayer"}'}
-execute if score $new_player.request_resources bingo.tmp matches 0 unless entity @e[name=DoNotTranslateThis, limit=1] run scoreboard players set $new_player.request_resources bingo.tmp 1
-
-execute if score $new_player.request_resources bingo.tmp matches 0 run function bingo:util/go_to_lobby
-execute unless score $new_player.request_resources bingo.tmp matches 0 run function bingo:tick/resource_pack_check_setup
-execute unless score $new_player.request_resources bingo.tmp matches 0 run scoreboard players set $is_multiplayer bingo.state 1
+setblock 1 2 2 minecraft:sea_lantern
 
 scoreboard players add @s bingo.operator 0
 

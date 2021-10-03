@@ -10,7 +10,19 @@
 
 execute in bingo:lobby run function neun_einser.timer:store_current_time
 
-# Resource pack check
+#region Resource pack check
+# Detect second (or more) players in a LAN world
+execute store result score $is_multiplayer bingo.state if entity @a
+scoreboard players remove $is_multiplayer bingo.state 1
+
+# Detect the resource pack not being active server-side (So either we are on a
+# server, or resourcepack is missing in single player for some reason)
+
+execute if score $is_multiplayer bingo.state matches 0 unless entity @e[name=DoNotTranslateThis, limit=1] run scoreboard players set $is_multiplayer bingo.state 1
+
+execute if score $is_multiplayer bingo.state matches 0 run tellraw @a[tag=bingo.resourcepack_check] "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+execute if score $is_multiplayer bingo.state matches 0 run scoreboard players set @a[tag=bingo.resourcepack_check] bingo.resources 91
+
 tellraw @a[scores={bingo.resources=1}] ["\n\n\n", {"translate": "%1074992263$s%1$s", "with": [["",{"text": "The resourcepack is currently not enabled.", "color": "red"}, "\nPlease download the Resourcepack ", {"text": "here", "color": "#00c3ff", "clickEvent": {"action": "open_url", "value": "https://github.com/NeunEinser/bingo/releases/download/5.0-beta2/Resourcepack.zip"}}, " and enable it.\n\n[", {"text": "Re-check", "color": "#00c3ff", "clickEvent": {"action": "run_command", "value": "/trigger bingo.resources"}}, "]"], ["", {"translate": "bingo.resourcepack_check.go_to_lobby.part1", "color": "green"}, "\n", {"translate": "bingo.resourcepack_check.go_to_lobby.part2", "with": [{"translate": "bingo.resourcepack_check.go_to_lobby.click", "color": "#00c3ff", "clickEvent": {"action": "run_command", "value": "/trigger bingo.resources set 91"}}]}]]}]
 scoreboard players enable @a[tag=bingo.resourcepack_check] bingo.resources
 scoreboard players set @a[scores={bingo.resources=1}] bingo.resources 0
@@ -19,6 +31,7 @@ execute as @a[scores={bingo.resources=91}] run function bingo:util/go_to_lobby
 
 setblock 1 2 1 minecraft:air
 setblock 1 2 1 minecraft:warped_wall_sign{Text1: '{"translate":"%1074992263$s%1$s", "bold": true, "color":"#8eedeb", "with": ["", {"translate": "bingo.resourcepack_check.sign.line1"}], "clickEvent": {"action": "run_command", "value": "/trigger bingo.resources"}}', Text2:'{"translate":"%1074992263$s%1$s", "bold": true, "color":"#8eedeb", "with": ["Download", {"translate": "bingo.resourcepack_check.sign.line2"}]}', Text3:'{"translate":"%1074992263$s%1$s", "bold": true, "color":"#8eedeb", "with": ["Resourcepack", {"translate": "bingo.resourcepack_check.sign.line3"}]}', Text4:'{"translate":"%1074992263$s%1$s", "bold": true, "color":"#8eedeb", "with": ["", {"translate": "bingo.resourcepack_check.sign.line4"}]}'}
+#endregion
 
 # Assign each player a unique ID
 execute as @a[scores={bingo.reconnect=1}] run function #bingo:player_reconnect
