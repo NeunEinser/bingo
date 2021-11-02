@@ -30,10 +30,10 @@ execute if score @s bingo.pref matches 9 run function bingo:preferences/custom_h
 execute if score @s bingo.pref matches 10 run function bingo:preferences/custom_hud/show_col1
 
 execute if score @s bingo.pref matches 12..31 run function bingo:preferences/custom_hud/add_disabled/exec
-execute if score @s bingo.pref matches 32..48 run function bingo:preferences/custom_hud/adjust_col/col0
-execute if score @s bingo.pref matches 49..65 run function bingo:preferences/custom_hud/adjust_col/col1
+execute if score @s bingo.pref matches 32..46 run function bingo:preferences/custom_hud/adjust_col/col0
+execute if score @s bingo.pref matches 49..66 run function bingo:preferences/custom_hud/adjust_col/col1
 
-execute if score @s bingo.pref matches 12..65 run scoreboard players set @s bingo.update_hud 1
+execute if score @s bingo.pref matches 12..66 run scoreboard players set @s bingo.update_hud 1
 
 #>
 # @api

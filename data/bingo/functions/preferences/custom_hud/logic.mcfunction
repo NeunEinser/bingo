@@ -18,6 +18,7 @@ execute store result score $preferences/hud.total_count bingo.tmp run data get s
 # Workaround for https://bugs.mojang.com/browse/MC-236889 :mad_neun:
 data modify storage tmp.bingo:preferences/hud activeComponents set from storage bingo:custom_hud currentPlayer.components
 data remove storage tmp.bingo:preferences/hud activeComponents[{id: "bingo:empty"}]
+data remove storage tmp.bingo:preferences/hud activeComponents[{id: "bingo:spacer"}]
 
 execute store result score $preferences/hud.enabled_count bingo.tmp run data get storage tmp.bingo:preferences/hud activeComponents
 

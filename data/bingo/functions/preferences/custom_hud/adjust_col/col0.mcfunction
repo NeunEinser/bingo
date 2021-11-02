@@ -13,6 +13,8 @@ execute if score @s bingo.pref matches 38..40 run function bingo:preferences/cus
 execute if score @s bingo.pref matches 41..43 run function bingo:preferences/custom_hud/adjust_col/col0_row1
 execute if score @s bingo.pref matches 44..45 run function bingo:preferences/custom_hud/adjust_col/col0_row0
 
+execute if score @s bingo.pref matches 46 run function bingo:preferences/custom_hud/adjust_col/col0_add_spacer
+
 # Work around for """WAI""" https://bugs.mojang.com/browse/MC-139625 :mad_neun:
 data modify storage tmp.bingo:preferences/hud firstComponent set from storage bingo:custom_hud currentPlayer.components[0]
 execute unless data storage tmp.bingo:preferences/hud firstComponent{id: "bingo:empty"} run scoreboard players set $preferences.next_page bingo.tmp 9

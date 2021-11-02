@@ -45,6 +45,7 @@
 	"bingo.preferences.custom_hud.adjust_col.move_down.description": "Switches position of this component with the below component.",
 	"bingo.preferences.custom_hud.adjust_col.remove.title": "Remove",
 	"bingo.preferences.custom_hud.adjust_col.remove.description": "Removes the component from your HUD.",
+	"bingo.preferences.custom_hud.adjust_col.add_spacer": "Add Spacer",
 
 	"bingo.preferences.custom_hud.adjust_card.title": "Adjust Bingo Card",
 	"bingo.preferences.custom_hud.adjust_card.description": "Here, you can change settings about the Bingo Card.",
@@ -55,6 +56,7 @@
 	"bingo.preferences.custom_hud.adjust_card.right_of_hotbar_with_attack.title": "Move to Right of Hotbar (Attack Indicator)",
 	"bingo.preferences.custom_hud.adjust_card.right_of_hotbar_with_attack.description": "Moves the Bingo card to the right side of the hotbar while leaving space for the attack indicator.\nOnly use this option if “Options → Video Settings → Attack Indicator” is set to “Hotbar”.",
 
+	"bingo.custom_hud.components.spacer": "Spacer",
 	"bingo.custom_hud.components.seed": "Bingo Seed",
 	"bingo.custom_hud.components.player_position": "X/Z coordinates",
 	"bingo.custom_hud.components.y_position": "Y coordinate",
