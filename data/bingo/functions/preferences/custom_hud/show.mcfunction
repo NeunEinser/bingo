@@ -22,7 +22,7 @@ data remove storage tmp.bingo:preferences/hud skippedHuds[0]
 
 execute if score @s bingo.pref matches 5 run data modify storage io.bingo:preferences menuOptions set from storage bingo:registries preferences.custom_hud
 execute if score @s bingo.pref matches 5 run function #bingo:preferences/custom_hud
-execute if score @s bingo.pref matches 5 run tellraw @s ["\n\n\n=== ", {"translate": "bingo.preferences.custom_hud.title", "bold": true, "color": "green"}, " ===\n\n", {"translate": "bingo.preferences.custom_hud.description", "color": "gray"}, "\n"]
+execute if score @s bingo.pref matches 5 run tellraw @s ["\n\n\n\n\n=== ", {"translate": "bingo.preferences.custom_hud.title", "bold": true, "color": "green"}, " ===\n\n", {"translate": "bingo.preferences.custom_hud.description", "color": "gray"}, "\n"]
 execute if score @s bingo.pref matches 5 run data modify storage tmp.bingo:preferences back set value '["[", {"translate": "bingo.preferences.back", "color": "#00c3ff", "clickEvent": {"action": "run_command", "value": "/trigger bingo.pref"}}, "]"]'
 
 execute if score @s bingo.pref matches 6..8 run function bingo:preferences/custom_hud/show_disabled
@@ -40,7 +40,7 @@ execute if score @s bingo.pref matches 12..65 run scoreboard players set @s bing
 #declare tag/function bingo:preferences/custom_hud/adjust_card
 execute if score @s bingo.pref matches 11 run data modify storage io.bingo:preferences menuOptions set from storage bingo:registries preferences.adjust_card
 execute if score @s bingo.pref matches 11 run function #bingo:preferences/custom_hud/adjust_card
-execute if score @s bingo.pref matches 11 run tellraw @s ["\n\n\n=== ", {"translate": "bingo.preferences.custom_hud.adjust_card.title", "bold": true, "color": "green"}, " ===\n\n", {"translate": "bingo.preferences.custom_hud.adjust_card.description", "color": "gray"}, "\n"]
+execute if score @s bingo.pref matches 11 run tellraw @s ["\n\n\n\n\n=== ", {"translate": "bingo.preferences.custom_hud.adjust_card.title", "bold": true, "color": "green"}, " ===\n\n", {"translate": "bingo.preferences.custom_hud.adjust_card.description", "color": "gray"}, "\n"]
 
 data modify storage bingo:custom_hud players append from storage bingo:custom_hud currentPlayer
 data modify storage bingo:custom_hud players append from storage tmp.bingo:preferences/hud skippedHuds[]

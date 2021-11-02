@@ -8,7 +8,7 @@
 # @context entity Player who triggered bingo.pref
 # @reads storage bingo:custom_hud currentPlayer.components
 
-tellraw @s ["\n\n\n=== ", {"translate": "bingo.preferences.custom_hud.adjust_col0.title", "bold": true, "color": "green"}, " ===\n\n", {"translate": "bingo.preferences.custom_hud.adjust_col.description", "color": "gray"}, "\n"]
+tellraw @s ["\n\n\n\n\n=== ", {"translate": "bingo.preferences.custom_hud.adjust_col0.title", "bold": true, "color": "green"}, " ===\n\n", {"translate": "bingo.preferences.custom_hud.adjust_col.description", "color": "gray"}, "\n"]
 
 data modify storage tmp.bingo:preferences/hud move set value '""'
 

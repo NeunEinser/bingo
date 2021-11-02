@@ -25,7 +25,7 @@
 data remove storage tmp.bingo:preferences back
 execute if score @s bingo.pref matches 1 run data modify storage io.bingo:preferences menuOptions set from storage bingo:registries preferences.main
 execute if score @s bingo.pref matches 1 run function #bingo:preferences/main
-execute if score @s bingo.pref matches 1 run tellraw @s ["\n\n\n=== ", {"translate": "bingo.preferences.title", "bold": true, "color": "green"}, " ===\n\n", {"translate": "bingo.preferences.description", "color": "gray"}, "\n"]
+execute if score @s bingo.pref matches 1 run tellraw @s ["\n\n\n\n\n=== ", {"translate": "bingo.preferences.title", "bold": true, "color": "green"}, " ===\n\n", {"translate": "bingo.preferences.description", "color": "gray"}, "\n"]
 
 execute if score @s bingo.pref matches 5..65 run function bingo:preferences/custom_hud/show
 

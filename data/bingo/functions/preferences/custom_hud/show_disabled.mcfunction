@@ -22,7 +22,7 @@ data modify storage tmp.bingo:preferences/hud playerComponents set from storage 
 data remove storage tmp.bingo:preferences/hud playerComponents[{id: "bingo:blank"}]
 function bingo:preferences/custom_hud/select_page
 
-tellraw @s ["\n\n\n=== ", {"translate": "bingo.preferences.custom_hud.add_disabled.title", "bold": true, "color": "green"}, " ===\n\n", {"translate": "bingo.preferences.custom_hud.add_disabled.description", "color": "gray"}, "\n"]
+tellraw @s ["\n\n\n\n\n=== ", {"translate": "bingo.preferences.custom_hud.add_disabled.title", "bold": true, "color": "green"}, " ===\n\n", {"translate": "bingo.preferences.custom_hud.add_disabled.description", "color": "gray"}, "\n"]
 
 data modify storage tmp.bingo:preferences/hud addCol0 set value '""'
 data modify storage tmp.bingo:preferences/hud addCol1 set value '""'
