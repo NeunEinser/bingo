@@ -14,7 +14,7 @@ data modify storage tmp.bingo:preferences/hud move set value '""'
 
 # Work around for """WAI""" https://bugs.mojang.com/browse/MC-139625 :mad_neun:
 data modify storage tmp.bingo:preferences/hud hudComponent set from storage bingo:custom_hud currentPlayer.components[5]
-execute if data storage tmp.bingo:preferences/hud hudComponent{id: "bingo:blank"} run data modify storage tmp.bingo:preferences/hud move set value '[" [", {"translate": "bingo.preferences.custom_hud.adjust_col.move_left.title", "color": "#00c3ff", "hoverEvent": {"action": "show_text", "contents": {"translate": "bingo.preferences.custom_hud.adjust_col.move_left_right.description", "color": "gold"}}}, "]"]'
+execute if data storage tmp.bingo:preferences/hud hudComponent{id: "bingo:empty"} run data modify storage tmp.bingo:preferences/hud move set value '[" [", {"translate": "bingo.preferences.custom_hud.adjust_col.move_left.title", "color": "#00c3ff", "hoverEvent": {"action": "show_text", "contents": {"translate": "bingo.preferences.custom_hud.adjust_col.move_left_right.description", "color": "gold"}}}, "]"]'
 
 #region Work around for """WAI""" https://bugs.mojang.com/browse/MC-139625 :mad_neun:
 data modify storage tmp.bingo:preferences/hud filledComponets set value []
@@ -25,7 +25,7 @@ data modify storage tmp.bingo:preferences/hud filledComponets append from storag
 data modify storage tmp.bingo:preferences/hud filledComponets append from storage bingo:custom_hud currentPlayer.components[10]
 data modify storage tmp.bingo:preferences/hud filledComponets append from storage bingo:custom_hud currentPlayer.components[11]
 
-data remove storage tmp.bingo:preferences/hud filledComponets[{id: "bingo:blank"}]
+data remove storage tmp.bingo:preferences/hud filledComponets[{id: "bingo:empty"}]
 #endregion
 
 execute if data storage tmp.bingo:preferences/hud filledComponets[5] run tellraw @s ["[", {"translate": "bingo.preferences.custom_hud.adjust_col.move_up.title", "color": "gray"}, "] [", {"translate": "bingo.preferences.custom_hud.adjust_col.move_down.title", "color": "#00c3ff", "hoverEvent": {"action": "show_text", "contents": {"translate": "bingo.preferences.custom_hud.adjust_col.move_down.description", "color": "gold"}}, "clickEvent": {"action": "run_command", "value": "/trigger bingo.pref set 49"}}, "]", {"storage": "tmp.bingo:preferences/hud", "nbt": "move", "interpret": true, "clickEvent": {"action": "run_command", "value": "/trigger bingo.pref set 50"}}, " [", {"translate": "bingo.preferences.custom_hud.adjust_col.remove.title", "color": "#00c3ff", "hoverEvent": {"action": "show_text", "contents": {"translate": "bingo.preferences.custom_hud.adjust_col.remove.description", "color": "gold"}}, "clickEvent": {"action": "run_command", "value": "/trigger bingo.pref set 51"}}, "] ", {"storage": "tmp.bingo:preferences/hud", "nbt": "filledComponets[5].name", "interpret": true}]

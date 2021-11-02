@@ -15,4 +15,4 @@ data modify storage bingo:custom_hud currentPlayer.components[1] set from storag
 data modify storage bingo:custom_hud currentPlayer.components[2] set from storage bingo:custom_hud currentPlayer.components[3]
 data modify storage bingo:custom_hud currentPlayer.components[3] set from storage bingo:custom_hud currentPlayer.components[4]
 data modify storage bingo:custom_hud currentPlayer.components[4] set from storage bingo:custom_hud currentPlayer.components[5]
-data modify storage bingo:custom_hud currentPlayer.components[5] set value {id: "bingo:blank", padding: '{"translate": "space.91"}'}
+data modify storage bingo:custom_hud currentPlayer.components[5] set value {id: "bingo:empty", padding: '{"translate": "space.91"}'}

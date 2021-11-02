@@ -19,7 +19,7 @@ scoreboard players set $preferences/hud.element bingo.tmp 0
 data modify storage tmp.bingo:preferences/hud components set from storage bingo:custom_hud components
 data modify storage tmp.bingo:preferences/hud pageElements set value []
 data modify storage tmp.bingo:preferences/hud playerComponents set from storage bingo:custom_hud currentPlayer.components
-data remove storage tmp.bingo:preferences/hud playerComponents[{id: "bingo:blank"}]
+data remove storage tmp.bingo:preferences/hud playerComponents[{id: "bingo:empty"}]
 function bingo:preferences/custom_hud/select_page
 
 tellraw @s ["\n\n\n\n\n=== ", {"translate": "bingo.preferences.custom_hud.add_disabled.title", "bold": true, "color": "green"}, " ===\n\n", {"translate": "bingo.preferences.custom_hud.add_disabled.description", "color": "gray"}, "\n"]
@@ -30,10 +30,10 @@ data modify storage tmp.bingo:preferences/hud col01Space set value '""'
 
 # Work around for """WAI""" https://bugs.mojang.com/browse/MC-139625 :mad_neun:
 data modify storage tmp.bingo:preferences/hud hudComponent set from storage bingo:custom_hud currentPlayer.components[5]
-execute if data storage tmp.bingo:preferences/hud hudComponent{id: "bingo:blank"} run data modify storage tmp.bingo:preferences/hud addCol0 set value '["[", {"translate": "bingo.preferences.custom_hud.add_disabled.add_col0.title", "color": "#00c3ff", "hoverEvent": {"action": "show_text", "contents": {"translate": "bingo.preferences.custom_hud.add_disabled.add.description", "color": "gold"}}}, "]"]'
+execute if data storage tmp.bingo:preferences/hud hudComponent{id: "bingo:empty"} run data modify storage tmp.bingo:preferences/hud addCol0 set value '["[", {"translate": "bingo.preferences.custom_hud.add_disabled.add_col0.title", "color": "#00c3ff", "hoverEvent": {"action": "show_text", "contents": {"translate": "bingo.preferences.custom_hud.add_disabled.add.description", "color": "gold"}}}, "]"]'
 # Work around for """WAI""" https://bugs.mojang.com/browse/MC-139625 :mad_neun:
 data modify storage tmp.bingo:preferences/hud hudComponent set from storage bingo:custom_hud currentPlayer.components[11]
-execute if data storage tmp.bingo:preferences/hud hudComponent{id: "bingo:blank"} run data modify storage tmp.bingo:preferences/hud addCol1 set value '["[", {"translate": "bingo.preferences.custom_hud.add_disabled.add_col1.title", "color": "#00c3ff", "hoverEvent": {"action": "show_text", "contents": {"translate": "bingo.preferences.custom_hud.add_disabled.add.description", "color": "gold"}}}, "]"]'
+execute if data storage tmp.bingo:preferences/hud hudComponent{id: "bingo:empty"} run data modify storage tmp.bingo:preferences/hud addCol1 set value '["[", {"translate": "bingo.preferences.custom_hud.add_disabled.add_col1.title", "color": "#00c3ff", "hoverEvent": {"action": "show_text", "contents": {"translate": "bingo.preferences.custom_hud.add_disabled.add.description", "color": "gold"}}}, "]"]'
 execute unless data storage tmp.bingo:preferences/hud {addCol0: '""'} unless data storage tmp.bingo:preferences/hud {addCol1: '""'} run data modify storage tmp.bingo:preferences/hud col01Space set value '" "'
 
 tellraw @s [{"storage": "tmp.bingo:preferences/hud", "nbt": "pageElements[0].name", "interpret": true}, " ", {"storage": "tmp.bingo:preferences/hud", "nbt": "addCol0", "interpret": true, "clickEvent": {"action": "run_command", "value": "/trigger bingo.pref set 12"}}, {"storage": "tmp.bingo:preferences/hud", "nbt": "col01Space", "interpret": true}, {"storage": "tmp.bingo:preferences/hud", "nbt": "addCol1", "interpret": true, "clickEvent": {"action": "run_command", "value": "/trigger bingo.pref set 13"}}]

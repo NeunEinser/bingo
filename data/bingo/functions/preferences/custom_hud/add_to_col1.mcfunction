@@ -20,7 +20,7 @@ data modify storage tmp.bingo:preferences/hud filledComponets append from storag
 data modify storage tmp.bingo:preferences/hud filledComponets append from storage bingo:custom_hud currentPlayer.components[10]
 data modify storage tmp.bingo:preferences/hud filledComponets append from storage bingo:custom_hud currentPlayer.components[11]
 
-data remove storage tmp.bingo:preferences/hud filledComponets[{id: "bingo:blank"}]
+data remove storage tmp.bingo:preferences/hud filledComponets[{id: "bingo:empty"}]
 
 # At least this makes it a little bit better, but still :mad_neun:
 execute store result score $preferences/hud/add.row bingo.tmp run data get storage tmp.bingo:preferences/hud filledComponets

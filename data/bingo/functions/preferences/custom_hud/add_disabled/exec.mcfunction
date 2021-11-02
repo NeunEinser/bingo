@@ -8,7 +8,7 @@ scoreboard players set $preferences/hud.element bingo.tmp 0
 data modify storage tmp.bingo:preferences/hud components set from storage bingo:custom_hud components
 data modify storage tmp.bingo:preferences/hud pageElements set value []
 data modify storage tmp.bingo:preferences/hud playerComponents set from storage bingo:custom_hud currentPlayer.components
-data remove storage tmp.bingo:preferences/hud playerComponents[{id: "bingo:blank"}]
+data remove storage tmp.bingo:preferences/hud playerComponents[{id: "bingo:empty"}]
 function bingo:preferences/custom_hud/select_page
 
 execute if score @s bingo.pref matches 12..17 run function bingo:preferences/custom_hud/add_disabled/partition_0
