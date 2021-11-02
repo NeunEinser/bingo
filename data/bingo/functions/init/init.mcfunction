@@ -1070,8 +1070,7 @@
 	data modify storage bingo:custom_hud default append from storage tmp.bingo:init/hud columns[0][2]
 	data modify storage bingo:custom_hud default append from storage tmp.bingo:init/hud columns[0][3]
 	data modify storage bingo:custom_hud default append from storage tmp.bingo:init/hud columns[0][4]
-	data modify storage bingo:custom_hud default append from storage tmp.bingo:init/hud columns[0][5]
-	execute unless data storage bingo:custom_hud default[5] run function bingo:init/initialize_hud_components/fill_default_col0
+	execute unless data storage bingo:custom_hud default[4] run function bingo:init/initialize_hud_components/fill_default_col0
 	
 	data modify storage bingo:custom_hud default append from storage tmp.bingo:init/hud columns[1][0]
 	data modify storage bingo:custom_hud default append from storage tmp.bingo:init/hud columns[1][1]
@@ -1079,7 +1078,7 @@
 	data modify storage bingo:custom_hud default append from storage tmp.bingo:init/hud columns[1][3]
 	data modify storage bingo:custom_hud default append from storage tmp.bingo:init/hud columns[1][4]
 	data modify storage bingo:custom_hud default append from storage tmp.bingo:init/hud columns[1][5]
-	execute unless data storage bingo:custom_hud default[11] run function bingo:init/initialize_hud_components/fill_default_col1
+	execute unless data storage bingo:custom_hud default[10] run function bingo:init/initialize_hud_components/fill_default_col1
 	
 	data remove storage bingo:custom_hud default[].addByDefault
 	data remove storage bingo:custom_hud default[].preferredColumn

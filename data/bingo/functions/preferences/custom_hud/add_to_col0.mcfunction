@@ -17,7 +17,6 @@ data modify storage tmp.bingo:preferences/hud filledComponets append from storag
 data modify storage tmp.bingo:preferences/hud filledComponets append from storage bingo:custom_hud currentPlayer.components[2]
 data modify storage tmp.bingo:preferences/hud filledComponets append from storage bingo:custom_hud currentPlayer.components[3]
 data modify storage tmp.bingo:preferences/hud filledComponets append from storage bingo:custom_hud currentPlayer.components[4]
-data modify storage tmp.bingo:preferences/hud filledComponets append from storage bingo:custom_hud currentPlayer.components[5]
 
 data remove storage tmp.bingo:preferences/hud filledComponets[{id: "bingo:empty"}]
 
@@ -30,4 +29,3 @@ execute if score $preferences/hud/add.row bingo.tmp matches 1 run data modify st
 execute if score $preferences/hud/add.row bingo.tmp matches 2 run data modify storage bingo:custom_hud currentPlayer.components[2] set from storage tmp.bingo:preferences/hud toBeAdded
 execute if score $preferences/hud/add.row bingo.tmp matches 3 run data modify storage bingo:custom_hud currentPlayer.components[3] set from storage tmp.bingo:preferences/hud toBeAdded
 execute if score $preferences/hud/add.row bingo.tmp matches 4 run data modify storage bingo:custom_hud currentPlayer.components[4] set from storage tmp.bingo:preferences/hud toBeAdded
-execute if score $preferences/hud/add.row bingo.tmp matches 5 run data modify storage bingo:custom_hud currentPlayer.components[5] set from storage tmp.bingo:preferences/hud toBeAdded

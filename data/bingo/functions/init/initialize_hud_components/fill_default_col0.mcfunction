@@ -17,4 +17,4 @@ data remove storage tmp.bingo:init/hud whereSpace[0]
 
 execute store result storage bingo:custom_hud default[-1].line byte 1 run scoreboard players get $init/hud.line bingo.tmp
 
-execute unless data storage bingo:custom_hud default[5] run function bingo:init/initialize_hud_components/fill_default_col0
+execute unless data storage bingo:custom_hud default[4] run function bingo:init/initialize_hud_components/fill_default_col0

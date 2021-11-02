@@ -29,10 +29,10 @@ data modify storage tmp.bingo:preferences/hud addCol1 set value '""'
 data modify storage tmp.bingo:preferences/hud col01Space set value '""'
 
 # Work around for """WAI""" https://bugs.mojang.com/browse/MC-139625 :mad_neun:
-data modify storage tmp.bingo:preferences/hud hudComponent set from storage bingo:custom_hud currentPlayer.components[5]
+data modify storage tmp.bingo:preferences/hud hudComponent set from storage bingo:custom_hud currentPlayer.components[4]
 execute if data storage tmp.bingo:preferences/hud hudComponent{id: "bingo:empty"} run data modify storage tmp.bingo:preferences/hud addCol0 set value '["[", {"translate": "bingo.preferences.custom_hud.add_disabled.add_col0.title", "color": "#00c3ff", "hoverEvent": {"action": "show_text", "contents": {"translate": "bingo.preferences.custom_hud.add_disabled.add.description", "color": "gold"}}}, "]"]'
 # Work around for """WAI""" https://bugs.mojang.com/browse/MC-139625 :mad_neun:
-data modify storage tmp.bingo:preferences/hud hudComponent set from storage bingo:custom_hud currentPlayer.components[11]
+data modify storage tmp.bingo:preferences/hud hudComponent set from storage bingo:custom_hud currentPlayer.components[10]
 execute if data storage tmp.bingo:preferences/hud hudComponent{id: "bingo:empty"} run data modify storage tmp.bingo:preferences/hud addCol1 set value '["[", {"translate": "bingo.preferences.custom_hud.add_disabled.add_col1.title", "color": "#00c3ff", "hoverEvent": {"action": "show_text", "contents": {"translate": "bingo.preferences.custom_hud.add_disabled.add.description", "color": "gold"}}}, "]"]'
 execute unless data storage tmp.bingo:preferences/hud {addCol0: '""'} unless data storage tmp.bingo:preferences/hud {addCol1: '""'} run data modify storage tmp.bingo:preferences/hud col01Space set value '" "'
 
