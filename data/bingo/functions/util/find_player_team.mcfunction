@@ -25,7 +25,7 @@
 
 #>
 # @within bingo:util/find_player_team/*
-#declare storage temp:bingo.find_team
+#declare storage tmp.bingo:find_team
 
 tag @a remove bingo.in_current_team
 

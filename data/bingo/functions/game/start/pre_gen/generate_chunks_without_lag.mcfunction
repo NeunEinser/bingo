@@ -9,6 +9,7 @@
 # @within function bingo:game/start/pre_gen/set_position_and_generate_next
 
 scoreboard players reset $game_start/pre_gen.column bingo.tmp
+forceload remove all
 forceload add ~ ~
 teleport @s ~ ~ ~
 

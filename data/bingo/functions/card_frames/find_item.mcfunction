@@ -1,14 +1,14 @@
 #> bingo:card_frames/find_item
 #
 # This function finds the item in the given slot and returns it as found item in
-# temp:bingo.output/card_item
+# tmp.bingo:card_frames
 #
 # @internal
 # @input
 # 	score $card_frames/find_item.slot_id bingo.tmp The slot index of which the
 # 		item should be returned.
-# 	storage temp:bingo.input/card_item slots The slots of the current card
-# @output storage temp:bingo.output/card_item found_item
+# 	storage tmp.bingo:card_frames slots The slots of the current card
+# @output storage tmp.bingo:card_frames foundItem
 
 #>
 # Input score for bingo:card_frames/find_item.
@@ -20,26 +20,17 @@
 #declare score_holder $card_frames/find_item.slot_id
 
 #>
-# Input storage for bingo:card_frames/find_item.
-# May only be read by that function.
-#
-# This should hold the slots of the current card in the slots field
-#
-# @internal
-#declare storage temp:bingo.input/card_item
-
-#>
-# Output storage for bingo:card_frames/find_item
-# May only be written to by that function
-#
-# This holds the item that was found in the given slot in found_item
+# Storage for bingo:card_frames/find_item.
+# 
+# Input: slots - Array with slots of the current card
+# Output: foundItem - The item found in the given slot id
 #
 # @internal
-#declare storage temp:bingo.output/card_item
+#declare storage tmp.bingo:card_frames
 
-execute if score $card_frames/find_item.slot_id bingo.tmp matches 0 run data modify storage temp:bingo.output/card_item found_item set from storage temp:bingo.input/card_item slots[0].item.item
-execute if score $card_frames/find_item.slot_id bingo.tmp matches 0 unless data storage temp:bingo.input/card_item slots[0].item.item run data modify storage temp:bingo.output/card_item found_item set value {id: "minecraft:barrier", Count: 1b}
+execute if score $card_frames/find_item.slot_id bingo.tmp matches 0 run data modify storage tmp.bingo:card_frames foundItem set from storage tmp.bingo:card_frames slots[0].item.item
+execute if score $card_frames/find_item.slot_id bingo.tmp matches 0 unless data storage tmp.bingo:card_frames slots[0].item.item run data modify storage tmp.bingo:card_frames foundItem set value {id: "minecraft:barrier", Count: 1b}
 
-data remove storage temp:bingo.input/card_item slots[0]
+data remove storage tmp.bingo:card_frames slots[0]
 scoreboard players remove $card_frames/find_item.slot_id bingo.tmp 1
 execute if score $card_frames/find_item.slot_id bingo.tmp matches 0.. run function bingo:card_frames/find_item
