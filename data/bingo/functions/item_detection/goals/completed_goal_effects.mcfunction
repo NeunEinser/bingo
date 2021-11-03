@@ -15,4 +15,4 @@ summon minecraft:firework_rocket ~-2 ~4 ~2 {LifeTime:20,FireworksItem:{id:"minec
 
 summon minecraft:firework_rocket ~2 ~4 ~2 {LifeTime:23,FireworksItem:{id:"minecraft:firework_rocket", Count:1b ,tag:{Fireworks:{Flight:2b, Explosions:[{Type:2b, Flicker:false, Trail:false, Colors:[I;1279],FadeColors:[I;1279]}]}}}}
 
-tellraw @s [{"translate": "bingo.game.go_to_lobby", "with": [{"translate": "bingo.game.go_to_lobby.click", "color": "#00c3ff", "clickEvent": {"action": "run_command", "value": "/trigger bingo.lobby"}}]}, "\n", {"translate": "bingo.game.go_to_lobby.hint", "color": "gray", "italic": true, "with": [{"text": "/trigger bingo.lobby", "color": "white", "italic": false, "clickEvent": {"action": "suggest_command", "value": "/trigger bingo.lobby"}}]}]
+tellraw @s [{"translate": "bingo.game.go_to_lobby", "with": [{"translate": "bingo.game.go_to_lobby.click", "color": "#00c3ff", "clickEvent": {"action": "run_command", "value": "/trigger bingo.lobby"}}]}]

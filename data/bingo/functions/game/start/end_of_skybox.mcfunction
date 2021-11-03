@@ -6,8 +6,8 @@
 
 execute in bingo:multi_noise run forceload remove all
 
-execute in bingo:multi_noise at @a[distance=0.., limit=1] run setblock ~ ~-1 ~ minecraft:air
-effect give @a minecraft:resistance 1000000 255 true
+execute in bingo:multi_noise at @a[predicate=bingo:is_in_game, limit=1] run setblock ~ ~-1 ~ minecraft:air
+effect give @a[predicate=bingo:is_in_game] minecraft:resistance 1000000 255 true
 
 #>
 # The countdown timer

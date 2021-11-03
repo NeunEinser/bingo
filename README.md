@@ -39,8 +39,8 @@ There will be more documentation about this, once it is more mature.
 
 ## Contributing
 Just make a pull request :D  
-All functions should be documented using IMP doc.  
-It is recommended to use the VS code extension Datapack Helper Plus. There are some custom settings in this repository that will automatically be applied to your repository and ensure you follow my conventions.
+All functions should be documented using [IMP doc](https://github.com/SPYGlassMC/SPYGlass/wiki/IMP-Doc).  
+It is recommended to use the VS code extension [Datapack Helper Plus](https://marketplace.visualstudio.com/items?itemName=SPGoding.datapack-language-server). There are some custom settings in this repository that will automatically be applied to your repository and ensure you follow my conventions.
 
 ## Credits
 NeunEinser: The map  
