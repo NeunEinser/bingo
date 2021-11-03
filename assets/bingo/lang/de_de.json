@@ -141,37 +141,37 @@
 	"bingo.lobby.menu.back": "Zurück",
 	"bingo.lobby.menu.back.hover": "Zurück zur vorherigen Seite",
 
-	"bingo.lobby.preferences.menu.main.title": "Change Preferences",
+	"bingo.lobby.preferences.menu.main.title": "Einstellungen ändern",
 	
-	"bingo.lobby.preferences.menu.main.card_pos": "Change Card Position",
-	"bingo.lobby.preferences.menu.main.card_pos.hover": "Changes where on the screen the Bingo card is displayed",
+	"bingo.lobby.preferences.menu.main.card_pos": "Position der Karte ändern",
+	"bingo.lobby.preferences.menu.main.card_pos.hover": "Ändert den Ort, an dem die Bingo-Karte angezeigt wird.",
 	
-	"bingo.lobby.preferences.menu.card_pos.title": "Change Card Position",
+	"bingo.lobby.preferences.menu.card_pos.title": "Position der Karte ändern",
 
-	"bingo.lobby.preferences.menu.card_pos.left": "Left of Hotbar",
-	"bingo.lobby.preferences.menu.card_pos.left.hover": "Postions the Bingo card left of the hotbar.",
+	"bingo.lobby.preferences.menu.card_pos.left": "Links der Schnellzugriffsleiste ",
+	"bingo.lobby.preferences.menu.card_pos.left.hover": "Positioniert die Bingo-Karte links neben der Schnellzugriffsleiste.",
 
-	"bingo.lobby.preferences.menu.card_pos.right": "Right of Hotbar",
-	"bingo.lobby.preferences.menu.card_pos.right.hover": "Postions the Bingo card right of the hotbar.",
-	"bingo.lobby.preferences.menu.card_pos.right.info": "This setting requires more information about your Minecraft settings.\nPlease take a look at your Attack Indicator setting in Options -> Video Settings and choose one of the following:",
+	"bingo.lobby.preferences.menu.card_pos.right": "Rechts der Schnellzugriffsleiste",
+	"bingo.lobby.preferences.menu.card_pos.right.hover": "Positioniert die Bingo-Karte links neben der Schnellzugriffsleiste.",
+	"bingo.lobby.preferences.menu.card_pos.right.info": "Diese Einstellung erfordert weitere Informationen über deine Minecraft Einstellungen.\nBitte schau deine Einstellungen zur Angriffsanzeige unter Optionen -> Grafikeinstellungen nach und wähle eine der folgenden:",
 
-	"bingo.lobby.preferences.menu.card_pos.right.indicator_hotbar":"Attack Indicator: Hotbar",
-	"bingo.lobby.preferences.menu.card_pos.right.indicator_hotbar.hover":"Adds an extra space to make room for the attack indicator next to the hotbar.",
+	"bingo.lobby.preferences.menu.card_pos.right.indicator_hotbar":"Angriffsanzeige: Schnellzugr.",
+	"bingo.lobby.preferences.menu.card_pos.right.indicator_hotbar.hover":"Lässt Raum für die Angriffsanzeige neben der Schnellzugriffsleiste.",
 
-	"bingo.lobby.preferences.menu.card_pos.right.indicator_crosshair":"Attack Indicator: Crosshair or Off",
-	"bingo.lobby.preferences.menu.card_pos.right.indicator_crosshair.hover":"Positions the Bingo card directly next to the hotbar.",
+	"bingo.lobby.preferences.menu.card_pos.right.indicator_crosshair":"Angriffsanzeige: Fadenkreuz oder Aus",
+	"bingo.lobby.preferences.menu.card_pos.right.indicator_crosshair.hover":"Positioniert die Bingo-Karte direkt neben der Schnellzugriffsleiste.",
 
-	"bingo.lobby.preferences.warning16_9": "Only works properly on a 16:9 display.",
+	"bingo.lobby.preferences.warning16_9": "Funktioniert nur mit 16:9 Anzeigen.",
 
-	"bingo.lobby.preferences.menu.card_pos.left_edge": "Left Edge",
-	"bingo.lobby.preferences.menu.card_pos.left_edge.hover": "Postions the Bingo card on the left edge of the screen.",
-	"bingo.lobby.preferences.menu.card_pos.left_edge.info": "This setting requires more information about your Minecraft settings.\nPlease take a look at your GUI Scale setting in Options -> Video Settings. In case it is set to auto, please cycle the setting to find the scale auto is using.\nPlease choose one of the following:",
+	"bingo.lobby.preferences.menu.card_pos.left_edge": "Linker Rand",
+	"bingo.lobby.preferences.menu.card_pos.left_edge.hover": "Positioniert die Bingo-Karte am linken Rand der Anzeige.",
+	"bingo.lobby.preferences.menu.card_pos.left_edge.info": "Diese Einstellung erfordert weitere Informationen über deine Minecraft Einstellungen.\nBitte schau deine Einstellungen zur GUI-Größe unter Optionen -> Grafikeinstellungen nach. Falls die Option auf Automatisch steht, schalte die Einstellungen durch, um die zu finden, die von der Automatik verwendet wird.\nWähle eine der folgenden:",
 
-	"bingo.lobby.preferences.menu.card_pos.right_edge": "Right Edge",
-	"bingo.lobby.preferences.menu.card_pos.right_edge.hover": "Postions the Bingo card on the right edge of the screen.",
+	"bingo.lobby.preferences.menu.card_pos.right_edge": "Rechter Rand",
+	"bingo.lobby.preferences.menu.card_pos.right_edge.hover": "Positioniert die Bingo-Karte am rechten Rand der Anzeige.",
 
-	"bingo.lobby.preferences.gui_scale": "GUI Scale: %s",
-	"bingo.lobby.preferences.gui_scale.hover": "Aligns the Bingo card to the left edge for GUI Scale %s.",
+	"bingo.lobby.preferences.gui_scale": "GUI-Größe: %s",
+	"bingo.lobby.preferences.gui_scale.hover": "Richtet die Bingo-Karte am linken Rand für GUI-Größe: %s aus.",
 
 
 	"bingo.lobby.tutorial.generate_chests.sign.line1": "",
