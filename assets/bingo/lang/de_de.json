@@ -1,7 +1,66 @@
 {
+	"%1074992263$s%1$s": "%2$s",
+	"bingo.technical.detect_multiplayer": "DoNotTranslateThis",
+
+	"bingo.resourcepack_check.sign.line1": "",
+	"bingo.resourcepack_check.sign.line2": "Klick",
+	"bingo.resourcepack_check.sign.line3": "Mich",
+	"bingo.resourcepack_check.sign.line4": "",
+	"bingo.resourcepack_check.go_to_lobby.part1": "Das Ressourcenpaket wurde erfolgreich aktiviert.",
+	"bingo.resourcepack_check.go_to_lobby.part2": "%s um zur Lobby zu gehen.",
+	"bingo.resourcepack_check.go_to_lobby.click": "Hier klicken",
+
 	"bingo.game.go_to_lobby": "%s um zur Lobby zurückzukehren.",
 	"bingo.game.go_to_lobby.hint": "Hinweis: Du kannst jederzeit mit dem Befehl %s zur Lobby zurückkehren",
 	"bingo.game.go_to_lobby.click": "Hier klicken",
+
+	"bingo.preferences.title": "Einstellungen ändern",
+	"bingo.preferences.description": "This menu allows you to configure your own preferences.",
+	"bingo.preferences.back": "Back",
+	"bingo.preferences.previous": "Previous",
+	"bingo.preferences.next": "Next",
+	"bingo.preferences.page": "Page %s/%s",
+
+	"bingo.preferences.custom_hud.title": "Bingo-HUD Konfiguration",
+	"bingo.preferences.custom_hud.description": "In diesem Menu kannst Du Komponenten des Bingo-HUD verschieben, sie deaktivieren oder komponenten spezifische Einstellungen treffen.",
+
+	"bingo.preferences.custom_hud.add_disabled.title": "Deaktivierte Komponenten hinzufügen",
+	"bingo.preferences.custom_hud.add_disabled.description": "Hier kannst Du deaktivierte Komponenten anzeigen und auf dem HUD hinzufügen.",
+	"bingo.preferences.custom_hud.add_disabled.disabled": "Du hast aktuell alle Komponenten aktiviert.",
+	"bingo.preferences.custom_hud.add_disabled.add_col0.title": "Oberhalb der Schnellzugriffsleiste hinzufügen, Links",
+	"bingo.preferences.custom_hud.add_disabled.add_col1.title": "Oberhalb der Schnellzugriffsleiste hinzufügen, Rechts",
+	"bingo.preferences.custom_hud.add_disabled.add.description": "Füge die Komponente zu den Anzeige Plätzen hinzu.",
+	"bingo.preferences.custom_hud.add_disabled.add.disabled": "Die Komponente kann nicht zu diesem Platz hinzugefügt werden, da kein Raum mehr frei ist.",
+
+	"bingo.preferences.custom_hud.adjust_col0.title": "Feinposition Komponente oberhalb Schnellzugriffsleiste, Links",
+	"bingo.preferences.custom_hud.adjust_col1.title": "Feinposition Komponente oberhalb Schnellzugriffsleiste, Rechts",
+	"bingo.preferences.custom_hud.adjust_col.description": "Hier kannst Du Positionen von Komponenten tauschen, sie in eine andere Spalte verschieben oder spezifische Einstellungen machen.",
+	"bingo.preferences.custom_hud.adjust_col.disabled": "Es sind momentan keine Komponenten in diesem Anzeige Platz.",
+	"bingo.preferences.custom_hud.adjust_col.move_left.title": "◀",
+	"bingo.preferences.custom_hud.adjust_col.move_right.title": "▶",
+	"bingo.preferences.custom_hud.adjust_col.move_left_right.description": "Verschiebt Komponenten in den anderen Anzeige Platz.",
+	"bingo.preferences.custom_hud.adjust_col.move_up.title": "▲",
+	"bingo.preferences.custom_hud.adjust_col.move_up.description": "Tauscht die Position dieser Komponente mit der Komponente oberhalb.",
+	"bingo.preferences.custom_hud.adjust_col.move_down.title": "▼",
+	"bingo.preferences.custom_hud.adjust_col.move_down.description": "Tauscht die Position dieser Komponente mit der Komponente unterhalb.",
+	"bingo.preferences.custom_hud.adjust_col.remove.title": "Entfernen",
+	"bingo.preferences.custom_hud.adjust_col.remove.description": "Entfernt die Komponente aus dem HUD.",
+	"bingo.preferences.custom_hud.adjust_col.add_spacer": "Freiraum hinzufügn.",
+
+	"bingo.preferences.custom_hud.adjust_card.title": "Feinposition Bingo-Karte",
+	"bingo.preferences.custom_hud.adjust_card.description": "Hier kannst Du Einstellungen der Bingo-Karte ändern.",
+	"bingo.preferences.custom_hud.adjust_card.left_of_hotbar.title": "Verschieben auf linke Seite der Schnellzugriffsleiste.",
+	"bingo.preferences.custom_hud.adjust_card.left_of_hotbar.description": "Verschiebt die Bingo-Karte auf die linke Seite der Schnellzugriffsleiste.",
+	"bingo.preferences.custom_hud.adjust_card.right_of_hotbar_no_attack.title": "Verschieben auf rechte Seite der Schnellzugriffsleiste.",
+	"bingo.preferences.custom_hud.adjust_card.right_of_hotbar_no_attack.description": "Verschiebt die Bingo-Karte auf die rechte Seite der Schnellzugriffsleiste ohne Raum für die Angriffsanzeige.\nFalls “Optionen → Grafikeinstellungen → Angriffsanzeige” auf “Schnellzugr.” steht, wähle bitte die nächste Option.",
+	"bingo.preferences.custom_hud.adjust_card.right_of_hotbar_with_attack.title": "Verschieben auf rechte Seite der Schnellzugriffsleiste (Angriffsanzeige)",
+	"bingo.preferences.custom_hud.adjust_card.right_of_hotbar_with_attack.description": "erschiebt die Bingo-Karte auf die rechte Seite der Schnellzugriffsleiste mit Freiraum für die Angriffsanzeige.\nWähle diese Option nur falls “Optionen → Grafikeinstellungen → Angriffsanzeige” auf “Schnellzugr.” steht",
+
+	"bingo.custom_hud.components.spacer": "Freiraum",
+	"bingo.custom_hud.components.seed": "Bingo Seed",
+	"bingo.custom_hud.components.player_position": "X/Z Koordinaten",
+	"bingo.custom_hud.components.y_position": "Y Koordinate",
+	"bingo.custom_hud.components.timer": "Timer",
 
 	"bingo.lobby.machinery.sign.line1": "Maschinenraum",
 	"bingo.lobby.machinery.sign.line2": "Zugang nur für",
@@ -51,6 +110,7 @@
 
 	"bingo.lobby.credits.tools.nbt_viewer.sign.line3": "von ",
 	"bingo.lobby.credits.tools.nbt_viewer.sign.line4": "Misode",
+
 
 	"bingo.lobby.card_generation.random_card.sign.line1": "",
 	"bingo.lobby.card_generation.random_card.sign.line2": "Zufällige Karte",
@@ -132,47 +192,30 @@
 	"bingo.lobby.settings.automatic_pregen.sign.line1": "Landschaft",
 	"bingo.lobby.settings.automatic_pregen.sign.line2": "vorzeitig",
 	"bingo.lobby.settings.automatic_pregen.sign.line3": "erzeugen",
-	"bingo.lobby.settings.automatic_pregen.sign.on": "AN",
-	"bingo.lobby.settings.automatic_pregen.sign.off": "AUS",
-	"bingo.lobby.settings.automatic_pregen.info": "Standardmäßig wird die Landschaft rund um den Spawn erzeugt, sobald Du auf das \"Spiel starten\" Schild klickst. Wenn diese Einstellung auf \"AN\" steht, beginnt die Erzeugung 5 Sekunden nach der Generierung der Bingo-Karte. Falls eine neue Karte genriert wird, wird eine laufende Erzeugung unterbrochen.\nBeachte bitte, dass dies Lag in der Lobby verursachen kann, was in einigen Fällen zu Verzögerung in der Funktionalität führt.",
-	"bingo.lobby.settings.automatic_pregen.turn_on": "Einschalten",
-	"bingo.lobby.settings.automatic_pregen.turn_off": "Ausschalten",
+	"bingo.lobby.settings.automatic_pregen.sign.on": "Bei Spielstart",
+	"bingo.lobby.settings.automatic_pregen.sign.off": "Bei Generierung",
+	"bingo.lobby.settings.pregen_behavior.info.on_game_start.prefix": "Bei Spielstart: ",
+	"bingo.lobby.settings.pregen_behavior.info.on_game_start": "Die Landschaft rund um den Spawn wird erzeugt, sobald Du auf das \"Spiel starten\" Schild klickst. Dies führt zu zusätzlicher Wartezeit beim Spielstart.",
+	"bingo.lobby.settings.pregen_behavior.info.on_card_generation.prefix": "Bei Generierung: ",
+	"bingo.lobby.settings.pregen_behavior.info.on_card_generation": "Die Erzeugung der Landschaft beginnt 5 Sekunden nach der Generierung der Bingo-Karte. \nBeachte bitte, dass dies Lag in der Lobby verursachen kann, was in einigen Fällen zu Verlangsamung der Funktionalität in der Lobby führen kann.",
+	"bingo.lobby.settings.pregen_behavior.turn_on": "Wechsel zu “Bei Spielstart”",
+	"bingo.lobby.settings.pregen_behavior.turn_off": "Wechsel zu “Bei Generierung”",
 
 	"bingo.lobby.menu.back": "Zurück",
 	"bingo.lobby.menu.back.hover": "Zurück zur vorherigen Seite",
 
-	"bingo.lobby.preferences.menu.main.title": "Einstellungen ändern",
-	
-	"bingo.lobby.preferences.menu.main.card_pos": "Position der Karte ändern",
-	"bingo.lobby.preferences.menu.main.card_pos.hover": "Ändert den Ort, an dem die Bingo-Karte angezeigt wird.",
-	
-	"bingo.lobby.preferences.menu.card_pos.title": "Position der Karte ändern",
-
-	"bingo.lobby.preferences.menu.card_pos.left": "Links der Schnellzugriffsleiste ",
-	"bingo.lobby.preferences.menu.card_pos.left.hover": "Positioniert die Bingo-Karte links neben der Schnellzugriffsleiste.",
-
-	"bingo.lobby.preferences.menu.card_pos.right": "Rechts der Schnellzugriffsleiste",
-	"bingo.lobby.preferences.menu.card_pos.right.hover": "Positioniert die Bingo-Karte links neben der Schnellzugriffsleiste.",
-	"bingo.lobby.preferences.menu.card_pos.right.info": "Diese Einstellung erfordert weitere Informationen über deine Minecraft Einstellungen.\nBitte schau deine Einstellungen zur Angriffsanzeige unter Optionen -> Grafikeinstellungen nach und wähle eine der folgenden:",
-
-	"bingo.lobby.preferences.menu.card_pos.right.indicator_hotbar":"Angriffsanzeige: Schnellzugr.",
-	"bingo.lobby.preferences.menu.card_pos.right.indicator_hotbar.hover":"Lässt Raum für die Angriffsanzeige neben der Schnellzugriffsleiste.",
-
-	"bingo.lobby.preferences.menu.card_pos.right.indicator_crosshair":"Angriffsanzeige: Fadenkreuz oder Aus",
-	"bingo.lobby.preferences.menu.card_pos.right.indicator_crosshair.hover":"Positioniert die Bingo-Karte direkt neben der Schnellzugriffsleiste.",
-
-	"bingo.lobby.preferences.warning16_9": "Funktioniert nur mit 16:9 Anzeigen.",
-
-	"bingo.lobby.preferences.menu.card_pos.left_edge": "Linker Rand",
-	"bingo.lobby.preferences.menu.card_pos.left_edge.hover": "Positioniert die Bingo-Karte am linken Rand der Anzeige.",
-	"bingo.lobby.preferences.menu.card_pos.left_edge.info": "Diese Einstellung erfordert weitere Informationen über deine Minecraft Einstellungen.\nBitte schau deine Einstellungen zur GUI-Größe unter Optionen -> Grafikeinstellungen nach. Falls die Option auf Automatisch steht, schalte die Einstellungen durch, um die zu finden, die von der Automatik verwendet wird.\nWähle eine der folgenden:",
-
-	"bingo.lobby.preferences.menu.card_pos.right_edge": "Rechter Rand",
-	"bingo.lobby.preferences.menu.card_pos.right_edge.hover": "Positioniert die Bingo-Karte am rechten Rand der Anzeige.",
-
-	"bingo.lobby.preferences.gui_scale": "GUI-Größe: %s",
-	"bingo.lobby.preferences.gui_scale.hover": "Richtet die Bingo-Karte am linken Rand für GUI-Größe: %s aus.",
-
+	"bingo.lobby.settings.strict_mode.sign.line1": "Server",
+	"bingo.lobby.settings.strict_mode.sign.line2": "Strict Mode",
+	"bingo.lobby.settings.strict_mode.sign.line3": "",
+	"bingo.lobby.settings.strict_mode.sign.on": "Aktiviert",
+	"bingo.lobby.settings.strict_mode.sign.off": "Deaktiviert",
+	"bingo.lobby.settings.strict_mode.info": "Diese Einstellung ist für öffentliche Server. Bei dieser Einstellung sind alle in der Lobby im Abenteuermodus und die Spieleinstellungen sind deaktiviert für Nicht-Operatoren.",
+	"bingo.lobby.settings.strict_mode.turn_on": "Strict Mode aktivieren",
+	"bingo.lobby.settings.strict_mode.turn_off": "Strict Mode deaktivieren",
+	"bingo.lobby.settings.strict_mode.revoke_from_player": "Du kannst den OP Status eines bestimmten Spielers zurückziehen mit %s Kommando. Ersetze <player_name> mit dem Spieler dessen Status Du zurückziehen willst.",
+	"bingo.lobby.settings.strict_mode.revoke_from_player.click": "diesem",
+	"bingo.strict_mode.confirm_op": "Bitte %s um deine OP Status zu bestätigen.",
+	"bingo.strict_mode.confirm_op.click": "klick hier",
 
 	"bingo.lobby.tutorial.generate_chests.sign.line1": "",
 	"bingo.lobby.tutorial.generate_chests.sign.line2": "Truhen",
@@ -257,7 +300,7 @@
 	"bingo.lobby.tutorial.game_info.world_gen.ites.heading": "Keine *ite: ",
 	"bingo.lobby.tutorial.game_info.world_gen.ites": "Alle Steinvarianten wie DiorIT, GranIT and AndesIT sind in dieser Version komplett entfernt.\nDadurch soll das Zumüllen des Inventars reduziert werden.",
 	"bingo.lobby.tutorial.game_info.world_gen.ambient.heading": "Umgebungs-\nbeleuchtung: ",
-	"bingo.lobby.tutorial.game_info.world_gen.ambient": "Du kannst im Dunkeln besser sehen, aber immer noch hell von dunkel unterscheiden.",
+	"bingo.lobby.tutorial.game_info.world_gen.ambient": "Es ist eine Dimensionseinstellung aktiv, mit der Du im Dunkeln ähnlich wie im Vanilla Nether sehen kannst.\nDies funktioniert ohne Nachtsicht, aber Du kannst immer noch hell von dunkel unterscheiden.",
 
 	"bingo.lobby.tutorial.get_tools.sign.line1": "Nach dem Start",
 	"bingo.lobby.tutorial.get_tools.sign.line2": "brauchst Du ",
