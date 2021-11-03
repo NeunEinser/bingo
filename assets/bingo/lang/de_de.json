@@ -132,9 +132,9 @@
 	"bingo.lobby.card_generation.crafting_table.sign.line3": "zeptsuchgerät",
 	"bingo.lobby.card_generation.crafting_table.sign.line4": "",
 
-	"bingo.lobby.card_generation.furnace.sign.line1": "Schmelz",
-	"bingo.lobby.card_generation.furnace.sign.line2": "Rezepte",
-	"bingo.lobby.card_generation.furnace.sign.line3": "Suchgerät",
+	"bingo.lobby.card_generation.furnace.sign.line1": "",
+	"bingo.lobby.card_generation.furnace.sign.line2": "Schmelzrezept-",
+	"bingo.lobby.card_generation.furnace.sign.line3": "suchgerät",
 	"bingo.lobby.card_generation.furnace.sign.line4": "",
 
 	"bingo.lobby.card_generation.from_seed.instructions": "%s, um einen Befehl zum Setzten des Seeds zu erhalten. Füge den numerischen Seed am Ende des Befehls hinzu.",
