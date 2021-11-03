@@ -127,9 +127,9 @@
 	"bingo.lobby.card_generation.start_game.sign.line3": "starten",
 	"bingo.lobby.card_generation.start_game.sign.line4": "",
 
-	"bingo.lobby.card_generation.crafting_table.sign.line1": "Crafting",
-	"bingo.lobby.card_generation.crafting_table.sign.line2": "Rezepte",
-	"bingo.lobby.card_generation.crafting_table.sign.line3": "Suchgerät",
+	"bingo.lobby.card_generation.crafting_table.sign.line1": "",
+	"bingo.lobby.card_generation.crafting_table.sign.line2": "Handwerksre-",
+	"bingo.lobby.card_generation.crafting_table.sign.line3": "zeptsuchgerät",
 	"bingo.lobby.card_generation.crafting_table.sign.line4": "",
 
 	"bingo.lobby.card_generation.furnace.sign.line1": "Schmelz",
