@@ -142,6 +142,44 @@
 	"bingo.lobby.settings.pregen_behavior.turn_on": "Switch to “On game start”",
 	"bingo.lobby.settings.pregen_behavior.turn_off": "Switch to “On card generation”",
 
+	
+
+	"bingo.lobby.menu.back": "Back",
+	"bingo.lobby.menu.back.hover": "Go back to previous page",
+
+	"bingo.lobby.preferences.menu.main.title": "Change Preferences",
+	
+	"bingo.lobby.preferences.menu.main.card_pos": "Change Card Position",
+	"bingo.lobby.preferences.menu.main.card_pos.hover": "Changes where on the screen the Bingo card is displayed",
+	
+	"bingo.lobby.preferences.menu.card_pos.title": "Change Card Position",
+
+	"bingo.lobby.preferences.menu.card_pos.left": "Left of Hotbar",
+	"bingo.lobby.preferences.menu.card_pos.left.hover": "Postions the Bingo card left of the hotbar.",
+
+	"bingo.lobby.preferences.menu.card_pos.right": "Right of Hotbar",
+	"bingo.lobby.preferences.menu.card_pos.right.hover": "Postions the Bingo card right of the hotbar.",
+	"bingo.lobby.preferences.menu.card_pos.right.info": "This setting requires more information about your Minecraft settings.\nPlease take a look at your Attack Indicator setting in Options -> Video Settings and choose one of the following:",
+
+	"bingo.lobby.preferences.menu.card_pos.right.indicator_hotbar":"Attack Indicator: Hotbar",
+	"bingo.lobby.preferences.menu.card_pos.right.indicator_hotbar.hover":"Adds an extra space to make room for the attack indicator next to the hotbar.",
+
+	"bingo.lobby.preferences.menu.card_pos.right.indicator_crosshair":"Attack Indicator: Crosshair or Off",
+	"bingo.lobby.preferences.menu.card_pos.right.indicator_crosshair.hover":"Positions the Bingo card directly next to the hotbar.",
+
+	"bingo.lobby.preferences.warning16_9": "Only works properly on a 16:9 display.",
+
+	"bingo.lobby.preferences.menu.card_pos.left_edge": "Left Edge",
+	"bingo.lobby.preferences.menu.card_pos.left_edge.hover": "Postions the Bingo card on the left edge of the screen.",
+	"bingo.lobby.preferences.menu.card_pos.left_edge.info": "This setting requires more information about your Minecraft settings.\nPlease take a look at your GUI Scale setting in Options -> Video Settings. In case it is set to auto, please cycle the setting to find the scale auto is using.\nPlease choose one of the following:",
+
+	"bingo.lobby.preferences.menu.card_pos.right_edge": "Right Edge",
+	"bingo.lobby.preferences.menu.card_pos.right_edge.hover": "Postions the Bingo card on the right edge of the screen.",
+
+	"bingo.lobby.preferences.gui_scale": "GUI Scale: %s",
+	"bingo.lobby.preferences.gui_scale.hover": "Aligns the Bingo card to the left edge for GUI Scale %s.",
+
+
 	"bingo.lobby.tutorial.generate_chests.sign.line1": "",
 	"bingo.lobby.tutorial.generate_chests.sign.line2": "Re-generate",
 	"bingo.lobby.tutorial.generate_chests.sign.line3": "Chests",

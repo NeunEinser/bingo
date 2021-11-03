@@ -12,9 +12,9 @@
 	"bingo.lobby.credits.neun_einser.sign.line3": "Alles von Minecraft",
 	"bingo.lobby.credits.neun_einser.sign.line4": "Bingo v5",
 
-	"bingo.lobby.credits.amber_wat.sign.line3": "Schriftart für",
-	"bingo.lobby.credits.amber_wat.sign.line4": "negativen Raum",
-	"bingo.lobby.credits.amber_wat.sign.line1": "",
+	"bingo.lobby.credits.amber_wat.sign.line2": "Schriftart für",
+	"bingo.lobby.credits.amber_wat.sign.line3": "negative",
+	"bingo.lobby.credits.amber_wat.sign.line4": "Leerzeichen",
 
 	"bingo.lobby.credits.nope_name.sign.line2": "",
 	"bingo.lobby.credits.nope_name.sign.line3": "Mathe Helfer-",
@@ -138,6 +138,42 @@
 	"bingo.lobby.settings.automatic_pregen.turn_on": "Einschalten",
 	"bingo.lobby.settings.automatic_pregen.turn_off": "Ausschalten",
 
+	"bingo.lobby.menu.back": "Zurück",
+	"bingo.lobby.menu.back.hover": "Zurück zur vorherigen Seite",
+
+	"bingo.lobby.preferences.menu.main.title": "Einstellungen ändern",
+	
+	"bingo.lobby.preferences.menu.main.card_pos": "Position der Karte ändern",
+	"bingo.lobby.preferences.menu.main.card_pos.hover": "Ändert den Ort, an dem die Bingo-Karte angezeigt wird.",
+	
+	"bingo.lobby.preferences.menu.card_pos.title": "Position der Karte ändern",
+
+	"bingo.lobby.preferences.menu.card_pos.left": "Links der Schnellzugriffsleiste ",
+	"bingo.lobby.preferences.menu.card_pos.left.hover": "Positioniert die Bingo-Karte links neben der Schnellzugriffsleiste.",
+
+	"bingo.lobby.preferences.menu.card_pos.right": "Rechts der Schnellzugriffsleiste",
+	"bingo.lobby.preferences.menu.card_pos.right.hover": "Positioniert die Bingo-Karte links neben der Schnellzugriffsleiste.",
+	"bingo.lobby.preferences.menu.card_pos.right.info": "Diese Einstellung erfordert weitere Informationen über deine Minecraft Einstellungen.\nBitte schau deine Einstellungen zur Angriffsanzeige unter Optionen -> Grafikeinstellungen nach und wähle eine der folgenden:",
+
+	"bingo.lobby.preferences.menu.card_pos.right.indicator_hotbar":"Angriffsanzeige: Schnellzugr.",
+	"bingo.lobby.preferences.menu.card_pos.right.indicator_hotbar.hover":"Lässt Raum für die Angriffsanzeige neben der Schnellzugriffsleiste.",
+
+	"bingo.lobby.preferences.menu.card_pos.right.indicator_crosshair":"Angriffsanzeige: Fadenkreuz oder Aus",
+	"bingo.lobby.preferences.menu.card_pos.right.indicator_crosshair.hover":"Positioniert die Bingo-Karte direkt neben der Schnellzugriffsleiste.",
+
+	"bingo.lobby.preferences.warning16_9": "Funktioniert nur mit 16:9 Anzeigen.",
+
+	"bingo.lobby.preferences.menu.card_pos.left_edge": "Linker Rand",
+	"bingo.lobby.preferences.menu.card_pos.left_edge.hover": "Positioniert die Bingo-Karte am linken Rand der Anzeige.",
+	"bingo.lobby.preferences.menu.card_pos.left_edge.info": "Diese Einstellung erfordert weitere Informationen über deine Minecraft Einstellungen.\nBitte schau deine Einstellungen zur GUI-Größe unter Optionen -> Grafikeinstellungen nach. Falls die Option auf Automatisch steht, schalte die Einstellungen durch, um die zu finden, die von der Automatik verwendet wird.\nWähle eine der folgenden:",
+
+	"bingo.lobby.preferences.menu.card_pos.right_edge": "Rechter Rand",
+	"bingo.lobby.preferences.menu.card_pos.right_edge.hover": "Positioniert die Bingo-Karte am rechten Rand der Anzeige.",
+
+	"bingo.lobby.preferences.gui_scale": "GUI-Größe: %s",
+	"bingo.lobby.preferences.gui_scale.hover": "Richtet die Bingo-Karte am linken Rand für GUI-Größe: %s aus.",
+
+
 	"bingo.lobby.tutorial.generate_chests.sign.line1": "",
 	"bingo.lobby.tutorial.generate_chests.sign.line2": "Truhen",
 	"bingo.lobby.tutorial.generate_chests.sign.line3": "erneut",
@@ -220,7 +256,7 @@
 	"bingo.lobby.tutorial.game_info.world_gen.no_mineshafts": "Minen haben sich als übermächtig gezeigt, da sie leichten Zufgriff auf viele Truhen geben. Minen sind daher ausgeschaltet in Bingo.",
 	"bingo.lobby.tutorial.game_info.world_gen.ites.heading": "Keine *ite: ",
 	"bingo.lobby.tutorial.game_info.world_gen.ites": "Alle Steinvarianten wie DiorIT, GranIT and AndesIT sind in dieser Version komplett entfernt.\nDadurch soll das Zumüllen des Inventars reduziert werden.",
-	"bingo.lobby.tutorial.game_info.world_gen.ambient.heading": "Umgebungsbeleuchtung: ",
+	"bingo.lobby.tutorial.game_info.world_gen.ambient.heading": "Umgebungs-\nbeleuchtung: ",
 	"bingo.lobby.tutorial.game_info.world_gen.ambient": "Du kannst im Dunkeln besser sehen, aber immer noch hell von dunkel unterscheiden.",
 
 	"bingo.lobby.tutorial.get_tools.sign.line1": "Nach dem Start",
