@@ -1,4 +1,3 @@
-// cls; pushd C:\github\bingo\assets\bingo\lang; $en = (gc .\en_us.json | ConvertFrom-Json -AsHashtable); $de = (gc .\de_de.json | ConvertFrom-Json -AsHashtable); popd;  $missing = @( $en.Keys | ? {-not $de.Keys.Contains($_) } ); $missing.Count; $missing | sort
 {
 	"bingo.game.go_to_lobby": "%s um zur Lobby zurückzukehren.",
 	"bingo.game.go_to_lobby.hint": "Hinweis: Du kannst jederzeit mit dem Befehl %s zur Lobby zurückkehren",
@@ -13,13 +12,13 @@
 	"bingo.lobby.credits.neun_einser.sign.line3": "Alles von Minecraft",
 	"bingo.lobby.credits.neun_einser.sign.line4": "Bingo v5",
 
-	"bingo.lobby.credits.amber_wat.sign.line2": "",
-	"bingo.lobby.credits.amber_wat.sign.line3": "Negative Space",
-	"bingo.lobby.credits.amber_wat.sign.line4": "Font",
+	"bingo.lobby.credits.amber_wat.sign.line2": "Schriftart für",
+	"bingo.lobby.credits.amber_wat.sign.line3": "negative",
+	"bingo.lobby.credits.amber_wat.sign.line4": "Leerzeichen",
 
 	"bingo.lobby.credits.nope_name.sign.line2": "",
-	"bingo.lobby.credits.nope_name.sign.line3": "Math utility",
-	"bingo.lobby.credits.nope_name.sign.line4": "datapack",
+	"bingo.lobby.credits.nope_name.sign.line3": "Mathe Helfer-",
+	"bingo.lobby.credits.nope_name.sign.line4": "Datenpaket",
 
 	"bingo.lobby.credits.dr_brian_lorgon111.sign.line2": "",
 	"bingo.lobby.credits.dr_brian_lorgon111.sign.line3": "Original Schöpfer",
@@ -138,6 +137,42 @@
 	"bingo.lobby.settings.automatic_pregen.info": "Standardmäßig wird die Landschaft rund um den Spawn erzeugt, sobald Du auf das \"Spiel starten\" Schild klickst. Wenn diese Einstellung auf \"AN\" steht, beginnt die Erzeugung 5 Sekunden nach der Generierung der Bingo-Karte. Falls eine neue Karte genriert wird, wird eine laufende Erzeugung unterbrochen.\nBeachte bitte, dass dies Lag in der Lobby verursachen kann, was in einigen Fällen zu Verzögerung in der Funktionalität führt.",
 	"bingo.lobby.settings.automatic_pregen.turn_on": "Einschalten",
 	"bingo.lobby.settings.automatic_pregen.turn_off": "Ausschalten",
+
+	"bingo.lobby.menu.back": "Zurück",
+	"bingo.lobby.menu.back.hover": "Zurück zur vorherigen Seite",
+
+	"bingo.lobby.preferences.menu.main.title": "Change Preferences",
+	
+	"bingo.lobby.preferences.menu.main.card_pos": "Change Card Position",
+	"bingo.lobby.preferences.menu.main.card_pos.hover": "Changes where on the screen the Bingo card is displayed",
+	
+	"bingo.lobby.preferences.menu.card_pos.title": "Change Card Position",
+
+	"bingo.lobby.preferences.menu.card_pos.left": "Left of Hotbar",
+	"bingo.lobby.preferences.menu.card_pos.left.hover": "Postions the Bingo card left of the hotbar.",
+
+	"bingo.lobby.preferences.menu.card_pos.right": "Right of Hotbar",
+	"bingo.lobby.preferences.menu.card_pos.right.hover": "Postions the Bingo card right of the hotbar.",
+	"bingo.lobby.preferences.menu.card_pos.right.info": "This setting requires more information about your Minecraft settings.\nPlease take a look at your Attack Indicator setting in Options -> Video Settings and choose one of the following:",
+
+	"bingo.lobby.preferences.menu.card_pos.right.indicator_hotbar":"Attack Indicator: Hotbar",
+	"bingo.lobby.preferences.menu.card_pos.right.indicator_hotbar.hover":"Adds an extra space to make room for the attack indicator next to the hotbar.",
+
+	"bingo.lobby.preferences.menu.card_pos.right.indicator_crosshair":"Attack Indicator: Crosshair or Off",
+	"bingo.lobby.preferences.menu.card_pos.right.indicator_crosshair.hover":"Positions the Bingo card directly next to the hotbar.",
+
+	"bingo.lobby.preferences.warning16_9": "Only works properly on a 16:9 display.",
+
+	"bingo.lobby.preferences.menu.card_pos.left_edge": "Left Edge",
+	"bingo.lobby.preferences.menu.card_pos.left_edge.hover": "Postions the Bingo card on the left edge of the screen.",
+	"bingo.lobby.preferences.menu.card_pos.left_edge.info": "This setting requires more information about your Minecraft settings.\nPlease take a look at your GUI Scale setting in Options -> Video Settings. In case it is set to auto, please cycle the setting to find the scale auto is using.\nPlease choose one of the following:",
+
+	"bingo.lobby.preferences.menu.card_pos.right_edge": "Right Edge",
+	"bingo.lobby.preferences.menu.card_pos.right_edge.hover": "Postions the Bingo card on the right edge of the screen.",
+
+	"bingo.lobby.preferences.gui_scale": "GUI Scale: %s",
+	"bingo.lobby.preferences.gui_scale.hover": "Aligns the Bingo card to the left edge for GUI Scale %s.",
+
 
 	"bingo.lobby.tutorial.generate_chests.sign.line1": "",
 	"bingo.lobby.tutorial.generate_chests.sign.line2": "Truhen",
