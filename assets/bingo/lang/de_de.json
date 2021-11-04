@@ -276,7 +276,7 @@
 	"bingo.lobby.tutorial.goals.20_no_bingo.heading": "20 No Bingo",
 	"bingo.lobby.tutorial.goals.20_no_bingo": "Erhalte 20 Gegenstände ohne Bingo zu bekommen.\n\nÜberlege Dir, welche Gegenstände Du vermeiden willst, um das Ziel zu erreichen. Hüte Dich vor Dingen, die Du versehentlich aufnehmen könntest wie z.B. Pfeile von Skeletten.",
 	"bingo.lobby.tutorial.goals.multiple_bingo.heading": "Multi-Bingo",
-	"bingo.lobby.tutorial.goals.multiple_bingo": "Für dieses Ziel musst Du mehrere Bingos mit einem Item bekommen.\n\nDu musst in sich überschneidenden Zeilen, Spalten oder Diagonalen je 4 Items erhalten und das Item auf der Kreuzung als Letztes. Dies schließt Doppel-, Drei- oder Vierfach Bingo ein.",
+	"bingo.lobby.tutorial.goals.multiple_bingo": "Bei diesem Ziel erreichst Du mehrere Bingos gleichzeitig\n\nDazu sammelst Du je 4 Gegegenstände in sich überschneidenden Zeilen, Spalten oder Diagonalen und den Gegenstand auf der Kreuzung als Letztes. Es gibt Doppel, Drei- und Vierfach Bingo",
 	
 	"bingo.lobby.tutorial.game_info.sign.line1": "",
 	"bingo.lobby.tutorial.game_info.sign.line2": "Spiel",
