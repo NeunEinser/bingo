@@ -293,7 +293,7 @@
 	"bingo.lobby.tutorial.game_info.world_gen.tiny_biomes": "Biome sind kleiner, um die Erkundung zu erleichtern. Dadurch können auch andere Unterschiede im Biomlayout auftreten.",
 	"bingo.lobby.tutorial.game_info.world_gen.more_dungeons.heading": "Mehr Verliese: ",
 	"bingo.lobby.tutorial.game_info.world_gen.more_dungeons": "Damit Verliese eine sinnvolle Option in einem schnellen Spiel sind, ist die Rate von Verliesen um den Faktor 12,5 erhöht. Dadurch können sie bei jedem Durchlauf einfach gefunden werden.",
-	"bingo.lobby.tutorial.game_info.world_gen.caves.heading": "Höhlen Anpassungen: ",
+	"bingo.lobby.tutorial.game_info.world_gen.caves.heading": "Anpassungen von Höhlen: ",
 	"bingo.lobby.tutorial.game_info.world_gen.caves": "Die Frequenz von Höhlen wurde leicht erhöht (von 1/7 in Vanilla auf 1/6).\n\nAußerdem gibt es keine überfluteten Höhlen in Ozeanen.",
 	"bingo.lobby.tutorial.game_info.world_gen.no_mineshafts.heading": "Keine Minen: ",
 	"bingo.lobby.tutorial.game_info.world_gen.no_mineshafts": "Minen haben sich als übermächtig herausgestellt, da sie leichten Zufgriff auf viele Truhen geben. Minen sind daher ausgeschaltet.",
