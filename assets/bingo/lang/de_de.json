@@ -290,7 +290,7 @@
 	"bingo.lobby.tutorial.game_info.world_gen.heading": "Anpassungen Welt-Erzeugung",
 	"bingo.lobby.tutorial.game_info.world_gen": "Minecraft Bingo benutzt einige Anpassungen bei der Erzeugung.",
 	"bingo.lobby.tutorial.game_info.world_gen.tiny_biomes.heading": "Winzige Biome: ",
-	"bingo.lobby.tutorial.game_info.world_gen.tiny_biomes": "Biome sind kleiner, um die Erkundung zu erleichtern. Dadurch können auch andere Unterschiede im Biom-Layout auftreten.",
+	"bingo.lobby.tutorial.game_info.world_gen.tiny_biomes": "Biome sind kleiner, um die Erkundung zu erleichtern. Dadurch können auch andere Unterschiede im Biomlayout auftreten.",
 	"bingo.lobby.tutorial.game_info.world_gen.more_dungeons.heading": "Mehr Verliese: ",
 	"bingo.lobby.tutorial.game_info.world_gen.more_dungeons": "Damit Verliese eine sinnvolle Option in einem schnellen Spiel sind, ist die Rate von Verliesen um den Faktor 12,5 erhöht. Das sollte es einfacher machen, sie bei jedem Durchlauf zu finden.",
 	"bingo.lobby.tutorial.game_info.world_gen.caves.heading": "Höhlen Anpassungen: ",
