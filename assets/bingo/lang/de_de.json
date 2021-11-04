@@ -296,7 +296,7 @@
 	"bingo.lobby.tutorial.game_info.world_gen.caves.heading": "Höhlen Anpassungen: ",
 	"bingo.lobby.tutorial.game_info.world_gen.caves": "Die Frequenz von Höhlen wurde leicht erhöht (von 1/7 in Vanilla auf 1/6).\n\nAußerdem gibt es keine überfluteten Höhlen in Ozeanen.",
 	"bingo.lobby.tutorial.game_info.world_gen.no_mineshafts.heading": "Keine Minen: ",
-	"bingo.lobby.tutorial.game_info.world_gen.no_mineshafts": "Minen haben sich als übermächtig gezeigt, da sie leichten Zufgriff auf viele Truhen geben. Minen sind daher ausgeschaltet in Bingo.",
+	"bingo.lobby.tutorial.game_info.world_gen.no_mineshafts": "Minen haben sich als übermächtig herausgestellt, da sie leichten Zufgriff auf viele Truhen geben. Minen sind daher ausgeschaltet.",
 	"bingo.lobby.tutorial.game_info.world_gen.ites.heading": "Keine *ite: ",
 	"bingo.lobby.tutorial.game_info.world_gen.ites": "Alle Steinvarianten wie DiorIT, GranIT and AndesIT sind in dieser Version komplett entfernt.\nDadurch soll das Zumüllen des Inventars reduziert werden.",
 	"bingo.lobby.tutorial.game_info.world_gen.ambient.heading": "Umgebungs-\nbeleuchtung: ",
