@@ -149,10 +149,10 @@
 	"bingo.lobby.settings.player.tutorial.sign.line3": "Erklärung",
 	"bingo.lobby.settings.player.tutorial.sign.line4": "wie das funktioniert",
 
-	"bingo.lobby.settings.player.tutorial.part1": "Diese Einstellungen erlauben Dir festzulegen, mit welchen Items und Effekten der Spieler spawnt.\nAlle Trankeffekte sind permanent.",
+	"bingo.lobby.settings.player.tutorial.part1": "Diese Einstellungen erlauben Dir festzulegen, mit welchen Gegenstände und Effekten der Spieler spawnt.\nAlle Trankeffekte sind permanent.",
 	"bingo.lobby.settings.player.tutorial.part2": "Es gibt einige fertige Voreinstellungen, die Du über das Schild “Auswahl / Ansicht Voreinstellungen” auf der rechten Seite nutzen kannst.",
-	"bingo.lobby.settings.player.tutorial.part3": "Um eigene Voreinstellungen zu erzeugen, ändere einfach die Items in Deinem Inventar oder trinke einen Trank für einen permanenten Effekt. Trinke Milch um deine Effekte zu entfernen.",
-	"bingo.lobby.settings.player.tutorial.part4": "Steh auf dem gemeißelten Quartzblock, um in den Kreativmodus zu wechseln, damit Du einfachen Zugriff auf alle Items hast.\nWenn Du Operator bist oder im Einzelspielermodus spielst kannst Du auch /give und /effect Befehle nutzen.",
+	"bingo.lobby.settings.player.tutorial.part3": "Um eigene Voreinstellungen zu erzeugen, ändere einfach die Gegenstände in Deinem Inventar oder trinke einen Trank für einen permanenten Effekt. Trinke Milch um deine Effekte zu entfernen.",
+	"bingo.lobby.settings.player.tutorial.part4": "Steh auf dem gemeißelten Quartzblock, um in den Kreativmodus zu wechseln, damit Du einfachen Zugriff auf alle Gegenstände hast.\nWenn Du Operator bist oder im Einzelspielermodus spielst kannst Du auch /give und /effect Befehle nutzen.",
 	"bingo.lobby.settings.player.tutorial.part5": "Vergiss nicht, deine Einstellungen zu speichern - andernfalls werden sie weder gespeichert noch ausgewählt.",
 
 	"bingo.lobby.settings.player.save.sign.line1": "Spieler",
@@ -165,7 +165,7 @@
 	"bingo.lobby.settings.player.save.title": "Speicher Spieler Voreinstellung",
 	"bingo.lobby.settings.player.save.description": "Voreinstellung überschreiben:",
 	"bingo.lobby.settings.player.save.new": "Erzeuge neue Voreinstellung",
-	"bingo.lobby.settings.player.save.new.explanation": "Setze den Namen der neuen Voreinstellung, indem Du den Nametag, den Du gerade erhalten hast, im Amboss umbenennst.\nWenn Du fertig bist, lass den Nametag einfach fallen.\nWenn dein Inventar voll ist, kannst Du einfach kurzfristig ein Item vor den Amboss werfen. Du nimmst es wieder auf, wenn der Nametag im Amboss ist.",
+	"bingo.lobby.settings.player.save.new.explanation": "Setze den Namen der neuen Voreinstellung, indem Du den Nametag, den Du gerade erhalten hast, im Amboss umbenennst.\nWenn Du fertig bist, lass den Nametag einfach fallen.\nWenn dein Inventar voll ist, kannst Du einfach kurzfristig ein Gegenstand vor den Amboss werfen. Du nimmst es wieder auf, wenn der Nametag im Amboss ist.",
 	"bingo.lobby.settings.player.save.new.success": "Neue Voreinstellung “%s” erfolgreich gespeichert",
 	"bingo.lobby.settings.player.save.overwrite.success": "Voreinstellung “%s” erfolgreich mit neuen Einstellungen überschrieben.",
 
@@ -227,14 +227,14 @@
 	"bingo.lobby.tutorial.basics.sign.line3": "Grundlagen",
 	"bingo.lobby.tutorial.basics.sign.line4": "",
 
-	"bingo.lobby.tutorial.basics1.sign.line1": "Minecraft",
-	"bingo.lobby.tutorial.basics1.sign.line2": "Bingo ist",
-	"bingo.lobby.tutorial.basics1.sign.line3": "eine Item-",
-	"bingo.lobby.tutorial.basics1.sign.line4": "jagdquest.",
+	"bingo.lobby.tutorial.basics1.sign.line1": "Minecraft Bingo",
+	"bingo.lobby.tutorial.basics1.sign.line2": "ist eine",
+	"bingo.lobby.tutorial.basics1.sign.line3": "Jagdquest",
+	"bingo.lobby.tutorial.basics1.sign.line4": "nach Gegenständen.",
 
 	"bingo.lobby.tutorial.basics2.sign.line1": "Eine Bingo-Karte",
 	"bingo.lobby.tutorial.basics2.sign.line2": "ist ein 5x5 Gitter",
-	"bingo.lobby.tutorial.basics2.sign.line3": "mit einem Item",
+	"bingo.lobby.tutorial.basics2.sign.line3": "mit einem Gegenstand",
 	"bingo.lobby.tutorial.basics2.sign.line4": "pro Zelle.",
 
 	"bingo.lobby.tutorial.basics3.sign.line1": "Um eine Zelle",
