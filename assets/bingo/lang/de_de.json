@@ -284,7 +284,7 @@
 	"bingo.lobby.tutorial.game_info.sign.line4": "",
 
 	"bingo.lobby.tutorial.game_info.introduction.heading": "Spiel Info",
-	"bingo.lobby.tutorial.game_info.introduction": "Dieses Buch enthält einige generelle Informationen über das Spiel.\nEs gibt auch einige Anpassungen der Welt-Erzeugung, die hier auch beschrieben werden.",
+	"bingo.lobby.tutorial.game_info.introduction": "Dieses Buch enthält einige generelle Informationen über das Spiel.\nEs gibt einige Anpassungen der Welterzeugung, die hier auch beschrieben werden.",
 	"bingo.lobby.tutorial.game_info.general.heading": "Allgemein",
 	"bingo.lobby.tutorial.game_info.general": "Alle Items müssen genauso erhalten werden, wie angezeigt. Alle Items, die gleich aussehen, zählen. (z.B. ein verzaubertes Buch benötigt keine spezifische Verzauberung, aber ein rotes Bett muss rot sein und nicht blau.)",
 	"bingo.lobby.tutorial.game_info.world_gen.heading": "Anpassungen Welt-Erzeugung",
