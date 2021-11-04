@@ -223,9 +223,9 @@
 	"bingo.lobby.tutorial.generate_chests.sign.line4": "erzeugen",
 
 	"bingo.lobby.tutorial.basics.sign.line1": "",
-	"bingo.lobby.tutorial.basics.sign.line2": "Minecraft",
-	"bingo.lobby.tutorial.basics.sign.line3": "Bingo",
-	"bingo.lobby.tutorial.basics.sign.line4": "Grundlagen",
+	"bingo.lobby.tutorial.basics.sign.line2": "Minecraft Bingo",
+	"bingo.lobby.tutorial.basics.sign.line3": "Grundlagen",
+	"bingo.lobby.tutorial.basics.sign.line4": "",
 
 	"bingo.lobby.tutorial.basics1.sign.line1": "Minecraft",
 	"bingo.lobby.tutorial.basics1.sign.line2": "Bingo ist",
@@ -239,8 +239,8 @@
 
 	"bingo.lobby.tutorial.basics3.sign.line1": "Um eine Zelle",
 	"bingo.lobby.tutorial.basics3.sign.line2": "freizuschalten,",
-	"bingo.lobby.tutorial.basics3.sign.line3": "erhalte das Item",
-	"bingo.lobby.tutorial.basics3.sign.line4": "in der Zelle.",
+	"bingo.lobby.tutorial.basics3.sign.line3": "erhalte das dar-",
+	"bingo.lobby.tutorial.basics3.sign.line4": "gestellte Item",
 
 	"bingo.lobby.tutorial.basics4.sign.line1": "Nach Generierung",
 	"bingo.lobby.tutorial.basics4.sign.line2": "einer Karte hast",
@@ -304,7 +304,7 @@
 
 	"bingo.lobby.tutorial.get_tools.sign.line1": "Nach dem Start",
 	"bingo.lobby.tutorial.get_tools.sign.line2": "brauchst Du ",
-	"bingo.lobby.tutorial.get_tools.sign.line3": "erstmal ",
+	"bingo.lobby.tutorial.get_tools.sign.line3": "erstmal",
 	"bingo.lobby.tutorial.get_tools.sign.line4": "Werkzeug.",
 
 	"bingo.lobby.team_selection.sign.line1": "",
