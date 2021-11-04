@@ -286,7 +286,7 @@
 	"bingo.lobby.tutorial.game_info.introduction.heading": "Spiel Info",
 	"bingo.lobby.tutorial.game_info.introduction": "Dieses Buch enthält einige generelle Informationen über das Spiel.\nEs gibt einige Anpassungen der Welterzeugung, die hier auch beschrieben werden.",
 	"bingo.lobby.tutorial.game_info.general.heading": "Allgemein",
-	"bingo.lobby.tutorial.game_info.general": "Alle Items müssen genauso erhalten werden, wie angezeigt. Alle Items, die gleich aussehen, zählen. (z.B. ein verzaubertes Buch benötigt keine spezifische Verzauberung, aber ein rotes Bett muss rot sein und nicht blau.)",
+	"bingo.lobby.tutorial.game_info.general": "Alle Gegenstände müssen genauso erhalten werden, wie angezeigt. Alle Gegegenstände, die gleich aussehen, zählen. (Z.B. benötigt ein verzaubertes Buch keine spezifische Verzauberung, aber ein rotes Bett muss rot sein und nicht blau.)",
 	"bingo.lobby.tutorial.game_info.world_gen.heading": "Anpassungen Welterzeugung",
 	"bingo.lobby.tutorial.game_info.world_gen": "Minecraft Bingo benutzt einige Anpassungen bei der Erzeugung.",
 	"bingo.lobby.tutorial.game_info.world_gen.tiny_biomes.heading": "Winzige Biome: ",
