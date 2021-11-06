@@ -5,6 +5,9 @@
 # @within function bingo:lobby/tick
 # @context entity Current player
 
+# saturation
+effect give @s minecraft:saturation 1 255 true
+
 # advanture mode
 execute if score $strict_mode bingo.settings matches 1 run gamemode adventure @s[gamemode=survival]
 
