@@ -13,7 +13,7 @@ execute in bingo:lobby run function neun_einser.timer:store_current_time
 #region Resource pack check
 # Detect second (or more) players in a LAN world
 execute store result score $is_multiplayer bingo.state if entity @a
-scoreboard players remove $is_multiplayer bingo.state 1
+execute if score $is_multiplayer bingo.state matches 2.. run scoreboard players set $is_multiplayer bingo.state 1
 
 # Detect the resource pack not being active server-side (So either we are on a
 # server, or resourcepack is missing in single player for some reason)
