@@ -14,6 +14,7 @@ scoreboard players enable @s bingo.card_pos
 scoreboard players enable @s bingo.pref
 
 # Float in front of card display
+execute at @s align y if block ~ ~1 ~ minecraft:void_air run tp ~ ~1 ~
 execute at @s if block ~ ~ ~ minecraft:void_air run effect give @s minecraft:levitation 1 255 true
 execute at @s unless block ~ ~ ~ minecraft:void_air run effect clear @s minecraft:levitation
 
