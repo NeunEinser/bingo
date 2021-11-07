@@ -25,7 +25,7 @@
 	"bingo.preferences.custom_hud.description": "In diesem Menu kannst Du Komponenten des Bingo-HUD verschieben, sie deaktivieren oder komponenten spezifische Einstellungen treffen.",
 
 	"bingo.preferences.custom_hud.add_disabled.title": "Deaktivierte Komponenten hinzufügen",
-	"bingo.preferences.custom_hud.add_disabled.description": "Hier kannst Du deaktivierte Komponenten anzeigen und auf dem HUD hinzufügen.",
+	"bingo.preferences.custom_hud.add_disabled.description": "Hier erhälst Du eine Liste deaktivierter Komponenten und kannst sie dem HUD hinzufügen.",
 	"bingo.preferences.custom_hud.add_disabled.disabled": "Du hast aktuell alle Komponenten aktiviert.",
 	"bingo.preferences.custom_hud.add_disabled.add_col0.title": "Über Schnellzugr., Links",
 	"bingo.preferences.custom_hud.add_disabled.add_col1.title": "Über Schnellzugr., Rechts",
