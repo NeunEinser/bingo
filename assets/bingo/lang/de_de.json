@@ -52,9 +52,9 @@
 	"bingo.preferences.custom_hud.adjust_card.left_of_hotbar.title": "Verschieben auf linke Seite der Schnellzugriffsleiste.",
 	"bingo.preferences.custom_hud.adjust_card.left_of_hotbar.description": "Verschiebt die Bingo-Karte auf die linke Seite der Schnellzugriffsleiste.",
 	"bingo.preferences.custom_hud.adjust_card.right_of_hotbar_no_attack.title": "Verschieben auf rechte Seite der Schnellzugriffsleiste.",
-	"bingo.preferences.custom_hud.adjust_card.right_of_hotbar_no_attack.description": "Verschiebt die Bingo-Karte auf die rechte Seite der Schnellzugriffsleiste ohne Raum für die Angriffsanzeige.\nFalls “Optionen → Grafikeinstellungen → Angriffsanzeige” auf “Schnellzugr.” steht, wähle bitte die nächste Option.",
+	"bingo.preferences.custom_hud.adjust_card.right_of_hotbar_no_attack.description": "Verschiebt die Bingo-Karte auf die rechte Seite der Schnellzugriffsleiste ohne Raum für die Angriffsanzeige.\nFalls „Optionen → Grafikeinstellungen → Angriffsanzeige“ auf „Schnellzugr.“ steht, wähle bitte die nächste Option.",
 	"bingo.preferences.custom_hud.adjust_card.right_of_hotbar_with_attack.title": "Verschieben auf rechte Seite der Schnellzugriffsleiste (Angriffsanzeige)",
-	"bingo.preferences.custom_hud.adjust_card.right_of_hotbar_with_attack.description": "Verschiebt die Bingo-Karte auf die rechte Seite der Schnellzugriffsleiste mit Freiraum für die Angriffsanzeige.\nWähle diese Option nur falls “Optionen → Grafikeinstellungen → Angriffsanzeige” auf “Schnellzugr.” steht",
+	"bingo.preferences.custom_hud.adjust_card.right_of_hotbar_with_attack.description": "Verschiebt die Bingo-Karte auf die rechte Seite der Schnellzugriffsleiste mit Freiraum für die Angriffsanzeige.\nWähle diese Option nur falls „Optionen → Grafikeinstellungen → Angriffsanzeige“ auf „Schnellzugr.“ steht",
 
 	"bingo.custom_hud.components.spacer": "Freiraum",
 	"bingo.custom_hud.components.seed": "Bingo Seed",
