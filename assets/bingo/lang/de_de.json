@@ -34,7 +34,7 @@
 
 	"bingo.preferences.custom_hud.adjust_col0.title": "Komponente links oberhalb Schnellzugriffsleiste positionieren",
 	"bingo.preferences.custom_hud.adjust_col1.title": "Komponente rechts oberhalb Schnellzugriffsleiste positionieren",
-	"bingo.preferences.custom_hud.adjust_col.description": "Hier kannst Du Positionen von Komponenten tauschen, sie in eine andere Spalte verschieben oder spezifische Einstellungen machen.",
+	"bingo.preferences.custom_hud.adjust_col.description": "Hier kannst Du Positionen von Komponenten tauschen, sie in eine andere Spalte verschieben oder komponenten-spezifische Einstellungen ändern.",
 	"bingo.preferences.custom_hud.adjust_col.disabled": "Es sind momentan keine Komponenten in diesem Anzeige Platz.",
 	"bingo.preferences.custom_hud.adjust_col.move_left.title": "◀",
 	"bingo.preferences.custom_hud.adjust_col.move_right.title": "▶",
