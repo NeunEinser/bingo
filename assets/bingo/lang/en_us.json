@@ -201,9 +201,6 @@
 	"bingo.lobby.settings.pregen_behavior.turn_on": "Switch to “On game start”",
 	"bingo.lobby.settings.pregen_behavior.turn_off": "Switch to “On card generation”",
 
-	"bingo.lobby.menu.back": "Back",
-	"bingo.lobby.menu.back.hover": "Go back to previous page",
-	
 	"bingo.lobby.settings.strict_mode.sign.line1": "Server",
 	"bingo.lobby.settings.strict_mode.sign.line2": "Strict Mode",
 	"bingo.lobby.settings.strict_mode.sign.line3": "",
