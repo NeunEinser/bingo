@@ -22,7 +22,7 @@
 	"bingo.preferences.page": "Seite %s/%s",
 
 	"bingo.preferences.custom_hud.title": "Bingo-HUD Konfiguration",
-	"bingo.preferences.custom_hud.description": "In diesem Menu kannst Du Komponenten des Bingo-HUD verschieben, sie deaktivieren oder komponenten spezifische Einstellungen treffen.",
+	"bingo.preferences.custom_hud.description": "In diesem Menü kannst Du Komponenten des Bingo-HUD verschieben, sie deaktivieren oder komponentenspezifische Einstellungen treffen.",
 
 	"bingo.preferences.custom_hud.add_disabled.title": "Deaktivierte Komponenten hinzufügen",
 	"bingo.preferences.custom_hud.add_disabled.description": "Hier erhälst Du eine Liste deaktivierter Komponenten und kannst sie dem HUD hinzufügen.",
