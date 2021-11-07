@@ -1,6 +1,4 @@
 # Minecraft Bingo 5.0
-***You cannot run this in conjunction with OptiFine at the moment. The card display will be messed up otherwise.
-In case you need performance mods, I recommend using Sodium, Lithium and Phosphor.***
 
 Minecraft Bingo is a custom Minecraft map. Essentially, this is an item fetch quest.
 
