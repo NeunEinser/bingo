@@ -206,7 +206,7 @@
 	"bingo.lobby.settings.strict_mode.sign.line3": "",
 	"bingo.lobby.settings.strict_mode.sign.on": "Aktiviert",
 	"bingo.lobby.settings.strict_mode.sign.off": "Deaktiviert",
-	"bingo.lobby.settings.strict_mode.info": "Diese Einstellung ist für öffentliche Server. Bei dieser Einstellung sind alle in der Lobby im Abenteuermodus und die Spieleinstellungen sind deaktiviert für Nicht-Operatoren.",
+	"bingo.lobby.settings.strict_mode.info": "Diese Einstellung ist für öffentliche Server. Mit dieser Einstellung sind alle in der Lobby im Abenteuermodus und die Spieleinstellungen sind deaktiviert für Nicht-Operatoren.",
 	"bingo.lobby.settings.strict_mode.turn_on": "Strikten Modus aktivieren",
 	"bingo.lobby.settings.strict_mode.turn_off": "Strikten Modus deaktivieren",
 	"bingo.lobby.settings.strict_mode.revoke_from_player": "Du kannst den OP Status eines bestimmten Spielers zurückziehen mit %s Kommando. Ersetze <player_name> mit dem Spieler dessen Status Du zurückziehen willst.",
