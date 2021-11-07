@@ -16,9 +16,9 @@
 
 	"bingo.preferences.title": "Spieler Einstellungen ändern",
 	"bingo.preferences.description": "Dieses Menü erlaubt die Konfiguration deiner Einstellungen.",
-	"bingo.preferences.back": "Vorheriges Menu",
-	"bingo.preferences.previous": "Zurück",
-	"bingo.preferences.next": "Weiter",
+	"bingo.preferences.back": "Zurück",
+	"bingo.preferences.previous": "Vorh. Seite",
+	"bingo.preferences.next": "Nächste Seite",
 	"bingo.preferences.page": "Seite %s/%s",
 
 	"bingo.preferences.custom_hud.title": "Bingo-HUD Konfiguration",
