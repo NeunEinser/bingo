@@ -32,8 +32,8 @@
 	"bingo.preferences.custom_hud.add_disabled.add.description": "Füge die Komponente dem Anzeigeplatz hinzu.",
 	"bingo.preferences.custom_hud.add_disabled.add.disabled": "Die Komponente kann nicht zu diesem Platz hinzugefügt werden, da kein Raum mehr frei ist.",
 
-	"bingo.preferences.custom_hud.adjust_col0.title": "Komponente oberhalb Schnellzugriffsleiste positionieren, Links",
-	"bingo.preferences.custom_hud.adjust_col1.title": "Komponente oberhalb Schnellzugriffsleiste positionieren, Rechts",
+	"bingo.preferences.custom_hud.adjust_col0.title": "Komponente links oberhalb Schnellzugriffsleiste positionieren",
+	"bingo.preferences.custom_hud.adjust_col1.title": "Komponente rechts oberhalb Schnellzugriffsleiste positionieren",
 	"bingo.preferences.custom_hud.adjust_col.description": "Hier kannst Du Positionen von Komponenten tauschen, sie in eine andere Spalte verschieben oder spezifische Einstellungen machen.",
 	"bingo.preferences.custom_hud.adjust_col.disabled": "Es sind momentan keine Komponenten in diesem Anzeige Platz.",
 	"bingo.preferences.custom_hud.adjust_col.move_left.title": "◀",
