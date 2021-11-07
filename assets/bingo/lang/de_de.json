@@ -29,7 +29,7 @@
 	"bingo.preferences.custom_hud.add_disabled.disabled": "Du hast aktuell alle Komponenten aktiviert.",
 	"bingo.preferences.custom_hud.add_disabled.add_col0.title": "Über Schnellzugr., Links",
 	"bingo.preferences.custom_hud.add_disabled.add_col1.title": "Über Schnellzugr., Rechts",
-	"bingo.preferences.custom_hud.add_disabled.add.description": "Füge die Komponente zu den Anzeige Plätzen hinzu.",
+	"bingo.preferences.custom_hud.add_disabled.add.description": "Füge die Komponente dem Anzeigeplatz hinzu.",
 	"bingo.preferences.custom_hud.add_disabled.add.disabled": "Die Komponente kann nicht zu diesem Platz hinzugefügt werden, da kein Raum mehr frei ist.",
 
 	"bingo.preferences.custom_hud.adjust_col0.title": "Komponente oberhalb Schnellzugriffsleiste positionieren, Links",
