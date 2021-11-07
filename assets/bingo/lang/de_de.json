@@ -14,7 +14,7 @@
 	"bingo.game.go_to_lobby.hint": "Hinweis: Du kannst jederzeit mit dem Befehl %s zur Lobby zurückkehren",
 	"bingo.game.go_to_lobby.click": "Hier klicken",
 
-	"bingo.preferences.title": "Spieler Einstellungen ändern",
+	"bingo.preferences.title": "Spielereinstellungen ändern",
 	"bingo.preferences.description": "Dieses Menü erlaubt die Konfiguration deiner Einstellungen.",
 	"bingo.preferences.back": "Zurück",
 	"bingo.preferences.previous": "Vorh. Seite",
