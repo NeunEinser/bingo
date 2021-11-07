@@ -201,9 +201,6 @@
 	"bingo.lobby.settings.pregen_behavior.turn_on": "Wechsel zu „Bei Spielstart“",
 	"bingo.lobby.settings.pregen_behavior.turn_off": "Wechsel zu „Bei Generierung“",
 
-	"bingo.lobby.menu.back": "Zurück",
-	"bingo.lobby.menu.back.hover": "Zurück zur vorherigen Seite",
-
 	"bingo.lobby.settings.strict_mode.sign.line1": "Server",
 	"bingo.lobby.settings.strict_mode.sign.line2": "Strikter Modus",
 	"bingo.lobby.settings.strict_mode.sign.line3": "",
