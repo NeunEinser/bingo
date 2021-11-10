@@ -206,7 +206,7 @@
 	"bingo.lobby.settings.strict_mode.sign.line3": "",
 	"bingo.lobby.settings.strict_mode.sign.on": "Enabled",
 	"bingo.lobby.settings.strict_mode.sign.off": "Disabled",
-	"bingo.lobby.settings.strict_mode.info": "This setting is intended for public server. Using this setting, everyone in the lobby will be in adventure mode and game controls will be disabled for non-operators.",
+	"bingo.lobby.settings.strict_mode.info": "This setting is intended for public servers. Using this setting, everyone in the lobby will be in adventure mode and game controls will be disabled for non-operators.",
 	"bingo.lobby.settings.strict_mode.turn_on": "Enable Strict Mode",
 	"bingo.lobby.settings.strict_mode.turn_off": "Disable Strict Mode",
 	"bingo.lobby.settings.strict_mode.revoke_from_player": "You can also revoke the OP status of a certain player using %s command. Replace <player_name> with the player you want to revoke the status from.",
