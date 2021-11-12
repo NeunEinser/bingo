@@ -21,10 +21,10 @@
 #declare score_holder $chest_generation.column
 scoreboard players set $chest_generation.column bingo.tmp -1
 
-data modify storage tmp.bingo:chest_generation categories set from storage bingo:items categories
+data modify storage tmp.bingo:chest_generation categories set from storage bingo:items activeCategories
 
 scoreboard players set $chest_generation/sort/card.out bingo.tmp 0
-execute store result score $chest_generation/sort/card.size bingo.tmp run data get storage bingo:items categories
+execute store result score $chest_generation/sort/card.size bingo.tmp run data get storage bingo:items activeCategories
 function bingo:lobby/chest_generation/sort_categories/determain_cardinality
 scoreboard players operation $chest_generation/sort/card.out bingo.tmp %= 2 bingo.const
 

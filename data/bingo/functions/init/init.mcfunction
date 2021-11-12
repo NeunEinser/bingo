@@ -831,6 +831,13 @@
 		# @internal
 		#declare score_holder $seed
 		#>
+		# The current total item weight
+		#
+		# Stored in bingo.state
+		#
+		# @internal
+		#declare score_holder $total_item_weight
+		#>
 		# Time from last tick
 		#
 		# @internal
@@ -1043,6 +1050,10 @@
 	data remove storage bingo:items items
 
 	function bingo:init/initialize_items
+	
+	execute unless data storage bingo:items activeTags run data modify storage bingo:items activeTags set value ["bingo:default"]
+	# Schedule to avoid maxCommandChainLength being hit (setting it in init doesn't work the first time)
+	schedule function bingo:util/apply_active_item_tags 1t
 #endregion
 
 #region initialize hud components
