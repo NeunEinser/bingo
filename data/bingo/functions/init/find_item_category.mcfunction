@@ -14,6 +14,7 @@
 
 data modify storage tmp.bingo:init category set from storage tmp.bingo:init categories[-1].name
 execute store success score $init/find_cat.is_different bingo.tmp run data modify storage tmp.bingo:init category set from storage tmp.bingo:init itemCategories[-1].id
+execute unless data storage tmp.bingo:init itemCategories[-1].id store success score $init/find_cat.is_different bingo.tmp run data modify storage tmp.bingo:init category set from storage tmp.bingo:init itemCategories[-1]
 
 execute if score $init/find_cat.is_different bingo.tmp matches 1 run data remove storage tmp.bingo:init itemCategories[-1]
 execute if score $init/find_cat.is_different bingo.tmp matches 1 run function bingo:init/find_item_category
