@@ -105,9 +105,6 @@
 	#
 	# @internal
 	#declare storage bingo:card
-
-	#TODO move to temp:bingo
-	#declare storage bingo:card_generation
 #endregion
 
 #region tag declarations

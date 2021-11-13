@@ -1,16 +1,49 @@
+#> bingo:card_generation/generate_card
+#
+# Generates a card using the set seed in nn.math.rand
+#
+# @within
+# 	function bingo:card_generation/random_card
+# 	function bingo:card_generation/generate_from_seed
+# @input score $seed nn.math.rand
+# @writes storage bingo:card
+
+#>
+# @within function bingo:card_generation/**
+#declare storage tmp.bingo:card_generation
+
 function bingo:game/end
 
 scoreboard players operation $seed bingo.state = $seed nn.math.rand
 
-data remove storage bingo:tmp forbiddenCategories
-data modify storage bingo:tmp categories set from storage bingo:items categories
-data remove storage bingo:card_generation forbiddenCategories
+#>
+# The slot which is currently being generated
+#
+# @within
+# 	function bingo:card_generation/generate_card
+# 	function bingo:card_generation/generate_slot
+#declare score_holder $card_gen.slot
+scoreboard players set $card_gen.slot bingo.tmp 0
+#>
+# The current total weight of all remaining items of tmp.bingo:card_generation
+# items
+#
+# @within
+# 	function bingo:card_generation/generate_card
+# 	function bingo:card_generation/generate_slot
+# 	function bingo:card_generation/remove_items
+#declare score_holder $card_gen.total_weight
+scoreboard players operation $card_gen.total_weight bingo.tmp = $total_item_weight bingo.state
+#>
+# Tag used for temporary entity used for positional command execution to set
+# lobby comand block's commands
+#
+# @within
+# 	function bingo:card_generation/generate_card
+# 	function bingo:card_generation/generate_slot
+#declare tag bingo.command_cloud
+data modify storage tmp.bingo:card_generation items set from storage bingo:items activeItems
 data remove storage bingo:card slots
-execute as @e[type=minecraft:item_frame, tag=bingo.card_frame] at @s run setblock ~ ~ ~-1 minecraft:barrier
-
-execute in bingo:lobby run data modify block 5 3 5 auto set value false
-
-scoreboard players set $i bingo.tmp 0
 execute in bingo:lobby run summon minecraft:area_effect_cloud 0 0 0 {Tags: ["bingo.command_cloud"]}
 function bingo:card_generation/generate_slot
 

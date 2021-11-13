@@ -16,3 +16,6 @@ kill @e[type=minecraft:area_effect_cloud, tag=bingo.skybox_cloud, limit=1]
 scoreboard players set $pregen_status bingo.state 0
 execute in bingo:multi_noise run forceload remove all
 execute in bingo:lobby run function neun_einser.timer:stop
+
+execute as @e[type=minecraft:item_frame, tag=bingo.card_frame] at @s run setblock ~ ~ ~-1 minecraft:barrier
+execute in bingo:lobby run data modify block 5 3 5 auto set value false
