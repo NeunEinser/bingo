@@ -19,13 +19,20 @@
 #declare storage tmp.bingo:preferences
 
 #>
-# @api
-#declare tag/function bingo:preferences/main
+# Used to tag a player if the enable gamemode switch tag was added this tick
+#
+# @private
+#declare tag bingo.pref.added
+
+tag @s[scores={bingo.pref=2}, tag=!bingo.enable_manual_gameode_switch] add bingo.pref.added
+tag @s[scores={bingo.pref=2}, tag=!bingo.enable_manual_gameode_switch] add bingo.enable_manual_gameode_switch
+tag @s[scores={bingo.pref=2}, tag=bingo.enable_manual_gameode_switch, tag=!bingo.pref.added] remove bingo.enable_manual_gameode_switch
+tag @s remove bingo.pref.added
 
 data remove storage tmp.bingo:preferences back
-execute if score @s bingo.pref matches 1 run data modify storage io.bingo:preferences menuOptions set from storage bingo:registries preferences.main
-execute if score @s bingo.pref matches 1 run function #bingo:preferences/main
-execute if score @s bingo.pref matches 1 run tellraw @s ["\n\n\n\n\n=== ", {"translate": "bingo.preferences.title", "bold": true, "color": "green"}, " ===\n\n", {"translate": "bingo.preferences.description", "color": "gray"}, "\n"]
+execute if score @s bingo.pref matches 1..2 run data modify storage io.bingo:preferences menuOptions set from storage bingo:registries preferences.main
+execute if score @s bingo.pref matches 1..2 run function #bingo:preferences/main
+execute if score @s bingo.pref matches 1..2 run tellraw @s ["\n\n\n\n\n=== ", {"translate": "bingo.preferences.title", "bold": true, "color": "green"}, " ===\n\n", {"translate": "bingo.preferences.description", "color": "gray"}, "\n"]
 
 execute if score @s bingo.pref matches 5..66 run function bingo:preferences/custom_hud/show
 

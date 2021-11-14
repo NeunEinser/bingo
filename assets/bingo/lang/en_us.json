@@ -29,6 +29,11 @@
 	"bingo.preferences.custom_hud.title": "Configure Bingo HUD",
 	"bingo.preferences.custom_hud.description": "In this menu, you can move components of the custom HUD around, disable them, or adjust some component-specific settings.",
 
+	"bingo.preferences.spectator_mode.title": "Prevent manual gamemode switching",
+	"bingo.preferences.spectator_mode.description": "When on, you will not be able to use /gamemode commands, F3+N or F3+F4 to switch your gamemode while in game.\n\nThis is done to prevent accidentally hitting those button combinations.\n\nThere is a trigger you can use for switching gamemode instead.",
+	"bingo.preferences.spectator_mode.enabled": "On",
+	"bingo.preferences.spectator_mode.disabled": "Off",
+
 	"bingo.preferences.custom_hud.add_disabled.title": "Add Disabled Components",
 	"bingo.preferences.custom_hud.add_disabled.description": "Here, you can view disabled components and add them somewhere to your HUD.",
 	"bingo.preferences.custom_hud.add_disabled.disabled": "You currently have all components enabled.",
