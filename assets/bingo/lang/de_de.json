@@ -12,7 +12,7 @@
 
 	"bingo.game.go_to_lobby": "%s um zur Lobby zurückzukehren.",
 	"bingo.game.go_to_lobby.hint": "Hinweis: Du kannst jederzeit mit dem Befehl %s zur Lobby zurückkehren",
-	"bingo.game.go_to_lobby.click": "Hier klicken",
+	"bingo.game.go_to_lobby.click_lobby": "Hier klicken",
 
 	"bingo.preferences.title": "Spielereinstellungen ändern",
 	"bingo.preferences.description": "Dieses Menü erlaubt die Konfiguration deiner Einstellungen.",

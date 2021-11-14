@@ -4,8 +4,6 @@
 #
 # @within function bingo:game/start/spawn_skybox
 # @context location bingo:lobby 0 0 0
-#
-# 
 
 # Make teammates fully invisible in the skybox
 team modify bingo.aqua seeFriendlyInvisibles false

@@ -8,7 +8,7 @@
 
 # Don't use translation strings here as resource pack is almost never loaded
 # here.
-execute if score $game_state bingo.state matches 3 run tellraw @s[predicate=bingo:is_in_game] [{"text": "Click here", "color": "#00c3ff", "clickEvent": {"action": "run_command", "value": "/trigger bingo.lobby"}}, " to go back to the lobby"]
+execute if score $game_state bingo.state matches 3 run tellraw @s[predicate=bingo:is_in_game] [{"text": "Click here", "color": "#00c3ff", "clickEvent": {"action": "run_command", "value": "/trigger bingo.lobby"}}, " to go back to the lobby\n", {"text": "Click here", "color": "#00c3ff", "clickEvent": {"action": "run_command", "value": "/trigger bingo.spectator"}}, " to switch to spectator mode."]
 scoreboard players set @s bingo.update_hud 1
 trigger bingo.resources
 setblock 1 2 2 minecraft:sea_lantern
