@@ -12,5 +12,7 @@ execute if score $game_state bingo.state matches 3 run tellraw @s[predicate=bing
 scoreboard players set @s bingo.update_hud 1
 trigger bingo.resources
 setblock 1 2 2 minecraft:sea_lantern
+execute unless score @s bingo.game_id = $current_game_id bingo.game_id run function bingo:util/go_to_lobby
+execute if score $game_state bingo.state matches 0..1 if entity @s[predicate=bingo:is_in_game] run function bingo:util/go_to_lobby
 
 scoreboard players reset @s bingo.reconnect

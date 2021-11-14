@@ -51,6 +51,9 @@ function nope_name.math:rand/exe
 execute store result storage bingo:card spawnLocation int 1 run scoreboard players get $out nn.math.rand
 execute if score $automatically_pregen bingo.settings matches 1 run schedule function bingo:game/start/locate_spawnpoint 5s
 
+execute store result score $tmp bingo.tmp run data get storage tmp.bingo:card_generation items
+tellraw @a {"score":{"name": "$tmp","objective": "bingo.tmp"}}
+
 # Reset teams
 data remove storage bingo:card teams
 data modify storage bingo:card teams append value {id: "bingo:aqua", completedBorder: '{"text": "\\uFFFE", "color": "aqua"}', slots:['"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"']}

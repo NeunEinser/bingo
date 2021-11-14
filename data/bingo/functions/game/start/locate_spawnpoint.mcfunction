@@ -19,7 +19,6 @@
 # @private
 #declare tag bingo.spawn_position
 
-title @a times 1 2147483647 0
 execute if score $game_state bingo.state matches 1 run tellraw @a "Preparing Spawn..."
 
 gamerule doDaylightCycle false

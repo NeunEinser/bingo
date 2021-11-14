@@ -11,7 +11,7 @@
 # @within tag/function minecraft:load
 # @handles #minecraft:load
 
-#TODO change everywhere
+#TODO change to use tmp.bingo:<name> everywhere
 #declare storage bingo:tmp
 
 #region Storage declarations
@@ -765,7 +765,7 @@
 		#>
 		# The current game state
 		# 0 = Lobby / Not in game
-		# 1 = Starting / pre-game
+		# 1 = Starting / chunk-gen
 		# 2 = Skybox phase
 		# 3 = Game started
 		#
