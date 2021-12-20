@@ -376,7 +376,7 @@
 	"bingo.got_bingo.diag.top_left": "[%s] %s got a bingo in the top left to bottom right diagonal!",
 	"bingo.got_bingo.diag.bottom_left": "[%s] %s got a bingo in the bottom left to top right diagonal!",
 	
-	"bingo.got_bingo.double.col_row": "[%s] %s got a double bingo in row %s and col %s!",
+	"bingo.got_bingo.double.col_row": "[%s] %s got a double bingo in col %s and row %s!",
 	"bingo.got_bingo.double.col_diag.top_left": "[%s] %s got a double bingo in col %s and the top left to bottom right diagonal!",
 	"bingo.got_bingo.double.col_diag.bottom_left": "[%s] %s got a double bingo in col %s and the bottom left to top right diagonal!",
 	"bingo.got_bingo.double.row_diag.top_left": "[%s] %s got a double bingo in row %s and the top left to bottom right diagonal!",
