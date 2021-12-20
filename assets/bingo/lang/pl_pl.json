@@ -395,7 +395,7 @@
 	"bingo.got_sniper_bingo.diag.top_left": "[%s] %s zdobył sniper-bingo na przekątnej od lewej górnej do prawej dolnej!",
 	"bingo.got_sniper_bingo.diag.bottom_left": "[%s] %s zdobył sniper-bingo na przekątnej od lewej dolnej do prawej górnej!",
 
-	"bingo.got_sniper_bingo.double.col_row": "[%s] %s zdobył podwójne sniper-bingo w wierszu %s i kolumnie %s!",
+	"bingo.got_sniper_bingo.double.col_row": "[%s] %s zdobył podwójne sniper-bingo w kolumnie %s i wierszu %s!",
 	"bingo.got_sniper_bingo.double.col_diag.top_left": "[%s] %s zdobył podwójne sniper-bingo w kolumnie %s i na przekątnej od lewej górnej do prawej dolnej!",
 	"bingo.got_sniper_bingo.double.col_diag.bottom_left": "[%s] %s zdobył podwójne sniper-bingo w kolumnie %s i na przekątnej od lewej dolnej do prawej górnej!",
 	"bingo.got_sniper_bingo.double.row_diag.top_left": "[%s] %s zdobył podwójne sniper-bingo w wierszu %s i na przekątnej od lewej górnej do prawej dolnej!",
