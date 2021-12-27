@@ -219,10 +219,10 @@
 	"bingo.lobby.tutorial.generate_chests.sign.line3": "erneut",
 	"bingo.lobby.tutorial.generate_chests.sign.line4": "erzeugen",
 
-	"bingo.lobby.tutorial.basics.sign.line1": "",
-	"bingo.lobby.tutorial.basics.sign.line2": "Minecraft Bingo",
-	"bingo.lobby.tutorial.basics.sign.line3": "Grundlagen",
-	"bingo.lobby.tutorial.basics.sign.line4": "",
+	"bingo.lobby.tutorial.basics.sign.line1": "Minecraft",
+	"bingo.lobby.tutorial.basics.sign.line2": "Bingo",
+	"bingo.lobby.tutorial.basics.sign.line3": "",
+	"bingo.lobby.tutorial.basics.sign.line4": "Grundlagen",
 
 	"bingo.lobby.tutorial.basics1.sign.line1": "Minecraft Bingo",
 	"bingo.lobby.tutorial.basics1.sign.line2": "ist eine",
