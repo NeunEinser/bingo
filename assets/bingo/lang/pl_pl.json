@@ -85,7 +85,7 @@
 	"bingo.lobby.credits.amber_wat.sign.line3": "Negative Space",
 	"bingo.lobby.credits.amber_wat.sign.line4": "Font",
 
-	"bingo.lobby.credits.nope_name.sign.line2": "Paczka zasobów",
+	"bingo.lobby.credits.nope_name.sign.line2": "Paczka danych",
 	"bingo.lobby.credits.nope_name.sign.line3": "narzędzi",
 	"bingo.lobby.credits.nope_name.sign.line4": "matematycznych",
 
@@ -304,8 +304,8 @@
 	"bingo.lobby.tutorial.game_info.world_gen.caves": "Częstotliwość występowania jaskiń została nieznacznie zwiększona\n(z domyślnej 1/7 do 1/6).\n\nPonadto, biomy oceaniczne nie generują zalanych jaskiń na tej mapie.",
 	"bingo.lobby.tutorial.game_info.world_gen.no_mineshafts.heading": "Brak Kopalń: ",
 	"bingo.lobby.tutorial.game_info.world_gen.no_mineshafts": "Opuszczone kopalnie okazały się zbyt potężne, ponieważ dają łatwy dostęp do wielu skrzyń. Dlatego też w Bingo zostały one wyłączone.",
-	"bingo.lobby.tutorial.game_info.world_gen.ites.heading": "Brak -it'ów/-yt;ów: ",
-	"bingo.lobby.tutorial.game_info.world_gen.ites": "Wszystkie warianty kamieni, takie jak DiorYT, GranIT i AndezYT zostały całkowicie usunięte z generacji w tej wersji.\nZostało to zrobione w celu zmniejszenia bałaganu w ekwipunku.",
+	"bingo.lobby.tutorial.game_info.world_gen.ites.heading": "Brak wariantów kamienia: ",
+	"bingo.lobby.tutorial.game_info.world_gen.ites": "Wszystkie warianty kamienia, takie jak Dioryt, Granit i Andezyt zostały całkowicie usunięte z generacji w tej wersji.\nZostało to zrobione w celu zmniejszenia bałaganu w ekwipunku.",
 	"bingo.lobby.tutorial.game_info.world_gen.ambient.heading": "Jasne otoczenie: ",
 	"bingo.lobby.tutorial.game_info.world_gen.ambient": "Włączony jest parametr wymiaru pozwalający widziać w ciemności, podobnie jak w Netherze.\nDziała to bez noktowizji, dzięki czemu nadal możesz w pewnym stopniu rozróżnić ciemność od światła.",
 
@@ -403,7 +403,7 @@
 	"bingo.got_sniper_bingo.double.diags": "[%s] %s zdobył podwójne sniper-bingo na obu przekątnych!",
 
 	"bingo.got_sniper_bingo.triple.top_left": "[%s] %s zdobył potrójne sniper-bingo w kolumnie %s, wierszu %s i na przekątnej od lewej górnej do prawej dolnej!",
-	"bingo.got_sniper_bingo.triple.bottom_left": "[%s] %s zdobył potrójne sniper-bingo w kolumnie %s, row %s i na przekątnej od lewej dolnej do prawej górnej!",
+	"bingo.got_sniper_bingo.triple.bottom_left": "[%s] %s zdobył potrójne sniper-bingo w kolumnie %s, wierszu %s i na przekątnej od lewej dolnej do prawej górnej!",
 	"bingo.got_sniper_bingo.triple.col_diags": "[%s] %s zdobył potrójne sniper-bingo w kolumnie %s i na obu przekątnych!",
 	"bingo.got_sniper_bingo.triple.row_diags": "[%s] %s zdobył potrójne sniper-bingo w wierszu %s i na obu przekątnych!",
 
