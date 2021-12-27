@@ -307,7 +307,7 @@
 	"bingo.lobby.tutorial.game_info.world_gen.ites.heading": "Brak wariantów kamienia: ",
 	"bingo.lobby.tutorial.game_info.world_gen.ites": "Wszystkie warianty kamienia, takie jak Dioryt, Granit i Andezyt zostały całkowicie usunięte z generacji w tej wersji.\nZostało to zrobione w celu zmniejszenia bałaganu w ekwipunku.",
 	"bingo.lobby.tutorial.game_info.world_gen.ambient.heading": "Jasne otoczenie: ",
-	"bingo.lobby.tutorial.game_info.world_gen.ambient": "Włączony jest parametr wymiaru pozwalający widziać w ciemności, podobnie jak w Netherze.\nDziała to bez noktowizji, dzięki czemu nadal możesz w pewnym stopniu rozróżnić ciemność od światła.",
+	"bingo.lobby.tutorial.game_info.world_gen.ambient": "Włączony jest parametr wymiaru pozwalający widzieć w ciemności, podobnie jak w Netherze.\nDziała to bez noktowizji, dzięki czemu nadal możesz w pewnym stopniu rozróżnić ciemność od światła.",
 
 	"bingo.lobby.tutorial.get_tools.sign.line1": "Po starcie,",
 	"bingo.lobby.tutorial.get_tools.sign.line2": "musisz najpierw",
