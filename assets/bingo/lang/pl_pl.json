@@ -7,16 +7,16 @@
 	"bingo.resourcepack_check.sign.line3": "Mnie",
 	"bingo.resourcepack_check.sign.line4": "",
 	"bingo.resourcepack_check.go_to_lobby.part1": "Paczka zasobów aktywowana pomyślnie.",
-	"bingo.resourcepack_check.go_to_lobby.part2": "%s aby przejść do lobby.",
+	"bingo.resourcepack_check.go_to_lobby.part2": "%s, aby przejść do lobby.",
 	"bingo.resourcepack_check.go_to_lobby.click": "Kliknij tutaj",
 
-	"bingo.game.go_to_lobby": "%s aby wrócić do lobby.\n%s aby zmienić na tryb widza.",
-	"bingo.game.go_to_lobby.hint": "Wskazówka: W każdej chwili możesz użyć polecenia %s aby wrócić do lobby lub %s aby zmienić na tryb widza.",
+	"bingo.game.go_to_lobby": "%s, aby wrócić do lobby.\n%s, aby zmienić na tryb widza.",
+	"bingo.game.go_to_lobby.hint": "Wskazówka: W każdej chwili możesz użyć polecenia %s, aby wrócić do lobby, lub %s, aby zmienić na tryb widza.",
 	"bingo.game.go_to_lobby.click_lobby": "Kliknij tu",
 	"bingo.game.go_to_lobby.click_spectator": "Kliknij tutaj",
 
-	"bingo.game.switch_gamemode.hint": "Wskazówka: W każdej chwili możesz użyć polecenia %s aby zmienić na tryb widza.",
-	"bingo.game.switch_gamemode.prevented": "Zmiana trybu gry zablokowana. %s aby zmienić na tryb widza.\nNastępnie, możesz zmienić na dowolny inny tryb",
+	"bingo.game.switch_gamemode.hint": "Wskazówka: W każdej chwili możesz użyć polecenia %s, aby zmienić na tryb widza.",
+	"bingo.game.switch_gamemode.prevented": "Zmiana trybu gry zablokowana. %s, aby zmienić na tryb widza.\nNastępnie, możesz zmienić na dowolny inny tryb.",
 	"bingo.game.switch_gamemode.prevented.click": "Kliknij tutaj",
 
 	"bingo.preferences.title": "Preferencje Gracza",
@@ -147,7 +147,7 @@
 	"bingo.lobby.card_generation.furnace.sign.line3": "Przetapiania",
 	"bingo.lobby.card_generation.furnace.sign.line4": "",
 
-	"bingo.lobby.card_generation.from_seed.instructions": "%s aby dostać polecenie na ustawienie ziarna. Wprowadź liczbowe ziarno na końcu polecenia.",
+	"bingo.lobby.card_generation.from_seed.instructions": "%s, aby dostać polecenie na ustawienie ziarna. Wprowadź liczbowe ziarno na końcu polecenia.",
 	"bingo.lobby.card_generation.from_seed.instructions.link": "Kliknij tutaj",
 	"bingo.lobby.card_generation.from_seed.explanation": "Ziarno określa jakie przedmioty zostaną wygenerowane na karcie bingo i gdzie się zespawnujesz. Może to być wykorzystane np. w zawodach, w których wszyscy uczestnicy używają tego samego ziarna.",
 
@@ -277,7 +277,7 @@
 	"bingo.lobby.tutorial.goals.introduction.heading": "Cele",
 	"bingo.lobby.tutorial.goals.introduction": "W Minecraft Bingo jest kilka celów, które możesz osiągnąć.\n\nPodczas planowania próby, pomyśl w jakiej kolejności zdobywać przedmioty.\n\nKolejne strony szczegółowo opisują wykrywane przez grę cele.",
 	"bingo.lobby.tutorial.goals.bingo.heading": "Bingo",
-	"bingo.lobby.tutorial.goals.bingo": "W przypadku Bingo, zdobądź 5 przed- miotów w dowolnym wierszu, kolumnie lub na przekątnej.\n\nAby ułatwić planowanie, w lobby możesz zaznaczać przedmioty w tablicy lewym/prawym przyciskiem myszy",
+	"bingo.lobby.tutorial.goals.bingo": "W przypadku Bingo, zdobądź 5 przed- miotów w dowolnym wierszu, kolumnie lub na przekątnej.\n\nAby ułatwić planowanie, w lobby możesz zaznaczać przedmioty w tablicy lewym/prawym przyciskiem myszy.",
 	"bingo.lobby.tutorial.goals.blackout.heading": "Blackout",
 	"bingo.lobby.tutorial.goals.blackout": "Blackout polega po prostu na zdobyciu wszystkich 25 przedmiotów.\n\nSpróbuj być jak najbardziej wydajny, zdobywać kilka przedmiotów z jednego miejsca i przetapiać podczas robienia innych czynności.",
 	"bingo.lobby.tutorial.goals.20_no_bingo.heading": "20 Bez Bingo",
@@ -307,7 +307,7 @@
 	"bingo.lobby.tutorial.game_info.world_gen.ites.heading": "Brak -it'ów/-yt;ów: ",
 	"bingo.lobby.tutorial.game_info.world_gen.ites": "Wszystkie warianty kamieni, takie jak DiorYT, GranIT i AndezYT zostały całkowicie usunięte z generacji w tej wersji.\nZostało to zrobione w celu zmniejszenia bałaganu w ekwipunku.",
 	"bingo.lobby.tutorial.game_info.world_gen.ambient.heading": "Jasne otoczenie: ",
-	"bingo.lobby.tutorial.game_info.world_gen.ambient": "Włączony jest parametr wymiaru pozwalający widziać w ciemności, podobnie jak w Netherze.\nDziała to bez noktowizji, dzięki czemu nadal możesz w pewnym stopniu rozróżnić ciemność od światła",
+	"bingo.lobby.tutorial.game_info.world_gen.ambient": "Włączony jest parametr wymiaru pozwalający widziać w ciemności, podobnie jak w Netherze.\nDziała to bez noktowizji, dzięki czemu nadal możesz w pewnym stopniu rozróżnić ciemność od światła.",
 
 	"bingo.lobby.tutorial.get_tools.sign.line1": "Po starcie,",
 	"bingo.lobby.tutorial.get_tools.sign.line2": "musisz najpierw",
