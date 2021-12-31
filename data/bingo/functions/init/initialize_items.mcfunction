@@ -19,7 +19,7 @@ function bingo:init/add_category_names_to_lore
 data modify storage tmp.bingo:init items[-1].item.tag.display.Lore append value '""'
 data modify storage tmp.bingo:init items[-1].item.Count set value 1b
 
-data modify block 0 255 0 Text1 set value '{"storage": "tmp.bingo:init", "nbt": "items[-1].textComponent", "interpret": true, "italic": false}'
+setblock 0 255 0 minecraft:oak_sign{Text1:'{"storage": "tmp.bingo:init", "nbt": "items[-1].textComponent", "interpret": true, "italic": false}'}
 data modify storage tmp.bingo:init items[-1].item.tag.display.Name set from block 0 255 0 Text1
 setblock 0 255 0 minecraft:air
 
