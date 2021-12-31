@@ -33,6 +33,6 @@ execute if score $init/find_cat.is_different bingo.tmp matches 1 run data modify
 execute if score $init/find_cat.is_different bingo.tmp matches 0 run data modify storage tmp.bingo:init categories append from storage bingo:items categories[-1]
 execute store success score $init/find_cat.category_exists bingo.tmp run data remove storage bingo:items categories[-1]
 
-execute if score $init/find_cat.category_exists bingo.tmp matches 0 if data storage tmp.bingo:init itemCategories[0] run tellraw @a [{"text": "[ERROR] Could not find categories [", "color": "red"}, {"storage": "tmp.bingo:init", "nbt": "itemCategories[]"}, "] of item ", {"storage": "tmp.bingo:init", "nbt": "items[-1].id"}]
+execute if score $init/find_cat.category_exists bingo.tmp matches 0 run tellraw @a [{"text": "[ERROR] Could not find category [", "color": "red"}, {"storage": "tmp.bingo:init", "nbt": "category"}, "] of item ", {"storage": "tmp.bingo:init", "nbt": "items[-1].id"}]
 
 execute unless score $init/find_cat.category_exists bingo.tmp matches 0 if data storage tmp.bingo:init itemCategories[0] run function bingo:init/find_categories
