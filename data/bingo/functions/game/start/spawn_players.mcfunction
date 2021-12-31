@@ -10,7 +10,6 @@ scoreboard players operation @s bingo.game_id = $current_game_id bingo.game_id
 teleport @s ~ 128 ~
 tag @s remove bingo.spectator
 
-#scoreboard players reset @s bingo.card_pos
 scoreboard players reset @s bingo.pref
 scoreboard players reset @s bingo.seed
 scoreboard players reset @s bingo.settings

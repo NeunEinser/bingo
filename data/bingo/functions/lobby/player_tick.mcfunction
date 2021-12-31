@@ -13,7 +13,6 @@ execute if score $strict_mode bingo.settings matches 1 run gamemode adventure @s
 
 # change preferences
 execute unless score @s bingo.pref matches 0 run function bingo:preferences/show
-scoreboard players enable @s bingo.card_pos
 scoreboard players enable @s bingo.pref
 
 # Float in front of card display

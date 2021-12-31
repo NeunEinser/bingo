@@ -45,3 +45,9 @@ execute if score @s bingo.pref matches 11 run tellraw @s ["\n\n\n\n\n=== ", {"tr
 data modify storage bingo:custom_hud players append from storage bingo:custom_hud currentPlayer
 data modify storage bingo:custom_hud players append from storage tmp.bingo:preferences/hud skippedHuds[]
 execute if score @s bingo.pref matches 11 run data modify storage tmp.bingo:preferences back set value '["[", {"translate": "bingo.preferences.back", "color": "#00c3ff", "clickEvent": {"action": "run_command", "value": "/trigger bingo.pref set 5"}}, "]"]'
+
+execute if score @s bingo.pref matches 67 run scoreboard players set @s bingo.card_pos 0
+execute if score @s bingo.pref matches 68 run scoreboard players set @s bingo.card_pos 8
+execute if score @s bingo.pref matches 69 run scoreboard players set @s bingo.card_pos 9
+execute if score @s bingo.pref matches 67..69 run scoreboard players set $preferences.next_page bingo.tmp 11
+execute if score @s bingo.pref matches 67..69 run scoreboard players set @s bingo.update_hud 1

@@ -630,13 +630,6 @@
 
 	#region trigger objectives
 		#>
-		# This objective holds the position preference of where a player's card should
-		# be displayed.
-		#
-		# @internal
-		scoreboard objectives add bingo.card_pos trigger
-
-		#>
 		# Trigger objective for returning to the lobby.
 		#
 		# @internal
@@ -683,6 +676,13 @@
 	#endregion
 
 	#region other internal objectives
+		#>
+		# This objective holds the position preference of where a player's card should
+		# be displayed.
+		#
+		# @internal
+		scoreboard objectives add bingo.card_pos dummy
+
 		#>
 		# This objective contains unique IDs for the item frames in the lobby.
 		#
