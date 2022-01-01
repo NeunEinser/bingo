@@ -7,6 +7,7 @@
 
 team join bingo.dark_green
 recipe give @s *
+scoreboard players set @s bingo.card_pos 0
 
 gamemode adventure
 scoreboard players set @s bingo.resources 1
