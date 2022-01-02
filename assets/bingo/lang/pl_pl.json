@@ -10,6 +10,9 @@
 	"bingo.resourcepack_check.go_to_lobby.part2": "%s, aby przejść do lobby.",
 	"bingo.resourcepack_check.go_to_lobby.click": "Kliknij tutaj",
 
+	//"bingo.logging.error": "ERROR",
+	//"bingo.setup.error.unknown_category": "Item %1$s has category %2$s, but category %2$s could not be found.",
+
 	"bingo.game.go_to_lobby": "%s, aby wrócić do lobby.\n%s, aby zmienić na tryb widza.",
 	"bingo.game.go_to_lobby.hint": "Wskazówka: W każdej chwili możesz użyć polecenia %s, aby wrócić do lobby, lub %s, aby zmienić na tryb widza.",
 	"bingo.game.go_to_lobby.click_lobby": "Kliknij tu",

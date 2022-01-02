@@ -10,6 +10,9 @@
 	"bingo.resourcepack_check.go_to_lobby.part2": "%s um zur Lobby zu gehen.",
 	"bingo.resourcepack_check.go_to_lobby.click": "Hier klicken",
 
+	"bingo.logging.error": "FEHLER",
+	"bingo.setup.error.unknown_category": "Gegenstand %1$s hat Kategorie %2$s, die Kategorie %2$s kann allerdings nicht gefunden werden.",
+
 	"bingo.game.go_to_lobby": "%s um zur Lobby zurückzukehren.",
 	"bingo.game.go_to_lobby.hint": "Hinweis: Du kannst jederzeit mit dem Befehl %s zur Lobby zurückkehren",
 	"bingo.game.go_to_lobby.click_lobby": "Hier klicken",
