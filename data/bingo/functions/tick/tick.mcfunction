@@ -10,6 +10,10 @@
 
 execute in bingo:lobby run function neun_einser.timer:store_current_time
 
+# Player jooin
+execute as @a unless score @s bingo.id matches -2147483648.. run function #bingo:new_player
+execute as @a[scores={bingo.reconnect=1}] run function #bingo:player_reconnect
+
 #region Resource pack check
 # Detect second (or more) players in a LAN world
 execute store result score $is_multiplayer bingo.state if entity @a
@@ -33,10 +37,6 @@ execute as @a[scores={bingo.resources=91}] run function bingo:util/go_to_lobby
 setblock 1 2 1 minecraft:air
 setblock 1 2 1 minecraft:warped_wall_sign{Text1: '{"translate":"%1074992263$s%1$s", "bold": true, "color":"#8eedeb", "with": ["", {"translate": "bingo.resourcepack_check.sign.line1"}], "clickEvent": {"action": "run_command", "value": "/trigger bingo.resources"}}', Text2:'{"translate":"%1074992263$s%1$s", "bold": true, "color":"#8eedeb", "with": ["Download", {"translate": "bingo.resourcepack_check.sign.line2"}]}', Text3:'{"translate":"%1074992263$s%1$s", "bold": true, "color":"#8eedeb", "with": ["Resourcepack", {"translate": "bingo.resourcepack_check.sign.line3"}]}', Text4:'{"translate":"%1074992263$s%1$s", "bold": true, "color":"#8eedeb", "with": ["", {"translate": "bingo.resourcepack_check.sign.line4"}]}'}
 #endregion
-
-# Assign each player a unique ID
-execute as @a[scores={bingo.reconnect=1}] run function #bingo:player_reconnect
-execute as @a unless score @s bingo.id matches -2147483648.. run function #bingo:new_player
 
 # custom hud
 data modify storage tmp.bingo:custom_hud handled set value []
