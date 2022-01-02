@@ -67,7 +67,6 @@ execute at @e[type=minecraft:area_effect_cloud, tag=bingo.button_light_blue, lim
 execute at @e[type=minecraft:area_effect_cloud, tag=bingo.button_blue, limit=1] run fill ~ ~-1 ~1 ~ ~1 ~1 minecraft:blue_concrete
 execute at @e[type=minecraft:area_effect_cloud, tag=bingo.button_purple, limit=1] run fill ~ ~-1 ~1 ~ ~1 ~1 minecraft:purple_concrete
 execute at @e[type=minecraft:area_effect_cloud, tag=bingo.button_magenta, limit=1] run fill ~ ~-1 ~1 ~ ~1 ~1 minecraft:magenta_concrete
-execute at @e[type=minecraft:area_effect_cloud, tag=bingo.button_black, limit=1] run fill ~ ~-1 ~1 ~ ~1 ~1 minecraft:black_concrete
 
 #Tutorial / Game Info / Settings
 ## Settings

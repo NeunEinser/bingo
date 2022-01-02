@@ -5,7 +5,7 @@
 # @within function bingo:game/start/spawn_skybox
 # @context entity Current player
 
-tellraw @s "Loading terrain"
+tellraw @s {"translate": "bingo.game.start.loading_terrain"}
 scoreboard players operation @s bingo.game_id = $current_game_id bingo.game_id
 teleport @s ~ 128 ~
 tag @s remove bingo.spectator

@@ -634,12 +634,6 @@
 		# 	function bingo:lobby/press_button
 		# 	structure bingo:card_generation
 		#declare tag bingo.button_magenta
-		#>
-		# @within
-		# 	function bingo:lobby/place_indestructible_blocks
-		# 	function bingo:lobby/press_button
-		# 	structure bingo:card_generation
-		#declare tag bingo.button_black
 	#endregion
 #endregion
 

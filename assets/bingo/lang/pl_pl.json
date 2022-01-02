@@ -383,7 +383,10 @@
 	"bingo.category.wheat": "Pszenica",
 	"bingo.category.wool": "Wełna",
 	"bingo.items.weight": "Waga: %s",
-	
+
+	//"bingo.game.start.preparing_spawn": "Preparing Spawn...",
+	//"bingo.game.start.loading_terrain": "Loading Terrain...",
+	//"bingo.game.start.countdown_completed": "GO!",
 	"bingo.game.start.pre_gen_progress": "Wstępne Generowanie Chunków...",
 
 	"bingo.got_item": "[%2$s | #%1$s] %3$s zdobył [%4$s]",

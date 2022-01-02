@@ -373,8 +373,11 @@
 	"bingo.category.wheat": "Weizen",
 	"bingo.category.wool": "Wolle",
 	"bingo.items.weight": "Gewichtung: %s",
-	
-	"bingo.game.start.pre_gen_progress": "Bereite Chunks vor...",
+
+	"bingo.game.start.preparing_spawn": "Spawn vorbereiten...",
+	"bingo.game.start.loading_terrain": "Terrain laden...",
+	"bingo.game.start.countdown_completed": "LOS!",
+	"bingo.game.start.pre_gen_progress": "Generiere Chunks...",
 
 	"bingo.got_item": "[%1$s] %2$s erhielt [%3$s]",
 	"bingo.got_blackout": "[%1$s] %2$s erzielte(n) ein Blackout!",

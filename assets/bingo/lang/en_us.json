@@ -383,7 +383,10 @@
 	"bingo.category.wheat": "Wheat",
 	"bingo.category.wool": "Wool",
 	"bingo.items.weight": "Weight: %s",
-	
+
+	"bingo.game.start.preparing_spawn": "Preparing Spawn...",
+	"bingo.game.start.loading_terrain": "Loading Terrain...",
+	"bingo.game.start.countdown_completed": "GO!",
 	"bingo.game.start.pre_gen_progress": "Pre-generating Chunks...",
 
 	"bingo.got_item": "[%2$s | #%1$s] %3$s got [%4$s]",
