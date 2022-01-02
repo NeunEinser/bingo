@@ -8,7 +8,9 @@
 	"bed_works": true,
 	"respawn_anchor_works": true,
 	"has_raids": false,
-	"logical_height": 256,
+	"min_y": -64,
+	"height": 384,
+	"logical_height": 384,
 	"infiniburn": "minecraft:infiniburn_overworld",
 	"ambient_light": 0.125
 }
