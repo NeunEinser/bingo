@@ -214,10 +214,15 @@
 	"bingo.strict_mode.confirm_op": "Bitte %s um deine OP Status zu bestätigen.",
 	"bingo.strict_mode.confirm_op.click": "klick hier",
 
-	"bingo.lobby.tutorial.generate_chests.sign.line1": "",
+	"bingo.lobby.tutorial.generate_chests.sign.line1": "Kategorie-",
 	"bingo.lobby.tutorial.generate_chests.sign.line2": "Truhen",
 	"bingo.lobby.tutorial.generate_chests.sign.line3": "erneut",
 	"bingo.lobby.tutorial.generate_chests.sign.line4": "erzeugen",
+
+	"bingo.lobby.tutorial.chests.book.heading": "Kategorie-Truhen",
+	"bingo.lobby.tutorial.chests.book.page1": "Die Truhen zur Rechten beinhalten alle Gegenstände, die auf einer Bingokarte auftauchen können.\n\nJede Spalte ist eine Kategorie. Es kann immer nur ein Gegenstand je Kategorie gleichzeitig auf einer Karte auftauchen.",
+	"bingo.lobby.tutorial.chests.book.page2": "Eine Zeile, die mit einem leeren Feld beginnt ist eine Fortsetzung der vorherigen Kategorie.\n\nEin Gegenstand kann auch mehrere Kategorien haben. Dann kann er nur auftauchen, wenn keiner der Gegen-\nstände aus einer seiner Kategorien auf der Karte sind.",
+	"bingo.lobby.tutorial.chests.book.page3": "Gegenstände können auch gewichtet sein. Je höher die Gewichtung ist desto wahrscheinlicher ist es, dass der Gegenstand aus der Kategorie genommen wird.\n\nMit dem Schild oben können die Truhen erneut erzeugt werden.",
 
 	"bingo.lobby.tutorial.basics.sign.line1": "Minecraft",
 	"bingo.lobby.tutorial.basics.sign.line2": "Bingo",

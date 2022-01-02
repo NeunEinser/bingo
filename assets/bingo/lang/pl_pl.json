@@ -224,10 +224,15 @@
 	"bingo.strict_mode.confirm_op": "Proszę %s, aby potwierdzić swój status operatora.",
 	"bingo.strict_mode.confirm_op.click": "kliknąć tutaj",
 
-	"bingo.lobby.tutorial.generate_chests.sign.line1": "",
-	"bingo.lobby.tutorial.generate_chests.sign.line2": "Re-generuj",
-	"bingo.lobby.tutorial.generate_chests.sign.line3": "Skrzynie",
-	"bingo.lobby.tutorial.generate_chests.sign.line4": "",
+	//"bingo.lobby.tutorial.generate_chests.sign.line1": "",
+	//"bingo.lobby.tutorial.generate_chests.sign.line2": "Re-generuj",
+	//"bingo.lobby.tutorial.generate_chests.sign.line3": "Skrzynie",
+	//"bingo.lobby.tutorial.generate_chests.sign.line4": "",
+
+	//"bingo.lobby.tutorial.chests.book.heading": "Category Chests",
+	//"bingo.lobby.tutorial.chests.book.page1": "The chests to the right display all the items that are in the Bingo item pool.\n\nEach column is a category. Only one item of each category can appear at the same time on any given card.",
+	//"bingo.lobby.tutorial.chests.book.page2": "A column starting with an empty slot is a continuation of the category in the last column.\n\nAn item can also have multiple categories, which restricts it more, as the item can only be picked when none of the items in any of its categories are on the card.",
+	//"bingo.lobby.tutorial.chests.book.page3": "Items can also have weights. The higher the weight is, the more likely it is for the game to pick the item from the category.\n\nUse the sign above to re-generate the chests.",
 
 	"bingo.lobby.tutorial.basics.sign.line1": "Minecraft",
 	"bingo.lobby.tutorial.basics.sign.line2": "Bingo",
