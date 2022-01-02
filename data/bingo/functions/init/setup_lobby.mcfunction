@@ -59,5 +59,4 @@ setblock -3 2 -3 minecraft:barrier
 
 setblock -3 1 -3 minecraft:barrier
 
-forceload remove all
-forceload add 0 0
+schedule function bingo:init/setup_lobby_end 1t
