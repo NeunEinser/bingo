@@ -17,7 +17,7 @@ execute as @e[type=minecraft:item_frame, tag=bingo.card_frame, nbt=!{Item: {}}] 
 execute as @e[type=minecraft:item_frame, tag=bingo.card_frame, nbt=!{ItemRotation: 0b}] at @s run function bingo:card_frames/on_rotation_changed
 
 # set signs
-function bingo:lobby/set_signs
+function bingo:lobby/place_indestructible_blocks
 
 # regen item frames if neccasary
 #>

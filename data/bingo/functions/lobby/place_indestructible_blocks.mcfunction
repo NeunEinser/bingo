@@ -1,4 +1,4 @@
-#> bingo:lobby/set_signs
+#> bingo:lobby/place_indestructible_blocks
 #
 # Places all the signs in the lobby.
 #
@@ -55,6 +55,19 @@ execute at @e[type=minecraft:area_effect_cloud, tag=bingo.sign_team_selection, l
 execute at @e[type=minecraft:area_effect_cloud, tag=bingo.sign_card_generation_random_card, limit=1] run setblock ~ ~ ~ minecraft:warped_wall_sign[facing=south]{Text1: '{"translate":"bingo.lobby.card_generation.random_card.sign.line1", "bold":true, "color":"#8eedeb", "clickEvent":{"action":"run_command","value":"/function bingo:lobby/settings/random_seed_strict_mode_check"}}', Text2:'{"translate":"bingo.lobby.card_generation.random_card.sign.line2", "bold":true, "color":"#8eedeb"}', Text3:'{"translate":"bingo.lobby.card_generation.random_card.sign.line3", "bold":true, "color":"#8eedeb"}', Text4:'{"translate":"bingo.lobby.card_generation.random_card.sign.line4", "bold":true, "color":"#8eedeb"}'}
 execute at @e[type=minecraft:area_effect_cloud, tag=bingo.sign_card_generation_from_seed, limit=1] run setblock ~ ~ ~ minecraft:warped_wall_sign[facing=south]{Text1: '{"translate":"bingo.lobby.card_generation.from_seed.sign.line1", "bold":true, "color":"#8eedeb", "clickEvent":{"action":"run_command","value":"/function bingo:lobby/settings/set_seed_strict_mode_check"}}', Text2:'{"translate":"bingo.lobby.card_generation.from_seed.sign.line2", "bold":true, "color":"#8eedeb"}', Text3:'{"translate":"bingo.lobby.card_generation.from_seed.sign.line3", "bold":true, "color":"#8eedeb"}', Text4:'{"translate":"bingo.lobby.card_generation.from_seed.sign.line4", "bold":true, "color":"#8eedeb"}'}
 execute at @e[type=minecraft:area_effect_cloud, tag=bingo.sign_card_generation_start_game, limit=3] run setblock ~ ~ ~ minecraft:warped_wall_sign[facing=south]{Text1: '{"translate":"bingo.lobby.card_generation.start_game.sign.line1", "bold":true, "color":"#8eedeb", "clickEvent":{"action":"run_command","value":"/function bingo:lobby/settings/start_game_strict_mode_check"}}', Text2:'{"translate":"bingo.lobby.card_generation.start_game.sign.line2", "bold":true, "color":"#8eedeb"}', Text3:'{"translate":"bingo.lobby.card_generation.start_game.sign.line3", "bold":true, "color":"#8eedeb"}', Text4:'{"translate":"bingo.lobby.card_generation.start_game.sign.line4", "bold":true, "color":"#8eedeb"}'}
+
+execute at @e[type=minecraft:area_effect_cloud, tag=bingo.lobby_button, limit=11] unless block ~ ~ ~ minecraft:stone_button run setblock ~ ~ ~ minecraft:stone_button[face=wall,facing=north]
+execute at @e[type=minecraft:area_effect_cloud, tag=bingo.button_red, limit=1] run fill ~ ~-1 ~1 ~ ~1 ~1 minecraft:red_concrete
+execute at @e[type=minecraft:area_effect_cloud, tag=bingo.button_orange, limit=1] run fill ~ ~-1 ~1 ~ ~1 ~1 minecraft:orange_concrete
+execute at @e[type=minecraft:area_effect_cloud, tag=bingo.button_yellow, limit=1] run fill ~ ~-1 ~1 ~ ~1 ~1 minecraft:yellow_concrete
+execute at @e[type=minecraft:area_effect_cloud, tag=bingo.button_lime, limit=1] run fill ~ ~-1 ~1 ~ ~1 ~1 minecraft:lime_concrete
+execute at @e[type=minecraft:area_effect_cloud, tag=bingo.button_green, limit=1] run fill ~ ~-1 ~1 ~ ~1 ~1 minecraft:green_concrete
+execute at @e[type=minecraft:area_effect_cloud, tag=bingo.button_cyan, limit=1] run fill ~ ~-1 ~1 ~ ~1 ~1 minecraft:cyan_concrete
+execute at @e[type=minecraft:area_effect_cloud, tag=bingo.button_light_blue, limit=1] run fill ~ ~-1 ~1 ~ ~1 ~1 minecraft:light_blue_concrete
+execute at @e[type=minecraft:area_effect_cloud, tag=bingo.button_blue, limit=1] run fill ~ ~-1 ~1 ~ ~1 ~1 minecraft:blue_concrete
+execute at @e[type=minecraft:area_effect_cloud, tag=bingo.button_purple, limit=1] run fill ~ ~-1 ~1 ~ ~1 ~1 minecraft:purple_concrete
+execute at @e[type=minecraft:area_effect_cloud, tag=bingo.button_magenta, limit=1] run fill ~ ~-1 ~1 ~ ~1 ~1 minecraft:magenta_concrete
+execute at @e[type=minecraft:area_effect_cloud, tag=bingo.button_black, limit=1] run fill ~ ~-1 ~1 ~ ~1 ~1 minecraft:black_concrete
 
 #Tutorial / Game Info / Settings
 ## Settings

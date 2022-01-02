@@ -3,7 +3,7 @@
 # This function checks whether the player clicking is a confirmed operator, and
 # if so, prints the strict mode dialog
 #
-# @within bingo:lobby/set_signs
+# @within bingo:lobby/place_indestructible_blocks
 # @user
 # @context entity Player changing the setting
 

@@ -318,6 +318,17 @@
 	"bingo.lobby.team_selection.sign.line3": "wechseln",
 	"bingo.lobby.team_selection.sign.line4": "",
 
+	"bingo.lobby.team_selection.join_red": "%s ist dem roten Team beigetreten.",
+	"bingo.lobby.team_selection.join_orange": "%s ist dem orangen Team beigetreten.",
+	"bingo.lobby.team_selection.join_yellow": "%s ist dem gelben Team beigetreten.",
+	"bingo.lobby.team_selection.join_lime_green": "%s ist dem hellgrünen Team beigetreten.",
+	"bingo.lobby.team_selection.join_dark_green": "%s ist dem dunkelgrünen Team beigetreten.",
+	"bingo.lobby.team_selection.join_cyan": "%s ist dem türkiesen Team beigetreten.",
+	"bingo.lobby.team_selection.join_light_blue": "%s ist dem hellblauen Team beigetreten.",
+	"bingo.lobby.team_selection.join_dark_blue": "%s ist dem blauen Team beigetreten.",
+	"bingo.lobby.team_selection.join_purple": "%s ist dem violetten Team beigetreten.",
+	"bingo.lobby.team_selection.join_magenta": "%s ist dem magenta Team beigetreten.",
+
 	"bingo.lobby.end.sign.line1": "Die Außenwelt",
 	"bingo.lobby.end.sign.line2": "",
 	"bingo.lobby.end.sign.line3": "Gefahr!",

@@ -14,7 +14,7 @@
 #>
 # @within
 # 	function bingo:init/setup_lobby
-# 	function bingo:lobby/set_signs
+# 	function bingo:lobby/place_indestructible_blocks
 #declare tag bingo.lobby_sign
 #>
 # @within

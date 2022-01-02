@@ -4,7 +4,7 @@
 # a confirmed operator, and the either asks the player to confirm their op
 # status or starts the game.
 #
-# @within bingo:lobby/set_signs
+# @within bingo:lobby/place_indestructible_blocks
 # @user
 # @context entity Player changing the setting
 

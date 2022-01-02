@@ -328,6 +328,17 @@
 	"bingo.lobby.team_selection.sign.line3": "Team",
 	"bingo.lobby.team_selection.sign.line4": "",
 
+	"bingo.lobby.team_selection.join_red": "%s joined the red team.",
+	"bingo.lobby.team_selection.join_orange": "%s joined the orange team.",
+	"bingo.lobby.team_selection.join_yellow": "%s joined the yellow team.",
+	"bingo.lobby.team_selection.join_lime_green": "%s joined the lime team.",
+	"bingo.lobby.team_selection.join_dark_green": "%s joined the dark green team.",
+	"bingo.lobby.team_selection.join_cyan": "%s joined the cyan team.",
+	"bingo.lobby.team_selection.join_light_blue": "%s joined the light blue team.",
+	"bingo.lobby.team_selection.join_dark_blue": "%s joined the blue team.",
+	"bingo.lobby.team_selection.join_purple": "%s joined the purple team.",
+	"bingo.lobby.team_selection.join_magenta": "%s joined the magenta team.",
+
 	"bingo.lobby.end.sign.line1": "The Outside",
 	"bingo.lobby.end.sign.line2": "",
 	"bingo.lobby.end.sign.line3": "Danger!",
