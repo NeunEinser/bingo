@@ -192,6 +192,16 @@
 	"bingo.lobby.settings.preferences.sign.line3": "ändern",
 	"bingo.lobby.settings.preferences.sign.line4": "",
 
+	"bingo.lobby.settings.more_coming.sign.line1": "",
+	"bingo.lobby.settings.more_coming.sign.line2": "Bald mehr",
+	"bingo.lobby.settings.more_coming.sign.line3": "Einstellungen",
+	"bingo.lobby.settings.more_coming.sign.line4": "",
+	"bingo.lobby.settings.more_coming.change_future": "Willst du künftige Einstellungen bearbeiten?",
+	"bingo.lobby.settings.more_coming.change_future.yes": "Ja",
+	"bingo.lobby.settings.more_coming.change_future.no": "Nein",
+	"bingo.lobby.settings.more_coming.change_future.yes_response": "Fehler beim Zugriff auf die Zukunft. Bitte wende dich an deinen lokalen Zeitmaschinenoperator.",
+	"bingo.lobby.settings.more_coming.change_future.no_response": "Gute Entscheidung. Wer weiß, vielleicht sind diese Einstellungen schlecht.",
+
 	"bingo.lobby.settings.pregen_behavior.sign.line1": "Landschaft",
 	"bingo.lobby.settings.pregen_behavior.sign.line2": "vorzeitig",
 	"bingo.lobby.settings.pregen_behavior.sign.line3": "erzeugen",

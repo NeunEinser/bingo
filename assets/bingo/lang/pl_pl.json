@@ -202,6 +202,16 @@
 	"bingo.lobby.settings.preferences.sign.line3": "Gracza",
 	"bingo.lobby.settings.preferences.sign.line4": "",
 
+	//"bingo.lobby.settings.more_coming.sign.line1": "",
+	//"bingo.lobby.settings.more_coming.sign.line2": "More Settings",
+	//"bingo.lobby.settings.more_coming.sign.line3": "Coming Soon",
+	//"bingo.lobby.settings.more_coming.sign.line4": "",
+	//"bingo.lobby.settings.more_coming.change_future": "Do you want to change future settings?",
+	//"bingo.lobby.settings.more_coming.change_future.yes": "Yes",
+	//"bingo.lobby.settings.more_coming.change_future.no": "No",
+	//"bingo.lobby.settings.more_coming.change_future.yes_response": "Error accessing the future. Please talk to your local time machine operator.",
+	//"bingo.lobby.settings.more_coming.change_future.no_response": "Good decision. Who knows, maybe these settings are awful.",
+
 	"bingo.lobby.settings.pregen_behavior.sign.line1": "Wstępne",
 	"bingo.lobby.settings.pregen_behavior.sign.line2": "generowanie",
 	"bingo.lobby.settings.pregen_behavior.sign.line3": "terenu",
