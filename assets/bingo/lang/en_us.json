@@ -19,7 +19,7 @@
 	"bingo.game.go_to_lobby.click_spectator": "Click here",
 
 	"bingo.game.switch_gamemode.hint": "Hint: You can use the command %s at any time manually to switch to spectator mode as well.\nIf you do not like this functionality, you can disable it in your preferences in the lobby.",
-	"bingo.game.switch_gamemode.prevented": "Prevented gamemode switch. %s for spectator mode.\nAfterwards, you can switch to any other gamemode",
+	"bingo.game.switch_gamemode.prevented": "Prevented gamemode switch. %s for spectator mode.\nAfterwards, you can switch to any other gamemode.",
 	"bingo.game.switch_gamemode.prevented.click": "Click here",
 
 	"bingo.preferences.title": "Change Preferences",
