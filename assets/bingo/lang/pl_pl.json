@@ -18,7 +18,7 @@
 	"bingo.game.go_to_lobby.click_lobby": "Kliknij tu",
 	"bingo.game.go_to_lobby.click_spectator": "Kliknij tutaj",
 
-	"bingo.game.switch_gamemode.hint": "Wskazówka: W każdej chwili możesz użyć polecenia %s, aby zmienić na tryb widza.",
+	//"bingo.game.switch_gamemode.hint": "Wskazówka: W każdej chwili możesz użyć polecenia %s, aby zmienić na tryb widza.",
 	"bingo.game.switch_gamemode.prevented": "Zmiana trybu gry zablokowana. %s, aby zmienić na tryb widza.\nNastępnie, możesz zmienić na dowolny inny tryb.",
 	"bingo.game.switch_gamemode.prevented.click": "Kliknij tutaj",
 
