@@ -2,10 +2,10 @@
 	"%1074992263$s%1$s": "%2$s",
 	"bingo.technical.detect_multiplayer": "DoNotTranslateThis",
 
-	"bingo.resourcepack_check.sign.line1": "",
-	"bingo.resourcepack_check.sign.line2": "Kliknij",
-	"bingo.resourcepack_check.sign.line3": "Mnie",
-	"bingo.resourcepack_check.sign.line4": "",
+	//"bingo.resourcepack_check.sign.line1": "",
+	//"bingo.resourcepack_check.sign.line2": "Kliknij",
+	//"bingo.resourcepack_check.sign.line3": "Mnie",
+	//"bingo.resourcepack_check.sign.line4": "",
 	"bingo.resourcepack_check.go_to_lobby.part1": "Paczka zasobów aktywowana pomyślnie.",
 	"bingo.resourcepack_check.go_to_lobby.part2": "%s, aby przejść do lobby.",
 	"bingo.resourcepack_check.go_to_lobby.click": "Kliknij tutaj",
@@ -18,7 +18,7 @@
 	"bingo.game.go_to_lobby.click_lobby": "Kliknij tu",
 	"bingo.game.go_to_lobby.click_spectator": "Kliknij tutaj",
 
-	"bingo.game.switch_gamemode.hint": "Wskazówka: W każdej chwili możesz użyć polecenia %s, aby zmienić na tryb widza.",
+	//"bingo.game.switch_gamemode.hint": "Wskazówka: W każdej chwili możesz użyć polecenia %s, aby zmienić na tryb widza.",
 	"bingo.game.switch_gamemode.prevented": "Zmiana trybu gry zablokowana. %s, aby zmienić na tryb widza.\nNastępnie, możesz zmienić na dowolny inny tryb.",
 	"bingo.game.switch_gamemode.prevented.click": "Kliknij tutaj",
 
