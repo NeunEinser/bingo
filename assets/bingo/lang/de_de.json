@@ -2,12 +2,12 @@
 	"%1074992263$s%1$s": "%2$s",
 	"bingo.technical.detect_multiplayer": "DoNotTranslateThis",
 
-	"bingo.resourcepack_check.sign.line1": "",
-	"bingo.resourcepack_check.sign.line2": "Klick",
-	"bingo.resourcepack_check.sign.line3": "Mich",
-	"bingo.resourcepack_check.sign.line4": "",
+	"bingo.resourcepack_check.sign.line1": "Ressourcenpaket",
+	"bingo.resourcepack_check.sign.line2": "installiert.",
+	"bingo.resourcepack_check.sign.line3": "Klicke hier für",
+	"bingo.resourcepack_check.sign.line4": "Chatnachricht.",
 	"bingo.resourcepack_check.go_to_lobby.part1": "Das Ressourcenpaket wurde erfolgreich aktiviert.",
-	"bingo.resourcepack_check.go_to_lobby.part2": "%s um zur Lobby zu gehen.",
+	"bingo.resourcepack_check.go_to_lobby.part2": "%s, um zur Lobby zu gehen.",
 	"bingo.resourcepack_check.go_to_lobby.click": "Hier klicken",
 
 	"bingo.logging.error": "FEHLER",
