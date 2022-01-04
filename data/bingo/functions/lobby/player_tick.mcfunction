@@ -6,9 +6,9 @@
 # @context entity Current player
 
 # saturation
-effect give @s minecraft:saturation 1 255 true
+effect give @s minecraft:saturation 2 255 true
 
-# advanture mode
+# adventure mode
 execute if score $strict_mode bingo.settings matches 1 run gamemode adventure @s[gamemode=survival]
 
 # change preferences

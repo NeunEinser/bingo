@@ -2,20 +2,25 @@
 	"%1074992263$s%1$s": "%2$s",
 	"bingo.technical.detect_multiplayer": "DoNotTranslateThis",
 
-	"bingo.resourcepack_check.sign.line1": "",
-	"bingo.resourcepack_check.sign.line2": "Klick",
-	"bingo.resourcepack_check.sign.line3": "Mich",
-	"bingo.resourcepack_check.sign.line4": "",
+	"bingo.resourcepack_check.sign.line1": "Ressourcenpaket",
+	"bingo.resourcepack_check.sign.line2": "installiert.",
+	"bingo.resourcepack_check.sign.line3": "Klicke hier für",
+	"bingo.resourcepack_check.sign.line4": "Chatnachricht.",
 	"bingo.resourcepack_check.go_to_lobby.part1": "Das Ressourcenpaket wurde erfolgreich aktiviert.",
-	"bingo.resourcepack_check.go_to_lobby.part2": "%s um zur Lobby zu gehen.",
+	"bingo.resourcepack_check.go_to_lobby.part2": "%s, um zur Lobby zu gehen.",
 	"bingo.resourcepack_check.go_to_lobby.click": "Hier klicken",
 
 	"bingo.logging.error": "FEHLER",
 	"bingo.setup.error.unknown_category": "Gegenstand %1$s hat Kategorie %2$s, die Kategorie %2$s kann allerdings nicht gefunden werden.",
 
-	"bingo.game.go_to_lobby": "%s um zur Lobby zurückzukehren.",
-	"bingo.game.go_to_lobby.hint": "Hinweis: Du kannst jederzeit mit dem Befehl %s zur Lobby zurückkehren",
+	"bingo.game.go_to_lobby": "%s, um zur Lobby zurückzukehren.\n%s, um zum Zuschauermodus zu wechseln.",
+	"bingo.game.go_to_lobby.hint": "Hinweis: Du kannst jederzeit mit dem Befehl %s zur Lobby zurückkehren oder mit dem Befehl %s in den Zuschauermodus wechseln.",
 	"bingo.game.go_to_lobby.click_lobby": "Hier klicken",
+	"bingo.game.go_to_lobby.click_spectator": "Hier klicken",
+
+	"bingo.game.switch_gamemode.hint": "Hint: Du kannst mit dem Befehl %s jederzeit in den Zuschauermodus wechseln.\nSolltest du diese Funktionalität nicht mögen, kannst du sie in der Lobby in deinen Spielereinstellungen ändern.",
+	"bingo.game.switch_gamemode.prevented": "Spielmoduswechsel verhindert. %s, um in den Zuschauermodus zu wechseln.\nDanach kannst du in jeden anderen Spielmodus wie gewohnt wechseln.",
+	"bingo.game.switch_gamemode.prevented.click": "Klicke hier",
 
 	"bingo.preferences.title": "Spielereinstellungen ändern",
 	"bingo.preferences.description": "Dieses Menü erlaubt die Konfiguration deiner Einstellungen.",
