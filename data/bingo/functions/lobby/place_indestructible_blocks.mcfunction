@@ -1,12 +1,9 @@
 #> bingo:lobby/place_indestructible_blocks
 #
-# Places all the signs in the lobby.
+# Place indistructible blocks.
 #
-# This is needed, since players in the lobby will be in survival mode in order
-# to support trophy collection like in older Minecraft: Bingo.
-#
-# Hence, signs could potentially be broken by a player and we just place them
-# every tick to make sure everything keeps working.
+# Players may be in survival mode like in old-school bingo. This function
+# ensures nothing crucial can be broken.
 #
 # @within function bingo:lobby/tick
 # @context dimension bingo:lobby
