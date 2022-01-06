@@ -540,7 +540,7 @@
 
 				
 				{
-					"biome": "minecraft:deep_warm_ocean",
+					"biome": "bingo:deep_warm_ocean",
 					"parameters": {
 						"altitude": -0.5,
 						"temperature": 0.6,
@@ -550,7 +550,7 @@
 					}
 				},
 				{
-					"biome": "minecraft:deep_warm_ocean",
+					"biome": "bingo:deep_warm_ocean",
 					"parameters": {
 						"altitude": -0.5,
 						"temperature": 0.6,
@@ -570,7 +570,7 @@
 					}
 				},
 				{
-					"biome": "minecraft:deep_warm_ocean",
+					"biome": "bingo:deep_warm_ocean",
 					"parameters": {
 						"altitude": -0.5,
 						"temperature": 0.6,
@@ -580,7 +580,7 @@
 					}
 				},
 				{
-					"biome": "minecraft:deep_warm_ocean",
+					"biome": "bingo:deep_warm_ocean",
 					"parameters": {
 						"altitude": -0.5,
 						"temperature": 0.6,
@@ -600,7 +600,7 @@
 					}
 				},
 				{
-					"biome": "minecraft:deep_warm_ocean",
+					"biome": "bingo:deep_warm_ocean",
 					"parameters": {
 						"altitude": -0.5,
 						"temperature": 0.6,
@@ -610,7 +610,7 @@
 					}
 				},
 				{
-					"biome": "minecraft:deep_warm_ocean",
+					"biome": "bingo:deep_warm_ocean",
 					"parameters": {
 						"altitude": -0.5,
 						"temperature": 0.6,
@@ -620,7 +620,7 @@
 					}
 				},
 				{
-					"biome": "minecraft:deep_warm_ocean",
+					"biome": "bingo:deep_warm_ocean",
 					"parameters": {
 						"altitude": -0.5,
 						"temperature": 0.6,
