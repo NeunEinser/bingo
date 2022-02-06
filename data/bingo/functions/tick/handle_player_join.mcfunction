@@ -18,11 +18,12 @@ setblock 1 2 2 minecraft:sea_lantern
 execute unless score @s bingo.game_id = $current_game_id bingo.game_id if entity @s[predicate=bingo:is_in_game] run function bingo:util/go_to_lobby
 execute if score $game_state bingo.state matches 0..1 if entity @s[predicate=bingo:is_in_game] run function bingo:util/go_to_lobby
 
-scoreboard players reset @s bingo.reconnect
-
 #>
 # @private
 #declare score_holder $player_join.item_count
 execute store result score $player_join.item_count bingo.tmp run data get storage bingo:card teams[-1].itemCount
 
 execute if score $player_join.item_count bingo.tmp matches 25 run tag @s add bingo.spectator
+
+
+scoreboard players reset @s bingo.reconnect

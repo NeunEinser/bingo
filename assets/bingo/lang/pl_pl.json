@@ -2,10 +2,14 @@
 	"%1074992263$s%1$s": "%2$s",
 	"bingo.technical.detect_multiplayer": "DoNotTranslateThis",
 
+	//"bingo.error.command_blocks_disabled": "Command blocks are disabled on this server. Please make sure the server.properties file does have all mentioned values set as described %s.",
+	//"bingo.error.command_blocks_disabled.link": "here",
+
 	"bingo.resourcepack_check.sign.line1": "Paczka zasobów",
 	"bingo.resourcepack_check.sign.line2": "zainstalowana.",
 	"bingo.resourcepack_check.sign.line3": "Kliknij tutaj, aby",
 	"bingo.resourcepack_check.sign.line4": "dostać wiadomość.",
+
 	"bingo.resourcepack_check.go_to_lobby.part1": "Paczka zasobów aktywowana pomyślnie.",
 	"bingo.resourcepack_check.go_to_lobby.part2": "%s, aby przejść do lobby.",
 	"bingo.resourcepack_check.go_to_lobby.click": "Kliknij tutaj",

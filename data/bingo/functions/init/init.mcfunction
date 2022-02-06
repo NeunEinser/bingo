@@ -848,6 +848,13 @@
 
 	#region score holders
 		#>
+		# @internal
+		#declare score_holder $commandblocks_enabled
+		scoreboard players set $commandblocks_enabled bingo.state 0
+		setblock 0 4 0 minecraft:air
+		setblock 0 4 0 minecraft:command_block{auto: true, Command: "scoreboard players set $commandblocks_enabled bingo.state 1"}
+
+		#>
 		# The current game state
 		# 0 = Lobby / Not in game
 		# 1 = Starting / chunk-gen
