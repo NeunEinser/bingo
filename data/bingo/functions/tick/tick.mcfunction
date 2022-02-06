@@ -50,3 +50,10 @@ execute if entity @a[predicate=bingo:is_in_lobby, limit=1] in bingo:lobby run fu
 execute if score $game_state bingo.state matches 2.. run function bingo:game/tick
 
 scoreboard players operation $last_tick bingo.state = $raw 91.timer.time
+
+# Command blocks enabled check
+execute if score $commandblocks_enabled bingo.state matches 0 run effect give @a minecraft:blindness 2 255 true
+execute if score $commandblocks_enabled bingo.state matches 0 run effect give @a minecraft:slowness 2 255 true
+execute if score $commandblocks_enabled bingo.state matches 0 run effect give @a minecraft:jump_boost 2 128 true
+
+execute if score $commandblocks_enabled bingo.state matches 0 run tellraw @a {"translate":"%1074992263$s%1$s", "color": "red", "with":[["Command blocks are disabled on this server. Please make sure the server.properties file does have all mentioned values set as described ", {"text": "here", "color": "#00c3ff", "clickEvent": {"action": "open_url", "value": "https://github.com/NeunEinser/bingo/blob/5.0-pre1/server.properties"}}, "."], {"translate": "bingo.error.command_blocks_disabled", "with": [{"translate": "bingo.error.command_blocks_disabled.link", "color": "#00c3ff", "clickEvent": {"action": "open_url", "value": "https://github.com/NeunEinser/bingo/blob/5.0-pre1/server.properties"}}]}]}
