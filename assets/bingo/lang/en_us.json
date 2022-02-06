@@ -19,7 +19,7 @@
 	"bingo.game.go_to_lobby.click_spectator": "Click here",
 
 	"bingo.game.switch_gamemode.hint": "Hint: You can use the command %s at any time manually to switch to spectator mode as well.\nIf you do not like this functionality, you can disable it in your preferences in the lobby.",
-	"bingo.game.switch_gamemode.prevented": "Prevented gamemode switch. %s for spectator mode.\nAfterwards, you can switch to any other gamemode.",
+	"bingo.game.switch_gamemode.prevented": "Prevented game mode switch. %s for spectator mode.\nAfterwards, you can switch to any other game mode.",
 	"bingo.game.switch_gamemode.prevented.click": "Click here",
 
 	"bingo.preferences.title": "Change Preferences",
@@ -32,8 +32,8 @@
 	"bingo.preferences.custom_hud.title": "Configure Bingo HUD",
 	"bingo.preferences.custom_hud.description": "In this menu, you can move components of the custom HUD around, disable them, or adjust some component-specific settings.",
 
-	"bingo.preferences.spectator_mode.title": "Prevent manual gamemode switching",
-	"bingo.preferences.spectator_mode.description": "When on, you will not be able to use /gamemode commands, F3+N or F3+F4 to switch your gamemode while in game.\n\nThis is done to prevent accidentally hitting those button combinations.\n\nThere is a trigger you can use for switching gamemode instead.",
+	"bingo.preferences.spectator_mode.title": "Prevent manual game mode switching",
+	"bingo.preferences.spectator_mode.description": "When on, you will not be able to use /gamemode commands, F3+N or F3+F4 to switch your game mode while in game.\n\nThis is done to prevent accidentally hitting those button combinations.\n\nThere is a chat message you can use for switching to spectator mode instead. After switching to spectator mode or getting all 25 items on the card, you can switch your game mode freely again.",
 	"bingo.preferences.spectator_mode.enabled": "On",
 	"bingo.preferences.spectator_mode.disabled": "Off",
 
