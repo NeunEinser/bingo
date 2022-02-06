@@ -175,7 +175,7 @@
 					}
 				},
 				{
-					"biome": "minecraft:wooded_badlands_plateau",
+					"biome": "bingo:wooded_badlands_plateau",
 					"parameters": {
 						"altitude": 0.1,
 						"temperature": 0.6,
@@ -185,7 +185,7 @@
 					}
 				},
 				{
-					"biome": "minecraft:badlands_plateau",
+					"biome": "bingo:badlands_plateau",
 					"parameters": {
 						"altitude": 0.1,
 						"temperature": 0.6,
@@ -195,7 +195,7 @@
 					}
 				},
 				{
-					"biome": "minecraft:badlands",
+					"biome": "bingo:badlands",
 					"parameters": {
 						"altitude": 0.1,
 						"temperature": 0.6,
@@ -205,7 +205,7 @@
 					}
 				},
 				{
-					"biome": "minecraft:modified_wooded_badlands_plateau",
+					"biome": "bingo:modified_wooded_badlands_plateau",
 					"parameters": {
 						"altitude": 0.1,
 						"temperature": 0.6,
@@ -215,7 +215,7 @@
 					}
 				},
 				{
-					"biome": "minecraft:modified_badlands_plateau",
+					"biome": "bingo:modified_badlands_plateau",
 					"parameters": {
 						"altitude": 0.1,
 						"temperature": 0.6,
@@ -225,7 +225,7 @@
 					}
 				},
 				{
-					"biome": "minecraft:eroded_badlands",
+					"biome": "bingo:eroded_badlands",
 					"parameters": {
 						"altitude": 0.1,
 						"temperature": 0.6,
@@ -386,7 +386,7 @@
 					}
 				},
 				{
-					"biome": "minecraft:badlands",
+					"biome": "bingo:badlands",
 					"parameters": {
 						"altitude": 0.0999997,
 						"temperature": 0.6,
@@ -396,7 +396,7 @@
 					}
 				},
 				{
-					"biome": "minecraft:badlands",
+					"biome": "bingo:badlands",
 					"parameters": {
 						"altitude": 0.0999997,
 						"temperature": 0.6,
@@ -406,7 +406,7 @@
 					}
 				},
 				{
-					"biome": "minecraft:badlands",
+					"biome": "bingo:badlands",
 					"parameters": {
 						"altitude": 0.0999997,
 						"temperature": 0.6,
@@ -416,7 +416,7 @@
 					}
 				},
 				{
-					"biome": "minecraft:badlands",
+					"biome": "bingo:badlands",
 					"parameters": {
 						"altitude": 0.0999997,
 						"temperature": 0.6,
@@ -426,7 +426,7 @@
 					}
 				},
 				{
-					"biome": "minecraft:badlands",
+					"biome": "bingo:badlands",
 					"parameters": {
 						"altitude": 0.0999997,
 						"temperature": 0.6,
@@ -436,7 +436,7 @@
 					}
 				},
 				{
-					"biome": "minecraft:badlands",
+					"biome": "bingo:badlands",
 					"parameters": {
 						"altitude": 0.0999997,
 						"temperature": 0.6,
@@ -540,7 +540,7 @@
 
 				
 				{
-					"biome": "minecraft:deep_warm_ocean",
+					"biome": "bingo:deep_warm_ocean",
 					"parameters": {
 						"altitude": -0.5,
 						"temperature": 0.6,
@@ -550,7 +550,7 @@
 					}
 				},
 				{
-					"biome": "minecraft:deep_warm_ocean",
+					"biome": "bingo:deep_warm_ocean",
 					"parameters": {
 						"altitude": -0.5,
 						"temperature": 0.6,
@@ -570,7 +570,7 @@
 					}
 				},
 				{
-					"biome": "minecraft:deep_warm_ocean",
+					"biome": "bingo:deep_warm_ocean",
 					"parameters": {
 						"altitude": -0.5,
 						"temperature": 0.6,
@@ -580,7 +580,7 @@
 					}
 				},
 				{
-					"biome": "minecraft:deep_warm_ocean",
+					"biome": "bingo:deep_warm_ocean",
 					"parameters": {
 						"altitude": -0.5,
 						"temperature": 0.6,
@@ -600,7 +600,7 @@
 					}
 				},
 				{
-					"biome": "minecraft:deep_warm_ocean",
+					"biome": "bingo:deep_warm_ocean",
 					"parameters": {
 						"altitude": -0.5,
 						"temperature": 0.6,
@@ -610,7 +610,7 @@
 					}
 				},
 				{
-					"biome": "minecraft:deep_warm_ocean",
+					"biome": "bingo:deep_warm_ocean",
 					"parameters": {
 						"altitude": -0.5,
 						"temperature": 0.6,
@@ -620,7 +620,7 @@
 					}
 				},
 				{
-					"biome": "minecraft:deep_warm_ocean",
+					"biome": "bingo:deep_warm_ocean",
 					"parameters": {
 						"altitude": -0.5,
 						"temperature": 0.6,
