@@ -33,7 +33,7 @@
 	"bingo.preferences.custom_hud.description": "W tym menu, możesz dostosować położenie komponentów HUD'a, wyłączyć je lub zmienić ustawienia poszczególnych z nich.",
 
 	"bingo.preferences.spectator_mode.title": "Zablokuj ręczną zmianę trybu gry",
-	//"bingo.preferences.spectator_mode.description": "Gdy włączone, blokuje używanie polecenia /gamemode, F3+N lub F3+F4 do zmiany tryb gry podczas rozgrywki.\n\nMa to zapobiec przypadkowemu wciśnięciu tych kombinacji klawiszowych.\n\nZamiast tego jest trigger, którego możesz użyć do zmiany tryb gry.",
+	"bingo.preferences.spectator_mode.description": "Gdy włączone, blokuje używanie polecenia /gamemode, F3+N lub F3+F4 do zmiany tryb gry podczas rozgrywki.\n\nMa to zapobiec przypadkowemu wciśnięciu tych kombinacji klawiszowych.\n\nZamiast tego pojawia się wiadomość, której możesz użyć do zmiany na tryb widza. Po zmianie na tryb widza lub zdobyciu wszystkich 25 przedmiotów, możesz dowolnie zmieniać swój tryb gry.",
 	"bingo.preferences.spectator_mode.enabled": "Włączone",
 	"bingo.preferences.spectator_mode.disabled": "Wyłączone",
 
