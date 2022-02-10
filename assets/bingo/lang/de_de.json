@@ -1,7 +1,4 @@
 {
-	"%1074992263$s%1$s": "%2$s",
-	"bingo.technical.detect_multiplayer": "DoNotTranslateThis",
-
 	"bingo.error.command_blocks_disabled": "Befehlsblöcke sind auf diesem server deaktiviert. Bitte stelle sicher, dass in der server.properties-Datei alle Werte, die %s beinhaltet sind, korrekt gesetzt sind.",
 	"bingo.error.command_blocks_disabled.link": "hier",
 
