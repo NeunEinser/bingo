@@ -23,6 +23,7 @@ execute if score $is_multiplayer bingo.state matches 0 unless entity @e[name=DoN
 # Auto-validate if Singleplayer
 execute if score $is_multiplayer bingo.state matches 0 run tellraw @a[tag=bingo.resourcepack_check] "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
 execute if score $is_multiplayer bingo.state matches 0 run scoreboard players set @a[tag=bingo.resourcepack_check] bingo.resources 91
+
 # Send Resource pack check chat message
 #
 # Uses technical translation strings with unused argument indexes
