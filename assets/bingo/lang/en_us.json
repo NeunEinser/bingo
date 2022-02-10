@@ -1,5 +1,6 @@
 {
 	"%1074992263$s%1$s": "%2$s",
+	"%1074992263$s%3$s%1$s": "%2$s",
 	"bingo.technical.detect_multiplayer": "DoNotTranslateThis",
 
 	"bingo.error.command_blocks_disabled": "Command blocks are disabled on this server. Please make sure the server.properties file does have all mentioned values set as described %s.",
