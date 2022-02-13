@@ -1,6 +1,7 @@
 {
 	"%1074992263$s%1$s": "%2$s",
 	"%1074992263$s%3$s%1$s": "%2$s",
+	"%1074992263$s%3$s%3$s%1$s": "%2$s",
 	"bingo.technical.detect_multiplayer": "DoNotTranslateThis3",
 
 	"bingo.error.command_blocks_disabled": "Command blocks are disabled on this server. Please make sure the server.properties file does have all mentioned values set as described %s.",
@@ -13,6 +14,11 @@
 	"bingo.resourcepack_check.go_to_lobby.part1": "The resource pack was successfully enabled.",
 	"bingo.resourcepack_check.go_to_lobby.part2": "%s to go to the lobby.",
 	"bingo.resourcepack_check.go_to_lobby.click": "Click here",
+	"bingo.resourcepack_check.wrong_version.title": "Incorrect resource pack version enabled.",
+	"bingo.resourcepack_check.wrong_version.description": "You are using an incompatible version of the Bingo resource pack.\n\nPlease download the correct version %s, enable it and click “re-check” down below.",
+	"bingo.resourcepack_check.wrong_version.link": "here",
+	"bingo.resourcepack_check.wrong_version.server": "If the resource pack was applied automatically through a server resource pack, please inform the server admin to update the server resource pack.",
+	"bingo.resourcepack_check.wrong_version.recheck": "Re-check",
 
 	"bingo.logging.error": "ERROR",
 	"bingo.setup.error.unknown_category": "Item %1$s has category %2$s, but category %2$s could not be found.",

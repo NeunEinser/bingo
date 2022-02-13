@@ -10,6 +10,11 @@
 	"bingo.resourcepack_check.go_to_lobby.part1": "Paczka zasobów aktywowana pomyślnie.",
 	"bingo.resourcepack_check.go_to_lobby.part2": "%s, aby przejść do lobby.",
 	"bingo.resourcepack_check.go_to_lobby.click": "Kliknij tutaj",
+	// "bingo.resourcepack_check.wrong_version.title": "Incorrect resource pack version enabled.",
+	// "bingo.resourcepack_check.wrong_version.description": "You are using an incompatible version of the Bingo resource pack.\n\nPlease download the correct version %s, enable it and click “re-check” down below.",
+	// "bingo.resourcepack_check.wrong_version.link": "here",
+	// "bingo.resourcepack_check.wrong_version.server": "If the resource pack was applied automatically through a server resource pack, please inform the server admin to update the server resource pack.",
+	// "bingo.resourcepack_check.wrong_version.recheck": "Re-check",
 
 	"bingo.logging.error": "BŁĄD",
 	"bingo.setup.error.unknown_category": "Przedmiot %1$s ma kategorię %2$s, ale kategoria %2$s nie została znaleziona .",
