@@ -18,7 +18,11 @@ execute if score $is_multiplayer bingo.state matches 2.. run scoreboard players 
 
 # Detect the resource pack not being active server-side (So either we are on a
 # server, or resourcepack is missing in single player for some reason)
-execute if score $is_multiplayer bingo.state matches 0 unless entity @e[name=DoNotTranslateThis, limit=1] run scoreboard players set $is_multiplayer bingo.state 1
+#
+# Uses name-check from technical translation:
+# - "bingo.technical.detect_multiplayer" -> "DoNotTranslateThis<X>"
+#    <X> being version-check iteration (3+) (also used below)
+execute if score $is_multiplayer bingo.state matches 0 unless entity @e[name=DoNotTranslateThis3, limit=1] run scoreboard players set $is_multiplayer bingo.state 1
 
 # Auto-validate if Singleplayer
 execute if score $is_multiplayer bingo.state matches 0 run tellraw @a[tag=bingo.resourcepack_check] "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
