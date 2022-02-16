@@ -14,9 +14,9 @@
 	"bingo.resourcepack_check.wrong_version.link": "hier",
 	"bingo.resourcepack_check.wrong_version.server": "Sollte das Resourcenpaket durch ein Server-Resourcenpaket aktiviert sein, informiere bitte den Serveradmin es zu aktualisieren.",
 	"bingo.resourcepack_check.wrong_version.recheck": "Erneut Prüfen",
-	"bingo.resourcepack_check.wrong_version.sign.line1": "",
-	"bingo.resourcepack_check.wrong_version.sign.line2": "Download",
-	"bingo.resourcepack_check.wrong_version.sign.line3": "Resourcepack",
+	"bingo.resourcepack_check.wrong_version.sign.line1": "Ressourcen-",
+	"bingo.resourcepack_check.wrong_version.sign.line2": "paket",
+	"bingo.resourcepack_check.wrong_version.sign.line3": "herunterladen",
 	"bingo.resourcepack_check.wrong_version.sign.line4": "",
 
 	"bingo.logging.error": "FEHLER",
