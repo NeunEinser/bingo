@@ -18,21 +18,41 @@ execute if score $is_multiplayer bingo.state matches 2.. run scoreboard players 
 
 # Detect the resource pack not being active server-side (So either we are on a
 # server, or resourcepack is missing in single player for some reason)
+#
+# Uses name-check from technical translation:
+# - "bingo.technical.detect_multiplayer" -> "DoNotTranslateThis<X>"
+#    <X> being version-check iteration (3+) (also used below)
+execute if score $is_multiplayer bingo.state matches 0 unless entity @e[name=DoNotTranslateThis3, limit=1] run scoreboard players set $is_multiplayer bingo.state 1
 
-execute if score $is_multiplayer bingo.state matches 0 unless entity @e[name=DoNotTranslateThis, limit=1] run scoreboard players set $is_multiplayer bingo.state 1
-
+# Auto-validate if Singleplayer
 execute if score $is_multiplayer bingo.state matches 0 run tellraw @a[tag=bingo.resourcepack_check] "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
 execute if score $is_multiplayer bingo.state matches 0 run scoreboard players set @a[tag=bingo.resourcepack_check] bingo.resources 91
 
-#tellraw @a[scores={bingo.resources=1}] ["\n\n\n\n\n", {"translate": "%1074992263$s%1$s", "with": [["",{"text": "The resourcepack is currently not enabled.", "color": "red"}, "\nIf there is a server resource pack in place, enable it and wait until the Mojang loading screen is done. Then click “re-check” down below.\n\nOtherwise, please download the Resourcepack ", {"text": "here", "color": "#00c3ff", "clickEvent": {"action": "open_url", "value": "https://github.com/NeunEinser/bingo/releases/download/5.0-pre1/Resourcepack.zip"}}, " and enable it.\n\n[", {"text": "Re-check", "color": "#00c3ff", "clickEvent": {"action": "run_command", "value": "/trigger bingo.resources"}}, "]"], ["", {"translate": "bingo.resourcepack_check.go_to_lobby.part1", "color": "green"}, "\n", {"translate": "bingo.resourcepack_check.go_to_lobby.part2", "with": [{"translate": "bingo.resourcepack_check.go_to_lobby.click", "color": "#00c3ff", "clickEvent": {"action": "run_command", "value": "/trigger bingo.resources set 91"}}]}]]}]
+# Send Resource pack check chat message
+#
+# Uses technical translation strings with unused argument indexes - below
+# (1, 2 are string argument indexes used in IF: [translated ? <2> : <1>])
+#
+# For easier understanding: <val/string> - value/encoded-string* as "%<val>$s"
+# e.g. 'bingo' encoded* as 1074992263 => "%1074992263$s"; 1 => "%1$s"
+# - "<bingo><1>" - bingo-ResourcePack-loaded check for datapack
+# - "<bingo><X><1>" - RP-version equal check: <X>[version iteration, 3+]
+# - "<bingo><3><X><1>" - RP-version equal or above check: <X>[as above]
+# All above translate to "<2>"="%2$s" (2nd argument), in [en_us] lang-file
+# 
+# *NeunEinser's encoder: https://github.com/NeunEinser/translation-placeholder-namespace
+#tellraw @a[scores={bingo.resources=1}] ["\n\n\n\n\n", {"translate": "%1074992263$s%1$s", "with": [["", {"text": "The resourcepack is currently not enabled.", "color": "red"}, "\nIf there is a server resource pack in place, enable it and wait until the Mojang loading screen is done. Then click “re-check” down below.\n\nOtherwise, please download the Resourcepack ", {"text": "here", "color": "#00c3ff", "clickEvent": {"action": "open_url", "value": "https://github.com/NeunEinser/bingo/releases/download/5.0-pre1/Resourcepack.zip"}}, " and enable it.\n\n[", {"text": "Re-check", "color": "#00c3ff", "clickEvent": {"action": "run_command", "value": "/trigger bingo.resources"}}, "]"], ["", {"translate": "%1074992263$s%3$s%1$s", "with": [["", {"text": "Incorrect resource pack version enabled.", "color": "red"}, "\nYou are using an incompatible version of the Bingo resource pack.\n\nPlease download the correct version ", {"text": "here", "color": "#00c3ff", "clickEvent": {"action": "open_url", "value": "https://github.com/NeunEinser/bingo/releases/download/5.0-pre1/Resourcepack.zip"}}, ", enable it and click “re-check” down below.\n\nIf the resource pack was applied automatically through a server resource pack, please inform the server admin to update the server resource pack.\n\n[", {"text": "Re-check", "color": "#00c3ff", "clickEvent": {"action": "run_command", "value": "/trigger bingo.resources"}}, "]"], ["", {"translate": "bingo.resourcepack_check.go_to_lobby.part1", "color": "green"}, "\n", {"translate": "bingo.resourcepack_check.go_to_lobby.part2", "with": [{"translate": "bingo.resourcepack_check.go_to_lobby.click", "color": "#00c3ff", "clickEvent": {"action": "run_command", "value": "/trigger bingo.resources set 91"}}]}]]}]]}]
 tellraw @a[scores={bingo.resources=1}] ["\n\n\n\n\n", {"translate": "%1074992263$s%1$s", "with": [["",{"text": "The resourcepack is currently not enabled.", "color": "red"}, "\nThis is not a release version, thus no resource pack download can be provided. You can get the resource pack from master as well, just like you did with the data pack. You will need to download and apply the NegativeSpaceFont linked in readme manually as well, though.\n\nIf you want to play the release version, please follow the instructions on ", {"text": "this page", "color": "#00c3ff", "clickEvent": {"action": "open_url", "value": "https://github.com/NeunEinser/bingo/releases/tag/5.0-pre1"}}, "."], ["", {"translate": "bingo.resourcepack_check.go_to_lobby.part1", "color": "green"}, "\n", {"translate": "bingo.resourcepack_check.go_to_lobby.part2", "with": [{"translate": "bingo.resourcepack_check.go_to_lobby.click", "color": "#00c3ff", "clickEvent": {"action": "run_command", "value": "/trigger bingo.resources set 91"}}]}]]}]
+
+# Validate checked players, reenable trigger
 scoreboard players enable @a[tag=bingo.resourcepack_check] bingo.resources
 scoreboard players set @a[scores={bingo.resources=1}] bingo.resources 0
 tag @a[scores={bingo.resources=91}] remove bingo.resourcepack_check
 execute as @a[scores={bingo.resources=91}] run function bingo:util/go_to_lobby
 
+# Place the sign in resource pack check chamber
 setblock 1 2 1 minecraft:air
-setblock 1 2 1 minecraft:warped_wall_sign{Text1: '{"translate":"%1074992263$s%1$s", "color":"#8eedeb", "with": ["", {"translate": "bingo.resourcepack_check.sign.line1"}], "clickEvent": {"action": "run_command", "value": "/trigger bingo.resources"}}', Text2:'{"translate":"%1074992263$s%1$s", "color":"#8eedeb", "with": [{"text": "Download", "bold": true}, {"translate": "bingo.resourcepack_check.sign.line2"}]}', Text3:'{"translate":"%1074992263$s%1$s", "color":"#8eedeb", "with": [{"text": "Resourcepack", "bold": true}, {"translate": "bingo.resourcepack_check.sign.line3"}]}', Text4:'{"translate":"%1074992263$s%1$s", "color":"#8eedeb", "with": ["", {"translate": "bingo.resourcepack_check.sign.line4"}]}'}
+setblock 1 2 1 minecraft:warped_wall_sign{Text1: '{"translate": "%1074992263$s%1$s", "color": "#8eedeb", "with": ["", {"translate": "%1074992263$s%3$s%1$s", "with": ["", {"translate": "bingo.resourcepack_check.sign.line1"}]}], "clickEvent": {"action": "run_command", "value": "/trigger bingo.resources"}}', Text2: '{"translate": "%1074992263$s%1$s", "color": "#8eedeb", "with": [{"text": "Download", "bold":true}, {"translate": "%1074992263$s%3$s%1$s", "with": [{"text": "Download", "bold":true}, {"translate": "bingo.resourcepack_check.sign.line2"}]}]}', Text3: '{"translate": "%1074992263$s%1$s", "color": "#8eedeb", "with": [{"text": "Resourcepack", "bold":true}, {"translate": "%1074992263$s%3$s%1$s", "with": [{"text": "Resourcepack", "bold":true}, {"translate": "bingo.resourcepack_check.sign.line3"}]}]}', Text4: '{"translate": "%1074992263$s%1$s", "color": "#8eedeb", "with": ["", {"translate": "%1074992263$s%3$s%1$s", "with": ["", {"translate": "bingo.resourcepack_check.sign.line4"}]}]}'}
 #endregion
 
 # Assign each player a unique ID

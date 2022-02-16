@@ -1,7 +1,4 @@
 {
-	"%1074992263$s%1$s": "%2$s",
-	"bingo.technical.detect_multiplayer": "DoNotTranslateThis",
-
 	"bingo.error.command_blocks_disabled": "Befehlsblöcke sind auf diesem server deaktiviert. Bitte stelle sicher, dass in der server.properties-Datei alle Werte, die %s beinhaltet sind, korrekt gesetzt sind.",
 	"bingo.error.command_blocks_disabled.link": "hier",
 
@@ -12,6 +9,11 @@
 	"bingo.resourcepack_check.go_to_lobby.part1": "Das Ressourcenpaket wurde erfolgreich aktiviert.",
 	"bingo.resourcepack_check.go_to_lobby.part2": "%s, um zur Lobby zu gehen.",
 	"bingo.resourcepack_check.go_to_lobby.click": "Hier klicken",
+	// "bingo.resourcepack_check.wrong_version.title": "Incorrect resource pack version enabled.",
+	// "bingo.resourcepack_check.wrong_version.description": "You are using an incompatible version of the Bingo resource pack.\n\nPlease download the correct version %s, enable it and click “re-check” down below.",
+	// "bingo.resourcepack_check.wrong_version.link": "here",
+	// "bingo.resourcepack_check.wrong_version.server": "If the resource pack was applied automatically through a server resource pack, please inform the server admin to update the server resource pack.",
+	// "bingo.resourcepack_check.wrong_version.recheck": "Re-check",
 
 	"bingo.logging.error": "FEHLER",
 	"bingo.setup.error.unknown_category": "Gegenstand %1$s hat Kategorie %2$s, die Kategorie %2$s kann allerdings nicht gefunden werden.",
