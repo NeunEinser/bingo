@@ -24,9 +24,9 @@
 # @private
 #declare tag bingo.pref.added
 
-tag @s[scores={bingo.pref=2}, tag=!bingo.enable_manual_gameode_switch] add bingo.pref.added
-tag @s[scores={bingo.pref=2}, tag=!bingo.enable_manual_gameode_switch] add bingo.enable_manual_gameode_switch
-tag @s[scores={bingo.pref=2}, tag=bingo.enable_manual_gameode_switch, tag=!bingo.pref.added] remove bingo.enable_manual_gameode_switch
+tag @s[scores={bingo.pref=2}, tag=!bingo.enable_manual_gamemode_switch] add bingo.pref.added
+tag @s[scores={bingo.pref=2}, tag=!bingo.enable_manual_gamemode_switch] add bingo.enable_manual_gamemode_switch
+tag @s[scores={bingo.pref=2}, tag=bingo.enable_manual_gamemode_switch, tag=!bingo.pref.added] remove bingo.enable_manual_gamemode_switch
 tag @s remove bingo.pref.added
 
 data remove storage tmp.bingo:preferences back

@@ -144,7 +144,7 @@
 	# This tag is used for players who enable manual gamemode switching.
 	#
 	# @internal
-	#declare tag bingo.enable_manual_gameode_switch
+	#declare tag bingo.enable_manual_gamemode_switch
 	#region slots
 		#>
 		# This tag marks a player who is in a team that obtained the item in slot 0.
