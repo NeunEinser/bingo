@@ -19,6 +19,10 @@
 	"bingo.resourcepack_check.wrong_version.link": "here",
 	"bingo.resourcepack_check.wrong_version.server": "If the resource pack was applied automatically through a server resource pack, please inform the server admin to update the server resource pack.",
 	"bingo.resourcepack_check.wrong_version.recheck": "Re-check",
+	"bingo.resourcepack_check.wrong_version.sign.line1": "",
+	"bingo.resourcepack_check.wrong_version.sign.line2": "Download",
+	"bingo.resourcepack_check.wrong_version.sign.line3": "Resourcepack",
+	"bingo.resourcepack_check.wrong_version.sign.line4": "",
 
 	"bingo.logging.error": "ERROR",
 	"bingo.setup.error.unknown_category": "Item %1$s has category %2$s, but category %2$s could not be found.",
