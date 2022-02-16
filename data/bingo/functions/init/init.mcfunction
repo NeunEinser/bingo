@@ -44,7 +44,7 @@
 	# clearCommand: (String) Command for clearing the item from the player's
 	# 	inventory. Should look like this: "clear @a[tag=bingo.clear] <item> 1
 	# categories: (String List) List of category names. All categories referenced
-	# 	here should be registered seperately.
+	# 	here should be registered separately.
 	# weight: (Integer) Weight of this item for the rng.
 	#
 	# Categories have the following structure:

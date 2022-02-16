@@ -10,9 +10,9 @@
 data modify storage tmp.bingo:init/hud cur set from storage bingo:registries hud_components[0]
 data remove storage bingo:registries hud_components[0]
 
-execute unless data storage tmp.bingo:init/hud cur.iconSeperatorAlignLeft run data modify storage tmp.bingo:init/hud cur.iconSeperatorAlignLeft set from storage tmp.bingo:init/hud cur.iconSeperator
-execute unless data storage tmp.bingo:init/hud cur.iconSeperatorAlignRight run data modify storage tmp.bingo:init/hud cur.iconSeperatorAlignRight set from storage tmp.bingo:init/hud cur.iconSeperator
-data remove storage tmp.bingo:init/hud cur.iconSeperator
+execute unless data storage tmp.bingo:init/hud cur.iconSeparatorAlignLeft run data modify storage tmp.bingo:init/hud cur.iconSeparatorAlignLeft set from storage tmp.bingo:init/hud cur.iconSeparator
+execute unless data storage tmp.bingo:init/hud cur.iconSeparatorAlignRight run data modify storage tmp.bingo:init/hud cur.iconSeparatorAlignRight set from storage tmp.bingo:init/hud cur.iconSeparator
+data remove storage tmp.bingo:init/hud cur.iconSeparator
 
 execute if data storage tmp.bingo:init/hud cur{addByDefault: true, preferredColumn: 0} if data storage tmp.bingo:init/hud columns[0][4] run function bingo:init/initialize_hud_components/add_unpreferred
 execute if data storage tmp.bingo:init/hud cur{addByDefault: true, preferredColumn: 0} unless data storage tmp.bingo:init/hud columns[0][4] run function bingo:init/initialize_hud_components/add_to_0
