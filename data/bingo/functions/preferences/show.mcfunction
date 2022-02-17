@@ -43,7 +43,7 @@ scoreboard players reset @s bingo.pref
 execute if data storage tmp.bingo:preferences back run tellraw @s ["\n", {"storage": "tmp.bingo:preferences", "nbt": "back", "interpret": true}]
 
 #>
-# In case an action happened and in the next tick a different page shoud be
+# In case an action happened and in the next tick a different page should be
 # shown, this score is set.
 #
 # @within function bingo:preferences/**

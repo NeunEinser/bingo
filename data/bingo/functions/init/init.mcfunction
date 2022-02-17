@@ -29,12 +29,12 @@
 	# containing the full item definition, like in the items array.
 	#
 	# Items have the following NBT structure:
-	# id: (String) custom namespaced id to uniquly identify the item within bingo
+	# id: (String) custom namespaced id to uniquely identify the item within bingo
 	# item: (Compound) Minecraft item data. Should be set in such a way, that an
 	# 	item of this type looks exactly the same as the item you require.
 	# textComponent: (String) The text component that is used for displaying the
 	# 	item name.
-	# icon: (String) Parsable text component that holds a charcter which is re-
+	# icon: (String) Parsable text component that holds a character which is re-
 	# 	textured to look like the item you require
 	# detectCommand: (String) Command for detecting if the player has this item.
 	# 	Has to set the player's bingo.has_item score. The command that is used in
@@ -45,13 +45,13 @@
 	# 	inventory. Should look like this: "clear @a[tag=bingo.clear] <item> 1
 	# categories: (String List) List of category names. All categories referenced
 	# 	here should be registered separately.
-	# weight: (Integer) Weight of this item for the rng.
+	# weight: (Integer) Weight of this item for the RNG.
 	#
 	# Categories have the following structure:
-	# name: (String) Namespaced id to uniquly identify the category within bingo
-	# translateableName: (String) Text component used for displaying the category's
+	# name: (String) Namespaced id to uniquely identify the category within bingo
+	# translatableName: (String) Text component used for displaying the category's
 	# 	name
-	# items: (Compund List) (readonly) List of all items this category has. Entries
+	# items: (Compound List) (read-only) List of all items this category has. Entries
 	# 	have the same structure as in the items array. Will be created
 	# 	automatically, after #bingo:post_register_items ran.
 	#
@@ -441,7 +441,7 @@
 			#declare tag bingo.sign_credits_tools_nbtviewer
 		#endregion
 
-		#region crad generation
+		#region card generation
 			#>
 			# @within
 			# 	function bingo:lobby/place_indestructible_blocks

@@ -36,7 +36,7 @@ scoreboard players set $card_gen.slot bingo.tmp 0
 scoreboard players operation $card_gen.total_weight bingo.tmp = $total_item_weight bingo.state
 #>
 # Tag used for temporary entity used for positional command execution to set
-# lobby comand block's commands
+# lobby command block's commands
 #
 # @within
 # 	function bingo:card_generation/generate_card
