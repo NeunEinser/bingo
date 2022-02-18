@@ -791,8 +791,8 @@
 		scoreboard objectives add bingo.id dummy
 
 		#>
-		# This objective stores the page of a paginated tellraw a player is currently
-		# at.
+		# This objective stores the page number of a paginated tellraw
+		# a player is currently at.
 		#
 		# This is for example used for the preferences menu. It would otherwise be
 		# impossible to display a generated list with clickable items, as the score
@@ -819,14 +819,14 @@
 	#region private objectives
 		#>
 		# This objective is used to store the player's position hash, which in turn
-		# is used to determine wether the player position display needs updating
+		# is used to determine whether the player position display needs updating
 		# @within
 		#		function bingo:init/init
 		#		function bingo:custom_hud/components/player_position/*
 		scoreboard objectives add bingo.pos_hash dummy
 
 		#>
-		# The last time the hud was refeshed for each player
+		# The last time the hud was refreshed for each player
 		# #TODO rename to something like "last_hud_update" in 1.18 when the stupid
 		# # length limit is gone.
 		#
@@ -848,6 +848,8 @@
 
 	#region score holders
 		#>
+		# Whether command blocks are enabled
+		#
 		# @internal
 		#declare score_holder $commandblocks_enabled
 		scoreboard players set $commandblocks_enabled bingo.state 0
@@ -857,7 +859,7 @@
 		#>
 		# The current game state
 		# 0 = Lobby / Not in game
-		# 1 = Starting / chunk-gen
+		# 1 = Starting / chunk pre-gen
 		# 2 = Skybox phase
 		# 3 = Game started
 		#
@@ -871,9 +873,9 @@
 		#declare score_holder $is_multiplayer
 		scoreboard players add $is_multiplayer bingo.state 0
 		#>
-		# The status of pregeneration.
+		# The status of chunk pregeneration.
 		# 0 = not started
-		# 1 = started
+		# 1 = started / during the process
 		# 2 = completed
 		#
 		# @public
@@ -1121,7 +1123,7 @@
 	# items are duplicated into the categories array.
 	#
 	# You may use this function tag for modifing existing items from the default
-	# bingo item pool or from other extensio packs.
+	# bingo item pool or from other extension packs.
 	#
 	# @api
 	#declare tag/function bingo:post_registration
