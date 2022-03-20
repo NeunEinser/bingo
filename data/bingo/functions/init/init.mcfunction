@@ -1130,7 +1130,7 @@
 
 #region initialize items
 	#>
-	# @within function bingo:init/*
+	# @within function bingo:init/**
 	#declare storage tmp.bingo:init
 
 	# initialize items
@@ -1138,7 +1138,7 @@
 	data modify storage bingo:items categories set from storage bingo:registries categories
 	data remove storage bingo:items items
 
-	function bingo:init/initialize_items
+	function bingo:init/items
 	
 	execute unless data storage bingo:items activeTags run data modify storage bingo:items activeTags set value ["bingo:default"]
 	# Schedule to avoid maxCommandChainLength being hit (setting it in init doesn't work the first time)

@@ -12,9 +12,10 @@
 # @within function bingo:util/apply_active_item_tags/find_next_category
 # @within function bingo:util/apply_active_item_tags/check_category
 # @within function bingo:util/apply_active_item_tags/check_current_tag
-#declare score_holder $apply_tags.category_has_not_tag
+#declare score_holder $apply_tags.category_excluded
+scoreboard players set $apply_tags.category_excluded bingo.tmp 1
 data modify storage tmp.bingo:apply_active_item_tags activeTags set from storage bingo:items activeTags
-function bingo:util/apply_active_item_tags/check_category
+execute if data storage tmp.bingo:apply_active_item_tags categories[-1].items[0] run function bingo:util/apply_active_item_tags/check_category
 
-execute if score $apply_tags.category_has_not_tag bingo.tmp matches 1 run data remove storage tmp.bingo:apply_active_item_tags categories[-1]
-execute if score $apply_tags.category_has_not_tag bingo.tmp matches 1 if data storage tmp.bingo:apply_active_item_tags categories[0] run function bingo:util/apply_active_item_tags/find_next_category
+execute if score $apply_tags.category_excluded bingo.tmp matches 1 run data remove storage tmp.bingo:apply_active_item_tags categories[-1]
+execute if score $apply_tags.category_excluded bingo.tmp matches 1 if data storage tmp.bingo:apply_active_item_tags categories[0] run function bingo:util/apply_active_item_tags/find_next_category
