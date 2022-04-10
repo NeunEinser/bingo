@@ -1,0 +1,15 @@
+use ::bingo::item::item::Item;
+
+compound CategoryRegistryEntry {
+	id: id(bingo:category),
+	name: string,
+	tags: [id(bingo:category_tag)]
+}
+
+compound Category {
+	id: id(bingo:category),
+	name: string,
+	tags: [id(bingo:category_tag)],
+	totalItemWeight: int,
+	items: [Item]
+}

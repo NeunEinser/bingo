@@ -1,0 +1,8 @@
+use ::bingo::item::category::CategoryRegistryEntry;
+use ::bingo::item::item::ItemRegistryEntry;
+
+compound RegistryStorage {
+	categories: [CategoryRegistryEntry],
+	items: [ItemRegistryEntry]
+}
+RegistryStorage describes minecraft:storage[bingo:registries];

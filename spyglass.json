@@ -1,0 +1,94 @@
+{
+	"env": {
+		"dataSource": "GitHub",
+		"dependencies": [
+			"@mc-nbtdoc"
+		],
+		"feature": {
+			"codeActions": true,
+			"colors": true,
+			"completions": true,
+			"documentHighlighting": true,
+			"documentLinks": true,
+			"foldingRanges": true,
+			"formatting": true,
+			"hover": true,
+			"inlayHint": {
+				"enabledNodes": [
+					"mcfunction:command_child/unknown"
+				]
+			},
+			"semanticColoring": true,
+			"selectionRanges": true,
+			"signatures": true
+		},
+		"gameVersion": "1.16.5",
+		"language": "Default",
+		"permissionLevel": 2,
+		"plugins": [],
+		"mcmetaSummaryOverrides": {}
+	},
+	"format": {
+		"blockStateBracketSpacing": { "inside": 0 },
+		"blockStateCommaSpacing": { "before": 0, "after": 1 },
+		"blockStateEqualSpacing": { "before": 0, "after": 0 },
+		"blockStateTrailingComma": false,
+		"eol": "LF",
+		"nbtArrayBracketSpacing": { "inside": 0 },
+		"nbtArrayCommaSpacing": { "before": 0, "after": 1 },
+		"nbtArraySemicolonSpacing": { "after": 1 },
+		"nbtArrayTrailingComma": false,
+		"nbtByteSuffix": "b",
+		"nbtCompoundBracketSpacing": { "inside": 0 },
+		"nbtCompoundColonSpacing": { "before": 0, "after": 1 },
+		"nbtCompoundCommaSpacing": { "before": 0, "after": 1 },
+		"nbtCompoundTrailingComma": false,
+		"nbtDoubleOmitSuffix": false,
+		"nbtDoubleSuffix": "d",
+		"nbtFloatSuffix": "f",
+		"nbtListBracketSpacing": { "inside": 0 },
+		"nbtListCommaSpacing": { "before": 0, "after": 1 },
+		"nbtListTrailingComma": false,
+		"nbtLongSuffix": "L",
+		"nbtShortSuffix": "s",
+		"selectorBracketSpacing": { "inside": 0 },
+		"selectorCommaSpacing": { "before": 0, "after": 1 },
+		"selectorEqualSpacing": { "before": 0, "after": 0 },
+		"selectorTrailingComma": false,
+		"timeOmitTickUnit": false
+	},
+	"lint": {
+		"blockStateSortKeys": null,
+		"nbtCompoundSortKeys": null,
+		"selectorSortKeys": null,
+
+		"commandStringQuote": null,
+		"nbtKeyQuote": null,
+		"nbtPathQuote": null,
+		"nbtStringQuote": null,
+		"selectorKeyQuote": null,
+
+		"idOmitDefaultNamespace": null,
+
+		"nameOfNbtKey": null,
+		"nameOfObjective": "^(?:bingo\\.[a-z0-9][a-z0-9_]*|[a-z0-9][a-z0-9_]*\\.[a-z0-9][a-z0-9_]*\\.[a-z0-9][a-z0-9_]*)$",
+		"nameOfScoreHolder": "^(?:-?\\d+|\\$(?:[a-z0-9][a-z0-9_]*|(?:[a-z0-9][a-z0-9_]*\\/)*[a-z0-9][a-z0-9_]*\\.[a-z0-9][a-z0-9_]*))$",
+		"nameOfTag": "^(?:bingo\\.[a-z0-9][a-z0-9_]*|[a-z0-9][a-z0-9_]*\\.[a-z0-9][a-z0-9_]*\\.[a-z0-9][a-z0-9_]*)$",
+		"nameOfTeam": "^(?:bingo\\.[a-z0-9][a-z0-9_]*|[a-z0-9][a-z0-9_]*\\.[a-z0-9][a-z0-9_]*\\.[a-z0-9][a-z0-9_]*)$",
+
+		"nbtArrayLengthCheck": true,
+		"nbtBoolean": null,
+		"nbtListLengthCheck": null,
+		"nbtTypeCheck": "loosely",
+
+		"undeclaredSymbol": [
+			{
+				"then": { "declare": "block" }
+			}
+		]
+	},
+	"snippet": {
+		"executeIfScoreSet": "execute if score ${1:score_holder} ${2:objective} = ${1:score_holder} ${2:objective} $0",
+		"summonAec": "summon minecraft:area_effect_cloud ~ ~ ~ {Age: -2147483648, Duration: -1, WaitTime: -2147483648, Tags: [\"${1:tag}\"]}"
+	}
+}

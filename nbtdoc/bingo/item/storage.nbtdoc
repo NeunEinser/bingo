@@ -1,0 +1,10 @@
+use ::bingo::item::item::Item;
+use ::bingo::item::category::Category;
+
+compound ItemStorage {
+	items: [Item],
+	activeItems: [Item],
+	categories: [Category],
+	activeCategories: [Category]
+}
+ItemStorage describes minecraft:storage[bingo:item];

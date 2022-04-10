@@ -1,0 +1,67 @@
+use ::minecraft::util::InventoryItem;
+
+compound ItemBase {
+	/// Namespaced id for this item. Should use your custom namespace, and not
+	/// be the same as the minecraft item id.
+	id: id(bingo:item),
+
+	/// The item definition as it is used for display purposes, for example in
+	/// lobby item frames or category chests
+	item: InventoryItem,
+
+	/// The text component that should be used for representing this item, for
+	/// example in the chat announcement "<player> got <item>"
+	textComponent: string,
+
+	/// The icon of the item. Should represent a character that is retextured in
+	/// the custom font. Currently, the character has to be defined in the bingo
+	/// font, using a custom pack-specific dont is currently not possible.
+	icon: string,
+
+	/// Command used for detecting if any player has this item.
+	///
+	/// This command needs to check all players and set the player's
+	/// bingo.has_item scoreboard objective to 1 if the player has the item and
+	/// to 0 otherwise.
+	///
+	/// Example: execute as @a store success score @s bingo.has_item run clear
+	/// @s minecraft:egg 0
+	detectCommand: string,
+
+	/// Command used for removing an item from the player's inventory.
+	///
+	/// This command needs to clear the item from all players tagged with the
+	/// tag bingo.clear. This extra step is needed, as the pack first checks if
+	/// the player's team already received the item.
+	///
+	/// Example: clear @a[tag=bingo.clear] minecraft:egg 1
+	clearCommand: string
+}
+
+compound ItemRegistryEntry extends ItemBase {
+	/// Categories this item is in. Can be an id list or a list of compounds.
+	categories: ([string] | [ItemRegistryEntryCategoryEntry]),
+	/// The default weight for this item. If not set, defaults to 1.
+	weight?: int
+}
+
+compound Item extends ItemBase {
+	/// Categories this item is in.
+	categories: [ItemCategoryEntry],
+	/// The weight of this item within the current context.
+	weight: int
+}
+
+compound ItemRegistryEntryCategoryEntry {
+	/// The id of the referenced category
+	id: id(bingo:category),
+	/// The weight of the current item in this category. When not set defaults
+	/// to the item's default weight.
+	weight?: int
+}
+
+compound ItemCategoryEntry {
+	id: id(bingo:category),
+	weight: int,
+	totalItemWeight: int
+}
