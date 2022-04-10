@@ -9,7 +9,8 @@
 # the original list
 #
 # @within
-# 	function bingo:init/items
+# 	function bingo:init/items/first_pass
+# 	function bingo:init/items/second_pass
 # 	function bingo:init/items/find_categories
 # @writes storage bingo:items categories
 # @output storage tmp.bingo:init categories
@@ -17,9 +18,7 @@
 #>
 # Indicates whether a category was checked in this iteration.
 #
-# @within
-# 	function bingo:init/items
-# 	function bingo:init/items/find_categories
+# @private
 #declare score_holder $init/items/find_cat.category_exists
 
 data modify storage tmp.bingo:init checkCategories set from storage tmp.bingo:init itemCategories

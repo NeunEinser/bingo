@@ -1116,6 +1116,17 @@
 	data remove storage bingo:registries preferences
 	function #bingo:fill_registries
 
+	#TODO probably should make a new tag for sanity checking and post-processing
+	# here which is called after fill_registries and post_generation.
+	#
+	# This way we make sure, post_generation only sees valid entries.
+	# This would mean moving some logic around for vanilla stuff.
+	#
+	# The result should be that all registry's entries are in a state they would be
+	# after the init function has run through completely, apart from fields that
+	# depend on other registries (e.g. the category's items or totalItemWeight
+	# fields would not be included.)
+
 	#>
 	# Function tag for doing actions after the item registration, but before the
 	# items are duplicated into the categories array.
@@ -1127,7 +1138,6 @@
 	#declare tag/function bingo:post_registration
 	function #bingo:post_registration
 #endregion
-
 #region initialize items
 	#>
 	# @within function bingo:init/**
@@ -1138,7 +1148,8 @@
 	data modify storage bingo:items categories set from storage bingo:registries categories
 	data remove storage bingo:items items
 
-	function bingo:init/items
+	function bingo:init/items/first_pass
+	function bingo:init/items/second_pass
 	
 	execute unless data storage bingo:items activeTags run data modify storage bingo:items activeTags set value ["bingo:default"]
 	# Schedule to avoid maxCommandChainLength being hit (setting it in init doesn't work the first time)

@@ -10,7 +10,7 @@
 # down the line.
 #
 # @within
-# 	function bingo:init/items
+# 	function bingo:init/items/first_pass
 # 	function bingo:init/items/normalize_categories
 
 #>
