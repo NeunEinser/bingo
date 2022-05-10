@@ -38,12 +38,12 @@ execute store result storage tmp.bingo:apply_active_item_tags items[-1].weightDe
 data remove storage tmp.bingo:apply_active_item_tags items[-1].multipleCategories
 data modify storage tmp.bingo:apply_active_item_tags activeItems append from storage tmp.bingo:apply_active_item_tags items[-1]
 
-scoreboard players operation $gcd.a 91.math.io = $apply_tags.weight_multiplier bingo.tmp
+scoreboard players operation $gcd.a 91.math.io = $available_category_weight bingo.state
 scoreboard players operation $gcd.b 91.math.io = $apply_tags/mult_cat.denom bingo.tmp
 function neuneinser.math:greatest_common_divisor
 
 scoreboard players operation $apply_tags/mult_cat.denom bingo.tmp /= $gcd.result 91.math.io
-scoreboard players operation $apply_tags.weight_multiplier bingo.tmp *= $apply_tags/mult_cat.denom bingo.tmp
+scoreboard players operation $available_category_weight bingo.state *= $apply_tags/mult_cat.denom bingo.tmp
 
 
 data remove storage tmp.bingo:apply_active_item_tags items[-1]

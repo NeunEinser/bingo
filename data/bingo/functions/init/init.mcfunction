@@ -927,6 +927,19 @@
 		# @internal
 		#declare score_holder $total_item_weight
 		#>
+		# The weight that is available per category to be split over all items belonging
+		# to that category.
+		#
+		# In the datapack, items define local weights per category. In order to derive
+		# a weight for items that works on a global level, there needs to be an
+		# available weight per category every category follows, which is derived from
+		# lcd values of category's total item weights. 
+		#
+		# Stored in bingo.state
+		#
+		# @internal
+		#declare score_holder $available_category_weight
+		#>
 		# Time from last tick
 		#
 		# @internal
@@ -1039,6 +1052,7 @@
 	gamerule doTraderSpawning false
 	gamerule disableElytraMovementCheck true
 	gamerule doPatrolSpawning false
+	gamerule maxCommandChainLength 262144
 	difficulty easy
 
 # Init slow loops

@@ -24,7 +24,8 @@ execute if score $apply_tags.item_does_not_exists bingo.tmp matches 1 run data m
 execute if score $apply_tags.item_does_not_exists bingo.tmp matches 1 run data modify storage tmp.bingo:apply_active_item_tags activeItems[-1].weightDenom set from storage tmp.bingo:apply_active_item_tags categories[-1].totalItemWeight
 
 execute if score $apply_tags.item_does_not_exists bingo.tmp matches 0 run function bingo:util/apply_active_item_tags/modify_existing_item
-data modify storage tmp.bingo:apply_active_item_tags activeItems[-1].activeCategories append from storage tmp.bingo:apply_active_item_tags categories[-1].id
+data modify storage tmp.bingo:apply_active_item_tags itemCategories set from storage tmp.bingo:apply_active_item_tags activeItems[-1].categories
+function bingo:util/apply_active_item_tags/add_current_category
 
 data remove storage tmp.bingo:apply_active_item_tags categories[-1].items[-1]
 execute if data storage tmp.bingo:apply_active_item_tags categories[-1].items[0] run function bingo:util/apply_active_item_tags/add_items_from_category
