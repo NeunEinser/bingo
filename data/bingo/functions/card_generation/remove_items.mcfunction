@@ -27,7 +27,6 @@ execute if score $card_gen/remove_items.keep_item bingo.tmp matches 1 run data m
 #declare score_holder $card_gen/remove_items.weight
 execute unless score $card_gen/remove_items.keep_item bingo.tmp matches 1 store result score $card_gen/remove_items.weight bingo.tmp run data get storage tmp.bingo:card_generation items[-1].weight
 execute unless score $card_gen/remove_items.keep_item bingo.tmp matches 1 run scoreboard players operation $card_gen.total_weight bingo.tmp -= $card_gen/remove_items.weight bingo.tmp
-#execute if score $card_gen/remove_items.keep_item bingo.tmp matches 1 run tellraw NeunEinser [{"storage": "tmp.bingo:card_generation", "nbt": "items[-1].categories"}, ": ", {"storage": "tmp.bingo:card_generation", "nbt": "items[-1].weight"}]
 
 
 # Keep track of other categories of that item, so that the total weight of that

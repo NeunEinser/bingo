@@ -132,7 +132,6 @@ data modify storage tmp.bingo:card_generation categoriesForRemoval set value []
 data modify storage tmp.bingo:card_generation categoriesForRemoval append from storage tmp.bingo:card_generation items[-1].activeCategories[].id
 data modify storage tmp.bingo:card_generation categoriesWithRemovedItem set value []
 function bingo:card_generation/remove_items
-#tellraw NeunEinser "---------------------"
 
 #>
 # @within

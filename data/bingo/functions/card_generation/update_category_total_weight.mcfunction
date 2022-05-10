@@ -54,7 +54,7 @@ scoreboard players operation $gcd.a 91.math.io = $card_gen/cat_weight.denom bing
 scoreboard players operation $gcd.b 91.math.io = $card_gen.required_category_weight bingo.tmp
 function neuneinser.math:greatest_common_divisor
 scoreboard players operation $card_gen/cat_weight.denom bingo.tmp /= $gcd.result 91.math.io
-scoreboard players operation $card_gen.required_category_weight bingo.tmp += $card_gen/cat_weight.denom bingo.tmp
+scoreboard players operation $card_gen.required_category_weight bingo.tmp *= $card_gen/cat_weight.denom bingo.tmp
 
 data modify storage tmp.bingo:card_generation items append from storage tmp.bingo:card_generation keptItems[-1]
 data remove storage tmp.bingo:card_generation keptItems[-1]
