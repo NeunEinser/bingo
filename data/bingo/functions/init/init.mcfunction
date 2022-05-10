@@ -342,6 +342,16 @@
 			# @within
 			# 	function bingo:lobby/place_indestructible_blocks
 			# 	structure bingo:credits
+			#declare tag bingo.sign_credits_kristof
+			#>
+			# @within
+			# 	function bingo:lobby/place_indestructible_blocks
+			# 	structure bingo:credits
+			#declare tag bingo.sign_credits_gbegerow
+			#>
+			# @within
+			# 	function bingo:lobby/place_indestructible_blocks
+			# 	structure bingo:credits
 			#declare tag bingo.sign_credits_amber_wat
 			#>
 			# @within
@@ -353,6 +363,11 @@
 			# 	function bingo:lobby/place_indestructible_blocks
 			# 	structure bingo:credits
 			#declare tag bingo.sign_credits_dr_brian_lorgon111
+			#>
+			# @within
+			# 	function bingo:lobby/place_indestructible_blocks
+			# 	structure bingo:credits
+			#declare tag bingo.sign_credits_community_and_support
 			#>
 			# @within
 			# 	function bingo:lobby/place_indestructible_blocks
