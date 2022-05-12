@@ -1,0 +1,12 @@
+{
+	"name": "Bingo",
+	"version": "5.0-pre2",
+	"dependencies": {
+		"resourcePacks": [
+			"https://github.com/AmberWat/NegativeSpaceFont/releases/download/v4.1/NegativeSpaceFont4.zip"
+		]
+	},
+	"vars": {
+		"versionLongName": "5.0 Pre-Release 2"
+	}
+}
