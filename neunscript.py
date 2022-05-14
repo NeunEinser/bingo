@@ -1,14 +1,16 @@
 # This script is used for building this pack
-from distutils.dir_util import copy_tree
 import hashlib
-from pickle import NONE
-import shutil
-import os
 import json
+import os
 import re
-from sys import stderr
-import python_nbt.nbt as nbt
+import shutil
 import urllib.request
+from distutils.dir_util import copy_tree
+from pickle import NONE
+from sys import stderr
+
+import python_nbt.nbt as nbt
+
 
 def main():
 	if os.path.exists("dist"):
