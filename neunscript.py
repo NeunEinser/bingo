@@ -6,7 +6,6 @@ import re
 import shutil
 import urllib.request
 from distutils.dir_util import copy_tree
-from pickle import NONE
 from sys import stderr
 
 import python_nbt.nbt as nbt
