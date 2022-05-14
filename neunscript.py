@@ -7,7 +7,6 @@ import os
 import json
 import re
 from sys import stderr
-from numpy import array
 import python_nbt.nbt as nbt
 import urllib.request
 
