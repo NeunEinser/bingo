@@ -1,6 +1,6 @@
 {
 	"%1074992263$s%1$s": "%2$s",
-	"%1074992263$s%3$s%1$s": "%2$s",
+	"%1074992263$s%{NEUN_SCRIPT:rp_version}$s%1$s": "%2$s",
 	"%1074992263$s%3$s%3$s%1$s": "%2$s",
 	"bingo.technical.detect_multiplayer": "DoNotTranslateThis3",
 
