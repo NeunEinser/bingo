@@ -84,7 +84,7 @@ def main():
 	for file_path in requested_rp_sha:
 		with open(file_path, "r+", encoding="utf-8") as file:
 			file_content = file.read()
-			file_content = file_content.replace("{NEUN_SCRIPT:resourcePackSha}", sha1.hexdigest())
+			file_content = file_content.replace("{NEUN_SCRIPT:resource_pack_sha1}", sha1.hexdigest())
 			file.seek(0)
 			file.write(file_content)
 			file.truncate()
@@ -142,7 +142,7 @@ def replace_variables(content: str, file_path: str, config, requested_rp_sha: li
 
 		if variable == "version":
 			replace = config.get("version")
-		elif variable == "resourcePackSha":
+		elif variable == "resource_pack_sha1":
 			requested_rp_sha.append(file_path)
 			continue
 		elif vars != None:
