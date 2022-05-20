@@ -5,6 +5,9 @@
 # @within function bingo:game/tick
 # @context entity Player
 
+scoreboard players enable @s bingo.menu
+execute if entity @s[scores={bingo.menu=1}] run function bingo:util/print_bingo_menu
+
 scoreboard players enable @s bingo.lobby
 execute if entity @s[scores={bingo.lobby=1}] run function bingo:util/go_to_lobby
 
