@@ -8,8 +8,8 @@ execute at @e[type=minecraft:area_effect_cloud, tag=bingo.spawn, limit=1] rotate
 scoreboard players set $game_state bingo.state 3
 
 tellraw @s [{"translate": "bingo.game.menu.text", "with": [{"translate": "bingo.game.menu.icon", "color": "#00c3ff", "clickEvent": {"action": "run_command", "value": "/trigger bingo.menu"}, "hoverEvent":{"action":"show_text","contents":[{"translate":"bingo.game.menu.hover_text"}]}}]}, " ", {"translate": "bingo.game.start.countdown_completed"}]
-tellraw @s [{"translate": "bingo.game.menu.options", "with": [{"translate": "bingo.game.menu.options.click_lobby", "color": "#00c3ff", "clickEvent": {"action": "run_command", "value": "/trigger bingo.lobby"}}, {"translate": "bingo.game.menu.options.click_spectator", "color": "#00c3ff", "clickEvent": {"action": "run_command", "value": "/trigger bingo.spectator"}}]}]
-tellraw @s [{"translate": "bingo.game.menu.hint", "color": "gray", "italic": true, "with": [{"translate": "bingo.game.menu.text", "color": "white", "italic": false, "with": [{"translate": "bingo.game.menu.icon", "color": "#00c3ff", "italic": false, "clickEvent": {"action": "run_command", "value": "/trigger bingo.menu"}, "hoverEvent":{"action":"show_text","contents":[{"translate":"bingo.game.menu.hover_text"}]}}]}, {"text": "/trigger bingo.menu", "color": "white", "italic": false, "clickEvent": {"action": "suggest_command", "value": "/trigger bingo.menu"}}]}]
+function bingo:util/bingo_menu/print_options
+function bingo:util/bingo_menu/print_menu_hint
 execute at @s run playsound minecraft:block.note_block.pling master @s ~ ~ ~ 1 1
 
 effect clear @s
