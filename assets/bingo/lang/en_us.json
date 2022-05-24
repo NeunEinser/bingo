@@ -1,6 +1,6 @@
 {
 	"%1074992263$s%1$s": "%2$s",
-	"%1074992263$s%3$s%1$s": "%2$s",
+	"%1074992263$s%{NEUN_SCRIPT:rp_version}$s%1$s": "%2$s",
 	"%1074992263$s%3$s%3$s%1$s": "%2$s",
 	"bingo.technical.detect_multiplayer": "DoNotTranslateThis3",
 
@@ -94,9 +94,17 @@
 	"bingo.lobby.machinery.sign.line3": "Authorized",
 	"bingo.lobby.machinery.sign.line4": "personnel only",
 
-	"bingo.lobby.credits.neun_einser.sign.line2": "",
-	"bingo.lobby.credits.neun_einser.sign.line3": "All of Minecraft",
-	"bingo.lobby.credits.neun_einser.sign.line4": "Bingo v5",
+	"bingo.lobby.credits.neun_einser.sign.line2": "Minecraft Bingo",
+	"bingo.lobby.credits.neun_einser.sign.line3": "Main & Lead",
+	"bingo.lobby.credits.neun_einser.sign.line4": "Developer",
+
+	"bingo.lobby.credits.kristof.sign.line2": "",
+	"bingo.lobby.credits.kristof.sign.line3": "Code Contributor",
+	"bingo.lobby.credits.kristof.sign.line4": "Polish translator",
+
+	"bingo.lobby.credits.gbegerow.sign.line2": "",
+	"bingo.lobby.credits.gbegerow.sign.line3": "German",
+	"bingo.lobby.credits.gbegerow.sign.line4": "translator",
 
 	"bingo.lobby.credits.amber_wat.sign.line2": "",
 	"bingo.lobby.credits.amber_wat.sign.line3": "Negative Space",
@@ -109,6 +117,17 @@
 	"bingo.lobby.credits.dr_brian_lorgon111.sign.line2": "",
 	"bingo.lobby.credits.dr_brian_lorgon111.sign.line3": "Original Minecraft",
 	"bingo.lobby.credits.dr_brian_lorgon111.sign.line4": "Bingo creator",
+
+	"bingo.lobby.credits.community_and_support.sign.line1": "",
+	"bingo.lobby.credits.community_and_support.sign.line2": "Community &",
+	"bingo.lobby.credits.community_and_support.sign.line3": "Support",
+	"bingo.lobby.credits.community_and_support.sign.line4": "",
+
+	"bingo.lobby.credits.community_and_support.heading": "Community & Support",
+	"bingo.lobby.credits.community_and_support.description": "In this book, you find some useful links to get support or report bugs / suggest features.",
+	"bingo.lobby.credits.community_and_support.issue_link": "Bug & Issue Tracker",
+	"bingo.lobby.credits.community_and_support.discord_link": "Discord Server",
+	"bingo.lobby.credits.community_and_support.twitter_link": "Twitter (DMs open)",
 
 	"bingo.lobby.credits.playtesters.sign.line1": "",
 	"bingo.lobby.credits.playtesters.sign.line2": "Wall of",

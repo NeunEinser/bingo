@@ -28,12 +28,17 @@ scoreboard players set $card_gen.slot bingo.tmp 0
 # The current total weight of all remaining items of tmp.bingo:card_generation
 # items
 #
-# @within
-# 	function bingo:card_generation/generate_card
-# 	function bingo:card_generation/generate_slot
-# 	function bingo:card_generation/remove_items
+# @within function bingo:card_generation/**
 #declare score_holder $card_gen.total_weight
 scoreboard players operation $card_gen.total_weight bingo.tmp = $total_item_weight bingo.state
+#>
+# The current weight available per category. Might change if a category's total
+# item weight changes in such a way that the available category weight cannot
+# be split correctly.
+#
+# @within function bingo:card_generation/**
+#declare score_holder $card_gen.available_category_weight
+scoreboard players operation $card_gen.available_category_weight bingo.tmp = $available_category_weight bingo.state
 #>
 # Tag used for temporary entity used for positional command execution to set
 # lobby command block's commands

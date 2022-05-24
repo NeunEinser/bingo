@@ -13,4 +13,4 @@ function bingo:util/apply_active_item_tags/check_current_tag
 
 data remove storage tmp.bingo:apply_active_item_tags activeTags[-1]
 
-execute if score $apply_tags.category_has_not_tag bingo.tmp matches 1 if data storage tmp.bingo:apply_active_item_tags activeTags[0] run function bingo:util/apply_active_item_tags/check_category
+execute if score $apply_tags.category_excluded bingo.tmp matches 1 if data storage tmp.bingo:apply_active_item_tags activeTags[0] run function bingo:util/apply_active_item_tags/check_category

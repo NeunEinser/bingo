@@ -14,12 +14,7 @@
 # 	function bingo:util/apply_active_item_tags/**
 #declare storage tmp.bingo:apply_active_item_tags
 
-#>
-# @within
-# 	function bingo:util/apply_active_item_tags
-# 	function bingo:util/apply_active_item_tags/**
-#declare score_holder $apply_tags.weight_multiplier
-scoreboard players set $apply_tags.weight_multiplier bingo.tmp 1
+scoreboard players set $available_category_weight bingo.state 1
 
 data modify storage bingo:items activeItems set value []
 data modify storage bingo:items activeCategories set value []

@@ -21,7 +21,7 @@ execute store result score $apply_tags/mult_cat.denom bingo.tmp run data get sto
 #declare score_holder $apply_tags/mult_cat.nom
 execute store result score $apply_tags/mult_cat.nom bingo.tmp run data get storage bingo:items activeItems[-1].weight
 
-scoreboard players operation $apply_tags/mult_cat.nom bingo.tmp *= $apply_tags.weight_multiplier bingo.tmp
+scoreboard players operation $apply_tags/mult_cat.nom bingo.tmp *= $available_category_weight bingo.state
 scoreboard players operation $apply_tags/mult_cat.nom bingo.tmp /= $apply_tags/mult_cat.denom bingo.tmp
 
 scoreboard players operation $total_item_weight bingo.state += $apply_tags/mult_cat.nom bingo.tmp

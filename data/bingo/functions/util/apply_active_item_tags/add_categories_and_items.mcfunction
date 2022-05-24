@@ -17,12 +17,12 @@ function bingo:util/apply_active_item_tags/add_items_from_category
 #declare score_holder $apply_tags.category_weight
 execute store result score $apply_tags.category_weight bingo.tmp run data get storage tmp.bingo:apply_active_item_tags categories[-1].totalItemWeight
 
-scoreboard players operation $gcd.a 91.math.io = $apply_tags.weight_multiplier bingo.tmp
+scoreboard players operation $gcd.a 91.math.io = $available_category_weight bingo.state
 scoreboard players operation $gcd.b 91.math.io = $apply_tags.category_weight bingo.tmp
 function neuneinser.math:greatest_common_divisor
 
 scoreboard players operation $apply_tags.category_weight bingo.tmp /= $gcd.result 91.math.io
-scoreboard players operation $apply_tags.weight_multiplier bingo.tmp *= $apply_tags.category_weight bingo.tmp
+scoreboard players operation $available_category_weight bingo.state *= $apply_tags.category_weight bingo.tmp
 
 data remove storage tmp.bingo:apply_active_item_tags categories[-1]
 function bingo:util/apply_active_item_tags/find_next_category

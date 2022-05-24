@@ -128,9 +128,31 @@ execute at @e[type=minecraft:area_effect_cloud, tag=bingo.command_cloud, limit=1
 
 #region cleanup and next slot
 data modify storage tmp.bingo:card_generation keptItems set value []
-data modify storage tmp.bingo:card_generation categoriesForRemoval set from storage tmp.bingo:card_generation items[-1].activeCategories
+data modify storage tmp.bingo:card_generation categoriesForRemoval set value []
+data modify storage tmp.bingo:card_generation categoriesForRemoval append from storage tmp.bingo:card_generation items[-1].activeCategories[].id
+data modify storage tmp.bingo:card_generation categoriesWithRemovedItem set value []
 function bingo:card_generation/remove_items
-data modify storage tmp.bingo:card_generation items set from storage tmp.bingo:card_generation keptItems
+
+#>
+# @within
+# 	function bingo:card_generation/generate_slot
+# 	function bingo:card_generation/update_category_total_weight
+#declare score_holder $card_gen.required_category_weight
+scoreboard players set $card_gen.required_category_weight bingo.tmp 1
+execute unless data storage tmp.bingo:card_generation categoriesWithRemovedItem[0] run data modify storage tmp.bingo:card_generation items set from storage tmp.bingo:card_generation keptItems
+execute if data storage tmp.bingo:card_generation categoriesWithRemovedItem[0] run function bingo:card_generation/update_category_total_weight
+
+#>
+# @private
+#declare score_holder $card_gen.requires_item_recalc
+scoreboard players operation $card_gen.requires_item_recalc bingo.tmp = $card_gen.available_category_weight bingo.tmp
+scoreboard players operation $card_gen.requires_item_recalc bingo.tmp %= $card_gen.required_category_weight bingo.tmp
+
+execute unless score $card_gen.requires_item_recalc bingo.tmp matches 0 run scoreboard players operation $card_gen.available_category_weight bingo.tmp = $card_gen.required_category_weight bingo.tmp
+execute unless score $card_gen.requires_item_recalc bingo.tmp matches 0 run scoreboard players set $card_gen.total_weight bingo.tmp 0
+execute unless score $card_gen.requires_item_recalc bingo.tmp matches 0 run data modify storage tmp.bingo:card_generation recalculateItems set from storage tmp.bingo:card_generation items
+execute unless score $card_gen.requires_item_recalc bingo.tmp matches 0 run data modify storage tmp.bingo:card_generation items set value []
+execute unless score $card_gen.requires_item_recalc bingo.tmp matches 0 run function bingo:card_generation/recalculate_item_weight
 
 scoreboard players add $card_gen.slot bingo.tmp 1
 execute if score $card_gen.slot bingo.tmp matches ..24 run function bingo:card_generation/generate_slot

@@ -342,6 +342,16 @@
 			# @within
 			# 	function bingo:lobby/place_indestructible_blocks
 			# 	structure bingo:credits
+			#declare tag bingo.sign_credits_kristof
+			#>
+			# @within
+			# 	function bingo:lobby/place_indestructible_blocks
+			# 	structure bingo:credits
+			#declare tag bingo.sign_credits_gbegerow
+			#>
+			# @within
+			# 	function bingo:lobby/place_indestructible_blocks
+			# 	structure bingo:credits
 			#declare tag bingo.sign_credits_amber_wat
 			#>
 			# @within
@@ -353,6 +363,11 @@
 			# 	function bingo:lobby/place_indestructible_blocks
 			# 	structure bingo:credits
 			#declare tag bingo.sign_credits_dr_brian_lorgon111
+			#>
+			# @within
+			# 	function bingo:lobby/place_indestructible_blocks
+			# 	structure bingo:credits
+			#declare tag bingo.sign_credits_community_and_support
 			#>
 			# @within
 			# 	function bingo:lobby/place_indestructible_blocks
@@ -929,6 +944,19 @@
 		# @internal
 		#declare score_holder $total_item_weight
 		#>
+		# The weight that is available per category to be split over all items belonging
+		# to that category.
+		#
+		# In the datapack, items define local weights per category. In order to derive
+		# a weight for items that works on a global level, there needs to be an
+		# available weight per category every category follows, which is derived from
+		# lcd values of category's total item weights. 
+		#
+		# Stored in bingo.state
+		#
+		# @internal
+		#declare score_holder $available_category_weight
+		#>
 		# Time from last tick
 		#
 		# @internal
@@ -1041,6 +1069,7 @@
 	gamerule doTraderSpawning false
 	gamerule disableElytraMovementCheck true
 	gamerule doPatrolSpawning false
+	gamerule maxCommandChainLength 262144
 	difficulty easy
 
 # Init slow loops
@@ -1118,6 +1147,17 @@
 	data remove storage bingo:registries preferences
 	function #bingo:fill_registries
 
+	#TODO probably should make a new tag for sanity checking and post-processing
+	# here which is called after fill_registries and post_generation.
+	#
+	# This way we make sure, post_generation only sees valid entries.
+	# This would mean moving some logic around for vanilla stuff.
+	#
+	# The result should be that all registry's entries are in a state they would be
+	# after the init function has run through completely, apart from fields that
+	# depend on other registries (e.g. the category's items or totalItemWeight
+	# fields would not be included.)
+
 	#>
 	# Function tag for doing actions after the item registration, but before the
 	# items are duplicated into the categories array.
@@ -1129,10 +1169,9 @@
 	#declare tag/function bingo:post_registration
 	function #bingo:post_registration
 #endregion
-
 #region initialize items
 	#>
-	# @within function bingo:init/*
+	# @within function bingo:init/**
 	#declare storage tmp.bingo:init
 
 	# initialize items
@@ -1140,7 +1179,8 @@
 	data modify storage bingo:items categories set from storage bingo:registries categories
 	data remove storage bingo:items items
 
-	function bingo:init/initialize_items
+	function bingo:init/items/first_pass
+	function bingo:init/items/second_pass
 	
 	execute unless data storage bingo:items activeTags run data modify storage bingo:items activeTags set value ["bingo:default"]
 	# Schedule to avoid maxCommandChainLength being hit (setting it in init doesn't work the first time)
