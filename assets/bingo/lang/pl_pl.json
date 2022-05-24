@@ -6,7 +6,6 @@
 	"bingo.resourcepack_check.sign.line2": "zainstalowana.",
 	"bingo.resourcepack_check.sign.line3": "Kliknij tu po",
 	"bingo.resourcepack_check.sign.line4": "wiadomość.",
-
 	"bingo.resourcepack_check.go_to_lobby.part1": "Paczka zasobów aktywowana pomyślnie.",
 	"bingo.resourcepack_check.go_to_lobby.part2": "%s, aby przejść do lobby.",
 	"bingo.resourcepack_check.go_to_lobby.click": "Kliknij tutaj",
@@ -90,6 +89,18 @@
 	"bingo.lobby.machinery.sign.line3": "Nieupoważnionym",
 	"bingo.lobby.machinery.sign.line4": "wstęp wzbroniony",
 
+	"bingo.lobby.credits.neun_einser.sign.line2": "Główny",
+	"bingo.lobby.credits.neun_einser.sign.line3": "Deweloper",
+	"bingo.lobby.credits.neun_einser.sign.line4": "Minecraft Bingo",
+
+	"bingo.lobby.credits.kristof.sign.line2": "",
+	"bingo.lobby.credits.kristof.sign.line3": "Współautor Kodu",
+	"bingo.lobby.credits.kristof.sign.line4": "Polski tłumacz",
+
+	"bingo.lobby.credits.gbegerow.sign.line2": "",
+	"bingo.lobby.credits.gbegerow.sign.line3": "Niemiecki",
+	"bingo.lobby.credits.gbegerow.sign.line4": "tłumacz",
+
 	"bingo.lobby.credits.amber_wat.sign.line2": "Czcionka",
 	"bingo.lobby.credits.amber_wat.sign.line3": "Negative Space",
 	"bingo.lobby.credits.amber_wat.sign.line4": "Font",
@@ -101,6 +112,17 @@
 	"bingo.lobby.credits.dr_brian_lorgon111.sign.line2": "Oryginalny",
 	"bingo.lobby.credits.dr_brian_lorgon111.sign.line3": "twórca",
 	"bingo.lobby.credits.dr_brian_lorgon111.sign.line4": "Minecraft Bingo",
+
+	"bingo.lobby.credits.community_and_support.sign.line1": "",
+	"bingo.lobby.credits.community_and_support.sign.line2": "Społeczność",
+	"bingo.lobby.credits.community_and_support.sign.line3": "& Wsparcie",
+	"bingo.lobby.credits.community_and_support.sign.line4": "",
+
+	"bingo.lobby.credits.community_and_support.heading": "Społeczność & Wsparcie",
+	"bingo.lobby.credits.community_and_support.description": "W tej książce znajdują się przydatne linki do pomocy technicznej, raportów o błędach i sugestii.",
+	"bingo.lobby.credits.community_and_support.issue_link": "Raporty błędów i sugestii (Angielski)",
+	"bingo.lobby.credits.community_and_support.discord_link": "Serwer Discord",
+	"bingo.lobby.credits.community_and_support.twitter_link": "Twitter (otwarte DMy, Angielski/Niemiecki)",
 
 	"bingo.lobby.credits.playtesters.sign.line1": "",
 	"bingo.lobby.credits.playtesters.sign.line2": "Ściana",
