@@ -46,9 +46,15 @@ scoreboard players operation $card_gen/cat_weight.denom bingo.tmp /= $gcd.result
 execute store result storage tmp.bingo:card_generation keptItems[-1].weightNom int 1 run scoreboard players get $card_gen/cat_weight.nom bingo.tmp
 execute store result storage tmp.bingo:card_generation keptItems[-1].weightDenom int 1 run scoreboard players get $card_gen/cat_weight.denom bingo.tmp
 
+#>
+# @private
+#declare score_holder $card_gen/cat_weight.previous_weight
+execute store result score $card_gen/cat_weight.previous_weight bingo.tmp run data get storage tmp.bingo:card_generation keptItems[-1].weight
 scoreboard players operation $card_gen/cat_weight.nom bingo.tmp *= $card_gen.available_category_weight bingo.tmp
 scoreboard players operation $card_gen/cat_weight.nom bingo.tmp /= $card_gen/cat_weight.denom bingo.tmp
 execute store result storage tmp.bingo:card_generation keptItems[-1].weight int 1 run scoreboard players get $card_gen/cat_weight.nom bingo.tmp
+scoreboard players operation $card_gen.total_weight bingo.tmp -= $card_gen/cat_weight.previous_weight bingo.tmp
+scoreboard players operation $card_gen.total_weight bingo.tmp += $card_gen/cat_weight.nom bingo.tmp
 
 scoreboard players operation $gcd.a 91.math.io = $card_gen/cat_weight.denom bingo.tmp
 scoreboard players operation $gcd.b 91.math.io = $card_gen.required_category_weight bingo.tmp
