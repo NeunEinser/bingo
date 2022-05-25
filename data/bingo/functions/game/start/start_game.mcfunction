@@ -7,7 +7,7 @@
 execute at @e[type=minecraft:area_effect_cloud, tag=bingo.spawn, limit=1] rotated as @s run tp ~ ~ ~
 scoreboard players set $game_state bingo.state 3
 
-tellraw @s [{"translate": "bingo.game.menu.text", "with": [{"translate": "bingo.game.menu.icon", "color": "#00c3ff", "clickEvent": {"action": "run_command", "value": "/trigger bingo.menu"}, "hoverEvent":{"action":"show_text","contents":[{"translate":"bingo.game.menu.hover_text"}]}}]}, " ", {"translate": "bingo.game.start.countdown_completed"}]
+tellraw @s {"translate": "bingo.game.start.countdown_completed"}
 function bingo:util/bingo_menu/print_options
 function bingo:util/bingo_menu/print_menu_hint
 execute at @s run playsound minecraft:block.note_block.pling master @s ~ ~ ~ 1 1
