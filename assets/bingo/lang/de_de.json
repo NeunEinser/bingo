@@ -24,7 +24,6 @@
 
 	"bingo.game.menu.text": "[%s]",
 	"bingo.game.menu.icon": "≡",
-	// "bingo.game.menu.title": "Bingo Menu",
 	// "bingo.game.menu.hover_text": "Bingo Menu",
 	// "bingo.game.menu.hint": "Hint: You can click %s or use the command %s at any time to display the bingo menu.",
 	"bingo.game.menu.options": "%s, um zur Lobby zurückzukehren.\n%s, um zum Zuschauermodus zu wechseln.",
