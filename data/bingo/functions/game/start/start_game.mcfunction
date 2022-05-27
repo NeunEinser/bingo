@@ -8,8 +8,8 @@ execute at @e[type=minecraft:area_effect_cloud, tag=bingo.spawn, limit=1] rotate
 scoreboard players set $game_state bingo.state 3
 
 tellraw @s {"translate": "bingo.game.start.countdown_completed"}
-function bingo:util/bingo_menu/print_options
-function bingo:util/bingo_menu/print_menu_hint
+function bingo:game/bingo_menu/print_options
+function bingo:game/bingo_menu/print_menu_hint
 execute at @s run playsound minecraft:block.note_block.pling master @s ~ ~ ~ 1 1
 
 effect clear @s

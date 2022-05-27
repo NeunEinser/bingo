@@ -1,4 +1,4 @@
-#> bingo:util/bingo_menu/print_options
+#> bingo:game/bingo_menu/print_options
 #
 # Display the bingo menu options to @s
 #
