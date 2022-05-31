@@ -1171,7 +1171,7 @@
 	# @within function bingo:init/**
 	#declare storage tmp.bingo:init
 
-	schedule function bingo:init/items/exec 2t
+	schedule function bingo:init/items/exec 1t
 #endregion
 #region initialize hud components
 	#>
