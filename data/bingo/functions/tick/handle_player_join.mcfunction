@@ -25,5 +25,4 @@ execute store result score $player_join.item_count bingo.tmp run data get storag
 
 execute if score $player_join.item_count bingo.tmp matches 25 run tag @s add bingo.spectator
 
-
 scoreboard players reset @s bingo.reconnect

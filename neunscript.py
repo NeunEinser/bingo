@@ -7,6 +7,7 @@ import shutil
 import urllib.request
 from distutils.dir_util import copy_tree
 from sys import stderr
+import pyjson5
 
 import python_nbt.nbt as nbt
 
@@ -167,7 +168,9 @@ def handle_nbt(nbt_tag, file_path: str, config):
 
 def minify_json_file(file_content: str):
 	try:
-		json_content = json.loads(file_content)
+		# pyjson5 allows for comments and other json5 features when reading
+		json_content = pyjson5.decode(file_content)
+		# json serializes as utf-8 when called like this, increasing minification 
 		return json.dumps(json_content, ensure_ascii=False, separators=(",", ":"))
 
 	except Exception:
