@@ -10,7 +10,7 @@ function bingo:util/find_player_team
 
 # Resource pack is likely not loaded here. In case it isn't, just print
 # hardcoded English message.
-execute if score $game_state bingo.state matches 3 run execute as @s[predicate=bingo:is_in_game] run function bingo:game/bingo_menu/print_with_menu_hint
+execute if score $game_state bingo.state matches 3 as @s[predicate=bingo:is_in_game] run function bingo:game/bingo_menu/print_with_hint
 
 scoreboard players set @s bingo.update_hud 1
 trigger bingo.resources
