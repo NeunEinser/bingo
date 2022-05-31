@@ -3,8 +3,7 @@
 # Adds entries for categoriesWithRemovedItem for the current item
 #
 # @within
-# 	function bingo:card_generation/remove_items/**
-# 	function bingo:card_generation/remove_items/update_categories_with_removed_item
+# 	function bingo:card_generation/remove_items/add_categories_with_removed_item
 # 	function bingo:card_generation/remove_items/add_category_with_removed_item
 
 data modify entity @s Tags set from storage tmp.bingo:card_generation stringTesterTagCache

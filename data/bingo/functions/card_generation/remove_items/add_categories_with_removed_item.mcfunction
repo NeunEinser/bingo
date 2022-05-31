@@ -1,4 +1,4 @@
-#> bingo:card_generation/remove_items/update_categories_with_removed_item
+#> bingo:card_generation/remove_items/add_categories_with_removed_item
 #
 # Adds entries for categoriesWithRemovedItem for the current item
 #

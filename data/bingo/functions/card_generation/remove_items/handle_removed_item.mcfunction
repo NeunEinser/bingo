@@ -12,6 +12,4 @@
 execute store result score $card_gen/remove_items.weight bingo.tmp run data get storage tmp.bingo:card_generation items[-1].weight
 scoreboard players operation $card_gen.total_weight bingo.tmp -= $card_gen/remove_items.weight bingo.tmp
 
-#execute if data storage tmp.bingo:card_generation items[-1].activeCategories[1] run function bingo:card_generation/remove_items/update_categories_with_removed_item
-data modify storage tmp.bingo:card_generation itemCategories set from storage tmp.bingo:card_generation items[-1].activeCategories
-function bingo:card_generation/remove_items/add_category_with_removed_item
+execute if data storage tmp.bingo:card_generation items[-1].activeCategories[1] run function bingo:card_generation/remove_items/add_categories_with_removed_item
