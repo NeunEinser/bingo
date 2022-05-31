@@ -105,6 +105,8 @@ def main():
 def iterate_files(config):
 	requested_rp_sha = []
 	remove_extensions = config.get("remove_file_types")
+	for i, ext in enumerate(remove_extensions):
+		remove_extensions[i] = "." + ext
 	if remove_extensions == None:
 		remove_extensions=()
 	else:
