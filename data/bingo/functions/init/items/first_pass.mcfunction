@@ -4,15 +4,9 @@
 # weight for each category.
 #
 # @within
-# 	function bingo:init/init
+# 	function bingo:init/items/exec
 # 	function bingo:init/items/first_pass
 # @writes storage bingo:items categories
-
-#>
-# @within
-# 	function bingo:init/items/**
-#declare tag bingo.string_tester
-summon minecraft:area_effect_cloud ~ ~ ~ {Tags: ["bingo.string_tester"]}
 
 data modify storage tmp.bingo:init itemCategories set from storage tmp.bingo:init items[-1].categories
 data remove storage tmp.bingo:init items[-1].categories[]

@@ -109,6 +109,16 @@
 
 #region tag declarations
 	#>
+	# This tag marks a player who is at a location eligible for emerald generation.
+	#
+	# @internal
+	#declare tag bingo.emerald
+	#>
+	# This tag is used for players who enable manual gamemode switching.
+	#
+	# @internal
+	#declare tag bingo.enable_manual_gameode_switch
+	#>
 	# This tag is used to tag the item frames that display the big preview card in
 	# the lobby
 	#
@@ -121,30 +131,26 @@
 	# @internal
 	#declare tag bingo.clear
 	#>
-	# This tag marks a player who is at a location eligible for emerald generation.
-	#
-	# @internal
-	#declare tag bingo.emerald
-	#>
 	# This tag is used for the area effect cloud marking the location for the skybox
 	#
 	# @internal
 	#declare tag bingo.skybox_cloud
-	#>
-	# This tag is given to players who are currently verifying their resource pack
-	#
-	# @internal
-	#declare tag bingo.resourcepack_check
 	#>
 	# This tag is given to any player who triggered bingo.spectator in game.
 	#
 	# @internal
 	#declare tag bingo.spectator
 	#>
-	# This tag is used for players who enable manual gamemode switching.
+	# This tag marks an AEC which may be used for testing wether a string is
+	# within a certain set.
 	#
 	# @internal
-	#declare tag bingo.enable_manual_gameode_switch
+	#declare tag bingo.string_tester
+	#>
+	# This tag is given to players who are currently verifying their resource pack
+	#
+	# @internal
+	#declare tag bingo.resourcepack_check
 	#region slots
 		#>
 		# This tag marks a player who is in a team that obtained the item in slot 0.
@@ -1045,12 +1051,6 @@
 #endregion
 
 # Create overworld resourcepack check
-	#>
-	# @private
-	#declare tag bingo.detect_mp_aec
-
-	kill @e[type=minecraft:area_effect_cloud, tag=bingo.detect_mp_aec, limit=1]
-	summon minecraft:area_effect_cloud ~ ~ ~ {CustomName:'{"translate": "bingo.technical.detect_multiplayer"}', Age: -2147483648, Duration: -1, WaitTime: -2147483648, Tags: ["bingo.detect_mp_aec"]}
 	fill 0 0 0 2 3 2 minecraft:black_concrete outline
 	setworldspawn 1 0 1
 	gamerule spawnRadius 0
@@ -1067,7 +1067,6 @@
 	gamerule doTraderSpawning false
 	gamerule disableElytraMovementCheck true
 	gamerule doPatrolSpawning false
-	gamerule maxCommandChainLength 262144
 	difficulty easy
 
 # Init slow loops
@@ -1172,19 +1171,8 @@
 	# @within function bingo:init/**
 	#declare storage tmp.bingo:init
 
-	# initialize items
-	data modify storage tmp.bingo:init items set from storage bingo:registries items
-	data modify storage bingo:items categories set from storage bingo:registries categories
-	data remove storage bingo:items items
-
-	function bingo:init/items/first_pass
-	function bingo:init/items/second_pass
-	
-	execute unless data storage bingo:items activeTags run data modify storage bingo:items activeTags set value ["bingo:default"]
-	# Schedule to avoid maxCommandChainLength being hit (setting it in init doesn't work the first time)
-	schedule function bingo:util/apply_active_item_tags 1t
+	schedule function bingo:init/items/exec 2t
 #endregion
-
 #region initialize hud components
 	#>
 	# @within

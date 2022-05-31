@@ -128,10 +128,17 @@ execute at @e[type=minecraft:area_effect_cloud, tag=bingo.command_cloud, limit=1
 
 #region cleanup and next slot
 data modify storage tmp.bingo:card_generation keptItems set value []
-data modify storage tmp.bingo:card_generation categoriesForRemoval set value []
-data modify storage tmp.bingo:card_generation categoriesForRemoval append from storage tmp.bingo:card_generation items[-1].activeCategories[].id
+data modify storage tmp.bingo:card_generation stringTesterTagCache set value ["bingo.string_tester"]
+data modify storage tmp.bingo:card_generation stringTesterTagCache append from storage tmp.bingo:card_generation items[-1].activeCategories[].id
 data modify storage tmp.bingo:card_generation categoriesWithRemovedItem set value []
-function bingo:card_generation/remove_items
+#>
+# @within
+# 	function bingo:card_generation/generate_slot
+# 	function bingo:card_generation/remove_items/*
+#declare score_holder $card_gen.aec_tag_count
+execute store result score $card_gen.aec_tag_count bingo.tmp run data get storage tmp.bingo:card_generation stringTesterTagCache
+function bingo:card_generation/remove_items/exec
+data modify entity @e[type=minecraft:area_effect_cloud, tag=bingo.string_tester, distance=..0.1, limit=1] Tags set value ["bingo.string_tester"]
 
 #>
 # @within
