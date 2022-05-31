@@ -138,7 +138,7 @@ data modify storage tmp.bingo:card_generation categoriesWithRemovedItem set valu
 #declare score_holder $card_gen.aec_tag_count
 execute store result score $card_gen.aec_tag_count bingo.tmp run data get storage tmp.bingo:card_generation stringTesterTagCache
 function bingo:card_generation/remove_items/exec
-data modify entity @e[type=minecraft:area_effect_cloud, tag=bingo.string_tester, distance=..0.1, limit=1] Tags set value ["bingo.string_tester"]
+data modify entity @s Tags set value ["bingo.string_tester"]
 
 #>
 # @within
