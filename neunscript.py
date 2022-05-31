@@ -103,12 +103,18 @@ def main():
 	shutil.rmtree("dist/tmp")
 
 def iterate_files(config):
-	requested_rp_sha=[]
+	requested_rp_sha = []
+	remove_extensions = config.get("remove_file_types")
+	if remove_extensions == None:
+		remove_extensions=()
+	else:
+		remove_extensions = tuple(remove_extensions)
+
 	for root, _, files in os.walk("dist/tmp"):
 		for file_name in files:
 			file_path = root + os.sep + file_name
 
-			if file_name.endswith(".xcf") or file_name.endswith(".py"):
+			if file_name.endswith(remove_extensions):
 				os.remove(file_path)
 			elif file_name.endswith(".nbt") or file_name.endswith(".dat"):
 				nbt_content = nbt.read_from_nbt_file(file_path)

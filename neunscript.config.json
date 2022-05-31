@@ -9,5 +9,8 @@
 	"vars": {
 		"version_long_name": "5.0 Pre-Release 2",
 		"rp_version": "4"
-	}
+	},
+	"remove_file_types": [
+		"xcf", "py", "jsonc"
+	]
 }
