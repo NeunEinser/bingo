@@ -675,6 +675,7 @@ summon minecraft:area_effect_cloud 0 0 0 {CustomName:'{"translate": "bingo.techn
 	scoreboard objectives remove bingo.hud_update
 	scoreboard objectives remove bingo.io
 	scoreboard objectives remove bingo.lobby
+	scoreboard objectives remove bingo.menu
 	scoreboard objectives remove bingo.menu_page
 	scoreboard objectives remove bingo.pos_hash
 	scoreboard objectives remove bingo.seed
@@ -735,6 +736,13 @@ summon minecraft:area_effect_cloud 0 0 0 {CustomName:'{"translate": "bingo.techn
 		# @internal
 		# @user
 		scoreboard objectives add bingo.lobby trigger
+
+		#>
+		# Trigger objective for displaying the bingo menu during a game.
+		#
+		# @internal
+		# @user
+		scoreboard objectives add bingo.menu trigger
 
 		#>
 		# Trigger objective used to handle changes / clicks in the preferences menu.

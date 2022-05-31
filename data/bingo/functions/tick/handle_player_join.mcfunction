@@ -10,7 +10,7 @@ function bingo:util/find_player_team
 
 # Resource pack is likely not loaded here. In case it isn't, just print
 # hardcoded English message.
-execute if score $game_state bingo.state matches 3 run tellraw @s[predicate=bingo:is_in_game] {"translate": "%1074992263$s%1$s", "with": [["", {"text": "Click here", "color": "#00c3ff", "clickEvent": {"action": "run_command", "value": "/trigger bingo.lobby"}}, " to go back to the lobby\n", {"text": "Click here", "color": "#00c3ff", "clickEvent": {"action": "run_command", "value": "/trigger bingo.spectator"}}, " to switch to spectator mode."], [{"translate": "bingo.game.go_to_lobby", "with": [{"translate": "bingo.game.go_to_lobby.click_lobby", "color": "#00c3ff", "clickEvent": {"action": "run_command", "value": "/trigger bingo.lobby"}}, {"translate": "bingo.game.go_to_lobby.click_spectator", "color": "#00c3ff", "clickEvent": {"action": "run_command", "value": "/trigger bingo.spectator"}}]}]]}
+execute if score $game_state bingo.state matches 3 as @s[predicate=bingo:is_in_game] run function bingo:game/bingo_menu/print_with_hint
 
 scoreboard players set @s bingo.update_hud 1
 trigger bingo.resources

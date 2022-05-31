@@ -5,6 +5,10 @@
 # @within function bingo:game/tick
 # @context entity Player
 
+scoreboard players enable @s bingo.menu
+execute if entity @s[scores={bingo.menu=1}] run function bingo:game/bingo_menu/print_without_hint
+scoreboard players reset @s[scores={bingo.menu=1}] bingo.menu
+
 scoreboard players enable @s[tag=!bingo.spectator] bingo.spectator
 execute if score $game_state bingo.state matches 3 if entity @s[tag=bingo.enable_manual_gameode_switch, gamemode=!survival] run tag @s add bingo.spectator
 execute unless score $game_state bingo.state matches 3 if entity @s[tag=bingo.enable_manual_gameode_switch, gamemode=!adventure] run tag @s add bingo.spectator

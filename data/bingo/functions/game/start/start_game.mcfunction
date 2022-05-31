@@ -8,7 +8,7 @@ execute at @e[type=minecraft:area_effect_cloud, tag=bingo.spawn, limit=1] rotate
 scoreboard players set $game_state bingo.state 3
 
 tellraw @s {"translate": "bingo.game.start.countdown_completed"}
-tellraw @s [{"translate": "bingo.game.go_to_lobby", "with": [{"translate": "bingo.game.go_to_lobby.click_lobby", "color": "#00c3ff", "clickEvent": {"action": "run_command", "value": "/trigger bingo.lobby"}}, {"translate": "bingo.game.go_to_lobby.click_spectator", "color": "#00c3ff", "clickEvent": {"action": "run_command", "value": "/trigger bingo.spectator"}}]}, "\n", {"translate": "bingo.game.go_to_lobby.hint", "color": "gray", "italic": true, "with": [{"text": "/trigger bingo.lobby", "color": "white", "italic": false, "clickEvent": {"action": "suggest_command", "value": "/trigger bingo.lobby"}}, {"text": "/trigger bingo.spectator", "color": "white", "italic": false, "clickEvent": {"action": "suggest_command", "value": "/trigger bingo.spectator"}}]}]
+function bingo:game/bingo_menu/print_with_hint
 execute at @s run playsound minecraft:block.note_block.pling master @s ~ ~ ~ 1 1
 
 effect clear @s
