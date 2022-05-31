@@ -22,7 +22,7 @@ execute if score $is_multiplayer bingo.state matches 2.. run scoreboard players 
 # Uses name-check from technical translation:
 # - "bingo.technical.detect_multiplayer" -> "DoNotTranslateThis<X>"
 #    <X> being version-check iteration (3+) (also used below)
-execute if score $is_multiplayer bingo.state matches 0 unless entity @e[name=DoNotTranslateThis3, limit=1] run scoreboard players set $is_multiplayer bingo.state 1
+execute if score $is_multiplayer bingo.state matches 0 unless entity @e[name="DoNotTranslateThis{NEUN_SCRIPT:rp_version}", limit=1] run scoreboard players set $is_multiplayer bingo.state 1
 
 # Auto-validate if Singleplayer
 execute if score $is_multiplayer bingo.state matches 0 run tellraw @a[tag=bingo.resourcepack_check] "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
