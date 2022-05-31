@@ -6,9 +6,6 @@
 # 	function bingo:init/init
 # 	function bingo:init/items/exec
 
-# Apparently the entity takes some time until it is loaded. Weird.
-execute unless entity @e[tag=bingo.string_tester] run schedule function bingo:init/items/exec 1t
-
 data modify storage tmp.bingo:init items set from storage bingo:registries items
 data modify storage bingo:items categories set from storage bingo:registries categories
 data remove storage bingo:items items

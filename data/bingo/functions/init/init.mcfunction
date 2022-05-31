@@ -11,6 +11,9 @@
 # @within tag/function minecraft:load
 # @handles #minecraft:load
 
+setworldspawn 1 0 1
+forceload add 0 0
+
 #TODO change to use tmp.bingo:<name> everywhere
 #declare storage bingo:tmp
 
@@ -146,6 +149,8 @@
 	#
 	# @internal
 	#declare tag bingo.string_tester
+	kill @e[type=minecraft:area_effect_cloud, tag=bingo.string_tester]
+	summon minecraft:area_effect_cloud 0 0 0 {Age: -2147483648, Duration: -1, WaitTime: -2147483648, Tags: ["bingo.string_tester"]}
 	#>
 	# This tag is given to players who are currently verifying their resource pack
 	#
@@ -658,6 +663,12 @@
 	#endregion
 #endregion
 
+#>
+# @private
+#declare tag bingo.detect_mp_aec
+kill @e[type=minecraft:area_effect_cloud, tag=bingo.detect_mp_aec, limit=1]
+summon minecraft:area_effect_cloud 0 0 0 {CustomName:'{"translate": "bingo.technical.detect_multiplayer"}', Age: -2147483648, Duration: -1, WaitTime: -2147483648, Tags: ["bingo.detect_mp_aec"]}
+
 #region setup objectives
 	scoreboard objectives remove bingo.const
 	scoreboard objectives remove bingo.has_item
@@ -1052,7 +1063,6 @@
 
 # Create overworld resourcepack check
 	fill 0 0 0 2 3 2 minecraft:black_concrete outline
-	setworldspawn 1 0 1
 	gamerule spawnRadius 0
 
 # Add pregen bossbar
@@ -1067,6 +1077,7 @@
 	gamerule doTraderSpawning false
 	gamerule disableElytraMovementCheck true
 	gamerule doPatrolSpawning false
+	gamerule maxCommandChainLength 131072
 	difficulty easy
 
 # Init slow loops

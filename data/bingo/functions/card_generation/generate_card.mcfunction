@@ -51,7 +51,7 @@ scoreboard players operation $card_gen.available_category_weight bingo.tmp = $av
 data modify storage tmp.bingo:card_generation items set from storage bingo:items activeItems
 data remove storage bingo:card slots
 execute in bingo:lobby run summon minecraft:area_effect_cloud 0 0 0 {Tags: ["bingo.command_cloud"]}
-execute in bingo:lobby positioned 0 0 0 as @e[type=minecraft:area_effect_cloud, tag=bingo.string_tester, distance=..0.1, limit=1] run function bingo:card_generation/generate_slot
+execute in minecraft:overworld positioned 0 0 0 as @e[type=minecraft:area_effect_cloud, tag=bingo.string_tester, distance=..0.1, limit=1] run function bingo:card_generation/generate_slot
 
 function nope_name.math:rand/exe
 execute store result storage bingo:card spawnLocation int 1 run scoreboard players get $out nn.math.rand
