@@ -23,7 +23,7 @@
 	"bingo.setup.error.unknown_category": "Gegenstand %1$s hat Kategorie %2$s, die Kategorie %2$s kann allerdings nicht gefunden werden.",
 
 	"bingo.game.menu.hover_text": "Bingo-Menü",
-	"bingo.game.menu.hint": "Hinweis: Du kannst %s überall anklicken, um das Bingo-Menü anzuzeigen. Du kannst %s auch manuell ausführen und %s durch die automatisch verfollständigbare Aktion",
+	"bingo.game.menu.hint": "Hinweis: Du kannst %s überall anklicken, um das Bingo-Menü anzuzeigen. Du kannst %s auch manuell ausführen und %s dabei durch die automatisch verfollständigbare Aktion ersetzen.",
 	"bingo.game.menu.hint.action_param": "Aktion",
 	"bingo.game.menu.options": "%s, um zur Lobby zurückzukehren.\n%s, um zum Zuschauermodus zu wechseln.",
 	"bingo.game.menu.options.click_lobby": "Hier klicken",
