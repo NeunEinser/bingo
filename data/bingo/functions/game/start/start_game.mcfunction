@@ -5,6 +5,7 @@
 # @within function bingo:game/start/countdown
 
 execute at @e[type=minecraft:area_effect_cloud, tag=bingo.spawn, limit=1] rotated as @s run tp ~ ~ ~
+execute at @e[type=minecraft:area_effect_cloud, tag=bingo.spawn, limit=1] run forceload add ~ ~
 scoreboard players set $game_state bingo.state 3
 
 tellraw @s {"translate": "bingo.game.start.countdown_completed"}
@@ -37,5 +38,5 @@ team modify bingo.red seeFriendlyInvisibles true
 team modify bingo.white seeFriendlyInvisibles true
 team modify bingo.yellow seeFriendlyInvisibles true
 
-execute in bingo:lobby run function neun_einser.timer:start/hundredth_of_second
 execute at @s run fill ~-1 0 ~-1 ~1 130 ~1 minecraft:air replace minecraft:barrier
+execute in bingo:lobby run function neun_einser.timer:start/hundredth_of_second

@@ -9,8 +9,8 @@
 # @within function bingo:game/start/pre_gen/set_position_and_generate_next
 
 scoreboard players reset $game_start/pre_gen.column bingo.tmp
-forceload remove all
 forceload add ~ ~
+execute as @e[y=0, dx=16, dz=16, dy=256] run function bingo:game/start/pre_gen/handle_entities
 teleport @s ~ ~ ~
 
 scoreboard players add $game_start/pre_gen.i bingo.schedule 1

@@ -152,6 +152,13 @@ forceload add 0 0
 	kill @e[type=minecraft:area_effect_cloud, tag=bingo.string_tester]
 	summon minecraft:area_effect_cloud 0 0 0 {Age: -2147483648, Duration: -1, WaitTime: -2147483648, Tags: ["bingo.string_tester"]}
 	#>
+	# Tag for entities that where already persistent.
+	#
+	# @within
+	# 	function bingo:game/start/pre_gen/handle_entities
+	# 	function bingo:game/start/unfreeze_entities
+	#declare tag bingo.persistance_required
+	#>
 	# This tag is given to players who are currently verifying their resource pack
 	#
 	# @internal
@@ -670,6 +677,7 @@ kill @e[type=minecraft:area_effect_cloud, tag=bingo.detect_mp_aec, limit=1]
 summon minecraft:area_effect_cloud 0 0 0 {CustomName:'{"translate": "bingo.technical.detect_multiplayer"}', Age: -2147483648, Duration: -1, WaitTime: -2147483648, Tags: ["bingo.detect_mp_aec"]}
 
 #region setup objectives
+	scoreboard objectives remove bingo.chicken
 	scoreboard objectives remove bingo.const
 	scoreboard objectives remove bingo.has_item
 	scoreboard objectives remove bingo.hud_update
@@ -784,6 +792,11 @@ summon minecraft:area_effect_cloud 0 0 0 {CustomName:'{"translate": "bingo.techn
 	#endregion
 
 	#region other internal objectives
+		#>
+		# Used to store chicken egg timers during pre-gen
+		#
+		# @internal
+		scoreboard objectives add bingo.chicken dummy
 		#>
 		# This objective holds the position preference of where a player's card should
 		# be displayed.
