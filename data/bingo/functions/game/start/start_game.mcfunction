@@ -9,7 +9,7 @@ scoreboard players set $game_state bingo.state 3
 
 tellraw @s {"translate": "bingo.game.start.countdown_completed"}
 function bingo:game/bingo_menu/print_with_hint
-execute at @s run playsound minecraft:block.note_block.pling master @s ~ ~ ~ 1 1
+execute at @s run playsound minecraft:block.note_block.pling voice @s ~ ~ ~ 1 1
 
 effect clear @s
 clear @s

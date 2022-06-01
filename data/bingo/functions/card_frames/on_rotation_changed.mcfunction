@@ -22,3 +22,4 @@ execute unless entity @s[tag=bingo.toggle_on] run setblock ~ ~ ~-1 minecraft:bar
 execute if entity @s[tag=bingo.toggle_on] run setblock ~ ~ ~-1 minecraft:green_concrete
 
 tag @s remove bingo.toggle_on
+playsound minecraft:entity.item_frame.rotate_item neutral @a ~ ~ ~ 1 1

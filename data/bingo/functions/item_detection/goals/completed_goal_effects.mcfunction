@@ -7,7 +7,7 @@
 # 	entity Player for whom to play the effects
 # 	position @s
 
-playsound minecraft:entity.player.levelup master @s ~ ~ ~ 1 0.95
+playsound minecraft:entity.player.levelup voice @s ~ ~ ~ 1 0.95
 
 summon minecraft:firework_rocket ~2 ~4 ~ {LifeTime:30,FireworksItem:{id:"minecraft:firework_rocket", Count:1b ,tag:{Fireworks:{Flight:3b, Explosions:[{Type:1b, Flicker:false, Trail:false, Colors:[I;16713728],FadeColors:[I;16713728]},{Type:false, Flicker:false, Trail:false, Colors:[I;8302899],FadeColors:[I;8302899]}]}}}}
 
