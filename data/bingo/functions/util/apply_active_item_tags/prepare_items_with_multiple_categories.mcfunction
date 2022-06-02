@@ -16,7 +16,7 @@ execute store result score $apply_tags/mult_cat.denom bingo.tmp run data get sto
 #>
 # @private
 #declare score_holder $apply_tags/mult_cat.nom
-execute store result score $apply_tags/mult_cat.nom bingo.tmp run data get storage tmp.bingo:apply_active_item_tags items[-1].weight
+execute store result score $apply_tags/mult_cat.nom bingo.tmp run data get storage tmp.bingo:apply_active_item_tags items[-1].weightNom
 
 #>
 # @private
@@ -33,7 +33,7 @@ scoreboard players operation $apply_tags/mult_cat.nom bingo.tmp /= $gcd.result 9
 scoreboard players operation $apply_tags/mult_cat.denom bingo.tmp /= $gcd.result 91.math.io
 
 
-execute store result storage tmp.bingo:apply_active_item_tags items[-1].weight int 1 run scoreboard players get $apply_tags/mult_cat.nom bingo.tmp
+execute store result storage tmp.bingo:apply_active_item_tags items[-1].weightNom int 1 run scoreboard players get $apply_tags/mult_cat.nom bingo.tmp
 execute store result storage tmp.bingo:apply_active_item_tags items[-1].weightDenom int 1 run scoreboard players get $apply_tags/mult_cat.denom bingo.tmp
 data remove storage tmp.bingo:apply_active_item_tags items[-1].multipleCategories
 data modify storage tmp.bingo:apply_active_item_tags activeItems append from storage tmp.bingo:apply_active_item_tags items[-1]

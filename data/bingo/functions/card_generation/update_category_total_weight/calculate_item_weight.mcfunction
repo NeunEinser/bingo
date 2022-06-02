@@ -4,7 +4,7 @@
 # category total weights when needed
 #
 # @within
-# 	function bingo:card_generation/update_category_total_weight
+# 	function bingo:card_generation/update_category_total_weight/update_weight
 # 	function bingo:card_generation/update_category_total_weight/calculate_item_weight
 
 #>

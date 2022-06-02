@@ -18,7 +18,7 @@ execute store result score $apply_tags/mod_existing.cur_denom bingo.tmp run data
 #>
 # @private
 #declare score_holder $apply_tags/mod_existing.result_nom
-execute store result score $apply_tags/mod_existing.result_nom bingo.tmp run data get storage tmp.bingo:apply_active_item_tags activeItems[-1].weight
+execute store result score $apply_tags/mod_existing.result_nom bingo.tmp run data get storage tmp.bingo:apply_active_item_tags activeItems[-1].weightNom
 
 #>
 # @private
@@ -31,6 +31,6 @@ scoreboard players operation $apply_tags/mod_existing.result_nom bingo.tmp *= $a
 scoreboard players operation $apply_tags/mod_existing.result_nom bingo.tmp += $apply_tags/mod_existing.cur_nom bingo.tmp
 
 execute store result storage tmp.bingo:apply_active_item_tags activeItems[-1].weightDenom int 1 run scoreboard players get $apply_tags/mod_existing.result_denom bingo.tmp
-execute store result storage tmp.bingo:apply_active_item_tags activeItems[-1].weight int 1 run scoreboard players get $apply_tags/mod_existing.result_nom bingo.tmp
+execute store result storage tmp.bingo:apply_active_item_tags activeItems[-1].weightNom int 1 run scoreboard players get $apply_tags/mod_existing.result_nom bingo.tmp
 data modify storage tmp.bingo:apply_active_item_tags activeItems[-1].multipleCategories set value true
 
