@@ -7,9 +7,9 @@
 # 	function bingo:card_generation/generate_slot
 
 #region select item
-scoreboard players operation $max nn.math.rand = $card_gen.total_weight bingo.tmp
+scoreboard players operation $rand.max 91.math.io = $card_gen.total_weight bingo.tmp
 
-function nope_name.math:rand/exe
+function neun_einser.math:random/next_int
 
 data modify storage tmp.bingo:card_generation skippedItems set value []
 function bingo:card_generation/find_item

@@ -14,7 +14,7 @@
 
 function bingo:game/end
 
-scoreboard players operation $seed bingo.state = $seed nn.math.rand
+scoreboard players operation $seed bingo.state = $rand.seed 91.math.io
 scoreboard players set $update_card bingo.state 1
 
 #>
@@ -53,8 +53,8 @@ data remove storage bingo:card slots
 execute in bingo:lobby run summon minecraft:area_effect_cloud 0 0 0 {Tags: ["bingo.command_cloud"]}
 execute in minecraft:overworld positioned 0 0 0 as @e[type=minecraft:area_effect_cloud, tag=bingo.string_tester, distance=..0.1, limit=1] run function bingo:card_generation/generate_slot
 
-function nope_name.math:rand/exe
-execute store result storage bingo:card spawnLocation int 1 run scoreboard players get $out nn.math.rand
+function neun_einser.math:random/next_int
+execute store result storage bingo:card spawnLocation int 1 run scoreboard players get $rand.seed 91.math.io
 execute if score $automatically_pregen bingo.settings matches 1 run schedule function bingo:game/start/locate_spawnpoint 5s
 
 # Reset teams

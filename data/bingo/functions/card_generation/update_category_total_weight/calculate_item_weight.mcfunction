@@ -28,7 +28,7 @@ scoreboard players operation $card_gen/cat_weight.nom bingo.tmp += $card_gen/cat
 
 scoreboard players operation $gcd.a 91.math.io = $card_gen/cat_weight.nom bingo.tmp
 scoreboard players operation $gcd.b 91.math.io = $card_gen/cat_weight.denom bingo.tmp
-function neuneinser.math:greatest_common_divisor
+function neun_einser.math:greatest_common_divisor
 scoreboard players operation $card_gen/cat_weight.nom bingo.tmp /= $gcd.result 91.math.io
 scoreboard players operation $card_gen/cat_weight.denom bingo.tmp /= $gcd.result 91.math.io
 
