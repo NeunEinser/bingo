@@ -10,7 +10,7 @@
 # The recalculation of global item weights will fail in case the current
 # available category weight does not make an even split possible for some items.
 #
-# @within function bingo:card_generation/generate_slot
+# @within function bingo:card_generation/cleanup_and_next_slot
 
 data modify storage tmp.bingo:card_generation stringTesterTagCache set value ["bingo.string_tester"]
 data modify storage tmp.bingo:card_generation stringTesterTagCache append from storage tmp.bingo:card_generation categoriesWithRemovedItem[].id

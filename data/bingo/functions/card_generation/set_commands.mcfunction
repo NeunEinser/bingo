@@ -3,6 +3,7 @@
 # Sets the detect and clear commands to the command blocks for item detection
 #
 # @within function bingo:card_generation/generate_slot
+# @context entity command block marker
 
 #>
 # The calculated index of the current slot's command block in the chain

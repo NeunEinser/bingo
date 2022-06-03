@@ -3,7 +3,7 @@
 # Removes all items that are within a category of the current item
 #
 # @within
-# 	function bingo:card_generation/generate_slot
+# 	function bingo:card_generation/cleanup_and_next_slot
 # 	function bingo:card_generation/remove_items/exec
 
 #>
