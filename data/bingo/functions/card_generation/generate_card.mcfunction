@@ -20,9 +20,7 @@ scoreboard players set $update_card bingo.state 1
 #>
 # The slot which is currently being generated
 #
-# @within
-# 	function bingo:card_generation/generate_card
-# 	function bingo:card_generation/generate_slot
+# @within function bingo:card_generation/**
 #declare score_holder $card_gen.slot
 scoreboard players set $card_gen.slot bingo.tmp 0
 #>
@@ -47,6 +45,7 @@ scoreboard players operation $card_gen.available_category_weight bingo.tmp = $av
 # @within
 # 	function bingo:card_generation/generate_card
 # 	function bingo:card_generation/generate_slot
+# 	function bingo:card_generation/set_commands
 #declare tag bingo.command_cloud
 data modify storage tmp.bingo:card_generation items set from storage bingo:items activeItems
 data remove storage bingo:card slots
