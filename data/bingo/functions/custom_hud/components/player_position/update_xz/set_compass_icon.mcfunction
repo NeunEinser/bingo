@@ -1,22 +1,13 @@
-#> bingo:custom_hud/components/player_position/update_x_z
+#> bingo:custom_hud/components/player_position/update_xz/set_compass_icon
 #
-# Updates the component for the player position
+# This function sets the compass icon for the component
 #
-# @within function bingo:custom_hud/components/player_position/update
+# @within function bingo:custom_hud/components/player_position/update_xz
 # @context entity Player whose hud is currently being updated
 
-#>
-# @within function bingo:custom_hud/components/player_position/*
-#declare score_holder $custom_hud/player_pos.x_len
-#>
-# @within function bingo:custom_hud/components/player_position/*
-#declare score_holder $custom_hud/player_pos.z_len
+data modify storage io.bingo:custom_hud component.iconWidth set value '{"translate": "space.10"}'
+scoreboard players remove $custom_hud/width.padding bingo.io 1
 
-scoreboard players operation @s bingo.pos_hash = $custom_hud/player_pos.hash bingo.tmp
-execute if entity @s[predicate=bingo:is_in_game] run scoreboard players operation $custom_hud/player_pos.x bingo.tmp -= $spawn_x bingo.state
-execute if entity @s[predicate=bingo:is_in_game] run scoreboard players operation $custom_hud/player_pos.z bingo.tmp -= $spawn_z bingo.state
-
-data modify storage io.bingo:custom_hud component set value {textComponent:'[{"score": {"name": "$custom_hud/player_pos.x", "objective": "bingo.tmp"}}, " ", {"score": {"name": "$custom_hud/player_pos.z", "objective": "bingo.tmp"}}]', changed: true}
 execute if score $custom_hud/player_pos.rot bingo.tmp matches 0 run data modify storage io.bingo:custom_hud component.icon set value '"\\u0100"'
 execute if score $custom_hud/player_pos.rot bingo.tmp matches 1 run data modify storage io.bingo:custom_hud component.icon set value '"\\u011F"'
 execute if score $custom_hud/player_pos.rot bingo.tmp matches 2 run data modify storage io.bingo:custom_hud component.icon set value '"\\u011E"'
@@ -49,19 +40,3 @@ execute if score $custom_hud/player_pos.rot bingo.tmp matches 28 run data modify
 execute if score $custom_hud/player_pos.rot bingo.tmp matches 29 run data modify storage io.bingo:custom_hud component.icon set value '"\\u0103"'
 execute if score $custom_hud/player_pos.rot bingo.tmp matches 30 run data modify storage io.bingo:custom_hud component.icon set value '"\\u0102"'
 execute if score $custom_hud/player_pos.rot bingo.tmp matches 31 run data modify storage io.bingo:custom_hud component.icon set value '"\\u0101"'
-
-scoreboard players operation $custom_hud/width.number bingo.io = $custom_hud/player_pos.x bingo.tmp
-scoreboard players set $custom_hud/width.padding bingo.io 73
-
-function bingo:custom_hud/subtract_width
-scoreboard players operation $custom_hud/player_pos.x_len bingo.tmp = $custom_hud/width.characters bingo.io
-scoreboard players operation $custom_hud/width.number bingo.io = $custom_hud/player_pos.z bingo.tmp
-function bingo:custom_hud/subtract_width
-scoreboard players operation $custom_hud/player_pos.z_len bingo.tmp = $custom_hud/width.characters bingo.io
-scoreboard players operation $custom_hud/width.characters bingo.io += $custom_hud/player_pos.x_len bingo.tmp
-
-execute if score $custom_hud/width.characters bingo.io matches 12.. run function bingo:custom_hud/components/player_position/shorten
-
-function bingo:custom_hud/component_post_evaluation
-
-data modify storage bingo:custom_hud currentPlayer.components[{id: "bingo:player_position"}] merge from storage io.bingo:custom_hud component

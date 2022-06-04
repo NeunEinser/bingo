@@ -1065,12 +1065,12 @@ summon minecraft:area_effect_cloud 0 0 0 {CustomName:'{"translate": "bingo.techn
 		scoreboard players set 100 bingo.const 100
 		#>
 		# @public
-		#declare score_holder 256
-		scoreboard players set 256 bingo.const 256
+		#declare score_holder 128
+		scoreboard players set 128 bingo.const 128
 		#>
 		# @public
-		#declare score_holder 512
-		scoreboard players set 512 bingo.const 512
+		#declare score_holder 256
+		scoreboard players set 256 bingo.const 256
 		#>
 		# @public
 		#declare score_holder 1000
@@ -1215,6 +1215,7 @@ summon minecraft:area_effect_cloud 0 0 0 {CustomName:'{"translate": "bingo.techn
 	data modify storage tmp.bingo:init/hud columns set value [[], []]
 	data modify storage tmp.bingo:init/hud whereSpace set value []
 	data modify storage tmp.bingo:init/hud unpreferred set value []
+	data modify storage tmp.bingo:init/hud dontAdd set value []
 	function bingo:init/initialize_hud_components/add_defaults
 	data modify storage tmp.bingo:init/hud whereSpace append from storage tmp.bingo:init/hud unpreferred[]
 
@@ -1222,6 +1223,7 @@ summon minecraft:area_effect_cloud 0 0 0 {CustomName:'{"translate": "bingo.techn
 	data modify storage bingo:custom_hud components append from storage tmp.bingo:init/hud columns[0][]
 	data modify storage bingo:custom_hud components append from storage tmp.bingo:init/hud columns[1][]
 	data modify storage bingo:custom_hud components append from storage tmp.bingo:init/hud whereSpace[]
+	data modify storage bingo:custom_hud components append from storage tmp.bingo:init/hud dontAdd[]
 
 	data modify storage bingo:custom_hud default set value []
 	data modify storage bingo:custom_hud default append from storage tmp.bingo:init/hud columns[0][0]
@@ -1231,7 +1233,7 @@ summon minecraft:area_effect_cloud 0 0 0 {CustomName:'{"translate": "bingo.techn
 	data modify storage bingo:custom_hud default append from storage tmp.bingo:init/hud columns[0][4]
 	execute unless data storage bingo:custom_hud default[4] run function bingo:init/initialize_hud_components/fill_default_col0
 	
-	execute unless data storage tmp.bingo:init/hud columns[1][5] run data modify storage bingo:custom_hud default append value {id: "bingo:spacer", name: '{"translate": "bingo.custom_hud.components.spacer"}', padding: '{"translate": "space.91"}'}
+	execute unless data storage tmp.bingo:init/hud columns[1][5] run data modify storage bingo:custom_hud default append value {id: "bingo:spacer", name: '{"translate": "bingo.custom_hud.components.spacer"}', padding: '{"translate": "space.91"}', slot_id: 5b}
 	data modify storage bingo:custom_hud default append from storage tmp.bingo:init/hud columns[1][0]
 	data modify storage bingo:custom_hud default append from storage tmp.bingo:init/hud columns[1][1]
 	data modify storage bingo:custom_hud default append from storage tmp.bingo:init/hud columns[1][2]

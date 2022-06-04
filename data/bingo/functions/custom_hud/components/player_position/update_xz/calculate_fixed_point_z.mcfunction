@@ -1,11 +1,11 @@
-#> bingo:custom_hud/components/player_position/calculate_fixed_point_z
+#> bingo:custom_hud/components/player_position/update_xz/calculate_fixed_point_z
 #
 # Calculates integer and decimal portion of z
 #
 # @within
-# 	function bingo:custom_hud/components/player_position/shorten_z
-# 	function bingo:custom_hud/components/player_position/shorten_both
-# 	function bingo:custom_hud/components/player_position/calculate_fixed_point_z
+# 	function bingo:custom_hud/components/player_position/update_xz/shorten_z
+# 	function bingo:custom_hud/components/player_position/update_xz/shorten_both
+# 	function bingo:custom_hud/components/player_position/update_xz/calculate_fixed_point_z
 
 #>
 # @private
@@ -24,4 +24,4 @@ scoreboard players operation $custom_hud/player_pos.int_z bingo.tmp /= 10 bingo.
 scoreboard players operation $custom_hud/player_pos.ten_pow bingo.tmp *= 10 bingo.const
 scoreboard players add $custom_hud/player_pos.decimal_digits bingo.tmp 1
 
-execute if score $custom_hud/player_pos.abs_z bingo.tmp matches 1000000.. if score $custom_hud/player_pos.decimal_digits bingo.tmp matches ..5 run function bingo:custom_hud/components/player_position/calculate_fixed_point_z
+execute if score $custom_hud/player_pos.abs_z bingo.tmp matches 1000000.. if score $custom_hud/player_pos.decimal_digits bingo.tmp matches ..5 run function bingo:custom_hud/components/player_position/update_xz/calculate_fixed_point_z

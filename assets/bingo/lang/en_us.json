@@ -74,6 +74,7 @@
 	"bingo.preferences.custom_hud.adjust_col.move_down.description": "Switches position of this component with the below component.",
 	"bingo.preferences.custom_hud.adjust_col.remove.title": "Remove",
 	"bingo.preferences.custom_hud.adjust_col.remove.description": "Removes the component from your HUD.",
+	"bingo.preferences.custom_hud.adjust_col.settings.hover_text": "Component Settings",
 	"bingo.preferences.custom_hud.adjust_col.add_spacer": "Add Spacer",
 
 	"bingo.preferences.custom_hud.adjust_card.title": "Adjust Bingo Card",
@@ -88,8 +89,21 @@
 	"bingo.custom_hud.components.spacer": "Spacer",
 	"bingo.custom_hud.components.seed": "Bingo Seed",
 	"bingo.custom_hud.components.player_position": "X/Z coordinates",
+	"bingo.custom_hud.components.player_chunk_position": "Chunk coordinates",
 	"bingo.custom_hud.components.y_position": "Y coordinate",
 	"bingo.custom_hud.components.timer": "Timer",
+
+	"bingo.preferences.custom_hud.component_settings.player_chunk_position.title": "Chunk Coordinate Settings",
+	"bingo.preferences.custom_hud.component_settings.player_chunk_position.description": "This page allows you to customize settings for the chunk coordinate display",
+	"bingo.preferences.custom_hud.component_settings.player_chunk_position.merge_with_pos.title": "Show instead of position when holding treasure map",
+	"bingo.preferences.custom_hud.component_settings.player_chunk_position.merge_with_pos.description": "This setting removes this component from the list and instead shows the chunk coordinates in place of the normal coordinates when you are holding a treasure map.\n\nThis is useful for finding the specific block of treasure, as it's always on chunk coordinates 9 9.\n\nUse the settings of the normal coordinates to change this back.",
+
+	"bingo.preferences.custom_hud.component_settings.player_position.title": "Coordinate Settings",
+	"bingo.preferences.custom_hud.component_settings.player_position.description": "This page allows you to customize settings for the coordinate display",
+	"bingo.preferences.custom_hud.component_settings.player_position.enable_chunk_coordinates.title": "Show chunk coordinates when holding treasure map",
+	"bingo.preferences.custom_hud.component_settings.player_position.enable_chunk_coordinates.description": "With this setting, chunk coordinates are shown instead of regular coordinates when holding a treasure map.\n\nThis is useful for finding the specific block of treasure, as it's always on chunk coordinates 9 9.",
+	"bingo.preferences.custom_hud.component_settings.player_position.disable_chunk_coordinates.title": "Enable separate chunk coordinate component",
+	"bingo.preferences.custom_hud.component_settings.player_position.disable_chunk_coordinates.description": "With this, the coordinates are no longer replaced by chunk coordinates when holding a treasure map, and instead a separate component with chunk coordinates is inserted if there is space.\n\nYou can of course also disable that component like any other component.",
 
 	"bingo.lobby.machinery.sign.line1": "Machinery",
 	"bingo.lobby.machinery.sign.line2": "",

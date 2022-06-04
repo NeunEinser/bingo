@@ -1,11 +1,11 @@
-#> bingo:custom_hud/components/player_position/calculate_fixed_point_x
+#> bingo:custom_hud/components/player_position/update_xz/calculate_fixed_point_x
 #
 # Calculates integer and decimal portion of x
 #
 # @within
-# 	function bingo:custom_hud/components/player_position/shorten_x
-# 	function bingo:custom_hud/components/player_position/shorten_both
-# 	function bingo:custom_hud/components/player_position/calculate_fixed_point_x
+# 	function bingo:custom_hud/components/player_position/update_xz/shorten_x
+# 	function bingo:custom_hud/components/player_position/update_xz/shorten_both
+# 	function bingo:custom_hud/components/player_position/update_xz/calculate_fixed_point_x
 
 #>
 # @private
@@ -24,4 +24,4 @@ scoreboard players operation $custom_hud/player_pos.int_x bingo.tmp /= 10 bingo.
 scoreboard players operation $custom_hud/player_pos.ten_pow bingo.tmp *= 10 bingo.const
 scoreboard players add $custom_hud/player_pos.decimal_digits bingo.tmp 1
 
-execute if score $custom_hud/player_pos.abs_x bingo.tmp matches 1000000.. if score $custom_hud/player_pos.decimal_digits bingo.tmp matches ..5 run function bingo:custom_hud/components/player_position/calculate_fixed_point_x
+execute if score $custom_hud/player_pos.abs_x bingo.tmp matches 1000000.. if score $custom_hud/player_pos.decimal_digits bingo.tmp matches ..5 run function bingo:custom_hud/components/player_position/update_xz/calculate_fixed_point_x

@@ -4,6 +4,6 @@
 
 #>
 # @private
-#declare score_holder $init/hud.line
+#declare score_holder $init/hud.slot
 
 data modify storage tmp.bingo:init/hud unpreferred append from storage tmp.bingo:init/hud cur

@@ -4,10 +4,9 @@
 
 #>
 # @private
-#declare score_holder $init/hud.line
-execute store result score $init/hud.line bingo.tmp run data get storage tmp.bingo:init/hud columns[0]
-scoreboard players add $init/hud.line bingo.tmp 5
+#declare score_holder $init/hud.slot
+execute store result score $init/hud.slot bingo.tmp run data get storage tmp.bingo:init/hud columns[0]
 
 data modify storage tmp.bingo:init/hud columns[0] append from storage tmp.bingo:init/hud cur
 
-execute store result storage tmp.bingo:init/hud columns[0][-1].line byte 1 run scoreboard players get $init/hud.line bingo.tmp
+execute store result storage tmp.bingo:init/hud columns[0][-1].slot_id byte 1 run scoreboard players get $init/hud.slot bingo.tmp
