@@ -85,7 +85,7 @@ def main():
 	for file_path in requested_rp_sha:
 		with open(file_path, "r+", encoding="utf-8") as file:
 			file_content = file.read()
-			file_content = file_content.replace("{NEUN_SCRIPT:resource_pack_sha1}", sha1.hexdigest())
+			file_content = file_content.replace("{NEUN_SCRIPT:resource_pack_sha1}", sha1.hexdigest().upper())
 			file.seek(0)
 			file.write(file_content)
 			file.truncate()
@@ -144,7 +144,7 @@ def iterate_files(config):
 
 def replace_variables(content: str, file_path: str, config, requested_rp_sha: list):
 	indexDiff = 0
-	for match in re.finditer(r"\{NEUN_SCRIPT:([a-zA-Z_-]+)\}", content):
+	for match in re.finditer(r"\{NEUN_SCRIPT:([a-zA-Z0-9_-]+)\}", content):
 		variable = match.group(1)
 		replace=None
 		vars = config.get("vars")
