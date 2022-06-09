@@ -9,7 +9,5 @@
 kill @e[type=minecraft:area_effect_cloud, tag=bingo.pre_gen_cloud, limit=1]
 
 scoreboard players set $pregen_status bingo.state 2
-forceload remove all
-forceload add ~-1 ~-1 ~1 ~1
 execute if score $game_state bingo.state matches 1 run function bingo:game/start/spawn_skybox
 execute if score $game_state bingo.state matches 0 run summon minecraft:area_effect_cloud ~ ~ ~ {Age: -2147483648, Duration: -1, WaitTime: -2147483648, Tags: ["bingo.skybox_cloud"]}
