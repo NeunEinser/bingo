@@ -360,6 +360,11 @@ forceload add 0 0
 			# @within
 			# 	function bingo:lobby/place_indestructible_blocks
 			# 	structure bingo:credits
+			#declare tag bingo.sign_credits_unlucks_mc_gee
+			#>
+			# @within
+			# 	function bingo:lobby/place_indestructible_blocks
+			# 	structure bingo:credits
 			#declare tag bingo.sign_credits_kristof
 			#>
 			# @within
