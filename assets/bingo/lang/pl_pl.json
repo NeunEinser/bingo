@@ -87,6 +87,13 @@
 	"bingo.custom_hud.components.y_position": "Współrzędna Y",
 	"bingo.custom_hud.components.timer": "Stoper",
 
+	//"bingo.preferences.custom_hud.component_settings.seed.title": "Seed Settings",
+	//"bingo.preferences.custom_hud.component_settings.seed.description": "This page allows you to customize settings for the seed display",
+	//"bingo.preferences.custom_hud.component_settings.seed.only_show_after_run.title": "Only show seed after run completion",
+	//"bingo.preferences.custom_hud.component_settings.seed.only_show_after_run.description": "With this setting, the Bingo Seed will only be revealed after a completed run.\n\nSpecifically, this means after collecting all 25 items, or after returning to the lobby.\n\nIf you want to properly disguise your spawn location, you also need to either not use F3 or set Options -> Chat Settings -> Reduced Debug Info to ON.",
+	//"bingo.preferences.custom_hud.component_settings.seed.always_show.title": "Always show seed",
+	//"bingo.preferences.custom_hud.component_settings.seed.always_show.description": "With this setting, the Bingo Seed will always be shown.",
+
 	//"bingo.preferences.custom_hud.component_settings.player_chunk_position.title": "Chunk Coordinate Settings",
 	// "bingo.preferences.custom_hud.component_settings.player_chunk_position.description": "This page allows you to customize settings for the chunk coordinate display",
 	// "bingo.preferences.custom_hud.component_settings.player_chunk_position.merge_with_pos.title": "Show instead of position when holding treasure map",

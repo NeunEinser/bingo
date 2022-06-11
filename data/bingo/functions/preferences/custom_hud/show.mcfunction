@@ -37,6 +37,9 @@ execute if score @s bingo.pref matches 71 run function bingo:preferences/custom_
 
 execute if score @s bingo.pref matches 72 run function bingo:preferences/custom_hud/component_settings/player_position_settings
 execute if score @s bingo.pref matches 73 run function bingo:preferences/custom_hud/component_settings/disable_merged_chunk_coordinates/exec
+execute if score @s bingo.pref matches 74 run function bingo:preferences/custom_hud/component_settings/seed_settings
+execute if score @s bingo.pref matches 75 run function bingo:preferences/custom_hud/component_settings/only_show_seed_after_completion
+execute if score @s bingo.pref matches 76 run function bingo:preferences/custom_hud/component_settings/always_show_seed
 execute if score @s bingo.pref matches 12..66 run scoreboard players set @s bingo.update_hud 1
 
 #>
