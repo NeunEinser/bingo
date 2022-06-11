@@ -679,6 +679,7 @@ summon minecraft:area_effect_cloud 0 0 0 {CustomName:'{"translate": "bingo.techn
 #region setup objectives
 	scoreboard objectives remove bingo.chicken
 	scoreboard objectives remove bingo.const
+	scoreboard objectives remove bingo.fireworks
 	scoreboard objectives remove bingo.has_item
 	scoreboard objectives remove bingo.hud_update
 	scoreboard objectives remove bingo.io
@@ -686,11 +687,12 @@ summon minecraft:area_effect_cloud 0 0 0 {CustomName:'{"translate": "bingo.techn
 	scoreboard objectives remove bingo.menu
 	scoreboard objectives remove bingo.menu_page
 	scoreboard objectives remove bingo.pos_hash
+	scoreboard objectives remove bingo.pref
+	scoreboard objectives remove bingo.prev_y_pos
 	scoreboard objectives remove bingo.seed
 	scoreboard objectives remove bingo.spectator
 	scoreboard objectives remove bingo.resources
 	scoreboard objectives remove bingo.tmp
-	scoreboard objectives remove bingo.pref
 
 	#region public objectives
 		#>
@@ -805,6 +807,12 @@ summon minecraft:area_effect_cloud 0 0 0 {CustomName:'{"translate": "bingo.techn
 		scoreboard objectives add bingo.card_pos dummy
 
 		#>
+		# This objective contains the index for the completed goal effect per player
+		#
+		# @internal
+		scoreboard objectives add bingo.fireworks dummy
+
+		#>
 		# This objective contains unique IDs for the item frames in the lobby.
 		#
 		# This is needed to identify the correct item frame to use for the current item
@@ -855,6 +863,12 @@ summon minecraft:area_effect_cloud 0 0 0 {CustomName:'{"translate": "bingo.techn
 		#
 		# @internal
 		scoreboard objectives add bingo.menu_page dummy
+
+		#>
+		# This objective contains the y coordinate of entities in the previous tick
+		#
+		# @internal
+		scoreboard objectives add bingo.prev_y_pos dummy
 
 		#>
 		# This objective is used to store information for scheduled events
