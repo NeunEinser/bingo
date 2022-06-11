@@ -12,5 +12,11 @@
 	},
 	"remove_file_types": [
 		"xcf", "py", "jsonc"
-	]
+	],
+	"exclude": {
+		"resourcepack": [
+			"assets/bingo/textures/font/compass_text_scroll.png",
+			"assets/bingo/textures/font/compass_text_overlay.png"
+		]
+	}
 }

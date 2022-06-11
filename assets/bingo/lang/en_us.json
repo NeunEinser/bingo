@@ -112,6 +112,11 @@
 	"bingo.preferences.custom_hud.component_settings.player_position.disable_chunk_coordinates.title": "Enable separate chunk coordinate component",
 	"bingo.preferences.custom_hud.component_settings.player_position.disable_chunk_coordinates.description": "With this, the coordinates are no longer replaced by chunk coordinates when holding a treasure map, and instead a separate component with chunk coordinates is inserted if there is space.\n\nYou can of course also disable that component like any other component.",
 
+	"bingo.preferences.custom_hud.component_settings.player_position.use_compass_icon.title": "Use Compass Icon",
+	"bingo.preferences.custom_hud.component_settings.player_position.use_compass_icon.description": "Changes the coordinate icon to a Minecraft compass item.",
+	"bingo.preferences.custom_hud.component_settings.player_position.use_text_icon.title": "Use Text Icon",
+	"bingo.preferences.custom_hud.component_settings.player_position.use_text_icon.description": "Changes the coordinate icon to a textual representation of cardinal directions.",
+
 	"bingo.lobby.machinery.sign.line1": "Machinery",
 	"bingo.lobby.machinery.sign.line2": "",
 	"bingo.lobby.machinery.sign.line3": "Authorized",

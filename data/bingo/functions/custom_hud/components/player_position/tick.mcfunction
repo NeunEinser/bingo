@@ -60,11 +60,11 @@ execute if score $custom_hud/player_pos.z bingo.tmp matches ..-1 run scoreboard 
 # @within function bingo:custom_hud/components/player_position/**
 #declare score_holder $custom_hud/player_pos.rot
 # Rotation / 5.625 (divides the 360 possible values into 64)
-execute store result score $custom_hud/player_pos.rot bingo.tmp run data get entity @s Rotation[0] 0.71111111111111111111111111111111
+execute store result score $custom_hud/player_pos.rot bingo.tmp run data get entity @s Rotation[0] 0.53333333333333333333333333333333
 # Divide by 2 and ceil to next integer
 scoreboard players add $custom_hud/player_pos.rot bingo.tmp 1
 scoreboard players operation $custom_hud/player_pos.rot bingo.tmp /= 2 bingo.const
-scoreboard players operation $custom_hud/player_pos.rot bingo.tmp %= 128 bingo.const
+scoreboard players operation $custom_hud/player_pos.rot bingo.tmp %= 96 bingo.const
 
 # calculate current position hash
 # coordinate_hash(coord) := coord % 256 + (coord < 0 ? 512 : 0)

@@ -8,7 +8,6 @@
 scoreboard players operation @s bingo.pos_hash = $custom_hud/player_pos.hash bingo.tmp
 execute if entity @s[predicate=bingo:is_in_game] run scoreboard players operation $custom_hud/player_pos.x bingo.tmp -= $spawn_x bingo.state
 execute if entity @s[predicate=bingo:is_in_game] run scoreboard players operation $custom_hud/player_pos.z bingo.tmp -= $spawn_z bingo.state
-scoreboard players operation $custom_hud/player_pos.rot bingo.tmp /= 4 bingo.const
 
 execute if data storage bingo:custom_hud currentPlayer.components[{id: "bingo:player_position"}] run function bingo:custom_hud/components/player_position/update_xz
 execute if data storage bingo:custom_hud currentPlayer.components[{id: "bingo:player_chunk_position"}] run function bingo:custom_hud/components/player_position/update_chunk_xz

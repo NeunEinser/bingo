@@ -1080,6 +1080,10 @@ summon minecraft:area_effect_cloud 0 0 0 {CustomName:'{"translate": "bingo.techn
 		scoreboard players set 41 bingo.const 41
 		#>
 		# @public
+		#declare score_holder 96
+		scoreboard players set 96 bingo.const 96
+		#>
+		# @public
 		#declare score_holder 100
 		scoreboard players set 100 bingo.const 100
 		#>

@@ -67,6 +67,19 @@ def main():
 	os.makedirs(worldpath)
 	shutil.copy2("level.dat", worldpath)
 	shutil.copy2("icon.png", worldpath)
+
+	exclude=config.get("exclude")
+	if exclude != None:
+		resourcepack_excludes=exclude.get("resourcepack")
+		if resourcepack_excludes != None:
+			for file in resourcepack_excludes:
+				os.remove(f"dist/tmp/resourcepack/{file}")
+		
+		datapack_excludes=exclude.get("datapack")
+		if datapack_excludes != None:
+			for file in datapack_excludes:
+				os.remove(f"dist/tmp/datapack/{file}")
+
 	requested_rp_sha = iterate_files(config)
 
 	rppath=f"dist/{name}-{version}-resourcepack"
