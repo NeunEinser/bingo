@@ -87,12 +87,12 @@
 	"bingo.custom_hud.components.y_position": "Y Koordinate",
 	"bingo.custom_hud.components.timer": "Timer",
 
-	//"bingo.preferences.custom_hud.component_settings.seed.title": "Seed Settings",
-	//"bingo.preferences.custom_hud.component_settings.seed.description": "This page allows you to customize settings for the seed display",
-	//"bingo.preferences.custom_hud.component_settings.seed.only_show_after_run.title": "Only show seed after run completion",
-	//"bingo.preferences.custom_hud.component_settings.seed.only_show_after_run.description": "With this setting, the Bingo Seed will only be revealed after a completed run.\n\nSpecifically, this means after collecting all 25 items, or after returning to the lobby.\n\nIf you want to properly disguise your spawn location, you also need to either not use F3 or set Options -> Chat Settings -> Reduced Debug Info to ON.",
-	//"bingo.preferences.custom_hud.component_settings.seed.always_show.title": "Always show seed",
-	//"bingo.preferences.custom_hud.component_settings.seed.always_show.description": "With this setting, the Bingo Seed will always be shown.",
+	"bingo.preferences.custom_hud.component_settings.seed.title": "Seedeinstellungen",
+	"bingo.preferences.custom_hud.component_settings.seed.description": "Auf dieser Seite kannst Du Einstellungen für die Seedkomponente vornehmen",
+	"bingo.preferences.custom_hud.component_settings.seed.only_show_after_run.title": "Erst nach Ende eines Durchlaufes anzeigen",
+	"bingo.preferences.custom_hud.component_settings.seed.only_show_after_run.description": "Mit dieser Einstellung wird der Bingo-Seed erst nach Fertigstellung eines Durchlaufes angezeigt.\n\nIm Detail bedeutet das, nach dem Sammeln aller 25 Gegenstände, oder nach dem Zurückkehren in die Lobby.\n\nUm deinen Spawnpunkt 100% zu verbergen, solltest du entweder F3 nicht verwenden, oder Optionen -> Chateinstellungen -> Reduzierte Debug-Infos auf „An“ stellen.",
+	"bingo.preferences.custom_hud.component_settings.seed.always_show.title": "Seed immer anzeigen",
+	"bingo.preferences.custom_hud.component_settings.seed.always_show.description": "Mit dieser Einstellung wird der Bingo-Seed immer angezeigt.",
 
 	"bingo.preferences.custom_hud.component_settings.player_chunk_position.title": "Chunkkoordinateneinstellungen",
 	"bingo.preferences.custom_hud.component_settings.player_chunk_position.description": "Auf dieser Seite kannst Du Einstellungen für die Chunkkoordinatenkomponente vornehmen",
@@ -106,10 +106,10 @@
 	"bingo.preferences.custom_hud.component_settings.player_position.disable_chunk_coordinates.title": "Enable separate chunk coordinate component",
 	"bingo.preferences.custom_hud.component_settings.player_position.disable_chunk_coordinates.description": "Mit dieser Einstellung werden normale Koordinaten nicht mehr mit Chunkkoordinaten ersetzt während Du eine Schatzkarte hälst. Stattdessen wird eine eigene Komponente für Chunkkordinaten eingefügt, sofern genügen Platz im HUD ist.\n\nNatürlich kannst du diese Komponente dann auch wie jede andere komplett deaktivieren.",
 
-	//"bingo.preferences.custom_hud.component_settings.player_position.use_compass_icon.title": "Use Compass Icon",
-	//"bingo.preferences.custom_hud.component_settings.player_position.use_compass_icon.description": "Changes the coordinate icon to a Minecraft compass item.",
-	//"bingo.preferences.custom_hud.component_settings.player_position.use_text_icon.title": "Use Text Icon",
-	//"bingo.preferences.custom_hud.component_settings.player_position.use_text_icon.description": "Changes the coordinate icon to a textual representation of cardinal directions.",
+	"bingo.preferences.custom_hud.component_settings.player_position.use_compass_icon.title": "Kompasssymbol verwenden",
+	"bingo.preferences.custom_hud.component_settings.player_position.use_compass_icon.description": "Ändert das Koordinatensymbol zu einem Minecraft-Kompass.",
+	"bingo.preferences.custom_hud.component_settings.player_position.use_text_icon.title": "Textsymbol verwenden",
+	"bingo.preferences.custom_hud.component_settings.player_position.use_text_icon.description": "Ändert das Koordinatensymbol zu einer textuellen Representation der Himmelsrichtungen.",
 
 	"bingo.lobby.machinery.sign.line1": "Maschinenraum",
 	"bingo.lobby.machinery.sign.line2": "Zugang nur für",
