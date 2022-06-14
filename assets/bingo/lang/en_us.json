@@ -2,7 +2,7 @@
 	"%1074992263$s%1$s": "%2$s",
 	"%1074992263$s%{NEUN_SCRIPT:rp_version}$s%1$s": "%2$s",
 	"%1074992263$s%3$s%3$s%1$s": "%2$s",
-	"bingo.technical.detect_multiplayer": "DoNotTranslateThis3",
+	"bingo.technical.detect_multiplayer": "DoNotTranslateThis{NEUN_SCRIPT:rp_version}",
 
 	"bingo.error.command_blocks_disabled": "Command blocks are disabled on this server. Please make sure the server.properties file does have all mentioned values set as described %s.",
 	"bingo.error.command_blocks_disabled.link": "here",
@@ -27,10 +27,12 @@
 	"bingo.logging.error": "ERROR",
 	"bingo.setup.error.unknown_category": "Item %1$s has category %2$s, but category %2$s could not be found.",
 
-	"bingo.game.go_to_lobby": "%s to go back to the lobby.\n%s to switch to spectator mode.",
-	"bingo.game.go_to_lobby.hint": "Hint: You can also use the command %s at any time manually to return to the lobby or %s for spectator mode.",
-	"bingo.game.go_to_lobby.click_lobby": "Click here",
-	"bingo.game.go_to_lobby.click_spectator": "Click here",
+	"bingo.game.menu.hover_text": "Bingo Menu",
+	"bingo.game.menu.hint": "Hint: You can click %s anywhere to bring up the bingo menu. You may also run %s manually, replacing %s with the auto-completable action.",
+	"bingo.game.menu.hint.action_param": "action",
+	"bingo.game.menu.options": "%s to go back to the lobby.\n%s to switch to spectator mode.",
+	"bingo.game.menu.options.click_lobby": "Click here",
+	"bingo.game.menu.options.click_spectator": "Click here",
 
 	"bingo.game.switch_gamemode.hint": "Hint: You can use the command %s at any time manually to switch to spectator mode as well.\nIf you do not like this functionality, you can disable it in your preferences in the lobby.",
 	"bingo.game.switch_gamemode.prevented": "Prevented game mode switch. %s for spectator mode.\nAfterwards, you can switch to any other game mode.",
@@ -72,6 +74,7 @@
 	"bingo.preferences.custom_hud.adjust_col.move_down.description": "Switches position of this component with the below component.",
 	"bingo.preferences.custom_hud.adjust_col.remove.title": "Remove",
 	"bingo.preferences.custom_hud.adjust_col.remove.description": "Removes the component from your HUD.",
+	"bingo.preferences.custom_hud.adjust_col.settings.hover_text": "Component Settings",
 	"bingo.preferences.custom_hud.adjust_col.add_spacer": "Add Spacer",
 
 	"bingo.preferences.custom_hud.adjust_card.title": "Adjust Bingo Card",
@@ -86,8 +89,33 @@
 	"bingo.custom_hud.components.spacer": "Spacer",
 	"bingo.custom_hud.components.seed": "Bingo Seed",
 	"bingo.custom_hud.components.player_position": "X/Z coordinates",
+	"bingo.custom_hud.components.player_chunk_position": "Chunk coordinates",
 	"bingo.custom_hud.components.y_position": "Y coordinate",
 	"bingo.custom_hud.components.timer": "Timer",
+
+	"bingo.preferences.custom_hud.component_settings.seed.title": "Seed Settings",
+	"bingo.preferences.custom_hud.component_settings.seed.description": "This page allows you to customize settings for the seed display",
+	"bingo.preferences.custom_hud.component_settings.seed.only_show_after_run.title": "Only show seed after run completion",
+	"bingo.preferences.custom_hud.component_settings.seed.only_show_after_run.description": "With this setting, the Bingo Seed will only be revealed after a completed run.\n\nSpecifically, this means after collecting all 25 items, or after returning to the lobby.\n\nIf you want to properly disguise your spawn location, you also need to either not use F3 or set Options -> Chat Settings -> Reduced Debug Info to ON.",
+	"bingo.preferences.custom_hud.component_settings.seed.always_show.title": "Always show seed",
+	"bingo.preferences.custom_hud.component_settings.seed.always_show.description": "With this setting, the Bingo Seed will always be shown.",
+
+	"bingo.preferences.custom_hud.component_settings.player_chunk_position.title": "Chunk Coordinate Settings",
+	"bingo.preferences.custom_hud.component_settings.player_chunk_position.description": "This page allows you to customize settings for the chunk coordinate display",
+	"bingo.preferences.custom_hud.component_settings.player_chunk_position.merge_with_pos.title": "Show instead of position when holding treasure map",
+	"bingo.preferences.custom_hud.component_settings.player_chunk_position.merge_with_pos.description": "This setting removes this component from the list and instead shows the chunk coordinates in place of the normal coordinates when you are holding a treasure map.\n\nThis is useful for finding the specific block of treasure, as it's always on chunk coordinates 9 9.\n\nUse the settings of the normal coordinates to change this back.",
+
+	"bingo.preferences.custom_hud.component_settings.player_position.title": "Coordinate Settings",
+	"bingo.preferences.custom_hud.component_settings.player_position.description": "This page allows you to customize settings for the coordinate display",
+	"bingo.preferences.custom_hud.component_settings.player_position.enable_chunk_coordinates.title": "Show chunk coordinates when holding treasure map",
+	"bingo.preferences.custom_hud.component_settings.player_position.enable_chunk_coordinates.description": "With this setting, chunk coordinates are shown instead of regular coordinates when holding a treasure map.\n\nThis is useful for finding the specific block of treasure, as it's always on chunk coordinates 9 9.",
+	"bingo.preferences.custom_hud.component_settings.player_position.disable_chunk_coordinates.title": "Enable separate chunk coordinate component",
+	"bingo.preferences.custom_hud.component_settings.player_position.disable_chunk_coordinates.description": "With this, the coordinates are no longer replaced by chunk coordinates when holding a treasure map, and instead a separate component with chunk coordinates is inserted if there is space.\n\nYou can of course also disable that component like any other component.",
+
+	"bingo.preferences.custom_hud.component_settings.player_position.use_compass_icon.title": "Use Compass Icon",
+	"bingo.preferences.custom_hud.component_settings.player_position.use_compass_icon.description": "Changes the coordinate icon to a Minecraft compass item.",
+	"bingo.preferences.custom_hud.component_settings.player_position.use_text_icon.title": "Use Text Icon",
+	"bingo.preferences.custom_hud.component_settings.player_position.use_text_icon.description": "Changes the coordinate icon to a textual representation of cardinal directions.",
 
 	"bingo.lobby.machinery.sign.line1": "Machinery",
 	"bingo.lobby.machinery.sign.line2": "",
@@ -97,6 +125,10 @@
 	"bingo.lobby.credits.neun_einser.sign.line2": "Minecraft Bingo",
 	"bingo.lobby.credits.neun_einser.sign.line3": "Main & Lead",
 	"bingo.lobby.credits.neun_einser.sign.line4": "Developer",
+
+	"bingo.lobby.credits.unlucks_mc_gee.sign.line2": "",
+	"bingo.lobby.credits.unlucks_mc_gee.sign.line3": "Code",
+	"bingo.lobby.credits.unlucks_mc_gee.sign.line4": "Contributor",
 
 	"bingo.lobby.credits.kristof.sign.line2": "",
 	"bingo.lobby.credits.kristof.sign.line3": "Code Contributor",

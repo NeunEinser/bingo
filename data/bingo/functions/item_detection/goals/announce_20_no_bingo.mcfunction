@@ -5,5 +5,5 @@
 #
 # @within function bingo:item_detection/goals/bingo/detect_bingo_and_20_no_bingo
 
-tellraw @a {"translate": "bingo.got_20_no_bingo", "with": [{"storage": "neun_einser.timer:display", "nbt": "\"hh:mm:ss.s\"", "interpret": true}, {"selector": "@a[tag=bingo.in_current_team]"}]}
-execute as @a[tag=bingo.in_current_team] at @s run function bingo:item_detection/goals/completed_goal_effects
+tellraw @a ["[", {"text":"≡", "color":"#00c3ff", "clickEvent":{"action":"run_command", "value":"/trigger bingo.menu"}, "hoverEvent":{"action":"show_text", "contents":{"translate":"bingo.game.menu.hover_text"}}}, "] ", {"translate": "bingo.got_20_no_bingo", "with": [{"storage": "neun_einser.timer:display", "nbt": "\"hh:mm:ss.s\"", "interpret": true}, {"selector": "@a[tag=bingo.in_current_team]"}]}]
+function bingo:item_detection/goals/completed_goal_effects/init

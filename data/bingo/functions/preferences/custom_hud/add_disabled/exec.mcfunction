@@ -5,7 +5,8 @@
 
 scoreboard players set $preferences/hud.page bingo.tmp 0
 scoreboard players set $preferences/hud.element bingo.tmp 0
-data modify storage tmp.bingo:preferences/hud components set from storage bingo:custom_hud components
+data modify storage io.bingo:preferences components set from storage bingo:custom_hud components
+function #bingo:preferences/custom_hud/filter_disabled
 data modify storage tmp.bingo:preferences/hud pageElements set value []
 data modify storage tmp.bingo:preferences/hud playerComponents set from storage bingo:custom_hud currentPlayer.components
 data remove storage tmp.bingo:preferences/hud playerComponents[{id: "bingo:empty"}]

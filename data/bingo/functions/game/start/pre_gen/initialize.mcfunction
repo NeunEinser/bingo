@@ -21,6 +21,33 @@ bossbar set bingo:start/pre_gen/progress value 0
 
 forceload add ~-320 ~-320
 summon minecraft:area_effect_cloud ~-320 ~ ~-320 {Duration: -1, Tags: ["bingo.pre_gen_cloud"]}
+
+# Make sure marker cloud is on chunk coords 0 0
+#>
+# @private
+#declare score_holder $pre_gen.x
+execute store result score $pre_gen.x bingo.tmp run data get entity @e[type=minecraft:area_effect_cloud, tag=bingo.pre_gen_cloud, limit=1] Pos[0]
+#>
+# @private
+#declare score_holder $pre_gen.z
+execute store result score $pre_gen.z bingo.tmp run data get entity @e[type=minecraft:area_effect_cloud, tag=bingo.pre_gen_cloud, limit=1] Pos[2]
+#>
+# @private
+#declare score_holder $pre_gen.mod_x
+scoreboard players operation $pre_gen.mod_x bingo.tmp = $pre_gen.x bingo.tmp
+scoreboard players operation $pre_gen.mod_x bingo.tmp %= 16 bingo.const
+#>
+# @private
+#declare score_holder $pre_gen.mod_z
+scoreboard players operation $pre_gen.mod_z bingo.tmp = $pre_gen.z bingo.tmp
+scoreboard players operation $pre_gen.mod_z bingo.tmp %= 16 bingo.const
+
+scoreboard players operation $pre_gen.x bingo.tmp -= $pre_gen.mod_x bingo.tmp
+scoreboard players operation $pre_gen.z bingo.tmp -= $pre_gen.mod_z bingo.tmp
+
+execute store result entity @e[type=minecraft:area_effect_cloud, tag=bingo.pre_gen_cloud, limit=1] Pos[0] double 1 run scoreboard players get $pre_gen.x bingo.tmp
+execute store result entity @e[type=minecraft:area_effect_cloud, tag=bingo.pre_gen_cloud, limit=1] Pos[2] double 1 run scoreboard players get $pre_gen.z bingo.tmp
+
 bossbar set bingo:start/pre_gen/progress value 1
 
 schedule function bingo:game/start/pre_gen/schedule 1t

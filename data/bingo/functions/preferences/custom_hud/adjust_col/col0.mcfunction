@@ -14,6 +14,11 @@ execute if score @s bingo.pref matches 41..43 run function bingo:preferences/cus
 execute if score @s bingo.pref matches 44..45 run function bingo:preferences/custom_hud/adjust_col/col0_row0
 
 execute if score @s bingo.pref matches 46 run function bingo:preferences/custom_hud/adjust_col/col0_add_spacer
+data modify storage bingo:custom_hud currentPlayer.components[0].slot_id set value 0b
+data modify storage bingo:custom_hud currentPlayer.components[1].slot_id set value 1b
+data modify storage bingo:custom_hud currentPlayer.components[2].slot_id set value 2b
+data modify storage bingo:custom_hud currentPlayer.components[3].slot_id set value 3b
+data modify storage bingo:custom_hud currentPlayer.components[4].slot_id set value 4b
 
 # Work around for """WAI""" https://bugs.mojang.com/browse/MC-139625 :mad_neun:
 data modify storage tmp.bingo:preferences/hud firstComponent set from storage bingo:custom_hud currentPlayer.components[0]

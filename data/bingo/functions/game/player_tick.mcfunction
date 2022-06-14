@@ -5,8 +5,9 @@
 # @within function bingo:game/tick
 # @context entity Player
 
-scoreboard players enable @s bingo.lobby
-execute if entity @s[scores={bingo.lobby=1}] run function bingo:util/go_to_lobby
+scoreboard players enable @s bingo.menu
+execute if entity @s[scores={bingo.menu=1}] run function bingo:game/bingo_menu/print_without_hint
+scoreboard players reset @s[scores={bingo.menu=1}] bingo.menu
 
 scoreboard players enable @s[tag=!bingo.spectator] bingo.spectator
 execute if score $game_state bingo.state matches 3 if entity @s[tag=bingo.enable_manual_gamemode_switch, gamemode=!survival] run tag @s add bingo.spectator
@@ -22,3 +23,8 @@ tag @s[scores={bingo.spectator=1}] add bingo.spectator
 gamemode creative @s[scores={bingo.spectator=1}]
 gamemode spectator @s[scores={bingo.spectator=1}]
 scoreboard players reset @s[scores={bingo.spectator=1}] bingo.spectator
+
+# This should always be at the end to prevent game logic from running for this
+# player in the lobby.
+scoreboard players enable @s bingo.lobby
+execute if entity @s[scores={bingo.lobby=1}] run function bingo:util/go_to_lobby

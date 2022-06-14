@@ -11,6 +11,9 @@
 # @within tag/function minecraft:load
 # @handles #minecraft:load
 
+setworldspawn 1 0 1
+forceload add 0 0
+
 #TODO change to use tmp.bingo:<name> everywhere
 #declare storage bingo:tmp
 
@@ -109,6 +112,16 @@
 
 #region tag declarations
 	#>
+	# This tag marks a player who is at a location eligible for emerald generation.
+	#
+	# @internal
+	#declare tag bingo.emerald
+	#>
+	# This tag is used for players who enable manual gamemode switching.
+	#
+	# @internal
+	#declare tag bingo.enable_manual_gameode_switch
+	#>
 	# This tag is used to tag the item frames that display the big preview card in
 	# the lobby
 	#
@@ -121,30 +134,35 @@
 	# @internal
 	#declare tag bingo.clear
 	#>
-	# This tag marks a player who is at a location eligible for emerald generation.
-	#
-	# @internal
-	#declare tag bingo.emerald
-	#>
 	# This tag is used for the area effect cloud marking the location for the skybox
 	#
 	# @internal
 	#declare tag bingo.skybox_cloud
-	#>
-	# This tag is given to players who are currently verifying their resource pack
-	#
-	# @internal
-	#declare tag bingo.resourcepack_check
 	#>
 	# This tag is given to any player who triggered bingo.spectator in game.
 	#
 	# @internal
 	#declare tag bingo.spectator
 	#>
-	# This tag is used for players who enable manual gamemode switching.
+	# This tag marks an AEC which may be used for testing wether a string is
+	# within a certain set.
 	#
 	# @internal
-	#declare tag bingo.enable_manual_gamemode_switch
+	#declare tag bingo.string_tester
+	kill @e[type=minecraft:area_effect_cloud, tag=bingo.string_tester]
+	summon minecraft:area_effect_cloud 0 0 0 {Age: -2147483648, Duration: -1, WaitTime: -2147483648, Tags: ["bingo.string_tester"]}
+	#>
+	# Tag for entities that where already persistent.
+	#
+	# @within
+	# 	function bingo:game/start/pre_gen/handle_entities
+	# 	function bingo:game/start/unfreeze_entities
+	#declare tag bingo.persistance_required
+	#>
+	# This tag is given to players who are currently verifying their resource pack
+	#
+	# @internal
+	#declare tag bingo.resourcepack_check
 	#region slots
 		#>
 		# This tag marks a player who is in a team that obtained the item in slot 0.
@@ -338,6 +356,11 @@
 			# 	function bingo:lobby/place_indestructible_blocks
 			# 	structure bingo:credits
 			#declare tag bingo.sign_credits_neun_einser
+			#>
+			# @within
+			# 	function bingo:lobby/place_indestructible_blocks
+			# 	structure bingo:credits
+			#declare tag bingo.sign_credits_unlucks_mc_gee
 			#>
 			# @within
 			# 	function bingo:lobby/place_indestructible_blocks
@@ -652,19 +675,29 @@
 	#endregion
 #endregion
 
+#>
+# @private
+#declare tag bingo.detect_mp_aec
+kill @e[type=minecraft:area_effect_cloud, tag=bingo.detect_mp_aec, limit=1]
+summon minecraft:area_effect_cloud 0 0 0 {CustomName:'{"translate": "bingo.technical.detect_multiplayer"}', Age: -2147483648, Duration: -1, WaitTime: -2147483648, Tags: ["bingo.detect_mp_aec"]}
+
 #region setup objectives
+	scoreboard objectives remove bingo.chicken
 	scoreboard objectives remove bingo.const
+	scoreboard objectives remove bingo.fireworks
 	scoreboard objectives remove bingo.has_item
 	scoreboard objectives remove bingo.hud_update
 	scoreboard objectives remove bingo.io
 	scoreboard objectives remove bingo.lobby
+	scoreboard objectives remove bingo.menu
 	scoreboard objectives remove bingo.menu_page
 	scoreboard objectives remove bingo.pos_hash
+	scoreboard objectives remove bingo.pref
+	scoreboard objectives remove bingo.prev_y_pos
 	scoreboard objectives remove bingo.seed
 	scoreboard objectives remove bingo.spectator
 	scoreboard objectives remove bingo.resources
 	scoreboard objectives remove bingo.tmp
-	scoreboard objectives remove bingo.pref
 
 	#region public objectives
 		#>
@@ -720,6 +753,13 @@
 		scoreboard objectives add bingo.lobby trigger
 
 		#>
+		# Trigger objective for displaying the bingo menu during a game.
+		#
+		# @internal
+		# @user
+		scoreboard objectives add bingo.menu trigger
+
+		#>
 		# Trigger objective used to handle changes / clicks in the preferences menu.
 		#
 		# @internal
@@ -760,11 +800,22 @@
 
 	#region other internal objectives
 		#>
+		# Used to store chicken egg timers during pre-gen
+		#
+		# @internal
+		scoreboard objectives add bingo.chicken dummy
+		#>
 		# This objective holds the position preference of where a player's card should
 		# be displayed.
 		#
 		# @internal
 		scoreboard objectives add bingo.card_pos dummy
+
+		#>
+		# This objective contains the index for the completed goal effect per player
+		#
+		# @internal
+		scoreboard objectives add bingo.fireworks dummy
 
 		#>
 		# This objective contains unique IDs for the item frames in the lobby.
@@ -817,6 +868,12 @@
 		#
 		# @internal
 		scoreboard objectives add bingo.menu_page dummy
+
+		#>
+		# This objective contains the y coordinate of entities in the previous tick
+		#
+		# @internal
+		scoreboard objectives add bingo.prev_y_pos dummy
 
 		#>
 		# This objective is used to store information for scheduled events
@@ -1025,16 +1082,20 @@
 		scoreboard players set 41 bingo.const 41
 		#>
 		# @public
+		#declare score_holder 96
+		scoreboard players set 96 bingo.const 96
+		#>
+		# @public
 		#declare score_holder 100
 		scoreboard players set 100 bingo.const 100
 		#>
 		# @public
-		#declare score_holder 256
-		scoreboard players set 256 bingo.const 256
+		#declare score_holder 128
+		scoreboard players set 128 bingo.const 128
 		#>
 		# @public
-		#declare score_holder 512
-		scoreboard players set 512 bingo.const 512
+		#declare score_holder 256
+		scoreboard players set 256 bingo.const 256
 		#>
 		# @public
 		#declare score_holder 1000
@@ -1047,14 +1108,7 @@
 #endregion
 
 # Create overworld resourcepack check
-	#>
-	# @private
-	#declare tag bingo.detect_mp_aec
-
-	kill @e[type=minecraft:area_effect_cloud, tag=bingo.detect_mp_aec, limit=1]
-	summon minecraft:area_effect_cloud ~ ~ ~ {CustomName:'{"translate": "bingo.technical.detect_multiplayer"}', Age: -2147483648, Duration: -1, WaitTime: -2147483648, Tags: ["bingo.detect_mp_aec"]}
 	fill 0 0 0 2 3 2 minecraft:black_concrete outline
-	setworldspawn 1 0 1
 	gamerule spawnRadius 0
 
 # Add pregen bossbar
@@ -1069,7 +1123,6 @@
 	gamerule doTraderSpawning false
 	gamerule disableElytraMovementCheck true
 	gamerule doPatrolSpawning false
-	gamerule maxCommandChainLength 262144
 	difficulty easy
 
 # Init slow loops
@@ -1174,19 +1227,8 @@
 	# @within function bingo:init/**
 	#declare storage tmp.bingo:init
 
-	# initialize items
-	data modify storage tmp.bingo:init items set from storage bingo:registries items
-	data modify storage bingo:items categories set from storage bingo:registries categories
-	data remove storage bingo:items items
-
-	function bingo:init/items/first_pass
-	function bingo:init/items/second_pass
-	
-	execute unless data storage bingo:items activeTags run data modify storage bingo:items activeTags set value ["bingo:default"]
-	# Schedule to avoid maxCommandChainLength being hit (setting it in init doesn't work the first time)
-	schedule function bingo:util/apply_active_item_tags 1t
+	schedule function bingo:init/items/exec 1t
 #endregion
-
 #region initialize hud components
 	#>
 	# @within
@@ -1198,6 +1240,7 @@
 	data modify storage tmp.bingo:init/hud columns set value [[], []]
 	data modify storage tmp.bingo:init/hud whereSpace set value []
 	data modify storage tmp.bingo:init/hud unpreferred set value []
+	data modify storage tmp.bingo:init/hud dontAdd set value []
 	function bingo:init/initialize_hud_components/add_defaults
 	data modify storage tmp.bingo:init/hud whereSpace append from storage tmp.bingo:init/hud unpreferred[]
 
@@ -1205,6 +1248,7 @@
 	data modify storage bingo:custom_hud components append from storage tmp.bingo:init/hud columns[0][]
 	data modify storage bingo:custom_hud components append from storage tmp.bingo:init/hud columns[1][]
 	data modify storage bingo:custom_hud components append from storage tmp.bingo:init/hud whereSpace[]
+	data modify storage bingo:custom_hud components append from storage tmp.bingo:init/hud dontAdd[]
 
 	data modify storage bingo:custom_hud default set value []
 	data modify storage bingo:custom_hud default append from storage tmp.bingo:init/hud columns[0][0]
@@ -1214,7 +1258,7 @@
 	data modify storage bingo:custom_hud default append from storage tmp.bingo:init/hud columns[0][4]
 	execute unless data storage bingo:custom_hud default[4] run function bingo:init/initialize_hud_components/fill_default_col0
 	
-	execute unless data storage tmp.bingo:init/hud columns[1][5] run data modify storage bingo:custom_hud default append value {id: "bingo:spacer", name: '{"translate": "bingo.custom_hud.components.spacer"}', padding: '{"translate": "space.91"}'}
+	execute unless data storage tmp.bingo:init/hud columns[1][5] run data modify storage bingo:custom_hud default append value {id: "bingo:spacer", name: '{"translate": "bingo.custom_hud.components.spacer"}', padding: '{"translate": "space.91"}', slot_id: 5b}
 	data modify storage bingo:custom_hud default append from storage tmp.bingo:init/hud columns[1][0]
 	data modify storage bingo:custom_hud default append from storage tmp.bingo:init/hud columns[1][1]
 	data modify storage bingo:custom_hud default append from storage tmp.bingo:init/hud columns[1][2]

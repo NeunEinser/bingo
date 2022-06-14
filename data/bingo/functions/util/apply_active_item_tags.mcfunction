@@ -31,3 +31,5 @@ function bingo:util/apply_active_item_tags/prepare_items_with_multiple_categorie
 
 scoreboard players set $total_item_weight bingo.state 0
 function bingo:util/apply_active_item_tags/calculate_global_weight_and_add
+
+function bingo:lobby/chest_generation/generate_item_chests

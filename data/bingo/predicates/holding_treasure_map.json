@@ -1,0 +1,29 @@
+{
+	"condition": "minecraft:alternative",
+	"terms": [
+		{
+			"condition": "minecraft:entity_properties",
+			"entity": "this",
+			"predicate": {
+				"equipment": {
+					"mainhand": {
+						"item": "minecraft:filled_map",
+						"nbt": "{display:{Name:'{\"translate\":\"filled_map.buried_treasure\"}'}}"
+					}
+				}
+			}
+		},
+		{
+			"condition": "minecraft:entity_properties",
+			"entity": "this",
+			"predicate": {
+				"equipment": {
+					"offhand": {
+						"item": "minecraft:filled_map",
+						"nbt": "{display:{Name:'{\"translate\":\"filled_map.buried_treasure\"}'}}"
+					}
+				}
+			}
+		}
+	]
+}

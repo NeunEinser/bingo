@@ -41,7 +41,7 @@ All functions should be documented using [IMP doc](https://github.com/SPYGlassMC
 It is recommended to use the VS code extension [Datapack Helper Plus](https://marketplace.visualstudio.com/items?itemName=SPGoding.datapack-language-server). There are some custom settings in this repository that will automatically be applied to your repository and ensure you follow my conventions.
 
 ## Credits
-NeunEinser: The map  
-NOPEName: [nn_math](https://github.com/NOPEname/nn_math)  
+Contributors as listed on github
+
 AmberWat: [NegativeSpaceFont](https://github.com/AmberWat/NegativeSpaceFont/releases)  
 Lorgon111: Original idea.

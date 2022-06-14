@@ -5,7 +5,7 @@
 # @within function bingo:game/start/spawn_skybox
 # @context entity Current player
 
-tellraw @s {"translate": "bingo.game.start.loading_terrain"}
+tellraw @s ["[", {"text":"≡", "color":"#00c3ff", "clickEvent":{"action":"run_command", "value":"/trigger bingo.menu"}, "hoverEvent":{"action":"show_text", "contents":{"translate":"bingo.game.menu.hover_text"}}}, "] ", {"translate": "bingo.game.start.loading_terrain"}]
 scoreboard players operation @s bingo.game_id = $current_game_id bingo.game_id
 teleport @s ~ 128 ~
 tag @s remove bingo.spectator

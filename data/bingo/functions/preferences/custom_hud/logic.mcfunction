@@ -21,6 +21,7 @@ data remove storage tmp.bingo:preferences/hud activeComponents[{id: "bingo:empty
 data remove storage tmp.bingo:preferences/hud activeComponents[{id: "bingo:spacer"}]
 
 execute store result score $preferences/hud.enabled_count bingo.tmp run data get storage tmp.bingo:preferences/hud activeComponents
+execute if data storage bingo:custom_hud currentPlayer.components[{id: "bingo:player_position"}].custom.bingo{chunkCoordinatesOnTreasureMap: true} run scoreboard players add $preferences/hud.enabled_count bingo.tmp 1
 
 execute if score $preferences/hud.enabled_count bingo.tmp = $preferences/hud.total_count bingo.tmp run data modify storage io.bingo:preferences menuOptions[{id: "bingo:custom_hud/add_disabled"}].disabled set value true
 

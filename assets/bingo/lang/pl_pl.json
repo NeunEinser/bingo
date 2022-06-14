@@ -22,10 +22,12 @@
 	"bingo.logging.error": "BŁĄD",
 	"bingo.setup.error.unknown_category": "Przedmiot %1$s ma kategorię %2$s, ale kategoria %2$s nie została znaleziona .",
 
-	"bingo.game.go_to_lobby": "%s, aby wrócić do lobby.\n%s, aby zmienić na tryb widza.",
-	"bingo.game.go_to_lobby.hint": "Wskazówka: W każdej chwili możesz użyć polecenia %s, aby wrócić do lobby, lub %s, aby zmienić na tryb widza.",
-	"bingo.game.go_to_lobby.click_lobby": "Kliknij tutaj",
-	"bingo.game.go_to_lobby.click_spectator": "Kliknij tutaj",
+	// "bingo.game.menu.hover_text": "Bingo Menu",
+	// "bingo.game.menu.hint": "Hint: You can click %s anywhere to bring up the bingo menu. You may also run %s manually, replacing %s with the auto-completable action.",
+	// "bingo.game.menu.hint.action_param": "action",
+	"bingo.game.menu.options": "%s, aby wrócić do lobby.\n%s, aby zmienić na tryb widza.",
+	"bingo.game.menu.options.click_lobby": "Kliknij tutaj",
+	"bingo.game.menu.options.click_spectator": "Kliknij tutaj",
 
 	"bingo.game.switch_gamemode.hint": "Wskazówka: W każdej chwili możesz użyć polecenia %s, aby zmienić na tryb widza.\nJeśli nie podoba Ci się ta funkcjonalność, możesz ją zmienić w lobby w preferencjach gracza.",
 	"bingo.game.switch_gamemode.prevented": "Zmiana trybu gry zablokowana. %s, aby zmienić na tryb widza.\nNastępnie, możesz zmienić na dowolny inny tryb.",
@@ -81,8 +83,33 @@
 	"bingo.custom_hud.components.spacer": "Odstęp",
 	"bingo.custom_hud.components.seed": "Ziarno Bingo",
 	"bingo.custom_hud.components.player_position": "Współrzędne X/Z",
+	//"bingo.custom_hud.components.player_chunk_position": "Chunk coordinates",
 	"bingo.custom_hud.components.y_position": "Współrzędna Y",
 	"bingo.custom_hud.components.timer": "Stoper",
+
+	//"bingo.preferences.custom_hud.component_settings.seed.title": "Seed Settings",
+	//"bingo.preferences.custom_hud.component_settings.seed.description": "This page allows you to customize settings for the seed display",
+	//"bingo.preferences.custom_hud.component_settings.seed.only_show_after_run.title": "Only show seed after run completion",
+	//"bingo.preferences.custom_hud.component_settings.seed.only_show_after_run.description": "With this setting, the Bingo Seed will only be revealed after a completed run.\n\nSpecifically, this means after collecting all 25 items, or after returning to the lobby.\n\nIf you want to properly disguise your spawn location, you also need to either not use F3 or set Options -> Chat Settings -> Reduced Debug Info to ON.",
+	//"bingo.preferences.custom_hud.component_settings.seed.always_show.title": "Always show seed",
+	//"bingo.preferences.custom_hud.component_settings.seed.always_show.description": "With this setting, the Bingo Seed will always be shown.",
+
+	//"bingo.preferences.custom_hud.component_settings.player_chunk_position.title": "Chunk Coordinate Settings",
+	// "bingo.preferences.custom_hud.component_settings.player_chunk_position.description": "This page allows you to customize settings for the chunk coordinate display",
+	// "bingo.preferences.custom_hud.component_settings.player_chunk_position.merge_with_pos.title": "Show instead of position when holding treasure map",
+	// "bingo.preferences.custom_hud.component_settings.player_chunk_position.merge_with_pos.description": "This setting removes this component from the list and instead shows the chunk coordinates in place of the normal coordinates when you are holding a treasure map.\n\nThis is useful for finding the specific block of treasure, as it's always on chunk coordinates 9 9.\n\nUse the settings of the normal coordinates to change this back.",
+
+	// "bingo.preferences.custom_hud.component_settings.player_position.title": "Coordinate Settings",
+	// "bingo.preferences.custom_hud.component_settings.player_position.description": "This page allows you to customize settings for the coordinate display",
+	// "bingo.preferences.custom_hud.component_settings.player_position.enable_chunk_coordinates.title": "Show chunk coordinates when holding treasure map",
+	// "bingo.preferences.custom_hud.component_settings.player_position.enable_chunk_coordinates.description": "With this setting, chunk coordinates are shown instead of regular coordinates when holding a treasure map.\n\nThis is useful for finding the specific block of treasure, as it's always on chunk coordinates 9 9.",
+	// "bingo.preferences.custom_hud.component_settings.player_position.disable_chunk_coordinates.title": "Enable separate chunk coordinate component",
+	// "bingo.preferences.custom_hud.component_settings.player_position.disable_chunk_coordinates.description": "With this, the coordinates are no longer replaced by chunk coordinates when holding a treasure map, and instead a separate component with chunk coordinates is inserted if there is space.\n\nYou can of course also disable that component like any other component.",
+
+	//"bingo.preferences.custom_hud.component_settings.player_position.use_compass_icon.title": "Use Compass Icon",
+	//"bingo.preferences.custom_hud.component_settings.player_position.use_compass_icon.description": "Changes the coordinate icon to a Minecraft compass item.",
+	//"bingo.preferences.custom_hud.component_settings.player_position.use_text_icon.title": "Use Text Icon",
+	//"bingo.preferences.custom_hud.component_settings.player_position.use_text_icon.description": "Changes the coordinate icon to a textual representation of cardinal directions.",
 
 	"bingo.lobby.machinery.sign.line1": "Maszynownia",
 	"bingo.lobby.machinery.sign.line2": "",
@@ -92,6 +119,10 @@
 	"bingo.lobby.credits.neun_einser.sign.line2": "Główny",
 	"bingo.lobby.credits.neun_einser.sign.line3": "Deweloper",
 	"bingo.lobby.credits.neun_einser.sign.line4": "Minecraft Bingo",
+
+	"bingo.lobby.credits.unlucks_mc_gee.sign.line2": "",
+	"bingo.lobby.credits.unlucks_mc_gee.sign.line3": "Współautor",
+	"bingo.lobby.credits.unlucks_mc_gee.sign.line4": "Kodu",
 
 	"bingo.lobby.credits.kristof.sign.line2": "",
 	"bingo.lobby.credits.kristof.sign.line3": "Współautor Kodu",

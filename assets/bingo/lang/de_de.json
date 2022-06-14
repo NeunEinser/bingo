@@ -22,12 +22,14 @@
 	"bingo.logging.error": "FEHLER",
 	"bingo.setup.error.unknown_category": "Gegenstand %1$s hat Kategorie %2$s, die Kategorie %2$s kann allerdings nicht gefunden werden.",
 
-	"bingo.game.go_to_lobby": "%s, um zur Lobby zurückzukehren.\n%s, um zum Zuschauermodus zu wechseln.",
-	"bingo.game.go_to_lobby.hint": "Hinweis: Du kannst jederzeit mit dem Befehl %s zur Lobby zurückkehren oder mit dem Befehl %s in den Zuschauermodus wechseln.",
-	"bingo.game.go_to_lobby.click_lobby": "Hier klicken",
-	"bingo.game.go_to_lobby.click_spectator": "Hier klicken",
+	"bingo.game.menu.hover_text": "Bingo-Menü",
+	"bingo.game.menu.hint": "Hinweis: Du kannst %s überall anklicken, um das Bingo-Menü anzuzeigen. Du kannst %s auch manuell ausführen und %s dabei durch die automatisch verfollständigbare Aktion ersetzen.",
+	"bingo.game.menu.hint.action_param": "Aktion",
+	"bingo.game.menu.options": "%s, um zur Lobby zurückzukehren.\n%s, um zum Zuschauermodus zu wechseln.",
+	"bingo.game.menu.options.click_lobby": "Hier klicken",
+	"bingo.game.menu.options.click_spectator": "Hier klicken",
 
-	"bingo.game.switch_gamemode.hint": "Hint: Du kannst mit dem Befehl %s jederzeit in den Zuschauermodus wechseln.\nSolltest du diese Funktionalität nicht mögen, kannst du sie in der Lobby in deinen Spielereinstellungen ändern.",
+	"bingo.game.switch_gamemode.hint": "Hinweis: Du kannst mit dem Befehl %s jederzeit in den Zuschauermodus wechseln.\nSolltest du diese Funktionalität nicht mögen, kannst du sie in der Lobby in deinen Spielereinstellungen ändern.",
 	"bingo.game.switch_gamemode.prevented": "Spielmoduswechsel verhindert. %s, um in den Zuschauermodus zu wechseln.\nDanach kannst du in jeden anderen Spielmodus wie gewohnt wechseln.",
 	"bingo.game.switch_gamemode.prevented.click": "Klicke hier",
 
@@ -81,8 +83,33 @@
 	"bingo.custom_hud.components.spacer": "Freiraum",
 	"bingo.custom_hud.components.seed": "Bingo Seed",
 	"bingo.custom_hud.components.player_position": "X/Z Koordinaten",
+	"bingo.custom_hud.components.player_chunk_position": "Chunkkoordinaten",
 	"bingo.custom_hud.components.y_position": "Y Koordinate",
 	"bingo.custom_hud.components.timer": "Timer",
+
+	"bingo.preferences.custom_hud.component_settings.seed.title": "Seedeinstellungen",
+	"bingo.preferences.custom_hud.component_settings.seed.description": "Auf dieser Seite kannst Du Einstellungen für die Seedkomponente vornehmen",
+	"bingo.preferences.custom_hud.component_settings.seed.only_show_after_run.title": "Erst nach Ende eines Durchlaufes anzeigen",
+	"bingo.preferences.custom_hud.component_settings.seed.only_show_after_run.description": "Mit dieser Einstellung wird der Bingo-Seed erst nach Fertigstellung eines Durchlaufes angezeigt.\n\nIm Detail bedeutet das, nach dem Sammeln aller 25 Gegenstände, oder nach dem Zurückkehren in die Lobby.\n\nUm deinen Spawnpunkt 100% zu verbergen, solltest du entweder F3 nicht verwenden, oder Optionen -> Chateinstellungen -> Reduzierte Debug-Infos auf „An“ stellen.",
+	"bingo.preferences.custom_hud.component_settings.seed.always_show.title": "Seed immer anzeigen",
+	"bingo.preferences.custom_hud.component_settings.seed.always_show.description": "Mit dieser Einstellung wird der Bingo-Seed immer angezeigt.",
+
+	"bingo.preferences.custom_hud.component_settings.player_chunk_position.title": "Chunkkoordinateneinstellungen",
+	"bingo.preferences.custom_hud.component_settings.player_chunk_position.description": "Auf dieser Seite kannst Du Einstellungen für die Chunkkoordinatenkomponente vornehmen",
+	"bingo.preferences.custom_hud.component_settings.player_chunk_position.merge_with_pos.title": "Statt normalen Koordinaten anzeigen beim Halten einer Schatzkarte",
+	"bingo.preferences.custom_hud.component_settings.player_chunk_position.merge_with_pos.description": "Diese Einstellung entfernt die Komponente aus der Liste und zeigt die Chunkkoordinaten statt der normalen Koordinaten während du eine Schatzkarte hälst.\n\nDies ist nützlich um den genauen Block zu finden wo der Schatz vergraben ist, da sich Schätze immer bei Chunkkordinaten 9 9 befinden.\n\nVerwende die Einstellungen für die normalen Koordinaten um diese Einstellung zurückzusetzen",
+
+	"bingo.preferences.custom_hud.component_settings.player_position.title": "Koordinateneinstellungen",
+	"bingo.preferences.custom_hud.component_settings.player_position.description": "Auf dieser Seite kannst Du Einstellungen für die Koordinatenkomponente vornehmen",
+	"bingo.preferences.custom_hud.component_settings.player_position.enable_chunk_coordinates.title": "Zeige Chunkkoordinaten",
+	"bingo.preferences.custom_hud.component_settings.player_position.enable_chunk_coordinates.description": "Mit dieser Einstellung werden Chunkkoordinaten statt der normalen Koordinaten angezeigt während du eine Schatzkarte hälst.\n\nDies ist nützlich um den genauen Block zu finden wo der Schatz vergraben ist, da sich Schätze immer bei Chunkkordinaten 9 9 befinden.",
+	"bingo.preferences.custom_hud.component_settings.player_position.disable_chunk_coordinates.title": "Enable separate chunk coordinate component",
+	"bingo.preferences.custom_hud.component_settings.player_position.disable_chunk_coordinates.description": "Mit dieser Einstellung werden normale Koordinaten nicht mehr mit Chunkkoordinaten ersetzt während Du eine Schatzkarte hälst. Stattdessen wird eine eigene Komponente für Chunkkordinaten eingefügt, sofern genügen Platz im HUD ist.\n\nNatürlich kannst du diese Komponente dann auch wie jede andere komplett deaktivieren.",
+
+	"bingo.preferences.custom_hud.component_settings.player_position.use_compass_icon.title": "Kompasssymbol verwenden",
+	"bingo.preferences.custom_hud.component_settings.player_position.use_compass_icon.description": "Ändert das Koordinatensymbol zu einem Minecraft-Kompass.",
+	"bingo.preferences.custom_hud.component_settings.player_position.use_text_icon.title": "Textsymbol verwenden",
+	"bingo.preferences.custom_hud.component_settings.player_position.use_text_icon.description": "Ändert das Koordinatensymbol zu einer textuellen Representation der Himmelsrichtungen.",
 
 	"bingo.lobby.machinery.sign.line1": "Maschinenraum",
 	"bingo.lobby.machinery.sign.line2": "Zugang nur für",
@@ -92,6 +119,10 @@
 	"bingo.lobby.credits.neun_einser.sign.line2": "Minecraft Bingo",
 	"bingo.lobby.credits.neun_einser.sign.line3": "Haupt-",
 	"bingo.lobby.credits.neun_einser.sign.line4": "Entwickler",
+
+	"bingo.lobby.credits.unlucks_mc_gee.sign.line2": "",
+	"bingo.lobby.credits.unlucks_mc_gee.sign.line3": "Code",
+	"bingo.lobby.credits.unlucks_mc_gee.sign.line4": "Contributor",
 
 	"bingo.lobby.credits.kristof.sign.line2": "Code Contributor",
 	"bingo.lobby.credits.kristof.sign.line3": "Polnischer",

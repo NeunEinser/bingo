@@ -1,13 +1,31 @@
 {
 	"name": "Bingo",
-	"version": "5.0-pre2",
-	"dependencies": {
-		"resourcePacks": [
+	"version": "5.0-pre4",
+	"target": "dist",
+	"vars": {
+		"version_long_name": "5.0 Pre-Release 4",
+		"rp_version": "5"
+	},
+	"remove_file_types": [
+		"xcf", "py", "jsonc"
+	],
+	"resourcepack": {
+		"path": ".",
+		"exclude": [
+			"assets/bingo/textures/font/compass_text_scroll.png",
+			"assets/bingo/textures/font/compass_text_overlay.png"
+		],
+		"dependencies": [
 			"https://github.com/AmberWat/NegativeSpaceFont/releases/download/v4.1/NegativeSpaceFont4.zip"
 		]
 	},
-	"vars": {
-		"version_long_name": "5.0 Pre-Release 2",
-		"rp_version": "4"
-	}
+	"datapack": {
+		"path": "."
+	},
+	"world": {
+		"path": "world"
+	},
+	"include": [
+		"server.properties"
+	]
 }

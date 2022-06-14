@@ -59,4 +59,5 @@ setblock -3 2 -3 minecraft:barrier
 
 setblock -3 1 -3 minecraft:barrier
 
+# lobby end
 schedule function bingo:init/setup_lobby_end 1t

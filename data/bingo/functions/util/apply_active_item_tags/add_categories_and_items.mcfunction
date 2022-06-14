@@ -19,7 +19,7 @@ execute store result score $apply_tags.category_weight bingo.tmp run data get st
 
 scoreboard players operation $gcd.a 91.math.io = $available_category_weight bingo.state
 scoreboard players operation $gcd.b 91.math.io = $apply_tags.category_weight bingo.tmp
-function neuneinser.math:greatest_common_divisor
+function neun_einser.math:greatest_common_divisor
 
 scoreboard players operation $apply_tags.category_weight bingo.tmp /= $gcd.result 91.math.io
 scoreboard players operation $available_category_weight bingo.state *= $apply_tags.category_weight bingo.tmp
