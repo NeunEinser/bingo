@@ -120,7 +120,7 @@ forceload add 0 0
 	# This tag is used for players who enable manual gamemode switching.
 	#
 	# @internal
-	#declare tag bingo.enable_manual_gameode_switch
+	#declare tag bingo.enable_manual_gamemode_switch
 	#>
 	# This tag is used to tag the item frames that display the big preview card in
 	# the lobby
