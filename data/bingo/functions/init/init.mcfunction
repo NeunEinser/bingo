@@ -54,7 +54,7 @@ forceload add 0 0
 	# name: (String) Namespaced id to uniquely identify the category within bingo
 	# translatableName: (String) Text component used for displaying the category's
 	# 	name
-	# items: (Compound List) (read-only) List of all items this category has. Entries
+	# items: (Compound List) (readonly) List of all items this category has. Entries
 	# 	have the same structure as in the items array. Will be created
 	# 	automatically, after #bingo:post_register_items ran.
 	#
@@ -947,7 +947,7 @@ summon minecraft:area_effect_cloud 0 0 0 {CustomName:'{"translate": "bingo.techn
 		#>
 		# The status of chunk pregeneration.
 		# 0 = not started
-		# 1 = started / during the process
+		# 1 = started
 		# 2 = completed
 		#
 		# @public
