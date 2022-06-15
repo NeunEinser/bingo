@@ -32,12 +32,12 @@ forceload add 0 0
 	# containing the full item definition, like in the items array.
 	#
 	# Items have the following NBT structure:
-	# id: (String) custom namespaced id to uniquly identify the item within bingo
+	# id: (String) custom namespaced id to uniquely identify the item within bingo
 	# item: (Compound) Minecraft item data. Should be set in such a way, that an
 	# 	item of this type looks exactly the same as the item you require.
 	# textComponent: (String) The text component that is used for displaying the
 	# 	item name.
-	# icon: (String) Parsable text component that holds a charcter which is re-
+	# icon: (String) Parsable text component that holds a character which is re-
 	# 	textured to look like the item you require
 	# detectCommand: (String) Command for detecting if the player has this item.
 	# 	Has to set the player's bingo.has_item score. The command that is used in
@@ -48,13 +48,13 @@ forceload add 0 0
 	# 	inventory. Should look like this: "clear @a[tag=bingo.clear] <item> 1
 	# categories: (String List) List of category names. All categories referenced
 	# 	here should be registered separately.
-	# weight: (Integer) Weight of this item for the rng.
+	# weight: (Integer) Weight of this item for the RNG.
 	#
 	# Categories have the following structure:
-	# name: (String) Namespaced id to uniquly identify the category within bingo
-	# translateableName: (String) Text component used for displaying the category's
+	# name: (String) Namespaced id to uniquely identify the category within bingo
+	# translatableName: (String) Text component used for displaying the category's
 	# 	name
-	# items: (Compund List) (readonly) List of all items this category has. Entries
+	# items: (Compound List) (readonly) List of all items this category has. Entries
 	# 	have the same structure as in the items array. Will be created
 	# 	automatically, after #bingo:post_register_items ran.
 	#
@@ -120,7 +120,7 @@ forceload add 0 0
 	# This tag is used for players who enable manual gamemode switching.
 	#
 	# @internal
-	#declare tag bingo.enable_manual_gameode_switch
+	#declare tag bingo.enable_manual_gamemode_switch
 	#>
 	# This tag is used to tag the item frames that display the big preview card in
 	# the lobby
@@ -479,7 +479,7 @@ forceload add 0 0
 			#declare tag bingo.sign_credits_tools_nbtviewer
 		#endregion
 
-		#region crad generation
+		#region card generation
 			#>
 			# @within
 			# 	function bingo:lobby/place_indestructible_blocks
@@ -857,8 +857,8 @@ summon minecraft:area_effect_cloud 0 0 0 {CustomName:'{"translate": "bingo.techn
 		scoreboard objectives add bingo.id dummy
 
 		#>
-		# This objective stores the page of a paginated tellraw a player is currently
-		# at.
+		# This objective stores the page number of a paginated tellraw
+		# a player is currently at.
 		#
 		# This is for example used for the preferences menu. It would otherwise be
 		# impossible to display a generated list with clickable items, as the score
@@ -891,14 +891,14 @@ summon minecraft:area_effect_cloud 0 0 0 {CustomName:'{"translate": "bingo.techn
 	#region private objectives
 		#>
 		# This objective is used to store the player's position hash, which in turn
-		# is used to determine wether the player position display needs updating
+		# is used to determine whether the player position display needs updating
 		# @within
 		#		function bingo:init/init
 		#		function bingo:custom_hud/components/player_position/*
 		scoreboard objectives add bingo.pos_hash dummy
 
 		#>
-		# The last time the hud was refeshed for each player
+		# The last time the hud was refreshed for each player
 		# #TODO rename to something like "last_hud_update" in 1.18 when the stupid
 		# # length limit is gone.
 		#
@@ -920,6 +920,8 @@ summon minecraft:area_effect_cloud 0 0 0 {CustomName:'{"translate": "bingo.techn
 
 	#region score holders
 		#>
+		# Whether command blocks are enabled
+		#
 		# @internal
 		#declare score_holder $commandblocks_enabled
 		scoreboard players set $commandblocks_enabled bingo.state 0
@@ -929,7 +931,7 @@ summon minecraft:area_effect_cloud 0 0 0 {CustomName:'{"translate": "bingo.techn
 		#>
 		# The current game state
 		# 0 = Lobby / Not in game
-		# 1 = Starting / chunk-gen
+		# 1 = Starting / chunk pre-gen
 		# 2 = Skybox phase
 		# 3 = Game started
 		#
@@ -943,7 +945,7 @@ summon minecraft:area_effect_cloud 0 0 0 {CustomName:'{"translate": "bingo.techn
 		#declare score_holder $is_multiplayer
 		scoreboard players add $is_multiplayer bingo.state 0
 		#>
-		# The status of pregeneration.
+		# The status of chunk pregeneration.
 		# 0 = not started
 		# 1 = started
 		# 2 = completed
@@ -1214,7 +1216,7 @@ summon minecraft:area_effect_cloud 0 0 0 {CustomName:'{"translate": "bingo.techn
 	# items are duplicated into the categories array.
 	#
 	# You may use this function tag for modifing existing items from the default
-	# bingo item pool or from other extensio packs.
+	# bingo item pool or from other extension packs.
 	#
 	# @api
 	#declare tag/function bingo:post_registration

@@ -2,8 +2,8 @@
 #
 # This function cleans up some temporary data every 5 minutes.
 #
-# This prevents the tmp scoreboarb from being filled with too much garbage over
-# time
+# This prevents the tmp and io scoreboards from being filled with too much
+# garbage over time
 #
 # @within
 # 	function bingo:init/init

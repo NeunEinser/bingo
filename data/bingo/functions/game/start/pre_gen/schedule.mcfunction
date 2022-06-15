@@ -1,7 +1,7 @@
 #> bingo:game/start/pre_gen/schedule
 #
 # This function is scheduled to spread the chunk generation over multiple ticks
-# to avoid player timeouts and server crashes sue to lag
+# to avoid player timeouts and server crashes due to lag
 #
 # @within
 # 	function bingo:game/start/pre_gen/*

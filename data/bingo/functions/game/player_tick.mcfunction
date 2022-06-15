@@ -10,8 +10,8 @@ execute if entity @s[scores={bingo.menu=1}] run function bingo:game/bingo_menu/p
 scoreboard players reset @s[scores={bingo.menu=1}] bingo.menu
 
 scoreboard players enable @s[tag=!bingo.spectator] bingo.spectator
-execute if score $game_state bingo.state matches 3 if entity @s[tag=bingo.enable_manual_gameode_switch, gamemode=!survival] run tag @s add bingo.spectator
-execute unless score $game_state bingo.state matches 3 if entity @s[tag=bingo.enable_manual_gameode_switch, gamemode=!adventure] run tag @s add bingo.spectator
+execute if score $game_state bingo.state matches 3 if entity @s[tag=bingo.enable_manual_gamemode_switch, gamemode=!survival] run tag @s add bingo.spectator
+execute unless score $game_state bingo.state matches 3 if entity @s[tag=bingo.enable_manual_gamemode_switch, gamemode=!adventure] run tag @s add bingo.spectator
 
 execute if score $game_state bingo.state matches 3 run tellraw @s[tag=!bingo.spectator, gamemode=!survival] [{"translate": "bingo.game.switch_gamemode.prevented", "with": [{"translate": "bingo.game.switch_gamemode.prevented.click", "color": "#00c3ff", "clickEvent": {"action": "run_command", "value": "/trigger bingo.spectator"}}]}, "\n\n",{"translate": "bingo.game.switch_gamemode.hint", "color": "gray", "italic": true, "with": [{"text": "/trigger bingo.spectator", "color": "white", "italic": false, "clickEvent": {"action": "suggest_command", "value": "/trigger bingo.spectator"}}]}]
 execute if score $game_state bingo.state matches 3 run gamemode survival @s[tag=!bingo.spectator, gamemode=!survival]
