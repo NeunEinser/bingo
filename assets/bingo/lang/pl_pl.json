@@ -1,4 +1,9 @@
 {
+
+
+
+
+	
 	"bingo.error.command_blocks_disabled": "Bloki poleceń są wyłączone na tym serwerze. Upewnij się, że plik server.properties ma wszystkie wymienione wartości ustawione tak jak opisano %s.",
 	"bingo.error.command_blocks_disabled.link": "tutaj",
 
@@ -22,9 +27,9 @@
 	"bingo.logging.error": "BŁĄD",
 	"bingo.setup.error.unknown_category": "Przedmiot %1$s ma kategorię %2$s, ale kategoria %2$s nie została znaleziona .",
 
-	// "bingo.game.menu.hover_text": "Bingo Menu",
-	// "bingo.game.menu.hint": "Hint: You can click %s anywhere to bring up the bingo menu. You may also run %s manually, replacing %s with the auto-completable action.",
-	// "bingo.game.menu.hint.action_param": "action",
+	"bingo.game.menu.hover_text": "Menu Bingo",
+	"bingo.game.menu.hint": "Wskazówka: Możesz kliknąć %s w dowolnym miejscu, aby wywołać menu bingo. Możesz także wywołać %s ręcznie, zastępując %s akcją z autouzupełnienia.",
+	"bingo.game.menu.hint.action_param": "akcja",
 	"bingo.game.menu.options": "%s, aby wrócić do lobby.\n%s, aby zmienić na tryb widza.",
 	"bingo.game.menu.options.click_lobby": "Kliknij tutaj",
 	"bingo.game.menu.options.click_spectator": "Kliknij tutaj",
@@ -69,6 +74,7 @@
 	"bingo.preferences.custom_hud.adjust_col.move_down.description": "Zamienia pozycję tego komponentu z komponentem poniżej.",
 	"bingo.preferences.custom_hud.adjust_col.remove.title": "Usuń",
 	"bingo.preferences.custom_hud.adjust_col.remove.description": "Usuwa komponent z HUD'a.",
+	"bingo.preferences.custom_hud.adjust_col.settings.hover_text": "Ustawienia komponentu",
 	"bingo.preferences.custom_hud.adjust_col.add_spacer": "Dodaj Odstęp",
 
 	"bingo.preferences.custom_hud.adjust_card.title": "Dostosuj Kartę Bingo",
@@ -83,33 +89,33 @@
 	"bingo.custom_hud.components.spacer": "Odstęp",
 	"bingo.custom_hud.components.seed": "Ziarno Bingo",
 	"bingo.custom_hud.components.player_position": "Współrzędne X/Z",
-	//"bingo.custom_hud.components.player_chunk_position": "Chunk coordinates",
+	"bingo.custom_hud.components.player_chunk_position": "Współrzędne chunka",
 	"bingo.custom_hud.components.y_position": "Współrzędna Y",
 	"bingo.custom_hud.components.timer": "Stoper",
 
-	//"bingo.preferences.custom_hud.component_settings.seed.title": "Seed Settings",
-	//"bingo.preferences.custom_hud.component_settings.seed.description": "This page allows you to customize settings for the seed display",
-	//"bingo.preferences.custom_hud.component_settings.seed.only_show_after_run.title": "Only show seed after run completion",
-	//"bingo.preferences.custom_hud.component_settings.seed.only_show_after_run.description": "With this setting, the Bingo Seed will only be revealed after a completed run.\n\nSpecifically, this means after collecting all 25 items, or after returning to the lobby.\n\nIf you want to properly disguise your spawn location, you also need to either not use F3 or set Options -> Chat Settings -> Reduced Debug Info to ON.",
-	//"bingo.preferences.custom_hud.component_settings.seed.always_show.title": "Always show seed",
-	//"bingo.preferences.custom_hud.component_settings.seed.always_show.description": "With this setting, the Bingo Seed will always be shown.",
+	"bingo.preferences.custom_hud.component_settings.seed.title": "Ustawienia Ziarna",
+	"bingo.preferences.custom_hud.component_settings.seed.description": "Ta strona umożliwia dostosowanie ustawień dla wyświetlacza ziarna",
+	"bingo.preferences.custom_hud.component_settings.seed.only_show_after_run.title": "Pokaż ziarno dopiero po zakończeniu biegu",
+	"bingo.preferences.custom_hud.component_settings.seed.only_show_after_run.description": "Z tym ustawieniem, Ziarno Bingo zostanie ujawnione dopiero po zakończeniu biegu.\n\nKonkretnie oznacza to, że po zebraniu wszystkich 25 przedmiotów lub po powrocie do lobby.\n\nJeśli chcesz prawidłowo ukryć swoją lokalizację spawnu, musisz również albo nie używać F3, albo ustawić Opcje -> Ustawienia czatu -> Zmniejszone informacje o debugowaniu na WŁ.",
+	"bingo.preferences.custom_hud.component_settings.seed.always_show.title": "Zawsze pokazuj ziarno",
+	"bingo.preferences.custom_hud.component_settings.seed.always_show.description": "Z tym ustawieniem, Ziarno Bingo będzie zawsze widoczne.",
 
-	//"bingo.preferences.custom_hud.component_settings.player_chunk_position.title": "Chunk Coordinate Settings",
-	// "bingo.preferences.custom_hud.component_settings.player_chunk_position.description": "This page allows you to customize settings for the chunk coordinate display",
-	// "bingo.preferences.custom_hud.component_settings.player_chunk_position.merge_with_pos.title": "Show instead of position when holding treasure map",
-	// "bingo.preferences.custom_hud.component_settings.player_chunk_position.merge_with_pos.description": "This setting removes this component from the list and instead shows the chunk coordinates in place of the normal coordinates when you are holding a treasure map.\n\nThis is useful for finding the specific block of treasure, as it's always on chunk coordinates 9 9.\n\nUse the settings of the normal coordinates to change this back.",
+	"bingo.preferences.custom_hud.component_settings.player_chunk_position.title": "Ustawienia Współrzędnych Chunka",
+	"bingo.preferences.custom_hud.component_settings.player_chunk_position.description": "Ta strona umożliwia dostosowanie ustawień dla wyświetlacza współrzędnych chunka",
+	"bingo.preferences.custom_hud.component_settings.player_chunk_position.merge_with_pos.title": "Pokaż zamiast pozycji podczas trzymania mapy skarbu",
+	"bingo.preferences.custom_hud.component_settings.player_chunk_position.merge_with_pos.description": "To ustawienie usuwa ten komponent z listy i zamiast tego pokazuje współrzędne chunka w miejsce normalnych współrzędnych, gdy trzymasz mapę skarbu.\n\nJest to przydatne do znalezienia konkretnego bloku ze skarbem, ponieważ zawsze znajduje się on na współrzędnych chunka 9 9.\n\nUżyj ustawień normalnych współrzędnych, aby zmienić to z powrotem.",
 
-	// "bingo.preferences.custom_hud.component_settings.player_position.title": "Coordinate Settings",
-	// "bingo.preferences.custom_hud.component_settings.player_position.description": "This page allows you to customize settings for the coordinate display",
-	// "bingo.preferences.custom_hud.component_settings.player_position.enable_chunk_coordinates.title": "Show chunk coordinates when holding treasure map",
-	// "bingo.preferences.custom_hud.component_settings.player_position.enable_chunk_coordinates.description": "With this setting, chunk coordinates are shown instead of regular coordinates when holding a treasure map.\n\nThis is useful for finding the specific block of treasure, as it's always on chunk coordinates 9 9.",
-	// "bingo.preferences.custom_hud.component_settings.player_position.disable_chunk_coordinates.title": "Enable separate chunk coordinate component",
-	// "bingo.preferences.custom_hud.component_settings.player_position.disable_chunk_coordinates.description": "With this, the coordinates are no longer replaced by chunk coordinates when holding a treasure map, and instead a separate component with chunk coordinates is inserted if there is space.\n\nYou can of course also disable that component like any other component.",
+	"bingo.preferences.custom_hud.component_settings.player_position.title": "Ustawienia Współrzędnych",
+	"bingo.preferences.custom_hud.component_settings.player_position.description": "Ta strona umożliwia dostosowanie ustawień wyświetlacza współrzędnych",
+	"bingo.preferences.custom_hud.component_settings.player_position.enable_chunk_coordinates.title": "Pokaż współrzędne chunka podczas trzymania mapy skarbu",
+	"bingo.preferences.custom_hud.component_settings.player_position.enable_chunk_coordinates.description": "Z tym ustawieniem, współrzędne chunka są wyświetlane zamiast zwykłych współrzędnych podczas trzymania mapy skarbu.\n\nJest to przydatne do znalezienia konkretnego bloku ze skarbem, ponieważ zawsze znajduje się on na współrzędnych chunka 9 9.",
+	"bingo.preferences.custom_hud.component_settings.player_position.disable_chunk_coordinates.title": "Włącz osobny komponent współrzędnych chunka",
+	"bingo.preferences.custom_hud.component_settings.player_position.disable_chunk_coordinates.description": "Z tym, współrzędne nie są już zastępowane przez współrzędne chunka podczas trzymania mapy skarbu, a zamiast tego wstawiany jest oddzielny komponent ze współrzędnymi chunka, jeśli jest miejsce.\n\nOczywiście możesz również wyłączyć ten komponent jak każdy inny.",
 
-	//"bingo.preferences.custom_hud.component_settings.player_position.use_compass_icon.title": "Use Compass Icon",
-	//"bingo.preferences.custom_hud.component_settings.player_position.use_compass_icon.description": "Changes the coordinate icon to a Minecraft compass item.",
-	//"bingo.preferences.custom_hud.component_settings.player_position.use_text_icon.title": "Use Text Icon",
-	//"bingo.preferences.custom_hud.component_settings.player_position.use_text_icon.description": "Changes the coordinate icon to a textual representation of cardinal directions.",
+	"bingo.preferences.custom_hud.component_settings.player_position.use_compass_icon.title": "Użyj Ikony Kompasu",
+	"bingo.preferences.custom_hud.component_settings.player_position.use_compass_icon.description": "Zmienia ikonę współrzędnych na przedmiot Minecraft-owego kompasu.",
+	"bingo.preferences.custom_hud.component_settings.player_position.use_text_icon.title": "Użyj Ikony Tekstowej",
+	"bingo.preferences.custom_hud.component_settings.player_position.use_text_icon.description": "Zmienia ikonę współrzędnych na tekstową reprezentację kierunków kardynalnych.",
 
 	"bingo.lobby.machinery.sign.line1": "Maszynownia",
 	"bingo.lobby.machinery.sign.line2": "",
