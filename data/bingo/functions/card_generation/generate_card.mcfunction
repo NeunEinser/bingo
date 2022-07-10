@@ -77,6 +77,8 @@ data modify storage bingo:card teams append value {id: "bingo:yellow", completed
 
 execute as @e[tag=bingo.card_frame, scores={bingo.frame_id=12}, limit=1] at @s run playsound minecraft:entity.item_frame.add_item voice @a ~ ~ ~ 1 0.8
 
+bossbar set bingo:start/pre_gen/progress visible false
+
 #>
 # @api
 #declare tag/function bingo:post_card_gen
