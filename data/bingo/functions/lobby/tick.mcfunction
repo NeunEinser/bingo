@@ -16,9 +16,6 @@ execute as @a[predicate=bingo:is_in_lobby] run function bingo:lobby/player_tick
 execute as @e[type=minecraft:item_frame, tag=bingo.card_frame, nbt=!{Item: {}}] at @s run function bingo:card_frames/on_item_removed
 execute as @e[type=minecraft:item_frame, tag=bingo.card_frame, nbt=!{ItemRotation: 0b}] at @s run function bingo:card_frames/on_rotation_changed
 
-# set signs
-function bingo:lobby/place_indestructible_blocks
-
 # regen item frames if neccasary
 #>
 # Used for counting the item frames
