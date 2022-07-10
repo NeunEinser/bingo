@@ -1,12 +1,10 @@
-#> bingo:lobby/place_indestructible_block
+#> bingo:lobby/place_sign
 #
-# Place indistructible blocks.
-#
-# Players may be in survival mode like in old-school bingo. This function
-# ensures nothing crucial can be broken.
+# Places the sign corresponding to the current aec
 #
 # @within function bingo:lobby/place_indestructible_blocks
-# @context dimension bingo:lobby
+# @context
+# 	entity The current sign marker
 
 #>
 # @private
@@ -58,18 +56,6 @@ execute if entity @s[tag=bingo.sign_team_selection] run setblock ~ ~ ~ minecraft
 execute if entity @s[tag=bingo.sign_card_generation_random_card] run setblock ~ ~ ~ minecraft:warped_wall_sign[facing=south]{Text1: '{"translate":"bingo.lobby.card_generation.random_card.sign.line1", "bold":true, "color":"#8eedeb", "clickEvent":{"action":"run_command","value":"/function bingo:lobby/settings/random_seed_strict_mode_check"}}', Text2:'{"translate":"bingo.lobby.card_generation.random_card.sign.line2", "bold":true, "color":"#8eedeb"}', Text3:'{"translate":"bingo.lobby.card_generation.random_card.sign.line3", "bold":true, "color":"#8eedeb"}', Text4:'{"translate":"bingo.lobby.card_generation.random_card.sign.line4", "bold":true, "color":"#8eedeb"}'}
 execute if entity @s[tag=bingo.sign_card_generation_from_seed] run setblock ~ ~ ~ minecraft:warped_wall_sign[facing=south]{Text1: '{"translate":"bingo.lobby.card_generation.from_seed.sign.line1", "bold":true, "color":"#8eedeb", "clickEvent":{"action":"run_command","value":"/function bingo:lobby/settings/set_seed_strict_mode_check"}}', Text2:'{"translate":"bingo.lobby.card_generation.from_seed.sign.line2", "bold":true, "color":"#8eedeb"}', Text3:'{"translate":"bingo.lobby.card_generation.from_seed.sign.line3", "bold":true, "color":"#8eedeb"}', Text4:'{"translate":"bingo.lobby.card_generation.from_seed.sign.line4", "bold":true, "color":"#8eedeb"}'}
 execute if entity @s[tag=bingo.sign_card_generation_start_game] run setblock ~ ~ ~ minecraft:warped_wall_sign[facing=south]{Text1: '{"translate":"bingo.lobby.card_generation.start_game.sign.line1", "bold":true, "color":"#8eedeb", "clickEvent":{"action":"run_command","value":"/function bingo:lobby/settings/start_game_strict_mode_check"}}', Text2:'{"translate":"bingo.lobby.card_generation.start_game.sign.line2", "bold":true, "color":"#8eedeb"}', Text3:'{"translate":"bingo.lobby.card_generation.start_game.sign.line3", "bold":true, "color":"#8eedeb"}', Text4:'{"translate":"bingo.lobby.card_generation.start_game.sign.line4", "bold":true, "color":"#8eedeb"}'}
-
-execute if entity @s[tag=bingo.lobby_button] unless block ~ ~ ~ minecraft:stone_button run setblock ~ ~ ~ minecraft:stone_button[face=wall,facing=north]
-execute if entity @s[tag=bingo.button_red] run fill ~ ~-1 ~1 ~ ~1 ~1 minecraft:red_concrete
-execute if entity @s[tag=bingo.button_orange] run fill ~ ~-1 ~1 ~ ~1 ~1 minecraft:orange_concrete
-execute if entity @s[tag=bingo.button_yellow] run fill ~ ~-1 ~1 ~ ~1 ~1 minecraft:yellow_concrete
-execute if entity @s[tag=bingo.button_lime] run fill ~ ~-1 ~1 ~ ~1 ~1 minecraft:lime_concrete
-execute if entity @s[tag=bingo.button_green] run fill ~ ~-1 ~1 ~ ~1 ~1 minecraft:green_concrete
-execute if entity @s[tag=bingo.button_cyan] run fill ~ ~-1 ~1 ~ ~1 ~1 minecraft:cyan_concrete
-execute if entity @s[tag=bingo.button_light_blue] run fill ~ ~-1 ~1 ~ ~1 ~1 minecraft:light_blue_concrete
-execute if entity @s[tag=bingo.button_blue] run fill ~ ~-1 ~1 ~ ~1 ~1 minecraft:blue_concrete
-execute if entity @s[tag=bingo.button_purple] run fill ~ ~-1 ~1 ~ ~1 ~1 minecraft:purple_concrete
-execute if entity @s[tag=bingo.button_magenta] run fill ~ ~-1 ~1 ~ ~1 ~1 minecraft:magenta_concrete
 
 #Tutorial / Game Info / Settings
 ## Settings

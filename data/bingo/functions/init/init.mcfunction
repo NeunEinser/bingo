@@ -345,7 +345,7 @@ forceload add 0 0
 		#region machinery
 			#>
 			# @within
-			# 	function bingo:lobby/place_indestructible_block
+			# 	function bingo:lobby/place_sign
 			# 	function bingo:init/setup_lobby
 			#declare tag bingo.sign_machinery
 		#endregion
@@ -353,128 +353,128 @@ forceload add 0 0
 		#region credits
 			#>
 			# @within
-			# 	function bingo:lobby/place_indestructible_block
+			# 	function bingo:lobby/place_sign
 			# 	structure bingo:credits
 			#declare tag bingo.sign_credits_neun_einser
 			#>
 			# @within
-			# 	function bingo:lobby/place_indestructible_block
+			# 	function bingo:lobby/place_sign
 			# 	structure bingo:credits
 			#declare tag bingo.sign_credits_unlucks_mc_gee
 			#>
 			# @within
-			# 	function bingo:lobby/place_indestructible_block
+			# 	function bingo:lobby/place_sign
 			# 	structure bingo:credits
 			#declare tag bingo.sign_credits_kristof
 			#>
 			# @within
-			# 	function bingo:lobby/place_indestructible_block
+			# 	function bingo:lobby/place_sign
 			# 	structure bingo:credits
 			#declare tag bingo.sign_credits_gbegerow
 			#>
 			# @within
-			# 	function bingo:lobby/place_indestructible_block
+			# 	function bingo:lobby/place_sign
 			# 	structure bingo:credits
 			#declare tag bingo.sign_credits_amber_wat
 			#>
 			# @within
-			# 	function bingo:lobby/place_indestructible_block
+			# 	function bingo:lobby/place_sign
 			# 	structure bingo:credits
 			#declare tag bingo.sign_credits_nope_name
 			#>
 			# @within
-			# 	function bingo:lobby/place_indestructible_block
+			# 	function bingo:lobby/place_sign
 			# 	structure bingo:credits
 			#declare tag bingo.sign_credits_dr_brian_lorgon111
 			#>
 			# @within
-			# 	function bingo:lobby/place_indestructible_block
+			# 	function bingo:lobby/place_sign
 			# 	structure bingo:credits
 			#declare tag bingo.sign_credits_community_and_support
 			#>
 			# @within
-			# 	function bingo:lobby/place_indestructible_block
+			# 	function bingo:lobby/place_sign
 			# 	structure bingo:credits
 			#declare tag bingo.sign_credits_playtesters
 			#>
 			# @within
-			# 	function bingo:lobby/place_indestructible_block
+			# 	function bingo:lobby/place_sign
 			# 	structure bingo:credits
 			#declare tag bingo.sign_credits_silentrob
 			#>
 			# @within
-			# 	function bingo:lobby/place_indestructible_block
+			# 	function bingo:lobby/place_sign
 			# 	structure bingo:credits
 			#declare tag bingo.sign_credits_muffinshire
 			#>
 			# @within
-			# 	function bingo:lobby/place_indestructible_block
+			# 	function bingo:lobby/place_sign
 			# 	structure bingo:credits
 			#declare tag bingo.sign_credits_gothfaerie
 			#>
 			# @within
-			# 	function bingo:lobby/place_indestructible_block
+			# 	function bingo:lobby/place_sign
 			# 	structure bingo:credits
 			#declare tag bingo.sign_credits_zampone
 			#>
 			# @within
-			# 	function bingo:lobby/place_indestructible_block
+			# 	function bingo:lobby/place_sign
 			# 	structure bingo:credits
 			#declare tag bingo.sign_credits_thomas_to_space
 			#>
 			# @within
-			# 	function bingo:lobby/place_indestructible_block
+			# 	function bingo:lobby/place_sign
 			# 	structure bingo:credits
 			#declare tag bingo.sign_credits_craca_croes_gazyy
 			#>
 			# @within
-			# 	function bingo:lobby/place_indestructible_block
+			# 	function bingo:lobby/place_sign
 			# 	structure bingo:credits
 			#declare tag bingo.sign_credits_lifeofchrome
 			#>
 			# @within
-			# 	function bingo:lobby/place_indestructible_block
+			# 	function bingo:lobby/place_sign
 			# 	structure bingo:credits
 			#declare tag bingo.sign_credits_tod_nl
 			#>
 			# @within
-			# 	function bingo:lobby/place_indestructible_block
+			# 	function bingo:lobby/place_sign
 			# 	structure bingo:credits
 			#declare tag bingo.sign_credits_no_leaf_clover
 
 			#>
 			# @within
-			# 	function bingo:lobby/place_indestructible_block
+			# 	function bingo:lobby/place_sign
 			# 	structure bingo:credits
 			#declare tag bingo.sign_credits_tools
 			#>
 			# @within
-			# 	function bingo:lobby/place_indestructible_block
+			# 	function bingo:lobby/place_sign
 			# 	structure bingo:credits
 			#declare tag bingo.sign_credits_tools_vscode
 			#>
 			# @within
-			# 	function bingo:lobby/place_indestructible_block
+			# 	function bingo:lobby/place_sign
 			# 	structure bingo:credits
 			#declare tag bingo.sign_credits_tools_datapackhelperplus
 			#>
 			# @within
-			# 	function bingo:lobby/place_indestructible_block
+			# 	function bingo:lobby/place_sign
 			# 	structure bingo:credits
 			#declare tag bingo.sign_credits_tools_multinoise
 			#>
 			# @within
-			# 	function bingo:lobby/place_indestructible_block
+			# 	function bingo:lobby/place_sign
 			# 	structure bingo:credits
 			#declare tag bingo.sign_credits_tools_nbtexplorer
 			#>
 			# @within
-			# 	function bingo:lobby/place_indestructible_block
+			# 	function bingo:lobby/place_sign
 			# 	structure bingo:credits
 			#declare tag bingo.sign_credits_tools_nbtstudio
 			#>
 			# @within
-			# 	function bingo:lobby/place_indestructible_block
+			# 	function bingo:lobby/place_sign
 			# 	structure bingo:credits
 			#declare tag bingo.sign_credits_tools_nbtviewer
 		#endregion
@@ -482,32 +482,32 @@ forceload add 0 0
 		#region card generation
 			#>
 			# @within
-			# 	function bingo:lobby/place_indestructible_block
+			# 	function bingo:lobby/place_sign
 			# 	structure bingo:card_generation
 			#declare tag bingo.sign_team_selection
 			#>
 			# @within
-			# 	function bingo:lobby/place_indestructible_block
+			# 	function bingo:lobby/place_sign
 			# 	structure bingo:card_generation
 			#declare tag bingo.sign_card_generation_crafting_table
 			#>
 			# @within
-			# 	function bingo:lobby/place_indestructible_block
+			# 	function bingo:lobby/place_sign
 			# 	structure bingo:card_generation
 			#declare tag bingo.sign_card_generation_furnace
 			#>
 			# @within
-			# 	function bingo:lobby/place_indestructible_block
+			# 	function bingo:lobby/place_sign
 			# 	structure bingo:card_generation
 			#declare tag bingo.sign_card_generation_random_card
 			#>
 			# @within
-			# 	function bingo:lobby/place_indestructible_block
+			# 	function bingo:lobby/place_sign
 			# 	structure bingo:card_generation
 			#declare tag bingo.sign_card_generation_from_seed
 			#>
 			# @within
-			# 	function bingo:lobby/place_indestructible_block
+			# 	function bingo:lobby/place_sign
 			# 	structure bingo:card_generation
 			#declare tag bingo.sign_card_generation_start_game
 		#endregion
@@ -515,92 +515,92 @@ forceload add 0 0
 		#region tutorial & settings
 			#>
 			# @within
-			# 	function bingo:lobby/place_indestructible_block
+			# 	function bingo:lobby/place_sign
 			# 	structure bingo:tutorial
 			#declare tag bingo.sign_settings_more_coming
 			#>
 			# @within
-			# 	function bingo:lobby/place_indestructible_block
+			# 	function bingo:lobby/place_sign
 			# 	structure bingo:tutorial
 			#declare tag bingo.sign_settings_automatic_pregen
 			#>
 			# @within
-			# 	function bingo:lobby/place_indestructible_block
+			# 	function bingo:lobby/place_sign
 			# 	structure bingo:tutorial
 			#declare tag bingo.sign_settings_strict_mode
 			#>
 			# @within
-			# 	function bingo:lobby/place_indestructible_block
+			# 	function bingo:lobby/place_sign
 			# 	structure bingo:tutorial
 			#declare tag bingo.sign_settings_preferences
 			#>
 			# @within
-			# 	function bingo:lobby/place_indestructible_block
+			# 	function bingo:lobby/place_sign
 			# 	structure bingo:tutorial
 			#declare tag bingo.sign_tutorial_generate_chests
 			#>
 			# @within
-			# 	function bingo:lobby/place_indestructible_block
+			# 	function bingo:lobby/place_sign
 			# 	structure bingo:tutorial
 			#declare tag bingo.sign_tutorial_generate_chests
 			#>
 			# @within
-			# 	function bingo:lobby/place_indestructible_block
+			# 	function bingo:lobby/place_sign
 			# 	structure bingo:tutorial
 			#declare tag bingo.sign_tutorial_basics
 			#>
 			# @within
-			# 	function bingo:lobby/place_indestructible_block
+			# 	function bingo:lobby/place_sign
 			# 	structure bingo:tutorial
 			#declare tag bingo.sign_tutorial_basics1
 			#>
 			# @within
-			# 	function bingo:lobby/place_indestructible_block
+			# 	function bingo:lobby/place_sign
 			# 	structure bingo:tutorial
 			#declare tag bingo.sign_tutorial_basics2
 			#>
 			# @within
-			# 	function bingo:lobby/place_indestructible_block
+			# 	function bingo:lobby/place_sign
 			# 	structure bingo:tutorial
 			#declare tag bingo.sign_tutorial_basics3
 			#>
 			# @within
-			# 	function bingo:lobby/place_indestructible_block
+			# 	function bingo:lobby/place_sign
 			# 	structure bingo:tutorial
 			#declare tag bingo.sign_tutorial_basics4
 			#>
 			# @within
-			# 	function bingo:lobby/place_indestructible_block
+			# 	function bingo:lobby/place_sign
 			# 	structure bingo:tutorial
 			#declare tag bingo.sign_tutorial_basics5
 			#>
 			# @within
-			# 	function bingo:lobby/place_indestructible_block
+			# 	function bingo:lobby/place_sign
 			# 	structure bingo:tutorial
 			#declare tag bingo.sign_tutorial_basics6
 			#>
 			# @within
-			# 	function bingo:lobby/place_indestructible_block
+			# 	function bingo:lobby/place_sign
 			# 	structure bingo:tutorial
 			#declare tag bingo.sign_tutorial_skybox
 			#>
 			# @within
-			# 	function bingo:lobby/place_indestructible_block
+			# 	function bingo:lobby/place_sign
 			# 	structure bingo:tutorial
 			#declare tag bingo.sign_tutorial_get_tools
 			#>
 			# @within
-			# 	function bingo:lobby/place_indestructible_block
+			# 	function bingo:lobby/place_sign
 			# 	structure bingo:tutorial
 			#declare tag bingo.sign_tutorial_game_info
 			#>
 			# @within
-			# 	function bingo:lobby/place_indestructible_block
+			# 	function bingo:lobby/place_sign
 			# 	structure bingo:tutorial
 			#declare tag bingo.sign_tutorial_goal_lectern
 			#>
 			# @within
-			# 	function bingo:lobby/place_indestructible_block
+			# 	function bingo:lobby/place_sign
 			# 	structure bingo:tutorial
 			#declare tag bingo.sign_tutorial_game_info_lectern
 		#endregion
@@ -610,67 +610,56 @@ forceload add 0 0
 		#>
 		# @within
 		# 	function bingo:lobby/place_indestructible_blocks
-		# 	function bingo:lobby/place_indestructible_block
 		# 	structure bingo:card_generation
 		#declare tag bingo.lobby_button
 		#>
 		# @within
-		# 	function bingo:lobby/place_indestructible_block
-		# 	function bingo:lobby/press_button
+		# 	function bingo:lobby/place_indestructible_blocks
 		# 	structure bingo:card_generation
 		#declare tag bingo.button_red
 		#>
 		# @within
-		# 	function bingo:lobby/place_indestructible_block
-		# 	function bingo:lobby/press_button
+		# 	function bingo:lobby/place_indestructible_blocks
 		# 	structure bingo:card_generation
 		#declare tag bingo.button_orange
 		#>
 		# @within
-		# 	function bingo:lobby/place_indestructible_block
-		# 	function bingo:lobby/press_button
+		# 	function bingo:lobby/place_indestructible_blocks
 		# 	structure bingo:card_generation
 		#declare tag bingo.button_yellow
 		#>
 		# @within
-		# 	function bingo:lobby/place_indestructible_block
-		# 	function bingo:lobby/press_button
+		# 	function bingo:lobby/place_indestructible_blocks
 		# 	structure bingo:card_generation
 		#declare tag bingo.button_lime
 		#>
 		# @within
-		# 	function bingo:lobby/place_indestructible_block
-		# 	function bingo:lobby/press_button
+		# 	function bingo:lobby/place_indestructible_blocks
 		# 	structure bingo:card_generation
 		#declare tag bingo.button_green
 		#>
 		# @within
-		# 	function bingo:lobby/place_indestructible_block
-		# 	function bingo:lobby/press_button
+		# 	function bingo:lobby/place_indestructible_blocks
 		# 	structure bingo:card_generation
 		#declare tag bingo.button_cyan
 		#>
 		# @within
-		# 	function bingo:lobby/place_indestructible_block
-		# 	function bingo:lobby/press_button
+		# 	function bingo:lobby/place_indestructible_blocks
 		# 	structure bingo:card_generation
 		#declare tag bingo.button_light_blue
 		#>
 		# @within
-		# 	function bingo:lobby/place_indestructible_block
-		# 	function bingo:lobby/press_button
+		# 	function bingo:lobby/place_indestructible_blocks
 		# 	structure bingo:card_generation
 		#declare tag bingo.button_blue
 		#>
 		# @within
-		# 	function bingo:lobby/place_indestructible_block
-		# 	function bingo:lobby/press_button
+		# 	function bingo:lobby/place_indestructible_blocks
 		# 	structure bingo:card_generation
 		#declare tag bingo.button_purple
 		#>
 		# @within
-		# 	function bingo:lobby/place_indestructible_block
-		# 	function bingo:lobby/press_button
+		# 	function bingo:lobby/place_indestructible_blocks
 		# 	structure bingo:card_generation
 		#declare tag bingo.button_magenta
 	#endregion
