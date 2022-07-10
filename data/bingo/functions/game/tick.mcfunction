@@ -5,7 +5,7 @@
 # @within function bingo:tick/tick
 
 #execute in bingo:lobby run function neun_einser.timer:detect_pause
-tp @a[predicate=bingo:is_in_overworld, tag=!bingo.resourcepack_check] @e[type=minecraft:area_effect_cloud, tag=bingo.spawn, limit=1]
+teleport @a[predicate=bingo:is_in_overworld, tag=!bingo.resourcepack_check] @e[type=minecraft:area_effect_cloud, tag=bingo.spawn, limit=1]
 
 #>
 # Count of players in the game

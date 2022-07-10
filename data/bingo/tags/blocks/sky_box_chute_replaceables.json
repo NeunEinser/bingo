@@ -1,7 +1,6 @@
 {
     "values": [
-        "minecraft:air",
-        "minecraft:cave_air",
+        "#bingo:air",
         "minecraft:tall_grass",
         "minecraft:large_fern",
         "#minecraft:tall_flowers"

@@ -15,11 +15,12 @@ kill @e[type=minecraft:area_effect_cloud, tag=bingo.skybox_cloud, limit=1]
 bossbar set bingo:start/pre_gen/progress visible false
 function neun_einser.timer:stop
 
+# make drop chute and place dirt
 fill ~-1 0 ~-1 ~1 130 ~1 minecraft:barrier replace #bingo:sky_box_chute_replaceables
 fill ~ 0 ~ ~ 129 ~ minecraft:air replace minecraft:barrier
 setblock ~ 127 ~ minecraft:barrier
-execute if block ~ 62 ~ minecraft:water run setblock ~ 62 ~ minecraft:dirt
-execute if block ~ 62 ~ minecraft:lava run setblock ~ 62 ~ minecraft:dirt
+fill ~ 0 ~ ~ 62 ~ minecraft:dirt replace #bingo:air
+fill ~ 0 ~ ~ 127 ~ minecraft:dirt replace #bingo:liquids
 
 scoreboard players add $current_game_id bingo.game_id 1
 
