@@ -78,5 +78,5 @@ scoreboard players operation $custom_hud/player_pos.hash bingo.tmp += $custom_hu
 scoreboard players operation $custom_hud/player_pos.hash bingo.tmp *= 2 bingo.const
 execute if entity @s[predicate=bingo:holding_treasure_map] run scoreboard players add $custom_hud/player_pos.hash bingo.tmp 1
 
-execute unless score @s bingo.pos_hash = $custom_hud/player_pos.hash bingo.tmp run function bingo:custom_hud/components/player_position/update
 execute if score @s bingo.update_hud matches 1 run function bingo:custom_hud/components/player_position/update
+execute unless score @s bingo.update_hud matches 1 unless score @s bingo.pos_hash = $custom_hud/player_pos.hash bingo.tmp run function bingo:custom_hud/components/player_position/update
