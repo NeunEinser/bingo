@@ -1,9 +1,9 @@
 {
 	"name": "Bingo",
-	"version": "5.0-pre4",
+	"version": "5.0-rc1",
 	"target": "dist",
 	"vars": {
-		"version_long_name": "5.0 Pre-Release 4",
+		"version_long_name": "5.0 Release Candidate 1",
 		"rp_version": "6"
 	},
 	"remove_file_types": [
