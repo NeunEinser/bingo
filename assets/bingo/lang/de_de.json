@@ -1,4 +1,9 @@
 {
+
+
+
+
+
 	"bingo.error.command_blocks_disabled": "Befehlsblöcke sind auf diesem server deaktiviert. Bitte stelle sicher, dass in der server.properties-Datei alle Werte, die %s beinhaltet sind, korrekt gesetzt sind.",
 	"bingo.error.command_blocks_disabled.link": "hier",
 
@@ -69,6 +74,7 @@
 	"bingo.preferences.custom_hud.adjust_col.move_down.description": "Tauscht die Position dieser Komponente mit der Komponente unterhalb.",
 	"bingo.preferences.custom_hud.adjust_col.remove.title": "Entfernen",
 	"bingo.preferences.custom_hud.adjust_col.remove.description": "Entfernt die Komponente aus dem HUD.",
+	"bingo.preferences.custom_hud.adjust_col.settings.hover_text": "Komponenteneinstellungen",
 	"bingo.preferences.custom_hud.adjust_col.add_spacer": "Freiraum hinzufügn.",
 
 	"bingo.preferences.custom_hud.adjust_card.title": "Positionierung Bingo-Karte",
