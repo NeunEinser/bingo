@@ -4,7 +4,7 @@
 	"target": "dist",
 	"vars": {
 		"version_long_name": "5.0 Pre-Release 4",
-		"rp_version": "5"
+		"rp_version": "6"
 	},
 	"remove_file_types": [
 		"xcf", "py", "jsonc"
