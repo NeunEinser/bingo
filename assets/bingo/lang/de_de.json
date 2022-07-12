@@ -1,12 +1,10 @@
 {
-
-
-
-
-
+	"%1074992263$s%1$s": "%2$s",
+	"%1074992263$s%{NEUN_SCRIPT:rp_version}$s%1$s": "%2$s",
+	"%1074992263$s%3$s%3$s%1$s": "%2$s",
+	"bingo.technical.detect_multiplayer": "DoNotTranslateThis{NEUN_SCRIPT:rp_version}",
 	"bingo.error.command_blocks_disabled": "Befehlsblöcke sind auf diesem server deaktiviert. Bitte stelle sicher, dass in der server.properties-Datei alle Werte, die %s beinhaltet sind, korrekt gesetzt sind.",
 	"bingo.error.command_blocks_disabled.link": "hier",
-
 	"bingo.resourcepack_check.sign.line1": "Ressourcenpaket",
 	"bingo.resourcepack_check.sign.line2": "installiert.",
 	"bingo.resourcepack_check.sign.line3": "Klicke hier für",
@@ -19,40 +17,33 @@
 	"bingo.resourcepack_check.wrong_version.link": "hier",
 	"bingo.resourcepack_check.wrong_version.server": "Sollte das Resourcenpaket durch ein Server-Resourcenpaket aktiviert sein, informiere bitte den Serveradmin es zu aktualisieren.",
 	"bingo.resourcepack_check.wrong_version.recheck": "Erneut Prüfen",
-	"bingo.resourcepack_check.wrong_version.sign.line1": "Ressourcen-",
+	"bingo.resourcepack_check.wrong_version.sign.line1": "",
 	"bingo.resourcepack_check.wrong_version.sign.line2": "paket",
 	"bingo.resourcepack_check.wrong_version.sign.line3": "herunterladen",
 	"bingo.resourcepack_check.wrong_version.sign.line4": "",
-
 	"bingo.logging.error": "FEHLER",
 	"bingo.setup.error.unknown_category": "Gegenstand %1$s hat Kategorie %2$s, die Kategorie %2$s kann allerdings nicht gefunden werden.",
-
 	"bingo.game.menu.hover_text": "Fetchr-Menü",
 	"bingo.game.menu.hint": "Hinweis: Du kannst %s überall anklicken, um das Fetchr-Menü anzuzeigen. Du kannst %s auch manuell ausführen und %s dabei durch die automatisch verfollständigbare Aktion ersetzen.",
 	"bingo.game.menu.hint.action_param": "Aktion",
 	"bingo.game.menu.options": "%s, um zur Lobby zurückzukehren.\n%s, um zum Zuschauermodus zu wechseln.",
 	"bingo.game.menu.options.click_lobby": "Hier klicken",
 	"bingo.game.menu.options.click_spectator": "Hier klicken",
-
 	"bingo.game.switch_gamemode.hint": "Hinweis: Du kannst mit dem Befehl %s jederzeit in den Zuschauermodus wechseln.\nSolltest du diese Funktionalität nicht mögen, kannst du sie in der Lobby in deinen Spielereinstellungen ändern.",
 	"bingo.game.switch_gamemode.prevented": "Spielmoduswechsel verhindert. %s, um in den Zuschauermodus zu wechseln.\nDanach kannst du in jeden anderen Spielmodus wie gewohnt wechseln.",
 	"bingo.game.switch_gamemode.prevented.click": "Klicke hier",
-
 	"bingo.preferences.title": "Spielereinstellungen ändern",
 	"bingo.preferences.description": "Dieses Menü erlaubt die Konfiguration deiner Einstellungen.",
 	"bingo.preferences.back": "Zurück",
 	"bingo.preferences.previous": "Vorh. Seite",
 	"bingo.preferences.next": "Nächste Seite",
 	"bingo.preferences.page": "Seite %s/%s",
-
 	"bingo.preferences.custom_hud.title": "HUD Konfiguration",
 	"bingo.preferences.custom_hud.description": "In diesem Menü kannst Du Komponenten im HUD verschieben, sie deaktivieren oder komponentenspezifische Einstellungen treffen.",
-
 	"bingo.preferences.spectator_mode.title": "Manuellen Spielmoduswechsel verhindern",
 	"bingo.preferences.spectator_mode.description": "Wenn aktiviert, kannst Du während des Spiels deinen Spielmodus nicht mit dem /gamemode Befehl, F3+N oder F3+F4 ändern.\n\nDies soll verhindern, dass Du mit diesen Tastenkombinationen versehentlich den Spielmodus wechselst.\n\nDu kannst immernoch über eine Chatnachricht in den Zuschauermodus wechseln. Nachdem Du in den Zuschauermodus gewechselt bist oder alle 25 Gegenstände der Karte erhalten hast, kannst du deinen Spielmodus wieder frei ändern.",
 	"bingo.preferences.spectator_mode.enabled": "Aktiviert",
 	"bingo.preferences.spectator_mode.disabled": "Deaktiviert",
-
 	"bingo.preferences.custom_hud.add_disabled.title": "Deaktivierte Komponenten hinzufügen",
 	"bingo.preferences.custom_hud.add_disabled.description": "Hier erhälst Du eine Liste deaktivierter Komponenten und kannst sie dem HUD hinzufügen.",
 	"bingo.preferences.custom_hud.add_disabled.disabled": "Du hast aktuell alle Komponenten aktiviert.",
@@ -60,7 +51,6 @@
 	"bingo.preferences.custom_hud.add_disabled.add_col1.title": "Über Schnellzugr., Rechts",
 	"bingo.preferences.custom_hud.add_disabled.add.description": "Füge die Komponente dem Anzeigeplatz hinzu.",
 	"bingo.preferences.custom_hud.add_disabled.add.disabled": "Die Komponente kann nicht zu diesem Platz hinzugefügt werden, da kein Raum mehr frei ist.",
-
 	"bingo.preferences.custom_hud.adjust_col0.title": "Komponente links oberhalb Schnellzugriffsleiste positionieren",
 	"bingo.preferences.custom_hud.adjust_col1.title": "Komponente rechts oberhalb Schnellzugriffsleiste positionieren",
 	"bingo.preferences.custom_hud.adjust_col.description": "Hier kannst Du Positionen von Komponenten tauschen, sie in eine andere Spalte verschieben oder komponenten-spezifische Einstellungen ändern.",
@@ -76,7 +66,6 @@
 	"bingo.preferences.custom_hud.adjust_col.remove.description": "Entfernt die Komponente aus dem HUD.",
 	"bingo.preferences.custom_hud.adjust_col.settings.hover_text": "Komponenteneinstellungen",
 	"bingo.preferences.custom_hud.adjust_col.add_spacer": "Freiraum hinzufügn.",
-
 	"bingo.preferences.custom_hud.adjust_card.title": "Positionierung Bingokarte",
 	"bingo.preferences.custom_hud.adjust_card.description": "Hier kannst Du Einstellungen der Bingokarte ändern.",
 	"bingo.preferences.custom_hud.adjust_card.left_of_hotbar.title": "Verschieben auf linke Seite der Schnellzugriffsleiste.",
@@ -85,159 +74,124 @@
 	"bingo.preferences.custom_hud.adjust_card.right_of_hotbar_no_attack.description": "Verschiebt die Bingokarte auf die rechte Seite der Schnellzugriffsleiste ohne Raum für die Angriffsanzeige.\nFalls „Optionen → Grafikeinstellungen → Angriffsanzeige“ auf „Schnellzugr.“ steht, wähle bitte die nächste Option.",
 	"bingo.preferences.custom_hud.adjust_card.right_of_hotbar_with_attack.title": "Verschieben auf rechte Seite der Schnellzugriffsleiste (Angriffsanzeige)",
 	"bingo.preferences.custom_hud.adjust_card.right_of_hotbar_with_attack.description": "Verschiebt die Bingokarte auf die rechte Seite der Schnellzugriffsleiste mit Freiraum für die Angriffsanzeige.\nWähle diese Option nur falls „Optionen → Grafikeinstellungen → Angriffsanzeige“ auf „Schnellzugr.“ steht",
-
 	"bingo.custom_hud.components.spacer": "Freiraum",
 	"bingo.custom_hud.components.seed": "Fetchr-Seed",
 	"bingo.custom_hud.components.player_position": "X/Z Koordinaten",
 	"bingo.custom_hud.components.player_chunk_position": "Chunkkoordinaten",
 	"bingo.custom_hud.components.y_position": "Y Koordinate",
 	"bingo.custom_hud.components.timer": "Timer",
-
 	"bingo.preferences.custom_hud.component_settings.seed.title": "Seedeinstellungen",
 	"bingo.preferences.custom_hud.component_settings.seed.description": "Auf dieser Seite kannst Du Einstellungen für die Seedkomponente vornehmen",
 	"bingo.preferences.custom_hud.component_settings.seed.only_show_after_run.title": "Erst nach Ende eines Durchlaufes anzeigen",
 	"bingo.preferences.custom_hud.component_settings.seed.only_show_after_run.description": "Mit dieser Einstellung wird der Fetchr-Seed erst nach Fertigstellung eines Durchlaufes angezeigt.\n\nIm Detail bedeutet das, nach dem Sammeln aller 25 Gegenstände, oder nach dem Zurückkehren in die Lobby.\n\nUm deinen Spawnpunkt 100% zu verbergen, solltest du entweder F3 nicht verwenden, oder Optionen -> Chateinstellungen -> Reduzierte Debug-Infos auf „An“ stellen.",
 	"bingo.preferences.custom_hud.component_settings.seed.always_show.title": "Seed immer anzeigen",
 	"bingo.preferences.custom_hud.component_settings.seed.always_show.description": "Mit dieser Einstellung wird der Fetchr-Seed immer angezeigt.",
-
 	"bingo.preferences.custom_hud.component_settings.player_chunk_position.title": "Chunkkoordinateneinstellungen",
 	"bingo.preferences.custom_hud.component_settings.player_chunk_position.description": "Auf dieser Seite kannst Du Einstellungen für die Chunkkoordinatenkomponente vornehmen",
 	"bingo.preferences.custom_hud.component_settings.player_chunk_position.merge_with_pos.title": "Statt normalen Koordinaten anzeigen beim Halten einer Schatzkarte",
 	"bingo.preferences.custom_hud.component_settings.player_chunk_position.merge_with_pos.description": "Diese Einstellung entfernt die Komponente aus der Liste und zeigt die Chunkkoordinaten statt der normalen Koordinaten während du eine Schatzkarte hälst.\n\nDies ist nützlich um den genauen Block zu finden wo der Schatz vergraben ist, da sich Schätze immer bei Chunkkordinaten 9 9 befinden.\n\nVerwende die Einstellungen für die normalen Koordinaten um diese Einstellung zurückzusetzen",
-
 	"bingo.preferences.custom_hud.component_settings.player_position.title": "Koordinateneinstellungen",
 	"bingo.preferences.custom_hud.component_settings.player_position.description": "Auf dieser Seite kannst Du Einstellungen für die Koordinatenkomponente vornehmen",
 	"bingo.preferences.custom_hud.component_settings.player_position.enable_chunk_coordinates.title": "Zeige Chunkkoordinaten",
 	"bingo.preferences.custom_hud.component_settings.player_position.enable_chunk_coordinates.description": "Mit dieser Einstellung werden Chunkkoordinaten statt der normalen Koordinaten angezeigt während du eine Schatzkarte hälst.\n\nDies ist nützlich um den genauen Block zu finden wo der Schatz vergraben ist, da sich Schätze immer bei Chunkkordinaten 9 9 befinden.",
 	"bingo.preferences.custom_hud.component_settings.player_position.disable_chunk_coordinates.title": "Enable separate chunk coordinate component",
 	"bingo.preferences.custom_hud.component_settings.player_position.disable_chunk_coordinates.description": "Mit dieser Einstellung werden normale Koordinaten nicht mehr mit Chunkkoordinaten ersetzt während Du eine Schatzkarte hälst. Stattdessen wird eine eigene Komponente für Chunkkordinaten eingefügt, sofern genügen Platz im HUD ist.\n\nNatürlich kannst du diese Komponente dann auch wie jede andere komplett deaktivieren.",
-
 	"bingo.preferences.custom_hud.component_settings.player_position.use_compass_icon.title": "Kompasssymbol verwenden",
 	"bingo.preferences.custom_hud.component_settings.player_position.use_compass_icon.description": "Ändert das Koordinatensymbol zu einem Minecraft-Kompass.",
 	"bingo.preferences.custom_hud.component_settings.player_position.use_text_icon.title": "Textsymbol verwenden",
 	"bingo.preferences.custom_hud.component_settings.player_position.use_text_icon.description": "Ändert das Koordinatensymbol zu einer textuellen Representation der Himmelsrichtungen.",
-
 	"bingo.lobby.machinery.sign.line1": "Maschinenraum",
-	"bingo.lobby.machinery.sign.line2": "Zugang nur für",
+	"bingo.lobby.machinery.sign.line2": "",
 	"bingo.lobby.machinery.sign.line3": "autorisiertes",
 	"bingo.lobby.machinery.sign.line4": "Personal",
-
 	"bingo.lobby.credits.neun_einser.sign.line2": "Fetchr",
 	"bingo.lobby.credits.neun_einser.sign.line3": "Haupt-",
 	"bingo.lobby.credits.neun_einser.sign.line4": "Entwickler",
-
 	"bingo.lobby.credits.unlucks_mc_gee.sign.line2": "",
 	"bingo.lobby.credits.unlucks_mc_gee.sign.line3": "Code",
 	"bingo.lobby.credits.unlucks_mc_gee.sign.line4": "Contributor",
-
-	"bingo.lobby.credits.kristof.sign.line2": "Code Contributor",
+	"bingo.lobby.credits.kristof.sign.line2": "",
 	"bingo.lobby.credits.kristof.sign.line3": "Polnischer",
 	"bingo.lobby.credits.kristof.sign.line4": "Übersetzer",
-
 	"bingo.lobby.credits.gbegerow.sign.line2": "",
 	"bingo.lobby.credits.gbegerow.sign.line3": "Deutscher",
 	"bingo.lobby.credits.gbegerow.sign.line4": "Übersetzer",
-
-	"bingo.lobby.credits.amber_wat.sign.line2": "Schriftart für",
+	"bingo.lobby.credits.amber_wat.sign.line2": "",
 	"bingo.lobby.credits.amber_wat.sign.line3": "negative",
 	"bingo.lobby.credits.amber_wat.sign.line4": "Leerzeichen",
-
 	"bingo.lobby.credits.nope_name.sign.line2": "",
 	"bingo.lobby.credits.nope_name.sign.line3": "Mathe Helfer-",
 	"bingo.lobby.credits.nope_name.sign.line4": "Datenpaket",
-
 	"bingo.lobby.credits.dr_brian_lorgon111.sign.line2": "",
 	"bingo.lobby.credits.dr_brian_lorgon111.sign.line3": "Schöpfer von",
 	"bingo.lobby.credits.dr_brian_lorgon111.sign.line4": "Minecraft Bingo",
-
 	"bingo.lobby.credits.community_and_support.sign.line1": "",
 	"bingo.lobby.credits.community_and_support.sign.line2": "Community &",
 	"bingo.lobby.credits.community_and_support.sign.line3": "Support",
 	"bingo.lobby.credits.community_and_support.sign.line4": "",
-
 	"bingo.lobby.credits.community_and_support.heading": "Community & Support",
 	"bingo.lobby.credits.community_and_support.description": "In diesem Buch findest Du einige nützliche Links für Support, Bugreports und Verbesserungsvorschläge.",
 	"bingo.lobby.credits.community_and_support.issue_link": "Bug & Verbesserungstracker (Englisch)",
 	"bingo.lobby.credits.community_and_support.discord_link": "Discord Server",
 	"bingo.lobby.credits.community_and_support.twitter_link": "Twitter (DMs offen)",
-
 	"bingo.lobby.credits.playtesters.sign.line1": "",
 	"bingo.lobby.credits.playtesters.sign.line2": "Wand der",
 	"bingo.lobby.credits.playtesters.sign.line3": "Spieltester",
 	"bingo.lobby.credits.playtesters.sign.line4": "",
-	
 	"bingo.lobby.credits.tools.sign.line1": "",
 	"bingo.lobby.credits.tools.sign.line2": "Benutzte",
 	"bingo.lobby.credits.tools.sign.line3": "Tools",
 	"bingo.lobby.credits.tools.sign.line4": "",
-	
 	"bingo.lobby.credits.tools.vscode.sign.line3": "von",
 	"bingo.lobby.credits.tools.vscode.sign.line4": "Microsoft",
-
 	"bingo.lobby.credits.tools.datapack_helper_plus.sign.line3": "von",
 	"bingo.lobby.credits.tools.datapack_helper_plus.sign.line4": "SPGoding",
-
 	"bingo.lobby.credits.tools.minecraft_multi_noise_visualizer.sign.line3": "von",
 	"bingo.lobby.credits.tools.minecraft_multi_noise_visualizer.sign.line4": "Jochen Jacobs",
-
 	"bingo.lobby.credits.tools.nbt_explorer.sign.line3": "von",
 	"bingo.lobby.credits.tools.nbt_explorer.sign.line4": "Justin Aquadro",
-
 	"bingo.lobby.credits.tools.nbt_studio.sign.line3": "von",
-	"bingo.lobby.credits.tools.nbt_studio.sign.line4": "Tryashtar",
-
+	"bingo.lobby.credits.tools.nbt_studio.sign.line4": "",
 	"bingo.lobby.credits.tools.nbt_viewer.sign.line3": "von",
-	"bingo.lobby.credits.tools.nbt_viewer.sign.line4": "Misode",
-
-
+	"bingo.lobby.credits.tools.nbt_viewer.sign.line4": "",
 	"bingo.lobby.card_generation.random_card.sign.line1": "",
 	"bingo.lobby.card_generation.random_card.sign.line2": "Zufällige Karte",
 	"bingo.lobby.card_generation.random_card.sign.line3": "generieren",
 	"bingo.lobby.card_generation.random_card.sign.line4": "",
-
-	"bingo.lobby.card_generation.from_seed.sign.line1": "Karte aus",
+	"bingo.lobby.card_generation.from_seed.sign.line1": "",
 	"bingo.lobby.card_generation.from_seed.sign.line2": "Seed",
 	"bingo.lobby.card_generation.from_seed.sign.line3": "generieren",
 	"bingo.lobby.card_generation.from_seed.sign.line4": "",
-	
 	"bingo.lobby.card_generation.start_game.sign.line1": "",
 	"bingo.lobby.card_generation.start_game.sign.line2": "Spiel",
 	"bingo.lobby.card_generation.start_game.sign.line3": "starten",
 	"bingo.lobby.card_generation.start_game.sign.line4": "",
-
-	"bingo.lobby.card_generation.crafting_table.sign.line1": "",
+	"bingo.lobby.card_generation.crafting_table.sign.line1": "Crafting",
 	"bingo.lobby.card_generation.crafting_table.sign.line2": "Handwerksre-",
 	"bingo.lobby.card_generation.crafting_table.sign.line3": "zeptsuchgerät",
-	"bingo.lobby.card_generation.crafting_table.sign.line4": "",
-
-	"bingo.lobby.card_generation.furnace.sign.line1": "",
+	"bingo.lobby.card_generation.crafting_table.sign.line4": "Device",
+	"bingo.lobby.card_generation.furnace.sign.line1": "Smelting",
 	"bingo.lobby.card_generation.furnace.sign.line2": "Schmelzre-",
 	"bingo.lobby.card_generation.furnace.sign.line3": "zeptsuchgerät",
-	"bingo.lobby.card_generation.furnace.sign.line4": "",
-
+	"bingo.lobby.card_generation.furnace.sign.line4": "Device",
 	"bingo.lobby.card_generation.from_seed.instructions": "%s, um einen Befehl zum Setzten des Seeds zu erhalten. Füge den numerischen Seed am Ende des Befehls hinzu.",
 	"bingo.lobby.card_generation.from_seed.instructions.link": "Hier klicken",
 	"bingo.lobby.card_generation.from_seed.explanation": "Der Seed bestimmt die Gegenstände auf der Bingokarte und den Spawnpunkt. Dies kann zum Beispiel für Rennen verwendet werden, bei denen alle Teilnehmer denselben Seed verwenden.",
-	
 	"bingo.lobby.card_generation.start_game.already_in_progress": "Du musst eine neue Karte generieren, bevor Du ein neues Spiel starten kannst.",
 	"bingo.lobby.card_generation.start_game.no_card": "Du musst eine Bingokarte generieren, bevor Du ein Spiel starten kannst.",
-
 	"bingo.lobby.settings.player.tutorial.sign.line1": "Spieler",
 	"bingo.lobby.settings.player.tutorial.sign.line2": "",
 	"bingo.lobby.settings.player.tutorial.sign.line3": "Erklärung",
 	"bingo.lobby.settings.player.tutorial.sign.line4": "wie das funktioniert",
-
 	"bingo.lobby.settings.player.tutorial.part1": "Diese Einstellungen erlauben Dir festzulegen, mit welchen Gegenstände und Effekten der Spieler spawnt.\nAlle Trankeffekte sind permanent.",
 	"bingo.lobby.settings.player.tutorial.part2": "Es gibt einige fertige Voreinstellungen, die Du über das Schild “Auswahl / Ansicht Voreinstellungen” auf der rechten Seite nutzen kannst.",
 	"bingo.lobby.settings.player.tutorial.part3": "Um eigene Voreinstellungen zu erzeugen, ändere einfach die Gegenstände in Deinem Inventar oder trinke einen Trank für einen permanenten Effekt. Trinke Milch um deine Effekte zu entfernen.",
 	"bingo.lobby.settings.player.tutorial.part4": "Steh auf dem gemeißelten Quartzblock, um in den Kreativmodus zu wechseln, damit Du einfachen Zugriff auf alle Gegenstände hast.\nWenn Du Operator bist oder im Einzelspielermodus spielst kannst Du auch /give und /effect Befehle nutzen.",
 	"bingo.lobby.settings.player.tutorial.part5": "Vergiss nicht, deine Einstellungen zu speichern - andernfalls werden sie weder gespeichert noch ausgewählt.",
-
 	"bingo.lobby.settings.player.save.sign.line1": "Spieler",
 	"bingo.lobby.settings.player.save.sign.line2": "",
 	"bingo.lobby.settings.player.save.sign.line3": "Voreinstellung",
 	"bingo.lobby.settings.player.save.sign.line4": "speichern",
-
 	"bingo.lobby.settings.player.prev": "Vorherige",
 	"bingo.lobby.settings.player.next": "Nächste",
 	"bingo.lobby.settings.player.save.title": "Speicher Spieler Voreinstellung",
@@ -246,7 +200,6 @@
 	"bingo.lobby.settings.player.save.new.explanation": "Setze den Namen der neuen Voreinstellung, indem Du den Nametag, den Du gerade erhalten hast, im Amboss umbenennst.\nWenn Du fertig bist, lass den Nametag einfach fallen.\nWenn dein Inventar voll ist, kannst Du einfach kurzfristig ein Gegenstand vor den Amboss werfen. Du nimmst es wieder auf, wenn der Nametag im Amboss ist.",
 	"bingo.lobby.settings.player.save.new.success": "Neue Voreinstellung “%s” erfolgreich gespeichert",
 	"bingo.lobby.settings.player.save.overwrite.success": "Voreinstellung “%s” erfolgreich mit neuen Einstellungen überschrieben.",
-
 	"bingo.lobby.settings.player.load.sign.line1": "Spieler",
 	"bingo.lobby.settings.player.load.sign.line2": "",
 	"bingo.lobby.settings.player.load.sign.line3": "Auswahl / Ansicht",
@@ -254,19 +207,16 @@
 	"bingo.lobby.settings.player.load.title": "Lade Spieler Voreinstellung",
 	"bingo.lobby.settings.player.load.description": "Zu ladende Voreinstellung:",
 	"bingo.lobby.settings.player.load.new.success": "Voreinstellung “%s” erfolgreich geladen",
-
 	"bingo.lobby.settings.player.configuration.empty": "Leer",
 	"bingo.lobby.settings.player.configuration.night_vision": "Nachtsicht",
 	"bingo.lobby.settings.player.configuration.boats": "Nachtsicht + 'Boats Boats Boats'",
 	"bingo.lobby.settings.player.configuration.elytra": "Nachtsicht + Elytra",
 	"bingo.lobby.settings.player.configuration.frostwalker": "Nachtsicht + Eisläufer",
 	"bingo.lobby.settings.player.configuration.underwater": "Nachtsicht + Unterwasseratmung + Wasserläufer",
-
-	"bingo.lobby.settings.preferences.sign.line1": "Spieler-",
+	"bingo.lobby.settings.preferences.sign.line1": "",
 	"bingo.lobby.settings.preferences.sign.line2": "einstellungen",
 	"bingo.lobby.settings.preferences.sign.line3": "ändern",
 	"bingo.lobby.settings.preferences.sign.line4": "",
-
 	"bingo.lobby.settings.more_coming.sign.line1": "",
 	"bingo.lobby.settings.more_coming.sign.line2": "Bald mehr",
 	"bingo.lobby.settings.more_coming.sign.line3": "Einstellungen",
@@ -276,10 +226,9 @@
 	"bingo.lobby.settings.more_coming.change_future.no": "Nein",
 	"bingo.lobby.settings.more_coming.change_future.yes_response": "Fehler beim Zugriff auf die Zukunft. Bitte wende dich an deinen lokalen Zeitmaschinenoperator.",
 	"bingo.lobby.settings.more_coming.change_future.no_response": "Gute Entscheidung. Wer weiß, vielleicht sind diese Einstellungen schlecht.",
-
 	"bingo.lobby.settings.pregen_behavior.sign.line1": "Landschaft",
 	"bingo.lobby.settings.pregen_behavior.sign.line2": "vorzeitig",
-	"bingo.lobby.settings.pregen_behavior.sign.line3": "erzeugen",
+	"bingo.lobby.settings.pregen_behavior.sign.line3": "",
 	"bingo.lobby.settings.pregen_behavior.sign.on": "Bei Spielstart",
 	"bingo.lobby.settings.pregen_behavior.sign.off": "Bei Generierung",
 	"bingo.lobby.settings.pregen_behavior.info.on_game_start.prefix": "Bei Spielstart: ",
@@ -288,7 +237,6 @@
 	"bingo.lobby.settings.pregen_behavior.info.on_card_generation": "Die Erzeugung der Landschaft beginnt 5 Sekunden nach der Generierung der Bingokarte. \nBeachte bitte, dass dies Lag in der Lobby verursachen kann, was in einigen Fällen zu Verlangsamung der Funktionalität in der Lobby führen kann.",
 	"bingo.lobby.settings.pregen_behavior.turn_on": "Wechsel zu „Bei Spielstart“",
 	"bingo.lobby.settings.pregen_behavior.turn_off": "Wechsel zu „Bei Generierung“",
-
 	"bingo.lobby.settings.strict_mode.sign.line1": "Server",
 	"bingo.lobby.settings.strict_mode.sign.line2": "Strikter Modus",
 	"bingo.lobby.settings.strict_mode.sign.line3": "",
@@ -301,62 +249,50 @@
 	"bingo.lobby.settings.strict_mode.revoke_from_player.click": "diesem",
 	"bingo.strict_mode.confirm_op": "Bitte %s um deine OP Status zu bestätigen.",
 	"bingo.strict_mode.confirm_op.click": "klick hier",
-
 	"bingo.lobby.tutorial.generate_chests.sign.line1": "Kategorie-",
 	"bingo.lobby.tutorial.generate_chests.sign.line2": "Truhen",
 	"bingo.lobby.tutorial.generate_chests.sign.line3": "erneut",
-	"bingo.lobby.tutorial.generate_chests.sign.line4": "erzeugen",
-
+	"bingo.lobby.tutorial.generate_chests.sign.line4": "",
 	"bingo.lobby.tutorial.chests.book.heading": "Kategorie-Truhen",
 	"bingo.lobby.tutorial.chests.book.page1": "Die Truhen zur Rechten beinhalten alle Gegenstände, die auf einer Bingokarte auftauchen können.\n\nJede Spalte ist eine Kategorie. Es kann immer nur ein Gegenstand je Kategorie gleichzeitig auf einer Karte auftauchen.",
 	"bingo.lobby.tutorial.chests.book.page2": "Eine Zeile, die mit einem leeren Feld beginnt ist eine Fortsetzung der vorherigen Kategorie.\n\nEin Gegenstand kann auch mehrere Kategorien haben. Dann kann er nur auftauchen, wenn keiner der Gegen-\nstände aus einer seiner Kategorien auf der Karte sind.",
 	"bingo.lobby.tutorial.chests.book.page3": "Gegenstände können auch gewichtet sein. Je höher die Gewichtung ist desto wahrscheinlicher ist es, dass der Gegenstand aus der Kategorie genommen wird.\n\nMit dem Schild oben können die Truhen erneut erzeugt werden.",
-
 	"bingo.lobby.tutorial.basics.sign.line1": "",
 	"bingo.lobby.tutorial.basics.sign.line2": "Fetchr",
 	"bingo.lobby.tutorial.basics.sign.line3": "Grundlagen",
 	"bingo.lobby.tutorial.basics.sign.line4": "",
-
 	"bingo.lobby.tutorial.basics1.sign.line1": "Fetchr ist eine",
 	"bingo.lobby.tutorial.basics1.sign.line2": "Minecraft Bingo",
 	"bingo.lobby.tutorial.basics1.sign.line3": "map, bei der Du",
 	"bingo.lobby.tutorial.basics1.sign.line4": "Items sammelst.",
-
 	"bingo.lobby.tutorial.basics2.sign.line1": "Eine Bingokarte",
 	"bingo.lobby.tutorial.basics2.sign.line2": "ist ein 5x5 Gitter",
 	"bingo.lobby.tutorial.basics2.sign.line3": "mit einem Gegen-",
 	"bingo.lobby.tutorial.basics2.sign.line4": "stand pro Zelle.",
-
 	"bingo.lobby.tutorial.basics3.sign.line1": "Um eine Zelle",
 	"bingo.lobby.tutorial.basics3.sign.line2": "freizuschalten,",
 	"bingo.lobby.tutorial.basics3.sign.line3": "erhalte das dar-",
 	"bingo.lobby.tutorial.basics3.sign.line4": "gestellte Item.",
-
 	"bingo.lobby.tutorial.basics4.sign.line1": "Nach Generierung",
 	"bingo.lobby.tutorial.basics4.sign.line2": "einer Karte hast",
 	"bingo.lobby.tutorial.basics4.sign.line3": "Du Zeit, sie",
 	"bingo.lobby.tutorial.basics4.sign.line4": "zu analysieren.",
-
 	"bingo.lobby.tutorial.basics5.sign.line1": "Wenn Du fertig",
 	"bingo.lobby.tutorial.basics5.sign.line2": "bist, starte",
 	"bingo.lobby.tutorial.basics5.sign.line3": "einfach das Spiel",
 	"bingo.lobby.tutorial.basics5.sign.line4": "und hab Spaß :)",
-
 	"bingo.lobby.tutorial.basics6.sign.line1": "Zur Rechten",
 	"bingo.lobby.tutorial.basics6.sign.line2": "findest Du eine",
 	"bingo.lobby.tutorial.basics6.sign.line3": "Übersicht der",
 	"bingo.lobby.tutorial.basics6.sign.line4": "möglichen Ziele.",
-
 	"bingo.lobby.tutorial.skybox.sign.line1": "Nach dem Start",
 	"bingo.lobby.tutorial.skybox.sign.line2": "kannst Du Dich",
 	"bingo.lobby.tutorial.skybox.sign.line3": "kurz von hoch",
 	"bingo.lobby.tutorial.skybox.sign.line4": "oben umsehen.",
-
 	"bingo.lobby.tutorial.goals.sign.line1": "",
 	"bingo.lobby.tutorial.goals.sign.line2": "Ziele",
 	"bingo.lobby.tutorial.goals.sign.line3": "",
 	"bingo.lobby.tutorial.goals.sign.line4": "",
-		
 	"bingo.lobby.tutorial.goals.introduction.heading": "Ziele",
 	"bingo.lobby.tutorial.goals.introduction": "In Fetchr kann man verschiedene Ziele erreichen.\n\nDie folgenden Seiten zeigen die vom Spiel erkannten Ziele.\n\nEs ist nicht nötig, dein Ziel zu auszuwählen, spiele einfach bis Du es erreicht hast.",
 	"bingo.lobby.tutorial.goals.planning.heading": "Planung",
@@ -369,12 +305,10 @@
 	"bingo.lobby.tutorial.goals.20_no_bingo": "Erhalte 20 Gegenstände ohne Bingo zu bekommen.\n\nÜberlege Dir, welche Gegenstände Du vermeiden willst, um das Ziel zu erreichen. Hüte Dich vor Dingen, die Du versehentlich aufnehmen könntest, wie z.B. Pfeile von Skeletten.",
 	"bingo.lobby.tutorial.goals.multiple_bingo.heading": "Multi-Bingo",
 	"bingo.lobby.tutorial.goals.multiple_bingo": "Bei diesem Ziel erreichst Du mehrere Bingos gleichzeitig.\n\nDazu sammelst Du je 4 Gegegenstände in sich überschneidenden Zeilen, Spalten oder Diagonalen und den Gegenstand auf der Kreuzung als Letztes. Es gibt Doppel, Drei- und Vierfach Bingo.",
-	
 	"bingo.lobby.tutorial.game_info.sign.line1": "",
 	"bingo.lobby.tutorial.game_info.sign.line2": "Spiel",
 	"bingo.lobby.tutorial.game_info.sign.line3": "Info",
 	"bingo.lobby.tutorial.game_info.sign.line4": "",
-
 	"bingo.lobby.tutorial.game_info.introduction.heading": "Spiel Info",
 	"bingo.lobby.tutorial.game_info.introduction": "Dieses Buch enthält einige generelle Informationen über das Spiel.\nEs gibt einige Anpassungen der Welterzeugung, die hier auch beschrieben werden.",
 	"bingo.lobby.tutorial.game_info.general.heading": "Allgemein",
@@ -395,17 +329,14 @@
 	"bingo.lobby.tutorial.game_info.world_gen.ites": "Alle Steinvarianten wie DiorIT, GranIT and AndesIT sind in dieser Version komplett entfernt.\nDadurch soll das Zumüllen des Inventars reduziert werden.",
 	"bingo.lobby.tutorial.game_info.world_gen.ambient.heading": "Umgebungs-\nbeleuchtung: ",
 	"bingo.lobby.tutorial.game_info.world_gen.ambient": "Es ist eine Dimensionseinstellung aktiv, mit der Du im Dunkeln ähnlich wie im Vanilla Nether sehen kannst.\nDies funktioniert ohne Nachtsicht, Du kannst aber immer noch hell von dunkel unterscheiden.",
-
 	"bingo.lobby.tutorial.get_tools.sign.line1": "Nach dem Start",
 	"bingo.lobby.tutorial.get_tools.sign.line2": "brauchst Du ",
 	"bingo.lobby.tutorial.get_tools.sign.line3": "erstmal",
 	"bingo.lobby.tutorial.get_tools.sign.line4": "Werkzeug.",
-
 	"bingo.lobby.team_selection.sign.line1": "",
 	"bingo.lobby.team_selection.sign.line2": "Team",
 	"bingo.lobby.team_selection.sign.line3": "wechseln",
 	"bingo.lobby.team_selection.sign.line4": "",
-
 	"bingo.lobby.team_selection.join_red": "%s ist dem roten Team beigetreten.",
 	"bingo.lobby.team_selection.join_orange": "%s ist dem orangen Team beigetreten.",
 	"bingo.lobby.team_selection.join_yellow": "%s ist dem gelben Team beigetreten.",
@@ -416,20 +347,18 @@
 	"bingo.lobby.team_selection.join_dark_blue": "%s ist dem blauen Team beigetreten.",
 	"bingo.lobby.team_selection.join_purple": "%s ist dem violetten Team beigetreten.",
 	"bingo.lobby.team_selection.join_magenta": "%s ist dem magenta Team beigetreten.",
-
 	"bingo.lobby.end.sign.line1": "Die Außenwelt",
 	"bingo.lobby.end.sign.line2": "",
 	"bingo.lobby.end.sign.line3": "Gefahr!",
 	"bingo.lobby.end.sign.line4": "Bleib drinnen!",
-
 	"bingo.categories.header": "Kategorien:",
 	"bingo.category.apple": "Apfel",
 	"bingo.category.bow": "Bogen",
 	"bingo.category.cactus": "Kaktus",
 	"bingo.category.chest_iron": "Eisen mit Truhe",
 	"bingo.category.chest_loot": "Verliesbeute",
-	"bingo.category.compass": "Kompass",
 	"bingo.category.clay": "Ton",
+	"bingo.category.compass": "Kompass",
 	"bingo.category.diamond": "Diamant",
 	"bingo.category.egg": "Ei",
 	"bingo.category.nighttime_mob_drops": "Nächtliche Monsterbeute",
@@ -461,51 +390,41 @@
 	"bingo.category.wheat": "Weizen",
 	"bingo.category.wool": "Wolle",
 	"bingo.items.weight": "Gewichtung: %s",
-
 	"bingo.game.start.preparing_spawn": "Spawn vorbereiten...",
 	"bingo.game.start.loading_terrain": "Terrain laden...",
 	"bingo.game.start.countdown_completed": "LOS!",
 	"bingo.game.start.pre_gen_progress": "Generiere Chunks...",
-
 	"bingo.got_item": "[%2$s | #%1$s] %3$s erhielt [%4$s]",
 	"bingo.got_blackout": "[%s] %s erzielte(n) ein Blackout!",
 	"bingo.got_20_no_bingo": "[%s] %s erzielte(n) ein 20-ohne-Bingo!",
-	
 	"bingo.got_bingo.row": "[%s] %s erzielte(n) ein Bingo in Zeile %s!",
 	"bingo.got_bingo.col": "[%s] %s erzielte(n) ein Bingo in Spalte %s!",
 	"bingo.got_bingo.diag.top_left": "[%s] %s erzielte(n) ein Bingo diagonal von oben links nach unten rechts!",
 	"bingo.got_bingo.diag.bottom_left": "[%s] %s erzielte(n) ein Bingo diagonal von unten links nach oben rechts!",
-	
 	"bingo.got_bingo.double.col_row": "[%s] %s erzielte(n) ein Doppel-Bingo in Spalte %s und Zeile %s!",
 	"bingo.got_bingo.double.col_diag.top_left": "[%s] %s erzielte(n) ein Doppel-Bingo in Spalte %s und diagonal von oben links nach unten rechts!",
 	"bingo.got_bingo.double.col_diag.bottom_left": "[%s] %s erzielte(n) ein Doppel-Bingo in Spalte %s und diagonal von unten links nach oben rechts!",
 	"bingo.got_bingo.double.row_diag.top_left": "[%s] %s erzielte(n) ein Doppel-Bingo in Zeile %s und diagonal von oben links nach unten rechts!",
 	"bingo.got_bingo.double.row_diag.bottom_left": "[%s] %s erzielte(n) ein Doppel-Bingo in Zeile %s und diagonal von unten links nach oben rechts!",
 	"bingo.got_bingo.double.diags": "[%s] %s erzielte(n) ein Doppel-Bingo in beiden Diagonalen!",
-	
 	"bingo.got_bingo.triple.top_left": "[%s] %s erzielte(n) ein Dreifach-Bingo in Spalte %s, Zeile %s und diagonal von oben links nach unten rechts!",
 	"bingo.got_bingo.triple.bottom_left": "[%s] %s erzielte(n) ein Dreifach-Bingo in Spalte %s, Zeile %s und diagonal von unten links nach oben rechts!",
 	"bingo.got_bingo.triple.col_diags": "[%s] %s erzielte(n) ein Dreifach-Bingo in Spalte %s und beiden Diagonalen!",
 	"bingo.got_bingo.triple.row_diags": "[%s] %s erzielte(n) ein Dreifach-Bingo in Zeile %s und beiden Diagonalen!",
-	
 	"bingo.got_bingo.quadruple": "[%s] %s erzielte(n) ein Vierfach-Bingo!",
-
 	"bingo.got_sniper_bingo.row": "[%s] %s erzielte(n) ein Sniper-Bingo in Zeile %s!",
 	"bingo.got_sniper_bingo.col": "[%s] %2$s erzielte(n) ein Sniper-Bingo in Spalte %s!",
 	"bingo.got_sniper_bingo.diag.top_left": "[%s] %s erzielte(n) ein Sniper-Bingo diagonal von oben links nach unten rechts!",
 	"bingo.got_sniper_bingo.diag.bottom_left": "[%s] %s erzielte(n) ein Sniper-Bingo diagonal von unten links nach oben rechts!",
-	
 	"bingo.got_sniper_bingo.double.col_row": "[%s] %s erzielte(n) ein Sniper-Doppel-Bingo in Spalte %s und Zeile %s!",
 	"bingo.got_sniper_bingo.double.col_diag.top_left": "[%s] %s erzielte(n) ein Sniper-Doppel-Bingo in Spalte %s und diagonal von oben links nach unten rechts!",
 	"bingo.got_sniper_bingo.double.col_diag.bottom_left": "[%s] %s erzielte(n) ein Sniper-Doppel-Bingo in Spalte %s und diagonal von unten links nach oben rechts!",
 	"bingo.got_sniper_bingo.double.row_diag.top_left": "[%s] %s erzielte(n) ein Sniper-Doppel-Bingo in Zeile %s und diagonal von oben links nach unten rechts!",
 	"bingo.got_sniper_bingo.double.row_diag.bottom_left": "[%s] %s erzielte(n) ein Sniper-Doppel-Bingo in Zeile %s und diagonal von unten links nach oben rechts!",
 	"bingo.got_sniper_bingo.double.diags": "[%s] %s erzielte(n) ein Sniper-Doppel-Bingo in beiden Diagonalen!",
-	
 	"bingo.got_sniper_bingo.triple.top_left": "[%s] %s erzielte(n) ein Sniper-Dreifach-Bingo in Spalte %s, Zeile %s und diagonal von oben links nach unten rechts!",
 	"bingo.got_sniper_bingo.triple.bottom_left": "[%s] %s erzielte(n) ein Sniper-Dreifach-Bingo in Spalte %s, Zeile %4$s und diagonal von unten links nach oben rechts!",
 	"bingo.got_sniper_bingo.triple.col_diags": "[%s] %s erzielte(n) ein Sniper-Dreifach-Bingo in Spalte %s und beiden Diagonalen!",
 	"bingo.got_sniper_bingo.triple.row_diags": "[%s] %s erzielte(n) ein Sniper-Dreifach-Bingo in Zeile %s und beiden Diagonalen!",
-	
 	"bingo.got_sniper_bingo.quadruple": "[%s] %s erzielte(n) ein Sniper-Vierfach-Bingo!"
 }
