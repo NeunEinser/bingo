@@ -346,7 +346,7 @@ forceload add 0 0
 			#>
 			# @within
 			# 	function bingo:lobby/place_sign
-			# 	function bingo:init/setup_lobby
+			# 	function bingo:init/setup_lobby/end
 			#declare tag bingo.sign_machinery
 		#endregion
 
@@ -1263,5 +1263,9 @@ summon minecraft:area_effect_cloud 0 0 0 {CustomName:'{"translate": "bingo.techn
 #endregion
 
 # spawn strcutures
-	execute if score $lobby_generated bingo.state matches 0 in bingo:lobby run function bingo:init/setup_lobby
+	
+	#Temporary forceload to make sure all needed chunks are actually loaded.
+	#This forceload is undone at the end of the function bingo:init/setup_lobby
+	execute if score $lobby_generated bingo.state matches 0 in bingo:lobby run forceload add -16 -17 47 31
+	execute if score $lobby_generated bingo.state matches 0 run schedule function bingo:init/setup_lobby/root 1t
 	scoreboard players set $lobby_generated bingo.state 1

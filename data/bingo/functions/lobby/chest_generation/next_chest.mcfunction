@@ -7,7 +7,7 @@
 # 	entity Marker area effect cloud that marks the right side of the chest
 # 	position @s
 
-clone ~ ~ ~ ~1 254 ~ ~ ~1 ~ filtered minecraft:chest move
+clone ~ ~ ~ ~1 62 ~ ~ ~1 ~ filtered minecraft:chest move
 
 #>
 # @private

@@ -1,10 +1,9 @@
-#> bingo:init/spawn_structures
+#> bingo:init/setup_lobby/spawn_structures
 #
 # This function spawns all registered structures
 #
 # @within
-# 	function bingo:init/setup_lobby
-# 	function bingo:init/spawn_structures
+# 	function bingo:init/setup_lobby/spawn_structures_schedule
 # @context
 # 	entity Marker entity which is at the end of the structure spawned in the
 # 		last step
@@ -31,7 +30,6 @@ execute store result score $init/lobby.offsetz bingo.tmp run data get block -1 3
 scoreboard players operation $init/lobby.offsetz bingo.tmp /= -2 bingo.const
 scoreboard players add $init/lobby.offsetz bingo.tmp 1
 
-forceload add ~-1 ~-24 ~-48 ~23
 setblock ~-1 ~ ~ minecraft:structure_block[mode=load]{mode:"LOAD"}
 data modify block ~-1 ~ ~ name set from storage bingo:registries structures[0]
 execute store result block ~-1 ~ ~ posX int 1 run scoreboard players get $init/lobby.offsetx bingo.tmp
@@ -47,4 +45,7 @@ scoreboard players remove $init/lobby.posx bingo.tmp 1
 execute store result entity @s Pos[0] double 1 run scoreboard players get $init/lobby.posx bingo.tmp
 
 data remove storage bingo:registries structures[0]
-execute if data storage bingo:registries structures[0] at @s run function bingo:init/spawn_structures
+
+execute unless data storage bingo:registries structures[0] at @s run function bingo:init/setup_lobby/end
+execute if data storage bingo:registries structures[0] at @s run forceload add ~-1 ~-24 ~-48 ~23
+execute if data storage bingo:registries structures[0] run schedule function bingo:init/setup_lobby/spawn_structures_schedule 1t
