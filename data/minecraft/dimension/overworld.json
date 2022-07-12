@@ -10,7 +10,8 @@
 					"height": 1
 				 }
 			],
-			"structures": {"structures":{}}
+			"structures": {"structures":{}},
+			"structure_overrides": []
 		}
 	}
 }
