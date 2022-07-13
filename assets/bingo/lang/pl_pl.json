@@ -1,8 +1,4 @@
 {
-	"%1074992263$s%1$s": "%2$s",
-	"%1074992263$s%{NEUN_SCRIPT:rp_version}$s%1$s": "%2$s",
-	"%1074992263$s%3$s%3$s%1$s": "%2$s",
-	"bingo.technical.detect_multiplayer": "DoNotTranslateThis{NEUN_SCRIPT:rp_version}",
 	"bingo.error.command_blocks_disabled": "Bloki poleceń są wyłączone na tym serwerze. Upewnij się, że plik server.properties ma wszystkie wymienione wartości ustawione tak jak opisano %s.",
 	"bingo.error.command_blocks_disabled.link": "tutaj",
 	"bingo.resourcepack_check.sign.line1": "Pacz. zasobów",
