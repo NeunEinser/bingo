@@ -1,1 +1,14 @@
-{}
+{
+	"bingo.resourcepack_check.sign.line1": "Набор ресурсов",
+	"bingo.resourcepack_check.sign.line2": "был установлен.",
+	"bingo.resourcepack_check.sign.line3": "Нажмите здесь для",
+	"bingo.resourcepack_check.sign.line4": "сообщения чата.",
+	"bingo.resourcepack_check.wrong_version.sign.line2": "Скачать",
+	"bingo.resourcepack_check.wrong_version.sign.line3": "набор ресурсов",
+	"bingo.logging.error": "ОШИБКА",
+	"bingo.game.menu.options.click_lobby": "Нажмите здесь",
+	"bingo.game.menu.options.click_spectator": "Нажмите здесь",
+	"bingo.game.switch_gamemode.prevented.click": "Нажмите здесь",
+	"bingo.preferences.title": "Изменение Настроек",
+	"bingo.preferences.page": "Страница %s/%s"
+}
