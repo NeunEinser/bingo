@@ -10,5 +10,10 @@
 	"bingo.game.menu.options.click_spectator": "Нажмите здесь",
 	"bingo.game.switch_gamemode.prevented.click": "Нажмите здесь",
 	"bingo.preferences.title": "Изменение Настроек",
-	"bingo.preferences.page": "Страница %s/%s"
+	"bingo.preferences.page": "Страница %s/%s",
+	"bingo.custom_hud.components.timer": "Таймер",
+	"bingo.preferences.custom_hud.component_settings.player_position.title": "Настройки Координат",
+	"bingo.lobby.credits.gbegerow.sign.line3": "Немецкий",
+	"bingo.lobby.card_generation.start_game.sign.line2": "Начать",
+	"bingo.lobby.card_generation.start_game.sign.line3": "Игру"
 }
