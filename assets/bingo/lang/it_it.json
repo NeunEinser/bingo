@@ -1,7 +1,7 @@
 {
 	"bingo.error.command_blocks_disabled": "I blocchi di comando sono disabilitati su questo server. Assicurati che il file server.properties abbia tutti i valori indicati come descritto %s.",
 	"bingo.error.command_blocks_disabled.link": "qui",
-	"bingo.resourcepack_check.sign.line1": "Pacchetto di risorse",
+	"bingo.resourcepack_check.sign.line1": "Pacchetto risorse",
 	"bingo.resourcepack_check.sign.line2": "è stato installato.",
 	"bingo.resourcepack_check.sign.line3": "Clicca qui per",
 	"bingo.resourcepack_check.sign.line4": "messaggi della chat.",
