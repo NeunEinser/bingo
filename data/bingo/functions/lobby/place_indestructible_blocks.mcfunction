@@ -11,8 +11,7 @@
 # @private
 #declare tag bingo.sign_lobby_end_sign
 
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo.lobby_sign] at @s if entity @a[distance=..10] run function bingo:lobby/place_sign
-execute as @e[type=minecraft:area_effect_cloud, tag=bingo.lobby_sign] at @s unless block ~ ~ ~ #minecraft:signs run function bingo:lobby/place_sign
+execute as @e[type=minecraft:area_effect_cloud, tag=bingo.lobby_sign] at @s run function bingo:lobby/place_sign
 
 #region Buttons
 execute at @e[type=minecraft:area_effect_cloud, tag=bingo.lobby_button] unless block ~ ~ ~ minecraft:stone_button run setblock ~ ~ ~ minecraft:stone_button[face=wall,facing=north]
