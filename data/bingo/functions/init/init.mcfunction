@@ -1117,7 +1117,6 @@ summon minecraft:area_effect_cloud 0 0 0 {CustomName:'{"translate": "bingo.techn
 
 # Init slow loops
 	schedule function bingo:tick/clean_up 1s replace
-	schedule function bingo:lobby/place_indestructible_blocks 1s replace
 
 # setup default player configurations
 	#data remove storage bingo:player configurations

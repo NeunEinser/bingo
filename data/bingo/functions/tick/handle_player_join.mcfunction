@@ -26,3 +26,5 @@ execute store result score $player_join.item_count bingo.tmp run data get storag
 execute if score $player_join.item_count bingo.tmp matches 25 run tag @s add bingo.spectator
 
 scoreboard players reset @s bingo.reconnect
+
+execute if entity @s[predicate=bingo:is_in_lobby] run schedule function bingo:lobby/place_indestructible_blocks 1t replace
