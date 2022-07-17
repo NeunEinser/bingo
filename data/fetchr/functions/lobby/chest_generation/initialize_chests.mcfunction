@@ -4,7 +4,7 @@
 #
 # @within function fetchr:lobby/chest_generation/generate_item_chests
 
-fill ~ ~ ~ ~1 255 ~ minecraft:air replace minecraft:chest
+fill ~ ~ ~ ~1 63 ~ minecraft:air replace minecraft:chest
 
 setblock ~ ~ ~ minecraft:chest[type=left]
 setblock ~1 ~ ~ minecraft:chest[type=right]
