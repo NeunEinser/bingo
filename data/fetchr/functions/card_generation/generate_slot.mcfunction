@@ -8,7 +8,6 @@
 
 #region select item
 scoreboard players operation $rand.max 91.math.io = $card_gen.total_weight fetchr.tmp
-tellraw @a {"score": {"name": "$card_gen.slot", "objective": "fetchr.tmp"}}
 
 function neun_einser.math:random/next_int
 
@@ -34,4 +33,4 @@ execute as @e[type=minecraft:item_frame, tag=fetchr.card_frame] if score @s fetc
 
 execute as @e[tag=fetchr.command_cloud, limit=1] run function fetchr:card_generation/set_commands
 
-execute if score $card_gen.slot fetchr.tmp matches ..24 run function fetchr:card_generation/cleanup_and_next_slot
+execute if score $card_gen.slot fetchr.tmp matches ..23 run function fetchr:card_generation/cleanup_and_next_slot
