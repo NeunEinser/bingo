@@ -20,8 +20,8 @@
 		"warning",
 		[
 			{
-				"label": "bingo.snake_case",
-				"parts": [ "/^bingo$/", "snake_case" ],
+				"label": "fetchr.snake_case",
+				"parts": [ "/^fetchr$/", "snake_case" ],
 				"sep": "."
 			},
 			{
@@ -62,8 +62,8 @@
 		"warning",
 		[
 			{
-				"label": "bingo.snake_case",
-				"parts": [ "/bingo/", "snake_case" ],
+				"label": "fetchr.snake_case",
+				"parts": [ "/fetchr/", "snake_case" ],
 				"sep": "."
 			},
 			{

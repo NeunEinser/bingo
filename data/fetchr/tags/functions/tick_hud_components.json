@@ -1,0 +1,7 @@
+{
+	"values": [
+		"fetchr:custom_hud/components/timer/tick",
+		"fetchr:custom_hud/components/player_position/tick",
+		"fetchr:custom_hud/components/seed/tick"
+	]
+}

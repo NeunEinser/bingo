@@ -1,2 +1,0 @@
-execute if score $slot bingo.tmp matches 35 run loot replace entity @s inventory.26 1 mine 0 63 0 minecraft:map{bingo: {shulkerBoxDropper: true}}
-execute if score $slot bingo.tmp matches 100 run loot replace entity @s armor.feet 1 mine 0 63 0 minecraft:map{bingo: {shulkerBoxDropper: true}}

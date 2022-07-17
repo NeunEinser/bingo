@@ -1,0 +1,2 @@
+execute if score $slot fetchr.tmp matches ..22 run function fetchr:lobby/player_settings/load/copy_inventory_slot/l2/l2_2
+execute if score $slot fetchr.tmp matches 23.. run function fetchr:lobby/player_settings/load/copy_inventory_slot/l2/l2_3

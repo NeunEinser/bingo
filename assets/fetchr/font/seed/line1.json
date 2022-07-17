@@ -1,0 +1,13 @@
+{
+	"providers": [
+		{
+			"type": "bitmap",
+			"file": "fetchr:font/seed.png",
+			"ascent": -42,
+			"height": 40,
+			"chars": [
+				"s"
+			]
+		}
+	]
+}

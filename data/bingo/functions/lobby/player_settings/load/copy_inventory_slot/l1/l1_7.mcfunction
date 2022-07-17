@@ -1,2 +1,0 @@
-execute if score $slot bingo.tmp matches ..28 run function bingo:lobby/player_settings/load/copy_inventory_slot/l0/l0_14
-execute if score $slot bingo.tmp matches 29.. run function bingo:lobby/player_settings/load/copy_inventory_slot/l0/l0_15

@@ -1,6 +1,6 @@
 {
 	"values": [
 		"neun_einser.timer:internal/tick",
-		"bingo:tick/tick"
+		"fetchr:tick/tick"
 	]
 }

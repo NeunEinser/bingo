@@ -2,6 +2,6 @@
 	"values": [
 		"neun_einser.math:init/init",
 		"neun_einser.timer:internal/init",
-		"bingo:init/init"
+		"fetchr:init/init"
 	]
 }

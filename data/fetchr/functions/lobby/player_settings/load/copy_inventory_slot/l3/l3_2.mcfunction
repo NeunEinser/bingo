@@ -1,0 +1,2 @@
+execute if score $slot fetchr.tmp matches ..102 run function fetchr:lobby/player_settings/load/copy_inventory_slot/l2/l2_4
+execute if score $slot fetchr.tmp matches 103 run loot replace entity @s armor.head 1 mine 0 63 0 minecraft:map{fetchr: {shulkerBoxDropper: true}}

@@ -1,0 +1,18 @@
+{
+	"criteria": {
+		"click_button": {
+			"trigger": "minecraft:item_used_on_block",
+			"conditions": {
+				"location": {
+					"dimension": "fetchr:lobby",
+					"block": {
+						"tag": "minecraft:buttons"
+					}
+				}
+			}
+		}	
+	},
+	"rewards": {
+		"function": "fetchr:lobby/press_button"
+	}
+}

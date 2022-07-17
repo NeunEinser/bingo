@@ -12,8 +12,8 @@
 	"resourcepack": {
 		"path": ".",
 		"exclude": [
-			"assets/bingo/textures/font/compass_text_scroll.png",
-			"assets/bingo/textures/font/compass_text_overlay.png"
+			"assets/fetchr/textures/font/compass_text_scroll.png",
+			"assets/fetchr/textures/font/compass_text_overlay.png"
 		],
 		"dependencies": [
 			"https://github.com/AmberWat/NegativeSpaceFont/releases/download/v4.1/NegativeSpaceFont4.zip"
