@@ -81,5 +81,16 @@
 	"bingo.lobby.credits.community_and_support.heading": "Gemeenschap & Ondersteuning",
 	"bingo.lobby.credits.community_and_support.discord_link": "Discord server",
 	"bingo.lobby.credits.community_and_support.twitter_link": "Twitter (DMs open)",
-	"bingo.lobby.credits.playtesters.sign.line2": "Muur van"
+	"bingo.lobby.credits.playtesters.sign.line2": "Muur van",
+	"bingo.lobby.credits.tools.nbt_viewer.sign.line3": "door Misode",
+	"bingo.lobby.card_generation.random_card.sign.line2": "Genereer",
+	"bingo.lobby.card_generation.random_card.sign.line3": "Willekeurige",
+	"bingo.lobby.card_generation.random_card.sign.line4": "Kaart",
+	"bingo.lobby.card_generation.from_seed.sign.line2": "Genereer Kaart",
+	"bingo.lobby.card_generation.from_seed.sign.line3": "Van Seed",
+	"bingo.lobby.card_generation.start_game.sign.line2": "Start",
+	"bingo.lobby.card_generation.start_game.sign.line3": "Spel",
+	"bingo.lobby.card_generation.crafting_table.sign.line1": "Vervaardiging",
+	"bingo.lobby.card_generation.crafting_table.sign.line2": "Recept",
+	"bingo.lobby.card_generation.crafting_table.sign.line3": "Opzoek"
 }
