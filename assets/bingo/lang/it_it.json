@@ -177,7 +177,7 @@
 	"bingo.lobby.settings.pregen_behavior.info.on_card_generation": "La pregenerazione inizierà automaticamente 5 secondi dopo aver generato una nuova carta. Questo può causare un ritardo nella lobby mentre sta accadendo, rendendo alcune funzionalità nella lobby lente a reagire e non rispondere in alcuni casi.",
 	"bingo.lobby.settings.pregen_behavior.turn_on": "Cambia a “All'inizio del gioco”",
 	"bingo.lobby.settings.pregen_behavior.turn_off": "Cambia a “All'inizio della gener. della carta”",
-	"bingo.lobby.settings.strict_mode.sign.line1": "Server Modalità Rigida",
+	"bingo.lobby.settings.strict_mode.sign.line1": "Server",
 	"bingo.lobby.settings.strict_mode.sign.line2": "Modalità Rigida",
 	"bingo.lobby.settings.strict_mode.sign.on": "Attivato",
 	"bingo.lobby.settings.strict_mode.sign.off": "Disattivato",
