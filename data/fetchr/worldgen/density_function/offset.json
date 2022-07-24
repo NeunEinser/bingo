@@ -51,17 +51,17 @@
 								},
 								{
 									"derivative": 0.0,
-									"location": -0.44,
+									"location": -0.46,
+									"value": -0.12
+								},
+								{
+									"derivative": 0.0,
+									"location": -0.2,
 									"value": -0.12
 								},
 								{
 									"derivative": 0.0,
 									"location": -0.18,
-									"value": -0.12
-								},
-								{
-									"derivative": 0.0,
-									"location": -0.16,
 									"value": {
 										"coordinate": "fetchr:erosion",
 										"points": [
@@ -283,7 +283,7 @@
 								},
 								{
 									"derivative": 0.0,
-									"location": -0.15,
+									"location": -0.17,
 									"value": {
 										"coordinate": "fetchr:erosion",
 										"points": [
