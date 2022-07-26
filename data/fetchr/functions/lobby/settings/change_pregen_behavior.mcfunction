@@ -2,7 +2,9 @@
 #
 # This function prints the prompt for changing pregen behavior.
 #
-# @within fetchr:lobby/settings/pregen_strict_mode_check
+# @within
+# 	fetchr:lobby/settings/pregen_strict_mode_check
+# 	fetchr:lobby/player_tick
 # @context entity Player changing the setting
 
 tellraw @s [{"translate": "fetchr.lobby.settings.pregen_behavior.info.on_game_start.prefix"}, {"translate": "fetchr.lobby.settings.pregen_behavior.info.on_game_start", "color": "gray"}, "\n\n", {"translate": "fetchr.lobby.settings.pregen_behavior.info.on_card_generation.prefix"}, {"translate": "fetchr.lobby.settings.pregen_behavior.info.on_card_generation", "color": "gray"}, "\n"]

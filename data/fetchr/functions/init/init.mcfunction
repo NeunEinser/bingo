@@ -341,268 +341,44 @@ forceload add 0 0
 	#endregion
 
 	#region lobby signs
-		#region machinery
-			#>
-			# @within
-			# 	function fetchr:lobby/place_sign
-			# 	function fetchr:init/setup_lobby/end
-			#declare tag fetchr.sign_machinery
-		#endregion
-
-		#region credits
-			#>
-			# @within
-			# 	function fetchr:lobby/place_sign
-			# 	structure fetchr:credits
-			#declare tag fetchr.sign_credits_neun_einser
-			#>
-			# @within
-			# 	function fetchr:lobby/place_sign
-			# 	structure fetchr:credits
-			#declare tag fetchr.sign_credits_unlucks_mc_gee
-			#>
-			# @within
-			# 	function fetchr:lobby/place_sign
-			# 	structure fetchr:credits
-			#declare tag fetchr.sign_credits_kristof
-			#>
-			# @within
-			# 	function fetchr:lobby/place_sign
-			# 	structure fetchr:credits
-			#declare tag fetchr.sign_credits_gbegerow
-			#>
-			# @within
-			# 	function fetchr:lobby/place_sign
-			# 	structure fetchr:credits
-			#declare tag fetchr.sign_credits_amber_wat
-			#>
-			# @within
-			# 	function fetchr:lobby/place_sign
-			# 	structure fetchr:credits
-			#declare tag fetchr.sign_credits_nope_name
-			#>
-			# @within
-			# 	function fetchr:lobby/place_sign
-			# 	structure fetchr:credits
-			#declare tag fetchr.sign_credits_dr_brian_lorgon111
-			#>
-			# @within
-			# 	function fetchr:lobby/place_sign
-			# 	structure fetchr:credits
-			#declare tag fetchr.sign_credits_community_and_support
-			#>
-			# @within
-			# 	function fetchr:lobby/place_sign
-			# 	structure fetchr:credits
-			#declare tag fetchr.sign_credits_playtesters
-			#>
-			# @within
-			# 	function fetchr:lobby/place_sign
-			# 	structure fetchr:credits
-			#declare tag fetchr.sign_credits_silentrob
-			#>
-			# @within
-			# 	function fetchr:lobby/place_sign
-			# 	structure fetchr:credits
-			#declare tag fetchr.sign_credits_muffinshire
-			#>
-			# @within
-			# 	function fetchr:lobby/place_sign
-			# 	structure fetchr:credits
-			#declare tag fetchr.sign_credits_gothfaerie
-			#>
-			# @within
-			# 	function fetchr:lobby/place_sign
-			# 	structure fetchr:credits
-			#declare tag fetchr.sign_credits_zampone
-			#>
-			# @within
-			# 	function fetchr:lobby/place_sign
-			# 	structure fetchr:credits
-			#declare tag fetchr.sign_credits_thomas_to_space
-			#>
-			# @within
-			# 	function fetchr:lobby/place_sign
-			# 	structure fetchr:credits
-			#declare tag fetchr.sign_credits_craca_croes_gazyy
-			#>
-			# @within
-			# 	function fetchr:lobby/place_sign
-			# 	structure fetchr:credits
-			#declare tag fetchr.sign_credits_lifeofchrome
-			#>
-			# @within
-			# 	function fetchr:lobby/place_sign
-			# 	structure fetchr:credits
-			#declare tag fetchr.sign_credits_tod_nl
-			#>
-			# @within
-			# 	function fetchr:lobby/place_sign
-			# 	structure fetchr:credits
-			#declare tag fetchr.sign_credits_no_leaf_clover
-
-			#>
-			# @within
-			# 	function fetchr:lobby/place_sign
-			# 	structure fetchr:credits
-			#declare tag fetchr.sign_credits_tools
-			#>
-			# @within
-			# 	function fetchr:lobby/place_sign
-			# 	structure fetchr:credits
-			#declare tag fetchr.sign_credits_tools_vscode
-			#>
-			# @within
-			# 	function fetchr:lobby/place_sign
-			# 	structure fetchr:credits
-			#declare tag fetchr.sign_credits_tools_datapackhelperplus
-			#>
-			# @within
-			# 	function fetchr:lobby/place_sign
-			# 	structure fetchr:credits
-			#declare tag fetchr.sign_credits_tools_multinoise
-			#>
-			# @within
-			# 	function fetchr:lobby/place_sign
-			# 	structure fetchr:credits
-			#declare tag fetchr.sign_credits_tools_nbtexplorer
-			#>
-			# @within
-			# 	function fetchr:lobby/place_sign
-			# 	structure fetchr:credits
-			#declare tag fetchr.sign_credits_tools_nbtstudio
-			#>
-			# @within
-			# 	function fetchr:lobby/place_sign
-			# 	structure fetchr:credits
-			#declare tag fetchr.sign_credits_tools_nbtviewer
-		#endregion
-
-		#region card generation
-			#>
-			# @within
-			# 	function fetchr:lobby/place_sign
-			# 	structure fetchr:card_generation
-			#declare tag fetchr.sign_team_selection
-			#>
-			# @within
-			# 	function fetchr:lobby/place_sign
-			# 	structure fetchr:card_generation
-			#declare tag fetchr.sign_card_generation_crafting_table
-			#>
-			# @within
-			# 	function fetchr:lobby/place_sign
-			# 	structure fetchr:card_generation
-			#declare tag fetchr.sign_card_generation_furnace
-			#>
-			# @within
-			# 	function fetchr:lobby/place_sign
-			# 	structure fetchr:card_generation
-			#declare tag fetchr.sign_card_generation_random_card
-			#>
-			# @within
-			# 	function fetchr:lobby/place_sign
-			# 	structure fetchr:card_generation
-			#declare tag fetchr.sign_card_generation_from_seed
-			#>
-			# @within
-			# 	function fetchr:lobby/place_sign
-			# 	structure fetchr:card_generation
-			#declare tag fetchr.sign_card_generation_start_game
-		#endregion
-
-		#region tutorial & settings
-			#>
-			# @within
-			# 	function fetchr:lobby/place_sign
-			# 	structure fetchr:tutorial
-			#declare tag fetchr.sign_settings_more_coming
-			#>
-			# @within
-			# 	function fetchr:lobby/place_sign
-			# 	structure fetchr:tutorial
-			#declare tag fetchr.sign_settings_automatic_pregen
-			#>
-			# @within
-			# 	function fetchr:lobby/place_sign
-			# 	structure fetchr:tutorial
-			#declare tag fetchr.sign_settings_strict_mode
-			#>
-			# @within
-			# 	function fetchr:lobby/place_sign
-			# 	structure fetchr:tutorial
-			#declare tag fetchr.sign_settings_preferences
-			#>
-			# @within
-			# 	function fetchr:lobby/place_sign
-			# 	structure fetchr:tutorial
-			#declare tag fetchr.sign_tutorial_generate_chests
-			#>
-			# @within
-			# 	function fetchr:lobby/place_sign
-			# 	structure fetchr:tutorial
-			#declare tag fetchr.sign_tutorial_generate_chests
-			#>
-			# @within
-			# 	function fetchr:lobby/place_sign
-			# 	structure fetchr:tutorial
-			#declare tag fetchr.sign_tutorial_basics
-			#>
-			# @within
-			# 	function fetchr:lobby/place_sign
-			# 	structure fetchr:tutorial
-			#declare tag fetchr.sign_tutorial_basics1
-			#>
-			# @within
-			# 	function fetchr:lobby/place_sign
-			# 	structure fetchr:tutorial
-			#declare tag fetchr.sign_tutorial_basics2
-			#>
-			# @within
-			# 	function fetchr:lobby/place_sign
-			# 	structure fetchr:tutorial
-			#declare tag fetchr.sign_tutorial_basics3
-			#>
-			# @within
-			# 	function fetchr:lobby/place_sign
-			# 	structure fetchr:tutorial
-			#declare tag fetchr.sign_tutorial_basics4
-			#>
-			# @within
-			# 	function fetchr:lobby/place_sign
-			# 	structure fetchr:tutorial
-			#declare tag fetchr.sign_tutorial_basics5
-			#>
-			# @within
-			# 	function fetchr:lobby/place_sign
-			# 	structure fetchr:tutorial
-			#declare tag fetchr.sign_tutorial_basics6
-			#>
-			# @within
-			# 	function fetchr:lobby/place_sign
-			# 	structure fetchr:tutorial
-			#declare tag fetchr.sign_tutorial_skybox
-			#>
-			# @within
-			# 	function fetchr:lobby/place_sign
-			# 	structure fetchr:tutorial
-			#declare tag fetchr.sign_tutorial_get_tools
-			#>
-			# @within
-			# 	function fetchr:lobby/place_sign
-			# 	structure fetchr:tutorial
-			#declare tag fetchr.sign_tutorial_game_info
-			#>
-			# @within
-			# 	function fetchr:lobby/place_sign
-			# 	structure fetchr:tutorial
-			#declare tag fetchr.sign_tutorial_goal_lectern
-			#>
-			# @within
-			# 	function fetchr:lobby/place_sign
-			# 	structure fetchr:tutorial
-			#declare tag fetchr.sign_tutorial_game_info_lectern
-		#endregion
+		#>
+		# @within
+		# 	function fetchr:init/setup_lobby/start
+		# 	function fetchr:init/setup_lobby/end
+		# 	function fetchr:lobby/place_indestructible_blocks
+		# 	structure fetchr:*
+		#declare tag fetchr.lobby_sign
+		#>
+		# @within
+		# 	function fetchr:lobby/place_sign
+		# 	structure fetchr:*
+		#declare tag fetchr.sign_north
+		#>
+		# @within
+		# 	function fetchr:lobby/place_sign
+		# 	structure fetchr:*
+		#declare tag fetchr.sign_east
+		#>
+		# @within
+		# 	function fetchr:lobby/place_sign
+		# 	structure fetchr:*
+		#declare tag fetchr.sign_south
+		#>
+		# @within
+		# 	function fetchr:lobby/place_sign
+		# 	function fetchr:init/setup_lobby/end
+		# 	structure fetchr:*
+		#declare tag fetchr.sign_west
+		#>
+		# @within
+		# 	function fetchr:lobby/player_tick
+		# 	structure fetchr:tutorial
+		#declare tag fetchr.sign_automatically_pregen
+		#>
+		# @within
+		# 	function fetchr:lobby/place_sign
+		# 	structure fetchr:tutorial
+		#declare tag fetchr.sign_strict_mode
 	#endregion
 
 	#region lobby buttons

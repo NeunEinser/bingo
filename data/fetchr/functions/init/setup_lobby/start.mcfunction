@@ -13,12 +13,6 @@
 #>
 # @within
 # 	function fetchr:init/setup_lobby/start
-# 	function fetchr:init/setup_lobby/end
-# 	function fetchr:lobby/place_indestructible_blocks
-#declare tag fetchr.lobby_sign
-#>
-# @within
-# 	function fetchr:init/setup_lobby/start
 # 	function fetchr:card_frames/**
 #declare tag fetchr.card_generation_frame_start
 
