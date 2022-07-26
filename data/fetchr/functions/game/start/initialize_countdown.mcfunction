@@ -19,7 +19,7 @@ scoreboard players set $start_game.countdown fetchr.schedule 3
 
 spawnpoint @a[predicate=fetchr:is_in_game] ~ ~ ~
 forceload add ~ ~
-summon minecraft:area_effect_cloud ~ ~ ~ {Age: -2147483648, Duration: -1, WaitTime: -2147483648, Tags: ["fetchr.spawn"]}
+summon minecraft:marker ~ ~ ~ {Tags: ["fetchr.spawn"]}
 teleport @a[predicate=fetchr:is_in_game, gamemode=adventure] ~ ~ ~
 
 schedule function fetchr:game/start/countdown 1s

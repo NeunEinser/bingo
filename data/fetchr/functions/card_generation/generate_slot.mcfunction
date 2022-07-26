@@ -31,6 +31,6 @@ execute store result storage fetchr:card slots[-1].id int 1 run scoreboard playe
 # set item to frame
 execute as @e[type=minecraft:item_frame, tag=fetchr.card_frame] if score @s fetchr.lobby_card_frame_id = $card_gen.slot fetchr.tmp run data modify entity @s Item set from storage tmp.fetchr:card_generation items[-1].item
 
-execute as @e[tag=fetchr.command_cloud, limit=1] run function fetchr:card_generation/set_commands
+execute as @e[type=minecraft:marker, tag=fetchr.command_cloud, limit=1] run function fetchr:card_generation/set_commands
 
 execute if score $card_gen.slot fetchr.tmp matches ..23 run function fetchr:card_generation/cleanup_and_next_slot

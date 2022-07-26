@@ -49,8 +49,9 @@ scoreboard players operation $card_gen.available_category_weight fetchr.tmp = $a
 #declare tag fetchr.command_cloud
 data modify storage tmp.fetchr:card_generation items set from storage fetchr:items activeItems
 data remove storage fetchr:card slots
-execute in fetchr:lobby run summon minecraft:area_effect_cloud 0 0 0 {Tags: ["fetchr.command_cloud"]}
-execute in minecraft:overworld positioned 0 0 0 as @e[type=minecraft:area_effect_cloud, tag=fetchr.string_tester, distance=..0.1, limit=1] run function fetchr:card_generation/generate_slot
+execute in fetchr:lobby run summon minecraft:marker 0 0 0 {Tags: ["fetchr.command_cloud"]}
+execute in minecraft:overworld positioned 0 0 0 as @e[type=minecraft:marker, tag=fetchr.string_tester, distance=..0.1, limit=1] run function fetchr:card_generation/generate_slot
+kill @e[type=minecraft:marker, tag=fetchr.command_cloud, limit=1]
 
 function neun_einser.math:random/next_int
 execute store result storage fetchr:card spawnLocation int 1 run scoreboard players get $rand.seed 91.math.io

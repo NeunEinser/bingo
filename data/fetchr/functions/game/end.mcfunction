@@ -11,8 +11,8 @@ scoreboard players reset $spawn_z fetchr.state
 
 execute as @a[predicate=fetchr:is_in_game] run function fetchr:util/go_to_lobby
 
-kill @e[type=minecraft:area_effect_cloud, tag=fetchr.spawn, limit=1]
-kill @e[type=minecraft:area_effect_cloud, tag=fetchr.skybox_cloud, limit=1]
+kill @e[type=minecraft:marker, tag=fetchr.spawn, limit=1]
+kill @e[type=minecraft:marker, tag=fetchr.skybox, limit=1]
 scoreboard players set $pregen_status fetchr.state 0
 execute in fetchr:default run forceload remove all
 execute in fetchr:lobby run function neun_einser.timer:stop

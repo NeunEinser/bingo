@@ -136,7 +136,7 @@ forceload add 0 0
 	# This tag is used for the area effect cloud marking the location for the skybox
 	#
 	# @internal
-	#declare tag fetchr.skybox_cloud
+	#declare tag fetchr.skybox
 	#>
 	# This tag is given to any player who triggered fetchr.spectator in game.
 	#
@@ -148,8 +148,8 @@ forceload add 0 0
 	#
 	# @internal
 	#declare tag fetchr.string_tester
-	kill @e[type=minecraft:area_effect_cloud, tag=fetchr.string_tester]
-	summon minecraft:area_effect_cloud 0 0 0 {Age: -2147483648, Duration: -1, WaitTime: -2147483648, Tags: ["fetchr.string_tester"]}
+	kill @e[type=minecraft:marker, tag=fetchr.string_tester]
+	summon minecraft:marker 0 0 0 {Tags: ["fetchr.string_tester"]}
 	#>
 	# Tag for entities that where already persistent.
 	#
@@ -667,8 +667,8 @@ forceload add 0 0
 #>
 # @private
 #declare tag fetchr.detect_mp_aec
-kill @e[type=minecraft:area_effect_cloud, tag=fetchr.detect_mp_aec, limit=1]
-summon minecraft:area_effect_cloud 0 0 0 {CustomName:'{"translate": "fetchr.technical.detect_multiplayer"}', Age: -2147483648, Duration: -1, WaitTime: -2147483648, Tags: ["fetchr.detect_mp_aec"]}
+kill @e[type=minecraft:marker, tag=fetchr.detect_mp_aec, limit=1]
+summon minecraft:marker 0 0 0 {CustomName:'{"translate": "fetchr.technical.detect_multiplayer"}', Tags: ["fetchr.detect_mp_aec"]}
 
 #region setup objectives
 	scoreboard objectives remove fetchr.chicken_timer_cache

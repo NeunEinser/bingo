@@ -5,7 +5,7 @@
 # @within function fetchr:tick/tick
 
 #execute in fetchr:lobby run function neun_einser.timer:detect_pause
-teleport @a[predicate=fetchr:is_in_overworld, tag=!fetchr.resourcepack_check] @e[type=minecraft:area_effect_cloud, tag=fetchr.spawn, limit=1]
+teleport @a[predicate=fetchr:is_in_overworld, tag=!fetchr.resourcepack_check] @e[type=minecraft:marker, tag=fetchr.spawn, limit=1]
 
 #>
 # Count of players in the game

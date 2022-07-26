@@ -6,8 +6,8 @@
 # @within function fetchr:game/start/pre_gen/generate_chunks_without_lag
 # @context position Spawn location.
 
-kill @e[type=minecraft:area_effect_cloud, tag=fetchr.pre_gen_cloud, limit=1]
+kill @e[type=minecraft:marker, tag=fetchr.pre_gen_last_chunk, limit=1]
 
 scoreboard players set $pregen_status fetchr.state 2
 execute if score $game_state fetchr.state matches 1 run function fetchr:game/start/spawn_skybox
-execute if score $game_state fetchr.state matches 0 run summon minecraft:area_effect_cloud ~ ~ ~ {Age: -2147483648, Duration: -1, WaitTime: -2147483648, Tags: ["fetchr.skybox_cloud"]}
+execute if score $game_state fetchr.state matches 0 run summon minecraft:marker ~ ~ ~ {Tags: ["fetchr.skybox"]}

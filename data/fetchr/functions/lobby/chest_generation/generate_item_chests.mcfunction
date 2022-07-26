@@ -34,4 +34,4 @@ execute if score $chest_generation/sort/card.out fetchr.tmp matches 0 run functi
 execute if score $chest_generation/sort/card.out fetchr.tmp matches 1 run function fetchr:lobby/chest_generation/sort_categories/sort_by_length_odd
 data modify storage tmp.fetchr:chest_generation categories set from storage tmp.fetchr:chest_generation mergeSort.odd[0]
 
-execute at @e[type=minecraft:area_effect_cloud, tag=fetchr.chest_generation_marker, limit=1] run function fetchr:lobby/chest_generation/initialize_chests
+execute at @e[type=minecraft:marker, tag=fetchr.chest_generation_marker, limit=1] run function fetchr:lobby/chest_generation/initialize_chests

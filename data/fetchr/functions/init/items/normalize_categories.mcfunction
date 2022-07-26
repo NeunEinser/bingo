@@ -16,8 +16,8 @@
 #>
 # @private
 #declare score_holder $init/items/normalize.is_string
-execute store success score $init/items/normalize.is_string fetchr.tmp run data modify entity @e[type=minecraft:area_effect_cloud, tag=fetchr.string_tester, limit=1] Tags append from storage tmp.fetchr:init itemCategories[-1]
-execute if score $init/items/normalize.is_string fetchr.tmp matches 1 run data modify entity @e[type=minecraft:area_effect_cloud, tag=fetchr.string_tester, limit=1] Tags set value ["fetchr.string_tester"]
+execute store success score $init/items/normalize.is_string fetchr.tmp run data modify entity @e[type=minecraft:marker, tag=fetchr.string_tester, limit=1] Tags append from storage tmp.fetchr:init itemCategories[-1]
+execute if score $init/items/normalize.is_string fetchr.tmp matches 1 run data modify entity @e[type=minecraft:marker, tag=fetchr.string_tester, limit=1] Tags set value ["fetchr.string_tester"]
 
 data modify storage tmp.fetchr:init category set value {}
 execute if score $init/items/normalize.is_string fetchr.tmp matches 1 run data modify storage tmp.fetchr:init category.id set from storage tmp.fetchr:init itemCategories[-1]

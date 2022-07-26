@@ -23,6 +23,6 @@
 execute in fetchr:lobby run function neun_einser.timer:read
 scoreboard players operation $game_start/pre_gen.start fetchr.tmp = $raw 91.timer.time
 
-execute if score $pregen_status fetchr.state matches 1 as @e[type=minecraft:area_effect_cloud, tag=fetchr.pre_gen_cloud, limit=1] at @s run function fetchr:game/start/pre_gen/set_position_and_generate_next
+execute if score $pregen_status fetchr.state matches 1 as @e[type=minecraft:marker, tag=fetchr.pre_gen_last_chunk, limit=1] at @s run function fetchr:game/start/pre_gen/set_position_and_generate_next
 
 execute store result bossbar fetchr:start/pre_gen/progress value run scoreboard players get $game_start/pre_gen.i fetchr.schedule

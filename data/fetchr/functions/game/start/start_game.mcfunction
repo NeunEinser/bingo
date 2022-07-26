@@ -4,8 +4,8 @@
 #
 # @within function fetchr:game/start/countdown
 
-execute at @e[type=minecraft:area_effect_cloud, tag=fetchr.spawn, limit=1] rotated as @s run tp ~ ~ ~
-execute at @e[type=minecraft:area_effect_cloud, tag=fetchr.spawn, limit=1] run forceload add ~ ~
+execute at @e[type=minecraft:marker, tag=fetchr.spawn, limit=1] rotated as @s run tp ~ ~ ~
+execute at @e[type=minecraft:marker, tag=fetchr.spawn, limit=1] run forceload add ~ ~
 scoreboard players set $game_state fetchr.state 3
 
 tellraw @s {"translate": "fetchr.game.start.countdown_completed"}

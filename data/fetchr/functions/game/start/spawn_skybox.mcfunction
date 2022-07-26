@@ -11,7 +11,7 @@ scoreboard players set $game_state fetchr.state 2
 execute as @e[distance=0..] run function fetchr:game/start/unfreeze_entities
 forceload remove all
 
-kill @e[type=minecraft:area_effect_cloud, tag=fetchr.skybox_cloud, limit=1]
+kill @e[type=minecraft:marker, tag=fetchr.skybox, limit=1]
 bossbar set fetchr:start/pre_gen/progress visible false
 function neun_einser.timer:stop
 
