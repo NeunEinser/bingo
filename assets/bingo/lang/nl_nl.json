@@ -136,5 +136,10 @@
 	"bingo.lobby.settings.pregen_behavior.sign.off": "Bij kaart gen",
 	"bingo.lobby.settings.pregen_behavior.info.on_game_start.prefix": "Bij starten van het spel: ",
 	"bingo.lobby.settings.pregen_behavior.info.on_game_start": "Het terrein is vooraf gegenereerd rond spawn zodra je het \"Start Spel\" bord raakt. Dit resulteert in een extra wachttijd na het starten van het spel.",
-	"bingo.lobby.settings.pregen_behavior.info.on_card_generation.prefix": "Bij genereren van de kaart: "
+	"bingo.lobby.settings.pregen_behavior.info.on_card_generation.prefix": "Bij genereren van de kaart: ",
+	"bingo.lobby.tutorial.basics.sign.line2": "Fetchr",
+	"bingo.lobby.tutorial.basics.sign.line3": "Basis",
+	"bingo.lobby.tutorial.basics1.sign.line1": "Fetchr is een",
+	"bingo.lobby.tutorial.basics1.sign.line2": "Minecraft Bingo",
+	"bingo.lobby.tutorial.basics1.sign.line3": "kaart over"
 }
