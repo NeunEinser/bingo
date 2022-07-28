@@ -370,11 +370,6 @@ forceload add 0 0
 			# @within
 			# 	function bingo:lobby/place_sign
 			# 	structure bingo:credits
-			#declare tag bingo.sign_credits_gbegerow
-			#>
-			# @within
-			# 	function bingo:lobby/place_sign
-			# 	structure bingo:credits
 			#declare tag bingo.sign_credits_amber_wat
 			#>
 			# @within
@@ -441,6 +436,42 @@ forceload add 0 0
 			# 	function bingo:lobby/place_sign
 			# 	structure bingo:credits
 			#declare tag bingo.sign_credits_no_leaf_clover
+
+			#>
+			# @within
+			# 	function bingo:lobby/place_sign
+			# 	structure bingo:credits
+			#declare tag bingo.sign_credits_translators
+
+			#>
+			# @within
+			# 	function bingo:lobby/place_sign
+			# 	structure bingo:credits
+			#declare tag bingo.sign_credits_german
+
+			#>
+			# @within
+			# 	function bingo:lobby/place_sign
+			# 	structure bingo:credits
+			#declare tag bingo.sign_credits_polish
+
+			#>
+			# @within
+			# 	function bingo:lobby/place_sign
+			# 	structure bingo:credits
+			#declare tag bingo.sign_credits_italian
+
+			#>
+			# @within
+			# 	function bingo:lobby/place_sign
+			# 	structure bingo:credits
+			#declare tag bingo.sign_credits_dutch
+
+			#>
+			# @within
+			# 	function bingo:lobby/place_sign
+			# 	structure bingo:credits
+			#declare tag bingo.sign_credits_russian
 
 			#>
 			# @within
