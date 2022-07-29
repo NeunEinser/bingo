@@ -1,5 +1,10 @@
 {
+	"bingo.error.command_blocks_disabled": "Blocos de comando estão desativados neste servidor. Certifique-se de que o arquivo server.properties tenha todos os valores mencionados definidos como descrito %s.",
+	"bingo.error.command_blocks_disabled.link": "aqui",
+	"bingo.resourcepack_check.go_to_lobby.part1": "O pacote de recursos foi ativado com sucesso.",
+	"bingo.resourcepack_check.go_to_lobby.part2": "%s para ir ao saguão.",
 	"bingo.resourcepack_check.go_to_lobby.click": "Clique aqui",
+	"bingo.resourcepack_check.wrong_version.title": "Versão incorreta do pacote de recursos ativada.",
 	"bingo.resourcepack_check.wrong_version.link": "aqui",
 	"bingo.game.menu.options.click_spectator": "Clique aqui",
 	"bingo.game.switch_gamemode.prevented.click": "Clique aqui",
