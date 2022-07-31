@@ -1,1 +1,12 @@
-{}
+{
+	"bingo.error.command_blocks_disabled": "Les blocs de commandes sont désactivés sur ce serveur. Veuillez vous assurer que le fichier server.properties a toutes les valeurs mentionnées définies comme décrit %s.",
+	"bingo.error.command_blocks_disabled.link": "ici",
+	"bingo.resourcepack_check.sign.line1": "Pack de textures",
+	"bingo.resourcepack_check.sign.line2": "a été installée.",
+	"bingo.resourcepack_check.sign.line3": "Cliquez ici pour",
+	"bingo.resourcepack_check.sign.line4": "le message.",
+	"bingo.resourcepack_check.go_to_lobby.part1": "Le pack de ressources a été correctement activé.",
+	"bingo.resourcepack_check.go_to_lobby.part2": "%s pour aller au lobby.",
+	"bingo.resourcepack_check.go_to_lobby.click": "Cliquez ici",
+	"bingo.resourcepack_check.wrong_version.title": "Version incorrecte du pack de ressources activée."
+}
