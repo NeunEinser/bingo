@@ -39,4 +39,4 @@ team modify fetchr.white seeFriendlyInvisibles true
 team modify fetchr.yellow seeFriendlyInvisibles true
 
 execute at @s run fill ~-1 0 ~-1 ~1 130 ~1 minecraft:air replace minecraft:barrier
-execute in fetchr:lobby run function neun_einser.timer:start/hundredth_of_second
+function neun_einser.timer:start/hundredth_of_second

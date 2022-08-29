@@ -13,7 +13,7 @@
 
 scoreboard players set $pregen_status fetchr.state 1
 scoreboard players set $game_start/pre_gen.i fetchr.schedule 1
-execute in fetchr:lobby run function neun_einser.timer:start/millis
+function neun_einser.timer:start/millis
 bossbar set fetchr:start/pre_gen/progress players @a
 execute if score $game_state fetchr.settings matches 1 run bossbar set fetchr:start/pre_gen/progress visible true
 bossbar set fetchr:start/pre_gen/progress max 1681
