@@ -5,7 +5,7 @@
 # @within advancement bingo:inventory_changed
 # @context entity Player
 
-tag @s[tag=!bingo.check_inventory] add bingo.only_check_inventory_once
-scoreboard players set @s[tag=!bingo.check_inventory] bingo.inv_change 2
+tag @s add bingo.only_check_inventory_once
+scoreboard players set @s bingo.inv_change 2
 
 advancement revoke @s only bingo:inventory_changed
