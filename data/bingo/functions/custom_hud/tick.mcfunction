@@ -2,7 +2,7 @@
 #
 # Displays the bingo card for @s
 #
-# @within bingo:tick/tick
+# @within bingo:tick/player_tick
 # @context entity Player for displaying the card
 # @reads score @s bingo.card_pos
 

@@ -1,0 +1,10 @@
+{
+	"criteria": {
+		"inventory_changed": {
+			"trigger": "minecraft:inventory_changed"
+		}
+	},
+	"rewards": {
+		"function": "bingo:game/on_inventory_changed"
+	}
+}

@@ -128,11 +128,30 @@ forceload add 0 0
 	# @internal
 	#declare tag bingo.card_frame
 	#>
+	# This tag is given to players whose inventory should be checked for item gets
+	#
+	# This is part of an optimization since checking inventory is unoptimized by Mojang
+	#
+	# @internal
+	#declare tag bingo.check_inventory
+	#>
 	# This tag is used during item removal after successfully obtaining an item from
 	# the card.
 	#
 	# @internal
 	#declare tag bingo.clear
+	#>
+	# This tag is given to players whose inventory should only be checked once, not
+	# waiting for a movement action
+	#
+	# @within
+	# 	function bingo:game/on_inventory_changed
+	# 	function bingo:game/player_tick
+	#declare tag bingo.only_check_inventory_once
+	#>
+	# This tag is given to players whose position changed compared to last tick
+	# @internal
+	#declare tag bingo.position_changed
 	#>
 	# This tag is used for the area effect cloud marking the location for the skybox
 	#
@@ -703,9 +722,17 @@ kill @e[type=minecraft:area_effect_cloud, tag=bingo.detect_mp_aec, limit=1]
 summon minecraft:area_effect_cloud 0 0 0 {CustomName:'{"translate": "bingo.technical.detect_multiplayer"}', Age: -2147483648, Duration: -1, WaitTime: -2147483648, Tags: ["bingo.detect_mp_aec"]}
 
 #region setup objectives
+	scoreboard objectives remove bingo.barrel
+	scoreboard objectives remove bingo.brewing
+	scoreboard objectives remove bingo.b_furnace
+	scoreboard objectives remove bingo.chest
 	scoreboard objectives remove bingo.chicken
 	scoreboard objectives remove bingo.const
+	scoreboard objectives remove bingo.crafting
+	scoreboard objectives remove bingo.enderchest
 	scoreboard objectives remove bingo.fireworks
+	scoreboard objectives remove bingo.furnace
+	scoreboard objectives remove bingo.grindstone
 	scoreboard objectives remove bingo.has_item
 	scoreboard objectives remove bingo.hud_update
 	scoreboard objectives remove bingo.io
@@ -718,6 +745,9 @@ summon minecraft:area_effect_cloud 0 0 0 {CustomName:'{"translate": "bingo.techn
 	scoreboard objectives remove bingo.seed
 	scoreboard objectives remove bingo.spectator
 	scoreboard objectives remove bingo.resources
+	scoreboard objectives remove bingo.shulkerbox
+	scoreboard objectives remove bingo.stonecut
+	scoreboard objectives remove bingo.smoker
 	scoreboard objectives remove bingo.tmp
 
 	#region public objectives
@@ -915,7 +945,7 @@ summon minecraft:area_effect_cloud 0 0 0 {CustomName:'{"translate": "bingo.techn
 		# is used to determine whether the player position display needs updating
 		# @within
 		#		function bingo:init/init
-		#		function bingo:custom_hud/components/player_position/*
+		#		function bingo:tick/player_tick
 		scoreboard objectives add bingo.pos_hash dummy
 
 		#>
@@ -933,10 +963,101 @@ summon minecraft:area_effect_cloud 0 0 0 {CustomName:'{"translate": "bingo.techn
 		#
 		# @within
 		#		function bingo:init/init
-		#		function bingo:tick/tick
+		#		function bingo:tick/player_tick
 		#		function bingo:tick/handle_player_join
 		scoreboard objectives add bingo.reconnect minecraft.custom:minecraft.leave_game
 
+		
+
+		#region interaction
+			#>
+			# This objective is used to detect a player reconnecting
+			#
+			# @within
+			#		function bingo:init/init
+			#		function bingo:game/player_tick
+			#		function bingo:game/on_inventory_changed
+			scoreboard objectives add bingo.inv_change dummy
+
+			#>
+			# This objective is used to detect a player reconnecting
+			#
+			# @within
+			#		function bingo:init/init
+			#		function bingo:game/player_tick
+			scoreboard objectives add bingo.chest minecraft.custom:minecraft.open_chest
+			#>
+			# This objective is used to detect a player reconnecting
+			#
+			# @within
+			#		function bingo:init/init
+			#		function bingo:game/player_tick
+			scoreboard objectives add bingo.barrel minecraft.custom:minecraft.open_barrel
+			#>
+			# This objective is used to detect a player reconnecting
+			#
+			# @within
+			#		function bingo:init/init
+			#		function bingo:game/player_tick
+			scoreboard objectives add bingo.enderchest minecraft.custom:minecraft.open_enderchest
+			#>
+			# This objective is used to detect a player reconnecting
+			#
+			# @within
+			#		function bingo:init/init
+			#		function bingo:game/player_tick
+			scoreboard objectives add bingo.shulkerbox minecraft.custom:minecraft.open_shulker_box
+
+			#>
+			# This objective is used to detect a player reconnecting
+			#
+			# @within
+			#		function bingo:init/init
+			#		function bingo:game/player_tick
+			scoreboard objectives add bingo.crafting minecraft.custom:minecraft.interact_with_crafting_table
+			#>
+			# This objective is used to detect a player reconnecting
+			#
+			# @within
+			#		function bingo:init/init
+			#		function bingo:game/player_tick
+			scoreboard objectives add bingo.furnace minecraft.custom:minecraft.interact_with_furnace
+			#>
+			# This objective is used to detect a player reconnecting
+			#
+			# @within
+			#		function bingo:init/init
+			#		function bingo:game/player_tick
+			scoreboard objectives add bingo.b_furnace minecraft.custom:minecraft.interact_with_blast_furnace
+			#>
+			# This objective is used to detect a player reconnecting
+			#
+			# @within
+			#		function bingo:init/init
+			#		function bingo:game/player_tick
+			scoreboard objectives add bingo.smoker minecraft.custom:minecraft.interact_with_smoker
+			#>
+			# This objective is used to detect a player reconnecting
+			#
+			# @within
+			#		function bingo:init/init
+			#		function bingo:game/player_tick
+			scoreboard objectives add bingo.grindstone minecraft.custom:minecraft.interact_with_grindstone
+			#>
+			# This objective is used to detect a player reconnecting
+			#
+			# @within
+			#		function bingo:init/init
+			#		function bingo:game/player_tick
+			scoreboard objectives add bingo.stonecut minecraft.custom:minecraft.interact_with_stonecutter
+			#>
+			# This objective is used to detect a player reconnecting
+			#
+			# @within
+			#		function bingo:init/init
+			#		function bingo:game/player_tick
+			scoreboard objectives add bingo.brewing minecraft.custom:minecraft.interact_with_brewingstand
+		#endregion
 	#endregion
 
 	#region score holders
@@ -1075,10 +1196,6 @@ summon minecraft:area_effect_cloud 0 0 0 {CustomName:'{"translate": "bingo.techn
 		scoreboard players set 6 bingo.const 6
 		#>
 		# @public
-		#declare score_holder 8
-		scoreboard players set 8 bingo.const 8
-		#>
-		# @public
 		#declare score_holder 9
 		scoreboard players set 9 bingo.const 9
 		#>
@@ -1095,12 +1212,12 @@ summon minecraft:area_effect_cloud 0 0 0 {CustomName:'{"translate": "bingo.techn
 		scoreboard players set 32 bingo.const 32
 		#>
 		# @public
-		#declare score_holder 40
-		scoreboard players set 40 bingo.const 40
-		#>
-		# @public
 		#declare score_holder 41
 		scoreboard players set 41 bingo.const 41
+		#>
+		# @public
+		#declare score_holder 50
+		scoreboard players set 50 bingo.const 50
 		#>
 		# @public
 		#declare score_holder 96

@@ -24,6 +24,38 @@ gamemode creative @s[scores={bingo.spectator=1}]
 gamemode spectator @s[scores={bingo.spectator=1}]
 scoreboard players reset @s[scores={bingo.spectator=1}] bingo.spectator
 
+# Set player inventory change delay
+scoreboard players remove @s[scores={bingo.inv_change=1..}] bingo.inv_change 1
+
+execute if score @s bingo.chest matches 1.. run scoreboard players set @s bingo.inv_change 20
+execute if score @s bingo.barrel matches 1.. run scoreboard players set @s bingo.inv_change 20
+execute if score @s bingo.enderchest matches 1.. run scoreboard players set @s bingo.inv_change 20
+execute if score @s bingo.shulkerbox matches 1.. run scoreboard players set @s bingo.inv_change 20
+execute if score @s bingo.crafting matches 1.. run scoreboard players set @s bingo.inv_change 20
+execute if score @s bingo.furnace matches 1.. run scoreboard players set @s bingo.inv_change 20
+execute if score @s bingo.b_furnace matches 1.. run scoreboard players set @s bingo.inv_change 20
+execute if score @s bingo.smoker matches 1.. run scoreboard players set @s bingo.inv_change 20
+execute if score @s bingo.grindstone matches 1.. run scoreboard players set @s bingo.inv_change 20
+execute if score @s bingo.stonecut matches 1.. run scoreboard players set @s bingo.inv_change 20
+execute if score @s bingo.brewing matches 1.. run scoreboard players set @s bingo.inv_change 20
+
+scoreboard players reset @s bingo.chest
+scoreboard players reset @s bingo.barrel
+scoreboard players reset @s bingo.enderchest
+scoreboard players reset @s bingo.shulkerbox
+scoreboard players reset @s bingo.crafting
+scoreboard players reset @s bingo.furnace
+scoreboard players reset @s bingo.b_furnace
+scoreboard players reset @s bingo.smoker
+scoreboard players reset @s bingo.grindstone
+scoreboard players reset @s bingo.stonecut
+scoreboard players reset @s bingo.brewing
+
+tag @s[tag=bingo.position_changed] remove bingo.check_inventory
+tag @s[tag=bingo.only_check_inventory_once] remove bingo.check_inventory
+tag @s[scores={bingo.inv_change=1..}] add bingo.check_inventory
+tag @s[scores={bingo.inv_change=2..}] remove bingo.only_check_inventory_once
+
 # This should always be at the end to prevent game logic from running for this
 # player in the lobby.
 scoreboard players enable @s bingo.lobby
