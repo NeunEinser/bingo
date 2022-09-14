@@ -116,7 +116,6 @@ scoreboard players operation $tick/player.hash bingo.tmp += $tick/player.hash_z 
 scoreboard players operation $tick/player.hash bingo.tmp *= 128 bingo.const
 scoreboard players operation $tick/player.hash bingo.tmp += $tick/player.rot bingo.tmp
 scoreboard players operation $tick/player.hash bingo.tmp *= 2 bingo.const
-execute if entity @s[predicate=bingo:holding_treasure_map] run scoreboard players add $tick/player.hash bingo.tmp 1
 
 tag @s remove bingo.position_changed
 execute unless score @s bingo.pos_hash = $tick/player.hash bingo.tmp run tag @s add bingo.position_changed
