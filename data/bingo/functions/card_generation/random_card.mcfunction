@@ -5,4 +5,4 @@
 # @within function bingo:lobby/settings/random_seed_strict_mode_check
 
 function neun_einser.math:random/set_random_seed
-function bingo:card_generation/generate_card
+execute in bingo:lobby run function bingo:card_generation/generate_card

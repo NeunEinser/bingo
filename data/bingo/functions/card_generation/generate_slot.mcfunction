@@ -19,6 +19,8 @@ data modify storage tmp.bingo:card_generation items append from storage tmp.bing
 
 #region copy to slot
 data modify storage bingo:card slots append value {}
+data modify block 0 0 0 Text1 set value '["", {"translate": "space.2", "font": "space:default"}, {"storage": "tmp.bingo:card_generation", "nbt":"items[-1].icon", "interpret": true}]'
+data modify storage bingo:card slots[-1].display set from block 0 0 0 Text1
 
 data modify storage bingo:card slots[-1].item set from storage tmp.bingo:card_generation items[-1]
 execute store result storage bingo:card slots[-1].id int 1 run scoreboard players get $card_gen.slot bingo.tmp

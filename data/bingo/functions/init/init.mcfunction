@@ -168,8 +168,6 @@ forceload add 0 0
 	#
 	# @internal
 	#declare tag bingo.string_tester
-	kill @e[type=minecraft:area_effect_cloud, tag=bingo.string_tester]
-	summon minecraft:area_effect_cloud 0 0 0 {Age: -2147483648, Duration: -1, WaitTime: -2147483648, Tags: ["bingo.string_tester"]}
 	#>
 	# Tag for entities that where already persistent.
 	#
@@ -1135,6 +1133,13 @@ summon minecraft:area_effect_cloud 0 0 0 {CustomName:'{"translate": "bingo.techn
 		#
 		# @internal
 		#declare score_holder $seed
+		#>
+		# The count of currently active teams
+		#
+		# Stored in bingo.state
+		#
+		# @internal
+		#declare score_holder $team_count
 		#>
 		# The current total item weight
 		#

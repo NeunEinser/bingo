@@ -23,66 +23,66 @@ team modify bingo.red seeFriendlyInvisibles false
 team modify bingo.white seeFriendlyInvisibles false
 team modify bingo.yellow seeFriendlyInvisibles false
 
-# Generate needed completed backgrounds
-#>
-# @within
-# 	function bingo:game/start/init_teams
-# 	function bingo:game/start/get_completed_background_template
-#declare score_holder $game/start.team_count
-scoreboard players set $game/start.team_count bingo.tmp 0
+scoreboard players set $team_count bingo.state 0
 
 execute if entity @a[team=bingo.dark_red,limit=1] run data modify storage bingo:card teams[{id: "bingo:dark_red"}].backgroundIndex set value 0b
-execute if entity @a[team=bingo.dark_red,limit=1] run scoreboard players add $game/start.team_count bingo.tmp 1
+execute if entity @a[team=bingo.dark_red,limit=1] run scoreboard players add $team_count bingo.state 1
 
-execute if entity @a[team=bingo.red,limit=1] store result storage bingo:card teams[{id: "bingo:red"}].backgroundIndex byte 1 run scoreboard players get $game/start.team_count bingo.tmp
-execute if entity @a[team=bingo.red,limit=1] run scoreboard players add $game/start.team_count bingo.tmp 1
+execute if entity @a[team=bingo.red,limit=1] store result storage bingo:card teams[{id: "bingo:red"}].backgroundIndex byte 1 run scoreboard players get $team_count bingo.state
+execute if entity @a[team=bingo.red,limit=1] run scoreboard players add $team_count bingo.state 1
 
-execute if entity @a[team=bingo.gold,limit=1] store result storage bingo:card teams[{id: "bingo:gold"}].backgroundIndex byte 1 run scoreboard players get $game/start.team_count bingo.tmp
-execute if entity @a[team=bingo.gold,limit=1] run scoreboard players add $game/start.team_count bingo.tmp 1
+execute if entity @a[team=bingo.gold,limit=1] store result storage bingo:card teams[{id: "bingo:gold"}].backgroundIndex byte 1 run scoreboard players get $team_count bingo.state
+execute if entity @a[team=bingo.gold,limit=1] run scoreboard players add $team_count bingo.state 1
 
-execute if entity @a[team=bingo.yellow,limit=1] store result storage bingo:card teams[{id: "bingo:yellow"}].backgroundIndex byte 1 run scoreboard players get $game/start.team_count bingo.tmp
-execute if entity @a[team=bingo.yellow,limit=1] run scoreboard players add $game/start.team_count bingo.tmp 1
+execute if entity @a[team=bingo.yellow,limit=1] store result storage bingo:card teams[{id: "bingo:yellow"}].backgroundIndex byte 1 run scoreboard players get $team_count bingo.state
+execute if entity @a[team=bingo.yellow,limit=1] run scoreboard players add $team_count bingo.state 1
 
-execute if entity @a[team=bingo.green,limit=1] store result storage bingo:card teams[{id: "bingo:green"}].backgroundIndex byte 1 run scoreboard players get $game/start.team_count bingo.tmp
-execute if entity @a[team=bingo.green,limit=1] run scoreboard players add $game/start.team_count bingo.tmp 1
+execute if entity @a[team=bingo.green,limit=1] store result storage bingo:card teams[{id: "bingo:green"}].backgroundIndex byte 1 run scoreboard players get $team_count bingo.state
+execute if entity @a[team=bingo.green,limit=1] run scoreboard players add $team_count bingo.state 1
 
-execute if entity @a[team=bingo.dark_green,limit=1] store result storage bingo:card teams[{id: "bingo:dark_green"}].backgroundIndex byte 1 run scoreboard players get $game/start.team_count bingo.tmp
-execute if entity @a[team=bingo.dark_green,limit=1] run scoreboard players add $game/start.team_count bingo.tmp 1
+execute if entity @a[team=bingo.dark_green,limit=1] store result storage bingo:card teams[{id: "bingo:dark_green"}].backgroundIndex byte 1 run scoreboard players get $team_count bingo.state
+execute if entity @a[team=bingo.dark_green,limit=1] run scoreboard players add $team_count bingo.state 1
 
-execute if entity @a[team=bingo.dark_aqua,limit=1] store result storage bingo:card teams[{id: "bingo:dark_aqua"}].backgroundIndex byte 1 run scoreboard players get $game/start.team_count bingo.tmp
-execute if entity @a[team=bingo.dark_aqua,limit=1] run scoreboard players add $game/start.team_count bingo.tmp 1
+execute if entity @a[team=bingo.dark_aqua,limit=1] store result storage bingo:card teams[{id: "bingo:dark_aqua"}].backgroundIndex byte 1 run scoreboard players get $team_count bingo.state
+execute if entity @a[team=bingo.dark_aqua,limit=1] run scoreboard players add $team_count bingo.state 1
 
-execute if entity @a[team=bingo.aqua,limit=1] store result storage bingo:card teams[{id: "bingo:aqua"}].backgroundIndex byte 1 run scoreboard players get $game/start.team_count bingo.tmp
-execute if entity @a[team=bingo.aqua,limit=1] run scoreboard players add $game/start.team_count bingo.tmp 1
+execute if entity @a[team=bingo.aqua,limit=1] store result storage bingo:card teams[{id: "bingo:aqua"}].backgroundIndex byte 1 run scoreboard players get $team_count bingo.state
+execute if entity @a[team=bingo.aqua,limit=1] run scoreboard players add $team_count bingo.state 1
 
-execute if entity @a[team=bingo.blue,limit=1] store result storage bingo:card teams[{id: "bingo:blue"}].backgroundIndex byte 1 run scoreboard players get $game/start.team_count bingo.tmp
-execute if entity @a[team=bingo.blue,limit=1] run scoreboard players add $game/start.team_count bingo.tmp 1
+execute if entity @a[team=bingo.blue,limit=1] store result storage bingo:card teams[{id: "bingo:blue"}].backgroundIndex byte 1 run scoreboard players get $team_count bingo.state
+execute if entity @a[team=bingo.blue,limit=1] run scoreboard players add $team_count bingo.state 1
 
-execute if entity @a[team=bingo.dark_blue,limit=1] store result storage bingo:card teams[{id: "bingo:dark_blue"}].backgroundIndex byte 1 run scoreboard players get $game/start.team_count bingo.tmp
-execute if entity @a[team=bingo.dark_blue,limit=1] run scoreboard players add $game/start.team_count bingo.tmp 1
+execute if entity @a[team=bingo.dark_blue,limit=1] store result storage bingo:card teams[{id: "bingo:dark_blue"}].backgroundIndex byte 1 run scoreboard players get $team_count bingo.state
+execute if entity @a[team=bingo.dark_blue,limit=1] run scoreboard players add $team_count bingo.state 1
 
-execute if entity @a[team=bingo.dark_purpl,limit=1] store result storage bingo:card teams[{id: "bingo:dark_purple"}].backgroundIndex byte 1 run scoreboard players get $game/start.team_count bingo.tmp
-execute if entity @a[team=bingo.dark_purpl,limit=1] run scoreboard players add $game/start.team_count bingo.tmp 1
+execute if entity @a[team=bingo.dark_purpl,limit=1] store result storage bingo:card teams[{id: "bingo:dark_purple"}].backgroundIndex byte 1 run scoreboard players get $team_count bingo.state
+execute if entity @a[team=bingo.dark_purpl,limit=1] run scoreboard players add $team_count bingo.state 1
 
-execute if entity @a[team=bingo.light_purp,limit=1] store result storage bingo:card teams[{id: "bingo:light_purple"}].backgroundIndex byte 1 run scoreboard players get $game/start.team_count bingo.tmp
-execute if entity @a[team=bingo.light_purp,limit=1] run scoreboard players add $game/start.team_count bingo.tmp 1
+execute if entity @a[team=bingo.light_purp,limit=1] store result storage bingo:card teams[{id: "bingo:light_purple"}].backgroundIndex byte 1 run scoreboard players get $team_count bingo.state
+execute if entity @a[team=bingo.light_purp,limit=1] run scoreboard players add $team_count bingo.state 1
 
-execute if entity @a[team=bingo.white,limit=1] store result storage bingo:card teams[{id: "bingo:white"}].backgroundIndex byte 1 run scoreboard players get $game/start.team_count bingo.tmp
-execute if entity @a[team=bingo.white,limit=1] run scoreboard players add $game/start.team_count bingo.tmp 1
+execute if entity @a[team=bingo.white,limit=1] store result storage bingo:card teams[{id: "bingo:white"}].backgroundIndex byte 1 run scoreboard players get $team_count bingo.state
+execute if entity @a[team=bingo.white,limit=1] run scoreboard players add $team_count bingo.state 1
 
-execute if entity @a[team=bingo.gray,limit=1] store result storage bingo:card teams[{id: "bingo:gray"}].backgroundIndex byte 1 run scoreboard players get $game/start.team_count bingo.tmp
-execute if entity @a[team=bingo.gray,limit=1] run scoreboard players add $game/start.team_count bingo.tmp 1
+execute if entity @a[team=bingo.gray,limit=1] store result storage bingo:card teams[{id: "bingo:gray"}].backgroundIndex byte 1 run scoreboard players get $team_count bingo.state
+execute if entity @a[team=bingo.gray,limit=1] run scoreboard players add $team_count bingo.state 1
 
-execute if entity @a[team=bingo.dark_gray,limit=1] store result storage bingo:card teams[{id: "bingo:dark_gray"}].backgroundIndex byte 1 run scoreboard players get $game/start.team_count bingo.tmp
-execute if entity @a[team=bingo.dark_gray,limit=1] run scoreboard players add $game/start.team_count bingo.tmp 1
+execute if entity @a[team=bingo.dark_gray,limit=1] store result storage bingo:card teams[{id: "bingo:dark_gray"}].backgroundIndex byte 1 run scoreboard players get $team_count bingo.state
+execute if entity @a[team=bingo.dark_gray,limit=1] run scoreboard players add $team_count bingo.state 1
 
-execute if entity @a[team=bingo.black,limit=1] store result storage bingo:card teams[{id: "bingo:black"}].backgroundIndex byte 1 run scoreboard players get $game/start.team_count bingo.tmp
-execute if entity @a[team=bingo.black,limit=1] run scoreboard players add $game/start.team_count bingo.tmp 1
+execute if entity @a[team=bingo.black,limit=1] store result storage bingo:card teams[{id: "bingo:black"}].backgroundIndex byte 1 run scoreboard players get $team_count bingo.state
+execute if entity @a[team=bingo.black,limit=1] run scoreboard players add $team_count bingo.state 1
 
 #>
 # @within function bingo:game/start/**
 #declare storage tmp.bingo:game/start
 data modify storage tmp.bingo:game/start backgroundTemplates set from storage bingo:card completedBackgroundTemplates
+#>
+# @within
+# 	function bingo:game/start/init_teams
+# 	function bingo:game/start/get_completed_background_template
+#declare score_holder $game/start.team_count
+scoreboard players operation $team_count bingo.tmp = $team_count bingo.state
 function bingo:game/start/get_completed_background_template
 
 setblock ~ ~ ~ minecraft:oak_sign
