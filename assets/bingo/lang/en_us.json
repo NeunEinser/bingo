@@ -191,10 +191,19 @@
 	"bingo.lobby.credits.translators.sign.line4": "",
 
 	"bingo.lobby.credits.translators.german.sign.line1": "German",
+	"bingo.lobby.credits.translators.german.sign.line2": "",
 	"bingo.lobby.credits.translators.polish.sign.line1": "Polish",
+	"bingo.lobby.credits.translators.polish.sign.line2": "",
 	"bingo.lobby.credits.translators.italian.sign.line1": "Italian",
+	"bingo.lobby.credits.translators.italian.sign.line2": "",
 	"bingo.lobby.credits.translators.dutch.sign.line1": "Dutch",
+	"bingo.lobby.credits.translators.dutch.sign.line2": "",
 	"bingo.lobby.credits.translators.russian.sign.line1": "Russian",
+	"bingo.lobby.credits.translators.russian.sign.line2": "",
+	"bingo.lobby.credits.translators.french.sign.line1": "French",
+	"bingo.lobby.credits.translators.french.sign.line2": "",
+	"bingo.lobby.credits.translators.brazillian_portuguese.sign.line1": "Potuguese",
+	"bingo.lobby.credits.translators.brazillian_portuguese.sign.line2": "(BR)",
 
 
 	"bingo.lobby.card_generation.random_card.sign.line1": "",

@@ -501,6 +501,18 @@ forceload add 0 0
 			# @within
 			# 	function bingo:lobby/place_sign
 			# 	structure bingo:credits
+			#declare tag bingo.sign_credits_french
+
+			#>
+			# @within
+			# 	function bingo:lobby/place_sign
+			# 	structure bingo:credits
+			#declare tag bingo.sign_credits_brazillian_portuguese
+
+			#>
+			# @within
+			# 	function bingo:lobby/place_sign
+			# 	structure bingo:credits
 			#declare tag bingo.sign_credits_tools
 			#>
 			# @within
