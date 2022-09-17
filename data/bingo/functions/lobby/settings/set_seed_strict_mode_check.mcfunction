@@ -8,6 +8,6 @@
 # @user
 # @context entity Player changing the setting
 
-execute if score $strict_mode bingo.settings matches 0 run tellraw @s [{"translate": "bingo.lobby.card_generation.from_seed.instructions", "with": [{"translate": "bingo.lobby.card_generation.from_seed.instructions.link", "color":"#00c3ff", "clickEvent": {"action": "suggest_command", "value": "/trigger bingo.seed set "}}]}, "\n", {"translate": "bingo.lobby.card_generation.from_seed.explanation", "italic": true, "color": "gray"}]
+execute unless score $strict_mode bingo.settings matches 1 run tellraw @s [{"translate": "bingo.lobby.card_generation.from_seed.instructions", "with": [{"translate": "bingo.lobby.card_generation.from_seed.instructions.link", "color":"#00c3ff", "clickEvent": {"action": "suggest_command", "value": "/trigger bingo.seed set "}}]}, "\n", {"translate": "bingo.lobby.card_generation.from_seed.explanation", "italic": true, "color": "gray"}]
 execute if score $strict_mode bingo.settings matches 1 if score @s bingo.operator matches 1 run tellraw @s [{"translate": "bingo.lobby.card_generation.from_seed.instructions", "with": [{"translate": "bingo.lobby.card_generation.from_seed.instructions.link", "color":"#00c3ff", "clickEvent": {"action": "suggest_command", "value": "/trigger bingo.seed set "}}]}, "\n", {"translate": "bingo.lobby.card_generation.from_seed.explanation", "italic": true, "color": "gray"}]
 execute if score $strict_mode bingo.settings matches 1 if score @s bingo.operator matches 0 run function bingo:util/confirm_operator_status

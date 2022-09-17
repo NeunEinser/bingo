@@ -1151,7 +1151,7 @@ summon minecraft:area_effect_cloud 0 0 0 {CustomName:'{"translate": "bingo.techn
 		#
 		# @internal
 		#declare score_holder $strict_mode
-		scoreboard players add $strict_mode bingo.settings 0
+		execute unless score $strict_mode bingo.settings matches 0..2 run scoreboard players set $strict_mode bingo.settings 2
 
 		#>
 		# The current game seed
