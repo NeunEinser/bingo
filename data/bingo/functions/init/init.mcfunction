@@ -999,6 +999,14 @@ summon minecraft:area_effect_cloud 0 0 0 {CustomName:'{"translate": "bingo.techn
 			#		function bingo:game/player_tick
 			scoreboard objectives add bingo.barrel minecraft.custom:minecraft.open_barrel
 			#>
+			# This objective is used to detect player sleeping for night skipping
+			#
+			# @within
+			#		function bingo:init/init
+			#		function bingo:game/tick
+			#		function bingo:game/player_tick
+			scoreboard objectives add bingo.bed minecraft.custom:minecraft.sleep_in_bed
+			#>
 			# This objective is used to detect a player reconnecting
 			#
 			# @within

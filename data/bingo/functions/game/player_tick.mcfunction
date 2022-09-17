@@ -56,6 +56,9 @@ tag @s[tag=bingo.only_check_inventory_once] remove bingo.check_inventory
 tag @s[scores={bingo.inv_change=1..}] add bingo.check_inventory
 tag @s[scores={bingo.inv_change=2..}] remove bingo.only_check_inventory_once
 
+scoreboard players add @s[scores={bingo.bed=1..}] bingo.bed 1
+execute if score @s bingo.bed matches 99.. store result score @s bingo.bed run data get entity @s SleepTimer
+
 # This should always be at the end to prevent game logic from running for this
 # player in the lobby.
 scoreboard players enable @s bingo.lobby
