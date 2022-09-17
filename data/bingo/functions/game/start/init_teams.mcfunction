@@ -3,7 +3,7 @@
 # Sets teams up for playing and skybox
 #
 # @within function bingo:game/start/spawn_skybox
-# @context location bingo:lobby 0 0 0
+# @context location bingo:lobby
 
 # Make teammates fully invisible in the skybox
 team modify bingo.aqua seeFriendlyInvisibles false
@@ -85,7 +85,6 @@ data modify storage tmp.bingo:game/start backgroundTemplates set from storage bi
 scoreboard players operation $team_count bingo.tmp = $team_count bingo.state
 function bingo:game/start/get_completed_background_template
 
-setblock ~ ~ ~ minecraft:oak_sign
 data modify storage tmp.bingo:game/start defaultBackground set value []
 
 execute if entity @a[team=bingo.dark_red,limit=1] run function bingo:game/start/init_teams/dark_red
@@ -104,7 +103,5 @@ execute if entity @a[team=bingo.white,limit=1] run function bingo:game/start/ini
 execute if entity @a[team=bingo.gray,limit=1] run function bingo:game/start/init_teams/gray
 execute if entity @a[team=bingo.dark_gray,limit=1] run function bingo:game/start/init_teams/dark_gray
 execute if entity @a[team=bingo.black,limit=1] run function bingo:game/start/init_teams/black
-
-setblock ~ ~ ~ minecraft:barrier
 
 data modify storage bingo:card slots[].background set from storage tmp.bingo:game/start defaultBackground

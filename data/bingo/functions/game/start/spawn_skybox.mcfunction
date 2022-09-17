@@ -25,7 +25,7 @@ fill ~ 0 ~ ~ 127 ~ minecraft:dirt replace #bingo:liquids
 scoreboard players add $current_game_id bingo.game_id 1
 
 execute as @a[tag=!bingo.resourcepack_check] run function bingo:game/start/spawn_players
-execute in bingo:lobby positioned 0 0 0 run function bingo:game/start/init_teams
+execute in bingo:lobby run function bingo:game/start/init_teams
 
 execute store result score $spawn_x bingo.state run data get entity @a[tag=!bingo.resourcepack_check, limit=1] Pos[0]
 execute store result score $spawn_z bingo.state run data get entity @a[tag=!bingo.resourcepack_check, limit=1] Pos[2]

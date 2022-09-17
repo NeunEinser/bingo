@@ -1,4 +1,4 @@
-#> bingo:custom_hud/component_post_evaluation
+#> bingo:custom_hud/component_eval
 #
 # This function should be called at the very end of each component's update
 # function right before writing it back to the player. 
@@ -33,8 +33,14 @@ execute if score $custom_hud/width.padding bingo.io matches 3 run data modify st
 execute if score $custom_hud/width.padding bingo.io matches 2 run data modify storage io.bingo:custom_hud component.padding append value ""
 execute if score $custom_hud/width.padding bingo.io matches 1 run data modify storage io.bingo:custom_hud component.padding append value ""
 
-execute in bingo:lobby run setblock 0 0 0 minecraft:oak_sign{Text1: '{"storage":"io.bingo:custom_hud","nbt":"component.textComponent","interpret":true,"color":"black"}'}
-execute in bingo:lobby run data modify storage io.bingo:custom_hud component.evaluatedShadow set from block 0 0 0 Text1
-execute in bingo:lobby run data modify block 0 0 0 Text1 set from storage io.bingo:custom_hud component.textComponent
-execute in bingo:lobby run data modify storage io.bingo:custom_hud component.evaluatedTextComponent set from block 0 0 0 Text1
-execute in bingo:lobby run setblock 0 0 0 minecraft:air
+#>
+# @within
+# 	function bingo:custom_hud/component_eval
+# 	function bingo:custom_hud/component_eval/*
+#declare score_holder $custom_hud/eval.slot
+execute store result score $custom_hud/eval.slot bingo.tmp run data get storage io.bingo:custom_hud component.slot_id
+
+execute if score $custom_hud/eval.slot bingo.tmp matches ..4 run function bingo:custom_hud/component_eval/0_4
+execute if score $custom_hud/eval.slot bingo.tmp matches 5.. run function bingo:custom_hud/component_eval/5_10
+
+data modify storage io.bingo:custom_hud component.evaluated set from block 7 0 7 Text1

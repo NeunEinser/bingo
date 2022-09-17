@@ -17,4 +17,4 @@ execute if score @s bingo.pref matches 59 run function bingo:preferences/custom_
 execute if score @s bingo.pref matches 59..60 run data modify storage bingo:custom_hud currentPlayer.components[7] set from storage bingo:custom_hud currentPlayer.components[8]
 execute if score @s bingo.pref matches 59..60 run data modify storage bingo:custom_hud currentPlayer.components[8] set from storage bingo:custom_hud currentPlayer.components[9]
 execute if score @s bingo.pref matches 59..60 run data modify storage bingo:custom_hud currentPlayer.components[9] set from storage bingo:custom_hud currentPlayer.components[10]
-execute if score @s bingo.pref matches 59..60 run data modify storage bingo:custom_hud currentPlayer.components[10] set value {id: "bingo:empty", padding: '{"translate": "space.91"}'}
+execute if score @s bingo.pref matches 59..60 run data modify storage bingo:custom_hud currentPlayer.components[10] set value {id: "bingo:empty"}

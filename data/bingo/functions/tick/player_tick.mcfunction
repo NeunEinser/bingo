@@ -128,4 +128,4 @@ execute if score @s bingo.reconnect matches 1.. run function #bingo:player_recon
 execute unless score @s bingo.id matches -2147483648.. run function #bingo:new_player
 
 # custom hud
-execute if entity @s[predicate=!bingo:is_in_overworld] run function bingo:custom_hud/tick
+execute if entity @s[predicate=!bingo:is_in_overworld] in bingo:lobby run function bingo:custom_hud/tick

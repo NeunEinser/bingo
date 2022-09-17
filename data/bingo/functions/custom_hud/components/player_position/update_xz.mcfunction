@@ -17,7 +17,8 @@
 #declare score_holder $custom_hud/player_pos.z_len
 
 scoreboard players set $custom_hud/width.padding bingo.io 73
-data modify storage io.bingo:custom_hud component set value {textComponent:'[{"score": {"name": "$custom_hud/player_pos.x", "objective": "bingo.tmp"}}, " ", {"score": {"name": "$custom_hud/player_pos.z", "objective": "bingo.tmp"}}]', changed: true}
+data modify storage io.bingo:custom_hud component set from storage bingo:custom_hud currentPlayer.components[{id: "bingo:player_position"}]
+data modify storage io.bingo:custom_hud component merge value {textComponent:'[{"score": {"name": "$custom_hud/player_pos.x", "objective": "bingo.tmp"}}, " ", {"score": {"name": "$custom_hud/player_pos.z", "objective": "bingo.tmp"}}]', changed: true}
 
 execute if data storage bingo:custom_hud currentPlayer.components[{id: "bingo:player_position"}].custom.bingo{iconType: "compass"} run function bingo:custom_hud/components/player_position/update_xz/set_compass_icon
 execute unless data storage bingo:custom_hud currentPlayer.components[{id: "bingo:player_position"}].custom.bingo{iconType: "compass"} run function bingo:custom_hud/components/player_position/update_xz/set_compass_text
@@ -37,6 +38,6 @@ scoreboard players operation $custom_hud/width.characters bingo.io += $custom_hu
 
 execute if score $custom_hud/width.characters bingo.io matches 12.. run function bingo:custom_hud/components/player_position/update_xz/shorten
 
-function bingo:custom_hud/component_post_evaluation
+function bingo:custom_hud/component_eval
 
-data modify storage bingo:custom_hud currentPlayer.components[{id: "bingo:player_position"}] merge from storage io.bingo:custom_hud component
+data modify storage bingo:custom_hud currentPlayer.components[{id: "bingo:player_position"}] set from storage io.bingo:custom_hud component

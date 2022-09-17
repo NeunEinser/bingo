@@ -1401,7 +1401,7 @@ summon minecraft:area_effect_cloud 0 0 0 {CustomName:'{"translate": "bingo.techn
 	data modify storage bingo:custom_hud default append from storage tmp.bingo:init/hud columns[0][4]
 	execute unless data storage bingo:custom_hud default[4] run function bingo:init/initialize_hud_components/fill_default_col0
 	
-	execute unless data storage tmp.bingo:init/hud columns[1][5] run data modify storage bingo:custom_hud default append value {id: "bingo:spacer", name: '{"translate": "bingo.custom_hud.components.spacer"}', padding: '{"translate": "space.91"}', slot_id: 5b}
+	execute unless data storage tmp.bingo:init/hud columns[1][5] run data modify storage bingo:custom_hud default append value {id: "bingo:spacer", name: '{"translate": "bingo.custom_hud.components.spacer"}', slot_id: 5b}
 	data modify storage bingo:custom_hud default append from storage tmp.bingo:init/hud columns[1][0]
 	data modify storage bingo:custom_hud default append from storage tmp.bingo:init/hud columns[1][1]
 	data modify storage bingo:custom_hud default append from storage tmp.bingo:init/hud columns[1][2]
