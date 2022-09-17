@@ -1,10 +1,10 @@
 {
 	"name": "Fetchr",
-	"version": "5.0",
+	"version": "5.0.1-pre1",
 	"target": "dist",
 	"vars": {
-		"version_long_name": "5.0",
-		"rp_version": "9"
+		"version_long_name": "5.0.1 Pre-Release 1",
+		"rp_version": "10"
 	},
 	"remove_file_types": [
 		"xcf", "py", "jsonc"
