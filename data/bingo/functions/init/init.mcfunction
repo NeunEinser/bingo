@@ -153,6 +153,13 @@ forceload add 0 0
 	# @internal
 	#declare tag bingo.position_changed
 	#>
+	# This marks an entity which is used to teleport to a player and read position
+	# data. Reading from the the player position directly is super expensive
+	# Because MC serializes the entire recipe book.
+	# 
+	# @internal
+	#declare tag bingo.pos_reader
+	#>
 	# This tag is used for the area effect cloud marking the location for the skybox
 	#
 	# @internal

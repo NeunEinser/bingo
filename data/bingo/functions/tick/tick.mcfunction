@@ -35,7 +35,7 @@ execute if entity @a[tag=bingo.resourcepack_check, limit=1] run setblock 1 2 1 m
 
 # player tick
 data modify storage tmp.bingo:custom_hud handled set value []
-execute as @a run function bingo:tick/player_tick
+execute as @a at @s run function bingo:tick/player_tick
 data modify storage bingo:custom_hud players append from storage tmp.bingo:custom_hud handled[]
 scoreboard players reset $update_card bingo.state
 

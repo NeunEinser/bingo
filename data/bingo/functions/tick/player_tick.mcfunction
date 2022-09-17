@@ -37,6 +37,12 @@ execute if score @s bingo.resources matches 91 run function bingo:util/go_to_lob
 
 
 #region check player position change
+teleport @e[type=minecraft:area_effect_cloud, tag=bingo.pos_reader, limit=1] ~ ~ ~ ~ ~
+
+#>
+# @private
+#declare storage tmp.bingo:tick
+data modify storage tmp.bingo:tick posReader set from entity @e[type=minecraft:area_effect_cloud, tag=bingo.pos_reader, limit=1] {}
 #>
 # The x coordinate of the current player
 #
@@ -44,7 +50,7 @@ execute if score @s bingo.resources matches 91 run function bingo:util/go_to_lob
 # 	function bingo:tick/player_tick
 # 	function bingo:custom_hud/components/player_position/update
 #declare score_holder $tick/player.x
-execute store result score $tick/player.x bingo.tmp run data get entity @s Pos[0]
+execute store result score $tick/player.x bingo.tmp run data get storage tmp.bingo:tick posReader.Pos[0]
 
 #>
 # The x coordinate of the current player
@@ -53,7 +59,7 @@ execute store result score $tick/player.x bingo.tmp run data get entity @s Pos[0
 # 	function bingo:tick/player_tick
 # 	function bingo:custom_hud/components/player_position/update
 #declare score_holder $tick/player.y
-execute store result score $tick/player.y bingo.tmp run data get entity @s Pos[1]
+execute store result score $tick/player.y bingo.tmp run data get storage tmp.bingo:tick posReader.Pos[1]
 
 #>
 # The z coordinate of the current player
@@ -62,7 +68,7 @@ execute store result score $tick/player.y bingo.tmp run data get entity @s Pos[1
 # 	function bingo:tick/player_tick
 # 	function bingo:custom_hud/components/player_position/update
 #declare score_holder $tick/player.z
-execute store result score $tick/player.z bingo.tmp run data get entity @s Pos[2]
+execute store result score $tick/player.z bingo.tmp run data get storage tmp.bingo:tick posReader.Pos[2]
 
 #>
 # The position hash
@@ -100,7 +106,7 @@ execute if score $tick/player.z bingo.tmp matches ..-1 run scoreboard players ad
 # 	function bingo:custom_hud/components/player_position/update
 #declare score_holder $tick/player.rot
 # Rotation / 5.625 (divides the 360 possible values into 64)
-execute store result score $tick/player.rot bingo.tmp run data get entity @s Rotation[0] 0.53333333333333333333333333333333
+execute store result score $tick/player.rot bingo.tmp run data get storage tmp.bingo:tick posReader.Rotation[0] 0.53333333333333333333333333333333
 # Divide by 2 and ceil to next integer
 scoreboard players add $tick/player.rot bingo.tmp 1
 scoreboard players operation $tick/player.rot bingo.tmp /= 2 bingo.const

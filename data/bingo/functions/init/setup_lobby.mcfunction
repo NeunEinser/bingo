@@ -62,6 +62,9 @@ setblock -3 1 -3 minecraft:barrier
 kill @e[type=minecraft:area_effect_cloud, tag=bingo.string_tester]
 summon minecraft:area_effect_cloud 0 0 0 {Age: -2147483648, Duration: -1, WaitTime: -2147483648, Tags: ["bingo.string_tester"]}
 
+kill @e[type=minecraft:area_effect_cloud, tag=bingo.pos_reader]
+summon minecraft:area_effect_cloud 0 0 0 {Age: -2147483648, Duration: -1, WaitTime: -2147483648, Tags: ["bingo.pos_reader"]}
+
 setblock 7 0 7 minecraft:oak_sign
 
 # lobby end
