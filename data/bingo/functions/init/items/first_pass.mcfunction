@@ -4,7 +4,7 @@
 # weight for each category.
 #
 # @within
-# 	function bingo:init/items/exec
+# 	function bingo:init/items/lobby_loaded
 # 	function bingo:init/items/first_pass
 # @writes storage bingo:items categories
 
