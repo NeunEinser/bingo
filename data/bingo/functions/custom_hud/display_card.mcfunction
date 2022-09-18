@@ -8,7 +8,6 @@
 scoreboard players operation $custom_hud/width.number bingo.io = $seed bingo.state
 scoreboard players set $custom_hud/width.padding bingo.io 88
 function bingo:custom_hud/subtract_width
-function bingo:custom_hud/component_eval
 
 # card
 execute if score @s bingo.card_pos matches ..7 run function bingo:custom_hud/left

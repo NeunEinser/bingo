@@ -28,6 +28,6 @@ scoreboard players add @s bingo.hud_update 1
 execute if data storage bingo:custom_hud currentPlayer.components[{changed: true}] run function bingo:custom_hud/update_actionbar
 execute if score @s bingo.hud_update matches 40.. run function bingo:custom_hud/update_actionbar
 
-data remove storage bingo:custom_hud currentPlayer.components[].changed
+data modify storage bingo:custom_hud currentPlayer.components[].changed set value false
 data modify storage tmp.bingo:custom_hud handled prepend from storage bingo:custom_hud currentPlayer
 scoreboard players reset @s bingo.update_hud

@@ -1191,8 +1191,8 @@ forceload add 0 0
 		# Time from last tick
 		#
 		# @internal
-		#declare score_holder $last_tick
-		scoreboard players reset $last_tick bingo.state
+		#declare score_holder $last_tick_second
+		scoreboard players reset $last_tick_second bingo.state
 		#>
 		# Whether the card needs to be updated
 		#

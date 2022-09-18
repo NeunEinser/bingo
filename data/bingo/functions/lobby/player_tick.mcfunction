@@ -34,3 +34,5 @@ execute if score @s bingo.settings matches 22 run scoreboard players set $automa
 scoreboard players reset @s bingo.settings
 execute unless score $strict_mode bingo.settings matches 1 run scoreboard players enable @s bingo.settings
 execute if score @s bingo.operator matches 1 run scoreboard players enable @s bingo.settings
+
+execute if score @s bingo.update_hud matches 1 run function bingo:custom_hud/components/timer/update

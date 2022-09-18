@@ -82,6 +82,8 @@ execute as @e[tag=bingo.card_frame, scores={bingo.frame_id=12}, limit=1] at @s r
 
 bossbar set bingo:start/pre_gen/progress visible false
 
+function bingo:custom_hud/components/timer/update
+
 #>
 # @api
 #declare tag/function bingo:post_card_gen

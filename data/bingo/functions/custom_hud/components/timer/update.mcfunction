@@ -1,8 +1,8 @@
 #> bingo:custom_hud/components/timer/update
 #
-# @within function bingo:custom_hud/components/timer/tick
+# @internal
 
-data modify storage io.bingo:custom_hud component set from storage bingo:custom_hud currentPlayer.components[{id: "bingo:timer"}]
+data modify storage io.bingo:custom_hud component set from storage bingo:custom_hud default[{id: "bingo:timer"}]
 data modify storage io.bingo:custom_hud component merge value {icon: '"\\u0132"', changed: true}
 data modify storage io.bingo:custom_hud component.textComponent set from storage neun_einser.timer:display "hh:mm:ss" 
 
@@ -21,17 +21,22 @@ execute if score $custom_hud/timer.daytime bingo.tmp matches 20703.. run functio
 execute if score $game_state bingo.state matches 0..1 run data modify storage io.bingo:custom_hud component.icon set value '"\\u0100"'
 
 # padding
-scoreboard players set $custom_hud/width.padding bingo.io 33
-execute if score $hours 91.timer.time matches ..99 run scoreboard players add $custom_hud/width.padding bingo.io 6
-execute if score $hours 91.timer.time matches ..9 run scoreboard players add $custom_hud/width.padding bingo.io 6
-execute if score $hours 91.timer.time matches 0 run scoreboard players add $custom_hud/width.padding bingo.io 8
-execute if score $hours 91.timer.time matches 0 if score $minutes 91.timer.time matches ..9 run scoreboard players add $custom_hud/width.padding bingo.io 6
-execute if score $hours 91.timer.time matches 0 if score $minutes 91.timer.time matches 0 run scoreboard players add $custom_hud/width.padding bingo.io 8
-execute if score $hours 91.timer.time matches 0 if score $minutes 91.timer.time matches 0 if score $seconds 91.timer.time matches ..9 run scoreboard players add $custom_hud/width.padding bingo.io 6
+#>
+# @within function bingo:custom_hud/components/timer/**
+#declare score_holder $custom_hud/timer.padding
+scoreboard players set $custom_hud/timer.padding bingo.tmp 33
+execute if score $hours 91.timer.time matches ..99 run scoreboard players add $custom_hud/timer.padding bingo.tmp 6
+execute if score $hours 91.timer.time matches ..9 run scoreboard players add $custom_hud/timer.padding bingo.tmp 6
+execute if score $hours 91.timer.time matches 0 run scoreboard players add $custom_hud/timer.padding bingo.tmp 8
+execute if score $hours 91.timer.time matches 0 if score $minutes 91.timer.time matches ..9 run scoreboard players add $custom_hud/timer.padding bingo.tmp 6
+execute if score $hours 91.timer.time matches 0 if score $minutes 91.timer.time matches 0 run scoreboard players add $custom_hud/timer.padding bingo.tmp 8
+execute if score $hours 91.timer.time matches 0 if score $minutes 91.timer.time matches 0 if score $seconds 91.timer.time matches ..9 run scoreboard players add $custom_hud/timer.padding bingo.tmp 6
 
 # hide timer during pre-gen
 execute if score $game_state bingo.state matches 0..2 run data modify storage io.bingo:custom_hud component.textComponent set value '"0"'
-execute if score $game_state bingo.state matches 0..2 run scoreboard players set $custom_hud/width.padding bingo.io 73
+execute if score $game_state bingo.state matches 0..2 run scoreboard players set $custom_hud/timer.padding bingo.tmp 73
 
+scoreboard players operation $custom_hud/width.padding bingo.io = $custom_hud/timer.padding bingo.tmp
 function bingo:custom_hud/component_eval
-data modify storage bingo:custom_hud currentPlayer.components[{id: "bingo:timer"}] set from storage io.bingo:custom_hud component
+data modify storage bingo:custom_hud players[].components[{id: "bingo:timer", slot_id: 0b}] set from storage io.bingo:custom_hud component
+execute if data storage bingo:custom_hud players[].components[{id: "bingo:timer", changed: false}] run function bingo:custom_hud/components/timer/eval_non_default
