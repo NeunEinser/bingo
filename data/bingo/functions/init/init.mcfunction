@@ -732,12 +732,6 @@ forceload add 0 0
 	#endregion
 #endregion
 
-#>
-# @private
-#declare tag bingo.detect_mp_aec
-kill @e[type=minecraft:area_effect_cloud, tag=bingo.detect_mp_aec, limit=1]
-summon minecraft:area_effect_cloud 0 0 0 {CustomName:'{"translate": "bingo.technical.detect_multiplayer"}', Age: -2147483648, Duration: -1, WaitTime: -2147483648, Tags: ["bingo.detect_mp_aec"]}
-
 #region setup objectives
 	scoreboard objectives remove bingo.barrel
 	scoreboard objectives remove bingo.brewing
@@ -1105,6 +1099,12 @@ summon minecraft:area_effect_cloud 0 0 0 {CustomName:'{"translate": "bingo.techn
 		# @public
 		#declare score_holder $game_state
 		scoreboard players add $game_state bingo.state 0
+		#>
+		# Whether this is played on an integrated server (SP or Open to LAN)
+		#
+		# @public
+		#declare score_holder $integrated_server
+		scoreboard players set $integrated_server bingo.state 0
 		#>
 		# Whether this is multiplayer
 		#

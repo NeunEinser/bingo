@@ -22,7 +22,8 @@ execute if score $is_multiplayer bingo.state matches 2.. run scoreboard players 
 # Uses name-check from technical translation:
 # - "bingo.technical.detect_multiplayer" -> "DoNotTranslateThis<X>"
 #    <X> being version-check iteration (3+) (also used below)
-execute if score $is_multiplayer bingo.state matches 0 unless entity @e[name="DoNotTranslateThis{NEUN_SCRIPT:rp_version}", limit=1] run scoreboard players set $is_multiplayer bingo.state 1
+execute if score $is_multiplayer bingo.state matches 0 unless score $integrated_server bingo.state matches 1 in bingo:lobby positioned 0 0 0 if entity @e[name="DoNotTranslateThis{NEUN_SCRIPT:rp_version}", distance=..0.1, limit=1] run scoreboard players set $integrated_server bingo.state 1
+execute unless score $integrated_server bingo.state matches 1 run scoreboard players set $is_multiplayer bingo.state 1
 
 # Place the sign in resource pack check chamber
 execute if entity @a[tag=bingo.resourcepack_check, limit=1] run setblock 1 2 1 minecraft:air
