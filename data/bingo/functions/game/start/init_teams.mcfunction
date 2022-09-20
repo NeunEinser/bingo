@@ -82,7 +82,7 @@ data modify storage tmp.bingo:game/start backgroundTemplates set from storage bi
 # 	function bingo:game/start/init_teams
 # 	function bingo:game/start/get_completed_background_template
 #declare score_holder $game/start.team_count
-scoreboard players operation $team_count bingo.tmp = $team_count bingo.state
+scoreboard players operation $game/start.team_count bingo.tmp = $team_count bingo.state
 function bingo:game/start/get_completed_background_template
 
 data modify storage tmp.bingo:game/start defaultBackground set value []
