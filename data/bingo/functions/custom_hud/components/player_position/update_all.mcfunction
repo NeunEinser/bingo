@@ -1,4 +1,4 @@
-#> bingo:custom_hud/components/player_position/update
+#> bingo:custom_hud/components/player_position/update_all
 #
 # Updates player_position and y_coordinate components if they are enabled.
 #
@@ -8,28 +8,28 @@
 #>
 # The x coordinate of the current player
 #
-# @internal
+# @within function bingo:custom_hud/components/player_position/**
 #declare score_holder $custom_hud/player_pos.x
 scoreboard players operation $custom_hud/player_pos.x bingo.tmp = $tick/player.x bingo.tmp
 
 #>
 # The x coordinate of the current player
 #
-# @internal
+# @within function bingo:custom_hud/components/player_position/**
 #declare score_holder $custom_hud/player_pos.y
 scoreboard players operation $custom_hud/player_pos.y bingo.tmp = $tick/player.y bingo.tmp
 
 #>
 # The z coordinate of the current player
 #
-# @internal
+# @within function bingo:custom_hud/components/player_position/**
 #declare score_holder $custom_hud/player_pos.z
 scoreboard players operation $custom_hud/player_pos.z bingo.tmp = $tick/player.z bingo.tmp
 
 #>
 # The rotation of the current player
 #
-# @internal
+# @within function bingo:custom_hud/components/player_position/**
 #declare score_holder $custom_hud/player_pos.rot
 scoreboard players operation $custom_hud/player_pos.rot bingo.tmp = $tick/player.rot bingo.tmp
 

@@ -750,9 +750,11 @@ forceload add 0 0
 	scoreboard objectives remove bingo.lobby
 	scoreboard objectives remove bingo.menu
 	scoreboard objectives remove bingo.menu_page
-	scoreboard objectives remove bingo.pos_hash
 	scoreboard objectives remove bingo.pref
+	scoreboard objectives remove bingo.prev_rot
+	scoreboard objectives remove bingo.prev_x_pos
 	scoreboard objectives remove bingo.prev_y_pos
+	scoreboard objectives remove bingo.prev_z_pos
 	scoreboard objectives remove bingo.seed
 	scoreboard objectives remove bingo.spectator
 	scoreboard objectives remove bingo.resources
@@ -932,10 +934,28 @@ forceload add 0 0
 		scoreboard objectives add bingo.menu_page dummy
 
 		#>
+		# This objective contains the rotation of entities in the previous tick
+		#
+		# @internal
+		scoreboard objectives add bingo.prev_rot dummy
+
+		#>
+		# This objective contains the x coordinate of entities in the previous tick
+		#
+		# @internal
+		scoreboard objectives add bingo.prev_x_pos dummy
+
+		#>
 		# This objective contains the y coordinate of entities in the previous tick
 		#
 		# @internal
 		scoreboard objectives add bingo.prev_y_pos dummy
+
+		#>
+		# This objective contains the z coordinate of entities in the previous tick
+		#
+		# @internal
+		scoreboard objectives add bingo.prev_z_pos dummy
 
 		#>
 		# This objective is used to store information for scheduled events
@@ -951,14 +971,6 @@ forceload add 0 0
 	#endregion
 
 	#region private objectives
-		#>
-		# This objective is used to store the player's position hash, which in turn
-		# is used to determine whether the player position display needs updating
-		# @within
-		#		function bingo:init/init
-		#		function bingo:tick/player_tick
-		scoreboard objectives add bingo.pos_hash dummy
-
 		#>
 		# The last time the hud was refreshed for each player
 		# #TODO rename to something like "last_hud_update" in 1.18 when the stupid

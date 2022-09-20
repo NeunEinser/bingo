@@ -2,7 +2,7 @@
 #
 # Updates the component for the y position
 #
-# @within function bingo:custom_hud/components/player_position/update
+# @within function bingo:custom_hud/components/player_position/*
 # @context entity Player whose hud is currently being updated
 
 data modify storage io.bingo:custom_hud component set from storage bingo:custom_hud currentPlayer.components[{id: "bingo:y_position"}]

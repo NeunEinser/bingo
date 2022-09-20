@@ -5,6 +5,53 @@
 # @within function bingo:tick/tick
 # @context entity Player
 
+
+#region check player position change
+teleport @e[type=minecraft:area_effect_cloud, tag=bingo.pos_reader, limit=1] ~ ~ ~ ~ ~
+
+#>
+# @private
+#declare storage tmp.bingo:tick
+data modify storage tmp.bingo:tick posReader set from entity @e[type=minecraft:area_effect_cloud, tag=bingo.pos_reader, limit=1] {}
+#>
+# The x coordinate of the current player
+#
+# @internal
+#declare score_holder $tick/player.x
+execute store result score $tick/player.x bingo.tmp run data get storage tmp.bingo:tick posReader.Pos[0]
+
+#>
+# The x coordinate of the current player
+#
+# @internal
+#declare score_holder $tick/player.y
+execute store result score $tick/player.y bingo.tmp run data get storage tmp.bingo:tick posReader.Pos[1]
+
+#>
+# The z coordinate of the current player
+#
+# @internal
+#declare score_holder $tick/player.z
+execute store result score $tick/player.z bingo.tmp run data get storage tmp.bingo:tick posReader.Pos[2]
+
+#>
+# The rotation of the player for the compass icon in a resolution of 32 possible
+# values
+#
+# @internal
+#declare score_holder $tick/player.rot
+# Rotation / 5.625 (divides the 360 possible values into 192)
+execute store result score $tick/player.rot bingo.tmp run data get storage tmp.bingo:tick posReader.Rotation[0] 0.53333333333333333333333333333333
+# Divide by 2 and ceil to next integer
+scoreboard players add $tick/player.rot bingo.tmp 1
+scoreboard players operation $tick/player.rot bingo.tmp /= 2 bingo.const
+scoreboard players operation $tick/player.rot bingo.tmp %= 96 bingo.const
+
+tag @s add bingo.position_changed
+execute if score @s bingo.prev_x_pos = $tick/player.x bingo.tmp if score @s bingo.prev_y_pos = $tick/player.y bingo.tmp if score @s bingo.prev_z_pos = $tick/player.z bingo.tmp if score @s bingo.prev_rot = $tick/player.rot bingo.tmp run tag @s remove bingo.position_changed
+#endregion
+
+#region resourcepack check
 # Auto-validate if Singleplayer
 execute if score $is_multiplayer bingo.state matches 0 run tellraw @s[tag=bingo.resourcepack_check] "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
 execute if score $is_multiplayer bingo.state matches 0 run scoreboard players set @s[tag=bingo.resourcepack_check] bingo.resources 91
@@ -34,99 +81,6 @@ scoreboard players enable @a[tag=bingo.resourcepack_check] bingo.resources
 scoreboard players set @s[scores={bingo.resources=1}] bingo.resources 0
 tag @s[scores={bingo.resources=91}] remove bingo.resourcepack_check
 execute if score @s bingo.resources matches 91 run function bingo:util/go_to_lobby
-
-
-#region check player position change
-teleport @e[type=minecraft:area_effect_cloud, tag=bingo.pos_reader, limit=1] ~ ~ ~ ~ ~
-
-#>
-# @private
-#declare storage tmp.bingo:tick
-data modify storage tmp.bingo:tick posReader set from entity @e[type=minecraft:area_effect_cloud, tag=bingo.pos_reader, limit=1] {}
-#>
-# The x coordinate of the current player
-#
-# @within
-# 	function bingo:tick/player_tick
-# 	function bingo:custom_hud/components/player_position/update
-#declare score_holder $tick/player.x
-execute store result score $tick/player.x bingo.tmp run data get storage tmp.bingo:tick posReader.Pos[0]
-
-#>
-# The x coordinate of the current player
-#
-# @within
-# 	function bingo:tick/player_tick
-# 	function bingo:custom_hud/components/player_position/update
-#declare score_holder $tick/player.y
-execute store result score $tick/player.y bingo.tmp run data get storage tmp.bingo:tick posReader.Pos[1]
-
-#>
-# The z coordinate of the current player
-#
-# @within
-# 	function bingo:tick/player_tick
-# 	function bingo:custom_hud/components/player_position/update
-#declare score_holder $tick/player.z
-execute store result score $tick/player.z bingo.tmp run data get storage tmp.bingo:tick posReader.Pos[2]
-
-#>
-# The position hash
-#
-# @private
-#declare score_holder $tick/player.hash
-scoreboard players operation $tick/player.hash bingo.tmp = $tick/player.x bingo.tmp
-scoreboard players operation $tick/player.hash bingo.tmp %= 128 bingo.const
-execute if score $tick/player.x bingo.tmp matches ..-1 run scoreboard players add $tick/player.hash bingo.tmp 128
-
-#>
-# The y value relevant for position hash
-#
-# @private
-#declare score_holder $tick/player.hash_y
-scoreboard players operation $tick/player.hash_y bingo.tmp = $tick/player.y bingo.tmp
-scoreboard players operation $tick/player.hash_y bingo.tmp %= 128 bingo.const
-execute if score $tick/player.y bingo.tmp matches ..-1 run scoreboard players add $tick/player.hash_y bingo.tmp 128
-
-#>
-# The z value relevant for position hash
-#
-# @private
-#declare score_holder $tick/player.hash_z
-scoreboard players operation $tick/player.hash_z bingo.tmp = $tick/player.z bingo.tmp
-scoreboard players operation $tick/player.hash_z bingo.tmp %= 128 bingo.const
-execute if score $tick/player.z bingo.tmp matches ..-1 run scoreboard players add $tick/player.hash_z bingo.tmp 128
-
-#>
-# The rotation of the player for the compass icon in a resolution of 32 possible
-# values
-#
-# @within
-# 	function bingo:tick/player_tick
-# 	function bingo:custom_hud/components/player_position/update
-#declare score_holder $tick/player.rot
-# Rotation / 5.625 (divides the 360 possible values into 64)
-execute store result score $tick/player.rot bingo.tmp run data get storage tmp.bingo:tick posReader.Rotation[0] 0.53333333333333333333333333333333
-# Divide by 2 and ceil to next integer
-scoreboard players add $tick/player.rot bingo.tmp 1
-scoreboard players operation $tick/player.rot bingo.tmp /= 2 bingo.const
-scoreboard players operation $tick/player.rot bingo.tmp %= 96 bingo.const
-
-# calculate current position hash
-# coordinate_hash(coord) := coord % 256 + (coord < 0 ? 512 : 0)
-# hash := ((coordinate_hash(player_x) * 512 + coordinate_hash(player_y)) * 512 + coordinate_hash(player_z)) * 32 + compass_direction
-scoreboard players operation $tick/player.hash bingo.tmp *= 256 bingo.const
-scoreboard players operation $tick/player.hash bingo.tmp += $tick/player.hash_y bingo.tmp
-scoreboard players operation $tick/player.hash bingo.tmp *= 256 bingo.const
-scoreboard players operation $tick/player.hash bingo.tmp += $tick/player.hash_z bingo.tmp
-scoreboard players operation $tick/player.hash bingo.tmp *= 128 bingo.const
-scoreboard players operation $tick/player.hash bingo.tmp += $tick/player.rot bingo.tmp
-scoreboard players operation $tick/player.hash bingo.tmp *= 2 bingo.const
-
-tag @s remove bingo.position_changed
-execute unless score @s bingo.pos_hash = $tick/player.hash bingo.tmp run tag @s add bingo.position_changed
-
-scoreboard players operation @s bingo.pos_hash = $tick/player.hash bingo.tmp
 #endregion
 
 # Assign each player a unique ID
@@ -135,3 +89,9 @@ execute unless score @s bingo.id matches -2147483648.. run function #bingo:new_p
 
 # custom hud
 execute if entity @s[predicate=!bingo:is_in_overworld] in bingo:lobby run function bingo:custom_hud/tick
+
+# End
+scoreboard players operation @s bingo.prev_x_pos = $tick/player.x bingo.tmp
+scoreboard players operation @s bingo.prev_y_pos = $tick/player.y bingo.tmp
+scoreboard players operation @s bingo.prev_z_pos = $tick/player.z bingo.tmp
+scoreboard players operation @s bingo.prev_rot = $tick/player.rot bingo.tmp

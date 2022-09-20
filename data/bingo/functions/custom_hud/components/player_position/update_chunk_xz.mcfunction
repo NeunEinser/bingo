@@ -2,7 +2,7 @@
 #
 # Updates the component for the player chunk position
 #
-# @within function bingo:custom_hud/components/player_position/update
+# @within function bingo:custom_hud/components/player_position/*
 # @context entity Player whose hud is currently being updated
 
 scoreboard players operation $custom_hud/player_pos.x bingo.tmp %= 16 bingo.const
