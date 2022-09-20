@@ -1122,7 +1122,7 @@ forceload add 0 0
 		#
 		# @public
 		#declare score_holder $is_multiplayer
-		scoreboard players add $is_multiplayer bingo.state 0
+		scoreboard players set $is_multiplayer bingo.state 0
 		#>
 		# The status of chunk pregeneration.
 		# 0 = not started
