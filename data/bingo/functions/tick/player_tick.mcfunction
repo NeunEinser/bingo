@@ -9,6 +9,7 @@
 #>
 # @within function bingo:tick/*
 #declare storage tmp.bingo:tick
+execute in minecraft:overworld run teleport @s[tag=bingo.resourcepack_check, predicate=!bingo:is_in_overworld] 1 1 1 0 0
 
 #region check player position change
 execute as @e[type=minecraft:area_effect_cloud, x=0.5, y=0, z=0.5, distance=..0.1, tag=bingo.pos_reader, limit=1] run function bingo:tick/tp_pos_marker
