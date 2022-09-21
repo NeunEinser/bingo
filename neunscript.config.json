@@ -1,9 +1,9 @@
 {
 	"name": "Fetchr",
-	"version": "5.0.1-pre2",
+	"version": "5.0.1-rc1",
 	"target": "dist",
 	"vars": {
-		"version_long_name": "5.0.1 Pre-Release 2",
+		"version_long_name": "5.0.1 Release Candidate 1",
 		"rp_version": "11"
 	},
 	"remove_file_types": [
