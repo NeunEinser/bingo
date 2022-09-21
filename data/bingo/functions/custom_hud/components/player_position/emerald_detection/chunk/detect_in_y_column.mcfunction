@@ -1,4 +1,4 @@
-#> bingo:game/emerald_detection/chunk/detect_in_y_column
+#> bingo:custom_hud/components/player_position/emerald_detection/chunk/detect_in_y_column
 #
 # This function is executed at chunk position 10 10. For every spot on that
 # chunk coordinate, it is extremely likely to contain the correct biome which
@@ -7,7 +7,7 @@
 # To be sure, 8 spots with different y coordinates are checked. If most of them
 # are mountain, it's an emerald chunk.
 #
-# @within function bingo:game/emerald_detection/chunk/move_z/3
+# @within function bingo:custom_hud/components/player_position/emerald_detection/chunk/move_z/3
 # @context
 # 	entity Player who is checked if they are located in an emerald chunk
 # 	position Chunk coordinate 10 10 of the chunk @s occupies
