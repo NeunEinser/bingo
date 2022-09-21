@@ -19,6 +19,7 @@ scoreboard players set $start_game.countdown bingo.schedule 3
 
 spawnpoint @a[predicate=bingo:is_in_game] ~ ~ ~
 forceload add ~ ~
+forceload add 0 0
 summon minecraft:area_effect_cloud ~ ~ ~ {Age: -2147483648, Duration: -1, WaitTime: -2147483648, Tags: ["bingo.spawn"]}
 teleport @a[predicate=bingo:is_in_game, gamemode=adventure] ~ ~ ~
 

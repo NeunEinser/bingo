@@ -6,13 +6,12 @@
 # @context entity Player
 
 
-#region check player position change
-teleport @e[type=minecraft:area_effect_cloud, tag=bingo.pos_reader, limit=1] ~ ~ ~ ~ ~
-
 #>
-# @private
+# @within function bingo:tick/*
 #declare storage tmp.bingo:tick
-data modify storage tmp.bingo:tick posReader set from entity @e[type=minecraft:area_effect_cloud, tag=bingo.pos_reader, limit=1] {}
+
+#region check player position change
+execute as @e[type=minecraft:area_effect_cloud, x=0.5, y=0, z=0.5, distance=..0.1, tag=bingo.pos_reader, limit=1] run function bingo:tick/tp_pos_marker
 #>
 # The x coordinate of the current player
 #

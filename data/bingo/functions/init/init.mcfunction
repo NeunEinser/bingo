@@ -1456,3 +1456,7 @@ forceload add 0 0
 # spawn strcutures
 	execute if score $lobby_generated bingo.state matches 0 in bingo:lobby run function bingo:init/setup_lobby
 	scoreboard players set $lobby_generated bingo.state 1
+
+# summon multi noise pos marker
+	execute in bingo:multi_noise run forceload add 0 0
+	execute in bingo:multi_noise run summon minecraft:area_effect_cloud 0 0 0 {Age: -2147483648, Duration: -1, WaitTime: -2147483648, Tags: ["bingo.pos_reader"]}

@@ -10,6 +10,8 @@
 scoreboard players set $game_state bingo.state 2
 execute as @e[distance=0..] run function bingo:game/start/unfreeze_entities
 forceload remove all
+forceload add ~-1 ~-1 ~ ~
+forceload add 0 0
 
 kill @e[type=minecraft:area_effect_cloud, tag=bingo.skybox_cloud, limit=1]
 bossbar set bingo:start/pre_gen/progress visible false
