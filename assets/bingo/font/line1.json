@@ -1,6 +1,12 @@
 {
 	"providers": [
 		{
+			"type": "space",
+			"advances": {
+				" ": 4
+			}
+		},
+		{
 			"type": "bitmap",
 			"file": "bingo:font/ascii.png",
 			"ascent": -42,
