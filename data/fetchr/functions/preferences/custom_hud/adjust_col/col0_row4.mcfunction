@@ -14,4 +14,4 @@ execute if score @s fetchr.pref matches 32 run data modify storage fetchr:custom
 
 execute if score @s fetchr.pref matches 33 run data modify storage tmp.fetchr:preferences/hud toBeAdded set from storage fetchr:custom_hud currentPlayer.components[4]
 execute if score @s fetchr.pref matches 33 run function fetchr:preferences/custom_hud/add_to_col1
-execute if score @s fetchr.pref matches 33..34 run data modify storage fetchr:custom_hud currentPlayer.components[4] set value {id: "fetchr:empty", padding: '{"translate": "space.91"}'}
+execute if score @s fetchr.pref matches 33..34 run data modify storage fetchr:custom_hud currentPlayer.components[4] set value {id: "fetchr:empty"}

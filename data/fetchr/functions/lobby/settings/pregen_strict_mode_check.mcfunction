@@ -9,6 +9,6 @@
 # @user
 # @context entity Player changing the setting
 
-execute if score $strict_mode fetchr.settings matches 0 run function fetchr:lobby/settings/change_pregen_behavior
+execute unless score $strict_mode fetchr.settings matches 1 run function fetchr:lobby/settings/change_pregen_behavior
 execute if score $strict_mode fetchr.settings matches 1 if score @s fetchr.operator matches 1 run function fetchr:lobby/settings/change_pregen_behavior
 execute if score $strict_mode fetchr.settings matches 1 if score @s fetchr.operator matches 0 run function fetchr:util/confirm_operator_status

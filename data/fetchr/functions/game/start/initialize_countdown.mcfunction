@@ -19,6 +19,7 @@ scoreboard players set $start_game.countdown fetchr.schedule 3
 
 spawnpoint @a[predicate=fetchr:is_in_game] ~ ~ ~
 forceload add ~ ~
+forceload add 0 0
 summon minecraft:marker ~ ~ ~ {Tags: ["fetchr.spawn"]}
 teleport @a[predicate=fetchr:is_in_game, gamemode=adventure] ~ ~ ~
 

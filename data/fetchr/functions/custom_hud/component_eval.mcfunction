@@ -1,4 +1,4 @@
-#> fetchr:custom_hud/component_post_evaluation
+#> fetchr:custom_hud/component_eval
 #
 # This function should be called at the very end of each component's update
 # function right before writing it back to the player. 
@@ -33,8 +33,15 @@ execute if score $custom_hud/width.padding fetchr.io matches 3 run data modify s
 execute if score $custom_hud/width.padding fetchr.io matches 2 run data modify storage io.fetchr:custom_hud component.padding append value ""
 execute if score $custom_hud/width.padding fetchr.io matches 1 run data modify storage io.fetchr:custom_hud component.padding append value ""
 
-execute in fetchr:lobby run setblock 0 0 0 minecraft:oak_sign{Text1: '{"storage":"io.fetchr:custom_hud","nbt":"component.textComponent","interpret":true,"color":"black"}'}
-execute in fetchr:lobby run data modify storage io.fetchr:custom_hud component.evaluatedShadow set from block 0 0 0 Text1
-execute in fetchr:lobby run data modify block 0 0 0 Text1 set from storage io.fetchr:custom_hud component.textComponent
-execute in fetchr:lobby run data modify storage io.fetchr:custom_hud component.evaluatedTextComponent set from block 0 0 0 Text1
-execute in fetchr:lobby run setblock 0 0 0 minecraft:air
+
+#>
+# @within
+# 	function fetchr:custom_hud/component_eval
+# 	function fetchr:custom_hud/component_eval/*
+#declare score_holder $custom_hud/eval.slot
+execute store result score $custom_hud/eval.slot fetchr.tmp run data get storage io.fetchr:custom_hud component.slot_id
+
+execute if score $custom_hud/eval.slot fetchr.tmp matches ..4 run function fetchr:custom_hud/component_eval/0_4
+execute if score $custom_hud/eval.slot fetchr.tmp matches 5.. run function fetchr:custom_hud/component_eval/5_10
+
+data modify storage io.fetchr:custom_hud component.evaluated set from block 7 0 7 Text1

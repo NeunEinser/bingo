@@ -4,7 +4,7 @@
 # weight for each category.
 #
 # @within
-# 	function fetchr:init/items/exec
+# 	function fetchr:init/items/lobby_loaded
 # 	function fetchr:init/items/second_pass
 # @writes storage fetchr:items categories
 

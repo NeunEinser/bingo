@@ -9,7 +9,9 @@
 effect give @s minecraft:saturation 2 255 true
 
 # adventure mode
-execute if score $strict_mode fetchr.settings matches 1 run gamemode adventure @s[gamemode=survival]
+execute if score $is_multiplayer fetchr.state matches 1 if score $strict_mode fetchr.settings matches 1.. run gamemode adventure @s[gamemode=survival]
+execute if score $is_multiplayer fetchr.state matches 1 if score $strict_mode fetchr.settings matches 0 run gamemode survival @s[gamemode=adventure]
+execute if score $is_multiplayer fetchr.state matches 0 run gamemode survival @s[gamemode=adventure]
 
 # change preferences
 execute unless score @s fetchr.pref matches 0 run function fetchr:preferences/show
@@ -35,3 +37,5 @@ execute if score @s fetchr.settings matches 21..22 run function fetchr:lobby/set
 scoreboard players reset @s fetchr.settings
 execute unless score $strict_mode fetchr.settings matches 1 run scoreboard players enable @s fetchr.settings
 execute if score @s fetchr.operator matches 1 run scoreboard players enable @s fetchr.settings
+
+execute if score @s fetchr.update_hud matches 1 run function fetchr:custom_hud/components/timer/update

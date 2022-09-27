@@ -20,3 +20,4 @@ data modify block ~ ~ ~ {} merge from entity @s data
 
 execute if entity @s[tag=fetchr.sign_strict_mode] if score $strict_mode fetchr.settings matches 0 run data modify block ~ ~ ~ Text4 set value '{"translate":"fetchr.lobby.settings.strict_mode.sign.off","color":"gray"}'
 execute if entity @s[tag=fetchr.sign_strict_mode] if score $strict_mode fetchr.settings matches 1 run data modify block ~ ~ ~ Text4 set value '{"translate":"fetchr.lobby.settings.strict_mode.sign.on","color":"green"}'
+execute if entity @s[tag=fetchr.sign_strict_mode] if score $strict_mode fetchr.settings matches 2 run data modify block ~ ~ ~ Text4 set value '{"translate":"bingo.lobby.settings.strict_mode.sign.adventure", "color":"gray"}'

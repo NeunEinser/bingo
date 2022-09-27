@@ -127,11 +127,37 @@ forceload add 0 0
 	# @internal
 	#declare tag fetchr.card_frame
 	#>
+	# This tag is given to players whose inventory should be checked for item gets
+	#
+	# This is part of an optimization since checking inventory is unoptimized by Mojang
+	#
+	# @internal
+	#declare tag fetchr.check_inventory
+	#>
 	# This tag is used during item removal after successfully obtaining an item from
 	# the card.
 	#
 	# @internal
 	#declare tag fetchr.clear
+	#>
+	# This tag is given to players whose inventory should only be checked once, not
+	# waiting for a movement action
+	#
+	# @within
+	# 	function fetchr:game/on_inventory_changed
+	# 	function fetchr:game/player_tick
+	#declare tag fetchr.only_check_inventory_once
+	#>
+	# This tag is given to players whose position changed compared to last tick
+	# @internal
+	#declare tag fetchr.position_changed
+	#>
+	# This marks an entity which is used to teleport to a player and read position
+	# data. Reading from the the player position directly is super expensive
+	# Because MC serializes the entire recipe book.
+	# 
+	# @internal
+	#declare tag fetchr.pos_reader
 	#>
 	# This tag is used for the area effect cloud marking the location for the skybox
 	#
@@ -148,8 +174,6 @@ forceload add 0 0
 	#
 	# @internal
 	#declare tag fetchr.string_tester
-	kill @e[type=minecraft:marker, tag=fetchr.string_tester]
-	summon minecraft:marker 0 0 0 {Tags: ["fetchr.string_tester"]}
 	#>
 	# Tag for entities that where already persistent.
 	#
@@ -440,28 +464,35 @@ forceload add 0 0
 	#endregion
 #endregion
 
-#>
-# @private
-#declare tag fetchr.detect_mp_aec
-kill @e[type=minecraft:marker, tag=fetchr.detect_mp_aec, limit=1]
-summon minecraft:marker 0 0 0 {CustomName:'{"translate": "fetchr.technical.detect_multiplayer"}', Tags: ["fetchr.detect_mp_aec"]}
-
 #region setup objectives
+	scoreboard objectives remove fetchr.barrel
+	scoreboard objectives remove fetchr.brewing
+	scoreboard objectives remove fetchr.b_furnace
+	scoreboard objectives remove fetchr.chest
 	scoreboard objectives remove fetchr.chicken_timer_cache
 	scoreboard objectives remove fetchr.const
 	scoreboard objectives remove fetchr.completed_goal_effect_state
+	scoreboard objectives remove fetchr.crafting
+	scoreboard objectives remove fetchr.enderchest
+	scoreboard objectives remove fetchr.furnace
+	scoreboard objectives remove fetchr.grindstone
 	scoreboard objectives remove fetchr.has_item
 	scoreboard objectives remove fetchr.hud_update
 	scoreboard objectives remove fetchr.io
 	scoreboard objectives remove fetchr.lobby
 	scoreboard objectives remove fetchr.menu
 	scoreboard objectives remove fetchr.menu_page
-	scoreboard objectives remove fetchr.pos_hash
 	scoreboard objectives remove fetchr.pref
+	scoreboard objectives remove fetchr.prev_rot
+	scoreboard objectives remove fetchr.prev_x_pos
 	scoreboard objectives remove fetchr.prev_y_pos
+	scoreboard objectives remove fetchr.prev_z_pos
 	scoreboard objectives remove fetchr.seed
 	scoreboard objectives remove fetchr.spectator
 	scoreboard objectives remove fetchr.resource_pack_check
+	scoreboard objectives remove fetchr.shulkerbox
+	scoreboard objectives remove fetchr.stonecut
+	scoreboard objectives remove fetchr.smoker
 	scoreboard objectives remove fetchr.tmp
 
 	#region public objectives
@@ -635,10 +666,28 @@ summon minecraft:marker 0 0 0 {CustomName:'{"translate": "fetchr.technical.detec
 		scoreboard objectives add fetchr.menu_page dummy
 
 		#>
+		# This objective contains the rotation of entities in the previous tick
+		#
+		# @internal
+		scoreboard objectives add fetchr.prev_rot dummy
+
+		#>
+		# This objective contains the x coordinate of entities in the previous tick
+		#
+		# @internal
+		scoreboard objectives add fetchr.prev_x_pos dummy
+
+		#>
 		# This objective contains the y coordinate of entities in the previous tick
 		#
 		# @internal
 		scoreboard objectives add fetchr.prev_y_pos dummy
+
+		#>
+		# This objective contains the z coordinate of entities in the previous tick
+		#
+		# @internal
+		scoreboard objectives add fetchr.prev_z_pos dummy
 
 		#>
 		# This objective is used to store information for scheduled events
@@ -655,14 +704,6 @@ summon minecraft:marker 0 0 0 {CustomName:'{"translate": "fetchr.technical.detec
 
 	#region private objectives
 		#>
-		# This objective is used to store the player's position hash, which in turn
-		# is used to determine whether the player position display needs updating
-		# @within
-		#		function fetchr:init/init
-		#		function fetchr:custom_hud/components/player_position/*
-		scoreboard objectives add fetchr.pos_hash dummy
-
-		#>
 		# The last time the hud was refreshed for each player
 		# #TODO rename to something like "last_hud_update" in 1.18 when the stupid
 		# # length limit is gone.
@@ -677,10 +718,107 @@ summon minecraft:marker 0 0 0 {CustomName:'{"translate": "fetchr.technical.detec
 		#
 		# @within
 		#		function fetchr:init/init
-		#		function fetchr:tick/tick
+		#		function fetchr:tick/player_tick
 		#		function fetchr:tick/handle_player_join
 		scoreboard objectives add fetchr.reconnect minecraft.custom:minecraft.leave_game
 
+		#region interaction
+			#>
+			# This objective is used to detect a player reconnecting
+			#
+			# @within
+			#		function fetchr:init/init
+			#		function fetchr:game/player_tick
+			#		function fetchr:game/on_inventory_changed
+			scoreboard objectives add fetchr.inv_change dummy
+
+			#>
+			# This objective is used to detect a player reconnecting
+			#
+			# @within
+			#		function fetchr:init/init
+			#		function fetchr:game/player_tick
+			scoreboard objectives add fetchr.chest minecraft.custom:minecraft.open_chest
+			#>
+			# This objective is used to detect a player reconnecting
+			#
+			# @within
+			#		function fetchr:init/init
+			#		function fetchr:game/player_tick
+			scoreboard objectives add fetchr.barrel minecraft.custom:minecraft.open_barrel
+			#>
+			# This objective is used to detect player sleeping for night skipping
+			#
+			# @within
+			#		function fetchr:init/init
+			#		function fetchr:game/tick
+			#		function fetchr:game/player_tick
+			scoreboard objectives add fetchr.bed minecraft.custom:minecraft.sleep_in_bed
+			#>
+			# This objective is used to detect a player reconnecting
+			#
+			# @within
+			#		function fetchr:init/init
+			#		function fetchr:game/player_tick
+			scoreboard objectives add fetchr.enderchest minecraft.custom:minecraft.open_enderchest
+			#>
+			# This objective is used to detect a player reconnecting
+			#
+			# @within
+			#		function fetchr:init/init
+			#		function fetchr:game/player_tick
+			scoreboard objectives add fetchr.shulkerbox minecraft.custom:minecraft.open_shulker_box
+
+			#>
+			# This objective is used to detect a player reconnecting
+			#
+			# @within
+			#		function fetchr:init/init
+			#		function fetchr:game/player_tick
+			scoreboard objectives add fetchr.crafting minecraft.custom:minecraft.interact_with_crafting_table
+			#>
+			# This objective is used to detect a player reconnecting
+			#
+			# @within
+			#		function fetchr:init/init
+			#		function fetchr:game/player_tick
+			scoreboard objectives add fetchr.furnace minecraft.custom:minecraft.interact_with_furnace
+			#>
+			# This objective is used to detect a player reconnecting
+			#
+			# @within
+			#		function fetchr:init/init
+			#		function fetchr:game/player_tick
+			scoreboard objectives add fetchr.b_furnace minecraft.custom:minecraft.interact_with_blast_furnace
+			#>
+			# This objective is used to detect a player reconnecting
+			#
+			# @within
+			#		function fetchr:init/init
+			#		function fetchr:game/player_tick
+			scoreboard objectives add fetchr.smoker minecraft.custom:minecraft.interact_with_smoker
+			#>
+			# This objective is used to detect a player reconnecting
+			#
+			# @within
+			#		function fetchr:init/init
+			#		function fetchr:game/player_tick
+			scoreboard objectives add fetchr.grindstone minecraft.custom:minecraft.interact_with_grindstone
+			#>
+			# This objective is used to detect a player reconnecting
+			#
+			# @within
+			#		function fetchr:init/init
+			#		function fetchr:game/player_tick
+			scoreboard objectives add fetchr.stonecut minecraft.custom:minecraft.interact_with_stonecutter
+			#>
+			# This objective is used to detect a player reconnecting
+			#
+			# @within
+			#		function fetchr:init/init
+			#		function fetchr:game/player_tick
+			scoreboard objectives add fetchr.brewing minecraft.custom:minecraft.interact_with_brewingstand
+		#endregion
 	#endregion
 
 	#region score holders
@@ -703,6 +841,12 @@ summon minecraft:marker 0 0 0 {CustomName:'{"translate": "fetchr.technical.detec
 		# @public
 		#declare score_holder $game_state
 		scoreboard players add $game_state fetchr.state 0
+		#>
+		# Whether this is played on an integrated server (SP or Open to LAN)
+		#
+		# @public
+		#declare score_holder $integrated_server
+		scoreboard players set $integrated_server fetchr.state 0
 		#>
 		# Whether this is multiplayer
 		#
@@ -749,7 +893,7 @@ summon minecraft:marker 0 0 0 {CustomName:'{"translate": "fetchr.technical.detec
 		#
 		# @internal
 		#declare score_holder $strict_mode
-		scoreboard players add $strict_mode fetchr.settings 0
+		execute unless score $strict_mode fetchr.settings matches 0..2 run scoreboard players set $strict_mode fetchr.settings 2
 
 		#>
 		# The current game seed
@@ -758,6 +902,13 @@ summon minecraft:marker 0 0 0 {CustomName:'{"translate": "fetchr.technical.detec
 		#
 		# @internal
 		#declare score_holder $seed
+		#>
+		# The count of currently active teams
+		#
+		# Stored in fetchr.state
+		#
+		# @internal
+		#declare score_holder $team_count
 		#>
 		# The current total item weight
 		#
@@ -782,8 +933,8 @@ summon minecraft:marker 0 0 0 {CustomName:'{"translate": "fetchr.technical.detec
 		# Time from last tick
 		#
 		# @internal
-		#declare score_holder $last_tick
-		scoreboard players reset $last_tick fetchr.state
+		#declare score_holder $last_tick_second
+		scoreboard players reset $last_tick_second fetchr.state
 		#>
 		# Whether the card needs to be updated
 		#
@@ -819,10 +970,6 @@ summon minecraft:marker 0 0 0 {CustomName:'{"translate": "fetchr.technical.detec
 		scoreboard players set 6 fetchr.const 6
 		#>
 		# @public
-		#declare score_holder 8
-		scoreboard players set 8 fetchr.const 8
-		#>
-		# @public
 		#declare score_holder 9
 		scoreboard players set 9 fetchr.const 9
 		#>
@@ -839,12 +986,12 @@ summon minecraft:marker 0 0 0 {CustomName:'{"translate": "fetchr.technical.detec
 		scoreboard players set 32 fetchr.const 32
 		#>
 		# @public
-		#declare score_holder 40
-		scoreboard players set 40 fetchr.const 40
-		#>
-		# @public
 		#declare score_holder 41
 		scoreboard players set 41 fetchr.const 41
+		#>
+		# @public
+		#declare score_holder 50
+		scoreboard players set 50 fetchr.const 50
 		#>
 		# @public
 		#declare score_holder 96
@@ -1023,7 +1170,7 @@ summon minecraft:marker 0 0 0 {CustomName:'{"translate": "fetchr.technical.detec
 	data modify storage fetchr:custom_hud default append from storage tmp.fetchr:init/hud columns[0][4]
 	execute unless data storage fetchr:custom_hud default[4] run function fetchr:init/initialize_hud_components/fill_default_col0
 	
-	execute unless data storage tmp.fetchr:init/hud columns[1][5] run data modify storage fetchr:custom_hud default append value {id: "fetchr:spacer", name: '{"translate": "fetchr.custom_hud.components.spacer"}', padding: '{"translate": "space.91"}', slot_id: 5b}
+	execute unless data storage tmp.fetchr:init/hud columns[1][5] run data modify storage fetchr:custom_hud default append value {id: "fetchr:spacer", name: '{"translate": "fetchr.custom_hud.components.spacer"}', slot_id: 5b}
 	data modify storage fetchr:custom_hud default append from storage tmp.fetchr:init/hud columns[1][0]
 	data modify storage fetchr:custom_hud default append from storage tmp.fetchr:init/hud columns[1][1]
 	data modify storage fetchr:custom_hud default append from storage tmp.fetchr:init/hud columns[1][2]
@@ -1043,3 +1190,6 @@ summon minecraft:marker 0 0 0 {CustomName:'{"translate": "fetchr.technical.detec
 	execute if score $lobby_generated fetchr.state matches 0 in fetchr:lobby run forceload add -16 -17 47 31
 	execute if score $lobby_generated fetchr.state matches 0 run schedule function fetchr:init/setup_lobby/root 1t
 	scoreboard players set $lobby_generated fetchr.state 1
+
+# summon multi noise pos marker
+	execute in fetchr:default run forceload add 0 0

@@ -24,6 +24,41 @@ gamemode creative @s[scores={fetchr.spectator=1}]
 gamemode spectator @s[scores={fetchr.spectator=1}]
 scoreboard players reset @s[scores={fetchr.spectator=1}] fetchr.spectator
 
+# Set player inventory change delay
+scoreboard players remove @s[scores={fetchr.inv_change=1..}] fetchr.inv_change 1
+
+execute if score @s fetchr.chest matches 1.. run scoreboard players set @s fetchr.inv_change 20
+execute if score @s fetchr.barrel matches 1.. run scoreboard players set @s fetchr.inv_change 20
+execute if score @s fetchr.enderchest matches 1.. run scoreboard players set @s fetchr.inv_change 20
+execute if score @s fetchr.shulkerbox matches 1.. run scoreboard players set @s fetchr.inv_change 20
+execute if score @s fetchr.crafting matches 1.. run scoreboard players set @s fetchr.inv_change 20
+execute if score @s fetchr.furnace matches 1.. run scoreboard players set @s fetchr.inv_change 20
+execute if score @s fetchr.b_furnace matches 1.. run scoreboard players set @s fetchr.inv_change 20
+execute if score @s fetchr.smoker matches 1.. run scoreboard players set @s fetchr.inv_change 20
+execute if score @s fetchr.grindstone matches 1.. run scoreboard players set @s fetchr.inv_change 20
+execute if score @s fetchr.stonecut matches 1.. run scoreboard players set @s fetchr.inv_change 20
+execute if score @s fetchr.brewing matches 1.. run scoreboard players set @s fetchr.inv_change 20
+
+scoreboard players reset @s fetchr.chest
+scoreboard players reset @s fetchr.barrel
+scoreboard players reset @s fetchr.enderchest
+scoreboard players reset @s fetchr.shulkerbox
+scoreboard players reset @s fetchr.crafting
+scoreboard players reset @s fetchr.furnace
+scoreboard players reset @s fetchr.b_furnace
+scoreboard players reset @s fetchr.smoker
+scoreboard players reset @s fetchr.grindstone
+scoreboard players reset @s fetchr.stonecut
+scoreboard players reset @s fetchr.brewing
+
+tag @s[tag=fetchr.position_changed] remove fetchr.check_inventory
+tag @s[tag=fetchr.only_check_inventory_once] remove fetchr.check_inventory
+tag @s[scores={fetchr.inv_change=1..}] add fetchr.check_inventory
+tag @s[scores={fetchr.inv_change=2..}] remove fetchr.only_check_inventory_once
+
+scoreboard players add @s[scores={fetchr.bed=1..}] fetchr.bed 1
+execute if score @s fetchr.bed matches 99.. store result score @s fetchr.bed run data get entity @s SleepTimer
+
 # This should always be at the end to prevent game logic from running for this
 # player in the lobby.
 scoreboard players enable @s fetchr.lobby

@@ -17,4 +17,4 @@ function fetchr:util/find_player_team
 function fetchr:item_detection/set_overlay
 tag @a[tag=fetchr.in_current_team] add fetchr.got_item
 
-execute if score $item_detect/set_overlay.success fetchr.tmp matches 1 run function fetchr:item_detection/announce
+execute if score $item_detect/set_overlay.success fetchr.tmp matches 1 in fetchr:lobby run function fetchr:item_detection/announce

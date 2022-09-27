@@ -1,10 +1,10 @@
 #> fetchr:custom_hud/tick
 #
-# Displays the bingo card for @s
+# Displays the fetchr card for @s
 #
-# @within fetchr:tick/tick
+# @within fetchr:tick/player_tick
 # @context entity Player for displaying the card
-# @reads score @s fetchr.card_position
+# @reads score @s fetchr.card_pos
 
 #>
 # @within
@@ -28,6 +28,6 @@ scoreboard players add @s fetchr.hud_update 1
 execute if data storage fetchr:custom_hud currentPlayer.components[{changed: true}] run function fetchr:custom_hud/update_actionbar
 execute if score @s fetchr.hud_update matches 40.. run function fetchr:custom_hud/update_actionbar
 
-data remove storage fetchr:custom_hud currentPlayer.components[].changed
+data modify storage fetchr:custom_hud currentPlayer.components[].changed set value false
 data modify storage tmp.fetchr:custom_hud handled prepend from storage fetchr:custom_hud currentPlayer
 scoreboard players reset @s fetchr.update_hud

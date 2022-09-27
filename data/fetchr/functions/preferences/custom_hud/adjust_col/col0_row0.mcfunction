@@ -14,4 +14,4 @@ data modify storage fetchr:custom_hud currentPlayer.components[0] set from stora
 data modify storage fetchr:custom_hud currentPlayer.components[1] set from storage fetchr:custom_hud currentPlayer.components[2]
 data modify storage fetchr:custom_hud currentPlayer.components[2] set from storage fetchr:custom_hud currentPlayer.components[3]
 data modify storage fetchr:custom_hud currentPlayer.components[3] set from storage fetchr:custom_hud currentPlayer.components[4]
-data modify storage fetchr:custom_hud currentPlayer.components[4] set value {id: "fetchr:empty", padding: '{"translate": "space.91"}'}
+data modify storage fetchr:custom_hud currentPlayer.components[4] set value {id: "fetchr:empty"}

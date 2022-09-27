@@ -37,23 +37,23 @@
 #declare score_holder $card_gen/slot.zmod
 
 #region detection command
-scoreboard players set $card_gen/slot.command_index fetchr.tmp 8
+scoreboard players set $card_gen/slot.command_index fetchr.tmp 10
 scoreboard players operation $card_gen/slot.command_index fetchr.tmp *= $card_gen.slot fetchr.tmp
-scoreboard players add $card_gen/slot.command_index fetchr.tmp 2
+scoreboard players add $card_gen/slot.command_index fetchr.tmp 4
 
 scoreboard players operation $card_gen/slot.y fetchr.tmp = $card_gen/slot.command_index fetchr.tmp
-scoreboard players operation $card_gen/slot.y fetchr.tmp %= 8 fetchr.const
+scoreboard players operation $card_gen/slot.y fetchr.tmp %= 10 fetchr.const
 scoreboard players operation $card_gen/slot.x fetchr.tmp = $card_gen/slot.command_index fetchr.tmp
-scoreboard players operation $card_gen/slot.x fetchr.tmp /= 8 fetchr.const
+scoreboard players operation $card_gen/slot.x fetchr.tmp /= 10 fetchr.const
 scoreboard players operation $card_gen/slot.x fetchr.tmp %= 5 fetchr.const
 scoreboard players operation $card_gen/slot.z fetchr.tmp = $card_gen/slot.command_index fetchr.tmp
-scoreboard players operation $card_gen/slot.z fetchr.tmp /= 40 fetchr.const
+scoreboard players operation $card_gen/slot.z fetchr.tmp /= 50 fetchr.const
 
 scoreboard players operation $card_gen/slot.xmod fetchr.tmp = $card_gen/slot.x fetchr.tmp
 scoreboard players operation $card_gen/slot.xmod fetchr.tmp %= 2 fetchr.const
 scoreboard players operation $card_gen/slot.zmod fetchr.tmp = $card_gen/slot.z fetchr.tmp
 scoreboard players operation $card_gen/slot.zmod fetchr.tmp %= 2 fetchr.const
-execute unless score $card_gen/slot.xmod fetchr.tmp = $card_gen/slot.zmod fetchr.tmp run scoreboard players remove $card_gen/slot.y fetchr.tmp 7
+execute unless score $card_gen/slot.xmod fetchr.tmp = $card_gen/slot.zmod fetchr.tmp run scoreboard players remove $card_gen/slot.y fetchr.tmp 9
 execute if score $card_gen/slot.y fetchr.tmp matches ..-1 run scoreboard players operation $card_gen/slot.y fetchr.tmp *= -1 fetchr.const
 execute if score $card_gen/slot.zmod fetchr.tmp matches 1 run scoreboard players remove $card_gen/slot.x fetchr.tmp 4
 execute if score $card_gen/slot.zmod fetchr.tmp matches 1 run scoreboard players operation $card_gen/slot.x fetchr.tmp *= -1 fetchr.const
@@ -72,18 +72,18 @@ execute at @s run data modify block ~ ~ ~ Command set from storage tmp.fetchr:ca
 scoreboard players add $card_gen/slot.command_index fetchr.tmp 5
 
 scoreboard players operation $card_gen/slot.y fetchr.tmp = $card_gen/slot.command_index fetchr.tmp
-scoreboard players operation $card_gen/slot.y fetchr.tmp %= 8 fetchr.const
+scoreboard players operation $card_gen/slot.y fetchr.tmp %= 10 fetchr.const
 scoreboard players operation $card_gen/slot.x fetchr.tmp = $card_gen/slot.command_index fetchr.tmp
-scoreboard players operation $card_gen/slot.x fetchr.tmp /= 8 fetchr.const
+scoreboard players operation $card_gen/slot.x fetchr.tmp /= 10 fetchr.const
 scoreboard players operation $card_gen/slot.x fetchr.tmp %= 5 fetchr.const
 scoreboard players operation $card_gen/slot.z fetchr.tmp = $card_gen/slot.command_index fetchr.tmp
-scoreboard players operation $card_gen/slot.z fetchr.tmp /= 40 fetchr.const
+scoreboard players operation $card_gen/slot.z fetchr.tmp /= 50 fetchr.const
 
 scoreboard players operation $card_gen/slot.xmod fetchr.tmp = $card_gen/slot.x fetchr.tmp
 scoreboard players operation $card_gen/slot.xmod fetchr.tmp %= 2 fetchr.const
 scoreboard players operation $card_gen/slot.zmod fetchr.tmp = $card_gen/slot.z fetchr.tmp
 scoreboard players operation $card_gen/slot.zmod fetchr.tmp %= 2 fetchr.const
-execute unless score $card_gen/slot.xmod fetchr.tmp = $card_gen/slot.zmod fetchr.tmp run scoreboard players remove $card_gen/slot.y fetchr.tmp 7
+execute unless score $card_gen/slot.xmod fetchr.tmp = $card_gen/slot.zmod fetchr.tmp run scoreboard players remove $card_gen/slot.y fetchr.tmp 9
 execute if score $card_gen/slot.y fetchr.tmp matches ..-1 run scoreboard players operation $card_gen/slot.y fetchr.tmp *= -1 fetchr.const
 execute if score $card_gen/slot.zmod fetchr.tmp matches 1 run scoreboard players remove $card_gen/slot.x fetchr.tmp 4
 execute if score $card_gen/slot.zmod fetchr.tmp matches 1 run scoreboard players operation $card_gen/slot.x fetchr.tmp *= -1 fetchr.const

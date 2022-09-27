@@ -38,5 +38,20 @@ setblock -3 2 -3 minecraft:barrier
 
 setblock -3 1 -3 minecraft:barrier
 
+#>
+# @private
+#declare tag fetchr.detect_mp_aec
+kill @e[type=minecraft:marker, tag=fetchr.detect_mp_aec]
+summon minecraft:marker 0 0 0 {CustomName:'{"translate": "fetchr.technical.detect_multiplayer"}', Tags: ["fetchr.detect_mp_aec"]}
+execute in fetchr:default run summon minecraft:marker 0 0 0 {CustomName:'{"translate": "fetchr.technical.detect_multiplayer"}', Tags: ["fetchr.detect_mp_aec"]}
+
+kill @e[type=minecraft:marker, tag=fetchr.string_tester]
+summon minecraft:marker 0 0 0 {Tags: ["fetchr.string_tester"]}
+
+kill @e[type=minecraft:marker, tag=fetchr.pos_reader]
+summon minecraft:marker 0 0 0 {Tags: ["fetchr.pos_reader"]}
+
+setblock 7 0 7 minecraft:oak_sign
+
 forceload remove all
 forceload add 0 0

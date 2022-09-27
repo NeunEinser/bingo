@@ -16,4 +16,4 @@ execute if score @s fetchr.pref matches 56 run data modify storage tmp.fetchr:pr
 execute if score @s fetchr.pref matches 56 run function fetchr:preferences/custom_hud/add_to_col0
 execute if score @s fetchr.pref matches 56..57 run data modify storage fetchr:custom_hud currentPlayer.components[8] set from storage fetchr:custom_hud currentPlayer.components[9]
 execute if score @s fetchr.pref matches 56..57 run data modify storage fetchr:custom_hud currentPlayer.components[9] set from storage fetchr:custom_hud currentPlayer.components[10]
-execute if score @s fetchr.pref matches 56..57 run data modify storage fetchr:custom_hud currentPlayer.components[10] set value {id: "fetchr:empty", padding: '{"translate": "space.91"}'}
+execute if score @s fetchr.pref matches 56..57 run data modify storage fetchr:custom_hud currentPlayer.components[10] set value {id: "fetchr:empty"}

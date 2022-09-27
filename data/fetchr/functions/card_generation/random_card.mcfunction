@@ -5,4 +5,4 @@
 # @within function fetchr:lobby/settings/random_seed_strict_mode_check
 
 function neun_einser.math:random/set_random_seed
-function fetchr:card_generation/generate_card
+execute in fetchr:lobby run function fetchr:card_generation/generate_card
