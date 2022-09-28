@@ -334,7 +334,7 @@
 	"bingo.game.start.preparing_spawn": "Preparazione Spawn...",
 	"bingo.game.start.loading_terrain": "Caricamento Terreno...",
 	"bingo.game.start.countdown_completed": "VAI!",
-	"bingo.game.start.pre_gen_progress": "Pregenerazione dei Chunks...",
+	"bingo.game.start.pre_gen_progress": "Pre-generazione dei Chunks...",
 	"bingo.got_item": "[%2$s | #%1$s] %3$s ottenuto [%4$s]",
 	"bingo.got_blackout": "[%s] %s ha ottenuto un blackout!",
 	"bingo.got_20_no_bingo": "[%s] %s ha ottenuto 20 no bingo!",
