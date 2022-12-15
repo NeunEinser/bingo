@@ -261,7 +261,7 @@
 	"bingo.lobby.tutorial.game_info.game_rules": "Il tempo è sempre soleggiato per evitare che gli endermen siano fastidiosi.\n\nI fantasmi, commercianti eranti e le pattuglie sono disabilitati. Tutti questi sono su un timer globale, causando problemi quando si giocano più partite.",
 	"bingo.lobby.tutorial.game_info.world_gen.heading": "Modifiche della Gener. del Mondo",
 	"bingo.lobby.tutorial.game_info.world_gen": "Fetchr utilizza alcune personalizzazioni della generazione del mondo.",
-	"bingo.lobby.tutorial.game_info.world_gen.tiny_biomes.heading": "Biomi Minuscoli: ",
+	"bingo.lobby.tutorial.game_info.world_gen.tiny_biomes.heading": "Biomi Piccoli: ",
 	"bingo.lobby.tutorial.game_info.world_gen.tiny_biomes": "Le dimensioni del bioma sono diminuite. Potresti notare alcune differenze nel layout del bioma.",
 	"bingo.lobby.tutorial.game_info.world_gen.more_dungeons.heading": "Molte Segrete: ",
 	"bingo.lobby.tutorial.game_info.world_gen.more_dungeons": "Al fine di rendere le segrete ragionevoli da trovare in un veloce gioco Fetchr, i tassi di generazione delle segrete sono aumentate di un fattore di 12.5, rendendo piu facile trovarle in qualsiasi partita.",
