@@ -34,6 +34,8 @@
 	"bingo.preferences.custom_hud.adjust_col.move_up.title": "▲",
 	"bingo.preferences.custom_hud.adjust_col.move_down.title": "▼",
 	"bingo.custom_hud.components.timer": "Таймер",
+	"bingo.preferences.custom_hud.component_settings.player_chunk_position.title": "Настройки Координат Чанка",
+	"bingo.preferences.custom_hud.component_settings.player_chunk_position.description": "Эта страница позволяет поменять настройки для отображения координат чанка",
 	"bingo.preferences.custom_hud.component_settings.player_position.title": "Настройки Координат",
 	"bingo.lobby.credits.tools.vscode.sign.line4": "Майкрософт",
 	"bingo.lobby.credits.tools.datapack_helper_plus.sign.line4": "SPGoding",
