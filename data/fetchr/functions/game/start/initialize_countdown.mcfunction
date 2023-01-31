@@ -15,7 +15,7 @@
 # 	function fetchr:game/start/initialize_countdown
 # 	function fetchr:game/start/countdown
 #declare score_holder $start_game.countdown
-scoreboard players set $start_game.countdown fetchr.schedule 3
+scoreboard players set $start_game.countdown fetchr.tmp 3
 
 spawnpoint @a[predicate=fetchr:is_in_game] ~ ~ ~
 forceload add ~ ~

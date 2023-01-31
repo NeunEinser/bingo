@@ -690,12 +690,6 @@ forceload add 0 0
 		scoreboard objectives add fetchr.prev_z_pos dummy
 
 		#>
-		# This objective is used to store information for scheduled events
-		#
-		# @internal
-		scoreboard objectives add fetchr.schedule dummy
-
-		#>
 		# This objective is used for temporary calculations.
 		#
 		# @internal
@@ -1036,9 +1030,6 @@ forceload add 0 0
 	gamerule disableElytraMovementCheck true
 	gamerule doPatrolSpawning false
 	difficulty easy
-
-# Init slow loops
-	schedule function fetchr:tick/clean_up 1s replace
 
 # setup default player configurations
 	#data remove storage fetchr:player configurations
