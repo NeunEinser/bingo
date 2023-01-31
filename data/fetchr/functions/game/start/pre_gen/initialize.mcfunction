@@ -1,53 +1,113 @@
 #> fetchr:game/start/pre_gen/initialize
 #
-# Initializes the pre-generation of chunks
+# Initializes scoreboards at the beginning of chunk pregen. Is executed after
+# the spawn itself is loaded
 #
-# @within function fetchr:game/start/move_z/f
+# @within function fetchr:game/start/pre_gen/start
+# @context
+# 	position Fetchr Spawnpoint
+# 	entity Spawn marker
 
-#>
-# The marker cloud used to mark the current last pre-generated line of chunks.
-#
-# @within function fetchr:game/start/pre_gen/*
-# @within function fetchr:game/start/spawn_skybox
-#declare tag fetchr.pre_gen_last_chunk
-
+say hi
 scoreboard players set $pregen_status fetchr.state 1
-scoreboard players set $game_start/pre_gen.i fetchr.schedule 1
+
+#>
+# The current step
+#
+# @within
+# 	function fetchr:game/start/pre_gen/*
+#declare score_holder $game_start/pre_gen.i
+scoreboard players set $game_start/pre_gen.i fetchr.tmp 9
+
+#>
+# The timestamp in miliseconds this iteration started
+#
+# @within
+# 	function fetchr:game/start/pre_gen/*
+#declare score_holder $game_start/pre_gen.start
+
+#>
+# The current chunk x offset
+#
+# @within
+# 	function fetchr:game/start/pre_gen/*
+#declare score_holder $game_start/pre_gen.x
+scoreboard players set $game_start/pre_gen.x fetchr.tmp 2
+
+#>
+# The current chunk z offset
+#
+# @within
+# 	function fetchr:game/start/pre_gen/*
+#declare score_holder $game_start/pre_gen.z
+scoreboard players set $game_start/pre_gen.z fetchr.tmp -1
+
+#>
+# Remaining chunks in current direction
+#
+# @within
+# 	function fetchr:game/start/pre_gen/*
+#declare score_holder $game_start/pre_gen.remaining_in_dir
+scoreboard players set $game_start/pre_gen.remaining_in_dir fetchr.tmp 3
+
+#>
+# Remaining chunks in current direction
+#
+# @within
+# 	function fetchr:game/start/pre_gen/*
+#declare score_holder $game_start/pre_gen.chunks_per_tick
+scoreboard players set $game_start/pre_gen.chunks_per_tick fetchr.tmp 5
+
+#>
+# The current direction.
+#
+# 0: pos z
+# 1: neg x
+# 2: neg z
+# 3: pos x
+#
+# @within
+# 	function fetchr:game/start/pre_gen/*
+#declare score_holder $game_start/pre_gen.direction
+scoreboard players set $game_start/pre_gen.direction fetchr.tmp 0
+
+#>
+# Time last tick
+#
+# @within
+# 	function fetchr:game/start/pre_gen/*
+#declare score_holder $game_start/pre_gen.last_tick_time
+scoreboard players set $game_start/pre_gen.last_tick_time fetchr.tmp 0
 function neun_einser.timer:start/millis
-bossbar set fetchr:start/pre_gen/progress players @a
-execute if score $game_state fetchr.settings matches 1 run bossbar set fetchr:start/pre_gen/progress visible true
+#todo configurable max
 bossbar set fetchr:start/pre_gen/progress max 1681
-bossbar set fetchr:start/pre_gen/progress value 0
+bossbar set fetchr:start/pre_gen/progress value 9
 
-forceload add ~-320 ~-320
-summon minecraft:marker ~-320 ~ ~-320 {Tags: ["fetchr.pre_gen_last_chunk"]}
 
-# Make sure marker cloud is on chunk coords 0 0
+# Make sure marker is on chunk coords 0 0
 #>
 # @private
-#declare score_holder $pre_gen.x
-execute store result score $pre_gen.x fetchr.tmp run data get entity @e[type=minecraft:marker, tag=fetchr.pre_gen_last_chunk, limit=1] Pos[0]
+#declare score_holder $game_start/pre_gen.spawn_x
+execute store result score $game_start/pre_gen.spawn_x fetchr.tmp run data get entity @s Pos[0]
 #>
 # @private
-#declare score_holder $pre_gen.z
-execute store result score $pre_gen.z fetchr.tmp run data get entity @e[type=minecraft:marker, tag=fetchr.pre_gen_last_chunk, limit=1] Pos[2]
+#declare score_holder $game_start/pre_gen.spawn_z
+execute store result score $game_start/pre_gen.spawn_z fetchr.tmp run data get entity @s Pos[2]
 #>
 # @private
-#declare score_holder $pre_gen.mod_x
-scoreboard players operation $pre_gen.mod_x fetchr.tmp = $pre_gen.x fetchr.tmp
-scoreboard players operation $pre_gen.mod_x fetchr.tmp %= 16 fetchr.const
+#declare score_holder $game_start/pre_gen.spawn_mod_x
+scoreboard players operation $game_start/pre_gen.spawn_mod_x fetchr.tmp = $game_start/pre_gen.spawn_x fetchr.tmp
+scoreboard players operation $game_start/pre_gen.spawn_mod_x fetchr.tmp %= 16 fetchr.const
 #>
 # @private
-#declare score_holder $pre_gen.mod_z
-scoreboard players operation $pre_gen.mod_z fetchr.tmp = $pre_gen.z fetchr.tmp
-scoreboard players operation $pre_gen.mod_z fetchr.tmp %= 16 fetchr.const
+#declare score_holder $game_start/pre_gen.spawn_mod_z
+scoreboard players operation $game_start/pre_gen.spawn_mod_z fetchr.tmp = $game_start/pre_gen.spawn_z fetchr.tmp
+scoreboard players operation $game_start/pre_gen.spawn_mod_z fetchr.tmp %= 16 fetchr.const
 
-scoreboard players operation $pre_gen.x fetchr.tmp -= $pre_gen.mod_x fetchr.tmp
-scoreboard players operation $pre_gen.z fetchr.tmp -= $pre_gen.mod_z fetchr.tmp
+scoreboard players operation $game_start/pre_gen.spawn_x fetchr.tmp -= $game_start/pre_gen.spawn_mod_x fetchr.tmp
+scoreboard players operation $game_start/pre_gen.spawn_z fetchr.tmp -= $game_start/pre_gen.spawn_mod_z fetchr.tmp
 
-execute store result entity @e[type=minecraft:marker, tag=fetchr.pre_gen_last_chunk, limit=1] Pos[0] double 1 run scoreboard players get $pre_gen.x fetchr.tmp
-execute store result entity @e[type=minecraft:marker, tag=fetchr.pre_gen_last_chunk, limit=1] Pos[2] double 1 run scoreboard players get $pre_gen.z fetchr.tmp
+execute store result entity @s Pos[0] double 1 run scoreboard players get $game_start/pre_gen.spawn_x fetchr.tmp
+execute store result entity @s Pos[2] double 1 run scoreboard players get $game_start/pre_gen.spawn_z fetchr.tmp
 
-bossbar set fetchr:start/pre_gen/progress value 1
-
-schedule function fetchr:game/start/pre_gen/schedule 1t
+execute at @s run function fetchr:game/start/pre_gen/goto_current_chunk

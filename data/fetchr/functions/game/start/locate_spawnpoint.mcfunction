@@ -2,9 +2,7 @@
 #
 # Moves players to the spawnpoint
 #
-# @within
-# 	function fetchr:game/start/initialize_game_start
-# 	function fetchr:card_generation/generate_card
+# @internal
 
 #>
 # Spawnpoint x coordinate
