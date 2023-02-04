@@ -2,7 +2,7 @@
 #
 # Sets teams up for playing and skybox
 #
-# @within function fetchr:game/start/spawn_skybox
+# @within function fetchr:game/start/create_skybox/spawn_players
 # @context location fetchr:lobby
 
 # Make teammates fully invisible in the skybox
@@ -55,11 +55,11 @@ execute if entity @a[team=fetchr.blue,limit=1] run scoreboard players add $team_
 execute if entity @a[team=fetchr.dark_blue,limit=1] store result storage fetchr:card teams[{id: "fetchr:dark_blue"}].backgroundIndex byte 1 run scoreboard players get $team_count fetchr.state
 execute if entity @a[team=fetchr.dark_blue,limit=1] run scoreboard players add $team_count fetchr.state 1
 
-execute if entity @a[team=fetchr.dark_purpl,limit=1] store result storage fetchr:card teams[{id: "fetchr:dark_purple"}].backgroundIndex byte 1 run scoreboard players get $team_count fetchr.state
-execute if entity @a[team=fetchr.dark_purpl,limit=1] run scoreboard players add $team_count fetchr.state 1
+execute if entity @a[team=fetchr.dark_purple,limit=1] store result storage fetchr:card teams[{id: "fetchr:dark_purple"}].backgroundIndex byte 1 run scoreboard players get $team_count fetchr.state
+execute if entity @a[team=fetchr.dark_purple,limit=1] run scoreboard players add $team_count fetchr.state 1
 
-execute if entity @a[team=fetchr.light_purp,limit=1] store result storage fetchr:card teams[{id: "fetchr:light_purple"}].backgroundIndex byte 1 run scoreboard players get $team_count fetchr.state
-execute if entity @a[team=fetchr.light_purp,limit=1] run scoreboard players add $team_count fetchr.state 1
+execute if entity @a[team=fetchr.light_purple,limit=1] store result storage fetchr:card teams[{id: "fetchr:light_purple"}].backgroundIndex byte 1 run scoreboard players get $team_count fetchr.state
+execute if entity @a[team=fetchr.light_purple,limit=1] run scoreboard players add $team_count fetchr.state 1
 
 execute if entity @a[team=fetchr.white,limit=1] store result storage fetchr:card teams[{id: "fetchr:white"}].backgroundIndex byte 1 run scoreboard players get $team_count fetchr.state
 execute if entity @a[team=fetchr.white,limit=1] run scoreboard players add $team_count fetchr.state 1

@@ -159,11 +159,6 @@ forceload add 0 0
 	# @internal
 	#declare tag fetchr.pos_reader
 	#>
-	# This tag is used for the area effect cloud marking the location for the skybox
-	#
-	# @internal
-	#declare tag fetchr.skybox
-	#>
 	# This tag is given to any player who triggered fetchr.spectator in game.
 	#
 	# @internal
@@ -191,175 +186,175 @@ forceload add 0 0
 		# This tag marks a player who is in a team that obtained the item in slot 0.
 		#
 		# @within
-		# 	function fetchr:game/start/spawn_players
+		# 	function fetchr:game/start/create_skybox/spawn_player
 		# 	structure fetchr:machinery
 		#declare tag fetchr.has_slot0
 		#>
 		# This tag marks a player who is in a team that obtained the item in slot 1.
 		#
 		# @within
-		# 	function fetchr:game/start/spawn_players
+		# 	function fetchr:game/start/create_skybox/spawn_player
 		# 	structure fetchr:machinery
 		#declare tag fetchr.has_slot1
 		#>
 		# This tag marks a player who is in a team that obtained the item in slot 2.
 		#
 		# @within
-		# 	function fetchr:game/start/spawn_players
+		# 	function fetchr:game/start/create_skybox/spawn_player
 		# 	structure fetchr:machinery
 		#declare tag fetchr.has_slot2
 		#>
 		# This tag marks a player who is in a team that obtained the item in slot 3.
 		#
 		# @within
-		# 	function fetchr:game/start/spawn_players
+		# 	function fetchr:game/start/create_skybox/spawn_player
 		# 	structure fetchr:machinery
 		#declare tag fetchr.has_slot3
 		#>
 		# This tag marks a player who is in a team that obtained the item in slot 4.
 		#
 		# @within
-		# 	function fetchr:game/start/spawn_players
+		# 	function fetchr:game/start/create_skybox/spawn_player
 		# 	structure fetchr:machinery
 		#declare tag fetchr.has_slot4
 		#>
 		# This tag marks a player who is in a team that obtained the item in slot 5.
 		#
 		# @within
-		# 	function fetchr:game/start/spawn_players
+		# 	function fetchr:game/start/create_skybox/spawn_player
 		# 	structure fetchr:machinery
 		#declare tag fetchr.has_slot5
 		#>
 		# This tag marks a player who is in a team that obtained the item in slot 6.
 		#
 		# @within
-		# 	function fetchr:game/start/spawn_players
+		# 	function fetchr:game/start/create_skybox/spawn_player
 		# 	structure fetchr:machinery
 		#declare tag fetchr.has_slot6
 		#>
 		# This tag marks a player who is in a team that obtained the item in slot 7.
 		#
 		# @within
-		# 	function fetchr:game/start/spawn_players
+		# 	function fetchr:game/start/create_skybox/spawn_player
 		# 	structure fetchr:machinery
 		#declare tag fetchr.has_slot7
 		#>
 		# This tag marks a player who is in a team that obtained the item in slot 8.
 		#
 		# @within
-		# 	function fetchr:game/start/spawn_players
+		# 	function fetchr:game/start/create_skybox/spawn_player
 		# 	structure fetchr:machinery
 		#declare tag fetchr.has_slot8
 		#>
 		# This tag marks a player who is in a team that obtained the item in slot 9.
 		#
 		# @within
-		# 	function fetchr:game/start/spawn_players
+		# 	function fetchr:game/start/create_skybox/spawn_player
 		# 	structure fetchr:machinery
 		#declare tag fetchr.has_slot9
 		#>
 		# This tag marks a player who is in a team that obtained the item in slot 10.
 		#
 		# @within
-		# 	function fetchr:game/start/spawn_players
+		# 	function fetchr:game/start/create_skybox/spawn_player
 		# 	structure fetchr:machinery
 		#declare tag fetchr.has_slot10
 		#>
 		# This tag marks a player who is in a team that obtained the item in slot 11.
 		#
 		# @within
-		# 	function fetchr:game/start/spawn_players
+		# 	function fetchr:game/start/create_skybox/spawn_player
 		# 	structure fetchr:machinery
 		#declare tag fetchr.has_slot11
 		#>
 		# This tag marks a player who is in a team that obtained the item in slot 12.
 		#
 		# @within
-		# 	function fetchr:game/start/spawn_players
+		# 	function fetchr:game/start/create_skybox/spawn_player
 		# 	structure fetchr:machinery
 		#declare tag fetchr.has_slot12
 		#>
 		# This tag marks a player who is in a team that obtained the item in slot 13.
 		#
 		# @within
-		# 	function fetchr:game/start/spawn_players
+		# 	function fetchr:game/start/create_skybox/spawn_player
 		# 	structure fetchr:machinery
 		#declare tag fetchr.has_slot13
 		#>
 		# This tag marks a player who is in a team that obtained the item in slot 14.
 		#
 		# @within
-		# 	function fetchr:game/start/spawn_players
+		# 	function fetchr:game/start/create_skybox/spawn_player
 		# 	structure fetchr:machinery
 		#declare tag fetchr.has_slot14
 		#>
 		# This tag marks a player who is in a team that obtained the item in slot 15.
 		#
 		# @within
-		# 	function fetchr:game/start/spawn_players
+		# 	function fetchr:game/start/create_skybox/spawn_player
 		# 	structure fetchr:machinery
 		#declare tag fetchr.has_slot15
 		#>
 		# This tag marks a player who is in a team that obtained the item in slot 16.
 		#
 		# @within
-		# 	function fetchr:game/start/spawn_players
+		# 	function fetchr:game/start/create_skybox/spawn_player
 		# 	structure fetchr:machinery
 		#declare tag fetchr.has_slot16
 		#>
 		# This tag marks a player who is in a team that obtained the item in slot 17.
 		#
 		# @within
-		# 	function fetchr:game/start/spawn_players
+		# 	function fetchr:game/start/create_skybox/spawn_player
 		# 	structure fetchr:machinery
 		#declare tag fetchr.has_slot17
 		#>
 		# This tag marks a player who is in a team that obtained the item in slot 18.
 		#
 		# @within
-		# 	function fetchr:game/start/spawn_players
+		# 	function fetchr:game/start/create_skybox/spawn_player
 		# 	structure fetchr:machinery
 		#declare tag fetchr.has_slot18
 		#>
 		# This tag marks a player who is in a team that obtained the item in slot 19.
 		#
 		# @within
-		# 	function fetchr:game/start/spawn_players
+		# 	function fetchr:game/start/create_skybox/spawn_player
 		# 	structure fetchr:machinery
 		#declare tag fetchr.has_slot19
 		#>
 		# This tag marks a player who is in a team that obtained the item in slot 20.
 		#
 		# @within
-		# 	function fetchr:game/start/spawn_players
+		# 	function fetchr:game/start/create_skybox/spawn_player
 		# 	structure fetchr:machinery
 		#declare tag fetchr.has_slot20
 		#>
 		# This tag marks a player who is in a team that obtained the item in slot 21.
 		#
 		# @within
-		# 	function fetchr:game/start/spawn_players
+		# 	function fetchr:game/start/create_skybox/spawn_player
 		# 	structure fetchr:machinery
 		#declare tag fetchr.has_slot21
 		#>
 		# This tag marks a player who is in a team that obtained the item in slot 22.
 		#
 		# @within
-		# 	function fetchr:game/start/spawn_players
+		# 	function fetchr:game/start/create_skybox/spawn_player
 		# 	structure fetchr:machinery
 		#declare tag fetchr.has_slot22
 		#>
 		# This tag marks a player who is in a team that obtained the item in slot 23.
 		#
 		# @within
-		# 	function fetchr:game/start/spawn_players
+		# 	function fetchr:game/start/create_skybox/spawn_player
 		# 	structure fetchr:machinery
 		#declare tag fetchr.has_slot23
 		#>
 		# This tag marks a player who is in a team that obtained the item in slot 24.
 		#
 		# @within
-		# 	function fetchr:game/start/spawn_players
+		# 	function fetchr:game/start/create_skybox/spawn_player
 		# 	structure fetchr:machinery
 		#declare tag fetchr.has_slot24
 	#endregion

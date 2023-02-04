@@ -20,7 +20,7 @@ scoreboard players set $start_game.countdown fetchr.tmp 3
 spawnpoint @a[predicate=fetchr:is_in_game] ~ ~ ~
 forceload add ~ ~
 forceload add 0 0
-summon minecraft:marker ~ ~ ~ {Tags: ["fetchr.spawn"]}
+execute align xyz run teleport @e[type=minecraft:marker, distance=..3, tag=fetchr.spawn, limit=1] ~.5 ~ ~.5
 teleport @a[predicate=fetchr:is_in_game, gamemode=adventure] ~ ~ ~
 
 schedule function fetchr:game/start/countdown 1s

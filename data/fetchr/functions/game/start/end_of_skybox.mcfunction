@@ -2,7 +2,7 @@
 #
 # Starts the spawn sequence
 #
-# @within function fetchr:game/start/spawn_skybox
+# @within function fetchr:game/start/create_skybox/spawn_players
 
 execute in fetchr:default run forceload remove all
 

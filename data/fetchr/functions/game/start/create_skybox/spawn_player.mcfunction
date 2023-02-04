@@ -1,13 +1,15 @@
-#> fetchr:game/start/spawn_players
+#> fetchr:game/start/create_skybox/spawn_player
 #
 # Spawns all players in the skybox
 #
-# @within function fetchr:game/start/spawn_skybox
-# @context entity Current player
+# @within function fetchr:game/start/create_skybox/spawn_players
+# @context
+# 	entity Current player
+# 	position Skybox spawn
 
 tellraw @s ["[", {"text":"≡", "color":"#00c3ff", "clickEvent":{"action":"run_command", "value":"/trigger fetchr.menu"}, "hoverEvent":{"action":"show_text", "contents":{"translate": "fetchr.game.menu.hover_text"}}}, "] ", {"translate": "fetchr.game.start.loading_terrain"}]
 scoreboard players operation @s fetchr.game_id = $current_game_id fetchr.game_id
-teleport @s ~ 128 ~
+teleport @s ~ ~ ~
 tag @s remove fetchr.spectator
 
 scoreboard players reset @s fetchr.pref

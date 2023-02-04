@@ -35,3 +35,6 @@ scoreboard players operation $game_start/pre_gen.chunks_left_in_tick fetchr.tmp 
 
 execute if score $game_start/pre_gen.chunks_left fetchr.tmp matches 1.. if score $game_start/pre_gen/goto.x fetchr.tmp matches 0.. run function fetchr:game/start/pre_gen/goto_current_chunk/1
 execute if score $game_start/pre_gen.chunks_left fetchr.tmp matches 1.. if score $game_start/pre_gen/goto.x fetchr.tmp matches ..-1 positioned ~-16384 ~ ~ run function fetchr:game/start/pre_gen/goto_current_chunk/1
+
+execute if score $game_start/pre_gen.chunks_left fetchr.tmp matches 0 run scoreboard players set $pregen_status fetchr.state 2
+execute if score $game_start/pre_gen.chunks_left fetchr.tmp matches 0 if score $game_state fetchr.state matches 1 run function fetchr:game/start/create_skybox/find_ground_level/exec
