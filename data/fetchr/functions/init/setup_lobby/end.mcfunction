@@ -50,6 +50,7 @@ summon minecraft:marker 0 0 0 {Tags: ["fetchr.string_tester"]}
 
 kill @e[type=minecraft:marker, tag=fetchr.pos_reader]
 summon minecraft:marker 0 0 0 {Tags: ["fetchr.pos_reader"]}
+execute in fetchr:default run summon minecraft:marker 0 0 0 {Tags: ["fetchr.pos_reader"]}
 
 setblock 7 0 7 minecraft:oak_sign
 
