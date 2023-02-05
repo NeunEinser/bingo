@@ -8,7 +8,6 @@
 # 	position Fetchr Spawnpoint
 # 	entity Spawn marker
 
-say hi
 scoreboard players set $pregen_status fetchr.state 1
 
 #>
