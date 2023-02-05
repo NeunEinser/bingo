@@ -14,7 +14,7 @@ scoreboard players set $game_start/pre_gen.chunks_per_tick fetchr.tmp -9
 scoreboard players operation $game_start/pre_gen.chunks_per_tick fetchr.tmp = $game_start/pre_gen.i fetchr.tmp
 scoreboard players operation $game_start/pre_gen.chunks_per_tick fetchr.tmp *= 60 fetchr.const
 scoreboard players operation $game_start/pre_gen.chunks_per_tick fetchr.tmp /= $raw 91.timer.time
-scoreboard players operation $game_start/pre_gen.chunks_per_tick fetchr.tmp > 1 fetchr.const
+scoreboard players add $game_start/pre_gen.chunks_per_tick fetchr.tmp 1
 
 scoreboard players operation $millis fetchr.tmp = $raw 91.timer.time
 scoreboard players operation $millis fetchr.tmp -= $game_start/pre_gen.last_tick_time fetchr.tmp
