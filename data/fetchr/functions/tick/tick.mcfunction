@@ -44,6 +44,7 @@ execute if score $commandblocks_enabled fetchr.state matches 0 run effect give @
 
 #NEUN_SCRIPT remove
 execute if score $commandblocks_enabled fetchr.state matches 0 run tellraw @a {"translate":"%1074992263$s%1$s", "color": "red", "with":[["Command blocks are disabled on this server. Please make sure the server.properties file does have all mentioned values set as described ", {"text": "here", "color": "#00c3ff", "clickEvent": {"action": "open_url", "value": "https://gist.githubusercontent.com/NeunEinser/dac27cc76dbc83bdd1ea22a99cff3967"}}, "."], {"translate": "fetchr.error.command_blocks_disabled", "with": [{"translate": "fetchr.error.command_blocks_disabled.link", "color": "#00c3ff", "clickEvent": {"action": "open_url", "value": "https://gist.githubusercontent.com/NeunEinser/dac27cc76dbc83bdd1ea22a99cff3967"}}]}]}
+execute if score $commandblocks_enabled fetchr.state matches -1 run scoreboard players set $commandblocks_enabled fetchr.state 0
 
 # Loop depending on game state
 execute if entity @a[predicate=fetchr:is_in_lobby, limit=1] in fetchr:lobby run function fetchr:lobby/tick

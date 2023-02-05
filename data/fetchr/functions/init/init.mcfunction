@@ -816,7 +816,7 @@ forceload add 0 0
 		#
 		# @internal
 		#declare score_holder $commandblocks_enabled
-		scoreboard players set $commandblocks_enabled fetchr.state 0
+		scoreboard players set $commandblocks_enabled fetchr.state -1
 		setblock 0 4 0 minecraft:air
 		setblock 0 4 0 minecraft:command_block{auto: true, Command: "scoreboard players set $commandblocks_enabled fetchr.state 1"}
 
