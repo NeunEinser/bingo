@@ -55,7 +55,6 @@ kill @e[type=minecraft:marker, tag=fetchr.command_cloud, limit=1]
 
 function neun_einser.math:random/next_int
 execute store result storage fetchr:card spawnLocation int 1 run scoreboard players get $rand.seed 91.math.io
-execute if score $automatically_pregen fetchr.settings matches 1 run schedule function fetchr:game/start/locate_spawnpoint 5s
 
 # Reset teams
 data remove storage fetchr:card teams
@@ -89,3 +88,5 @@ function fetchr:custom_hud/components/timer/update
 # @api
 #declare tag/function fetchr:post_card_gen
 function #fetchr:post_card_gen
+
+schedule function fetchr:game/start/locate_spawnpoint 5s
