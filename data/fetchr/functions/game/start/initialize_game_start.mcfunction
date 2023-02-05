@@ -8,5 +8,7 @@
 scoreboard players set $game_state fetchr.state 1
 bossbar set fetchr:start/pre_gen/progress visible true
 bossbar set fetchr:start/pre_gen/progress players @a
+
+execute if score $pregen_status fetchr.state matches 0 run tellraw @a {"translate": "fetchr.game.start.preparing_spawn"}
 execute if score $pregen_status fetchr.state matches 0 run function fetchr:game/start/locate_spawnpoint
 execute if score $pregen_status fetchr.state matches 2 at @e[type=minecraft:marker, tag=fetchr.spawn, limit=1] run function fetchr:game/start/create_skybox/find_ground_level/exec

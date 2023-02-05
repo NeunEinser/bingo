@@ -17,8 +17,6 @@
 # @private
 #declare tag fetchr.spawn_position
 
-execute if score $game_state fetchr.state matches 1 run tellraw @a {"translate": "fetchr.game.start.preparing_spawn"}
-
 gamerule doDaylightCycle false
 time set 0
 
