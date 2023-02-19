@@ -348,6 +348,9 @@ data modify storage fetchr:registries items append value {id: "fetchr:pointed_dr
 ## 0060: hanging_roots
 data modify storage fetchr:registries items append value {id: "fetchr:hanging_roots", item: {id: "minecraft:hanging_roots"}, textComponent: '{"translate": "block.minecraft.hanging_roots", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:hanging_roots"}}}', icon: '"\\u0060"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:hanging_roots 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:hanging_roots 1", categories: ["fetchr:shearable"], weight: 2}
 
+## 0061: glow_lichen
+data modify storage fetchr:registries items append value {id: "fetchr:glow_lichen", item: {id: "minecraft:glow_lichen"}, textComponent: '{"translate": "block.minecraft.glow_lichen", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:glow_lichen"}}}', icon: '"\\u0061"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:glow_lichen 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:glow_lichen 1", categories: ["fetchr:shearable"], weight: 2}
+
 ## 0100: iron_block
 data modify storage fetchr:registries items append value {id: "fetchr:iron_block", item: {id: "minecraft:iron_block"}, textComponent: '{"translate": "block.minecraft.iron_block", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:iron_block"}}}', icon: '"\\u0100"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:iron_block 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:iron_block 1", categories: ["fetchr:basic_iron"]}
 
