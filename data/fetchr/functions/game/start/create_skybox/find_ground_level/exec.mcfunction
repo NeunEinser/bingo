@@ -20,10 +20,10 @@ function neun_einser.timer:stop
 #>
 # @within function fetchr:game/start/create_skybox/**
 #declare score_holder $game/start/find_ground.y
-scoreboard players set $game/start/find_ground.y fetchr.tmp -64
+scoreboard players set $game/start/find_ground.y fetchr.tmp 128
 #>
 # @within function fetchr:game/start/create_skybox/find_ground_level/*
 #declare score_holder $game/start/find_ground.blocks
-scoreboard players set $game/start/find_ground.blocks fetchr.tmp 384
+scoreboard players set $game/start/find_ground.blocks fetchr.tmp 256
 
-function fetchr:game/start/create_skybox/find_ground_level/iter
+execute positioned ~ 128 ~ run function fetchr:game/start/create_skybox/find_ground_level/iter
