@@ -19,19 +19,23 @@
 
 # categories
 data modify storage fetchr:registries categories append value {id: "fetchr:apple", name: '{"translate": "fetchr.category.apple"}', tags: ["fetchr:default"]}
+data modify storage fetchr:registries categories append value {id: "fetchr:basic_iron", name: '{"translate": "fetchr.category.basic_iron"}', tags: ["fetchr:default"]}
 data modify storage fetchr:registries categories append value {id: "fetchr:bow", name: '{"translate": "fetchr.category.bow"}', tags: ["fetchr:default"]}
+data modify storage fetchr:registries categories append value {id: "fetchr:copper", name: '{"translate": "fetchr.category.copper"}', tags: ["fetchr:default"]}
 data modify storage fetchr:registries categories append value {id: "fetchr:clay", name: '{"translate": "fetchr.category.clay"}', tags: ["fetchr:default"]}
 data modify storage fetchr:registries categories append value {id: "fetchr:cactus", name: '{"translate": "fetchr.category.cactus"}', tags: ["fetchr:default"]}
 data modify storage fetchr:registries categories append value {id: "fetchr:chest_iron", name: '{"translate": "fetchr.category.chest_iron"}', tags: ["fetchr:default"]}
-data modify storage fetchr:registries categories append value {id: "fetchr:chest_loot", name: '{"translate": "fetchr.category.chest_loot"}', tags: ["fetchr:default"]}
 data modify storage fetchr:registries categories append value {id: "fetchr:compass", name: '{"translate": "fetchr.category.compass"}', tags: ["fetchr:default"]}
+data modify storage fetchr:registries categories append value {id: "fetchr:deepslate", name: '{"translate": "fetchr.category.deepslate"}', tags: ["fetchr:default"]}
 data modify storage fetchr:registries categories append value {id: "fetchr:diamond", name: '{"translate": "fetchr.category.diamond"}', tags: ["fetchr:default"]}
+data modify storage fetchr:registries categories append value {id: "fetchr:dripstone_cave", name: '{"translate": "fetchr.category.dripstone_cave"}', tags: ["fetchr:default"]}
 data modify storage fetchr:registries categories append value {id: "fetchr:egg", name: '{"translate": "fetchr.category.egg"}', tags: ["fetchr:default"]}
 data modify storage fetchr:registries categories append value {id: "fetchr:nighttime_mob_drops", name: '{"translate": "fetchr.category.nighttime_mob_drops"}', tags: ["fetchr:default"]}
 data modify storage fetchr:registries categories append value {id: "fetchr:extra_smelt", name: '{"translate": "fetchr.category.extra_smelt"}', tags: ["fetchr:default"]}
 data modify storage fetchr:registries categories append value {id: "fetchr:fish", name: '{"translate": "fetchr.category.fish"}', tags: ["fetchr:default"]}
 data modify storage fetchr:registries categories append value {id: "fetchr:flint", name: '{"translate": "fetchr.category.flint"}', tags: ["fetchr:default"]}
 data modify storage fetchr:registries categories append value {id: "fetchr:furnace", name: '{"translate": "fetchr.category.furnace"}', tags: ["fetchr:default"]}
+data modify storage fetchr:registries categories append value {id: "fetchr:glow_ink", name: '{"translate": "fetchr.category.glow_ink"}', tags: ["fetchr:default"]}
 data modify storage fetchr:registries categories append value {id: "fetchr:gold_and_ruined_portal", name: '{"translate": "fetchr.category.gold_and_ruined_portal"}', tags: ["fetchr:default"]}
 data modify storage fetchr:registries categories append value {id: "fetchr:gunpowder", name: '{"translate": "fetchr.category.gunpowder"}', tags: ["fetchr:default"]}
 data modify storage fetchr:registries categories append value {id: "fetchr:ink", name: '{"translate": "fetchr.category.ink"}', tags: ["fetchr:default"]}
@@ -40,13 +44,17 @@ data modify storage fetchr:registries categories append value {id: "fetchr:rabbi
 data modify storage fetchr:registries categories append value {id: "fetchr:lapis", name: '{"translate": "fetchr.category.lapis"}', tags: ["fetchr:default"]}
 data modify storage fetchr:registries categories append value {id: "fetchr:leather", name: '{"translate": "fetchr.category.leather"}', tags: ["fetchr:default"]}
 data modify storage fetchr:registries categories append value {id: "fetchr:lime", name: '{"translate": "fetchr.category.lime"}', tags: ["fetchr:default"]}
-data modify storage fetchr:registries categories append value {id: "fetchr:milk", name: '{"translate": "fetchr.category.milk"}', tags: ["fetchr:default"]}
+data modify storage fetchr:registries categories append value {id: "fetchr:lush_cave", name: '{"translate": "fetchr.category.lush_cave"}', tags: ["fetchr:default"]}
+data modify storage fetchr:registries categories append value {id: "fetchr:milk_and_goat", name: '{"translate": "fetchr.category.milk_and_goat"}', tags: ["fetchr:default"]}
+data modify storage fetchr:registries categories append value {id: "fetchr:mud", name: '{"translate": "fetchr.category.mud"}', tags: ["fetchr:default"]}
 data modify storage fetchr:registries categories append value {id: "fetchr:mushroom", name: '{"translate": "fetchr.category.mushroom"}', tags: ["fetchr:default"]}
+data modify storage fetchr:registries categories append value {id: "fetchr:ore", name: '{"translate": "fetchr.category.ore"}', tags: ["fetchr:default"]}
 data modify storage fetchr:registries categories append value {id: "fetchr:pumpkin", name: '{"translate": "fetchr.category.pumpkin"}', tags: ["fetchr:default"]}
 data modify storage fetchr:registries categories append value {id: "fetchr:rail", name: '{"translate": "fetchr.category.rail"}', tags: ["fetchr:default"]}
 data modify storage fetchr:registries categories append value {id: "fetchr:redstone", name: '{"translate": "fetchr.category.redstone"}', tags: ["fetchr:default"]}
 data modify storage fetchr:registries categories append value {id: "fetchr:sand", name: '{"translate": "fetchr.category.sand"}', tags: ["fetchr:default"]}
 data modify storage fetchr:registries categories append value {id: "fetchr:sapling", name: '{"translate": "fetchr.category.sapling"}', tags: ["fetchr:default"]}
+data modify storage fetchr:registries categories append value {id: "fetchr:sculk", name: '{"translate": "fetchr.category.sculk"}', tags: ["fetchr:default"]}
 data modify storage fetchr:registries categories append value {id: "fetchr:shearable", name: '{"translate": "fetchr.category.shearable"}', tags: ["fetchr:default"]}
 data modify storage fetchr:registries categories append value {id: "fetchr:snow", name: '{"translate": "fetchr.category.snow"}', tags: ["fetchr:default"]}
 data modify storage fetchr:registries categories append value {id: "fetchr:spider", name: '{"translate": "fetchr.category.spider"}', tags: ["fetchr:default"]}
@@ -68,7 +76,7 @@ data modify storage fetchr:registries items append value {id: "fetchr:pumpkin_pi
 data modify storage fetchr:registries items append value {id: "fetchr:egg", item: {id: "minecraft:egg"}, textComponent: '{"translate": "item.minecraft.egg", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:egg"}}}', icon: '"\\u0003"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:egg 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:egg 1", categories: ["fetchr:egg"]}
 
 ## 0004: cake
-data modify storage fetchr:registries items append value {id: "fetchr:cake", item: {id: "minecraft:cake"}, textComponent: '{"translate": "block.minecraft.cake", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:cake"}}}', icon: '"\\u0004"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:cake 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:cake 1", categories: ["fetchr:egg", "fetchr:milk"]}
+data modify storage fetchr:registries items append value {id: "fetchr:cake", item: {id: "minecraft:cake"}, textComponent: '{"translate": "block.minecraft.cake", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:cake"}}}', icon: '"\\u0004"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:cake 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:cake 1", categories: ["fetchr:egg", "fetchr:milk_and_goat"]}
 
 ## 0005: acacia_sapling
 data modify storage fetchr:registries items append value {id: "fetchr:acacia_sapling", item: {id: "minecraft:acacia_sapling"}, textComponent: '{"translate": "block.minecraft.acacia_sapling", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:acacia_sapling"}}}', icon: '"\\u0005"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:acacia_sapling 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:acacia_sapling 1", categories: ["fetchr:sapling"]}
@@ -122,22 +130,16 @@ data modify storage fetchr:registries items append value {id: "fetchr:slime_ball
 data modify storage fetchr:registries items append value {id: "fetchr:firework_rocket", item: {id: "minecraft:firework_rocket"}, textComponent: '{"translate": "item.minecraft.firework_rocket", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:firework_rocket"}}}', icon: '"\\u0015"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:firework_rocket 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:firework_rocket 1", categories: ["fetchr:gunpowder"], weight: 2}
 
 ## 0016: milk_bucket
-data modify storage fetchr:registries items append value {id: "fetchr:milk_bucket", item: {id: "minecraft:milk_bucket"}, textComponent: '{"translate": "item.minecraft.milk_bucket", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:milk_bucket"}}}', icon: '"\\u0016"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:milk_bucket 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:milk_bucket 1", categories: ["fetchr:milk"]}
+data modify storage fetchr:registries items append value {id: "fetchr:milk_bucket", item: {id: "minecraft:milk_bucket"}, textComponent: '{"translate": "item.minecraft.milk_bucket", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:milk_bucket"}}}', icon: '"\\u0016"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:milk_bucket 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:milk_bucket 1", categories: ["fetchr:milk_and_goat"]}
 
 ## 0017: cauldron
-data modify storage fetchr:registries items append value {id: "fetchr:cauldron", item: {id: "minecraft:cauldron"}, textComponent: '{"translate": "block.minecraft.cauldron", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:cauldron"}}}', icon: '"\\u0017"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:cauldron 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:cauldron 1", categories: ["fetchr:extra_smelt"]}
-
-## 0018: saddle
-data modify storage fetchr:registries items append value {id: "fetchr:saddle", item: {id: "minecraft:saddle"}, textComponent: '{"translate": "item.minecraft.saddle", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:saddle"}}}', icon: '"\\u0018"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:saddle 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:saddle 1", categories: ["fetchr:chest_loot"]}
-
-## 0019: name_tag
-data modify storage fetchr:registries items append value {id: "fetchr:name_tag", item: {id: "minecraft:name_tag"}, textComponent: '{"translate": "item.minecraft.name_tag", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:name_tag"}}}', icon: '"\\u0019"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:name_tag 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:name_tag 1", categories: ["fetchr:chest_loot"]}
+data modify storage fetchr:registries items append value {id: "fetchr:cauldron", item: {id: "minecraft:cauldron"}, textComponent: '{"translate": "block.minecraft.cauldron", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:cauldron"}}}', icon: '"\\u0017"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:cauldron 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:cauldron 1", categories: ["fetchr:basic_iron"]}
 
 ## 001a: painting
 data modify storage fetchr:registries items append value {id: "fetchr:painting", item: {id: "minecraft:painting"}, textComponent: '{"translate": "item.minecraft.painting", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:painting"}}}', icon: '"\\u001a"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:painting 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:painting 1", categories: ["fetchr:wool"]}
 
 ## 001b: item_frame
-data modify storage fetchr:registries items append value {id: "fetchr:item_frame", item: {id: "minecraft:item_frame"}, textComponent: '{"translate": "item.minecraft.item_frame", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:item_frame"}}}', icon: '"\\u001b"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:item_frame 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:item_frame 1", categories: ["fetchr:leather"], weight: 4}
+data modify storage fetchr:registries items append value {id: "fetchr:item_frame", item: {id: "minecraft:item_frame"}, textComponent: '{"translate": "item.minecraft.item_frame", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:item_frame"}}}', icon: '"\\u001b"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:item_frame 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:item_frame 1", categories: ["fetchr:leather"], weight: 2}
 
 ## 001c: emerald
 data modify storage fetchr:registries items append value {id: "fetchr:emerald", item: {id: "minecraft:emerald"}, textComponent: '{"translate": "item.minecraft.emerald", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:emerald"}}}', icon: '"\\u001c"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:emerald 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:emerald 1", categories: ["fetchr:treasure_chest"]}
@@ -151,6 +153,9 @@ data modify storage fetchr:registries items append value {id: "fetchr:diamond_ho
 ## 001f: diamond_axe
 data modify storage fetchr:registries items append value {id: "fetchr:diamond_axe", item: {id: "minecraft:diamond_axe"}, textComponent: '{"translate": "item.minecraft.diamond_axe", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:diamond_axe"}}}', icon: '"\\u001f"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:diamond_axe 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:diamond_axe 1", categories: ["fetchr:diamond"]}
 
+## 0020: goat_horn
+data modify storage fetchr:registries items append value {id: "fetchr:goat_horn", item: {id: "minecraft:goat_horn"}, textComponent: '{"translate": "item.minecraft.goat_horn", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:goat_horn"}}}', icon: '"\\u0020"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:goat_horn 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:goat_horn 1", categories: ["fetchr:milk_and_goat"], weight: 2}
+
 ## 0021: flower_pot
 data modify storage fetchr:registries items append value {id: "fetchr:flower_pot", item: {id: "minecraft:flower_pot"}, textComponent: '{"translate": "block.minecraft.flower_pot", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:flower_pot"}}}', icon: '"\\u0021"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:flower_pot 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:flower_pot 1", categories: ["fetchr:clay"]}
 
@@ -159,6 +164,9 @@ data modify storage fetchr:registries items append value {id: "fetchr:brick", it
 
 ## 0023: mushroom_stew
 data modify storage fetchr:registries items append value {id: "fetchr:mushroom_stew", item: {id: "minecraft:mushroom_stew"}, textComponent: '{"translate": "item.minecraft.mushroom_stew", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:mushroom_stew"}}}', icon: '"\\u0023"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:mushroom_stew 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:mushroom_stew 1", categories: ["fetchr:mushroom"]}
+
+## 0024: mangrove_propagule
+data modify storage fetchr:registries items append value {id: "fetchr:mangrove_propagule", item: {id: "minecraft:mangrove_propagule"}, textComponent: '{"translate": "block.minecraft.mangrove_propagule", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:mangrove_propagule"}}}', icon: '"\\u0024"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:mangrove_propagule 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:mangrove_propagule 1", categories: ["fetchr:sapling"]}
 
 ## 0025: apple
 data modify storage fetchr:registries items append value {id: "fetchr:apple", item: {id: "minecraft:apple"}, textComponent: '{"translate": "item.minecraft.apple", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:apple"}}}', icon: '"\\u0025"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:apple 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:apple 1", categories: ["fetchr:apple"]}
@@ -189,9 +197,6 @@ data modify storage fetchr:registries items append value {id: "fetchr:book", ite
 
 ## 002e: writable_book
 data modify storage fetchr:registries items append value {id: "fetchr:writable_book", item: {id: "minecraft:writable_book"}, textComponent: '{"translate": "item.minecraft.writable_book", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:writable_book"}}}', icon: '"\\u002e"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:writable_book 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:writable_book 1", categories: ["fetchr:leather"]}
-
-## 002f: enchanted_book
-data modify storage fetchr:registries items append value {id: "fetchr:enchanted_book", item: {id: "minecraft:enchanted_book"}, textComponent: '{"translate": "item.minecraft.enchanted_book", "color": "yellow", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:enchanted_book"}}}', icon: '"\\u002f"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:enchanted_book 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:enchanted_book 1", categories: ["fetchr:chest_loot"]}
 
 ## 0030: spider_eye
 data modify storage fetchr:registries items append value {id: "fetchr:spider_eye", item: {id: "minecraft:spider_eye"}, textComponent: '{"translate": "item.minecraft.spider_eye", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:spider_eye"}}}', icon: '"\\u0030"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:spider_eye 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:spider_eye 1", categories: ["fetchr:spider"]}
@@ -283,6 +288,9 @@ data modify storage fetchr:registries items append value {id: "fetchr:activator_
 ## 004d: heart_of_the_sea
 data modify storage fetchr:registries items append value {id: "fetchr:heart_of_the_sea", item: {id: "minecraft:heart_of_the_sea"}, textComponent: '{"translate": "item.minecraft.heart_of_the_sea", "color": "yellow", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:heart_of_the_sea"}}}', icon: '"\\u004d"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:heart_of_the_sea 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:heart_of_the_sea 1", categories: ["fetchr:treasure_chest"]}
 
+## 004e: glow_berries
+data modify storage fetchr:registries items append value {id: "fetchr:glow_berries", item: {id: "minecraft:glow_berries"}, textComponent: '{"translate": "item.minecraft.glow_berries", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:glow_berries"}}}', icon: '"\\u004e"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:glow_berries 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:glow_berries 1", categories: ["fetchr:lush_cave"]}
+
 ## 004f: sweet_berries
 data modify storage fetchr:registries items append value {id: "fetchr:sweet_berries", item: {id: "minecraft:sweet_berries"}, textComponent: '{"translate": "item.minecraft.sweet_berries", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:sweet_berries"}}}', icon: '"\\u004f"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:sweet_berries 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:sweet_berries 1", categories: ["fetchr:taiga"]}
 
@@ -319,11 +327,26 @@ data modify storage fetchr:registries items append value {id: "fetchr:rabbit_hid
 ## 005a: cooked_rabbit
 data modify storage fetchr:registries items append value {id: "fetchr:cooked_rabbit", item: {id: "minecraft:cooked_rabbit"}, textComponent: '{"translate": "item.minecraft.cooked_rabbit", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:cooked_rabbit"}}}', icon: '"\\u005a"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:cooked_rabbit 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:cooked_rabbit 1", categories: ["fetchr:rabbit"]}
 
+## 005b: powder_snow_bucket
+data modify storage fetchr:registries items append value {id: "fetchr:powder_snow_bucket", item: {id: "minecraft:powder_snow_bucket"}, textComponent: '{"translate": "item.minecraft.powder_snow_bucket", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:powder_snow_bucket"}}}', icon: '"\\u005b"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:powder_snow_bucket 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:powder_snow_bucket 1", categories: ["fetchr:snow"]}
+
 ## 005c: slowness_arrow
 data modify storage fetchr:registries items append value {id: "fetchr:slowness_arrow", item: {id: "minecraft:tipped_arrow", tag: {Potion: "minecraft:slowness"}}, textComponent: '{"translate": "item.minecraft.tipped_arrow.effect.slowness", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:tipped_arrow", "tag": "{Potion: \\"minecraft:slowness\\"}"}}}', icon: '"\\u005c"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:tipped_arrow{Potion: 'minecraft:slowness'} 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:tipped_arrow{Potion: 'minecraft:slowness'} 1", categories: [{id: "fetchr:skeleton_drops"}, {id: "fetchr:nighttime_mob_drops", weight: 3}]}
 
+## 005d: glow_ink_sac
+data modify storage fetchr:registries items append value {id: "fetchr:glow_ink_sac", item: {id: "minecraft:glow_ink_sac"}, textComponent: '{"translate": "item.minecraft.glow_ink_sac", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:glow_ink_sac"}}}', icon: '"\\u005d"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:glow_ink_sac 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:glow_ink_sac 1", categories: ["fetchr:glow_ink"]}
+
+## 005e: glow_item_frame
+data modify storage fetchr:registries items append value {id: "fetchr:glow_item_frame", item: {id: "minecraft:glow_item_frame"}, textComponent: '{"translate": "item.minecraft.glow_item_frame", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:glow_item_frame"}}}', icon: '"\\u005e"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:glow_item_frame 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:glow_item_frame 1", categories: [{id: "fetchr:glow_ink"}, {id: "fetchr:leather", weight: 2}]}
+
+## 005f: pointed_dripstone
+data modify storage fetchr:registries items append value {id: "fetchr:pointed_dripstone", item: {id: "minecraft:pointed_dripstone"}, textComponent: '{"translate": "block.minecraft.pointed_dripstone", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:pointed_dripstone"}}}', icon: '"\\u005f"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:pointed_dripstone 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:pointed_dripstone 1", categories: ["fetchr:dripstone_cave"]}
+
+## 0060: hanging_roots
+data modify storage fetchr:registries items append value {id: "fetchr:hanging_roots", item: {id: "minecraft:hanging_roots"}, textComponent: '{"translate": "block.minecraft.hanging_roots", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:hanging_roots"}}}', icon: '"\\u0060"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:hanging_roots 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:hanging_roots 1", categories: ["fetchr:shearable"], weight: 2}
+
 ## 0100: iron_block
-data modify storage fetchr:registries items append value {id: "fetchr:iron_block", item: {id: "minecraft:iron_block"}, textComponent: '{"translate": "block.minecraft.iron_block", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:iron_block"}}}', icon: '"\\u0100"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:iron_block 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:iron_block 1", categories: ["fetchr:extra_smelt"]}
+data modify storage fetchr:registries items append value {id: "fetchr:iron_block", item: {id: "minecraft:iron_block"}, textComponent: '{"translate": "block.minecraft.iron_block", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:iron_block"}}}', icon: '"\\u0100"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:iron_block 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:iron_block 1", categories: ["fetchr:basic_iron"]}
 
 ## 0101: redstone_block
 data modify storage fetchr:registries items append value {id: "fetchr:redstone_block", item: {id: "minecraft:redstone_block"}, textComponent: '{"translate": "block.minecraft.redstone_block", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:redstone_block"}}}', icon: '"\\u0101"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:redstone_block 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:redstone_block 1", categories: ["fetchr:redstone"], weight: 2}
@@ -344,13 +367,16 @@ data modify storage fetchr:registries items append value {id: "fetchr:mossy_ston
 data modify storage fetchr:registries items append value {id: "fetchr:jukebox", item: {id: "minecraft:jukebox"}, textComponent: '{"translate": "block.minecraft.jukebox", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:jukebox"}}}', icon: '"\\u0106"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:jukebox 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:jukebox 1", categories: ["fetchr:diamond"], weight: 5}
 
 ## 0107: magma_block
-data modify storage fetchr:registries items append value {id: "fetchr:magma_block", item: {id: "minecraft:magma_block"}, textComponent: '{"translate": "block.minecraft.magma_block", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:magma_block"}}}', icon: '"\\u0107"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:magma_block 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:magma_block 1", categories: ["fetchr:gold_and_ruined_portal"], weight: 10}
+data modify storage fetchr:registries items append value {id: "fetchr:magma_block", item: {id: "minecraft:magma_block"}, textComponent: '{"translate": "block.minecraft.magma_block", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:magma_block"}}}', icon: '"\\u0107"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:magma_block 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:magma_block 1", categories: ["fetchr:gold_and_ruined_portal"], weight: 30}
 
 ## 0108: bone_block
 data modify storage fetchr:registries items append value {id: "fetchr:bone_block", item: {id: "minecraft:bone_block"}, textComponent: '{"translate": "block.minecraft.bone_block", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:bone_block"}}}', icon: '"\\u0108"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:bone_block 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:bone_block 1", categories: ["fetchr:skeleton_drops"]}
 
 ## 0109: blast_furnace
 data modify storage fetchr:registries items append value {id: "fetchr:blast_furnace", item: {id: "minecraft:blast_furnace"}, textComponent: '{"translate": "block.minecraft.blast_furnace", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:blast_furnace"}}}', icon: '"\\u0109"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:blast_furnace 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:blast_furnace 1", categories: ["fetchr:furnace"]}
+
+## 010a: raw_iron_block
+data modify storage fetchr:registries items append value {id: "fetchr:raw_iron_block", item: {id: "minecraft:raw_iron_block"}, textComponent: '{"translate": "block.minecraft.raw_iron_block", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:raw_iron_block"}}}', icon: '"\\u010a"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:raw_iron_block 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:raw_iron_block 1", categories: ["fetchr:basic_iron"], weight: 2}
 
 ## 010b: red_bed
 data modify storage fetchr:registries items append value {id: "fetchr:red_bed", item: {id: "minecraft:red_bed"}, textComponent: '{"translate": "block.minecraft.red_bed", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:red_bed"}}}', icon: '"\\u010b"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:red_bed 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:red_bed 1", categories: ["fetchr:wool"]}
@@ -391,8 +417,11 @@ data modify storage fetchr:registries items append value {id: "fetchr:fletching_
 ## 0117: lectern
 data modify storage fetchr:registries items append value {id: "fetchr:lectern", item: {id: "minecraft:lectern"}, textComponent: '{"translate": "block.minecraft.lectern", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:lectern"}}}', icon: '"\\u0117"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:lectern 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:lectern 1", categories: ["fetchr:leather"]}
 
+## 0118: raw_gold_block
+data modify storage fetchr:registries items append value {id: "fetchr:raw_gold_block", item: {id: "minecraft:raw_gold_block"}, textComponent: '{"translate": "block.minecraft.raw_gold_block", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:raw_gold_block"}}}', icon: '"\\u0118"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:raw_gold_block 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:raw_gold_block 1", categories: ["fetchr:gold_and_ruined_portal"], weight: 5}
+
 ## 0119: gold_block
-data modify storage fetchr:registries items append value {id: "fetchr:gold_block", item: {id: "minecraft:gold_block"}, textComponent: '{"translate": "block.minecraft.gold_block", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:gold_block"}}}', icon: '"\\u0119"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:gold_block 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:gold_block 1", categories: ["fetchr:gold_and_ruined_portal"], weight: 10}
+data modify storage fetchr:registries items append value {id: "fetchr:gold_block", item: {id: "minecraft:gold_block"}, textComponent: '{"translate": "block.minecraft.gold_block", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:gold_block"}}}', icon: '"\\u0119"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:gold_block 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:gold_block 1", categories: ["fetchr:gold_and_ruined_portal"], weight: 5}
 
 ## 011a: scaffolding
 data modify storage fetchr:registries items append value {id: "fetchr:scaffolding", item: {id: "minecraft:scaffolding"}, textComponent: '{"translate": "block.minecraft.scaffolding", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:scaffolding"}}}', icon: '"\\u011a"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:scaffolding 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:scaffolding 1", categories: ["fetchr:jungle"], weight: 3}
@@ -408,6 +437,60 @@ data modify storage fetchr:registries items append value {id: "fetchr:orange_con
 
 ## 011e: pink_glazed_terracotta
 data modify storage fetchr:registries items append value {id: "fetchr:pink_glazed_terracotta", item: {id: "minecraft:pink_glazed_terracotta"}, textComponent: '{"translate": "block.minecraft.pink_glazed_terracotta", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:pink_glazed_terracotta"}}}', icon: '"\\u011e"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:pink_glazed_terracotta 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:pink_glazed_terracotta 1", categories: ["fetchr:clay"], weight: 2}
+
+## 011f: deepslate
+data modify storage fetchr:registries items append value {id: "fetchr:deepslate", item: {id: "minecraft:deepslate"}, textComponent: '{"translate": "block.minecraft.deepslate", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:deepslate"}}}', icon: '"\\u011f"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:deepslate 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:deepslate 1", categories: ["fetchr:deepslate"]}
+
+## 0120: cracked_deepslate_bricks
+data modify storage fetchr:registries items append value {id: "fetchr:cracked_deepslate_bricks", item: {id: "minecraft:cracked_deepslate_bricks"}, textComponent: '{"translate": "block.minecraft.cracked_deepslate_bricks", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:cracked_deepslate_bricks"}}}', icon: '"\\u0120"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:cracked_deepslate_bricks 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:cracked_deepslate_bricks 1", categories: ["fetchr:deepslate"]}
+
+## 0121: deepslate_tile_wall
+data modify storage fetchr:registries items append value {id: "fetchr:deepslate_tile_wall", item: {id: "minecraft:deepslate_tile_wall"}, textComponent: '{"translate": "block.minecraft.deepslate_tile_wall", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:deepslate_tile_wall"}}}', icon: '"\\u0121"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:deepslate_tile_wall 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:deepslate_tile_wall 1", categories: ["fetchr:deepslate"]}
+
+## 0122: muddy_mangrove_roots
+data modify storage fetchr:registries items append value {id: "fetchr:muddy_mangrove_roots", item: {id: "minecraft:muddy_mangrove_roots"}, textComponent: '{"translate": "block.minecraft.muddy_mangrove_roots", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:muddy_mangrove_roots"}}}', icon: '"\\u0122"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:muddy_mangrove_roots 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:muddy_mangrove_roots 1", categories: ["fetchr:mud"]}
+
+## 0123: packed_mud
+data modify storage fetchr:registries items append value {id: "fetchr:packed_mud", item: {id: "minecraft:packed_mud"}, textComponent: '{"translate": "block.minecraft.packed_mud", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:packed_mud"}}}', icon: '"\\u0123"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:packed_mud 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:packed_mud 1", categories: ["fetchr:mud"]}
+
+## 0124: mud_bricks
+data modify storage fetchr:registries items append value {id: "fetchr:mud_bricks", item: {id: "minecraft:mud_bricks"}, textComponent: '{"translate": "block.minecraft.mud_bricks", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:mud_bricks"}}}', icon: '"\\u0124"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:mud_bricks 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:mud_bricks 1", categories: ["fetchr:mud"]}
+
+## 0125: rooted_dirt
+data modify storage fetchr:registries items append value {id: "fetchr:rooted_dirt", item: {id: "minecraft:rooted_dirt"}, textComponent: '{"translate": "block.minecraft.rooted_dirt", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:rooted_dirt"}}}', icon: '"\\u0125"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:rooted_dirt 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:rooted_dirt 1", categories: ["fetchr:lush_cave"]}
+
+## 0126: moss_carpet
+data modify storage fetchr:registries items append value {id: "fetchr:moss_carpet", item: {id: "minecraft:moss_carpet"}, textComponent: '{"translate": "block.minecraft.moss_carpet", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:moss_carpet"}}}', icon: '"\\u0126"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:moss_carpet 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:moss_carpet 1", categories: ["fetchr:lush_cave"]}
+
+## 0127: flowering_azalea
+data modify storage fetchr:registries items append value {id: "fetchr:flowering_azalea", item: {id: "minecraft:flowering_azalea"}, textComponent: '{"translate": "block.minecraft.flowering_azalea", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:flowering_azalea"}}}', icon: '"\\u0127"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:flowering_azalea 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:flowering_azalea 1", categories: ["fetchr:lush_cave"]}
+
+## 0128: spore_blossom
+data modify storage fetchr:registries items append value {id: "fetchr:spore_blossom", item: {id: "minecraft:spore_blossom"}, textComponent: '{"translate": "block.minecraft.spore_blossom", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:spore_blossom"}}}', icon: '"\\u0128"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:spore_blossom 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:spore_blossom 1", categories: ["fetchr:lush_cave"]}
+
+## 0129: dripstone_block
+data modify storage fetchr:registries items append value {id: "fetchr:dripstone_block", item: {id: "minecraft:dripstone_block"}, textComponent: '{"translate": "block.minecraft.dripstone_block", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:dripstone_block"}}}', icon: '"\\u0129"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:dripstone_block 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:dripstone_block 1", categories: ["fetchr:dripstone_cave"]}
+
+## 012a: raw_copper_block
+data modify storage fetchr:registries items append value {id: "fetchr:raw_copper_block", item: {id: "minecraft:raw_copper_block"}, textComponent: '{"translate": "block.minecraft.raw_copper_block", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:raw_copper_block"}}}', icon: '"\\u012a"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:raw_copper_block 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:raw_copper_block 1", categories: ["fetchr:copper"]}
+
+## 012b: cut_copper
+data modify storage fetchr:registries items append value {id: "fetchr:cut_copper", item: {id: "minecraft:cut_copper"}, textComponent: '{"translate": "block.minecraft.cut_copper", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:cut_copper"}}}', icon: '"\\u012b"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:cut_copper 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:cut_copper 1", categories: ["fetchr:copper"]}
+
+## 012c: exposed_copper
+data modify storage fetchr:registries items append value {id: "fetchr:exposed_copper", item: {id: "minecraft:exposed_copper"}, textComponent: '{"translate": "block.minecraft.exposed_copper", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:exposed_copper"}}}', icon: '"\\u012c"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:exposed_copper 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:exposed_copper 1", categories: ["fetchr:copper"]}
+
+## 012d: sculk
+data modify storage fetchr:registries items append value {id: "fetchr:sculk", item: {id: "minecraft:sculk"}, textComponent: '{"translate": "block.minecraft.sculk", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:sculk"}}}', icon: '"\\u012d"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:sculk 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:sculk 1", categories: ["fetchr:sculk"]}
+
+## 012e: sculk_catalyst
+data modify storage fetchr:registries items append value {id: "fetchr:sculk_catalyst", item: {id: "minecraft:sculk_catalyst"}, textComponent: '{"translate": "block.minecraft.sculk_catalyst", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:sculk_catalyst"}}}', icon: '"\\u012e"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:sculk_catalyst 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:sculk_catalyst 1", categories: ["fetchr:sculk"]}
+
+## 012f: sculk_shrieker
+data modify storage fetchr:registries items append value {id: "fetchr:sculk_shrieker", item: {id: "minecraft:sculk_shrieker"}, textComponent: '{"translate": "block.minecraft.sculk_shrieker", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:sculk_shrieker"}}}', icon: '"\\u012f"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:sculk_shrieker 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:sculk_shrieker 1", categories: ["fetchr:sculk"]}
+
+## 0130: sculk_sensor
+data modify storage fetchr:registries items append value {id: "fetchr:sculk_sensor", item: {id: "minecraft:sculk_sensor"}, textComponent: '{"translate": "block.minecraft.sculk_sensor", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:sculk_sensor"}}}', icon: '"\\u0130"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:sculk_sensor 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:sculk_sensor 1", categories: ["fetchr:sculk"]}
 
 # structures
 data modify storage fetchr:registries structures append value "fetchr:credits"
