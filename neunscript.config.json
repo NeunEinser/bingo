@@ -1,9 +1,9 @@
 {
 	"name": "Fetchr",
-	"version": "5.1-beta1",
+	"version": "5.1-beta2",
 	"target": "dist",
 	"vars": {
-		"version_long_name": "5.1 Beta 1",
+		"version_long_name": "5.1 Beta 2",
 		"rp_version": "13"
 	},
 	"remove_file_types": [
