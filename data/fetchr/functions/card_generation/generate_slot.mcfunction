@@ -20,7 +20,7 @@ data modify storage tmp.fetchr:card_generation items append from storage tmp.fet
 #region copy to slot
 data modify storage fetchr:card slots append value {}
 
-data modify block 7 0 7 Text1 set value '["", {"translate": "space.2", "font": "space:default"}, {"storage": "tmp.fetchr:card_generation", "nbt":"items[-1].icon", "interpret": true}]'
+data modify block 7 0 7 Text1 set value '["", {"text": "\\u0002", "font": "fetchr:space"}, {"storage": "tmp.fetchr:card_generation", "nbt":"items[-1].icon", "interpret": true}]'
 data modify storage fetchr:card slots[-1].display set from block 7 0 7 Text1
 
 data modify storage fetchr:card slots[-1].item set from storage tmp.fetchr:card_generation items[-1]

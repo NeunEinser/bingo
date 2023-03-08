@@ -1,12 +1,11 @@
 {
 	"editor.insertSpaces": false, // TABS!!!
 	"files.eol": "\n",
-	"datapack.env.cmdVersion": "1.19",
-	"datapack.env.dataVersion": "Latest snapshot",
+	"datapack.env.cmdVersion": "1.19.4",
+	"datapack.env.dataVersion": "1.19.4-pre3",
 	"datapack.env.defaultVisibility": "public",
 	"datapack.env.dependsOnVanilla": true,
 	"datapack.env.detectionDepth": 1,
-	"datapack.env.jsonVersion": "1.19",
 	"datapack.env.permissionLevel": 2,
 	"datapack.lint.blockStateBracketSpacing": { "inside": 0 },
 	"datapack.lint.blockStateCommaSpacing": { "before": 0, "after": 1 },
