@@ -14,34 +14,18 @@
 # @api
 #declare storage io.fetchr:custom_hud
 
-data modify storage io.fetchr:custom_hud component.padding set value []
-execute if score $custom_hud/width.padding fetchr.io matches 0 run data modify storage io.fetchr:custom_hud component.padding append value ""
-
-execute if score $custom_hud/width.padding fetchr.io matches 64.. run data modify storage io.fetchr:custom_hud component.padding append value ""
-execute if score $custom_hud/width.padding fetchr.io matches 64.. run scoreboard players remove $custom_hud/width.padding fetchr.io 64
-execute if score $custom_hud/width.padding fetchr.io matches 32.. run data modify storage io.fetchr:custom_hud component.padding append value ""
-execute if score $custom_hud/width.padding fetchr.io matches 32.. run scoreboard players remove $custom_hud/width.padding fetchr.io 32
-execute if score $custom_hud/width.padding fetchr.io matches 16.. run data modify storage io.fetchr:custom_hud component.padding append value ""
-execute if score $custom_hud/width.padding fetchr.io matches 16.. run scoreboard players remove $custom_hud/width.padding fetchr.io 16
-execute if score $custom_hud/width.padding fetchr.io matches 8.. run data modify storage io.fetchr:custom_hud component.padding append value ""
-execute if score $custom_hud/width.padding fetchr.io matches 8.. run scoreboard players remove $custom_hud/width.padding fetchr.io 8
-execute if score $custom_hud/width.padding fetchr.io matches 7 run data modify storage io.fetchr:custom_hud component.padding append value ""
-execute if score $custom_hud/width.padding fetchr.io matches 6 run data modify storage io.fetchr:custom_hud component.padding append value ""
-execute if score $custom_hud/width.padding fetchr.io matches 5 run data modify storage io.fetchr:custom_hud component.padding append value ""
-execute if score $custom_hud/width.padding fetchr.io matches 4 run data modify storage io.fetchr:custom_hud component.padding append value ""
-execute if score $custom_hud/width.padding fetchr.io matches 3 run data modify storage io.fetchr:custom_hud component.padding append value ""
-execute if score $custom_hud/width.padding fetchr.io matches 2 run data modify storage io.fetchr:custom_hud component.padding append value ""
-execute if score $custom_hud/width.padding fetchr.io matches 1 run data modify storage io.fetchr:custom_hud component.padding append value ""
+execute if score $custom_hud/width.padding fetchr.io matches ..80 run function fetchr:custom_hud/component_eval/padding/0_80
+execute if score $custom_hud/width.padding fetchr.io matches 81.. run function fetchr:custom_hud/component_eval/padding/81_91
 
 
 #>
 # @within
 # 	function fetchr:custom_hud/component_eval
-# 	function fetchr:custom_hud/component_eval/*
+# 	function fetchr:custom_hud/component_eval/slot/*
 #declare score_holder $custom_hud/eval.slot
 execute store result score $custom_hud/eval.slot fetchr.tmp run data get storage io.fetchr:custom_hud component.slot_id
 
-execute if score $custom_hud/eval.slot fetchr.tmp matches ..4 run function fetchr:custom_hud/component_eval/0_4
-execute if score $custom_hud/eval.slot fetchr.tmp matches 5.. run function fetchr:custom_hud/component_eval/5_10
+execute if score $custom_hud/eval.slot fetchr.tmp matches ..4 run function fetchr:custom_hud/component_eval/slot/0_4
+execute if score $custom_hud/eval.slot fetchr.tmp matches 5.. run function fetchr:custom_hud/component_eval/slot/5_10
 
 data modify storage io.fetchr:custom_hud component.evaluated set from block 7 0 7 Text1
