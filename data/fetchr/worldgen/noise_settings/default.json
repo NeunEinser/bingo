@@ -244,7 +244,7 @@
 			"xz_scale": 1.0,
 			"y_scale": 1.0
 		},
-		"ridges": "minecraft:overworld/ridges",
+		"ridges": "fetchr:ridges",
 		"temperature": {
 			"type": "minecraft:shifted_noise",
 			"noise": "fetchr:temperature",
