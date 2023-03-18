@@ -1,11 +1,11 @@
 {
 	"name": "Fetchr",
-	"version": "5.1-beta2",
+	"version": "5.1-beta3",
 	"mc": "1.19.4",
 	"target": "dist",
 	"vars": {
-		"version_long_name": "5.1 Beta 2",
-		"rp_version": "13"
+		"version_long_name": "5.1 Beta 3",
+		"rp_version": "14"
 	},
 	"remove_file_types": [
 		"xcf", "py", "jsonc"
