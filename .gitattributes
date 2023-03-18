@@ -1,6 +1,6 @@
 * text eol=lf
 
 *.png binary
-*.xlf binary
+*.xcf binary
 *.nbt binary
 *.dat binary

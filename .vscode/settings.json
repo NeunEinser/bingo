@@ -2,7 +2,7 @@
 	"editor.insertSpaces": false, // TABS!!!
 	"files.eol": "\n",
 	"datapack.env.cmdVersion": "1.19.4",
-	"datapack.env.dataVersion": "1.19.4-pre3",
+	"datapack.env.dataVersion": "1.19.4",
 	"datapack.env.defaultVisibility": "public",
 	"datapack.env.dependsOnVanilla": true,
 	"datapack.env.detectionDepth": 1,
