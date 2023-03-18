@@ -70,7 +70,7 @@ def main():
 	if world_config != None:
 		copy_pack(world_config, worldpath, None)
 
-	requested_rp_sha = iterate_files(config, target)
+	requested_rp_sha = iterate_files(config, target, mc_version_info)
 
 	rppath=f"{target}/{name}-{version}-resourcepack"
 	shutil.make_archive(rppath, "zip", f"{target}/tmp/resourcepack")
@@ -108,7 +108,7 @@ def main():
 	
 	shutil.rmtree(f"{target}/tmp")
 
-def iterate_files(config: dict, target: str, mc_version_info: dict = None, languages: list[str] = list()):
+def iterate_files(config: dict, target: str, mc_version_info: dict | None):
 	requested_rp_sha = []
 	remove_extensions = config.get("remove_file_types")
 	for i, ext in enumerate(remove_extensions):
@@ -117,8 +117,6 @@ def iterate_files(config: dict, target: str, mc_version_info: dict = None, langu
 		remove_extensions=()
 	else:
 		remove_extensions = tuple(remove_extensions)
-	
-
 
 	for root, _, files in os.walk(f"{target}{os.sep}tmp"):
 		for file_name in files:
@@ -129,7 +127,7 @@ def iterate_files(config: dict, target: str, mc_version_info: dict = None, langu
 				os.remove(file_path)
 			elif file_name.endswith(".nbt") or file_name.endswith(".dat"):
 				nbt_content = nbt.read_from_nbt_file(file_path)
-				handle_nbt(nbt_content, file_path, config)
+				handle_nbt(nbt_content, file_path, config, mc_version_info)
 				nbt.write_to_nbt_file(file_path, nbt_content)
 
 			elif not file_name.endswith(".png") and not file_name.endswith(".bin"):
@@ -173,15 +171,21 @@ def replace_variables(content: str, file_path: str, config, requested_rp_sha: li
 		indexDiff += len(replace) - match.end() + match.start()
 	return content
 
-def handle_nbt(nbt_tag, file_path: str, config):
+def handle_nbt(nbt_tag, file_path: str, config: dict, mc_version_info: dict | None, key: str | None = None):
 	if isinstance(nbt_tag, dict):
-		for _, value in nbt_tag.items():
-			handle_nbt(value, file_path, config)
+		if file_path.endswith("level.dat") and key == "Version" and mc_version_info != None:
+			nbt_tag["Id"].value = mc_version_info["world_version"]
+			nbt_tag["Name"].value = mc_version_info["name"]
+		else:
+			for key, value in nbt_tag.items():
+				handle_nbt(value, file_path, config, mc_version_info, key)
 	elif isinstance(nbt_tag, list):
 		for value in nbt_tag:
-			handle_nbt(value, file_path, config)
+			handle_nbt(value, file_path, config, key)
 	elif hasattr(nbt_tag, "value") and isinstance(nbt_tag.value, str):
 		nbt_tag.value = replace_variables(nbt_tag.value, file_path, config, [])
+	elif key == "DataVersion" and mc_version_info != None:
+		nbt_tag.value = mc_version_info["world_version"]
 
 def minify_json_file(file_content: str):
 	try:
