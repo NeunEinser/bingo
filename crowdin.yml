@@ -1,9 +1,8 @@
 pull_request_title: Update translations from Crowdin
-append_commit_message: false
+append_commit_message: 
 commit_message: Updated %language% translations.
-
 files:
-  - source: /assets/fetchr/lang/en_us.json
-    translation: /assets/fetchr/lang/%locale_with_underscore%.json
-  - source: /assets/minecraft/lang/en_us.json
-    translation: /assets/minecraft/lang/%locale_with_underscore%.json
+  - source: /resources/assets/fetchr/lang/en_us.json
+    translation: /resources/assets/fetchr/lang/%locale_with_underscore%.json
+  - source: /resources/assets/minecraft/lang/en_us.json
+    translation: /resources/assets/minecraft/lang/%locale_with_underscore%.json
