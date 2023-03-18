@@ -151,7 +151,7 @@ def iterate_files(config: dict, target: str, mc_version_info: dict | None):
 
 def replace_variables(content: str, file_path: str, config, requested_rp_sha: list):
 	indexDiff = 0
-	for match in re.finditer(r"\{NEUN_SCRIPT:([a-zA-Z0-9_-]+)\}", content):
+	for match in re.finditer(r"\{NEUN_SCRIPT:([a-zA-Z0-9_-]+)(?:\s*([+\-*/%])\s*([+-]?\d+))?\}", content):
 		variable = match.group(1)
 		replace=None
 		vars = config.get("vars")
@@ -166,6 +166,18 @@ def replace_variables(content: str, file_path: str, config, requested_rp_sha: li
 
 		if replace == None:
 			replace=""
+		
+		if match.group(2) != None:
+			if match.group(2) == "+":
+				replace = str(int(replace) + int(match.group(3)))
+			elif match.group(2) == "-":
+				replace = str(int(replace) - int(match.group(3)))
+			elif match.group(2) == "*":
+				replace = str(int(replace) * int(match.group(3)))
+			elif match.group(2) == "/":
+				replace = str(int(replace) / int(match.group(3)))
+			else:
+				replace = str(int(replace) % int(match.group(3)))
 
 		content = content[0:match.start() + indexDiff] + replace + content[match.end() + indexDiff:]
 		indexDiff += len(replace) - match.end() + match.start()
@@ -205,7 +217,7 @@ def minify_function_file(file_content: str):
 	for line in file_content.splitlines():
 		line = line.strip()
 
-		if line.startswith("#") and uncomment != 0:
+		if line.startswith("#") and uncomment > 0:
 			line = line[1:]
 			uncomment -= 1
 		elif uncomment < 0:
@@ -224,7 +236,7 @@ def minify_function_file(file_content: str):
 				command = re.sub("\s+", " ", match.group(1)).lower().split(" ")
 
 				if command[0] == "uncomment":
-					uncomment = -1
+					uncomment = 1
 					if len(command) > 1:
 						try:
 							uncomment = int(command[1])

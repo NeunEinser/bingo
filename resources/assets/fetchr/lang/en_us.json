@@ -1,14 +1,14 @@
 {
-	"%1162888552$s%1$s": "%2$s",
-	"%1162888552$s%{NEUN_SCRIPT:rp_version}$s%1$s": "%2$s",
-	"%1162888552$s%3$s%3$s%1$s": "%2$s",
 	"fetchr.technical.detect_multiplayer": "DoNotTranslateThis{NEUN_SCRIPT:rp_version}",
+	"fetchr.technical.resourcepack_version_{NEUN_SCRIPT:rp_version}": "%s",
 
 	"fetchr.error.command_blocks_disabled": "Command blocks are disabled on this server. Please make sure the server.properties file does have all mentioned values set as described %s.",
 	"fetchr.error.command_blocks_disabled.link": "here",
 
 	"fetchr.logging.error": "ERROR",
 	"fetchr.setup.error.unknown_category": "Item %1$s has category %2$s, but category %2$s could not be found.",
+
+	"fetchr.actionbar.wrong_resourcepack_error": "Incompatible version of the Fetchr resource pack enabled.",
 
 	"fetchr.resourcepack_check.sign.line1": "Resource pack",
 	"fetchr.resourcepack_check.sign.line2": "was installed.",
@@ -24,7 +24,7 @@
 	"fetchr.resourcepack_check.wrong_version.recheck": "Re-check",
 	"fetchr.resourcepack_check.wrong_version.sign.line1": "",
 	"fetchr.resourcepack_check.wrong_version.sign.line2": "Download",
-	"fetchr.resourcepack_check.wrong_version.sign.line3": "Resourcepack",
+	"fetchr.resourcepack_check.wrong_version.sign.line3": "Resource Pack",
 	"fetchr.resourcepack_check.wrong_version.sign.line4": "",
 
 	"fetchr.game.menu.hover_text": "Fetchr Menu",
