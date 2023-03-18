@@ -1,13 +1,7 @@
 # This script is used for building this pack
-import hashlib
-import json
-import os
-import re
-import shutil
-import urllib.request
+import hashlib, io, json, os, re, requests, shutil, pyjson5, zipfile
 from distutils.dir_util import copy_tree
 from sys import stderr
-import pyjson5
 
 import python_nbt.nbt as nbt
 
@@ -31,8 +25,25 @@ def main():
 		shutil.rmtree(target)
 
 	resourcepack_config = config.get("resourcepack")
+	languages = None
+	mc_version_info = None
+
 	if resourcepack_config != None:
 		copy_pack(resourcepack_config, f"{target}/tmp/resourcepack", ["assets", "pack.mcmeta", "pack.png"])
+		version_id: str = config.get("mc")
+
+		if version_id != None:
+			version_manifest : dict = requests.get("https://piston-meta.mojang.com/mc/game/version_manifest_v2.json").json()
+			version_data: dict = next(filter(lambda v: v["id"] == version_id, version_manifest["versions"]))
+			if version_data != None:
+				version: dict = requests.get(version_data["url"]).json()
+				override_default_lang_strings(f"{target}/tmp/resourcepack", version["assetIndex"]["url"])
+
+				minecraft_jar = zipfile.ZipFile(io.BytesIO(requests.get(version["downloads"]["client"]["url"]).content))
+				minecraft_jar.extract("version.json", f"{target}/tmp")
+				with open(f"{target}/tmp/version.json", "r", encoding="utf-8") as version_info_file:
+					mc_version_info: dict = json.loads(version_info_file.read())
+				os.remove(f"{target}/tmp/version.json")
 
 	datapack_config = config.get("datapack")
 	if datapack_config != None:
@@ -97,7 +108,7 @@ def main():
 	
 	shutil.rmtree(f"{target}/tmp")
 
-def iterate_files(config: dict, target: str):
+def iterate_files(config: dict, target: str, mc_version_info: dict = None, languages: list[str] = list()):
 	requested_rp_sha = []
 	remove_extensions = config.get("remove_file_types")
 	for i, ext in enumerate(remove_extensions):
@@ -106,10 +117,13 @@ def iterate_files(config: dict, target: str):
 		remove_extensions=()
 	else:
 		remove_extensions = tuple(remove_extensions)
+	
 
-	for root, _, files in os.walk(f"{target}/tmp"):
+
+	for root, _, files in os.walk(f"{target}{os.sep}tmp"):
 		for file_name in files:
 			file_path = root + os.sep + file_name
+			print(file_path)
 
 			if file_name.endswith(remove_extensions):
 				os.remove(file_path)
@@ -231,9 +245,8 @@ def copy_pack(pack_config: dict, tmp_dir: str, paths: list[str] | None):
 	deps = pack_config.get("dependencies")
 	if deps != None:
 		for dep in deps:
-			urllib.request.urlretrieve(dep, f"{tmp_dir}/dependency.zip")
-			shutil.unpack_archive(f"{tmp_dir}/dependency.zip", f"{tmp_dir}/dependency")
-			os.remove(f"{tmp_dir}/dependency.zip")
+			dependency = zipfile.ZipFile(io.BytesIO(requests.get(dep).content))
+			dependency.extractall( f"{tmp_dir}/dependency")
 
 			if paths != None:
 				for path in paths:
@@ -258,8 +271,38 @@ def copy_pack(pack_config: dict, tmp_dir: str, paths: list[str] | None):
 def copy_file_or_dir(src: str, target: str):
 	if os.path.isdir(src):
 		copy_tree(src, target)
-	else:
+	elif os.path.exists(src):
 		shutil.copy2(src, target)
+
+def override_default_lang_strings(rp_root: str, assetUrl: str):
+	default_strings = None
+	if os.path.isfile(f"{rp_root}/assets/minecraft/lang/en_us.json"):
+		with open(f"{rp_root}/assets/minecraft/lang/en_us.json", "r", encoding="utf-8") as lang_file:
+			default_strings: dict[str, str] = pyjson5.decode(lang_file.read())
+
+	if default_strings == None:
+		return
+
+	assets: dict = requests.get(assetUrl).json()
+	pack_mcmeta_hash: str = assets["objects"]["pack.mcmeta"]["hash"]
+	pack_mcmeta: dict = requests.get(f"https://resources.download.minecraft.net/{pack_mcmeta_hash[0:2]}/{pack_mcmeta_hash}").json()
+	languages: list[str] = list(pack_mcmeta["language"])
+
+	for lang in languages:
+		if lang != "en_us":
+			lang_path=f"{rp_root}/assets/minecraft/lang/{lang}.json"
+			if os.path.isfile(lang_path):
+				with open(lang_path, "r+", encoding="utf-8") as lang_file:
+					lang_json: dict[str, str] = pyjson5.decode(lang_file.read())
+					for (key, default) in default_strings.items():
+						if key not in lang_json or not lang_json[key] or lang_json[key].isspace():
+							lang_json[key] = default
+					lang_file.seek(0)
+					lang_file.write(json.dumps(lang_json))
+					lang_file.truncate()
+			else:
+				with open(lang_path, "w", encoding="utf-8") as lang_file:
+					lang_file.write(json.dumps(default_strings))
 
 if __name__ == '__main__':
     main()
