@@ -16,6 +16,7 @@
 	"fetchr.resourcepack_check.wrong_version.server": "Als het bronpakket automatisch is toegepast via een server bronpakket, informeer de server admin dan om het bij te werken.",
 	"fetchr.resourcepack_check.wrong_version.recheck": "Opnieuw controleren",
 	"fetchr.resourcepack_check.wrong_version.sign.line2": "Download",
+	"fetchr.resourcepack_check.wrong_version.sign.line3": "Bronpakket",
 	"fetchr.game.menu.hover_text": "Fetchr Menu",
 	"fetchr.game.menu.hint": "Tip: Je kunt overal op %s klikken om het Fetchr menu te tonen. Je kunt ook %s handmatig uitvoeren en %s vervangen door de automatisch aanvulbare actie.",
 	"fetchr.game.menu.hint.action_param": "actie",
