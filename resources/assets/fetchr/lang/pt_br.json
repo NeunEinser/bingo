@@ -18,7 +18,7 @@
 	"fetchr.resourcepack_check.wrong_version.server": "Se o pacote de recursos foi aplicado automaticamente por um servidor, informe o administrador do servidor para atualizá-lo.",
 	"fetchr.resourcepack_check.wrong_version.recheck": "Verificar novamente",
 	"fetchr.resourcepack_check.wrong_version.sign.line2": "Baixar pacote",
-	"fetchr.resourcepack_check.wrong_version.sign.line3": "Pacote de recursos",
+	"fetchr.resourcepack_check.wrong_version.sign.line3": "de recursos",
 	"fetchr.game.menu.hover_text": "Menu do Fetchr",
 	"fetchr.game.menu.hint": "Dica: Você pode clicar %s a qualquer momento para abrir o menu do Fetchr. Você também pode executar %s manualmente, substituindo %s com a ação de preenchimento automático.",
 	"fetchr.game.menu.hint.action_param": "ação",
