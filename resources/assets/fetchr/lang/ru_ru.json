@@ -16,7 +16,6 @@
 	"fetchr.resourcepack_check.wrong_version.server": "Если пакет ресурсов был автоматически применен через пакет ресурсов сервера, пожалуйста, сообщите администратору сервера, что его необходимо обновить.",
 	"fetchr.resourcepack_check.wrong_version.recheck": "Перепроверить",
 	"fetchr.resourcepack_check.wrong_version.sign.line2": "Скачать набор",
-	"fetchr.resourcepack_check.wrong_version.sign.line3": "ресурсов",
 	"fetchr.game.menu.hover_text": "Меню Fetchr",
 	"fetchr.game.menu.hint": "Подсказка: Вы можете нажать %s в любом месте, чтобы открыть меню Fetchr. Также вы можете запустить %s вручную, заменив %s автоматическим завершающим действием.",
 	"fetchr.game.menu.hint.action_param": "действие",
