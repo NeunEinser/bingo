@@ -17,7 +17,6 @@
 	"fetchr.resourcepack_check.wrong_version.recheck": "Ricontrolla",
 	"fetchr.resourcepack_check.wrong_version.sign.line1": "Scarica",
 	"fetchr.resourcepack_check.wrong_version.sign.line2": "Pacchetto",
-	"fetchr.resourcepack_check.wrong_version.sign.line3": "di",
 	"fetchr.resourcepack_check.wrong_version.sign.line4": "risorse",
 	"fetchr.game.menu.hover_text": "Menu di Fetchr",
 	"fetchr.game.menu.hint": "Suggerimento: Puoi fare clic su %s ovunque per far apparire il menu Fetchr. Puoi anche eseguire %s manualmente, sostituendo %s con l'azione completabile automaticamente.",
