@@ -17,6 +17,7 @@
 	"fetchr.resourcepack_check.wrong_version.recheck": "Erneut Prüfen",
 	"fetchr.resourcepack_check.wrong_version.sign.line1": "Ressourcen-",
 	"fetchr.resourcepack_check.wrong_version.sign.line2": "paket",
+	"fetchr.resourcepack_check.wrong_version.sign.line3": "herunterladen",
 	"fetchr.game.menu.hover_text": "Fetchr-Menü",
 	"fetchr.game.menu.hint": "Hinweis: Du kannst %s überall anklicken, um das Fetchr-Menü anzuzeigen. Du kannst %s auch manuell ausführen und %s dabei durch die automatisch verfollständigbare Aktion ersetzen.",
 	"fetchr.game.menu.hint.action_param": "Aktion",
