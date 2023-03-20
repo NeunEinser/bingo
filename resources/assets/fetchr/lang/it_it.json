@@ -3,6 +3,7 @@
 	"fetchr.error.command_blocks_disabled.link": "qui",
 	"fetchr.logging.error": "ERRORE",
 	"fetchr.setup.error.unknown_category": "L'elemento %1$s ha la categoria %2$s, ma la categoria %2$s non è stata trovata.",
+	"fetchr.actionbar.wrong_resourcepack_error": "Versione incompatibile del pacchetto risorse Fetchr abilitato.",
 	"fetchr.resourcepack_check.sign.line1": "Pacchetto risor-",
 	"fetchr.resourcepack_check.sign.line2": "se è installato.",
 	"fetchr.resourcepack_check.sign.line3": "Clicca per man-",
