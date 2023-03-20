@@ -1,5 +1,4 @@
 {
-	"fetchr.technical.resourcepack_version_{NEUN_SCRIPT:rp_version}": "%s",
 	"fetchr.error.command_blocks_disabled": "Blocos de comando estão desativados neste servidor. Certifique-se de que o arquivo server.properties tenha todos os valores mencionados definidos como descrito %s.",
 	"fetchr.error.command_blocks_disabled.link": "aqui",
 	"fetchr.logging.error": "ERRO",
