@@ -6,7 +6,7 @@
 
 #execute in fetchr:lobby run function neun_einser.timer:detect_pause
 teleport @a[predicate=fetchr:is_in_overworld, tag=!fetchr.resourcepack_check] @e[type=minecraft:marker, tag=fetchr.spawn, limit=1]
-execute as @a[predicate=fetchr:is_in_game] run function fetchr:game/player_tick
+execute as @a[predicate=fetchr:is_in_game] at @s run function fetchr:game/player_tick
 
 #>
 # Count of players in the game

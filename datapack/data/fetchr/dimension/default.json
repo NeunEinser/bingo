@@ -1,5 +1,5 @@
 {
-	"type": "fetchr:bright",
+	"type": "minecraft:overworld",
 	"generator": {
 		"type": "minecraft:noise",
 		"settings": "fetchr:default",

@@ -51,15 +51,18 @@ scoreboard players reset @s fetchr.grindstone
 scoreboard players reset @s fetchr.stonecut
 scoreboard players reset @s fetchr.brewing
 
+scoreboard players add @s[scores={fetchr.bed=1..}] fetchr.bed 1
+execute if score @s fetchr.bed matches 99.. store result score @s fetchr.bed run data get entity @s SleepTimer
+
+execute if entity @s[tag=fetchr.position_changed] positioned ~ ~1 ~ run function fetchr:game/player_tick/on_position_changed
+
+# This should always be at the end to prevent game logic from running for this
+# player in the lobby.
+
 tag @s[tag=fetchr.position_changed] remove fetchr.check_inventory
 tag @s[tag=fetchr.only_check_inventory_once] remove fetchr.check_inventory
 tag @s[scores={fetchr.inv_change=1..}] add fetchr.check_inventory
 tag @s[scores={fetchr.inv_change=2..}] remove fetchr.only_check_inventory_once
 
-scoreboard players add @s[scores={fetchr.bed=1..}] fetchr.bed 1
-execute if score @s fetchr.bed matches 99.. store result score @s fetchr.bed run data get entity @s SleepTimer
-
-# This should always be at the end to prevent game logic from running for this
-# player in the lobby.
 scoreboard players enable @s fetchr.lobby
 execute if entity @s[scores={fetchr.lobby=1}] run function fetchr:util/go_to_lobby
