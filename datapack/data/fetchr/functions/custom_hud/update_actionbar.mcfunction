@@ -11,7 +11,7 @@
 #
 # @reads storage fetchr:custom_hud currentPlayer.components
 
-scoreboard players set @s fetchr.hud_update 0
+scoreboard players set @s fetchr.last_hud_update 0
 data modify storage tmp.fetchr:custom_hud texts set value []
 data modify storage tmp.fetchr:custom_hud texts append from storage fetchr:custom_hud currentPlayer.components[].evaluated
 

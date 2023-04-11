@@ -460,19 +460,11 @@ forceload add 0 0
 #endregion
 
 #region setup objectives
-	scoreboard objectives remove fetchr.barrel
-	scoreboard objectives remove fetchr.brewing
-	scoreboard objectives remove fetchr.b_furnace
-	scoreboard objectives remove fetchr.chest
 	scoreboard objectives remove fetchr.chicken_timer_cache
 	scoreboard objectives remove fetchr.const
 	scoreboard objectives remove fetchr.completed_goal_effect_state
-	scoreboard objectives remove fetchr.crafting
-	scoreboard objectives remove fetchr.enderchest
-	scoreboard objectives remove fetchr.furnace
-	scoreboard objectives remove fetchr.grindstone
 	scoreboard objectives remove fetchr.has_item
-	scoreboard objectives remove fetchr.hud_update
+	scoreboard objectives remove fetchr.last_hud_update
 	scoreboard objectives remove fetchr.io
 	scoreboard objectives remove fetchr.lobby
 	scoreboard objectives remove fetchr.menu
@@ -485,9 +477,6 @@ forceload add 0 0
 	scoreboard objectives remove fetchr.seed
 	scoreboard objectives remove fetchr.spectator
 	scoreboard objectives remove fetchr.resource_pack_check
-	scoreboard objectives remove fetchr.shulkerbox
-	scoreboard objectives remove fetchr.stonecut
-	scoreboard objectives remove fetchr.smoker
 	scoreboard objectives remove fetchr.tmp
 
 	#region public objectives
@@ -693,14 +682,30 @@ forceload add 0 0
 
 	#region private objectives
 		#>
+		# This objective is used to detect player sleeping for night skipping
+		#
+		# @within
+		#		function fetchr:init/init
+		#		function fetchr:game/tick
+		#		function fetchr:game/player_tick
+		scoreboard objectives add fetchr.bed minecraft.custom:minecraft.sleep_in_bed
+
+		#>
 		# The last time the hud was refreshed for each player
-		# #TODO rename to something like "last_hud_update" in 1.18 when the stupid
-		# # length limit is gone.
 		#
 		# @within
 		#		function fetchr:init/init
 		#		function fetchr:custom_hud/*
-		scoreboard objectives add fetchr.hud_update dummy
+		scoreboard objectives add fetchr.last_hud_update dummy
+		
+		#>
+		# This objective is used to detect a player reconnecting
+		#
+		# @within
+		#		function fetchr:init/init
+		#		function fetchr:game/player_tick
+		#		function fetchr:game/on_inventory_changed
+		scoreboard objectives add fetchr.inv_change dummy
 
 		#>
 		# This objective is used to detect a player reconnecting
@@ -710,104 +715,6 @@ forceload add 0 0
 		#		function fetchr:tick/player_tick
 		#		function fetchr:tick/handle_player_join
 		scoreboard objectives add fetchr.reconnect minecraft.custom:minecraft.leave_game
-
-		#region interaction
-			#>
-			# This objective is used to detect a player reconnecting
-			#
-			# @within
-			#		function fetchr:init/init
-			#		function fetchr:game/player_tick
-			#		function fetchr:game/on_inventory_changed
-			scoreboard objectives add fetchr.inv_change dummy
-
-			#>
-			# This objective is used to detect a player reconnecting
-			#
-			# @within
-			#		function fetchr:init/init
-			#		function fetchr:game/player_tick
-			scoreboard objectives add fetchr.chest minecraft.custom:minecraft.open_chest
-			#>
-			# This objective is used to detect a player reconnecting
-			#
-			# @within
-			#		function fetchr:init/init
-			#		function fetchr:game/player_tick
-			scoreboard objectives add fetchr.barrel minecraft.custom:minecraft.open_barrel
-			#>
-			# This objective is used to detect player sleeping for night skipping
-			#
-			# @within
-			#		function fetchr:init/init
-			#		function fetchr:game/tick
-			#		function fetchr:game/player_tick
-			scoreboard objectives add fetchr.bed minecraft.custom:minecraft.sleep_in_bed
-			#>
-			# This objective is used to detect a player reconnecting
-			#
-			# @within
-			#		function fetchr:init/init
-			#		function fetchr:game/player_tick
-			scoreboard objectives add fetchr.enderchest minecraft.custom:minecraft.open_enderchest
-			#>
-			# This objective is used to detect a player reconnecting
-			#
-			# @within
-			#		function fetchr:init/init
-			#		function fetchr:game/player_tick
-			scoreboard objectives add fetchr.shulkerbox minecraft.custom:minecraft.open_shulker_box
-
-			#>
-			# This objective is used to detect a player reconnecting
-			#
-			# @within
-			#		function fetchr:init/init
-			#		function fetchr:game/player_tick
-			scoreboard objectives add fetchr.crafting minecraft.custom:minecraft.interact_with_crafting_table
-			#>
-			# This objective is used to detect a player reconnecting
-			#
-			# @within
-			#		function fetchr:init/init
-			#		function fetchr:game/player_tick
-			scoreboard objectives add fetchr.furnace minecraft.custom:minecraft.interact_with_furnace
-			#>
-			# This objective is used to detect a player reconnecting
-			#
-			# @within
-			#		function fetchr:init/init
-			#		function fetchr:game/player_tick
-			scoreboard objectives add fetchr.b_furnace minecraft.custom:minecraft.interact_with_blast_furnace
-			#>
-			# This objective is used to detect a player reconnecting
-			#
-			# @within
-			#		function fetchr:init/init
-			#		function fetchr:game/player_tick
-			scoreboard objectives add fetchr.smoker minecraft.custom:minecraft.interact_with_smoker
-			#>
-			# This objective is used to detect a player reconnecting
-			#
-			# @within
-			#		function fetchr:init/init
-			#		function fetchr:game/player_tick
-			scoreboard objectives add fetchr.grindstone minecraft.custom:minecraft.interact_with_grindstone
-			#>
-			# This objective is used to detect a player reconnecting
-			#
-			# @within
-			#		function fetchr:init/init
-			#		function fetchr:game/player_tick
-			scoreboard objectives add fetchr.stonecut minecraft.custom:minecraft.interact_with_stonecutter
-			#>
-			# This objective is used to detect a player reconnecting
-			#
-			# @within
-			#		function fetchr:init/init
-			#		function fetchr:game/player_tick
-			scoreboard objectives add fetchr.brewing minecraft.custom:minecraft.interact_with_brewingstand
-		#endregion
 	#endregion
 
 	#region score holders
