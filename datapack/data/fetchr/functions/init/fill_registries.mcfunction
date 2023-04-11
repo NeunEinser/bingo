@@ -153,6 +153,9 @@ data modify storage fetchr:registries items append value {id: "fetchr:diamond_ho
 ## 001f: diamond_axe
 data modify storage fetchr:registries items append value {id: "fetchr:diamond_axe", item: {id: "minecraft:diamond_axe"}, textComponent: '{"translate": "item.minecraft.diamond_axe", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:diamond_axe"}}}', icon: '"\\u001f"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:diamond_axe 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:diamond_axe 1", categories: ["fetchr:diamond"], weight: 2}
 
+## 0020: axolotl_bucket
+data modify storage fetchr:registries items append value {id: "fetchr:axolotl_bucket", item: {id: "minecraft:axolotl_bucket"}, textComponent: '{"translate": "item.minecraft.axolotl_bucket", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:diamond_axe"}}}', icon: '"\\u0020"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:axolotl_bucket 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:axolotl_bucket 1", categories: ["fetchr:lush_cave"], weight: 2}
+
 ## 0021: flower_pot
 data modify storage fetchr:registries items append value {id: "fetchr:flower_pot", item: {id: "minecraft:flower_pot"}, textComponent: '{"translate": "block.minecraft.flower_pot", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:flower_pot"}}}', icon: '"\\u0021"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:flower_pot 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:flower_pot 1", categories: ["fetchr:clay"]}
 
