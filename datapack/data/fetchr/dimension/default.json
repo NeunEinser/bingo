@@ -1,5 +1,5 @@
 {
-	"type": "minecraft:overworld",
+	"type": "fetchr:default",
 	"generator": {
 		"type": "minecraft:noise",
 		"settings": "fetchr:default",
