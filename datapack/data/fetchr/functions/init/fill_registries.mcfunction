@@ -55,7 +55,6 @@ data modify storage fetchr:registries categories append value {id: "fetchr:rail"
 data modify storage fetchr:registries categories append value {id: "fetchr:redstone", name: '{"translate": "fetchr.category.redstone"}', tags: ["fetchr:default"]}
 data modify storage fetchr:registries categories append value {id: "fetchr:sand", name: '{"translate": "fetchr.category.sand"}', tags: ["fetchr:default"]}
 data modify storage fetchr:registries categories append value {id: "fetchr:sapling", name: '{"translate": "fetchr.category.sapling"}', tags: ["fetchr:default"]}
-data modify storage fetchr:registries categories append value {id: "fetchr:sculk", name: '{"translate": "fetchr.category.sculk"}', tags: ["fetchr:default"]}
 data modify storage fetchr:registries categories append value {id: "fetchr:shearable", name: '{"translate": "fetchr.category.shearable"}', tags: ["fetchr:default"]}
 data modify storage fetchr:registries categories append value {id: "fetchr:snow", name: '{"translate": "fetchr.category.snow"}', tags: ["fetchr:default"]}
 data modify storage fetchr:registries categories append value {id: "fetchr:spider", name: '{"translate": "fetchr.category.spider"}', tags: ["fetchr:default"]}
@@ -489,18 +488,6 @@ data modify storage fetchr:registries items append value {id: "fetchr:cut_copper
 
 ## 012c: exposed_copper
 data modify storage fetchr:registries items append value {id: "fetchr:exposed_copper", item: {id: "minecraft:exposed_copper"}, textComponent: '{"translate": "block.minecraft.exposed_copper", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:exposed_copper"}}}', icon: '"\\u012c"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:exposed_copper 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:exposed_copper 1", categories: ["fetchr:copper"]}
-
-## 012d: sculk
-data modify storage fetchr:registries items append value {id: "fetchr:sculk", item: {id: "minecraft:sculk"}, textComponent: '{"translate": "block.minecraft.sculk", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:sculk"}}}', icon: '"\\u012d"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:sculk 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:sculk 1", categories: ["fetchr:sculk"]}
-
-## 012e: sculk_catalyst
-data modify storage fetchr:registries items append value {id: "fetchr:sculk_catalyst", item: {id: "minecraft:sculk_catalyst"}, textComponent: '{"translate": "block.minecraft.sculk_catalyst", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:sculk_catalyst"}}}', icon: '"\\u012e"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:sculk_catalyst 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:sculk_catalyst 1", categories: ["fetchr:sculk"]}
-
-## 012f: sculk_shrieker
-data modify storage fetchr:registries items append value {id: "fetchr:sculk_shrieker", item: {id: "minecraft:sculk_shrieker"}, textComponent: '{"translate": "block.minecraft.sculk_shrieker", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:sculk_shrieker"}}}', icon: '"\\u012f"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:sculk_shrieker 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:sculk_shrieker 1", categories: ["fetchr:sculk"]}
-
-## 0130: sculk_sensor
-data modify storage fetchr:registries items append value {id: "fetchr:sculk_sensor", item: {id: "minecraft:sculk_sensor"}, textComponent: '{"translate": "block.minecraft.sculk_sensor", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:sculk_sensor"}}}', icon: '"\\u0130"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:sculk_sensor 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:sculk_sensor 1", categories: ["fetchr:sculk"]}
 
 ## 0131: amethyst_block
 data modify storage fetchr:registries items append value {id: "fetchr:amethyst_block", item: {id: "minecraft:amethyst_block"}, textComponent: '{"translate": "block.minecraft.amethyst_block", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:amethyst_block"}}}', icon: '"\\u0131"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:amethyst_block 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:amethyst_block 1", categories: ["fetchr:amethyst"]}
