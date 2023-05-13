@@ -451,6 +451,7 @@
 	"fetchr.game.start.pre_gen_progress": "Pre-generating Chunks...",
 	"fetchr.game.start.countdown_completed": "GO!",
 
+	"fetchr.item.blue_trimmed_leather_boots": "Blue trimmed leather boots",
 
 	"fetchr.got_item": "[%2$s | #%1$s] %3$s got [%4$s]",
 	"fetchr.got_blackout": "[%s] %s got a blackout!",

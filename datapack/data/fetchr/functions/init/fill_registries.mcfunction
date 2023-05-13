@@ -25,6 +25,7 @@ data modify storage fetchr:registries categories append value {id: "fetchr:bow",
 data modify storage fetchr:registries categories append value {id: "fetchr:copper", name: '{"translate": "fetchr.category.copper"}', tags: ["fetchr:default"]}
 data modify storage fetchr:registries categories append value {id: "fetchr:clay", name: '{"translate": "fetchr.category.clay"}', tags: ["fetchr:default"]}
 data modify storage fetchr:registries categories append value {id: "fetchr:cactus", name: '{"translate": "fetchr.category.cactus"}', tags: ["fetchr:default"]}
+data modify storage fetchr:registries categories append value {id: "fetchr:cherry_grove", name: '{"translate": "fetchr.category.cherry_grove"}', tags: ["fetchr:default"]}
 data modify storage fetchr:registries categories append value {id: "fetchr:chest_iron", name: '{"translate": "fetchr.category.chest_iron"}', tags: ["fetchr:default"]}
 data modify storage fetchr:registries categories append value {id: "fetchr:compass", name: '{"translate": "fetchr.category.compass"}', tags: ["fetchr:default"]}
 data modify storage fetchr:registries categories append value {id: "fetchr:deepslate", name: '{"translate": "fetchr.category.deepslate"}', tags: ["fetchr:default"]}
@@ -241,7 +242,7 @@ data modify storage fetchr:registries items append value {id: "fetchr:green_dye"
 data modify storage fetchr:registries items append value {id: "fetchr:lime_dye", item: {id: "minecraft:lime_dye"}, textComponent: '{"translate": "item.minecraft.lime_dye", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:lime_dye"}}}', icon: '"\\u003c"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:lime_dye 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:lime_dye 1", categories: ["fetchr:cactus", "fetchr:lime"]}
 
 ## 003d: lapis_lazuli
-data modify storage fetchr:registries items append value {id: "fetchr:lapis_lazuli", item: {id: "minecraft:lapis_lazuli"}, textComponent: '{"translate": "item.minecraft.lapis_lazuli", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:lapis_lazuli"}}}', icon: '"\\u003d"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:lapis_lazuli 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:lapis_lazuli 1", categories: ["fetchr:lapis", "fetchr:treasure_chest"]}
+data modify storage fetchr:registries items append value {id: "fetchr:lapis_lazuli", item: {id: "minecraft:lapis_lazuli"}, textComponent: '{"translate": "item.minecraft.lapis_lazuli", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:lapis_lazuli"}}}', icon: '"\\u003d"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:lapis_lazuli 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:lapis_lazuli 1", categories: ["fetchr:lapis"]}
 
 ## 003e: cyan_dye
 data modify storage fetchr:registries items append value {id: "fetchr:cyan_dye", item: {id: "minecraft:cyan_dye"}, textComponent: '{"translate": "item.minecraft.cyan_dye", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:cyan_dye"}}}', icon: '"\\u003e"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:cyan_dye 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:cyan_dye 1", categories: ["fetchr:lapis"], weight: 2}
@@ -356,6 +357,24 @@ data modify storage fetchr:registries items append value {id: "fetchr:amethyst_s
 
 ## 0063: spyglass
 data modify storage fetchr:registries items append value {id: "fetchr:spyglass", item: {id: "minecraft:spyglass"}, textComponent: '{"translate": "item.minecraft.spyglass", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:spyglass"}}}', icon: '"\\u0063"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:spyglass 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:spyglass 1", categories: ["fetchr:amethyst"]}
+
+## 0064: blue trimmed leather boots
+data modify storage fetchr:registries items append value {id: "fetchr:blue_trimmed_leather_boots", item: {id: "minecraft:leather_boots", tag: {Trim: {pattern: "minecraft:shaper", material: "minecraft:lapis"}}}, textComponent: '{"translate": "fetchr.item.blue_trimmed_leather_boots", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:leather_boots", "tag": "{Trim: {pattern: \'minecraft:shaper\', material: \'minecraft:lapis\'}}"}}}', icon: '"\\u0064"', detectCommand: 'execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:leather_boots{Trim: {material: "minecraft:lapis"}} 0', clearCommand: 'clear @a[tag=fetchr.clear] minecraft:leather_boots{Trim: {material: "minecraft:lapis"}} 1', categories: ["fetchr:treasure_chest"]}
+
+## 0065: hanging acacia sign
+data modify storage fetchr:registries items append value {id: "fetchr:hanging_acacia_sign", item: {id: "minecraft:acacia_hanging_sign"}, textComponent: '{"translate": "block.minecraft.acacia_hanging_sign", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:acacia_hanging_sign"}}}', icon: '"\\u0065"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:acacia_hanging_sign 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:acacia_hanging_sign 1", categories: ["fetchr:basic_iron"]}
+
+## 0066: brush
+data modify storage fetchr:registries items append value {id: "fetchr:brush", item: {id: "minecraft:brush"}, textComponent: '{"translate": "item.minecraft.brush", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:brush"}}}', icon: '"\\u0066"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:brush 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:brush 1", categories: ["fetchr:copper"]}
+
+## 0067: cherry_chest_boat
+data modify storage fetchr:registries items append value {id: "fetchr:cherry_chest_boat", item: {id: "minecraft:cherry_chest_boat"}, textComponent: '{"translate": "item.minecraft.cherry_chest_boat", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:cherry_chest_boat"}}}', icon: '"\\u0067"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:cherry_chest_boat 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:cherry_chest_boat 1", categories: ["fetchr:cherry_grove"]}
+
+## 0068: pink_petals
+data modify storage fetchr:registries items append value {id: "fetchr:pink_petals", item: {id: "minecraft:pink_petals"}, textComponent: '{"translate": "block.minecraft.pink_petals", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:pink_petals"}}}', icon: '"\\u0068"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:pink_petals 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:pink_petals 1", categories: ["fetchr:cherry_grove"]}
+
+## 0069: pink_petals
+data modify storage fetchr:registries items append value {id: "fetchr:cherry_sapling", item: {id: "minecraft:cherry_sapling"}, textComponent: '{"translate": "block.minecraft.cherry_sapling", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:cherry_sapling"}}}', icon: '"\\u0069"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:cherry_sapling 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:cherry_sapling 1", categories: ["fetchr:cherry_grove"]}
 
 ## 0100: iron_block
 data modify storage fetchr:registries items append value {id: "fetchr:iron_block", item: {id: "minecraft:iron_block"}, textComponent: '{"translate": "block.minecraft.iron_block", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:iron_block"}}}', icon: '"\\u0100"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:iron_block 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:iron_block 1", categories: ["fetchr:basic_iron"]}
