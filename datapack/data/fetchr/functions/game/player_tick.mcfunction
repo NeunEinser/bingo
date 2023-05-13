@@ -30,8 +30,6 @@ scoreboard players remove @s[scores={fetchr.inv_change=1..}] fetchr.inv_change 1
 scoreboard players add @s[scores={fetchr.bed=1..}] fetchr.bed 1
 execute if score @s fetchr.bed matches 99.. store result score @s fetchr.bed run data get entity @s SleepTimer
 
-execute if entity @s[tag=fetchr.position_changed] positioned ~ ~1 ~ run function fetchr:game/player_tick/on_position_changed
-
 # This should always be at the end to prevent game logic from running for this
 # player in the lobby.
 
