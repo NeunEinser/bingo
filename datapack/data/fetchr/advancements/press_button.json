@@ -3,12 +3,17 @@
 		"click_button": {
 			"trigger": "minecraft:item_used_on_block",
 			"conditions": {
-				"location": {
-					"dimension": "fetchr:lobby",
-					"block": {
-						"tag": "minecraft:buttons"
+				"location": [
+					{
+						"condition": "minecraft:location_check",
+						"predicate": {
+							"dimension": "fetchr:lobby",
+							"block": {
+								"tag": "minecraft:buttons"
+							}
+						}
 					}
-				}
+				]
 			}
 		}	
 	},

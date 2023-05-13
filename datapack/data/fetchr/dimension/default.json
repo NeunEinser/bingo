@@ -5383,13 +5383,13 @@
 					}
 				},
 				{
-					"biome": "minecraft:meadow",
+					"biome": "minecraft:cherry_grove",
 					"parameters": {
 						"weirdness": [ 0.26666666, 0.4 ],
 						"continentalness": [ 0.3, 1 ],
 						"erosion": [ -0.78, -0.2225 ],
-						"temperature": [ -0.45, -0.15 ],
-						"humidity": [ -1, 0.3 ],
+						"temperature": [ -0.45, 0.2 ],
+						"humidity": [ -1, -0.35 ],
 						"depth": [ 0, 0 ],
 						"offset": 0
 					}
@@ -5400,8 +5400,20 @@
 						"weirdness": [ 0.26666666, 0.4 ],
 						"continentalness": [ 0.3, 1 ],
 						"erosion": [ -0.78, -0.2225 ],
+						"temperature": [ -0.45, -0.15 ],
+						"humidity": [ -0.35, 0.3 ],
+						"depth": [ 0, 0 ],
+						"offset": 0
+					}
+				},
+				{
+					"biome": "minecraft:cherry_grove",
+					"parameters": {
+						"weirdness": [ 0.26666666, 0.4 ],
+						"continentalness": [ 0.3, 1 ],
+						"erosion": [ -0.78, -0.2225 ],
 						"temperature": [ -0.15, 0.2 ],
-						"humidity": [ -1, -0.1 ],
+						"humidity": [ -0.35, -0.1 ],
 						"depth": [ 0, 0 ],
 						"offset": 0
 					}
@@ -6199,13 +6211,25 @@
 					}
 				},
 				{
+					"biome": "minecraft:cherry_grove",
+					"parameters": {
+						"weirdness": [ 0.4, 0.93333333 ],
+						"continentalness": [ 0.03, 1 ],
+						"erosion": [ -0.375, -0.2225 ],
+						"temperature": [ -0.45, 0.2 ],
+						"humidity": [ -1, -0.35 ],
+						"depth": [ 0, 0 ],
+						"offset": 0
+					}
+				},
+				{
 					"biome": "minecraft:meadow",
 					"parameters": {
 						"weirdness": [ 0.4, 0.93333333 ],
 						"continentalness": [ 0.03, 1 ],
 						"erosion": [ -0.375, -0.2225 ],
 						"temperature": [ -0.45, -0.15 ],
-						"humidity": [ -1, 0.3 ],
+						"humidity": [ -0.35, 0.3 ],
 						"depth": [ 0, 0 ],
 						"offset": 0
 					}
@@ -6223,13 +6247,13 @@
 					}
 				},
 				{
-					"biome": "minecraft:meadow",
+					"biome": "minecraft:cherry_grove",
 					"parameters": {
 						"weirdness": [ 0.4, 0.93333333 ],
 						"continentalness": [ 0.03, 1 ],
 						"erosion": [ -0.375, -0.2225 ],
 						"temperature": [ -0.15, 0.2 ],
-						"humidity": [ -1, -0.1 ],
+						"humidity": [ -0.35, -0.1 ],
 						"depth": [ 0, 0 ],
 						"offset": 0
 					}
@@ -6391,13 +6415,13 @@
 					}
 				},
 				{
-					"biome": "minecraft:meadow",
+					"biome": "minecraft:cherry_grove",
 					"parameters": {
 						"weirdness": [ 0.4, 0.93333333 ],
 						"continentalness": [ 0.3, 1 ],
 						"erosion": [ -0.2225, 0.05 ],
-						"temperature": [ -0.45, -0.15 ],
-						"humidity": [ -1, 0.3 ],
+						"temperature": [ -0.45, 0.2 ],
+						"humidity": [ -1, -0.35 ],
 						"depth": [ 0, 0 ],
 						"offset": 0
 					}
@@ -6408,8 +6432,20 @@
 						"weirdness": [ 0.4, 0.93333333 ],
 						"continentalness": [ 0.3, 1 ],
 						"erosion": [ -0.2225, 0.05 ],
+						"temperature": [ -0.45, -0.15 ],
+						"humidity": [ -0.35, 0.3 ],
+						"depth": [ 0, 0 ],
+						"offset": 0
+					}
+				},
+				{
+					"biome": "minecraft:cherry_grove",
+					"parameters": {
+						"weirdness": [ 0.4, 0.93333333 ],
+						"continentalness": [ 0.3, 1 ],
+						"erosion": [ -0.2225, 0.05 ],
 						"temperature": [ -0.15, 0.2 ],
-						"humidity": [ -1, -0.1 ],
+						"humidity": [ -0.35, -0.1 ],
 						"depth": [ 0, 0 ],
 						"offset": 0
 					}
@@ -7699,13 +7735,13 @@
 					}
 				},
 				{
-					"biome": "minecraft:meadow",
+					"biome": "minecraft:cherry_grove",
 					"parameters": {
 						"weirdness": [ 0.93333333, 1 ],
 						"continentalness": [ 0.3, 1 ],
 						"erosion": [ -0.78, -0.2225 ],
-						"temperature": [ -0.45, -0.15 ],
-						"humidity": [ -1, 0.3 ],
+						"temperature": [ -0.45, 0.2 ],
+						"humidity": [ -1, -0.35 ],
 						"depth": [ 0, 0 ],
 						"offset": 0
 					}
@@ -7716,8 +7752,20 @@
 						"weirdness": [ 0.93333333, 1 ],
 						"continentalness": [ 0.3, 1 ],
 						"erosion": [ -0.78, -0.2225 ],
+						"temperature": [ -0.45, -0.15 ],
+						"humidity": [ -0.35, 0.3 ],
+						"depth": [ 0, 0 ],
+						"offset": 0
+					}
+				},
+				{
+					"biome": "minecraft:cherry_grove",
+					"parameters": {
+						"weirdness": [ 0.93333333, 1 ],
+						"continentalness": [ 0.3, 1 ],
+						"erosion": [ -0.78, -0.2225 ],
 						"temperature": [ -0.15, 0.2 ],
-						"humidity": [ -1, -0.1 ],
+						"humidity": [ -0.35, -0.1 ],
 						"depth": [ 0, 0 ],
 						"offset": 0
 					}
@@ -13351,13 +13399,13 @@
 					}
 				},
 				{
-					"biome": "minecraft:meadow",
+					"biome": "minecraft:cherry_grove",
 					"parameters": {
 						"weirdness": [ 0.26666666, 0.4 ],
 						"continentalness": [ 0.3, 1 ],
 						"erosion": [ -0.78, -0.2225 ],
-						"temperature": [ -0.45, -0.15 ],
-						"humidity": [ -1, 0.3 ],
+						"temperature": [ -0.45, 0.2 ],
+						"humidity": [ -1, -0.35 ],
 						"depth": [ 1, 1 ],
 						"offset": 0
 					}
@@ -13368,8 +13416,20 @@
 						"weirdness": [ 0.26666666, 0.4 ],
 						"continentalness": [ 0.3, 1 ],
 						"erosion": [ -0.78, -0.2225 ],
+						"temperature": [ -0.45, -0.15 ],
+						"humidity": [ -0.35, 0.3 ],
+						"depth": [ 1, 1 ],
+						"offset": 0
+					}
+				},
+				{
+					"biome": "minecraft:cherry_grove",
+					"parameters": {
+						"weirdness": [ 0.26666666, 0.4 ],
+						"continentalness": [ 0.3, 1 ],
+						"erosion": [ -0.78, -0.2225 ],
 						"temperature": [ -0.15, 0.2 ],
-						"humidity": [ -1, -0.1 ],
+						"humidity": [ -0.35, -0.1 ],
 						"depth": [ 1, 1 ],
 						"offset": 0
 					}
@@ -14167,13 +14227,25 @@
 					}
 				},
 				{
+					"biome": "minecraft:cherry_grove",
+					"parameters": {
+						"weirdness": [ 0.4, 0.93333333 ],
+						"continentalness": [ 0.03, 1 ],
+						"erosion": [ -0.375, -0.2225 ],
+						"temperature": [ -0.45, 0.2 ],
+						"humidity": [ -1, -0.35 ],
+						"depth": [ 1, 1 ],
+						"offset": 0
+					}
+				},
+				{
 					"biome": "minecraft:meadow",
 					"parameters": {
 						"weirdness": [ 0.4, 0.93333333 ],
 						"continentalness": [ 0.03, 1 ],
 						"erosion": [ -0.375, -0.2225 ],
 						"temperature": [ -0.45, -0.15 ],
-						"humidity": [ -1, 0.3 ],
+						"humidity": [ -0.35, 0.3 ],
 						"depth": [ 1, 1 ],
 						"offset": 0
 					}
@@ -14191,13 +14263,13 @@
 					}
 				},
 				{
-					"biome": "minecraft:meadow",
+					"biome": "minecraft:cherry_grove",
 					"parameters": {
 						"weirdness": [ 0.4, 0.93333333 ],
 						"continentalness": [ 0.03, 1 ],
 						"erosion": [ -0.375, -0.2225 ],
 						"temperature": [ -0.15, 0.2 ],
-						"humidity": [ -1, -0.1 ],
+						"humidity": [ -0.35, -0.1 ],
 						"depth": [ 1, 1 ],
 						"offset": 0
 					}
@@ -14359,13 +14431,13 @@
 					}
 				},
 				{
-					"biome": "minecraft:meadow",
+					"biome": "minecraft:cherry_grove",
 					"parameters": {
 						"weirdness": [ 0.4, 0.93333333 ],
 						"continentalness": [ 0.3, 1 ],
 						"erosion": [ -0.2225, 0.05 ],
-						"temperature": [ -0.45, -0.15 ],
-						"humidity": [ -1, 0.3 ],
+						"temperature": [ -0.45, 0.2 ],
+						"humidity": [ -1, -0.35 ],
 						"depth": [ 1, 1 ],
 						"offset": 0
 					}
@@ -14376,8 +14448,20 @@
 						"weirdness": [ 0.4, 0.93333333 ],
 						"continentalness": [ 0.3, 1 ],
 						"erosion": [ -0.2225, 0.05 ],
+						"temperature": [ -0.45, -0.15 ],
+						"humidity": [ -0.35, 0.3 ],
+						"depth": [ 1, 1 ],
+						"offset": 0
+					}
+				},
+				{
+					"biome": "minecraft:cherry_grove",
+					"parameters": {
+						"weirdness": [ 0.4, 0.93333333 ],
+						"continentalness": [ 0.3, 1 ],
+						"erosion": [ -0.2225, 0.05 ],
 						"temperature": [ -0.15, 0.2 ],
-						"humidity": [ -1, -0.1 ],
+						"humidity": [ -0.35, -0.1 ],
 						"depth": [ 1, 1 ],
 						"offset": 0
 					}
@@ -15667,13 +15751,13 @@
 					}
 				},
 				{
-					"biome": "minecraft:meadow",
+					"biome": "minecraft:cherry_grove",
 					"parameters": {
 						"weirdness": [ 0.93333333, 1 ],
 						"continentalness": [ 0.3, 1 ],
 						"erosion": [ -0.78, -0.2225 ],
-						"temperature": [ -0.45, -0.15 ],
-						"humidity": [ -1, 0.3 ],
+						"temperature": [ -0.45, 0.2 ],
+						"humidity": [ -1, -0.35 ],
 						"depth": [ 1, 1 ],
 						"offset": 0
 					}
@@ -15684,8 +15768,20 @@
 						"weirdness": [ 0.93333333, 1 ],
 						"continentalness": [ 0.3, 1 ],
 						"erosion": [ -0.78, -0.2225 ],
+						"temperature": [ -0.45, -0.15 ],
+						"humidity": [ -0.35, 0.3 ],
+						"depth": [ 1, 1 ],
+						"offset": 0
+					}
+				},
+				{
+					"biome": "minecraft:cherry_grove",
+					"parameters": {
+						"weirdness": [ 0.93333333, 1 ],
+						"continentalness": [ 0.3, 1 ],
+						"erosion": [ -0.78, -0.2225 ],
 						"temperature": [ -0.15, 0.2 ],
-						"humidity": [ -1, -0.1 ],
+						"humidity": [ -0.35, -0.1 ],
 						"depth": [ 1, 1 ],
 						"offset": 0
 					}

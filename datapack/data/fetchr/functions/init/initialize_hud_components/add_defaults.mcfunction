@@ -14,8 +14,8 @@ execute unless data storage tmp.fetchr:init/hud cur.iconSeparatorAlignLeft run d
 execute unless data storage tmp.fetchr:init/hud cur.iconSeparatorAlignRight run data modify storage tmp.fetchr:init/hud cur.iconSeparatorAlignRight set from storage tmp.fetchr:init/hud cur.iconSeparator
 data remove storage tmp.fetchr:init/hud cur.iconSeparator
 
-setblock 0 15 0 minecraft:oak_sign{Text1: '["[", {"storage": "tmp.fetchr:init/hud", "nbt": "cur.settingsClickEvent", "interpret": true, "color": "#00c3ff", "bold": true, "hoverEvent": {"action": "show_text", "contents": {"translate": "fetchr.preferences.custom_hud.adjust_col.settings.hover_text", "color": "gold"}}, "extra": ["⚙"]}, "] "]'}
-execute if data storage tmp.fetchr:init/hud cur.settingsClickEvent run data modify storage tmp.fetchr:init/hud cur.settingsTextComponent set from block 0 15 0 Text1
+setblock 0 15 0 minecraft:oak_sign{front_text: {messages: ['["[", {"storage": "tmp.fetchr:init/hud", "nbt": "cur.settingsClickEvent", "interpret": true, "color": "#00c3ff", "bold": true, "hoverEvent": {"action": "show_text", "contents": {"translate": "fetchr.preferences.custom_hud.adjust_col.settings.hover_text", "color": "gold"}}, "extra": ["⚙"]}, "] "]']}}
+execute if data storage tmp.fetchr:init/hud cur.settingsClickEvent run data modify storage tmp.fetchr:init/hud cur.settingsTextComponent set from block 0 15 0 front_text.messages[0]
 setblock 0 15 0 minecraft:air
 data remove storage tmp.fetchr:init/hud cur.settingsClickEvent
 

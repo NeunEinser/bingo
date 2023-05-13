@@ -14,8 +14,8 @@ data modify storage tmp.fetchr:init searchedCategory set from storage tmp.fetchr
 function fetchr:init/items/find_item_category
 
 # set lore
-setblock 0 15 0 minecraft:oak_sign{Text1: '[{"text": "  • ", "color": "gray", "italic": false}, {"storage": "tmp.fetchr:init", "nbt": "currentCategories[-1].name", "interpret": true}, " (", {"storage": "tmp.fetchr:init", "nbt": "itemCategories[-1].weight"}, "/", {"storage": "tmp.fetchr:init", "nbt": "currentCategories[-1].totalItemWeight"}, ")"]'}
-data modify storage tmp.fetchr:init initializedItems[-1].item.tag.display.Lore append from block 0 15 0 Text1
+setblock 0 15 0 minecraft:oak_sign{front_text: {messages: ['[{"text": "  • ", "color": "gray", "italic": false}, {"storage": "tmp.fetchr:init", "nbt": "currentCategories[-1].name", "interpret": true}, " (", {"storage": "tmp.fetchr:init", "nbt": "itemCategories[-1].weight"}, "/", {"storage": "tmp.fetchr:init", "nbt": "currentCategories[-1].totalItemWeight"}, ")"]']}}
+data modify storage tmp.fetchr:init initializedItems[-1].item.tag.display.Lore append from block 0 15 0 front_text.messages[0]
 setblock 0 15 0 minecraft:air
 
 # add category info

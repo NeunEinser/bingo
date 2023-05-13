@@ -20,9 +20,9 @@ data remove storage tmp.fetchr:init skippedCategories
 
 data modify storage tmp.fetchr:init items[-1].item.Count set value 1b
 
-setblock 0 15 0 minecraft:oak_sign{Text1:'{"storage": "tmp.fetchr:init", "nbt": "items[-1].textComponent", "interpret": true, "italic": false}'}
+setblock 0 15 0 minecraft:oak_sign{front_text:{messages:['{"storage": "tmp.fetchr:init", "nbt": "items[-1].textComponent", "interpret": true, "italic": false}']}}
 
-data modify storage tmp.fetchr:init items[-1].item.tag.display.Name set from block 0 15 0 Text1
+data modify storage tmp.fetchr:init items[-1].item.tag.display.Name set from block 0 15 0 front_text.messages[0]
 setblock 0 15 0 minecraft:air
 
 function fetchr:init/items/update_category_total_weight

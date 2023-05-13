@@ -28,4 +28,4 @@ execute store result score $custom_hud/eval.slot fetchr.tmp run data get storage
 execute if score $custom_hud/eval.slot fetchr.tmp matches ..4 run function fetchr:custom_hud/component_eval/slot/0_4
 execute if score $custom_hud/eval.slot fetchr.tmp matches 5.. run function fetchr:custom_hud/component_eval/slot/5_10
 
-data modify storage io.fetchr:custom_hud component.evaluated set from block 7 0 7 Text1
+data modify storage io.fetchr:custom_hud component.evaluated set from block 7 0 7 front_text.messages[0]
