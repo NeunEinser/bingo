@@ -358,10 +358,10 @@ data modify storage fetchr:registries items append value {id: "fetchr:amethyst_s
 ## 0063: spyglass
 data modify storage fetchr:registries items append value {id: "fetchr:spyglass", item: {id: "minecraft:spyglass"}, textComponent: '{"translate": "item.minecraft.spyglass", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:spyglass"}}}', icon: '"\\u0063"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:spyglass 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:spyglass 1", categories: ["fetchr:amethyst"]}
 
-## 0064: blue trimmed leather boots
+## 0064: blue_trimmed_leather_boots
 data modify storage fetchr:registries items append value {id: "fetchr:blue_trimmed_leather_boots", item: {id: "minecraft:leather_boots", tag: {Trim: {pattern: "minecraft:shaper", material: "minecraft:lapis"}}}, textComponent: '{"translate": "fetchr.item.blue_trimmed_leather_boots", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:leather_boots", "tag": "{Trim: {pattern: \'minecraft:shaper\', material: \'minecraft:lapis\'}}"}}}', icon: '"\\u0064"', detectCommand: 'execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:leather_boots{Trim: {material: "minecraft:lapis"}} 0', clearCommand: 'clear @a[tag=fetchr.clear] minecraft:leather_boots{Trim: {material: "minecraft:lapis"}} 1', categories: ["fetchr:treasure_chest"]}
 
-## 0065: hanging acacia sign
+## 0065: hanging_acacia_sign
 data modify storage fetchr:registries items append value {id: "fetchr:hanging_acacia_sign", item: {id: "minecraft:acacia_hanging_sign"}, textComponent: '{"translate": "block.minecraft.acacia_hanging_sign", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:acacia_hanging_sign"}}}', icon: '"\\u0065"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:acacia_hanging_sign 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:acacia_hanging_sign 1", categories: ["fetchr:basic_iron"]}
 
 ## 0066: brush
@@ -373,7 +373,7 @@ data modify storage fetchr:registries items append value {id: "fetchr:cherry_che
 ## 0068: pink_petals
 data modify storage fetchr:registries items append value {id: "fetchr:pink_petals", item: {id: "minecraft:pink_petals"}, textComponent: '{"translate": "block.minecraft.pink_petals", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:pink_petals"}}}', icon: '"\\u0068"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:pink_petals 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:pink_petals 1", categories: ["fetchr:cherry_grove"]}
 
-## 0069: pink_petals
+## 0069: cherry_sapling
 data modify storage fetchr:registries items append value {id: "fetchr:cherry_sapling", item: {id: "minecraft:cherry_sapling"}, textComponent: '{"translate": "block.minecraft.cherry_sapling", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:cherry_sapling"}}}', icon: '"\\u0069"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:cherry_sapling 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:cherry_sapling 1", categories: ["fetchr:cherry_grove"]}
 
 ## 0100: iron_block
