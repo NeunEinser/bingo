@@ -336,6 +336,7 @@
 	"fetchr.game.start.loading_terrain": "Caricamento Terreno...",
 	"fetchr.game.start.pre_gen_progress": "Pre-generazione dei Chunks...",
 	"fetchr.game.start.countdown_completed": "VAI!",
+	"fetchr.item.blue_trimmed_leather_boots": "Stivali di pelle ornati blu",
 	"fetchr.got_item": "[%2$s | #%1$s] %3$s ottenuto [%4$s]",
 	"fetchr.got_blackout": "[%s] %s ha ottenuto un blackout!",
 	"fetchr.got_20_no_bingo": "[%s] %s ha ottenuto 20 no bingo!",
