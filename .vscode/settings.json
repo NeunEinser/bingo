@@ -2,7 +2,7 @@
 	"editor.insertSpaces": false, // TABS!!!
 	"files.eol": "\n",
 	"datapack.env.cmdVersion": "1.20",
-	"datapack.env.dataVersion": "1.20-pre1",
+	"datapack.env.dataVersion": "1.20",
 	"datapack.env.defaultVisibility": "public",
 	"datapack.env.dependsOnVanilla": true,
 	"datapack.env.detectionDepth": 1,
@@ -103,7 +103,7 @@
 	"datapack.lint.nbtListTrailingComma": false,
 	"datapack.lint.nbtLongSuffix": "l",
 	"datapack.lint.nbtPathQuote": null,//["warning", false],
-	"datapack.lint.nbtPathQuoteType": ["error", "always double"], // single quotes should never be used here, see https://bugs.mojang.com/browse/MC-175504
+	"datapack.lint.nbtPathQuoteType": ["warning", "prefer double"],
 	"datapack.lint.nbtShortSuffix": "s",
 	"datapack.lint.nbtStringQuote": ["warning", true],
 	"datapack.lint.nbtStringQuoteType": ["warning", "prefer double"],
