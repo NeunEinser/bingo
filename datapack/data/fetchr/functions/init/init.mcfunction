@@ -170,12 +170,24 @@ forceload add 0 0
 	# @internal
 	#declare tag fetchr.string_tester
 	#>
+	# Tag for entities that have been processed by pre-gen.
+	#
+	# @within function fetchr:game/start/**
+	#declare tag fetchr.generated_entity
+	#>
 	# Tag for entities that where already persistent.
 	#
 	# @within
-	# 	function fetchr:game/start/pre_gen/handle_entities
-	# 	function fetchr:game/start/unfreeze_entities
+	# 	function fetchr:game/start/pre_gen/entities/process_entity
+	# 	function fetchr:game/start/unfreeze_entity
 	#declare tag fetchr.persistance_required
+	#>
+	# Tag for chickens that where already chicken jockeys.
+	#
+	# @within
+	# 	function fetchr:game/start/pre_gen/entities/process_entity
+	# 	function fetchr:game/start/unfreeze_entity
+	#declare tag fetchr.chicken_jockey
 	#>
 	# This tag is given to players who are currently verifying their resource pack
 	#
@@ -403,6 +415,17 @@ forceload add 0 0
 	#region lobby buttons
 		#>
 		# @within
+		# 	function fetchr:lobby/**
+		# 	function fetchr:game/start/**
+		# 	structure fetchr:skybox
+		#declare tag fetchr.skybox_button
+		#>
+		# @within
+		# 	function fetchr:lobby/**
+		# 	structure fetchr:card_generation
+		#declare tag fetchr.pressed_button
+		#>
+		# @within
 		# 	function fetchr:lobby/place_indestructible_blocks
 		# 	structure fetchr:card_generation
 		#declare tag fetchr.lobby_button
@@ -460,7 +483,6 @@ forceload add 0 0
 #endregion
 
 #region setup objectives
-	scoreboard objectives remove fetchr.chicken_timer_cache
 	scoreboard objectives remove fetchr.const
 	scoreboard objectives remove fetchr.completed_goal_effect_state
 	scoreboard objectives remove fetchr.has_item
@@ -477,7 +499,6 @@ forceload add 0 0
 	scoreboard objectives remove fetchr.seed
 	scoreboard objectives remove fetchr.spectator
 	scoreboard objectives remove fetchr.resource_pack_check
-	scoreboard objectives remove fetchr.tmp
 
 	#region public objectives
 		#>
@@ -531,6 +552,7 @@ forceload add 0 0
 		# @internal
 		# @user
 		scoreboard objectives add fetchr.lobby trigger
+		scoreboard players enable @a[predicate=fetchr:is_in_game] fetchr.lobby
 
 		#>
 		# Trigger objective for displaying the Fetchr menu during a game.
@@ -579,11 +601,6 @@ forceload add 0 0
 	#endregion
 
 	#region other internal objectives
-		#>
-		# Used to store chicken egg timers during pre-gen
-		#
-		# @internal
-		scoreboard objectives add fetchr.chicken_timer_cache dummy
 		#>
 		# This objective holds the position preference of where a player's card should
 		# be displayed.
@@ -910,6 +927,10 @@ forceload add 0 0
 		scoreboard players set 256 fetchr.const 256
 		#>
 		# @public
+		#declare score_holder 762
+		scoreboard players set 762 fetchr.const 762
+		#>
+		# @public
 		#declare score_holder 1000
 		scoreboard players set 1000 fetchr.const 1000
 		#>
@@ -926,7 +947,7 @@ forceload add 0 0
 # Add pregen bossbar
 	bossbar add fetchr:start/pre_gen/progress {"translate": "fetchr.game.start.pre_gen_progress"}
 	bossbar set fetchr:start/pre_gen/progress color red
-	execute unless score $game_state fetchr.state matches 1 run bossbar set fetchr:start/pre_gen/progress visible false
+	execute unless score $game_state fetchr.state matches 2 run bossbar set fetchr:start/pre_gen/progress visible false
 
 # Set gamerules
 	gamerule commandBlockOutput false

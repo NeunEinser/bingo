@@ -4,7 +4,6 @@
 # a confirmed operator, and the either asks the player to confirm their op
 # status or starts the game.
 #
-# @within fetchr:lobby/place_indestructible_blocks
 # @user
 # @context entity Player changing the setting
 

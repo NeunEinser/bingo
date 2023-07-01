@@ -2,7 +2,7 @@
 #
 # Spawns all players in the skybox
 #
-# @within function fetchr:game/start/create_skybox/spawn_players
+# @internal
 # @context
 # 	entity Current player
 # 	position Skybox spawn
@@ -15,12 +15,9 @@ tag @s remove fetchr.spectator
 scoreboard players reset @s fetchr.pref
 scoreboard players reset @s fetchr.seed
 scoreboard players reset @s fetchr.settings
+scoreboard players enable @s fetchr.lobby
 
 gamemode adventure @s
-effect give @s minecraft:jump_boost 1000000 128 true
-effect give @s minecraft:invisibility 1000000 0 true
-effect give @s minecraft:saturation 1000000 255 true
-effect give @s minecraft:weakness 1000000 255 true
 clear @s
 experience set @s 0 levels
 experience set @s 0 points
@@ -50,3 +47,6 @@ tag @s remove fetchr.has_slot21
 tag @s remove fetchr.has_slot22
 tag @s remove fetchr.has_slot23
 tag @s remove fetchr.has_slot24
+
+execute in fetchr:lobby run function fetchr:custom_hud/components/timer/update
+bossbar set fetchr:start/pre_gen/progress players @a[predicate=fetchr:is_in_game]

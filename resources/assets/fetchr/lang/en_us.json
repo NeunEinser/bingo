@@ -224,13 +224,14 @@
 	"fetchr.lobby.card_generation.from_seed.instructions.link": "Click here",
 	"fetchr.lobby.card_generation.from_seed.explanation": "The seed determines which items generate on the bingo card and where you spawn. You can use this for example for competitive races, where everyone is using the same seed.",
 
-	"fetchr.lobby.card_generation.start_game.already_in_progress": "You cannot start a new game without generating a new card.",
-	"fetchr.lobby.card_generation.start_game.no_card": "You cannot start a game without having generated a bingo Card.",
+	"fetchr.lobby.card_generation.join_game.error.no_card": "You have to generate a card before joining a game.",
+	"fetchr.lobby.card_generation.join_game.error.not_ready": "The game is not ready yet, try again in a few seconds.",
+	"fetchr.lobby.card_generation.join_game.error.in_progress": "You cannot join an ongoing game. If you want to start a new game, generate a new card first.",
 
-	"fetchr.lobby.card_generation.start_game.sign.line1": "",
-	"fetchr.lobby.card_generation.start_game.sign.line2": "Start",
-	"fetchr.lobby.card_generation.start_game.sign.line3": "Game",
-	"fetchr.lobby.card_generation.start_game.sign.line4": "",
+	"fetchr.lobby.card_generation.join_game.sign.line1": "",
+	"fetchr.lobby.card_generation.join_game.sign.line2": "Join",
+	"fetchr.lobby.card_generation.join_game.sign.line3": "Game",
+	"fetchr.lobby.card_generation.join_game.sign.line4": "",
 
 	"fetchr.lobby.card_generation.crafting_table.sign.line1": "Crafting",
 	"fetchr.lobby.card_generation.crafting_table.sign.line2": "Recipe",
@@ -264,7 +265,7 @@
 
 	"fetchr.lobby.settings.more_coming.sign.line1": "",
 	"fetchr.lobby.settings.more_coming.sign.line2": "More Settings",
-	"fetchr.lobby.settings.more_coming.sign.line3": "Coming Soon",
+	"fetchr.lobby.settings.more_coming.sign.line3": "Next Beta",
 	"fetchr.lobby.settings.more_coming.sign.line4": "",
 	"fetchr.lobby.settings.more_coming.change_future": "Do you want to change future settings?",
 	"fetchr.lobby.settings.more_coming.change_future.yes": "Yes",
@@ -403,6 +404,19 @@
 	"fetchr.lobby.end.sign.line2": "",
 	"fetchr.lobby.end.sign.line3": "Danger!",
 	"fetchr.lobby.end.sign.line4": "Stay Inside!",
+
+
+	"fetchr.skybox.start_game.error.not_ready": "Please wait for the pre-generation bar at the top to complete.",
+	"fetchr.skybox.start_game.sign.line1": "",
+	"fetchr.skybox.start_game.sign.line2": "Start",
+	"fetchr.skybox.start_game.sign.line3": "Game",
+	"fetchr.skybox.start_game.sign.line4": "",
+
+
+	"fetchr.skybox.leave_game.sign.line1": "",
+	"fetchr.skybox.leave_game.sign.line2": "Leave",
+	"fetchr.skybox.leave_game.sign.line3": "Game",
+	"fetchr.skybox.leave_game.sign.line4": "",
 
 
 	"fetchr.categories.header": "Categories:",

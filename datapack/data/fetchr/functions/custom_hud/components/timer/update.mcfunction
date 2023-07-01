@@ -33,8 +33,8 @@ execute if score $hours 91.timer.time matches 0 if score $minutes 91.timer.time 
 execute if score $hours 91.timer.time matches 0 if score $minutes 91.timer.time matches 0 if score $seconds 91.timer.time matches ..9 run scoreboard players add $custom_hud/timer.padding fetchr.tmp 6
 
 # hide timer during pre-gen
-execute if score $game_state fetchr.state matches 0..2 run data modify storage io.fetchr:custom_hud component.textComponent set value '"0"'
-execute if score $game_state fetchr.state matches 0..2 run scoreboard players set $custom_hud/timer.padding fetchr.tmp 73
+execute if score $game_state fetchr.state matches ..2 run data modify storage io.fetchr:custom_hud component.textComponent set value '"0"'
+execute if score $game_state fetchr.state matches ..2 run scoreboard players set $custom_hud/timer.padding fetchr.tmp 73
 
 scoreboard players operation $custom_hud/width.padding fetchr.io = $custom_hud/timer.padding fetchr.tmp
 function fetchr:custom_hud/component_eval

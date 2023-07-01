@@ -3,7 +3,6 @@
 # This function checks whether the player clicking is a confirmed operator, and
 # if so, prints the strict mode dialog
 #
-# @within fetchr:lobby/place_indestructible_blocks
 # @user
 # @context entity Player changing the setting
 

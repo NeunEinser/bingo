@@ -56,3 +56,5 @@ setblock 7 0 7 minecraft:oak_sign
 
 forceload remove all
 forceload add 0 0
+
+function fetchr:custom_hud/components/timer/update

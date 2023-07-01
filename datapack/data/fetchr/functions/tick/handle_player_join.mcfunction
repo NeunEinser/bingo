@@ -16,7 +16,7 @@ scoreboard players set @s fetchr.update_hud 1
 trigger fetchr.resource_pack_check
 setblock 1 2 2 minecraft:sea_lantern
 execute unless score @s fetchr.game_id = $current_game_id fetchr.game_id if entity @s[predicate=fetchr:is_in_game] run function fetchr:util/go_to_lobby
-execute if score $game_state fetchr.state matches 0..1 if entity @s[predicate=fetchr:is_in_game] run function fetchr:util/go_to_lobby
+execute if score $game_state fetchr.state matches ..1 if entity @s[predicate=fetchr:is_in_game] run function fetchr:util/go_to_lobby
 
 #>
 # @private

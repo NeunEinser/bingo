@@ -5,7 +5,7 @@
 # @within function fetchr:tick/tick
 
 #execute in fetchr:lobby run function neun_einser.timer:detect_pause
-teleport @a[predicate=fetchr:is_in_overworld, tag=!fetchr.resourcepack_check] @e[type=minecraft:marker, tag=fetchr.spawn, limit=1]
+execute at @e[type=minecraft:marker, tag=fetchr.spawn, limit=1] positioned over motion_blocking_no_leaves run teleport @a[predicate=fetchr:is_in_overworld, tag=!fetchr.resourcepack_check] ~ ~ ~
 execute as @a[predicate=fetchr:is_in_game] at @s run function fetchr:game/player_tick
 
 #>

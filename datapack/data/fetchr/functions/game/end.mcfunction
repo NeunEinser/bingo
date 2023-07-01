@@ -18,3 +18,5 @@ execute in fetchr:lobby run function neun_einser.timer:stop
 
 execute as @e[type=minecraft:item_frame, tag=fetchr.card_frame] at @s run setblock ~ ~ ~-1 minecraft:barrier
 execute in fetchr:lobby run data modify block 5 3 5 auto set value false
+
+scoreboard players add $current_game_id fetchr.game_id 1

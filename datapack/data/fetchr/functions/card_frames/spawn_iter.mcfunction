@@ -6,12 +6,8 @@
 # Already creates each frame at the correct location
 #
 # @within
-# 	function fetchr:card_frames/spawn
+# 	function fetchr:card_frames/spawn_frames
 # 	function fetchr:card_frames/spawn_iter
-# @context
-# 	dimension fetchr:lobby
-# 	location Location where next item frame needs to be placed, starting from
-# 		top left
 #>
 # @private
 #declare score_holder $card_frames/spawn.row
@@ -20,12 +16,12 @@
 #declare tag fetchr.new
 #>
 # @within
-# 	function fetchr:card_frames/spawn
+# 	function fetchr:card_frames/spawn_frames
 # 	function fetchr:card_frames/spawn_iter
 #declare score_holder $card_frames/spawn.i
 #>
 # @within
-# 	function fetchr:card_frames/spawn
+# 	function fetchr:card_frames/spawn_frames
 # 	function fetchr:card_frames/spawn_iter
 #declare storage tmp.fetchr:card_frames/spawn_frames
 

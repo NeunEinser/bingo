@@ -4,18 +4,16 @@
 #
 # @within function fetchr:game/start/countdown
 
-execute at @e[type=minecraft:marker, tag=fetchr.spawn, distance=..2, limit=1] rotated as @s run tp ~ ~ ~
+teleport @e[type=!minecraft:player, type=!minecraft:marker, type=!minecraft:bee, type=!minecraft:item, tag=!fetchr.generated_entity, distance=..10000] ~ -128 ~
+execute as @e[tag=fetchr.generated_entity, distance=..10000] run function fetchr:game/start/unfreeze_entity
+
+forceload remove all
+forceload add 0 0
+forceload add ~ ~
+
 scoreboard players set $game_state fetchr.state 3
+execute as @a[predicate=fetchr:is_in_game] run function fetchr:game/start/player_init
 
-tellraw @s {"translate": "fetchr.game.start.countdown_completed"}
-function fetchr:game/menu/print_with_hint
-execute at @s run playsound minecraft:block.note_block.pling voice @s ~ ~ ~ 1 1
-
-effect clear @s
-clear @s
-gamemode survival @s
-experience set @s 0 levels
-experience set @s 0 points
 gamerule doDaylightCycle true
 
 execute in fetchr:lobby run data modify block 5 3 5 auto set value true
@@ -37,5 +35,6 @@ team modify fetchr.red seeFriendlyInvisibles true
 team modify fetchr.white seeFriendlyInvisibles true
 team modify fetchr.yellow seeFriendlyInvisibles true
 
-execute at @s run fill ~-1 ~ ~-1 ~1 319 ~1 minecraft:air replace minecraft:barrier
+
+fill ~-1 62 ~-1 ~1 319 ~1 minecraft:air replace minecraft:barrier
 function neun_einser.timer:start/hundredth_of_second
