@@ -7,7 +7,6 @@
 					{
 						"condition": "minecraft:location_check",
 						"predicate": {
-							"dimension": "fetchr:lobby",
 							"block": {
 								"tag": "minecraft:buttons"
 							}
