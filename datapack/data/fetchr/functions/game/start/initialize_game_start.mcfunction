@@ -16,7 +16,7 @@ fill ~ 62 ~ ~ ~2 ~ minecraft:air replace minecraft:barrier
 setblock ~ ~-1 ~ minecraft:lime_stained_glass
 teleport @a[predicate=fetchr:is_in_game] ~ ~ ~
 
-function fetchr:game/start/init_teams
+execute in fetchr:lobby run function fetchr:game/start/init_teams
 
 teleport @e[type=!minecraft:player, type=!minecraft:marker, type=!minecraft:bee, type=!minecraft:item, tag=!fetchr.generated_entity, distance=..10000] ~ -128 ~
 
