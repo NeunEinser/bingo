@@ -7,8 +7,6 @@
 
 data modify storage io.fetchr:custom_hud component set from storage fetchr:custom_hud currentPlayer.components[{id: "fetchr:y_position"}]
 data modify storage io.fetchr:custom_hud component merge value {textComponent:'["Y: ", {"score": {"name": "$custom_hud/player_pos.y", "objective": "fetchr.tmp"}}]', changed: true}
-execute at @s run function fetchr:game/emerald_detection/chunk/detect
-execute if entity @s[tag=fetchr.emerald] run data modify storage io.fetchr:custom_hud component.textComponent set value '[{"text": "Y: ", "color": "green"}, {"score": {"name": "$custom_hud/player_pos.y", "objective": "fetchr.tmp"}}]'
 
 scoreboard players set $custom_hud/width.padding fetchr.io 79
 scoreboard players operation $custom_hud/width.number fetchr.io = $custom_hud/player_pos.y fetchr.tmp

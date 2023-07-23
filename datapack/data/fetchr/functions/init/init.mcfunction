@@ -111,11 +111,6 @@ forceload add 0 0
 
 #region tag declarations
 	#>
-	# This tag marks a player who is at a location eligible for emerald generation.
-	#
-	# @internal
-	#declare tag fetchr.emerald
-	#>
 	# This tag is used for players who enable manual gamemode switching.
 	#
 	# @internal
