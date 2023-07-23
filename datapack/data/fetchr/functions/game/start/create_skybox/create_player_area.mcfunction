@@ -9,7 +9,9 @@
 
 setblock ~-1 ~-1 ~-1 minecraft:structure_block[mode=load]{mode:"LOAD", name:"fetchr:skybox"}
 setblock ~-1 ~ ~-1 minecraft:redstone_block
+execute if block ~-1 ~-1 ~-1 minecraft:structure_block run setblock ~-1 ~-1 ~-1 minecraft:air
+execute if block ~-1 ~ ~-1 minecraft:redstone_block run setblock ~-1 ~ ~-1 minecraft:air
 function fetchr:card_frames/spawn
 
-teleport @s ~7 ~ ~7
-execute unless score $is_multiplayer fetchr.tmp matches 1 positioned ~7 ~ ~7 as @a[tag=!fetchr.resourcepack_check] run function fetchr:game/start/create_skybox/spawn_player
+teleport @s ~7 ~1 ~7
+execute unless score $is_multiplayer fetchr.tmp matches 1 positioned ~7 ~1 ~7 as @a[tag=!fetchr.resourcepack_check] run function fetchr:game/start/create_skybox/spawn_player

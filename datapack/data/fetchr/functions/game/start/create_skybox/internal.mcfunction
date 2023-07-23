@@ -36,6 +36,6 @@ execute positioned ~7 ~ ~7 positioned over motion_blocking run function fetchr:g
 teleport @s ~ ~ ~
 execute store result entity @s Pos[1] double 1 run scoreboard players get $game/start/find_ground.y fetchr.tmp
 
-execute if score $game/start/find_ground.y fetchr.tmp matches ..112 positioned ~ 128 ~ run function fetchr:game/start/create_skybox/create_player_area
-execute if score $game/start/find_ground.y fetchr.tmp matches 113..298 at @s positioned ~ ~16 ~ run function fetchr:game/start/create_skybox/create_player_area
-execute if score $game/start/find_ground.y fetchr.tmp matches 299.. positioned ~ 314 ~ run function fetchr:game/start/create_skybox/create_player_area
+execute if score $game/start/find_ground.y fetchr.tmp matches ..112 positioned ~ 127 ~ run function fetchr:game/start/create_skybox/create_player_area
+execute if score $game/start/find_ground.y fetchr.tmp matches 113..299 at @s positioned ~ ~15 ~ run function fetchr:game/start/create_skybox/create_player_area
+execute if score $game/start/find_ground.y fetchr.tmp matches 300.. positioned ~ 314 ~ run function fetchr:game/start/create_skybox/create_player_area

@@ -22,6 +22,10 @@ clear @s
 experience set @s 0 levels
 experience set @s 0 points
 
+effect give @s minecraft:saturation infinite 255 true
+effect give @s minecraft:resistance infinite 255 true
+effect give @s minecraft:weakness infinite 255 true
+
 tag @s remove fetchr.has_slot0
 tag @s remove fetchr.has_slot1
 tag @s remove fetchr.has_slot2
