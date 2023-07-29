@@ -89,4 +89,4 @@ function fetchr:custom_hud/components/timer/update
 #declare tag/function fetchr:post_card_gen
 function #fetchr:post_card_gen
 
-schedule function fetchr:game/start/locate_spawnpoint 2s
+schedule function fetchr:game/start/locate_spawnpoint 1s

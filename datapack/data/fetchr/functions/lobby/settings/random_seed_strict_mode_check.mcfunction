@@ -7,6 +7,6 @@
 # @user
 # @context entity Player changing the setting
 
-execute unless score $strict_mode fetchr.settings matches 1 run function fetchr:card_generation/random_card
+execute unless score $strict_mode fetchr.settings matches 1 in fetchr:lobby run function fetchr:card_generation/random_card
 execute if score $strict_mode fetchr.settings matches 1 if score @s fetchr.operator matches 1 run function fetchr:card_generation/random_card
 execute if score $strict_mode fetchr.settings matches 1 if score @s fetchr.operator matches 0 run function fetchr:util/confirm_operator_status

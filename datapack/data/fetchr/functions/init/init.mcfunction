@@ -412,6 +412,7 @@ forceload add 0 0
 		# @within
 		# 	function fetchr:lobby/**
 		# 	function fetchr:game/start/**
+		# 	function fetchr:game/end
 		# 	structure fetchr:skybox
 		#declare tag fetchr.skybox_button
 		#>
