@@ -18,19 +18,19 @@ gamerule doDaylightCycle true
 
 execute in fetchr:lobby run data modify block 5 3 5 auto set value true
 
-team modify fetchr.aqua seeFriendlyInvisibles true
+team modify fetchr.light_blue seeFriendlyInvisibles true
 team modify fetchr.black seeFriendlyInvisibles true
 team modify fetchr.blue seeFriendlyInvisibles true
-team modify fetchr.dark_aqua seeFriendlyInvisibles true
+team modify fetchr.cyan seeFriendlyInvisibles true
 team modify fetchr.dark_blue seeFriendlyInvisibles true
 team modify fetchr.dark_gray seeFriendlyInvisibles true
-team modify fetchr.dark_green seeFriendlyInvisibles true
-team modify fetchr.dark_purple seeFriendlyInvisibles true
-team modify fetchr.dark_red seeFriendlyInvisibles true
-team modify fetchr.gold seeFriendlyInvisibles true
-team modify fetchr.gray seeFriendlyInvisibles true
 team modify fetchr.green seeFriendlyInvisibles true
-team modify fetchr.light_purple seeFriendlyInvisibles true
+team modify fetchr.purple seeFriendlyInvisibles true
+team modify fetchr.dark_red seeFriendlyInvisibles true
+team modify fetchr.orange seeFriendlyInvisibles true
+team modify fetchr.gray seeFriendlyInvisibles true
+team modify fetchr.lime seeFriendlyInvisibles true
+team modify fetchr.magenta seeFriendlyInvisibles true
 team modify fetchr.red seeFriendlyInvisibles true
 team modify fetchr.white seeFriendlyInvisibles true
 team modify fetchr.yellow seeFriendlyInvisibles true

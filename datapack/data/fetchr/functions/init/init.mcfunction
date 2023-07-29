@@ -993,37 +993,37 @@ forceload add 0 0
 
 # setup teams
 	## add
-		team add fetchr.aqua
+		team add fetchr.light_blue
 		team add fetchr.black
 		team add fetchr.blue
-		team add fetchr.dark_aqua
+		team add fetchr.cyan
 		team add fetchr.dark_blue
 		team add fetchr.dark_gray
-		team add fetchr.dark_green
-		team add fetchr.dark_purple
-		team add fetchr.dark_red
-		team add fetchr.gold
-		team add fetchr.gray
 		team add fetchr.green
-		team add fetchr.light_purple
+		team add fetchr.purple
+		team add fetchr.dark_red
+		team add fetchr.orange
+		team add fetchr.gray
+		team add fetchr.lime
+		team add fetchr.magenta
 		team add fetchr.red
 		team add fetchr.white
 		team add fetchr.yellow
 
 	## set colors
-		team modify fetchr.aqua color aqua
+		team modify fetchr.light_blue color aqua
 		team modify fetchr.black color black
 		team modify fetchr.blue color blue
-		team modify fetchr.dark_aqua color dark_aqua
+		team modify fetchr.cyan color dark_aqua
 		team modify fetchr.dark_blue color dark_blue
 		team modify fetchr.dark_gray color dark_gray
-		team modify fetchr.dark_green color dark_green
-		team modify fetchr.dark_purple color dark_purple
+		team modify fetchr.green color dark_green
+		team modify fetchr.purple color dark_purple
 		team modify fetchr.dark_red color dark_red
-		team modify fetchr.gold color gold
+		team modify fetchr.orange color gold
 		team modify fetchr.gray color gray
-		team modify fetchr.green color green
-		team modify fetchr.light_purple color light_purple
+		team modify fetchr.lime color green
+		team modify fetchr.magenta color light_purple
 		team modify fetchr.red color red
 		team modify fetchr.white color white
 		team modify fetchr.yellow color yellow

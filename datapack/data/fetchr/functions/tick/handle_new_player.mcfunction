@@ -5,7 +5,7 @@
 # @within tag/function fetchr:new_player
 # @handles #fetchr:new_player
 
-team join fetchr.dark_green
+team join fetchr.green
 recipe give @s *
 scoreboard players set @s fetchr.card_position 0
 tp ~ 1 ~

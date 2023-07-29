@@ -6,5 +6,5 @@
 # @context
 # 	location The location of the button
 
-team join fetchr.dark_purple @p[tag=fetchr.pressed_button]
+team join fetchr.purple @p[tag=fetchr.pressed_button]
 tellraw @a {"translate":"fetchr.lobby.team_selection.join_purple","with":[{"selector":"@p[tag=fetchr.pressed_button]"}]}
