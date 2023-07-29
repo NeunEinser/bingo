@@ -14,6 +14,7 @@ scoreboard players reset @s fetchr.spectator
 scoreboard players reset @s fetchr.resource_pack_check
 
 tag @s remove fetchr.spectator
+tag @s remove fetchr.in_skybox
 scoreboard players set @s fetchr.update_hud 1
 
 gamemode survival

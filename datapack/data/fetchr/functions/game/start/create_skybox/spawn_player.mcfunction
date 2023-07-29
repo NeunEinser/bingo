@@ -14,6 +14,7 @@ tellraw @s ["[", {"text":"≡", "color":"#00c3ff", "clickEvent":{"action":"run_c
 scoreboard players operation @s fetchr.game_id = $current_game_id fetchr.game_id
 teleport @s ~ ~ ~
 tag @s remove fetchr.spectator
+tag @s add fetchr.in_skybox
 
 scoreboard players reset @s fetchr.pref
 scoreboard players reset @s fetchr.seed

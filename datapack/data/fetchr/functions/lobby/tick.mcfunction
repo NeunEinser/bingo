@@ -6,7 +6,7 @@
 # @within function fetchr:tick/tick
 
 execute as @a[predicate=fetchr:is_in_lobby] run function fetchr:lobby/player_tick
-execute if score $game_state fetchr.state matches 2 run function fetchr:lobby/skybox_tick
+execute if entity @a[tag=fetchr.in_skybox] run function fetchr:lobby/skybox_tick
 
 #change settings
 #execute as @a[scores={fetchr.settings=5..12}] run function fetchr:lobby/player_settings/save/do_action

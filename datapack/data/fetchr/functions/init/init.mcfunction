@@ -135,6 +135,11 @@ forceload add 0 0
 	# @internal
 	#declare tag fetchr.clear
 	#>
+	# Players currently in the skybox.
+	#
+	# @internal
+	#declare tag fetchr.in_skybox
+	#>
 	# This tag is given to players whose inventory should only be checked once, not
 	# waiting for a movement action
 	#

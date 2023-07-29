@@ -15,6 +15,7 @@ fill ~ 62 ~ ~ ~2 ~ minecraft:air replace minecraft:barrier
 
 setblock ~ ~-1 ~ minecraft:lime_stained_glass
 teleport @a[predicate=fetchr:is_in_game] ~ ~ ~
+tag @a remove fetchr.in_skybox
 
 execute in fetchr:lobby run function fetchr:game/start/init_teams
 
