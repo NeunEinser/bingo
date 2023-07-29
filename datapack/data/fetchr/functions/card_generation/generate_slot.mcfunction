@@ -22,13 +22,14 @@ data modify storage fetchr:card slots append value {}
 
 data modify block 7 0 7 front_text.messages[0] set value '["", {"text": "\\u0002", "font": "fetchr:space"}, {"storage": "tmp.fetchr:card_generation", "nbt":"items[-1].icon", "interpret": true}]'
 data modify storage fetchr:card slots[-1].display set from block 7 0 7 front_text.messages[0]
+execute if score $blind_mode fetchr.settings matches 1 run data modify storage fetchr:card slots[-1].display set value '{"text": "\\u0013", "font": "fetchr:space"}'
 
 data modify storage fetchr:card slots[-1].item set from storage tmp.fetchr:card_generation items[-1]
 execute store result storage fetchr:card slots[-1].id int 1 run scoreboard players get $card_gen.slot fetchr.tmp
 #endregion
 
 # set item to frame
-execute as @e[type=minecraft:item_frame, tag=fetchr.card_frame] if score @s fetchr.lobby_card_frame_id = $card_gen.slot fetchr.tmp run data modify entity @s Item set from storage tmp.fetchr:card_generation items[-1].item
+execute unless score $blind_mode fetchr.settings matches 1 as @e[type=minecraft:item_frame, tag=fetchr.card_frame] if score @s fetchr.lobby_card_frame_id = $card_gen.slot fetchr.tmp run data modify entity @s Item set from storage tmp.fetchr:card_generation items[-1].item
 
 execute as @e[type=minecraft:marker, tag=fetchr.command_cloud, limit=1] run function fetchr:card_generation/set_commands
 

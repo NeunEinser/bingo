@@ -808,6 +808,13 @@ forceload add 0 0
 		# @internal
 		#declare score_holder $strict_mode
 		execute unless score $strict_mode fetchr.settings matches 0..2 run scoreboard players set $strict_mode fetchr.settings 2
+		#>
+		# Whether blind mode is enabled. Blind mode means, players cannot see items on
+		# the card until some team has obtained them.
+		#
+		# @internal
+		#declare score_holder $blind_mode
+		scoreboard players add $automatically_pregen fetchr.settings 0
 
 		#>
 		# The current game seed

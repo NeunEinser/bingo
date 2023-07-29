@@ -28,8 +28,7 @@
 # @internal
 #declare storage tmp.fetchr:card_frames
 
-execute if score $card_frames/find_item.slot_id fetchr.tmp matches 0 run data modify storage tmp.fetchr:card_frames foundItem set from storage tmp.fetchr:card_frames slots[0].item.item
-execute if score $card_frames/find_item.slot_id fetchr.tmp matches 0 unless data storage tmp.fetchr:card_frames slots[0].item.item run data modify storage tmp.fetchr:card_frames foundItem set value {id: "minecraft:barrier", Count: 1b}
+execute if score $card_frames/find_item.slot_id fetchr.tmp matches 0 if data storage tmp.fetchr:card_frames slots[0].item.item run data modify storage tmp.fetchr:card_frames foundItem set from storage tmp.fetchr:card_frames slots[0].item.item
 
 data remove storage tmp.fetchr:card_frames slots[0]
 scoreboard players remove $card_frames/find_item.slot_id fetchr.tmp 1
