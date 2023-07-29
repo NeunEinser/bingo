@@ -470,6 +470,7 @@
 	"fetchr.got_item": "[%2$s | #%1$s] %3$s got [%4$s]",
 	"fetchr.got_blackout": "[%s] %s got a blackout!",
 	"fetchr.got_20_no_bingo": "[%s] %s got a 20 no bingo!",
+	"fetchr.won_lockout_race": "[%s] %s won the lockout race!",
 
 	"fetchr.got_bingo.row": "[%s] %s got a bingo in row %s!",
 	"fetchr.got_bingo.col": "[%s] %s got a bingo in col %s!",

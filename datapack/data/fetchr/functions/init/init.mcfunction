@@ -786,6 +786,14 @@ forceload add 0 0
 		#declare score_holder $lobby_generated
 		scoreboard players add $lobby_generated fetchr.state 0
 		#>
+		# Whether the lockout race is determined.
+		# 
+		# This is used to prevent the lockout goal being announced multiple times.
+		# 
+		# @public
+		#declare score_holder $lockout_race_ended
+		scoreboard players add $lockout_race_ended fetchr.state 0
+		#>
 		# The x location of spawn. Is initialized when players are teleported.
 		#
 		# @public
@@ -809,12 +817,20 @@ forceload add 0 0
 		#declare score_holder $strict_mode
 		execute unless score $strict_mode fetchr.settings matches 0..2 run scoreboard players set $strict_mode fetchr.settings 2
 		#>
-		# Whether blind mode is enabled. Blind mode means, players cannot see items on
-		# the card until some team has obtained them.
+		# Whether blind mode is enabled. In blind mode, players cannot see items on the
+		# card until some team has obtained them.
 		#
 		# @internal
 		#declare score_holder $blind_mode
-		scoreboard players add $automatically_pregen fetchr.settings 0
+		scoreboard players add $blind_mode fetchr.settings 0
+		#>
+		# Whether lockout mode is enabled. In lockout mode, items can only be obtained
+		# once by any team. This also adds a special win condition when a team has
+		# obtained an amount of items, no other team can obtain anymore. 
+		#
+		# @internal
+		#declare score_holder $lockout_mode
+		scoreboard players add $lockout_mode fetchr.settings 0
 
 		#>
 		# The current game seed
