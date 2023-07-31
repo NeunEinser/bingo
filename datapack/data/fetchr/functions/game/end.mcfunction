@@ -15,6 +15,7 @@ execute unless score $game_state fetchr.state matches 3 at @e[type=minecraft:mar
 execute at @e[type=minecraft:marker, tag=fetchr.spawn, limit=1] run kill @e[type=!minecraft:player, type=!minecraft:item_frame, tag=!fetchr.skybox_button, distance=..10]
 scoreboard players set $pregen_status fetchr.state 0
 execute in fetchr:default run forceload remove all
+execute in fetchr:default run forceload add 0 0
 execute in fetchr:lobby run function neun_einser.timer:stop
 
 execute as @e[type=minecraft:item_frame, tag=fetchr.card_frame] at @s run setblock ~ ~ ~-1 minecraft:barrier

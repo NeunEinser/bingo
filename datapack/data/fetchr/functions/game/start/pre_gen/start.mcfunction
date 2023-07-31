@@ -16,6 +16,9 @@ scoreboard players set $pregen_status fetchr.state 1
 gamerule doDaylightCycle false
 time set 0
 
+forceload remove all
+forceload add 0 0
+
 #>
 # Spawnpoint x coordinate
 # @within function fetchr:game/start/pre_gen/**
