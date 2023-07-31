@@ -14,8 +14,8 @@
 #declare tag fetchr.got_item
 
 function fetchr:util/find_player_team
-execute unless score $lockout_mode fetchr.settings matches 1 run function fetchr:item_detection/set_overlay
-execute if score $lockout_mode fetchr.settings matches 1 unless data storage tmp.fetchr:item_detection slot{itemCollected: true} run function fetchr:item_detection/set_overlay
+execute unless score $lockout_mode fetchr.state matches 1 run function fetchr:item_detection/set_overlay
+execute if score $lockout_mode fetchr.state matches 1 unless data storage tmp.fetchr:item_detection slot{itemCollected: true} run function fetchr:item_detection/set_overlay
 tag @a[tag=fetchr.in_current_team] add fetchr.got_item
 
 execute if score $item_detect/set_overlay.success fetchr.tmp matches 1 in fetchr:lobby run function fetchr:item_detection/announce

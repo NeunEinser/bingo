@@ -1,13 +1,10 @@
 #> fetchr:lobby/place_sign
 #
-# Places the sign corresponding to the current aec
+# Places the sign corresponding to the current marker
 #
 # @within function fetchr:lobby/place_indestructible_blocks
 # @context
 # 	entity The current sign marker
-
-#>
-# @private
 
 execute if entity @s[tag=fetchr.sign_north] run setblock ~ ~ ~ minecraft:warped_wall_sign[facing=north]
 execute if entity @s[tag=fetchr.sign_east] run setblock ~ ~ ~ minecraft:warped_wall_sign[facing=east]

@@ -56,5 +56,23 @@ tag @s remove fetchr.has_slot22
 tag @s remove fetchr.has_slot23
 tag @s remove fetchr.has_slot24
 
+#>
+# @within
+# 	function fetchr:game/start/create_skybox/spawn_player
+# 	function fetchr:game/start/create_skybox/get_random_team_index
+#declare score_holder $game/start/skybox/player.team
+function fetchr:game/start/create_skybox/get_random_team_index
+
+execute if score $game/start/skybox/player.team fetchr.tmp matches 0 run team join fetchr.red
+execute if score $game/start/skybox/player.team fetchr.tmp matches 1 run team join fetchr.orange
+execute if score $game/start/skybox/player.team fetchr.tmp matches 2 run team join fetchr.yellow
+execute if score $game/start/skybox/player.team fetchr.tmp matches 3 run team join fetchr.lime
+execute if score $game/start/skybox/player.team fetchr.tmp matches 4 run team join fetchr.green
+execute if score $game/start/skybox/player.team fetchr.tmp matches 5 run team join fetchr.cyan
+execute if score $game/start/skybox/player.team fetchr.tmp matches 6 run team join fetchr.light_blue
+execute if score $game/start/skybox/player.team fetchr.tmp matches 7 run team join fetchr.blue
+execute if score $game/start/skybox/player.team fetchr.tmp matches 8 run team join fetchr.purple
+execute if score $game/start/skybox/player.team fetchr.tmp matches 9 run team join fetchr.magenta
+
 execute in fetchr:lobby run function fetchr:custom_hud/components/timer/update
 bossbar set fetchr:start/pre_gen/progress players @a[predicate=fetchr:is_in_game]

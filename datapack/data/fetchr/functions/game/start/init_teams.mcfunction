@@ -84,7 +84,7 @@ data modify storage tmp.fetchr:game/start backgroundTemplates set from storage f
 #declare score_holder $game/start.team_count
 scoreboard players operation $game/start.team_count fetchr.tmp = $team_count fetchr.state
 function fetchr:game/start/get_completed_background_template
-execute if score $lockout_mode fetchr.settings matches 1 run data modify storage tmp.fetchr:game/start backgroundTemplate[] set value '"\\uf000"'
+execute if score $lockout_mode fetchr.state matches 1 run data modify storage tmp.fetchr:game/start backgroundTemplate[] set value '"\\uf000"'
 
 data modify storage tmp.fetchr:game/start defaultBackground set value []
 
@@ -105,4 +105,4 @@ execute if entity @a[predicate=fetchr:is_in_game, team=fetchr.gray,limit=1] run 
 execute if entity @a[predicate=fetchr:is_in_game, team=fetchr.dark_gray,limit=1] run function fetchr:game/start/init_teams/dark_gray
 execute if entity @a[predicate=fetchr:is_in_game, team=fetchr.black,limit=1] run function fetchr:game/start/init_teams/black
 
-execute unless score $lockout_mode fetchr.settings matches 1 run data modify storage fetchr:card slots[].background set from storage tmp.fetchr:game/start defaultBackground
+execute unless score $lockout_mode fetchr.state matches 1 run data modify storage fetchr:card slots[].background set from storage tmp.fetchr:game/start defaultBackground

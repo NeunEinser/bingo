@@ -37,7 +37,7 @@ execute store result score $item_detect/announce.has_bingo fetchr.tmp run data g
 # Update completed indicator
 execute store result score $item_detect/announce.background_index fetchr.tmp run data get storage fetchr:card teams[-1].backgroundIndex
 data modify storage tmp.fetchr:item_detection skippedBackgrounds set value []
-execute unless score $lockout_mode fetchr.settings matches 1 run function fetchr:item_detection/find_background
+execute unless score $lockout_mode fetchr.state matches 1 run function fetchr:item_detection/find_background
 data modify storage tmp.fetchr:item_detection slot.background prepend from storage fetchr:card teams[-1].background
 data modify storage tmp.fetchr:item_detection slot.background prepend from storage tmp.fetchr:item_detection skippedBackgrounds[]
 
@@ -48,6 +48,6 @@ data modify storage tmp.fetchr:item_detection slot.itemCollected set value true
 # detect goals
 execute if score $item_detect/announce.has_bingo fetchr.tmp matches 0 run function fetchr:item_detection/goals/bingo/detect_bingo_and_20_no_bingo
 execute if score $item_detect/announce.items fetchr.tmp matches 25 run function fetchr:item_detection/goals/announce_blackout
-execute if score $lockout_mode fetchr.settings matches 1 unless score $lockout_race_ended fetchr.state matches 1 run function fetchr:item_detection/goals/lockout/detect
+execute if score $lockout_mode fetchr.state matches 1 unless score $lockout_race_ended fetchr.state matches 1 run function fetchr:item_detection/goals/lockout/detect
 
 scoreboard players set $update_card fetchr.state 1

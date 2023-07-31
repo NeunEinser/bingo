@@ -7,4 +7,5 @@
 scoreboard players operation $rand.seed 91.math.io = @s fetchr.seed
 scoreboard players reset @s fetchr.seed
 
+scoreboard players set $blind_mode fetchr.state 0
 execute in fetchr:lobby run function fetchr:card_generation/generate_card

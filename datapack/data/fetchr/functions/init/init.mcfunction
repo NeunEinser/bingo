@@ -371,7 +371,7 @@ forceload add 0 0
 		#declare tag fetchr.has_slot24
 	#endregion
 
-	#region lobby signs
+	#region lobby blocks
 		#>
 		# @within
 		# 	function fetchr:init/setup_lobby/start
@@ -379,6 +379,11 @@ forceload add 0 0
 		# 	function fetchr:lobby/place_indestructible_blocks
 		# 	structure fetchr:*
 		#declare tag fetchr.lobby_sign
+		#>
+		# @within
+		# 	function fetchr:lobby/place_indestructible_blocks
+		# 	structure fetchr:*
+		#declare tag fetchr.multiplayer_only
 		#>
 		# @within
 		# 	function fetchr:lobby/place_sign
@@ -402,17 +407,46 @@ forceload add 0 0
 		#declare tag fetchr.sign_west
 		#>
 		# @within
-		# 	function fetchr:lobby/player_tick
-		# 	structure fetchr:tutorial
-		#declare tag fetchr.sign_automatically_pregen
+		# 	function fetchr:lobby/settings/toggle_blind_mode
+		# 	structure fetchr:card_generation
+		#declare tag fetchr.blind_mode_sign
+		#>
+		# @within
+		# 	function fetchr:lobby/settings/toggle_lockout_mode
+		# 	structure fetchr:card_generation
+		#declare tag fetchr.lockout_mode_sign
 		#>
 		# @within
 		# 	function fetchr:lobby/place_sign
 		# 	structure fetchr:tutorial
 		#declare tag fetchr.sign_strict_mode
-	#endregion
-
-	#region lobby buttons
+		#>
+		# @within
+		# 	function fetchr:init/setup_lobby/start
+		# 	function fetchr:init/setup_lobby/end
+		# 	function fetchr:lobby/place_indestructible_blocks
+		# 	structure fetchr:*
+		#declare tag fetchr.lobby_lectern
+		#>
+		# @within
+		# 	function fetchr:lobby/place_lectern
+		# 	structure fetchr:*
+		#declare tag fetchr.lectern_north
+		#>
+		# @within
+		# 	function fetchr:lobby/place_lectern
+		# 	structure fetchr:*
+		#declare tag fetchr.lectern_east
+		#>
+		# @within
+		# 	function fetchr:lobby/place_lectern
+		# 	structure fetchr:*
+		#declare tag fetchr.lectern_south
+		#>
+		# @within
+		# 	function fetchr:lobby/place_lectern
+		# 	structure fetchr:*
+		#declare tag fetchr.lectern_west
 		#>
 		# @within
 		# 	function fetchr:lobby/**
@@ -425,61 +459,6 @@ forceload add 0 0
 		# 	function fetchr:lobby/**
 		# 	structure fetchr:card_generation
 		#declare tag fetchr.pressed_button
-		#>
-		# @within
-		# 	function fetchr:lobby/place_indestructible_blocks
-		# 	structure fetchr:card_generation
-		#declare tag fetchr.lobby_button
-		#>
-		# @within
-		# 	function fetchr:lobby/place_indestructible_blocks
-		# 	structure fetchr:card_generation
-		#declare tag fetchr.button_red
-		#>
-		# @within
-		# 	function fetchr:lobby/place_indestructible_blocks
-		# 	structure fetchr:card_generation
-		#declare tag fetchr.button_orange
-		#>
-		# @within
-		# 	function fetchr:lobby/place_indestructible_blocks
-		# 	structure fetchr:card_generation
-		#declare tag fetchr.button_yellow
-		#>
-		# @within
-		# 	function fetchr:lobby/place_indestructible_blocks
-		# 	structure fetchr:card_generation
-		#declare tag fetchr.button_lime
-		#>
-		# @within
-		# 	function fetchr:lobby/place_indestructible_blocks
-		# 	structure fetchr:card_generation
-		#declare tag fetchr.button_green
-		#>
-		# @within
-		# 	function fetchr:lobby/place_indestructible_blocks
-		# 	structure fetchr:card_generation
-		#declare tag fetchr.button_cyan
-		#>
-		# @within
-		# 	function fetchr:lobby/place_indestructible_blocks
-		# 	structure fetchr:card_generation
-		#declare tag fetchr.button_light_blue
-		#>
-		# @within
-		# 	function fetchr:lobby/place_indestructible_blocks
-		# 	structure fetchr:card_generation
-		#declare tag fetchr.button_blue
-		#>
-		# @within
-		# 	function fetchr:lobby/place_indestructible_blocks
-		# 	structure fetchr:card_generation
-		#declare tag fetchr.button_purple
-		#>
-		# @within
-		# 	function fetchr:lobby/place_indestructible_blocks
-		# 	structure fetchr:card_generation
-		#declare tag fetchr.button_magenta
 	#endregion
 #endregion
 
@@ -822,7 +801,7 @@ forceload add 0 0
 		#
 		# @internal
 		#declare score_holder $blind_mode
-		scoreboard players add $blind_mode fetchr.settings 0
+		scoreboard players add $blind_mode fetchr.state 0
 		#>
 		# Whether lockout mode is enabled. In lockout mode, items can only be obtained
 		# once by any team. This also adds a special win condition when a team has
@@ -830,7 +809,7 @@ forceload add 0 0
 		#
 		# @internal
 		#declare score_holder $lockout_mode
-		scoreboard players add $lockout_mode fetchr.settings 0
+		scoreboard players add $lockout_mode fetchr.state 0
 
 		#>
 		# The current game seed

@@ -6,6 +6,8 @@
 # @context
 # 	entity The player who wants to go back to the lobby
 
+team leave @s
+
 effect clear @s
 execute in fetchr:lobby run teleport @s -8.5 3 7.5 180 0
 execute at @s run spawnpoint
