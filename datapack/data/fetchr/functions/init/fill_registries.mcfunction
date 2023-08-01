@@ -344,9 +344,9 @@ data modify storage fetchr:registries items append value {id: "fetchr:glow_item_
 data modify storage fetchr:registries items append value {id: "fetchr:pointed_dripstone", item: {id: "minecraft:pointed_dripstone"}, textComponent: '{"translate": "block.minecraft.pointed_dripstone", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:pointed_dripstone"}}}', icon: '"\\u005f"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:pointed_dripstone 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:pointed_dripstone 1", categories: ["fetchr:dripstone_cave"]}
 
 ## 0060: hanging_roots
-data modify storage fetchr:registries items append value {id: "fetchr:hanging_roots", item: {id: "minecraft:hanging_roots"}, textComponent: '{"translate": "block.minecraft.hanging_roots", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:hanging_roots"}}}', icon: '"\\u0060"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:hanging_roots 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:hanging_roots 1", categories: ["fetchr:shearable"], weight: 2}
+data modify storage fetchr:registries items append value {id: "fetchr:hanging_roots", item: {id: "minecraft:hanging_roots"}, textComponent: '{"translate": "block.minecraft.hanging_roots", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:hanging_roots"}}}', icon: '"\\u0060"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:hanging_roots 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:hanging_roots 1", categories: ["fetchr:lush_cave"], weight: 2}
 
-## 0061: hanging_roots
+## 0061: glow_lichen
 data modify storage fetchr:registries items append value {id: "fetchr:glow_lichen", item: {id: "minecraft:glow_lichen"}, textComponent: '{"translate": "block.minecraft.glow_lichen", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:glow_lichen"}}}', icon: '"\\u0061"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:glow_lichen 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:glow_lichen 1", categories: ["fetchr:shearable"], weight: 2}
 
 ## 0062: amethyst_shard
