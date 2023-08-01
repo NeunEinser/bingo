@@ -18,6 +18,7 @@ teleport @a[predicate=fetchr:is_in_game] ~ ~ ~
 tag @a remove fetchr.in_skybox
 
 execute in fetchr:lobby run function fetchr:game/start/init_teams
+execute if score $team_count fetchr.state matches 1 run scoreboard players set $lockout_mode fetchr.state 0
 
 teleport @e[type=!minecraft:player, type=!minecraft:marker, type=!minecraft:bee, type=!minecraft:item, tag=!fetchr.generated_entity, distance=..10000] ~ -128 ~
 
