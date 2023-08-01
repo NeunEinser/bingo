@@ -11,6 +11,5 @@ execute if entity @s[tag=fetchr.sign_east] run setblock ~ ~ ~ minecraft:warped_w
 execute if entity @s[tag=fetchr.sign_south] run setblock ~ ~ ~ minecraft:warped_wall_sign[facing=south]
 execute if entity @s[tag=fetchr.sign_west] run setblock ~ ~ ~ minecraft:warped_wall_sign[facing=west]
 
-execute if entity @s[tag=fetchr.sign_strict_mode] run function fetchr:lobby/place_special_sign/strict_mode
-
 data modify block ~ ~ ~ {} merge from entity @s data
+execute if entity @s[tag=fetchr.sign_strict_mode] run function fetchr:lobby/place_special_sign/strict_mode
