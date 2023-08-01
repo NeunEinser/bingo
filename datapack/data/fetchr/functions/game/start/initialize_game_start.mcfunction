@@ -24,5 +24,5 @@ teleport @e[type=!minecraft:player, type=!minecraft:marker, type=!minecraft:bee,
 
 # Minecraft sucks and creates item entities when replacing blocks because of order issues.
 # @slicedlime fix your game
-teleport @e[type=minecraft:item, distance=..8] ~ -128 ~
+teleport @e[type=minecraft:item, distance=..9] ~ -128 ~
 schedule function fetchr:game/start/end_of_skybox 2s
