@@ -224,14 +224,13 @@
 	"fetchr.lobby.card_generation.from_seed.instructions.link": "Click here",
 	"fetchr.lobby.card_generation.from_seed.explanation": "The seed determines which items generate on the bingo card and where you spawn. You can use this for example for competitive races, where everyone is using the same seed.",
 
-	"fetchr.lobby.card_generation.join_game.error.no_card": "You have to generate a card before joining a game.",
-	"fetchr.lobby.card_generation.join_game.error.not_ready": "The game is not ready yet, try again in a few seconds.",
-	"fetchr.lobby.card_generation.join_game.error.in_progress": "You cannot join an ongoing game. If you want to start a new game, generate a new card first.",
-
 	"fetchr.lobby.card_generation.join_game.sign.line1": "",
 	"fetchr.lobby.card_generation.join_game.sign.line2": "Join",
 	"fetchr.lobby.card_generation.join_game.sign.line3": "Game",
 	"fetchr.lobby.card_generation.join_game.sign.line4": "",
+	"fetchr.lobby.card_generation.join_game.not_ready": "The game is not ready yet. You will automatically join the game once it is.",
+	"fetchr.lobby.card_generation.join_game.error.no_card": "You have to generate a card before joining a game.",
+	"fetchr.lobby.card_generation.join_game.error.in_progress": "You cannot join an ongoing game. If you want to start a new game, generate a new card first.",
 
 	"fetchr.lobby.card_generation.crafting_table.sign.line1": "Crafting",
 	"fetchr.lobby.card_generation.crafting_table.sign.line2": "Recipe",

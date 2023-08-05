@@ -152,6 +152,11 @@ forceload add 0 0
 	# @internal
 	#declare tag fetchr.position_changed
 	#>
+	# This tag is used to automatically make these players join the game when the
+	# skybox is ready
+	# @internal
+	#declare tag fetchr.automatically_join_game
+	#>
 	# This marks an entity which is used to teleport to a player and read position
 	# data. Reading from the the player position directly is super expensive
 	# Because MC serializes the entire recipe book.

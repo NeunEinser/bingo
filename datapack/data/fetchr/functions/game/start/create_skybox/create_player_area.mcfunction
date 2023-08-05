@@ -17,7 +17,7 @@ execute as @a[predicate=fetchr:is_in_game] run forceload add ~-1 ~-1 ~1 ~1
 execute as @a[predicate=fetchr:is_in_game] positioned ~7 ~1 ~7 run function fetchr:game/start/create_skybox/spawn_player
 execute at @e[type=minecraft:item_frame, tag=fetchr.card_frame, scores={fetchr.lobby_card_frame_id=0}, distance=100.., limit=1] run clone ~ ~-4 ~-1 ~4 ~ ~-1 0 315 0
 execute at @e[type=minecraft:marker, tag=fetchr.card_frame_start, distance=..8, limit=1] run clone 0 315 0 4 319 0 ~ ~-4 ~-1
-execute unless score $is_multiplayer fetchr.tmp matches 1 positioned ~7 ~1 ~7 as @a[predicate=fetchr:is_in_lobby] run function fetchr:game/start/create_skybox/spawn_player
+execute positioned ~7 ~1 ~7 as @a[predicate=fetchr:is_in_lobby, tag=fetchr.automatically_join_game] run function fetchr:game/start/create_skybox/spawn_player
 fill 0 315 0 4 319 0 minecraft:air
 
 function fetchr:card_frames/spawn
