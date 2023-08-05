@@ -535,6 +535,13 @@ forceload add 0 0
 		scoreboard players enable @a[predicate=fetchr:is_in_game] fetchr.lobby
 
 		#>
+		# Trigger objective for revealing the card in blind mode.
+		#
+		# @internal
+		# @user
+		scoreboard objectives add fetchr.reveal_card trigger
+
+		#>
 		# Trigger objective for displaying the Fetchr menu during a game.
 		#
 		# @internal
