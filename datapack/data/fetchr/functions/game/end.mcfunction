@@ -23,3 +23,6 @@ execute in fetchr:lobby run data modify block 5 3 5 auto set value false
 
 scoreboard players add $current_game_id fetchr.game_id 1
 scoreboard players set $game_state fetchr.state 0
+
+scoreboard players operation $blind_mode fetchr.state = $blind_mode fetchr.settings
+scoreboard players operation $lockout_mode fetchr.state = $lockout_mode fetchr.settings

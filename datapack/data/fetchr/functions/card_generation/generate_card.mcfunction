@@ -84,7 +84,6 @@ execute as @e[tag=fetchr.card_frame, scores={fetchr.lobby_card_frame_id=12}, dis
 bossbar set fetchr:start/pre_gen/progress visible false
 
 function fetchr:custom_hud/components/timer/update
-scoreboard players operation $lockout_mode fetchr.state = $lockout_mode fetchr.settings
 
 #>
 # @api
