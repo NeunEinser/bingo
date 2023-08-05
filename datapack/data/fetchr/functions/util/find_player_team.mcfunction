@@ -28,6 +28,7 @@
 #declare storage tmp.fetchr:find_team
 
 tag @a remove fetchr.in_current_team
+execute if score $game_state fetchr.state matches ..2 run return 0
 
 execute if entity @s[team=fetchr.light_blue] run function fetchr:util/find_player_team/light_blue
 execute if entity @s[team=fetchr.black] run function fetchr:util/find_player_team/black
@@ -45,3 +46,4 @@ execute if entity @s[team=fetchr.magenta] run function fetchr:util/find_player_t
 execute if entity @s[team=fetchr.red] run function fetchr:util/find_player_team/red
 execute if entity @s[team=fetchr.white] run function fetchr:util/find_player_team/white
 execute if entity @s[team=fetchr.yellow] run function fetchr:util/find_player_team/yellow
+execute if entity @s[team=] run function fetchr:util/find_player_team/none

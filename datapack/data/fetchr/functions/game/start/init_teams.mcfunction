@@ -105,4 +105,7 @@ execute if entity @a[predicate=fetchr:is_in_game, team=fetchr.gray,limit=1] run 
 execute if entity @a[predicate=fetchr:is_in_game, team=fetchr.dark_gray,limit=1] run function fetchr:game/start/init_teams/dark_gray
 execute if entity @a[predicate=fetchr:is_in_game, team=fetchr.black,limit=1] run function fetchr:game/start/init_teams/black
 
+data modify storage fetchr:card teams[].slots set value ['"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"']
+data modify storage fetchr:card teams[].card set from storage fetchr:card teams[0].card
+
 execute unless score $lockout_mode fetchr.state matches 1 run data modify storage fetchr:card slots[].background set from storage tmp.fetchr:game/start defaultBackground
