@@ -26,6 +26,7 @@ scoreboard players set $game_state fetchr.state 0
 
 scoreboard players operation $blind_mode fetchr.state = $blind_mode fetchr.settings
 scoreboard players operation $lockout_mode fetchr.state = $lockout_mode fetchr.settings
+team leave @a[predicate=fetchr:is_in_lobby]
 
 tag @a remove fetchr.automatically_join_game
 tag @s add fetchr.automatically_join_game

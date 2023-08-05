@@ -6,7 +6,8 @@
 # @context
 # 	entity The player who wants to go back to the lobby
 
-team leave @s
+execute unless score $game_state fetchr.state matches 3 run team leave @s
+execute unless score @s fetchr.game_id = $current_game_id fetchr.game_id run team leave @s
 
 effect clear @s
 execute in fetchr:lobby run teleport @s -8.5 3 7.5 180 0
