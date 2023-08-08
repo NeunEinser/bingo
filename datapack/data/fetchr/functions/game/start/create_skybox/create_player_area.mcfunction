@@ -21,3 +21,5 @@ execute positioned ~7 ~1 ~7 as @a[predicate=fetchr:is_in_lobby, tag=fetchr.autom
 fill 0 315 0 4 319 0 minecraft:air
 
 function fetchr:card_frames/spawn
+function fetchr:game/start/pre_gen/schedule_unload
+function fetchr:game/start/pre_gen/schedule_entity_check

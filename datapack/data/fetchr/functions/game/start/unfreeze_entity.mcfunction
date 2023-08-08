@@ -4,8 +4,13 @@
 # chickens
 #
 # @context entity The entity to hanlde
-# @within function fetchr:game/start/start_game
+# @within
+# 	function fetchr:game/start/start_game
+# 	function fetchr:game/start/pre_gen/unload/unload_chunk
 
-data merge entity @s {NoAI: false, PersistenceRequired: false, IsChickenJockey: false}
+teleport @s[type=!#fetchr:keep_on_game_start, tag=!fetchr.generated_entity] ~ -128 ~
+kill @s[type=!#fetchr:keep_on_game_start, tag=!fetchr.generated_entity]
+
+data merge entity @s {Age: 0s, NoGravity: false, NoAI: false, PersistenceRequired: false, IsChickenJockey: false}
 execute if entity @s[tag=fetchr.persistance_required] run data modify entity @s PersistenceRequired set value true
 execute if entity @s[type=minecraft:chicken, tag=fetchr.chicken_jockey] run data modify entity @s IsChickenJockey set value true

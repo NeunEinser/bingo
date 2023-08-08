@@ -75,6 +75,7 @@ scoreboard players operation $spawn_x fetchr.state *= 16 fetchr.const
 scoreboard players operation $game_start/pre_gen/generate.x fetchr.tmp = $game_start/pre_gen.spawn_x fetchr.tmp
 scoreboard players operation $game_start/pre_gen/entities.x fetchr.tmp = $game_start/pre_gen.spawn_x fetchr.tmp
 scoreboard players operation $game_start/pre_gen/unload.x fetchr.tmp = $game_start/pre_gen.spawn_x fetchr.tmp
+scoreboard players add $game_start/pre_gen/unload.x fetchr.tmp 10
 
 #Spawn z: $result >> 16
 execute store result score $game_start/pre_gen.spawn_z fetchr.tmp run data get storage fetchr:card spawnLocation
@@ -87,6 +88,8 @@ scoreboard players operation $spawn_z fetchr.state *= 16 fetchr.const
 scoreboard players operation $game_start/pre_gen/generate.z fetchr.tmp = $game_start/pre_gen.spawn_z fetchr.tmp
 scoreboard players operation $game_start/pre_gen/entities.z fetchr.tmp = $game_start/pre_gen.spawn_z fetchr.tmp
 scoreboard players operation $game_start/pre_gen/unload.z fetchr.tmp = $game_start/pre_gen.spawn_z fetchr.tmp
+scoreboard players remove $game_start/pre_gen/unload.z fetchr.tmp 9
+
 
 #>
 # The current step
@@ -108,7 +111,7 @@ scoreboard players set $game_start/pre_gen/entities.i fetchr.tmp 0
 # @within
 # 	function fetchr:game/start/pre_gen/**
 #declare score_holder $game_start/pre_gen/unload.i
-scoreboard players set $game_start/pre_gen/unload.i fetchr.tmp 0
+scoreboard players set $game_start/pre_gen/unload.i fetchr.tmp 361
 
 #>
 # The timestamp in miliseconds this iteration started
@@ -142,7 +145,7 @@ scoreboard players set $game_start/pre_gen/entities.remaining_in_dir fetchr.tmp 
 # 	function fetchr:game/start/pre_gen/*
 # 	function fetchr:game/start/pre_gen/unload/*
 #declare score_holder $game_start/pre_gen/unload.remaining_in_dir
-scoreboard players set $game_start/pre_gen/unload.remaining_in_dir fetchr.tmp 1
+scoreboard players set $game_start/pre_gen/unload.remaining_in_dir fetchr.tmp 19
 
 #>
 # Remaining chunks in current direction
@@ -192,7 +195,7 @@ scoreboard players set $game_start/pre_gen/entities.direction fetchr.tmp 3
 # 	function fetchr:game/start/pre_gen/*
 # 	function fetchr:game/start/pre_gen/unload/*
 #declare score_holder $game_start/pre_gen/unload.direction
-scoreboard players set $game_start/pre_gen/unload.direction fetchr.tmp 3
+scoreboard players set $game_start/pre_gen/unload.direction fetchr.tmp 0
 
 #>
 # Time last tick
@@ -204,7 +207,7 @@ scoreboard players set $game_start/pre_gen/unload.direction fetchr.tmp 3
 scoreboard players set $game_start/pre_gen.last_tick_time fetchr.tmp 0
 function neun_einser.timer:start/millis
 #todo configurable max
-bossbar set fetchr:start/pre_gen/progress max 1681
+bossbar set fetchr:start/pre_gen/progress max 361
 bossbar set fetchr:start/pre_gen/progress value 9
 
 function fetchr:game/start/pre_gen/goto_current_chunk

@@ -182,16 +182,12 @@ forceload add 0 0
 	#>
 	# Tag for entities that where already persistent.
 	#
-	# @within
-	# 	function fetchr:game/start/pre_gen/entities/process_entity
-	# 	function fetchr:game/start/unfreeze_entity
+	# @within function fetchr:game/start/**
 	#declare tag fetchr.persistance_required
 	#>
 	# Tag for chickens that where already chicken jockeys.
 	#
-	# @within
-	# 	function fetchr:game/start/pre_gen/entities/process_entity
-	# 	function fetchr:game/start/unfreeze_entity
+	# @within function fetchr:game/start/**
 	#declare tag fetchr.chicken_jockey
 	#>
 	# This tag is given to players who are currently verifying their resource pack

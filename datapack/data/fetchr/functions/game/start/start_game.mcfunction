@@ -4,8 +4,7 @@
 #
 # @within function fetchr:game/start/countdown
 
-teleport @e[type=!minecraft:player, type=!minecraft:marker, type=!minecraft:bee, type=!minecraft:item, tag=!fetchr.generated_entity, distance=..10000] ~ -128 ~
-execute as @e[tag=fetchr.generated_entity, distance=..10000] run function fetchr:game/start/unfreeze_entity
+execute as @e[distance=..10000] run function fetchr:game/start/unfreeze_entity
 
 forceload remove all
 forceload add 0 0
