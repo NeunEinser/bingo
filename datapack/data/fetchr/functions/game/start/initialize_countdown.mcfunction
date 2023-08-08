@@ -17,6 +17,9 @@
 #declare score_holder $start_game.countdown
 scoreboard players set $start_game.countdown fetchr.tmp 3
 
+teleport @e[type=!#fetchr:keep_on_game_start, tag=!fetchr.generated_entity, distance=..10000] ~ -128 ~
+kill @e[y=-128, distance=..1]
+
 spawnpoint @a[predicate=fetchr:is_in_game] ~ ~ ~
 execute as @a[predicate=fetchr:is_in_game, gamemode=adventure] rotated as @s run teleport @s ~ ~ ~
 
