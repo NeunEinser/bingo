@@ -3,9 +3,18 @@
 # @within function fetchr:game/start/pre_gen/move_z/21
 
 #>
+# 1 = generate
+# 2 = process entities
+# 3 = unload
+# @within function fetchr:game/start/pre_gen/**
+#declare score_holder $game_start/pre_gen/goto.type
+
+#>
 # @within function fetchr:game/start/pre_gen/**
 #declare score_holder $game_start/pre_gen.end_for_tick
 scoreboard players set $game_start/pre_gen.end_for_tick fetchr.tmp 0
+
+#tellraw NeunEinser ["goto type: ",{"score":{"name":"$game_start/pre_gen/goto.type","objective":"fetchr.tmp"}}]
 
 execute if score $game_start/pre_gen/goto.type fetchr.tmp matches 1 run function fetchr:game/start/pre_gen/generate/generate_chunk
 execute if score $game_start/pre_gen/goto.type fetchr.tmp matches 2 run function fetchr:game/start/pre_gen/entities/process_entities

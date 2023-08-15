@@ -27,6 +27,5 @@ teleport @e[type=!#fetchr:keep_on_game_start, tag=!fetchr.generated_entity, dist
 teleport @e[type=minecraft:item, distance=..9] ~ -128 ~
 kill @e[y=-128, distance=..1]
 
-schedule clear fetchr:game/start/pre_gen/schedule_unload
 schedule clear fetchr:game/start/pre_gen/schedule_entity_check
 schedule function fetchr:game/start/end_of_skybox 2s

@@ -2,8 +2,7 @@
 	"values": [
 		"minecraft:player",
 		"minecraft:item",
-		"minecraft:falling_block",
 		"minecraft:marker",
-		"minecraft:bee"
+		"minecraft:falling_block"
 	]
 }

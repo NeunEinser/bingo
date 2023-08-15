@@ -4,6 +4,7 @@
 		"minecraft:item",
 		"minecraft:falling_block",
 		"minecraft:marker",
-		"minecraft:bee"
+		"minecraft:item_display",
+		"minecraft:item_frame"
 	]
 }

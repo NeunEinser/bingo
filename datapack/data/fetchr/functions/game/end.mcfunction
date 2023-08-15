@@ -8,7 +8,6 @@ scoreboard players reset * fetchr.lobby
 scoreboard players reset $spawn_x fetchr.state
 scoreboard players reset $spawn_z fetchr.state
 
-schedule clear fetchr:game/start/pre_gen/schedule_unload
 schedule clear fetchr:game/start/pre_gen/schedule_entity_check
 
 execute if score $game_state fetchr.state matches 3 as @a[predicate=fetchr:is_in_game] run function fetchr:util/go_to_lobby

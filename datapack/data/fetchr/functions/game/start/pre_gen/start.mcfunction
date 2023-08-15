@@ -208,6 +208,6 @@ scoreboard players set $game_start/pre_gen.last_tick_time fetchr.tmp 0
 function neun_einser.timer:start/millis
 #todo configurable max
 bossbar set fetchr:start/pre_gen/progress max 361
-bossbar set fetchr:start/pre_gen/progress value 9
+bossbar set fetchr:start/pre_gen/progress value 0
 
-function fetchr:game/start/pre_gen/goto_current_chunk
+function fetchr:game/start/pre_gen/generate_and_process

@@ -8,7 +8,6 @@ execute unless loaded ~ ~ ~ run scoreboard players set $game_start/pre_gen.end_f
 execute if score $game_start/pre_gen/entities.i fetchr.tmp >= $game_start/pre_gen/generate.i fetchr.tmp run scoreboard players set $game_start/pre_gen.end_for_tick fetchr.tmp 1
 execute if score $game_start/pre_gen.end_for_tick fetchr.tmp matches 1 run return 0
 
-forceload add ~ ~
 scoreboard players add $game_start/pre_gen/entities.i fetchr.tmp 1
 
 execute if score $game_start/pre_gen/entities.remaining_in_dir fetchr.tmp matches 0 run function fetchr:game/start/pre_gen/entities/change_dir

@@ -12,7 +12,8 @@
 # scoreboard players operation $z fetchr.tmp -= $spawn_z fetchr.state
 # tellraw NeunEinser [{"selector": "@s"}, ": ", {"score": {"name": "$x", "objective": "fetchr.tmp"}}, ", ", {"entity": "@s", "nbt": "Pos[1]"}, ", ", {"score": {"name": "$z", "objective": "fetchr.tmp"}}]
 
-forceload add ~ ~
+execute if entity @s[tag=fetchr.generated_entity] run return 0
+execute unless entity @s[type=!#fetchr:do_not_forceload] run forceload add ~ ~
 
 tag @s add fetchr.generated_entity
 tag @s[nbt={PersistenceRequired: true}] add fetchr.persistance_required

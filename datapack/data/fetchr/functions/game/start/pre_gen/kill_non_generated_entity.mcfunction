@@ -4,7 +4,10 @@
 #
 # @within function fetchr:game/start/pre_gen/check_entities
 
-#execute if entity @s[type=!minecraft:zombie, type=!minecraft:spider, type=!minecraft:skeleton, type=!minecraft:enderman, type=!minecraft:witch] run say @s
+execute if entity @s[type=minecraft:bee] run function fetchr:game/start/pre_gen/freeze_entity
+execute if entity @s[type=minecraft:bee] run return 0
 
-teleport @s ~151 -128 ~151 
+# data modify entity @s Glowing set value true
+
+teleport @s ~151 -128 ~151
 kill @s
