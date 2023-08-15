@@ -2,7 +2,7 @@
 #
 # Sets teams up for playing and skybox
 #
-# @within function fetchr:game/start/initialize_game_start
+# @within function fetchr:game/start/start_spawn_sequence
 # @context location fetchr:lobby
 
 # Make teammates fully invisible in the skybox

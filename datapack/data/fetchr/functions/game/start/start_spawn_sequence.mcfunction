@@ -1,9 +1,9 @@
-#> fetchr:game/start/initialize_game_start
+#> fetchr:game/start/start_spawn_sequence
 #
 # This function is called when a player starts the game and either starts pre-
 # generating or spawns the skybox.
 #
-# @within function fetchr:game/start/check_and_start
+# @within function fetchr:game/start/start_if_ready
 
 kill @e[type=minecraft:marker, tag=fetchr.skybox_button, distance=..8]
 kill @e[type=minecraft:item_frame, tag=fetchr.card_frame, distance=..8]
@@ -16,6 +16,7 @@ fill ~ 62 ~ ~ ~2 ~ minecraft:air replace minecraft:barrier
 setblock ~ ~-1 ~ minecraft:lime_stained_glass
 teleport @a[predicate=fetchr:is_in_game] ~ ~ ~
 tag @a remove fetchr.in_skybox
+effect give @a[predicate=fetchr:is_in_game] minecraft:invisibility infinite 1 true
 
 execute in fetchr:lobby run function fetchr:game/start/init_teams
 execute if score $team_count fetchr.state matches 1 run scoreboard players set $lockout_mode fetchr.state 0
@@ -28,4 +29,4 @@ teleport @e[type=minecraft:item, distance=..9] ~ -128 ~
 kill @e[y=-128, distance=..1]
 
 schedule clear fetchr:game/start/pre_gen/schedule_entity_check
-schedule function fetchr:game/start/end_of_skybox 2s
+schedule function fetchr:game/start/start_falling 2s
