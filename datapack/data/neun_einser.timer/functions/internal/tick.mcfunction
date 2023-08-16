@@ -6,4 +6,4 @@
 # @within tag/function minecraft:tick
 # @handles #minecraft:tick
 
-scoreboard players add $ticks 91.timer.intern 1
+execute if score $in_game 91.timer.intern matches 1 if score $count_pauses 91.timer.io matches 1 unless entity @a[limit=1] run scoreboard players add $ticks 91.timer.intern 1

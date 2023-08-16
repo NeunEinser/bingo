@@ -25,12 +25,12 @@ execute if score $game_state fetchr.state matches 0..1 run data modify storage i
 # @within function fetchr:custom_hud/components/timer/**
 #declare score_holder $custom_hud/timer.padding
 scoreboard players set $custom_hud/timer.padding fetchr.tmp 33
-execute if score $hours 91.timer.time matches ..99 run scoreboard players add $custom_hud/timer.padding fetchr.tmp 6
-execute if score $hours 91.timer.time matches ..9 run scoreboard players add $custom_hud/timer.padding fetchr.tmp 6
-execute if score $hours 91.timer.time matches 0 run scoreboard players add $custom_hud/timer.padding fetchr.tmp 8
-execute if score $hours 91.timer.time matches 0 if score $minutes 91.timer.time matches ..9 run scoreboard players add $custom_hud/timer.padding fetchr.tmp 6
-execute if score $hours 91.timer.time matches 0 if score $minutes 91.timer.time matches 0 run scoreboard players add $custom_hud/timer.padding fetchr.tmp 8
-execute if score $hours 91.timer.time matches 0 if score $minutes 91.timer.time matches 0 if score $seconds 91.timer.time matches ..9 run scoreboard players add $custom_hud/timer.padding fetchr.tmp 6
+execute if score $hours 91.timer.io matches ..99 run scoreboard players add $custom_hud/timer.padding fetchr.tmp 6
+execute if score $hours 91.timer.io matches ..9 run scoreboard players add $custom_hud/timer.padding fetchr.tmp 6
+execute if score $hours 91.timer.io matches 0 run scoreboard players add $custom_hud/timer.padding fetchr.tmp 8
+execute if score $hours 91.timer.io matches 0 if score $minutes 91.timer.io matches ..9 run scoreboard players add $custom_hud/timer.padding fetchr.tmp 6
+execute if score $hours 91.timer.io matches 0 if score $minutes 91.timer.io matches 0 run scoreboard players add $custom_hud/timer.padding fetchr.tmp 8
+execute if score $hours 91.timer.io matches 0 if score $minutes 91.timer.io matches 0 if score $seconds 91.timer.io matches ..9 run scoreboard players add $custom_hud/timer.padding fetchr.tmp 6
 
 # hide timer during pre-gen
 execute if score $game_state fetchr.state matches ..2 run data modify storage io.fetchr:custom_hud component.textComponent set value '"0"'

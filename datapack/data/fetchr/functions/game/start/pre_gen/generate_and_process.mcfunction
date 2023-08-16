@@ -7,12 +7,12 @@
 function neun_einser.timer:read
 scoreboard players operation $game_start/pre_gen.chunks_per_tick fetchr.tmp = $game_start/pre_gen/generate.i fetchr.tmp
 scoreboard players operation $game_start/pre_gen.chunks_per_tick fetchr.tmp *= 60 fetchr.const
-scoreboard players operation $game_start/pre_gen.chunks_per_tick fetchr.tmp /= $raw 91.timer.time
+scoreboard players operation $game_start/pre_gen.chunks_per_tick fetchr.tmp /= $raw 91.timer.io
 scoreboard players add $game_start/pre_gen.chunks_per_tick fetchr.tmp 1
 
-scoreboard players operation $millis fetchr.tmp = $raw 91.timer.time
+scoreboard players operation $millis fetchr.tmp = $raw 91.timer.io
 scoreboard players operation $millis fetchr.tmp -= $game_start/pre_gen.last_tick_time fetchr.tmp
-scoreboard players operation $game_start/pre_gen.last_tick_time fetchr.tmp = $raw 91.timer.time
+scoreboard players operation $game_start/pre_gen.last_tick_time fetchr.tmp = $raw 91.timer.io
 
 #>
 # @within

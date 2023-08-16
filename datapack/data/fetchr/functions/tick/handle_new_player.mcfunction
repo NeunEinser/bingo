@@ -12,7 +12,7 @@ tp ~ 1 ~
 gamemode adventure
 scoreboard players set @s fetchr.resource_pack_check 1
 scoreboard players enable @s fetchr.resource_pack_check
-effect give @s minecraft:weakness 1000000 255 true
+effect give @s minecraft:weakness infinite 255 true
 tag @s add fetchr.resourcepack_check
 
 setblock 1 2 2 minecraft:sea_lantern

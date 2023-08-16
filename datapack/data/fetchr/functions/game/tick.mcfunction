@@ -23,5 +23,5 @@ execute store result score $game/tick.sleeping_players fetchr.tmp if entity @a[g
 
 execute if score $game/tick.player_count fetchr.tmp matches 1.. if score $game/tick.player_count fetchr.tmp = $game/tick.sleeping_players fetchr.tmp if entity @a[scores={fetchr.bed=99}, limit=1] run function fetchr:game/skip_night
 
-scoreboard players operation $raw 91.timer.time /= 100 fetchr.const
-execute in fetchr:lobby unless score $raw 91.timer.time = $last_tick_second fetchr.state run function fetchr:custom_hud/components/timer/update
+scoreboard players operation $raw 91.timer.io /= $current_percision 91.timer.io
+execute in fetchr:lobby unless score $raw 91.timer.io = $last_tick_second fetchr.state run function fetchr:custom_hud/components/timer/update

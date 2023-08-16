@@ -37,4 +37,5 @@ team modify fetchr.yellow seeFriendlyInvisibles true
 scoreboard players set $lockout_race_ended fetchr.state 0
 
 fill ~-1 62 ~-1 ~1 319 ~1 minecraft:air replace minecraft:barrier
-function neun_einser.timer:start/hundredth_of_second
+execute if score $use_in_game_time fetchr.settings matches 0 run function neun_einser.timer:start/hundredth_of_second
+execute if score $use_in_game_time fetchr.settings matches 1 run function neun_einser.timer:start/gametime

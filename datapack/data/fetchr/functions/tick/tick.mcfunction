@@ -48,7 +48,7 @@ execute unless entity @a[predicate=fetchr:is_in_lobby, limit=1] if entity @a[tag
 execute if score $game_state fetchr.state matches 1..2 in fetchr:default run function fetchr:game/start/pre_gen/tick
 execute if score $game_state fetchr.state matches 3 run function fetchr:game/tick
 
-scoreboard players operation $last_tick_second fetchr.state = $raw 91.timer.time
+scoreboard players operation $last_tick_second fetchr.state = $raw 91.timer.io
 
 # player tick
 data modify storage tmp.fetchr:custom_hud handled set value []

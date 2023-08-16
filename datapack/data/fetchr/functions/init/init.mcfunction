@@ -478,7 +478,6 @@ forceload add 0 0
 	scoreboard objectives remove fetchr.prev_y_pos
 	scoreboard objectives remove fetchr.prev_z_pos
 	scoreboard objectives remove fetchr.seed
-	scoreboard objectives remove fetchr.spectator
 	scoreboard objectives remove fetchr.resource_pack_check
 
 	#region public objectives
@@ -804,6 +803,12 @@ forceload add 0 0
 		#declare score_holder $strict_mode
 		execute unless score $strict_mode fetchr.settings matches 0..2 run scoreboard players set $strict_mode fetchr.settings 2
 		#>
+		# Whether in-game time should be used instead if real time.
+		#
+		# @internal
+		#declare score_holder $use_in_game_time
+		scoreboard players add $use_in_game_time fetchr.settings 0
+		#>
 		# Whether blind mode is enabled. In blind mode, players cannot see items on the
 		# card until some team has obtained them.
 		#
@@ -904,6 +909,10 @@ forceload add 0 0
 		# @public
 		#declare score_holder 16
 		scoreboard players set 16 fetchr.const 16
+		#>
+		# @public
+		#declare score_holder 20
+		scoreboard players set 20 fetchr.const 20
 		#>
 		# @public
 		#declare score_holder 32
