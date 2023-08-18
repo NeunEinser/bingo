@@ -1,8 +1,11 @@
 #> fetchr:util/confirm_operator_status
 #
-# This function prints the prompt for changing strict mode.
+# This function marks a player as operator 
 #
-# @public
-# @context entity Player changing the setting
+# @internal
+# @user
 
-tellraw @s ["\n\n\n\n\n", {"translate": "fetchr.strict_mode.confirm_op", "with": [{"translate": "fetchr.strict_mode.confirm_op.click", "color": "#00c3ff", "clickEvent": {"action": "run_command", "value": "/scoreboard players set @s fetchr.operator 1"}}]}]
+gamerule sendCommandFeedback false
+
+scoreboard players set @s fetchr.operator 1
+tellraw @s ["\n\n\n\n\n", {"translate": "fetchr.operator_only.confirm_op.success", "color": "green"}, "\n", {"translate": "fetchr.operator_only.confirm_op.success.info"}]

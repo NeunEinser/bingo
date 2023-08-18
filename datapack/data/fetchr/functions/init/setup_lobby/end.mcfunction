@@ -54,6 +54,8 @@ execute in fetchr:default run summon minecraft:marker 0 0 0 {Tags: ["fetchr.pos_
 
 setblock 7 0 7 minecraft:oak_sign
 
+execute if score $is_multiplayer fetchr.state matches 1 at @e[tag=fetchr.multiplayer_mangrove_button_north] run setblock ~ ~ ~ minecraft:mangrove_button[facing=north]
+
 forceload remove all
 forceload add 0 0
 

@@ -10,4 +10,4 @@ execute if score $seed fetchr.state matches -2147483648.. if score $game_state f
 execute if score $seed fetchr.state matches -2147483648.. if score $game_state fetchr.state matches ..1 run tag @s add fetchr.automatically_join_game
 execute if score $game_state fetchr.state matches 3 run tellraw @s {"translate": "fetchr.lobby.card_generation.join_game.error.in_progress", "color": "red"}
 
-execute if score $game_state fetchr.state matches 2 at @e[tag=fetchr.spawn] run function fetchr:game/start/create_skybox/spawn_player
+execute if score $game_state fetchr.state matches 2 at @e[tag=fetchr.spawn] run function fetchr:game/skybox/join_game

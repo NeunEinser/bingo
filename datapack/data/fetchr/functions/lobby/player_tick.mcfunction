@@ -9,8 +9,8 @@
 effect give @s minecraft:saturation 2 255 true
 
 # adventure mode
-execute if score $is_multiplayer fetchr.state matches 1 if score $strict_mode fetchr.settings matches 1.. run gamemode adventure @s[gamemode=survival]
-execute if score $is_multiplayer fetchr.state matches 1 if score $strict_mode fetchr.settings matches 0 run gamemode survival @s[gamemode=adventure]
+execute if score $is_multiplayer fetchr.state matches 1 if score $lobby_gamemode fetchr.settings matches 0 run gamemode adventure @s[gamemode=survival]
+execute if score $is_multiplayer fetchr.state matches 1 if score $lobby_gamemode fetchr.settings matches 1 run gamemode survival @s[gamemode=adventure]
 execute if score $is_multiplayer fetchr.state matches 0 run gamemode survival @s[gamemode=adventure]
 
 # change preferences
@@ -25,17 +25,14 @@ execute at @s unless block ~ ~ ~ minecraft:void_air run effect clear @s minecraf
 # generate card from seed
 execute if score @s fetchr.seed matches -2147483648.. unless score @s fetchr.seed matches 0 run function fetchr:card_generation/generate_from_seed
 scoreboard players reset @s fetchr.seed
-execute unless score $strict_mode fetchr.settings matches 1 run scoreboard players enable @s fetchr.seed
+execute unless score $operator_only fetchr.settings matches 1 run scoreboard players enable @s fetchr.seed
 execute if score @s fetchr.operator matches 1 run scoreboard players enable @s fetchr.seed
 
+# teleport all
+execute if score @s fetchr.teleport_all matches 1 run function fetchr:lobby/teleport_all
+
 # change settings
-execute if score @s fetchr.settings matches 21 run scoreboard players set $automatically_pregen fetchr.settings 1
-execute if score @s fetchr.settings matches 21 run data modify entity @e[type=minecraft:marker, tag=fetchr.sign_automatically_pregen, limit=1] data.front_text.messages[0] set value '{"translate":"fetchr.lobby.settings.pregen_behavior.sign.off","color":"white"}'
-execute if score @s fetchr.settings matches 22 run scoreboard players set $automatically_pregen fetchr.settings 0
-execute if score @s fetchr.settings matches 22 run data modify entity @e[type=minecraft:marker, tag=fetchr.sign_automatically_pregen, limit=1] data.front_text.messages[0] set value '{"translate":"fetchr.lobby.settings.pregen_behavior.sign.on","color":"white"}'
-execute if score @s fetchr.settings matches 21..22 run function fetchr:lobby/settings/change_pregen_behavior
-scoreboard players reset @s fetchr.settings
-execute unless score $strict_mode fetchr.settings matches 1 run scoreboard players enable @s fetchr.settings
-execute if score @s fetchr.operator matches 1 run scoreboard players enable @s fetchr.settings
+execute if score @s fetchr.pre_gen_radius matches 1.. run function fetchr:lobby/settings/set_pre_gen_radius_internal
+execute if score @s fetchr.pre_gen_radius matches 1.. run scoreboard players reset @s fetchr.pre_gen_radius
 
 execute if score @s fetchr.update_hud matches 1 run function fetchr:custom_hud/components/timer/update

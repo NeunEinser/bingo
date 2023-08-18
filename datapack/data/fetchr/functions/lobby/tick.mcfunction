@@ -6,7 +6,7 @@
 # @within function fetchr:tick/tick
 
 execute as @a[predicate=fetchr:is_in_lobby] run function fetchr:lobby/player_tick
-execute if entity @a[tag=fetchr.in_skybox] run function fetchr:lobby/skybox_tick
+execute if entity @a[tag=fetchr.in_skybox] run function fetchr:game/skybox/tick
 
 #change settings
 #execute as @a[scores={fetchr.settings=5..12}] run function fetchr:lobby/player_settings/save/do_action
@@ -25,3 +25,5 @@ execute as @e[type=minecraft:item_frame, tag=fetchr.card_frame, nbt=!{ItemRotati
 #declare score_holder $lobby/loop.frame_count
 execute store result score $lobby/loop.frame_count fetchr.tmp if entity @e[type=minecraft:item_frame, tag=fetchr.card_frame, distance=0..]
 execute unless score $lobby/loop.frame_count fetchr.tmp matches 25 run function fetchr:card_frames/spawn
+
+gamerule sendCommandFeedback true

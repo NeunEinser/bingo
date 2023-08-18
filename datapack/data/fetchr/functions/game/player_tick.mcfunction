@@ -21,7 +21,7 @@ gamemode spectator @s[scores={fetchr.spectator=1}]
 scoreboard players reset @s[scores={fetchr.spectator=1}] fetchr.spectator
 
 # reveal card
-execute if entity @s[scores={fetchr.reveal_card=1}] run function fetchr:game/reveal_card_strict_mode_check
+execute if entity @s[scores={fetchr.reveal_card=1}] run function fetchr:game/reveal_card
 
 # Set player inventory change delay
 scoreboard players remove @s[scores={fetchr.inv_change=1..}] fetchr.inv_change 1

@@ -199,180 +199,181 @@ forceload add 0 0
 		# This tag marks a player who is in a team that obtained the item in slot 0.
 		#
 		# @within
-		# 	function fetchr:game/start/create_skybox/spawn_player
+		# 	function fetchr:game/skybox/join_game
 		# 	structure fetchr:machinery
 		#declare tag fetchr.has_slot0
 		#>
 		# This tag marks a player who is in a team that obtained the item in slot 1.
 		#
 		# @within
-		# 	function fetchr:game/start/create_skybox/spawn_player
+		# 	function fetchr:game/skybox/join_game
 		# 	structure fetchr:machinery
 		#declare tag fetchr.has_slot1
 		#>
 		# This tag marks a player who is in a team that obtained the item in slot 2.
 		#
 		# @within
-		# 	function fetchr:game/start/create_skybox/spawn_player
+		# 	function fetchr:game/skybox/join_game
 		# 	structure fetchr:machinery
 		#declare tag fetchr.has_slot2
 		#>
 		# This tag marks a player who is in a team that obtained the item in slot 3.
 		#
 		# @within
-		# 	function fetchr:game/start/create_skybox/spawn_player
+		# 	function fetchr:game/skybox/join_game
 		# 	structure fetchr:machinery
 		#declare tag fetchr.has_slot3
 		#>
 		# This tag marks a player who is in a team that obtained the item in slot 4.
 		#
 		# @within
-		# 	function fetchr:game/start/create_skybox/spawn_player
+		# 	function fetchr:game/skybox/join_game
 		# 	structure fetchr:machinery
 		#declare tag fetchr.has_slot4
 		#>
 		# This tag marks a player who is in a team that obtained the item in slot 5.
 		#
 		# @within
-		# 	function fetchr:game/start/create_skybox/spawn_player
+		# 	function fetchr:game/skybox/join_game
 		# 	structure fetchr:machinery
 		#declare tag fetchr.has_slot5
 		#>
 		# This tag marks a player who is in a team that obtained the item in slot 6.
 		#
 		# @within
-		# 	function fetchr:game/start/create_skybox/spawn_player
+		# 	function fetchr:game/skybox/join_game
 		# 	structure fetchr:machinery
 		#declare tag fetchr.has_slot6
 		#>
 		# This tag marks a player who is in a team that obtained the item in slot 7.
 		#
 		# @within
-		# 	function fetchr:game/start/create_skybox/spawn_player
+		# 	function fetchr:game/skybox/join_game
 		# 	structure fetchr:machinery
 		#declare tag fetchr.has_slot7
 		#>
 		# This tag marks a player who is in a team that obtained the item in slot 8.
 		#
 		# @within
-		# 	function fetchr:game/start/create_skybox/spawn_player
+		# 	function fetchr:game/skybox/join_game
 		# 	structure fetchr:machinery
 		#declare tag fetchr.has_slot8
 		#>
 		# This tag marks a player who is in a team that obtained the item in slot 9.
 		#
 		# @within
-		# 	function fetchr:game/start/create_skybox/spawn_player
+		# 	function fetchr:game/skybox/join_game
 		# 	structure fetchr:machinery
 		#declare tag fetchr.has_slot9
 		#>
 		# This tag marks a player who is in a team that obtained the item in slot 10.
 		#
 		# @within
-		# 	function fetchr:game/start/create_skybox/spawn_player
+		# 	function fetchr:game/skybox/join_game
 		# 	structure fetchr:machinery
 		#declare tag fetchr.has_slot10
 		#>
 		# This tag marks a player who is in a team that obtained the item in slot 11.
 		#
 		# @within
-		# 	function fetchr:game/start/create_skybox/spawn_player
+		# 	function fetchr:game/skybox/join_game
 		# 	structure fetchr:machinery
 		#declare tag fetchr.has_slot11
 		#>
 		# This tag marks a player who is in a team that obtained the item in slot 12.
 		#
 		# @within
-		# 	function fetchr:game/start/create_skybox/spawn_player
+		# 	function fetchr:game/skybox/join_game
 		# 	structure fetchr:machinery
 		#declare tag fetchr.has_slot12
 		#>
 		# This tag marks a player who is in a team that obtained the item in slot 13.
 		#
 		# @within
-		# 	function fetchr:game/start/create_skybox/spawn_player
+		# 	function fetchr:game/skybox/join_game
 		# 	structure fetchr:machinery
 		#declare tag fetchr.has_slot13
 		#>
 		# This tag marks a player who is in a team that obtained the item in slot 14.
 		#
 		# @within
-		# 	function fetchr:game/start/create_skybox/spawn_player
+		# 	function fetchr:game/skybox/join_game
 		# 	structure fetchr:machinery
 		#declare tag fetchr.has_slot14
 		#>
 		# This tag marks a player who is in a team that obtained the item in slot 15.
 		#
 		# @within
-		# 	function fetchr:game/start/create_skybox/spawn_player
+		# 	function fetchr:game/skybox/join_game
 		# 	structure fetchr:machinery
 		#declare tag fetchr.has_slot15
 		#>
 		# This tag marks a player who is in a team that obtained the item in slot 16.
 		#
 		# @within
-		# 	function fetchr:game/start/create_skybox/spawn_player
+		# 	function fetchr:game/skybox/join_game
 		# 	structure fetchr:machinery
 		#declare tag fetchr.has_slot16
 		#>
 		# This tag marks a player who is in a team that obtained the item in slot 17.
 		#
 		# @within
-		# 	function fetchr:game/start/create_skybox/spawn_player
+		# 	function fetchr:game/skybox/join_game
 		# 	structure fetchr:machinery
 		#declare tag fetchr.has_slot17
 		#>
 		# This tag marks a player who is in a team that obtained the item in slot 18.
 		#
 		# @within
-		# 	function fetchr:game/start/create_skybox/spawn_player
+		# 	function fetchr:game/skybox/join_game
 		# 	structure fetchr:machinery
 		#declare tag fetchr.has_slot18
 		#>
 		# This tag marks a player who is in a team that obtained the item in slot 19.
 		#
 		# @within
-		# 	function fetchr:game/start/create_skybox/spawn_player
+		# 	function fetchr:game/skybox/join_game
 		# 	structure fetchr:machinery
 		#declare tag fetchr.has_slot19
 		#>
 		# This tag marks a player who is in a team that obtained the item in slot 20.
 		#
 		# @within
-		# 	function fetchr:game/start/create_skybox/spawn_player
+		# 	function fetchr:game/skybox/join_game
 		# 	structure fetchr:machinery
 		#declare tag fetchr.has_slot20
 		#>
 		# This tag marks a player who is in a team that obtained the item in slot 21.
 		#
 		# @within
-		# 	function fetchr:game/start/create_skybox/spawn_player
+		# 	function fetchr:game/skybox/join_game
 		# 	structure fetchr:machinery
 		#declare tag fetchr.has_slot21
 		#>
 		# This tag marks a player who is in a team that obtained the item in slot 22.
 		#
 		# @within
-		# 	function fetchr:game/start/create_skybox/spawn_player
+		# 	function fetchr:game/skybox/join_game
 		# 	structure fetchr:machinery
 		#declare tag fetchr.has_slot22
 		#>
 		# This tag marks a player who is in a team that obtained the item in slot 23.
 		#
 		# @within
-		# 	function fetchr:game/start/create_skybox/spawn_player
+		# 	function fetchr:game/skybox/join_game
 		# 	structure fetchr:machinery
 		#declare tag fetchr.has_slot23
 		#>
 		# This tag marks a player who is in a team that obtained the item in slot 24.
 		#
 		# @within
-		# 	function fetchr:game/start/create_skybox/spawn_player
+		# 	function fetchr:game/skybox/join_game
 		# 	structure fetchr:machinery
 		#declare tag fetchr.has_slot24
 	#endregion
 
 	#region lobby blocks
+		# TODO: Give markers block id and use 1.20.2 function macro
 		#>
 		# @within
 		# 	function fetchr:init/setup_lobby/start
@@ -382,9 +383,30 @@ forceload add 0 0
 		#declare tag fetchr.lobby_sign
 		#>
 		# @within
-		# 	function fetchr:lobby/place_indestructible_blocks
+		# 	function fetchr:lobby/*
 		# 	structure fetchr:*
 		#declare tag fetchr.multiplayer_only
+		#>
+		# @within
+		# 	function fetchr:lobby/*
+		# 	structure fetchr:*
+		#declare tag fetchr.multiplayer_only_brown
+		#>
+		# @within
+		# 	function fetchr:lobby/*
+		# 	function fetchr:init/setup_lobby/*
+		# 	structure fetchr:*
+		#declare tag fetchr.multiplayer_mangrove_button_north
+		#>
+		# @within
+		# 	function fetchr:lobby/*
+		# 	structure fetchr:*
+		#declare tag fetchr.singleplayer_only
+		#>
+		# @within
+		# 	function fetchr:lobby/*
+		# 	structure fetchr:*
+		#declare tag fetchr.singleplayer_only_brown
 		#>
 		# @within
 		# 	function fetchr:lobby/place_sign
@@ -408,6 +430,11 @@ forceload add 0 0
 		#declare tag fetchr.sign_west
 		#>
 		# @within
+		# 	function fetchr:lobby/place_sign
+		# 	structure fetchr:*
+		#declare tag fetchr.danger_sign_east
+		#>
+		# @within
 		# 	function fetchr:lobby/settings/toggle_blind_mode
 		# 	structure fetchr:card_generation
 		#declare tag fetchr.blind_mode_sign
@@ -418,9 +445,54 @@ forceload add 0 0
 		#declare tag fetchr.lockout_mode_sign
 		#>
 		# @within
-		# 	function fetchr:lobby/place_sign
-		# 	structure fetchr:tutorial
-		#declare tag fetchr.sign_strict_mode
+		# 	function fetchr:lobby/settings/toggle_timer_method
+		# 	structure fetchr:card_generation
+		#declare tag fetchr.timer_method_sign
+		#>
+		# @within
+		# 	function fetchr:lobby/settings/toggle_paused_time
+		# 	structure fetchr:card_generation
+		#declare tag fetchr.paused_time_sign
+		#>
+		# @within
+		# 	function fetchr:lobby/settings/toggle_operator_only
+		# 	structure fetchr:card_generation
+		#declare tag fetchr.operator_only_sign
+		#>
+		# @within
+		# 	function fetchr:lobby/settings/toggle_gamemode
+		# 	structure fetchr:card_generation
+		#declare tag fetchr.gamemode_sign
+		#>
+		# @within
+		# 	function fetchr:lobby/settings/set_pre_gen_radius_internal
+		# 	structure fetchr:card_generation
+		#declare tag fetchr.pre_gen_sign
+		#>
+		# @within
+		# 	function fetchr:lobby/settings/toggle_allow_spectating
+		# 	structure fetchr:card_generation
+		#declare tag fetchr.allow_spectating_sign
+		#>
+		# @within
+		# 	function fetchr:lobby/settings/toggle_show_seed
+		# 	structure fetchr:card_generation
+		#declare tag fetchr.show_seed_sign
+		#>
+		# @within
+		# 	function fetchr:lobby/place_indestructible_blocks
+		# 	structure fetchr:card_generation
+		#declare tag fetchr.multiplayer_door
+		#>
+		# @within
+		# 	function fetchr:lobby/place_indestructible_blocks
+		# 	structure fetchr:card_generation
+		#declare tag fetchr.mangrove_button_south
+		#>
+		# @within
+		# 	function fetchr:lobby/place_indestructible_blocks
+		# 	structure fetchr:card_generation
+		#declare tag fetchr.lobby_enderchest
 		#>
 		# @within
 		# 	function fetchr:init/setup_lobby/start
@@ -451,13 +523,13 @@ forceload add 0 0
 		#>
 		# @within
 		# 	function fetchr:lobby/**
-		# 	function fetchr:game/start/**
+		# 	function fetchr:game/skybox/**
 		# 	function fetchr:game/end
 		# 	structure fetchr:skybox
 		#declare tag fetchr.skybox_button
 		#>
 		# @within
-		# 	function fetchr:lobby/**
+		# 	function fetchr:game/skybox/**
 		# 	structure fetchr:card_generation
 		#declare tag fetchr.pressed_button
 	#endregion
@@ -535,18 +607,18 @@ forceload add 0 0
 		scoreboard players enable @a[predicate=fetchr:is_in_game] fetchr.lobby
 
 		#>
-		# Trigger objective for revealing the card in blind mode.
-		#
-		# @internal
-		# @user
-		scoreboard objectives add fetchr.reveal_card trigger
-
-		#>
 		# Trigger objective for displaying the Fetchr menu during a game.
 		#
 		# @internal
 		# @user
 		scoreboard objectives add fetchr.menu trigger
+
+		#>
+		# Trigger objective used to change the pre-generation radius.
+		#
+		# @internal
+		# @user
+		scoreboard objectives add fetchr.pre_gen_radius trigger
 
 		#>
 		# Trigger objective used to handle changes / clicks in the preferences menu.
@@ -555,22 +627,24 @@ forceload add 0 0
 		scoreboard objectives add fetchr.pref trigger
 
 		#>
-		# Trigger objective used to switch to spectator mode while in game.
-		#
-		# @internal
-		scoreboard objectives add fetchr.spectator trigger
-
-		#>
-		# Trigger objective used in the player configuration dialogs.
-		#
-		# @internal
-		#scoreboard objectives add fetchr.player_config trigger
-
-		#>
 		# This trigger is used for confirming that the resource pack is active
 		#
 		# @internal
 		scoreboard objectives add fetchr.resource_pack_check trigger
+
+		#>
+		# Trigger objective for revealing the card in blind mode.
+		#
+		# @internal
+		# @user
+		scoreboard objectives add fetchr.reveal_card trigger
+
+		#>
+		# Trigger for teleporting all players back to the lobby.
+		#
+		# @internal
+		# @user
+		scoreboard objectives add fetchr.teleport_all trigger
 
 		#>
 		# Trigger objective used to generate a bingo card with a set seed.
@@ -580,11 +654,10 @@ forceload add 0 0
 		scoreboard objectives add fetchr.seed trigger
 
 		#>
-		# Trigger objective used to load certain setting pages.
+		# Trigger objective used to switch to spectator mode while in game.
 		#
 		# @internal
-		# @user
-		scoreboard objectives add fetchr.settings trigger
+		scoreboard objectives add fetchr.spectator trigger
 	#endregion
 
 	#region other internal objectives
@@ -609,6 +682,12 @@ forceload add 0 0
 		#
 		# @internal
 		scoreboard objectives add fetchr.lobby_card_frame_id dummy
+
+		#>
+		# Setting storage
+		#
+		# @internal
+		scoreboard objectives add fetchr.settings dummy
 
 		#>
 		# This objective is used to keep track of the current game id. Players who
@@ -789,19 +868,39 @@ forceload add 0 0
 		#
 		# @public
 		#declare score_holder $spawn_z
-
 		#>
-		# Whether pregen should automatically start after generating a new card.
+		# Whether operator only is turned on
 		#
 		# @internal
-		#declare score_holder $automatically_pregen
-		scoreboard players add $automatically_pregen fetchr.settings 0
+		#declare score_holder $operator_only
+		scoreboard players add $operator_only fetchr.settings 0
 		#>
-		# Whether strict mode is turned on
+		# Which gamemode to use in the lobby.
+		#
+		# 0 = adventure
+		# 1 = survival
 		#
 		# @internal
-		#declare score_holder $strict_mode
-		execute unless score $strict_mode fetchr.settings matches 0..2 run scoreboard players set $strict_mode fetchr.settings 2
+		#declare score_holder $lobby_gamemode
+		scoreboard players add $lobby_gamemode fetchr.settings 0
+		#>
+		# The amount of chunks to pre-generate
+		#
+		# @internal
+		#declare score_holder $pregeneration_chunks
+		execute unless score $pregeneration_chunks fetchr.settings matches 361.. run scoreboard players set $pregeneration_chunks fetchr.settings 361
+		#>
+		# Whether spectator mode is enabled during games.
+		#
+		# @internal
+		#declare score_holder $allow_spectating
+		execute unless score $allow_spectating fetchr.settings matches 0..1 run scoreboard players set $allow_spectating fetchr.settings 1
+		#>
+		# Whether you see the seed before the game has ended.
+		#
+		# @internal
+		#declare score_holder $show_seed
+		execute unless score $show_seed fetchr.settings matches 0..1 run scoreboard players set $show_seed fetchr.settings 1
 		#>
 		# Whether in-game time should be used instead if real time.
 		#

@@ -30,7 +30,7 @@ scoreboard players set $game_start/pre_gen/goto.type fetchr.tmp 1
 # @private
 #declare score_holder $game_start/pre_gen.chunks_left
 #TODO configurable max
-scoreboard players set $game_start/pre_gen.chunks_left fetchr.tmp 361
+scoreboard players operation $game_start/pre_gen.chunks_left fetchr.tmp = $pregeneration_chunks fetchr.settings
 scoreboard players operation $game_start/pre_gen.chunks_left fetchr.tmp -= $game_start/pre_gen/generate.i fetchr.tmp
 
 #>
@@ -50,6 +50,6 @@ scoreboard players operation $game_start/pre_gen/goto.z fetchr.tmp = $game_start
 scoreboard players set $game_start/pre_gen/goto.type fetchr.tmp 2
 function fetchr:game/start/pre_gen/move_x/0
 
-execute if score $game_start/pre_gen.chunks_left fetchr.tmp matches 0 if score $game_start/pre_gen/entities.i fetchr.tmp >= $game_start/pre_gen/generate.i fetchr.tmp run function fetchr:game/start/pre_gen/end
+execute if score $game_start/pre_gen.chunks_left fetchr.tmp matches ..0 if score $game_start/pre_gen/entities.i fetchr.tmp >= $game_start/pre_gen/generate.i fetchr.tmp run function fetchr:game/start/pre_gen/end
 
 execute store result bossbar fetchr:start/pre_gen/progress value run scoreboard players get $game_start/pre_gen/entities.i fetchr.tmp
