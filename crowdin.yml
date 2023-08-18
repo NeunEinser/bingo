@@ -1,5 +1,5 @@
 pull_request_title: Update translations from Crowdin
-append_commit_message: false
+append_commit_message: 
 commit_message: Updated %language% translations.
 files:
   - source: /resources/assets/fetchr/lang/en_us.json
