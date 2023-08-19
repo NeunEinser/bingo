@@ -515,7 +515,7 @@
 	"fetchr.lobby.tutorial.game_info.ites.heading": "No Ites",
 	"fetchr.lobby.tutorial.game_info.ites": "Ore blobs of all stone variants like DiorITE, GranITE and AndesITE are completely removed. Granite may still occur as part of copper ore veins.\n\nThis is done to reduce inventory clutter.",
 	"fetchr.lobby.tutorial.game_info.ambient.heading": "Ambient lighting",
-	"fetchr.lobby.tutorial.game_info.ambient": "There is a dimension setting in place that lets you see in the dark similarly to the vanilla nether.\n\nThis works without night vision and you are still able to tell darkness apart from light to some degree.",
+	"fetchr.lobby.tutorial.game_info.ambient": "There is a dimension setting in place that lets you see in the dark similarly to the vanilla nether.\n\nThis works without night vision, and you are still able to tell darkness apart from light to some degree.",
 
 	"fetchr.lobby.end.sign.line1": "The Outside",
 	"fetchr.lobby.end.sign.line2": "",
