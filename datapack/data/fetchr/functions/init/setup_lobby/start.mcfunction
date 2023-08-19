@@ -14,7 +14,7 @@
 # @within
 # 	function fetchr:init/setup_lobby/start
 # 	function fetchr:card_frames/**
-# 	function fetchr:game/skybox/**
+# 	function fetchr:game/**
 #declare tag fetchr.card_frame_start
 
 setblock -1 3 -17 minecraft:structure_block[mode=load]{mode: "LOAD", ignoreEntities: true, integrity: 0f, posX: 1, posZ: 1}
