@@ -345,7 +345,7 @@
 	"fetchr.lobby.settings.timer.lectern.page_5": "Using in-game time could put players who experience lag at an advantage, as they will generally be able to explore with less time passed, especially when being at roughly the same area, for example in a cave system.",
 	"fetchr.lobby.settings.timer.lectern.page_6": "There is no “better” way to measure time, and you can try to evaluate which you consider fairer.",
 	"fetchr.lobby.settings.timer.lectern.paused_time.heading": "Count Paused Time",
-	"fetchr.lobby.settings.timer.lectern.page_7": "This setting is mostly relevant for single player.\n\nWhen active, the timer will keep increasing, even when the game is paused.",
+	"fetchr.lobby.settings.timer.lectern.page_7": "This setting is mostly relevant for singleplayer.\n\nWhen active, the timer will keep increasing, even when the game is paused.",
 	"fetchr.lobby.settings.timer.lectern.page_8": "In multiplayer, the timer will not increase while no player when this setting is inactive.\n\nBy default, paused time is not counted.",
 	"fetchr.lobby.settings.timer.toggle.off": "Lockout mode has been disabled.",
 	"fetchr.lobby.settings.timer.toggle.on": "Lockout mode has been enabled.",
@@ -375,7 +375,7 @@
 	"fetchr.lobby.settings.gamemode.toggle.adventure": "Players in the lobby now use adventure mode.",
 	"fetchr.lobby.settings.gamemode.toggle.survival": "Players in the lobby now use survival mode.",
 	"fetchr.lobby.settings.gamemode.lectern.heading": "Lobby Game Mode",
-	"fetchr.lobby.settings.gamemode.lectern.page_1": "By default, all players in the lobby are in adventure mode, which means they cannot place or break any blocks.\n\nIn single player, you are intentionally left in survival mode and allowed to alter the lobby in this way.",
+	"fetchr.lobby.settings.gamemode.lectern.page_1": "By default, all players in the lobby are in adventure mode, which means they cannot place or break any blocks.\n\nIn singleplayer, you are intentionally left in survival mode and allowed to alter the lobby in this way.",
 	"fetchr.lobby.settings.gamemode.lectern.page_2": "All essential parts like signs and lecterns are always preserved.\n\nThis can be used for nice decorations and giving the place a story from things collected from different runs.",
 
 	"fetchr.lobby.settings.pre_gen.sign.line1": "Pre-Gener-",
@@ -415,7 +415,7 @@
 	"fetchr.lobby.settings.show_seed.toggle.on": "Players now see the Fetchr seed, even during the game.",
 	"fetchr.lobby.settings.show_seed.lectern.heading": "Show Fetchr Seed",
 	"fetchr.lobby.settings.show_seed.lectern.page_1": "Above the hotbar on the right, the Fetchr Seed is shown by default.\n\nGenerating a card with the same seed will result in the same card and spawn point.",
-	"fetchr.lobby.settings.show_seed.lectern.page_2": "This could be abused by players who could look at the spawn point in spectator or creative mode in single player to gain an advantage.\n\nIf you are concerned about this, you can use this setting to hide the seed until the game has ended.",
+	"fetchr.lobby.settings.show_seed.lectern.page_2": "This could be abused by players who could look at the spawn point in spectator or creative mode in singleplayer to gain an advantage.\n\nIf you are concerned about this, you can use this setting to hide the seed until the game has ended.",
 
 	"fetchr.lobby.tutorial.generate_chests.sign.line1": "Re-generate",
 	"fetchr.lobby.tutorial.generate_chests.sign.line2": "Category",

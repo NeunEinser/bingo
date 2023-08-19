@@ -21,6 +21,8 @@
 	"fetchr.resourcepack_check.wrong_version.sign.line3": "di",
 	"fetchr.resourcepack_check.wrong_version.sign.line4": "risorse",
 	"fetchr.game.menu.hover_text": "Menu Fetchr",
+	"fetchr.game.menu.heading": "Menu Fetchr",
+	"fetchr.game.menu.options.goto_lobby": "Vai alla lobby",
 	"fetchr.game.menu.hint": "Suggerimento: Puoi fare clic su %s ovunque per far apparire il menu Fetchr. Puoi anche eseguire %s manualmente, sostituendo %s con l'azione completabile automaticamente.",
 	"fetchr.game.menu.hint.action_param": "azione",
 	"fetchr.game.switch_gamemode.prevented": "Cambio modalità di gioco impedito. %s per la modalità spettatore.\nSuccessivamente, puoi passare a qualsiasi altra modalità di gioco.",
