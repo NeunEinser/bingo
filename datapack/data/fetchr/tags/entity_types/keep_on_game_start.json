@@ -1,9 +1,8 @@
 {
 	"values": [
+		"#fetchr:always_keep",
 		"minecraft:player",
-		"minecraft:item",
 		"minecraft:falling_block",
-		"minecraft:marker",
-		"minecraft:bee"
+		"minecraft:marker"
 	]
 }

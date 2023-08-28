@@ -4,8 +4,8 @@
 #
 # @within function fetchr:game/start/pre_gen/check_entities
 
-execute if entity @s[type=minecraft:bee] run function fetchr:game/start/pre_gen/freeze_entity
-execute if entity @s[type=minecraft:bee] run return 0
+execute if entity @s[type=#fetchr:always_keep] run function fetchr:game/start/pre_gen/freeze_entity
+execute if entity @s[type=#fetchr:always_keep] run return 0
 
 # data modify entity @s Glowing set value true
 

@@ -180,12 +180,17 @@ forceload add 0 0
 	# @within function fetchr:game/start/**
 	#declare tag fetchr.generated_entity
 	#>
-	# Tag for entities that where already persistent.
+	# Tag for entities that were already persistent.
 	#
 	# @within function fetchr:game/start/**
 	#declare tag fetchr.persistance_required
 	#>
-	# Tag for chickens that where already chicken jockeys.
+	# Tag for entities that were already invulnerable.
+	#
+	# @within function fetchr:game/start/**
+	#declare tag fetchr.invulnerable
+	#>
+	# Tag for chickens that whre already chicken jockeys.
 	#
 	# @within function fetchr:game/start/**
 	#declare tag fetchr.chicken_jockey
