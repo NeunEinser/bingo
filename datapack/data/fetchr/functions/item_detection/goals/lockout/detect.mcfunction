@@ -25,7 +25,6 @@ data remove storage tmp.fetchr:item_detection openItems[{itemCollected: true}]
 execute store result score $item_detect/announce/lockout.open_items fetchr.tmp run data get storage tmp.fetchr:item_detection openItems
 # subtract item that is collected right now
 scoreboard players remove $item_detect/announce/lockout.open_items fetchr.tmp 1
-tellraw NeunEinser {"score":{"name":"$item_detect/announce/lockout.open_items","objective":"fetchr.tmp"}}
 
 scoreboard players operation $item_detect/announce/lockout.second_place fetchr.tmp += $item_detect/announce/lockout.open_items fetchr.tmp
 

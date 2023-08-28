@@ -28,7 +28,6 @@ execute if score $game_start/pre_gen/unload.direction fetchr.tmp matches 2 run s
 execute if score $game_start/pre_gen/unload.direction fetchr.tmp matches 3 run scoreboard players add $game_start/pre_gen/unload.x fetchr.tmp 1
 
 scoreboard players remove $game_start/pre_gen/unload.remaining_in_dir fetchr.tmp 1
-tellraw NeunEinser ["unl", {"score": {"name": "$game_start/pre_gen/unload.i", "objective": "fetchr.tmp"}}, ": ", {"score": {"name": "$game_start/pre_gen/unload.x", "objective": "fetchr.tmp"}}, ", ", {"score": {"name": "$game_start/pre_gen/unload.z", "objective": "fetchr.tmp"}}]
 
 execute if score $game_start/pre_gen/unload.direction fetchr.tmp matches 0 positioned ~ ~ ~16 run function fetchr:game/start/pre_gen/unload/unload_chunk
 execute if score $game_start/pre_gen/unload.direction fetchr.tmp matches 1 positioned ~-16 ~ ~ run function fetchr:game/start/pre_gen/unload/unload_chunk
