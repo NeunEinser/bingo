@@ -514,6 +514,9 @@ data modify storage fetchr:registries items append value {id: "fetchr:exposed_cu
 ## 012d: big_dripleaf
 data modify storage fetchr:registries items append value {id: "fetchr:big_dripleaf", item: {id: "minecraft:big_dripleaf"}, textComponent: '{"translate": "block.minecraft.big_dripleaf", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:big_dripleaf"}}}', icon: '"\\u012d"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:big_dripleaf 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:big_dripleaf 1", categories: ["fetchr:lush_cave"], weight: 3}
 
+## 012e: tuff
+data modify storage fetchr:registries items append value {id: "fetchr:tuff", item: {id: "minecraft:tuff"}, textComponent: '{"translate": "block.minecraft.tuff", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:tuff"}}}', icon: '"\\u012e"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:tuff 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:tuff 1", categories: ["fetchr:deepslate"], weight: 3}
+
 ## 0131: amethyst_block
 data modify storage fetchr:registries items append value {id: "fetchr:amethyst_block", item: {id: "minecraft:amethyst_block"}, textComponent: '{"translate": "block.minecraft.amethyst_block", "hoverEvent": {"action": "show_item", "contents": {"id": "minecraft:amethyst_block"}}}', icon: '"\\u0131"', detectCommand: "execute as @a[tag=fetchr.check_slot] store success score @s fetchr.has_item run clear @s minecraft:amethyst_block 0", clearCommand: "clear @a[tag=fetchr.clear] minecraft:amethyst_block 1", categories: ["fetchr:amethyst"], weight: 2}
 
