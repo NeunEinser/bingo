@@ -287,7 +287,6 @@
 	"fetchr.game.start.loading_terrain": "Terrein laden...",
 	"fetchr.game.start.pre_gen_progress": "Pre-genereren van de chunks...",
 	"fetchr.game.start.countdown_completed": "GO!",
-	"fetchr.item.blue_trimmed_leather_boots": "Blauwe versierde leren laarzen",
 	"fetchr.got_item": "[%2$s | #%1$s] %3$s heeft [%4$s]",
 	"fetchr.goal.blackout.chat": "[%s] %s heeft een verduistering gekregen!",
 	"fetchr.goal.20_no_bingo.chat": "[%s] %s heeft een 20 geen bingo!",

@@ -315,7 +315,6 @@
 	"fetchr.game.start.loading_terrain": "正在加载地形…",
 	"fetchr.game.start.pre_gen_progress": "正在预生成区块…",
 	"fetchr.game.start.countdown_completed": "完成！",
-	"fetchr.item.blue_trimmed_leather_boots": "蓝色饰边皮靴",
 	"fetchr.got_item": "[%2$s | #%1$s] %3$s 获得了 [%4$s]",
 	"fetchr.goal.blackout.chat": "[%s] %s 成功获得了全部 25 个物品！",
 	"fetchr.goal.20_no_bingo.chat": "[%s] %s 成功获得了 20 个物品且未达成宾果！",

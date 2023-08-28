@@ -434,7 +434,6 @@
 	"fetchr.game.start.loading_terrain": "Chargement du Terrain...",
 	"fetchr.game.start.pre_gen_progress": "Pré-génération des Chunks...",
 	"fetchr.game.start.countdown_completed": "PARTEZ !",
-	"fetchr.item.blue_trimmed_leather_boots": "Bottes en cuir bordées de bleu",
 	"fetchr.got_item": "[%2$s | #%1$s] %3$s a obtenu [%4$s]",
 	"fetchr.goal.blackout.chat": "[%s] %s a obtenu un blackout !",
 	"fetchr.goal.20_no_bingo.chat": "[%s] %s a obtenu un 20 no bingo !",
