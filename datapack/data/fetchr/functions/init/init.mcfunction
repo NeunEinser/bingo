@@ -545,7 +545,6 @@ forceload add 0 0
 	scoreboard objectives remove fetchr.has_item
 	scoreboard objectives remove fetchr.last_hud_update
 	scoreboard objectives remove fetchr.io
-	scoreboard objectives remove fetchr.lobby
 	scoreboard objectives remove fetchr.menu
 	scoreboard objectives remove fetchr.menu_page
 	scoreboard objectives remove fetchr.pref
@@ -608,7 +607,6 @@ forceload add 0 0
 		# @internal
 		# @user
 		scoreboard objectives add fetchr.lobby trigger
-		scoreboard players enable @a[predicate=fetchr:is_in_game] fetchr.lobby
 
 		#>
 		# Trigger objective for displaying the Fetchr menu during a game.

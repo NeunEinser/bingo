@@ -17,4 +17,6 @@ execute if block ~ ~ ~1 minecraft:blue_stained_glass as @p[tag=fetchr.pressed_bu
 execute if block ~ ~ ~1 minecraft:purple_stained_glass as @p[tag=fetchr.pressed_button] run function fetchr:game/skybox/join_team/purple
 execute if block ~ ~ ~1 minecraft:magenta_stained_glass as @p[tag=fetchr.pressed_button] run function fetchr:game/skybox/join_team/magenta
 
+scoreboard players operation @p[tag=fetchr.pressed_button] fetchr.game_id = $current_game_id fetchr.game_id
+
 setblock ~ ~ ~ minecraft:stone_button[facing=north,powered=false]

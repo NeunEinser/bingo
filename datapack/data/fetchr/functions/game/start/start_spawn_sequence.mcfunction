@@ -13,6 +13,8 @@ fill ~-8 ~-1 ~-8 ~9 ~5 ~9 minecraft:air
 fill ~-1 62 ~-1 ~1 ~3 ~1 minecraft:barrier replace #fetchr:sky_box_chute_replaceables
 fill ~ 62 ~ ~ ~2 ~ minecraft:air replace minecraft:barrier
 
+execute as @a[predicate=fetchr:is_in_game] unless score @s fetchr.game_id = $current_game_id fetchr.game_id run function fetchr:util/go_to_lobby
+
 setblock ~ ~-1 ~ minecraft:lime_stained_glass
 teleport @a[predicate=fetchr:is_in_game] ~ ~ ~
 tag @a remove fetchr.in_skybox
