@@ -436,6 +436,8 @@
 	"fetchr.game.start.loading_terrain": "Carregando terreno...",
 	"fetchr.game.start.pre_gen_progress": "Gerando chunks...",
 	"fetchr.game.start.countdown_completed": "VALENDO!",
+	"fetchr.item.blue_trimmed_leather_boots": "Botas de couro azul enfeitada",
+	"fetchr.item.description.any_trim": "Qualquer enfeite de armadura",
 	"fetchr.got_item": "[%2$s | #%1$s] %3$s obteve [%4$s]",
 	"fetchr.goal.blackout.chat": "[%s] %s concluiu a cartela!",
 	"fetchr.goal.20_no_bingo.chat": "[%s] %s concluiu o 20, sem bingo!",
