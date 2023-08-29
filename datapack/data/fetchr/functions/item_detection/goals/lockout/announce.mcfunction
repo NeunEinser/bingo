@@ -18,6 +18,8 @@ title @a[predicate=fetchr:is_in_game, tag=!fetchr.lockout_winner] subtitle [{"tr
 title @a[tag=fetchr.lockout_winner] title [{"translate":"fetchr.goal.lockout.title.won", "color": "green"}]
 title @a[predicate=fetchr:is_in_game, tag=!fetchr.lockout_winner] title [{"translate":"fetchr.goal.lockout.title.lost", "color": "red"}]
 
+execute if score $blind_mode fetchr.state matches 1 run function fetchr:game/reveal_card
+
 execute as @a[tag=fetchr.lockout_winner] run function fetchr:item_detection/goals/completed_goal_effects/init
 execute as @a[tag=!fetchr.lockout_winner, predicate=fetchr:is_in_game] at @s run playsound minecraft:entity.wither.spawn voice @a ~ ~ ~ 1 1.5
 execute as @a[predicate=fetchr:is_in_game] run function fetchr:game/menu/print_without_hint

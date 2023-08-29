@@ -91,3 +91,5 @@ scoreboard players operation @s fetchr.prev_x_pos = $tick/player.x fetchr.tmp
 scoreboard players operation @s fetchr.prev_y_pos = $tick/player.y fetchr.tmp
 scoreboard players operation @s fetchr.prev_z_pos = $tick/player.z fetchr.tmp
 scoreboard players operation @s fetchr.prev_rot = $tick/player.rot fetchr.tmp
+
+execute if entity @s[scores={fetchr.reveal_card=1}] in fetchr:lobby run function fetchr:game/reveal_card_operator_check

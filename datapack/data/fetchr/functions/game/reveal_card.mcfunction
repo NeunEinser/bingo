@@ -1,17 +1,8 @@
 #> fetchr:game/reveal_card
 #
+# This function reveals the card in blind mode.
 #
-# This function checks whether strict mode is active and the player clicking is
-# a confirmed operator, and the either asks the player to confirm their op
-# status or reveals the bingo card
-#
-# @within function fetchr:game/player_tick
-# @context entity Player changing the setting
-
-scoreboard players reset @s fetchr.reveal_card
-scoreboard players enable @s fetchr.reveal_card
-execute if score $operator_only fetchr.settings matches 1 unless score @s fetchr.operator matches 1 run function fetchr:util/show_confirm_operator_status_prompt
-execute if score $operator_only fetchr.settings matches 1 unless score @s fetchr.operator matches 1 run return 0
+# @internal
 
 data modify block 7 0 7 front_text.messages[0] set value '["", {"storage": "fetchr:card", "nbt": "slots[0].background[]", "interpret": true, "separator":""}, {"text": "\\u0002", "font": "fetchr:space"}, {"storage": "fetchr:card", "nbt": "slots[0].item.icon", "interpret": true}]'
 data modify storage fetchr:card slots[0].display set from block 7 0 7 front_text.messages[0]

@@ -25,6 +25,9 @@ scoreboard players set @s fetchr.update_hud 1
 gamemode creative
 gamemode survival
 scoreboard players enable @s fetchr.teleport_all
-execute if score $game_state fetchr.state matches 3 if score $is_multiplayer fetchr.state matches 1 unless entity @a[scores={fetchr.teleport_all=1}] run tellraw @s {"translate": "fetchr.game.menu.options.teleport_all", "with":[{"translate": "fetchr.game.menu.options.teleport_all.click", "color": "#00c3ff", "clickEvent": {"action": "run_command", "value": "/trigger fetchr.teleport_all"}}]}
+
+execute if score $game_state fetchr.state matches 3 if score $blind_mode fetchr.state matches 1 run tellraw @s ["===", {"translate": "fetchr.game.menu.heading.lobby", "bold": true, "color": "green"}, "===\n[", {"translate": "fetchr.game.menu.options.reveal_card", "color": "#00c3ff", "clickEvent": {"action": "run_command", "value": "/trigger fetchr.reveal_card"}}, "]"]
+execute if score $game_state fetchr.state matches 3 unless score $blind_mode fetchr.state matches 1 if score $is_multiplayer fetchr.state matches 1 unless entity @a[scores={fetchr.teleport_all=1}] run tellraw @s ["===", {"translate": "fetchr.game.menu.heading.lobby", "bold": true, "color": "green"}, "==="]
+execute if score $game_state fetchr.state matches 3 if score $is_multiplayer fetchr.state matches 1 unless entity @a[scores={fetchr.teleport_all=1}] run tellraw @s ["[", {"translate": "fetchr.game.menu.options.teleport_all", "color": "#00c3ff", "clickEvent": {"action": "run_command", "value": "/trigger fetchr.teleport_all"}}, "]"]
 
 schedule function fetchr:lobby/place_indestructible_blocks 1t replace
