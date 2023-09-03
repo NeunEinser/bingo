@@ -29,7 +29,7 @@ def main():
 	mc_version_info = None
 
 	if resourcepack_config != None:
-		copy_pack(resourcepack_config, f"{target}/tmp/resourcepack", ["assets", "pack.mcmeta", "pack.png"])
+		copy_pack(resourcepack_config, f"{target}{os.sep}tmp{os.sep}resourcepack", ["assets", "pack.mcmeta", "pack.png"])
 		version_id: str = config.get("mc")
 
 		if version_id != None:
@@ -37,17 +37,17 @@ def main():
 			version_data: dict = next(filter(lambda v: v["id"] == version_id, version_manifest["versions"]))
 			if version_data != None:
 				version: dict = requests.get(version_data["url"]).json()
-				override_default_lang_strings(f"{target}/tmp/resourcepack", version["assetIndex"]["url"])
+				override_default_lang_strings(f"{target}{os.sep}tmp{os.sep}resourcepack", version["assetIndex"]["url"])
 
 				minecraft_jar = zipfile.ZipFile(io.BytesIO(requests.get(version["downloads"]["client"]["url"]).content))
-				minecraft_jar.extract("version.json", f"{target}/tmp")
-				with open(f"{target}/tmp/version.json", "r", encoding="utf-8") as version_info_file:
+				minecraft_jar.extract("version.json", f"{target}{os.sep}tmp")
+				with open(f"{target}{os.sep}tmp{os.sep}version.json", "r", encoding="utf-8") as version_info_file:
 					mc_version_info: dict = json.loads(version_info_file.read())
-				os.remove(f"{target}/tmp/version.json")
+				os.remove(f"{target}{os.sep}tmp{os.sep}version.json")
 
 	datapack_config = config.get("datapack")
 	if datapack_config != None:
-		copy_pack(datapack_config, f"{target}/tmp/datapack", ["data", "pack.mcmeta", "pack.png"])
+		copy_pack(datapack_config, f"{target}{os.sep}tmp{os.sep}datapack", ["data", "pack.mcmeta", "pack.png"])
 
 	name=config.get("name")
 	version=config.get("version")
@@ -63,54 +63,76 @@ def main():
 	includes = config.get("include")
 	if includes != None:
 		for path in includes:
-			copy_file_or_dir(path, f"{target}/tmp/{path}")
+			copy_file_or_dir(path, f"{target}{os.sep}tmp{os.sep}{path}")
 
 	world_config=config.get("world")
-	worldpath=f"{target}/tmp/world/{name}-{version}"
+	worldpath=f"{target}{os.sep}tmp{os.sep}world{os.sep}{name}-{version}"
 	if world_config != None:
 		copy_pack(world_config, worldpath, None)
 
+	copy_tree(f"{target}{os.sep}tmp", f"{target}{os.sep}out")
 	requested_rp_sha = iterate_files(config, target, mc_version_info)
 
-	rppath=f"{target}/{name}-{version}-resourcepack"
-	shutil.make_archive(rppath, "zip", f"{target}/tmp/resourcepack")
-	rppath += ".zip"
+	variants:dict = config.get("versions")
+	if variants == None:
+		variants = {}
+	variants[""] = None
+	for variant, _ in variants.items():
+		rppath=f"{target}{os.sep}{name}-{version}-resourcepack{'-' + variant if variant else ''}"
+		shutil.make_archive(rppath, "zip", f"{target}{os.sep}out{os.sep + variant if variant else ''}{os.sep}resourcepack")
+		rppath += ".zip"
 
-	BUF_SIZE = 65536
-	sha1 = hashlib.sha1()
-	with open(rppath, 'rb') as f:
-		while True:
-			data = f.read(BUF_SIZE)
-			if not data:
-				break
-			sha1.update(data)
+		BUF_SIZE = 65536
+		sha1 = hashlib.sha1()
+		with open(rppath, 'rb') as f:
+			while True:
+				data = f.read(BUF_SIZE)
+				if not data:
+					break
+				sha1.update(data)
 
-	for file_path in requested_rp_sha:
-		with open(file_path, "r+", encoding="utf-8") as file:
-			file_content = file.read()
-			file_content = file_content.replace("{NEUN_SCRIPT:resource_pack_sha1}", sha1.hexdigest().upper())
-			file.seek(0)
-			file.write(file_content)
-			file.truncate()
-	
-	dppath = f"{target}/{name}-{version}-datapack"
-	shutil.make_archive(dppath, "zip", f"{target}/tmp/datapack")
-	dppath += ".zip"
-	shutil.copy2(rppath, f"{worldpath}/resources.zip")
-	os.mkdir(f"{worldpath}/datapacks")
-	shutil.copy2(dppath, f"{worldpath}/datapacks/{name}.zip")
+		for file_path in requested_rp_sha:
+			if version not in file_path:
+				continue
+			with open(file_path, "r+", encoding="utf-8") as file:
+				file_content = file.read()
+				file_content = file_content.replace("{NEUN_SCRIPT:resource_pack_sha1}", sha1.hexdigest().upper())
+				file.seek(0)
+				file.write(file_content)
+				file.truncate()
+		
+		dppath = f"{target}{os.sep}{name}-{version}-datapack{'-' + variant if variant else ''}"
+		shutil.make_archive(dppath, "zip", f"{target}{os.sep}out{os.sep + variant if variant else ''}{os.sep}datapack")
+		dppath += ".zip"
+		
+		worldpathroot=f"{target}{os.sep}out{os.sep + variant if variant else ''}{os.sep}world"
+		worldpath=f"{worldpathroot}{os.sep}{name}-{version}"
+		if variant:
+			shutil.move(worldpath, worldpath + "-" + variant)
+			worldpath += "-" + variant
 
-	shutil.make_archive(f"{target}/{name}-{version}", "zip", f"{target}/tmp/world")
+		shutil.copy2(rppath, f"{worldpath}{os.sep}resources.zip")
+		os.mkdir(f"{worldpath}{os.sep}datapacks")
+		shutil.copy2(dppath, f"{worldpath}{os.sep}datapacks{os.sep}{name}.zip")
+
+		shutil.make_archive(f"{target}{os.sep}{name}-{version}{'-' + variant if variant else ''}", "zip", worldpathroot)
+		
+		if includes != None:
+			for path in includes:
+				copy_file_or_dir(f"{target}{os.sep}out{os.sep}{path}", f"{target}{os.sep}{path}")
 	
-	if includes != None:
-		for path in includes:
-			copy_file_or_dir(f"{target}/tmp/{path}", f"{target}/{path}")
-	
-	shutil.rmtree(f"{target}/tmp")
+	shutil.rmtree(f"{target}{os.sep}tmp")
+	shutil.rmtree(f"{target}{os.sep}out")
 
 def iterate_files(config: dict, target: str, mc_version_info: dict | None):
 	requested_rp_sha = []
 	remove_extensions = config.get("remove_file_types")
+	versionDict: dict = config.get("versions")
+	if versionDict == None:
+		versionDict = {}
+	versions:list[tuple[str,dict]] = list(versionDict.items())
+	versions.insert(0, ("", None))
+
 	for i, ext in enumerate(remove_extensions):
 		remove_extensions[i] = "." + ext
 	if remove_extensions == None:
@@ -118,54 +140,59 @@ def iterate_files(config: dict, target: str, mc_version_info: dict | None):
 	else:
 		remove_extensions = tuple(remove_extensions)
 
-	for root, _, files in os.walk(f"{target}{os.sep}tmp"):
+	for directory, _, files in os.walk(f"{target}{os.sep}tmp"):
 		for file_name in files:
-			file_path = root + os.sep + file_name
-			print(file_path)
 
-			if file_name.endswith(remove_extensions):
-				os.remove(file_path)
-			elif file_name.endswith(".nbt") or file_name.endswith(".dat"):
-				nbt_content = nbt.read_from_nbt_file(file_path)
-				handle_nbt(nbt_content, file_path, config, mc_version_info)
-				nbt.write_to_nbt_file(file_path, nbt_content)
+			for version, override in versions:
+				version_config = config.copy()
+				if override != None:
+					dict_apply(version_config, override)
+				
+				if version:
+					out_path = f"{target}{os.sep}out{os.sep}{version}{directory.removeprefix(target + os.sep + 'tmp')}"
+					file_path = out_path + os.sep + file_name
+					os.makedirs(out_path, exist_ok=True)
+					shutil.copy2(directory + os.sep + file_name, file_path)
+				else:
+					file_path = f"{target}{os.sep}out{directory.removeprefix(target + os.sep + 'tmp')}" + os.sep + file_name
+				print(file_path)
 
-			elif not file_name.endswith(".png") and not file_name.endswith(".bin"):
-				try:
-					with open(file_path, "r+", encoding="utf-8") as file:
-						file_content = file.read()
+				if file_name.endswith(remove_extensions):
+					os.remove(file_path)
+				elif file_name.endswith(".nbt") or file_name.endswith(".dat"):
+					nbt_content = nbt.read_from_nbt_file(file_path)
+					handle_nbt(nbt_content, file_path, version_config, mc_version_info)
+					nbt.write_to_nbt_file(file_path, nbt_content)
 
-						if file_name.endswith(".json") or file_name.endswith(".mcmeta"):
-							file_content = minify_json_file(file_content)
-						elif file_name.endswith(".mcfunction"):
-							file_content = minify_function_file(file_content)
+				elif not file_name.endswith(".png") and not file_name.endswith(".bin"):
+					try:
+						with open(file_path, "r+", encoding="utf-8") as file:
+							file_content = file.read()
 
-						file_content = replace_variables(file_content, file_path, config, requested_rp_sha)
+							if file_name.endswith(".json") or file_name.endswith(".mcmeta"):
+								file_content = minify_json_file(file_content)
+							elif file_name.endswith(".mcfunction"):
+								file_content = minify_function_file(file_content, version_config)
 
-						file.seek(0)
-						file.write(file_content)
-						file.truncate()
-				except UnicodeDecodeError:
-					pass
+							file_content = replace_variables(file_content, file_path, version_config, requested_rp_sha)
+
+							file.seek(0)
+							file.write(file_content)
+							file.truncate()
+					except UnicodeDecodeError:
+						pass
 	return requested_rp_sha
 
 def replace_variables(content: str, file_path: str, config, requested_rp_sha: list):
 	indexDiff = 0
 	for match in re.finditer(r"\{NEUN_SCRIPT:([a-zA-Z0-9_-]+)(?:\s*([+\-*/%])\s*([+-]?\d+))?\}", content):
 		variable = match.group(1)
-		replace=None
-		vars = config.get("vars")
-
-		if variable == "version":
-			replace = config.get("version")
-		elif variable == "resource_pack_sha1":
-			requested_rp_sha.append(file_path)
-			continue
-		elif vars != None:
-			replace = vars.get(variable)
-
+		replace=get_variable(variable, config, requested_rp_sha, file_path)
 		if replace == None:
-			replace=""
+			continue
+		if replace == variable:
+			replace = ""
+			print(f"variable {variable} not found", file=stderr)
 		
 		if match.group(2) != None:
 			if match.group(2) == "+":
@@ -182,6 +209,21 @@ def replace_variables(content: str, file_path: str, config, requested_rp_sha: li
 		content = content[0:match.start() + indexDiff] + replace + content[match.end() + indexDiff:]
 		indexDiff += len(replace) - match.end() + match.start()
 	return content
+
+def get_variable(variable: str, config: dict, requested_rp_sha: list | None = None, file_path: str | None = None):
+	vars = config.get("vars")
+
+	if variable == "version":
+		return config.get("version")
+	elif variable == "resource_pack_sha1" and requested_rp_sha != None and file_path != None:
+		requested_rp_sha.append(file_path)
+		return None
+	elif vars != None:
+		ret = vars.get(variable)
+		if ret != None:
+			return ret
+		return variable
+	return variable
 
 def handle_nbt(nbt_tag, file_path: str, config: dict, mc_version_info: dict | None, key: str | None = None):
 	if isinstance(nbt_tag, dict):
@@ -209,7 +251,7 @@ def minify_json_file(file_content: str):
 	except Exception:
 		print("failed to parse json file\n" + file_content, file=stderr)
 
-def minify_function_file(file_content: str):
+def minify_function_file(file_content: str, config: dict):
 	output=""
 	remove=0
 	uncomment=0
@@ -217,15 +259,24 @@ def minify_function_file(file_content: str):
 	for line in file_content.splitlines():
 		line = line.strip()
 
-		if line.startswith("#") and uncomment > 0:
+		if not line or line == "#":
+			continue
+
+		if line == "#NEUN_SCRIPT end":
+			uncomment = 0
+			remove = 0
+
+		if line.startswith("#") and uncomment != 0:
 			line = line[1:]
 			uncomment -= 1
-		elif uncomment < 0:
-			uncomment = 0
 
 		if remove > 0:
 			remove -= 1
-		elif not line.startswith("#") and line:
+			continue
+		elif remove < 0:
+			continue
+		
+		if not line.startswith("#"):
 			if output:
 				output += "\n"
 			output += line
@@ -250,6 +301,17 @@ def minify_function_file(file_content: str):
 							remove = int(command[1])
 						except ValueError:
 							pass
+				
+				if command[0] == "if" or command[0] == "unless":
+					if len(command) < 2:
+						raise ValueError("if/unless needs at least one argument")
+					value = get_variable(command[1], config)
+					if bool(value) == (command[0] == "if"):
+						uncomment = -1
+					else:
+						remove = -1
+						
+
 	return output
 
 def copy_pack(pack_config: dict, tmp_dir: str, paths: list[str] | None):
@@ -262,19 +324,19 @@ def copy_pack(pack_config: dict, tmp_dir: str, paths: list[str] | None):
 	if deps != None:
 		for dep in deps:
 			dependency = zipfile.ZipFile(io.BytesIO(requests.get(dep).content))
-			dependency.extractall( f"{tmp_dir}/dependency")
+			dependency.extractall( f"{tmp_dir}{os.sep}dependency")
 
 			if paths != None:
 				for path in paths:
-					copy_file_or_dir(f"{tmp_dir}/dependency/{path}", f"{tmp_dir}/{path}")
+					copy_file_or_dir(f"{tmp_dir}{os.sep}dependency{os.sep}{path}", f"{tmp_dir}{os.sep}{path}")
 			else:
-				copy_file_or_dir(f"{tmp_dir}/dependency", tmp_dir)
-			shutil.rmtree(f"{tmp_dir}/dependency")
+				copy_file_or_dir(f"{tmp_dir}{os.sep}dependency", tmp_dir)
+			shutil.rmtree(f"{tmp_dir}{os.sep}dependency")
 
 	
 	if paths != None:
 		for path in paths:
-			copy_file_or_dir(f"{src}/{path}", f"{tmp_dir}/{path}")
+			copy_file_or_dir(f"{src}{os.sep}{path}", f"{tmp_dir}{os.sep}{path}")
 	else:
 		copy_file_or_dir(src, tmp_dir)
 
@@ -282,7 +344,7 @@ def copy_pack(pack_config: dict, tmp_dir: str, paths: list[str] | None):
 	exclude=pack_config.get("exclude")
 	if exclude != None:
 		for file in exclude:
-			os.remove(f"{tmp_dir}/{file}")
+			os.remove(f"{tmp_dir}{os.sep}{file}")
 
 def copy_file_or_dir(src: str, target: str):
 	if os.path.isdir(src):
@@ -290,10 +352,22 @@ def copy_file_or_dir(src: str, target: str):
 	elif os.path.exists(src):
 		shutil.copy2(src, target)
 
+def dict_apply(src: dict, other: dict):
+	for key, value in other.items():
+		if isinstance(src[key], dict) and isinstance(value, dict):
+			if key in src:
+				cpy = src[key].copy()
+				src[key] = cpy
+				dict_apply(cpy, value)
+			else:
+				src[key] = value
+		else:
+			src[key] = value
+
 def override_default_lang_strings(rp_root: str, assetUrl: str):
 	default_strings = None
-	if os.path.isfile(f"{rp_root}/assets/minecraft/lang/en_us.json"):
-		with open(f"{rp_root}/assets/minecraft/lang/en_us.json", "r", encoding="utf-8") as lang_file:
+	if os.path.isfile(f"{rp_root}{os.sep}assets{os.sep}minecraft{os.sep}lang{os.sep}en_us.json"):
+		with open(f"{rp_root}{os.sep}assets{os.sep}minecraft{os.sep}lang{os.sep}en_us.json", "r", encoding="utf-8") as lang_file:
 			default_strings: dict[str, str] = pyjson5.decode(lang_file.read())
 
 	if default_strings == None:
@@ -306,7 +380,7 @@ def override_default_lang_strings(rp_root: str, assetUrl: str):
 
 	for lang in languages:
 		if lang != "en_us":
-			lang_path=f"{rp_root}/assets/minecraft/lang/{lang}.json"
+			lang_path=f"{rp_root}{os.sep}assets{os.sep}minecraft{os.sep}lang{os.sep}{lang}.json"
 			if os.path.isfile(lang_path):
 				with open(lang_path, "r+", encoding="utf-8") as lang_file:
 					lang_json: dict[str, str] = pyjson5.decode(lang_file.read())

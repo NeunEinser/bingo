@@ -384,16 +384,25 @@ forceload add 0 0
 		# 	function fetchr:init/setup_lobby/start
 		# 	function fetchr:init/setup_lobby/end
 		# 	function fetchr:lobby/place_indestructible_blocks
+		# 	function fetchr:init/setup_lobby/*
 		# 	structure fetchr:*
 		#declare tag fetchr.lobby_sign
 		#>
 		# @within
 		# 	function fetchr:lobby/*
+		# 	function fetchr:init/setup_lobby/*
 		# 	structure fetchr:*
 		#declare tag fetchr.multiplayer_only
 		#>
 		# @within
 		# 	function fetchr:lobby/*
+		# 	function fetchr:init/setup_lobby/*
+		# 	structure fetchr:*
+		#declare tag fetchr.no_realms
+		#>
+		# @within
+		# 	function fetchr:lobby/*
+		# 	function fetchr:init/setup_lobby/*
 		# 	structure fetchr:*
 		#declare tag fetchr.multiplayer_only_brown
 		#>
@@ -405,97 +414,115 @@ forceload add 0 0
 		#>
 		# @within
 		# 	function fetchr:lobby/*
+		# 	function fetchr:init/setup_lobby/*
 		# 	structure fetchr:*
 		#declare tag fetchr.singleplayer_only
 		#>
 		# @within
 		# 	function fetchr:lobby/*
+		# 	function fetchr:init/setup_lobby/*
 		# 	structure fetchr:*
 		#declare tag fetchr.singleplayer_only_brown
 		#>
 		# @within
 		# 	function fetchr:lobby/place_sign
+		# 	function fetchr:init/setup_lobby/*
 		# 	structure fetchr:*
 		#declare tag fetchr.sign_north
 		#>
 		# @within
 		# 	function fetchr:lobby/place_sign
+		# 	function fetchr:init/setup_lobby/*
 		# 	structure fetchr:*
 		#declare tag fetchr.sign_east
 		#>
 		# @within
 		# 	function fetchr:lobby/place_sign
+		# 	function fetchr:init/setup_lobby/*
 		# 	structure fetchr:*
 		#declare tag fetchr.sign_south
 		#>
 		# @within
 		# 	function fetchr:lobby/place_sign
-		# 	function fetchr:init/setup_lobby/end
+		# 	function fetchr:init/setup_lobby/*
 		# 	structure fetchr:*
 		#declare tag fetchr.sign_west
 		#>
 		# @within
 		# 	function fetchr:lobby/place_sign
+		# 	function fetchr:init/setup_lobby/*
 		# 	structure fetchr:*
 		#declare tag fetchr.danger_sign_east
 		#>
 		# @within
 		# 	function fetchr:lobby/settings/toggle_blind_mode
+		# 	function fetchr:init/setup_lobby/*
 		# 	structure fetchr:card_generation
 		#declare tag fetchr.blind_mode_sign
 		#>
 		# @within
 		# 	function fetchr:lobby/settings/toggle_lockout_mode
+		# 	function fetchr:init/setup_lobby/*
 		# 	structure fetchr:card_generation
 		#declare tag fetchr.lockout_mode_sign
 		#>
 		# @within
 		# 	function fetchr:lobby/settings/toggle_timer_method
+		# 	function fetchr:init/setup_lobby/*
 		# 	structure fetchr:card_generation
 		#declare tag fetchr.timer_method_sign
 		#>
 		# @within
 		# 	function fetchr:lobby/settings/toggle_paused_time
+		# 	function fetchr:init/setup_lobby/*
 		# 	structure fetchr:card_generation
 		#declare tag fetchr.paused_time_sign
 		#>
 		# @within
 		# 	function fetchr:lobby/settings/toggle_operator_only
+		# 	function fetchr:init/setup_lobby/*
 		# 	structure fetchr:card_generation
 		#declare tag fetchr.operator_only_sign
 		#>
 		# @within
 		# 	function fetchr:lobby/settings/toggle_gamemode
+		# 	function fetchr:init/setup_lobby/*
 		# 	structure fetchr:card_generation
 		#declare tag fetchr.gamemode_sign
 		#>
 		# @within
 		# 	function fetchr:lobby/settings/set_pre_gen_radius_internal
+		# 	function fetchr:init/setup_lobby/*
 		# 	structure fetchr:card_generation
 		#declare tag fetchr.pre_gen_sign
 		#>
 		# @within
 		# 	function fetchr:lobby/settings/toggle_allow_spectating
+		# 	function fetchr:init/setup_lobby/*
 		# 	structure fetchr:card_generation
 		#declare tag fetchr.allow_spectating_sign
 		#>
 		# @within
 		# 	function fetchr:lobby/settings/toggle_show_seed
+		# 	function fetchr:init/setup_lobby/*
 		# 	structure fetchr:card_generation
 		#declare tag fetchr.show_seed_sign
 		#>
 		# @within
 		# 	function fetchr:lobby/place_indestructible_blocks
+		# 	function fetchr:init/setup_lobby/*
 		# 	structure fetchr:card_generation
 		#declare tag fetchr.multiplayer_door
 		#>
 		# @within
 		# 	function fetchr:lobby/place_indestructible_blocks
+		# 	function fetchr:init/setup_lobby/*
 		# 	structure fetchr:card_generation
 		#declare tag fetchr.mangrove_button_south
 		#>
 		# @within
 		# 	function fetchr:lobby/place_indestructible_blocks
+		# 	function fetchr:init/setup_lobby/*
 		# 	structure fetchr:card_generation
 		#declare tag fetchr.lobby_enderchest
 		#>
@@ -503,26 +530,31 @@ forceload add 0 0
 		# 	function fetchr:init/setup_lobby/start
 		# 	function fetchr:init/setup_lobby/end
 		# 	function fetchr:lobby/place_indestructible_blocks
+		# 	function fetchr:init/setup_lobby/*
 		# 	structure fetchr:*
 		#declare tag fetchr.lobby_lectern
 		#>
 		# @within
 		# 	function fetchr:lobby/place_lectern
+		# 	function fetchr:init/setup_lobby/*
 		# 	structure fetchr:*
 		#declare tag fetchr.lectern_north
 		#>
 		# @within
 		# 	function fetchr:lobby/place_lectern
+		# 	function fetchr:init/setup_lobby/*
 		# 	structure fetchr:*
 		#declare tag fetchr.lectern_east
 		#>
 		# @within
 		# 	function fetchr:lobby/place_lectern
+		# 	function fetchr:init/setup_lobby/*
 		# 	structure fetchr:*
 		#declare tag fetchr.lectern_south
 		#>
 		# @within
 		# 	function fetchr:lobby/place_lectern
+		# 	function fetchr:init/setup_lobby/*
 		# 	structure fetchr:*
 		#declare tag fetchr.lectern_west
 		#>

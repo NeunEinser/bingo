@@ -5,7 +5,8 @@
 	"target": "dist",
 	"vars": {
 		"version_long_name": "5.1 Pre-Release 2",
-		"rp_version": "20"
+		"rp_version": "20",
+		"realms": false
 	},
 	"remove_file_types": [
 		"xcf", "py", "jsonc"
@@ -22,6 +23,14 @@
 	},
 	"world": {
 		"path": "world"
+	},
+	"versions": {
+		"realms": {
+			"vars": {
+				"realms": true,
+				"version_long_name": "5.1 (Realms)"
+			}
+		}
 	},
 	"include": [
 		"server.properties"
