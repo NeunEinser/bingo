@@ -32,4 +32,4 @@ function fetchr:util/apply_active_item_tags/prepare_items_with_multiple_categori
 scoreboard players set $total_item_weight fetchr.state 0
 function fetchr:util/apply_active_item_tags/calculate_global_weight_and_add
 
-function fetchr:lobby/chest_generation/generate_item_chests
+execute in fetchr:lobby run function fetchr:lobby/chest_generation/generate_item_chests

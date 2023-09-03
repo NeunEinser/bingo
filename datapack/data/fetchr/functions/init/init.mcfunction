@@ -1178,7 +1178,7 @@ forceload add 0 0
 	# @within function fetchr:init/**
 	#declare storage tmp.fetchr:init
 
-	schedule function fetchr:init/items/exec 1t
+	execute if score $lobby_generated fetchr.state matches 1 run schedule function fetchr:init/items/exec 1t
 #endregion
 #region initialize hud components
 	#>

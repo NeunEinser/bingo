@@ -3,7 +3,9 @@
 # This function is called after the lobby loaded. The lobby is required for
 # properly initializing everything.
 #
-# @within function fetchr:init/items/exec
+# @within
+# 	function fetchr:init/items/exec
+# 	function fetchr:init/setup_lobby/end
 
 data modify storage tmp.fetchr:init items set from storage fetchr:registries items
 data modify storage fetchr:items categories set from storage fetchr:registries categories
