@@ -301,5 +301,9 @@
 	"fetchr.lobby.tutorial.chests.lectern.page_2": "Una columna que comienza con un espacio vacío es una continuación de la categoría de la última columna.\n\nUn artículo también puede tener múltiples categorías, lo que lo restringe más, ya que el artículo solo se puede seleccionar cuando ninguno de los artículos en cualquiera de sus categorías está en la tarjeta.",
 	"fetchr.lobby.tutorial.chests.lectern.page_3": "Los artículos también pueden tener pesos. Cuanto mayor sea el peso, más probabilidades habrá de que el juego seleccione el elemento de la categoría.\n\nUtilice el letrero de arriba para regenerar los cofres.",
 	"fetchr.lobby.tutorial.basics.sign.line2": "Fetchr",
-	"fetchr.lobby.tutorial.basics.sign.line3": "Basics"
+	"fetchr.lobby.tutorial.basics.sign.line3": "Basics",
+	"fetchr.lobby.tutorial.basics1.sign.line1": "Fetchr es un",
+	"fetchr.lobby.tutorial.basics1.sign.line2": "mapa de Bingo",
+	"fetchr.lobby.tutorial.basics1.sign.line3": "donde consigues",
+	"fetchr.lobby.tutorial.basics1.sign.line4": "items."
 }
