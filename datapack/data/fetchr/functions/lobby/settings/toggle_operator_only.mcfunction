@@ -18,3 +18,5 @@ execute if score $operator_only fetchr.settings matches 1 run tellraw @s {"trans
 
 execute if score $operator_only fetchr.settings matches 0 run data modify entity @e[type=minecraft:marker, tag=fetchr.operator_only_sign, distance=..1, limit=1] data.front_text.messages[3] set value '{"translate": "fetchr.lobby.settings.operator_only.sign.off", "color": "gray"}'
 execute if score $operator_only fetchr.settings matches 1 run data modify entity @e[type=minecraft:marker, tag=fetchr.operator_only_sign, distance=..1, limit=1] data.front_text.messages[3] set value '{"translate": "fetchr.lobby.settings.operator_only.sign.on", "color": "green"}'
+
+function fetchr:lobby/place_indestructible_blocks

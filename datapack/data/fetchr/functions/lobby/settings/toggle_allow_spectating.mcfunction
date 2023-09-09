@@ -18,3 +18,5 @@ execute if score $allow_spectating fetchr.settings matches 1 run tellraw @s {"tr
 
 execute if score $allow_spectating fetchr.settings matches 0 run data modify entity @e[type=minecraft:marker, tag=fetchr.allow_spectating_sign, distance=..1, limit=1] data.front_text.messages[3] set value '{"translate": "fetchr.lobby.settings.allow_spectating.sign.off", "color": "gray"}'
 execute if score $allow_spectating fetchr.settings matches 1 run data modify entity @e[type=minecraft:marker, tag=fetchr.allow_spectating_sign, distance=..1, limit=1] data.front_text.messages[3] set value '{"translate": "fetchr.lobby.settings.allow_spectating.sign.on", "color": "green"}'
+
+function fetchr:lobby/place_indestructible_blocks

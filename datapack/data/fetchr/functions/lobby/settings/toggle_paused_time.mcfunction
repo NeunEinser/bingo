@@ -18,3 +18,5 @@ execute if score $count_pauses 91.timer.io matches 1 run tellraw @s {"translate"
 
 execute if score $count_pauses 91.timer.io matches 0 as @e[type=minecraft:marker, tag=fetchr.paused_time_sign, distance=0.., limit=2] run data modify entity @s data.front_text.messages[3] set value '{"translate": "fetchr.lobby.settings.paused_time.sign.off", "color": "gray"}'
 execute if score $count_pauses 91.timer.io matches 1 as @e[type=minecraft:marker, tag=fetchr.paused_time_sign, distance=0.., limit=2] run data modify entity @s data.front_text.messages[3] set value '{"translate": "fetchr.lobby.settings.paused_time.sign.on", "color": "green"}'
+
+function fetchr:lobby/place_indestructible_blocks

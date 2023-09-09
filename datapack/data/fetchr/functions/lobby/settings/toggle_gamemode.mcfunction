@@ -18,3 +18,5 @@ execute if score $lobby_gamemode fetchr.settings matches 1 run tellraw @s {"tran
 
 execute if score $lobby_gamemode fetchr.settings matches 0 run data modify entity @e[type=minecraft:marker, tag=fetchr.gamemode_sign, distance=..1, limit=1] data.front_text.messages[3] set value '{"translate": "fetchr.lobby.settings.gamemode.sign.adventure", "color": "gray"}'
 execute if score $lobby_gamemode fetchr.settings matches 1 run data modify entity @e[type=minecraft:marker, tag=fetchr.gamemode_sign, distance=..1, limit=1] data.front_text.messages[3] set value '{"translate": "fetchr.lobby.settings.gamemode.sign.survival", "color": "red"}'
+
+function fetchr:lobby/place_indestructible_blocks

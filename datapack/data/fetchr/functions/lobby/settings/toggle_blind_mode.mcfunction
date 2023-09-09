@@ -18,3 +18,5 @@ execute if score $blind_mode fetchr.settings matches 1 run tellraw @s ["", {"tra
 
 execute if score $blind_mode fetchr.settings matches 0 run data modify entity @e[type=minecraft:marker, tag=fetchr.blind_mode_sign, distance=..1, limit=1] data.front_text.messages[3] set value '{"translate": "fetchr.lobby.settings.blind_mode.sign.off", "color": "gray"}'
 execute if score $blind_mode fetchr.settings matches 1 run data modify entity @e[type=minecraft:marker, tag=fetchr.blind_mode_sign, distance=..1, limit=1] data.front_text.messages[3] set value '{"translate": "fetchr.lobby.settings.blind_mode.sign.on", "color": "green"}'
+
+function fetchr:lobby/place_indestructible_blocks
