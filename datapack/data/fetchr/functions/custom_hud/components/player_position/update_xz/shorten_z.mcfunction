@@ -27,7 +27,6 @@ scoreboard players operation $custom_hud/player_pos.short_z fetchr.tmp = $custom
 # At least 2 digits need to be removed.
 scoreboard players operation $custom_hud/player_pos.short_z fetchr.tmp /= 100 fetchr.const
 scoreboard players set $custom_hud/player_pos.removed_z fetchr.tmp 2
-scoreboard players remove $custom_hud/width.characters fetchr.io 1
 
 # Remove 2 digits (width 12) and add per coordinate:
 #   - decimal point (width 2)
@@ -38,7 +37,7 @@ execute if score $custom_hud/player_pos.abs_z fetchr.tmp matches ..999999 run da
 execute unless score $custom_hud/player_pos.abs_z fetchr.tmp matches ..999999 run scoreboard players add $custom_hud/width.padding fetchr.io 4
 execute unless score $custom_hud/player_pos.abs_z fetchr.tmp matches ..999999 run data modify storage tmp.fetchr:custom_hud zChar set value "M"
 
-execute if score $custom_hud/width.characters fetchr.tmp matches 12.. if score $custom_hud/player_pos.abs_z fetchr.tmp > $custom_hud/player_pos.abs_x fetchr.tmp run function fetchr:custom_hud/components/player_position/update_xz/shorten_z_iter
+execute if score $custom_hud/width.padding fetchr.io matches ..-1 if score $custom_hud/player_pos.abs_z fetchr.tmp > $custom_hud/player_pos.abs_x fetchr.tmp run function fetchr:custom_hud/components/player_position/update_xz/shorten_z_iter
 
 #>
 # Current decimal digits

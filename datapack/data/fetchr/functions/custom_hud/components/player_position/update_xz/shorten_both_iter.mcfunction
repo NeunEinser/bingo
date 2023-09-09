@@ -9,9 +9,8 @@
 
 scoreboard players operation $custom_hud/player_pos.short_x fetchr.tmp /= 10 fetchr.const
 scoreboard players operation $custom_hud/player_pos.short_z fetchr.tmp /= 10 fetchr.const
-scoreboard players remove $custom_hud/width.characters fetchr.io 2
 scoreboard players add $custom_hud/width.padding fetchr.io 12
 scoreboard players add $custom_hud/player_pos.removed_x fetchr.tmp 1
 scoreboard players add $custom_hud/player_pos.removed_z fetchr.tmp 1
 
-execute if score $custom_hud/width.characters fetchr.io matches 13.. if score $custom_hud/player_pos.removed_x fetchr.tmp < $custom_hud/player_pos.max_secondary fetchr.tmp run function fetchr:custom_hud/components/player_position/update_xz/shorten_both_iter
+execute if score $custom_hud/width.padding fetchr.io matches ..-7 if score $custom_hud/player_pos.removed_x fetchr.tmp < $custom_hud/player_pos.max_secondary fetchr.tmp run function fetchr:custom_hud/components/player_position/update_xz/shorten_both_iter

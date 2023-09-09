@@ -29,26 +29,20 @@ execute if score $custom_hud/player_pos.z fetchr.tmp matches ..-1 run scoreboard
 # 1 if both coordinates should be shortened,
 # 0 if only the one with the higher absolute value should be shortened
 #
-# Logic see comments below, basically it's overengineered as heck.
-#
 # @private
 #declare score_holder $custom_hud/player_pos.shorten_both
 scoreboard players set $custom_hud/player_pos.shorten_both fetchr.tmp 0
+execute if score $custom_hud/width.padding fetchr.io matches ..-6 run scoreboard players set $custom_hud/player_pos.shorten_both fetchr.tmp 1
+execute if score $custom_hud/width.padding fetchr.io matches -5 if score $custom_hud/player_pos.abs_x fetchr.tmp matches 1000000.. run scoreboard players set $custom_hud/player_pos.shorten_both fetchr.tmp 1
+execute if score $custom_hud/width.padding fetchr.io matches -5 if score $custom_hud/player_pos.abs_z fetchr.tmp matches 1000000.. run scoreboard players set $custom_hud/player_pos.shorten_both fetchr.tmp 1
 
-# These checks are here for -100000 (which is 7 characters because of the `-`
-# sign)
-# In this case, 2 digits need to be pruned, so the tense and ones of both values
-# will be chosen first, and possibly one hundrets digit as well, if both values
-# have a length of 7.
-execute if score $custom_hud/player_pos.x_len fetchr.tmp matches 7.. if score $custom_hud/player_pos.z_len fetchr.tmp matches 6.. run scoreboard players set $custom_hud/player_pos.shorten_both fetchr.tmp 1
-execute if score $custom_hud/player_pos.z_len fetchr.tmp matches 7.. if score $custom_hud/player_pos.x_len fetchr.tmp matches 6.. run scoreboard players set $custom_hud/player_pos.shorten_both fetchr.tmp 1
+execute if score $custom_hud/width.padding fetchr.io matches -11 if score $custom_hud/player_pos.abs_x fetchr.tmp matches ..999999 if score $custom_hud/player_pos.abs_z fetchr.tmp matches ..999999 run scoreboard players set $custom_hud/player_pos.shorten_both fetchr.tmp 0
+execute if score $custom_hud/width.padding fetchr.io matches -10 if score $custom_hud/player_pos.abs_x fetchr.tmp matches 1000000.. run scoreboard players set $custom_hud/player_pos.shorten_both fetchr.tmp 0
+execute if score $custom_hud/width.padding fetchr.io matches -10 if score $custom_hud/player_pos.abs_z fetchr.tmp matches 1000000.. run scoreboard players set $custom_hud/player_pos.shorten_both fetchr.tmp 0
+execute if score $custom_hud/width.padding fetchr.io matches -9 if score $custom_hud/player_pos.abs_x fetchr.tmp matches 1000000.. if score $custom_hud/player_pos.abs_z fetchr.tmp matches 1000000.. run scoreboard players set $custom_hud/player_pos.shorten_both fetchr.tmp 0
 
-# In order to show as siginificant digits as possible, if one of the values is
-# >= 1M and at least 2 digits need to be pruned, the other coordinate will be
-# shortened in order to allow more siginificant digits of the 1M to be
-# displayed.
-execute if score $custom_hud/player_pos.abs_x fetchr.tmp matches 1000000.. if score $custom_hud/width.characters fetchr.io matches 13.. if score $custom_hud/player_pos.abs_z fetchr.tmp matches 1000.. run scoreboard players set $custom_hud/player_pos.shorten_both fetchr.tmp 1
-execute if score $custom_hud/player_pos.abs_z fetchr.tmp matches 1000000.. if score $custom_hud/width.characters fetchr.io matches 13.. if score $custom_hud/player_pos.abs_x fetchr.tmp matches 1000.. run scoreboard players set $custom_hud/player_pos.shorten_both fetchr.tmp 1
+execute if score $custom_hud/player_pos.abs_x fetchr.tmp matches ..999 run scoreboard players set $custom_hud/player_pos.shorten_both fetchr.tmp 0
+execute if score $custom_hud/player_pos.abs_z fetchr.tmp matches ..999 run scoreboard players set $custom_hud/player_pos.shorten_both fetchr.tmp 0
 
 execute if score $custom_hud/player_pos.shorten_both fetchr.tmp matches 0 if score $custom_hud/player_pos.abs_x fetchr.tmp >= $custom_hud/player_pos.abs_z fetchr.tmp run function fetchr:custom_hud/components/player_position/update_xz/shorten_x
 execute if score $custom_hud/player_pos.shorten_both fetchr.tmp matches 0 if score $custom_hud/player_pos.abs_z fetchr.tmp > $custom_hud/player_pos.abs_x fetchr.tmp run function fetchr:custom_hud/components/player_position/update_xz/shorten_z
