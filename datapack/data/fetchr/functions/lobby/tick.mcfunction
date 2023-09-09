@@ -6,7 +6,7 @@
 # @within function fetchr:tick/tick
 
 execute as @a[predicate=fetchr:is_in_lobby] run function fetchr:lobby/player_tick
-execute if entity @a[tag=fetchr.in_skybox] run function fetchr:game/skybox/tick
+execute if entity @a[tag=fetchr.in_skybox] in fetchr:default as @e[type=minecraft:marker, tag=fetchr.spawn, distance=0.., limit=1] at @s run function fetchr:game/skybox/tick
 
 #change settings
 #execute as @a[scores={fetchr.settings=5..12}] run function fetchr:lobby/player_settings/save/do_action
