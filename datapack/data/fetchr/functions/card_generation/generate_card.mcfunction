@@ -56,6 +56,9 @@ kill @e[type=minecraft:marker, tag=fetchr.command_cloud, limit=1]
 function neun_einser.math:random/next_int
 execute store result storage fetchr:card spawnLocation int 1 run scoreboard players get $rand.seed 91.math.io
 
+function neun_einser.math:random/next_int
+execute store result storage fetchr:card randomSequenceData.seed int 1 run scoreboard players get $rand.seed 91.math.io
+
 # Reset teams
 data remove storage fetchr:card teams
 data modify storage fetchr:card teams append value {id: "fetchr:none"}
