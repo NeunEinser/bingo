@@ -613,6 +613,7 @@ forceload add 0 0
 		# @public
 		scoreboard objectives add fetchr.state dummy
 
+		#NEUN_SCRIPT unless realms
 		#>
 		# This objective is set to 1 for players who confirmed their operator status in
 		# strict mode.
@@ -622,6 +623,7 @@ forceload add 0 0
 		#
 		# @public
 		scoreboard objectives add fetchr.operator dummy
+		#NEUN_SCRIPT end
 
 		#>
 		# Whether this player's hud needs to be forcefully updated entirely
@@ -647,12 +649,14 @@ forceload add 0 0
 		# @user
 		scoreboard objectives add fetchr.menu trigger
 
+		#NEUN_SCRIPT unless realms
 		#>
 		# Trigger objective used to change the pre-generation radius.
 		#
 		# @internal
 		# @user
 		scoreboard objectives add fetchr.pre_gen_radius trigger
+		#NEUN_SCRIPT end
 
 		#>
 		# Trigger objective used to handle changes / clicks in the preferences menu.
@@ -660,11 +664,13 @@ forceload add 0 0
 		# @internal
 		scoreboard objectives add fetchr.pref trigger
 
+		#NEUN_SCRIPT unless realms
 		#>
 		# This trigger is used for confirming that the resource pack is active
 		#
 		# @internal
 		scoreboard objectives add fetchr.resource_pack_check trigger
+		#NEUN_SCRIPT end
 
 		#>
 		# Trigger objective for revealing the card in blind mode.
@@ -865,7 +871,12 @@ forceload add 0 0
 		#
 		# @public
 		#declare score_holder $is_multiplayer
+		#NEUN_SCRIPT unless realms
 		scoreboard players add $is_multiplayer fetchr.state 0
+		#NEUN_SCRIPT end
+		#NEUN_SCRIPT if realms
+		#scoreboard players set $is_multiplayer fetchr.state 1
+		#NEUN_SCRIPT end
 		#>
 		# The status of chunk pregeneration.
 		# 0 = not started
@@ -916,7 +927,9 @@ forceload add 0 0
 		#
 		# @internal
 		#declare score_holder $lobby_gamemode
+		#NEUN_SCRIPT unless realms
 		scoreboard players add $lobby_gamemode fetchr.settings 0
+		#NEUN_SCRIPT end
 		#>
 		# The amount of chunks to pre-generate
 		#
@@ -1102,8 +1115,10 @@ forceload add 0 0
 #endregion
 
 # Create overworld resourcepack check
+	#NEUN_SCRIPT unless realms
 	fill 0 0 0 2 3 2 minecraft:black_concrete outline
 	gamerule spawnRadius 0
+	#NEUN_SCRIPT end
 
 # Add pregen bossbar
 	bossbar add fetchr:start/pre_gen/progress {"translate": "fetchr.game.start.pre_gen_progress"}

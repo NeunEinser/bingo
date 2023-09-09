@@ -53,27 +53,30 @@ execute if score @s fetchr.prev_x_pos = $tick/player.x fetchr.tmp if score @s fe
 
 #region resourcepack check
 # Auto-validate if Singleplayer
+#NEUN_SCRIPT unless realms
 execute if score $is_multiplayer fetchr.state matches 0 run tellraw @s[tag=fetchr.resourcepack_check] "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
-#NEUN_SCRIPT uncomment
 #execute if score $is_multiplayer fetchr.state matches 0 run scoreboard players set @s[tag=fetchr.resourcepack_check] fetchr.resource_pack_check {NEUN_SCRIPT:rp_version * 91}
-#NEUN_SCRIPT remove
+#NEUN_SCRIPT end
+#NEUN_SCRIPT remove 1
 execute if score $is_multiplayer fetchr.state matches 0 run scoreboard players set @s[tag=fetchr.resourcepack_check] fetchr.resource_pack_check 91
 
 # Send Resource pack check chat message
 # Uses fallback messages to check for the resource pack
 
-#NEUN_SCRIPT uncomment
+#NEUN_SCRIPT unless realms
 #tellraw @s[scores={fetchr.resource_pack_check=1}] ["\n\n\n\n\n",{"translate":"fetchr.technical.resourcepack_version_{NEUN_SCRIPT:rp_version}","fallback":"%2$s","with":[["",{"translate":"fetchr.resourcepack_check.go_to_lobby.part1","color":"green"},"\n",{"translate":"fetchr.resourcepack_check.go_to_lobby.part2","with":[{"translate":"fetchr.resourcepack_check.go_to_lobby.click","color":"#00c3ff","clickEvent":{"action":"run_command","value":"/trigger fetchr.resource_pack_check set {NEUN_SCRIPT:rp_version * 91}"}}]}],["",{"translate":"fetchr.resourcepack_check.wrong_version.title","fallback":"%s","with":[{"translate":"bingo.resourcepack_check.wrong_version.title","fallback":"The resourcepack is currently not enabled."}],"color":"red"},"\n",{"translate":"fetchr.resourcepack_check.wrong_version.description","fallback":"%2$s","with":[{"translate":"fetchr.resourcepack_check.wrong_version.link","color":"#00c3ff","clickEvent":{"action":"open_url","value":"https://github.com/NeunEinser/bingo/releases/download/{NEUN_SCRIPT:version}/Fetchr-{NEUN_SCRIPT:version}-resourcepack.zip"}},{"translate":"bingo.resourcepack_check.wrong_version.description","fallback":"If there is a server resource pack in place, enable it and wait until the Mojang loading screen is done.\n\nOtherwise, please download the Resourcepack %s and enable it.","with":[{"translate":"bingo.resourcepack_check.wrong_version.link","fallback":"here","color":"#00c3ff","clickEvent":{"action":"open_url","value":"https://github.com/NeunEinser/bingo/releases/download/{NEUN_SCRIPT:version}/Fetchr-{NEUN_SCRIPT:version}-resourcepack.zip"}}]}]},"\n\n",{"translate":"fetchr.resourcepack_check.wrong_version.server","fallback":"%s","with":[{"translate":"bingo.resourcepack_check.wrong_version.server","fallback":"Then click “re-check” down below."}]},"\n\n[",{"translate":"fetchr.resourcepack_check.wrong_version.recheck","fallback":"Re-check","color":"#00c3ff","clickEvent":{"action":"run_command","value":"/trigger fetchr.resource_pack_check"}},"]"]]}]
+#NEUN_SCRIPT end
 
-#NEUN_SCRIPT remove
+#NEUN_SCRIPT remove 1
 tellraw @s[scores={fetchr.resource_pack_check=1}] ["\n\n\n\n\n", {"translate": "fetchr.resourcepack_check.go_to_lobby.part1", "color": "green", "fallback": "%s", "with": [[{"text": "", "color": "white"}, {"text": "The resourcepack is currently not enabled.", "color": "red"}, "\nThis is not a release version, thus no resource pack download can be provided. You can get the resource pack from the branch as well, just like you did with the data pack.\n\nIf you want to play the release version, please follow the instructions on ", {"text": "this page", "color": "#00c3ff", "clickEvent": {"action": "open_url", "value": "https://github.com/NeunEinser/bingo/releases"}}, "."]]}, "\n", {"translate": "fetchr.resourcepack_check.go_to_lobby.part2", "fallback": "", "with": [{"translate": "fetchr.resourcepack_check.go_to_lobby.click", "color": "#00c3ff", "clickEvent": {"action": "run_command", "value": "/trigger fetchr.resource_pack_check set 91"}}]}]
 
 # Validate checked players, reenable trigger
+#NEUN_SCRIPT unless realms
 scoreboard players enable @a[tag=fetchr.resourcepack_check] fetchr.resource_pack_check
 scoreboard players set @s[scores={fetchr.resource_pack_check=1}] fetchr.resource_pack_check 0
-#NEUN_SCRIPT uncomment 2
 #tag @s[scores={fetchr.resource_pack_check={NEUN_SCRIPT:rp_version * 91}}] remove fetchr.resourcepack_check
 #execute if score @s fetchr.resource_pack_check matches {NEUN_SCRIPT:rp_version * 91} run function fetchr:util/go_to_lobby
+#NEUN_SCRIPT end
 #NEUN_SCRIPT remove 2
 tag @s[scores={fetchr.resource_pack_check=91}] remove fetchr.resourcepack_check
 execute if score @s fetchr.resource_pack_check matches 91 run function fetchr:util/go_to_lobby

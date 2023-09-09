@@ -58,14 +58,15 @@ execute if score $is_multiplayer fetchr.state matches 1 at @e[tag=fetchr.multipl
 
 execute in fetchr:lobby as @e[x=0.5,y=0,z=0.5,type=minecraft:marker, tag=fetchr.string_tester, distance=..0.1, limit=1] run function fetchr:init/items/lobby_loaded
 #NEUN_SCRIPT if realms
-#kill @e[tag=fetchr.no_realms]
 #tag @e remove fetchr.multiplayer_only
 #tag @e remove fetchr.singleplayer_only
+#execute at @e[tag=fetchr.no_realms,tag=!fetchr.multiplayer_door] run setblock ~ ~ ~ minecraft:air
 #execute at @e[tag=fetchr.multiplayer_only_brown] run setblock ~ ~ ~ minecraft:brown_carpet
 #execute at @e[tag=fetchr.singleplayer_only_brown] run setblock ~ ~ ~ minecraft:brown_carpet
 #tag @e remove fetchr.multiplayer_only_brown
 #tag @e remove fetchr.singleplayer_only_brown
 #tag @e remove fetchr.multiplayer_mangrove_button_north
+#kill @e[tag=fetchr.no_realms]
 #NEUN_SCRIPT end
 
 forceload remove all

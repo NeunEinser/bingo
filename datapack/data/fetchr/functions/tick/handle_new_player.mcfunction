@@ -7,6 +7,7 @@
 
 recipe give @s *
 scoreboard players set @s fetchr.card_position 0
+#NEUN_SCRIPT unless realms
 tp ~ 1 ~
 
 gamemode adventure
@@ -18,6 +19,11 @@ tag @s add fetchr.resourcepack_check
 setblock 1 2 2 minecraft:sea_lantern
 
 scoreboard players add @s fetchr.operator 0
+#NEUN_SCRIPT end
+
+#NEUN_SCRIPT if realms
+#function fetchr:util/go_to_lobby
+#NEUN_SCRIPT end
 
 # Set player ID
 #>
