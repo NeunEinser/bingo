@@ -40,7 +40,16 @@ scoreboard players operation $game_start/pre_gen.chunks_left fetchr.tmp -= $game
 # 	function fetchr:game/start/pre_gen/generate_and_process
 # 	function fetchr:game/start/pre_gen/generate/*
 #declare score_holder $game_start/pre_gen.chunks_left_in_tick
+
+# Maximize the amount generate is ahead of actually loaded chunks to
+# 2 * chunks_per_tick + 20 to avoid performance issues
 scoreboard players operation $game_start/pre_gen.chunks_left_in_tick fetchr.tmp = $game_start/pre_gen.chunks_per_tick fetchr.tmp
+scoreboard players operation $game_start/pre_gen.chunks_left_in_tick fetchr.tmp *= 2 fetchr.const
+scoreboard players operation $game_start/pre_gen.chunks_left_in_tick fetchr.tmp += $game_start/pre_gen/entities.i fetchr.tmp
+scoreboard players add $game_start/pre_gen.chunks_left_in_tick fetchr.tmp 50
+scoreboard players operation $game_start/pre_gen.chunks_left_in_tick fetchr.tmp -= $game_start/pre_gen/generate.i fetchr.tmp
+
+scoreboard players operation $game_start/pre_gen.chunks_left_in_tick fetchr.tmp < $game_start/pre_gen.chunks_per_tick fetchr.tmp
 scoreboard players operation $game_start/pre_gen.chunks_left_in_tick fetchr.tmp < $game_start/pre_gen.chunks_left fetchr.tmp
 
 execute if score $game_start/pre_gen.chunks_left fetchr.tmp matches 1.. run function fetchr:game/start/pre_gen/move_x/0
