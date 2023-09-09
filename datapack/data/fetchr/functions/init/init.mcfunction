@@ -1061,6 +1061,10 @@ forceload add 0 0
 		scoreboard players set 20 fetchr.const 20
 		#>
 		# @public
+		#declare score_holder 25
+		scoreboard players set 25 fetchr.const 25
+		#>
+		# @public
 		#declare score_holder 32
 		scoreboard players set 32 fetchr.const 32
 		#>

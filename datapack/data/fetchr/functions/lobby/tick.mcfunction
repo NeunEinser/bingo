@@ -23,7 +23,9 @@ execute as @e[type=minecraft:item_frame, tag=fetchr.card_frame, nbt=!{ItemRotati
 #
 # @private
 #declare score_holder $lobby/loop.frame_count
-execute store result score $lobby/loop.frame_count fetchr.tmp if entity @e[type=minecraft:item_frame, tag=fetchr.card_frame, distance=0..]
-execute unless score $lobby/loop.frame_count fetchr.tmp matches 25 run function fetchr:card_frames/spawn
+execute store result score $lobby/loop.frame_count fetchr.tmp if entity @e[type=minecraft:item_frame, tag=fetchr.card_frame]
+execute if score $lobby/loop.frame_count fetchr.tmp matches 0 run function fetchr:card_frames/spawn
+scoreboard players operation $lobby/loop.frame_count fetchr.tmp %= 25 fetchr.const
+execute unless score $lobby/loop.frame_count fetchr.tmp matches 0 run function fetchr:card_frames/spawn
 
 gamerule sendCommandFeedback true
