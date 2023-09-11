@@ -92,7 +92,7 @@ def main():
 				sha1.update(data)
 
 		for file_path in requested_rp_sha:
-			if version not in file_path:
+			if variant not in file_path:
 				continue
 			with open(file_path, "r+", encoding="utf-8") as file:
 				file_content = file.read()
