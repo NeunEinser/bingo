@@ -38,8 +38,10 @@ execute if entity @s[predicate=fetchr:is_in_lobby] run scoreboard players add $g
 execute if entity @s[predicate=fetchr:is_in_game] run scoreboard players operation $game/start/skybox/player.x fetchr.tmp %= 1376 fetchr.const
 execute if entity @s[predicate=fetchr:is_in_game] run scoreboard players operation $game/start/skybox/player.z fetchr.tmp %= 1376 fetchr.const
 
-execute if score $game/start/skybox/player.x fetchr.tmp matches ..86 run scoreboard players add $game/start/skybox/player.x fetchr.tmp 1
-execute if score $game/start/skybox/player.z fetchr.tmp matches ..86 run scoreboard players add $game/start/skybox/player.z fetchr.tmp 1
+execute if score $game/start/skybox/player.x fetchr.tmp matches ..25 run scoreboard players set $game/start/skybox/player.x fetchr.tmp 26
+execute if score $game/start/skybox/player.z fetchr.tmp matches ..25 run scoreboard players set $game/start/skybox/player.z fetchr.tmp 26
+execute if score $game/start/skybox/player.x fetchr.tmp matches 1351.. run scoreboard players set $game/start/skybox/player.x fetchr.tmp 1350
+execute if score $game/start/skybox/player.z fetchr.tmp matches 1351.. run scoreboard players set $game/start/skybox/player.z fetchr.tmp 1350
 
 #>
 # @private
