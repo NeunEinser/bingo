@@ -49,6 +49,7 @@ scoreboard players operation $card_gen.available_category_weight fetchr.tmp = $a
 #declare tag fetchr.command_cloud
 data modify storage tmp.fetchr:card_generation items set from storage fetchr:items activeItems
 data remove storage fetchr:card slots
+execute as @e[type=minecraft:item_frame, tag=fetchr.card_frame] run data modify entity @s Item set value { id: "minecraft:barrier", Count: 1b }
 summon minecraft:marker 0 0 0 {Tags: ["fetchr.command_cloud"]}
 execute positioned 0 0 0 as @e[type=minecraft:marker, tag=fetchr.string_tester, distance=..0.1, limit=1] run function fetchr:card_generation/generate_slot
 kill @e[type=minecraft:marker, tag=fetchr.command_cloud, limit=1]

@@ -1136,6 +1136,7 @@ forceload add 0 0
 	gamerule doTraderSpawning false
 	gamerule disableElytraMovementCheck true
 	gamerule doPatrolSpawning false
+	gamerule maxCommandChainLength 131072
 	difficulty easy
 
 # setup default player configurations
