@@ -850,9 +850,8 @@ forceload add 0 0
 		# @internal
 		#declare score_holder $commandblocks_enabled
 		scoreboard players set $commandblocks_enabled fetchr.state -1
-		setblock 0 4 0 minecraft:air
-		setblock 0 4 0 minecraft:command_block{auto: true, Command: "scoreboard players set $commandblocks_enabled fetchr.state 1"}
-
+		forceload add 0 0
+		function fetchr:init/command_block_check
 		#>
 		# The current game state
 		# 0 = Lobby / Not in game
