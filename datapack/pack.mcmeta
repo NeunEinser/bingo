@@ -1,7 +1,15 @@
 {
 	"pack": {
-		"pack_format": 18,
-		"supported_formats": {"min_inclusive": 16, "max_inclusive": 18},
+		"pack_format": 15,
+		"supported_formats": {"min_inclusive": 15, "max_inclusive": 18},
 		"description": "Fetchr"
+	},
+	"overlays": {
+		"entries": [
+			{
+				"formats": {"min_inclusive": 16, "max_inclusive": 2147483647},
+				"directory": "deterministic_random_sequences"
+			}
+		]
 	}
 }

@@ -12,6 +12,7 @@
 # @within function fetchr:game/start/spawn_skybox
 
 scoreboard players set $pregen_status fetchr.state 1
+$random reset * $(seed) false
 
 gamerule doDaylightCycle false
 time set 0
