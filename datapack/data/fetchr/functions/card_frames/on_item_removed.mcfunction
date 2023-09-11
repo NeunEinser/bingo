@@ -5,7 +5,7 @@
 #
 # It toggles the red marker block behind the item frame.
 #
-# @within function fetchr:lobby/tick
+# @within fetchr:card_frames/check_item
 # @context entity The item frame that had its item removed
 
 #>

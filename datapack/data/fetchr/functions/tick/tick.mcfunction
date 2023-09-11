@@ -46,7 +46,7 @@ execute if score $commandblocks_enabled fetchr.state matches -1 run scoreboard p
 
 # Loop depending on game state
 execute if entity @a[predicate=fetchr:is_in_lobby, limit=1] in fetchr:lobby run function fetchr:lobby/tick
-execute unless entity @a[predicate=fetchr:is_in_lobby, limit=1] if entity @a[tag=fetchr.in_skybox] in fetchr:lobby run function fetchr:lobby/tick
+execute at @a[tag=fetchr.in_skybox, limit=1] as @e[type=minecraft:marker, tag=fetchr.spawn, distance=..12, limit=1] at @s run function fetchr:game/skybox/tick
 execute if score $game_state fetchr.state matches 1..2 in fetchr:default run function fetchr:game/start/pre_gen/tick
 execute if score $game_state fetchr.state matches 3 run function fetchr:game/tick
 
