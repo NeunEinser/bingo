@@ -199,6 +199,9 @@ forceload add 0 0
 	#
 	# @internal
 	#declare tag fetchr.resourcepack_check
+	#>
+	# @internal
+	#declare tag fetchr.chest_generation_marker
 	#region slots
 		#>
 		# This tag marks a player who is in a team that obtained the item in slot 0.
