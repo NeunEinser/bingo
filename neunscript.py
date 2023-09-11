@@ -29,7 +29,7 @@ def main():
 	mc_version_info = None
 
 	if resourcepack_config != None:
-		copy_pack(resourcepack_config, f"{target}{os.sep}tmp{os.sep}resourcepack", ["assets", "pack.mcmeta", "pack.png"])
+		copy_pack(resourcepack_config, f"{target}{os.sep}tmp{os.sep}resourcepack")
 		version_id: str = config.get("mc")
 
 		if version_id != None:
@@ -47,7 +47,7 @@ def main():
 
 	datapack_config = config.get("datapack")
 	if datapack_config != None:
-		copy_pack(datapack_config, f"{target}{os.sep}tmp{os.sep}datapack", ["data", "pack.mcmeta", "pack.png"])
+		copy_pack(datapack_config, f"{target}{os.sep}tmp{os.sep}datapack")
 
 	name=config.get("name")
 	version=config.get("version")
@@ -68,7 +68,7 @@ def main():
 	world_config=config.get("world")
 	worldpath=f"{target}{os.sep}tmp{os.sep}world{os.sep}{name}-{version}"
 	if world_config != None:
-		copy_pack(world_config, worldpath, None)
+		copy_pack(world_config, worldpath)
 
 	copy_tree(f"{target}{os.sep}tmp", f"{target}{os.sep}out")
 	requested_rp_sha = iterate_files(config, target, mc_version_info)
@@ -314,7 +314,7 @@ def minify_function_file(file_content: str, config: dict):
 
 	return output
 
-def copy_pack(pack_config: dict, tmp_dir: str, paths: list[str] | None):
+def copy_pack(pack_config: dict, tmp_dir: str, paths: list[str] | None = None):
 	os.makedirs(tmp_dir)
 	src=pack_config.get("path")
 	if src == None:
