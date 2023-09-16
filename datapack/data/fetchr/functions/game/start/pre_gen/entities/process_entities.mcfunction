@@ -21,6 +21,7 @@ scoreboard players remove $game_start/pre_gen/entities.remaining_in_dir fetchr.t
 execute as @e[y=-64, dx=16, dz=16, dy=384] run function fetchr:game/start/pre_gen/freeze_entity
 
 execute if score $game_start/pre_gen/entities.i fetchr.tmp matches 9 positioned ~-16 ~ ~16 run function fetchr:game/skybox/create_skybox/exec
+execute if score $game_start/pre_gen/entities.i fetchr.tmp matches 361 run function fetchr:game/start/pre_gen/schedule_entity_check
 
 execute if score $game_start/pre_gen/entities.direction fetchr.tmp matches 0 positioned ~ ~ ~16 run function fetchr:game/start/pre_gen/entities/process_entities
 execute if score $game_start/pre_gen/entities.direction fetchr.tmp matches 1 positioned ~-16 ~ ~ run function fetchr:game/start/pre_gen/entities/process_entities

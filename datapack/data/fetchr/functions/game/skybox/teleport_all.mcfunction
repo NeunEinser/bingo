@@ -1,4 +1,4 @@
-#> fetchr:game/start/teleport_all
+#> fetchr:game/skybox/teleport_all
 #
 # Teleport all players to the skybox
 #
