@@ -9,7 +9,7 @@
 #next to hotbar
 execute if score @s fetchr.card_position matches 8 run data merge storage fetchr:tmp {cardOffset:'"\\u005b"',cardNegOffset:'"\\uffa5"'}
 #next to attack indicator
-execute if score @s fetchr.card_position matches 9 run data merge storage fetchr:tmp {cardOffset:'"\\u0059"',cardNegOffset:'"\\uff87"'}
+execute if score @s fetchr.card_position matches 9 run data merge storage fetchr:tmp {cardOffset:'"\\u0079"',cardNegOffset:'"\\uff87"'}
 #right edge (gui 1)
 execute if score @s fetchr.card_position matches 10 run data merge storage fetchr:tmp {cardOffset:'"\\u0358"',cardNegOffset:'"\\ufca8"'}
 #right edge (gui 2)
