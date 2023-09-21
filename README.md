@@ -128,12 +128,12 @@ UnlucksMcGee
 ### Translators
 
 German by NeunEinser, gbegerow and LawrenceB  
-Polish by Kri5t0fK
-Italian by Loweredgames
-Dutch by ThomasToSpace
-Portuguese (Brazil) by Draacoun
-French by Aurélien
-Spanish by Alvaro Orrego and HolaSoyElmo
+Polish by Kri5t0fK  
+Italian by Loweredgames  
+Dutch by ThomasToSpace  
+Portuguese (Brazil) by Draacoun  
+French by Aurélien  
+Spanish by Alvaro Orrego and HolaSoyElmo  
 Chinese (simplified) by 雨夢 YoMon and Sora
 
 ## Contributing
