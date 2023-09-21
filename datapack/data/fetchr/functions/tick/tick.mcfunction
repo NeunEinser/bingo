@@ -14,7 +14,7 @@ execute in fetchr:lobby run function neun_einser.timer:store_current_time
 # Detect second (or more) players in a LAN world
 #NEUN_SCRIPT unless realms
 execute store result score $is_multiplayer fetchr.state if entity @a
-scoreboard players remove $is_multiplayer fetchr.state 1
+#scoreboard players remove $is_multiplayer fetchr.state 1
 execute if score $is_multiplayer fetchr.state matches 2.. run scoreboard players set $is_multiplayer fetchr.state 1
 
 # Detect the resource pack not being active server-side (So either we are on a
