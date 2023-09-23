@@ -28,8 +28,8 @@ scoreboard players set $team_count fetchr.state 0
 execute if entity @a[predicate=fetchr:is_in_game, team=fetchr.dark_red,limit=1] run data modify storage fetchr:card teams[{id: "fetchr:dark_red"}].backgroundIndex set value 0b
 execute if entity @a[predicate=fetchr:is_in_game, team=fetchr.dark_red,limit=1] run scoreboard players add $team_count fetchr.state 1
 
-execute store result storage fetchr:card teams[{id: "fetchr:red"}].backgroundIndex byte 1 run scoreboard players get $team_count fetchr.state
-execute run scoreboard players add $team_count fetchr.state 1
+execute if entity @a[predicate=fetchr:is_in_game, team=fetchr.red,limit=1] store result storage fetchr:card teams[{id: "fetchr:red"}].backgroundIndex byte 1 run scoreboard players get $team_count fetchr.state
+execute if entity @a[predicate=fetchr:is_in_game, team=fetchr.red,limit=1] run scoreboard players add $team_count fetchr.state 1
 
 execute if entity @a[predicate=fetchr:is_in_game, team=fetchr.orange,limit=1] store result storage fetchr:card teams[{id: "fetchr:orange"}].backgroundIndex byte 1 run scoreboard players get $team_count fetchr.state
 execute if entity @a[predicate=fetchr:is_in_game, team=fetchr.orange,limit=1] run scoreboard players add $team_count fetchr.state 1
@@ -89,7 +89,7 @@ execute if score $lockout_mode fetchr.state matches 1 run data modify storage tm
 data modify storage tmp.fetchr:game/start defaultBackground set value []
 
 execute if entity @a[predicate=fetchr:is_in_game, team=fetchr.dark_red,limit=1] run function fetchr:game/start/init_teams/dark_red
-execute run function fetchr:game/start/init_teams/red
+execute if entity @a[predicate=fetchr:is_in_game, team=fetchr.red,limit=1] run function fetchr:game/start/init_teams/red
 execute if entity @a[predicate=fetchr:is_in_game, team=fetchr.orange,limit=1] run function fetchr:game/start/init_teams/orange
 execute if entity @a[predicate=fetchr:is_in_game, team=fetchr.yellow,limit=1] run function fetchr:game/start/init_teams/yellow
 execute if entity @a[predicate=fetchr:is_in_game, team=fetchr.lime,limit=1] run function fetchr:game/start/init_teams/lime

@@ -44,10 +44,10 @@ You may also download from [CurseForge](https://www.curseforge.com/minecraft/wor
 
 ## Detailed Feature Overview
 
-### Custum HUD
+### Custom HUD
 
 While in-game you will have a bunch of custom HUD elements around your hotbar. This utilizes a custom font and does not require any mods.
-![Custum HUD](screenshots/HUD.png)
+![Custom HUD](screenshots/HUD.png)
 
 The HUD can be customized in the Lobby and elements can be moved however you prefer them to be layed out, or individual components can be removed.
 
