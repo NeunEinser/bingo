@@ -305,7 +305,7 @@
 	"fetchr.lobby.settings.gamemode.toggle.survival": "大厅中的玩家现在使用生存模式。",
 	"fetchr.lobby.settings.gamemode.lectern.heading": "大厅游戏模式",
 	"fetchr.lobby.settings.gamemode.lectern.page_1": "默认情况下，大厅中的所有玩家都处于冒险模式，这意味着他们不能放置或破坏任何方块。\n\n在单人游戏中，你将被故意设置为生存模式，因而被允许改变大厅。",
-	"fetchr.lobby.settings.gamemode.lectern.page_2": "标志和讲台等所有基本部分都将始终得到保护。\n\n这样你就可以更快速便捷地装饰这里，也可以给这个地方加入一个故事区，写下你在不同游戏中收集到的有趣故事！",
+	"fetchr.lobby.settings.gamemode.lectern.page_2": "木牌和讲台等所有基本部分都将始终得到保护。\n\n因此，你可以装饰这里，也可以给这个地方加入一个故事区，写下你在不同游戏中收集到的有趣故事！",
 	"fetchr.lobby.settings.pre_gen.sign.line1": "预加载区域半径",
 	"fetchr.lobby.settings.pre_gen.sign.line2": "",
 	"fetchr.lobby.settings.pre_gen.sign.line3": "",
