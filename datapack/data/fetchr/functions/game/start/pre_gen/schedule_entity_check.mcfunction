@@ -8,4 +8,4 @@
 
 execute in fetchr:default at @e[type=minecraft:marker, tag=fetchr.spawn, distance=0.., limit=1] run function fetchr:game/start/pre_gen/check_entities
 
-schedule function fetchr:game/start/pre_gen/schedule_entity_check 5s
+schedule function fetchr:game/start/pre_gen/schedule_entity_check 3s

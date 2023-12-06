@@ -199,6 +199,9 @@ forceload add 0 0
 	#
 	# @internal
 	#declare tag fetchr.resourcepack_check
+	#>
+	# @internal
+	#declare tag fetchr.chest_generation_marker
 	#region slots
 		#>
 		# This tag marks a player who is in a team that obtained the item in slot 0.
@@ -847,9 +850,8 @@ forceload add 0 0
 		# @internal
 		#declare score_holder $commandblocks_enabled
 		scoreboard players set $commandblocks_enabled fetchr.state -1
-		setblock 0 4 0 minecraft:air
-		setblock 0 4 0 minecraft:command_block{auto: true, Command: "scoreboard players set $commandblocks_enabled fetchr.state 1"}
-
+		forceload add 0 0
+		function fetchr:init/command_block_check
 		#>
 		# The current game state
 		# 0 = Lobby / Not in game
@@ -1136,6 +1138,7 @@ forceload add 0 0
 	gamerule doTraderSpawning false
 	gamerule disableElytraMovementCheck true
 	gamerule doPatrolSpawning false
+	gamerule maxCommandChainLength 131072
 	difficulty easy
 
 # setup default player configurations

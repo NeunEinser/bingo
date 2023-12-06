@@ -42,11 +42,11 @@ execute if score $commandblocks_enabled fetchr.state matches 0 run effect give @
 
 #NEUN_SCRIPT remove 1
 execute if score $commandblocks_enabled fetchr.state matches 0 run tellraw @a {"translate": "fetchr.error.command_blocks_disabled", "fallback": "Command blocks are disabled on this server. Please make sure the server.properties file does have all mentioned values set as described %s.", "color": "red", "with": [{"translate": "fetchr.error.command_blocks_disabled.link", "fallback": "here", "color": "#00c3ff", "clickEvent": {"action": "open_url", "value": "https://gist.githubusercontent.com/NeunEinser/dac27cc76dbc83bdd1ea22a99cff3967"}}]}
-execute if score $commandblocks_enabled fetchr.state matches -1 run scoreboard players set $commandblocks_enabled fetchr.state 0
+execute if loaded 0 0 0 if score $commandblocks_enabled fetchr.state matches -1 run scoreboard players set $commandblocks_enabled fetchr.state 0
 
 # Loop depending on game state
 execute if entity @a[predicate=fetchr:is_in_lobby, limit=1] in fetchr:lobby run function fetchr:lobby/tick
-execute unless entity @a[predicate=fetchr:is_in_lobby, limit=1] if entity @a[tag=fetchr.in_skybox] in fetchr:lobby run function fetchr:lobby/tick
+execute at @a[tag=fetchr.in_skybox, limit=1] as @e[type=minecraft:marker, tag=fetchr.spawn, distance=..12, limit=1] at @s run function fetchr:game/skybox/tick
 execute if score $game_state fetchr.state matches 1..2 in fetchr:default run function fetchr:game/start/pre_gen/tick
 execute if score $game_state fetchr.state matches 3 run function fetchr:game/tick
 

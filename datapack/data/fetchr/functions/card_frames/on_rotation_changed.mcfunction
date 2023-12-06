@@ -3,9 +3,9 @@
 # This function is called by the lobby loop whenever an item was removed from a
 # card frame in the lobby.
 #
-# It toggles the hreen marker block behind the item frame.
+# It toggles the green marker block behind the item frame.
 #
-# @within function fetchr:lobby/tick
+# @within function fetchr:card_frames/check_rotation
 # @context entity The item frame that had its item removed
 
 #>

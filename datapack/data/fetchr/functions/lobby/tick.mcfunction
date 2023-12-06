@@ -6,7 +6,6 @@
 # @within function fetchr:tick/tick
 
 execute as @a[predicate=fetchr:is_in_lobby] run function fetchr:lobby/player_tick
-execute if entity @a[tag=fetchr.in_skybox] in fetchr:default as @e[type=minecraft:marker, tag=fetchr.spawn, distance=0.., limit=1] at @s run function fetchr:game/skybox/tick
 
 #change settings
 #execute as @a[scores={fetchr.settings=5..12}] run function fetchr:lobby/player_settings/save/do_action
@@ -14,18 +13,12 @@ execute if entity @a[tag=fetchr.in_skybox] in fetchr:default as @e[type=minecraf
 #execute as @e[type=minecraft:item, nbt={Item:{id:"minecraft:name_tag", tag:{fetchr:{newConfig: true}}}}] if data entity @s Item.tag.display.Name run function fetchr:lobby/player_settings/save/new_config
 
 # mark card frame
-execute as @e[type=minecraft:item_frame, tag=fetchr.card_frame, nbt=!{Item: {}}] at @s run function fetchr:card_frames/on_item_removed
-execute as @e[type=minecraft:item_frame, tag=fetchr.card_frame, nbt=!{ItemRotation: 0b}] at @s run function fetchr:card_frames/on_rotation_changed
+scoreboard players set $card_frames.count fetchr.io 0
+execute as @e[type=minecraft:item_frame, tag=fetchr.card_frame, distance=0..] at @s run function fetchr:card_frames/check_item
 
 # regen item frames if neccasary
-#>
-# Used for counting the item frames
-#
-# @private
-#declare score_holder $lobby/loop.frame_count
-execute store result score $lobby/loop.frame_count fetchr.tmp if entity @e[type=minecraft:item_frame, tag=fetchr.card_frame]
-execute if score $lobby/loop.frame_count fetchr.tmp matches 0 run function fetchr:card_frames/spawn
-scoreboard players operation $lobby/loop.frame_count fetchr.tmp %= 25 fetchr.const
-execute unless score $lobby/loop.frame_count fetchr.tmp matches 0 run function fetchr:card_frames/spawn
+execute if score $card_frames.count fetchr.io matches ..24 run function fetchr:card_frames/spawn
 
+# Command feedback is sometimes momentarily disabled to hide certain messages.
+# This re-enables it.
 gamerule sendCommandFeedback true

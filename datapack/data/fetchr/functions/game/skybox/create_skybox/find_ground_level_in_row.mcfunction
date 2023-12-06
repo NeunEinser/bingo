@@ -78,4 +78,3 @@ scoreboard players operation $game/start/find_ground.y fetchr.tmp > $game/start/
 execute positioned ~15 ~ ~ positioned over motion_blocking run teleport @s ~ ~ ~
 execute store result score $game/start/find_ground.current_y fetchr.tmp run data get entity @s Pos[1]
 scoreboard players operation $game/start/find_ground.y fetchr.tmp > $game/start/find_ground.current_y fetchr.tmp
-#tellraw NeunEinser [{"text":"Current Y: "},{"score":{"name":"$game/start/find_ground.current_y","objective":"fetchr.tmp"}}, ", total y: ", {"score":{"name":"$game/start/find_ground.y","objective":"fetchr.tmp"}}]

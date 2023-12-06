@@ -6,6 +6,8 @@
 
 execute as @e[distance=..10000] run function fetchr:game/start/unfreeze_entity
 
+$random reset * $(seed) false
+
 forceload remove all
 forceload add 0 0
 forceload add ~ ~

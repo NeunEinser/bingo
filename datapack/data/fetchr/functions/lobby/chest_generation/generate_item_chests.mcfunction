@@ -13,10 +13,6 @@
 #declare tag fetchr.item_chest_marker
 
 #>
-# @private
-#declare tag fetchr.chest_generation_marker
-
-#>
 # @within function fetchr:lobby/chest_generation/*
 #declare score_holder $chest_generation.column
 scoreboard players set $chest_generation.column fetchr.tmp -1

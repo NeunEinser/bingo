@@ -71,5 +71,6 @@ execute in fetchr:lobby as @e[x=0.5,y=0,z=0.5,type=minecraft:marker, tag=fetchr.
 
 forceload remove all
 forceload add 0 0
+execute at @e[type=minecraft:marker, tag=fetchr.chest_generation_marker] run forceload add ~ ~
 
 function fetchr:custom_hud/components/timer/update

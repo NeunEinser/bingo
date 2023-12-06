@@ -1,0 +1,16 @@
+{
+	"criteria": {
+		"interaction": {
+			"trigger": "minecraft:player_interacted_with_entity",
+			"conditions": {
+				"entity": {
+					"type": "minecraft:item_frame",
+					"nbt": "{Tags:['fetchr.card_frame']}"
+				}
+			}
+		}
+	},
+	"rewards": {
+		"function": "fetchr:card_frames/check_rotation"
+	}
+}
