@@ -112,6 +112,7 @@ def main():
 			shutil.move(worldpath, worldpath + "-" + variant)
 			worldpath += "-" + variant
 
+		os.mkdir(f"{worldpath}{os.sep}region")
 		shutil.copy2(rppath, f"{worldpath}{os.sep}resources.zip")
 		os.mkdir(f"{worldpath}{os.sep}datapacks")
 		shutil.copy2(dppath, f"{worldpath}{os.sep}datapacks{os.sep}{name}.zip")
