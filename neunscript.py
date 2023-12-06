@@ -5,6 +5,7 @@ from sys import stderr
 
 import python_nbt.nbt as nbt
 
+lines = 0
 
 def main():
 	config = {}
@@ -123,6 +124,7 @@ def main():
 	
 	shutil.rmtree(f"{target}{os.sep}tmp")
 	shutil.rmtree(f"{target}{os.sep}out")
+	print(f"minified {lines} lines")
 
 def iterate_files(config: dict, target: str, mc_version_info: dict | None):
 	requested_rp_sha = []
@@ -173,6 +175,9 @@ def iterate_files(config: dict, target: str, mc_version_info: dict | None):
 								file_content = minify_json_file(file_content)
 							elif file_name.endswith(".mcfunction"):
 								file_content = minify_function_file(file_content, version_config)
+								if override == None:
+									global lines
+									lines += file_content.count("\n") + 1
 
 							file_content = replace_variables(file_content, file_path, version_config, requested_rp_sha)
 
@@ -395,4 +400,4 @@ def override_default_lang_strings(rp_root: str, assetUrl: str):
 					lang_file.write(json.dumps(default_strings))
 
 if __name__ == '__main__':
-    main()
+	main()
