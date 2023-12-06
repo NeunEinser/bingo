@@ -339,7 +339,7 @@
 	"fetchr.lobby.settings.timer.lectern.page_6": "There is no “better” way to measure time, and you can try to evaluate which you consider fairer.",
 	"fetchr.lobby.settings.timer.lectern.paused_time.heading": "Count Paused Time",
 	"fetchr.lobby.settings.timer.lectern.page_7": "This setting is mostly relevant for singleplayer.\n\nWhen active, the timer will keep increasing, even when the game is paused.",
-	"fetchr.lobby.settings.timer.lectern.page_8": "In multiplayer, the timer will not increase while no player when this setting is inactive.\n\nBy default, paused time is not counted.",
+	"fetchr.lobby.settings.timer.lectern.page_8": "In multiplayer, the timer will not increase while no player is online when this setting is inactive.\n\nBy default, paused time is not counted.",
 
 	"fetchr.lobby.settings.operator_only.sign.line1": "Operator-Only",
 	"fetchr.lobby.settings.operator_only.sign.line2": "Controls",
