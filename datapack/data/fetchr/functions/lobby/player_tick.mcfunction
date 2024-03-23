@@ -21,8 +21,15 @@ scoreboard players enable @s fetchr.pref
 
 # Float in front of card display
 execute at @s align y if block ~ ~1 ~ minecraft:void_air run tp ~ ~1 ~
-execute at @s if block ~ ~ ~ minecraft:void_air run effect give @s minecraft:levitation 1 255 true
-execute at @s unless block ~ ~ ~ minecraft:void_air run effect clear @s minecraft:levitation
+#NEUN_SCRIPT until 30
+#execute at @s if block ~ ~ ~ minecraft:void_air run effect give @s minecraft:levitation 1 255 true
+#execute at @s unless block ~ ~ ~ minecraft:void_air run effect clear @s minecraft:levitation
+#NEUN_SCRIPT end
+#NEUN_SCRIPT since 31
+execute at @s if block ~ ~ ~ minecraft:void_air run attribute @s generic.gravity base set 0
+execute at @s if block ~ ~ ~-1 minecraft:void_air run attribute @s generic.gravity base set 0
+execute at @s unless block ~ ~ ~ minecraft:void_air unless block ~ ~ ~-1 minecraft:void_air run attribute @s generic.gravity base set 0.08
+#NEUN_SCRIPT end
 
 # generate card from seed
 execute if score @s fetchr.seed matches -2147483648.. unless score @s fetchr.seed matches 0 run function fetchr:card_generation/generate_from_seed
