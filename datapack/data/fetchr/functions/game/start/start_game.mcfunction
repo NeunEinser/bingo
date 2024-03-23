@@ -5,6 +5,10 @@
 # @within function fetchr:game/start/countdown
 
 execute as @e[distance=..10000] run function fetchr:game/start/unfreeze_entity
+fill ~-7 64 ~-7 ~8 191 ~8 air replace minecraft:lava[level=2]
+fill ~-7 64 ~-7 ~8 191 ~8 air replace minecraft:lava[level=4]
+fill ~-7 64 ~-7 ~8 191 ~8 air replace minecraft:lava[level=6]
+fill ~-7 64 ~-7 ~8 191 ~8 air replace minecraft:lava[level=8]
 
 #NEUN_SCRIPT since 16
 $random reset * $(seed) false
@@ -18,6 +22,7 @@ scoreboard players set $game_state fetchr.state 3
 execute as @a[predicate=fetchr:is_in_game] run function fetchr:game/start/player_init
 
 gamerule doDaylightCycle true
+gamerule doFireTick true
 
 execute in fetchr:lobby run data modify block 5 3 5 auto set value true
 

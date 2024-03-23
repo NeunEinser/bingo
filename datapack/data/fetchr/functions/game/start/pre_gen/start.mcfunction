@@ -17,6 +17,7 @@ scoreboard players set $pregen_status fetchr.state 1
 $random reset * $(seed) false
 #NEUN_SCRIPT end
 
+gamerule doFireTick false
 gamerule doDaylightCycle false
 time set 0
 
