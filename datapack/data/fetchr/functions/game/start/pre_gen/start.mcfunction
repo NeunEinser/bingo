@@ -13,6 +13,10 @@
 
 scoreboard players set $pregen_status fetchr.state 1
 
+#NEUN_SCRIPT since 16
+$random reset * $(seed) false
+#NEUN_SCRIPT end
+
 gamerule doDaylightCycle false
 time set 0
 
