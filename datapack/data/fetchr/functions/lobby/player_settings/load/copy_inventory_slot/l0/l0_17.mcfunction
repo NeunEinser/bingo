@@ -1,2 +1,0 @@
-execute if score $slot fetchr.tmp matches 33 run loot replace entity @s inventory.24 1 mine 0 63 0 minecraft:map{fetchr: {shulkerBoxDropper: true}}
-execute if score $slot fetchr.tmp matches 34 run loot replace entity @s inventory.25 1 mine 0 63 0 minecraft:map{fetchr: {shulkerBoxDropper: true}}

@@ -8,7 +8,7 @@
 
 execute as @a[predicate=fetchr:is_in_game, scores={fetchr.completed_goal_effect_state=1..}] at @s run function fetchr:item_detection/goals/completed_goal_effects/spawn_fireworks
 
-execute as @e[tag=fetchr.completed_goal_effect_state] at @s unless entity @a[distance=..5] run function fetchr:item_detection/goals/completed_goal_effects/check_firewroks
+execute as @e[tag=fetchr.completed_goal_effect_state] at @s unless entity @a[distance=..5] run function fetchr:item_detection/goals/completed_goal_effects/check_fireworks
 
 execute if entity @e[tag=fetchr.completed_goal_effect_state] run schedule function fetchr:item_detection/goals/completed_goal_effects/spawn_fireworks_schedule 1t
 execute if entity @a[scores={fetchr.completed_goal_effect_state=1..40}] run schedule function fetchr:item_detection/goals/completed_goal_effects/spawn_fireworks_schedule 1t

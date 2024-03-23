@@ -13,7 +13,12 @@ function fetchr:init/items/find_categories
 data modify storage fetchr:items categories append from storage tmp.fetchr:init skippedCategories[]
 data remove storage tmp.fetchr:init skippedCategories
 
-data modify storage tmp.fetchr:init initializedItems[-1].item.tag.display.Lore append value '{"translate": "fetchr.categories.header", "color": "gray", "italic": false}'
+#NEUN_SCRIPT until 33
+#data modify storage tmp.fetchr:init initializedItems[-1].item.tag.display.Lore append value '{"translate": "fetchr.categories.header", "color": "gray", "italic": false}'
+#NEUN_SCRIPT end
+#NEUN_SCRIPT since 33
+data modify storage tmp.fetchr:init initializedItems[-1].item.components.minecraft:lore append value '{"translate": "fetchr.categories.header", "color": "gray", "italic": false}'
+#NEUN_SCRIPT end
 data modify storage tmp.fetchr:init currentCategories set from storage tmp.fetchr:init categories
 data remove storage tmp.fetchr:init currentCategories[].items
 data modify storage tmp.fetchr:init itemCategoriesCopy set from storage tmp.fetchr:init initializedItems[-1].categories
