@@ -175,7 +175,6 @@ def iterate_files(config: dict, source: str, target: str, mc_version_info: dict 
 				out_dir = f"{out_root}{relative_path}"
 				out_path = f"{out_dir}{os.sep}{file_name}"
 				
-				os.makedirs(out_dir, exist_ok=True)
 				file_path = f"{source}{relative_path}{os.sep}{file_name}"
 				print(out_path)
 
@@ -183,9 +182,11 @@ def iterate_files(config: dict, source: str, target: str, mc_version_info: dict 
 					if file_name.endswith(".nbt") or file_name.endswith(".dat"):
 						nbt_content = nbt.read_from_nbt_file(file_path)
 						handle_nbt(nbt_content, out_path, version_config, mc_version_info)
+						os.makedirs(out_dir, exist_ok=True)
 						nbt.write_to_nbt_file(out_path, nbt_content)
 
 					elif file_name.endswith(".png") and not file_name.endswith(".bin"):
+						os.makedirs(out_dir, exist_ok=True)
 						shutil.copy2(file_path, out_path)
 					else:
 						file_content: str | None = None
@@ -196,6 +197,7 @@ def iterate_files(config: dict, source: str, target: str, mc_version_info: dict 
 						except UnicodeDecodeError:
 							pass
 						if file_content == None:
+							os.makedirs(out_dir, exist_ok=True)
 							shutil.copy2(file_path, out_path)
 						else:	
 							if file_name.endswith(".json") or file_name.endswith(".mcmeta"):
@@ -216,8 +218,10 @@ def iterate_files(config: dict, source: str, target: str, mc_version_info: dict 
 
 							file_content = replace_variables(file_content, out_path, version_config, requested_rp_sha)
 
-							with open(out_path, "w", encoding="utf-8") as file:
-								file.write(file_content)
+							if file_content:
+								os.makedirs(out_dir, exist_ok=True)
+								with open(out_path, "w", encoding="utf-8") as file:
+									file.write(file_content)
 
 	pack_path = f"{target}{os.sep}pack.mcmeta"
 	if os.path.exists(pack_path) and len(pack_formats_for_overlay) > 0:
@@ -326,6 +330,12 @@ def minify_function_file(file_content: str, config: dict, pack_format: int):
 			uncomment = 0
 			remove = 0
 
+		if uncomment == -2:
+			if line.startswith("#"):
+				uncomment = -1
+			else:
+				uncomment = 0
+
 		if uncomment != 0 and line.startswith("#") and not line.startswith("# ") and not line.startswith("#>"):
 			line = line[1:]
 			uncomment -= 1
@@ -367,7 +377,7 @@ def minify_function_file(file_content: str, config: dict, pack_format: int):
 						raise ValueError("if/unless needs at least one argument")
 					value = get_variable(command[1], config)
 					if bool(value) == (command[0] == "if"):
-						uncomment = -1
+						uncomment = -2
 					else:
 						remove = -1
 				
@@ -385,7 +395,7 @@ def minify_function_file(file_content: str, config: dict, pack_format: int):
 					else:
 						max_value = int(command[1])
 					if pack_format >= min_value and (max_value is None or pack_format < max_value):
-						uncomment = -1
+						uncomment = -2
 					else:
 						remove = -1
 

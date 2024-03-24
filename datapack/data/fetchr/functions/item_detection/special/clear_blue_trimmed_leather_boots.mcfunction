@@ -6,6 +6,7 @@
 # @context
 # 	entity The player to check
 
+#NEUN_SCRIPT since 33
 clear @s minecraft:leather_boots[minecraft:trim={pattern:"minecraft:coast",material:"minecraft:lapis"}] 1
 clear @s minecraft:leather_boots[minecraft:trim={pattern:"minecraft:dune",material:"minecraft:lapis"}] 1
 clear @s minecraft:leather_boots[minecraft:trim={pattern:"minecraft:eye",material:"minecraft:lapis"}] 1
