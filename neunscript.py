@@ -338,7 +338,8 @@ def minify_function_file(file_content: str, config: dict, pack_format: int):
 
 		if uncomment != 0 and line.startswith("#") and not line.startswith("# ") and not line.startswith("#>"):
 			line = line[1:]
-			uncomment -= 1
+			if uncomment > 0:
+				uncomment -= 1
 
 		if remove > 0:
 			remove -= 1

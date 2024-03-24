@@ -29,6 +29,26 @@ execute store result score $item_detect/announce.items fetchr.tmp run data get s
 scoreboard players add $item_detect/announce.items fetchr.tmp 1
 execute store result storage fetchr:card teams[-1].itemCount int 1 run scoreboard players get $item_detect/announce.items fetchr.tmp
 
+#NEUN_SCRIPT since 25
+$scoreboard players operation $$(team_color) fetchr.neutral_display = $item_detect/announce.items fetchr.tmp
+$scoreboard players operation $$(team_color) fetchr.black_display = $item_detect/announce.items fetchr.tmp
+$scoreboard players operation $$(team_color) fetchr.blue_display = $item_detect/announce.items fetchr.tmp
+$scoreboard players operation $$(team_color) fetchr.cyan_display = $item_detect/announce.items fetchr.tmp
+$scoreboard players operation $$(team_color) fetchr.dark_blue_display = $item_detect/announce.items fetchr.tmp
+$scoreboard players operation $$(team_color) fetchr.dark_gray_display = $item_detect/announce.items fetchr.tmp
+$scoreboard players operation $$(team_color) fetchr.dark_red_display = $item_detect/announce.items fetchr.tmp
+$scoreboard players operation $$(team_color) fetchr.gray_display = $item_detect/announce.items fetchr.tmp
+$scoreboard players operation $$(team_color) fetchr.green_display = $item_detect/announce.items fetchr.tmp
+$scoreboard players operation $$(team_color) fetchr.light_blue_display = $item_detect/announce.items fetchr.tmp
+$scoreboard players operation $$(team_color) fetchr.lime_display = $item_detect/announce.items fetchr.tmp
+$scoreboard players operation $$(team_color) fetchr.magenta_display = $item_detect/announce.items fetchr.tmp
+$scoreboard players operation $$(team_color) fetchr.orange_display = $item_detect/announce.items fetchr.tmp
+$scoreboard players operation $$(team_color) fetchr.purple_display = $item_detect/announce.items fetchr.tmp
+$scoreboard players operation $$(team_color) fetchr.red_display = $item_detect/announce.items fetchr.tmp
+$scoreboard players operation $$(team_color) fetchr.white_display = $item_detect/announce.items fetchr.tmp
+$scoreboard players operation $$(team_color) fetchr.yellow_display = $item_detect/announce.items fetchr.tmp
+#NEUN_SCRIPT end
+
 execute as @a[tag=fetchr.in_current_team] at @s run playsound minecraft:block.end_portal_frame.fill voice @s ~ ~ ~ 1 2
 tellraw @a ["[", {"text":"≡", "color":"#00c3ff", "clickEvent":{"action":"run_command", "value":"/trigger fetchr.menu"}, "hoverEvent":{"action":"show_text", "contents":{"translate": "fetchr.game.menu.hover_text"}}}, "] ", {"translate": "fetchr.got_item", "with": [{"score": {"name": "$item_detect/announce.items", "objective": "fetchr.tmp"}}, {"storage": "neun_einser.timer:display", "nbt": "\"hh:mm:ss.s\"", "interpret": true}, {"selector": "@s"}, {"storage": "tmp.fetchr:item_detection", "nbt": "slot.item.textComponent", "interpret": true}]}]
 

@@ -68,6 +68,26 @@ data modify block 7 0 7 front_text.messages[0] set value '["",{"text":"a","font"
 data modify storage fetchr:card teams[0].card set from block 7 0 7 front_text.messages[0]
 execute if score $blind_mode fetchr.state matches 1 as @e[type=minecraft:item_frame, tag=fetchr.card_frame] run data modify entity @s Item set value { id: "minecraft:barrier", Count: 1b }
 
+#NEUN_SCRIPT since 25
+scoreboard players reset * fetchr.neutral_display
+scoreboard players reset * fetchr.black_display
+scoreboard players reset * fetchr.blue_display
+scoreboard players reset * fetchr.cyan_display
+scoreboard players reset * fetchr.dark_blue_display
+scoreboard players reset * fetchr.dark_gray_display
+scoreboard players reset * fetchr.dark_red_display
+scoreboard players reset * fetchr.gray_display
+scoreboard players reset * fetchr.green_display
+scoreboard players reset * fetchr.light_blue_display
+scoreboard players reset * fetchr.lime_display
+scoreboard players reset * fetchr.magenta_display
+scoreboard players reset * fetchr.orange_display
+scoreboard players reset * fetchr.purple_display
+scoreboard players reset * fetchr.red_display
+scoreboard players reset * fetchr.white_display
+scoreboard players reset * fetchr.yellow_display
+#NEUN_SCRIPT end
+
 execute as @e[tag=fetchr.card_frame, scores={fetchr.lobby_card_frame_id=12}, distance=0.., limit=1] at @s run playsound minecraft:entity.item_frame.add_item voice @a ~ ~ ~ 1 0.8
 
 bossbar set fetchr:start/pre_gen/progress visible false

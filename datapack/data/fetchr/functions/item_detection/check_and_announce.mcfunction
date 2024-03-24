@@ -19,4 +19,10 @@ execute unless score $lockout_mode fetchr.state matches 1 run function fetchr:it
 execute if score $lockout_mode fetchr.state matches 1 unless data storage tmp.fetchr:item_detection slot{itemCollected: true} run function fetchr:item_detection/set_overlay
 tag @a[tag=fetchr.in_current_team] add fetchr.got_item
 
-execute if score $item_detect/set_overlay.success fetchr.tmp matches 1 in fetchr:lobby run function fetchr:item_detection/announce
+#NEUN_SCRIPT until 25
+#execute if score $item_detect/set_overlay.success fetchr.tmp matches 1 in fetchr:lobby run function fetchr:item_detection/announce
+#NEUN_SCRIPT end
+#NEUN_SCRIPT since 25
+data modify storage tmp.fetchr:item_detection announce_params.team_color set string storage fetchr:card teams[-1].id 7
+execute if score $item_detect/set_overlay.success fetchr.tmp matches 1 in fetchr:lobby run function fetchr:item_detection/announce with storage tmp.fetchr:item_detection announce_params
+#NEUN_SCRIPT end

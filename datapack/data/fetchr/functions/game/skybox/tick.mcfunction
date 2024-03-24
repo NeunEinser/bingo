@@ -12,9 +12,47 @@ execute as @a[predicate=fetchr:is_in_game] at @s align y if block ~ ~ ~ minecraf
 #execute as @a[predicate=fetchr:is_in_game] at @s unless block ~ ~-1 ~ minecraft:void_air run effect clear @s minecraft:levitation
 #NEUN_SCRIPT end
 #NEUN_SCRIPT since 31
+execute as @a[predicate=fetchr:is_in_game] at @s align y if block ~ ~-1 ~ minecraft:void_air run tp ~ ~.1 ~
+execute as @a[predicate=fetchr:is_in_game] at @s align y if block ~ ~-1 ~-1 minecraft:void_air run tp ~ ~.1 ~
 execute as @a[predicate=fetchr:is_in_game] at @s if block ~ ~-1 ~ minecraft:void_air run attribute @s generic.gravity base set 0
 execute as @a[predicate=fetchr:is_in_game] at @s if block ~ ~-1 ~-1 minecraft:void_air run attribute @s generic.gravity base set 0
 execute as @a[predicate=fetchr:is_in_game] at @s unless block ~ ~-1 ~ minecraft:void_air unless block ~ ~-1 ~-1 minecraft:void_air run attribute @s generic.gravity base set 0.08
+#NEUN_SCRIPT end
+
+#NEUN_SCRIPT since 25
+execute unless entity @a[team=fetchr.black] run scoreboard players reset $black
+execute unless entity @a[team=fetchr.blue] run scoreboard players reset $blue
+execute unless entity @a[team=fetchr.cyan] run scoreboard players reset $cyan
+execute unless entity @a[team=fetchr.dark_blue] run scoreboard players reset $dark_blue
+execute unless entity @a[team=fetchr.dark_gray] run scoreboard players reset $dark_gray
+execute unless entity @a[team=fetchr.dark_red] run scoreboard players reset $dark_red
+execute unless entity @a[team=fetchr.gray] run scoreboard players reset $gray
+execute unless entity @a[team=fetchr.green] run scoreboard players reset $green
+execute unless entity @a[team=fetchr.light_blue] run scoreboard players reset $light_blue
+execute unless entity @a[team=fetchr.lime] run scoreboard players reset $lime
+execute unless entity @a[team=fetchr.magenta] run scoreboard players reset $magenta
+execute unless entity @a[team=fetchr.orange] run scoreboard players reset $orange
+execute unless entity @a[team=fetchr.purple] run scoreboard players reset $purple
+execute unless entity @a[team=fetchr.red] run scoreboard players reset $red
+execute unless entity @a[team=fetchr.white] run scoreboard players reset $white
+execute unless entity @a[team=fetchr.yellow] run scoreboard players reset $yellow
+
+execute if entity @a[team=fetchr.black] run function fetchr:game/skybox/setup_team_display/black
+execute if entity @a[team=fetchr.blue] run function fetchr:game/skybox/setup_team_display/blue
+execute if entity @a[team=fetchr.cyan] run function fetchr:game/skybox/setup_team_display/cyan
+execute if entity @a[team=fetchr.dark_blue] run function fetchr:game/skybox/setup_team_display/dark_blue
+execute if entity @a[team=fetchr.dark_gray] run function fetchr:game/skybox/setup_team_display/dark_gray
+execute if entity @a[team=fetchr.dark_red] run function fetchr:game/skybox/setup_team_display/dark_red
+execute if entity @a[team=fetchr.gray] run function fetchr:game/skybox/setup_team_display/gray
+execute if entity @a[team=fetchr.green] run function fetchr:game/skybox/setup_team_display/green
+execute if entity @a[team=fetchr.light_blue] run function fetchr:game/skybox/setup_team_display/light_blue
+execute if entity @a[team=fetchr.lime] run function fetchr:game/skybox/setup_team_display/lime
+execute if entity @a[team=fetchr.magenta] run function fetchr:game/skybox/setup_team_display/magenta
+execute if entity @a[team=fetchr.orange] run function fetchr:game/skybox/setup_team_display/orange
+execute if entity @a[team=fetchr.purple] run function fetchr:game/skybox/setup_team_display/purple
+execute if entity @a[team=fetchr.red] run function fetchr:game/skybox/setup_team_display/red
+execute if entity @a[team=fetchr.white] run function fetchr:game/skybox/setup_team_display/white
+execute if entity @a[team=fetchr.yellow] run function fetchr:game/skybox/setup_team_display/yellow
 #NEUN_SCRIPT end
 
 particle minecraft:happy_villager ~ ~-63 ~ .125 16 .125 1 16 force

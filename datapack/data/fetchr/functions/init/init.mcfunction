@@ -637,6 +637,112 @@ forceload add 0 0
 		scoreboard players set @a fetchr.update_hud 1
 	#endregion
 
+	#region display objectives
+		#NEUN_SCRIPT since 25
+		#>
+		# Display objective for the black team
+		#
+		# @internal
+		scoreboard objectives add fetchr.neutral_display dummy {"translate": "fetchr.scoreboard.header"}
+		
+		#>
+		# Display objective for the black team
+		#
+		# @internal
+		scoreboard objectives add fetchr.black_display dummy {"translate": "fetchr.scoreboard.header"}
+		
+		#>
+		# Display objective for the blue team
+		#
+		# @internal
+		scoreboard objectives add fetchr.blue_display dummy {"translate": "fetchr.scoreboard.header"}
+		
+		#>
+		# Display objective for the cyan team
+		#
+		# @internal
+		scoreboard objectives add fetchr.cyan_display dummy {"translate": "fetchr.scoreboard.header"}
+		
+		#>
+		# Display objective for the dark blue team
+		#
+		# @internal
+		scoreboard objectives add fetchr.dark_blue_display dummy {"translate": "fetchr.scoreboard.header"}
+		
+		#>
+		# Display objective for the dark gray team
+		#
+		# @internal
+		scoreboard objectives add fetchr.dark_gray_display dummy {"translate": "fetchr.scoreboard.header"}
+		
+		#>
+		# Display objective for the dark red team
+		#
+		# @internal
+		scoreboard objectives add fetchr.dark_red_display dummy {"translate": "fetchr.scoreboard.header"}
+		
+		#>
+		# Display objective for the gray team
+		#
+		# @internal
+		scoreboard objectives add fetchr.gray_display dummy {"translate": "fetchr.scoreboard.header"}
+		
+		#>
+		# Display objective for the green team
+		#
+		# @internal
+		scoreboard objectives add fetchr.green_display dummy {"translate": "fetchr.scoreboard.header"}
+		
+		#>
+		# Display objective for the light blue team
+		#
+		# @internal
+		scoreboard objectives add fetchr.light_blue_display dummy {"translate": "fetchr.scoreboard.header"}
+		
+		#>
+		# Display objective for the lime team
+		#
+		# @internal
+		scoreboard objectives add fetchr.lime_display dummy {"translate": "fetchr.scoreboard.header"}
+		
+		#>
+		# Display objective for the magenta team
+		#
+		# @internal
+		scoreboard objectives add fetchr.magenta_display dummy {"translate": "fetchr.scoreboard.header"}
+		
+		#>
+		# Display objective for the orange team
+		#
+		# @internal
+		scoreboard objectives add fetchr.orange_display dummy {"translate": "fetchr.scoreboard.header"}
+		
+		#>
+		# Display objective for the purple team
+		#
+		# @internal
+		scoreboard objectives add fetchr.purple_display dummy {"translate": "fetchr.scoreboard.header"}
+		
+		#>
+		# Display objective for the red team
+		#
+		# @internal
+		scoreboard objectives add fetchr.red_display dummy {"translate": "fetchr.scoreboard.header"}
+		
+		#>
+		# Display objective for the white team
+		#
+		# @internal
+		scoreboard objectives add fetchr.white_display dummy {"translate": "fetchr.scoreboard.header"}
+		
+		#>
+		# Display objective for the yellow team
+		#
+		# @internal
+		scoreboard objectives add fetchr.yellow_display dummy {"translate": "fetchr.scoreboard.header"}
+		#NEUN_SCRIPT end
+	#endregion
+
 	#region trigger objectives
 		#>
 		# Trigger objective for returning to the lobby.
@@ -1017,107 +1123,193 @@ forceload add 0 0
 		#
 		# @internal
 		#declare score_holder $update_card
-		#>
-		# @public
-		#declare score_holder -2
-		scoreboard players set -2 fetchr.const -2
-		#>
-		# @public
-		#declare score_holder -1
-		scoreboard players set -1 fetchr.const -1
-		#>
-		# @public
-		#declare score_holder 2
-		scoreboard players set 2 fetchr.const 2
-		#>
-		# @public
-		#declare score_holder 3
-		scoreboard players set 3 fetchr.const 3
-		#>
-		# @public
-		#declare score_holder 4
-		scoreboard players set 4 fetchr.const 4
-		#>
-		# @public
-		#declare score_holder 5
-		scoreboard players set 5 fetchr.const 5
-		#>
-		# @public
-		#declare score_holder 6
-		scoreboard players set 6 fetchr.const 6
-		#>
-		# @public
-		#declare score_holder 9
-		scoreboard players set 9 fetchr.const 9
-		#>
-		# @public
-		#declare score_holder 10
-		scoreboard players set 10 fetchr.const 10
-		#>
-		# @public
-		#declare score_holder 16
-		scoreboard players set 16 fetchr.const 16
-		#>
-		# @public
-		#declare score_holder 20
-		scoreboard players set 20 fetchr.const 20
-		#>
-		# @public
-		#declare score_holder 25
-		scoreboard players set 25 fetchr.const 25
-		#>
-		# @public
-		#declare score_holder 32
-		scoreboard players set 32 fetchr.const 32
-		#>
-		# @public
-		#declare score_holder 41
-		scoreboard players set 41 fetchr.const 41
-		#>
-		# @public
-		#declare score_holder 50
-		scoreboard players set 50 fetchr.const 50
-		#>
-		# @public
-		#declare score_holder 60
-		scoreboard players set 60 fetchr.const 60
-		#>
-		# @public
-		#declare score_holder 86
-		scoreboard players set 86 fetchr.const 86
-		#>
-		# @public
-		#declare score_holder 96
-		scoreboard players set 96 fetchr.const 96
-		#>
-		# @public
-		#declare score_holder 100
-		scoreboard players set 100 fetchr.const 100
-		#>
-		# @public
-		#declare score_holder 128
-		scoreboard players set 128 fetchr.const 128
-		#>
-		# @public
-		#declare score_holder 256
-		scoreboard players set 256 fetchr.const 256
-		#>
-		# @public
-		#declare score_holder 762
-		scoreboard players set 762 fetchr.const 762
-		#>
-		# @public
-		#declare score_holder 1000
-		scoreboard players set 1000 fetchr.const 1000
-		#>
-		# @public
-		#declare score_holder 1376
-		scoreboard players set 1376 fetchr.const 1376
-		#>
-		# @public
-		#declare score_holder 65536
-		scoreboard players set 65536 fetchr.const 65536
+
+		#region constants
+			#>
+			# @public
+			#declare score_holder -2
+			scoreboard players set -2 fetchr.const -2
+			#>
+			# @public
+			#declare score_holder -1
+			scoreboard players set -1 fetchr.const -1
+			#>
+			# @public
+			#declare score_holder 2
+			scoreboard players set 2 fetchr.const 2
+			#>
+			# @public
+			#declare score_holder 3
+			scoreboard players set 3 fetchr.const 3
+			#>
+			# @public
+			#declare score_holder 4
+			scoreboard players set 4 fetchr.const 4
+			#>
+			# @public
+			#declare score_holder 5
+			scoreboard players set 5 fetchr.const 5
+			#>
+			# @public
+			#declare score_holder 6
+			scoreboard players set 6 fetchr.const 6
+			#>
+			# @public
+			#declare score_holder 9
+			scoreboard players set 9 fetchr.const 9
+			#>
+			# @public
+			#declare score_holder 10
+			scoreboard players set 10 fetchr.const 10
+			#>
+			# @public
+			#declare score_holder 16
+			scoreboard players set 16 fetchr.const 16
+			#>
+			# @public
+			#declare score_holder 20
+			scoreboard players set 20 fetchr.const 20
+			#>
+			# @public
+			#declare score_holder 25
+			scoreboard players set 25 fetchr.const 25
+			#>
+			# @public
+			#declare score_holder 32
+			scoreboard players set 32 fetchr.const 32
+			#>
+			# @public
+			#declare score_holder 41
+			scoreboard players set 41 fetchr.const 41
+			#>
+			# @public
+			#declare score_holder 50
+			scoreboard players set 50 fetchr.const 50
+			#>
+			# @public
+			#declare score_holder 60
+			scoreboard players set 60 fetchr.const 60
+			#>
+			# @public
+			#declare score_holder 86
+			scoreboard players set 86 fetchr.const 86
+			#>
+			# @public
+			#declare score_holder 96
+			scoreboard players set 96 fetchr.const 96
+			#>
+			# @public
+			#declare score_holder 100
+			scoreboard players set 100 fetchr.const 100
+			#>
+			# @public
+			#declare score_holder 128
+			scoreboard players set 128 fetchr.const 128
+			#>
+			# @public
+			#declare score_holder 256
+			scoreboard players set 256 fetchr.const 256
+			#>
+			# @public
+			#declare score_holder 762
+			scoreboard players set 762 fetchr.const 762
+			#>
+			# @public
+			#declare score_holder 1000
+			scoreboard players set 1000 fetchr.const 1000
+			#>
+			# @public
+			#declare score_holder 1376
+			scoreboard players set 1376 fetchr.const 1376
+			#>
+			# @public
+			#declare score_holder 65536
+			scoreboard players set 65536 fetchr.const 65536
+		#endregion
+		#region team displays
+			#>
+			# Black team display
+			# @internal
+			#declare score_holder $black
+			#>
+			# Blue team display
+			# @internal
+			#declare score_holder $blue
+			#>
+			# Cyan team display
+			# @internal
+			#declare score_holder $cyan
+			#>
+			# Dark blue team display
+			# @internal
+			#declare score_holder $dark_blue
+			#>
+			# Dark gray team display
+			# @internal
+			#declare score_holder $dark_gray
+			#>
+			# Dark red team display
+			# @internal
+			#declare score_holder $dark_red
+			#>
+			# Gray team display
+			# @internal
+			#declare score_holder $gray
+			#>
+			# Green team display
+			# @internal
+			#declare score_holder $green
+			#>
+			# Light blue team display
+			# @internal
+			#declare score_holder $light_blue
+			#>
+			# Lime team display
+			# @internal
+			#declare score_holder $lime
+			#>
+			# Magenta team display
+			# @internal
+			#declare score_holder $magenta
+			#>
+			# Orange team display
+			# @internal
+			#declare score_holder $orange
+			#>
+			# Purple team display
+			# @internal
+			#declare score_holder $purple
+			#>
+			# Red team display
+			# @internal
+			#declare score_holder $red
+			#>
+			# White team display
+			# @internal
+			#declare score_holder $white
+			#>
+			# Yellow team display
+			# @internal
+			#declare score_holder $yellow
+		#endregion
 	#endregion
+	scoreboard objectives setdisplay sidebar fetchr.neutral_display
+	scoreboard objectives setdisplay sidebar.team.black fetchr.black_display
+	scoreboard objectives setdisplay sidebar.team.blue fetchr.blue_display
+	scoreboard objectives setdisplay sidebar.team.dark_aqua fetchr.cyan_display
+	scoreboard objectives setdisplay sidebar.team.dark_blue fetchr.dark_blue_display
+	scoreboard objectives setdisplay sidebar.team.dark_gray fetchr.dark_gray_display
+	scoreboard objectives setdisplay sidebar.team.dark_red fetchr.dark_red_display
+	scoreboard objectives setdisplay sidebar.team.gray fetchr.gray_display
+	scoreboard objectives setdisplay sidebar.team.dark_green fetchr.green_display
+	scoreboard objectives setdisplay sidebar.team.aqua fetchr.light_blue_display
+	scoreboard objectives setdisplay sidebar.team.green fetchr.lime_display
+	scoreboard objectives setdisplay sidebar.team.light_purple fetchr.magenta_display
+	scoreboard objectives setdisplay sidebar.team.gold fetchr.orange_display
+	scoreboard objectives setdisplay sidebar.team.dark_purple fetchr.purple_display
+	scoreboard objectives setdisplay sidebar.team.red fetchr.red_display
+	scoreboard objectives setdisplay sidebar.team.white fetchr.white_display
+	scoreboard objectives setdisplay sidebar.team.yellow fetchr.yellow_display
 #endregion
 
 # Create overworld resourcepack check
@@ -1140,15 +1332,6 @@ forceload add 0 0
 	gamerule doPatrolSpawning false
 	gamerule maxCommandChainLength 131072
 	difficulty easy
-
-# setup default player configurations
-	#data remove storage fetchr:player configurations
-	#data modify storage fetchr:player configurations append value {name: '{"translate": "fetchr.lobby.settings.player.configuration.empty"}', inventory: [], effects: [], fixed: true}
-	#data modify storage fetchr:player configurations append value {name: '{"translate": "fetchr.lobby.settings.player.configuration.night_vision"}', inventory: [], effects: [{Id:16b, Amplifier: 0b, Duration: 2147483647, Ambient: 0b, ShowParticles: 0b, ShowIcon:0b}], selected: true}
-	#data modify storage fetchr:player configurations append value {name: '{"translate": "fetchr.lobby.settings.player.configuration.boats"}', inventory: [{Slot: 8b, id: "minecraft:oak_boat", Count: 1b}, {Slot: 17b, id: "minecraft:oak_boat", Count: 1b}, {Slot: 26b, id: "minecraft:oak_boat", Count: 1b}, {Slot: 35b, id: "minecraft:oak_boat", Count: 1b}], effects: [{Id:16b, Amplifier: 0b, Duration: 2147483647, Ambient: 0b, ShowParticles: 0b, ShowIcon:0b}]}
-	#data modify storage fetchr:player configurations append value {name: '{"translate": "fetchr.lobby.settings.player.configuration.elytra"}', inventory: [{Slot: 8b, id: "minecraft:firework_rocket", Count: 64b}, {Slot: 102b, id: "minecraft:elytra", Count: 1b, tag: {Unbreakable: true}}], effects: [{Id:16b, Amplifier: 0b, Duration: 2147483647, Ambient: 0b, ShowParticles: 0b, ShowIcon:0b}]}
-	#data modify storage fetchr:player configurations append value {name: '{"translate": "fetchr.lobby.settings.player.configuration.frostwalker"}', inventory: [{Slot: 100b, id: "minecraft:leather_boots", Count: 1b, tag: {Unbreakable: true, Enchantments:[{lvl: 2s, id: "minecraft:frost_walker"}]}}], effects: [{Id:16b, Amplifier: 0b, Duration: 2147483647, Ambient: 0b, ShowParticles: 0b, ShowIcon:0b}]}
-	#data modify storage fetchr:player configurations append value {name: '{"translate": "fetchr.lobby.settings.player.configuration.underwater"}', inventory: [{Slot: 100b, id: "minecraft:leather_boots", Count: 1b, tag: {Unbreakable: true, Enchantments:[{lvl: 3s, id: "minecraft:depth_strider"}]}}], effects: [{Id:13b, Amplifier: 0b, Duration: 2147483647, Ambient: 0b, ShowParticles: 0b, ShowIcon:0b}, {Id:16b, Amplifier: 0b, Duration: 2147483647, Ambient: 0b, ShowParticles: 0b, ShowIcon:0b}]}
 
 # setup teams
 	## add

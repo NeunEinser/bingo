@@ -18,7 +18,9 @@ function fetchr:init/items/find_categories
 data modify storage fetchr:items categories append from storage tmp.fetchr:init skippedCategories[]
 data remove storage tmp.fetchr:init skippedCategories
 
-data modify storage tmp.fetchr:init items[-1].item.Count set value 1b
+#NEUN_SCRIPT until 33
+#data modify storage tmp.fetchr:init items[-1].item.Count set value 1b
+#NEUN_SCRIPT end
 
 setblock 0 15 0 minecraft:oak_sign{front_text:{messages:['{"storage": "tmp.fetchr:init", "nbt": "items[-1].textComponent", "interpret": true, "italic": false}', '""', '""', '""']}}
 
