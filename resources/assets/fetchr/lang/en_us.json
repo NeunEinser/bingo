@@ -240,6 +240,12 @@
 	"fetchr.lobby.card_generation.join_game.error.no_card": "You have to generate a card before joining a game.",
 	"fetchr.lobby.card_generation.join_game.error.in_progress": "You cannot join an ongoing game. If you want to start a new game, generate a new card first.",
 
+	"fetchr.lobby.card_generation.join_as_spectator.sign.line1": "",
+	"fetchr.lobby.card_generation.join_as_spectator.sign.line2": "Join",
+	"fetchr.lobby.card_generation.join_as_spectator.sign.line3": "As Spectator",
+	"fetchr.lobby.card_generation.join_as_spectator.sign.line4": "",
+	"fetchr.game.start_spectating": "%s is now spectating the game",
+
 	"fetchr.lobby.card_generation.crafting_table.sign.line1": "Crafting",
 	"fetchr.lobby.card_generation.crafting_table.sign.line2": "Recipe",
 	"fetchr.lobby.card_generation.crafting_table.sign.line3": "Lookup",
@@ -310,6 +316,21 @@
 	"fetchr.lobby.settings.lockout_mode.toggle.off": "Lockout mode has been disabled.",
 	"fetchr.lobby.settings.lockout_mode.toggle.on": "Lockout mode has been enabled.",
 	"fetchr.lobby.settings.lockout_mode.toggle.ongoing_game.info": "This setting change will only take effect after the ongoing game has completed.",
+
+	"fetchr.lobby.settings.points_goal.sign.line1": "Points",
+	"fetchr.lobby.settings.points_goal.sign.line2": "Race",
+	"fetchr.lobby.settings.points_goal.sign.line3": "",
+	"fetchr.lobby.settings.points_goal.sign.off": "Off",
+	"fetchr.lobby.settings.points_goal.sign.minutes": "%s minutes",
+	"fetchr.lobby.settings.points_goal.menu.heading": "Points Race",
+	"fetchr.lobby.settings.points_goal.menu.option.off": "Disable points race",
+	"fetchr.lobby.settings.points_goal.menu.option.minutes": "Set race end to %s minutes",
+	"fetchr.lobby.settings.points_goal.menu.option.custom": "Set a custom race time",
+	"fetchr.lobby.settings.points_goal.menu.set.minutes": "The points race will end after %s minutes",
+	"fetchr.lobby.settings.points_goal.menu.set.off": "The points race has been disabled",
+	"fetchr.lobby.settings.points_goal.lectern.heading": "Points Race",
+	"fetchr.lobby.settings.points_goal.lectern.page_1": "During a points race, you try to get as many items as possible in the specified time. Whoever gets the most amount of items within the time, or whoever gets a blackout the fastest, wins.\n\nYou can use this to limit the amount of time spend on a game.",
+	"fetchr.lobby.settings.points_goal.lectern.page_2": "Like with any other goal, there is no forced game end and you can continue playing after the race has ended, for example when you are close to a blackout.",
 
 	"fetchr.lobby.settings.advanced_settings.sign.line1": "",
 	"fetchr.lobby.settings.advanced_settings.sign.line2": "Advanced",
@@ -608,6 +629,7 @@
 	"fetchr.goal.blackout.chat": "[%s] %s got a blackout!",
 	"fetchr.goal.20_no_bingo.chat": "[%s] %s got a 20 no bingo!",
 	"fetchr.goal.lockout.chat": "[%s] %s won the lockout race!",
+	"fetchr.goal.points.chat": "[%s] %s won the points race with %s points!",
 
 	"fetchr.goal.blackout.title": "Blackout!",
 	"fetchr.goal.blackout.subtitle.black": "The black team got a blackout!",
@@ -651,6 +673,11 @@
 	"fetchr.goal.lockout.title.lost": "Lockout Loser!",
 	"fetchr.goal.lockout.subtitle.won": "You won the lockout race!",
 	"fetchr.goal.lockout.subtitle.lost": "You lost the lockout race!",
+
+	"fetchr.goal.points.title.won": "Points Winner!",
+	"fetchr.goal.points.title.lost": "Points Loser!",
+	"fetchr.goal.points.subtitle.won": "You won the points race!",
+	"fetchr.goal.points.subtitle.lost": "You lost the points race!",
 
 
 	"fetchr.goal.bingo.row": "[%s] %s got a bingo in row %s!",

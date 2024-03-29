@@ -20,7 +20,7 @@
 # 	function fetchr:item_detection/**
 #declare score_holder $item_detect/announce.items
 
-execute in fetchr:lobby run function neun_einser.timer:store_current_time
+function neun_einser.timer:store_current_time
 scoreboard players reset @s fetchr.has_item
 tag @s add fetchr.clear
 

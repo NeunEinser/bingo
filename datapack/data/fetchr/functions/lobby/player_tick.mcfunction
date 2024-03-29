@@ -44,4 +44,6 @@ execute if score @s fetchr.teleport_all matches 1 run function fetchr:lobby/tele
 execute if score @s fetchr.pre_gen_radius matches 1.. run function fetchr:lobby/settings/set_pre_gen_radius_internal
 execute if score @s fetchr.pre_gen_radius matches 1.. run scoreboard players reset @s fetchr.pre_gen_radius
 
+execute if score @s fetchr.points_race_minutes matches -2147483648.. unless score @s fetchr.points_race_minutes matches 0 run function fetchr:lobby/settings/set_points_goal_internal
+
 execute if score @s fetchr.update_hud matches 1 run function fetchr:custom_hud/components/timer/update

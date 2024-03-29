@@ -413,6 +413,12 @@ forceload add 0 0
 		# 	function fetchr:lobby/*
 		# 	function fetchr:init/setup_lobby/*
 		# 	structure fetchr:*
+		#declare tag fetchr.multiplayer_only_no_replace
+		#>
+		# @within
+		# 	function fetchr:lobby/*
+		# 	function fetchr:init/setup_lobby/*
+		# 	structure fetchr:*
 		#declare tag fetchr.multiplayer_mangrove_button_north
 		#>
 		# @within
@@ -426,6 +432,12 @@ forceload add 0 0
 		# 	function fetchr:init/setup_lobby/*
 		# 	structure fetchr:*
 		#declare tag fetchr.singleplayer_only_brown
+		#>
+		# @within
+		# 	function fetchr:lobby/*
+		# 	function fetchr:init/setup_lobby/*
+		# 	structure fetchr:*
+		#declare tag fetchr.singleplayer_only_no_replace
 		#>
 		# @within
 		# 	function fetchr:lobby/place_sign
@@ -456,6 +468,9 @@ forceload add 0 0
 		# 	function fetchr:init/setup_lobby/*
 		# 	structure fetchr:*
 		#declare tag fetchr.danger_sign_east
+		#>
+		# @internal
+		#declare tag fetchr.join_game_sign
 		#>
 		# @within
 		# 	function fetchr:lobby/settings/toggle_blind_mode
@@ -768,6 +783,13 @@ forceload add 0 0
 		#NEUN_SCRIPT end
 
 		#>
+		# Trigger objective used to change the announcement time for the points goal.
+		#
+		# @internal
+		# @user
+		scoreboard objectives add fetchr.points_race_minutes trigger
+
+		#>
 		# Trigger objective used to handle changes / clicks in the preferences menu.
 		#
 		# @internal
@@ -1044,6 +1066,19 @@ forceload add 0 0
 		# @internal
 		#declare score_holder $pregeneration_chunks
 		execute unless score $pregeneration_chunks fetchr.settings matches 361.. run scoreboard players set $pregeneration_chunks fetchr.settings 361
+		#>
+		# Minutes after which the points goal is announced
+		# 0 or less means, no announcement
+		#
+		# @internal
+		#declare score_holder $points_goal_announcement_minutes
+		scoreboard players add $points_goal_announcement_minutes fetchr.settings 0
+		#>
+		# Wether the points goal has already been announced this game
+		#
+		# @internal
+		#declare score_holder $points_goal_announced
+		scoreboard players add $points_goal_announced fetchr.state 0
 		#>
 		# Whether spectator mode is enabled during games.
 		#

@@ -37,3 +37,4 @@ execute as @a[predicate=fetchr:is_in_game] run function fetchr:game/menu/print_w
 execute as @a[tag=!fetchr.in_current_team, predicate=fetchr:is_in_game] at @s run playsound minecraft:entity.wither.spawn voice @a ~ ~ ~ 1 1.5
 
 tag @a[tag=fetchr.in_current_team] add fetchr.spectator
+scoreboard players set $points_goal_announced fetchr.state 1
