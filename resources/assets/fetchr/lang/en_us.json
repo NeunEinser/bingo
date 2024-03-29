@@ -4,6 +4,12 @@
 
 	"fetchr.error.command_blocks_disabled": "Command blocks are disabled on this server. Please make sure the server.properties file does have all mentioned values set as described %s.",
 	"fetchr.error.command_blocks_disabled.link": "here",
+	
+	"fetchr.error.incompatible_minecraft_version.multiple_compatible": "You are using an unsupported version of Minecraft. This pack has been made compatible for Minecraft versions %s-%s",
+	"fetchr.error.incompatible_minecraft_version.single_compatible": "You are using an unsupported version of Minecraft. This pack has been made compatible for Minecraft version %s",
+
+	"fetchr.error.spigot_paper": "You are likely using a version of Spigot or Paper. Paper and Spigot alter vanilla behavior and are incompatible with Fetchr.",
+	"fetchr.error.spigot_paper.help": "You can use a vanilla server, or use Fabric or Quilt with Lithium for best performance\n\nIf you need further assistance or are seeing this message despite not using Paper or Spigot, please report this issue on %s or %s",
 
 	"fetchr.logging.error": "ERROR",
 	"fetchr.setup.error.unknown_category": "Item %1$s has category %2$s, but category %2$s could not be found.",
