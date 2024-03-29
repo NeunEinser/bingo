@@ -6,14 +6,14 @@
 
 execute at @e[type=minecraft:marker, tag=fetchr.skybox_button, distance=..13] if block ~ ~ ~ minecraft:stone_button[powered=true] run function fetchr:game/skybox/button_pressed
 
-execute as @a[predicate=fetchr:is_in_game] at @s align y if block ~ ~ ~ minecraft:void_air run tp ~ ~1.1 ~
+execute as @a[predicate=fetchr:is_in_game] at @s align y if block ~ ~ ~ minecraft:void_air run tp ~ ~1.2 ~
 #NEUN_SCRIPT until 30
 #execute as @a[predicate=fetchr:is_in_game] at @s if block ~ ~-1 ~ minecraft:void_air run effect give @s minecraft:levitation 1 255 true
 #execute as @a[predicate=fetchr:is_in_game] at @s unless block ~ ~-1 ~ minecraft:void_air run effect clear @s minecraft:levitation
 #NEUN_SCRIPT end
 #NEUN_SCRIPT since 31
-execute as @a[predicate=fetchr:is_in_game] at @s align y if block ~ ~-1 ~ minecraft:void_air run tp ~ ~.1 ~
-execute as @a[predicate=fetchr:is_in_game] at @s align y if block ~ ~-1 ~-1 minecraft:void_air run tp ~ ~.1 ~
+execute as @a[predicate=fetchr:is_in_game] at @s align y if block ~ ~-1 ~ minecraft:void_air unless entity @s[distance=...01] run tp ~ ~.2 ~
+execute as @a[predicate=fetchr:is_in_game] at @s align y if block ~ ~-1 ~-1 minecraft:void_air run tp ~ ~ ~
 execute as @a[predicate=fetchr:is_in_game] at @s if block ~ ~-1 ~ minecraft:void_air run attribute @s generic.gravity base set 0
 execute as @a[predicate=fetchr:is_in_game] at @s if block ~ ~-1 ~-1 minecraft:void_air run attribute @s generic.gravity base set 0
 execute as @a[predicate=fetchr:is_in_game] at @s unless block ~ ~-1 ~ minecraft:void_air unless block ~ ~-1 ~-1 minecraft:void_air run attribute @s generic.gravity base set 0.08
