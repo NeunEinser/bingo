@@ -11,7 +11,6 @@
 #NEUN_SCRIPT since 38
 #tellraw @a {"translate": "fetchr.error.incompatible_minecraft_version.multiple_compatible", "color": "red", "with": ["1.20", "24w13a"]}
 #NEUN_SCRIPT end
-#NEUN_SCRIPT until 38
 function fetchr:tick/spigot
 function neun_einser.timer:store_current_time
 

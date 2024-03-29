@@ -69,16 +69,16 @@ def main():
 	if datapack_config is not None:
 		rp_path = datapack_config.get("path")
 		if rp_path is None:
-			print("invalid reourcepack config")
+			print("invalid datapack config")
 			return;
 		requested_rp_sha.extend(iterate_files(config, rp_path,  f"{target}{os.sep}tmp{os.sep}datapack", mc_version_info))
 
 	if world_config is not None:
 		world_path = world_config.get("path")
 		if world_path is None:
-			print("invalid reourcepack config")
+			print("invalid config")
 			return;
-		requested_rp_sha.extend(iterate_files(config, world_path,  f"{target}{os.sep}tmp{os.sep}world{os.sep}{name}-{version}", mc_version_info))
+		requested_rp_sha.extend(iterate_files(config, world_path,  f"{target}{os.sep}tmp{os.sep}world", mc_version_info))
 
 	includes = config.get("include")
 	if includes != None:
@@ -126,19 +126,21 @@ def main():
 		shutil.make_archive(dppath, "zip", f"{target}{os.sep}tmp{os.sep}datapack{'-' + variant if variant else ''}")
 		dppath += ".zip"
 		
-		worldpath=f"{target}{os.sep}tmp{os.sep}world{os.sep}{name}-{version}{'-' + variant if variant else ''}"
+		worldpath=f"{target}{os.sep}tmp{os.sep}world{'-' + variant if variant else ''}"
 		os.makedirs(f"{worldpath}{os.sep}region", exist_ok=True)
 		shutil.copy2(rppath, f"{worldpath}{os.sep}resources.zip")
 		os.mkdir(f"{worldpath}{os.sep}datapacks")
 		shutil.copy2(dppath, f"{worldpath}{os.sep}datapacks{os.sep}{name}.zip")
+		shutil.move(worldpath, f"{target}{os.sep}tmp{os.sep}w{os.sep}{name}-{version}")
 
-		shutil.make_archive(f"{target}{os.sep}{name}-{version}{'-' + variant if variant else ''}", "zip", f"{target}{os.sep}tmp{os.sep}world{'-' + variant if variant else ''}")
+		shutil.make_archive(f"{target}{os.sep}{name}-{version}{'-' + variant if variant else ''}", "zip", f"{target}{os.sep}tmp{os.sep}w")
+		shutil.rmtree(f"{target}{os.sep}tmp{os.sep}w")
 		
 		if includes != None:
 			for path in includes:
 				copy_file_or_dir(f"{target}{os.sep}tmp{os.sep}{path}", f"{target}{os.sep}{path}")
 	
-	shutil.rmtree(f"{target}{os.sep}tmp")
+	#shutil.rmtree(f"{target}{os.sep}tmp")
 	print(f"minified {lines} lines")
 
 def iterate_files(config: dict, source: str, target: str, mc_version_info: dict | None):

@@ -54,8 +54,8 @@ execute if score @s fetchr.prev_x_pos = $tick/player.x fetchr.tmp if score @s fe
 #region resourcepack check
 # Auto-validate if Singleplayer
 #NEUN_SCRIPT unless realms
-execute if score $is_multiplayer fetchr.state matches 0 run tellraw @s[tag=fetchr.resourcepack_check] "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
 #execute if score $is_multiplayer fetchr.state matches 0 run scoreboard players set @s[tag=fetchr.resourcepack_check] fetchr.resource_pack_check {NEUN_SCRIPT:rp_version * 91}
+execute if score $is_multiplayer fetchr.state matches 0 run tellraw @s[tag=fetchr.resourcepack_check] "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
 #NEUN_SCRIPT end
 #NEUN_SCRIPT remove 1
 execute if score $is_multiplayer fetchr.state matches 0 run scoreboard players set @s[tag=fetchr.resourcepack_check] fetchr.resource_pack_check 91
@@ -72,10 +72,10 @@ tellraw @s[scores={fetchr.resource_pack_check=1}] ["\n\n\n\n\n", {"translate": "
 
 # Validate checked players, reenable trigger
 #NEUN_SCRIPT unless realms
-scoreboard players enable @a[tag=fetchr.resourcepack_check] fetchr.resource_pack_check
-scoreboard players set @s[scores={fetchr.resource_pack_check=1}] fetchr.resource_pack_check 0
 #tag @s[scores={fetchr.resource_pack_check={NEUN_SCRIPT:rp_version * 91}}] remove fetchr.resourcepack_check
 #execute if score @s fetchr.resource_pack_check matches {NEUN_SCRIPT:rp_version * 91} run function fetchr:util/go_to_lobby
+scoreboard players enable @a[tag=fetchr.resourcepack_check] fetchr.resource_pack_check
+scoreboard players set @s[scores={fetchr.resource_pack_check=1}] fetchr.resource_pack_check 0
 #NEUN_SCRIPT end
 #NEUN_SCRIPT remove 2
 tag @s[scores={fetchr.resource_pack_check=91}] remove fetchr.resourcepack_check
