@@ -2,7 +2,6 @@
 	"values": [
 		"minecraft:lava",
 		"minecraft:water",
-		"minecraft:bubble_column",
-		"minecraft:powder_snow"
+		"minecraft:bubble_column"
 	]
 }
