@@ -7,6 +7,10 @@
 	"overlays": {
 		"entries": [
 			{
+				"formats": {"min_inclusive": 28, "max_inclusive": 2147483647},
+				"directory": "pack_format_28"
+			},
+			{
 				"formats": {"min_inclusive": 33, "max_inclusive": 2147483647},
 				"directory": "pack_format_33"
 			}
