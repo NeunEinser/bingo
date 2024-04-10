@@ -199,19 +199,31 @@
 	"fetchr.lobby.credits.translators.sign.line4": "",
 
 	"fetchr.lobby.credits.translators.german.sign.line1": "German",
+	"fetchr.lobby.credits.translators.german.sign.line2": "",
+
 	"fetchr.lobby.credits.translators.polish.sign.line1": "Polish",
+	"fetchr.lobby.credits.translators.polish.sign.line2": "",
+
 	"fetchr.lobby.credits.translators.italian.sign.line1": "Italian",
+	"fetchr.lobby.credits.translators.italian.sign.line2": "",
+
 	"fetchr.lobby.credits.translators.dutch.sign.line1": "Dutch",
+	"fetchr.lobby.credits.translators.dutch.sign.line2": "",
+
 	"fetchr.lobby.credits.translators.russian.sign.line1": "Russian",
 	"fetchr.lobby.credits.translators.russian.sign.line2": "(incomplete)",
+
 	"fetchr.lobby.credits.translators.french.sign.line1": "French",
+	"fetchr.lobby.credits.translators.french.sign.line2": "",
+
 	"fetchr.lobby.credits.translators.brazillian_portuguese.sign.line1": "Portuguese",
 	"fetchr.lobby.credits.translators.brazillian_portuguese.sign.line2": "(BR)",
+
 	"fetchr.lobby.credits.translators.spanish.sign.line1": "Spanish",
+	"fetchr.lobby.credits.translators.spanish.sign.line2": "",
+
 	"fetchr.lobby.credits.translators.chinese_simplified.sign.line1": "Chinese",
-	"fetchr.lobby.credits.translators.vietnamese.sign.line1": "Vietnamese",
-	"fetchr.lobby.credits.translators.vietnamese.sign.line2": "(incomplete)",
-	"fetchr.lobby.credits.translators.korean.sign.line1": "Korean",
+	"fetchr.lobby.credits.translators.chinese_simplified.sign.line2": "(simplified)",
 
 	"fetchr.lobby.card_generation.random_card.sign.line1": "",
 	"fetchr.lobby.card_generation.random_card.sign.line2": "Generate",
