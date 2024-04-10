@@ -9,6 +9,7 @@ data modify storage tmp.fetchr:item_detection teams set from storage fetchr:card
 # @within function fetchr:item_detection/goals/points/*
 #delcare score_holder $item_detect/announce/points.winning_score
 scoreboard players set $item_detect/announce/points.winning_score fetchr.tmp 0
+data modify storage tmp.fetchr:item_detection teams set from storage fetchr:card teams
 function fetchr:item_detection/goals/points/find_winners
 
 tellraw @a ["[", {"text":"≡", "color":"#00c3ff", "clickEvent":{"action":"run_command", "value":"/trigger fetchr.menu"}, "hoverEvent":{"action":"show_text", "contents":{"translate": "fetchr.game.menu.hover_text"}}}, "] ", {"translate": "fetchr.goal.points.chat", "with": [{"storage": "neun_einser.timer:display", "nbt": "\"hh:mm:ss.s\"", "interpret": true}, {"selector": "@a[tag=fetchr.in_team]"}, {"score": { "name": "$item_detect/announce/points.winning_score", "objective": "fetchr.tmp"}}]}]
