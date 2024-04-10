@@ -147,7 +147,6 @@
 	"fetchr.lobby.credits.translators.brazillian_portuguese.sign.line2": "(БР)",
 	"fetchr.lobby.credits.translators.spanish.sign.line1": "Испанский",
 	"fetchr.lobby.credits.translators.chinese_simplified.sign.line1": "Китайский",
-	"fetchr.lobby.credits.translators.chinese_simplified.sign.line2": "(упрощенный)",
 	"fetchr.lobby.card_generation.random_card.sign.line2": "Генерировать",
 	"fetchr.lobby.card_generation.random_card.sign.line3": "случайную карточку",
 	"fetchr.lobby.card_generation.from_seed.sign.line1": "Генерировать",
