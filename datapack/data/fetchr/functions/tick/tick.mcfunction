@@ -8,7 +8,7 @@
 # @within tag/function minecraft:tick
 # @handles #minecraft:tick
 
-#NEUN_SCRIPT since 40
+#NEUN_SCRIPT since 42
 #tellraw @a {"translate": "fetchr.error.incompatible_minecraft_version.multiple_compatible", "color": "red", "with": ["1.20", "1.20.5"]}
 #NEUN_SCRIPT end
 function fetchr:tick/spigot
