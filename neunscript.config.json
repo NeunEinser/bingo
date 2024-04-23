@@ -1,10 +1,10 @@
 {
 	"name": "Fetchr",
-	"version": "5.1.2-rc2",
+	"version": "5.1.2",
 	"mc": "1.20.2",
 	"target": "dist",
 	"vars": {
-		"version_long_name": "5.1.2 Release-Candidate 2",
+		"version_long_name": "5.1.2",
 		"rp_version": "23",
 		"realms": false
 	},
