@@ -10,9 +10,6 @@ function fetchr:game/menu/print_with_hint
 execute at @s run playsound minecraft:block.note_block.pling voice @s ~ ~ ~ 1 1
 
 effect clear @s
-#NEUN_SCRIPT since 31
-attribute @s generic.gravity base set 0.08
-#NEUN_SCRIPT end
 clear @s
 gamemode survival @s
 experience set @s 0 levels
