@@ -6,7 +6,7 @@
 # @context
 # 	entity The player to check
 
-#NEUN_SCRIPT since 33
+#NEUN_SCRIPT since 33 until 39
 execute if items entity @s container.* minecraft:leather_boots[minecraft:trim={pattern:"minecraft:coast",material:"minecraft:lapis"}] run scoreboard players set @s fetchr.has_item 1
 execute if items entity @s container.* minecraft:leather_boots[minecraft:trim={pattern:"minecraft:dune",material:"minecraft:lapis"}] run scoreboard players set @s fetchr.has_item 1
 execute if items entity @s container.* minecraft:leather_boots[minecraft:trim={pattern:"minecraft:eye",material:"minecraft:lapis"}] run scoreboard players set @s fetchr.has_item 1

@@ -8,15 +8,15 @@
 		"entries": [
 			{
 				"formats": {"min_inclusive": 28, "max_inclusive": 2147483647},
-				"directory": "pack_format_28"
+				"directory": "pack_format_from_28"
 			},
 			{
 				"formats": {"min_inclusive": 33, "max_inclusive": 2147483647},
-				"directory": "pack_format_33"
+				"directory": "pack_format_from_33"
 			},
 			{
 				"formats": {"min_inclusive": 37, "max_inclusive": 2147483647},
-				"directory": "pack_format_37"
+				"directory": "pack_format_from_37"
 			}
 		]
 	}

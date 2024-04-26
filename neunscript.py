@@ -145,7 +145,7 @@ def main():
 
 def iterate_files(config: dict, source: str, target: str, mc_version_info: dict | None):
 	requested_rp_sha = []
-	pack_formats_for_overlay = set()
+	pack_formats_for_overlay = []
 	remove_extensions = config.get("remove_file_types")
 	versionDict: dict | None = config.get("versions")
 	if versionDict == None:
@@ -206,13 +206,18 @@ def iterate_files(config: dict, source: str, target: str, mc_version_info: dict 
 								file_content = minify_json_file(file_content)
 							elif file_name.endswith(".mcfunction"):
 								function_result = minify_function_file(file_content, version_config, 1)
-								for pack_format in function_result.get("pack_formats"):
-									pack_formats_for_overlay.add(pack_format)
+								pack_formats = sorted(function_result.get("pack_formats"))
+								for i in range(0, len(pack_formats)):
+									pack_format = pack_formats[i]
+									max_format = pack_formats[i+1] - 1 if i+1 < len(pack_formats) else None
+									pack_formats_for_overlay.append([pack_format, max_format])
 									overlay_content = minify_function_file(file_content, version_config, pack_format).get("content")
-									overlay_path = f"{out_root}{os.sep}pack_format_{pack_format}{os.sep}{relative_path}"
-									os.makedirs(overlay_path, exist_ok=True)
-									with open(f"{overlay_path}{os.sep}{file_name}", "w", encoding="utf-8") as file:
-										file.write(overlay_content)
+
+									if overlay_content:
+										overlay_path = f"{out_root}{os.sep}pack_format_from_{pack_format}{f'_until_{max_format}' if max_format != None else ''}{os.sep}{relative_path}"
+										os.makedirs(overlay_path, exist_ok=True)
+										with open(f"{overlay_path}{os.sep}{file_name}", "w", encoding="utf-8") as file:
+											file.write(overlay_content)
 								file_content: str = function_result.get("content")
 								if override == None:
 									global lines
@@ -237,9 +242,11 @@ def iterate_files(config: dict, source: str, target: str, mc_version_info: dict 
 				entries = []
 
 			for pack_format in pack_formats_for_overlay:
-				overlay_name = f"pack_format_{pack_format}"
+				min_inc = pack_format[0]
+				max_inc = pack_format[1] if pack_format[1] != None else 2**31-1
+				overlay_name = f"pack_format_from_{min_inc}{f'_until_{max_inc}' if max_inc != 2**31-1 else ''}"
 				if not any (entry["directory"] == overlay_name for entry in entries):
-					entries.append({"formats": {"min_inclusive": pack_format, "max_inclusive": 2**31-1 }, "directory": overlay_name })
+					entries.append({"formats": {"min_inclusive": min_inc, "max_inclusive": max_inc}, "directory": overlay_name })
 			overlays["entries"] = entries
 			pack_def["overlays"] = overlays
 			file.seek(0)
@@ -320,7 +327,7 @@ def minify_function_file(file_content: str, config: dict, pack_format: int):
 	output=""
 	remove=0
 	uncomment=0
-	pack_formats = []
+	pack_formats = set() 
 
 	for line in file_content.splitlines():
 		line = line.strip()
@@ -389,12 +396,12 @@ def minify_function_file(file_content: str, config: dict, pack_format: int):
 						raise ValueError("until/since needs at least one argument")
 					min_value = 1
 					max_value = None
-					pack_formats.append(int(command[1]))
+					pack_formats.add(int(command[1]))
 					if command[0] == "since":
 						min_value = int(command[1])
 						if len(command) >= 4 and command[2] == "until":
 							max_value = int(command[3])
-							pack_formats.append(max_value)
+							pack_formats.add(max_value)
 					else:
 						max_value = int(command[1])
 					if pack_format >= min_value and (max_value is None or pack_format < max_value):
