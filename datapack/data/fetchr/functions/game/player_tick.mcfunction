@@ -35,5 +35,3 @@ tag @s[tag=fetchr.position_changed] remove fetchr.check_inventory
 tag @s[tag=fetchr.only_check_inventory_once] remove fetchr.check_inventory
 tag @s[scores={fetchr.inv_change=1..}] add fetchr.check_inventory
 tag @s[scores={fetchr.inv_change=2..}] remove fetchr.only_check_inventory_once
-
-execute if entity @s[scores={fetchr.lobby=1}] run function fetchr:util/go_to_lobby

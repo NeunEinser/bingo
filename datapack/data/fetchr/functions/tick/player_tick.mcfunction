@@ -5,7 +5,6 @@
 # @within function fetchr:tick/tick
 # @context entity Player
 
-
 #>
 # @within function fetchr:tick/*
 #declare storage tmp.fetchr:tick
@@ -92,6 +91,8 @@ execute if entity @s[predicate=!fetchr:is_in_overworld] in fetchr:lobby run func
 execute if entity @s[scores={fetchr.reveal_card=1}] in fetchr:lobby run function fetchr:game/reveal_card_operator_check
 
 # End
+execute if entity @s[scores={fetchr.lobby=1}] run function fetchr:util/go_to_lobby
+
 scoreboard players operation @s fetchr.prev_x_pos = $tick/player.x fetchr.tmp
 scoreboard players operation @s fetchr.prev_y_pos = $tick/player.y fetchr.tmp
 scoreboard players operation @s fetchr.prev_z_pos = $tick/player.z fetchr.tmp
