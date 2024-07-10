@@ -1,0 +1,78 @@
+{
+	"env": {
+		"gameVersion": "1.20.6"
+	},
+	"format": {
+		"blockStateBracketSpacing": { "inside": 0 },
+		"blockStateCommaSpacing": { "before": 0, "after": 1 },
+		"blockStateEqualSpacing": { "before": 0, "after": 1 },
+		"blockStateTrailingComma": false,
+		"eol": "LF",
+		"nbtArrayBracketSpacing": { "inside": 0 },
+		"nbtArrayCommaSpacing": { "before": 0, "after": 1 },
+		"nbtArraySemicolonSpacing": { "after": 1 },
+		"nbtArrayTrailingComma": false,
+		"nbtByteSuffix": "b",
+		"nbtCompoundBracketSpacing": { "inside": 0 },
+		"nbtCompoundColonSpacing": { "before": 0, "after": 1 },
+		"nbtCompoundCommaSpacing": { "before": 0, "after": 1 },
+		"nbtCompoundTrailingComma": false,
+		"nbtDoubleOmitSuffix": false,
+		"nbtDoubleSuffix": "d",
+		"nbtFloatSuffix": "f",
+		"nbtListBracketSpacing": { "inside": 0 },
+		"nbtListCommaSpacing": { "before": 0, "after": 1 },
+		"nbtListTrailingComma": false,
+		"nbtLongSuffix": "L",
+		"nbtShortSuffix": "s",
+		"selectorBracketSpacing": { "inside": 0 },
+		"selectorCommaSpacing": { "before": 0, "after": 1 },
+		"selectorEqualSpacing": { "before": 0, "after": 0 },
+		"selectorTrailingComma": false,
+		"timeOmitTickUnit": true
+	},
+	"lint": {
+		"blockStateSortKeys": null,
+		"nbtCompoundSortKeys": null,
+		"selectorSortKeys": null,
+
+		"commandStringQuote": {
+			"always": false,
+			"avoidEscape": true,
+			"type": "double"
+		},
+		"nbtKeyQuote": {
+			"always": false,
+			"avoidEscape": true,
+			"type": "double"
+		},
+		"nbtPathQuote": {
+			"always": false,
+			"avoidEscape": true,
+			"type": "double"
+		},
+		"nbtStringQuote": {
+			"always": true,
+			"avoidEscape": true,
+			"type": "double"
+		},
+		"selectorKeyQuote": {
+			"always": false,
+			"avoidEscape": true,
+			"type": "double"
+		},
+	
+		"idOmitDefaultNamespace": false,
+
+		"nameOfNbtKey": "^[a-z][a-z0-9_]*$",
+		"nameOfObjective": "^(?:fetchr\\.[a-z][a-z0-9_]*|[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*){2})$",
+		"nameOfScoreHolder": "^(?:\\$[a-z][a-z0-9_]*(?:(?:\\/[a-z][a-z0-9_]*)*\\.[a-z][a-z0-9_]*)?|0|-?[1-9][0-9]*)$",
+		"nameOfTag": "^(?:fetchr\\.[a-z][a-z0-9_]*|[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*){2})$",
+		"nameOfTeam": "^(?:fetchr\\.[a-z][a-z0-9_]*|[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*){2})$",
+
+		"nbtArrayLengthCheck": true,
+		"nbtBoolean": true,
+		"nbtListLengthCheck": true,
+		"nbtTypeCheck": "strictly"
+	}
+}

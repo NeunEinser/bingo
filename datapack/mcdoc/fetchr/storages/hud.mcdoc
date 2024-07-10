@@ -1,0 +1,35 @@
+use ::fetchr::hud::HudComponent
+use ::fetchr::hud::PlayerHudComponent
+use ::fetchr::storages::registry::HudComponentRegistryData
+use ::fetchr::storages::registry::PreferencesRegistryData
+
+type PlayerHudComponents = [PlayerHudComponent] @ ..12
+
+struct PlayerHudConfiguration {
+	id: int,
+	components: PlayerHudComponents,
+}
+
+dispatch minecraft:storage[fetchr:custom_hud] to struct {
+	components: [HudComponent],
+	default: PlayerHudComponents,
+	players: [PlayerHudConfiguration],
+	currentPlayer?: PlayerHudConfiguration,
+}
+
+dispatch minecraft:storage[io.fetchr:preferences] to struct {
+	menuOptions: [PreferencesRegistryData],
+	components: [HudComponentRegistryData],
+}
+
+dispatch minecraft:storage[tmp.fetchr:preferences] to struct {
+	menuOption: PreferencesRegistryData
+}
+
+dispatch minecraft:storage[tmp.fetchr:init/hud] to struct {
+	cur: (HudComponentRegistryData | HudComponent),
+	columns: [[PlayerHudComponent] @ ..6 ] @ ..2,
+	whereSpace: [HudComponent],
+	unpreferred: [HudComponent],
+	dontAdd: [HudComponent],
+}

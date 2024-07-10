@@ -19,10 +19,10 @@ execute if data storage tmp.fetchr:init/hud cur.settingsClickEvent run data modi
 setblock 0 15 0 minecraft:air
 data remove storage tmp.fetchr:init/hud cur.settingsClickEvent
 
-execute if data storage tmp.fetchr:init/hud cur{addByDefault: true, preferredColumn: 0} if data storage tmp.fetchr:init/hud columns[0][4] run function fetchr:init/initialize_hud_components/add_unpreferred
+execute if data storage tmp.fetchr:init/hud cur{addByDefault: true, preferredColumn: 0} if data storage tmp.fetchr:init/hud columns[0][4] run data modify storage tmp.fetchr:init/hud unpreferred append from storage tmp.fetchr:init/hud cur
 execute if data storage tmp.fetchr:init/hud cur{addByDefault: true, preferredColumn: 0} unless data storage tmp.fetchr:init/hud columns[0][4] run function fetchr:init/initialize_hud_components/add_to_0
 
-execute if data storage tmp.fetchr:init/hud cur{addByDefault: true, preferredColumn: 1} if data storage tmp.fetchr:init/hud columns[1][5] run function fetchr:init/initialize_hud_components/add_unpreferred
+execute if data storage tmp.fetchr:init/hud cur{addByDefault: true, preferredColumn: 1} if data storage tmp.fetchr:init/hud columns[1][5] run data modify storage tmp.fetchr:init/hud unpreferred append from storage tmp.fetchr:init/hud cur
 execute if data storage tmp.fetchr:init/hud cur{addByDefault: true, preferredColumn: 1} unless data storage tmp.fetchr:init/hud columns[1][5] run function fetchr:init/initialize_hud_components/add_to_1
 
 execute if data storage tmp.fetchr:init/hud cur{addByDefault: true} unless data storage tmp.fetchr:init/hud cur.preferredColumn run data modify storage tmp.fetchr:init/hud whereSpace append from storage tmp.fetchr:init/hud cur

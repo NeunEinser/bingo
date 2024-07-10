@@ -1,0 +1,80 @@
+use ::fetchr::hud::HudComponentBase
+use ::fetchr::item::ItemConfigurationBase
+
+struct ItemRegistryData {
+	...ItemConfigurationBase,
+
+		/// Categories this item is in. Can be an id list or a list of compounds.
+		categories: (
+			[#[id] string]
+			| [struct {
+					/// The id of the referenced category
+					id: #[id] string,
+					/// The weight of the current item in this category. When not set,
+					/// defaults to the item's default weight.
+					weight?: int
+			}]
+		),
+		/// The default weight for this item. If not set, defaults to 1.
+		weight?: int
+}
+
+struct CategroyRegistryData {
+	/// Namespaced id to uniquely identify the category within Fetchr
+	id: #[id] string,
+
+	/// This name is shown in the item tooltip of category chests.
+	name: #[text_component] string,
+
+	/// Tags this category belongs to. Changing `activeTags` in `fetchr:items`
+	/// and then calling `fetchr:util/apply_active_item_tags` will only respect
+	/// this category if any of these tags are included in `activeTags`.
+	tags: [#[id] string],
+}
+
+struct HudComponentRegistryData {
+	...HudComponentBase,
+	
+	/// In the hud menu, this can be used for custom settings. This is expected
+	/// to have an empty text and a click event.
+	settingsClickEvent?: #[text_component] string,
+
+	/// Text to display between the icon and the value. Can be used to define
+	/// `iconSeparatorAlignLeft` and `iconSeparatorAlignRight`at the same time.
+	iconSeparator?: #[text_component] string,
+}
+
+struct PreferencesRegistryData {	
+	id: #[id] string,
+
+	textComponent: #[text_component] string,
+
+	/// This can be used to show a custom hover event in the preferences menu.
+	/// This is expected to have an empty text and a hover event.
+	hoverText?: #[text_component] string,
+
+	/// This can be used to show a custom hover event in the preferences menu,
+	/// when the setting is changed to `disabled: true`.
+	/// This is expected to have an empty text and a hover event.
+	disabledHoverText?: #[text_component] string,
+
+	/// The click event to run when clicking this preferences entry.
+	/// This is expected to have an empty text and a click event.
+	clickEvent: #[text_component] string,
+
+	disabled?: boolean,
+
+	hidden?: boolean,
+}
+
+dispatch minecraft:storage[fetchr:registries] to struct RegistryStorage {
+	items: [ItemRegistryData],
+	categories: [CategroyRegistryData],
+	structures: [#[id=structure] string],
+	hud_components: [HudComponentRegistryData],
+	preferences: struct {
+		main: [PreferencesRegistryData],
+		custom_hud: [PreferencesRegistryData],
+		adjust_card: [PreferencesRegistryData],
+	}
+}

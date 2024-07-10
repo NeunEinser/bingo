@@ -1,0 +1,41 @@
+use ::fetchr::item::Category
+use ::fetchr::item::ItemConfiguration
+
+struct CategoryWithItems {
+	...Category,
+	items: [ItemConfiguration]
+}
+
+dispatch minecraft:storage[fetchr:items] to struct {
+	activeTags: [#[id] string],
+	activeCategories: [CategoryWithItems],
+	categories: [CategoryWithItems],
+	activeItems: [ItemConfiguration],
+	items: [ItemConfiguration],
+}
+
+dispatch minecraft:storage[fetchr:card] to struct {
+	spawnLocation: int,
+	slots: [ItemConfiguration],
+	teams: struct {
+		id: #[id] string,
+		slots: [#[text_component] string],
+
+		/// The background tile to render behind completed items of this team
+		background: [#[text_component] string],
+
+		/// The rendered card. Used to skip having to elvaluate the complex text
+		/// component.
+		card: [#[text_component] string],
+
+		/// TODO why is this needed
+		backgroundIndex: byte,
+		itemCount: int,
+
+		/// Data used by the macro resetting random sequences
+		#[since="1.20.2"]
+		randomSequenceData: struct RandomSequenceData {
+			seed: int
+		}
+	}
+}

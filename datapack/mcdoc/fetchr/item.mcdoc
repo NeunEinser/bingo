@@ -1,0 +1,57 @@
+use ::java::server::world::item::AnyItem
+
+struct ItemConfigurationBase {
+	/// Namespaced id for this item. Should use your custom namespace, and not
+	/// be the same as the minecraft item id.
+	id: #[id] string,
+
+	/// The item definition as it is used for display purposes, for example in
+	/// lobby item frames or category chests
+	item: AnyItem,
+
+	/// The text component that should be used for representing this item, for
+	/// example in the chat announcement "<player> got <item>"
+	textComponent: #[text_component] string,
+
+	/// The icon of the item. Should represent a character that is retextured in
+	/// the custom font. Currently, the character has to be defined in the bingo
+	/// font, using a custom pack-specific dont is currently not possible.
+	icon: #[text_component] string,
+
+	/// Command used for detecting if any player has this item.
+	///
+	/// This command needs to check all players and set the player's
+	/// bingo.has_item scoreboard objective to 1 if the player has the item and
+	/// to 0 otherwise.
+	///
+	/// Example: execute as @a store success score @s bingo.has_item run clear
+	/// @s minecraft:egg 0
+	detectCommand: #[command] string,
+
+	/// Command used for removing an item from the player's inventory.
+	///
+	/// This command needs to clear the item from all players tagged with the
+	/// tag bingo.clear. This extra step is needed, as the pack first checks if
+	/// the player's team already received the item.
+	///
+	/// Example: clear @a[tag=bingo.clear] minecraft:egg 1
+	clearCommand: #[command] string,
+}
+
+struct Category {
+	id: #[id] string,
+	weight: int,
+	totalItemWeight: int,
+}
+
+struct ItemConfiguration {
+	...ItemConfigurationBase,
+
+	/// The weight of this item within the current context. If inside a category,
+	/// the category weight, if in a global context the global weight relative to
+	/// all other items
+	weight: int,
+
+	/// Categories this item is in.
+	categories: [Category],
+}
