@@ -1,6 +1,9 @@
 {
 	"fetchr.error.command_blocks_disabled": "Командные блоки отключены на этом сервере. Пожалуйста, убедитесь, что файл server.properties содержит все упомянутые значения, как описано %s.",
 	"fetchr.error.command_blocks_disabled.link": "здесь",
+	"fetchr.error.incompatible_minecraft_version.multiple_compatible": "Вы используете неподдерживаемую версию Minecraft. Этот набор совместим с версиями Minecraft %s-%s",
+	"fetchr.error.incompatible_minecraft_version.single_compatible": "Вы используете неподдерживаемую версию Minecraft. Этот набор совместим с версией Minecraft %s",
+	"fetchr.error.spigot_paper": "Скорее всего, вы используете Spigot или Paper. Paper и Spigot изменяют ванильное поведение и несовместимы с Fetchr.",
 	"fetchr.logging.error": "ОШИБКА",
 	"fetchr.setup.error.unknown_category": "Предмет %1$s имеет категорию %2$s, но категория %2$s не найдена.",
 	"fetchr.actionbar.wrong_resourcepack_error": "Несовместимая версия ресурс-пака Fetchr включена.",
