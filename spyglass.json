@@ -1,6 +1,6 @@
 {
 	"env": {
-		"gameVersion": "1.20.6"
+		"gameVersion": "1.21.1"
 	},
 	"format": {
 		"blockStateBracketSpacing": { "inside": 0 },

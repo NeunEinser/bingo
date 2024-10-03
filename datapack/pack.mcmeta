@@ -1,23 +1,7 @@
 {
 	"pack": {
-		"pack_format": 15,
-		"supported_formats": {"min_inclusive": 15, "max_inclusive": 41},
+		"pack_format": 48,
+		"supported_formats": {"min_inclusive": 45, "max_inclusive": 48},
 		"description": "Fetchr"
-	},
-	"overlays": {
-		"entries": [
-			{
-				"formats": {"min_inclusive": 28, "max_inclusive": 2147483647},
-				"directory": "pack_format_from_28"
-			},
-			{
-				"formats": {"min_inclusive": 33, "max_inclusive": 2147483647},
-				"directory": "pack_format_from_33"
-			},
-			{
-				"formats": {"min_inclusive": 37, "max_inclusive": 2147483647},
-				"directory": "pack_format_from_37"
-			}
-		]
 	}
 }
