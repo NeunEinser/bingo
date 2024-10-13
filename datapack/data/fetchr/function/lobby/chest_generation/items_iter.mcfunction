@@ -27,6 +27,8 @@ scoreboard players operation $chest_generation.slot fetchr.tmp *= $chest_generat
 scoreboard players operation $chest_generation.slot fetchr.tmp += $chest_generation.chest_col fetchr.tmp
 
 data modify storage tmp.fetchr:chest_generation item set from storage tmp.fetchr:chest_generation items[-1]
+data modify storage tmp.fetchr:chest_generation item_categories set from storage tmp.fetchr:chest_generation item.active_categories
+
 data remove storage tmp.fetchr:chest_generation items[-1]
 
 execute store result storage tmp.fetchr:chest_generation item.item.Slot byte 1 run scoreboard players get $chest_generation.slot fetchr.tmp

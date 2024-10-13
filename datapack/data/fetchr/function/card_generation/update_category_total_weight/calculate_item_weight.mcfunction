@@ -32,7 +32,7 @@ function neun_einser.math:greatest_common_divisor
 scoreboard players operation $card_gen/cat_weight.nom fetchr.tmp /= $gcd.result 91.math.io
 scoreboard players operation $card_gen/cat_weight.denom fetchr.tmp /= $gcd.result 91.math.io
 
-data modify storage tmp.fetchr:card_generation keptItems[-1].activeCategories append from storage tmp.fetchr:card_generation item_categories[-1]
+data modify storage tmp.fetchr:card_generation keptItems[-1].active_categories append from storage tmp.fetchr:card_generation item_categories[-1]
 data remove storage tmp.fetchr:card_generation item_categories[-1]
 
 execute if data storage tmp.fetchr:card_generation item_categories[0] run function fetchr:card_generation/update_category_total_weight/calculate_item_weight

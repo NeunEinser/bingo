@@ -2,6 +2,8 @@ use ::java::server::world::item::SingleItem
 use ::java::server::world::item::DataComponentPatch
 use ::java::data::advancement::predicate::ItemSubPredicate
 
+use ::fetchr::storages::registry::CategroyRegistryData
+
 struct ItemConfigurationBase {
 	/// Namespaced id for this item. Should use your custom namespace, and not
 	/// be the same as the minecraft item id.
@@ -65,17 +67,27 @@ dispatch fetchr:item_test[fetchr:predicate] to struct {
 }
 
 struct ItemCategory {
-	id: #[id] string,
+	...CategroyRegistryData,
 	weight: int,
 	total_item_weight: int,
 }
 
 struct Category {
 	...ItemCategory,
-	items: [ItemConfiguration],
+	items: [Item],
 }
 
-struct ItemConfiguration {
+struct ActiveCategoryItem {
+	...ActiveItem,
+	global_weight: int
+}
+
+struct ActiveCategory {
+	...Category,
+	items: [ActiveCategoryItem],
+}
+
+struct Item {
 	...ItemConfigurationBase,
 
 	command_argument: #[item] string,
@@ -87,4 +99,12 @@ struct ItemConfiguration {
 
 	/// Categories this item is in.
 	categories: [ItemCategory],
+}
+
+struct ActiveItem {
+	...Item,
+	active_categories: [ItemCategory],
+	weight_nom: int,
+	weight_denom: int,
+	multiple_categories?: boolean,
 }

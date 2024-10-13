@@ -31,22 +31,6 @@ $data \
 	merge from storage fetchr:items categories[{id: "$(id)"}]
 data remove storage tmp.fetchr:init item_categories[-1].items
 
-# set lore
-data \
-	modify block 7 0 7 front_text.messages[0] \
-	set value '[\
-		{"text": "  • ", "color": "gray", "italic": false},\
-		{"storage": "tmp.fetchr:init", "nbt": "item_categories[-1].name", "interpret": true},\
-		" (",\
-		{"storage": "tmp.fetchr:init", "nbt": "item_categories[-1].weight"},\
-		"/",\
-		{"storage": "tmp.fetchr:init", "nbt": "item_categories[-1].total_item_weight"},\
-		")"\
-	]'
-data \
-	modify storage tmp.fetchr:init initialized_items[-1].item.components.minecraft:lore \
-	append from block 7 0 7 front_text.messages[0]
-
 data \
 	modify storage tmp.fetchr:init initialized_items[-1].categories \
 	append from storage tmp.fetchr:init item_categories[-1]

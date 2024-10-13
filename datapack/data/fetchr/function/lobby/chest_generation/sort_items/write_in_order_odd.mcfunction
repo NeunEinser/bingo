@@ -15,8 +15,8 @@
 # @private
 #declare score_holder $chest_generation/sort.b
 
-execute store result score $chest_generation/sort.a fetchr.tmp run data get storage tmp.fetchr:chest_generation category.items[-1].weight
-execute store result score $chest_generation/sort.b fetchr.tmp run data get storage tmp.fetchr:chest_generation category.items[-2].weight
+execute store result score $chest_generation/sort.a fetchr.tmp run data get storage tmp.fetchr:chest_generation category.items[-1].global_weight
+execute store result score $chest_generation/sort.b fetchr.tmp run data get storage tmp.fetchr:chest_generation category.items[-2].global_weight
 
 data modify storage tmp.fetchr:chest_generation mergeSort.odd append value []
 

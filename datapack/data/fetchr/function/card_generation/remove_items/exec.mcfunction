@@ -16,11 +16,11 @@
 #declare score_holder $card_gen/remove_items.keep_item
 
 data modify entity @s Tags set from storage tmp.fetchr:card_generation stringTesterTagCache
-data modify entity @s Tags append from storage tmp.fetchr:card_generation items[-1].activeCategories[].id
+data modify entity @s Tags append from storage tmp.fetchr:card_generation items[-1].active_categories[].id
 #>
 # @private
 #declare score_holder $card_gen/remove_items.expected_tag_cnt
-execute store result score $card_gen/remove_items.expected_tag_cnt fetchr.tmp run data get storage tmp.fetchr:card_generation items[-1].activeCategories
+execute store result score $card_gen/remove_items.expected_tag_cnt fetchr.tmp run data get storage tmp.fetchr:card_generation items[-1].active_categories
 scoreboard players operation $card_gen/remove_items.expected_tag_cnt fetchr.tmp += $card_gen.aec_tag_count fetchr.tmp
 #>
 # @private

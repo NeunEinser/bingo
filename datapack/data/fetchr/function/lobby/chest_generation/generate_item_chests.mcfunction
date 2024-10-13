@@ -17,10 +17,10 @@
 #declare score_holder $chest_generation.column
 scoreboard players set $chest_generation.column fetchr.tmp -1
 
-data modify storage tmp.fetchr:chest_generation categories set from storage fetchr:items activeCategories
+data modify storage tmp.fetchr:chest_generation categories set from storage fetchr:items active_categories
 
 scoreboard players set $chest_generation/sort/card.out fetchr.tmp 0
-execute store result score $chest_generation/sort/card.size fetchr.tmp run data get storage fetchr:items activeCategories
+execute store result score $chest_generation/sort/card.size fetchr.tmp run data get storage fetchr:items active_categories
 function fetchr:lobby/chest_generation/sort_categories/determain_cardinality
 scoreboard players operation $chest_generation/sort/card.out fetchr.tmp %= 2 fetchr.const
 

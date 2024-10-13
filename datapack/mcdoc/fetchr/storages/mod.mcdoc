@@ -1,17 +1,14 @@
+use ::fetchr::item::ActiveCategory
+use ::fetchr::item::ActiveItem
 use ::fetchr::item::Category
-use ::fetchr::item::ItemConfiguration
-
-struct CategoryWithItems {
-	...Category,
-	items: [ItemConfiguration]
-}
+use ::fetchr::item::Item
 
 dispatch minecraft:storage[fetchr:items] to struct {
-	activeTags: [#[id] string],
-	activeCategories: [CategoryWithItems],
-	categories: [CategoryWithItems],
-	activeItems: [ItemConfiguration],
-	items: [ItemConfiguration],
+	active_tags: [#[id] string],
+	active_categories: [Category],
+	categories: [ActiveCategory],
+	active_items: [ActiveItem],
+	items: [Item],
 }
 
 dispatch minecraft:storage[fetchr:card] to struct {
@@ -19,7 +16,7 @@ dispatch minecraft:storage[fetchr:card] to struct {
 	/// struct with the random sequence seed that will be forwarded to the macro
 	/// starting the game
 	randomSequenceData: struct { seed: int },
-	slots: [ItemConfiguration],
+	slots: [ActiveItem],
 	teams: [struct {
 		id: #[id] string,
 		slots: [#[text_component] string],

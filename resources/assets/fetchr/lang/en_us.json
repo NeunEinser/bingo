@@ -610,6 +610,7 @@
 	"fetchr.category.wheat": "Wheat",
 	"fetchr.category.wool": "Wool",
 
+	"fetchr.item.global_weight": "Global Weight",
 
 	"fetchr.game.start.preparing_spawn": "Preparing Spawn...",
 	"fetchr.game.start.loading_terrain": "Loading Terrain...",

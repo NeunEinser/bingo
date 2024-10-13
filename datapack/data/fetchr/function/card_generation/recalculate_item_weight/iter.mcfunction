@@ -8,11 +8,11 @@
 #>
 # @private
 #declare score_holder $card_gen/recalc_weight.weight
-execute store result score $card_gen/recalc_weight.weight fetchr.tmp run data get storage tmp.fetchr:card_generation recalculateItems[-1].weightNom
+execute store result score $card_gen/recalc_weight.weight fetchr.tmp run data get storage tmp.fetchr:card_generation recalculateItems[-1].weight_nom
 #>
 # @private
 #declare score_holder $card_gen/recalc_weight.denom
-execute store result score $card_gen/recalc_weight.denom fetchr.tmp run data get storage tmp.fetchr:card_generation recalculateItems[-1].weightDenom
+execute store result score $card_gen/recalc_weight.denom fetchr.tmp run data get storage tmp.fetchr:card_generation recalculateItems[-1].weight_denom
 
 scoreboard players operation $card_gen/recalc_weight.weight fetchr.tmp *= $card_gen.available_category_weight fetchr.tmp
 scoreboard players operation $card_gen/recalc_weight.weight fetchr.tmp /= $card_gen/recalc_weight.denom fetchr.tmp

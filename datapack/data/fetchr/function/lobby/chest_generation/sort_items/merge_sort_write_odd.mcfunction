@@ -15,8 +15,8 @@
 # @private
 #declare score_holder $chest_generation/sort.b
 
-execute store result score $chest_generation/sort.a fetchr.tmp run data get storage tmp.fetchr:chest_generation mergeSort.even[-1][-1].weight
-execute store result score $chest_generation/sort.b fetchr.tmp run data get storage tmp.fetchr:chest_generation mergeSort.even[-2][-1].weight
+execute store result score $chest_generation/sort.a fetchr.tmp run data get storage tmp.fetchr:chest_generation mergeSort.even[-1][-1].global_weight
+execute store result score $chest_generation/sort.b fetchr.tmp run data get storage tmp.fetchr:chest_generation mergeSort.even[-2][-1].global_weight
 
 execute if score $chest_generation/sort.a fetchr.tmp < $chest_generation/sort.b fetchr.tmp run data modify storage tmp.fetchr:chest_generation mergeSort.odd[-1] append from storage tmp.fetchr:chest_generation mergeSort.even[-1][-1]
 execute if score $chest_generation/sort.a fetchr.tmp < $chest_generation/sort.b fetchr.tmp run data remove storage tmp.fetchr:chest_generation mergeSort.even[-1][-1]

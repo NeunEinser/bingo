@@ -1,0 +1,12 @@
+use ::fetchr::item::ActiveCategory
+use ::fetchr::item::ActiveCategoryItem
+use ::fetchr::item::ActiveItem
+
+dispatch minecraft:storage[tmp.fetchr:apply_active_item_tags] to struct {
+	categories: [ActiveCategory],
+	categories_iter: [struct { ...ActiveCategory, i: int }],
+	items_with_multiple_categories: [ActiveItem],
+	category_items: [ActiveCategoryItem],
+	item: ActiveItem,
+	iterate: struct { i: int },
+}

@@ -7,8 +7,8 @@
 # 	function fetchr:card_generation/update_category_total_weight/exec
 # 	function fetchr:card_generation/update_category_total_weight/iter
 
-data modify storage tmp.fetchr:card_generation item_categories set from storage tmp.fetchr:card_generation keptItems[-1].activeCategories
-data modify storage tmp.fetchr:card_generation keptItems[-1].activeCategories set value []
+data modify storage tmp.fetchr:card_generation item_categories set from storage tmp.fetchr:card_generation keptItems[-1].active_categories
+data modify storage tmp.fetchr:card_generation keptItems[-1].active_categories set value []
 
 #>
 # @within function fetchr:card_generation/update_category_total_weight/*
@@ -24,7 +24,7 @@ function fetchr:card_generation/update_category_total_weight/calculate_item_weig
 #>
 # @private
 #declare score_holder $card_gen/cat_weight.category_count
-execute store result score $card_gen/cat_weight.category_count fetchr.tmp run data get storage tmp.fetchr:card_generation keptItems[-1].activeCategories
+execute store result score $card_gen/cat_weight.category_count fetchr.tmp run data get storage tmp.fetchr:card_generation keptItems[-1].active_categories
 scoreboard players operation $card_gen/cat_weight.denom fetchr.tmp *= $card_gen/cat_weight.category_count fetchr.tmp
 scoreboard players operation $gcd.a 91.math.io = $card_gen/cat_weight.nom fetchr.tmp
 scoreboard players operation $gcd.b 91.math.io = $card_gen/cat_weight.denom fetchr.tmp
@@ -32,8 +32,8 @@ function neun_einser.math:greatest_common_divisor
 scoreboard players operation $card_gen/cat_weight.nom fetchr.tmp /= $gcd.result 91.math.io
 scoreboard players operation $card_gen/cat_weight.denom fetchr.tmp /= $gcd.result 91.math.io
 
-execute store result storage tmp.fetchr:card_generation keptItems[-1].weightNom int 1 run scoreboard players get $card_gen/cat_weight.nom fetchr.tmp
-execute store result storage tmp.fetchr:card_generation keptItems[-1].weightDenom int 1 run scoreboard players get $card_gen/cat_weight.denom fetchr.tmp
+execute store result storage tmp.fetchr:card_generation keptItems[-1].weight_nom int 1 run scoreboard players get $card_gen/cat_weight.nom fetchr.tmp
+execute store result storage tmp.fetchr:card_generation keptItems[-1].weight_denom int 1 run scoreboard players get $card_gen/cat_weight.denom fetchr.tmp
 
 #>
 # @private

@@ -26,9 +26,9 @@ struct CategroyRegistryData {
 	/// This name is shown in the item tooltip of category chests.
 	name: #[text_component] string,
 
-	/// Tags this category belongs to. Changing `activeTags` in `fetchr:items`
+	/// Tags this category belongs to. Changing `active_tags` in `fetchr:items`
 	/// and then calling `fetchr:util/apply_active_item_tags` will only respect
-	/// this category if any of these tags are included in `activeTags`.
+	/// this category if any of these tags are included in `active_tags`.
 	tags: [#[id] string],
 }
 

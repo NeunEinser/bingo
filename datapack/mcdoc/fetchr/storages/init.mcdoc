@@ -1,14 +1,14 @@
 use ::java::server::world::item::DataComponentPatch
 
 use ::fetchr::item::Category
-use ::fetchr::item::ItemConfiguration
+use ::fetchr::item::Item
 use ::fetchr::item::ItemTest
 use ::fetchr::item::ItemTests
 
 dispatch minecraft:storage[tmp.fetchr:init] to struct {
 	item_categories: [Category],
-	items: [ItemConfiguration],
-	initialized_items: [ItemConfiguration],
+	items: [Item],
+	initialized_items: [Item],
 	components?: DataComponentPatch<minecraft:item_component[%fallback]>,
 	tests: ItemTests,
 	inner_tests: [ItemTest],

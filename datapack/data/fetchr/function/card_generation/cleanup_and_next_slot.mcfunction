@@ -6,7 +6,7 @@
 
 data modify storage tmp.fetchr:card_generation keptItems set value []
 data modify storage tmp.fetchr:card_generation stringTesterTagCache set value ["fetchr.string_tester"]
-data modify storage tmp.fetchr:card_generation stringTesterTagCache append from storage tmp.fetchr:card_generation items[-1].activeCategories[].id
+data modify storage tmp.fetchr:card_generation stringTesterTagCache append from storage tmp.fetchr:card_generation items[-1].active_categories[].id
 data modify storage tmp.fetchr:card_generation categoriesWithRemovedItem set value []
 #>
 # @within function fetchr:card_generation/**
