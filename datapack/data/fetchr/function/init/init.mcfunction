@@ -1437,7 +1437,7 @@ forceload add 0 0
 	#
 	# The result should be that all registry's entries are in a state they would be
 	# after the init function has run through completely, apart from fields that
-	# depend on other registries (e.g. the category's items or totalItemWeight
+	# depend on other registries (e.g. the category's items or total_item_weight
 	# fields would not be included.)
 
 	#>

@@ -16,8 +16,11 @@ dispatch minecraft:storage[fetchr:items] to struct {
 
 dispatch minecraft:storage[fetchr:card] to struct {
 	spawnLocation: int,
+	/// struct with the random sequence seed that will be forwarded to the macro
+	/// starting the game
+	randomSequenceData: struct { seed: int },
 	slots: [ItemConfiguration],
-	teams: struct {
+	teams: [struct {
 		id: #[id] string,
 		slots: [#[text_component] string],
 
@@ -37,5 +40,5 @@ dispatch minecraft:storage[fetchr:card] to struct {
 		randomSequenceData: struct RandomSequenceData {
 			seed: int
 		}
-	}
+	}]
 }

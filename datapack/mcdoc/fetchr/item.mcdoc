@@ -1,51 +1,84 @@
-use ::java::server::world::item::AnyItem
+use ::java::server::world::item::SingleItem
+use ::java::server::world::item::DataComponentPatch
+use ::java::data::advancement::predicate::ItemSubPredicate
 
 struct ItemConfigurationBase {
 	/// Namespaced id for this item. Should use your custom namespace, and not
 	/// be the same as the minecraft item id.
 	id: #[id] string,
 
-	/// The item definition as it is used for display purposes, for example in
-	/// lobby item frames or category chests
-	item: AnyItem,
-
-	/// The text component that should be used for representing this item, for
-	/// example in the chat announcement "<player> got <item>"
-	textComponent: #[text_component] string,
-
-	/// The icon of the item. Should represent a character that is retextured in
-	/// the custom font. Currently, the character has to be defined in the bingo
-	/// font, using a custom pack-specific dont is currently not possible.
-	icon: #[text_component] string,
-
-	/// Command used for detecting if any player has this item.
+	/// The minecraft item definition.
 	///
-	/// This command needs to check all players and set the player's
-	/// bingo.has_item scoreboard objective to 1 if the player has the item and
-	/// to 0 otherwise.
+	/// Checks can be overwritten in item_tests, by default all components from
+	/// this item definition must match exactly.
 	///
-	/// Example: execute as @a store success score @s bingo.has_item run clear
-	/// @s minecraft:egg 0
-	detectCommand: #[command] string,
+	/// This is always how the item is displayed, even if item_tests override
+	/// some checks
+	item: SingleItem,
 
-	/// Command used for removing an item from the player's inventory.
+	/// Additional checks the item must pass. All tests must match.
+	/// If this is a list of lists, all sub-lists are options of which only one
+	/// needs to match. At least one option from each sub-list needs to match.
 	///
-	/// This command needs to clear the item from all players tagged with the
-	/// tag bingo.clear. This extra step is needed, as the pack first checks if
-	/// the player's team already received the item.
-	///
-	/// Example: clear @a[tag=bingo.clear] minecraft:egg 1
-	clearCommand: #[command] string,
+	/// By default, all components and negated components from the item field
+	/// need to match.
+	item_tests?: ItemTests,
+
+	/// The translation key
+	translation: #[translation_key] string,
+
+	/// The icon of the item. Should represent the unicode codepoint in
+	/// hexadecimal of a character that is retextured in the custom font.
+	icon: string,
+
+	/// The font definitions for the font. Defaults to the fetchr font set.
+	icon_font?: struct {
+		/// The font for display on the actionbar. Must be a list of 5 fonts, one
+		/// for each row of the card. Each row must have the correct ascent value
+		/// set do displace the charachter vertically.
+		actionbar: [ #[id="font"] string ] @ 5
+	}
+}
+
+type ItemTests = (
+	[ItemTest]
+	| [[ItemTest]]
+)
+
+struct ItemTest {
+	type: #[id] #[dispatcher_key="fetchr:item_test"] string,
+	...fetchr:item_test[[type]]
+}
+
+dispatch fetchr:item_test[fetchr:component] to struct {
+	id: #[id(registry="data_component_type")] string,
+	component: minecraft:data_component[[id]],
+}
+
+dispatch fetchr:item_test[fetchr:negated_component] to struct {
+	id: #[id(registry="data_component_type")] string,
+}
+
+dispatch fetchr:item_test[fetchr:predicate] to struct {
+	id: #[id="item_sub_predicate_type"] string,
+	predicate: minecraft:item_sub_predicate[[id]],
+}
+
+struct ItemCategory {
+	id: #[id] string,
+	weight: int,
+	total_item_weight: int,
 }
 
 struct Category {
-	id: #[id] string,
-	weight: int,
-	totalItemWeight: int,
+	...ItemCategory,
+	items: [ItemConfiguration],
 }
 
 struct ItemConfiguration {
 	...ItemConfigurationBase,
+
+	command_argument: #[item] string,
 
 	/// The weight of this item within the current context. If inside a category,
 	/// the category weight, if in a global context the global weight relative to
@@ -53,5 +86,5 @@ struct ItemConfiguration {
 	weight: int,
 
 	/// Categories this item is in.
-	categories: [Category],
+	categories: [ItemCategory],
 }

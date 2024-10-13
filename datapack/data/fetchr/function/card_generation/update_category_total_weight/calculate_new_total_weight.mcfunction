@@ -14,7 +14,7 @@
 #declare score_holder $card_gen/cat_weight.current_weight
 execute store result score $card_gen/cat_weight.current_weight fetchr.tmp run data get storage tmp.fetchr:card_generation checkCategories[-1].weight
 
-data modify storage tmp.fetchr:card_generation category set from storage tmp.fetchr:card_generation itemCategories[-1].id
+data modify storage tmp.fetchr:card_generation category set from storage tmp.fetchr:card_generation item_categories[-1].id
 execute store success score $card_gen/cat_weight.different_category fetchr.tmp run data modify storage tmp.fetchr:card_generation category set from storage tmp.fetchr:card_generation checkCategories[-1].id
 
 execute if score $card_gen/cat_weight.different_category fetchr.tmp matches 0 run scoreboard players operation $card_gen/cat_weight.total_weight fetchr.tmp -= $card_gen/cat_weight.current_weight fetchr.tmp

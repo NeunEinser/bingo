@@ -13,7 +13,7 @@ execute store result score $apply_tags/mod_existing.result_denom fetchr.tmp run 
 #>
 # @private
 #declare score_holder $apply_tags/mod_existing.cur_denom
-execute store result score $apply_tags/mod_existing.cur_denom fetchr.tmp run data get storage tmp.fetchr:apply_active_item_tags categories[-1].totalItemWeight
+execute store result score $apply_tags/mod_existing.cur_denom fetchr.tmp run data get storage tmp.fetchr:apply_active_item_tags categories[-1].total_item_weight
 
 #>
 # @private

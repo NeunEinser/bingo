@@ -15,7 +15,7 @@ function fetchr:util/apply_active_item_tags/add_items_from_category
 #>
 # @private
 #declare score_holder $apply_tags.category_weight
-execute store result score $apply_tags.category_weight fetchr.tmp run data get storage tmp.fetchr:apply_active_item_tags categories[-1].totalItemWeight
+execute store result score $apply_tags.category_weight fetchr.tmp run data get storage tmp.fetchr:apply_active_item_tags categories[-1].total_item_weight
 
 scoreboard players operation $gcd.a 91.math.io = $available_category_weight fetchr.state
 scoreboard players operation $gcd.b 91.math.io = $apply_tags.category_weight fetchr.tmp

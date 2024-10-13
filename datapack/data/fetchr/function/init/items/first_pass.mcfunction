@@ -7,26 +7,28 @@
 # 	function fetchr:init/items/lobby_loaded
 # 	function fetchr:init/items/first_pass
 # @writes storage fetchr:items categories
+# @params ::fetchr::storages::registry::ItemRegistryData
 
-data modify storage tmp.fetchr:init itemCategories set from storage tmp.fetchr:init items[-1].categories
+data modify storage tmp.fetchr:init item_categories set from storage tmp.fetchr:init items[-1].categories
 data remove storage tmp.fetchr:init items[-1].categories[]
 function fetchr:init/items/normalize_categories
+
+data modify storage tmp.fetchr:init item_categories set from storage tmp.fetchr:init items[-1].categories
+function fetchr:init/items/update_category_total_weight with storage tmp.fetchr:init item_categories[-1]
+
+data modify storage tmp.fetchr:init items[-1].command_argument set from storage tmp.fetchr:init items[-1].item.id
+execute \
+	if data storage tmp.fetchr:init items[-1].item.components \
+	unless data storage tmp.fetchr:init items[-1].item_tests \
+	run function fetchr:init/items/set_item_command_argument/from_components/exec
+execute \
+	if data storage tmp.fetchr:init items[-1].item_tests \
+	run function fetchr:init/items/set_item_command_argument/from_tests/exec
+
+$data modify storage tmp.fetchr:init items[-1].item.components.minecraft:custom_name set value '{"translate": "$(translation)", "italic": false}'
 data remove storage tmp.fetchr:init items[-1].weight
 
-data modify storage tmp.fetchr:init itemCategories set from storage tmp.fetchr:init items[-1].categories
-function fetchr:init/items/find_categories
-data modify storage fetchr:items categories append from storage tmp.fetchr:init skippedCategories[]
-data remove storage tmp.fetchr:init skippedCategories
-
-setblock 0 15 0 minecraft:oak_sign{front_text:{messages:['{"storage": "tmp.fetchr:init", "nbt": "items[-1].textComponent", "interpret": true, "italic": false}', '""', '""', '""']}}
-
-data modify storage tmp.fetchr:init items[-1].item.components.minecraft:custom_name set from block 0 15 0 front_text.messages[0]
-setblock 0 15 0 minecraft:air
-
-function fetchr:init/items/update_category_total_weight
-data remove storage tmp.fetchr:init categories
-
-data modify storage tmp.fetchr:init initializedItems append from storage tmp.fetchr:init items[-1]
+data modify storage tmp.fetchr:init initialized_items append from storage tmp.fetchr:init items[-1]
 data remove storage tmp.fetchr:init items[-1]
 
-execute if data storage tmp.fetchr:init items[0] run function fetchr:init/items/first_pass
+execute if data storage tmp.fetchr:init items[0] run function fetchr:init/items/first_pass with storage tmp.fetchr:init items[-1]

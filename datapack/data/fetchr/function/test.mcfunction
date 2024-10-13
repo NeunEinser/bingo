@@ -1,0 +1,1 @@
+function fetchr:test_macro {value:  {abc: "hi"}}

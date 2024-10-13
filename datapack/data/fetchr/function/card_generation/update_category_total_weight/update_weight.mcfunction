@@ -7,7 +7,7 @@
 # 	function fetchr:card_generation/update_category_total_weight/exec
 # 	function fetchr:card_generation/update_category_total_weight/iter
 
-data modify storage tmp.fetchr:card_generation itemCategories set from storage tmp.fetchr:card_generation keptItems[-1].activeCategories
+data modify storage tmp.fetchr:card_generation item_categories set from storage tmp.fetchr:card_generation keptItems[-1].activeCategories
 data modify storage tmp.fetchr:card_generation keptItems[-1].activeCategories set value []
 
 #>

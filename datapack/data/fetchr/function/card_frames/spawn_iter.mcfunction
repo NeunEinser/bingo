@@ -25,7 +25,7 @@
 # 	function fetchr:card_frames/spawn_iter
 #declare storage tmp.fetchr:card_frames/spawn_frames
 
-summon minecraft:item_frame ~ ~ ~ {Facing: 3b, Silent: true, Tags: ["fetchr.card_frame", "fetchr.new"], Item:{id:"minecraft:barrier", Count: 1b}, ItemDropChance: 0.0f}
+summon minecraft:item_frame ~ ~ ~ {Facing: 3b, Silent: true, Tags: ["fetchr.card_frame", "fetchr.new"], Item:{id:"minecraft:barrier"}, ItemDropChance: 0.0f}
 scoreboard players operation @e[type=minecraft:item_frame, tag=fetchr.card_frame, tag=fetchr.new] fetchr.lobby_card_frame_id = $card_frames/spawn.i fetchr.tmp
 
 execute unless score $blind_mode fetchr.state matches 1 run data modify entity @e[type=minecraft:item_frame, tag=fetchr.new, limit=1] Item set from storage tmp.fetchr:card_frames/spawn_frames slots[0].item.item

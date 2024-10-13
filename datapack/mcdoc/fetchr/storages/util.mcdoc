@@ -1,0 +1,23 @@
+dispatch minecraft:storage[io.fetchr:util] to struct {
+	nbt?: any ,
+	"string"?: string ,
+	concat_strings?: ConcatStringsData,
+}
+
+dispatch minecraft:storage[tmp.fetchr:util] to struct {
+	char?: string @1,
+	"string"?: string ,
+	substring: struct { until: int @0.. },
+	concat_strings?: ConcatStringsData,
+	until_quote?: struct UntilQuoteIterData {
+		current: string,
+		char?: string @1,
+		start: int,
+		end: int,
+	},
+}
+
+struct ConcatStringsData {
+	first: any,
+	second: any,
+}

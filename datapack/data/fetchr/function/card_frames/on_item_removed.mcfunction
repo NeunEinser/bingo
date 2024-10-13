@@ -17,7 +17,7 @@
 
 data modify storage tmp.fetchr:card_frames slots set from storage fetchr:card slots
 scoreboard players operation $card_frames/find_item.slot_id fetchr.tmp = @s fetchr.lobby_card_frame_id
-data modify storage tmp.fetchr:card_frames foundItem set value {id: "minecraft:barrier", Count: 1b}
+data modify storage tmp.fetchr:card_frames foundItem set value {id: "minecraft:barrier"}
 execute unless score $blind_mode fetchr.state matches 1 run function fetchr:card_frames/find_item
 
 data modify entity @s Item set from storage tmp.fetchr:card_frames foundItem
