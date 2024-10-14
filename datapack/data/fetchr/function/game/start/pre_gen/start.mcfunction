@@ -67,7 +67,7 @@ forceload add 0 0
 # In order to center the area around spawn, we add 762/2=381
 # The algorithm for going to the coordinate is chunk based, so devide by 16 to
 # get chunk coordinates
-execute store result score $game_start/pre_gen.spawn_x fetchr.tmp run data get storage fetchr:card spawnLocation
+execute store result score $game_start/pre_gen.spawn_x fetchr.tmp run data get storage fetchr:card spawn_location
 scoreboard players operation $game_start/pre_gen.spawn_x fetchr.tmp %= 65536 fetchr.const
 execute if score $game_start/pre_gen.spawn_x fetchr.tmp matches 32768.. run scoreboard players remove $game_start/pre_gen.spawn_x fetchr.tmp 65536
 scoreboard players operation $game_start/pre_gen.spawn_x fetchr.tmp *= 762 fetchr.const
@@ -81,7 +81,7 @@ scoreboard players operation $game_start/pre_gen/unload.x fetchr.tmp = $game_sta
 scoreboard players add $game_start/pre_gen/unload.x fetchr.tmp 10
 
 #Spawn z: $result >> 16
-execute store result score $game_start/pre_gen.spawn_z fetchr.tmp run data get storage fetchr:card spawnLocation
+execute store result score $game_start/pre_gen.spawn_z fetchr.tmp run data get storage fetchr:card spawn_location
 scoreboard players operation $game_start/pre_gen.spawn_z fetchr.tmp /= 65536 fetchr.const
 scoreboard players operation $game_start/pre_gen.spawn_z fetchr.tmp *= 762 fetchr.const
 scoreboard players add $game_start/pre_gen.spawn_z fetchr.tmp 381

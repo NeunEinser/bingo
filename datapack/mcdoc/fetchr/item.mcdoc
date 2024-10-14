@@ -31,7 +31,7 @@ struct ItemConfigurationBase {
 
 	/// The icon of the item. Should represent the unicode codepoint in
 	/// hexadecimal of a character that is retextured in the custom font.
-	icon: string,
+	icon: string @4,
 
 	/// The font definitions for the font. Defaults to the fetchr font set.
 	icon_font?: struct {
@@ -83,7 +83,7 @@ struct ActiveCategoryItem {
 }
 
 struct ActiveCategory {
-	...Category,
+	...ItemCategory,
 	items: [ActiveCategoryItem],
 }
 

@@ -10,32 +10,3 @@ dispatch minecraft:storage[fetchr:items] to struct {
 	active_items: [ActiveItem],
 	items: [Item],
 }
-
-dispatch minecraft:storage[fetchr:card] to struct {
-	spawnLocation: int,
-	/// struct with the random sequence seed that will be forwarded to the macro
-	/// starting the game
-	randomSequenceData: struct { seed: int },
-	slots: [ActiveItem],
-	teams: [struct {
-		id: #[id] string,
-		slots: [#[text_component] string],
-
-		/// The background tile to render behind completed items of this team
-		background: [#[text_component] string],
-
-		/// The rendered card. Used to skip having to elvaluate the complex text
-		/// component.
-		card: [#[text_component] string],
-
-		/// TODO why is this needed
-		backgroundIndex: byte,
-		itemCount: int,
-
-		/// Data used by the macro resetting random sequences
-		#[since="1.20.2"]
-		randomSequenceData: struct RandomSequenceData {
-			seed: int
-		}
-	}]
-}

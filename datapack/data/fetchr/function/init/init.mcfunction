@@ -30,33 +30,6 @@ forceload add 0 0
 	# categories array holds all categories. Categories have an items array
 	# containing the full item definition, like in the items array.
 	#
-	# Items have the following NBT structure:
-	# id: (String) custom namespaced id to uniquely identify the item within Fetchr
-	# item: (Compound) Minecraft item data. Should be set in such a way, that an
-	# 	item of this type looks exactly the same as the item you require.
-	# textComponent: (String) The text component that is used for displaying the
-	# 	item name.
-	# icon: (String) Parsable text component that holds a character which is re-
-	# 	textured to look like the item you require
-	# detectCommand: (String) Command for detecting if the player has this item.
-	# 	Has to set the player's fetchr.has_item score. The command that is used in
-	# 	default Fetchr follows the scheme
-	# 	execute as @a store success score @s fetchr.has_item run clear @s <item> 0,
-	# 	though, a different command that sets the score would be acceptable, too
-	# clearCommand: (String) Command for clearing the item from the player's
-	# 	inventory. Should look like this: "clear @a[tag=fetchr.clear] <item> 1
-	# categories: (String List) List of category names. All categories referenced
-	# 	here should be registered separately.
-	# weight: (Integer) Weight of this item for the RNG.
-	#
-	# Categories have the following structure:
-	# name: (String) Namespaced id to uniquely identify the category within Fetchr
-	# translatableName: (String) Text component used for displaying the category's
-	# 	name
-	# items: (Compound List) (readonly) List of all items this category has. Entries
-	# 	have the same structure as in the items array. Will be created
-	# 	automatically, after #fetchr:post_register_items ran.
-	#
 	# @api
 	#declare storage fetchr:items
 
@@ -70,36 +43,8 @@ forceload add 0 0
 	# extension packs have registered everything, add a function to the function tag
 	# #fetchr:post_registration
 	#
-	# All registries are an array of the type of thing you want to register.
-	#
-	# Available registries:
-	# categories: categories of Fetchr. NBT-Structure see storage definition of
-	# 	fetchr:items
-	# items: All items that are available. NBT-Structure see storage definition of
-	# 	fetchr:items
-	# structures: Each entry holds a string representing a namespaced id of a
-	# 	structure file to be added to the lobby. The center must be the corridor.
-	# 	Add emptiness in case of unsymetric sizes.
-	#
-	# In order to modify existing items, either added by the default Fetchr datapack,
-	# or added by another extension pack, please use a function registered to the
-	# function tag #fetchr:post_register_items
-	#
-	# The items array should be considered read-only from other places.
-	#
 	# @api
 	#declare storage fetchr:registries
-
-	#>
-	# This storage is used to store player configurations.
-	#
-	# Player configurations store the desired initial inventory and potion effects.
-	#
-	# This is public, to allow for other datapacks that are added ontop of the
-	# vanilla Fetchr game to add more default configurations.
-	#
-	# @public
-	#declare storage fetchr:player
 
 	#>
 	# This storage holds the current bingo card. It contains information about the

@@ -1,42 +1,26 @@
 #> neun_einser.math:random/set_random_seed
 #
-# Sets the current seed of the lcg to a random seed.
+# Sets the current seed to a random seed.
 #
 # @api
-# @input score $rand.max 91.math.io max value
-# @output score $rand.out 91.math.io return value
+# @output score $rand.seed 91.math.io seed
+# @params
+# 	sequence: #[id] string
 
 scoreboard players set $rand.seed 91.math.io 0
 
-execute if predicate neun_einser.math:rand run scoreboard players set $rand.seed 91.math.io -2147483648
-execute if predicate neun_einser.math:rand run scoreboard players add $rand.seed 91.math.io 1073741824
-execute if predicate neun_einser.math:rand run scoreboard players add $rand.seed 91.math.io 536870912
-execute if predicate neun_einser.math:rand run scoreboard players add $rand.seed 91.math.io 268435456
-execute if predicate neun_einser.math:rand run scoreboard players add $rand.seed 91.math.io 134217728
-execute if predicate neun_einser.math:rand run scoreboard players add $rand.seed 91.math.io 67108864
-execute if predicate neun_einser.math:rand run scoreboard players add $rand.seed 91.math.io 33554432
-execute if predicate neun_einser.math:rand run scoreboard players add $rand.seed 91.math.io 16777216
-execute if predicate neun_einser.math:rand run scoreboard players add $rand.seed 91.math.io 8388608
-execute if predicate neun_einser.math:rand run scoreboard players add $rand.seed 91.math.io 4194304
-execute if predicate neun_einser.math:rand run scoreboard players add $rand.seed 91.math.io 2097152
-execute if predicate neun_einser.math:rand run scoreboard players add $rand.seed 91.math.io 1048576
-execute if predicate neun_einser.math:rand run scoreboard players add $rand.seed 91.math.io 524288
-execute if predicate neun_einser.math:rand run scoreboard players add $rand.seed 91.math.io 262144
-execute if predicate neun_einser.math:rand run scoreboard players add $rand.seed 91.math.io 131072
-execute if predicate neun_einser.math:rand run scoreboard players add $rand.seed 91.math.io 65536
-execute if predicate neun_einser.math:rand run scoreboard players add $rand.seed 91.math.io 32768
-execute if predicate neun_einser.math:rand run scoreboard players add $rand.seed 91.math.io 16384
-execute if predicate neun_einser.math:rand run scoreboard players add $rand.seed 91.math.io 8192
-execute if predicate neun_einser.math:rand run scoreboard players add $rand.seed 91.math.io 4096
-execute if predicate neun_einser.math:rand run scoreboard players add $rand.seed 91.math.io 2048
-execute if predicate neun_einser.math:rand run scoreboard players add $rand.seed 91.math.io 1024
-execute if predicate neun_einser.math:rand run scoreboard players add $rand.seed 91.math.io 512
-execute if predicate neun_einser.math:rand run scoreboard players add $rand.seed 91.math.io 256
-execute if predicate neun_einser.math:rand run scoreboard players add $rand.seed 91.math.io 128
-execute if predicate neun_einser.math:rand run scoreboard players add $rand.seed 91.math.io 64
-execute if predicate neun_einser.math:rand run scoreboard players add $rand.seed 91.math.io 32
-execute if predicate neun_einser.math:rand run scoreboard players add $rand.seed 91.math.io 16
-execute if predicate neun_einser.math:rand run scoreboard players add $rand.seed 91.math.io 8
-execute if predicate neun_einser.math:rand run scoreboard players add $rand.seed 91.math.io 4
-execute if predicate neun_einser.math:rand run scoreboard players add $rand.seed 91.math.io 2
-execute if predicate neun_einser.math:rand run scoreboard players add $rand.seed 91.math.io 1
+# For some reason /random can only return a max of 2^31-1 different results,
+# which means to get full 32 bits, we need to generate the first to differently.
+execute store result score $rand.seed 91.math.io run random value 0..3
+scoreboard players operation $rand.seed 91.math.io *= 1073741824 91.math.private
+execute store result score $rand.roll 91.math.private run random value 0..1073741823
+execute \
+	store result storage tmp.neun_einser.math:rand seed int 1 \
+	run scoreboard players operation $rand.seed 91.math.io += $rand.roll 91.math.private
+
+$data modify storage tmp.neun_einser.math:rand sequence \
+	set value "$(sequence)"
+
+data remove storage io.neun_einser.math:rand sequence
+
+function neun_einser.math:random/set_seed with storage tmp.neun_einser.math:rand

@@ -4,7 +4,11 @@
 #
 # @within function fetchr:lobby/player_tick
 
-scoreboard players operation $rand.seed 91.math.io = @s fetchr.seed
+data modify storage tmp.fetchr:rand_data sequence set value "fetchr:card"
+execute \
+	store result storage tmp.fetchr:rand_data seed int 1 \
+	run scoreboard players operation $seed fetchr.state = @s fetchr.seed
 scoreboard players reset @s fetchr.seed
+function neun_einser.math:random/set_seed with storage tmp.fetchr:rand_data
 
 execute in fetchr:lobby run function fetchr:card_generation/generate_card

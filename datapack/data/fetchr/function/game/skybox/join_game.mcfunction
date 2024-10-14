@@ -118,7 +118,12 @@ tag @s remove fetchr.has_slot24
 # 	function fetchr:game/skybox/join_game
 # 	function fetchr:game/skybox/create_skybox/get_random_team_index
 #declare score_holder $game/start/skybox/player.team
-function fetchr:game/skybox/create_skybox/get_random_team_index
+execute \
+	store result score $game/start/skybox/player.team fetchr.tmp \
+	run random value 0..9
+execute \
+	if entity @s[team=!] \
+	run scoreboard players set $game/start/skybox/player.team fetchr.tmp -1
 
 execute if score $game/start/skybox/player.team fetchr.tmp matches 0 run function fetchr:game/skybox/join_team/red
 execute if score $game/start/skybox/player.team fetchr.tmp matches 1 run function fetchr:game/skybox/join_team/orange

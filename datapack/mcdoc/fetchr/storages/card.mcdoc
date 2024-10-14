@@ -1,0 +1,53 @@
+use ::fetchr::item::ItemCategory
+use ::fetchr::item::ActiveItem
+
+dispatch minecraft:storage[fetchr:card] to struct {
+	spawn_location: int,
+	/// struct with the random sequence seed that will be forwarded to the macro
+	/// starting the game
+	random_sequence_data: struct { seed: int },
+	slots: [struct {
+		id: int @ 0..24,
+		display: #[text_component] string,
+		item: ActiveItem
+	}],
+	teams: [struct {
+		id: #[id] string,
+		slots: [#[text_component] string],
+
+		/// The background tile to render behind completed items of this team
+		background: [#[text_component] string],
+
+		/// The rendered card. Used to skip having to elvaluate the complex text
+		/// component.
+		card: [#[text_component] string],
+
+		/// TODO why is this needed
+		backgroundIndex: byte,
+		itemCount: int,
+
+		/// Data used by the macro resetting random sequences
+		#[since="1.20.2"]
+		randomSequenceData: struct RandomSequenceData {
+			seed: int
+		}
+	}]
+}
+
+dispatch minecraft:storage[tmp.fetchr:rand_data] to struct {
+	seed: int,
+	min: int,
+	max: int,
+	sequence: #[id(registry="random_sequence", definition=true)] string
+}
+
+dispatch minecraft:storage[tmp.fetchr:card_generation] to struct {
+	items: [ActiveItem],
+	skipped_items: [ActiveItem],
+	removed_items: [ActiveItem],
+	recalculate_items_iter: struct {i: int},
+	item_categories: [ItemCategory],
+	category: ItemCategory,
+	category_items: [ActiveItem],
+	categories_with_removed_item: [ItemCategory],
+}
