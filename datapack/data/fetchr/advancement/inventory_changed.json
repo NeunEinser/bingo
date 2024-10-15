@@ -5,6 +5,6 @@
 		}
 	},
 	"rewards": {
-		"function": "fetchr:game/on_inventory_changed"
+		"function": "fetchr:item_detection/on_inventory_changed"
 	}
 }

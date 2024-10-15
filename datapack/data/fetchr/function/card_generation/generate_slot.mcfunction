@@ -18,7 +18,7 @@ function fetchr:card_generation/find_item
 data modify storage tmp.fetchr:card_generation items append from storage tmp.fetchr:card_generation skipped_items[]
 #endregion
 
-data modify storage fetchr:card slots append value {}
+data modify storage fetchr:card slots append from storage tmp.fetchr:card_generation items[-1]
 function fetchr:card_generation/set_item_data with storage tmp.fetchr:card_generation items[-1]
 
 execute \

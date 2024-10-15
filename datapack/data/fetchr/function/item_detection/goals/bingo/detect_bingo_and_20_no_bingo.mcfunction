@@ -29,7 +29,7 @@
 # The slot number the current item is in.
 #
 # @within function fetchr:item_detection/goals/bingo/**
-#declare score_holder $item_detect/bingo.slot
+#declare score_holder $item_detect.slot
 #>
 # The column the current item is in.
 #
@@ -51,23 +51,21 @@ scoreboard players set $item_detect/bingo.row fetchr.tmp 0
 scoreboard players set $item_detect/bingo.column fetchr.tmp 0
 scoreboard players set $item_detect/bingo.diagonal fetchr.tmp 0
 
-execute store result score $item_detect/bingo.slot fetchr.tmp run data get storage tmp.fetchr:item_detection slot.id
-
-scoreboard players operation $item_detect/bingo.item_column fetchr.tmp = $item_detect/bingo.slot fetchr.tmp
+scoreboard players operation $item_detect/bingo.item_column fetchr.tmp = $item_detect.slot fetchr.tmp
 scoreboard players operation $item_detect/bingo.item_column fetchr.tmp %= 5 fetchr.const
 
-scoreboard players operation $item_detect/bingo.top_left fetchr.tmp = $item_detect/bingo.slot fetchr.tmp
+scoreboard players operation $item_detect/bingo.top_left fetchr.tmp = $item_detect.slot fetchr.tmp
 scoreboard players operation $item_detect/bingo.top_left fetchr.tmp %= 6 fetchr.const
 
-scoreboard players operation $item_detect/bingo.bottom_left fetchr.tmp = $item_detect/bingo.slot fetchr.tmp
+scoreboard players operation $item_detect/bingo.bottom_left fetchr.tmp = $item_detect.slot fetchr.tmp
 scoreboard players operation $item_detect/bingo.bottom_left fetchr.tmp %= 4 fetchr.const
 
 # detect in rows
-execute if score $item_detect/bingo.slot fetchr.tmp matches ..4 run function fetchr:item_detection/goals/bingo/row/1
-execute if score $item_detect/bingo.slot fetchr.tmp matches 5..9 run function fetchr:item_detection/goals/bingo/row/2
-execute if score $item_detect/bingo.slot fetchr.tmp matches 10..14 run function fetchr:item_detection/goals/bingo/row/3
-execute if score $item_detect/bingo.slot fetchr.tmp matches 15..19 run function fetchr:item_detection/goals/bingo/row/4
-execute if score $item_detect/bingo.slot fetchr.tmp matches 20..24 run function fetchr:item_detection/goals/bingo/row/5
+execute if score $item_detect.slot fetchr.tmp matches ..4 run function fetchr:item_detection/goals/bingo/row/1
+execute if score $item_detect.slot fetchr.tmp matches 5..9 run function fetchr:item_detection/goals/bingo/row/2
+execute if score $item_detect.slot fetchr.tmp matches 10..14 run function fetchr:item_detection/goals/bingo/row/3
+execute if score $item_detect.slot fetchr.tmp matches 15..19 run function fetchr:item_detection/goals/bingo/row/4
+execute if score $item_detect.slot fetchr.tmp matches 20..24 run function fetchr:item_detection/goals/bingo/row/5
 
 # detect in columns
 execute if score $item_detect/bingo.item_column fetchr.tmp matches 0 run function fetchr:item_detection/goals/bingo/col/1
@@ -78,7 +76,7 @@ execute if score $item_detect/bingo.item_column fetchr.tmp matches 4 run functio
 
 # detect in diagonals
 execute if score $item_detect/bingo.top_left fetchr.tmp matches 0 run function fetchr:item_detection/goals/bingo/diagonals/top_left
-execute if score $item_detect/bingo.bottom_left fetchr.tmp matches 0 unless score $item_detect/bingo.slot fetchr.tmp matches 0 unless score $item_detect/bingo.slot fetchr.tmp matches 24 run function fetchr:item_detection/goals/bingo/diagonals/bottom_left
+execute if score $item_detect/bingo.bottom_left fetchr.tmp matches 0 unless score $item_detect.slot fetchr.tmp matches 0 unless score $item_detect.slot fetchr.tmp matches 24 run function fetchr:item_detection/goals/bingo/diagonals/bottom_left
 
 # announce bingo
 ## Ordinary Bingo

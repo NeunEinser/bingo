@@ -25,52 +25,52 @@ team modify fetchr.yellow seeFriendlyInvisibles false
 
 scoreboard players set $team_count fetchr.state 0
 
-execute if entity @a[predicate=fetchr:is_in_game, team=fetchr.dark_red,limit=1] run data modify storage fetchr:card teams[{id: "fetchr:dark_red"}].backgroundIndex set value 0b
+execute if entity @a[predicate=fetchr:is_in_game, team=fetchr.dark_red,limit=1] run data modify storage fetchr:card teams[{id: "fetchr:dark_red"}].background_index set value 0b
 execute if entity @a[predicate=fetchr:is_in_game, team=fetchr.dark_red,limit=1] run scoreboard players add $team_count fetchr.state 1
 
-execute if entity @a[predicate=fetchr:is_in_game, team=fetchr.red,limit=1] store result storage fetchr:card teams[{id: "fetchr:red"}].backgroundIndex byte 1 run scoreboard players get $team_count fetchr.state
+execute if entity @a[predicate=fetchr:is_in_game, team=fetchr.red,limit=1] store result storage fetchr:card teams[{id: "fetchr:red"}].background_index byte 1 run scoreboard players get $team_count fetchr.state
 execute if entity @a[predicate=fetchr:is_in_game, team=fetchr.red,limit=1] run scoreboard players add $team_count fetchr.state 1
 
-execute if entity @a[predicate=fetchr:is_in_game, team=fetchr.orange,limit=1] store result storage fetchr:card teams[{id: "fetchr:orange"}].backgroundIndex byte 1 run scoreboard players get $team_count fetchr.state
+execute if entity @a[predicate=fetchr:is_in_game, team=fetchr.orange,limit=1] store result storage fetchr:card teams[{id: "fetchr:orange"}].background_index byte 1 run scoreboard players get $team_count fetchr.state
 execute if entity @a[predicate=fetchr:is_in_game, team=fetchr.orange,limit=1] run scoreboard players add $team_count fetchr.state 1
 
-execute if entity @a[predicate=fetchr:is_in_game, team=fetchr.yellow,limit=1] store result storage fetchr:card teams[{id: "fetchr:yellow"}].backgroundIndex byte 1 run scoreboard players get $team_count fetchr.state
+execute if entity @a[predicate=fetchr:is_in_game, team=fetchr.yellow,limit=1] store result storage fetchr:card teams[{id: "fetchr:yellow"}].background_index byte 1 run scoreboard players get $team_count fetchr.state
 execute if entity @a[predicate=fetchr:is_in_game, team=fetchr.yellow,limit=1] run scoreboard players add $team_count fetchr.state 1
 
-execute if entity @a[predicate=fetchr:is_in_game, team=fetchr.lime,limit=1] store result storage fetchr:card teams[{id: "fetchr:lime"}].backgroundIndex byte 1 run scoreboard players get $team_count fetchr.state
+execute if entity @a[predicate=fetchr:is_in_game, team=fetchr.lime,limit=1] store result storage fetchr:card teams[{id: "fetchr:lime"}].background_index byte 1 run scoreboard players get $team_count fetchr.state
 execute if entity @a[predicate=fetchr:is_in_game, team=fetchr.lime,limit=1] run scoreboard players add $team_count fetchr.state 1
 
-execute if entity @a[predicate=fetchr:is_in_game, team=fetchr.green,limit=1] store result storage fetchr:card teams[{id: "fetchr:green"}].backgroundIndex byte 1 run scoreboard players get $team_count fetchr.state
+execute if entity @a[predicate=fetchr:is_in_game, team=fetchr.green,limit=1] store result storage fetchr:card teams[{id: "fetchr:green"}].background_index byte 1 run scoreboard players get $team_count fetchr.state
 execute if entity @a[predicate=fetchr:is_in_game, team=fetchr.green,limit=1] run scoreboard players add $team_count fetchr.state 1
 
-execute if entity @a[predicate=fetchr:is_in_game, team=fetchr.cyan,limit=1] store result storage fetchr:card teams[{id: "fetchr:cyan"}].backgroundIndex byte 1 run scoreboard players get $team_count fetchr.state
+execute if entity @a[predicate=fetchr:is_in_game, team=fetchr.cyan,limit=1] store result storage fetchr:card teams[{id: "fetchr:cyan"}].background_index byte 1 run scoreboard players get $team_count fetchr.state
 execute if entity @a[predicate=fetchr:is_in_game, team=fetchr.cyan,limit=1] run scoreboard players add $team_count fetchr.state 1
 
-execute if entity @a[predicate=fetchr:is_in_game, team=fetchr.light_blue,limit=1] store result storage fetchr:card teams[{id: "fetchr:light_blue"}].backgroundIndex byte 1 run scoreboard players get $team_count fetchr.state
+execute if entity @a[predicate=fetchr:is_in_game, team=fetchr.light_blue,limit=1] store result storage fetchr:card teams[{id: "fetchr:light_blue"}].background_index byte 1 run scoreboard players get $team_count fetchr.state
 execute if entity @a[predicate=fetchr:is_in_game, team=fetchr.light_blue,limit=1] run scoreboard players add $team_count fetchr.state 1
 
-execute if entity @a[predicate=fetchr:is_in_game, team=fetchr.blue,limit=1] store result storage fetchr:card teams[{id: "fetchr:blue"}].backgroundIndex byte 1 run scoreboard players get $team_count fetchr.state
+execute if entity @a[predicate=fetchr:is_in_game, team=fetchr.blue,limit=1] store result storage fetchr:card teams[{id: "fetchr:blue"}].background_index byte 1 run scoreboard players get $team_count fetchr.state
 execute if entity @a[predicate=fetchr:is_in_game, team=fetchr.blue,limit=1] run scoreboard players add $team_count fetchr.state 1
 
-execute if entity @a[predicate=fetchr:is_in_game, team=fetchr.dark_blue,limit=1] store result storage fetchr:card teams[{id: "fetchr:dark_blue"}].backgroundIndex byte 1 run scoreboard players get $team_count fetchr.state
+execute if entity @a[predicate=fetchr:is_in_game, team=fetchr.dark_blue,limit=1] store result storage fetchr:card teams[{id: "fetchr:dark_blue"}].background_index byte 1 run scoreboard players get $team_count fetchr.state
 execute if entity @a[predicate=fetchr:is_in_game, team=fetchr.dark_blue,limit=1] run scoreboard players add $team_count fetchr.state 1
 
-execute if entity @a[predicate=fetchr:is_in_game, team=fetchr.purple,limit=1] store result storage fetchr:card teams[{id: "fetchr:purple"}].backgroundIndex byte 1 run scoreboard players get $team_count fetchr.state
+execute if entity @a[predicate=fetchr:is_in_game, team=fetchr.purple,limit=1] store result storage fetchr:card teams[{id: "fetchr:purple"}].background_index byte 1 run scoreboard players get $team_count fetchr.state
 execute if entity @a[predicate=fetchr:is_in_game, team=fetchr.purple,limit=1] run scoreboard players add $team_count fetchr.state 1
 
-execute if entity @a[predicate=fetchr:is_in_game, team=fetchr.magenta,limit=1] store result storage fetchr:card teams[{id: "fetchr:magenta"}].backgroundIndex byte 1 run scoreboard players get $team_count fetchr.state
+execute if entity @a[predicate=fetchr:is_in_game, team=fetchr.magenta,limit=1] store result storage fetchr:card teams[{id: "fetchr:magenta"}].background_index byte 1 run scoreboard players get $team_count fetchr.state
 execute if entity @a[predicate=fetchr:is_in_game, team=fetchr.magenta,limit=1] run scoreboard players add $team_count fetchr.state 1
 
-execute if entity @a[predicate=fetchr:is_in_game, team=fetchr.white,limit=1] store result storage fetchr:card teams[{id: "fetchr:white"}].backgroundIndex byte 1 run scoreboard players get $team_count fetchr.state
+execute if entity @a[predicate=fetchr:is_in_game, team=fetchr.white,limit=1] store result storage fetchr:card teams[{id: "fetchr:white"}].background_index byte 1 run scoreboard players get $team_count fetchr.state
 execute if entity @a[predicate=fetchr:is_in_game, team=fetchr.white,limit=1] run scoreboard players add $team_count fetchr.state 1
 
-execute if entity @a[predicate=fetchr:is_in_game, team=fetchr.gray,limit=1] store result storage fetchr:card teams[{id: "fetchr:gray"}].backgroundIndex byte 1 run scoreboard players get $team_count fetchr.state
+execute if entity @a[predicate=fetchr:is_in_game, team=fetchr.gray,limit=1] store result storage fetchr:card teams[{id: "fetchr:gray"}].background_index byte 1 run scoreboard players get $team_count fetchr.state
 execute if entity @a[predicate=fetchr:is_in_game, team=fetchr.gray,limit=1] run scoreboard players add $team_count fetchr.state 1
 
-execute if entity @a[predicate=fetchr:is_in_game, team=fetchr.dark_gray,limit=1] store result storage fetchr:card teams[{id: "fetchr:dark_gray"}].backgroundIndex byte 1 run scoreboard players get $team_count fetchr.state
+execute if entity @a[predicate=fetchr:is_in_game, team=fetchr.dark_gray,limit=1] store result storage fetchr:card teams[{id: "fetchr:dark_gray"}].background_index byte 1 run scoreboard players get $team_count fetchr.state
 execute if entity @a[predicate=fetchr:is_in_game, team=fetchr.dark_gray,limit=1] run scoreboard players add $team_count fetchr.state 1
 
-execute if entity @a[predicate=fetchr:is_in_game, team=fetchr.black,limit=1] store result storage fetchr:card teams[{id: "fetchr:black"}].backgroundIndex byte 1 run scoreboard players get $team_count fetchr.state
+execute if entity @a[predicate=fetchr:is_in_game, team=fetchr.black,limit=1] store result storage fetchr:card teams[{id: "fetchr:black"}].background_index byte 1 run scoreboard players get $team_count fetchr.state
 execute if entity @a[predicate=fetchr:is_in_game, team=fetchr.black,limit=1] run scoreboard players add $team_count fetchr.state 1
 
 #>

@@ -58,15 +58,6 @@ execute \
 	run scoreboard players operation $card_gen/cat_weight.nom fetchr.tmp /= $card_gen/cat_weight.denom fetchr.tmp
 #endregion
 
-tellraw NeunEinser [\
-	"#", {"score": {"name": "$card_gen.slot", "objective": "fetchr.tmp"}}, " ",\
-	{"storage": "tmp.fetchr:card_generation", "nbt": "category_items[-1].id"}, ": ",\
-	{"storage": "tmp.fetchr:card_generation", "nbt": "category_items[-1].weight_nom"}, "/",\
-	{"storage": "tmp.fetchr:card_generation", "nbt": "category_items[-1].weight_denom"},\
-	" = ", {"score": {"name": "$card_gen/cat_weight.nom", "objective": "fetchr.tmp"}},\
-	" (", {"score": {"name": "$card_gen/cat_weight.previous_weight", "objective": "fetchr.tmp"}}, ")"\
-]
-
 scoreboard players operation $card_gen.total_weight fetchr.tmp -= $card_gen/cat_weight.previous_weight fetchr.tmp
 scoreboard players operation $card_gen.total_weight fetchr.tmp += $card_gen/cat_weight.nom fetchr.tmp
 

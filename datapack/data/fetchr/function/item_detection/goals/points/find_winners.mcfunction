@@ -9,7 +9,7 @@
 #>
 # @private
 #declare score_holder $item_detect/announce/points.current_item_count
-execute store result score $item_detect/announce/points.current_item_count fetchr.tmp run data get storage tmp.fetchr:item_detection teams[-1].itemCount
+execute store result score $item_detect/announce/points.current_item_count fetchr.tmp run data get storage tmp.fetchr:item_detection teams[-1].item_count
 execute if score $item_detect/announce/points.current_item_count fetchr.tmp > $item_detect/announce/points.winning_score fetchr.tmp run tag @a remove fetchr.in_team
 scoreboard players operation $item_detect/announce/points.winning_score fetchr.tmp > $item_detect/announce/points.current_item_count fetchr.tmp
 

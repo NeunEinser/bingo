@@ -64,47 +64,47 @@ data modify block 7 0 7 front_text.messages[0] set value '[\
 	"\\uff97",\
 	[\
 		{"text":"","font":"fetchr:actionbar_card/row0"},\
-		{"storage":"fetchr:card","nbt":"slots[0].display","interpret":true},{"text":"\\u0002","font":"fetchr:space"},\
-		{"storage":"fetchr:card","nbt":"slots[1].display","interpret":true},{"text":"\\u0002","font":"fetchr:space"},\
-		{"storage":"fetchr:card","nbt":"slots[2].display","interpret":true},{"text":"\\u0002","font":"fetchr:space"},\
-		{"storage":"fetchr:card","nbt":"slots[3].display","interpret":true},{"text":"\\u0002","font":"fetchr:space"},\
-		{"storage":"fetchr:card","nbt":"slots[4].display","interpret":true}\
+		{"storage":"fetchr:card","nbt":"slots[0].current_display","interpret":true},{"text":"\\u0002","font":"fetchr:space"},\
+		{"storage":"fetchr:card","nbt":"slots[1].current_display","interpret":true},{"text":"\\u0002","font":"fetchr:space"},\
+		{"storage":"fetchr:card","nbt":"slots[2].current_display","interpret":true},{"text":"\\u0002","font":"fetchr:space"},\
+		{"storage":"fetchr:card","nbt":"slots[3].current_display","interpret":true},{"text":"\\u0002","font":"fetchr:space"},\
+		{"storage":"fetchr:card","nbt":"slots[4].current_display","interpret":true}\
 	],\
 	"\\uff99",\
 	[\
 		{"text":"","font":"fetchr:actionbar_card/row1"},\
-		{"storage":"fetchr:card","nbt":"slots[5].display","interpret":true},{"text":"\\u0002","font":"fetchr:space"},\
-		{"storage":"fetchr:card","nbt":"slots[6].display","interpret":true},{"text":"\\u0002","font":"fetchr:space"},\
-		{"storage":"fetchr:card","nbt":"slots[7].display","interpret":true},{"text":"\\u0002","font":"fetchr:space"},\
-		{"storage":"fetchr:card","nbt":"slots[8].display","interpret":true},{"text":"\\u0002","font":"fetchr:space"},\
-		{"storage":"fetchr:card","nbt":"slots[9].display","interpret":true}\
+		{"storage":"fetchr:card","nbt":"slots[5].current_display","interpret":true},{"text":"\\u0002","font":"fetchr:space"},\
+		{"storage":"fetchr:card","nbt":"slots[6].current_display","interpret":true},{"text":"\\u0002","font":"fetchr:space"},\
+		{"storage":"fetchr:card","nbt":"slots[7].current_display","interpret":true},{"text":"\\u0002","font":"fetchr:space"},\
+		{"storage":"fetchr:card","nbt":"slots[8].current_display","interpret":true},{"text":"\\u0002","font":"fetchr:space"},\
+		{"storage":"fetchr:card","nbt":"slots[9].current_display","interpret":true}\
 	],\
 	"\\uff99",\
 	[\
 		{"text":"","font":"fetchr:actionbar_card/row2"},\
-		{"storage":"fetchr:card","nbt":"slots[10].display","interpret":true},{"text":"\\u0002","font":"fetchr:space"},\
-		{"storage":"fetchr:card","nbt":"slots[11].display","interpret":true},{"text":"\\u0002","font":"fetchr:space"},\
-		{"storage":"fetchr:card","nbt":"slots[12].display","interpret":true},{"text":"\\u0002","font":"fetchr:space"},\
-		{"storage":"fetchr:card","nbt":"slots[13].display","interpret":true},{"text":"\\u0002","font":"fetchr:space"},\
-		{"storage":"fetchr:card","nbt":"slots[14].display","interpret":true}\
+		{"storage":"fetchr:card","nbt":"slots[10].current_display","interpret":true},{"text":"\\u0002","font":"fetchr:space"},\
+		{"storage":"fetchr:card","nbt":"slots[11].current_display","interpret":true},{"text":"\\u0002","font":"fetchr:space"},\
+		{"storage":"fetchr:card","nbt":"slots[12].current_display","interpret":true},{"text":"\\u0002","font":"fetchr:space"},\
+		{"storage":"fetchr:card","nbt":"slots[13].current_display","interpret":true},{"text":"\\u0002","font":"fetchr:space"},\
+		{"storage":"fetchr:card","nbt":"slots[14].current_display","interpret":true}\
 	],\
 	"\\uff99",\
 	[\
 		{"text":"","font":"fetchr:actionbar_card/row3"},\
-		{"storage":"fetchr:card","nbt":"slots[15].display","interpret":true},{"text":"\\u0002","font":"fetchr:space"},\
-		{"storage":"fetchr:card","nbt":"slots[16].display","interpret":true},{"text":"\\u0002","font":"fetchr:space"},\
-		{"storage":"fetchr:card","nbt":"slots[17].display","interpret":true},{"text":"\\u0002","font":"fetchr:space"},\
-		{"storage":"fetchr:card","nbt":"slots[18].display","interpret":true},{"text":"\\u0002","font":"fetchr:space"},\
-		{"storage":"fetchr:card","nbt":"slots[19].display","interpret":true}\
+		{"storage":"fetchr:card","nbt":"slots[15].current_display","interpret":true},{"text":"\\u0002","font":"fetchr:space"},\
+		{"storage":"fetchr:card","nbt":"slots[16].current_display","interpret":true},{"text":"\\u0002","font":"fetchr:space"},\
+		{"storage":"fetchr:card","nbt":"slots[17].current_display","interpret":true},{"text":"\\u0002","font":"fetchr:space"},\
+		{"storage":"fetchr:card","nbt":"slots[18].current_display","interpret":true},{"text":"\\u0002","font":"fetchr:space"},\
+		{"storage":"fetchr:card","nbt":"slots[19].current_display","interpret":true}\
 	],\
 	"\\uff99",\
 	[\
 		{"text":"","font":"fetchr:actionbar_card/row4"},\
-		{"storage":"fetchr:card","nbt":"slots[20].display","interpret":true},{"text":"\\u0002","font":"fetchr:space"},\
-		{"storage":"fetchr:card","nbt":"slots[21].display","interpret":true},{"text":"\\u0002","font":"fetchr:space"},\
-		{"storage":"fetchr:card","nbt":"slots[22].display","interpret":true},{"text":"\\u0002","font":"fetchr:space"},\
-		{"storage":"fetchr:card","nbt":"slots[23].display","interpret":true},{"text":"\\u0002","font":"fetchr:space"},\
-		{"storage":"fetchr:card","nbt":"slots[24].display","interpret":true}\
+		{"storage":"fetchr:card","nbt":"slots[20].current_display","interpret":true},{"text":"\\u0002","font":"fetchr:space"},\
+		{"storage":"fetchr:card","nbt":"slots[21].current_display","interpret":true},{"text":"\\u0002","font":"fetchr:space"},\
+		{"storage":"fetchr:card","nbt":"slots[22].current_display","interpret":true},{"text":"\\u0002","font":"fetchr:space"},\
+		{"storage":"fetchr:card","nbt":"slots[23].current_display","interpret":true},{"text":"\\u0002","font":"fetchr:space"},\
+		{"storage":"fetchr:card","nbt":"slots[24].current_display","interpret":true}\
 	],\
 	"\\uff99"\
 ]'

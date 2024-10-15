@@ -27,11 +27,3 @@ scoreboard players remove @s[scores={fetchr.inv_change=1..}] fetchr.inv_change 1
 
 scoreboard players add @s[scores={fetchr.bed=1..}] fetchr.bed 1
 execute if score @s fetchr.bed matches 99.. store result score @s fetchr.bed run data get entity @s SleepTimer
-
-# This should always be at the end to prevent game logic from running for this
-# player in the lobby.
-
-tag @s[tag=fetchr.position_changed] remove fetchr.check_inventory
-tag @s[tag=fetchr.only_check_inventory_once] remove fetchr.check_inventory
-tag @s[scores={fetchr.inv_change=1..}] add fetchr.check_inventory
-tag @s[scores={fetchr.inv_change=2..}] remove fetchr.only_check_inventory_once

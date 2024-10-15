@@ -10,4 +10,4 @@ execute if score $item_detect/announce.items fetchr.tmp matches 9 run tellraw @a
 execute as @a[tag=fetchr.in_current_team] run function fetchr:item_detection/goals/completed_goal_effects/init
 execute as @a[predicate=fetchr:is_in_game] run function fetchr:game/menu/print_without_hint
 
-data modify storage fetchr:card teams[-1].hasBingo set value true
+data modify storage fetchr:card teams[-1].has_bingo set value true

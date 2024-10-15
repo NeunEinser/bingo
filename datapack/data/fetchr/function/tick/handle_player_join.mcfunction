@@ -21,7 +21,7 @@ execute if score $game_state fetchr.state matches ..1 if entity @s[predicate=fet
 #>
 # @private
 #declare score_holder $player_join.item_count
-execute store result score $player_join.item_count fetchr.tmp run data get storage fetchr:card teams[-1].itemCount
+execute store result score $player_join.item_count fetchr.tmp run data get storage fetchr:card teams[-1].item_count
 
 execute if score $player_join.item_count fetchr.tmp matches 25 run tag @s add fetchr.spectator
 

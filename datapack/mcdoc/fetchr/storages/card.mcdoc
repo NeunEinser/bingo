@@ -6,32 +6,32 @@ dispatch minecraft:storage[fetchr:card] to struct {
 	/// struct with the random sequence seed that will be forwarded to the macro
 	/// starting the game
 	random_sequence_data: struct { seed: int },
-	slots: [struct {
-		id: int @ 0..24,
-		display: #[text_component] string,
-		item: ActiveItem
+	slots: [struct CardSlot {
+		...ActiveItem,
+		slot_id: int @ 0..24,
+		current_display: #[text_component] string,
+		item_collected?: true,
+		has_bingo?: true,
+		background: [#[text_component] string] @0..16,
 	}],
-	teams: [struct {
-		id: #[id] string,
-		slots: [#[text_component] string],
+	teams: [Team],
+}
 
-		/// The background tile to render behind completed items of this team
-		background: [#[text_component] string],
+struct Team {
+	id: #[id] string,
+	slots?: [#[text_component] string],
 
-		/// The rendered card. Used to skip having to elvaluate the complex text
-		/// component.
-		card: [#[text_component] string],
+	/// The background tile to render behind completed items of this team
+	background?: #[text_component] string,
 
-		/// TODO why is this needed
-		backgroundIndex: byte,
-		itemCount: int,
+	/// The rendered card. Used to skip having to elvaluate the complex text
+	/// component.
+	card?: [#[text_component] string],
 
-		/// Data used by the macro resetting random sequences
-		#[since="1.20.2"]
-		randomSequenceData: struct RandomSequenceData {
-			seed: int
-		}
-	}]
+	/// The index of a background tile on a slot.
+	/// Needed to render backgrounds in the correct order.
+	background_index?: byte,
+	item_count?: int,
 }
 
 dispatch minecraft:storage[tmp.fetchr:rand_data] to struct {
