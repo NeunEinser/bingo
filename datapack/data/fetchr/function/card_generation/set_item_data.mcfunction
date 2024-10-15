@@ -1,28 +1,33 @@
-#> fetchr:card_generation/cleanup_and_next_slot
+#> fetchr:card_generation/set_item_data
 #
-# Performs cleanup after generating a slot. Not called for the last slot.
+# Fills in some slot data to the item
 #
 # @within function fetchr:card_generation/generate_slot
-# @params ::fetchr::item::ActiveItem
+# @params ::fetchr::storage::card::CardSlot
+
+$data modify storage fetchr:card slots[-1].icon_display set value '"\\u$(icon)"'
+$data modify storage fetchr:card slots[-1].current_font \
+	set from storage fetchr:card slots[-1].icon_font.actionbar[$(row)]
 
 $execute \
 	unless score $blind_mode fetchr.state matches 1 \
-	run data modify block 7 0 7 front_text.messages[0] set value '[\
+	run data modify storage fetchr:card slots[-1].current_display set value '[\
 		"",\
-		{"text": "\\u0002", "font": "fetchr:space"},\
+		{"text":"\\u0002","font":"fetchr:space"},\
 		"\\u$(icon)"\
 	]'
 execute \
-	unless score $blind_mode fetchr.state matches 1 \
-	run data modify storage fetchr:card slots[-1].current_display \
-		set from block 7 0 7 front_text.messages[0]
+	if data storage fetchr:card slots[-1].current_font \
+	run function fetchr:card_generation/apply_custom_font \
+		with storage fetchr:card slots[-1]
+
 execute \
 	if score $blind_mode fetchr.state matches 1 \
 	run data modify storage fetchr:card slots[-1].current_display \
 		set value '{"text": "\\u0013", "font": "fetchr:space"}'
 
 execute \
-	store result storage fetchr:card slots[-1].slot_id int 1 \
+	store result storage fetchr:card slots[-1].slot_id byte 1 \
 	run scoreboard players get $card_gen.slot fetchr.tmp
 
 # set item to frame

@@ -17,7 +17,7 @@ $execute \
 	run return fail
 
 function fetchr:util/find_player_team
-$tag @a[tag=fetchr.in_current_team] add fetchr.has_item$(slot_id)
+$tag @a[tag=fetchr.in_current_team] add fetchr.has_slot$(slot_id)
 
 scoreboard players set $item_detect/set_overlay.success fetchr.tmp 0
 $execute \
@@ -61,7 +61,7 @@ $data modify block 7 0 7 front_text.messages[0] set value '[\
 	"",\
 	{"storage": "fetchr:card", "nbt": "slots[$(slot_id)].background[]", "interpret": true, "separator":""},\
 	{"text": "\\u0002", "font": "fetchr:space"},\
-	"\\u$(icon)"\
+	{"storage": "fetchr:card", "nbt": "slots[$(slot_id)].icon_display", "interpret": true}\
 ]'
 
 $data modify storage fetchr:card slots[$(slot_id)].current_display \

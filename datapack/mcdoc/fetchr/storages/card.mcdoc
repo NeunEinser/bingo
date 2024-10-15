@@ -8,10 +8,12 @@ dispatch minecraft:storage[fetchr:card] to struct {
 	random_sequence_data: struct { seed: int },
 	slots: [struct CardSlot {
 		...ActiveItem,
-		slot_id: int @ 0..24,
+		slot_id: byte @ 0..24,
+		row: byte @ 0..4,
+		icon_display: #[text_component] string,
+		current_font?: #[id="font"] string,
 		current_display: #[text_component] string,
 		item_collected?: true,
-		has_bingo?: true,
 		background: [#[text_component] string] @0..16,
 	}],
 	teams: [Team],
@@ -32,6 +34,7 @@ struct Team {
 	/// Needed to render backgrounds in the correct order.
 	background_index?: byte,
 	item_count?: int,
+	has_bingo?: true,
 }
 
 dispatch minecraft:storage[tmp.fetchr:rand_data] to struct {
