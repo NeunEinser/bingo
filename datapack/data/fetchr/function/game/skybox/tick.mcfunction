@@ -6,12 +6,10 @@
 
 execute at @e[type=minecraft:marker, tag=fetchr.skybox_button, distance=..13] if block ~ ~ ~ minecraft:stone_button[powered=true] run function fetchr:game/skybox/button_pressed
 
-execute as @a[predicate=fetchr:is_in_game] at @s align y if block ~ ~ ~ minecraft:void_air run tp ~ ~1.2 ~
-execute as @a[predicate=fetchr:is_in_game] at @s align y if block ~ ~-1 ~ minecraft:void_air unless entity @s[distance=...01] run tp ~ ~.2 ~
-execute as @a[predicate=fetchr:is_in_game] at @s align y if block ~ ~-1 ~-1 minecraft:void_air run tp ~ ~ ~
-execute as @a[predicate=fetchr:is_in_game] at @s if block ~ ~-1 ~ minecraft:void_air run attribute @s generic.gravity base set 0
-execute as @a[predicate=fetchr:is_in_game] at @s if block ~ ~-1 ~-1 minecraft:void_air run attribute @s generic.gravity base set 0
-execute as @a[predicate=fetchr:is_in_game] at @s unless block ~ ~-1 ~ minecraft:void_air unless block ~ ~-1 ~-1 minecraft:void_air run attribute @s generic.gravity base set 0.08
+execute \
+	as @a[predicate=fetchr:is_in_game] \
+	at @s \
+	run function fetchr:game/skybox/player_tick
 
 execute unless entity @a[team=fetchr.black] run scoreboard players reset $black
 execute unless entity @a[team=fetchr.blue] run scoreboard players reset $blue

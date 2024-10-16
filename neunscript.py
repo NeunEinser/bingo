@@ -234,6 +234,10 @@ def iterate_files(config: dict, source: str, target: str, mc_version_info: dict 
 	if os.path.exists(pack_path) and len(pack_formats_for_overlay) > 0:
 		with open(f"{target}{os.sep}pack.mcmeta", "r+", encoding="utf-8") as file:
 			pack_def = json.loads(file.read())
+			supported_formats = pack_def.get("supported_formats")
+			if supported_formats is not None:
+				min_incl = supported_formats.get("min_inclusive")
+				if min_incl is not None: pack_def["pack_format"] = min_incl
 			overlays = pack_def.get("overlays")
 			if overlays is None:
 				overlays = {}
