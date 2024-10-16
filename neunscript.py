@@ -234,10 +234,11 @@ def iterate_files(config: dict, source: str, target: str, mc_version_info: dict 
 	if os.path.exists(pack_path) and len(pack_formats_for_overlay) > 0:
 		with open(f"{target}{os.sep}pack.mcmeta", "r+", encoding="utf-8") as file:
 			pack_def = json.loads(file.read())
-			supported_formats = pack_def.get("supported_formats")
+			pack = pack_def.get("pack")
+			supported_formats = pack.get("supported_formats")
 			if supported_formats is not None:
 				min_incl = supported_formats.get("min_inclusive")
-				if min_incl is not None: pack_def["pack_format"] = min_incl
+				if min_incl is not None: pack["pack_format"] = min_incl
 			overlays = pack_def.get("overlays")
 			if overlays is None:
 				overlays = {}
@@ -331,7 +332,8 @@ def minify_function_file(file_content: str, config: dict, pack_format: int):
 	output=""
 	remove=0
 	uncomment=0
-	pack_formats = set() 
+	pack_formats = set()
+	file_content = re.sub(r"\\\r?\n\s*", "", file_content)
 
 	for line in file_content.splitlines():
 		line = line.strip()

@@ -18,13 +18,13 @@ execute \
 	if block ~ ~-1 ~-1 minecraft:void_air \
 	run tp ~ ~ ~
 #NEUN_SCRIPT until 49
-# execute \
+#execute \
 	if block ~ ~-1 ~ minecraft:void_air \
 	run attribute @s generic.gravity base set 0
-# execute \
+#execute \
 	if block ~ ~-1 ~-1 minecraft:void_air \
 	run attribute @s generic.gravity base set 0
-# execute \
+#execute \
 	unless block ~ ~-1 ~ minecraft:void_air \
 	unless block ~ ~-1 ~-1 minecraft:void_air \
 	run attribute @s generic.gravity base set 0.08
