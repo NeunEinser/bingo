@@ -129,11 +129,6 @@
 	
 	"fetchr.lobby.returned": "%s returned to the lobby.",
 
-	"fetchr.lobby.machinery.sign.line1": "Machinery",
-	"fetchr.lobby.machinery.sign.line2": "",
-	"fetchr.lobby.machinery.sign.line3": "Authorized",
-	"fetchr.lobby.machinery.sign.line4": "personnel only",
-
 	"fetchr.lobby.credits.neun_einser.sign.line2": "Fetchr",
 	"fetchr.lobby.credits.neun_einser.sign.line3": "Main & Lead",
 	"fetchr.lobby.credits.neun_einser.sign.line4": "Developer",
@@ -610,6 +605,7 @@
 	"fetchr.category.wheat": "Wheat",
 	"fetchr.category.wool": "Wool",
 
+	"fetchr.item.global_weight": "Global Weight",
 
 	"fetchr.game.start.preparing_spawn": "Preparing Spawn...",
 	"fetchr.game.start.loading_terrain": "Loading Terrain...",
