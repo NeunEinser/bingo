@@ -1,11 +1,11 @@
 {
 	"name": "Fetchr",
-	"version": "5.1.3_1.21",
-	"mc": "1.20.2",
+	"version": "5.1.4-beta1",
+	"mc": "1.21.2-pre5",
 	"target": "dist",
 	"vars": {
-		"version_long_name": "5.1.3 (1.21)",
-		"rp_version": "23",
+		"version_long_name": "5.1.4 Beta 1",
+		"rp_version": "24",
 		"realms": false
 	},
 	"remove_file_types": [
@@ -28,7 +28,7 @@
 		"realms": {
 			"vars": {
 				"realms": true,
-				"version_long_name": "5.1.3 (Realms)"
+				"version_long_name": "5.1.4 (Realms)"
 			}
 		}
 	},
