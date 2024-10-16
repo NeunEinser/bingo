@@ -21,13 +21,13 @@
 
 # categories
 data modify storage fetchr:registries categories append value {\
-	id: "fetchr:apple",\
-	name: '{"translate": "fetchr.category.apple"}',\
+	id: "fetchr:amethyst",\
+	name: '{"translate": "fetchr.category.amethyst"}',\
 	tags: ["fetchr:default"]\
 }
 data modify storage fetchr:registries categories append value {\
-	id: "fetchr:amethyst",\
-	name: '{"translate": "fetchr.category.amethyst"}',\
+	id: "fetchr:armadillo",\
+	name: '{"translate": "fetchr.category.armadillo"}',\
 	tags: ["fetchr:default"]\
 }
 data modify storage fetchr:registries categories append value {\
@@ -36,13 +36,13 @@ data modify storage fetchr:registries categories append value {\
 	tags: ["fetchr:default"]\
 }
 data modify storage fetchr:registries categories append value {\
-	id: "fetchr:bow",\
-	name: '{"translate": "fetchr.category.bow"}',\
+	id: "fetchr:book",\
+	name: '{"translate": "fetchr.category.book"}',\
 	tags: ["fetchr:default"]\
 }
 data modify storage fetchr:registries categories append value {\
-	id: "fetchr:cactus",\
-	name: '{"translate": "fetchr.category.cactus"}',\
+	id: "fetchr:bow",\
+	name: '{"translate": "fetchr.category.bow"}',\
 	tags: ["fetchr:default"]\
 }
 data modify storage fetchr:registries categories append value {\
@@ -88,11 +88,6 @@ data modify storage fetchr:registries categories append value {\
 data modify storage fetchr:registries categories append value {\
 	id: "fetchr:egg",\
 	name: '{"translate": "fetchr.category.egg"}',\
-	tags: ["fetchr:default"]\
-}
-data modify storage fetchr:registries categories append value {\
-	id: "fetchr:nighttime_mob_drops",\
-	name: '{"translate": "fetchr.category.nighttime_mob_drops"}',\
 	tags: ["fetchr:default"]\
 }
 data modify storage fetchr:registries categories append value {\
@@ -151,13 +146,13 @@ data modify storage fetchr:registries categories append value {\
 	tags: ["fetchr:default"]\
 }
 data modify storage fetchr:registries categories append value {\
-	id: "fetchr:lime",\
-	name: '{"translate": "fetchr.category.lime"}',\
+	id: "fetchr:lush_cave",\
+	name: '{"translate": "fetchr.category.lush_cave"}',\
 	tags: ["fetchr:default"]\
 }
 data modify storage fetchr:registries categories append value {\
-	id: "fetchr:lush_cave",\
-	name: '{"translate": "fetchr.category.lush_cave"}',\
+	id: "fetchr:mangrove",\
+	name: '{"translate": "fetchr.category.mangrove"}',\
 	tags: ["fetchr:default"]\
 }
 data modify storage fetchr:registries categories append value {\
@@ -166,13 +161,18 @@ data modify storage fetchr:registries categories append value {\
 	tags: ["fetchr:default"]\
 }
 data modify storage fetchr:registries categories append value {\
-	id: "fetchr:mud",\
-	name: '{"translate": "fetchr.category.mud"}',\
+	id: "fetchr:mushroom",\
+	name: '{"translate": "fetchr.category.mushroom"}',\
 	tags: ["fetchr:default"]\
 }
 data modify storage fetchr:registries categories append value {\
-	id: "fetchr:mushroom",\
-	name: '{"translate": "fetchr.category.mushroom"}',\
+	id: "fetchr:nighttime_mob_drops",\
+	name: '{"translate": "fetchr.category.nighttime_mob_drops"}',\
+	tags: ["fetchr:default"]\
+}
+data modify storage fetchr:registries categories append value {\
+	id: "fetchr:oak",\
+	name: '{"translate": "fetchr.category.oak"}',\
 	tags: ["fetchr:default"]\
 }
 data modify storage fetchr:registries categories append value {\
@@ -201,13 +201,13 @@ data modify storage fetchr:registries categories append value {\
 	tags: ["fetchr:default"]\
 }
 data modify storage fetchr:registries categories append value {\
-	id: "fetchr:sand",\
-	name: '{"translate": "fetchr.category.sand"}',\
+	id: "fetchr:roots",\
+	name: '{"translate": "fetchr.category.roots"}',\
 	tags: ["fetchr:default"]\
 }
 data modify storage fetchr:registries categories append value {\
-	id: "fetchr:sapling",\
-	name: '{"translate": "fetchr.category.sapling"}',\
+	id: "fetchr:sand",\
+	name: '{"translate": "fetchr.category.sand"}',\
 	tags: ["fetchr:default"]\
 }
 data modify storage fetchr:registries categories append value {\
@@ -226,11 +226,6 @@ data modify storage fetchr:registries categories append value {\
 	tags: ["fetchr:default"]\
 }
 data modify storage fetchr:registries categories append value {\
-	id: "fetchr:snow",\
-	name: '{"translate": "fetchr.category.snow"}',\
-	tags: ["fetchr:default"]\
-}
-data modify storage fetchr:registries categories append value {\
 	id: "fetchr:spider",\
 	name: '{"translate": "fetchr.category.spider"}',\
 	tags: ["fetchr:default"]\
@@ -238,6 +233,11 @@ data modify storage fetchr:registries categories append value {\
 data modify storage fetchr:registries categories append value {\
 	id: "fetchr:taiga",\
 	name: '{"translate": "fetchr.category.taiga"}',\
+	tags: ["fetchr:default"]\
+}
+data modify storage fetchr:registries categories append value {\
+	id: "fetchr:warm_biome",\
+	name: '{"translate": "fetchr.category.warm_biome"}',\
 	tags: ["fetchr:default"]\
 }
 data modify storage fetchr:registries categories append value {\
@@ -295,7 +295,8 @@ data modify storage fetchr:registries items append value {\
 	item: {id: "minecraft:acacia_sapling"},\
 	translation: "block.minecraft.acacia_sapling",\
 	icon: "0005",\
-	categories: ["fetchr:sapling"]\
+	categories: ["fetchr:warm_biome"],\
+	weight: 2\
 }
 
 ## 0006: spruce_sapling
@@ -304,7 +305,7 @@ data modify storage fetchr:registries items append value {\
 	item: {id: "minecraft:spruce_sapling"},\
 	translation: "block.minecraft.spruce_sapling",\
 	icon: "0006",\
-	categories: ["fetchr:sapling"]\
+	categories: ["fetchr:taiga"]\
 }
 
 ## 0007: cocoa_beans
@@ -391,7 +392,7 @@ data modify storage fetchr:registries items append value {\
 	translation: "block.minecraft.powered_rail",\
 	icon: "000f",\
 	categories: ["fetchr:gold_and_ruined_portal"],\
-	weight: 5\
+	weight: 3\
 }
 
 ## 0010: flint
@@ -468,6 +469,24 @@ data modify storage fetchr:registries items append value {\
 	categories: ["fetchr:basic_iron"]\
 }
 
+## 0018: carrot
+data modify storage fetchr:registries items append value {\
+	id: "fetchr:carrot",\
+	item: {id: "minecraft:carrot"},\
+	translation: "item.minecraft.carrot",\
+	icon: "0018",\
+	categories: ["fetchr:roots"]\
+}
+
+## 0019: golden_carrot
+data modify storage fetchr:registries items append value {\
+	id: "fetchr:golden_carrot",\
+	item: {id: "minecraft:golden_carrot"},\
+	translation: "item.minecraft.golden_carrot",\
+	icon: "0019",\
+	categories: ["fetchr:roots"]\
+}
+
 ## 001a: painting
 data modify storage fetchr:registries items append value {\
 	id: "fetchr:painting",\
@@ -483,8 +502,7 @@ data modify storage fetchr:registries items append value {\
 	item: {id: "minecraft:item_frame"},\
 	translation: "item.minecraft.item_frame",\
 	icon: "001b",\
-	categories: ["fetchr:leather"],\
-	weight: 2\
+	categories: ["fetchr:leather"]\
 }
 
 ## 001c: emerald
@@ -496,34 +514,13 @@ data modify storage fetchr:registries items append value {\
 	categories: ["fetchr:shipwreck"]\
 }
 
-## 001d: diamond_shovel
-data modify storage fetchr:registries items append value {\
-	id: "fetchr:diamond_shovel",\
-	item: {id: "minecraft:diamond_shovel"},\
-	translation: "item.minecraft.diamond_shovel",\
-	icon: "001d",\
-	categories: ["fetchr:diamond"],\
-	weight: 2\
-}
-
 ## 001e: diamond_hoe
 data modify storage fetchr:registries items append value {\
 	id: "fetchr:diamond_hoe",\
 	item: {id: "minecraft:diamond_hoe"},\
 	translation: "item.minecraft.diamond_hoe",\
 	icon: "001e",\
-	categories: ["fetchr:diamond"],\
-	weight: 2\
-}
-
-## 001f: diamond_axe
-data modify storage fetchr:registries items append value {\
-	id: "fetchr:diamond_axe",\
-	item: {id: "minecraft:diamond_axe"},\
-	translation: "item.minecraft.diamond_axe",\
-	icon: "001f",\
-	categories: ["fetchr:diamond"],\
-	weight: 2\
+	categories: ["fetchr:diamond"]\
 }
 
 ## 0020: axolotl_bucket
@@ -569,7 +566,7 @@ data modify storage fetchr:registries items append value {\
 	item: {id: "minecraft:mangrove_propagule"},\
 	translation: "block.minecraft.mangrove_propagule",\
 	icon: "0024",\
-	categories: ["fetchr:sapling"]\
+	categories: ["fetchr:mangrove"]\
 }
 
 ## 0025: apple
@@ -578,7 +575,7 @@ data modify storage fetchr:registries items append value {\
 	item: {id: "minecraft:apple"},\
 	translation: "item.minecraft.apple",\
 	icon: "0025",\
-	categories: ["fetchr:apple"]\
+	categories: ["fetchr:oak"]\
 }
 
 ## 0026: golden_apple
@@ -587,7 +584,7 @@ data modify storage fetchr:registries items append value {\
 	item: {id: "minecraft:golden_apple"},\
 	translation: "item.minecraft.golden_apple",\
 	icon: "0026",\
-	categories: ["fetchr:apple"]\
+	categories: ["fetchr:oak"]\
 }
 
 ## 0027: golden_shovel
@@ -617,7 +614,7 @@ data modify storage fetchr:registries items append value {\
 	translation: "item.minecraft.clock",\
 	icon: "0029",\
 	categories: ["fetchr:gold_and_ruined_portal"],\
-	weight: 5\
+	weight: 3\
 }
 
 ## 002a: repeater
@@ -653,7 +650,7 @@ data modify storage fetchr:registries items append value {\
 	item: {id: "minecraft:book"},\
 	translation: "item.minecraft.book",\
 	icon: "002d",\
-	categories: ["fetchr:leather"]\
+	categories: ["fetchr:book"]\
 }
 
 ## 002e: writable_book
@@ -662,7 +659,7 @@ data modify storage fetchr:registries items append value {\
 	item: {id: "minecraft:writable_book"},\
 	translation: "item.minecraft.writable_book",\
 	icon: "002e",\
-	categories: ["fetchr:leather"]\
+	categories: ["fetchr:book"]\
 }
 
 ## 002f: enchanted_book
@@ -672,7 +669,7 @@ data modify storage fetchr:registries items append value {\
 	translation: "item.minecraft.enchanted_book",\
 	icon: "002f",\
 	categories: ["fetchr:diamond"],\
-	weight: 5\
+	weight: 1\
 }
 
 ## 0030: spider_eye
@@ -709,7 +706,7 @@ data modify storage fetchr:registries items append value {\
 	item: {id: "minecraft:tnt_minecart"},\
 	translation: "item.minecraft.tnt_minecart",\
 	icon: "0033",\
-	categories: ["fetchr:gunpowder", "fetchr:sand"]\
+	categories: ["fetchr:gunpowder"]\
 }
 
 ## 0034: hopper
@@ -781,7 +778,8 @@ data modify storage fetchr:registries items append value {\
 	item: {id: "minecraft:green_dye"},\
 	translation: "item.minecraft.green_dye",\
 	icon: "003b",\
-	categories: ["fetchr:cactus"]\
+	categories: ["fetchr:warm_biome"],\
+	weight: 2\
 }
 
 ## 003c: lime_dye
@@ -790,7 +788,7 @@ data modify storage fetchr:registries items append value {\
 	item: {id: "minecraft:lime_dye"},\
 	translation: "item.minecraft.lime_dye",\
 	icon: "003c",\
-	categories: ["fetchr:cactus", "fetchr:lime"]\
+	categories: ["fetchr:warm_biome"]\
 }
 
 ## 003d: lapis_lazuli
@@ -837,8 +835,7 @@ data modify storage fetchr:registries items append value {\
 	item: {id: "minecraft:glass_bottle"},\
 	translation: "item.minecraft.glass_bottle",\
 	icon: "0041",\
-	categories: ["fetchr:sand"],\
-	weight: 2\
+	categories: ["fetchr:sand"]\
 }
 
 ## 0042: cod
@@ -895,22 +892,13 @@ data modify storage fetchr:registries items append value {\
 	categories: ["fetchr:fish"]\
 }
 
-## 0048: birch_sapling
-data modify storage fetchr:registries items append value {\
-	id: "fetchr:birch_sapling",\
-	item: {id: "minecraft:birch_sapling"},\
-	translation: "block.minecraft.birch_sapling",\
-	icon: "0048",\
-	categories: ["fetchr:sapling"]\
-}
-
 ## 0049: dark_oak_sapling
 data modify storage fetchr:registries items append value {\
 	id: "fetchr:dark_oak_sapling",\
 	item: {id: "minecraft:dark_oak_sapling"},\
 	translation: "block.minecraft.dark_oak_sapling",\
 	icon: "0049",\
-	categories: ["fetchr:sapling"]\
+	categories: ["fetchr:oak"]\
 }
 
 ## 004a: lead
@@ -968,16 +956,6 @@ data modify storage fetchr:registries items append value {\
 	categories: ["fetchr:taiga"]\
 }
 
-## 0050: diamond_sword
-data modify storage fetchr:registries items append value {\
-	id: "fetchr:diamond_sword",\
-	item: {id: "minecraft:diamond_sword"},\
-	translation: "item.minecraft.diamond_sword",\
-	icon: "0050",\
-	categories: ["fetchr:diamond"],\
-	weight: 2\
-}
-
 ## 0051: diamond_pickaxe
 data modify storage fetchr:registries items append value {\
 	id: "fetchr:diamond_pickaxe",\
@@ -985,7 +963,7 @@ data modify storage fetchr:registries items append value {\
 	translation: "item.minecraft.diamond_pickaxe",\
 	icon: "0051",\
 	categories: ["fetchr:diamond"],\
-	weight: 2\
+	weight: 1\
 }
 
 ## 0052: golden_axe
@@ -994,26 +972,6 @@ data modify storage fetchr:registries items append value {\
 	item: {id: "minecraft:golden_axe"},\
 	translation: "item.minecraft.golden_axe",\
 	icon: "0052",\
-	categories: ["fetchr:gold_and_ruined_portal"],\
-	weight: 2\
-}
-
-## 0053: golden_pickaxe
-data modify storage fetchr:registries items append value {\
-	id: "fetchr:golden_pickaxe",\
-	item: {id: "minecraft:golden_pickaxe"},\
-	translation: "item.minecraft.golden_pickaxe",\
-	icon: "0053",\
-	categories: ["fetchr:gold_and_ruined_portal"],\
-	weight: 2\
-}
-
-## 0054: golden_hoe
-data modify storage fetchr:registries items append value {\
-	id: "fetchr:golden_hoe",\
-	item: {id: "minecraft:golden_hoe"},\
-	translation: "item.minecraft.golden_hoe",\
-	icon: "0054",\
 	categories: ["fetchr:gold_and_ruined_portal"],\
 	weight: 2\
 }
@@ -1043,7 +1001,7 @@ data modify storage fetchr:registries items append value {\
 	item: {id: "minecraft:sea_pickle"},\
 	translation: "block.minecraft.sea_pickle",\
 	icon: "0057",\
-	categories: ["fetchr:lime"]\
+	categories: ["fetchr:warm_biome"]\
 }
 
 ## 0058: seagrass
@@ -1110,7 +1068,7 @@ data modify storage fetchr:registries items append value {\
 	item: {id: "minecraft:glow_item_frame"},\
 	translation: "item.minecraft.glow_item_frame",\
 	icon: "005e",\
-	categories: [{id: "fetchr:glow_ink"}, {id: "fetchr:leather", weight: 2}]\
+	categories: ["fetchr:glow_ink", "fetchr:leather"]\
 }
 
 ## 005f: pointed_dripstone
@@ -1230,6 +1188,65 @@ data modify storage fetchr:registries items append value {\
 	categories: ["fetchr:cherry_grove"]\
 }
 
+## 006a: carrot_on_a_stick
+data modify storage fetchr:registries items append value {\
+	id: "fetchr:carrot_on_a_stick",\
+	item: {id: "minecraft:carrot_on_a_stick"},\
+	translation: "item.minecraft.carrot_on_a_stick",\
+	icon: "006a",\
+	categories: ["fetchr:roots"]\
+}
+
+## 006b: baked_potato
+data modify storage fetchr:registries items append value {\
+	id: "fetchr:baked_potato",\
+	item: {id: "minecraft:baked_potato"},\
+	translation: "item.minecraft.baked_potato",\
+	icon: "006b",\
+	categories: ["fetchr:roots"],\
+	weight: 3\
+}
+
+## 006c: jungle_sapling
+data modify storage fetchr:registries items append value {\
+	id: "fetchr:jungle_sapling",\
+	item: {id: "minecraft:jungle_sapling"},\
+	translation: "block.minecraft.jungle_sapling",\
+	icon: "006c",\
+	categories: ["fetchr:jungle"],\
+	weight: 6\
+}
+
+## 006d: light_blue_bundle
+#NEUN_SCRIPT since 55
+data modify storage fetchr:registries items append value {\
+	id: "fetchr:light_blue_bundle",\
+	item: {id: "minecraft:light_blue_bundle"},\
+	translation: "item.minecraft.light_blue_bundle",\
+	icon: "006d",\
+	categories: ["fetchr:leather"],\
+	weight: 2\
+}
+#NEUN_SCRIPT end
+
+## 006e: armadillo_scute
+data modify storage fetchr:registries items append value {\
+	id: "fetchr:armadillo_scute",\
+	item: {id: "minecraft:armadillo_scute"},\
+	translation: "item.minecraft.armadillo_scute",\
+	icon: "006e",\
+	categories: ["fetchr:armadillo"]\
+}
+
+## 006f: wolf_armor
+data modify storage fetchr:registries items append value {\
+	id: "fetchr:wolf_armor",\
+	item: {id: "minecraft:wolf_armor"},\
+	translation: "item.minecraft.wolf_armor",\
+	icon: "006f",\
+	categories: ["fetchr:armadillo"]\
+}
+
 ## 0100: iron_block
 data modify storage fetchr:registries items append value {\
 	id: "fetchr:iron_block",\
@@ -1254,7 +1271,7 @@ data modify storage fetchr:registries items append value {\
 	item: {id: "minecraft:bookshelf"},\
 	translation: "block.minecraft.bookshelf",\
 	icon: "0102",\
-	categories: ["fetchr:leather"]\
+	categories: ["fetchr:book"]\
 }
 
 ## 0103: obsidian
@@ -1264,7 +1281,7 @@ data modify storage fetchr:registries items append value {\
 	translation: "block.minecraft.obsidian",\
 	icon: "0103",\
 	categories: ["fetchr:diamond"],\
-	weight: 5\
+	weight: 1\
 }
 
 ## 0104: melon
@@ -1293,7 +1310,7 @@ data modify storage fetchr:registries items append value {\
 	translation: "block.minecraft.jukebox",\
 	icon: "0106",\
 	categories: ["fetchr:diamond"],\
-	weight: 10\
+	weight: 2\
 }
 
 ## 0107: magma_block
@@ -1303,7 +1320,7 @@ data modify storage fetchr:registries items append value {\
 	translation: "block.minecraft.magma_block",\
 	icon: "0107",\
 	categories: ["fetchr:gold_and_ruined_portal"],\
-	weight: 30\
+	weight: 6\
 }
 
 ## 0108: bone_block
@@ -1357,7 +1374,7 @@ data modify storage fetchr:registries items append value {\
 	item: {id: "minecraft:snow"},\
 	translation: "block.minecraft.snow",\
 	icon: "010d",\
-	categories: ["fetchr:snow"]\
+	categories: ["fetchr:taiga"]\
 }
 
 ## 010e: stonecutter
@@ -1385,7 +1402,7 @@ data modify storage fetchr:registries items append value {\
 	item: {id: "minecraft:tnt"},\
 	translation: "block.minecraft.tnt",\
 	icon: "0110",\
-	categories: ["fetchr:gunpowder", "fetchr:sand"]\
+	categories: ["fetchr:gunpowder"]\
 }
 
 ## 0111: lapis_block
@@ -1448,7 +1465,7 @@ data modify storage fetchr:registries items append value {\
 	item: {id: "minecraft:lectern"},\
 	translation: "block.minecraft.lectern",\
 	icon: "0117",\
-	categories: ["fetchr:leather"]\
+	categories: ["fetchr:book"]\
 }
 
 ## 0118: raw_gold_block
@@ -1458,7 +1475,7 @@ data modify storage fetchr:registries items append value {\
 	translation: "block.minecraft.raw_gold_block",\
 	icon: "0118",\
 	categories: ["fetchr:gold_and_ruined_portal"],\
-	weight: 5\
+	weight: 3\
 }
 
 ## 0119: gold_block
@@ -1468,7 +1485,7 @@ data modify storage fetchr:registries items append value {\
 	translation: "block.minecraft.gold_block",\
 	icon: "0119",\
 	categories: ["fetchr:gold_and_ruined_portal"],\
-	weight: 5\
+	weight: 3\
 }
 
 ## 011a: scaffolding
@@ -1552,7 +1569,7 @@ data modify storage fetchr:registries items append value {\
 	item: {id: "minecraft:muddy_mangrove_roots"},\
 	translation: "block.minecraft.muddy_mangrove_roots",\
 	icon: "0122",\
-	categories: ["fetchr:mud"]\
+	categories: ["fetchr:mangrove"]\
 }
 
 ## 0123: packed_mud
@@ -1561,7 +1578,7 @@ data modify storage fetchr:registries items append value {\
 	item: {id: "minecraft:packed_mud"},\
 	translation: "block.minecraft.packed_mud",\
 	icon: "0123",\
-	categories: ["fetchr:mud"]\
+	categories: ["fetchr:mangrove"]\
 }
 
 ## 0124: mud_bricks
@@ -1570,7 +1587,7 @@ data modify storage fetchr:registries items append value {\
 	item: {id: "minecraft:mud_bricks"},\
 	translation: "block.minecraft.mud_bricks",\
 	icon: "0124",\
-	categories: ["fetchr:mud"]\
+	categories: ["fetchr:mangrove"]\
 }
 
 ## 0125: rooted_dirt
@@ -1665,6 +1682,24 @@ data modify storage fetchr:registries items append value {\
 	icon: "012e",\
 	categories: ["fetchr:deepslate"],\
 	weight: 3\
+}
+
+## 012f: white_stained_glass
+data modify storage fetchr:registries items append value {\
+	id: "fetchr:white_stained_glass",\
+	item: {id: "minecraft:white_stained_glass"},\
+	translation: "block.minecraft.white_stained_glass",\
+	icon: "012f",\
+	categories: ["fetchr:sand"]\
+}
+
+## 0130: brown_banner
+data modify storage fetchr:registries items append value {\
+	id: "fetchr:brown_banner",\
+	item: {id: "minecraft:brown_banner"},\
+	translation: "block.minecraft.brown_banner",\
+	icon: "0130",\
+	categories: ["fetchr:wool"]\
 }
 
 ## 0131: amethyst_block
