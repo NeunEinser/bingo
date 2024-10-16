@@ -45,12 +45,12 @@ execute \
 	run data modify entity @s Item set value { id: "minecraft:barrier" }
 function fetchr:card_generation/generate_slot
 
-function neun_einser.math:random/next_full_int
+function neun_einser.math:random/next_full_int with storage tmp.fetchr:rand_data
 execute \
 	store result storage fetchr:card spawn_location int 1 \
 	run scoreboard players get $rand.out 91.math.io
 
-function neun_einser.math:random/next_full_int
+function neun_einser.math:random/next_full_int with storage tmp.fetchr:rand_data
 execute \
 	store result storage fetchr:card random_sequence_data.seed int 1 \
 	run scoreboard players get $rand.out 91.math.io
