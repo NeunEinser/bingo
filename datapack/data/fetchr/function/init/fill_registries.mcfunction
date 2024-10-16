@@ -777,7 +777,7 @@ data modify storage fetchr:registries items append value {\
 
 ## 003b: green_dye
 data modify storage fetchr:registries items append value {\
-	id: "fetchr:lime_dye",\
+	id: "fetchr:green_dye",\
 	item: {id: "minecraft:green_dye"},\
 	translation: "item.minecraft.green_dye",\
 	icon: "003b",\
