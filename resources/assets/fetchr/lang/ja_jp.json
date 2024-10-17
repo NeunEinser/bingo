@@ -1,6 +1,4 @@
 {
-	"fetchr.error.command_blocks_disabled": "このサーバでのコマンドブロックは無効化されています。server.propertiesファイルが%sで説明されている値にちゃんと設定されていることを確認してください。",
-	"fetchr.error.command_blocks_disabled.link": "ここ",
 	"fetchr.error.incompatible_minecraft_version.multiple_compatible": "サポートされていないバージョンのMinecraftを実行しています。このパックはMinecraftバージョン %s‐%s で互換性があります。",
 	"fetchr.error.incompatible_minecraft_version.single_compatible": "サポートされていないバージョンのMinecraftを実行しています。このパックはMinecraftバージョン %s で互換性があります。",
 	"fetchr.error.spigot_paper": "SpigotまたはPaperのバージョンを使用している可能性があります。PaperとSpigotはバニラの動作を変更し、Fetchrと互換性がありません。",

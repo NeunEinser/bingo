@@ -1,6 +1,4 @@
 {
-	"fetchr.error.command_blocks_disabled": "Els blocs de comandaments estan desactivats a aquest servidor. Per favor, assegurau-vos de què tots els valors de l'arxiu server.properties estiguin definits com es mostra %s.",
-	"fetchr.error.command_blocks_disabled.link": "aquí",
 	"fetchr.error.incompatible_minecraft_version.multiple_compatible": "Esteu utilitzant una versió de Minecraft incompatible. Aquest pack s'ha fet amb compatibilitat per les versions %s a %s de Minecraft",
 	"fetchr.error.incompatible_minecraft_version.single_compatible": "Esteu utilitzant una versió de Minecraft incompatible. Aquest pack s'ha fet amb compatibilitat per les versions %s de Minecraft",
 	"fetchr.error.spigot_paper": "Probablement estau emprant una versió de Spigot o Paper, els quals alteren el comportament del joc per defecte i són incompatibles amb Fetchr.",

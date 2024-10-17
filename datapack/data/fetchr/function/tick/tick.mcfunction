@@ -36,18 +36,6 @@ execute if entity @a[tag=fetchr.resourcepack_check, limit=1] run setblock 1 2 1 
 #NEUN_SCRIPT end
 #endregion
 
-# Command blocks enabled check
-execute if score $commandblocks_enabled fetchr.state matches 0 run effect give @a minecraft:blindness 2 255 true
-execute if score $commandblocks_enabled fetchr.state matches 0 run effect give @a minecraft:slowness 2 255 true
-execute if score $commandblocks_enabled fetchr.state matches 0 run effect give @a minecraft:jump_boost 2 128 true
-
-#NEUN_SCRIPT uncomment 1
-#execute if score $commandblocks_enabled fetchr.state matches 0 run tellraw @a {"translate": "fetchr.error.command_blocks_disabled", "fallback": "Command blocks are disabled on this server. Please make sure the server.properties file does have all mentioned values set as described %s.", "color": "red", "with": [{"translate": "fetchr.error.command_blocks_disabled.link", "fallback": "here", "color": "#00c3ff", "clickEvent": {"action": "open_url", "value": "https://gist.githubusercontent.com/NeunEinser/dac27cc76dbc83bdd1ea22a99cff3967/raw/{NEUN_SCRIPT:version}.properties"}}]}
-
-#NEUN_SCRIPT remove 1
-execute if score $commandblocks_enabled fetchr.state matches 0 run tellraw @a {"translate": "fetchr.error.command_blocks_disabled", "fallback": "Command blocks are disabled on this server. Please make sure the server.properties file does have all mentioned values set as described %s.", "color": "red", "with": [{"translate": "fetchr.error.command_blocks_disabled.link", "fallback": "here", "color": "#00c3ff", "clickEvent": {"action": "open_url", "value": "https://gist.githubusercontent.com/NeunEinser/dac27cc76dbc83bdd1ea22a99cff3967"}}]}
-execute if loaded 0 0 0 if score $commandblocks_enabled fetchr.state matches -1 run scoreboard players set $commandblocks_enabled fetchr.state 0
-
 # Loop depending on game state
 execute if entity @a[predicate=fetchr:is_in_lobby, limit=1] in fetchr:lobby run function fetchr:lobby/tick
 execute at @a[tag=fetchr.in_skybox, limit=1] as @e[type=minecraft:marker, tag=fetchr.spawn, distance=..12, limit=1] at @s run function fetchr:game/skybox/tick

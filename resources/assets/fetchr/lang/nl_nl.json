@@ -1,6 +1,4 @@
 {
-	"fetchr.error.command_blocks_disabled": "Opdrachtblokken zijn uitgeschakeld op deze server. Zorg ervoor dat het server.properties bestand alle vermelde waarden heeft ingesteld als beschreven %s.",
-	"fetchr.error.command_blocks_disabled.link": "hier",
 	"fetchr.logging.error": "FOUT",
 	"fetchr.setup.error.unknown_category": "Voorwerp %1$s heeft categorie %2$s, maar categorie %2$s kon niet worden gevonden.",
 	"fetchr.actionbar.wrong_resourcepack_error": "Incompatibele versie van het Fetchr bronpakket ingeschakeld.",

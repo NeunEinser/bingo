@@ -1,6 +1,4 @@
 {
-	"fetchr.error.command_blocks_disabled": "Командні блоки вимкнено на цьому сервері. Будь ласка, переконайтеся, що всі значення в файлі server.properties встановленні, як описано %s.",
-	"fetchr.error.command_blocks_disabled.link": "тут",
 	"fetchr.error.incompatible_minecraft_version.multiple_compatible": "Ви використовуєте непідтримувану версію Minecraft. Цей пакет сумісний з версіями Minecraft %s-%s",
 	"fetchr.error.incompatible_minecraft_version.single_compatible": "Ви використовуєте непідтримувану версію Minecraft. Цей пакет сумісний з версією Minecraft %s",
 	"fetchr.error.spigot_paper": "Ймовірно, ви використовуєте версію Spigot, або Paper. Paper та Spigot змінюють ванільну поведінку та несумісні з Fetchr.",

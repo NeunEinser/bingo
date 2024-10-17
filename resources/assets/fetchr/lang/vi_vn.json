@@ -1,6 +1,4 @@
 {
-	"fetchr.error.command_blocks_disabled": "Khối lệnh đã bị vô hiệu hóa ở máy chủ này. Hãy chắc chắn rằng tệp server.properties có tất cả giá trị được nhắc tới trong mô tả %s.",
-	"fetchr.error.command_blocks_disabled.link": "đây",
 	"fetchr.logging.error": "LỖI",
 	"fetchr.setup.error.unknown_category": "Đồ vật %1$s có danh mục %2$s, nhưng danh mục %2$s đã không được tìm thấy.",
 	"fetchr.actionbar.wrong_resourcepack_error": "Đã kích hoạt phiên bản không tương thích của gói tài nguyên Fetchr.",

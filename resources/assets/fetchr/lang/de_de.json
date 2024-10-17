@@ -1,6 +1,4 @@
 {
-	"fetchr.error.command_blocks_disabled": "Befehlsblöcke sind auf diesem Server deaktiviert. Bitte stelle sicher, dass in der server.properties-Datei alle Werte, die %s beinhaltet sind, korrekt gesetzt sind.",
-	"fetchr.error.command_blocks_disabled.link": "hier",
 	"fetchr.logging.error": "FEHLER",
 	"fetchr.setup.error.unknown_category": "Gegenstand %1$s hat Kategorie %2$s, die Kategorie %2$s kann allerdings nicht gefunden werden.",
 	"fetchr.actionbar.wrong_resourcepack_error": "Inkompatible Version des Fetchr Ressourcenpakets aktiviert.",

@@ -1,6 +1,4 @@
 {
-	"fetchr.error.command_blocks_disabled": "Blocos de comando estão desativados neste servidor. Certifique-se de que o arquivo server.properties tenha todos os valores mencionados definidos como descrito %s.",
-	"fetchr.error.command_blocks_disabled.link": "aqui",
 	"fetchr.error.incompatible_minecraft_version.multiple_compatible": "Você está usando uma versão não suportada do Minecraft. Este pacote é compatível com as versões %s-%s do Minecraft",
 	"fetchr.error.incompatible_minecraft_version.single_compatible": "Você está usando uma versão não suportada do Minecraft. Este pacote é compatível com a versão %s do Minecraft",
 	"fetchr.error.spigot_paper": "Parece que você está usando uma versão do Spigot ou Paper. Ambos alteram o comportamento do jogo e são incompatíveis com o Fetchr.",

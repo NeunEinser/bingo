@@ -1,6 +1,4 @@
 {
-	"fetchr.error.command_blocks_disabled": "Bloki poleceń są wyłączone na tym serwerze. Upewnij się, że plik server.properties ma wszystkie wymienione wartości ustawione tak jak opisano %s.",
-	"fetchr.error.command_blocks_disabled.link": "tutaj",
 	"fetchr.logging.error": "BŁĄD",
 	"fetchr.setup.error.unknown_category": "Przedmiot %1$s ma kategorię %2$s, ale kategoria %2$s nie została znaleziona .",
 	"fetchr.actionbar.wrong_resourcepack_error": "Niekompatybilna wersja paczki zasobów Fetchr włączona.",

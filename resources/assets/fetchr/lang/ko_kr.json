@@ -1,6 +1,4 @@
 {
-	"fetchr.error.command_blocks_disabled": "명령 블록은 이 서버에서 비활성화되어 있습니다. server.properties이 %s에서 설명된 값으로 제대로 설정되어 있는지 확인해 주세요.",
-	"fetchr.error.command_blocks_disabled.link": "여기",
 	"fetchr.error.incompatible_minecraft_version.multiple_compatible": "지원되지 않는 버전의 Minecraft를 실행하고 있습니다. 이 팩은 %s-%s 버전의 Minecraft를 위해 제작되었습니다.",
 	"fetchr.error.incompatible_minecraft_version.single_compatible": "지원되지 않는 버전의 Minecraft를 실행하고 있습니다. 이 팩은 %s 버전의 Minecraft를 위해 제작되었습니다.",
 	"fetchr.error.spigot_paper": "Spigot 또는 Paper를 통해 실행하는 것으로 보입니다. Paper와 Spigot은 바닐라를 변형하여 Fetchr와 호환되지 않습니다.",

@@ -835,14 +835,6 @@ forceload add 0 0
 
 	#region score holders
 		#>
-		# Whether command blocks are enabled
-		#
-		# @internal
-		#declare score_holder $commandblocks_enabled
-		scoreboard players set $commandblocks_enabled fetchr.state -1
-		forceload add 0 0
-		function fetchr:init/command_block_check
-		#>
 		# The current game state
 		# 0 = Lobby / Not in game
 		# 1 = Starting / chunk pre-gen

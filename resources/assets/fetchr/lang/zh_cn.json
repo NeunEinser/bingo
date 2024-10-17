@@ -1,6 +1,4 @@
 {
-	"fetchr.error.command_blocks_disabled": "命令方块在此服务器上已被禁用。请确保“server.properties”文件已按照%s描述设置为指定的值。",
-	"fetchr.error.command_blocks_disabled.link": "此处",
 	"fetchr.error.incompatible_minecraft_version.multiple_compatible": "您正在使用不受支持的Minecraft版本。本数据包兼容 %s-%s 版本",
 	"fetchr.error.incompatible_minecraft_version.single_compatible": "您正在使用不受支持的Minecraft版本。本数据包兼容 %s 版本",
 	"fetchr.error.spigot_paper": "您可能正在使用Spigot或Paper作为服务端。Paper和Spigot更改原版的行为，与 Fetchr 不兼容。",

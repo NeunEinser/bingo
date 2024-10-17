@@ -1,9 +1,6 @@
 {
 	"fetchr.technical.detect_multiplayer": "DoNotTranslateThis{NEUN_SCRIPT:rp_version}",
 	"fetchr.technical.resourcepack_version_{NEUN_SCRIPT:rp_version}": "%s",
-
-	"fetchr.error.command_blocks_disabled": "Command blocks are disabled on this server. Please make sure the server.properties file does have all mentioned values set as described %s.",
-	"fetchr.error.command_blocks_disabled.link": "here",
 	
 	"fetchr.error.incompatible_minecraft_version.multiple_compatible": "You are using an unsupported version of Minecraft. This pack has been made compatible for Minecraft versions %s-%s",
 	"fetchr.error.incompatible_minecraft_version.single_compatible": "You are using an unsupported version of Minecraft. This pack has been made compatible for Minecraft version %s",
