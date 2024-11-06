@@ -37,6 +37,14 @@ execute \
 
 $scoreboard players set $item_detect.slot fetchr.tmp $(slot_id)
 
+# Update item count
+execute \
+	store result score $item_detect/announce.items fetchr.tmp \
+	run data get storage fetchr:card teams[-1].item_count
+execute \
+	store result storage fetchr:card teams[-1].item_count int 1 \
+	run scoreboard players add $item_detect/announce.items fetchr.tmp 1
+
 function neun_einser.timer:store_current_time
 $tellraw @a [\
 	"[",\

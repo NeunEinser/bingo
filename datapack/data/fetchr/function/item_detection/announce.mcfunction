@@ -24,11 +24,6 @@ execute as @a[tag=fetchr.in_current_team] at @s run playsound minecraft:block.en
 scoreboard players reset @s fetchr.has_item
 tag @s add fetchr.clear
 
-# Update item count
-execute store result score $item_detect/announce.items fetchr.tmp run data get storage fetchr:card teams[-1].item_count
-scoreboard players add $item_detect/announce.items fetchr.tmp 1
-execute store result storage fetchr:card teams[-1].item_count int 1 run scoreboard players get $item_detect/announce.items fetchr.tmp
-
 $scoreboard players operation $$(color) fetchr.neutral_display = $item_detect/announce.items fetchr.tmp
 $scoreboard players operation $$(color) fetchr.black_display = $item_detect/announce.items fetchr.tmp
 $scoreboard players operation $$(color) fetchr.blue_display = $item_detect/announce.items fetchr.tmp
