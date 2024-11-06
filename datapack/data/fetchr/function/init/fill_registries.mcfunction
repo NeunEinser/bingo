@@ -419,7 +419,8 @@ data modify storage fetchr:registries items append value {\
 	item: {id: "minecraft:arrow"},\
 	translation: "item.minecraft.arrow",\
 	icon: "0012",\
-	categories: ["fetchr:skeleton_drops"]\
+	categories: ["fetchr:skeleton_drops"],\
+	weight: 2\
 }
 
 ## 0013: ender_pearl
@@ -429,7 +430,7 @@ data modify storage fetchr:registries items append value {\
 	translation: "item.minecraft.ender_pearl",\
 	icon: "0013",\
 	categories: ["fetchr:nighttime_mob_drops"],\
-	weight: 3\
+	weight: 6\
 }
 
 ## 0014: slime_ball
@@ -438,7 +439,8 @@ data modify storage fetchr:registries items append value {\
 	item: {id: "minecraft:slime_ball"},\
 	translation: "item.minecraft.slime_ball",\
 	icon: "0014",\
-	categories: ["fetchr:nighttime_mob_drops"]\
+	categories: ["fetchr:nighttime_mob_drops"],\
+	weight: 2\
 }
 
 ## 0015: firework_rocket
@@ -751,7 +753,8 @@ data modify storage fetchr:registries items append value {\
 	item: {id: "minecraft:bone"},\
 	translation: "item.minecraft.bone",\
 	icon: "0038",\
-	categories: ["fetchr:skeleton_drops"]\
+	categories: ["fetchr:skeleton_drops"],\
+	weight: 2\
 }
 
 ## 0039: ink_sac
@@ -907,7 +910,8 @@ data modify storage fetchr:registries items append value {\
 	item: {id: "minecraft:lead"},\
 	translation: "item.minecraft.lead",\
 	icon: "004a",\
-	categories: ["fetchr:nighttime_mob_drops"]\
+	categories: ["fetchr:nighttime_mob_drops"],\
+	weight: 2\
 }
 
 ## 004b: detector_rail
@@ -1247,6 +1251,18 @@ data modify storage fetchr:registries items append value {\
 	categories: ["fetchr:armadillo"]\
 }
 
+## 0070: poison_arrow
+data modify storage fetchr:registries items append value {\
+	id: "fetchr:poison_arrow",\
+	item: {\
+		id: "minecraft:tipped_arrow",\
+		components: {"minecraft:potion_contents": {potion: "minecraft:poison"}}\
+	},\
+	translation: "item.minecraft.tipped_arrow.effect.poison",\
+	icon: "0070",\
+	categories: [{id: "fetchr:skeleton_drops"}, {id: "fetchr:nighttime_mob_drops", weight: 3}]\
+}
+
 ## 0100: iron_block
 data modify storage fetchr:registries items append value {\
 	id: "fetchr:iron_block",\
@@ -1329,7 +1345,8 @@ data modify storage fetchr:registries items append value {\
 	item: {id: "minecraft:bone_block"},\
 	translation: "block.minecraft.bone_block",\
 	icon: "0108",\
-	categories: ["fetchr:skeleton_drops"]\
+	categories: ["fetchr:skeleton_drops"],\
+	weight: 2\
 }
 
 ## 0109: blast_furnace
@@ -1513,7 +1530,8 @@ data modify storage fetchr:registries items append value {\
 	item: {id: "minecraft:sticky_piston"},\
 	translation: "block.minecraft.sticky_piston",\
 	icon: "011c",\
-	categories: ["fetchr:piston", "fetchr:nighttime_mob_drops"]\
+	categories: ["fetchr:piston", "fetchr:nighttime_mob_drops"],\
+	weight: 2\
 }
 
 ## 011d: orange_concrete
