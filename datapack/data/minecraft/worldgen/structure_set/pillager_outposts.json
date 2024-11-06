@@ -2,7 +2,7 @@
 	"placement": {
 		"type": "minecraft:random_spread",
 		"exclusion_zone": {
-			"chunk_count": 10,
+			"chunk_count": 7,
 			"other_set": "minecraft:villages"
 		},
 		"frequency": 0.4,
