@@ -5,7 +5,7 @@
 	"target": "dist",
 	"vars": {
 		"version_long_name": "5.1.4 Beta 1",
-		"rp_version": "24",
+		"rp_version": "25",
 		"realms": false
 	},
 	"remove_file_types": [

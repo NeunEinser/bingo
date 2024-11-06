@@ -1,0 +1,11 @@
+{
+	"parent": "minecraft:block/white_stained_glass",
+	"overrides": [
+		{
+			"predicate": {
+				"custom_model_data": 91
+			},
+			"model": "fetchr:item/invisible"
+		}
+	]
+}
