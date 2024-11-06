@@ -1,10 +1,10 @@
 {
 	"name": "Fetchr",
-	"version": "5.1.4-beta1",
+	"version": "5.1.4-pre1",
 	"mc": "1.21",
 	"target": "dist",
 	"vars": {
-		"version_long_name": "5.1.4 Beta 1",
+		"version_long_name": "5.1.4 Pre-Release 1",
 		"rp_version": "25",
 		"realms": false
 	},
@@ -23,14 +23,6 @@
 	},
 	"world": {
 		"path": "world"
-	},
-	"versions": {
-		"realms": {
-			"vars": {
-				"realms": true,
-				"version_long_name": "5.1.4 (Realms)"
-			}
-		}
 	},
 	"include": [
 		"server.properties"
