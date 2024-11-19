@@ -4,16 +4,16 @@
 # Allows for unescaped quotation marks or un-stringified nbt.
 #
 # @public
+# @context dimension fetchr:lobby
 # @input storage io.fetchr:util concat_strings
 # @outputs storage io.fetchr:util string
 
-execute in fetchr:lobby run \
-	data modify block 7 0 7 front_text.messages set value [\
-		'{"storage": "io.fetchr:util", "nbt": "concat_strings.first"}',\
-		'{"storage": "io.fetchr:util", "nbt": "concat_strings.second"}',\
-		'""',\
-		'""'\
-	]
+data modify block 7 0 7 front_text.messages set value [\
+	'{"storage": "io.fetchr:util", "nbt": "concat_strings.first"}',\
+	'{"storage": "io.fetchr:util", "nbt": "concat_strings.second"}',\
+	'""',\
+	'""'\
+]
 data modify storage io.fetchr:util string set string block 7 0 7 front_text.messages[0] 1
 execute store result score $util.until fetchr.tmp run data get storage io.fetchr:util string
 scoreboard players remove $util.until fetchr.tmp 1

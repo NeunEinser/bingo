@@ -29,6 +29,7 @@ kill @e[type=minecraft:marker, tag=fetchr.pos_reader]
 summon minecraft:marker 0 0 0 {Tags: ["fetchr.pos_reader"]}
 execute in fetchr:default run summon minecraft:marker 0 0 0 {Tags: ["fetchr.pos_reader"]}
 
+setblock 6 0 7 minecraft:barrel
 setblock 7 0 7 minecraft:oak_sign
 
 execute if score $is_multiplayer fetchr.state matches 1 at @e[tag=fetchr.multiplayer_mangrove_button_north] run setblock ~ ~ ~ minecraft:mangrove_button[facing=north]

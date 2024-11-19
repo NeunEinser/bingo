@@ -1,4 +1,4 @@
-#> fetchr:item_detection/check_and_announce
+#> fetchr:item_detection/check_and_announce/2
 #
 # Checks if another teammate got the item in the same tick, and announces the
 # item get otherwise
@@ -12,12 +12,46 @@
 $execute \
 	unless items entity @s container.* $(command_argument) \
 	unless items entity @s armor.* $(command_argument) \
-	unless items entity @s player.cursor $(command_argument) \
+	unless items entity @s weapon.offhand $(command_argument) \
 	unless items entity @s player.crafting.* $(command_argument) \
+	unless items entity @s player.cursor $(command_argument) \
 	run return fail
 
+scoreboard players set $item_detect.found_item fetchr.tmp 0
+data remove storage tmp.fetchr:item_detect slot
+
+$execute \
+	if items entity @s weapon.* $(command_argument) \
+	run function fetchr:item_detection/find_inventory_item/weapon_slots \
+		with storage fetchr:card slots[$(slot_id)]
+$execute \
+	if score $item_detect.found_item fetchr.tmp matches 0 \
+	store success score $item_detect.found_item fetchr.tmp \
+	if items entity @s player.cursor $(command_argument) \
+	run data modify storage tmp.fetchr:item_detect slot set value "player.cursor"
+$execute \
+	if score $item_detect.found_item fetchr.tmp matches 0 \
+	if items entity @s player.crafting.* $(command_argument) \
+	run function fetchr:item_detection/find_inventory_item/crafting_slots \
+		with storage fetchr:card slots[$(slot_id)]
+$execute \
+	if score $item_detect.found_item fetchr.tmp matches 0 \
+	if items entity @s hotbar.* $(command_argument) \
+	run function fetchr:item_detection/find_inventory_item/hotbar_slots \
+		with storage fetchr:card slots[$(slot_id)]
+$execute \
+	if score $item_detect.found_item fetchr.tmp matches 0 \
+	if items entity @s inventory.* $(command_argument) \
+	run function fetchr:item_detection/find_inventory_item/inventory_slots \
+		with storage fetchr:card slots[$(slot_id)]
+$execute \
+	if score $item_detect.found_item fetchr.tmp matches 0 \
+	if items entity @s armor.* $(command_argument) \
+	run function fetchr:item_detection/find_inventory_item/armor_slots \
+		with storage fetchr:card slots[$(slot_id)]
+
 function fetchr:util/find_player_team
-$tag @a[tag=fetchr.in_current_team] add fetchr.has_item$(slot_id)
+$tag @a[tag=fetchr.in_current_team] add fetchr.has_slot$(slot_id)
 
 scoreboard players set $item_detect/set_overlay.success fetchr.tmp 0
 $execute \
@@ -46,20 +80,11 @@ execute \
 	run scoreboard players add $item_detect/announce.items fetchr.tmp 1
 
 function neun_einser.timer:store_current_time
-$tellraw @a [\
-	"[",\
-	{"text":"≡", "color":"#00c3ff", "clickEvent":{"action":"run_command", "value":"/trigger fetchr.menu"}, "hoverEvent":{"action":"show_text", "contents":{"translate": "fetchr.game.menu.hover_text"}}},\
-	"] ",\
-	{\
-		"translate": "fetchr.got_item",\
-		"with": [\
-			{"score": {"name": "$item_detect/announce.items", "objective": "fetchr.tmp"}},\
-			{"storage": "neun_einser.timer:display", "nbt": "\"hh:mm:ss.s\"", "interpret": true},\
-			{"selector": "@s"},\
-			{"translate": "$(translation)"}\
-		]\
-	}\
-]
+$data \
+	modify storage tmp.fetchr:item_detect translation \
+	set from storage fetchr:card slots[$(slot_id)].translation
+function fetchr:item_detection/handle_item_from_inventory/exec \
+	with storage tmp.fetchr:item_detect
 
 data modify storage io.fetchr:find_team current_team.color \
 	set string storage fetchr:card teams[-1].id 7
@@ -76,4 +101,3 @@ $data modify storage fetchr:card slots[$(slot_id)].current_display \
 	set from block 7 0 7 front_text.messages[0]
 
 $data modify storage fetchr:card slots[$(slot_id)].item_collected set value true
-$clear @s $(command_argument) 1
