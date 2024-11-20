@@ -13,6 +13,7 @@ execute if entity @s[tag=fetchr.sign_north] run setblock ~ ~ ~ minecraft:warped_
 execute if entity @s[tag=fetchr.sign_east] run setblock ~ ~ ~ minecraft:warped_wall_sign[facing=east]
 execute if entity @s[tag=fetchr.sign_south] run setblock ~ ~ ~ minecraft:warped_wall_sign[facing=south]
 execute if entity @s[tag=fetchr.sign_west] run setblock ~ ~ ~ minecraft:warped_wall_sign[facing=west]
+execute if entity @s[tag=fetchr.standing_sign_south] run setblock ~ ~ ~ minecraft:warped_sign[rotation=0]
 execute if entity @s[tag=fetchr.danger_sign_east] run setblock ~ ~ ~ minecraft:crimson_wall_sign[facing=east]
 
 data modify block ~ ~ ~ {} merge from entity @s data

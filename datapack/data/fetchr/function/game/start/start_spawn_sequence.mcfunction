@@ -20,10 +20,12 @@ teleport @a[predicate=fetchr:is_in_game] ~ ~ ~
 tag @a remove fetchr.in_skybox
 effect give @a[predicate=fetchr:is_in_game] minecraft:invisibility infinite 1 true
 #NEUN_SCRIPT until 49
-#execute as @a run attribute @s generic.gravity base set 0.08
+#execute as @a run attribute @s minecraft:player.entity_interaction_range \
+	modifier remove fetchr:card_item_frame_range
 #NEUN_SCRIPT end
 #NEUN_SCRIPT since 49
-execute as @a run attribute @s gravity base set 0.08
+execute as @a run attribute @s minecraft:entity_interaction_range \
+	modifier remove fetchr:card_item_frame_range
 #NEUN_SCRIPT end
 
 execute in fetchr:lobby run function fetchr:game/start/init_teams

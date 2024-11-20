@@ -87,6 +87,15 @@ effect give @s minecraft:saturation infinite 255 true
 effect give @s minecraft:resistance infinite 255 true
 effect give @s minecraft:weakness infinite 255 true
 
+#NEUN_SCRIPT until 49
+#attribute @s minecraft:player.entity_interaction_range \
+	modifier add fetchr:card_item_frame_range 20 add_value
+#NEUN_SCRIPT end
+#NEUN_SCRIPT since 49
+attribute @s minecraft:entity_interaction_range \
+	modifier add fetchr:card_item_frame_range 20 add_value
+#NEUN_SCRIPT end
+
 tag @s remove fetchr.has_slot0
 tag @s remove fetchr.has_slot1
 tag @s remove fetchr.has_slot2

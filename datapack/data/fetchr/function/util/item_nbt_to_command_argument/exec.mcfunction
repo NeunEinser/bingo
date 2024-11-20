@@ -13,7 +13,9 @@ data \
 	set from storage io.fetchr:util item.components
 
 data modify storage tmp.fetchr:util test_string set value ""
-function fetchr:util/item_nbt_to_command_argument/iter_components
+execute \
+	if data storage io.fetchr:util item.components \
+	run function fetchr:util/item_nbt_to_command_argument/iter_components
 
 execute \
 	unless data storage tmp.fetchr:util {test_string: ""} \

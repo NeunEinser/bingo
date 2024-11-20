@@ -22,6 +22,15 @@ tag @s remove fetchr.spectator
 tag @s remove fetchr.in_skybox
 scoreboard players set @s fetchr.update_hud 1
 
+#NEUN_SCRIPT until 49
+#attribute @s minecraft:player.entity_interaction_range \
+	modifier add fetchr:card_item_frame_range 20 add_value
+#NEUN_SCRIPT end
+#NEUN_SCRIPT since 49
+attribute @s minecraft:entity_interaction_range \
+	modifier add fetchr:card_item_frame_range 20 add_value
+#NEUN_SCRIPT end
+
 gamemode creative
 gamemode survival
 scoreboard players enable @s fetchr.teleport_all

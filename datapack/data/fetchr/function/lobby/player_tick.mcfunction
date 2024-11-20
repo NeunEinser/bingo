@@ -24,31 +24,6 @@ execute \
 	align y \
 	if block ~ ~1 ~ minecraft:void_air \
 	run tp ~ ~1 ~
-#NEUN_SCRIPT until 49
-#execute \
-	if block ~ ~ ~ minecraft:void_air \
-	run attribute @s generic.gravity base set 0
-#execute \
-	if block ~ ~ ~-1 minecraft:void_air \
-	run attribute @s generic.gravity base set 0
-#execute \
-	unless block ~ ~ ~ minecraft:void_air \
-	unless block ~ ~ ~-1 minecraft:void_air \
-	run attribute @s generic.gravity base set 0.08
-#NEUN_SCRIPT end
-#NEUN_SCRIPT since 49
-execute \
-	if block ~ ~ ~ minecraft:void_air \
-	run attribute @s gravity base set 0
-execute \
-	if block ~ ~ ~-1 minecraft:void_air \
-	run attribute @s gravity base set 0
-execute \
-	unless block ~ ~ ~ minecraft:void_air \
-	unless block ~ ~ ~-1 minecraft:void_air \
-	run attribute @s gravity base set 0.08
-#NEUN_SCRIPT end
-
 
 # generate card from seed
 execute if score @s fetchr.seed matches -2147483648.. unless score @s fetchr.seed matches 0 run function fetchr:card_generation/generate_from_seed
