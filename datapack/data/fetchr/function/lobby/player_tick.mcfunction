@@ -19,12 +19,6 @@ execute if score $is_multiplayer fetchr.state matches 0 run gamemode survival @s
 execute unless score @s fetchr.pref matches 0 run function fetchr:preferences/show
 scoreboard players enable @s fetchr.pref
 
-# Float in front of card display
-execute \
-	align y \
-	if block ~ ~1 ~ minecraft:void_air \
-	run tp ~ ~1 ~
-
 # generate card from seed
 execute if score @s fetchr.seed matches -2147483648.. unless score @s fetchr.seed matches 0 run function fetchr:card_generation/generate_from_seed
 scoreboard players reset @s fetchr.seed
