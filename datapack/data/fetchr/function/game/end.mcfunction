@@ -12,7 +12,7 @@ schedule clear fetchr:game/start/pre_gen/schedule_entity_check
 
 execute if score $game_state fetchr.state matches 3 as @a[predicate=fetchr:is_in_game] run function fetchr:util/go_to_lobby
 
-execute unless score $game_state fetchr.state matches 3 at @e[type=minecraft:marker, tag=fetchr.spawn, limit=1] run fill ~-9 ~-2 ~-9 ~10 ~4 ~10 minecraft:black_concrete outline
+execute unless score $game_state fetchr.state matches 3 at @e[type=minecraft:marker, tag=fetchr.spawn, limit=1] run fill ~-9 ~-2 ~-9 ~10 ~5 ~10 minecraft:black_concrete outline
 execute unless score $game_state fetchr.state matches 3 at @e[type=minecraft:marker, tag=fetchr.spawn, limit=1] run setblock ~ ~-2 ~ minecraft:sea_lantern
 execute at @e[type=minecraft:marker, tag=fetchr.spawn, limit=1] run kill @e[type=!minecraft:player, type=!minecraft:item_frame, tag=!fetchr.skybox_button, distance=..10]
 scoreboard players set $pregen_status fetchr.state 0
