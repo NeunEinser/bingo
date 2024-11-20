@@ -60,25 +60,13 @@ def main():
 
 	requested_rp_sha = []
 	if resourcepack_config is not None:
-		rp_path = resourcepack_config.get("path")
-		if rp_path is None:
-			print("invalid reourcepack config")
-			return;
-		requested_rp_sha.extend(iterate_files(config, rp_path,  f"{target}{os.sep}tmp{os.sep}resourcepack", mc_version_info))
+		requested_rp_sha.extend(iterate_files(config, resourcepack_config, f"{target}{os.sep}tmp{os.sep}resourcepack", mc_version_info))
 
 	if datapack_config is not None:
-		rp_path = datapack_config.get("path")
-		if rp_path is None:
-			print("invalid datapack config")
-			return;
-		requested_rp_sha.extend(iterate_files(config, rp_path,  f"{target}{os.sep}tmp{os.sep}datapack", mc_version_info))
+		requested_rp_sha.extend(iterate_files(config, datapack_config, f"{target}{os.sep}tmp{os.sep}datapack", mc_version_info))
 
 	if world_config is not None:
-		world_path = world_config.get("path")
-		if world_path is None:
-			print("invalid config")
-			return;
-		requested_rp_sha.extend(iterate_files(config, world_path,  f"{target}{os.sep}tmp{os.sep}world", mc_version_info))
+		requested_rp_sha.extend(iterate_files(config, world_config, f"{target}{os.sep}tmp{os.sep}world", mc_version_info))
 
 	includes = config.get("include")
 	if includes != None:
@@ -140,16 +128,23 @@ def main():
 			for path in includes:
 				copy_file_or_dir(f"{target}{os.sep}tmp{os.sep}{path}", f"{target}{os.sep}{path}")
 	
-	#shutil.rmtree(f"{target}{os.sep}tmp")
+	shutil.rmtree(f"{target}{os.sep}tmp")
 	print(f"minified {lines} lines")
 
-def iterate_files(config: dict, source: str, target: str, mc_version_info: dict | None):
+def iterate_files(config: dict, pack_config: dict, target: str, mc_version_info: dict | None):
 	requested_rp_sha = []
 	pack_formats_for_overlay = []
 	remove_extensions = config.get("remove_file_types")
 	versionDict: dict | None = config.get("versions")
 	if versionDict == None:
 		versionDict = {}
+	excludes: list[str] | None = pack_config.get("exclude")
+	if excludes == None:
+		excludes = []
+	source = pack_config.get("path")
+	if source is None:
+		print("invalid datapack config")
+		return;
 	versions:list[tuple[str,dict|None]] = list(versionDict.items())
 	versions.insert(0, ("", None))
 
@@ -163,13 +158,17 @@ def iterate_files(config: dict, source: str, target: str, mc_version_info: dict 
 
 	for directory, _, files in os.walk(source):
 		for file_name in files:
+			relative_path = f"{directory.removeprefix(source)}"
+			file_path = f"{relative_path}{os.sep}{file_name}"
+			print(file_path)
+			if any(file_path.startswith(f"/{exclude}") for exclude in excludes):
+				continue
 
 			for version, override in versions:
 				version_config = config.copy()
 				if override != None:
 					dict_apply(version_config, override)
 				
-				relative_path = f"{directory.removeprefix(source)}"
 				if version:
 					out_root = f"{target}-{version}"
 				else:
@@ -177,7 +176,7 @@ def iterate_files(config: dict, source: str, target: str, mc_version_info: dict 
 				out_dir = f"{out_root}{relative_path}"
 				out_path = f"{out_dir}{os.sep}{file_name}"
 				
-				file_path = f"{source}{relative_path}{os.sep}{file_name}"
+				file_path = f"{source}{file_path}"
 				print(out_path)
 
 				if not file_name.endswith(remove_extensions):
