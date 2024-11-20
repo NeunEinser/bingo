@@ -8,8 +8,8 @@
 # @within tag/function minecraft:tick
 # @handles #minecraft:tick
 
-#NEUN_SCRIPT since 58
-#tellraw @a {"translate": "fetchr.error.incompatible_minecraft_version.multiple_compatible", "color": "red", "with": ["1.21.1", "1.21.3"]}
+#NEUN_SCRIPT since 61
+#tellraw @a {"translate": "fetchr.error.incompatible_minecraft_version.multiple_compatible", "color": "red", "with": ["1.21.1", "1.21.4-pre1"]}
 #NEUN_SCRIPT end
 function fetchr:tick/spigot
 function neun_einser.timer:store_current_time
