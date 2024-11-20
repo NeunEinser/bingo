@@ -68,3 +68,7 @@ data \
 
 function fetchr:item_detection/handle_item_from_inventory/send_chat_message \
 	with storage tmp.fetchr:item_detect
+
+execute \
+	if data storage tmp.fetchr:item_detect inventory[0] \
+	run function fetchr:item_detection/handle_item_from_inventory/explode_inner_inventory

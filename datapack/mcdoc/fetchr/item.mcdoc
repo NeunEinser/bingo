@@ -1,5 +1,4 @@
 use ::java::server::world::item::SingleItem
-use ::java::server::world::item::DataComponentPatch
 use ::java::data::advancement::predicate::ItemSubPredicate
 
 use ::fetchr::storages::registry::CategroyRegistryData

@@ -5,6 +5,9 @@
 # @within
 # 	function fetchr:init/items/first_pass
 
+data \
+	modify storage tmp.fetchr:init items[-1].command_argument \
+	set from storage tmp.fetchr:init items[-1].item.id
 data modify storage tmp.fetchr:init tests set from storage tmp.fetchr:init items[-1].item_tests
 
 data modify storage tmp.fetchr:init test_string set value ""

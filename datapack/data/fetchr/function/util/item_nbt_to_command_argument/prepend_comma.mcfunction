@@ -1,9 +1,9 @@
-#> fetchr:init/items/set_item_command_argument/from_components/prepend_comma
+#> fetchr:util/item_nbt_to_command_argument/prepend_comma
 #
 # Prepends a comma to the current io.fetchr:util string.
 #
 # @within
-# 	function fetchr:init/items/set_item_command_argument/**
+# 	function fetchr:util/item_nbt_to_command_argument/**
 # @input io.fetchr:util string
 # @output io.fetchr:util string
 

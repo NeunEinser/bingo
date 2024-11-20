@@ -1,7 +1,12 @@
+use ::java::server::world::item::SingleItem
+use ::java::server::world::item::DataComponentPatch
+
 dispatch minecraft:storage[io.fetchr:util] to struct {
 	nbt?: any ,
 	"string"?: string ,
 	concat_strings?: ConcatStringsData,
+	item: SingleItem,
+	command_argument: #[item] string,
 }
 
 dispatch minecraft:storage[tmp.fetchr:util] to struct {
@@ -14,6 +19,13 @@ dispatch minecraft:storage[tmp.fetchr:util] to struct {
 		char?: string @1,
 		start: int,
 		end: int,
+	},
+	components?: DataComponentPatch<minecraft:item_component[%fallback]>,
+	test_string?: string,
+	inner_test_string?: string,
+	inner_snbt?: struct { snbt: string },
+	component?: struct {
+		name: #[id="data_component_type"] string,
 	},
 }
 

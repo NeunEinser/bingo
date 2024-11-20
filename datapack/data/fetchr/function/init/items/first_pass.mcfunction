@@ -16,11 +16,9 @@ function fetchr:init/items/normalize_categories
 data modify storage tmp.fetchr:init item_categories set from storage tmp.fetchr:init items[-1].categories
 function fetchr:init/items/update_category_total_weight with storage tmp.fetchr:init item_categories[-1]
 
-data modify storage tmp.fetchr:init items[-1].command_argument set from storage tmp.fetchr:init items[-1].item.id
 execute \
-	if data storage tmp.fetchr:init items[-1].item.components \
 	unless data storage tmp.fetchr:init items[-1].item_tests \
-	run function fetchr:init/items/set_item_command_argument/from_components/exec
+	run function fetchr:init/items/set_item_command_argument/from_components
 execute \
 	if data storage tmp.fetchr:init items[-1].item_tests \
 	run function fetchr:init/items/set_item_command_argument/from_tests/exec
