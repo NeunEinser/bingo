@@ -1780,22 +1780,22 @@ data modify storage fetchr:registries items append value {\
 }
 
 #NEUN_SCRIPT since 58
-# 0132: chiseled_resin_bricks
+# 0133: chiseled_resin_bricks
 data modify storage fetchr:registries items append value {\
 	id: "fetchr:chiseled_resin_bricks",\
 	item: {id: "minecraft:chiseled_resin_bricks"},\
 	translation: "block.minecraft.chiseled_resin_bricks",\
-	icon: "0132",\
+	icon: "0133",\
 	categories: ["fetchr:pale_garden"],\
 	weight: 2\
 }
 
-# 0133: creaking_heart
+# 0134: creaking_heart
 data modify storage fetchr:registries items append value {\
 	id: "fetchr:creaking_heart",\
 	item: {id: "minecraft:creaking_heart"},\
 	translation: "block.minecraft.creaking_heart",\
-	icon: "0133",\
+	icon: "0134",\
 	categories: ["fetchr:pale_garden"],\
 	weight: 2\
 }
