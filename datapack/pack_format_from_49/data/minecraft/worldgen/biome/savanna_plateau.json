@@ -1,11 +1,9 @@
 {
-	"carvers": {
-		"air": [
-			"minecraft:cave",
-			"minecraft:cave_extra_underground",
-			"minecraft:canyon"
-		]
-	},
+	"carvers": [
+		"minecraft:cave",
+		"minecraft:cave_extra_underground",
+		"minecraft:canyon"
+	],
 	"downfall": 0.0,
 	"effects": {
 		"fog_color": 12638463,
@@ -138,7 +136,19 @@
 				"type": "minecraft:armadillo",
 				"maxCount": 3,
 				"minCount": 2,
-				"weight": 52
+				"weight": 68
+			},
+			{
+				"type": "minecraft:llama",
+				"maxCount": 4,
+				"minCount": 4,
+				"weight": 8
+			},
+			{
+				"type": "minecraft:wolf",
+				"maxCount": 8,
+				"minCount": 4,
+				"weight": 8
 			}
 		],
 		"misc": [],

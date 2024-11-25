@@ -1,11 +1,9 @@
 {
-	"carvers": {
-		"air": [
-			"minecraft:cave",
-			"minecraft:cave_extra_underground",
-			"minecraft:canyon"
-		]
-	},
+	"carvers": [
+		"minecraft:cave",
+		"minecraft:cave_extra_underground",
+		"minecraft:canyon"
+	],
 	"downfall": 0.0,
 	"effects": {
 		"fog_color": 12638463,
@@ -72,10 +70,9 @@
 		],
 		[
 			"minecraft:glow_lichen",
-			"minecraft:patch_tall_grass",
-			"minecraft:trees_savanna",
-			"minecraft:flower_warm",
-			"minecraft:patch_grass_savanna",
+			"minecraft:trees_windswept_savanna",
+			"minecraft:flower_default",
+			"minecraft:patch_grass_normal",
 			"minecraft:brown_mushroom_normal",
 			"minecraft:red_mushroom_normal",
 			"minecraft:patch_sugar_cane",
