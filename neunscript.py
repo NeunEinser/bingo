@@ -145,6 +145,44 @@ def iterate_files(config: dict, pack_config: dict, target: str, mc_version_info:
 	if source is None:
 		print("invalid datapack config")
 		return;
+	main_pack_format = None
+	min_pack_format = None
+	max_pack_format = None
+	existing_overlays = []
+	if os.path.isfile(f"{source}{os.sep}pack.mcmeta"):
+		with open(f"{source}{os.sep}pack.mcmeta") as file:
+			pack_format: dict[str, Any] = json.loads(file.read())
+			main_pack_format: str = pack_format["pack"]["pack_format"]
+			min_pack_format = main_pack_format
+			max_pack_format = main_pack_format
+			supported_formats: dict[str, int] | list[int] | None = pack_format["pack"].get("supported_formats")
+			if supported_formats is not None:
+				if isinstance(supported_formats, dict):
+					min_pack_format = supported_formats["min_inclusive"]
+					max_pack_format = supported_formats["max_inclusive"]
+				else:
+					min_pack_format = min(supported_formats)
+					max_pack_format = max(supported_formats)
+				if min_pack_format < 16 and main_pack_format >= 16:
+					main_pack_format = 15
+			overlays: dict[str, list[dict[str, Any]]] | None = pack_format.get("overlays")
+			if overlays is not None:
+				for overlay in overlays["entries"]:
+					min_format = 0
+					max_format = 2**31-1
+					formats: dict[str, int] | list[int] = overlay.get("formats")
+					if (isinstance(formats, dict)):
+						min_format = formats["min_inclusive"]
+						max_format = formats["max_inclusive"]
+					else:
+						min_format = min(formats)
+						max_format = max(formats)
+					existing_overlays.append({
+						"dir": overlay["directory"],
+						"min": min_format,
+						"max": max_format
+					})
+
 	versions:list[tuple[str,dict|None]] = list(versionDict.items())
 	versions.insert(0, ("", None))
 
@@ -160,7 +198,6 @@ def iterate_files(config: dict, pack_config: dict, target: str, mc_version_info:
 		for file_name in files:
 			relative_path = f"{directory.removeprefix(source)}"
 			file_path = f"{relative_path}{os.sep}{file_name}"
-			print(file_path)
 			if any(file_path.startswith(f"/{exclude}") for exclude in excludes):
 				continue
 
@@ -204,16 +241,22 @@ def iterate_files(config: dict, pack_config: dict, target: str, mc_version_info:
 							if file_name.endswith(".json") or file_name.endswith(".mcmeta"):
 								file_content = minify_json_file(file_content)
 							elif file_name.endswith(".mcfunction"):
-								function_result = minify_function_file(file_content, version_config, 1)
+								function_result = minify_function_file(file_content, version_config, main_pack_format, min_pack_format, max_pack_format)
 								pack_formats = sorted(function_result.get("pack_formats"))
 								for i in range(0, len(pack_formats)):
 									pack_format = pack_formats[i]
 									max_format = pack_formats[i+1] - 1 if i+1 < len(pack_formats) else None
-									pack_formats_for_overlay.append([pack_format, max_format])
-									overlay_content = minify_function_file(file_content, version_config, pack_format).get("content")
+									if main_pack_format >= pack_format and (max_format is None or main_pack_format < max_format):
+										continue
+									pack_formats_for_overlay.append([pack_format if pack_format > 1 else None, max_format])
+									overlay_content = minify_function_file(file_content, version_config, pack_format, min_pack_format, max_pack_format)\
+										.get("content")
 
 									if overlay_content:
-										overlay_path = f"{out_root}{os.sep}pack_format_from_{pack_format}{f'_until_{max_format}' if max_format != None else ''}{os.sep}{relative_path}"
+										overlay_path = f"{out_root}{os.sep}pack_format\
+											{f'_from_{pack_format}' if pack_format > 1 else ''}\
+											{f'_until_{max_format}' if max_format != None else ''}\
+											{os.sep}{relative_path}".replace("\t", "")
 										os.makedirs(overlay_path, exist_ok=True)
 										with open(f"{overlay_path}{os.sep}{file_name}", "w", encoding="utf-8") as file:
 											file.write(overlay_content)
@@ -235,9 +278,7 @@ def iterate_files(config: dict, pack_config: dict, target: str, mc_version_info:
 			pack_def = json.loads(file.read())
 			pack = pack_def.get("pack")
 			supported_formats = pack.get("supported_formats")
-			if supported_formats is not None:
-				min_incl = supported_formats.get("min_inclusive")
-				if min_incl is not None: pack["pack_format"] = min_incl
+			pack["pack_format"] = main_pack_format
 			overlays = pack_def.get("overlays")
 			if overlays is None:
 				overlays = {}
@@ -246,9 +287,9 @@ def iterate_files(config: dict, pack_config: dict, target: str, mc_version_info:
 				entries = []
 
 			for pack_format in pack_formats_for_overlay:
-				min_inc = pack_format[0]
+				min_inc = pack_format[0] if pack_format[0] != None else 1
 				max_inc = pack_format[1] if pack_format[1] != None else 2**31-1
-				overlay_name = f"pack_format_from_{min_inc}{f'_until_{max_inc}' if max_inc != 2**31-1 else ''}"
+				overlay_name = f"pack_format{f'_from_{min_inc}' if min_inc > 1 else ''}{f'_until_{max_inc}' if max_inc != 2**31-1 else ''}"
 				if not any (entry["directory"] == overlay_name for entry in entries):
 					entries.append({"formats": {"min_inclusive": min_inc, "max_inclusive": max_inc}, "directory": overlay_name })
 			overlays["entries"] = entries
@@ -327,7 +368,7 @@ def minify_json_file(file_content: str):
 	except Exception:
 		print("failed to parse json file\n" + file_content, file=stderr)
 
-def minify_function_file(file_content: str, config: dict, pack_format: int):
+def minify_function_file(file_content: str, config: dict, pack_format: int, min_format, max_format):
 	output=""
 	remove=0
 	uncomment=0
@@ -401,16 +442,19 @@ def minify_function_file(file_content: str, config: dict, pack_format: int):
 						raise ValueError("until/since needs at least one argument")
 					min_value = 1
 					max_value = None
-					pack_formats.add(int(command[1]))
 					if command[0] == "since":
 						min_value = int(command[1])
 						if len(command) >= 4 and command[2] == "until":
 							max_value = int(command[3])
-							pack_formats.add(max_value)
 					else:
 						max_value = int(command[1])
+					pack_formats.add(min_value)
+					if max_value is not None:
+						pack_formats.add(max_value)
 					if pack_format >= min_value and (max_value is None or pack_format < max_value):
 						uncomment = -2
+						if min_value > min_format:
+							pack_formats.add(1)
 					else:
 						remove = -1
 
