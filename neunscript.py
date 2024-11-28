@@ -149,6 +149,7 @@ def iterate_files(config: dict, pack_config: dict, target: str, mc_version_info:
 	min_pack_format = None
 	max_pack_format = None
 	existing_overlays = []
+	mc_versions: list[dict] = []
 	if os.path.isfile(f"{source}{os.sep}pack.mcmeta"):
 		with open(f"{source}{os.sep}pack.mcmeta") as file:
 			pack_format: dict[str, Any] = json.loads(file.read())
@@ -167,6 +168,7 @@ def iterate_files(config: dict, pack_config: dict, target: str, mc_version_info:
 					main_pack_format = 15
 			overlays: dict[str, list[dict[str, Any]]] | None = pack_format.get("overlays")
 			if overlays is not None:
+				mc_versions = requests.get("https://raw.githubusercontent.com/misode/mcmeta/refs/heads/summary/versions/data.json").json()
 				for overlay in overlays["entries"]:
 					min_format = 0
 					max_format = 2**31-1
@@ -200,6 +202,25 @@ def iterate_files(config: dict, pack_config: dict, target: str, mc_version_info:
 			file_path = f"{relative_path}{os.sep}{file_name}"
 			if any(file_path.startswith(f"/{exclude}") for exclude in excludes):
 				continue
+			overlay = next((overlay for overlay in existing_overlays if file_path.startswith(f"/{overlay['dir']}")), None)
+
+			version_info = dict(mc_version_info)
+
+			if overlay is not None:
+				format_version = overlay["min"] if overlay["min"] > min_pack_format else min_pack_format
+				if format_version > min_pack_format:
+					version = next(v for v in mc_versions if v["data_pack_version"] == format_version)
+					version_info["world_version"] = version["data_version"]
+			else:
+				format_version = max((overlay["max"] for overlay in existing_overlays \
+					if overlay['max'] < main_pack_format and os.path.isfile(f"{source}{os.sep}{overlay['dir']}{file_path}")),
+					default= None)
+				if format_version is not None:
+					version = next(v for v in mc_versions if v["data_pack_version"] == format_version)
+					version_info["world_version"] = version["data_version"]
+				else:
+					for overlay in existing_overlays:
+						t = f"{source}{overlay['dir']}{os.sep}{file_path}"
 
 			for version, override in versions:
 				version_config = config.copy()
@@ -219,7 +240,7 @@ def iterate_files(config: dict, pack_config: dict, target: str, mc_version_info:
 				if not file_name.endswith(remove_extensions):
 					if file_name.endswith(".nbt") or file_name.endswith(".dat"):
 						nbt_content = nbt.read_from_nbt_file(file_path)
-						handle_nbt(nbt_content, out_path, version_config, mc_version_info)
+						handle_nbt(nbt_content, out_path, version_config, version_info)
 						os.makedirs(out_dir, exist_ok=True)
 						nbt.write_to_nbt_file(out_path, nbt_content)
 
