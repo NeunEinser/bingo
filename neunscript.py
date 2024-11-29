@@ -45,21 +45,8 @@ def main():
 	resourcepack_config : dict | None = config.get("resourcepack")
 	datapack_config: dict | None = config.get("datapack")
 
-	mc_version_info = None
-	version_id: str | None = config.get("mc")
-
-	if version_id != None:
-		version_manifest : dict = requests.get("https://piston-meta.mojang.com/mc/game/version_manifest_v2.json").json()
-		version_data: dict = next(filter(lambda v: v["id"] == version_id, version_manifest["versions"]))
-		if version_data != None:
-			version_info: dict = requests.get(version_data["url"]).json()
-			override_default_lang_strings(f"{target}{os.sep}tmp{os.sep}resourcepack", version_info["assetIndex"]["url"])
-
-			minecraft_jar = zipfile.ZipFile(io.BytesIO(requests.get(version_info["downloads"]["client"]["url"]).content))
-			minecraft_jar.extract("version.json", f"{target}{os.sep}tmp")
-			with open(f"{target}{os.sep}tmp{os.sep}version.json", "r", encoding="utf-8") as version_info_file:
-				mc_version_info: dict | None = json.loads(version_info_file.read())
-			os.remove(f"{target}{os.sep}tmp{os.sep}version.json")
+	mc_versions: list[dict] = requests.get("https://raw.githubusercontent.com/misode/mcmeta/refs/heads/summary/versions/data.json").json()
+	mc_versions.reverse()
 
 	name=config.get("name")
 	version=config.get("version")
@@ -74,15 +61,33 @@ def main():
 
 	world_config=config.get("world")
 
+	mc_version_info = None
+	if resourcepack_config is not None:
+		mc_version_info = get_version(resourcepack_config.get("path"), mc_versions, True)
+	if datapack_config is not None:
+		data_version_info = get_version(datapack_config.get("path"), mc_versions, False)
+		if mc_version_info is None or mc_version_info["data_version"] < data_version_info["data_version"]:
+			mc_version_info = data_version_info
+
+	if mc_version_info is not None:
+		mc_version_info["release_version"] = next((
+			v for v in mc_versions \
+				if v["type"] == "release" and v["data_version"] >= mc_version_info["data_version"]
+		), mc_versions[-1])
+
+	mc_versions = [v for v in mc_versions if v["data_version"] >= mc_version_info["data_version"]]
+
+	print(mc_versions)
+
 	requested_rp_sha = []
 	if resourcepack_config is not None:
-		requested_rp_sha.extend(iterate_files(config, resourcepack_config, f"{target}{os.sep}tmp{os.sep}resourcepack", mc_version_info))
+		requested_rp_sha.extend(iterate_files(config, resourcepack_config, f"{target}{os.sep}tmp{os.sep}resourcepack", mc_versions, mc_version_info, True))
 
 	if datapack_config is not None:
-		requested_rp_sha.extend(iterate_files(config, datapack_config, f"{target}{os.sep}tmp{os.sep}datapack", mc_version_info))
+		requested_rp_sha.extend(iterate_files(config, datapack_config, f"{target}{os.sep}tmp{os.sep}datapack", mc_versions, mc_version_info))
 
 	if world_config is not None:
-		requested_rp_sha.extend(iterate_files(config, world_config, f"{target}{os.sep}tmp{os.sep}world", mc_version_info))
+		requested_rp_sha.extend(iterate_files(config, world_config, f"{target}{os.sep}tmp{os.sep}world", mc_versions, mc_version_info))
 
 	includes = config.get("include")
 	if includes != None:
@@ -152,7 +157,26 @@ class ExistingOverlay(TypedDict):
 	min: int
 	max: int
 
-def iterate_files(config: dict, pack_config: dict, target: str, mc_version_info: dict | None):
+def get_version(pack_path: str, mc_versions: list[dict], is_rp: bool):
+	if not os.path.isfile(f"{pack_path}{os.sep}pack.mcmeta"):
+		return None
+	with open(f"{pack_path}{os.sep}pack.mcmeta") as file:
+		pack_mcmeta: PackFormat = json.loads(file.read())
+		pack_format = pack_mcmeta["pack"]["pack_format"]
+		supported_versions = pack_mcmeta["pack"].get("supported_formats")
+
+		if isinstance(supported_versions, dict):
+			if pack_format > supported_versions["min_inclusive"]:
+				pack_format = supported_versions["min_inclusive"]
+		elif supported_versions is not None:
+			min_version = min(supported_versions)
+			if pack_format > min_version:
+				pack_format = min_version
+
+
+		return next((v for v in mc_versions if v["resource_pack_version" if is_rp else "data_pack_version"] == pack_format), None)
+
+def iterate_files(config: dict, pack_config: dict, target: str, mc_versions: list[dict], mc_version_info: dict, is_rp: bool = False):
 	requested_rp_sha: list[str] = []
 	pack_formats_for_overlay = []
 	remove_extensions = config.get("remove_file_types")
@@ -166,16 +190,16 @@ def iterate_files(config: dict, pack_config: dict, target: str, mc_version_info:
 	if source is None:
 		print("invalid datapack config")
 		return;
+
 	main_pack_format = None
 	min_pack_format = None
 	existing_overlays: list[ExistingOverlay] = []
-	mc_versions: list[dict] = []
 	if os.path.isfile(f"{source}{os.sep}pack.mcmeta"):
 		with open(f"{source}{os.sep}pack.mcmeta") as file:
-			pack_format: PackFormat = json.loads(file.read())
-			main_pack_format = pack_format["pack"]["pack_format"]
+			pack_mcmeta: PackFormat = json.loads(file.read())
+			main_pack_format = pack_mcmeta["pack"]["pack_format"]
 			min_pack_format = main_pack_format
-			supported_formats = pack_format["pack"].get("supported_formats")
+			supported_formats = pack_mcmeta["pack"].get("supported_formats")
 			if supported_formats is not None:
 				if isinstance(supported_formats, dict):
 					min_pack_format = supported_formats["min_inclusive"]
@@ -183,9 +207,8 @@ def iterate_files(config: dict, pack_config: dict, target: str, mc_version_info:
 					min_pack_format = min(supported_formats)
 				if min_pack_format < 16 and main_pack_format >= 16:
 					main_pack_format = 15
-			overlays = pack_format.get("overlays")
+			overlays = pack_mcmeta.get("overlays")
 			if overlays is not None:
-				mc_versions = requests.get("https://raw.githubusercontent.com/misode/mcmeta/refs/heads/summary/versions/data.json").json()
 				for overlay in overlays["entries"]:
 					min_format = 0
 					max_format = 2**31-1
@@ -213,6 +236,7 @@ def iterate_files(config: dict, pack_config: dict, target: str, mc_version_info:
 	else:
 		remove_extensions = tuple(remove_extensions)
 
+	format_version_identifier = "data_pack_version" if not is_rp else "resource_pack_version"
 	for directory, _, files in os.walk(source):
 		for file_name in files:
 			relative_path = directory.removeprefix(source).strip(os.sep)
@@ -221,19 +245,21 @@ def iterate_files(config: dict, pack_config: dict, target: str, mc_version_info:
 				continue
 
 			overlay = next((overlay for overlay in existing_overlays if file_path.startswith(overlay["dir"])), None)
-			version_info = dict(mc_version_info)
+			version_info = mc_version_info.copy()
 			if overlay is not None:
 				format_version = overlay["min"] if overlay["min"] > min_pack_format else min_pack_format
 				if format_version > min_pack_format:
-					version = next(v for v in mc_versions if v["data_pack_version"] == format_version)
-					version_info["world_version"] = version["data_version"]
+					version = next(v for v in mc_versions if v[format_version_identifier] == format_version)
+					version["release_version"] = version_info["release_version"]
+					version_info["data_version"] = version
 			else:
 				format_version = max((overlay["max"] for overlay in existing_overlays \
 					if overlay['max'] < main_pack_format and os.path.isfile(f"{source}{os.sep}{overlay['dir']}{file_path}")),
 					default= None)
 				if format_version is not None:
-					version = next(v for v in mc_versions if v["data_pack_version"] == format_version)
-					version_info["world_version"] = version["data_version"]
+					version = next(v for v in mc_versions if v[format_version_identifier] == format_version)
+					version["release_version"] = version_info["release_version"]
+					version_info["data_version"] = version
 
 			for version, override in versions:
 				version_config = config.copy()
@@ -251,7 +277,7 @@ def iterate_files(config: dict, pack_config: dict, target: str, mc_version_info:
 
 				if not file_name.endswith(remove_extensions):
 					file_result = handle_file(source, file_name, relative_path, out_root, main_pack_format,
-					  min_pack_format, version_config, requested_rp_sha, version_info)
+					  min_pack_format, mc_versions, version_config, requested_rp_sha, version_info)
 
 					pack_formats = sorted(file_result["formats"])
 					for i in range(0, len(pack_formats)):
@@ -261,7 +287,7 @@ def iterate_files(config: dict, pack_config: dict, target: str, mc_version_info:
 							continue
 						pack_formats_for_overlay.append([pack_format if pack_format > 1 else None, max_format])
 						write_overlay = handle_file(source, file_name, relative_path, out_root, pack_format,
-					  		min_pack_format, version_config, requested_rp_sha, version_info)\
+					  		min_pack_format, mc_versions, version_config, requested_rp_sha, version_info)\
 							["write_file"]
 
 						if write_overlay is not None:
@@ -356,6 +382,7 @@ def handle_file(
 	out_root: str,
 	pack_format: int,
 	min_pack_format: int,
+	versions: list[dict],
 	version_config: dict,
 	requested_rp_sha: list[str],
 	version_info: dict | None
@@ -365,6 +392,22 @@ def handle_file(
 	if file_name.endswith(".nbt") or file_name.endswith(".dat"):
 		nbt_content = nbt.read_from_nbt_file(file_path)
 		nbt_result = handle_structued(nbt_content, out_path, version_config, version_info, pack_format, min_pack_format, True)
+		
+		data_version = nbt_content.get("DataVersion") if isinstance(nbt_content, dict) else None
+		if data_version is not None:
+			formats = sorted(nbt_result[0])
+
+			min_format = 0
+			for i in range(0, len(formats)):
+				min_format = formats[i]
+				max_format = None
+				if len(formats) > i + 1:
+					max_format = formats[i+1]
+				if min_format <= pack_format and (max_format is None or max_format > pack_format):
+					break
+			version = next(v for v in versions if v["data_pack_version"] >= min_format)
+			data_version.value = version["data_version"]
+
 		return {
 			"formats": nbt_result[0],
 			"write_file": lambda out: nbt.write_to_nbt_file(out, nbt_content) if nbt_result[1] else None
@@ -426,8 +469,8 @@ def handle_structued(
 	keep_self = True
 	if isinstance(tag, dict):
 		if is_nbt and file_path.endswith("level.dat") and key == "Version" and mc_version_info != None:
-			tag["Id"].value = mc_version_info["world_version"]
-			tag["Name"].value = mc_version_info["name"]
+			tag["Id"].value = mc_version_info["release_version"]["data_version"]
+			tag["Name"].value = mc_version_info["release_version"]["id"]
 		else:
 			to_remove = set()
 			to_replace = {}
@@ -542,8 +585,6 @@ def handle_structued(
 
 	elif hasattr(tag, "value") and isinstance(tag.value, str):
 		tag.value = replace_variables(tag.value, file_path, config, [])
-	elif is_nbt and key == "DataVersion" and mc_version_info != None:
-		tag.value = mc_version_info["world_version"]
 	return (pack_formats, keep_self)
 
 class StringFileMinifyResult(TypedDict):
