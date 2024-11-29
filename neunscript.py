@@ -6,7 +6,6 @@ from sys import stderr
 
 import python_nbt.nbt as nbt
 
-lines = 0
 class Range(TypedDict):
 	min_inclusive: int
 	max_inclusive: int
@@ -150,7 +149,6 @@ def main():
 				copy_file_or_dir(f"{target}{os.sep}tmp{os.sep}{path}", f"{target}{os.sep}{path}")
 	
 	shutil.rmtree(f"{target}{os.sep}tmp")
-	print(f"minified {lines} lines")
 
 class ExistingOverlay(TypedDict):
 	dir: str
@@ -280,27 +278,39 @@ def iterate_files(config: dict, pack_config: dict, target: str, mc_versions: lis
 					  min_pack_format, mc_versions, version_config, requested_rp_sha, version_info)
 
 					pack_formats = sorted(file_result["formats"])
+					should_create_main_as_overlay = False
 					for i in range(0, len(pack_formats)):
 						pack_format = pack_formats[i]
 						max_format = pack_formats[i+1] - 1 if i+1 < len(pack_formats) else None
 						if main_pack_format >= pack_format and (max_format is None or main_pack_format < max_format):
 							continue
-						pack_formats_for_overlay.append([pack_format if pack_format > 1 else None, max_format])
+
 						write_overlay = handle_file(source, file_name, relative_path, out_root, pack_format,
 					  		min_pack_format, mc_versions, version_config, requested_rp_sha, version_info)\
 							["write_file"]
 
 						if write_overlay is not None:
+							pack_formats_for_overlay.append([pack_format, max_format])
 							overlay_path = f"{out_root}{os.sep}pack_format\
-								{f'_from_{pack_format}' if pack_format > 1 else ''}\
-								{f'_until_{max_format}' if max_format != None else ''}\
+								{get_overlay_dir_name(pack_formats_for_overlay[-1])}\
 								{os.sep}{relative_path}".replace("\t", "")
 							os.makedirs(overlay_path, exist_ok=True)
 							write_overlay(f"{overlay_path}{os.sep}{file_name}")
+						else:
+							should_create_main_as_overlay = True
+
 					write_file = file_result["write_file"]
 					if write_file is not None:
-						os.makedirs(out_dir, exist_ok=True)
-						write_file(out_path)
+						main_path = out_dir
+						if should_create_main_as_overlay:
+							format_range = get_format_range(pack_formats, pack_format)
+							pack_formats_for_overlay.append(format_range)
+							main_path = f"{out_root}{os.sep}pack_format\
+								{get_overlay_dir_name(format_range)}\
+								{os.sep}{relative_path}".replace("\t", "")
+							
+						os.makedirs(main_path, exist_ok=True)
+						write_file(f"{main_path}{os.sep}{file_name}")
 
 	pack_path = f"{target}{os.sep}pack.mcmeta"
 	if os.path.exists(pack_path) and len(pack_formats_for_overlay) > 0:
@@ -318,7 +328,7 @@ def iterate_files(config: dict, pack_config: dict, target: str, mc_versions: lis
 			for pack_format in pack_formats_for_overlay:
 				min_inc = pack_format[0] if pack_format[0] != None else 1
 				max_inc = pack_format[1] if pack_format[1] != None else 2**31-1
-				overlay_name = f"pack_format{f'_from_{min_inc}' if min_inc > 1 else ''}{f'_until_{max_inc}' if max_inc != 2**31-1 else ''}"
+				overlay_name = get_overlay_dir_name(pack_format)
 				if not any (entry["directory"] == overlay_name for entry in entries):
 					entries.append({"formats": {"min_inclusive": min_inc, "max_inclusive": max_inc}, "directory": overlay_name })
 			overlays["entries"] = entries
@@ -375,6 +385,21 @@ class FileResult(TypedDict):
 	formats: set[int]
 	write_file: Callable[[str], None]
 
+def get_format_range(formats: list[int], format: int):
+	min_format = 0
+	max_format = None
+	for i in range(0, len(formats)):
+		min_format = formats[i]
+		max_format = None
+		if len(formats) > i + 1:
+			max_format = formats[i+1]
+		if min_format <= format and (max_format is None or max_format > format):
+			break
+	return [min_format, max_format]
+
+def get_overlay_dir_name(format_range: list[int | None]):
+	return f"pack_format{f'_from_{format_range[0]}' if format_range[0] > 1 else ''}{f'_until_{format_range[1]}' if format_range[1] is not None else ''}"
+
 def handle_file(
 	source: str,
 	file_name: str,
@@ -399,14 +424,7 @@ def handle_file(
 		if data_version is not None:
 			formats = sorted(nbt_result[0])
 
-			min_format = 0
-			for i in range(0, len(formats)):
-				min_format = formats[i]
-				max_format = None
-				if len(formats) > i + 1:
-					max_format = formats[i+1]
-				if min_format <= pack_format and (max_format is None or max_format > pack_format):
-					break
+			min_format = get_format_range(formats, pack_format)[0]
 			version = next(v for v in versions if v["data_pack_version"] >= min_format)
 			data_version.value = version["data_version"]
 
@@ -455,7 +473,7 @@ def handle_file(
 	file_content = minify_result["content"]
 	return {
 		"formats": minify_result["formats"],
-		"write_file": lambda out: write_text(out, file_content) if file_content else None
+		"write_file": (lambda out: write_text(out, file_content)) if file_content else None
 	}
 
 def handle_structued(
