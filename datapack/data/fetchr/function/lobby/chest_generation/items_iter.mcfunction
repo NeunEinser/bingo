@@ -31,14 +31,30 @@ data modify storage tmp.fetchr:chest_generation item_categories set from storage
 
 data remove storage tmp.fetchr:chest_generation items[-1]
 
-execute store result storage tmp.fetchr:chest_generation item.item.Slot byte 1 run scoreboard players get $chest_generation.slot fetchr.tmp
+execute \
+	store result storage tmp.fetchr:chest_generation item.item.Slot byte 1 \
+	run scoreboard players get $chest_generation.slot fetchr.tmp
 
-execute if score $chest_generation.row fetchr.tmp matches ..2 if score $chest_generation.column fetchr.tmp matches ..8 run data modify block ~1 ~ ~ Items append from storage tmp.fetchr:chest_generation item.item
-execute if score $chest_generation.row fetchr.tmp matches 3.. run data modify block ~ ~ ~ Items append from storage tmp.fetchr:chest_generation item.item
-execute if score $chest_generation.column fetchr.tmp matches 9.. run data modify block ~ ~ ~ Items append from storage tmp.fetchr:chest_generation item.item
+execute \
+	if score $chest_generation.row fetchr.tmp matches ..2 \
+	if score $chest_generation.column fetchr.tmp matches ..8 \
+	run data modify block ~1 ~ ~ Items append from storage tmp.fetchr:chest_generation item.item
+execute \
+	if score $chest_generation.row fetchr.tmp matches 3.. \
+	run data modify block ~ ~ ~ Items append from storage tmp.fetchr:chest_generation item.item
+execute \
+	if score $chest_generation.column fetchr.tmp matches 9.. \
+	run data modify block ~ ~ ~ Items append from storage tmp.fetchr:chest_generation item.item
 
-execute if data storage tmp.fetchr:chest_generation items[-1] if score $chest_generation.row fetchr.tmp matches 5 run function fetchr:lobby/chest_generation/increment_column
-execute if block ~ ~ ~ minecraft:chest[type=single] if data storage tmp.fetchr:chest_generation items[-1] if score $chest_generation.row fetchr.tmp matches 2 run function fetchr:lobby/chest_generation/increment_column
+execute \
+	if data storage tmp.fetchr:chest_generation items[-1] \
+	if score $chest_generation.row fetchr.tmp matches 5 \
+	run function fetchr:lobby/chest_generation/increment_column
+execute \
+	if block ~ ~ ~ minecraft:chest[type=single] \
+	if data storage tmp.fetchr:chest_generation items[-1] \
+	if score $chest_generation.row fetchr.tmp matches 2 \
+	run function fetchr:lobby/chest_generation/increment_column
 scoreboard players add $chest_generation.row fetchr.tmp 1
 
 execute if data storage tmp.fetchr:chest_generation items[-1] run function fetchr:lobby/chest_generation/items_iter
