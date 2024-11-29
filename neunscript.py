@@ -291,7 +291,7 @@ def iterate_files(config: dict, pack_config: dict, target: str, mc_versions: lis
 
 						if write_overlay is not None:
 							pack_formats_for_overlay.append([pack_format, max_format])
-							overlay_path = f"{out_root}{os.sep}pack_format\
+							overlay_path = f"{out_root}{os.sep}\
 								{get_overlay_dir_name(pack_formats_for_overlay[-1])}\
 								{os.sep}{relative_path}".replace("\t", "")
 							os.makedirs(overlay_path, exist_ok=True)
@@ -305,7 +305,7 @@ def iterate_files(config: dict, pack_config: dict, target: str, mc_versions: lis
 						if should_create_main_as_overlay:
 							format_range = get_format_range(pack_formats, pack_format)
 							pack_formats_for_overlay.append(format_range)
-							main_path = f"{out_root}{os.sep}pack_format\
+							main_path = f"{out_root}{os.sep}\
 								{get_overlay_dir_name(format_range)}\
 								{os.sep}{relative_path}".replace("\t", "")
 							
