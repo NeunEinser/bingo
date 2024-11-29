@@ -32,7 +32,7 @@ execute if score $chest_generation/sort/card.out fetchr.tmp matches 1 run functi
 data modify storage tmp.fetchr:chest_generation items set from storage tmp.fetchr:chest_generation mergeSort.odd[0]
 
 scoreboard players operation $chest_generation.overflow_col_count fetchr.tmp = $chest_generation.size fetchr.tmp
-scoreboard players remove $chest_generation.overflow_col_count fetchr.tmp 1
+scoreboard players remove $chest_generation.overflow_col_count fetchr.tmp 2
 execute \
 	if score $chest_generation.overflow_col_count fetchr.tmp matches ..-1 \
 	run scoreboard players set $chest_generation.overflow_col_count fetchr.tmp 0
