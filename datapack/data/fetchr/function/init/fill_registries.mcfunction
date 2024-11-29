@@ -1297,8 +1297,17 @@ data modify storage fetchr:registries items append value {\
 	item: {id: "minecraft:resin_clump"},\
 	translation: "item.minecraft.resin_clump",\
 	icon: "0073",\
-	categories: ["fetchr:pale_garden"],\
+	categories: ["fetchr:pale_garden", "fetchr:nighttime_mob_drops"],\
 	weight: 2\
+}
+
+# 0074: pale_hanging_moss
+data modify storage fetchr:registries items append value {\
+	id: "fetchr:pale_hanging_moss",\
+	item: {id: "minecraft:pale_hanging_moss"},\
+	translation: "block.minecraft.pale_hanging_moss",\
+	icon: "0074",\
+	categories: [{id: "fetchr:pale_garden", weight: 6 }, { id: "fetchr:shearable", weight: 2 }]\
 }
 #NEUN_SCRIPT end
 
@@ -1569,8 +1578,7 @@ data modify storage fetchr:registries items append value {\
 	item: {id: "minecraft:sticky_piston"},\
 	translation: "block.minecraft.sticky_piston",\
 	icon: "011c",\
-	categories: ["fetchr:piston", "fetchr:nighttime_mob_drops"],\
-	weight: 2\
+	categories: [{id: "fetchr:piston" }, {id : "fetchr:nighttime_mob_drops", weight: 2 }]\
 }
 
 # 011d: orange_concrete
@@ -1786,7 +1794,7 @@ data modify storage fetchr:registries items append value {\
 	item: {id: "minecraft:chiseled_resin_bricks"},\
 	translation: "block.minecraft.chiseled_resin_bricks",\
 	icon: "0133",\
-	categories: ["fetchr:pale_garden"],\
+	categories: ["fetchr:pale_garden", "fetchr:nighttime_mob_drops"],\
 	weight: 2\
 }
 
@@ -1796,8 +1804,18 @@ data modify storage fetchr:registries items append value {\
 	item: {id: "minecraft:creaking_heart"},\
 	translation: "block.minecraft.creaking_heart",\
 	icon: "0134",\
-	categories: ["fetchr:pale_garden"],\
+	categories: ["fetchr:pale_garden", "fetchr:nighttime_mob_drops"],\
 	weight: 2\
+}
+
+# 0135: pale_moss_block
+data modify storage fetchr:registries items append value {\
+	id: "fetchr:pale_moss_block",\
+	item: {id: "minecraft:pale_moss_block"},\
+	translation: "block.minecraft.pale_moss_block",\
+	icon: "0135",\
+	categories: ["fetchr:pale_garden"],\
+	weight: 6\
 }
 #NEUN_SCRIPT end
 
