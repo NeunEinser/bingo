@@ -49,11 +49,6 @@ execute \
 	run scoreboard players set $chest_generation.remaining_cols fetchr.tmp 17
 scoreboard players operation $chest_generation.remaining_cols fetchr.tmp -= $chest_generation.column fetchr.tmp
 
-tellraw NeunEinser {"storage":"tmp.fetchr:chest_generation", "nbt": "category.id"}
-tellraw NeunEinser [{"score": {"name": "$chest_generation.column", "objective": "fetchr.tmp"}}, "; ", {"score": {"name": "$chest_generation.remaining_cols", "objective": "fetchr.tmp"}}]
-execute \
-	if score $chest_generation.remaining_cols fetchr.tmp < $chest_generation.overflow_col_count fetchr.tmp \
-	run tellraw NeunEinser {"storage":"tmp.fetchr:chest_generation", "nbt": "category.id"}
 execute \
 	if score $chest_generation.remaining_cols fetchr.tmp < $chest_generation.overflow_col_count fetchr.tmp \
 	run function fetchr:lobby/chest_generation/next_chest
