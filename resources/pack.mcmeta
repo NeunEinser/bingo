@@ -3,10 +3,5 @@
 		"pack_format": 46,
 		"supported_formats": {"min_inclusive": 34, "max_inclusive": 46},
 		"description": "Fetchr resources"
-	},
-	"overlays": {
-		"entries": [
-			{ "directory": "pack_format_until_43", "formats": {"min_inclusive": 1, "max_inclusive": 43} }
-		]
 	}
 }

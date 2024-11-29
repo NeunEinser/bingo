@@ -1,4 +1,5 @@
 {
+	"NEUN_SCRIPT remove_self from 44": null,
 	"parent": "minecraft:block/white_stained_glass",
 	"overrides": [
 		{

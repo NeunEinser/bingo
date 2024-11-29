@@ -5599,6 +5599,7 @@
 					}
 				},
 				{
+					"NEUN_SCRIPT replace biome until 58": "minecraft:dark_forest",
 					"biome": "minecraft:pale_garden",
 					"parameters": {
 						"weirdness": [ 0.26666667, 0.4 ],
@@ -6403,6 +6404,7 @@
 					}
 				},
 				{
+					"NEUN_SCRIPT replace biome until 58": "minecraft:dark_forest",
 					"biome": "minecraft:pale_garden",
 					"parameters": {
 						"weirdness": [ 0.4, 0.93333333 ],
@@ -6571,6 +6573,7 @@
 					}
 				},
 				{
+					"NEUN_SCRIPT replace biome until 58": "minecraft:dark_forest",
 					"biome": "minecraft:pale_garden",
 					"parameters": {
 						"weirdness": [ 0.4, 0.93333333 ],
@@ -8335,6 +8338,7 @@
 					}
 				},
 				{
+					"NEUN_SCRIPT replace biome until 58": "minecraft:dark_forest",
 					"biome": "minecraft:pale_garden",
 					"parameters": {
 						"weirdness": [ 0.93333333, 1 ],
@@ -14155,6 +14159,7 @@
 					}
 				},
 				{
+					"NEUN_SCRIPT replace biome until 58": "minecraft:dark_forest",
 					"biome": "minecraft:pale_garden",
 					"parameters": {
 						"weirdness": [ 0.26666667, 0.4 ],
@@ -14959,6 +14964,7 @@
 					}
 				},
 				{
+					"NEUN_SCRIPT replace biome until 58": "minecraft:dark_forest",
 					"biome": "minecraft:pale_garden",
 					"parameters": {
 						"weirdness": [ 0.4, 0.93333333 ],
@@ -15127,6 +15133,7 @@
 					}
 				},
 				{
+					"NEUN_SCRIPT replace biome until 58": "minecraft:dark_forest",
 					"biome": "minecraft:pale_garden",
 					"parameters": {
 						"weirdness": [ 0.4, 0.93333333 ],
@@ -16891,6 +16898,7 @@
 					}
 				},
 				{
+					"NEUN_SCRIPT replace biome until 58": "minecraft:dark_forest",
 					"biome": "minecraft:pale_garden",
 					"parameters": {
 						"weirdness": [ 0.93333333, 1 ],
