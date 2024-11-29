@@ -394,6 +394,8 @@ def handle_file(
 		nbt_result = handle_structued(nbt_content, out_path, version_config, version_info, pack_format, min_pack_format, True)
 		
 		data_version = nbt_content.get("DataVersion") if isinstance(nbt_content, dict) else None
+		if file_name == "level.dat":
+			data_version = nbt_content["Data"]["DataVersion"]
 		if data_version is not None:
 			formats = sorted(nbt_result[0])
 
