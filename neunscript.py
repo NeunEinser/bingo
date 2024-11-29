@@ -149,7 +149,7 @@ def main():
 			for path in includes:
 				copy_file_or_dir(f"{target}{os.sep}tmp{os.sep}{path}", f"{target}{os.sep}{path}")
 	
-	# shutil.rmtree(f"{target}{os.sep}tmp")
+	shutil.rmtree(f"{target}{os.sep}tmp")
 	print(f"minified {lines} lines")
 
 class ExistingOverlay(TypedDict):
@@ -443,6 +443,7 @@ def handle_file(
 		minify_result = minify_json_file(file_content, file_path, version_config, version_info, pack_format, min_pack_format)
 
 	elif file_name.endswith(".mcfunction"):
+		file_content = replace_variables(file_content, out_path, version_config, requested_rp_sha)
 		minify_result = minify_function_file(file_content, version_config, pack_format, min_pack_format)
 	else:
 		minify_result["content"] = replace_variables(file_content, out_path, version_config, requested_rp_sha)
