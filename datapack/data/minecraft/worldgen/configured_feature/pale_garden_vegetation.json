@@ -1,15 +1,16 @@
 {
+	"NEUN_SCRIPT remove_self until 56": null,
 	"type": "minecraft:random_selector",
 	"config": {
 		"default": "minecraft:pale_oak_checked",
 		"features": [
 			{
 				"feature": "minecraft:pale_oak_creaking_checked",
-				"chance": 0.1
+				"chance": 0.5
 			},
 			{
 				"feature": "minecraft:pale_oak_checked",
-				"chance": 0.9
+				"chance": 0.5
 			}
 		]
 	}
