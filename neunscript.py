@@ -1,12 +1,28 @@
 # This script is used for building this pack
 import hashlib, io, json, os, re, requests, shutil, pyjson5, zipfile
-from typing import Any
+from typing import Any, Callable, TypedDict
 from distutils.dir_util import copy_tree
 from sys import stderr
 
 import python_nbt.nbt as nbt
 
 lines = 0
+class Range(TypedDict):
+	min_inclusive: int
+	max_inclusive: int
+class Pack(TypedDict):
+	pack_format: int
+	supported_formats: Range | list[int] | None
+	description: Any
+class Overlay(TypedDict):
+	directory: str
+	formats: Range | list[int]
+class Overlays(TypedDict):
+	entries: list[Overlay]
+class PackFormat(TypedDict):
+	pack: Pack
+	overlays: Overlays | None
+	
 
 def main():
 	config: dict[str, Any] = {}
@@ -128,11 +144,16 @@ def main():
 			for path in includes:
 				copy_file_or_dir(f"{target}{os.sep}tmp{os.sep}{path}", f"{target}{os.sep}{path}")
 	
-	shutil.rmtree(f"{target}{os.sep}tmp")
+	# shutil.rmtree(f"{target}{os.sep}tmp")
 	print(f"minified {lines} lines")
 
+class ExistingOverlay(TypedDict):
+	dir: str
+	min: int
+	max: int
+
 def iterate_files(config: dict, pack_config: dict, target: str, mc_version_info: dict | None):
-	requested_rp_sha = []
+	requested_rp_sha: list[str] = []
 	pack_formats_for_overlay = []
 	remove_extensions = config.get("remove_file_types")
 	versionDict: dict | None = config.get("versions")
@@ -147,32 +168,28 @@ def iterate_files(config: dict, pack_config: dict, target: str, mc_version_info:
 		return;
 	main_pack_format = None
 	min_pack_format = None
-	max_pack_format = None
-	existing_overlays = []
+	existing_overlays: list[ExistingOverlay] = []
 	mc_versions: list[dict] = []
 	if os.path.isfile(f"{source}{os.sep}pack.mcmeta"):
 		with open(f"{source}{os.sep}pack.mcmeta") as file:
-			pack_format: dict[str, Any] = json.loads(file.read())
-			main_pack_format: str = pack_format["pack"]["pack_format"]
+			pack_format: PackFormat = json.loads(file.read())
+			main_pack_format = pack_format["pack"]["pack_format"]
 			min_pack_format = main_pack_format
-			max_pack_format = main_pack_format
-			supported_formats: dict[str, int] | list[int] | None = pack_format["pack"].get("supported_formats")
+			supported_formats = pack_format["pack"].get("supported_formats")
 			if supported_formats is not None:
 				if isinstance(supported_formats, dict):
 					min_pack_format = supported_formats["min_inclusive"]
-					max_pack_format = supported_formats["max_inclusive"]
 				else:
 					min_pack_format = min(supported_formats)
-					max_pack_format = max(supported_formats)
 				if min_pack_format < 16 and main_pack_format >= 16:
 					main_pack_format = 15
-			overlays: dict[str, list[dict[str, Any]]] | None = pack_format.get("overlays")
+			overlays = pack_format.get("overlays")
 			if overlays is not None:
 				mc_versions = requests.get("https://raw.githubusercontent.com/misode/mcmeta/refs/heads/summary/versions/data.json").json()
 				for overlay in overlays["entries"]:
 					min_format = 0
 					max_format = 2**31-1
-					formats: dict[str, int] | list[int] = overlay.get("formats")
+					formats = overlay.get("formats")
 					if (isinstance(formats, dict)):
 						min_format = formats["min_inclusive"]
 						max_format = formats["max_inclusive"]
@@ -198,14 +215,13 @@ def iterate_files(config: dict, pack_config: dict, target: str, mc_version_info:
 
 	for directory, _, files in os.walk(source):
 		for file_name in files:
-			relative_path = f"{directory.removeprefix(source)}"
+			relative_path = directory.removeprefix(source).strip(os.sep)
 			file_path = f"{relative_path}{os.sep}{file_name}"
-			if any(file_path.startswith(f"/{exclude}") for exclude in excludes):
+			if any(file_path.startswith(exclude) for exclude in excludes):
 				continue
-			overlay = next((overlay for overlay in existing_overlays if file_path.startswith(f"/{overlay['dir']}")), None)
 
+			overlay = next((overlay for overlay in existing_overlays if file_path.startswith(overlay["dir"])), None)
 			version_info = dict(mc_version_info)
-
 			if overlay is not None:
 				format_version = overlay["min"] if overlay["min"] > min_pack_format else min_pack_format
 				if format_version > min_pack_format:
@@ -218,9 +234,6 @@ def iterate_files(config: dict, pack_config: dict, target: str, mc_version_info:
 				if format_version is not None:
 					version = next(v for v in mc_versions if v["data_pack_version"] == format_version)
 					version_info["world_version"] = version["data_version"]
-				else:
-					for overlay in existing_overlays:
-						t = f"{source}{overlay['dir']}{os.sep}{file_path}"
 
 			for version, override in versions:
 				version_config = config.copy()
@@ -231,74 +244,43 @@ def iterate_files(config: dict, pack_config: dict, target: str, mc_version_info:
 					out_root = f"{target}-{version}"
 				else:
 					out_root = target
-				out_dir = f"{out_root}{relative_path}"
-				out_path = f"{out_dir}{os.sep}{file_name}"
 				
-				file_path = f"{source}{file_path}"
+				out_dir = f"{out_root}{os.sep}{relative_path}"
+				out_path = f"{out_dir}{os.sep}{file_name}"
 				print(out_path)
 
 				if not file_name.endswith(remove_extensions):
-					if file_name.endswith(".nbt") or file_name.endswith(".dat"):
-						nbt_content = nbt.read_from_nbt_file(file_path)
-						handle_nbt(nbt_content, out_path, version_config, version_info)
+					file_result = handle_file(source, file_name, relative_path, out_root, main_pack_format,
+					  min_pack_format, version_config, requested_rp_sha, version_info)
+
+					pack_formats = sorted(file_result["formats"])
+					for i in range(0, len(pack_formats)):
+						pack_format = pack_formats[i]
+						max_format = pack_formats[i+1] - 1 if i+1 < len(pack_formats) else None
+						if main_pack_format >= pack_format and (max_format is None or main_pack_format < max_format):
+							continue
+						pack_formats_for_overlay.append([pack_format if pack_format > 1 else None, max_format])
+						write_overlay = handle_file(source, file_name, relative_path, out_root, pack_format,
+					  		min_pack_format, version_config, requested_rp_sha, version_info)\
+							["write_file"]
+
+						if write_overlay is not None:
+							overlay_path = f"{out_root}{os.sep}pack_format\
+								{f'_from_{pack_format}' if pack_format > 1 else ''}\
+								{f'_until_{max_format}' if max_format != None else ''}\
+								{os.sep}{relative_path}".replace("\t", "")
+							os.makedirs(overlay_path, exist_ok=True)
+							write_overlay(f"{overlay_path}{os.sep}{file_name}")
+					write_file = file_result["write_file"]
+					if write_file is not None:
 						os.makedirs(out_dir, exist_ok=True)
-						nbt.write_to_nbt_file(out_path, nbt_content)
-
-					elif file_name.endswith(".png") and not file_name.endswith(".bin"):
-						os.makedirs(out_dir, exist_ok=True)
-						shutil.copy2(file_path, out_path)
-					else:
-						file_content: str | None = None
-						try:
-							with open(file_path, "r", encoding="utf-8") as file:
-								file_content = file.read()
-
-						except UnicodeDecodeError:
-							pass
-						if file_content == None:
-							os.makedirs(out_dir, exist_ok=True)
-							shutil.copy2(file_path, out_path)
-						else:	
-							if file_name.endswith(".json") or file_name.endswith(".mcmeta"):
-								file_content = minify_json_file(file_content)
-							elif file_name.endswith(".mcfunction"):
-								function_result = minify_function_file(file_content, version_config, main_pack_format, min_pack_format, max_pack_format)
-								pack_formats = sorted(function_result.get("pack_formats"))
-								for i in range(0, len(pack_formats)):
-									pack_format = pack_formats[i]
-									max_format = pack_formats[i+1] - 1 if i+1 < len(pack_formats) else None
-									if main_pack_format >= pack_format and (max_format is None or main_pack_format < max_format):
-										continue
-									pack_formats_for_overlay.append([pack_format if pack_format > 1 else None, max_format])
-									overlay_content = minify_function_file(file_content, version_config, pack_format, min_pack_format, max_pack_format)\
-										.get("content")
-
-									if overlay_content:
-										overlay_path = f"{out_root}{os.sep}pack_format\
-											{f'_from_{pack_format}' if pack_format > 1 else ''}\
-											{f'_until_{max_format}' if max_format != None else ''}\
-											{os.sep}{relative_path}".replace("\t", "")
-										os.makedirs(overlay_path, exist_ok=True)
-										with open(f"{overlay_path}{os.sep}{file_name}", "w", encoding="utf-8") as file:
-											file.write(overlay_content)
-								file_content: str = function_result.get("content")
-								if override == None:
-									global lines
-									lines += file_content.count("\n") + 1
-
-							file_content = replace_variables(file_content, out_path, version_config, requested_rp_sha)
-
-							if file_content:
-								os.makedirs(out_dir, exist_ok=True)
-								with open(out_path, "w", encoding="utf-8") as file:
-									file.write(file_content)
+						write_file(out_path)
 
 	pack_path = f"{target}{os.sep}pack.mcmeta"
 	if os.path.exists(pack_path) and len(pack_formats_for_overlay) > 0:
 		with open(f"{target}{os.sep}pack.mcmeta", "r+", encoding="utf-8") as file:
-			pack_def = json.loads(file.read())
-			pack = pack_def.get("pack")
-			supported_formats = pack.get("supported_formats")
+			pack_def: PackFormat = json.loads(file.read())
+			pack = pack_def["pack"]
 			pack["pack_format"] = main_pack_format
 			overlays = pack_def.get("overlays")
 			if overlays is None:
@@ -321,7 +303,7 @@ def iterate_files(config: dict, pack_config: dict, target: str, mc_version_info:
 
 	return requested_rp_sha
 
-def replace_variables(content: str, file_path: str, config, requested_rp_sha: list):
+def replace_variables(content: str, file_path: str, config, requested_rp_sha: list[str]):
 	indexDiff = 0
 	for match in re.finditer(r"\{NEUN_SCRIPT:([a-zA-Z0-9_-]+)(?:\s*([+\-*/%])\s*([+-]?\d+))?\}", content):
 		variable = match.group(1)
@@ -348,7 +330,7 @@ def replace_variables(content: str, file_path: str, config, requested_rp_sha: li
 		indexDiff += len(replace) - match.end() + match.start()
 	return content
 
-def get_variable(variable: str, config: dict, requested_rp_sha: list | None = None, file_path: str | None = None):
+def get_variable(variable: str, config: dict, requested_rp_sha: list[str] | None = None, file_path: str | None = None):
 	vars = config.get("vars")
 
 	if variable == "version":
@@ -363,33 +345,229 @@ def get_variable(variable: str, config: dict, requested_rp_sha: list | None = No
 		return variable
 	return variable
 
-def handle_nbt(nbt_tag, file_path: str, config: dict, mc_version_info: dict | None, key: str | None = None):
-	if isinstance(nbt_tag, dict):
-		if file_path.endswith("level.dat") and key == "Version" and mc_version_info != None:
-			nbt_tag["Id"].value = mc_version_info["world_version"]
-			nbt_tag["Name"].value = mc_version_info["name"]
-		else:
-			for key, value in nbt_tag.items():
-				handle_nbt(value, file_path, config, mc_version_info, key)
-	elif isinstance(nbt_tag, list):
-		for value in nbt_tag:
-			handle_nbt(value, file_path, config, key)
-	elif hasattr(nbt_tag, "value") and isinstance(nbt_tag.value, str):
-		nbt_tag.value = replace_variables(nbt_tag.value, file_path, config, [])
-	elif key == "DataVersion" and mc_version_info != None:
-		nbt_tag.value = mc_version_info["world_version"]
+class FileResult(TypedDict):
+	formats: set[int]
+	write_file: Callable[[str], None]
 
-def minify_json_file(file_content: str):
+def handle_file(
+	source: str,
+	file_name: str,
+	relative_path: str,
+	out_root: str,
+	pack_format: int,
+	min_pack_format: int,
+	version_config: dict,
+	requested_rp_sha: list[str],
+	version_info: dict | None
+) -> FileResult:
+	file_path = f"{source}{os.sep}{relative_path}{os.sep}{file_name}"
+	out_path = f"{out_root}{os.sep}{relative_path}{os.sep}{file_name}"
+	if file_name.endswith(".nbt") or file_name.endswith(".dat"):
+		nbt_content = nbt.read_from_nbt_file(file_path)
+		nbt_result = handle_structued(nbt_content, out_path, version_config, version_info, pack_format, min_pack_format, True)
+		return {
+			"formats": nbt_result[0],
+			"write_file": lambda out: nbt.write_to_nbt_file(out, nbt_content) if nbt_result[1] else None
+		}
+
+	if file_name.endswith(".png") and not file_name.endswith(".bin"):
+		return {
+			"formats": set(),
+			"write_file": lambda out: shutil.copy2(file_path, out)
+		}
+	
+	file_content: str | None = None
 	try:
-		# pyjson5 allows for comments and other json5 features when reading
-		json_content = pyjson5.decode(file_content)
-		# json serializes as utf-8 when called like this, increasing minification 
-		return json.dumps(json_content, ensure_ascii=False, separators=(",", ":"))
+		with open(file_path, "r", encoding="utf-8") as file:
+			file_content = file.read()
 
-	except Exception:
-		print("failed to parse json file\n" + file_content, file=stderr)
+	except UnicodeDecodeError:
+		pass
+	if file_content is None:
+		return {
+			"formats": set(),
+			"write_file": lambda out: shutil.copy2(file_path, out)
+		}
 
-def minify_function_file(file_content: str, config: dict, pack_format: int, min_format, max_format):
+	minify_result: StringFileMinifyResult = {
+		"formats": set(),
+		"content": file_content
+	}
+
+	if file_name.endswith(".json") or file_name.endswith(".mcmeta"):
+		minify_result = minify_json_file(file_content, file_path, version_config, version_info, pack_format, min_pack_format)
+
+	elif file_name.endswith(".mcfunction"):
+		minify_result = minify_function_file(file_content, version_config, pack_format, min_pack_format)
+	else:
+		minify_result["content"] = replace_variables(file_content, out_path, version_config, requested_rp_sha)
+
+	def write_text(out, content):
+		with open(out, "w", encoding="utf-8") as file:
+			file.write(content)
+
+	file_content = minify_result["content"]
+	return {
+		"formats": minify_result["formats"],
+		"write_file": lambda out: write_text(out, file_content) if file_content else None
+	}
+
+def handle_structued(
+	tag,
+	file_path: str,
+	config: dict,
+	mc_version_info: dict | None,
+	pack_format: int,
+	min_format: int,
+	is_nbt: bool,
+	key: str | None = None
+):
+	pack_formats = set()
+	keep_self = True
+	if isinstance(tag, dict):
+		if is_nbt and file_path.endswith("level.dat") and key == "Version" and mc_version_info != None:
+			tag["Id"].value = mc_version_info["world_version"]
+			tag["Name"].value = mc_version_info["name"]
+		else:
+			to_remove = set()
+			to_replace = {}
+			for key, value in tag.items():
+				new_key = replace_variables(key, file_path, config, [])
+				if new_key != key:
+					to_remove.add(key)
+					to_replace[new_key] = value
+					
+				if isinstance(value, str):
+					new_value = replace_variables(value, file_path, config, [])
+					if new_value != value:
+						value = new_value
+						to_replace[key] = new_value
+
+				if new_key.startswith("NEUN_SCRIPT "):
+					match=re.match("NEUN_SCRIPT\s+(.*)", new_key)
+					if match != None:
+						should_execute_action = False
+						force_child_evaluation = False
+						command = re.sub("\s+", " ", match.group(1)).lower().split(" ")
+
+						command_offset = 1 if command[0] not in ["replace", "remove"] else 2
+						if len(command) == command_offset:
+							should_execute_action = True
+						elif len(command) < command_offset:
+							raise ValueError(f"command needs {command_offset} arguments")
+						else:
+							match command[command_offset]:
+								case "if" | "unless":
+									if len(command) != command_offset + 2:
+										raise ValueError("if/unless needs one argument")
+									value = get_variable(command[command_offset + 1], config)
+									if bool(value) == (command[command_offset] == "if"):
+										should_execute_action = True
+									
+								case "from" | "until":
+									force_child_evaluation = True
+
+									if len(command) < command_offset + 2:
+										raise ValueError("until / from needs at least one argument")
+
+									min_value = 1
+									max_value = None
+
+									if command[command_offset] == "from":
+										min_value = int(command[command_offset + 1])
+										if len(command) > command_offset + 2 and command[command_offset + 2] == "until":
+											if len(command) < command_offset + 4:
+												raise ValueError("Syntax: from <pack_format> until <pack_format>")
+											max_value = int(command[command_offset + 3])
+									else:
+										max_value = int(command[command_offset + 1])
+
+									pack_formats.add(min_value)
+
+									if max_value is not None:
+										pack_formats.add(max_value)
+									if pack_format >= min_value and (max_value is None or pack_format < max_value):
+										should_execute_action = True
+										if min_value > min_format:
+											pack_formats.add(1)
+
+						val_result = None
+						if should_execute_action:
+							match command[0]:
+								case "remove_self":
+									keep_self = False
+								case "remove":
+									to_remove.add(command[1])
+								case "merge":
+									val_result = handle_structued(value, file_path, config, mc_version_info, pack_format, min_format, is_nbt, new_key)
+									if val_result[1] and isinstance(value, dict):
+										for k, v in value.items():
+											to_replace[k] = v
+								case "replace":
+									val_result = handle_structued(value, file_path, config, mc_version_info, pack_format, min_format, is_nbt, new_key)
+									if val_result[1]:
+										to_replace[command[1]] = value
+									else:
+										to_remove.add(command[1])
+
+						if force_child_evaluation and val_result is None:
+							val_result = handle_structued(value, file_path, config, mc_version_info, pack_format, min_format, is_nbt, new_key)
+						if val_result is not None:
+							pack_formats.update(val_result[0])
+						to_remove.add(new_key)
+							
+				else:
+					val_result = handle_structued(value, file_path, config, mc_version_info, pack_format, min_format, is_nbt, new_key)
+					if val_result[1]:
+						pack_formats.update(val_result[0])
+					else:
+						to_remove.add(new_key)
+
+			for key, val in to_replace.items():
+				tag[key] = val
+			for key in to_remove:
+				del tag[key]
+
+	elif isinstance(tag, list):
+		remove_indices = []
+		for i, value in enumerate(tag):
+			val_result = handle_structued(value, file_path, config, mc_version_info, pack_format, min_format, is_nbt)
+			if val_result[1]:
+				pack_formats.update(val_result[0])
+			else:
+				remove_indices.append(i)
+		remove_indices.reverse()
+		for i in remove_indices:
+			del tag[i]
+
+	elif hasattr(tag, "value") and isinstance(tag.value, str):
+		tag.value = replace_variables(tag.value, file_path, config, [])
+	elif is_nbt and key == "DataVersion" and mc_version_info != None:
+		tag.value = mc_version_info["world_version"]
+	return (pack_formats, keep_self)
+
+class StringFileMinifyResult(TypedDict):
+	formats: set[int]
+	content: str
+
+def minify_json_file(
+	file_content: str,
+	file_path: str,
+	config: dict,
+	mc_version_info: dict | None,
+	pack_format: int,
+	min_format: int
+) -> StringFileMinifyResult:
+	# pyjson5 allows for comments and other json5 features when reading
+	json_content = pyjson5.decode(file_content)
+	sturctured_result = handle_structued(json_content, file_path, config, mc_version_info, pack_format, min_format, False)
+	# json serializes as utf-8 when called like this, increasing minification 
+	return {
+		"content": json.dumps(json_content, ensure_ascii=False, separators=(",", ":")) if sturctured_result[1] else "",
+		"formats": sturctured_result[0]
+	}
+
+def minify_function_file(file_content: str, config: dict, pack_format: int, min_format: int) -> StringFileMinifyResult:
 	output=""
 	remove=0
 	uncomment=0
@@ -479,7 +657,7 @@ def minify_function_file(file_content: str, config: dict, pack_format: int, min_
 					else:
 						remove = -1
 
-	return { "content": output, "pack_formats": pack_formats }
+	return { "content": output, "formats": pack_formats }
 
 def copy_file_or_dir(src: str, target: str):
 	if os.path.isdir(src):
