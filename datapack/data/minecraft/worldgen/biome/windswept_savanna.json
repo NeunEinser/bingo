@@ -1,4 +1,11 @@
 {
+	"NEUN_SCRIPT replace carvers until 49": {
+		"air": [
+			"minecraft:cave",
+			"minecraft:cave_extra_underground",
+			"minecraft:canyon"
+		]
+	},
 	"carvers": [
 		"minecraft:cave",
 		"minecraft:cave_extra_underground",
@@ -13,6 +20,8 @@
 			"sound": "minecraft:ambient.cave",
 			"tick_delay": 6000
 		},
+		"NEUN_SCRIPT remove music_volume until 58": null,
+		"music_volume": 1.0,
 		"sky_color": 7254527,
 		"water_color": 4159204,
 		"water_fog_color": 329011
