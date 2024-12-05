@@ -2,7 +2,7 @@
 #
 # Moves @s to the lobby
 #
-# @internal
+# @public
 # @context
 # 	entity The player who wants to go back to the lobby
 
@@ -12,7 +12,31 @@ execute unless score @s fetchr.game_id = $current_game_id fetchr.game_id run tea
 execute if score @s fetchr.game_id = $current_game_id fetchr.game_id unless entity @a[scores={fetchr.teleport_all=1}] if entity @s[predicate=fetchr:is_in_game] run tellraw @a {"translate":"fetchr.lobby.returned","with":[{"selector":"@s"}]}
 
 effect clear @s
-execute in fetchr:lobby run teleport @s 7.5 3 7.5 180 0
+
+function fetchr:util/find_leashed_entities
+execute \
+	at @s \
+	as @e[distance=..50, tag=fetchr.leashed] \
+	in fetchr:lobby \
+	run teleport @s 7.5 3 7.5 180 0
+function fetchr:util/find_owned_entities
+execute \
+	at @s \
+	as @e[distance=..50, tag=fetchr.owned] \
+	in fetchr:lobby \
+	run teleport @s 7.5 3 7.5 180 0
+execute \
+	in fetchr:lobby \
+	positioned 7.5 3 7.5 \
+	run tag @e[distance=...1] remove fetchr.owned
+execute \
+	in fetchr:lobby \
+	on vehicle \
+	run teleport @s 7.5 3 7.5 180 0
+execute \
+	unless entity @s[predicate=fetchr:is_in_lobby] \
+	in fetchr:lobby \
+	run teleport @s 7.5 3 7.5 180 0
 execute at @s run spawnpoint
 scoreboard players reset @s fetchr.lobby
 scoreboard players reset @s fetchr.spectator
