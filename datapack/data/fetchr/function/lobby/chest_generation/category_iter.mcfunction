@@ -9,7 +9,6 @@
 #>
 # @within function fetchr:lobby/chest_generation/*
 #declare score_holder $chest_generation.row
-scoreboard players set $chest_generation.row fetchr.tmp 0
 
 function fetchr:lobby/chest_generation/increment_column
 
@@ -50,8 +49,12 @@ execute \
 scoreboard players operation $chest_generation.remaining_cols fetchr.tmp -= $chest_generation.column fetchr.tmp
 
 execute \
+	store result storage tmp.fetchr:chest_generation next_chest.height byte 1 \
+	run scoreboard players get $chest_generation.height fetchr.tmp
+execute \
 	if score $chest_generation.remaining_cols fetchr.tmp < $chest_generation.overflow_col_count fetchr.tmp \
-	run function fetchr:lobby/chest_generation/next_chest
+	run function fetchr:lobby/chest_generation/next_chest \
+		with storage tmp.fetchr:chest_generation next_chest
 
 function fetchr:lobby/chest_generation/items_iter
 

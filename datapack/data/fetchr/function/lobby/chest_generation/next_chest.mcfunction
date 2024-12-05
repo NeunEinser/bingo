@@ -7,6 +7,12 @@
 # 	entity Marker area effect cloud that marks the right side of the chest
 # 	position @s
 
+$execute \
+	if score $chest_generation.height fetchr.tmp matches 4.. \
+	positioned ~-4 $(height) ~-3 \
+	run function fetchr:lobby/chest_generation/place_ceiling
+
+scoreboard players add $chest_generation.height fetchr.tmp 1
 clone ~ ~ ~ ~1 62 ~ ~ ~1 ~ filtered minecraft:chest move
 
 #>
