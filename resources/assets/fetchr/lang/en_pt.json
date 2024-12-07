@@ -1,1 +1,12 @@
-{}
+{
+	"fetchr.error.incompatible_minecraft_version.multiple_compatible": "Ye be usin' an unsupported version o' Minecraft. Dis pack has been made compatible fer Minecraft versions %s-%s",
+	"fetchr.error.incompatible_minecraft_version.single_compatible": "Ye be usin' an unsupported version o' Minecraft. Dis pack has been made compatible fer Minecraft version %s",
+	"fetchr.error.spigot_paper": "Ye be likely usin' a version o' Spigot or Paper. Paper 'n Spigot alter vanilla behavior 'n be incompatible wit' Fetchr.",
+	"fetchr.error.spigot_paper.help": "Ye can use a vanilla server, or use Fabric or Quilt wit' Lithium fer best performance.\n\nIf ye needs further assistance or be seein' dis message despite nah usin' Paper or Spigot, please report dis issue on %s or %s",
+	"fetchr.logging.error": "MISHAP",
+	"fetchr.setup.error.unknown_category": "Arr, item %1$s be in category %2$s, but alas, category %2$s be nowhere to be found!",
+	"fetchr.actionbar.wrong_resourcepack_error": "Arr, ye've got a mismatched version of the Fetchr resource pack enabled, matey!",
+	"fetchr.resourcepack_check.sign.line1": "Resource Pack",
+	"fetchr.resourcepack_check.sign.line2": "be installed.",
+	"fetchr.resourcepack_check.sign.line3": "Press 'ere for"
+}
