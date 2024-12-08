@@ -36,7 +36,37 @@ teleport @e[type=!#fetchr:keep_on_game_start, tag=!fetchr.generated_entity, dist
 teleport @e[type=minecraft:item, distance=..9] ~ -128 ~
 kill @e[y=-128, distance=..1]
 
-execute if score $allow_spectating fetchr.settings matches 1 in fetchr:lobby as @e[type=minecraft:marker, tag=fetchr.join_game_sign, distance=0..] run data modify entity @s data.front_text.messages set value ['{"translate":"fetchr.lobby.card_generation.join_as_spectator.sign.line1","bold":true,"color":"#8eedeb","clickEvent":{"action":"run_command","value":"/function fetchr:lobby/settings/join_game"}}','{"translate":"fetchr.lobby.card_generation.join_as_spectator.sign.line2","bold":true,"color":"#8eedeb"}','{"translate":"fetchr.lobby.card_generation.join_as_spectator.sign.line3","bold":true,"color":"#8eedeb"}','{"translate":"fetchr.lobby.card_generation.join_as_spectator.sign.line4","bold":true,"color":"#8eedeb"}']
+execute \
+	if score $allow_spectating fetchr.settings matches 1 \
+	in fetchr:lobby \
+	as @e[type=minecraft:marker, tag=fetchr.join_game_sign, distance=0..] \
+	run data modify entity @s data.front_text.messages set value [\
+		'{\
+			"translate": "fetchr.lobby.card_generation.join_as_spectator.sign.line1",\
+			"bold": true,\
+			"color": "#8eedeb",\
+			"clickEvent": {"action": "run_command","value": "/function fetchr:lobby/settings/join_game"}\
+		}',\
+		'{"translate": "fetchr.lobby.card_generation.join_as_spectator.sign.line2", "bold": true, "color": "#8eedeb"}',\
+		'{"translate": "fetchr.lobby.card_generation.join_as_spectator.sign.line3", "bold": true, "color": "#8eedeb"}',\
+		'{"translate": "fetchr.lobby.card_generation.join_as_spectator.sign.line4", "bold": true, "color": "#8eedeb"}'\
+	]
+execute \
+	if score $allow_spectating fetchr.settings matches 1 \
+	in fetchr:lobby \
+	as @e[type=minecraft:marker, tag=fetchr.join_game_sign, distance=0..] \
+	if data entity @s data.back_text \
+	run data modify entity @s data.back_text.messages set value [\
+		'{\
+			"translate": "fetchr.lobby.card_generation.join_as_spectator.sign.line1",\
+			"bold": true,\
+			"color": "#8eedeb",\
+			"clickEvent": {"action": "run_command", "value": "/function fetchr:lobby/settings/join_game"}\
+		}',\
+		'{"translate": "fetchr.lobby.card_generation.join_as_spectator.sign.line2", "bold":true, "color": "#8eedeb"}',\
+		'{"translate": "fetchr.lobby.card_generation.join_as_spectator.sign.line3", "bold":true, "color": "#8eedeb"}',\
+		'{"translate": "fetchr.lobby.card_generation.join_as_spectator.sign.line4" ,"bold":true, "color": "#8eedeb"}'\
+	]
 
 schedule clear fetchr:game/start/pre_gen/schedule_entity_check
 schedule function fetchr:game/start/start_falling 2s
