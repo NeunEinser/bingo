@@ -8,9 +8,7 @@
 
 function fetchr:util/find_player_team
 
-# Resource pack is likely not loaded here. In case it isn't, just print
-# hardcoded English message.
-execute if score $game_state fetchr.state matches 3 as @s[predicate=fetchr:is_in_game] run function fetchr:game/menu/print_with_hint
+execute if score $game_state fetchr.state matches 4 as @s[predicate=fetchr:is_in_game] run function fetchr:game/menu/print_with_hint
 
 scoreboard players set @s fetchr.update_hud 1
 trigger fetchr.resource_pack_check

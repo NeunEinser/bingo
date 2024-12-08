@@ -5,6 +5,8 @@
 #
 # @within function fetchr:game/start/start_if_ready
 
+scoreboard players set $game_state fetchr.state 3
+
 kill @e[type=minecraft:marker, tag=fetchr.skybox_button, distance=..8]
 kill @e[type=minecraft:item_frame, tag=fetchr.card_frame, distance=..8]
 kill @e[type=minecraft:marker, tag=fetchr.card_frame_start, distance=..8]

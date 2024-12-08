@@ -40,7 +40,7 @@ execute if entity @a[tag=fetchr.resourcepack_check, limit=1] run setblock 1 2 1 
 execute if entity @a[predicate=fetchr:is_in_lobby, limit=1] in fetchr:lobby run function fetchr:lobby/tick
 execute at @a[tag=fetchr.in_skybox, limit=1] as @e[type=minecraft:marker, tag=fetchr.spawn, distance=..12, limit=1] at @s run function fetchr:game/skybox/tick
 execute if score $game_state fetchr.state matches 1..2 in fetchr:default run function fetchr:game/start/pre_gen/tick
-execute if score $game_state fetchr.state matches 3 run function fetchr:game/tick
+execute if score $game_state fetchr.state matches 4 run function fetchr:game/tick
 
 scoreboard players operation $last_tick_second fetchr.state = $raw 91.timer.io
 

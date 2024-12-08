@@ -6,7 +6,7 @@
 # @context entity Player
 
 execute \
-	if score $game_state fetchr.state matches 3 \
+	if score $game_state fetchr.state matches 4 \
 	if predicate fetchr:is_in_game \
 	run function fetchr:item_detection/check_all_slots
 

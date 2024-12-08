@@ -20,3 +20,7 @@ gamemode creative @s
 gamemode spectator @s
 
 tellraw @a {"translate":"fetchr.game.start_spectating","with":[{"selector":"@s"}]}
+
+execute \
+	if score $game_state fetchr.state matches 3 \
+	run schedule function fetchr:game/start/countdown 1t replace

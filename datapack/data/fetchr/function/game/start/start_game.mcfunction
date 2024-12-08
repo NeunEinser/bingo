@@ -16,13 +16,11 @@ forceload remove all
 forceload add 0 0
 forceload add ~ ~
 
-scoreboard players set $game_state fetchr.state 3
-execute as @a[predicate=fetchr:is_in_game] run function fetchr:game/start/player_init
+scoreboard players set $game_state fetchr.state 4
+execute as @a[predicate=fetchr:is_in_game,team=!] run function fetchr:game/start/player_init
 
 gamerule doDaylightCycle true
 gamerule doFireTick true
-
-execute in fetchr:lobby run data modify block 5 3 5 auto set value true
 
 team modify fetchr.light_blue seeFriendlyInvisibles true
 team modify fetchr.black seeFriendlyInvisibles true
