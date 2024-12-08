@@ -17,7 +17,22 @@ forceload add 0 0
 forceload add ~ ~
 
 scoreboard players set $game_state fetchr.state 4
-execute as @a[predicate=fetchr:is_in_game,team=!] run function fetchr:game/start/player_init
+execute \
+	unless block ~ ~ ~ #minecraft:leaves \
+	unless block ~ ~1 ~ #minecraft:leaves \
+	as @a[predicate=fetchr:is_in_game,team=!] \
+	run function fetchr:game/start/player_init
+execute \
+	if block ~ ~ ~ #minecraft:leaves \
+	positioned over motion_blocking \
+	as @a[predicate=fetchr:is_in_game,team=!] \
+	run function fetchr:game/start/player_init
+execute \
+	unless block ~ ~ ~ #minecraft:leaves \
+	if block ~ ~1 ~ #minecraft:leaves \
+	positioned over motion_blocking \
+	as @a[predicate=fetchr:is_in_game,team=!] \
+	run function fetchr:game/start/player_init
 
 gamerule doDaylightCycle true
 gamerule doFireTick true
