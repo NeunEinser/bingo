@@ -113,6 +113,9 @@ There is a constant lighting factor in the overworld, similarly to the vanilla N
 - Weather is always sunny
 - Phantoms, wandering traders and patrol spawns (which all work on a world-global timer) are disabled
 
+## Guides
+- [Modifying the item pool](<https://github.com/NeunEinser/bingo/blob/develop/docs/modifying_item_pool.md>)
+
 ## Credits
 
 Original idea and 1.11 implementation by Lorgon111: http://www.playminecraftbingo.com/
