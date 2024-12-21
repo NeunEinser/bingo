@@ -8,7 +8,7 @@ In order to modify the item pool, you will thus need to create a resource pack a
 
 The resource pack is needed to make it possible to render the item's icon on the Bingo card displayed on the HUD. If you are not looking to add any new item and only want to modify properties of existing items or remove some, you can skip this step.
 
-For the resource pack you need a texture file that looks like this: <https://github.com/NeunEinser/bingo/blob/develop/resources/assets/fetchr/textures/font/2d_items.png>. There are some gaps between the icons and those are important for technical reasons. If you use gimp (or prbly photoshop could also import it), you can also use <https://github.com/NeunEinser/bingo/blob/develop/resources/assets/fetchr/textures/font/2d_items.xcf>, remove all the icons and turn the grid to visible to give a visual guideline. each item should be placed at the top of a gridcell with empty space below.
+For the resource pack you need a texture file that looks like this: [2d_items.png](/resources/assets/fetchr/textures/font/2d_items.png). There are some gaps between the icons and those are important for technical reasons. If you use gimp (or prbly photoshop could also import it), you can also use [2d_items.xcf](/resources/assets/fetchr/textures/font/2d_items.xcf), remove all the icons and turn the grid to visible to give a visual guideline. each item should be placed at the top of a gridcell with empty space below.
 
 Place this texture file somewhere in a resourcepack ([see Minecraft wiki](<https://minecraft.wiki/w/Resource_pack>)) in the `assets/<your namespace>/textures/path/to/your/file.png` (everything after textures can be anything you want. Namespace could be your username, or a name to the modification you are making, or anything really. For the entire path you can only use lowercase, numbers, underscores and dots)
 
@@ -52,7 +52,7 @@ You need to create 5 of these files with different ascent values. This example h
 - `-47`
 
 ## Datapack
-To actually add an item to the item pool you need to register it to the item pool. You can do so by either creating an own datapack or modifying the existing datapack. In any case `fetchr:init/fill_registries` is were the default items are defined and should help you a lot in figuring out how to set things up.
+To actually add an item to the item pool you need to register it to the item pool. You can do so by either creating an own datapack or modifying the existing datapack. In any case [`fetchr:init/fill_registries`](/datapack/data/fetchr/function/init/fill_registries.mcfunction) is were the default items are defined and should help you a lot in figuring out how to set things up.
 
 Creating a separate datapack has the advantage that it might be easier to maintain for you throughout versions (you can simply add the datapack into a new world when an update comes without needing to merge), and it could be compatible with other packs modifiying the item pool.
 

@@ -4,7 +4,7 @@ Fetchr is a custom gamemode where you play in survival Minecraft with a 5x5 Bing
 Try to collect all 5 items in a line for a quick Bingo or all 25 items for a longer Blackout game as quickly as possible!
 
 Example of a Bingo Card as shown in the Fetchr lobby:  
-![Lobby Card](screenshots/Lobby%20Card.png)
+![Lobby Card](images/lobby_card.png)
 
 ## General information
 
@@ -47,7 +47,7 @@ You may also download from [CurseForge](https://www.curseforge.com/minecraft/wor
 ### Custom HUD
 
 While in-game you will have a bunch of custom HUD elements around your hotbar. This utilizes a custom font and does not require any mods.
-![Custom HUD](screenshots/HUD.png)
+![Custom HUD](images/hud.png)
 
 The HUD can be customized in the Lobby and elements can be moved however you prefer them to be layed out, or individual components can be removed.
 
@@ -56,7 +56,7 @@ The HUD can be customized in the Lobby and elements can be moved however you pre
 
 The Bingo card shows all items of the current game and a summary of which team obtained which item so far. Items your own team has already gotten appear a little bit darker. Depending on the amount of teams, this display will be adjusted to fit all teams in.
 
-![Bingo Card with 2 teams](screenshots/Bingo%20Card%20MP.png)
+![Bingo Card with 2 teams](images/bingo_card_multiplayer.png)
 
 From the lobby, 10 team colors are available.
 
@@ -65,7 +65,7 @@ From the lobby, 10 team colors are available.
 
 There is a timer that counts up. This allows you to keep track of your time without any third party software. There is no time limit imposed by the map, but you can of course set your own goal. The timer counts real time. The timer icon also represents a functional Minecraft clock, showing the time within the current day
 
-![Timer](screenshots/Timer.png)
+![Timer](images/hud_timer.png)
 
 
 #### Player position
@@ -76,13 +76,13 @@ Below the regular coordinates, there is by default also a chunk coordinate displ
 
 And below that, there is also a separated Y coordinate display, which is useful when digging down without requiring F3.
 
-![Coordinate Display](screenshots/Coordinates.png)
+![Coordinate Display](images/hud_coordinates.png)
 
 #### Fetchr Seed
 
 Finally, there is a visible display for the Fetchr seed. Like a Minecraft world, where the same seed will generate the same world, the same Fetchr seed will generate the same Bingo Board and the same spawn point. When generating a card, you can choose to manually set a seed instead of generating a random card for competitive races or set-seed runs.
 
-![Seed](screenshots/Seed.png)
+![Seed](images/hud_seed.png)
 
 
 ### Custom Worldgen
@@ -114,7 +114,7 @@ There is a constant lighting factor in the overworld, similarly to the vanilla N
 - Phantoms, wandering traders and patrol spawns (which all work on a world-global timer) are disabled
 
 ## Guides
-- [Modifying the item pool](<https://github.com/NeunEinser/bingo/blob/develop/docs/modifying_item_pool.md>)
+- [Modifying the item pool](docs/modifying_item_pool.md)
 
 ## Credits
 
