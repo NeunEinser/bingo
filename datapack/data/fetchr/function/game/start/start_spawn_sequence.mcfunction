@@ -21,14 +21,6 @@ setblock ~ ~-1 ~ minecraft:lime_stained_glass
 teleport @a[predicate=fetchr:is_in_game] ~ ~ ~
 tag @a remove fetchr.in_skybox
 effect give @a[predicate=fetchr:is_in_game] minecraft:invisibility infinite 1 true
-#NEUN_SCRIPT until 49
-#execute as @a run attribute @s minecraft:player.entity_interaction_range \
-	modifier remove fetchr:card_item_frame_range
-#NEUN_SCRIPT end
-#NEUN_SCRIPT since 49
-execute as @a run attribute @s minecraft:entity_interaction_range \
-	modifier remove fetchr:card_item_frame_range
-#NEUN_SCRIPT end
 
 execute in fetchr:lobby run function fetchr:game/start/init_teams
 execute if score $team_count fetchr.state matches 1 run scoreboard players set $lockout_mode fetchr.state 0
