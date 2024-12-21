@@ -11,6 +11,7 @@ execute at @s run playsound minecraft:block.note_block.pling voice @s ~ ~ ~ 1 1
 
 effect clear @s
 clear @s
+gamemode creative @s
 gamemode survival @s
 experience set @s 0 levels
 experience set @s 0 points

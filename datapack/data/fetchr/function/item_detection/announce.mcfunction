@@ -49,9 +49,7 @@ execute \
 	store result storage io.fetchr:find_team current_team.slot_id byte 1 \
 	run scoreboard players get $item_detect.slot fetchr.tmp
 
-execute \
-	unless score $lockout_mode fetchr.state matches 1 \
-	run function fetchr:item_detection/set_background with storage io.fetchr:find_team current_team
+function fetchr:item_detection/set_background with storage io.fetchr:find_team current_team
 
 # detect goals
 execute \

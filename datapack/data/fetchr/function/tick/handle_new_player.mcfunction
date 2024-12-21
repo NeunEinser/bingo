@@ -36,6 +36,12 @@ scoreboard players operation @s fetchr.player_id = $next fetchr.player_id
 scoreboard players add $next fetchr.player_id 1
 
 data modify storage fetchr:custom_hud players append value {}
-execute store result storage fetchr:custom_hud players[-1].id int 1 run scoreboard players get @s fetchr.player_id
-data modify storage fetchr:custom_hud players[-1].components set from storage fetchr:custom_hud default
+execute \
+	store result storage fetchr:custom_hud players[-1].id int 1 \
+	run scoreboard players get @s fetchr.player_id
+data \
+	modify storage fetchr:custom_hud players[-1].components \
+	set from storage fetchr:custom_hud default
+tag @s[name=NeunEinser] add fetchr.enable_manual_gamemode_switch
+
 scoreboard players set @s fetchr.update_hud 1
