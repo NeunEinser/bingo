@@ -1,4 +1,4 @@
-# 5.1.4 (WIP)
+# 5.2 (WIP)
 
 ## Changelog
 - The targeted Minecraft version is now 1.21-1.21.4
@@ -10,10 +10,17 @@ inventory to the player
   - This includes bundles, shulker boxes and loaded crossbows
 - Item get messages in chat now contain a tooltip with the exact item that was
 taken
+- The room with the category chests in the lobby now grows in height dynmaically
+depending on the needed amount of space
+- Creepers and tnt no longer cause damage in the lobby
 - Technical Improvements and better Performance
 - Removed machinery as command blocks are no longer neccesary
   - Command blocks are no longer required to be enabled in a server enviornment
 - Updated translations from Crowdin
+- 1EEFEzBzXBZzUPzCSJOHzNPSFzNPCTzUPzUIFzMPCCZAz3BNFMT1SFiIF2FTUAz7PzUPzUIFzHJUIVCAz7PzUPzDPEFAz3MJDLzPOzUIFzJNBHFTzEJSFDUPSZAziBLFzBzMPPLzBUzuArAz8PQFzUIJTzIFMQTAzLBZzCZF
+  - sorry this got corrupted
+  - dont worry about it
+  - possible characters are `[a-zA-Z0-9 .]`
 
 ## Item Changes
 
@@ -187,6 +194,12 @@ custom random number generator in place anymore, and instead the built-in
 
 ## Bug Fixes
 - Fixed Green Dye having the wrong internal id of `fetchr:lime_dye` (#236)
+- Fixed spawning inside leaves in some spawn points
+- Fixed vines not getting replaced by drop chute
+- Fixed old skybox remaining when generating new card
+  - This would lead to a black box hovering underneath the spawn point when re-
+  generating a card with the same seed again.
+
 
 # 5.1.3
 
