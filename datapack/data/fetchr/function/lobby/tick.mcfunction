@@ -10,6 +10,14 @@ execute \
 	at @s \
 	run function fetchr:lobby/player_tick
 
+execute \
+	as @e[x=0, type=minecraft:creeper] \
+	run data modify entity @s ExplosionRadius set value 0b
+
+execute \
+	as @e[x=0, type=minecraft:tnt] \
+	run data modify entity @s explosion_power set value 0f
+
 #change settings
 #execute as @a[scores={fetchr.settings=5..12}] run function fetchr:lobby/player_settings/save/do_action
 #execute as @a[scores={fetchr.settings=14..20}] run function fetchr:lobby/player_settings/load/do_action
