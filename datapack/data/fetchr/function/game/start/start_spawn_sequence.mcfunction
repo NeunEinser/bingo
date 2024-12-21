@@ -7,9 +7,10 @@
 
 scoreboard players set $game_state fetchr.state 3
 
-kill @e[type=minecraft:marker, tag=fetchr.skybox_button, distance=..8]
-kill @e[type=minecraft:item_frame, tag=fetchr.card_frame, distance=..8]
-kill @e[type=minecraft:marker, tag=fetchr.card_frame_start, distance=..8]
+kill @e[type=minecraft:marker, tag=fetchr.skybox_button, distance=..9]
+kill @e[type=minecraft:item_frame, tag=fetchr.card_frame, distance=..9]
+kill @e[type=minecraft:marker, tag=fetchr.card_frame_start, distance=..9]
+kill @e[type=minecraft:item_display, distance=..1]
 
 fill ~-8 ~-1 ~-8 ~9 ~5 ~9 minecraft:air
 fill ~-1 62 ~-1 ~1 ~3 ~1 minecraft:barrier replace #fetchr:sky_box_chute_replaceables
