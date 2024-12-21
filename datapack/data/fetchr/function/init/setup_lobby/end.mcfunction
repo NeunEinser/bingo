@@ -20,7 +20,6 @@ setblock ~-1 4 ~-1 minecraft:redstone_block
 #declare tag fetchr.detect_mp_aec
 kill @e[type=minecraft:marker, tag=fetchr.detect_mp_aec]
 summon minecraft:marker 0 0 0 {CustomName:'{"translate": "fetchr.technical.detect_multiplayer"}', Tags: ["fetchr.detect_mp_aec"]}
-execute in fetchr:default run summon minecraft:marker 0 0 0 {CustomName:'{"translate": "fetchr.technical.detect_multiplayer"}', Tags: ["fetchr.detect_mp_aec"]}
 
 kill @e[type=minecraft:marker, tag=fetchr.string_tester]
 summon minecraft:marker 0 0 0 {Tags: ["fetchr.string_tester"]}
