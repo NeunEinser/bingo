@@ -6,6 +6,10 @@
 # 	function fetchr:game/start/pre_gen/**
 
 function neun_einser.timer:pause
+execute \
+	as @e[type=minecraft:marker, tag=fetchr.old_spawn] \
+	at @s \
+	run function fetchr:game/skybox/create_skybox/remove_old_skybox
 
 bossbar set fetchr:start/pre_gen/progress visible true
 scoreboard players set $game_state fetchr.state 2

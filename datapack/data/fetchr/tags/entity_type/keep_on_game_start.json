@@ -3,6 +3,8 @@
 		"#fetchr:always_keep",
 		"minecraft:player",
 		"minecraft:falling_block",
-		"minecraft:marker"
+		"minecraft:marker",
+		"minecraft:item_frame",
+		"minecraft:item_display"
 	]
 }

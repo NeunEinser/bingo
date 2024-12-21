@@ -19,6 +19,8 @@ gamerule doFireTick false
 gamerule doDaylightCycle false
 time set 0
 
+execute as @e[distance=1000..] run function fetchr:game/start/unfreeze_entity
+
 forceload remove all
 forceload add 0 0
 
