@@ -37,7 +37,9 @@ execute \
 	unless entity @s[predicate=fetchr:is_in_lobby] \
 	in fetchr:lobby \
 	run teleport @s 7.5 3 7.5 180 0
-execute at @s run spawnpoint
+execute \
+	in fetchr:lobby \
+	run spawnpoint @s 7 3 7 180
 scoreboard players reset @s fetchr.lobby
 scoreboard players reset @s fetchr.spectator
 scoreboard players reset @s fetchr.resource_pack_check
