@@ -7,20 +7,10 @@
 
 $execute \
 	store success score $item_detect.found_item fetchr.tmp \
-	if items entity @s player.crafting.0 $(command_argument) \
-	run data modify storage tmp.fetchr:item_detect slot set value "player.crafting.0"
+	if items entity @s weapon.mainhand $(command_argument) \
+	run data modify storage tmp.fetchr:item_detect slot set value "weapon.mainhand"
 $execute \
 	if score $item_detect.found_item fetchr.tmp matches 0 \
 	store success score $item_detect.found_item fetchr.tmp \
-	if items entity @s player.crafting.1 $(command_argument) \
-	run data modify storage tmp.fetchr:item_detect slot set value "player.crafting.1"
-$execute \
-	if score $item_detect.found_item fetchr.tmp matches 0 \
-	store success score $item_detect.found_item fetchr.tmp \
-	if items entity @s player.crafting.2 $(command_argument) \
-	run data modify storage tmp.fetchr:item_detect slot set value "player.crafting.2"
-$execute \
-	if score $item_detect.found_item fetchr.tmp matches 0 \
-	store success score $item_detect.found_item fetchr.tmp \
-	if items entity @s player.crafting.3 $(command_argument) \
-	run data modify storage tmp.fetchr:item_detect slot set value "player.crafting.3"
+	if items entity @s weapon.offhand $(command_argument) \
+	run data modify storage tmp.fetchr:item_detect slot set value "weapon.offhand"
