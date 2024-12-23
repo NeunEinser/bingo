@@ -21,7 +21,11 @@ class Overlays(TypedDict):
 class PackFormat(TypedDict):
 	pack: Pack
 	overlays: Overlays | None
-	
+
+class VersionInfo(TypedDict):
+	initial_supported: dict | None
+	lowest_release: dict | None
+	latest_supported: dict | None
 
 def main():
 	config: dict[str, Any] = {}
@@ -60,27 +64,35 @@ def main():
 
 	world_config=config.get("world")
 
-	mc_version_info = None
+	mc_version_info: VersionInfo = {
+		"initial_supported": None,
+		"latest_supported": None,
+		"lowest_release": None,
+		"current_overlay_version": None,
+	}
 	if resourcepack_config is not None:
-		mc_version_info = get_version(resourcepack_config.get("path"), mc_versions, True)
+		(mc_version_info["initial_supported"], mc_version_info["latest_supported"]) = get_version(resourcepack_config.get("path"), mc_versions, True)
 	if datapack_config is not None:
-		data_version_info = get_version(datapack_config.get("path"), mc_versions, False)
-		if mc_version_info is None or mc_version_info["data_version"] < data_version_info["data_version"]:
-			mc_version_info = data_version_info
+		(data_initial_supported, data_latest_supported) = get_version(datapack_config.get("path"), mc_versions, False)
+		if mc_version_info["initial_supported"] is None or mc_version_info["initial_supported"]["data_version"] < data_initial_supported["data_version"]:
+			mc_version_info["initial_supported"] = data_initial_supported
+		if mc_version_info["latest_supported"] is None or mc_version_info["latest_supported"]["data_version"] > data_latest_supported["data_version"]:
+			mc_version_info["latest_supported"] = data_latest_supported
 
-	if mc_version_info is not None:
-		mc_version_info["release_version"] = next((
+	if mc_version_info["initial_supported"] is not None:
+		mc_version_info["lowest_release"] = next((
 			v for v in mc_versions \
-				if v["type"] == "release" and v["data_version"] >= mc_version_info["data_version"]
+				if v["type"] == "release" and v["data_version"] >= mc_version_info["initial_supported"]["data_version"]
 		), mc_versions[-1])
 
-	mc_versions = [v for v in mc_versions if v["data_version"] >= mc_version_info["data_version"]]
-
-	print(mc_versions)
+	mc_versions = [v for v in mc_versions if v["data_version"] >= mc_version_info["initial_supported"]["data_version"]]
 
 	requested_rp_sha = []
 	if resourcepack_config is not None:
 		requested_rp_sha.extend(iterate_files(config, resourcepack_config, f"{target}{os.sep}tmp{os.sep}resourcepack", mc_versions, mc_version_info, True))
+
+		version_json: dict = requests.get(f"https://piston-meta.mojang.com/v1/packages/{mc_version_info['latest_supported']['sha1']}/{mc_version_info['latest_supported']['id']}.json").json()
+		override_default_lang_strings(f"{target}{os.sep}tmp{os.sep}resourcepack", version_json["assetIndex"]["url"])
 
 	if datapack_config is not None:
 		requested_rp_sha.extend(iterate_files(config, datapack_config, f"{target}{os.sep}tmp{os.sep}datapack", mc_versions, mc_version_info))
@@ -157,24 +169,33 @@ class ExistingOverlay(TypedDict):
 
 def get_version(pack_path: str, mc_versions: list[dict], is_rp: bool):
 	if not os.path.isfile(f"{pack_path}{os.sep}pack.mcmeta"):
-		return None
+		return (None, None)
 	with open(f"{pack_path}{os.sep}pack.mcmeta") as file:
 		pack_mcmeta: PackFormat = json.loads(file.read())
-		pack_format = pack_mcmeta["pack"]["pack_format"]
+		min_pack_format = pack_mcmeta["pack"]["pack_format"]
+		max_pack_format = min_pack_format
 		supported_versions = pack_mcmeta["pack"].get("supported_formats")
 
 		if isinstance(supported_versions, dict):
-			if pack_format > supported_versions["min_inclusive"]:
-				pack_format = supported_versions["min_inclusive"]
+			if min_pack_format > supported_versions["min_inclusive"]:
+				min_pack_format = supported_versions["min_inclusive"]
+			if max_pack_format < supported_versions["max_inclusive"]:
+				max_pack_format = supported_versions["max_inclusive"]
 		elif supported_versions is not None:
 			min_version = min(supported_versions)
-			if pack_format > min_version:
-				pack_format = min_version
+			if min_pack_format > min_version:
+				min_pack_format = min_version
+			max_version = max(supported_versions)
+			if max_pack_format < max_version:
+				max_pack_format = max_version
 
 
-		return next((v for v in mc_versions if v["resource_pack_version" if is_rp else "data_pack_version"] == pack_format), None)
+		return (
+			next((v for v in mc_versions if v["resource_pack_version" if is_rp else "data_pack_version"] == min_pack_format), None),
+			next((v for v in reversed(mc_versions) if v["resource_pack_version" if is_rp else "data_pack_version"] == max_pack_format), None)
+		)
 
-def iterate_files(config: dict, pack_config: dict, target: str, mc_versions: list[dict], mc_version_info: dict, is_rp: bool = False):
+def iterate_files(config: dict, pack_config: dict, target: str, mc_versions: list[dict], version_info: VersionInfo, is_rp: bool = False):
 	requested_rp_sha: list[str] = []
 	pack_formats_for_overlay = []
 	remove_extensions = config.get("remove_file_types")
@@ -234,30 +255,12 @@ def iterate_files(config: dict, pack_config: dict, target: str, mc_versions: lis
 	else:
 		remove_extensions = tuple(remove_extensions)
 
-	format_version_identifier = "data_pack_version" if not is_rp else "resource_pack_version"
 	for directory, _, files in os.walk(source):
 		for file_name in files:
 			relative_path = directory.removeprefix(source).strip(os.sep)
 			file_path = f"{relative_path}{os.sep}{file_name}"
 			if any(file_path.startswith(exclude) for exclude in excludes):
 				continue
-
-			overlay = next((overlay for overlay in existing_overlays if file_path.startswith(overlay["dir"])), None)
-			version_info = mc_version_info.copy()
-			if overlay is not None:
-				format_version = overlay["min"] if overlay["min"] > min_pack_format else min_pack_format
-				if format_version > min_pack_format:
-					version = next(v for v in mc_versions if v[format_version_identifier] == format_version)
-					version["release_version"] = version_info["release_version"]
-					version_info["data_version"] = version
-			else:
-				format_version = max((overlay["max"] for overlay in existing_overlays \
-					if overlay['max'] < main_pack_format and os.path.isfile(f"{source}{os.sep}{overlay['dir']}{file_path}")),
-					default= None)
-				if format_version is not None:
-					version = next(v for v in mc_versions if v[format_version_identifier] == format_version)
-					version["release_version"] = version_info["release_version"]
-					version_info["data_version"] = version
 
 			for version, override in versions:
 				version_config = config.copy()
@@ -410,7 +413,7 @@ def handle_file(
 	versions: list[dict],
 	version_config: dict,
 	requested_rp_sha: list[str],
-	version_info: dict | None
+	version_info: VersionInfo
 ) -> FileResult:
 	file_path = f"{source}{os.sep}{relative_path}{os.sep}{file_name}"
 	out_path = f"{out_root}{os.sep}{relative_path}{os.sep}{file_name}"
@@ -480,7 +483,7 @@ def handle_structued(
 	tag,
 	file_path: str,
 	config: dict,
-	mc_version_info: dict | None,
+	mc_version_info: VersionInfo,
 	pack_format: int,
 	min_format: int,
 	is_nbt: bool,
@@ -489,9 +492,9 @@ def handle_structued(
 	pack_formats = set()
 	keep_self = True
 	if isinstance(tag, dict):
-		if is_nbt and file_path.endswith("level.dat") and key == "Version" and mc_version_info != None:
-			tag["Id"].value = mc_version_info["release_version"]["data_version"]
-			tag["Name"].value = mc_version_info["release_version"]["id"]
+		if is_nbt and file_path.endswith("level.dat") and key == "Version" and mc_version_info["lowest_release"] != None:
+			tag["Id"].value = mc_version_info["lowest_release"]["data_version"]
+			tag["Name"].value = mc_version_info["lowest_release"]["id"]
 		else:
 			to_remove = set()
 			to_replace = {}
@@ -616,7 +619,7 @@ def minify_json_file(
 	file_content: str,
 	file_path: str,
 	config: dict,
-	mc_version_info: dict | None,
+	mc_version_info: VersionInfo,
 	pack_format: int,
 	min_format: int
 ) -> StringFileMinifyResult:
@@ -740,6 +743,8 @@ def dict_apply(src: dict, other: dict):
 			src[key] = value
 
 def override_default_lang_strings(rp_root: str, assetUrl: str):
+	print(assetUrl)
+
 	default_strings = None
 	if os.path.isfile(f"{rp_root}{os.sep}assets{os.sep}minecraft{os.sep}lang{os.sep}en_us.json"):
 		with open(f"{rp_root}{os.sep}assets{os.sep}minecraft{os.sep}lang{os.sep}en_us.json", "r", encoding="utf-8") as lang_file:
@@ -765,9 +770,11 @@ def override_default_lang_strings(rp_root: str, assetUrl: str):
 					lang_file.seek(0)
 					lang_file.write(json.dumps(lang_json))
 					lang_file.truncate()
+					print("edit " + lang_path)
 			else:
 				with open(lang_path, "w", encoding="utf-8") as lang_file:
 					lang_file.write(json.dumps(default_strings))
+					print("write " + lang_path)
 
 if __name__ == '__main__':
 	main()
