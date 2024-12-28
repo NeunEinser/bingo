@@ -4,7 +4,7 @@
 	"target": "dist",
 	"vars": {
 		"version_long_name": "5.2 Release Candidate 3",
-		"rp_version": "28",
+		"rp_version": "29",
 		"realms": false
 	},
 	"remove_file_types": [
