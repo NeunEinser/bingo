@@ -8,11 +8,15 @@
 # 	position @s
 
 $execute \
-	if score $chest_generation.height fetchr.tmp matches 4.. \
+	if score $chest_generation.height fetchr.tmp matches 5.. \
 	positioned ~-4 $(height) ~-3 \
 	run function fetchr:lobby/chest_generation/place_ceiling
+$execute if score $chest_generation.height fetchr.tmp matches 4.. \
+	positioned ~ $(height) ~ \
+	run function fetchr:lobby/chest_generation/place_scaffolding
 
 scoreboard players add $chest_generation.height fetchr.tmp 1
+
 clone ~ ~ ~ ~1 62 ~ ~ ~1 ~ filtered minecraft:chest move
 
 #>
