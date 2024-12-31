@@ -1,4 +1,4 @@
-# 5.2 (WIP)
+# 5.2
 
 ## Changelog
 - The targeted Minecraft version is now 1.21-1.21.4
@@ -10,6 +10,7 @@ inventory to the player
   - This includes bundles, shulker boxes and loaded crossbows
 - Item get messages in chat now contain a tooltip with the exact item that was
 taken
+- Item chests in the lobby now show the global item weight.
 - The room with the category chests in the lobby now grows in height dynmaically
 depending on the needed amount of space
 - Creepers and tnt no longer cause damage in the lobby
