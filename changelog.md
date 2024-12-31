@@ -11,12 +11,11 @@ inventory to the player
   - This includes bundles, shulker boxes and loaded crossbows
 - Item get messages in chat now contain a tooltip with the exact item that was
 taken
-- Item chests in the lobby now show the global item weight.
-- The room with the category chests in the lobby now grows in height dynamically
-depending on the needed amount of space
+- Improved category chest
+- Improved big lobby & skybox card interaction
 - Creepers and tnt no longer cause damage in the lobby
 - Technical Improvements and better Performance
-- Removed machinery as command blocks are no longer neccesary
+- Removed machinery as command blocks are no longer necessary
   - Command blocks are no longer required to be enabled in a server environment
 - Updated translations from Crowdin
 - 1EEFEzBzXBZzUPzCSJOHzNPSFzNPCTzUPzUIFzMPCCZAz3BNFMT1SFiIF2FTUAz7PzUPzUIFzHJUIVCAz7PzUPzDPEFAz3MJDLzPOzUIFzJNBHFTzEJSFDUPSZAziBLFzBzMPPLzBUzuArAz8PQFzUIJTzIFMQTAzLBZzCZF
@@ -66,7 +65,7 @@ These items are only available when playing in 1.21.4
 - Saplings are no longer mutually exclusive
   - Mangrove propagule is exclusive with mud items
   - spruce sapling is exclusive with sweet berries, fern and snow
-  - acacial is exclusive with cactus green, lime dye and sea pickle
+  - acacia is exclusive with cactus green, lime dye and sea pickle
   - dark oak is exclusive with apple and golden apple
 
 ### Removed Items
@@ -77,14 +76,24 @@ These items are only available when playing in 1.21.4
 The variety in gold and diamond tools was reduced to make blind runs need to
 craft fewer of them.
 
+## Lobby & Skybox
+- The machinery is gone, as command blocks are no longer needed
+- Removed the floating property in front of the big lobby & skybox card
+- The reach to interact with item frames and other entities is now increased
+while in the lobby or skybox.
+- Item chests in the lobby now show the global item weight.
+- Item chests in the lobby now generate with scaffolding and make the room grow
+in height depending on the item pool (without pale garden items, the room is
+shorter, for example.)
+
 ## Worldgen Tweaks
 
--  Burried treasure is now more common like other structures
+-  Buried treasure is now more common like other structures
   - This means map chests are now less likely to have no map
-  - Burried treasure will generally be closer to their map
+  - Buried treasure will generally be closer to their map
 - Pillager outposts now require less distance from villages
 - Trial chambers are more common, just like other structures in Fetchr
-- Ceaking heart frequency in pale oak trees has been increased compared to
+- Creaking heart frequency in pale oak trees has been increased compared to
 vanilla from 10% to 35%
 
 ## Technical Changes
@@ -126,7 +135,7 @@ for the item frame card or the category chests.
   - `component` The component value
 - **`fetchr:negated_component`**  
   A component the item must not have
-  - `id` The data compontent id
+  - `id` The data component id
 - **`fetchr:predicate`**  
   An item sub predicate that must succeed for the item
   - `id` The item sub predicate type
