@@ -1,4 +1,5 @@
 # 5.2
+5.2 updates the map to 1.21, brings new items, and a few improvements
 
 ## Changelog
 - The targeted Minecraft version is now 1.21-1.21.4
@@ -11,12 +12,12 @@ inventory to the player
 - Item get messages in chat now contain a tooltip with the exact item that was
 taken
 - Item chests in the lobby now show the global item weight.
-- The room with the category chests in the lobby now grows in height dynmaically
+- The room with the category chests in the lobby now grows in height dynamically
 depending on the needed amount of space
 - Creepers and tnt no longer cause damage in the lobby
 - Technical Improvements and better Performance
 - Removed machinery as command blocks are no longer neccesary
-  - Command blocks are no longer required to be enabled in a server enviornment
+  - Command blocks are no longer required to be enabled in a server environment
 - Updated translations from Crowdin
 - 1EEFEzBzXBZzUPzCSJOHzNPSFzNPCTzUPzUIFzMPCCZAz3BNFMT1SFiIF2FTUAz7PzUPzUIFzHJUIVCAz7PzUPzDPEFAz3MJDLzPOzUIFzJNBHFTzEJSFDUPSZAziBLFzBzMPPLzBUzuArAz8PQFzUIJTzIFMQTAzLBZzCZF
   - sorry this got corrupted
@@ -86,8 +87,8 @@ craft fewer of them.
 - Ceaking heart frequency in pale oak trees has been increased compared to
 vanilla from 10% to 35%
 
-## Technical Changess
-- Overhauled item registration card generation and item detecion with new
+## Technical Changes
+- Overhauled item registration card generation and item detection with new
   Minecraft Features in Mind such as Macros
 
 ### Item Registration
@@ -100,7 +101,7 @@ pool will need to update to the new system.
 - `icon` is no longer a text component and instead the 4 digit hex code of the
   unicode character representing the item on the HUD bingo card
 - `icon_font` specifies a own custom font to use for this item. Can be used to
-  avoid conflicts in the vanilla fetchr font files when maintaining forks
+  avoid conflicts in the vanilla Fetchr font files when maintaining forks
   - `actionbar` A list of 5 font definitions to use for the card displayed in
     the actionbar. Each definition is for a different row on the Bingo card
 	 and needs to have the corresponding ascend value set. Reference the vanilla
@@ -135,7 +136,7 @@ At runtime, this will be parsed together with the item id into a command item
 argument.
 
 For example this definition would leather boots with a blue shaper trim which is
-not shown in the tooltup and a custom lore text whenever it is displayed, and
+not shown in the tooltip and a custom lore text whenever it is displayed, and
 any leather boots that have any kind of blue trim would match:
 ```js
 {
@@ -181,7 +182,7 @@ Item detection now only runs for a player who had a change to their inventory
 and does not have any active checks that run every tick anymore.
 
 Command blocks are also more expensive because they parse their command
-everytime they are executed anew while functions are pre-parsed. Macro lines
+every time they are executed anew while functions are pre-parsed. Macro lines
 still may need to be parsed more often, but because of macro caching, they will
 only need to be re-parsed when a new card with different items is generated.
 The cache only caches up to 8 unique combinations of arguments per function file
@@ -198,8 +199,8 @@ custom random number generator in place anymore, and instead the built-in
 - Fixed spawning inside leaves in some spawn points
 - Fixed vines not getting replaced by drop chute
 - Fixed old skybox remaining when generating new card
-  - This would lead to a black box hovering underneath the spawn point when re-
-  generating a card with the same seed again.
+  - This would lead to a black box hovering underneath the spawn point when
+  re-generating a card with the same seed again.
 
 
 # 5.1.3
