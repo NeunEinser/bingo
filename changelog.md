@@ -1,3 +1,15 @@
+# 5.2.1
+5.2.1 is released to address a critical bug in 5.2 that could cause spawn points
+to be swapped and mangeled after playing multiple runs. You are higly encouraged
+to update.
+
+This version is fully compatible with 5.2, meaning you can keep the same server
+config and just replace the datapack without replacing the world.
+
+## Bug Fixes
+- Fixed spawn marker not being cleared properly after a run, causing
+spawn points to be potentially swapped and messed up.
+
 # 5.2
 5.2 updates the map to 1.21, brings new items, and a few improvements
 
