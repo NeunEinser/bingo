@@ -10,7 +10,15 @@ scoreboard players reset $spawn_z fetchr.state
 
 schedule clear fetchr:game/start/pre_gen/schedule_entity_check
 
-execute if score $game_state fetchr.state matches 3.. as @a[predicate=fetchr:is_in_game] run function fetchr:util/go_to_lobby
+execute \
+	if score $game_state fetchr.state matches 3.. \
+	as @a[predicate=fetchr:is_in_game] \
+	run function fetchr:util/go_to_lobby
+
+execute \
+	in fetchr:default \
+	if score $game_state fetchr.state matches 4 \
+	run kill @e[type=minecraft:marker, tag=fetchr.spawn, x=0]
 
 execute \
 	unless score $game_state fetchr.state matches 4 \
