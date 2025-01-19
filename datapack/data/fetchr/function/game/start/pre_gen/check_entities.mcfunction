@@ -12,4 +12,7 @@ fill ~-7 64 ~-7 ~8 191 ~8 air replace minecraft:lava[level=4]
 fill ~-7 64 ~-7 ~8 191 ~8 air replace minecraft:lava[level=6]
 fill ~-7 64 ~-7 ~8 191 ~8 air replace minecraft:lava[level=8]
 
-execute as @e[distance=128..10000, tag=!fetchr.generated_entity] run function fetchr:game/start/pre_gen/freeze_entity
+execute \
+	as @e[distance=128..10000, tag=!fetchr.generated_entity] \
+	at @s \
+	run function fetchr:game/start/pre_gen/freeze_entity

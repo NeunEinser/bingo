@@ -42,6 +42,7 @@ execute \
 data \
 	modify storage fetchr:custom_hud players[-1].components \
 	set from storage fetchr:custom_hud default
+#NEUN_SCRIPT remove 1
 tag @s[name=NeunEinser] add fetchr.enable_manual_gamemode_switch
 
 scoreboard players set @s fetchr.update_hud 1

@@ -1,6 +1,6 @@
 # 5.2.1
 5.2.1 is released to address a critical bug in 5.2 that could cause spawn points
-to be swapped and mangeled after playing multiple runs. You are higly encouraged
+to be swapped and mangled after playing multiple runs. You are highly encouraged
 to update.
 
 This version is fully compatible with 5.2, meaning you can keep the same server
