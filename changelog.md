@@ -1,3 +1,14 @@
+# 5.2.2
+5.2.2 is released to address yet another critical bug in 5.2.x that can cause
+entities to stay frozen when altering render distance before the game starts.
+
+This version is fully compatible with 5.2 and 5.2.1, meaning you can keep the
+same server config and just replace the datapack without replacing the world.
+
+## Bug Fixes
+- Fixed entities outside of render distance staying frozen when lowering render
+distance
+
 # 5.2.1
 5.2.1 is released to address a critical bug in 5.2 that could cause spawn points
 to be swapped and mangled after playing multiple runs. You are highly encouraged
