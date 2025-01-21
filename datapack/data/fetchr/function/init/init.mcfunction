@@ -839,7 +839,8 @@ forceload add 0 0
 		# 0 = Lobby / Not in game
 		# 1 = Starting / chunk pre-gen
 		# 2 = Skybox phase
-		# 3 = Game started
+		# 3 = Countdown phase
+		# 4 = Game in progress
 		#
 		# @public
 		#declare score_holder $game_state
