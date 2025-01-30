@@ -59,7 +59,7 @@ Creating a separate datapack has the advantage that it might be easier to mainta
 Modifying the existing file has the advantage that it is easier to remove or modify existing items.
 
 To add an item in its simplest form, you can add a line like this to your function file:
-```sh
+```mcfunction
 data modify storage fetchr:registries items append value {\
 	id: "fetchr:pumpkin_seeds",\
 	item: {id: "minecraft:pumpkin_seeds"},\
@@ -88,7 +88,7 @@ data modify storage fetchr:registries items append value {\
 - `icon_font` specifies the font json text files you specified earlier with the different ascent values.
 
 For `categories` you can either use one of the existing categories or specify an own one like so:
-```sh
+```mcfunction
 data modify storage fetchr:registries categories append value {\
 	id: ":armadillo",\
 	name: '{"translate": "fetchr.category.armadillo"}',\
