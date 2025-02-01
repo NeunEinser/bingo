@@ -1,3 +1,4 @@
+use ::java::server::util::text::Text
 use ::fetchr::hud::HudComponentBase
 use ::fetchr::item::ItemConfigurationBase
 
@@ -24,7 +25,10 @@ struct CategroyRegistryData {
 	id: #[id] string,
 
 	/// This name is shown in the item tooltip of category chests.
-	name: #[text_component] string,
+	name: (
+		#[until="1.21.5"] #[text_component] string
+		| #[since="1.21.5"] Text
+	),
 
 	/// Tags this category belongs to. Changing `active_tags` in `fetchr:items`
 	/// and then calling `fetchr:util/apply_active_item_tags` will only respect
@@ -37,30 +41,48 @@ struct HudComponentRegistryData {
 	
 	/// In the hud menu, this can be used for custom settings. This is expected
 	/// to have an empty text and a click event.
-	settingsClickEvent?: #[text_component] string,
+	settingsClickEvent?: (
+		#[until="1.21.5"] #[text_component] string
+		| #[since="1.21.5"] Text
+	),
 
 	/// Text to display between the icon and the value. Can be used to define
 	/// `iconSeparatorAlignLeft` and `iconSeparatorAlignRight`at the same time.
-	iconSeparator?: #[text_component] string,
+	iconSeparator?: (
+		#[until="1.21.5"] #[text_component] string
+		| #[since="1.21.5"] Text
+	),
 }
 
 struct PreferencesRegistryData {	
 	id: #[id] string,
 
-	textComponent: #[text_component] string,
+	textComponent: (
+		#[until="1.21.5"] #[text_component] string
+		| #[since="1.21.5"] Text
+	),
 
 	/// This can be used to show a custom hover event in the preferences menu.
 	/// This is expected to have an empty text and a hover event.
-	hoverText?: #[text_component] string,
+	hoverText?: (
+		#[until="1.21.5"] #[text_component] string
+		| #[since="1.21.5"] Text
+	),
 
 	/// This can be used to show a custom hover event in the preferences menu,
 	/// when the setting is changed to `disabled: true`.
 	/// This is expected to have an empty text and a hover event.
-	disabledHoverText?: #[text_component] string,
+	disabledHoverText?: (
+		#[until="1.21.5"] #[text_component] string
+		| #[since="1.21.5"] Text
+	),
 
 	/// The click event to run when clicking this preferences entry.
 	/// This is expected to have an empty text and a click event.
-	clickEvent: #[text_component] string,
+	clickEvent: (
+		#[until="1.21.5"] #[text_component] string
+		| #[since="1.21.5"] Text
+	),
 
 	disabled?: boolean,
 

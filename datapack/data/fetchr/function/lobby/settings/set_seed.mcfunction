@@ -7,6 +7,26 @@
 # @user
 # @context entity Player changing the setting
 
-execute if score $operator_only fetchr.settings matches 1 unless score @s fetchr.operator matches 1 run function fetchr:util/show_confirm_operator_status_prompt
-execute if score $operator_only fetchr.settings matches 1 unless score @s fetchr.operator matches 1 run return 0
-tellraw @s [{"translate": "fetchr.lobby.card_generation.from_seed.instructions", "with": [{"translate": "fetchr.lobby.card_generation.from_seed.instructions.link", "color":"#00c3ff", "clickEvent": {"action": "suggest_command", "value": "/trigger fetchr.seed set "}}]}, "\n", {"translate": "fetchr.lobby.card_generation.from_seed.explanation", "italic": true, "color": "gray"}]
+execute \
+	if score $operator_only fetchr.settings matches 1 \
+	unless score @s fetchr.operator matches 1 \
+	run function fetchr:util/show_confirm_operator_status_prompt
+execute \
+	if score $operator_only fetchr.settings matches 1 \
+	unless score @s fetchr.operator matches 1 \
+	run return 0
+tellraw @s [\
+	{\
+		"translate": "fetchr.lobby.card_generation.from_seed.instructions",\
+		"with": [\
+			{\
+				"translate": "fetchr.lobby.card_generation.from_seed.instructions.link",\
+				"color": "#00c3ff",\
+				"clickEvent": { "action": "suggest_command", "value": "/trigger fetchr.seed set "},\
+				"click_event": { "action": "suggest_command", "command": "/trigger fetchr.seed set "}\
+			}\
+		]\
+	},\
+	"\n",\
+	{ "translate": "fetchr.lobby.card_generation.from_seed.explanation", "italic": true, "color": "gray" }\
+]

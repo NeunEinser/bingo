@@ -8,7 +8,8 @@
 
 #region select item
 execute \
-	store result storage tmp.fetchr:rand_data max int 1 \
+	store result storage tmp.fetchr:rand_data \
+	max int 1 \
 	run scoreboard players get $card_gen.total_weight fetchr.tmp
 function neun_einser.math:random/next_int with storage tmp.fetchr:rand_data
 

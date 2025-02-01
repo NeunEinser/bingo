@@ -13,6 +13,27 @@
 
 scoreboard players set @s fetchr.last_hud_update 0
 data modify storage tmp.fetchr:custom_hud texts set value []
-data modify storage tmp.fetchr:custom_hud texts append from storage fetchr:custom_hud currentPlayer.components[].evaluated
+data \
+	modify storage tmp.fetchr:custom_hud texts \
+	append from storage fetchr:custom_hud currentPlayer.components[].evaluated
 
-title @s actionbar {"translate":"fetchr.technical.resourcepack_version_{NEUN_SCRIPT:rp_version}","fallback":"%2$s","with": [[{"text":"\u0001","font":"fetchr:space"},{"text":"\uffff","font":"fetchr:space"},{"storage":"tmp.fetchr:custom_hud","nbt":"texts[]","interpret":true,"separator":""},{"storage":"fetchr:tmp","nbt":"cardOffset","interpret":true},{"storage":"fetchr:card","nbt":"teams[-1].card","interpret":true},{"storage":"fetchr:tmp","nbt":"cardNegOffset","interpret":true}], {"translate":"fetchr.actionbar.wrong_resourcepack_error","fallback":"Resource pack not enabled.","color":"red"}]}
+# quoted keys to avoid overlay
+title @s actionbar {\
+	"translate": "fetchr.technical.resourcepack_version_{NEUN_SCRIPT:rp_version}",\
+	"fallback":"%2$s",\
+	"with": [\
+		[\
+			{ "text": "\u0001", "font": "fetchr:space" },\
+			{ "text": "\uffff", "font": "fetchr:space" },\
+			{ "storage": "tmp.fetchr:custom_hud", "nbt": "texts[]", "interpret": true, "separator": "" },\
+			{ "storage": "fetchr:tmp", "nbt": "cardOffset", "interpret": false },\
+			{ "storage": "fetchr:card", "nbt": "teams[-1].card", "interpret": true },\
+			{ "storage": "fetchr:tmp", "nbt": "cardNegOffset", "interpret": true }\
+		],\
+		{\
+			"translate": "fetchr.actionbar.wrong_resourcepack_error",\
+			"fallback": "Resource pack not enabled.",\
+			"color": "red"\
+		}\
+	]\
+}

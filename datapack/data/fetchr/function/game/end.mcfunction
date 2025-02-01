@@ -29,8 +29,12 @@ execute \
 scoreboard players set $pregen_status fetchr.state 0
 function neun_einser.timer:stop
 
-execute as @e[type=minecraft:item_frame, tag=fetchr.card_frame] at @s run setblock ~ ~ ~-1 minecraft:barrier
-execute in fetchr:lobby run data modify block 5 3 5 auto set value false
+execute \
+	as @e[type=minecraft:item_frame, tag=fetchr.card_frame] \
+	at @s run setblock ~ ~ ~-1 minecraft:barrier
+execute \
+	in fetchr:lobby \
+	run data modify block 5 3 5 auto set value false
 
 scoreboard players add $current_game_id fetchr.game_id 1
 scoreboard players set $game_state fetchr.state 0
@@ -42,34 +46,72 @@ team leave @a[predicate=fetchr:is_in_lobby]
 tag @a remove fetchr.automatically_join_game
 tag @s add fetchr.automatically_join_game
 
-execute \
+#NEUN_SCRIPT until 65
+#execute \
 	in fetchr:lobby \
 	as @e[type=minecraft:marker, tag=fetchr.join_game_sign, distance=0..] \
-	run data modify entity @s data.front_text.messages set value [\
+	run data \
+		modify entity @s data.front_text.messages set value [\
 		'{\
 			"translate": "fetchr.lobby.card_generation.join_game.sign.line1",\
 			"bold": true,\
 			"color": "#8eedeb",\
-			"clickEvent": {"action": "run_command", "value": "/function fetchr:lobby/settings/join_game"}\
+			"clickEvent": { "action": "run_command", "value": "/function fetchr:lobby/settings/join_game" }\
 		}',\
-		'{"translate": "fetchr.lobby.card_generation.join_game.sign.line2", "bold": true, "color": "#8eedeb"}',\
-		'{"translate": "fetchr.lobby.card_generation.join_game.sign.line3", "bold": true, "color": "#8eedeb"}',\
-		'{"translate": "fetchr.lobby.card_generation.join_game.sign.line4", "bold": true, "color": "#8eedeb"}'\
+		'{ "translate": "fetchr.lobby.card_generation.join_game.sign.line2", "bold": true, "color": "#8eedeb" }',\
+		'{ "translate": "fetchr.lobby.card_generation.join_game.sign.line3", "bold": true, "color": "#8eedeb" }',\
+		'{ "translate": "fetchr.lobby.card_generation.join_game.sign.line4", "bold": true, "color": "#8eedeb" }'\
+	]
+
+#execute \
+	in fetchr:lobby \
+	as @e[type=minecraft:marker, tag=fetchr.join_game_sign, distance=0..] \
+	if data entity @s data.back_text \
+	run data \
+		modify entity @s data.front_text.messages set value [\
+		'{\
+			"translate": "fetchr.lobby.card_generation.join_game.sign.line1",\
+			"bold": true,\
+			"color": "#8eedeb",\
+			"clickEvent": { "action": "run_command", "value": "/function fetchr:lobby/settings/join_game" }\
+		}',\
+		'{ "translate": "fetchr.lobby.card_generation.join_game.sign.line2", "bold": true, "color": "#8eedeb" }',\
+		'{ "translate": "fetchr.lobby.card_generation.join_game.sign.line3", "bold": true, "color": "#8eedeb" }',\
+		'{ "translate": "fetchr.lobby.card_generation.join_game.sign.line4", "bold": true, "color": "#8eedeb" }'\
+	]
+#NEUN_SCRIPT end
+#NEUN_SCRIPT until 65
+execute \
+	in fetchr:lobby \
+	as @e[type=minecraft:marker, tag=fetchr.join_game_sign, distance=0..] \
+	run data \
+		modify entity @s data.front_text.messages set value [\
+		{\
+			translate: "fetchr.lobby.card_generation.join_game.sign.line1",\
+			bold: true,\
+			color: "#8eedeb",\
+			clickEvent: { action: "run_command", value: "/function fetchr:lobby/settings/join_game" }\
+		},\
+		{ translate: "fetchr.lobby.card_generation.join_game.sign.line2", bold: true, color: "#8eedeb" },\
+		{ translate: "fetchr.lobby.card_generation.join_game.sign.line3", bold: true, color: "#8eedeb" },\
+		{ translate: "fetchr.lobby.card_generation.join_game.sign.line4", bold: true, color: "#8eedeb" }\
 	]
 
 execute \
 	in fetchr:lobby \
 	as @e[type=minecraft:marker, tag=fetchr.join_game_sign, distance=0..] \
 	if data entity @s data.back_text \
-	run data modify entity @s data.front_text.messages set value [\
-		'{\
-			"translate": "fetchr.lobby.card_generation.join_game.sign.line1",\
-			"bold": true,\
-			"color": "#8eedeb",\
-			"clickEvent": {"action": "run_command", "value": "/function fetchr:lobby/settings/join_game"}\
-		}',\
-		'{"translate": "fetchr.lobby.card_generation.join_game.sign.line2", "bold": true, "color": "#8eedeb"}',\
-		'{"translate": "fetchr.lobby.card_generation.join_game.sign.line3", "bold": true, "color": "#8eedeb"}',\
-		'{"translate": "fetchr.lobby.card_generation.join_game.sign.line4", "bold": true, "color": "#8eedeb"}'\
+	run data \
+		modify entity @s data.front_text.messages set value [\
+		{\
+			translate: "fetchr.lobby.card_generation.join_game.sign.line1",\
+			bold: true,\
+			color: "#8eedeb",\
+			clickEvent: { action: "run_command", value: "/function fetchr:lobby/settings/join_game" }\
+		},\
+		{ translate: "fetchr.lobby.card_generation.join_game.sign.line2", bold: true, color: "#8eedeb" },\
+		{ translate: "fetchr.lobby.card_generation.join_game.sign.line3", bold: true, color: "#8eedeb" },\
+		{ translate: "fetchr.lobby.card_generation.join_game.sign.line4", bold: true, color: "#8eedeb" }\
 	]
+#NEUN_SCRIPT end
 function fetchr:lobby/place_indestructible_blocks

@@ -4,7 +4,8 @@
 #
 # @within function fetchr:card_generation/generate_slot
 
-data modify storage tmp.fetchr:card_generation item_categories \
+data \
+	modify storage tmp.fetchr:card_generation item_categories \
 	set from storage tmp.fetchr:card_generation items[-1].active_categories
 data modify storage tmp.fetchr:card_generation removed_items set value []
 function fetchr:card_generation/remove_items \

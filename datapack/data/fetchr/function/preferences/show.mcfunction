@@ -24,19 +24,45 @@
 # @private
 #declare tag fetchr.pref.added
 
-tag @s[scores={fetchr.pref=2}, tag=!fetchr.enable_manual_gamemode_switch] add fetchr.pref.added
-tag @s[scores={fetchr.pref=2}, tag=!fetchr.enable_manual_gamemode_switch] add fetchr.enable_manual_gamemode_switch
-tag @s[scores={fetchr.pref=2}, tag=fetchr.enable_manual_gamemode_switch, tag=!fetchr.pref.added] remove fetchr.enable_manual_gamemode_switch
+tag \
+	@s[scores={fetchr.pref=2}, tag=!fetchr.enable_manual_gamemode_switch] \
+	add fetchr.pref.added
+tag \
+	@s[scores={fetchr.pref=2}, tag=!fetchr.enable_manual_gamemode_switch] \
+	add fetchr.enable_manual_gamemode_switch
+tag \
+	@s[scores={fetchr.pref=2}, tag=fetchr.enable_manual_gamemode_switch, tag=!fetchr.pref.added] \
+	remove fetchr.enable_manual_gamemode_switch
 tag @s remove fetchr.pref.added
 
-execute if score @s fetchr.pref matches 1..2 run data modify storage io.fetchr:preferences menuOptions set from storage fetchr:registries preferences.main
-execute if score @s fetchr.pref matches 1..2 run function #fetchr:preferences/main
-execute if score @s fetchr.pref matches 1..2 run tellraw @s ["\n\n\n\n\n=== ", {"translate": "fetchr.preferences.title", "bold": true, "color": "green"}, " ===\n\n", {"translate": "fetchr.preferences.description", "color": "gray"}, "\n"]
+execute \
+	if score @s fetchr.pref matches 1..2 \
+	run data \
+		modify storage io.fetchr:preferences menuOptions \
+		set from storage fetchr:registries preferences.main
+execute \
+	if score @s fetchr.pref matches 1..2 \
+	run function #fetchr:preferences/main
+execute \
+	if score @s fetchr.pref matches 1..2 \
+	run tellraw @s [\
+		"\n\n\n\n\n=== ",\
+		{ "translate": "fetchr.preferences.title", "bold": true, "color": "green" },\
+		" ===\n\n",\
+		{ "translate": "fetchr.preferences.description", "color": "gray" },\
+		"\n"\
+	]
 
-execute if score @s fetchr.pref matches 5..78 run function fetchr:preferences/custom_hud/show
+execute \
+	if score @s fetchr.pref matches 5..78 \
+	run function fetchr:preferences/custom_hud/show
 
-execute if score @s fetchr.pref matches 1..5 run function fetchr:preferences/print_menu_items
-execute if score @s fetchr.pref matches 11 run function fetchr:preferences/print_menu_items
+execute \
+	if score @s fetchr.pref matches 1..5 \
+	run function fetchr:preferences/print_menu_items
+execute \
+	if score @s fetchr.pref matches 11 \
+	run function fetchr:preferences/print_menu_items
 scoreboard players reset @s fetchr.pref
 
 #>
@@ -45,5 +71,7 @@ scoreboard players reset @s fetchr.pref
 #
 # @within function fetchr:preferences/**
 #declare score_holder $preferences.next_page
-execute if score $preferences.next_page fetchr.tmp matches -2147483648.. run scoreboard players operation @s fetchr.pref = $preferences.next_page fetchr.tmp
+execute \
+	if score $preferences.next_page fetchr.tmp matches -2147483648.. \
+	run scoreboard players operation @s fetchr.pref = $preferences.next_page fetchr.tmp
 scoreboard players reset $preferences.next_page fetchr.tmp

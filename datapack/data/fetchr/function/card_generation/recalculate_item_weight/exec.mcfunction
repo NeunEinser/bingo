@@ -15,8 +15,8 @@
 
 scoreboard players set $card_gen.available_category_weight fetchr.tmp 1
 scoreboard players set $card_gen/item_weight.i fetchr.tmp 0
-function fetchr:card_generation/recalculate_item_weight/calculate_requried_available_category_weight {i: 0}
+function fetchr:card_generation/recalculate_item_weight/calculate_requried_available_category_weight { i: 0 }
 
 scoreboard players set $card_gen.total_weight fetchr.tmp 0
 scoreboard players set $card_gen/item_weight.i fetchr.tmp 0
-function fetchr:card_generation/recalculate_item_weight/iter {i: 0}
+function fetchr:card_generation/recalculate_item_weight/iter { i: 0 }

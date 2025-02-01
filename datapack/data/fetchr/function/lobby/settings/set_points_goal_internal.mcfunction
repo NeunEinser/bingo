@@ -8,13 +8,58 @@
 # 	score @s fetchr.points_race_minutes The minutes when the points goal triggers
 
 scoreboard players operation $points_goal_announcement_minutes fetchr.settings = @s fetchr.points_race_minutes
-data modify block 7 0 7 front_text.messages[0] set value '{"translate": "fetchr.lobby.settings.points_goal.sign.minutes", "color": "green", "with": [{"score": {"name": "$points_goal_announcement_minutes", "objective": "fetchr.settings"}}]}'
+#NEUN_SCRIPT until 65
+#data modify block 7 0 7 front_text.messages[0] set value '{\
+	"translate": "fetchr.lobby.settings.points_goal.sign.minutes",\
+	"color": "green",\
+	"with": [\
+		{ "score": { "name": "$points_goal_announcement_minutes", "objective": "fetchr.settings" }}\
+	]\
+}'
+#NEUN_SCRIPT end
+#NEUN_SCRIPT since 65
+data modify block 7 0 7 front_text.messages[0] set value {\
+	translate: "fetchr.lobby.settings.points_goal.sign.minutes",\
+	color: "green",\
+	with: [\
+		{ score: { name: "$points_goal_announcement_minutes", objective: "fetchr.settings" }}\
+	]\
+}
+#NEUN_SCRIPT end
 
-execute if score @s fetchr.points_race_minutes matches ..0 run tellraw @s {"translate": "fetchr.lobby.settings.points_goal.menu.set.off", "color": "green"}
-execute if score @s fetchr.points_race_minutes matches 1.. run tellraw @s {"translate": "fetchr.lobby.settings.points_goal.menu.set.minutes", "color": "green", "with": [{"score": {"name": "@s", "objective": "fetchr.points_race_minutes"}}]}
+execute \
+	if score @s fetchr.points_race_minutes matches ..0 \
+	run tellraw @s { "translate": "fetchr.lobby.settings.points_goal.menu.set.off", "color": "green" }
+execute \
+	if score @s fetchr.points_race_minutes matches 1.. \
+	run tellraw @s {\
+		"translate": "fetchr.lobby.settings.points_goal.menu.set.minutes",\
+		"color": "green",\
+		"with": [{ "score": { "name": "@s", "objective": "fetchr.points_race_minutes" }}]\
+	}
 
-execute if score @s fetchr.points_race_minutes matches ..0 as @e[type=minecraft:marker, tag=fetchr.points_goal_sign, distance=0.., limit=2] run data modify entity @s data.front_text.messages[3] set value '{"translate": "fetchr.lobby.settings.points_goal.sign.off", "color": "gray"}'
-execute if score @s fetchr.points_race_minutes matches 1.. as @e[type=minecraft:marker, tag=fetchr.points_goal_sign, distance=0.., limit=2] run data modify entity @s data.front_text.messages[3] set from block 7 0 7 front_text.messages[0]
+#NEUN_SCRIPT until 65
+#execute \
+	if score @s fetchr.points_race_minutes matches ..0 \
+	as @e[type=minecraft:marker, tag=fetchr.points_goal_sign, distance=0.., limit=2] \
+	run data \
+		modify entity @s data.front_text.messages[3] \
+		set value '{ "translate": "fetchr.lobby.settings.points_goal.sign.off", "color": "gray" }'
+#NEUN_SCRIPT end
+#NEUN_SCRIPT since 65
+execute \
+	if score @s fetchr.points_race_minutes matches ..0 \
+	as @e[type=minecraft:marker, tag=fetchr.points_goal_sign, distance=0.., limit=2] \
+	run data \
+		modify entity @s data.front_text.messages[3] \
+		set value { translate: "fetchr.lobby.settings.points_goal.sign.off", color: "gray" }
+#NEUN_SCRIPT end
+execute \
+	if score @s fetchr.points_race_minutes matches 1.. \
+	as @e[type=minecraft:marker, tag=fetchr.points_goal_sign, distance=0.., limit=2] \
+	run data \
+		modify entity @s data.front_text.messages[3] \
+		set from block 7 0 7 front_text.messages[0]
 
 scoreboard players reset @s fetchr.points_race_minutes
 scoreboard players enable @s fetchr.points_race_minutes

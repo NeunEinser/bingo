@@ -27,22 +27,39 @@ execute \
 	if score $apply_tags.item_exists fetchr.tmp matches 1 \
 	run function fetchr:util/apply_active_item_tags/modify_existing_item
 
-$data modify storage fetchr:items active_items[-1].active_categories \
-	append from storage fetchr:items active_items[-1].categories[{id: "$(id)"}]
+$data \
+	modify storage fetchr:items active_items[-1].active_categories \
+	append from storage fetchr:items active_items[-1].categories[{ id: "$(id)" }]
 
 # set lore
-data \
+#NEUN_SCRIPT until 65
+#data \
 	modify block 7 0 7 front_text.messages[0] \
 	set value '[\
-		{"text": "  • ", "color": "gray", "italic": false},\
-		{"storage": "fetchr:items", "nbt": "active_items[-1].active_categories[-1].name", "interpret": true},\
+		{ "text": "  • ", "color": "gray", "italic": false },\
+		{ "storage": "fetchr:items", "nbt": "active_items[-1].active_categories[-1].name", "interpret": true },\
 		" (",\
-		{"storage": "fetchr:items", "nbt": "active_items[-1].active_categories[-1].weight"},\
+		{ "storage": "fetchr:items", "nbt": "active_items[-1].active_categories[-1].weight" },\
 		"/",\
-		{"storage": "fetchr:items", "nbt": "active_items[-1].active_categories[-1].total_item_weight"},\
+		{ "storage": "fetchr:items", "nbt": "active_items[-1].active_categories[-1].total_item_weight" },\
 		")"\
 	]'
-data modify storage fetchr:items active_items[-1].item.components.minecraft:lore \
+#NEUN_SCRIPT end
+#NEUN_SCRIPT since 65
+data \
+	modify block 7 0 7 front_text.messages[0] \
+	set value [\
+		{ text: "  • ", color: "gray", italic: false },\
+		{ storage: "fetchr:items", nbt: "active_items[-1].active_categories[-1].name", interpret: true },\
+		" (",\
+		{ storage: "fetchr:items", nbt: "active_items[-1].active_categories[-1].weight" },\
+		"/",\
+		{ storage: "fetchr:items", nbt: "active_items[-1].active_categories[-1].total_item_weight" },\
+		")"\
+	]
+#NEUN_SCRIPT end
+data \
+	modify storage fetchr:items active_items[-1].item.components.minecraft:lore \
 	append from block 7 0 7 front_text.messages[0]
 
 data remove storage tmp.fetchr:apply_active_item_tags categories[-1].items[-1]

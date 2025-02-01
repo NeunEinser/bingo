@@ -8,10 +8,10 @@
 # 	function fetchr:init/items/add_to_category
 
 $data \
-	modify storage fetchr:items categories[{id: "$(id)"}].items \
+	modify storage fetchr:items categories[{ id: "$(id)" }].items \
 	append from storage tmp.fetchr:init initialized_items[-1]
 $data \
-	modify storage fetchr:items categories[{id: "$(id)"}].items[-1].weight \
+	modify storage fetchr:items categories[{ id: "$(id)" }].items[-1].weight \
 	set from storage tmp.fetchr:init item_categories[-1].weight
 
 data remove storage tmp.fetchr:init item_categories[-1]

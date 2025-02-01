@@ -7,7 +7,8 @@
 # 	function fetchr:card_generation/update_affected_item_weights/update_weights
 
 #region calculate weight nom and denom for item
-data modify storage tmp.fetchr:card_generation item_categories \
+data \
+	modify storage tmp.fetchr:card_generation item_categories \
 	set from storage tmp.fetchr:card_generation category_items[-1].active_categories
 
 #>
@@ -69,7 +70,8 @@ scoreboard players operation $card_gen/cat_weight.denom fetchr.tmp /= $gcd.resul
 scoreboard players operation $card_gen.required_category_weight fetchr.tmp *= $card_gen/cat_weight.denom fetchr.tmp
 #endregion
 
-data modify storage tmp.fetchr:card_generation items \
+data \
+	modify storage tmp.fetchr:card_generation items \
 	append from storage tmp.fetchr:card_generation category_items[-1]
 data remove storage tmp.fetchr:card_generation category_items[-1]
 execute \

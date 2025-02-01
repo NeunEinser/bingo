@@ -4,6 +4,25 @@
 #
 # @within function fetchr:custom_hud/components/timer/update/3732_8268
 
-execute if score $custom_hud/timer.daytime fetchr.tmp matches ..4197 run data modify storage io.fetchr:custom_hud component.icon set value '"\\u013C"'
-execute if score $custom_hud/timer.daytime fetchr.tmp matches 4198..4682 run data modify storage io.fetchr:custom_hud component.icon set value '"\\u013D"'
-execute if score $custom_hud/timer.daytime fetchr.tmp matches 4683.. run data modify storage io.fetchr:custom_hud component.icon set value '"\\u013E"'
+#NEUN_SCRIPT until 65
+#execute \
+	if score $custom_hud/timer.daytime fetchr.tmp matches ..4197 \
+	run data modify storage io.fetchr:custom_hud component.icon set value '"\\u013C"'
+#execute \
+	if score $custom_hud/timer.daytime fetchr.tmp matches 4198..4682 \
+	run data modify storage io.fetchr:custom_hud component.icon set value '"\U013D"'
+#execute \
+	if score $custom_hud/timer.daytime fetchr.tmp matches 4683.. \
+	run data modify storage io.fetchr:custom_hud component.icon set value '"\\u013E"'
+#NEUN_SCRIPT end
+#NEUN_SCRIPT since 65
+execute \
+	if score $custom_hud/timer.daytime fetchr.tmp matches ..4197 \
+	run data modify storage io.fetchr:custom_hud component.icon set value "\u013C"
+execute \
+	if score $custom_hud/timer.daytime fetchr.tmp matches 4198..4682 \
+	run data modify storage io.fetchr:custom_hud component.icon set value "\u013D"
+execute \
+	if score $custom_hud/timer.daytime fetchr.tmp matches 4683.. \
+	run data modify storage io.fetchr:custom_hud component.icon set value "\u013E"
+#NEUN_SCRIPT end

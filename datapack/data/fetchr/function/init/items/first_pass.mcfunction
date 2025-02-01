@@ -23,10 +23,21 @@ execute \
 	if data storage tmp.fetchr:init items[-1].item_tests \
 	run function fetchr:init/items/set_item_command_argument/from_tests/exec
 
-$data modify storage tmp.fetchr:init items[-1].item.components.minecraft:custom_name set value '{"translate": "$(translation)", "italic": false}'
+#NEUN_SCRIPT until 65
+#$data \
+	modify storage tmp.fetchr:init items[-1].item.components.minecraft:custom_name \
+	set value '{ "translate": "$(translation)", "italic": false }'
+#NEUN_SCRIPT end
+#NEUN_SCRIPT since 65
+$data \
+	modify storage tmp.fetchr:init items[-1].item.components.minecraft:custom_name \
+	set value { translate: "$(translation)", italic: false }
+#NEUN_SCRIPT end
 data remove storage tmp.fetchr:init items[-1].weight
 
 data modify storage tmp.fetchr:init initialized_items append from storage tmp.fetchr:init items[-1]
 data remove storage tmp.fetchr:init items[-1]
 
-execute if data storage tmp.fetchr:init items[0] run function fetchr:init/items/first_pass with storage tmp.fetchr:init items[-1]
+execute \
+	if data storage tmp.fetchr:init items[0] \
+	run function fetchr:init/items/first_pass with storage tmp.fetchr:init items[-1]

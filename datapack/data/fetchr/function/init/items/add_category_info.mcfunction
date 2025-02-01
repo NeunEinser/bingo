@@ -12,23 +12,23 @@
 # 	function fetchr:init/items/add_category_info
 
 $execute \
-	unless data storage fetchr:items categories[{id: "$(id)"}] \
+	unless data storage fetchr:items categories[{ id: "$(id)" }] \
 	run tellraw @a [\
-		{"text": "[", "color": "red"},\
-		{"translate": "fetchr.logging.error"},\
-		"] ",\
+		{ "text": "[ ", "color": "red" },\
+		{ "translate": "fetchr.logging.error" },\
+		" ] ",\
 		{\
 			"translate": "fetchr.setup.error.unknown_category",\
 			"with": [\
-				{"storage": "tmp.fetchr:init", "nbt": "items[-1].id"},\
-				{"storage": "tmp.fetchr:init", "nbt": "category"}\
+				{ "storage": "tmp.fetchr:init", "nbt": "items[-1].id" },\
+				{ "storage": "tmp.fetchr:init", "nbt": "category" }\
 			]\
 		}\
 	]
 
 $data \
 	modify storage tmp.fetchr:init item_categories[-1] \
-	merge from storage fetchr:items categories[{id: "$(id)"}]
+	merge from storage fetchr:items categories[{ id: "$(id)" }]
 data remove storage tmp.fetchr:init item_categories[-1].items
 
 data \

@@ -5,13 +5,32 @@
 # @within function fetchr:card_generation/generate_slot
 # @params ::fetchr::storage::card::CardSlot
 
-$data modify storage fetchr:card slots[-1].icon_display \
-	set value '{"text":"\\u$(icon)","font":"$(current_font)"}'
+#NEUN_SCRIPT until 65
+#$data \
+	modify storage fetchr:card slots[-1].icon_display \
+	set value '{ "text": "\\u$(icon)", "font": "$(current_font)" }'
+
+#$execute \
+	unless score $blind_mode fetchr.state matches 1 \
+	run data \
+		modify storage fetchr:card slots[-1].current_display set value '[\
+		"",\
+		{ "text": "\\u0002", "font": "fetchr:space" },\
+		{ "text": "\\u$(icon)", "font": "$(current_font)" }\
+	]'
+#NEUN_SCRIPT end
+
+#NEUN_SCRIPT since 65
+$data \
+	modify storage fetchr:card slots[-1].icon_display \
+	set value { text: "\u$(icon)", font: "$(current_font)" }
 
 $execute \
 	unless score $blind_mode fetchr.state matches 1 \
-	run data modify storage fetchr:card slots[-1].current_display set value '[\
+	run data \
+		modify storage fetchr:card slots[-1].current_display set value [\
 		"",\
-		{"text":"\\u0002","font":"fetchr:space"},\
-		{"text":"\\u$(icon)","font":"$(current_font)"}\
-	]'
+		{ text: "\u0002", font: "fetchr:space" },\
+		{ text: "\u$(icon)", font: "$(current_font)" }\
+	]
+#NEUN_SCRIPT end

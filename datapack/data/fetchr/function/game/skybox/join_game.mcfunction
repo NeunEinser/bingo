@@ -7,41 +7,87 @@
 # 	entity Current player
 # 	position Skybox spawn
 
-execute unless entity @a[predicate=fetchr:is_in_game] in fetchr:lobby at @e[type=minecraft:marker, tag=fetchr.card_frame_start, distance=0.., limit=1] run clone from fetchr:lobby ~ ~-4 ~-1 ~4 ~ ~-1 to fetchr:default 0 315 0
-execute unless entity @a[predicate=fetchr:is_in_game] at @e[type=minecraft:marker, tag=fetchr.card_frame_start, distance=..8, limit=1] run clone 0 315 0 4 319 0 ~ ~-4 ~-1 masked
+execute \
+	unless entity @a[predicate=fetchr:is_in_game] \
+	in fetchr:lobby at @e[type=minecraft:marker, tag=fetchr.card_frame_start, distance=0.., limit=1] \
+	run clone from fetchr:lobby ~ ~-4 ~-1 ~4 ~ ~-1 to fetchr:default 0 315 0
+execute \
+	unless entity @a[predicate=fetchr:is_in_game] \
+	at @e[type=minecraft:marker, tag=fetchr.card_frame_start, distance=..8, limit=1] \
+	run clone 0 315 0 4 319 0 ~ ~-4 ~-1 masked
 
 #>
 # @private
 #declare score_holder $game/start/skybox/player.x
-execute store result score $game/start/skybox/player.x fetchr.tmp run data get entity @s Pos[0] 86
+execute \
+	store result score $game/start/skybox/player.x fetchr.tmp \
+	run data get entity @s Pos[0] 86
 #>
 # @private
 #declare score_holder $game/start/skybox/player.z
-execute store result score $game/start/skybox/player.z fetchr.tmp run data get entity @s Pos[2] 86
+execute \
+	store result score $game/start/skybox/player.z fetchr.tmp \
+	run data get entity @s Pos[2] 86
 
 #>
 # @private
 #declare score_holder $game/start/skybox/lobby_card.x
-execute at @s positioned ~-13 ~ ~-11 store result score $game/start/skybox/lobby_card.x fetchr.tmp run data get entity @e[type=minecraft:marker, tag=fetchr.card_frame_start, dx=16, dy=6, dz=12, limit=1] Pos[0] 86
+execute \
+	at @s positioned ~-13 ~ ~-11 \
+	store result score $game/start/skybox/lobby_card.x fetchr.tmp \
+	run data get entity @e[type=minecraft:marker, tag=fetchr.card_frame_start, dx=16, dy=6, dz=12, limit=1] Pos[0] 86
 #>
 # @private
 #declare score_holder $game/start/skybox/lobby_card.z
-execute at @s positioned ~-13 ~ ~-11 store result score $game/start/skybox/lobby_card.z fetchr.tmp run data get entity @e[type=minecraft:marker, tag=fetchr.card_frame_start, dx=16, dy=6, dz=12, limit=1] Pos[2] 86
+execute \
+	at @s positioned ~-13 ~ ~-11 \
+	store result score $game/start/skybox/lobby_card.z fetchr.tmp \
+	run data get \
+		entity @e[type=minecraft:marker, tag=fetchr.card_frame_start, dx=16, dy=6, dz=12, limit=1] \
+		Pos[2] 86
 
-execute if entity @s[predicate=fetchr:is_in_lobby] run scoreboard players operation $game/start/skybox/player.x fetchr.tmp -= $game/start/skybox/lobby_card.x fetchr.tmp
-execute if entity @s[predicate=fetchr:is_in_lobby] run scoreboard players operation $game/start/skybox/player.z fetchr.tmp -= $game/start/skybox/lobby_card.z fetchr.tmp
-execute if entity @s[predicate=fetchr:is_in_lobby] at @s positioned ~-13 ~ ~-11 unless entity @e[type=minecraft:marker, tag=fetchr.card_frame_start, dx=16, dy=6, dz=12, limit=1] run scoreboard players set $game/start/skybox/player.x fetchr.tmp 172
-execute if entity @s[predicate=fetchr:is_in_lobby] at @s positioned ~-13 ~ ~-11 unless entity @e[type=minecraft:marker, tag=fetchr.card_frame_start, dx=16, dy=6, dz=12, limit=1] run scoreboard players set $game/start/skybox/player.z fetchr.tmp 602
-execute if entity @s[predicate=fetchr:is_in_lobby] run scoreboard players add $game/start/skybox/player.x fetchr.tmp 473
-execute if entity @s[predicate=fetchr:is_in_lobby] run scoreboard players add $game/start/skybox/player.z fetchr.tmp 43
+execute \
+	if entity @s[predicate=fetchr:is_in_lobby] \
+	run scoreboard players operation $game/start/skybox/player.x fetchr.tmp -= $game/start/skybox/lobby_card.x fetchr.tmp
+execute \
+	if entity @s[predicate=fetchr:is_in_lobby] \
+	run scoreboard players operation $game/start/skybox/player.z fetchr.tmp -= $game/start/skybox/lobby_card.z fetchr.tmp
+execute \
+	if entity @s[predicate=fetchr:is_in_lobby] \
+	at @s positioned ~-13 ~ ~-11 \
+	unless entity @e[type=minecraft:marker, tag=fetchr.card_frame_start, dx=16, dy=6, dz=12, limit=1] \
+	run scoreboard players set $game/start/skybox/player.x fetchr.tmp 172
+execute \
+	if entity @s[predicate=fetchr:is_in_lobby] \
+	at @s positioned ~-13 ~ ~-11 \
+	unless entity @e[type=minecraft:marker, tag=fetchr.card_frame_start, dx=16, dy=6, dz=12, limit=1] \
+	run scoreboard players set $game/start/skybox/player.z fetchr.tmp 602
+execute \
+	if entity @s[predicate=fetchr:is_in_lobby] \
+	run scoreboard players add $game/start/skybox/player.x fetchr.tmp 473
+execute \
+	if entity @s[predicate=fetchr:is_in_lobby] \
+	run scoreboard players add $game/start/skybox/player.z fetchr.tmp 43
 
-execute if entity @s[predicate=fetchr:is_in_game] run scoreboard players operation $game/start/skybox/player.x fetchr.tmp %= 1376 fetchr.const
-execute if entity @s[predicate=fetchr:is_in_game] run scoreboard players operation $game/start/skybox/player.z fetchr.tmp %= 1376 fetchr.const
+execute \
+	if entity @s[predicate=fetchr:is_in_game] \
+	run scoreboard players operation $game/start/skybox/player.x fetchr.tmp %= 1376 fetchr.const
+execute \
+	if entity @s[predicate=fetchr:is_in_game] \
+	run scoreboard players operation $game/start/skybox/player.z fetchr.tmp %= 1376 fetchr.const
 
-execute if score $game/start/skybox/player.x fetchr.tmp matches ..25 run scoreboard players set $game/start/skybox/player.x fetchr.tmp 26
-execute if score $game/start/skybox/player.z fetchr.tmp matches ..25 run scoreboard players set $game/start/skybox/player.z fetchr.tmp 26
-execute if score $game/start/skybox/player.x fetchr.tmp matches 1351.. run scoreboard players set $game/start/skybox/player.x fetchr.tmp 1350
-execute if score $game/start/skybox/player.z fetchr.tmp matches 1351.. run scoreboard players set $game/start/skybox/player.z fetchr.tmp 1350
+execute \
+	if score $game/start/skybox/player.x fetchr.tmp matches ..25 \
+	run scoreboard players set $game/start/skybox/player.x fetchr.tmp 26
+execute \
+	if score $game/start/skybox/player.z fetchr.tmp matches ..25 \
+	run scoreboard players set $game/start/skybox/player.z fetchr.tmp 26
+execute \
+	if score $game/start/skybox/player.x fetchr.tmp matches 1351.. \
+	run scoreboard players set $game/start/skybox/player.x fetchr.tmp 1350
+execute \
+	if score $game/start/skybox/player.z fetchr.tmp matches 1351.. \
+	run scoreboard players set $game/start/skybox/player.z fetchr.tmp 1350
 
 #>
 # @private
@@ -60,12 +106,23 @@ scoreboard players operation $game/start/skybox/player.z fetchr.tmp += $game/sta
 #>
 # @private
 #declare tag fetchr.game_start_skybox_pos
-summon minecraft:marker ~ ~ ~ {Tags:[fetchr.game_start_skybox_pos]}
-execute store result entity @e[type=minecraft:marker, tag=fetchr.game_start_skybox_pos, distance=0...1, limit=1] Pos[0] double 0.01162790697674418604651162790698 run scoreboard players get $game/start/skybox/player.x fetchr.tmp
-execute store result entity @e[type=minecraft:marker, tag=fetchr.game_start_skybox_pos, distance=0..9, limit=1] Pos[2] double 0.01162790697674418604651162790698 run scoreboard players get $game/start/skybox/player.z fetchr.tmp
+summon minecraft:marker ~ ~ ~ { Tags: [ fetchr.game_start_skybox_pos ]}
+execute \
+	store result \
+		entity @e[type=minecraft:marker, tag=fetchr.game_start_skybox_pos, distance=0...1, limit=1] \
+		Pos[0] double 0.01162790697674418604651162790698 \
+	run scoreboard players get $game/start/skybox/player.x fetchr.tmp
+execute \
+	store result \
+		entity @e[type=minecraft:marker, tag=fetchr.game_start_skybox_pos, distance=0..9, limit=1] \
+		Pos[2] double 0.01162790697674418604651162790698 \
+	run scoreboard players get $game/start/skybox/player.z fetchr.tmp
 
 scoreboard players operation @s fetchr.game_id = $current_game_id fetchr.game_id
-execute at @e[type=minecraft:marker, tag=fetchr.game_start_skybox_pos, distance=0..13, limit=1] rotated as @s run teleport @s ~ ~ ~
+execute \
+	at @e[type=minecraft:marker, tag=fetchr.game_start_skybox_pos, distance=0..13, limit=1] \
+	rotated as @s \
+	run teleport @s ~ ~ ~
 kill @e[type=minecraft:marker, tag=fetchr.game_start_skybox_pos, distance=0..13, limit=1]
 
 tag @s remove fetchr.spectator
@@ -134,16 +191,38 @@ execute \
 	if entity @s[team=!] \
 	run scoreboard players set $game/start/skybox/player.team fetchr.tmp -1
 
-execute if score $game/start/skybox/player.team fetchr.tmp matches 0 run function fetchr:game/skybox/join_team/red
-execute if score $game/start/skybox/player.team fetchr.tmp matches 1 run function fetchr:game/skybox/join_team/orange
-execute if score $game/start/skybox/player.team fetchr.tmp matches 2 run function fetchr:game/skybox/join_team/yellow
-execute if score $game/start/skybox/player.team fetchr.tmp matches 3 run function fetchr:game/skybox/join_team/lime
-execute if score $game/start/skybox/player.team fetchr.tmp matches 4 run function fetchr:game/skybox/join_team/green
-execute if score $game/start/skybox/player.team fetchr.tmp matches 5 run function fetchr:game/skybox/join_team/cyan
-execute if score $game/start/skybox/player.team fetchr.tmp matches 6 run function fetchr:game/skybox/join_team/light_blue
-execute if score $game/start/skybox/player.team fetchr.tmp matches 7 run function fetchr:game/skybox/join_team/blue
-execute if score $game/start/skybox/player.team fetchr.tmp matches 8 run function fetchr:game/skybox/join_team/purple
-execute if score $game/start/skybox/player.team fetchr.tmp matches 9 run function fetchr:game/skybox/join_team/magenta
+execute \
+	if score $game/start/skybox/player.team fetchr.tmp matches 0 \
+	run function fetchr:game/skybox/join_team/red
+execute \
+	if score $game/start/skybox/player.team fetchr.tmp matches 1 \
+	run function fetchr:game/skybox/join_team/orange
+execute \
+	if score $game/start/skybox/player.team fetchr.tmp matches 2 \
+	run function fetchr:game/skybox/join_team/yellow
+execute \
+	if score $game/start/skybox/player.team fetchr.tmp matches 3 \
+	run function fetchr:game/skybox/join_team/lime
+execute \
+	if score $game/start/skybox/player.team fetchr.tmp matches 4 \
+	run function fetchr:game/skybox/join_team/green
+execute \
+	if score $game/start/skybox/player.team fetchr.tmp matches 5 \
+	run function fetchr:game/skybox/join_team/cyan
+execute \
+	if score $game/start/skybox/player.team fetchr.tmp matches 6 \
+	run function fetchr:game/skybox/join_team/light_blue
+execute \
+	if score $game/start/skybox/player.team fetchr.tmp matches 7 \
+	run function fetchr:game/skybox/join_team/blue
+execute \
+	if score $game/start/skybox/player.team fetchr.tmp matches 8 \
+	run function fetchr:game/skybox/join_team/purple
+execute \
+	if score $game/start/skybox/player.team fetchr.tmp matches 9 \
+	run function fetchr:game/skybox/join_team/magenta
 
-execute in fetchr:lobby run function fetchr:custom_hud/components/timer/update
+execute \
+	in fetchr:lobby \
+	run function fetchr:custom_hud/components/timer/update
 bossbar set fetchr:start/pre_gen/progress players @a[predicate=fetchr:is_in_game]

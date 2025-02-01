@@ -61,8 +61,11 @@ dispatch fetchr:item_test[fetchr:negated_component] to struct {
 }
 
 dispatch fetchr:item_test[fetchr:predicate] to struct {
-	id: #[id="item_sub_predicate_type"] string,
-	predicate: minecraft:item_sub_predicate[[id]],
+	id: (
+		#[until="1.21.5"] #[id="item_sub_predicate_type"] string
+		| #[since="1.21.5"] #[id="data_component_predicate_type"] string
+	),
+	predicate: minecraft:data_component_predicate[[id]],
 }
 
 struct ItemCategory {

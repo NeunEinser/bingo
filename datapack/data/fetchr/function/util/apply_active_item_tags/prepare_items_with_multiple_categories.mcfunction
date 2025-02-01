@@ -45,7 +45,8 @@ execute \
 	store result storage tmp.fetchr:apply_active_item_tags items_with_multiple_categories[-1].weight_denom int 1 \
 	run scoreboard players get $apply_tags/mult_cat.denom fetchr.tmp
 data remove storage tmp.fetchr:apply_active_item_tags items_with_multiple_categories[-1].multiple_categories
-data modify storage fetchr:items active_items \
+data \
+	modify storage fetchr:items active_items \
 	append from storage tmp.fetchr:apply_active_item_tags items_with_multiple_categories[-1]
 
 scoreboard players operation $gcd.a 91.math.io = $available_category_weight fetchr.state

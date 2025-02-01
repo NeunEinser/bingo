@@ -7,4 +7,4 @@
 # 	location The location of the button
 
 team join fetchr.green @s
-tellraw @a {"translate":"fetchr.lobby.team_selection.join_green","with":[{"selector":"@s"}]}
+tellraw @a { "translate": "fetchr.lobby.team_selection.join_green", "with": [{ "selector": "@s" }]}

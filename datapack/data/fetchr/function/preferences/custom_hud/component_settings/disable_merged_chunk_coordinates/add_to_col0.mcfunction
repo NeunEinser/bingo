@@ -5,5 +5,7 @@
 #
 # @within function fetchr:preferences/custom_hud/component_settings/disable_merged_chunk_coordinates/exec
 
-data modify storage tmp.fetchr:preferences/hud toBeAdded set from storage fetchr:custom_hud components[{id: "fetchr:player_chunk_position"}]
+data \
+	modify storage tmp.fetchr:preferences/hud toBeAdded \
+	set from storage fetchr:custom_hud components[{ id: "fetchr:player_chunk_position" }]
 function fetchr:preferences/custom_hud/add_to_col0

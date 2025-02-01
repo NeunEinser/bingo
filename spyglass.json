@@ -1,6 +1,6 @@
 {
 	"env": {
-		"gameVersion": "1.21.4"
+		"gameVersion": "1.21.5"
 	},
 	"format": {
 		"blockStateBracketSpacing": { "inside": 0 },
@@ -64,8 +64,8 @@
 	
 		"idOmitDefaultNamespace": false,
 
-		"nameOfNbtKey": "^[a-z][a-z0-9_]*$",
-		"nameOfObjective": "^(?:fetchr\\.[a-z][a-z0-9_]*|[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*){2})$",
+		"nameOfNbtKey": "^(?:[a-z][a-z0-9_]*)?$",
+		"nameOfObjective": "^(?:fetchr\\.[a-z0-9][a-z0-9_]*|[a-z0-9][a-z0-9_]*(?:\\.[a-z0-9][a-z0-9_]*){2})$",
 		"nameOfScoreHolder": "^(?:\\$[a-z][a-z0-9_]*(?:(?:\\/[a-z][a-z0-9_]*)*\\.[a-z][a-z0-9_]*)?|0|-?[1-9][0-9]*)$",
 		"nameOfTag": "^(?:fetchr\\.[a-z][a-z0-9_]*|[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*){2})$",
 		"nameOfTeam": "^(?:fetchr\\.[a-z][a-z0-9_]*|[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*){2})$",

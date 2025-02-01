@@ -47,8 +47,12 @@
 
 scoreboard players set $custom_hud/player_pos.max_secondary fetchr.tmp 6
 
-execute if score $custom_hud/player_pos.abs_x fetchr.tmp matches ..999999 run scoreboard players set $custom_hud/player_pos.max_secondary fetchr.tmp 3
-execute if score $custom_hud/player_pos.abs_z fetchr.tmp matches ..999999 run scoreboard players set $custom_hud/player_pos.max_secondary fetchr.tmp 3
+execute \
+	if score $custom_hud/player_pos.abs_x fetchr.tmp matches ..999999 \
+	run scoreboard players set $custom_hud/player_pos.max_secondary fetchr.tmp 3
+execute \
+	if score $custom_hud/player_pos.abs_z fetchr.tmp matches ..999999 \
+	run scoreboard players set $custom_hud/player_pos.max_secondary fetchr.tmp 3
 
 # Use absolute value for now so that integer division cuts of digits (Mojang
 # uses floor_div and floor_mod, which is a good thing in most applications and
@@ -66,18 +70,42 @@ scoreboard players set $custom_hud/player_pos.removed_z fetchr.tmp 2
 #   - decimal point (width 2)
 #   - Either k for kilo (width 5) or M for million (width 6)
 # Total is either 5 or 4
-execute if score $custom_hud/player_pos.abs_x fetchr.tmp matches ..999999 run scoreboard players add $custom_hud/width.padding fetchr.io 5
-execute if score $custom_hud/player_pos.abs_x fetchr.tmp matches ..999999 run data modify storage tmp.fetchr:custom_hud xChar set value "k"
-execute unless score $custom_hud/player_pos.abs_x fetchr.tmp matches ..999999 run scoreboard players add $custom_hud/width.padding fetchr.io 4
-execute unless score $custom_hud/player_pos.abs_x fetchr.tmp matches ..999999 run data modify storage tmp.fetchr:custom_hud xChar set value "M"
-execute if score $custom_hud/player_pos.abs_z fetchr.tmp matches ..999999 run scoreboard players add $custom_hud/width.padding fetchr.io 5
-execute if score $custom_hud/player_pos.abs_z fetchr.tmp matches ..999999 run data modify storage tmp.fetchr:custom_hud zChar set value "k"
-execute unless score $custom_hud/player_pos.abs_z fetchr.tmp matches ..999999 run scoreboard players add $custom_hud/width.padding fetchr.io 4
-execute unless score $custom_hud/player_pos.abs_z fetchr.tmp matches ..999999 run data modify storage tmp.fetchr:custom_hud zChar set value "M"
+execute \
+	if score $custom_hud/player_pos.abs_x fetchr.tmp matches ..999999 \
+	run scoreboard players add $custom_hud/width.padding fetchr.io 5
+execute \
+	if score $custom_hud/player_pos.abs_x fetchr.tmp matches ..999999 \
+	run data modify storage tmp.fetchr:custom_hud xChar set value "k"
+execute \
+	unless score $custom_hud/player_pos.abs_x fetchr.tmp matches ..999999 \
+	run scoreboard players add $custom_hud/width.padding fetchr.io 4
+execute \
+	unless score $custom_hud/player_pos.abs_x fetchr.tmp matches ..999999 \
+	run data modify storage tmp.fetchr:custom_hud xChar set value "M"
+execute \
+	if score $custom_hud/player_pos.abs_z fetchr.tmp matches ..999999 \
+	run scoreboard players add $custom_hud/width.padding fetchr.io 5
+execute \
+	if score $custom_hud/player_pos.abs_z fetchr.tmp matches ..999999 \
+	run data modify storage tmp.fetchr:custom_hud zChar set value "k"
+execute \
+	unless score $custom_hud/player_pos.abs_z fetchr.tmp matches ..999999 \
+	run scoreboard players add $custom_hud/width.padding fetchr.io 4
+execute \
+	unless score $custom_hud/player_pos.abs_z fetchr.tmp matches ..999999 \
+	run data modify storage tmp.fetchr:custom_hud zChar set value "M"
 
-execute if score $custom_hud/width.padding fetchr.io matches ..-7 run function fetchr:custom_hud/components/player_position/update_xz/shorten_both_iter
-execute if score $custom_hud/width.padding fetchr.io matches ..-1 if score $custom_hud/player_pos.abs_x fetchr.tmp >= $custom_hud/player_pos.abs_z fetchr.tmp run function fetchr:custom_hud/components/player_position/update_xz/shorten_x_iter
-execute if score $custom_hud/width.padding fetchr.io matches ..-1 if score $custom_hud/player_pos.abs_z fetchr.tmp > $custom_hud/player_pos.abs_x fetchr.tmp run function fetchr:custom_hud/components/player_position/update_xz/shorten_z_iter
+execute \
+	if score $custom_hud/width.padding fetchr.io matches ..-7 \
+	run function fetchr:custom_hud/components/player_position/update_xz/shorten_both_iter
+execute \
+	if score $custom_hud/width.padding fetchr.io matches ..-1 \
+	if score $custom_hud/player_pos.abs_x fetchr.tmp >= $custom_hud/player_pos.abs_z fetchr.tmp \
+	run function fetchr:custom_hud/components/player_position/update_xz/shorten_x_iter
+execute \
+	if score $custom_hud/width.padding fetchr.io matches ..-1 \
+	if score $custom_hud/player_pos.abs_z fetchr.tmp > $custom_hud/player_pos.abs_x fetchr.tmp \
+	run function fetchr:custom_hud/components/player_position/update_xz/shorten_z_iter
 
 #>
 # Current decimal digits
@@ -112,9 +140,15 @@ scoreboard players operation $custom_hud/player_pos.int_x fetchr.tmp = $custom_h
 scoreboard players set $custom_hud/player_pos.dec_x fetchr.tmp 0
 data modify storage tmp.fetchr:custom_hud xFillerZeros set value [""]
 scoreboard players set $custom_hud/player_pos.ten_pow fetchr.tmp 1
-scoreboard players operation $custom_hud/player_pos.decimal_digits fetchr.tmp = $custom_hud/player_pos.removed_x fetchr.tmp
-execute if score $custom_hud/player_pos.abs_x fetchr.tmp matches 1000000.. run function fetchr:custom_hud/components/player_position/update_xz/calculate_fixed_point_x
-execute unless score $custom_hud/player_pos.abs_x fetchr.tmp matches 1000000.. if score $custom_hud/player_pos.removed_x fetchr.tmp matches ..2 run function fetchr:custom_hud/components/player_position/update_xz/calculate_fixed_point_x
+scoreboard players operation $custom_hud/player_pos.decimal_digits fetchr.tmp \
+	= $custom_hud/player_pos.removed_x fetchr.tmp
+execute \
+	if score $custom_hud/player_pos.abs_x fetchr.tmp matches 1000000.. \
+	run function fetchr:custom_hud/components/player_position/update_xz/calculate_fixed_point_x
+execute \
+	unless score $custom_hud/player_pos.abs_x fetchr.tmp matches 1000000.. \
+	if score $custom_hud/player_pos.removed_x fetchr.tmp matches ..2 \
+	run function fetchr:custom_hud/components/player_position/update_xz/calculate_fixed_point_x
 
 #>
 # Integer portion of z
@@ -134,19 +168,113 @@ scoreboard players operation $custom_hud/player_pos.int_z fetchr.tmp = $custom_h
 scoreboard players set $custom_hud/player_pos.dec_z fetchr.tmp 0
 data modify storage tmp.fetchr:custom_hud zFillerZeros set value [""]
 scoreboard players set $custom_hud/player_pos.ten_pow fetchr.tmp 1
-scoreboard players operation $custom_hud/player_pos.decimal_digits fetchr.tmp = $custom_hud/player_pos.removed_z fetchr.tmp
-execute if score $custom_hud/player_pos.abs_z fetchr.tmp matches 1000000.. run function fetchr:custom_hud/components/player_position/update_xz/calculate_fixed_point_z
-execute unless score $custom_hud/player_pos.abs_z fetchr.tmp matches 1000000.. if score $custom_hud/player_pos.removed_z fetchr.tmp matches ..2 run function fetchr:custom_hud/components/player_position/update_xz/calculate_fixed_point_z
+scoreboard players operation $custom_hud/player_pos.decimal_digits fetchr.tmp \
+	= $custom_hud/player_pos.removed_z fetchr.tmp
+execute \
+	if score $custom_hud/player_pos.abs_z fetchr.tmp matches 1000000.. \
+	run function fetchr:custom_hud/components/player_position/update_xz/calculate_fixed_point_z
+execute \
+	unless score $custom_hud/player_pos.abs_z fetchr.tmp matches 1000000.. \
+	if score $custom_hud/player_pos.removed_z fetchr.tmp matches ..2 \
+	run function fetchr:custom_hud/components/player_position/update_xz/calculate_fixed_point_z
 
-execute if score $custom_hud/player_pos.x fetchr.tmp matches ..-1 run scoreboard players operation $custom_hud/player_pos.int_x fetchr.tmp *= -1 fetchr.const
-execute if score $custom_hud/player_pos.z fetchr.tmp matches ..-1 run scoreboard players operation $custom_hud/player_pos.int_z fetchr.tmp *= -1 fetchr.const
+execute \
+	if score $custom_hud/player_pos.x fetchr.tmp matches ..-1 \
+	run scoreboard players operation $custom_hud/player_pos.int_x fetchr.tmp *= -1 fetchr.const
+execute \
+	if score $custom_hud/player_pos.z fetchr.tmp matches ..-1 \
+	run scoreboard players operation $custom_hud/player_pos.int_z fetchr.tmp *= -1 fetchr.const
 
-data modify storage io.fetchr:custom_hud component.textComponent set value '[{"storage": "tmp.fetchr:custom_hud", "nbt": "xComp", "interpret": true}, " ", {"storage": "tmp.fetchr:custom_hud", "nbt": "zComp", "interpret": true}]'
+#NEUN_SCRIPT until 65
+#data \
+	modify storage io.fetchr:custom_hud component.textComponent set value '[\
+	{ "storage": "tmp.fetchr:custom_hud", "nbt": "xComp", "interpret": true },\
+	" ",\
+	{ "storage": "tmp.fetchr:custom_hud", "nbt": "zComp", "interpret": true }\
+]'
+#data \
+	modify storage tmp.fetchr:custom_hud xComp set value '[\
+	{ "score": { "name": "$custom_hud/player_pos.int_x", "objective": "fetchr.tmp" }}\
+	, ".",\
+	{ "storage": "tmp.fetchr:custom_hud", "nbt": "xFillerZeros", "interpret": true },\
+	{ "score": { "name": "$custom_hud/player_pos.dec_x", "objective": "fetchr.tmp" }},\
+	{ "storage": "tmp.fetchr:custom_hud", "nbt": "xChar" }\
+]'
+#execute \
+	if score $custom_hud/player_pos.abs_x fetchr.tmp matches ..999999 \
+	if score $custom_hud/player_pos.removed_x fetchr.tmp matches 3 \
+	run data \
+		modify storage tmp.fetchr:custom_hud xComp set value '[\
+		{ "score": { "name": "$custom_hud/player_pos.int_x", "objective": "fetchr.tmp" }},\
+		{ "storage": "tmp.fetchr:custom_hud", "nbt": "xChar" }\
+	]'
+#NEUN_SCRIPT end
+#NEUN_SCRIPT since 65
+data \
+	modify storage io.fetchr:custom_hud component.textComponent set value [\
+	{ storage: "tmp.fetchr:custom_hud", nbt: "xComp", interpret: true },\
+	" ",\
+	{ storage: "tmp.fetchr:custom_hud", nbt: "zComp", interpret: true }\
+]
+data \
+	modify storage tmp.fetchr:custom_hud xComp set value [\
+	{ score: { name: "$custom_hud/player_pos.int_x", objective: "fetchr.tmp" }}\
+	, ".",\
+	{ storage: "tmp.fetchr:custom_hud", nbt: "xFillerZeros", interpret: true },\
+	{ score: { name: "$custom_hud/player_pos.dec_x", objective: "fetchr.tmp" }},\
+	{ storage: "tmp.fetchr:custom_hud", nbt: "xChar" }\
+]
+execute \
+	if score $custom_hud/player_pos.abs_x fetchr.tmp matches ..999999 \
+	if score $custom_hud/player_pos.removed_x fetchr.tmp matches 3 \
+	run data \
+		modify storage tmp.fetchr:custom_hud xComp set value [\
+		{ score: { name: "$custom_hud/player_pos.int_x", objective: "fetchr.tmp" }},\
+		{ storage: "tmp.fetchr:custom_hud", nbt: "xChar" }\
+	]
+#NEUN_SCRIPT end
+execute \
+	if score $custom_hud/player_pos.abs_x fetchr.tmp matches ..999999 \
+	if score $custom_hud/player_pos.removed_x fetchr.tmp matches 3 \
+	run scoreboard players add $custom_hud/width.padding fetchr.io 2
 
-data modify storage tmp.fetchr:custom_hud xComp set value '[{"score": {"name": "$custom_hud/player_pos.int_x", "objective": "fetchr.tmp"}}, ".", {"storage": "tmp.fetchr:custom_hud", "nbt": "xFillerZeros", "interpret": true}, {"score": {"name": "$custom_hud/player_pos.dec_x", "objective": "fetchr.tmp"}}, {"storage": "tmp.fetchr:custom_hud", "nbt": "xChar"}]'
-execute if score $custom_hud/player_pos.abs_x fetchr.tmp matches ..999999 if score $custom_hud/player_pos.removed_x fetchr.tmp matches 3 run data modify storage tmp.fetchr:custom_hud xComp set value '[{"score": {"name": "$custom_hud/player_pos.int_x", "objective": "fetchr.tmp"}}, {"storage": "tmp.fetchr:custom_hud", "nbt": "xChar"}]'
-execute if score $custom_hud/player_pos.abs_x fetchr.tmp matches ..999999 if score $custom_hud/player_pos.removed_x fetchr.tmp matches 3 run scoreboard players add $custom_hud/width.padding fetchr.io 2
-
-data modify storage tmp.fetchr:custom_hud zComp set value '[{"score": {"name": "$custom_hud/player_pos.int_z", "objective": "fetchr.tmp"}}, ".", {"storage": "tmp.fetchr:custom_hud", "nbt": "zFillerZeros", "interpret": true}, {"score": {"name": "$custom_hud/player_pos.dec_z", "objective": "fetchr.tmp"}}, {"storage": "tmp.fetchr:custom_hud", "nbt": "zChar"}]'
-execute if score $custom_hud/player_pos.abs_z fetchr.tmp matches ..999999 if score $custom_hud/player_pos.removed_z fetchr.tmp matches 3 run data modify storage tmp.fetchr:custom_hud zComp set value '[{"score": {"name": "$custom_hud/player_pos.int_z", "objective": "fetchr.tmp"}}, {"storage": "tmp.fetchr:custom_hud", "nbt": "zChar"}]'
-execute if score $custom_hud/player_pos.abs_z fetchr.tmp matches ..999999 if score $custom_hud/player_pos.removed_z fetchr.tmp matches 3 run scoreboard players add $custom_hud/width.padding fetchr.io 2
+#NEUN_SCRIPT until 65
+#data \
+	modify storage tmp.fetchr:custom_hud zComp set value '[\
+	{ "score": { "name": "$custom_hud/player_pos.int_z", "objective": "fetchr.tmp" }},\
+	".",\
+	{ "storage": "tmp.fetchr:custom_hud", "nbt": "zFillerZeros", "interpret": true },\
+	{ "score": { "name": "$custom_hud/player_pos.dec_z", "objective": "fetchr.tmp" }},\
+	{ "storage": "tmp.fetchr:custom_hud", "nbt": "zChar" }\
+]'
+#execute \
+	if score $custom_hud/player_pos.abs_z fetchr.tmp matches ..999999 \
+	if score $custom_hud/player_pos.removed_z fetchr.tmp matches 3 \
+	run data \
+		modify storage tmp.fetchr:custom_hud zComp set value '[\
+		{ "score": { "name": "$custom_hud/player_pos.int_z", "objective": "fetchr.tmp" }},\
+		{ "storage": "tmp.fetchr:custom_hud", "nbt": "zChar" }\
+	]'
+#NEUN_SCRIPT end
+#NEUN_SCRIPT since 65
+data \
+	modify storage tmp.fetchr:custom_hud zComp set value [\
+	{ score: { name: "$custom_hud/player_pos.int_z", objective: "fetchr.tmp" }},\
+	".",\
+	{ storage: "tmp.fetchr:custom_hud", nbt: "zFillerZeros", interpret: true },\
+	{ score: { name: "$custom_hud/player_pos.dec_z", objective: "fetchr.tmp" }},\
+	{ storage: "tmp.fetchr:custom_hud", nbt: "zChar" }\
+]
+execute \
+	if score $custom_hud/player_pos.abs_z fetchr.tmp matches ..999999 \
+	if score $custom_hud/player_pos.removed_z fetchr.tmp matches 3 \
+	run data \
+		modify storage tmp.fetchr:custom_hud zComp set value [\
+		{ score: { name: "$custom_hud/player_pos.int_z", objective: "fetchr.tmp" }},\
+		{ storage: "tmp.fetchr:custom_hud", nbt: "zChar" }\
+	]
+#NEUN_SCRIPT end
+execute \
+	if score $custom_hud/player_pos.abs_z fetchr.tmp matches ..999999 \
+	if score $custom_hud/player_pos.removed_z fetchr.tmp matches 3 \
+	run scoreboard players add $custom_hud/width.padding fetchr.io 2

@@ -17,14 +17,22 @@
 
 data modify storage tmp.fetchr:card_frames slots set from storage fetchr:card slots
 scoreboard players operation $card_frames/find_item.slot_id fetchr.tmp = @s fetchr.lobby_card_frame_id
-data modify storage tmp.fetchr:card_frames foundItem set value {id: "minecraft:barrier"}
-execute unless score $blind_mode fetchr.state matches 1 run function fetchr:card_frames/find_item
+data modify storage tmp.fetchr:card_frames foundItem set value { id: "minecraft:barrier" }
+execute \
+	unless score $blind_mode fetchr.state matches 1 \
+	run function fetchr:card_frames/find_item
 
 data modify entity @s Item set from storage tmp.fetchr:card_frames foundItem
 
-execute unless block ~ ~ ~-1 minecraft:red_concrete run tag @s add fetchr.toggle_on
-execute unless entity @s[tag=fetchr.toggle_on] run setblock ~ ~ ~-1 minecraft:barrier
-execute if entity @s[tag=fetchr.toggle_on] run setblock ~ ~ ~-1 minecraft:red_concrete
+execute \
+	unless block ~ ~ ~-1 minecraft:red_concrete \
+	run tag @s add fetchr.toggle_on
+execute \
+	unless entity @s[tag=fetchr.toggle_on] \
+	run setblock ~ ~ ~-1 minecraft:barrier
+execute \
+	if entity @s[tag=fetchr.toggle_on] \
+	run setblock ~ ~ ~-1 minecraft:red_concrete
 
 tag @s remove fetchr.toggle_on
 playsound minecraft:entity.item_frame.remove_item neutral @a ~ ~ ~ 1 1

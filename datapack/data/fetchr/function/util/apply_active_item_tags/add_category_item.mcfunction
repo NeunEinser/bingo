@@ -10,26 +10,46 @@
 # 	i: int
 # 	id: #[id] string
 
-data modify storage tmp.fetchr:apply_active_item_tags category_items[-1].item.components.minecraft:lore append value '""'
-data \
+#NEUN_SCRIPT until 65
+#data \
+	modify storage tmp.fetchr:apply_active_item_tags category_items[-1].item.components.minecraft:lore \
+	append value '""'
+#data \
 	modify block 7 0 7 front_text.messages[0] \
 	set value '[\
-		{"translate": "fetchr.item.global_weight", "color": "gray", "italic": false},\
+		{ "translate": "fetchr.item.global_weight", "color": "gray", "italic": false },\
 		": ",\
-		{"storage": "tmp.fetchr:apply_active_item_tags", "nbt": "category_items[-1].weight"}\
+		{ "storage": "tmp.fetchr:apply_active_item_tags", "nbt": "category_items[-1].weight" }\
 	]'
+#NEUN_SCRIPT end
+#NEUN_SCRIPT since 65
+data \
+	modify storage tmp.fetchr:apply_active_item_tags category_items[-1].item.components.minecraft:lore \
+	append value ""
+data \
+	modify block 7 0 7 front_text.messages[0] \
+	set value [\
+		{ translate: "fetchr.item.global_weight", color: "gray", italic: false },\
+		": ",\
+		{ storage: "tmp.fetchr:apply_active_item_tags", nbt: "category_items[-1].weight" }\
+	]
+#NEUN_SCRIPT end
 
-data modify storage tmp.fetchr:apply_active_item_tags category_items[-1].item.components.minecraft:lore \
+data \
+	modify storage tmp.fetchr:apply_active_item_tags category_items[-1].item.components.minecraft:lore \
 	append from block 7 0 7 front_text.messages[0]
 
 
-data modify storage tmp.fetchr:apply_active_item_tags category_items[-1].global_weight \
+data \
+	modify storage tmp.fetchr:apply_active_item_tags category_items[-1].global_weight \
 	set from storage tmp.fetchr:apply_active_item_tags category_items[-1].weight
 
-$data modify storage tmp.fetchr:apply_active_item_tags category_items[-1].weight \
-	set from storage tmp.fetchr:apply_active_item_tags category_items[-1].active_categories[{id: "$(id)"}].weight
+$data \
+	modify storage tmp.fetchr:apply_active_item_tags category_items[-1].weight \
+	set from storage tmp.fetchr:apply_active_item_tags category_items[-1].active_categories[{ id: "$(id)" }].weight
 
-$data modify storage fetchr:items active_categories[$(i)].items \
+$data \
+	modify storage fetchr:items active_categories[$(i)].items \
 	append from storage tmp.fetchr:apply_active_item_tags category_items[-1]
 data remove storage tmp.fetchr:apply_active_item_tags category_items[-1]
 

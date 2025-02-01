@@ -19,7 +19,9 @@ gamerule doFireTick false
 gamerule doDaylightCycle false
 time set 0
 
-execute as @e[distance=1000..] run function fetchr:game/start/unfreeze_entity
+execute \
+	as @e[distance=1000..] \
+	run function fetchr:game/start/unfreeze_entity
 
 forceload remove all
 forceload add 0 0
@@ -65,13 +67,17 @@ forceload add 0 0
 
 # Spawn x: $result & 0xFFFF (signed)
 # In order to not interfere with the worldborder timer, the max coordinate
-# is 25,000,000. 762 * 2^15 = 24,969,216 which brings us the closest.
+# is 25, 000, 000. 762 * 2^15 = 24, 969, 216 which brings us the closest.
 # In order to center the area around spawn, we add 762/2=381
 # The algorithm for going to the coordinate is chunk based, so devide by 16 to
 # get chunk coordinates
-execute store result score $game_start/pre_gen.spawn_x fetchr.tmp run data get storage fetchr:card spawn_location
+execute \
+	store result score $game_start/pre_gen.spawn_x fetchr.tmp \
+	run data get storage fetchr:card spawn_location
 scoreboard players operation $game_start/pre_gen.spawn_x fetchr.tmp %= 65536 fetchr.const
-execute if score $game_start/pre_gen.spawn_x fetchr.tmp matches 32768.. run scoreboard players remove $game_start/pre_gen.spawn_x fetchr.tmp 65536
+execute \
+	if score $game_start/pre_gen.spawn_x fetchr.tmp matches 32768.. \
+	run scoreboard players remove $game_start/pre_gen.spawn_x fetchr.tmp 65536
 scoreboard players operation $game_start/pre_gen.spawn_x fetchr.tmp *= 762 fetchr.const
 scoreboard players add $game_start/pre_gen.spawn_x fetchr.tmp 381
 scoreboard players operation $game_start/pre_gen.spawn_x fetchr.tmp /= 16 fetchr.const
@@ -83,7 +89,9 @@ scoreboard players operation $game_start/pre_gen/unload.x fetchr.tmp = $game_sta
 scoreboard players add $game_start/pre_gen/unload.x fetchr.tmp 10
 
 #Spawn z: $result >> 16
-execute store result score $game_start/pre_gen.spawn_z fetchr.tmp run data get storage fetchr:card spawn_location
+execute \
+	store result score $game_start/pre_gen.spawn_z fetchr.tmp \
+	run data get storage fetchr:card spawn_location
 scoreboard players operation $game_start/pre_gen.spawn_z fetchr.tmp /= 65536 fetchr.const
 scoreboard players operation $game_start/pre_gen.spawn_z fetchr.tmp *= 762 fetchr.const
 scoreboard players add $game_start/pre_gen.spawn_z fetchr.tmp 381
@@ -212,7 +220,9 @@ scoreboard players set $game_start/pre_gen/unload.direction fetchr.tmp 0
 scoreboard players set $game_start/pre_gen.last_tick_time fetchr.tmp 0
 function neun_einser.timer:start/millis
 #todo configurable max
-execute store result bossbar fetchr:start/pre_gen/progress max run scoreboard players get $pregeneration_chunks fetchr.settings
+execute \
+	store result bossbar fetchr:start/pre_gen/progress max \
+	run scoreboard players get $pregeneration_chunks fetchr.settings
 bossbar set fetchr:start/pre_gen/progress value 0
 
 function fetchr:game/start/pre_gen/generate_and_process

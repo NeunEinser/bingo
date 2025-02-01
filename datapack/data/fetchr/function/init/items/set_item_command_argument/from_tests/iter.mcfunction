@@ -19,7 +19,7 @@ data modify storage tmp.fetchr:init inner_test_string set value ""
 function fetchr:init/items/set_item_command_argument/from_tests/iter_inner
 
 execute \
-	unless data storage tmp.fetchr:init {test_string: ""} \
+	unless data storage tmp.fetchr:init { test_string: "" } \
 	run function fetchr:init/items/set_item_command_argument/from_tests/prepend_comma
 
 data modify storage io.fetchr:util concat_strings.first set from storage tmp.fetchr:init test_string

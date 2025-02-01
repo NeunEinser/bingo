@@ -26,132 +26,132 @@ team modify fetchr.yellow seeFriendlyInvisibles false
 scoreboard players set $team_count fetchr.state 0
 
 execute \
-	if entity @a[predicate=fetchr:is_in_game, team=fetchr.dark_red,limit=1] \
+	if entity @a[predicate=fetchr:is_in_game, team=fetchr.dark_red, limit=1] \
 	run data \
-		modify storage fetchr:card teams[{id: "fetchr:dark_red"}].background_index \
+		modify storage fetchr:card teams[{ id: "fetchr:dark_red" }].background_index \
 		set value 0b
 execute \
-	if entity @a[predicate=fetchr:is_in_game, team=fetchr.dark_red,limit=1] \
+	if entity @a[predicate=fetchr:is_in_game, team=fetchr.dark_red, limit=1] \
 	run scoreboard players add $team_count fetchr.state 1
 
 execute \
-	if entity @a[predicate=fetchr:is_in_game, team=fetchr.red,limit=1] \
-	store result storage fetchr:card teams[{id: "fetchr:red"}].background_index byte 1 \
+	if entity @a[predicate=fetchr:is_in_game, team=fetchr.red, limit=1] \
+	store result storage fetchr:card teams[{ id: "fetchr:red" }].background_index byte 1 \
 	run scoreboard players get $team_count fetchr.state
 execute \
-	if entity @a[predicate=fetchr:is_in_game, team=fetchr.red,limit=1] \
+	if entity @a[predicate=fetchr:is_in_game, team=fetchr.red, limit=1] \
 	run scoreboard players add $team_count fetchr.state 1
 
 execute \
-	if entity @a[predicate=fetchr:is_in_game, team=fetchr.orange,limit=1] \
-	store result storage fetchr:card teams[{id: "fetchr:orange"}].background_index byte 1 \
+	if entity @a[predicate=fetchr:is_in_game, team=fetchr.orange, limit=1] \
+	store result storage fetchr:card teams[{ id: "fetchr:orange" }].background_index byte 1 \
 	run scoreboard players get $team_count fetchr.state
 execute \
-	if entity @a[predicate=fetchr:is_in_game, team=fetchr.orange,limit=1] \
+	if entity @a[predicate=fetchr:is_in_game, team=fetchr.orange, limit=1] \
 	run scoreboard players add $team_count fetchr.state 1
 
 execute \
-	if entity @a[predicate=fetchr:is_in_game, team=fetchr.yellow,limit=1] \
-	store result storage fetchr:card teams[{id: "fetchr:yellow"}].background_index byte 1 \
+	if entity @a[predicate=fetchr:is_in_game, team=fetchr.yellow, limit=1] \
+	store result storage fetchr:card teams[{ id: "fetchr:yellow" }].background_index byte 1 \
 	run scoreboard players get $team_count fetchr.state
 execute \
-	if entity @a[predicate=fetchr:is_in_game, team=fetchr.yellow,limit=1] \
+	if entity @a[predicate=fetchr:is_in_game, team=fetchr.yellow, limit=1] \
 	run scoreboard players add $team_count fetchr.state 1
 
 execute \
-	if entity @a[predicate=fetchr:is_in_game, team=fetchr.lime,limit=1] \
-	store result storage fetchr:card teams[{id: "fetchr:lime"}].background_index byte 1 \
+	if entity @a[predicate=fetchr:is_in_game, team=fetchr.lime, limit=1] \
+	store result storage fetchr:card teams[{ id: "fetchr:lime" }].background_index byte 1 \
 	run scoreboard players get $team_count fetchr.state
 execute \
-	if entity @a[predicate=fetchr:is_in_game, team=fetchr.lime,limit=1] \
+	if entity @a[predicate=fetchr:is_in_game, team=fetchr.lime, limit=1] \
 	run scoreboard players add $team_count fetchr.state 1
 
 execute \
-	if entity @a[predicate=fetchr:is_in_game, team=fetchr.green,limit=1] \
-	store result storage fetchr:card teams[{id: "fetchr:green"}].background_index byte 1 \
+	if entity @a[predicate=fetchr:is_in_game, team=fetchr.green, limit=1] \
+	store result storage fetchr:card teams[{ id: "fetchr:green" }].background_index byte 1 \
 	run scoreboard players get $team_count fetchr.state
 execute \
-	if entity @a[predicate=fetchr:is_in_game, team=fetchr.green,limit=1] \
+	if entity @a[predicate=fetchr:is_in_game, team=fetchr.green, limit=1] \
 	run scoreboard players add $team_count fetchr.state 1
 
 execute \
-	if entity @a[predicate=fetchr:is_in_game, team=fetchr.cyan,limit=1] \
-	store result storage fetchr:card teams[{id: "fetchr:cyan"}].background_index byte 1 \
+	if entity @a[predicate=fetchr:is_in_game, team=fetchr.cyan, limit=1] \
+	store result storage fetchr:card teams[{ id: "fetchr:cyan" }].background_index byte 1 \
 	run scoreboard players get $team_count fetchr.state
 execute \
-	if entity @a[predicate=fetchr:is_in_game, team=fetchr.cyan,limit=1] \
+	if entity @a[predicate=fetchr:is_in_game, team=fetchr.cyan, limit=1] \
 	run scoreboard players add $team_count fetchr.state 1
 
 execute \
-	if entity @a[predicate=fetchr:is_in_game, team=fetchr.light_blue,limit=1] \
-	store result storage fetchr:card teams[{id: "fetchr:light_blue"}].background_index byte 1 \
+	if entity @a[predicate=fetchr:is_in_game, team=fetchr.light_blue, limit=1] \
+	store result storage fetchr:card teams[{ id: "fetchr:light_blue" }].background_index byte 1 \
 	run scoreboard players get $team_count fetchr.state
 execute \
-	if entity @a[predicate=fetchr:is_in_game, team=fetchr.light_blue,limit=1] \
+	if entity @a[predicate=fetchr:is_in_game, team=fetchr.light_blue, limit=1] \
 	run scoreboard players add $team_count fetchr.state 1
 
 execute \
-	if entity @a[predicate=fetchr:is_in_game, team=fetchr.blue,limit=1] \
-	store result storage fetchr:card teams[{id: "fetchr:blue"}].background_index byte 1 \
+	if entity @a[predicate=fetchr:is_in_game, team=fetchr.blue, limit=1] \
+	store result storage fetchr:card teams[{ id: "fetchr:blue" }].background_index byte 1 \
 	run scoreboard players get $team_count fetchr.state
 execute \
-	if entity @a[predicate=fetchr:is_in_game, team=fetchr.blue,limit=1] \
+	if entity @a[predicate=fetchr:is_in_game, team=fetchr.blue, limit=1] \
 	run scoreboard players add $team_count fetchr.state 1
 
 execute \
-	if entity @a[predicate=fetchr:is_in_game, team=fetchr.dark_blue,limit=1] \
-	store result storage fetchr:card teams[{id: "fetchr:dark_blue"}].background_index byte 1 \
+	if entity @a[predicate=fetchr:is_in_game, team=fetchr.dark_blue, limit=1] \
+	store result storage fetchr:card teams[{ id: "fetchr:dark_blue" }].background_index byte 1 \
 	run scoreboard players get $team_count fetchr.state
 execute \
-	if entity @a[predicate=fetchr:is_in_game, team=fetchr.dark_blue,limit=1] \
+	if entity @a[predicate=fetchr:is_in_game, team=fetchr.dark_blue, limit=1] \
 	run scoreboard players add $team_count fetchr.state 1
 
 execute \
-	if entity @a[predicate=fetchr:is_in_game, team=fetchr.purple,limit=1] \
-	store result storage fetchr:card teams[{id: "fetchr:purple"}].background_index byte 1 \
+	if entity @a[predicate=fetchr:is_in_game, team=fetchr.purple, limit=1] \
+	store result storage fetchr:card teams[{ id: "fetchr:purple" }].background_index byte 1 \
 	run scoreboard players get $team_count fetchr.state
 execute \
-	if entity @a[predicate=fetchr:is_in_game, team=fetchr.purple,limit=1] \
+	if entity @a[predicate=fetchr:is_in_game, team=fetchr.purple, limit=1] \
 	run scoreboard players add $team_count fetchr.state 1
 
 execute \
-	if entity @a[predicate=fetchr:is_in_game, team=fetchr.magenta,limit=1] \
-	store result storage fetchr:card teams[{id: "fetchr:magenta"}].background_index byte 1 \
+	if entity @a[predicate=fetchr:is_in_game, team=fetchr.magenta, limit=1] \
+	store result storage fetchr:card teams[{ id: "fetchr:magenta" }].background_index byte 1 \
 	run scoreboard players get $team_count fetchr.state
 execute \
-	if entity @a[predicate=fetchr:is_in_game, team=fetchr.magenta,limit=1] \
+	if entity @a[predicate=fetchr:is_in_game, team=fetchr.magenta, limit=1] \
 	run scoreboard players add $team_count fetchr.state 1
 
 execute \
-	if entity @a[predicate=fetchr:is_in_game, team=fetchr.white,limit=1] \
-	store result storage fetchr:card teams[{id: "fetchr:white"}].background_index byte 1 \
+	if entity @a[predicate=fetchr:is_in_game, team=fetchr.white, limit=1] \
+	store result storage fetchr:card teams[{ id: "fetchr:white" }].background_index byte 1 \
 	run scoreboard players get $team_count fetchr.state
 execute \
-	if entity @a[predicate=fetchr:is_in_game, team=fetchr.white,limit=1] \
+	if entity @a[predicate=fetchr:is_in_game, team=fetchr.white, limit=1] \
 	run scoreboard players add $team_count fetchr.state 1
 
 execute \
-	if entity @a[predicate=fetchr:is_in_game, team=fetchr.gray,limit=1] \
-	store result storage fetchr:card teams[{id: "fetchr:gray"}].background_index byte 1 \
+	if entity @a[predicate=fetchr:is_in_game, team=fetchr.gray, limit=1] \
+	store result storage fetchr:card teams[{ id: "fetchr:gray" }].background_index byte 1 \
 	run scoreboard players get $team_count fetchr.state
 execute \
-	if entity @a[predicate=fetchr:is_in_game, team=fetchr.gray,limit=1] \
+	if entity @a[predicate=fetchr:is_in_game, team=fetchr.gray, limit=1] \
 	run scoreboard players add $team_count fetchr.state 1
 
 execute \
-	if entity @a[predicate=fetchr:is_in_game, team=fetchr.dark_gray,limit=1] \
-	store result storage fetchr:card teams[{id: "fetchr:dark_gray"}].background_index byte 1 \
+	if entity @a[predicate=fetchr:is_in_game, team=fetchr.dark_gray, limit=1] \
+	store result storage fetchr:card teams[{ id: "fetchr:dark_gray" }].background_index byte 1 \
 	run scoreboard players get $team_count fetchr.state
 execute \
-	if entity @a[predicate=fetchr:is_in_game, team=fetchr.dark_gray,limit=1] \
+	if entity @a[predicate=fetchr:is_in_game, team=fetchr.dark_gray, limit=1] \
 	run scoreboard players add $team_count fetchr.state 1
 
 execute \
-	if entity @a[predicate=fetchr:is_in_game, team=fetchr.black,limit=1] \
-	store result storage fetchr:card teams[{id: "fetchr:black"}].background_index byte 1 \
+	if entity @a[predicate=fetchr:is_in_game, team=fetchr.black, limit=1] \
+	store result storage fetchr:card teams[{ id: "fetchr:black" }].background_index byte 1 \
 	run scoreboard players get $team_count fetchr.state
 execute \
-	if entity @a[predicate=fetchr:is_in_game, team=fetchr.black,limit=1] \
+	if entity @a[predicate=fetchr:is_in_game, team=fetchr.black, limit=1] \
 	run scoreboard players add $team_count fetchr.state 1
 
 #>
@@ -171,67 +171,85 @@ execute \
 	if score $lockout_mode fetchr.state matches 1 \
 	run data \
 		modify storage tmp.fetchr:game/start backgroundTemplate[] \
-		set value '"\\uf000"'
+		set value "\uf000"
 
 data modify storage tmp.fetchr:game/start defaultBackground set value []
 
 execute \
-	if entity @a[predicate=fetchr:is_in_game, team=fetchr.dark_red,limit=1] \
+	if entity @a[predicate=fetchr:is_in_game, team=fetchr.dark_red, limit=1] \
 	run function fetchr:game/start/init_teams/dark_red
 execute \
-	if entity @a[predicate=fetchr:is_in_game, team=fetchr.red,limit=1] \
+	if entity @a[predicate=fetchr:is_in_game, team=fetchr.red, limit=1] \
 	run function fetchr:game/start/init_teams/red
 execute \
-	if entity @a[predicate=fetchr:is_in_game, team=fetchr.orange,limit=1] \
+	if entity @a[predicate=fetchr:is_in_game, team=fetchr.orange, limit=1] \
 	run function fetchr:game/start/init_teams/orange
 execute \
-	if entity @a[predicate=fetchr:is_in_game, team=fetchr.yellow,limit=1] \
+	if entity @a[predicate=fetchr:is_in_game, team=fetchr.yellow, limit=1] \
 	run function fetchr:game/start/init_teams/yellow
 execute \
-	if entity @a[predicate=fetchr:is_in_game, team=fetchr.lime,limit=1] \
+	if entity @a[predicate=fetchr:is_in_game, team=fetchr.lime, limit=1] \
 	run function fetchr:game/start/init_teams/lime
 execute \
-	if entity @a[predicate=fetchr:is_in_game, team=fetchr.green,limit=1] \
+	if entity @a[predicate=fetchr:is_in_game, team=fetchr.green, limit=1] \
 	run function fetchr:game/start/init_teams/green
 execute \
-	if entity @a[predicate=fetchr:is_in_game, team=fetchr.cyan,limit=1] \
+	if entity @a[predicate=fetchr:is_in_game, team=fetchr.cyan, limit=1] \
 	run function fetchr:game/start/init_teams/cyan
 execute \
-	if entity @a[predicate=fetchr:is_in_game, team=fetchr.light_blue,limit=1] \
+	if entity @a[predicate=fetchr:is_in_game, team=fetchr.light_blue, limit=1] \
 	run function fetchr:game/start/init_teams/light_blue
 execute \
-	if entity @a[predicate=fetchr:is_in_game, team=fetchr.blue,limit=1] \
+	if entity @a[predicate=fetchr:is_in_game, team=fetchr.blue, limit=1] \
 	run function fetchr:game/start/init_teams/blue
 execute \
-	if entity @a[predicate=fetchr:is_in_game, team=fetchr.dark_blue,limit=1] \
+	if entity @a[predicate=fetchr:is_in_game, team=fetchr.dark_blue, limit=1] \
 	run function fetchr:game/start/init_teams/dark_blue
 execute \
-	if entity @a[predicate=fetchr:is_in_game, team=fetchr.purple,limit=1] \
+	if entity @a[predicate=fetchr:is_in_game, team=fetchr.purple, limit=1] \
 	run function fetchr:game/start/init_teams/purple
 execute \
-	if entity @a[predicate=fetchr:is_in_game, team=fetchr.magenta,limit=1] \
+	if entity @a[predicate=fetchr:is_in_game, team=fetchr.magenta, limit=1] \
 	run function fetchr:game/start/init_teams/magenta
 execute \
-	if entity @a[predicate=fetchr:is_in_game, team=fetchr.white,limit=1] \
+	if entity @a[predicate=fetchr:is_in_game, team=fetchr.white, limit=1] \
 	run function fetchr:game/start/init_teams/white
 execute \
-	if entity @a[predicate=fetchr:is_in_game, team=fetchr.gray,limit=1] \
+	if entity @a[predicate=fetchr:is_in_game, team=fetchr.gray, limit=1] \
 	run function fetchr:game/start/init_teams/gray
 execute \
-	if entity @a[predicate=fetchr:is_in_game, team=fetchr.dark_gray,limit=1] \
+	if entity @a[predicate=fetchr:is_in_game, team=fetchr.dark_gray, limit=1] \
 	run function fetchr:game/start/init_teams/dark_gray
 execute \
-	if entity @a[predicate=fetchr:is_in_game, team=fetchr.black,limit=1] \
+	if entity @a[predicate=fetchr:is_in_game, team=fetchr.black, limit=1] \
 	run function fetchr:game/start/init_teams/black
 
+#NEUN_SCRIPT until 65
+#data \
+		modify storage fetchr:card teams[].slots set value [ \
+		'"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"',\
+		'"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"',\
+		'"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"',\
+		'"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"',\
+		'"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"'\
+	]
+#NEUN_SCRIPT end
+#NEUN_SCRIPT since 65
 data \
-	modify storage fetchr:card teams[].slots \
-	set value ['"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"']
+		modify storage fetchr:card teams[].slots set value [ \
+		"\uFFFF", "\uFFFF", "\uFFFF", "\uFFFF", "\uFFFF",\
+		"\uFFFF", "\uFFFF", "\uFFFF", "\uFFFF", "\uFFFF",\
+		"\uFFFF", "\uFFFF", "\uFFFF", "\uFFFF", "\uFFFF",\
+		"\uFFFF", "\uFFFF", "\uFFFF", "\uFFFF", "\uFFFF",\
+		"\uFFFF", "\uFFFF", "\uFFFF", "\uFFFF", "\uFFFF"\
+	]
+#NEUN_SCRIPT end
 data \
 	modify storage fetchr:card teams[].card \
 	set from storage fetchr:card teams[0].card
 
 execute \
 	unless score $lockout_mode fetchr.state matches 1 \
-	run data modify storage fetchr:card slots[].background \
+	run data \
+		modify storage fetchr:card slots[].background \
 		set from storage tmp.fetchr:game/start defaultBackground

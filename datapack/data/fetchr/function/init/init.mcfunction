@@ -531,103 +531,103 @@ forceload add 0 0
 		# Display objective for the black team
 		#
 		# @internal
-		scoreboard objectives add fetchr.neutral_display dummy {"translate": "fetchr.scoreboard.header"}
+		scoreboard objectives add fetchr.neutral_display dummy { "translate": "fetchr.scoreboard.header" }
 		
 		#>
 		# Display objective for the black team
 		#
 		# @internal
-		scoreboard objectives add fetchr.black_display dummy {"translate": "fetchr.scoreboard.header"}
+		scoreboard objectives add fetchr.black_display dummy { "translate": "fetchr.scoreboard.header" }
 		
 		#>
 		# Display objective for the blue team
 		#
 		# @internal
-		scoreboard objectives add fetchr.blue_display dummy {"translate": "fetchr.scoreboard.header"}
+		scoreboard objectives add fetchr.blue_display dummy { "translate": "fetchr.scoreboard.header" }
 		
 		#>
 		# Display objective for the cyan team
 		#
 		# @internal
-		scoreboard objectives add fetchr.cyan_display dummy {"translate": "fetchr.scoreboard.header"}
+		scoreboard objectives add fetchr.cyan_display dummy { "translate": "fetchr.scoreboard.header" }
 		
 		#>
 		# Display objective for the dark blue team
 		#
 		# @internal
-		scoreboard objectives add fetchr.dark_blue_display dummy {"translate": "fetchr.scoreboard.header"}
+		scoreboard objectives add fetchr.dark_blue_display dummy { "translate": "fetchr.scoreboard.header" }
 		
 		#>
 		# Display objective for the dark gray team
 		#
 		# @internal
-		scoreboard objectives add fetchr.dark_gray_display dummy {"translate": "fetchr.scoreboard.header"}
+		scoreboard objectives add fetchr.dark_gray_display dummy { "translate": "fetchr.scoreboard.header" }
 		
 		#>
 		# Display objective for the dark red team
 		#
 		# @internal
-		scoreboard objectives add fetchr.dark_red_display dummy {"translate": "fetchr.scoreboard.header"}
+		scoreboard objectives add fetchr.dark_red_display dummy { "translate": "fetchr.scoreboard.header" }
 		
 		#>
 		# Display objective for the gray team
 		#
 		# @internal
-		scoreboard objectives add fetchr.gray_display dummy {"translate": "fetchr.scoreboard.header"}
+		scoreboard objectives add fetchr.gray_display dummy { "translate": "fetchr.scoreboard.header" }
 		
 		#>
 		# Display objective for the green team
 		#
 		# @internal
-		scoreboard objectives add fetchr.green_display dummy {"translate": "fetchr.scoreboard.header"}
+		scoreboard objectives add fetchr.green_display dummy { "translate": "fetchr.scoreboard.header" }
 		
 		#>
 		# Display objective for the light blue team
 		#
 		# @internal
-		scoreboard objectives add fetchr.light_blue_display dummy {"translate": "fetchr.scoreboard.header"}
+		scoreboard objectives add fetchr.light_blue_display dummy { "translate": "fetchr.scoreboard.header" }
 		
 		#>
 		# Display objective for the lime team
 		#
 		# @internal
-		scoreboard objectives add fetchr.lime_display dummy {"translate": "fetchr.scoreboard.header"}
+		scoreboard objectives add fetchr.lime_display dummy { "translate": "fetchr.scoreboard.header" }
 		
 		#>
 		# Display objective for the magenta team
 		#
 		# @internal
-		scoreboard objectives add fetchr.magenta_display dummy {"translate": "fetchr.scoreboard.header"}
+		scoreboard objectives add fetchr.magenta_display dummy { "translate": "fetchr.scoreboard.header" }
 		
 		#>
 		# Display objective for the orange team
 		#
 		# @internal
-		scoreboard objectives add fetchr.orange_display dummy {"translate": "fetchr.scoreboard.header"}
+		scoreboard objectives add fetchr.orange_display dummy { "translate": "fetchr.scoreboard.header" }
 		
 		#>
 		# Display objective for the purple team
 		#
 		# @internal
-		scoreboard objectives add fetchr.purple_display dummy {"translate": "fetchr.scoreboard.header"}
+		scoreboard objectives add fetchr.purple_display dummy { "translate": "fetchr.scoreboard.header" }
 		
 		#>
 		# Display objective for the red team
 		#
 		# @internal
-		scoreboard objectives add fetchr.red_display dummy {"translate": "fetchr.scoreboard.header"}
+		scoreboard objectives add fetchr.red_display dummy { "translate": "fetchr.scoreboard.header" }
 		
 		#>
 		# Display objective for the white team
 		#
 		# @internal
-		scoreboard objectives add fetchr.white_display dummy {"translate": "fetchr.scoreboard.header"}
+		scoreboard objectives add fetchr.white_display dummy { "translate": "fetchr.scoreboard.header" }
 		
 		#>
 		# Display objective for the yellow team
 		#
 		# @internal
-		scoreboard objectives add fetchr.yellow_display dummy {"translate": "fetchr.scoreboard.header"}
+		scoreboard objectives add fetchr.yellow_display dummy { "translate": "fetchr.scoreboard.header" }
 	#endregion
 
 	#region trigger objectives
@@ -920,7 +920,9 @@ forceload add 0 0
 		#
 		# @internal
 		#declare score_holder $pregeneration_chunks
-		execute unless score $pregeneration_chunks fetchr.settings matches 361.. run scoreboard players set $pregeneration_chunks fetchr.settings 361
+		execute \
+			unless score $pregeneration_chunks fetchr.settings matches 361.. \
+			run scoreboard players set $pregeneration_chunks fetchr.settings 361
 		#>
 		# Minutes after which the points goal is announced
 		# 0 or less means, no announcement
@@ -939,13 +941,17 @@ forceload add 0 0
 		#
 		# @internal
 		#declare score_holder $allow_spectating
-		execute unless score $allow_spectating fetchr.settings matches 0..1 run scoreboard players set $allow_spectating fetchr.settings 1
+		execute \
+			unless score $allow_spectating fetchr.settings matches 0..1 \
+			run scoreboard players set $allow_spectating fetchr.settings 1
 		#>
 		# Whether you see the seed before the game has ended.
 		#
 		# @internal
 		#declare score_holder $show_seed
-		execute unless score $show_seed fetchr.settings matches 0..1 run scoreboard players set $show_seed fetchr.settings 1
+		execute \
+			unless score $show_seed fetchr.settings matches 0..1 \
+			run scoreboard players set $show_seed fetchr.settings 1
 		#>
 		# Whether in-game time should be used instead if real time.
 		#
@@ -1209,9 +1215,11 @@ forceload add 0 0
 	#NEUN_SCRIPT end
 
 # Add pregen bossbar
-	bossbar add fetchr:start/pre_gen/progress {"translate": "fetchr.game.start.pre_gen_progress"}
+	bossbar add fetchr:start/pre_gen/progress { "translate": "fetchr.game.start.pre_gen_progress" }
 	bossbar set fetchr:start/pre_gen/progress color red
-	execute unless score $game_state fetchr.state matches 2 run bossbar set fetchr:start/pre_gen/progress visible false
+	execute \
+		unless score $game_state fetchr.state matches 2 \
+		run bossbar set fetchr:start/pre_gen/progress visible false
 
 # Set gamerules
 	gamerule commandBlockOutput false
@@ -1261,23 +1269,124 @@ forceload add 0 0
 		team modify fetchr.yellow color yellow
 
 	## set completed backgrounds
+		#NEUN_SCRIPT until 65
+		#data modify storage fetchr:card completedBackgroundTemplates set value []
+		#data modify storage fetchr:card completedBackgroundTemplates append value [\
+			'"\\uf000"'\
+		]
+		#data modify storage fetchr:card completedBackgroundTemplates append value [\
+			'"\\uf000"', '"\\uf001"'\
+		]
+		#data modify storage fetchr:card completedBackgroundTemplates append value [\
+			'"\\uf000"', '"\\uf001"', '"\\uf002"'\
+		]
+		#data modify storage fetchr:card completedBackgroundTemplates append value [\
+			'"\\uf000"', '"\\uf001"', '"\\uf003"', '"\\uf004"'\
+		]
+		#data modify storage fetchr:card completedBackgroundTemplates append value [\
+			'"\\uf000"', '"\\uf001"', '"\\uf005"', '"\\uf006"', '"\\uf007"'\
+		]
+		#data modify storage fetchr:card completedBackgroundTemplates append value [\
+			'"\\uf000"', '"\\uf001"', '"\\uf008"', '"\\uf002"', '"\\uf004"', '"\\uf009"'\
+		]
+		#data modify storage fetchr:card completedBackgroundTemplates append value [\
+			'"\\uf000"', '"\\uf001"', '"\\uf00a"', '"\\uf00b"', '"\\uf00c"', '"\\uf00d"', '"\\uf00e"'\
+		]
+		#data modify storage fetchr:card completedBackgroundTemplates append value [\
+			'"\\uf000"', '"\\uf001"', '"\\uf00f"', '"\\uf003"', '"\\uf010"', '"\\uf004"', '"\\uf011"', '"\\uf012"'\
+		]
+		#data modify storage fetchr:card completedBackgroundTemplates append value [\
+			'"\\uf000"', '"\\uf001"', '"\\uf013"', '"\\uf014"', '"\\uf002"', '"\\uf015"',\
+			'"\\uf016"', '"\\uf009"', '"\\uf017"'\
+		]
+		#data modify storage fetchr:card completedBackgroundTemplates append value [\
+			'"\\uf000"', '"\\uf001"', '"\\uf018"', '"\\uf005"', '"\\uf019"', '"\\uf006"',\
+			'"\\uf004"', '"\\uf007"', '"\\uf01a"', '"\\uf01b"'\
+		]
+		#data modify storage fetchr:card completedBackgroundTemplates append value [\
+			'"\\uf000"', '"\\uf001"', '"\\uf01c"', '"\\uf01d"', '"\\uf01e"', '"\\uf01f"',\
+			'"\\uf020"', '"\\uf021"', '"\\uf022"', '"\\uf023"', '"\\uf024"'\
+		]
+		#data modify storage fetchr:card completedBackgroundTemplates append value [\
+			'"\\uf000"', '"\\uf001"', '"\\uf025"', '"\\uf008"', '"\\uf003"', '"\\uf002"',\
+			'"\\uf026"', '"\\uf004"', '"\\uf027"', '"\\uf009"', '"\\uf012"', '"\\uf028"'\
+		]
+		#data modify storage fetchr:card completedBackgroundTemplates append value [\
+			'"\\uf000"', '"\\uf001"', '"\\uf029"', '"\\uf02a"', '"\\uf02b"', '"\\uf02c"', '"\\uf02d"',\
+			'"\\uf02e"', '"\\uf02f"', '"\\uf030"', '"\\uf031"', '"\\uf032"', '"\\uf033"'\
+		]
+		#data modify storage fetchr:card completedBackgroundTemplates append value [\
+			'"\\uf000"', '"\\uf001"', '"\\uf034"', '"\\uf00a"', '"\\uf035"', '"\\uf00b"', '"\\uf036"',\
+			'"\\uf00c"', '"\\uf004"', '"\\uf00d"', '"\\uf037"', '"\\uf00e"', '"\\uf038"', '"\\uf039"'\
+		]
+		#data modify storage fetchr:card completedBackgroundTemplates append value [\
+			'"\\uf000"', '"\\uf001"', '"\\uf03a"', '"\\uf03b"', '"\\uf005"', '"\\uf03c"', '"\\uf002"', '"\\uf006"',\
+			'"\\uf03d"', '"\\uf03e"', '"\\uf007"', '"\\uf009"', '"\\uf03f"', '"\\uf01b"', '"\\uf040"'\
+		]
+		#data modify storage fetchr:card completedBackgroundTemplates append value [\
+			'"\\uf000"', '"\\uf001"', '"\\uf041"', '"\\uf00f"', '"\\uf042"', '"\\uf003"', '"\\uf043"', '"\\uf010"',\
+			'"\\uf044"', '"\\uf004"', '"\\uf045"', '"\\uf011"', '"\\uf046"', '"\\uf012"', '"\\uf047"', '"\\uf048"'\
+		]
+		#NEUN_SCRIPT end
+		#NEUN_SCRIPT until 65
 		data modify storage fetchr:card completedBackgroundTemplates set value []
-		data modify storage fetchr:card completedBackgroundTemplates append value ['"\\uf000"']
-		data modify storage fetchr:card completedBackgroundTemplates append value ['"\\uf000"','"\\uf001"']
-		data modify storage fetchr:card completedBackgroundTemplates append value ['"\\uf000"','"\\uf001"','"\\uf002"']
-		data modify storage fetchr:card completedBackgroundTemplates append value ['"\\uf000"','"\\uf001"','"\\uf003"','"\\uf004"']
-		data modify storage fetchr:card completedBackgroundTemplates append value ['"\\uf000"','"\\uf001"','"\\uf005"','"\\uf006"','"\\uf007"']
-		data modify storage fetchr:card completedBackgroundTemplates append value ['"\\uf000"','"\\uf001"','"\\uf008"','"\\uf002"','"\\uf004"','"\\uf009"']
-		data modify storage fetchr:card completedBackgroundTemplates append value ['"\\uf000"','"\\uf001"','"\\uf00a"','"\\uf00b"','"\\uf00c"','"\\uf00d"','"\\uf00e"']
-		data modify storage fetchr:card completedBackgroundTemplates append value ['"\\uf000"','"\\uf001"','"\\uf00f"','"\\uf003"','"\\uf010"','"\\uf004"','"\\uf011"','"\\uf012"']
-		data modify storage fetchr:card completedBackgroundTemplates append value ['"\\uf000"','"\\uf001"','"\\uf013"','"\\uf014"','"\\uf002"','"\\uf015"','"\\uf016"','"\\uf009"','"\\uf017"']
-		data modify storage fetchr:card completedBackgroundTemplates append value ['"\\uf000"','"\\uf001"','"\\uf018"','"\\uf005"','"\\uf019"','"\\uf006"','"\\uf004"','"\\uf007"','"\\uf01a"','"\\uf01b"']
-		data modify storage fetchr:card completedBackgroundTemplates append value ['"\\uf000"','"\\uf001"','"\\uf01c"','"\\uf01d"','"\\uf01e"','"\\uf01f"','"\\uf020"','"\\uf021"','"\\uf022"','"\\uf023"','"\\uf024"']
-		data modify storage fetchr:card completedBackgroundTemplates append value ['"\\uf000"','"\\uf001"','"\\uf025"','"\\uf008"','"\\uf003"','"\\uf002"','"\\uf026"','"\\uf004"','"\\uf027"','"\\uf009"','"\\uf012"','"\\uf028"']
-		data modify storage fetchr:card completedBackgroundTemplates append value ['"\\uf000"','"\\uf001"','"\\uf029"','"\\uf02a"','"\\uf02b"','"\\uf02c"','"\\uf02d"','"\\uf02e"','"\\uf02f"','"\\uf030"','"\\uf031"','"\\uf032"','"\\uf033"']
-		data modify storage fetchr:card completedBackgroundTemplates append value ['"\\uf000"','"\\uf001"','"\\uf034"','"\\uf00a"','"\\uf035"','"\\uf00b"','"\\uf036"','"\\uf00c"','"\\uf004"','"\\uf00d"','"\\uf037"','"\\uf00e"','"\\uf038"','"\\uf039"']
-		data modify storage fetchr:card completedBackgroundTemplates append value ['"\\uf000"','"\\uf001"','"\\uf03a"','"\\uf03b"','"\\uf005"','"\\uf03c"','"\\uf002"','"\\uf006"','"\\uf03d"','"\\uf03e"','"\\uf007"','"\\uf009"','"\\uf03f"','"\\uf01b"','"\\uf040"']
-		data modify storage fetchr:card completedBackgroundTemplates append value ['"\\uf000"','"\\uf001"','"\\uf041"','"\\uf00f"','"\\uf042"','"\\uf003"','"\\uf043"','"\\uf010"','"\\uf044"','"\\uf004"','"\\uf045"','"\\uf011"','"\\uf046"','"\\uf012"','"\\uf047"','"\\uf048"']
+		data modify storage fetchr:card completedBackgroundTemplates append value [\
+			"\uf000"\
+		]
+		data modify storage fetchr:card completedBackgroundTemplates append value [\
+			"\uf000", "\uf001"\
+		]
+		data modify storage fetchr:card completedBackgroundTemplates append value [\
+			"\uf000", "\uf001", "\uf002"\
+		]
+		data modify storage fetchr:card completedBackgroundTemplates append value [\
+			"\uf000", "\uf001", "\uf003", "\uf004"\
+		]
+		data modify storage fetchr:card completedBackgroundTemplates append value [\
+			"\uf000", "\uf001", "\uf005", "\uf006", "\uf007"\
+		]
+		data modify storage fetchr:card completedBackgroundTemplates append value [\
+			"\uf000", "\uf001", "\uf008", "\uf002", "\uf004", "\uf009"\
+		]
+		data modify storage fetchr:card completedBackgroundTemplates append value [\
+			"\uf000", "\uf001", "\uf00a", "\uf00b", "\uf00c", "\uf00d", "\uf00e"\
+		]
+		data modify storage fetchr:card completedBackgroundTemplates append value [\
+			"\uf000", "\uf001", "\uf00f", "\uf003", "\uf010", "\uf004", "\uf011", "\uf012"\
+		]
+		data modify storage fetchr:card completedBackgroundTemplates append value [\
+			"\uf000", "\uf001", "\uf013", "\uf014", "\uf002", "\uf015",\
+			"\uf016", "\uf009", "\uf017"\
+		]
+		data modify storage fetchr:card completedBackgroundTemplates append value [\
+			"\uf000", "\uf001", "\uf018", "\uf005", "\uf019", "\uf006",\
+			"\uf004", "\uf007", "\uf01a", "\uf01b"\
+		]
+		data modify storage fetchr:card completedBackgroundTemplates append value [\
+			"\uf000", "\uf001", "\uf01c", "\uf01d", "\uf01e", "\uf01f",\
+			"\uf020", "\uf021", "\uf022", "\uf023", "\uf024"\
+		]
+		data modify storage fetchr:card completedBackgroundTemplates append value [\
+			"\uf000", "\uf001", "\uf025", "\uf008", "\uf003", "\uf002",\
+			"\uf026", "\uf004", "\uf027", "\uf009", "\uf012", "\uf028"\
+		]
+		data modify storage fetchr:card completedBackgroundTemplates append value [\
+			"\uf000", "\uf001", "\uf029", "\uf02a", "\uf02b", "\uf02c", "\uf02d",\
+			"\uf02e", "\uf02f", "\uf030", "\uf031", "\uf032", "\uf033"\
+		]
+		data modify storage fetchr:card completedBackgroundTemplates append value [\
+			"\uf000", "\uf001", "\uf034", "\uf00a", "\uf035", "\uf00b", "\uf036",\
+			"\uf00c", "\uf004", "\uf00d", "\uf037", "\uf00e", "\uf038", "\uf039"\
+		]
+		data modify storage fetchr:card completedBackgroundTemplates append value [\
+			"\uf000", "\uf001", "\uf03a", "\uf03b", "\uf005", "\uf03c", "\uf002", "\uf006",\
+			"\uf03d", "\uf03e", "\uf007", "\uf009", "\uf03f", "\uf01b", "\uf040"\
+		]
+		data modify storage fetchr:card completedBackgroundTemplates append value [\
+			"\uf000", "\uf001", "\uf041", "\uf00f", "\uf042", "\uf003", "\uf043", "\uf010",\
+			"\uf044", "\uf004", "\uf045", "\uf011", "\uf046", "\uf012", "\uf047", "\uf048"\
+		]
+		#NEUN_SCRIPT end
 #region run registries
 	data remove storage fetchr:registries categories
 	data remove storage fetchr:registries items
@@ -1313,7 +1422,9 @@ forceload add 0 0
 	# @within function fetchr:init/**
 	#declare storage tmp.fetchr:init
 
-	execute if score $lobby_generated fetchr.state matches 1 run schedule function fetchr:init/items/exec 1t
+	execute \
+		if score $lobby_generated fetchr.state matches 1 \
+		run schedule function fetchr:init/items/exec 1t
 #endregion
 #region initialize hud components
 	#>
@@ -1342,16 +1453,39 @@ forceload add 0 0
 	data modify storage fetchr:custom_hud default append from storage tmp.fetchr:init/hud columns[0][2]
 	data modify storage fetchr:custom_hud default append from storage tmp.fetchr:init/hud columns[0][3]
 	data modify storage fetchr:custom_hud default append from storage tmp.fetchr:init/hud columns[0][4]
-	execute unless data storage fetchr:custom_hud default[4] run function fetchr:init/initialize_hud_components/fill_default_col0
+	execute \
+		unless data storage fetchr:custom_hud default[4] \
+		run function fetchr:init/initialize_hud_components/fill_default_col0
 	
-	execute unless data storage tmp.fetchr:init/hud columns[1][5] run data modify storage fetchr:custom_hud default append value {id: "fetchr:spacer", name: '{"translate": "fetchr.custom_hud.components.spacer"}', slot_id: 5b}
+	#NEUN_SCRIPT until 65
+	#execute \
+		unless data storage tmp.fetchr:init/hud columns[1][5] \
+		run data \
+			modify storage fetchr:custom_hud default append value {\
+			id: "fetchr:spacer",\
+			name: '{ "translate": "fetchr.custom_hud.components.spacer" }',\
+			slot_id: 5b\
+		}
+	#NEUN_SCRIPT end
+	#NEUN_SCRIPT since 65
+	execute \
+		unless data storage tmp.fetchr:init/hud columns[1][5] \
+		run data \
+			modify storage fetchr:custom_hud default append value {\
+			id: "fetchr:spacer",\
+			name: { translate: "fetchr.custom_hud.components.spacer" },\
+			slot_id: 5b\
+		}
+	#NEUN_SCRIPT end
 	data modify storage fetchr:custom_hud default append from storage tmp.fetchr:init/hud columns[1][0]
 	data modify storage fetchr:custom_hud default append from storage tmp.fetchr:init/hud columns[1][1]
 	data modify storage fetchr:custom_hud default append from storage tmp.fetchr:init/hud columns[1][2]
 	data modify storage fetchr:custom_hud default append from storage tmp.fetchr:init/hud columns[1][3]
 	data modify storage fetchr:custom_hud default append from storage tmp.fetchr:init/hud columns[1][4]
 	data modify storage fetchr:custom_hud default append from storage tmp.fetchr:init/hud columns[1][5]
-	execute unless data storage fetchr:custom_hud default[10] run function fetchr:init/initialize_hud_components/fill_default_col1
+	execute \
+		unless data storage fetchr:custom_hud default[10] \
+		run function fetchr:init/initialize_hud_components/fill_default_col1
 	
 	data remove storage fetchr:custom_hud default[].addByDefault
 	data remove storage fetchr:custom_hud default[].preferredColumn
@@ -1361,8 +1495,12 @@ forceload add 0 0
 	
 	#Temporary forceload to make sure all needed chunks are actually loaded.
 	#This forceload is undone at the end of the function fetchr:init/setup_lobby
-	execute if score $lobby_generated fetchr.state matches 0 run schedule function fetchr:init/setup_lobby/root 1t
+	execute \
+		if score $lobby_generated fetchr.state matches 0 \
+		run schedule function fetchr:init/setup_lobby/root 1t
 	scoreboard players set $lobby_generated fetchr.state 1
 
 # summon multi noise pos marker
-	execute in fetchr:default run forceload add 0 0
+	execute \
+		in fetchr:default \
+		run forceload add 0 0

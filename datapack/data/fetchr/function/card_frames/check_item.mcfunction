@@ -9,6 +9,8 @@
 #
 # @internal
 #declare score_holder $card_frames.count
-execute unless data entity @s Item run function fetchr:card_frames/on_item_removed
+execute \
+	unless data entity @s Item \
+	run function fetchr:card_frames/on_item_removed
 
 scoreboard players add $card_frames.count fetchr.io 1

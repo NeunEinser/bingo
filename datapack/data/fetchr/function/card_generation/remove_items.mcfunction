@@ -8,10 +8,11 @@
 # @writes storage tmp.fetchr:card_generation removed_items
 # @params id: #[id] string
 
-$data modify storage tmp.fetchr:card_generation removed_items \
-	append from storage tmp.fetchr:card_generation items[{active_categories:[{id: "$(id)"}]}]
-$data remove storage tmp.fetchr:card_generation items[{active_categories:[{id: "$(id)"}]}]
-$data remove storage tmp.fetchr:card_generation removed_items[].active_categories[{id: "$(id)"}]
+$data \
+	modify storage tmp.fetchr:card_generation removed_items \
+	append from storage tmp.fetchr:card_generation items[{ active_categories: [{ id: "$(id)" }]}]
+$data remove storage tmp.fetchr:card_generation items[{ active_categories: [{ id: "$(id)" }]}]
+$data remove storage tmp.fetchr:card_generation removed_items[].active_categories[{ id: "$(id)" }]
 
 data remove storage tmp.fetchr:card_generation item_categories[-1]
 execute \

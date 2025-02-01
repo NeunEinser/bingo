@@ -10,9 +10,15 @@
 
 scoreboard players reset @s fetchr.reveal_card
 scoreboard players enable @s fetchr.reveal_card
-execute if score $operator_only fetchr.settings matches 1 unless score @s fetchr.operator matches 1 run function fetchr:util/show_confirm_operator_status_prompt
-execute if score $operator_only fetchr.settings matches 1 unless score @s fetchr.operator matches 1 run return 0
+execute \
+	if score $operator_only fetchr.settings matches 1 \
+	unless score @s fetchr.operator matches 1 \
+	run function fetchr:util/show_confirm_operator_status_prompt
+execute \
+	if score $operator_only fetchr.settings matches 1 \
+	unless score @s fetchr.operator matches 1 \
+	run return 0
 
 function fetchr:game/reveal_card
 
-tellraw @a {"translate": "fetchr.game.menu.options.reveal_card.activated", "with":[{"selector": "@s"}]}
+tellraw @a { "translate": "fetchr.game.menu.options.reveal_card.activated", "with": [{ "selector": "@s" }]}

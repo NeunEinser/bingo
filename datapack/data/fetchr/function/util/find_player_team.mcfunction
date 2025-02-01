@@ -28,22 +28,58 @@
 #declare storage tmp.fetchr:find_team
 
 tag @a remove fetchr.in_current_team
-execute if score $game_state fetchr.state matches ..2 run return 0
+execute \
+	if score $game_state fetchr.state matches ..2 \
+	run return 0
 
-execute if entity @s[team=fetchr.light_blue] run function fetchr:util/find_player_team/light_blue
-execute if entity @s[team=fetchr.black] run function fetchr:util/find_player_team/black
-execute if entity @s[team=fetchr.blue] run function fetchr:util/find_player_team/blue
-execute if entity @s[team=fetchr.cyan] run function fetchr:util/find_player_team/cyan
-execute if entity @s[team=fetchr.dark_blue] run function fetchr:util/find_player_team/dark_blue
-execute if entity @s[team=fetchr.dark_gray] run function fetchr:util/find_player_team/dark_gray
-execute if entity @s[team=fetchr.green] run function fetchr:util/find_player_team/green
-execute if entity @s[team=fetchr.purple] run function fetchr:util/find_player_team/purple
-execute if entity @s[team=fetchr.dark_red] run function fetchr:util/find_player_team/dark_red
-execute if entity @s[team=fetchr.orange] run function fetchr:util/find_player_team/orange
-execute if entity @s[team=fetchr.gray] run function fetchr:util/find_player_team/gray
-execute if entity @s[team=fetchr.lime] run function fetchr:util/find_player_team/lime
-execute if entity @s[team=fetchr.magenta] run function fetchr:util/find_player_team/magenta
-execute if entity @s[team=fetchr.red] run function fetchr:util/find_player_team/red
-execute if entity @s[team=fetchr.white] run function fetchr:util/find_player_team/white
-execute if entity @s[team=fetchr.yellow] run function fetchr:util/find_player_team/yellow
-execute if entity @s[team=] run function fetchr:util/find_player_team/none
+execute \
+	if entity @s[team=fetchr.light_blue] \
+	run function fetchr:util/find_player_team/light_blue
+execute \
+	if entity @s[team=fetchr.black] \
+	run function fetchr:util/find_player_team/black
+execute \
+	if entity @s[team=fetchr.blue] \
+	run function fetchr:util/find_player_team/blue
+execute \
+	if entity @s[team=fetchr.cyan] \
+	run function fetchr:util/find_player_team/cyan
+execute \
+	if entity @s[team=fetchr.dark_blue] \
+	run function fetchr:util/find_player_team/dark_blue
+execute \
+	if entity @s[team=fetchr.dark_gray] \
+	run function fetchr:util/find_player_team/dark_gray
+execute \
+	if entity @s[team=fetchr.green] \
+	run function fetchr:util/find_player_team/green
+execute \
+	if entity @s[team=fetchr.purple] \
+	run function fetchr:util/find_player_team/purple
+execute \
+	if entity @s[team=fetchr.dark_red] \
+	run function fetchr:util/find_player_team/dark_red
+execute \
+	if entity @s[team=fetchr.orange] \
+	run function fetchr:util/find_player_team/orange
+execute \
+	if entity @s[team=fetchr.gray] \
+	run function fetchr:util/find_player_team/gray
+execute \
+	if entity @s[team=fetchr.lime] \
+	run function fetchr:util/find_player_team/lime
+execute \
+	if entity @s[team=fetchr.magenta] \
+	run function fetchr:util/find_player_team/magenta
+execute \
+	if entity @s[team=fetchr.red] \
+	run function fetchr:util/find_player_team/red
+execute \
+	if entity @s[team=fetchr.white] \
+	run function fetchr:util/find_player_team/white
+execute \
+	if entity @s[team=fetchr.yellow] \
+	run function fetchr:util/find_player_team/yellow
+execute \
+	if entity @s[ team=] \
+	run function fetchr:util/find_player_team/none

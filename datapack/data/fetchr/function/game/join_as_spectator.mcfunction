@@ -23,15 +23,17 @@ gamemode creative @s
 gamemode spectator @s
 
 #NEUN_SCRIPT until 49
-#execute as @a run attribute @s minecraft:player.entity_interaction_range \
-	modifier remove fetchr:card_item_frame_range
+#execute \
+	as @a \
+	run attribute @s minecraft:player.entity_interaction_range modifier remove fetchr:card_item_frame_range
 #NEUN_SCRIPT end
 #NEUN_SCRIPT since 49
-execute as @a run attribute @s minecraft:entity_interaction_range \
-	modifier remove fetchr:card_item_frame_range
+execute \
+	as @a \
+	run attribute @s minecraft:entity_interaction_range modifier remove fetchr:card_item_frame_range
 #NEUN_SCRIPT end
 
-tellraw @a {"translate":"fetchr.game.start_spectating","with":[{"selector":"@s"}]}
+tellraw @a { "translate": "fetchr.game.start_spectating", "with": [{ "selector": "@s" }]}
 
 execute \
 	if score $game_state fetchr.state matches 3 \

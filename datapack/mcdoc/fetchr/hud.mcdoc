@@ -1,3 +1,5 @@
+use ::java::server::util::text::Text
+
 struct HudComponentBase {
 	id: #[id] string,
 
@@ -10,30 +12,48 @@ struct HudComponentBase {
 	/// be added by default.
 	preferredColumn?: int,
 
-	name: #[text_component] string,
+	name: (
+		#[until="1.21.5"] #[text_component] string
+		| #[since="1.21.5"] Text
+	),
 
 	/// This should be a unicode character matching a space from the
 	/// `fetchr:space` font.
-	iconWidth?: #[text_component] string,
+	iconWidth?: (
+		#[until="1.21.5"] #[text_component] string
+		| #[since="1.21.5"] Text
+	),
 
 	/// Text to display between the icon and the value when the component is
 	// left-aligned.
-	iconSeparatorAlignLeft?: #[text_component] string,
+	iconSeparatorAlignLeft?: (
+		#[until="1.21.5"] #[text_component] string
+		| #[since="1.21.5"] Text
+	),
 
 	/// Text to display between the icon and the value when the component is
 	// right-aligned.
-	iconSeparatorAlignRight?: #[text_component] string,
+	iconSeparatorAlignRight?: (
+		#[until="1.21.5"] #[text_component] string
+		| #[since="1.21.5"] Text
+	),
 
 	/// The font definition of the icon. This should be a text component with an
 	/// empty text and a font.
 	///
 	/// Each entry corresponds to a different line with the correct vertical
 	/// offset
-	iconFont?: [ #[text_component] string ] @ 11,
+	iconFont?: [ (
+		#[until="1.21.5"] #[text_component] string
+		| #[since="1.21.5"] Text
+	) ] @ 11,
 
 	/// The item that is displayed. Empty if the item is set at runtime or the
 	/// component does not have an icon 
-	icon?: #[text_component] string,
+	icon?: (
+		#[until="1.21.5"] #[text_component] string
+		| #[since="1.21.5"] Text
+	),
 }
 
 struct HudComponent {
@@ -42,7 +62,10 @@ struct HudComponent {
 	slot_id: byte,
 
 	/// The text component to show for custom settings.
-	settingsTextComponent?: #[text_component] string,
+	settingsTextComponent?: (
+		#[until="1.21.5"] #[text_component] string
+		| #[since="1.21.5"] Text
+	)
 }
 
 
@@ -52,6 +75,13 @@ struct PlayerHudComponent {
 
 	slot_id: byte,
 	changed?: boolean,
-	padding?: #[text_component] string,
-	evaluated?: #[text_component] string,
+	padding?: (
+		#[until="1.21.5"] #[text_component] string
+		| #[since="1.21.5"] Text
+	),
+	evaluated?: (
+		#[until="1.21.5"] #[text_component] string
+		| #[since="1.21.5"] Text
+	),
+	custom?: struct { [string]: any },
 }

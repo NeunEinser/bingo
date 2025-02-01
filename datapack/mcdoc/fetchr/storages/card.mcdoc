@@ -1,3 +1,4 @@
+use ::java::server::util::text::Text
 use ::fetchr::item::ItemCategory
 use ::fetchr::item::ActiveItem
 
@@ -10,25 +11,43 @@ dispatch minecraft:storage[fetchr:card] to struct {
 		...ActiveItem,
 		slot_id: byte @ 0..24,
 		row: byte @ 0..4,
-		icon_display: #[text_component] string,
+		icon_display: (
+			#[until="1.21.5"] #[text_component] string
+			| #[since="1.21.5"] Text
+		),
 		current_font?: #[id="font"] string,
-		current_display: #[text_component] string,
+		current_display: (
+			#[until="1.21.5"] #[text_component] string
+			| #[since="1.21.5"] Text
+		),
 		item_collected?: true,
-		background: [#[text_component] string] @0..16,
+		background: [(
+			#[until="1.21.5"] #[text_component] string
+			| #[since="1.21.5"] Text
+		)] @0..16,
 	}],
 	teams: [Team],
 }
 
 struct Team {
 	id: #[id] string,
-	slots?: [#[text_component] string],
+	slots?: [(
+		#[until="1.21.5"] #[text_component] string
+		| #[since="1.21.5"] Text
+	)],
 
 	/// The background tile to render behind completed items of this team
-	background?: #[text_component] string,
+	background?: (
+		#[until="1.21.5"] #[text_component] string
+		| #[since="1.21.5"] Text
+	),
 
 	/// The rendered card. Used to skip having to elvaluate the complex text
 	/// component.
-	card?: [#[text_component] string],
+	card?: [(
+		#[until="1.21.5"] #[text_component] string
+		| #[since="1.21.5"] Text
+	)],
 
 	/// The index of a background tile on a slot.
 	/// Needed to render backgrounds in the correct order.

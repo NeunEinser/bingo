@@ -7,4 +7,4 @@
 # 	location The location of the button
 
 team join fetchr.cyan @s
-tellraw @a {"translate":"fetchr.lobby.team_selection.join_cyan","with":[{"selector":"@s"}]}
+tellraw @a { "translate": "fetchr.lobby.team_selection.join_cyan", "with": [{ "selector": "@s" }]}

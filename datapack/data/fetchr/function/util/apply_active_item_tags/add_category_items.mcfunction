@@ -9,8 +9,9 @@
 # @params struct { ...::fetchr::item::ActiveCategory, i: int }
 
 data modify storage tmp.fetchr:apply_active_item_tags category_items set value []
-$data modify storage tmp.fetchr:apply_active_item_tags category_items \
-	append from storage fetchr:items active_items[{active_categories:[{id: "$(id)"}]}]
+$data \
+	modify storage tmp.fetchr:apply_active_item_tags category_items \
+	append from storage fetchr:items active_items[{ active_categories: [{ id: "$(id)" }]}]
 
 function fetchr:util/apply_active_item_tags/add_category_item \
 	with storage tmp.fetchr:apply_active_item_tags categories_iter[-1]

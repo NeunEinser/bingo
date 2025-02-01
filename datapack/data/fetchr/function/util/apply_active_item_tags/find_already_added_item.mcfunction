@@ -10,8 +10,10 @@
 data remove storage tmp.fetchr:apply_active_item_tags item
 $execute \
 	store success score $apply_tags.item_exists fetchr.tmp \
-	run data modify storage tmp.fetchr:apply_active_item_tags item \
-		set from storage fetchr:items active_items[{id: "$(id)"}]
-$data remove storage fetchr:items active_items[{id: "$(id)"}]
-data modify storage fetchr:items active_items \
+	run data \
+		modify storage tmp.fetchr:apply_active_item_tags item \
+		set from storage fetchr:items active_items[{ id: "$(id)" }]
+$data remove storage fetchr:items active_items[{ id: "$(id)" }]
+data \
+	modify storage fetchr:items active_items \
 	append from storage tmp.fetchr:apply_active_item_tags item

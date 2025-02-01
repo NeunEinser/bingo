@@ -14,5 +14,5 @@ data modify storage tmp.fetchr:init test_string set value ""
 function fetchr:init/items/set_item_command_argument/from_tests/iter
 
 execute \
-	unless data storage tmp.fetchr:init {test_string: ""} \
+	unless data storage tmp.fetchr:init { test_string: "" } \
 	run function fetchr:init/items/set_item_command_argument/append_item_tests

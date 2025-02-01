@@ -21,13 +21,21 @@ data modify storage fetchr:custom_hud players append from storage tmp.fetchr:cus
 
 function #fetchr:tick_hud_components
 
-execute if score $seed fetchr.state matches -2147483648.. run function fetchr:custom_hud/display_card
+execute \
+	if score $seed fetchr.state matches -2147483648.. \
+	run function fetchr:custom_hud/display_card
 
 scoreboard players add @s fetchr.last_hud_update 1
 
-execute if data storage fetchr:custom_hud currentPlayer.components[{changed: true}] run function fetchr:custom_hud/update_actionbar
-execute if score @s fetchr.last_hud_update matches 40.. run function fetchr:custom_hud/update_actionbar
+execute \
+	if data storage fetchr:custom_hud currentPlayer.components[{ changed: true }] \
+	run function fetchr:custom_hud/update_actionbar
+execute \
+	if score @s fetchr.last_hud_update matches 40.. \
+	run function fetchr:custom_hud/update_actionbar
 
 data modify storage fetchr:custom_hud currentPlayer.components[].changed set value false
-data modify storage tmp.fetchr:custom_hud handled prepend from storage fetchr:custom_hud currentPlayer
+data \
+	modify storage tmp.fetchr:custom_hud handled \
+	prepend from storage fetchr:custom_hud currentPlayer
 scoreboard players reset @s fetchr.update_hud

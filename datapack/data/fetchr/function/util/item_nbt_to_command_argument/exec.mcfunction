@@ -18,5 +18,5 @@ execute \
 	run function fetchr:util/item_nbt_to_command_argument/iter_components
 
 execute \
-	unless data storage tmp.fetchr:util {test_string: ""} \
+	unless data storage tmp.fetchr:util { test_string: "" } \
 	run function fetchr:util/item_nbt_to_command_argument/append_item_tests

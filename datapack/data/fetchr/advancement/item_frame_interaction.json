@@ -5,7 +5,7 @@
 			"conditions": {
 				"entity": {
 					"type": "minecraft:item_frame",
-					"nbt": "{Tags:['fetchr.card_frame']}"
+					"nbt": "{ Tags: ['fetchr.card_frame'] }"
 				}
 			}
 		}

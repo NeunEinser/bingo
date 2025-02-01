@@ -18,7 +18,7 @@
 #declare tag fetchr.card_frame_start
 
 forceload add -34 -17 14 30
-summon minecraft:marker 14 1 7 {Tags: ["fetchr.structure_spawner"]}
+summon minecraft:marker 14 1 7 { Tags: ["fetchr.structure_spawner"]}
 setblock 15 3 -17 minecraft:structure_block[mode=load]{\
 	mode: "LOAD",\
 	ignoreEntities: true,\
