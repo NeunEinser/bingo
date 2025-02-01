@@ -274,7 +274,7 @@
 					"biome": "minecraft:dark_forest",
 					"parameters": {
 						"weirdness": [ -1, -0.26666667 ],
-						"continentalness": [ -0.21, 1 ],
+						"continentalness": [ -0.21, 0.3 ],
 						"erosion": [ -0.2225, 0.05 ],
 						"temperature": [ -0.15, 0.2 ],
 						"humidity": [ 0.3, 1 ],
@@ -850,7 +850,7 @@
 					"biome": "minecraft:dark_forest",
 					"parameters": {
 						"weirdness": [ -1, -0.93333333 ],
-						"continentalness": [ 0.03, 1 ],
+						"continentalness": [ 0.03, 0.3 ],
 						"erosion": [ -0.78, 0.45 ],
 						"temperature": [ -0.15, 0.2 ],
 						"humidity": [ 0.3, 1 ],
@@ -1063,6 +1063,19 @@
 					}
 				},
 				{
+					"NEUN_SCRIPT replace biome until 65": "minecraft:dark_forest",
+					"biome": "minecraft:pale_garden",
+					"parameters": {
+						"weirdness": [ -1, -0.93333333 ],
+						"continentalness": [ 0.3, 1 ],
+						"erosion": [ -0.78, -0.2225 ],
+						"temperature": [ -0.15, 0.2 ],
+						"humidity": [ 0.3, 1 ],
+						"depth": [ 0, 0 ],
+						"offset": 0
+					}
+				},
+				{
 					"biome": "minecraft:savanna_plateau",
 					"parameters": {
 						"weirdness": [ -1, -0.7666667 ],
@@ -1166,6 +1179,18 @@
 						"erosion": [ -0.2225, 0.45 ],
 						"temperature": [ -0.15, 0.2 ],
 						"humidity": [ 0.1, 0.3 ],
+						"depth": [ 0, 0 ],
+						"offset": 0
+					}
+				},
+				{
+					"biome": "minecraft:dark_forest",
+					"parameters": {
+						"weirdness": [ -1, -0.93333333 ],
+						"continentalness": [ 0.3, 1 ],
+						"erosion": [ -0.2225, 0.45 ],
+						"temperature": [ -0.15, 0.2 ],
+						"humidity": [ 0.3, 1 ],
 						"depth": [ 0, 0 ],
 						"offset": 0
 					}
@@ -1663,11 +1688,12 @@
 					}
 				},
 				{
-					"biome": "minecraft:dark_forest",
+					"NEUN_SCRIPT replace biome until 65": "minecraft:dark_forest",
+					"biome": "minecraft:pale_garden",
 					"parameters": {
-						"weirdness": [ -0.93333333, -0.05 ],
+						"weirdness": [ -0.93333333, -0.4 ],
 						"continentalness": [ 0.03, 1 ],
-						"erosion": [ -0.375, 0.45 ],
+						"erosion": [ -0.375, -0.2225 ],
 						"temperature": [ -0.15, 0.2 ],
 						"humidity": [ 0.3, 1 ],
 						"depth": [ 0, 0 ],
@@ -1747,6 +1773,18 @@
 					}
 				},
 				{
+					"biome": "minecraft:dark_forest",
+					"parameters": {
+						"weirdness": [ -0.93333333, -0.05 ],
+						"continentalness": [ 0.03, 1 ],
+						"erosion": [ 0.05, 0.45 ],
+						"temperature": [ -0.15, 0.2 ],
+						"humidity": [ 0.3, 1 ],
+						"depth": [ 0, 0 ],
+						"offset": 0
+					}
+				},
+				{
 					"biome": "minecraft:savanna",
 					"parameters": {
 						"weirdness": [ -0.93333333, -0.4 ],
@@ -1802,6 +1840,19 @@
 						"erosion": [ -0.2225, 0.05 ],
 						"temperature": [ -0.15, 0.2 ],
 						"humidity": [ -0.1, 0.3 ],
+						"depth": [ 0, 0 ],
+						"offset": 0
+					}
+				},
+				{
+					"NEUN_SCRIPT replace biome until 65": "minecraft:dark_forest",
+					"biome": "minecraft:pale_garden",
+					"parameters": {
+						"weirdness": [ -0.93333333, -0.4 ],
+						"continentalness": [ 0.3, 1 ],
+						"erosion": [ -0.2225, 0.05 ],
+						"temperature": [ -0.15, 0.2 ],
+						"humidity": [ 0.3, 1 ],
 						"depth": [ 0, 0 ],
 						"offset": 0
 					}
@@ -3214,7 +3265,7 @@
 					"biome": "minecraft:dark_forest",
 					"parameters": {
 						"weirdness": [ -0.4, -0.05 ],
-						"continentalness": [ 0.03, 1 ],
+						"continentalness": [ 0.03, 0.3 ],
 						"erosion": [ -0.78, 0.45 ],
 						"temperature": [ -0.15, 0.2 ],
 						"humidity": [ 0.3, 1 ],
@@ -3278,6 +3329,19 @@
 						"erosion": [ -0.78, -0.2225 ],
 						"temperature": [ -0.15, 0.2 ],
 						"humidity": [ -0.1, 0.3 ],
+						"depth": [ 0, 0 ],
+						"offset": 0
+					}
+				},
+				{
+					"NEUN_SCRIPT replace biome until 65": "minecraft:dark_forest",
+					"biome": "minecraft:pale_garden",
+					"parameters": {
+						"weirdness": [ -0.4, -0.26666667 ],
+						"continentalness": [ 0.3, 1 ],
+						"erosion": [ -0.78, -0.2225 ],
+						"temperature": [ -0.15, 0.2 ],
+						"humidity": [ 0.3, 1 ],
 						"depth": [ 0, 0 ],
 						"offset": 0
 					}
@@ -3374,6 +3438,18 @@
 						"erosion": [ -0.2225, 0.45 ],
 						"temperature": [ -0.15, 0.2 ],
 						"humidity": [ 0.1, 0.3 ],
+						"depth": [ 0, 0 ],
+						"offset": 0
+					}
+				},
+				{
+					"biome": "minecraft:dark_forest",
+					"parameters": {
+						"weirdness": [ -0.4, -0.05 ],
+						"continentalness": [ 0.3, 1 ],
+						"erosion": [ -0.2225, 0.45 ],
+						"temperature": [ -0.15, 0.2 ],
+						"humidity": [ 0.3, 1 ],
 						"depth": [ 0, 0 ],
 						"offset": 0
 					}
@@ -8834,7 +8910,7 @@
 					"biome": "minecraft:dark_forest",
 					"parameters": {
 						"weirdness": [ -1, -0.26666667 ],
-						"continentalness": [ -0.21, 1 ],
+						"continentalness": [ -0.21, 0.3 ],
 						"erosion": [ -0.2225, 0.05 ],
 						"temperature": [ -0.15, 0.2 ],
 						"humidity": [ 0.3, 1 ],
@@ -9410,7 +9486,7 @@
 					"biome": "minecraft:dark_forest",
 					"parameters": {
 						"weirdness": [ -1, -0.93333333 ],
-						"continentalness": [ 0.03, 1 ],
+						"continentalness": [ 0.03, 0.3 ],
 						"erosion": [ -0.78, 0.45 ],
 						"temperature": [ -0.15, 0.2 ],
 						"humidity": [ 0.3, 1 ],
@@ -9623,6 +9699,19 @@
 					}
 				},
 				{
+					"NEUN_SCRIPT replace biome until 65": "minecraft:dark_forest",
+					"biome": "minecraft:pale_garden",
+					"parameters": {
+						"weirdness": [ -1, -0.93333333 ],
+						"continentalness": [ 0.3, 1 ],
+						"erosion": [ -0.78, -0.2225 ],
+						"temperature": [ -0.15, 0.2 ],
+						"humidity": [ 0.3, 1 ],
+						"depth": [ 1, 1 ],
+						"offset": 0
+					}
+				},
+				{
 					"biome": "minecraft:savanna_plateau",
 					"parameters": {
 						"weirdness": [ -1, -0.7666667 ],
@@ -9726,6 +9815,18 @@
 						"erosion": [ -0.2225, 0.45 ],
 						"temperature": [ -0.15, 0.2 ],
 						"humidity": [ 0.1, 0.3 ],
+						"depth": [ 1, 1 ],
+						"offset": 0
+					}
+				},
+				{
+					"biome": "minecraft:dark_forest",
+					"parameters": {
+						"weirdness": [ -1, -0.93333333 ],
+						"continentalness": [ 0.3, 1 ],
+						"erosion": [ -0.2225, 0.45 ],
+						"temperature": [ -0.15, 0.2 ],
+						"humidity": [ 0.3, 1 ],
 						"depth": [ 1, 1 ],
 						"offset": 0
 					}
@@ -10223,11 +10324,12 @@
 					}
 				},
 				{
-					"biome": "minecraft:dark_forest",
+					"NEUN_SCRIPT replace biome until 65": "minecraft:dark_forest",
+					"biome": "minecraft:pale_garden",
 					"parameters": {
-						"weirdness": [ -0.93333333, -0.05 ],
+						"weirdness": [ -0.93333333, -0.4 ],
 						"continentalness": [ 0.03, 1 ],
-						"erosion": [ -0.375, 0.45 ],
+						"erosion": [ -0.375, -0.2225 ],
 						"temperature": [ -0.15, 0.2 ],
 						"humidity": [ 0.3, 1 ],
 						"depth": [ 1, 1 ],
@@ -10307,6 +10409,18 @@
 					}
 				},
 				{
+					"biome": "minecraft:dark_forest",
+					"parameters": {
+						"weirdness": [ -0.93333333, -0.05 ],
+						"continentalness": [ 0.03, 1 ],
+						"erosion": [ 0.05, 0.45 ],
+						"temperature": [ -0.15, 0.2 ],
+						"humidity": [ 0.3, 1 ],
+						"depth": [ 1, 1 ],
+						"offset": 0
+					}
+				},
+				{
 					"biome": "minecraft:savanna",
 					"parameters": {
 						"weirdness": [ -0.93333333, -0.4 ],
@@ -10362,6 +10476,19 @@
 						"erosion": [ -0.2225, 0.05 ],
 						"temperature": [ -0.15, 0.2 ],
 						"humidity": [ -0.1, 0.3 ],
+						"depth": [ 1, 1 ],
+						"offset": 0
+					}
+				},
+				{
+					"NEUN_SCRIPT replace biome until 65": "minecraft:dark_forest",
+					"biome": "minecraft:pale_garden",
+					"parameters": {
+						"weirdness": [ -0.93333333, -0.4 ],
+						"continentalness": [ 0.3, 1 ],
+						"erosion": [ -0.2225, 0.05 ],
+						"temperature": [ -0.15, 0.2 ],
+						"humidity": [ 0.3, 1 ],
 						"depth": [ 1, 1 ],
 						"offset": 0
 					}
@@ -11774,7 +11901,7 @@
 					"biome": "minecraft:dark_forest",
 					"parameters": {
 						"weirdness": [ -0.4, -0.05 ],
-						"continentalness": [ 0.03, 1 ],
+						"continentalness": [ 0.03, 0.3 ],
 						"erosion": [ -0.78, 0.45 ],
 						"temperature": [ -0.15, 0.2 ],
 						"humidity": [ 0.3, 1 ],
@@ -11838,6 +11965,19 @@
 						"erosion": [ -0.78, -0.2225 ],
 						"temperature": [ -0.15, 0.2 ],
 						"humidity": [ -0.1, 0.3 ],
+						"depth": [ 1, 1 ],
+						"offset": 0
+					}
+				},
+				{
+					"NEUN_SCRIPT replace biome until 65": "minecraft:dark_forest",
+					"biome": "minecraft:pale_garden",
+					"parameters": {
+						"weirdness": [ -0.4, -0.26666667 ],
+						"continentalness": [ 0.3, 1 ],
+						"erosion": [ -0.78, -0.2225 ],
+						"temperature": [ -0.15, 0.2 ],
+						"humidity": [ 0.3, 1 ],
 						"depth": [ 1, 1 ],
 						"offset": 0
 					}
@@ -11934,6 +12074,18 @@
 						"erosion": [ -0.2225, 0.45 ],
 						"temperature": [ -0.15, 0.2 ],
 						"humidity": [ 0.1, 0.3 ],
+						"depth": [ 1, 1 ],
+						"offset": 0
+					}
+				},
+				{
+					"biome": "minecraft:dark_forest",
+					"parameters": {
+						"weirdness": [ -0.4, -0.05 ],
+						"continentalness": [ 0.3, 1 ],
+						"erosion": [ -0.2225, 0.45 ],
+						"temperature": [ -0.15, 0.2 ],
+						"humidity": [ 0.3, 1 ],
 						"depth": [ 1, 1 ],
 						"offset": 0
 					}
