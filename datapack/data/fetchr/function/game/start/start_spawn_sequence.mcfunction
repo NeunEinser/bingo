@@ -27,11 +27,11 @@ tag @a remove fetchr.in_skybox
 effect give @a[predicate=fetchr:is_in_game] minecraft:invisibility infinite 1 true
 
 execute \
-	if score $team_count fetchr.state matches 1 \
-	run scoreboard players set $lockout_mode fetchr.state 0
-execute \
 	in fetchr:lobby \
 	run function fetchr:game/start/init_teams
+execute \
+	if score $team_count fetchr.state matches 1 \
+	run scoreboard players set $lockout_mode fetchr.state 0
 
 teleport @e[type=!#fetchr:keep_on_game_start, tag=!fetchr.generated_entity, distance=..10000] ~ -128 ~
 
