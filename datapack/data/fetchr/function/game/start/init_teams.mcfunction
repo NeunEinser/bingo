@@ -261,8 +261,8 @@ data \
 execute \
 	if score $lockout_mode fetchr.state matches 1 \
 	run data modify storage tmp.fetchr:game/start defaultBackground set value [[\
-		{ "text": "\\uf000", "interpret": true, "color": "#8b8b8b" },\
-		{ "text": "\\uffeb", "font": "fetchr:space" }\
+		{ text: "\uf000", interpret: true, color: "#8b8b8b" },\
+		{ text: "\uffeb", font: "fetchr:space" }\
 	]]
 #NEUN_SCRIPT end
 execute \
