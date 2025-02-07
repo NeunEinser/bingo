@@ -26,7 +26,7 @@
 		"water_color": 4159204,
 		"water_fog_color": 329011
 	},
-	"NEUN_SCRIPT replace_features_until_64": [
+	"NEUN_SCRIPT replace features until 64": [
 		[],
 		[
 			"minecraft:lake_lava_underground",
