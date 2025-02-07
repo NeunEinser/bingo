@@ -1,6 +1,17 @@
-* text eol=lf
+* text=auto eol=lf
+
+*.mcfunction text
+*.json text
+*.jsonc text
+*.mcmeta text
+*.properties text
+*.py text diff=python
+*.md text diff=markdown
+*.txt text
+*.yml text
+LICENCE text
 
 *.png binary
 *.xcf binary
-*.nbt binary
-*.dat binary
+*.nbt binary diff=nbt
+*.dat binary diff=nbt

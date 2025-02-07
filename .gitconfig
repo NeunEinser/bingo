@@ -1,0 +1,7 @@
+# run git config --local  include.path ../.gitconfig to include this config file.
+
+# install https://github.com/vberlier/nbtlib/releases/latest for being able to
+# diff nbt encoded files
+
+[diff "nbt"]
+	textconv = nbt -r --pretty
