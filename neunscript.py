@@ -660,12 +660,15 @@ def minify_function_file(file_content: str, config: dict, pack_format: int, min_
 
 				elif command[0] == "uncomment":
 					uncomment = 1
+					remove = stack[-1]["remove"]
+					if (remove > 0):
+						remove = 0
 					if len(command) > 1:
 						try:
 							uncomment = int(command[1])
 						except ValueError:
 							pass
-					stack.append({ "remove": 0, "uncomment": uncomment })
+					stack.append({ "remove": remove, "uncomment": uncomment })
 
 				elif command[0] == "remove":
 					remove = 1
@@ -678,7 +681,9 @@ def minify_function_file(file_content: str, config: dict, pack_format: int, min_
 				
 				elif command[0] == "if" or command[0] == "unless":
 					uncomment = 0
-					remove = 0
+					remove = stack[-1]["remove"]
+					if (remove > 0):
+						remove = 0
 					if len(command) < 2:
 						raise ValueError("if/unless needs at least one argument")
 					value = get_variable(command[1], config)
@@ -690,7 +695,9 @@ def minify_function_file(file_content: str, config: dict, pack_format: int, min_
 				
 				elif command[0] == "until" or command[0] == "since":
 					uncomment = 0
-					remove = 0
+					remove = stack[-1]["remove"]
+					if (remove > 0):
+						remove = 0
 					if len(command) < 2:
 						raise ValueError("until/since needs at least one argument")
 					min_value = 1
@@ -712,11 +719,6 @@ def minify_function_file(file_content: str, config: dict, pack_format: int, min_
 						remove = -1
 					stack.append({ "remove": remove, "uncomment": uncomment })
 
-		elif stack[-1]["uncomment"] != 0 and line.startswith("#") and not line.startswith("# ") and not line.startswith("#>"):
-			line = line[1:]
-			if stack[-1]["uncomment"] > 0:
-				stack[-1]["uncomment"] -= 1
-
 		elif stack[-1]["remove"] != 0:
 			if stack[-1]["remove"] > 0:
 				stack[-1]["remove"] -= 1
@@ -725,6 +727,11 @@ def minify_function_file(file_content: str, config: dict, pack_format: int, min_
 						raise IndexError("Encountered unexpected end instruction")
 					stack.pop()
 			continue
+
+		elif stack[-1]["uncomment"] != 0 and line.startswith("#") and not line.startswith("# ") and not line.startswith("#>"):
+			line = line[1:]
+			if stack[-1]["uncomment"] > 0:
+				stack[-1]["uncomment"] -= 1
 
 		if not line.startswith("#"):
 			if output:
