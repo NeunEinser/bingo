@@ -10,7 +10,7 @@
 	run data modify storage io.fetchr:custom_hud component.icon set value '"\\u0108"'
 #execute \
 	if score $custom_hud/timer.daytime fetchr.tmp matches 9984..10383 \
-	run data modify storage io.fetchr:custom_hud component.icon set value '"\U0109"'
+	run data modify storage io.fetchr:custom_hud component.icon set value '"\\u0109"'
 #execute \
 	if score $custom_hud/timer.daytime fetchr.tmp matches 10384.. \
 	run data modify storage io.fetchr:custom_hud component.icon set value '"\\u010A"'

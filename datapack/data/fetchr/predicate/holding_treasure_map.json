@@ -9,6 +9,7 @@
 					"mainhand": {
 						"items": "minecraft:filled_map",
 						"components": {
+							"NEUN_SCRIPT replace minecraft:item_name until 65": "{ \"translate\": \"filled_map.buried_treasure\" }",
 							"minecraft:item_name": { "translate": "filled_map.buried_treasure" }
 						}
 					}
@@ -23,6 +24,7 @@
 					"offhand": {
 						"items": "minecraft:filled_map",
 						"components": {
+							"NEUN_SCRIPT replace minecraft:item_name until 65": "{ \"translate\": \"filled_map.buried_treasure\" }",
 							"minecraft:item_name": { "translate": "filled_map.buried_treasure" }
 						}
 					}

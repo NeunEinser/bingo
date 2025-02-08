@@ -441,7 +441,7 @@ scoreboard players add $preferences/hud.page fetchr.tmp 1
 		}\
 	]
 #NEUN_SCRIPT end
-#NEUN_SCRIPT until 65
+#NEUN_SCRIPT since 65
 execute \
 	unless data storage tmp.fetchr:preferences/hud {\
 		prev: [ "[ ", { translate: "fetchr.preferences.previous", color: "gray" }, " ]" ],\

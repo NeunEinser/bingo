@@ -60,14 +60,14 @@ scoreboard players set $item_detect/set_overlay.success fetchr.tmp 0
 	store success score $item_detect/set_overlay.success fetchr.tmp \
 	run data \
 		modify storage fetchr:card teams[-1].slots[$(slot_id)] \
-		set value '{ "text": "\uFFFE", "color": "black" }'
+		set value '{ "text": "\\uFFFE", "color": "black" }'
 #$execute \
 	if score $lockout_mode fetchr.state matches 1 \
 	unless data storage fetchr:card slots[$(slot_id)].item_collected \
 	store success score $item_detect/set_overlay.success fetchr.tmp \
 	run data \
 		modify storage fetchr:card teams[-1].slots[$(slot_id)] \
-		set value '{ "text": "\uFFFE", "color": "black" }'
+		set value '{ "text": "\\uFFFE", "color": "black" }'
 #NEUN_SCRIPT end
 #NEUN_SCRIPT since 65
 $execute \
@@ -115,7 +115,7 @@ function fetchr:item_detection/announce with storage io.fetchr:find_team current
 	modify block 7 0 7 front_text.messages[0] set value '[\
 	"",\
 	{ "storage": "fetchr:card", "nbt": "slots[$(slot_id)].background[]", "interpret": true, "separator": "" },\
-	{ "text": "\u0002", "font": "fetchr:space" },\
+	{ "text": "\\u0002", "font": "fetchr:space" },\
 	{ "storage": "fetchr:card", "nbt": "slots[$(slot_id)].icon_display", "interpret": true }\
 ]'
 #NEUN_SCRIPT end

@@ -42,7 +42,7 @@ execute \
 			data.front_text.messages[3] \
 		set value '{ "translate": "fetchr.lobby.settings.gamemode.sign.survival", "color": "red" }'
 #NEUN_SCRIPT end
-#NEUN_SCRIPT until 65
+#NEUN_SCRIPT since 65
 execute \
 	if score $lobby_gamemode fetchr.settings matches 0 \
 	run data \

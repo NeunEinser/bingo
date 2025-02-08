@@ -1568,9 +1568,9 @@ data \
 				show_in_tooltip: false\
 			},\
 			"minecraft:lore": [\
-				{ translate: "item.minecraft.smithing_template.upgrade", color: "gray", italic: false },\
-				[ " ", { translate: "fetchr.item.description.any_trim", color: "#406d95", italic: false }],\
-				[ " ", { translate: "trim_material.minecraft.lapis", color: "#406d95", italic: false }]\
+				'{ translate: "item.minecraft.smithing_template.upgrade", color: "gray", italic: false }',\
+				'{ translate: "fetchr.item.description.any_trim", color: "#406d95", italic: false }',\
+				'{ translate: "trim_material.minecraft.lapis", color: "#406d95", italic: false }'\
 			]\
 		}\
 	},\
@@ -1593,8 +1593,8 @@ data \
 			},\
 			"minecraft:lore": [\
 				{ translate: "item.minecraft.smithing_template.upgrade", color: "gray", italic: false },\
-				[ " ", { translate: "fetchr.item.description.any_trim", color: "#406d95", italic: false }],\
-				[ " ", { translate: "trim_material.minecraft.lapis", color: "#406d95", italic: false }]\
+				{ translate: "fetchr.item.description.any_trim", color: "#406d95", italic: false },\
+				{ translate: "trim_material.minecraft.lapis", color: "#406d95", italic: false }\
 			],\
 			"minecraft:tooltip_display": {\
 				hidden_components: [ "minecraft:trim" ]\

@@ -257,7 +257,7 @@ tellraw @s[scores={fetchr.resource_pack_check=1}] [\
 
 # Validate checked players, reenable trigger
 #NEUN_SCRIPT unless realms
-#tag @s[scores={fetchr.resource_pack_check={ NEUN_SCRIPT:rp_version * 91}}] remove fetchr.resourcepack_check
+#tag @s[scores={fetchr.resource_pack_check={NEUN_SCRIPT:rp_version * 91}}] remove fetchr.resourcepack_check
 #execute \
 	if score @s fetchr.resource_pack_check matches {NEUN_SCRIPT:rp_version * 91} \
 	run function fetchr:util/go_to_lobby

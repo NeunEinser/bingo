@@ -1328,7 +1328,7 @@ forceload add 0 0
 			'"\\uf044"', '"\\uf004"', '"\\uf045"', '"\\uf011"', '"\\uf046"', '"\\uf012"', '"\\uf047"', '"\\uf048"'\
 		]
 		#NEUN_SCRIPT end
-		#NEUN_SCRIPT until 65
+		#NEUN_SCRIPT since 65
 		data modify storage fetchr:card completedBackgroundTemplates set value []
 		data modify storage fetchr:card completedBackgroundTemplates append value [\
 			"\uf000"\

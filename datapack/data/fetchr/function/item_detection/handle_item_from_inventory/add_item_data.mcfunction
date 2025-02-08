@@ -6,7 +6,7 @@
 #	item_text_component: string
 # @within function fetchr:item_detection/handle_item_from_inventory/exec
 
-#NEUN_SCRIPT since 65
+#NEUN_SCRIPT until 65
 #$data \
 	modify storage tmp.fetchr:item_detect item_text_component \
 	set value '$(item_text_component),\

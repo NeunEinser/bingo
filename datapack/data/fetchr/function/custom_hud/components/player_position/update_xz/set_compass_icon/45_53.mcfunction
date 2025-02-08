@@ -10,7 +10,7 @@
 	run data modify storage io.fetchr:custom_hud component.icon set value '"\\u0111"'
 #execute \
 	if score $custom_hud/player_pos.rot fetchr.tmp matches 48..50 \
-	run data modify storage io.fetchr:custom_hud component.icon set value '"\U0110"'
+	run data modify storage io.fetchr:custom_hud component.icon set value '"\\u0110"'
 #execute \
 	if score $custom_hud/player_pos.rot fetchr.tmp matches 51.. \
 	run data modify storage io.fetchr:custom_hud component.icon set value '"\\u010F"'

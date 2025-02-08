@@ -32,7 +32,7 @@
 	run data merge storage fetchr:tmp { cardOffset: '"\\uff10"', cardNegOffset: '"\\u00f0"' }
 #NEUN_SCRIPT end
 
-#NEUN_SCRIPT since
+#NEUN_SCRIPT since 65
 # next to hotbar
 execute \
 	if score @s[predicate=!fetchr:has_item_in_offhand] fetchr.card_position \

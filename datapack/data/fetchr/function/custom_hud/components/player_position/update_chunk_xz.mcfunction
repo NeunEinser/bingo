@@ -14,15 +14,14 @@ data \
 #NEUN_SCRIPT until 65
 #data \
 	modify storage io.fetchr:custom_hud component \
-	merge value '{ \
-		"textComponent": \
-		[\
+	merge value { \
+		textComponent: '[\
 			{ "score": { "name": "$custom_hud/player_pos.x", "objective": "fetchr.tmp" }},\
 			" ",\
 			{ "score": { "name": "$custom_hud/player_pos.z", "objective": "fetchr.tmp" }}\
-		],\
-		"changed": true\
-	}'
+		]',\
+		changed: true\
+	}
 #NEUN_SCRIPT end
 #NEUN_SCRIPT since 65
 data \

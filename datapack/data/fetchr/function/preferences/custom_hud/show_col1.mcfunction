@@ -248,7 +248,49 @@ execute \
 	if data storage tmp.fetchr:preferences/hud filledComponets[3] \
 	run tellraw @s [\
 		"[ ",\
-		{ "translate": "fetchr.preferences.custom_hud.adjust_col.move_up.title", "color": "gray" }, " ] [ ", { "translate": "fetchr.preferences.custom_hud.adjust_col.move_down.title", "color": "#00c3ff", "hoverEvent": { "action": "show_text", "contents": { "translate": "fetchr.preferences.custom_hud.adjust_col.move_down.description", "color": "gold" }}, "clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 55" },\ "hover_event": { "action": "show_text", "value": { "translate": "fetchr.preferences.custom_hud.adjust_col.move_down.description", "color": "gold" }}, "click_event": { "action": "run_command", "command": "trigger fetchr.pref set 55" }}, " ]", { "storage": "tmp.fetchr:preferences/hud", "nbt": "move", "interpret": true, "clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 56" }, "click_event": { "action": "run_command", "command": "trigger fetchr.pref set 56" }}, " [ ", { "translate": "fetchr.preferences.custom_hud.adjust_col.remove.title", "color": "#00c3ff", "hoverEvent": { "action": "show_text", "contents": { "translate": "fetchr.preferences.custom_hud.adjust_col.remove.description", "color": "gold" }}, "clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 57" },\ "hover_event": { "action": "show_text", "value": { "translate": "fetchr.preferences.custom_hud.adjust_col.remove.description", "color": "gold" }}, "click_event": { "action": "run_command", "command": "trigger fetchr.pref set 57" }}, " ] ", { "storage": "tmp.fetchr:preferences/hud", "nbt": "filledComponets[3].settingsTextComponent", "interpret": true }, { "storage": "tmp.fetchr:preferences/hud", "nbt": "filledComponets[3].name", "interpret": true }]
+		{ "translate": "fetchr.preferences.custom_hud.adjust_col.move_up.title", "color": "gray" },\
+		" ] [ ",\
+		{\
+			"translate": "fetchr.preferences.custom_hud.adjust_col.move_down.title",\
+			"color": "#00c3ff",\
+			"hoverEvent": {\
+				"action": "show_text",\
+				"contents": { "translate": "fetchr.preferences.custom_hud.adjust_col.move_down.description", "color": "gold" }\
+			},\
+			"clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 55" },\
+			"hover_event": {\
+				"action": "show_text",\
+				"value": { "translate": "fetchr.preferences.custom_hud.adjust_col.move_down.description", "color": "gold" }\
+			},\
+			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 55" }\
+		},\
+		" ]",\
+		{\
+			"storage": "tmp.fetchr:preferences/hud",\
+			"nbt": "move",\
+			"interpret": true,\
+			"clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 56" },\
+			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 56" }\
+		},\
+		" [ ",\
+		{\
+			"translate": "fetchr.preferences.custom_hud.adjust_col.remove.title",\
+			"color": "#00c3ff",\
+			"hoverEvent": {\
+				"action": "show_text",\
+				"contents": { "translate": "fetchr.preferences.custom_hud.adjust_col.remove.description", "color": "gold" }\
+			},\
+			"clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 57" },\
+			"hover_event": {\
+				"action": "show_text",\
+				"value": { "translate": "fetchr.preferences.custom_hud.adjust_col.remove.description", "color": "gold" }\
+			},\
+			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 57" }\
+		},\
+		" ] ",\
+		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "filledComponets[3].settingsTextComponent", "interpret": true },\
+		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "filledComponets[3].name", "interpret": true }\
+	]
 execute \
 	if data storage tmp.fetchr:preferences/hud filledComponets[4] \
 	if data storage tmp.fetchr:preferences/hud filledComponets[3] \
