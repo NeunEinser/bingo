@@ -11,10 +11,14 @@
 #NEUN_SCRIPT since 66
 #tellraw @a { "translate": "fetchr.error.incompatible_minecraft_version.multiple_compatible", "color": "red", "with": [ "1.21.1", "1.21.4" ]}
 #NEUN_SCRIPT end
+#NEUN_SCRIPT until 45
+#tellraw @a { "translate": "fetchr.error.incompatible_minecraft_version.multiple_compatible", "color": "red", "with": [ "1.21.1", "1.21.4" ]}
+#NEUN_SCRIPT end
+#NEUN_SCRIPT until 66
+#NEUN_SCRIPT since 45
 function fetchr:tick/spigot
 function neun_einser.timer:store_current_time
 
-#region Resource pack check
 # Detect second (or more) players in a LAN world
 #NEUN_SCRIPT unless realms
 execute \
@@ -156,7 +160,6 @@ execute \
 	]}}
 #NEUN_SCRIPT end
 #NEUN_SCRIPT end
-#endregion
 
 # Loop depending on game state
 execute \
@@ -186,3 +189,5 @@ execute \
 	run function fetchr:tick/player_tick
 data modify storage fetchr:custom_hud players append from storage tmp.fetchr:custom_hud handled[]
 scoreboard players reset $update_card fetchr.state
+#NEUN_SCRIPT end
+#NEUN_SCRIPT end
