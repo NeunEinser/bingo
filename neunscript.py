@@ -306,7 +306,7 @@ def iterate_files(config: dict, pack_config: dict, target: str, mc_versions: lis
 					if write_file is not None:
 						main_path = out_dir
 						if should_create_main_as_overlay:
-							format_range = get_format_range(pack_formats, pack_format)
+							format_range = get_format_range(pack_formats, main_pack_format)
 							pack_formats_for_overlay.append(format_range)
 							main_path = f"{out_root}{os.sep}\
 								{get_overlay_dir_name(format_range)}\
@@ -396,7 +396,7 @@ def get_format_range(formats: list[int], format: int):
 		max_format = None
 		if len(formats) > i + 1:
 			max_format = formats[i+1]
-		if min_format <= format and (max_format is None or max_format > format):
+		if min_format <= format and (max_format is None or max_format >= format):
 			break
 	return [min_format, max_format]
 
@@ -632,10 +632,13 @@ def minify_json_file(
 		"formats": sturctured_result[0]
 	}
 
+class StackEntry(TypedDict):
+	remove: int
+	uncomment: int
+
 def minify_function_file(file_content: str, config: dict, pack_format: int, min_format: int) -> StringFileMinifyResult:
 	output=""
-	remove=0
-	uncomment=0
+	stack: list[StackEntry] = [{"remove": 0, "uncomment": 0}]
 	pack_formats = set()
 	file_content = re.sub(r"\\\r?\n\s*", "", file_content)
 
@@ -645,63 +648,49 @@ def minify_function_file(file_content: str, config: dict, pack_format: int, min_
 		if not line or line == "#":
 			continue
 
-		if line == "#NEUN_SCRIPT end":
-			uncomment = 0
-			remove = 0
-
-		if uncomment == -2:
-			if line.startswith("#"):
-				uncomment = -1
-			else:
-				uncomment = 0
-
-		if uncomment != 0 and line.startswith("#") and not line.startswith("# ") and not line.startswith("#>"):
-			line = line[1:]
-			if uncomment > 0:
-				uncomment -= 1
-
-		if remove > 0:
-			remove -= 1
-			continue
-		elif remove < 0:
-			continue
-		
-		if not line.startswith("#"):
-			if output:
-				output += "\n"
-			output += line
-		elif line.startswith("#NEUN_SCRIPT"):
+		if line.startswith("#NEUN_SCRIPT"):
 			match=re.match("#NEUN_SCRIPT\s+(.*)", line)
 
 			if match != None:
 				command = re.sub("\s+", " ", match.group(1)).lower().split(" ")
+				if command[0] == "end":
+					if len(stack) < 1:
+						raise IndexError("Encountered unexpected end instruction")
+					stack.pop()
 
-				if command[0] == "uncomment":
+				elif command[0] == "uncomment":
 					uncomment = 1
 					if len(command) > 1:
 						try:
 							uncomment = int(command[1])
 						except ValueError:
 							pass
+					stack.append({ "remove": 0, "uncomment": uncomment })
 
-				if command[0] == "remove":
+				elif command[0] == "remove":
 					remove = 1
 					if len(command) > 1:
 						try:
 							remove = int(command[1])
 						except ValueError:
 							pass
+					stack.append({ "remove": remove, "uncomment": 0 })
 				
-				if command[0] == "if" or command[0] == "unless":
+				elif command[0] == "if" or command[0] == "unless":
+					uncomment = 0
+					remove = 0
 					if len(command) < 2:
 						raise ValueError("if/unless needs at least one argument")
 					value = get_variable(command[1], config)
 					if bool(value) == (command[0] == "if"):
-						uncomment = -2
+						uncomment = -1
 					else:
 						remove = -1
+					stack.append({ "remove": remove, "uncomment": uncomment })
 				
-				if command[0] == "until" or command[0] == "since":
+				elif command[0] == "until" or command[0] == "since":
+					uncomment = 0
+					remove = 0
 					if len(command) < 2:
 						raise ValueError("until/since needs at least one argument")
 					min_value = 1
@@ -716,11 +705,31 @@ def minify_function_file(file_content: str, config: dict, pack_format: int, min_
 					if max_value is not None:
 						pack_formats.add(max_value)
 					if pack_format >= min_value and (max_value is None or pack_format < max_value):
-						uncomment = -2
+						uncomment = -1
 						if min_value > min_format:
 							pack_formats.add(1)
 					else:
 						remove = -1
+					stack.append({ "remove": remove, "uncomment": uncomment })
+
+		elif stack[-1]["uncomment"] != 0 and line.startswith("#") and not line.startswith("# ") and not line.startswith("#>"):
+			line = line[1:]
+			if stack[-1]["uncomment"] > 0:
+				stack[-1]["uncomment"] -= 1
+
+		elif stack[-1]["remove"] != 0:
+			if stack[-1]["remove"] > 0:
+				stack[-1]["remove"] -= 1
+				if stack[-1]["remove"] == 0:
+					if len(stack) < 1:
+						raise IndexError("Encountered unexpected end instruction")
+					stack.pop()
+			continue
+
+		if not line.startswith("#"):
+			if output:
+				output += "\n"
+			output += line
 
 	return { "content": output, "formats": pack_formats }
 
