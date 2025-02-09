@@ -1874,7 +1874,8 @@ data \
 }
 
 # 0070: poison_arrow
-data \
+#NEUN_SCRIPT until 66
+#data \
 	modify storage fetchr:registries items append value {\
 	id: "fetchr:poison_arrow",\
 	item: {\
@@ -1885,6 +1886,21 @@ data \
 	icon: "0070",\
 	categories: [{ id: "fetchr:skeleton_drops" }, { id: "fetchr:nighttime_mob_drops", weight: 3 }]\
 }
+#NEUN_SCRIPT end
+#NEUN_SCRIPT since 66
+data \
+	modify storage fetchr:registries items append value {\
+	id: "fetchr:poison_arrow",\
+	item: {\
+		id: "minecraft:tipped_arrow",\
+		components: { "minecraft:potion_contents": { potion: "minecraft:poison" }}\
+	},\
+	translation: "item.minecraft.tipped_arrow.effect.poison",\
+	icon: "0070",\
+	categories: [{ id: "fetchr:skeleton_drops", weight: 1 }, "fetchr:nighttime_mob_drops", "fetchr:swamp"],\
+	weight: 3\
+}
+#NEUN_SCRIPT end
 
 #NEUN_SCRIPT since 58
 # 0071: closed_eyeblossom
