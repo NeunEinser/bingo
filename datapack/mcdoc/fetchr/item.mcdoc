@@ -56,8 +56,9 @@ dispatch fetchr:item_test[fetchr:component] to struct {
 	component: minecraft:data_component[[id]],
 }
 
-dispatch fetchr:item_test[fetchr:negated_component] to struct {
+dispatch fetchr:item_test[fetchr:component_exists] to struct {
 	id: #[id(registry="data_component_type")] string,
+	negated?: boolean
 }
 
 dispatch fetchr:item_test[fetchr:predicate] to struct {

@@ -11,7 +11,7 @@ data modify storage io.fetchr:util string set from storage tmp.fetchr:init inner
 data modify storage tmp.fetchr:init test_type set from storage tmp.fetchr:init inner_tests[-1].type
 
 execute \
-	if data storage tmp.fetchr:init { test_type: "fetchr:negated_component" } \
+	if data storage tmp.fetchr:init { test_type: "fetchr:component_exists", negated: true } \
 	run function fetchr:init/items/set_item_command_argument/from_tests/prepend_exclamation
 
 execute \
