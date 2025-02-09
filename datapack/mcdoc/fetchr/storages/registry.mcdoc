@@ -6,16 +6,16 @@ struct ItemRegistryData {
 	...ItemConfigurationBase,
 
 		/// Categories this item is in. Can be an id list or a list of compounds.
-		categories: (
-			[#[id] string]
-			| [struct {
+		categories: [(
+			#[id] string
+			| struct {
 					/// The id of the referenced category
 					id: #[id] string,
 					/// The weight of the current item in this category. When not set,
 					/// defaults to the item's default weight.
 					weight?: int
-			}]
-		),
+			}
+		)],
 		/// The default weight for this item. If not set, defaults to 1.
 		weight?: int
 }

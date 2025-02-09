@@ -20,7 +20,7 @@
 # Probably should just keep the order of initial definition
 
 # categories
-#NEUN_SCRIPT until 65
+#NEUN_SCRIPT until 62
 #data \
 	modify storage fetchr:registries categories append value {\
 	id: "fetchr:amethyst",\
@@ -306,7 +306,7 @@
 	tags: [ "fetchr:default" ]\
 }
 #NEUN_SCRIPT end
-#NEUN_SCRIPT since 65
+#NEUN_SCRIPT since 62
 data \
 	modify storage fetchr:registries categories append value {\
 	id: "fetchr:amethyst",\
@@ -459,6 +459,12 @@ data \
 }
 data \
 	modify storage fetchr:registries categories append value {\
+	id: "fetchr:lodestone",\
+	name: { translate: "fetchr.category.lodestone" },\
+	tags: [ "fetchr:default" ]\
+}
+data \
+	modify storage fetchr:registries categories append value {\
 	id: "fetchr:lush_cave",\
 	name: { translate: "fetchr.category.lush_cave" },\
 	tags: [ "fetchr:default" ]\
@@ -567,6 +573,12 @@ data \
 }
 data \
 	modify storage fetchr:registries categories append value {\
+	id: "fetchr:swamp",\
+	name: { translate: "fetchr.category.swamp" },\
+	tags: [ "fetchr:default" ]\
+}
+data \
+	modify storage fetchr:registries categories append value {\
 	id: "fetchr:taiga",\
 	name: { translate: "fetchr.category.taiga" },\
 	tags: [ "fetchr:default" ]\
@@ -604,7 +616,8 @@ data \
 }
 
 # 0002: pumpkin_pie
-data \
+#NEUN_SCRIPT until 66
+#data \
 	modify storage fetchr:registries items append value {\
 	id: "fetchr:pumpkin_pie",\
 	item: { id: "minecraft:pumpkin_pie" },\
@@ -612,6 +625,17 @@ data \
 	icon: "0002",\
 	categories: [ "fetchr:pumpkin", "fetchr:egg" ]\
 }
+#NEUN_SCRIPT end
+#NEUN_SCRIPT since 66
+data \
+	modify storage fetchr:registries items append value {\
+	id: "fetchr:pumpkin_pie",\
+	item: { id: "minecraft:pumpkin_pie" },\
+	translation: "item.minecraft.pumpkin_pie",\
+	icon: "0002",\
+	categories: [ "fetchr:pumpkin", {id: "fetchr:egg", weight: 2 } ]\
+}
+#NEUN_SCRIPT end
 
 # 0003: egg
 data \
@@ -624,14 +648,25 @@ data \
 }
 
 # 0004: cake
+#NEUN_SCRIPT until 66
+#data \
+	modify storage fetchr:registries items append value {\
+	id: "fetchr:cake",\
+	item: { id: "minecraft:cake" },\
+	translation: "block.minecraft.cake",\
+	icon: "0004",\
+	categories: [ "fetchr:milk", "fetchr:egg" ]\
+#NEUN_SCRIPT end
+#NEUN_SCRIPT since 66
 data \
 	modify storage fetchr:registries items append value {\
 	id: "fetchr:cake",\
 	item: { id: "minecraft:cake" },\
 	translation: "block.minecraft.cake",\
 	icon: "0004",\
-	categories: [ "fetchr:egg", "fetchr:milk" ]\
+	categories: [ "fetchr:milk", {id: "fetchr:egg", weight: 2 } ]\
 }
+#NEUN_SCRIPT end
 
 # 0005: acacia_sapling
 data \
@@ -641,7 +676,7 @@ data \
 	translation: "block.minecraft.acacia_sapling",\
 	icon: "0005",\
 	categories: [ "fetchr:warm_biome" ],\
-	weight: 2\
+	weight: 6\
 }
 
 # 0006: spruce_sapling
@@ -699,15 +734,26 @@ data \
 }
 
 # 000b: dead_bush
-data \
+#NEUN_SCRIPT until 66
+#data \
 	modify storage fetchr:registries items append value {\
 	id: "fetchr:dead_bush",\
 	item: { id: "minecraft:dead_bush" },\
 	translation: "block.minecraft.dead_bush",\
 	icon: "000b",\
-	categories: [ "fetchr:shearable" ],\
-	weight: 2\
+	categories: [ { id: "fetchr:shearable", weight: 2 }, { id: "fetchr:warm_biome", weight: 6 } ]\
 }
+#NEUN_SCRIPT end
+#NEUN_SCRIPT since 66
+#data \
+	modify storage fetchr:registries items append value {\
+	id: "fetchr:dead_bush",\
+	item: { id: "minecraft:dead_bush" },\
+	translation: "block.minecraft.dead_bush",\
+	icon: "000b",\
+	categories: [ "fetchr:shearable", { id: "fetchr:warm_biome", weight: 3 } ]\
+}
+#NEUN_SCRIPT end
 
 # 000c: fern
 data \
@@ -793,7 +839,8 @@ data \
 }
 
 # 0014: slime_ball
-data \
+#NEUN_SCRIPT until 66
+#data \
 	modify storage fetchr:registries items append value {\
 	id: "fetchr:slime_ball",\
 	item: { id: "minecraft:slime_ball" },\
@@ -802,6 +849,17 @@ data \
 	categories: [ "fetchr:nighttime_mob_drops" ],\
 	weight: 2\
 }
+#NEUN_SCRIPT end
+#NEUN_SCRIPT since 66
+data \
+	modify storage fetchr:registries items append value {\
+	id: "fetchr:slime_ball",\
+	item: { id: "minecraft:slime_ball" },\
+	translation: "item.minecraft.slime_ball",\
+	icon: "0014",\
+	categories: [ "fetchr:swamp", { id: "fetchr:nighttime_mob_drops", weight: 2 } ]\
+}
+#NEUN_SCRIPT end
 
 # 0015: firework_rocket
 data \
@@ -884,6 +942,32 @@ data \
 	categories: [ "fetchr:shipwreck" ]\
 }
 
+#NEUN_SCRIPT since 62
+# 001d: lodestone_compass
+data \
+	modify storage fetchr:registries items append value {\
+	id: "fetchr:lodestone_compass",\
+	item: {\
+		id: "minecraft:compass",\
+		components: {\
+			"minecraft:lodestone_tracker": {\
+				target: { dimension: "fetchr:lobby", pos: [I; 0, 0, 0] },\
+				tracked: false\
+			}\
+		}\
+	},\
+	item_tests: [\
+		{\
+			type: "fetchr:component_exists",\
+			id: "minecraft:lodestone_tracker"\
+		}\
+	],\
+	translation: "item.minecraft.lodestone_compass",\
+	icon: "001d",\
+	categories: [ "fetchr:lodestone", "fetchr:compass" ]\
+}
+#NEUN_SCRIPT end
+
 # 001e: diamond_hoe
 data \
 	modify storage fetchr:registries items append value {\
@@ -893,6 +977,19 @@ data \
 	icon: "001e",\
 	categories: [ "fetchr:diamond" ]\
 }
+
+#NEUN_SCRIPT since 66
+# 001f: cactus_flower
+data \
+	modify storage fetchr:registries items append value {\
+	id: "fetchr:cactus_flower",\
+	item: { id: "minecraft:cactus_flower" },\
+	translation: "block.minecraft.cactus_flower",\
+	icon: "001f",\
+	categories: [ "fetchr:warm_biome" ],\
+	weight: 6\
+}
+#NEUN_SCRIPT end
 
 # 0020: axolotl_bucket
 data \
@@ -1189,7 +1286,8 @@ data \
 	item: { id: "minecraft:lime_dye" },\
 	translation: "item.minecraft.lime_dye",\
 	icon: "003c",\
-	categories: [ "fetchr:warm_biome" ]\
+	categories: [ "fetchr:warm_biome" ],\
+	weight: 2\
 }
 
 # 003d: lapis_lazuli
@@ -1304,6 +1402,19 @@ data \
 	categories: [ "fetchr:fish" ]\
 }
 
+#NEUN_SCRIPT since 66
+# 0047: firefly_bush
+data \
+	modify storage fetchr:registries items append value {\
+	id: "fetchr:firefly_bush",\
+	item: { id: "minecraft:firefly_bush" },\
+	translation: "block.minecraft.firefly_bush",\
+	icon: "0048",\
+	categories: [ "fetchr:swamp" ],\
+	weight: 3\
+}
+#NEUN_SCRIPT end
+
 # 0049: dark_oak_sapling
 data \
 	modify storage fetchr:registries items append value {\
@@ -1315,7 +1426,8 @@ data \
 }
 
 # 004a: lead
-data \
+#NEUN_SCRIPT until 66
+#data \
 	modify storage fetchr:registries items append value {\
 	id: "fetchr:lead",\
 	item: { id: "minecraft:lead" },\
@@ -1324,6 +1436,17 @@ data \
 	categories: [ "fetchr:nighttime_mob_drops" ],\
 	weight: 2\
 }
+#NEUN_SCRIPT end
+#NEUN_SCRIPT since 66
+data \
+	modify storage fetchr:registries items append value {\
+	id: "fetchr:lead",\
+	item: { id: "minecraft:lead" },\
+	translation: "item.minecraft.lead",\
+	icon: "004a",\
+	categories: [ "fetchr:swamp", { id: "fetchr:nighttime_mob_drops", weight: 2 } ]\
+}
+#NEUN_SCRIPT end
 
 # 004b: detector_rail
 data \
@@ -1376,6 +1499,18 @@ data \
 	categories: [ "fetchr:taiga" ]\
 }
 
+# 0050: short_dry_grass
+#NEUN_SCRIPT since 66
+data \
+	modify storage fetchr:registries items append value {\
+	id: "fetchr:short_dry_grass",\
+	item: { id: "minecraft:short_dry_grass" },\
+	translation: "block.minecraft.short_dry_grass",\
+	icon: "0050",\
+	categories: [ "fetchr:shearable", { id: "fetchr:warm_biome", weight: 3 } ]\
+}
+#NEUN_SCRIPT end
+
 # 0051: diamond_pickaxe
 data \
 	modify storage fetchr:registries items append value {\
@@ -1397,6 +1532,18 @@ data \
 	categories: [ "fetchr:gold_and_ruined_portal" ],\
 	weight: 2\
 }
+
+# 0053: blue_egg
+#NEUN_SCRIPT since 66
+data \
+	modify storage fetchr:registries items append value {\
+	id: "fetchr:blue_egg",\
+	item: { id: "minecraft:blue_egg" },\
+	translation: "item.minecraft.blue_egg",\
+	icon: "0053",\
+	categories: [ "fetchr:egg" ]\
+}
+#NEUN_SCRIPT end
 
 # 0055: crossbow
 data \
@@ -1426,7 +1573,8 @@ data \
 	item: { id: "minecraft:sea_pickle" },\
 	translation: "block.minecraft.sea_pickle",\
 	icon: "0057",\
-	categories: [ "fetchr:warm_biome" ]\
+	categories: [ "fetchr:warm_biome" ],\
+	weight: 2\
 }
 
 # 0058: seagrass
@@ -2073,7 +2221,8 @@ data \
 }
 
 # 011c: sticky_piston
-data \
+#NEUN_SCRIPT until 66
+#data \
 	modify storage fetchr:registries items append value {\
 	id: "fetchr:sticky_piston",\
 	item: { id: "minecraft:sticky_piston" },\
@@ -2081,6 +2230,18 @@ data \
 	icon: "011c",\
 	categories: [{ id: "fetchr:piston" }, { id : "fetchr:nighttime_mob_drops", weight: 2 }]\
 }
+#NEUN_SCRIPT end
+#NEUN_SCRIPT since 66
+data \
+	modify storage fetchr:registries items append value {\
+	id: "fetchr:sticky_piston",\
+	item: { id: "minecraft:sticky_piston" },\
+	translation: "block.minecraft.sticky_piston",\
+	icon: "011c",\
+	categories: [{ id: "fetchr:piston", weight: 1 }, "fetchr:nighttime_mob_drops", "fetchr:swamp" ],\
+	weight: 2\
+}
+#NEUN_SCRIPT end
 
 # 011d: orange_concrete
 data \
@@ -2174,12 +2335,12 @@ data \
 	categories: [ "fetchr:lush_cave" ]\
 }
 
-# 0126: moss_carpet
+# 0126: moss_block
 data \
 	modify storage fetchr:registries items append value {\
-	id: "fetchr:moss_carpet",\
-	item: { id: "minecraft:moss_carpet" },\
-	translation: "block.minecraft.moss_carpet",\
+	id: "fetchr:moss_block",\
+	item: { id: "minecraft:moss_block" },\
+	translation: "block.minecraft.moss_block",\
 	icon: "0126",\
 	categories: [ "fetchr:lush_cave" ],\
 	weight: 3\
@@ -2333,15 +2494,27 @@ data \
 	weight: 2\
 }
 
-# 0135: pale_moss_block
+# 0135: pale_moss_carpet
 data \
 	modify storage fetchr:registries items append value {\
-	id: "fetchr:pale_moss_block",\
-	item: { id: "minecraft:pale_moss_block" },\
-	translation: "block.minecraft.pale_moss_block",\
+	id: "fetchr:pale_moss_carpet",\
+	item: { id: "minecraft:pale_moss_carpet" },\
+	translation: "block.minecraft.pale_moss_carpet",\
 	icon: "0135",\
 	categories: [ "fetchr:pale_garden" ],\
 	weight: 6\
+}
+#NEUN_SCRIPT end
+
+#NEUN_SCRIPT since 62
+# 0136: lodestone
+data \
+	modify storage fetchr:registries items append value {\
+	id: "fetchr:lodestone",\
+	item: { id: "minecraft:lodestone" },\
+	translation: "block.minecraft.lodestone",\
+	icon: "0136",\
+	categories: [ "fetchr:lodestone" ]\
 }
 #NEUN_SCRIPT end
 

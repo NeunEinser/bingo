@@ -41,6 +41,12 @@ execute \
 	run data \
 		modify entity @e[type=minecraft:item_frame, tag=fetchr.new, limit=1] Item \
 		set from storage tmp.fetchr:card_frames/spawn_frames slots[0].item
+execute \
+	if dimension fetchr:default \
+	if items entity @s contents *[minecraft:lodestone_tracker] \
+	run data \
+		modify entity @s Item.components.minecraft:lodestone_tracker.target.dimension \
+		set value "fetchr:default"
 data remove storage tmp.fetchr:card_frames/spawn_frames slots[0]
 
 tag @e[type=minecraft:item_frame, tag=fetchr.card_frame] remove fetchr.new
