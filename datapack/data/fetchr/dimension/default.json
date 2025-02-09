@@ -1063,7 +1063,7 @@
 					}
 				},
 				{
-					"NEUN_SCRIPT replace biome until 65": "minecraft:dark_forest",
+					"NEUN_SCRIPT replace biome until 62": "minecraft:dark_forest",
 					"biome": "minecraft:pale_garden",
 					"parameters": {
 						"weirdness": [ -1, -0.93333333 ],
@@ -1688,7 +1688,7 @@
 					}
 				},
 				{
-					"NEUN_SCRIPT replace biome until 65": "minecraft:dark_forest",
+					"NEUN_SCRIPT replace biome until 62": "minecraft:dark_forest",
 					"biome": "minecraft:pale_garden",
 					"parameters": {
 						"weirdness": [ -0.93333333, -0.4 ],
@@ -1845,7 +1845,7 @@
 					}
 				},
 				{
-					"NEUN_SCRIPT replace biome until 65": "minecraft:dark_forest",
+					"NEUN_SCRIPT replace biome until 62": "minecraft:dark_forest",
 					"biome": "minecraft:pale_garden",
 					"parameters": {
 						"weirdness": [ -0.93333333, -0.4 ],
@@ -3334,7 +3334,7 @@
 					}
 				},
 				{
-					"NEUN_SCRIPT replace biome until 65": "minecraft:dark_forest",
+					"NEUN_SCRIPT replace biome until 62": "minecraft:dark_forest",
 					"biome": "minecraft:pale_garden",
 					"parameters": {
 						"weirdness": [ -0.4, -0.26666667 ],
@@ -9699,7 +9699,7 @@
 					}
 				},
 				{
-					"NEUN_SCRIPT replace biome until 65": "minecraft:dark_forest",
+					"NEUN_SCRIPT replace biome until 62": "minecraft:dark_forest",
 					"biome": "minecraft:pale_garden",
 					"parameters": {
 						"weirdness": [ -1, -0.93333333 ],
@@ -10324,7 +10324,7 @@
 					}
 				},
 				{
-					"NEUN_SCRIPT replace biome until 65": "minecraft:dark_forest",
+					"NEUN_SCRIPT replace biome until 62": "minecraft:dark_forest",
 					"biome": "minecraft:pale_garden",
 					"parameters": {
 						"weirdness": [ -0.93333333, -0.4 ],
@@ -10481,7 +10481,7 @@
 					}
 				},
 				{
-					"NEUN_SCRIPT replace biome until 65": "minecraft:dark_forest",
+					"NEUN_SCRIPT replace biome until 62": "minecraft:dark_forest",
 					"biome": "minecraft:pale_garden",
 					"parameters": {
 						"weirdness": [ -0.93333333, -0.4 ],
@@ -11970,7 +11970,7 @@
 					}
 				},
 				{
-					"NEUN_SCRIPT replace biome until 65": "minecraft:dark_forest",
+					"NEUN_SCRIPT replace biome until 62": "minecraft:dark_forest",
 					"biome": "minecraft:pale_garden",
 					"parameters": {
 						"weirdness": [ -0.4, -0.26666667 ],
