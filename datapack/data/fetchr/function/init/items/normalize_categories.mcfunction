@@ -31,19 +31,25 @@ execute \
 		set from storage tmp.fetchr:init item_categories[-1]
 execute \
 	if score $init/items/normalize.is_string fetchr.tmp matches 0 \
+	if data storage tmp.fetchr:init category."" \
+	run data \
+		modify storage tmp.fetchr:init category.id \
+		set from storage tmp.fetchr:init item_categories[-1].""
+execute \
+	if score $init/items/normalize.is_string fetchr.tmp matches 0 \
+	unless data storage tmp.fetchr:init category."" \
 	run data \
 		modify storage tmp.fetchr:init category \
 		set from storage tmp.fetchr:init item_categories[-1]
 
 execute \
 	unless data storage tmp.fetchr:init category.weight \
-	unless data storage tmp.fetchr:init items[-1].weight \
-	run data modify storage tmp.fetchr:init category.weight set value 1
-execute \
-	unless data storage tmp.fetchr:init category.weight \
 	run data \
 		modify storage tmp.fetchr:init category.weight \
 		set from storage tmp.fetchr:init items[-1].weight
+execute \
+	unless data storage tmp.fetchr:init category.weight \
+	run data modify storage tmp.fetchr:init category.weight set value 1
 
 #sanity checks
 #>
