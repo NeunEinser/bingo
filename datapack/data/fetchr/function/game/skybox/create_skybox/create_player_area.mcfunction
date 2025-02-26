@@ -7,7 +7,7 @@
 # 	entity Spawn marker
 # 	position the lowest non-air block with sky access at spawn
 
-setblock ~-1 ~ ~-1 minecraft:structure_block[mode=load]{ mode: "LOAD", name: "fetchr:skybox" }
+setblock ~-1 ~ ~-1 minecraft:structure_block[mode=load]{ mode: "LOAD", ignoreEntities: false, posY:0, name: "fetchr:skybox" }
 setblock ~-1 ~1 ~-1 minecraft:redstone_block
 execute \
 	if block ~-1 ~ ~-1 minecraft:structure_block \

@@ -24,7 +24,8 @@ setblock 15 3 -17 minecraft:structure_block[mode=load]{\
 	ignoreEntities: true,\
 	integrity: 0f,\
 	posX: 1,\
-	posZ: 1\
+	posZ: 1,\
+	posY: 0\
 }
 
 kill @e[type=minecraft:marker, tag=fetchr.lobby_sign]

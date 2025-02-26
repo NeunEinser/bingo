@@ -12,7 +12,7 @@
 setblock 15 3 -17 minecraft:air
 kill @s
 
-setblock ~-1 3 ~-1 minecraft:structure_block[mode=load]{ mode: "LOAD", name: "fetchr:lobby_end" }
+setblock ~-1 3 ~-1 minecraft:structure_block[mode=load]{ mode: "LOAD", ignoreEntities: false, posY: 0, name: "fetchr:lobby_end" }
 setblock ~-1 4 ~-1 minecraft:redstone_block
 
 #>
@@ -42,7 +42,7 @@ execute \
 	run summon minecraft:marker 0 0 0 { Tags: ["fetchr.pos_reader"]}
 
 setblock 6 0 7 minecraft:barrel
-setblock 7 0 7 minecraft:oak_sign
+setblock 7 0 7 minecraft:oak_sign{ front_text: { messages: ["", "", "", { text: "", bold: true }]}}
 
 execute \
 	if score $is_multiplayer fetchr.state matches 1 \

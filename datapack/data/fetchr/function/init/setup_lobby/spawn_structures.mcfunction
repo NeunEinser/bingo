@@ -34,7 +34,7 @@ execute \
 scoreboard players operation $init/lobby.offsetz fetchr.tmp /= -2 fetchr.const
 scoreboard players add $init/lobby.offsetz fetchr.tmp 1
 
-setblock ~-1 ~ ~ minecraft:structure_block[mode=load]{ mode: "LOAD" }
+setblock ~-1 ~ ~ minecraft:structure_block[mode=load]{ mode: "LOAD", ignoreEntities: false, posY: 0 }
 data modify block ~-1 ~ ~ name set from storage fetchr:registries structures[0]
 execute \
 	store result block ~-1 ~ ~ posX int 1 \
