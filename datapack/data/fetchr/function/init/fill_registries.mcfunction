@@ -745,7 +745,7 @@ data \
 }
 #NEUN_SCRIPT end
 #NEUN_SCRIPT since 66
-#data \
+data \
 	modify storage fetchr:registries items append value {\
 	id: "fetchr:dead_bush",\
 	item: { id: "minecraft:dead_bush" },\

@@ -24,11 +24,6 @@ data \
 	set value { storage: "tmp.fetchr:util", nbt: "components" }
 data modify storage tmp.fetchr:util snbt set from block 7 0 7 front_text.messages[0]
 execute \
-	if data storage tmp.fetchr:util snbt."" \
-	run data \
-		modify storage tmp.fetchr:util snbt \
-		set from storage tmp.fetchr:util snbt.""
-execute \
 	if data storage tmp.fetchr:util { snbt: "{}" } \
 	run return 0
 

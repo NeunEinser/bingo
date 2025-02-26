@@ -16,28 +16,23 @@
 #>
 # @private
 #declare score_holder $init/items/normalize.is_string
+data modify entity @s Tags append from storage tmp.fetchr:init item_categories[-1]
 execute \
-	store success score $init/items/normalize.is_string fetchr.tmp \
-	run data modify entity @s Tags append from storage tmp.fetchr:init item_categories[-1]
+	store result score $init/items/normalize.is_string fetchr.tmp \
+	run data get entity @s Tags
+
 execute \
-	if score $init/items/normalize.is_string fetchr.tmp matches 1 \
+	if score $init/items/normalize.is_string fetchr.tmp matches 2 \
 	run data modify entity @s Tags set value ["fetchr.string_tester"]
 
 data modify storage tmp.fetchr:init category set value {}
 execute \
-	if score $init/items/normalize.is_string fetchr.tmp matches 1 \
+	if score $init/items/normalize.is_string fetchr.tmp matches 2 \
 	run data \
 		modify storage tmp.fetchr:init category.id \
 		set from storage tmp.fetchr:init item_categories[-1]
 execute \
-	if score $init/items/normalize.is_string fetchr.tmp matches 0 \
-	if data storage tmp.fetchr:init category."" \
-	run data \
-		modify storage tmp.fetchr:init category.id \
-		set from storage tmp.fetchr:init item_categories[-1].""
-execute \
-	if score $init/items/normalize.is_string fetchr.tmp matches 0 \
-	unless data storage tmp.fetchr:init category."" \
+	if score $init/items/normalize.is_string fetchr.tmp matches 1 \
 	run data \
 		modify storage tmp.fetchr:init category \
 		set from storage tmp.fetchr:init item_categories[-1]
