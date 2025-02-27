@@ -16,6 +16,7 @@ scoreboard players add $util/string.length fetchr.tmp 1
 
 execute \
 	unless data storage tmp.fetchr:util until_quote{ char: '"' } \
+	unless data storage tmp.fetchr:util until_quote{ char: "'" } \
 	run function fetchr:util/string/until_quote_iter with storage tmp.fetchr:util until_quote
 
 data modify storage io.fetchr:util string set from storage tmp.fetchr:util until_quote.current

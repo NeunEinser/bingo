@@ -13,5 +13,9 @@ data modify storage io.fetchr:util concat_strings.second set value "="
 function fetchr:util/string/concat_escaped with storage io.fetchr:util concat_strings
 
 data modify storage io.fetchr:util concat_strings.first set from storage io.fetchr:util string
-$data modify storage io.fetchr:util concat_strings.second set from storage tmp.fetchr:util components.$(name)
+$data \
+	modify block 7 0 7 front_text.messages[0] \
+	set value { storage: "tmp.fetchr:util", nbt: "components.$(name)" }
+data modify storage io.fetchr:util concat_strings.second set from block 7 0 7 front_text.messages[0]
+
 function fetchr:util/string/concat

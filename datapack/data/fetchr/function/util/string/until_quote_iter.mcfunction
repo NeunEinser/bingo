@@ -21,5 +21,6 @@ execute \
 
 execute \
 	unless data storage tmp.fetchr:util concat_strings{ second: '"' } \
+	unless data storage tmp.fetchr:util concat_strings{ second: "'" } \
 	if score $util/string.length fetchr.tmp >= $util/string.index fetchr.tmp \
 	run function fetchr:util/string/until_quote_iter with storage tmp.fetchr:util until_quote
