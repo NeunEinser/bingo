@@ -1533,8 +1533,8 @@ data \
 	weight: 2\
 }
 
-# 0053: blue_egg
 #NEUN_SCRIPT since 66
+# 0053: blue_egg
 data \
 	modify storage fetchr:registries items append value {\
 	id: "fetchr:blue_egg",\
@@ -1542,6 +1542,18 @@ data \
 	translation: "item.minecraft.blue_egg",\
 	icon: "0053",\
 	categories: [ "fetchr:egg" ]\
+}
+#NEUN_SCRIPT end
+
+#NEUN_SCRIPT since 67
+# 0054: bush
+data \
+	modify storage fetchr:registries items append value {\
+	id: "fetchr:bush",\
+	item: { id: "minecraft:bush" },\
+	translation: "block.minecraft.bush",\
+	icon: "0054",\
+	categories: [ "fetchr:shearables" ]\
 }
 #NEUN_SCRIPT end
 
