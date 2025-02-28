@@ -36,7 +36,7 @@ execute \
 		" ]"\
 	]
 execute \
-	if score $blind_mode fetchr.state matches 1 \
+	if score $concealed_card fetchr.state matches 1 \
 	run tellraw @s [\
 		"[ ",\
 		{\

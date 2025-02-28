@@ -11,7 +11,7 @@
 	set value '{ "text": "\\u$(icon)", "font": "$(current_font)" }'
 
 #$execute \
-	unless score $blind_mode fetchr.state matches 1 \
+	unless score $concealed_card fetchr.state matches 1 \
 	run data \
 		modify storage fetchr:card slots[-1].current_display set value '[\
 		"",\
@@ -26,7 +26,7 @@ $data \
 	set value { text: "\u$(icon)", font: "$(current_font)" }
 
 $execute \
-	unless score $blind_mode fetchr.state matches 1 \
+	unless score $concealed_card fetchr.state matches 1 \
 	run data \
 		modify storage fetchr:card slots[-1].current_display set value [\
 		"",\

@@ -71,7 +71,7 @@ scoreboard players enable @s fetchr.teleport_all
 
 execute \
 	if score $game_state fetchr.state matches 3.. \
-	if score $blind_mode fetchr.state matches 1 \
+	if score $concealed_card fetchr.state matches 1 \
 	run tellraw @s [\
 		"===",\
 		{ "translate": "fetchr.game.menu.heading.lobby", "bold": true, "color": "green" },\
@@ -86,7 +86,7 @@ execute \
 	]
 execute \
 	if score $game_state fetchr.state matches 3.. \
-	unless score $blind_mode fetchr.state matches 1 \
+	unless score $concealed_card fetchr.state matches 1 \
 	if score $is_multiplayer fetchr.state matches 1 \
 	unless entity @a[scores={fetchr.teleport_all=1}] \
 	run tellraw @s [\

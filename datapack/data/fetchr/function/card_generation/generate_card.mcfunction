@@ -168,7 +168,7 @@ data \
 	modify storage fetchr:card teams[0].card \
 	set from block 7 0 7 front_text.messages[0]
 execute \
-	if score $blind_mode fetchr.state matches 1 \
+	if score $concealed_card fetchr.state matches 1 \
 	as @e[type=minecraft:item_frame, tag=fetchr.card_frame] \
 	run data modify entity @s Item set value { id: "minecraft:barrier" }
 

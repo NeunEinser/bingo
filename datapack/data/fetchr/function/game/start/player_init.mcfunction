@@ -35,5 +35,5 @@ execute \
 	if score $allow_spectating fetchr.settings matches 1 \
 	run scoreboard players enable @s fetchr.spectator
 execute \
-	if score $blind_mode fetchr.state matches 1 \
+	if score $concealed_card fetchr.state matches 1 \
 	run scoreboard players enable @s fetchr.reveal_card

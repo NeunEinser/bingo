@@ -37,7 +37,7 @@ title @a[predicate=fetchr:is_in_game, tag=!fetchr.in_team] \
 	title [{ "translate": "fetchr.goal.lockout.title.lost", "color": "red" }]
 
 execute \
-	if score $blind_mode fetchr.state matches 1 run \
+	if score $concealed_card fetchr.state matches 1 run \
 	function fetchr:game/reveal_card
 
 execute \

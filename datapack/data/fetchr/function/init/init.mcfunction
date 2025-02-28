@@ -347,10 +347,10 @@ forceload add 0 0
 		#declare tag fetchr.join_game_sign
 		#>
 		# @within
-		# 	function fetchr:lobby/settings/toggle_blind_mode
+		# 	function fetchr:lobby/settings/toggle_concealed_card
 		# 	function fetchr:init/setup_lobby/*
 		# 	structure fetchr:card_generation
-		#declare tag fetchr.blind_mode_sign
+		#declare tag fetchr.concealed_card_sign
 		#>
 		# @within
 		# 	function fetchr:lobby/settings/toggle_lockout_mode
@@ -676,7 +676,7 @@ forceload add 0 0
 		#NEUN_SCRIPT end
 
 		#>
-		# Trigger objective for revealing the card in blind mode.
+		# Trigger objective for revealing a concealed card.
 		#
 		# @internal
 		# @user
@@ -959,12 +959,12 @@ forceload add 0 0
 		#declare score_holder $use_in_game_time
 		scoreboard players add $use_in_game_time fetchr.settings 0
 		#>
-		# Whether blind mode is enabled. In blind mode, players cannot see items on the
-		# card until some team has obtained them.
+		# Whether concealed card is enabled. With a concealed card, players cannot
+		# see items on the card until some team has obtained them.
 		#
 		# @internal
-		#declare score_holder $blind_mode
-		scoreboard players add $blind_mode fetchr.state 0
+		#declare score_holder $concealed_card
+		scoreboard players add $concealed_card fetchr.state 0
 		#>
 		# Whether lockout mode is enabled. In lockout mode, items can only be obtained
 		# once by any team. This also adds a special win condition when a team has

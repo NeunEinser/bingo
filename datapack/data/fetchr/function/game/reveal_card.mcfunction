@@ -1,6 +1,6 @@
 #> fetchr:game/reveal_card
 #
-# This function reveals the card in blind mode.
+# This function reveals the card when playing with a concealed card.
 #
 # @internal
 
@@ -554,7 +554,7 @@ data \
 	modify storage fetchr:card slots[24].current_display \
 	set from block 7 0 7 front_text.messages[0]
 
-scoreboard players set $blind_mode fetchr.state 0
+scoreboard players set $concealed_card fetchr.state 0
 scoreboard players reset @a fetchr.reveal_card
 function fetchr:card_frames/spawn
 function fetchr:util/update_card

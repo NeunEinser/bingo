@@ -39,7 +39,7 @@ execute \
 scoreboard players add $current_game_id fetchr.game_id 1
 scoreboard players set $game_state fetchr.state 0
 
-scoreboard players operation $blind_mode fetchr.state = $blind_mode fetchr.settings
+scoreboard players operation $concealed_card fetchr.state = $concealed_card fetchr.settings
 scoreboard players operation $lockout_mode fetchr.state = $lockout_mode fetchr.settings
 team leave @a[predicate=fetchr:is_in_lobby]
 

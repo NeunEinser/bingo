@@ -37,7 +37,7 @@ scoreboard players \
 		= $card_frames/spawn.i fetchr.tmp
 
 execute \
-	unless score $blind_mode fetchr.state matches 1 \
+	unless score $concealed_card fetchr.state matches 1 \
 	run data \
 		modify entity @e[type=minecraft:item_frame, tag=fetchr.new, limit=1] Item \
 		set from storage tmp.fetchr:card_frames/spawn_frames slots[0].item
