@@ -53,10 +53,14 @@ execute \
 execute \
 	if entity @a[tag=fetchr.resourcepack_check, limit=1] \
 	run setblock 1 2 1 minecraft:air
+
+execute \
+	if entity @a[tag=fetchr.resourcepack_check, limit=1] \
+	run setblock 1 2 1 minecraft:warped_wall_sign
 #NEUN_SCRIPT until 69
 #execute \
 	if entity @a[tag=fetchr.resourcepack_check, limit=1] \
-	run setblock 1 2 1 minecraft:warped_wall_sign{ front_text: { messages: [\
+	run data modify block 1 2 1 front_text.messages set value [\
 		'{\
 			"translate": "fetchr.technical.resourcepack_version_{NEUN_SCRIPT:rp_version}",\
 			"fallback": "%2$s",\
@@ -106,12 +110,12 @@ execute \
 				}\
 			]\
 		}'\
-	]}}
+	]
 #NEUN_SCRIPT end
 #NEUN_SCRIPT since 69
 execute \
 	if entity @a[tag=fetchr.resourcepack_check, limit=1] \
-	run setblock 1 2 1 minecraft:warped_wall_sign{ front_text: { messages: [\
+	run data modify block 1 2 1 front_text.messages set value [\
 		{\
 			translate: "fetchr.technical.resourcepack_version_{NEUN_SCRIPT:rp_version}",\
 			fallback: "%2$s",\
@@ -161,7 +165,7 @@ execute \
 				}\
 			]\
 		}\
-	]}}
+	]
 #NEUN_SCRIPT end
 #NEUN_SCRIPT end
 
