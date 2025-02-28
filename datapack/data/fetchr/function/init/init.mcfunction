@@ -1211,7 +1211,7 @@ forceload add 0 0
 # Create overworld resourcepack check
 	#NEUN_SCRIPT unless realms
 	fill 0 0 0 2 3 2 minecraft:black_concrete outline
-	setblock 1 2 2 minecraft:glass
+	setblock 1 2 2 minecraft:sea_lantern
 	#NEUN_SCRIPT until 69
 	#execute \
 		if entity @a[tag=fetchr.resourcepack_check, limit=1] \
@@ -1322,7 +1322,6 @@ forceload add 0 0
 			}\
 		]}}
 	#NEUN_SCRIPT end
-	setblock 1 2 2 minecraft:sea_lantern
 	gamerule spawnRadius 0
 	#NEUN_SCRIPT end
 
