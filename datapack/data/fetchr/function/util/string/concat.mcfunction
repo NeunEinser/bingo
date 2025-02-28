@@ -33,7 +33,7 @@ data modify block 7 0 7 front_text.messages set value [\
 	{ "storage": "tmp.fetchr:util", "nbt": "concat_strings.first" },\
 	{ "storage": "tmp.fetchr:util", "nbt": "concat_strings.second" },\
 	"",\
-	{text: "", bold: true},\
+	"",\
 ]
 
 data \

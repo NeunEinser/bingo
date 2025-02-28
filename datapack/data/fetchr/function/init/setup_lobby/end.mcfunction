@@ -42,7 +42,7 @@ execute \
 	run summon minecraft:marker 0 0 0 { Tags: ["fetchr.pos_reader"]}
 
 setblock 6 0 7 minecraft:barrel
-setblock 7 0 7 minecraft:oak_sign{ front_text: { messages: ["", "", "", { text: "", bold: true }]}}
+setblock 7 0 7 minecraft:oak_sign{ front_text: { messages: ["", "", "", ""]}}
 
 execute \
 	if score $is_multiplayer fetchr.state matches 1 \
