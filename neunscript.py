@@ -1,5 +1,5 @@
 # This script is used for building this pack
-import hashlib, io, json, os, re, requests, shutil, pyjson5, zipfile
+import hashlib, json, os, re, requests, shutil, pyjson5
 from typing import Any, Callable, TypedDict
 from distutils.dir_util import copy_tree
 from sys import stderr

@@ -29,7 +29,6 @@ scoreboard players set $game_start/pre_gen/goto.type fetchr.tmp 1
 #>
 # @private
 #declare score_holder $game_start/pre_gen.chunks_left
-#TODO configurable max
 scoreboard players operation $game_start/pre_gen.chunks_left fetchr.tmp = $pregeneration_chunks fetchr.settings
 scoreboard players operation $game_start/pre_gen.chunks_left fetchr.tmp -= $game_start/pre_gen/generate.i fetchr.tmp
 

@@ -219,7 +219,6 @@ scoreboard players set $game_start/pre_gen/unload.direction fetchr.tmp 0
 #declare score_holder $game_start/pre_gen.last_tick_time
 scoreboard players set $game_start/pre_gen.last_tick_time fetchr.tmp 0
 function neun_einser.timer:start/millis
-#todo configurable max
 execute \
 	store result bossbar fetchr:start/pre_gen/progress max \
 	run scoreboard players get $pregeneration_chunks fetchr.settings
