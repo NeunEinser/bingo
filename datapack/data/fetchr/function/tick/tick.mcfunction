@@ -11,11 +11,12 @@
 #NEUN_SCRIPT since 70
 #tellraw @a { "translate": "fetchr.error.incompatible_minecraft_version.multiple_compatible", "color": "red", "with": [ "1.21.1", "1.21.4" ]}
 #NEUN_SCRIPT end
-#NEUN_SCRIPT since 62 until 68
+#NEUN_SCRIPT since 62 until 69
 #tellraw @a { "translate": "fetchr.error.incompatible_minecraft_version.incompatible_snapshot", "color": "red", "with": [ "25w02a", "25w09a", "25w09b" ]}
+#return fail
 #NEUN_SCRIPT end
 #NEUN_SCRIPT until 45
-#tellraw @a { "translate": "fetchr.error.incompatible_minecraft_version.multiple_compatible", "color": "red", "with": [ "1.21.1", "1.21.4" ]}
+#tellraw @a { "translate": "fetchr.error.incompatible_minecraft_version.multiple_compatible", "color": "red", "with": [ "1.21.1", "25w09b" ]}
 #NEUN_SCRIPT end
 #NEUN_SCRIPT until 69
 #NEUN_SCRIPT since 45
