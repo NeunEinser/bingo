@@ -1553,7 +1553,7 @@ data \
 	item: { id: "minecraft:bush" },\
 	translation: "block.minecraft.bush",\
 	icon: "0054",\
-	categories: [ "fetchr:shearables" ]\
+	categories: [ "fetchr:shearable" ]\
 }
 #NEUN_SCRIPT end
 
