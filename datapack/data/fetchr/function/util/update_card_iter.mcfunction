@@ -80,35 +80,35 @@ data remove storage fetchr:card teams[0]
 			{ "storage": "fetchr:card", "nbt": "slots[15].current_display", "interpret": true }, \
 			{ "text": "\\uffed", "font": "fetchr:space" },\
 			{ "storage": "tmp.fetchr:item_detect/update_card", "nbt": "handledTeams[-1].slots[15]", "interpret": true },\
-			{ "storage": "fetchr:card", "nbt": "slots[15].current_display", "interpret": true }, \
+			{ "storage": "fetchr:card", "nbt": "slots[16].current_display", "interpret": true }, \
 			{ "text": "\\uffed", "font": "fetchr:space" },\
 			{ "storage": "tmp.fetchr:item_detect/update_card", "nbt": "handledTeams[-1].slots[16]", "interpret": true },\
-			{ "storage": "fetchr:card", "nbt": "slots[15].current_display", "interpret": true }, \
+			{ "storage": "fetchr:card", "nbt": "slots[17].current_display", "interpret": true }, \
 			{ "text": "\\uffed", "font": "fetchr:space" },\
 			{ "storage": "tmp.fetchr:item_detect/update_card", "nbt": "handledTeams[-1].slots[17]", "interpret": true },\
-			{ "storage": "fetchr:card", "nbt": "slots[15].current_display", "interpret": true }, \
+			{ "storage": "fetchr:card", "nbt": "slots[18].current_display", "interpret": true }, \
 			{ "text": "\\uffed", "font": "fetchr:space" },\
 			{ "storage": "tmp.fetchr:item_detect/update_card", "nbt": "handledTeams[-1].slots[18]", "interpret": true },\
-			{ "storage": "fetchr:card", "nbt": "slots[15].current_display", "interpret": true }, \
+			{ "storage": "fetchr:card", "nbt": "slots[19].current_display", "interpret": true }, \
 			{ "text": "\\uffed", "font": "fetchr:space" },\
 			{ "storage": "tmp.fetchr:item_detect/update_card", "nbt": "handledTeams[-1].slots[19]", "interpret": true }\
 		],\
 		"\\uff97",\
 		[\
 			{ "text": "", "font": "fetchr:actionbar_card/row4" },\
-			{ "storage": "fetchr:card", "nbt": "slots[15].current_display", "interpret": true }, \
+			{ "storage": "fetchr:card", "nbt": "slots[20].current_display", "interpret": true }, \
 			{ "text": "\\uffed", "font": "fetchr:space" },\
 			{ "storage": "tmp.fetchr:item_detect/update_card", "nbt": "handledTeams[-1].slots[20]", "interpret": true },\
-			{ "storage": "fetchr:card", "nbt": "slots[15].current_display", "interpret": true }, \
+			{ "storage": "fetchr:card", "nbt": "slots[21].current_display", "interpret": true }, \
 			{ "text": "\\uffed", "font": "fetchr:space" },\
 			{ "storage": "tmp.fetchr:item_detect/update_card", "nbt": "handledTeams[-1].slots[21]", "interpret": true },\
-			{ "storage": "fetchr:card", "nbt": "slots[15].current_display", "interpret": true }, \
+			{ "storage": "fetchr:card", "nbt": "slots[22].current_display", "interpret": true }, \
 			{ "text": "\\uffed", "font": "fetchr:space" },\
 			{ "storage": "tmp.fetchr:item_detect/update_card", "nbt": "handledTeams[-1].slots[22]", "interpret": true },\
-			{ "storage": "fetchr:card", "nbt": "slots[15].current_display", "interpret": true }, \
+			{ "storage": "fetchr:card", "nbt": "slots[23].current_display", "interpret": true }, \
 			{ "text": "\\uffed", "font": "fetchr:space" },\
 			{ "storage": "tmp.fetchr:item_detect/update_card", "nbt": "handledTeams[-1].slots[23]", "interpret": true },\
-			{ "storage": "fetchr:card", "nbt": "slots[15].current_display", "interpret": true }, \
+			{ "storage": "fetchr:card", "nbt": "slots[24].current_display", "interpret": true }, \
 			{ "text": "\\uffed", "font": "fetchr:space" },\
 			{ "storage": "tmp.fetchr:item_detect/update_card", "nbt": "handledTeams[-1].slots[24]", "interpret": true }\
 		],\
@@ -184,35 +184,35 @@ data \
 			{ storage: "fetchr:card", nbt: "slots[15].current_display", interpret: true }, \
 			{ text: "\uffed", font: "fetchr:space" },\
 			{ storage: "tmp.fetchr:item_detect/update_card", nbt: "handledTeams[-1].slots[15]", interpret: true },\
-			{ storage: "fetchr:card", nbt: "slots[15].current_display", interpret: true }, \
+			{ storage: "fetchr:card", nbt: "slots[16].current_display", interpret: true }, \
 			{ text: "\uffed", font: "fetchr:space" },\
 			{ storage: "tmp.fetchr:item_detect/update_card", nbt: "handledTeams[-1].slots[16]", interpret: true },\
-			{ storage: "fetchr:card", nbt: "slots[15].current_display", interpret: true }, \
+			{ storage: "fetchr:card", nbt: "slots[17].current_display", interpret: true }, \
 			{ text: "\uffed", font: "fetchr:space" },\
 			{ storage: "tmp.fetchr:item_detect/update_card", nbt: "handledTeams[-1].slots[17]", interpret: true },\
-			{ storage: "fetchr:card", nbt: "slots[15].current_display", interpret: true }, \
+			{ storage: "fetchr:card", nbt: "slots[18].current_display", interpret: true }, \
 			{ text: "\uffed", font: "fetchr:space" },\
 			{ storage: "tmp.fetchr:item_detect/update_card", nbt: "handledTeams[-1].slots[18]", interpret: true },\
-			{ storage: "fetchr:card", nbt: "slots[15].current_display", interpret: true }, \
+			{ storage: "fetchr:card", nbt: "slots[19].current_display", interpret: true }, \
 			{ text: "\uffed", font: "fetchr:space" },\
 			{ storage: "tmp.fetchr:item_detect/update_card", nbt: "handledTeams[-1].slots[19]", interpret: true }\
 		],\
 		"\uff97",\
 		[\
 			{ text: "", font: "fetchr:actionbar_card/row4" },\
-			{ storage: "fetchr:card", nbt: "slots[15].current_display", interpret: true }, \
+			{ storage: "fetchr:card", nbt: "slots[20].current_display", interpret: true }, \
 			{ text: "\uffed", font: "fetchr:space" },\
 			{ storage: "tmp.fetchr:item_detect/update_card", nbt: "handledTeams[-1].slots[20]", interpret: true },\
-			{ storage: "fetchr:card", nbt: "slots[15].current_display", interpret: true }, \
+			{ storage: "fetchr:card", nbt: "slots[21].current_display", interpret: true }, \
 			{ text: "\uffed", font: "fetchr:space" },\
 			{ storage: "tmp.fetchr:item_detect/update_card", nbt: "handledTeams[-1].slots[21]", interpret: true },\
-			{ storage: "fetchr:card", nbt: "slots[15].current_display", interpret: true }, \
+			{ storage: "fetchr:card", nbt: "slots[22].current_display", interpret: true }, \
 			{ text: "\uffed", font: "fetchr:space" },\
 			{ storage: "tmp.fetchr:item_detect/update_card", nbt: "handledTeams[-1].slots[22]", interpret: true },\
-			{ storage: "fetchr:card", nbt: "slots[15].current_display", interpret: true }, \
+			{ storage: "fetchr:card", nbt: "slots[23].current_display", interpret: true }, \
 			{ text: "\uffed", font: "fetchr:space" },\
 			{ storage: "tmp.fetchr:item_detect/update_card", nbt: "handledTeams[-1].slots[23]", interpret: true },\
-			{ storage: "fetchr:card", nbt: "slots[15].current_display", interpret: true }, \
+			{ storage: "fetchr:card", nbt: "slots[24].current_display", interpret: true }, \
 			{ text: "\uffed", font: "fetchr:space" },\
 			{ storage: "tmp.fetchr:item_detect/update_card", nbt: "handledTeams[-1].slots[24]", interpret: true }\
 		],\
