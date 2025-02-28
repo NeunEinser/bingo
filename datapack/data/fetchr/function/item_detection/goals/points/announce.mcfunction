@@ -13,7 +13,7 @@ data modify storage tmp.fetchr:item_detection teams set from storage fetchr:card
 function fetchr:item_detection/goals/points/find_winners
 
 tellraw @a [\
-	"[ ",\
+	"[",\
 	{\
 		"text": "≡",\
 		"color": "#00c3ff",\
@@ -22,7 +22,7 @@ tellraw @a [\
 		"click_event": { "action": "run_command", "command": "trigger fetchr.menu" },\
 		"hover_event": { "action": "show_text", "value": { "translate": "fetchr.game.menu.hover_text" }}\
 	},\
-	" ] ",\
+	"] ",\
 	{\
 		"translate": "fetchr.goal.points.chat",\
 		"with": [\

@@ -12,7 +12,7 @@ tellraw @s [\
 	"==="\
 ]
 tellraw @s [\
-	"[ ",\
+	"[",\
 	{\
 		"translate": "fetchr.game.menu.options.goto_lobby",\
 		"fallback": "Go to Lobby",\
@@ -20,12 +20,12 @@ tellraw @s [\
 		"clickEvent": { "action": "run_command", "value": "/trigger fetchr.lobby" },\
 		"click_event": { "action": "run_command", "command": "trigger fetchr.lobby" }\
 	},\
-	" ]"\
+	"]"\
 ]
 execute \
 	if score $allow_spectating fetchr.settings matches 1 \
 	run tellraw @s [\
-		"[ ",\
+		"[",\
 		{\
 			"translate": "fetchr.game.menu.options.enter_spectator_mode",\
 			"fallback": "Enter Spectator Mode",\
@@ -33,12 +33,12 @@ execute \
 			"clickEvent": { "action": "run_command", "value": "/trigger fetchr.spectator" },\
 			"click_event": { "action": "run_command", "command": "trigger fetchr.spectator" }\
 		},\
-		" ]"\
+		"]"\
 	]
 execute \
 	if score $concealed_card fetchr.state matches 1 \
 	run tellraw @s [\
-		"[ ",\
+		"[",\
 		{\
 			"translate": "fetchr.game.menu.options.reveal_card",\
 			"fallback": "Reveal the Bingo Card",\
@@ -46,5 +46,5 @@ execute \
 			"clickEvent": { "action": "run_command", "value": "/trigger fetchr.reveal_card" },\
 			"click_event": { "action": "run_command", "command": "trigger fetchr.reveal_card" }\
 		},\
-		" ]"\
+		"]"\
 	]

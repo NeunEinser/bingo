@@ -16,7 +16,7 @@ tellraw @s {\
 	"italic": true,\
 	"with": [\
 		[\
-			{ "text": "[ ", "color": "white", "italic": false },\
+			{ "text": "[", "color": "white", "italic": false },\
 			{\
 				"text": "≡",\
 				"color": "#00c3ff",\
@@ -31,7 +31,7 @@ tellraw @s {\
 					"value": { "translate": "fetchr.game.menu.hover_text", "fallback": "Fetchr Menu" }\
 				}\
 			},\
-			" ]"\
+			"]"\
 		],\
 		{\
 			"text": "/trigger fetchr.<",\

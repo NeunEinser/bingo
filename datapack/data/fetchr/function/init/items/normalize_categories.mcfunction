@@ -60,9 +60,9 @@ execute \
 execute \
 	unless data storage tmp.fetchr:init category.id \
 	run tellraw @a [\
-		{ "text": "[ ", "color": "red" },\
+		{ "text": "[", "color": "red" },\
 		{ "translate": "fetchr.logging.error" },\
-		" ] ",\
+		"] ",\
 		{\
 			"translate": "fetchr.setup.error.item_category_without_id",\
 			"with": [\
@@ -75,9 +75,9 @@ execute \
 	if data storage tmp.fetchr:init category.id \
 	if score $init/items/normalize.weight fetchr.tmp matches ..0 \
 	run tellraw @a [\
-		{ "text": "[ ", "color": "red" },\
+		{ "text": "[", "color": "red" },\
 		{ "translate": "fetchr.logging.error" },\
-		" ] ",\
+		"] ",\
 		{\
 			"translate": "fetchr.setup.error.item_category_weight_below_1",\
 			"with": [\

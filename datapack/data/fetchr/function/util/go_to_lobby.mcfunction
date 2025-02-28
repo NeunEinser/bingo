@@ -82,7 +82,7 @@ execute \
 			"clickEvent": { "action": "run_command", "value": "/trigger fetchr.reveal_card" },\
 			"click_event": { "action": "run_command", "command": "trigger fetchr.reveal_card" }\
 		},\
-		" ]"\
+		"]"\
 	]
 execute \
 	if score $game_state fetchr.state matches 3.. \
@@ -99,14 +99,14 @@ execute \
 	if score $is_multiplayer fetchr.state matches 1 \
 	unless entity @a[scores={fetchr.teleport_all=1}] \
 	run tellraw @s [\
-		"[ ",\
+		"[",\
 		{\
 			"translate": "fetchr.game.menu.options.teleport_all",\
 			"color": "#00c3ff",\
 			"clickEvent": { "action": "run_command", "value": "/trigger fetchr.teleport_all" },\
 			"click_event": { "action": "run_command", "command": "trigger fetchr.teleport_all" }\
 		},\
-		" ]"\
+		"]"\
 	]
 
 schedule function fetchr:lobby/place_indestructible_blocks 1t replace

@@ -7,7 +7,7 @@
 execute \
 	unless score $item_detect/announce.items fetchr.tmp matches 5 \
 	run tellraw @a [\
-		"[ ",\
+		"[",\
 		{\
 			"text": "≡",\
 			"color": "#00c3ff",\
@@ -16,7 +16,7 @@ execute \
 			"click_event": { "action": "run_command", "command": "trigger fetchr.menu" },\
 			"hover_event": { "action": "show_text", "value": { "translate": "fetchr.game.menu.hover_text" }}\
 		},\
-		" ] ",\
+		"] ",\
 		{\
 			"translate": "fetchr.goal.bingo.row",\
 			"with": [\
@@ -29,7 +29,7 @@ execute \
 execute \
 	if score $item_detect/announce.items fetchr.tmp matches 5 \
 	run tellraw @a [\
-		"[ ",\
+		"[",\
 		{\
 			"text": "≡",\
 			"color": "#00c3ff",\
@@ -38,7 +38,7 @@ execute \
 			"click_event": { "action": "run_command", "command": "trigger fetchr.menu" },\
 			"hover_event": { "action": "show_text", "value": { "translate": "fetchr.game.menu.hover_text" }}\
 		},\
-		" ] ",\
+		"] ",\
 		{\
 			"translate": "fetchr.goal.bingo.sniper.row",\
 			"with": [\

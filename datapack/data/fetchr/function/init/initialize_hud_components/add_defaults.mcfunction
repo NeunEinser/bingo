@@ -25,7 +25,7 @@ data remove storage tmp.fetchr:init/hud cur.iconSeparator
 #NEUN_SCRIPT until 65
 #setblock 0 15 0 minecraft:oak_sign{ front_text: { messages: [\
 	'[\
-		"[ ",\
+		"[",\
 			{\
 				"storage": "tmp.fetchr:init/hud",\
 				"nbt": "cur.settingsClickEvent",\
@@ -38,7 +38,7 @@ data remove storage tmp.fetchr:init/hud cur.iconSeparator
 				},\
 				"extra": ["⚙"]\
 			},\
-			" ] "\
+			"] "\
 		]',\
 	'""',\
 	'""',\
@@ -48,7 +48,7 @@ data remove storage tmp.fetchr:init/hud cur.iconSeparator
 #NEUN_SCRIPT since 65
 setblock 0 15 0 minecraft:oak_sign{ front_text: { messages: [\
 	[\
-		"[ ",\
+		"[",\
 			{\
 				storage: "tmp.fetchr:init/hud",\
 				nbt: "cur.settingsClickEvent",\
@@ -61,7 +61,7 @@ setblock 0 15 0 minecraft:oak_sign{ front_text: { messages: [\
 				},\
 				extra: ["⚙"]\
 			},\
-			" ] "\
+			"] "\
 		],\
 	"",\
 	"",\

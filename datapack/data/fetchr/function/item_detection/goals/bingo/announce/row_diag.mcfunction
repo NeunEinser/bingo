@@ -8,7 +8,7 @@ execute \
 	unless score $item_detect/announce.items fetchr.tmp matches 9 \
 	if score $item_detect/bingo.diagonal fetchr.tmp matches 1 \
 	run tellraw @a [\
-		"[ ",\
+		"[",\
 		{\
 			"text": "≡",\
 			"color": "#00c3ff",\
@@ -17,7 +17,7 @@ execute \
 			"click_event": { "action": "run_command", "command": "trigger fetchr.menu" },\
 			"hover_event": { "action": "show_text", "value": { "translate": "fetchr.game.menu.hover_text" }}\
 		},\
-		" ] ",\
+		"] ",\
 		{\
 			"translate": "fetchr.goal.bingo.double.row_diag.top_left",\
 			"with": [\
@@ -31,7 +31,7 @@ execute \
 	unless score $item_detect/announce.items fetchr.tmp matches 9 \
 	if score $item_detect/bingo.diagonal fetchr.tmp matches 2 \
 	run tellraw @a [\
-		"[ ",\
+		"[",\
 		{\
 			"text": "≡",\
 			"color": "#00c3ff",\
@@ -40,7 +40,7 @@ execute \
 			"click_event": { "action": "run_command", "command": "trigger fetchr.menu" },\
 			"hover_event": { "action": "show_text", "value": { "translate": "fetchr.game.menu.hover_text" }}\
 		},\
-		" ] ",\
+		"] ",\
 		{\
 			"translate": "fetchr.goal.bingo.double.row_diag.bottom_left",\
 			"with": [\
@@ -54,7 +54,7 @@ execute \
 	unless score $item_detect/announce.items fetchr.tmp matches 13 \
 	if score $item_detect/bingo.diagonal fetchr.tmp matches 3 \
 	run tellraw @a [\
-		"[ ",\
+		"[",\
 		{\
 			"text": "≡",\
 			"color": "#00c3ff",\
@@ -63,7 +63,7 @@ execute \
 			"click_event": { "action": "run_command", "command": "trigger fetchr.menu" },\
 			"hover_event": { "action": "show_text", "value": { "translate": "fetchr.game.menu.hover_text" }}\
 		},\
-		" ] ",\
+		"] ",\
 		{\
 			"translate": "fetchr.goal.bingo.triple.row_diags",\
 			"with": [\
@@ -77,7 +77,7 @@ execute \
 	if score $item_detect/announce.items fetchr.tmp matches 9 \
 	if score $item_detect/bingo.diagonal fetchr.tmp matches 1 \
 	run tellraw @a [\
-		"[ ",\
+		"[",\
 		{\
 			"text": "≡",\
 			"color": "#00c3ff",\
@@ -86,7 +86,7 @@ execute \
 			"click_event": { "action": "run_command", "command": "trigger fetchr.menu" },\
 			"hover_event": { "action": "show_text", "value": { "translate": "fetchr.game.menu.hover_text" }}\
 		},\
-		" ] ",\
+		"] ",\
 		{\
 			"translate": "fetchr.goal.bingo.sniper.double.row_diag.top_left",\
 			"with": [\
@@ -100,7 +100,7 @@ execute \
 	if score $item_detect/announce.items fetchr.tmp matches 9 \
 	if score $item_detect/bingo.diagonal fetchr.tmp matches 2 \
 	run tellraw @a [\
-		"[ ",\
+		"[",\
 		{\
 			"text": "≡",\
 			"color": "#00c3ff",\
@@ -109,7 +109,7 @@ execute \
 			"click_event": { "action": "run_command", "command": "trigger fetchr.menu" },\
 			"hover_event": { "action": "show_text", "value": { "translate": "fetchr.game.menu.hover_text" }}\
 		},\
-		" ] ",\
+		"] ",\
 		{\
 			"translate": "fetchr.goal.bingo.sniper.double.row_diag.bottom_left",\
 			"with": [\
@@ -123,7 +123,7 @@ execute \
 	if score $item_detect/announce.items fetchr.tmp matches 13 \
 	if score $item_detect/bingo.diagonal fetchr.tmp matches 3 \
 	run tellraw @a [\
-		"[ ",\
+		"[",\
 		{\
 			"text": "≡",\
 			"color": "#00c3ff",\
@@ -132,7 +132,7 @@ execute \
 			"click_event": { "action": "run_command", "command": "trigger fetchr.menu" },\
 			"hover_event": { "action": "show_text", "value": { "translate": "fetchr.game.menu.hover_text" }}\
 		},\
-		" ] ",\
+		"] ",\
 		{\
 			"translate": "fetchr.goal.bingo.sniper.triple.row_diags",\
 			"with": [\

@@ -92,14 +92,14 @@ data \
 #NEUN_SCRIPT end
 #NEUN_SCRIPT since 65
 tellraw @a [\
-	"[ ",\
+	"[",\
 	{\
 		text: "≡",\
 		color: "#00c3ff",\
 		click_event: { action: "run_command", command: "/trigger fetchr.menu" },\
 		hover_event: { action: "show_text", value: { translate: "fetchr.game.menu.hover_text" }}\
 	},\
-	" ] ",\
+	"] ",\
 	{\
 		translate: "fetchr.got_item",\
 		with: [\

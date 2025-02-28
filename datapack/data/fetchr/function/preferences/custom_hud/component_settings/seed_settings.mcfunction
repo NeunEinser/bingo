@@ -21,7 +21,7 @@ execute \
 		data storage fetchr:custom_hud \
 		currentPlayer.components[{ id: "fetchr:seed" }].custom.fetchr{ onlyShowAfterRun: true } \
 	run tellraw @s [\
-		"[ ",\
+		"[",\
 		{\
 			"translate": "fetchr.preferences.custom_hud.component_settings.seed.only_show_after_run.title",\
 			"color": "#00c3ff",\
@@ -42,14 +42,14 @@ execute \
 			},\
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 75" }\
 		},\
-		" ]"\
+		"]"\
 	]
 execute \
 	if \
 		data storage fetchr:custom_hud \
 		currentPlayer.components[{ id: "fetchr:seed" }].custom.fetchr{ onlyShowAfterRun: true } \
 	run tellraw @s [\
-		"[ ",\
+		"[",\
 		{\
 			"translate": "fetchr.preferences.custom_hud.component_settings.seed.always_show.title",\
 			"color": "#00c3ff",\
@@ -70,7 +70,7 @@ execute \
 			},\
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 76" }\
 		},\
-		" ]"\
+		"]"\
 	]
 
 #>
@@ -89,7 +89,7 @@ execute \
 			"clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 9" },\
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 9" }\
 		},\
-		" ]"\
+		"]"\
 	]
 execute \
 	if score $hud/settings/pos_settings.slot fetchr.tmp matches 5..10 \
@@ -101,5 +101,5 @@ execute \
 			"clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 10" },\
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 10" }\
 		},\
-		" ]"\
+		"]"\
 	]

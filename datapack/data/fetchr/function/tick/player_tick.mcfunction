@@ -206,7 +206,7 @@ execute \
 					"clickEvent": { "action": "run_command", "value": "/trigger fetchr.resource_pack_check" },\
 					"click_event": { "action": "run_command", "command": "trigger fetchr.resource_pack_check" }\
 				},\
-				" ]"\
+				"]"\
 			]\
 		]\
 	}\

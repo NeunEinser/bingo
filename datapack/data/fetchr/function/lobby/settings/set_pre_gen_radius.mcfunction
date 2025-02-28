@@ -85,5 +85,5 @@ tellraw @s [\
 		"clickEvent": { "action": "suggest_command", "value": "/trigger fetchr.pre_gen_radius set " },\
 		"click_event": { "action": "suggest_command", "command": "/trigger fetchr.pre_gen_radius set "}\
 	},\
-	" ]"\
+	"]"\
 ]

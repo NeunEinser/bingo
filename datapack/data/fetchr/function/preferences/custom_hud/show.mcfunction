@@ -139,7 +139,7 @@ execute \
 			"clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref" },\
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref" }\
 		},\
-		" ]"\
+		"]"\
 	]
 execute \
 	if score @s fetchr.pref matches 11 \
@@ -151,5 +151,5 @@ execute \
 			"clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 5" },\
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 5" }\
 		},\
-		" ]"\
+		"]"\
 	]

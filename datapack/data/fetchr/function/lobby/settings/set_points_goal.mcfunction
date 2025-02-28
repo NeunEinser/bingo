@@ -99,5 +99,5 @@ tellraw @s [\
 		"clickEvent": { "action": "suggest_command", "value": "/trigger fetchr.points_race_minutes set "},\
 		"click_event": { "action": "suggest_command", "command": "/trigger fetchr.points_race_minutes set "}\
 	},\
-	" ]"\
+	"]"\
 ]

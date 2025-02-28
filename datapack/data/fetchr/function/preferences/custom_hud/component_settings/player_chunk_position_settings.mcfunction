@@ -37,7 +37,7 @@ tellraw @s [\
 		},\
 		"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 71" }\
 	},\
-	" ]"\
+	"]"\
 ]
 
 #>
@@ -56,7 +56,7 @@ execute \
 			"clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 9" },\
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 9" }\
 		},\
-		" ]"\
+		"]"\
 	]
 execute \
 	if score $hud/settings/chnk_pos_settings.slot fetchr.tmp matches 5..10 \
@@ -68,5 +68,5 @@ execute \
 			"clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 10" },\
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 10" }\
 		},\
-		" ]"\
+		"]"\
 	]

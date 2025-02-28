@@ -6,7 +6,7 @@
 # @within function fetchr:item_detection/goals/bingo/detect_bingo_and_20_no_bingo
 
 tellraw @a [\
-	"[ ",\
+	"[",\
 	{\
 		"text": "≡",\
 		"color": "#00c3ff",\
@@ -15,7 +15,7 @@ tellraw @a [\
 		"click_event": { "action": "run_command", "command": "trigger fetchr.menu" },\
 		"hover_event": { "action": "show_text", "value": { "translate": "fetchr.game.menu.hover_text" }}\
 	},\
-	" ] ",\
+	"] ",\
 	{\
 		"translate": "fetchr.goal.20_no_bingo.chat",\
 		"with": [\

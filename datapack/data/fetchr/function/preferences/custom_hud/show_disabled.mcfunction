@@ -56,7 +56,7 @@ data \
 #execute \
 	if data storage tmp.fetchr:preferences/hud hudComponent{ id: "fetchr:empty" } \
 	run data modify storage tmp.fetchr:preferences/hud addCol0 set value '[\
-		"[ ",\
+		"[",\
 		{\
 			"translate": "fetchr.preferences.custom_hud.add_disabled.add_col0.title",\
 			"color": "#00c3ff",\
@@ -65,14 +65,14 @@ data \
 				"contents": { "translate": "fetchr.preferences.custom_hud.add_disabled.add.description", "color": "gold" }\
 			}\
 		},\
-		" ]"\
+		"]"\
 	]'
 #NEUN_SCRIPT end
 #NEUN_SCRIPT since 65
 execute \
 	if data storage tmp.fetchr:preferences/hud hudComponent{ id: "fetchr:empty" } \
 	run data modify storage tmp.fetchr:preferences/hud addCol0 set value [\
-		"[ ",\
+		"[",\
 		{\
 			translate: "fetchr.preferences.custom_hud.add_disabled.add_col0.title",\
 			color: "#00c3ff",\
@@ -81,7 +81,7 @@ execute \
 				contents: { translate: "fetchr.preferences.custom_hud.add_disabled.add.description", color: "gold" }\
 			}\
 		},\
-		" ]"\
+		"]"\
 	]
 #NEUN_SCRIPT end
 # Work around for """WAI""" https://bugs.mojang.com/browse/MC-139625 :mad_neun:
@@ -92,7 +92,7 @@ data \
 #execute \
 	if data storage tmp.fetchr:preferences/hud hudComponent{ id: "fetchr:empty" } \
 	run data modify storage tmp.fetchr:preferences/hud addCol1 set value '[\
-		"[ ",\
+		"[",\
 		{\
 			"translate": "fetchr.preferences.custom_hud.add_disabled.add_col1.title",\
 			"color": "#00c3ff",\
@@ -101,7 +101,7 @@ data \
 				"contents": { "translate": "fetchr.preferences.custom_hud.add_disabled.add.description", "color": "gold" }\
 			}\
 		},\
-		" ]"\
+		"]"\
 	]'
 #execute \
 	unless data storage tmp.fetchr:preferences/hud { addCol0: '""' } \
@@ -112,7 +112,7 @@ data \
 execute \
 	if data storage tmp.fetchr:preferences/hud hudComponent{ id: "fetchr:empty" } \
 	run data modify storage tmp.fetchr:preferences/hud addCol1 set value [\
-		"[ ",\
+		"[",\
 		{\
 			translate: "fetchr.preferences.custom_hud.add_disabled.add_col1.title",\
 			color: "#00c3ff",\
@@ -121,7 +121,7 @@ execute \
 				contents: { translate: "fetchr.preferences.custom_hud.add_disabled.add.description", color: "gold" }\
 			}\
 		},\
-		" ]"\
+		"]"\
 	]
 execute \
 	unless data storage tmp.fetchr:preferences/hud { addCol0: "" } \
@@ -357,63 +357,63 @@ scoreboard players operation $preferences/hud.page_count fetchr.tmp /= 10 fetchr
 #NEUN_SCRIPT until 65
 #data \
 	modify storage tmp.fetchr:preferences/hud prev \
-	set value '[ "[ ", { "translate": "fetchr.preferences.previous", "color": "gray" }, " ]" ]'
+	set value '[ "[", { "translate": "fetchr.preferences.previous", "color": "gray" }, "]" ]'
 #data \
 	modify storage tmp.fetchr:preferences/hud next \
-	set value '[ "[ ", { "translate": "fetchr.preferences.next", "color": "gray" }, " ]" ]'
+	set value '[ "[", { "translate": "fetchr.preferences.next", "color": "gray" }, "]" ]'
 
 #execute \
 	if score @s fetchr.menu_page matches 1.. \
 	run data modify storage tmp.fetchr:preferences/hud prev set value '[\
-		"[ ",\
+		"[",\
 		{\
 			"translate": "fetchr.preferences.previous",\
 			"color": "#00c3ff",\
 			"clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 7" }\
 		},\
-		" ]"\
+		"]"\
 	]'
 #execute \
 	if score @s fetchr.menu_page < $preferences/hud.page_count fetchr.tmp \
 	run data modify storage tmp.fetchr:preferences/hud next set value '[\
-		"[ ",\
+		"[",\
 		{\
 			"translate": "fetchr.preferences.next",\
 			"color": "#00c3ff",\
 			"clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 8" }\
 		},\
-		" ]"\
+		"]"\
 	]'
 #NEUN_SCRIPT end
 #NEUN_SCRIPT since 65
 data \
 	modify storage tmp.fetchr:preferences/hud prev \
-	set value [ "[ ", { translate: "fetchr.preferences.previous", color: "gray" }, " ]" ]
+	set value [ "[", { translate: "fetchr.preferences.previous", color: "gray" }, "]" ]
 data \
 	modify storage tmp.fetchr:preferences/hud next \
-	set value [ "[ ", { translate: "fetchr.preferences.next", color: "gray" }, " ]" ]
+	set value [ "[", { translate: "fetchr.preferences.next", color: "gray" }, "]" ]
 
 execute \
 	if score @s fetchr.menu_page matches 1.. \
 	run data modify storage tmp.fetchr:preferences/hud prev set value [\
-		"[ ",\
+		"[",\
 		{\
 			translate: "fetchr.preferences.previous",\
 			color: "#00c3ff",\
 			clickEvent: { action: "run_command", value: "/trigger fetchr.pref set 7" }\
 		},\
-		" ]"\
+		"]"\
 	]
 execute \
 	if score @s fetchr.menu_page < $preferences/hud.page_count fetchr.tmp \
 	run data modify storage tmp.fetchr:preferences/hud next set value [\
-		"[ ",\
+		"[",\
 		{\
 			translate: "fetchr.preferences.next",\
 			color: "#00c3ff",\
 			clickEvent: { action: "run_command", value: "/trigger fetchr.pref set 8" }\
 		},\
-		" ]"\
+		"]"\
 	]
 #NEUN_SCRIPT end
 
@@ -423,8 +423,8 @@ scoreboard players add $preferences/hud.page fetchr.tmp 1
 #NEUN_SCRIPT until 65
 #execute \
 	unless data storage tmp.fetchr:preferences/hud {\
-		prev: '[ "[ ", { "translate": "fetchr.preferences.previous", "color": "gray" }, " ]" ]',\
-		next: '[ "[ ", { "translate": "fetchr.preferences.next", "color": "gray" }, " ]" ]'\
+		prev: '[ "[", { "translate": "fetchr.preferences.previous", "color": "gray" }, "]" ]',\
+		next: '[ "[", { "translate": "fetchr.preferences.next", "color": "gray" }, "]" ]'\
 	} \
 	run tellraw @s [\
 		"\n",\
@@ -444,8 +444,8 @@ scoreboard players add $preferences/hud.page fetchr.tmp 1
 #NEUN_SCRIPT since 65
 execute \
 	unless data storage tmp.fetchr:preferences/hud {\
-		prev: [ "[ ", { translate: "fetchr.preferences.previous", color: "gray" }, " ]" ],\
-		next: [ "[ ", { translate: "fetchr.preferences.next", color: "gray" }, " ]" ]\
+		prev: [ "[", { translate: "fetchr.preferences.previous", color: "gray" }, "]" ],\
+		next: [ "[", { translate: "fetchr.preferences.next", color: "gray" }, "]" ]\
 	} \
 	run tellraw @s [\
 		"\n",\
@@ -471,5 +471,5 @@ tellraw @s [\
 		"clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 5" },\
 		"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 5" }\
 	},\
-	" ]"\
+	"]"\
 ]

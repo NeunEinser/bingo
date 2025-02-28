@@ -32,7 +32,7 @@ data \
 #execute \
 	if data storage tmp.fetchr:preferences/hud hudComponent{ id: "fetchr:empty" } \
 	run data modify storage tmp.fetchr:preferences/hud move set value '[\
-		" [ ",\
+		" [",\
 		{\
 			"translate": "fetchr.preferences.custom_hud.adjust_col.move_left.title",\
 			"color": "#00c3ff",\
@@ -41,14 +41,14 @@ data \
 				"contents": { "translate": "fetchr.preferences.custom_hud.adjust_col.move_left_right.description", "color": "gold" }\
 			}\
 		},\
-		" ]"\
+		"]"\
 	]'
 #NEUN_SCRIPT end
 #NEUN_SCRIPT since 65
 execute \
 	if data storage tmp.fetchr:preferences/hud hudComponent{ id: "fetchr:empty" } \
 	run data modify storage tmp.fetchr:preferences/hud move set value [\
-		" [ ",\
+		" [",\
 		{\
 			translate: "fetchr.preferences.custom_hud.adjust_col.move_left.title",\
 			color: "#00c3ff",\
@@ -57,7 +57,7 @@ execute \
 				contents: { translate: "fetchr.preferences.custom_hud.adjust_col.move_left_right.description", color: "gold" }\
 			}\
 		},\
-		" ]"\
+		"]"\
 	]
 #NEUN_SCRIPT end
 
@@ -88,7 +88,7 @@ data remove storage tmp.fetchr:preferences/hud filledComponets[{ id: "fetchr:emp
 execute \
 	if data storage tmp.fetchr:preferences/hud filledComponets[5] \
 	run tellraw @s [\
-		"[ ",\
+		"[",\
 		{ "translate": "fetchr.preferences.custom_hud.adjust_col.move_up.title", "color": "gray" },\
 		" ] [ ",\
 		{\
@@ -105,7 +105,7 @@ execute \
 			},\
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 49" }\
 		},\
-		" ]",\
+		"]",\
 		{\
 			"storage": "tmp.fetchr:preferences/hud",\
 			"nbt": "move",\
@@ -113,7 +113,7 @@ execute \
 			"clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 50" },\
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 50" }\
 		},\
-		" [ ",\
+		" [",\
 		{\
 			"translate": "fetchr.preferences.custom_hud.adjust_col.remove.title",\
 			"color": "#00c3ff",\
@@ -128,7 +128,7 @@ execute \
 			},\
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 51" }\
 		},\
-		" ] ",\
+		"] ",\
 		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "filledComponets[5].settingsTextComponent", "interpret": true },\
 		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "filledComponets[5].name", "interpret": true }\
 	]
@@ -137,7 +137,7 @@ execute \
 	unless data storage tmp.fetchr:preferences/hud filledComponets[5] \
 	if data storage tmp.fetchr:preferences/hud filledComponets[4] \
 	run tellraw @s [\
-		"[ ",\
+		"[",\
 		{ "translate": "fetchr.preferences.custom_hud.adjust_col.move_up.title", "color": "gray" },\
 		" ] [ ",\
 		{\
@@ -154,7 +154,7 @@ execute \
 			},\
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 52" }\
 		},\
-		" ]",\
+		"]",\
 		{\
 			"storage": "tmp.fetchr:preferences/hud",\
 			"nbt": "move",\
@@ -162,7 +162,7 @@ execute \
 			"clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 53" },\
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 53" }\
 		},\
-		" [ ",\
+		" [",\
 		{\
 			"translate": "fetchr.preferences.custom_hud.adjust_col.remove.title",\
 			"color": "#00c3ff",\
@@ -177,7 +177,7 @@ execute \
 			},\
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 54" }\
 		},\
-		" ] ",\
+		"] ",\
 		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "filledComponets[4].settingsTextComponent", "interpret": true },\
 		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "filledComponets[4].name", "interpret": true }\
 	]
@@ -185,7 +185,7 @@ execute \
 	if data storage tmp.fetchr:preferences/hud filledComponets[5] \
 	if data storage tmp.fetchr:preferences/hud filledComponets[4] \
 	run tellraw @s [\
-		"[ ",\
+		"[",\
 		{\
 			"translate": "fetchr.preferences.custom_hud.adjust_col.move_up.title",\
 			"color": "#00c3ff",\
@@ -215,7 +215,7 @@ execute \
 			},\
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 52" }\
 		},\
-		" ]",\
+		"]",\
 		{\
 			"storage": "tmp.fetchr:preferences/hud",\
 			"nbt": "move",\
@@ -223,7 +223,7 @@ execute \
 			"clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 53" },\
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 53" }\
 		},\
-		" [ ",\
+		" [",\
 		{\
 			"translate": "fetchr.preferences.custom_hud.adjust_col.remove.title",\
 			"color": "#00c3ff",\
@@ -238,7 +238,7 @@ execute \
 			},\
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 54" }\
 		},\
-		" ] ",\
+		"] ",\
 		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "filledComponets[4].settingsTextComponent", "interpret": true },\
 		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "filledComponets[4].name", "interpret": true }\
 	]
@@ -247,7 +247,7 @@ execute \
 	unless data storage tmp.fetchr:preferences/hud filledComponets[4] \
 	if data storage tmp.fetchr:preferences/hud filledComponets[3] \
 	run tellraw @s [\
-		"[ ",\
+		"[",\
 		{ "translate": "fetchr.preferences.custom_hud.adjust_col.move_up.title", "color": "gray" },\
 		" ] [ ",\
 		{\
@@ -264,7 +264,7 @@ execute \
 			},\
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 55" }\
 		},\
-		" ]",\
+		"]",\
 		{\
 			"storage": "tmp.fetchr:preferences/hud",\
 			"nbt": "move",\
@@ -272,7 +272,7 @@ execute \
 			"clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 56" },\
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 56" }\
 		},\
-		" [ ",\
+		" [",\
 		{\
 			"translate": "fetchr.preferences.custom_hud.adjust_col.remove.title",\
 			"color": "#00c3ff",\
@@ -287,7 +287,7 @@ execute \
 			},\
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 57" }\
 		},\
-		" ] ",\
+		"] ",\
 		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "filledComponets[3].settingsTextComponent", "interpret": true },\
 		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "filledComponets[3].name", "interpret": true }\
 	]
@@ -295,7 +295,7 @@ execute \
 	if data storage tmp.fetchr:preferences/hud filledComponets[4] \
 	if data storage tmp.fetchr:preferences/hud filledComponets[3] \
 	run tellraw @s [\
-		"[ ",\
+		"[",\
 		{\
 			"translate": "fetchr.preferences.custom_hud.adjust_col.move_up.title",\
 			"color": "#00c3ff",\
@@ -325,7 +325,7 @@ execute \
 			},\
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 55" }\
 		},\
-		" ]",\
+		"]",\
 		{\
 			"storage": "tmp.fetchr:preferences/hud",\
 			"nbt": "move",\
@@ -333,7 +333,7 @@ execute \
 			"clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 56" },\
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 56" }\
 		},\
-		" [ ",\
+		" [",\
 		{\
 			"translate": "fetchr.preferences.custom_hud.adjust_col.remove.title",\
 			"color": "#00c3ff",\
@@ -348,7 +348,7 @@ execute \
 			},\
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 57" }\
 		},\
-		" ] ",\
+		"] ",\
 		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "filledComponets[3].settingsTextComponent", "interpret": true },\
 		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "filledComponets[3].name", "interpret": true }\
 	]
@@ -357,7 +357,7 @@ execute \
 	unless data storage tmp.fetchr:preferences/hud filledComponets[3] \
 	if data storage tmp.fetchr:preferences/hud filledComponets[2] \
 	run tellraw @s [\
-		"[ ",\
+		"[",\
 		{ "translate": "fetchr.preferences.custom_hud.adjust_col.move_up.title", "color": "gray" },\
 		" ] [ ",\
 		{\
@@ -374,7 +374,7 @@ execute \
 			},\
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 58" }\
 		},\
-		" ]",\
+		"]",\
 		{\
 			"storage": "tmp.fetchr:preferences/hud",\
 			"nbt": "move",\
@@ -382,7 +382,7 @@ execute \
 			"clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 59" },\
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 59" }\
 		},\
-		" [ ",\
+		" [",\
 		{\
 			"translate": "fetchr.preferences.custom_hud.adjust_col.remove.title",\
 			"color": "#00c3ff",\
@@ -397,7 +397,7 @@ execute \
 			},\
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 60" }\
 		},\
-		" ] ",\
+		"] ",\
 		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "filledComponets[2].settingsTextComponent", "interpret": true },\
 		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "filledComponets[2].name", "interpret": true }\
 	]
@@ -405,7 +405,7 @@ execute \
 	if data storage tmp.fetchr:preferences/hud filledComponets[3] \
 	if data storage tmp.fetchr:preferences/hud filledComponets[2] \
 	run tellraw @s [\
-		"[ ",\
+		"[",\
 		{\
 			"translate": "fetchr.preferences.custom_hud.adjust_col.move_up.title",\
 			"color": "#00c3ff",\
@@ -435,7 +435,7 @@ execute \
 			},\
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 58" }\
 		},\
-		" ]",\
+		"]",\
 		{\
 			"storage": "tmp.fetchr:preferences/hud",\
 			"nbt": "move",\
@@ -443,7 +443,7 @@ execute \
 			"clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 59" },\
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 59" }\
 		},\
-		" [ ",\
+		" [",\
 		{\
 			"translate": "fetchr.preferences.custom_hud.adjust_col.remove.title",\
 			"color": "#00c3ff",\
@@ -458,7 +458,7 @@ execute \
 			},\
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 60" }\
 		},\
-		" ] ",\
+		"] ",\
 		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "filledComponets[2].settingsTextComponent", "interpret": true },\
 		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "filledComponets[2].name", "interpret": true }\
 	]
@@ -467,7 +467,7 @@ execute \
 	unless data storage tmp.fetchr:preferences/hud filledComponets[2] \
 	if data storage tmp.fetchr:preferences/hud filledComponets[1] \
 	run tellraw @s [\
-		"[ ",\
+		"[",\
 		{ "translate": "fetchr.preferences.custom_hud.adjust_col.move_up.title", "color": "gray" },\
 		" ] [ ",\
 		{\
@@ -484,7 +484,7 @@ execute \
 			},\
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 61" }\
 		},\
-		" ]",\
+		"]",\
 		{\
 			"storage": "tmp.fetchr:preferences/hud",\
 			"nbt": "move",\
@@ -492,7 +492,7 @@ execute \
 			"clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 62" },\
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 62" }\
 		},\
-		" [ ",\
+		" [",\
 		{\
 			"translate": "fetchr.preferences.custom_hud.adjust_col.remove.title",\
 			"color": "#00c3ff",\
@@ -507,7 +507,7 @@ execute \
 			},\
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 63" }\
 		},\
-		" ] ",\
+		"] ",\
 		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "filledComponets[1].settingsTextComponent", "interpret": true },\
 		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "filledComponets[1].name", "interpret": true }\
 	]
@@ -515,7 +515,7 @@ execute \
 	if data storage tmp.fetchr:preferences/hud filledComponets[2] \
 	if data storage tmp.fetchr:preferences/hud filledComponets[1] \
 	run tellraw @s [\
-		"[ ",\
+		"[",\
 		{\
 			"translate": "fetchr.preferences.custom_hud.adjust_col.move_up.title",\
 			"color": "#00c3ff",\
@@ -545,7 +545,7 @@ execute \
 			},\
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 61" }\
 		},\
-		" ]",\
+		"]",\
 		{\
 			"storage": "tmp.fetchr:preferences/hud",\
 			"nbt": "move",\
@@ -553,7 +553,7 @@ execute \
 			"clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 62" },\
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 62" }\
 		},\
-		" [ ",\
+		" [",\
 		{\
 			"translate": "fetchr.preferences.custom_hud.adjust_col.remove.title",\
 			"color": "#00c3ff",\
@@ -568,7 +568,7 @@ execute \
 			},\
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 63" }\
 		},\
-		" ] ",\
+		"] ",\
 		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "filledComponets[1].settingsTextComponent", "interpret": true },\
 		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "filledComponets[1].name", "interpret": true }\
 	]
@@ -577,11 +577,11 @@ execute \
 	unless data storage tmp.fetchr:preferences/hud filledComponets[1] \
 	if data storage tmp.fetchr:preferences/hud filledComponets[0] \
 	run tellraw @s [\
-		"[ ",\
+		"[",\
 		{ "translate": "fetchr.preferences.custom_hud.adjust_col.move_up.title", "color": "gray" },\
 		" ] [ ",\
 		{ "translate": "fetchr.preferences.custom_hud.adjust_col.move_down.title", "color": "gray" },\
-		" ]",\
+		"]",\
 		{\
 			"storage": "tmp.fetchr:preferences/hud",\
 			"nbt": "move",\
@@ -589,7 +589,7 @@ execute \
 			"clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 64" },\
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 64" }\
 		},\
-		" [ ",\
+		" [",\
 		{\
 			"translate": "fetchr.preferences.custom_hud.adjust_col.remove.title",\
 			"color": "#00c3ff",\
@@ -604,7 +604,7 @@ execute \
 			},\
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 65" }\
 		},\
-		" ] ",\
+		"] ",\
 		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "filledComponets[0].settingsTextComponent", "interpret": true },\
 		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "filledComponets[0].name", "interpret": true }\
 	]
@@ -612,7 +612,7 @@ execute \
 	if data storage tmp.fetchr:preferences/hud filledComponets[1] \
 	if data storage tmp.fetchr:preferences/hud filledComponets[0] \
 	run tellraw @s [\
-		"[ ",\
+		"[",\
 		{\
 			"translate": "fetchr.preferences.custom_hud.adjust_col.move_up.title",\
 			"color": "#00c3ff",\
@@ -629,7 +629,7 @@ execute \
 		},\
 		" ] [ ",\
 		{ "translate": "fetchr.preferences.custom_hud.adjust_col.move_down.title", "color": "gray" },\
-		" ]",\
+		"]",\
 		{\
 			"storage": "tmp.fetchr:preferences/hud",\
 			"nbt": "move",\
@@ -637,7 +637,7 @@ execute \
 			"clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 64" },\
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 64" }\
 		},\
-		" [ ",\
+		" [",\
 		{\
 			"translate": "fetchr.preferences.custom_hud.adjust_col.remove.title",\
 			"color": "#00c3ff",\
@@ -652,7 +652,7 @@ execute \
 			},\
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 65" }\
 		},\
-		" ] ",\
+		"] ",\
 		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "filledComponets[0].settingsTextComponent", "interpret": true },\
 		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "filledComponets[0].name", "interpret": true }\
 	]
@@ -674,7 +674,7 @@ execute \
 			"clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 66" },\
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 66" }\
 		},\
-		" ]"\
+		"]"\
 	]
 execute \
 	if data storage tmp.fetchr:preferences/hud filledComponets[5] \
@@ -688,5 +688,5 @@ execute \
 		},\
 		" ] [ ",\
 		{ "translate": "fetchr.preferences.custom_hud.adjust_col.add_spacer", "color": "gray" },\
-		" ]"\
+		"]"\
 	]

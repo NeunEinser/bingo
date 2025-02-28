@@ -17,7 +17,7 @@ execute \
 	unless data storage tmp.fetchr:preferences menuOption{ disabled: true } \
 	unless data storage tmp.fetchr:preferences menuOption{ hidden: true } \
 	run tellraw @s [\
-		"[ ",\
+		"[",\
 		{\
 			"storage": "tmp.fetchr:preferences",\
 			"nbt": "menuOption.clickEvent",\
@@ -49,14 +49,14 @@ execute \
 				}\
 			]\
 		},\
-		" ]"\
+		"]"\
 	]
 
 execute \
 	if data storage tmp.fetchr:preferences menuOption{ disabled: true } \
 	unless data storage tmp.fetchr:preferences menuOption{ hidden: true } \
 	run tellraw @s [\
-		"[ ",\
+		"[",\
 		{\
 			"storage": "tmp.fetchr:preferences",\
 			"nbt": "menuOption.textComponent",\
@@ -81,7 +81,7 @@ execute \
 				}\
 			}\
 		},\
-		" ]"\
+		"]"\
 	]
 
 data remove storage io.fetchr:preferences menuOptions[0]
