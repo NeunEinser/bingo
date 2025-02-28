@@ -6,10 +6,10 @@
 # @context entity Player whose hud is currently being updated
 
 scoreboard players remove $custom_hud/width.padding fetchr.io 4
-#NEUN_SCRIPT until 65
+#NEUN_SCRIPT until 69
 #data modify storage io.fetchr:custom_hud component.iconWidth set value '"\\u000e"'
 #NEUN_SCRIPT end
-#NEUN_SCRIPT since 65
+#NEUN_SCRIPT since 69
 data modify storage io.fetchr:custom_hud component.iconWidth set value "\u000e"
 #NEUN_SCRIPT end
 

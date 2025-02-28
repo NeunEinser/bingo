@@ -9,7 +9,7 @@
 # 	storage fetchr:custom_hud components
 # 	storage fetchr:custom_hud currentPlayer.components
 
-#NEUN_SCRIPT until 65
+#NEUN_SCRIPT until 69
 #execute \
 	if entity @s[tag=!fetchr.enable_manual_gamemode_switch] \
 	run data \
@@ -33,7 +33,7 @@
 			{ "translate": "fetchr.preferences.spectator_mode.disabled" }\
 		]'
 #NEUN_SCRIPT end
-#NEUN_SCRIPT since 65
+#NEUN_SCRIPT since 69
 execute \
 	if entity @s[tag=!fetchr.enable_manual_gamemode_switch] \
 	run data \

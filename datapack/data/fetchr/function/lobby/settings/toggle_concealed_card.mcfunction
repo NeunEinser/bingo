@@ -38,7 +38,7 @@ execute \
 		{ "translate": "fetchr.lobby.settings.concealed_card.toggle.info", "color": "gray", "italic": true }\
 	]
 
-#NEUN_SCRIPT until 65
+#NEUN_SCRIPT until 69
 #execute \
 	if score $concealed_card fetchr.settings matches 0 \
 	run data \
@@ -54,7 +54,7 @@ execute \
 			data.front_text.messages[3] \
 		set value '{ "translate": "fetchr.lobby.settings.concealed_card.sign.on", "color": "green" }'
 #NEUN_SCRIPT end
-#NEUN_SCRIPT since 65
+#NEUN_SCRIPT since 69
 execute \
 	if score $concealed_card fetchr.settings matches 0 \
 	run data \

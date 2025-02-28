@@ -196,7 +196,7 @@ scoreboard players set 5 91.timer.intern 5
 # @internal
 #declare score_holder $last_worldborder_value
 
-#NEUN_SCRIPT until 65
+#NEUN_SCRIPT until 69
 #data merge storage neun_einser.timer:display {\
 	"hh:mm:ss.s": '[\
 		{ "storage": "neun_einser.timer:display", "nbt": "internal.hours", "interpret": true },\
@@ -215,7 +215,7 @@ scoreboard players set 5 91.timer.intern 5
 	]'\
 }
 #NEUN_SCRIPT end
-#NEUN_SCRIPT since 65
+#NEUN_SCRIPT since 69
 data merge storage neun_einser.timer:display {\
 	"hh:mm:ss.s": [\
 		{ storage: "neun_einser.timer:display", nbt: "internal.hours", interpret: true },\

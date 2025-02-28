@@ -1269,7 +1269,7 @@ forceload add 0 0
 		team modify fetchr.yellow color yellow
 
 	## set completed backgrounds
-		#NEUN_SCRIPT until 65
+		#NEUN_SCRIPT until 69
 		#data modify storage fetchr:card completedBackgroundTemplates set value []
 		#data modify storage fetchr:card completedBackgroundTemplates append value [\
 			'"\\uf000"'\
@@ -1328,7 +1328,7 @@ forceload add 0 0
 			'"\\uf044"', '"\\uf004"', '"\\uf045"', '"\\uf011"', '"\\uf046"', '"\\uf012"', '"\\uf047"', '"\\uf048"'\
 		]
 		#NEUN_SCRIPT end
-		#NEUN_SCRIPT since 65
+		#NEUN_SCRIPT since 69
 		data modify storage fetchr:card completedBackgroundTemplates set value []
 		data modify storage fetchr:card completedBackgroundTemplates append value [\
 			"\uf000"\
@@ -1457,7 +1457,7 @@ forceload add 0 0
 		unless data storage fetchr:custom_hud default[4] \
 		run function fetchr:init/initialize_hud_components/fill_default_col0
 	
-	#NEUN_SCRIPT until 65
+	#NEUN_SCRIPT until 69
 	#execute \
 		unless data storage tmp.fetchr:init/hud columns[1][5] \
 		run data \
@@ -1467,7 +1467,7 @@ forceload add 0 0
 			slot_id: 5b\
 		}
 	#NEUN_SCRIPT end
-	#NEUN_SCRIPT since 65
+	#NEUN_SCRIPT since 69
 	execute \
 		unless data storage tmp.fetchr:init/hud columns[1][5] \
 		run data \

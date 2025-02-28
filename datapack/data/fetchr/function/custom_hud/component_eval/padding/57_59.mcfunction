@@ -4,7 +4,7 @@
 #
 # @within function fetchr:custom_hud/component_eval/padding/54_62
 
-#NEUN_SCRIPT until 65
+#NEUN_SCRIPT until 69
 #execute \
 	if score $custom_hud/width.padding fetchr.io matches 57 \
 	run data modify storage io.fetchr:custom_hud component.padding set value '"\\u0039"'
@@ -15,7 +15,7 @@
 	if score $custom_hud/width.padding fetchr.io matches 59 \
 	run data modify storage io.fetchr:custom_hud component.padding set value '"\\u003b"'
 #NEUN_SCRIPT end
-#NEUN_SCRIPT since 65
+#NEUN_SCRIPT since 69
 execute \
 	if score $custom_hud/width.padding fetchr.io matches 57 \
 	run data modify storage io.fetchr:custom_hud component.padding set value "\u0039"

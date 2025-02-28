@@ -5,10 +5,10 @@
 data \
 	modify storage io.fetchr:custom_hud component \
 	set from storage fetchr:custom_hud default[{ id: "fetchr:timer" }]
-#NEUN_SCRIPT until 65
+#NEUN_SCRIPT until 69
 #data modify storage io.fetchr:custom_hud component merge value { icon: '"\\u0132"', changed: true }
 #NEUN_SCRIPT end
-#NEUN_SCRIPT since 65
+#NEUN_SCRIPT since 69
 data modify storage io.fetchr:custom_hud component merge value { icon: "\u0132", changed: true }
 #NEUN_SCRIPT end
 data \
@@ -35,12 +35,12 @@ execute \
 	if score $custom_hud/timer.daytime fetchr.tmp matches 20703.. \
 	run function fetchr:custom_hud/components/timer/update/20703_23745
 
-#NEUN_SCRIPT until 65
+#NEUN_SCRIPT until 69
 #execute \
 	if score $game_state fetchr.state matches 0..1 \
 	run data modify storage io.fetchr:custom_hud component.icon set value '"\\u0100"'
 #NEUN_SCRIPT end
-#NEUN_SCRIPT since 65
+#NEUN_SCRIPT since 69
 execute \
 	if score $game_state fetchr.state matches 0..1 \
 	run data modify storage io.fetchr:custom_hud component.icon set value "\u0100"
@@ -75,12 +75,12 @@ execute \
 	run scoreboard players add $custom_hud/timer.padding fetchr.tmp 6
 
 # hide timer during pre-gen
-#NEUN_SCRIPT until 65
+#NEUN_SCRIPT until 69
 #execute \
 	if score $game_state fetchr.state matches ..2 \
 	run data modify storage io.fetchr:custom_hud component.textComponent set value '"0"'
 #NEUN_SCRIPT end
-#NEUN_SCRIPT since 65
+#NEUN_SCRIPT since 69
 execute \
 	if score $game_state fetchr.state matches ..2 \
 	run data modify storage io.fetchr:custom_hud component.textComponent set value "0"

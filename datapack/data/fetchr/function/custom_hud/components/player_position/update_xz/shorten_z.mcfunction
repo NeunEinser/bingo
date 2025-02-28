@@ -95,7 +95,7 @@ execute \
 	if score $custom_hud/player_pos.z fetchr.tmp matches ..-1 \
 	run scoreboard players operation $custom_hud/player_pos.int_z fetchr.tmp *= -1 fetchr.const
 
-#NEUN_SCRIPT until 65
+#NEUN_SCRIPT until 69
 #data \
 	modify storage io.fetchr:custom_hud component.textComponent set value '[\
 	{ "score": { "name": "$custom_hud/player_pos.x", "objective": "fetchr.tmp" }},\
@@ -107,7 +107,7 @@ execute \
 	{ "storage": "tmp.fetchr:custom_hud", "nbt": "zChar" }\
 ]'
 #NEUN_SCRIPT end
-#NEUN_SCRIPT since 65
+#NEUN_SCRIPT since 69
 data \
 	modify storage io.fetchr:custom_hud component.textComponent set value [\
 	{ score: { name: "$custom_hud/player_pos.x", objective: "fetchr.tmp" }},\

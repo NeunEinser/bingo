@@ -6,7 +6,7 @@
 # 	function function fetchr:util/item_nbt_to_command_argument
 # 	function function fetchr:util/item_nbt_to_command_argument_iter
 
-#NEUN_SCRIPT until 65
+#NEUN_SCRIPT until 69
 #data \
 	modify block 7 0 7 front_text.messages[0] \
 	set value '{ "storage": "tmp.fetchr:util", "nbt": "components" }'
@@ -18,7 +18,7 @@
 
 #data modify storage io.fetchr:util string set string storage io.fetchr:util nbt 2
 #NEUN_SCRIPT end
-#NEUN_SCRIPT since 65
+#NEUN_SCRIPT since 69
 data \
 	modify block 7 0 7 front_text.messages[0] \
 	set value { storage: "tmp.fetchr:util", nbt: "components" }

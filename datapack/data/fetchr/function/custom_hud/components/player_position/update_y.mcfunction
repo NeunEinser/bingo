@@ -8,7 +8,7 @@
 data \
 	modify storage io.fetchr:custom_hud component \
 	set from storage fetchr:custom_hud currentPlayer.components[{ id: "fetchr:y_position" }]
-#NEUN_SCRIPT until 65
+#NEUN_SCRIPT until 69
 #data \
 	modify storage io.fetchr:custom_hud component \
 	merge value {\
@@ -19,7 +19,7 @@ data \
 		changed: true\
 	}
 #NEUN_SCRIPT end
-#NEUN_SCRIPT since 65
+#NEUN_SCRIPT since 69
 data \
 	modify storage io.fetchr:custom_hud component \
 	merge value {\

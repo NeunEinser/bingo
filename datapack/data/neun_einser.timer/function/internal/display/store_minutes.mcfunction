@@ -4,7 +4,7 @@
 #
 # @internal
 
-#NEUN_SCRIPT until 65
+#NEUN_SCRIPT until 69
 #data merge storage neun_einser.timer:display {\
 	internal: { \
 		minuteSeparator: [":"],\
@@ -15,7 +15,7 @@
 	}\
 }
 #NEUN_SCRIPT end
-#NEUN_SCRIPT since 65
+#NEUN_SCRIPT since 69
 data merge storage neun_einser.timer:display {\
 	internal: { \
 		minuteSeparator: [":"],\

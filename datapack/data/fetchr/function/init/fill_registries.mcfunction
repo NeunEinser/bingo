@@ -20,7 +20,7 @@
 # Probably should just keep the order of initial definition
 
 # categories
-#NEUN_SCRIPT until 62
+#NEUN_SCRIPT until 69
 #data \
 	modify storage fetchr:registries categories append value {\
 	id: "fetchr:amethyst",\
@@ -306,7 +306,7 @@
 	tags: [ "fetchr:default" ]\
 }
 #NEUN_SCRIPT end
-#NEUN_SCRIPT since 62
+#NEUN_SCRIPT until 69
 data \
 	modify storage fetchr:registries categories append value {\
 	id: "fetchr:amethyst",\
@@ -616,7 +616,7 @@ data \
 }
 
 # 0002: pumpkin_pie
-#NEUN_SCRIPT until 66
+#NEUN_SCRIPT until 69
 #data \
 	modify storage fetchr:registries items append value {\
 	id: "fetchr:pumpkin_pie",\
@@ -626,7 +626,7 @@ data \
 	categories: [ "fetchr:pumpkin", "fetchr:egg" ]\
 }
 #NEUN_SCRIPT end
-#NEUN_SCRIPT since 66
+#NEUN_SCRIPT until 69
 data \
 	modify storage fetchr:registries items append value {\
 	id: "fetchr:pumpkin_pie",\
@@ -648,7 +648,7 @@ data \
 }
 
 # 0004: cake
-#NEUN_SCRIPT until 66
+#NEUN_SCRIPT until 69
 #data \
 	modify storage fetchr:registries items append value {\
 	id: "fetchr:cake",\
@@ -657,7 +657,7 @@ data \
 	icon: "0004",\
 	categories: [ "fetchr:milk", "fetchr:egg" ]\
 #NEUN_SCRIPT end
-#NEUN_SCRIPT since 66
+#NEUN_SCRIPT until 69
 data \
 	modify storage fetchr:registries items append value {\
 	id: "fetchr:cake",\
@@ -734,7 +734,7 @@ data \
 }
 
 # 000b: dead_bush
-#NEUN_SCRIPT until 66
+#NEUN_SCRIPT until 69
 #data \
 	modify storage fetchr:registries items append value {\
 	id: "fetchr:dead_bush",\
@@ -744,7 +744,7 @@ data \
 	categories: [ { id: "fetchr:shearable", weight: 2 }, { id: "fetchr:warm_biome", weight: 6 } ]\
 }
 #NEUN_SCRIPT end
-#NEUN_SCRIPT since 66
+#NEUN_SCRIPT until 69
 data \
 	modify storage fetchr:registries items append value {\
 	id: "fetchr:dead_bush",\
@@ -839,7 +839,7 @@ data \
 }
 
 # 0014: slime_ball
-#NEUN_SCRIPT until 66
+#NEUN_SCRIPT until 69
 #data \
 	modify storage fetchr:registries items append value {\
 	id: "fetchr:slime_ball",\
@@ -850,7 +850,7 @@ data \
 	weight: 2\
 }
 #NEUN_SCRIPT end
-#NEUN_SCRIPT since 66
+#NEUN_SCRIPT until 69
 data \
 	modify storage fetchr:registries items append value {\
 	id: "fetchr:slime_ball",\
@@ -942,7 +942,7 @@ data \
 	categories: [ "fetchr:shipwreck" ]\
 }
 
-#NEUN_SCRIPT since 62
+#NEUN_SCRIPT until 69
 # 001d: lodestone_compass
 data \
 	modify storage fetchr:registries items append value {\
@@ -978,7 +978,7 @@ data \
 	categories: [ "fetchr:diamond" ]\
 }
 
-#NEUN_SCRIPT since 66
+#NEUN_SCRIPT until 69
 # 001f: cactus_flower
 data \
 	modify storage fetchr:registries items append value {\
@@ -1402,7 +1402,7 @@ data \
 	categories: [ "fetchr:fish" ]\
 }
 
-#NEUN_SCRIPT since 66
+#NEUN_SCRIPT until 69
 # 0047: firefly_bush
 data \
 	modify storage fetchr:registries items append value {\
@@ -1426,7 +1426,7 @@ data \
 }
 
 # 004a: lead
-#NEUN_SCRIPT until 66
+#NEUN_SCRIPT until 69
 #data \
 	modify storage fetchr:registries items append value {\
 	id: "fetchr:lead",\
@@ -1437,7 +1437,7 @@ data \
 	weight: 2\
 }
 #NEUN_SCRIPT end
-#NEUN_SCRIPT since 66
+#NEUN_SCRIPT until 69
 data \
 	modify storage fetchr:registries items append value {\
 	id: "fetchr:lead",\
@@ -1500,7 +1500,7 @@ data \
 }
 
 # 0050: short_dry_grass
-#NEUN_SCRIPT since 66
+#NEUN_SCRIPT until 69
 data \
 	modify storage fetchr:registries items append value {\
 	id: "fetchr:short_dry_grass",\
@@ -1533,7 +1533,7 @@ data \
 	weight: 2\
 }
 
-#NEUN_SCRIPT since 66
+#NEUN_SCRIPT until 69
 # 0053: blue_egg
 data \
 	modify storage fetchr:registries items append value {\
@@ -1545,7 +1545,7 @@ data \
 }
 #NEUN_SCRIPT end
 
-#NEUN_SCRIPT since 67
+#NEUN_SCRIPT until 69
 # 0054: bush
 data \
 	modify storage fetchr:registries items append value {\
@@ -1715,7 +1715,7 @@ data \
 }
 
 # 0064: blue_trimmed_leather_boots
-#NEUN_SCRIPT until 65
+#NEUN_SCRIPT until 69
 #data \
 	modify storage fetchr:registries items append value {\
 	id: "fetchr:blue_trimmed_leather_boots",\
@@ -1740,7 +1740,7 @@ data \
 	categories: [ "fetchr:shipwreck" ]\
 }
 #NEUN_SCRIPT end
-#NEUN_SCRIPT since 65
+#NEUN_SCRIPT since 69
 data \
 	modify storage fetchr:registries items append value {\
 	id: "fetchr:blue_trimmed_leather_boots",\
@@ -1886,7 +1886,7 @@ data \
 }
 
 # 0070: poison_arrow
-#NEUN_SCRIPT until 66
+#NEUN_SCRIPT until 69
 #data \
 	modify storage fetchr:registries items append value {\
 	id: "fetchr:poison_arrow",\
@@ -1899,7 +1899,7 @@ data \
 	categories: [{ id: "fetchr:skeleton_drops" }, { id: "fetchr:nighttime_mob_drops", weight: 3 }]\
 }
 #NEUN_SCRIPT end
-#NEUN_SCRIPT since 66
+#NEUN_SCRIPT until 69
 data \
 	modify storage fetchr:registries items append value {\
 	id: "fetchr:poison_arrow",\
@@ -2249,7 +2249,7 @@ data \
 }
 
 # 011c: sticky_piston
-#NEUN_SCRIPT until 66
+#NEUN_SCRIPT until 69
 #data \
 	modify storage fetchr:registries items append value {\
 	id: "fetchr:sticky_piston",\
@@ -2259,7 +2259,7 @@ data \
 	categories: [{ id: "fetchr:piston" }, { id : "fetchr:nighttime_mob_drops", weight: 2 }]\
 }
 #NEUN_SCRIPT end
-#NEUN_SCRIPT since 66
+#NEUN_SCRIPT until 69
 data \
 	modify storage fetchr:registries items append value {\
 	id: "fetchr:sticky_piston",\
@@ -2534,7 +2534,7 @@ data \
 }
 #NEUN_SCRIPT end
 
-#NEUN_SCRIPT since 62
+#NEUN_SCRIPT until 69
 # 0136: lodestone
 data \
 	modify storage fetchr:registries items append value {\
@@ -2552,7 +2552,7 @@ data modify storage fetchr:registries structures append value "fetchr:card_gener
 data modify storage fetchr:registries structures append value "fetchr:tutorial"
 
 # hud components
-#NEUN_SCRIPT until 65
+#NEUN_SCRIPT until 69
 #data \
 	modify storage fetchr:registries hud_components append value {\
 	id: "fetchr:timer",\
@@ -2722,7 +2722,7 @@ data modify storage fetchr:registries structures append value "fetchr:tutorial"
 	clickEvent: '{ "text": "", "clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 69" }}'\
 }
 #NEUN_SCRIPT end
-#NEUN_SCRIPT since 65
+#NEUN_SCRIPT since 69
 data \
 	modify storage fetchr:registries hud_components append value {\
 	id: "fetchr:timer",\

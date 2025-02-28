@@ -22,7 +22,7 @@ execute \
 		set from storage tmp.fetchr:init/hud cur.iconSeparator
 data remove storage tmp.fetchr:init/hud cur.iconSeparator
 
-#NEUN_SCRIPT until 65
+#NEUN_SCRIPT until 69
 #setblock 0 15 0 minecraft:oak_sign{ front_text: { messages: [\
 	'[\
 		"[",\
@@ -45,7 +45,7 @@ data remove storage tmp.fetchr:init/hud cur.iconSeparator
 	'""'\
 ]}}
 #NEUN_SCRIPT end
-#NEUN_SCRIPT since 65
+#NEUN_SCRIPT since 69
 setblock 0 15 0 minecraft:oak_sign{ front_text: { messages: [\
 	[\
 		"[",\

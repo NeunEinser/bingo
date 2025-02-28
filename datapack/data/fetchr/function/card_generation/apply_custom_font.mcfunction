@@ -5,7 +5,7 @@
 # @within function fetchr:card_generation/generate_slot
 # @params ::fetchr::storage::card::CardSlot
 
-#NEUN_SCRIPT until 65
+#NEUN_SCRIPT until 69
 #$data \
 	modify storage fetchr:card slots[-1].icon_display \
 	set value '{ "text": "\\u$(icon)", "font": "$(current_font)" }'
@@ -20,7 +20,7 @@
 	]'
 #NEUN_SCRIPT end
 
-#NEUN_SCRIPT since 65
+#NEUN_SCRIPT since 69
 $data \
 	modify storage fetchr:card slots[-1].icon_display \
 	set value { text: "\u$(icon)", font: "$(current_font)" }

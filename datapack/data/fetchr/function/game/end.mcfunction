@@ -46,7 +46,7 @@ team leave @a[predicate=fetchr:is_in_lobby]
 tag @a remove fetchr.automatically_join_game
 tag @s add fetchr.automatically_join_game
 
-#NEUN_SCRIPT until 65
+#NEUN_SCRIPT until 69
 #execute \
 	in fetchr:lobby \
 	as @e[type=minecraft:marker, tag=fetchr.join_game_sign, distance=0..] \
@@ -80,7 +80,7 @@ tag @s add fetchr.automatically_join_game
 		'{ "translate": "fetchr.lobby.card_generation.join_game.sign.line4", "bold": true, "color": "#8eedeb" }'\
 	]
 #NEUN_SCRIPT end
-#NEUN_SCRIPT since 65
+#NEUN_SCRIPT since 69
 execute \
 	in fetchr:lobby \
 	as @e[type=minecraft:marker, tag=fetchr.join_game_sign, distance=0..] \

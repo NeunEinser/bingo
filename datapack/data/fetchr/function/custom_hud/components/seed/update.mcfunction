@@ -6,14 +6,14 @@ data \
 	modify storage io.fetchr:custom_hud component \
 	set from storage fetchr:custom_hud currentPlayer.components[{ id: "fetchr:seed" }]
 data remove storage io.fetchr:custom_hud component.evaluated
-#NEUN_SCRIPT until 65
+#NEUN_SCRIPT until 69
 #data \
 	modify storage io.fetchr:custom_hud component merge value {\
 	textComponent: '{ "score": { "objective": "fetchr.state", "name": "$seed" }}',\
 	changed: true\
 }
 #NEUN_SCRIPT end
-#NEUN_SCRIPT since 65
+#NEUN_SCRIPT since 69
 data \
 	modify storage io.fetchr:custom_hud component merge value {\
 	textComponent: { score: { objective: "fetchr.state", name: "$seed" }},\

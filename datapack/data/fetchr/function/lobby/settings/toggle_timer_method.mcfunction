@@ -28,7 +28,7 @@ execute \
 	if score $use_in_game_time fetchr.settings matches 1 \
 	run tellraw @s { "translate": "fetchr.lobby.settings.timer_method.toggle.in_game_time", "color": "green" }
 
-#NEUN_SCRIPT until 65
+#NEUN_SCRIPT until 69
 #execute \
 	if score $use_in_game_time fetchr.settings matches 0 \
 	as @e[type=minecraft:marker, tag=fetchr.timer_method_sign, distance=0.., limit=2] \
@@ -42,7 +42,7 @@ execute \
 		modify entity @s data.front_text.messages[3] \
 		set value '{ "translate": "fetchr.lobby.settings.timer_method.sign.in_game_time", "color": "green" }'
 #NEUN_SCRIPT end
-#NEUN_SCRIPT since 65
+#NEUN_SCRIPT since 69
 execute \
 	if score $use_in_game_time fetchr.settings matches 0 \
 	as @e[type=minecraft:marker, tag=fetchr.timer_method_sign, distance=0.., limit=2] \

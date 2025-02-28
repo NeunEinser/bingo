@@ -8,7 +8,7 @@
 # 	score @s fetchr.points_race_minutes The minutes when the points goal triggers
 
 scoreboard players operation $points_goal_announcement_minutes fetchr.settings = @s fetchr.points_race_minutes
-#NEUN_SCRIPT until 65
+#NEUN_SCRIPT until 69
 #data modify block 7 0 7 front_text.messages[0] set value '{\
 	"translate": "fetchr.lobby.settings.points_goal.sign.minutes",\
 	"color": "green",\
@@ -17,7 +17,7 @@ scoreboard players operation $points_goal_announcement_minutes fetchr.settings =
 	]\
 }'
 #NEUN_SCRIPT end
-#NEUN_SCRIPT since 65
+#NEUN_SCRIPT since 69
 data modify block 7 0 7 front_text.messages[0] set value {\
 	translate: "fetchr.lobby.settings.points_goal.sign.minutes",\
 	color: "green",\
@@ -38,7 +38,7 @@ execute \
 		"with": [{ "score": { "name": "@s", "objective": "fetchr.points_race_minutes" }}]\
 	}
 
-#NEUN_SCRIPT until 65
+#NEUN_SCRIPT until 69
 #execute \
 	if score @s fetchr.points_race_minutes matches ..0 \
 	as @e[type=minecraft:marker, tag=fetchr.points_goal_sign, distance=0.., limit=2] \
@@ -46,7 +46,7 @@ execute \
 		modify entity @s data.front_text.messages[3] \
 		set value '{ "translate": "fetchr.lobby.settings.points_goal.sign.off", "color": "gray" }'
 #NEUN_SCRIPT end
-#NEUN_SCRIPT since 65
+#NEUN_SCRIPT since 69
 execute \
 	if score @s fetchr.points_race_minutes matches ..0 \
 	as @e[type=minecraft:marker, tag=fetchr.points_goal_sign, distance=0.., limit=2] \

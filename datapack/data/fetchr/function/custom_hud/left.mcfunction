@@ -5,7 +5,7 @@
 
 #TODO consider different screen sizes. Currently only a width of 1920 px is supported
 
-#NEUN_SCRIPT until 65
+#NEUN_SCRIPT until 69
 # next to hotbar
 #execute \
 	if score @s[predicate=!fetchr:has_item_in_offhand] fetchr.card_position \
@@ -32,7 +32,7 @@
 	run data merge storage fetchr:tmp { cardOffset: '"\\uff10"', cardNegOffset: '"\\u00f0"' }
 #NEUN_SCRIPT end
 
-#NEUN_SCRIPT since 65
+#NEUN_SCRIPT since 69
 # next to hotbar
 execute \
 	if score @s[predicate=!fetchr:has_item_in_offhand] fetchr.card_position \

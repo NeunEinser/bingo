@@ -4,7 +4,7 @@
 #
 # @within function fetchr:custom_hud/component_eval/slot/0_4
 
-#NEUN_SCRIPT until 65
+#NEUN_SCRIPT until 69
 #execute \
 	if score $custom_hud/eval.slot fetchr.tmp matches 2 \
 	run data \
@@ -69,7 +69,7 @@
 			{ "storage": "io.fetchr:custom_hud", "nbt": "component.padding", "interpret": true }\
 		]'
 #NEUN_SCRIPT end
-#NEUN_SCRIPT since 65
+#NEUN_SCRIPT since 69
 execute \
 	if score $custom_hud/eval.slot fetchr.tmp matches 2 \
 	run data \

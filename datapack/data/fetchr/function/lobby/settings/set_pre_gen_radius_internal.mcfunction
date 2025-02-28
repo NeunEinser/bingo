@@ -23,14 +23,14 @@ execute \
 	run return 0
 
 scoreboard players operation $pregeneration_chunks fetchr.settings = @s fetchr.pre_gen_radius
-#NEUN_SCRIPT until 65
+#NEUN_SCRIPT until 69
 #data modify block 7 0 7 front_text.messages[0] set value '{\
 	"translate": "fetchr.lobby.settings.pre_gen.sign.radius",\
 	"color": "green",\
 	"with": [{ "score": { "name": "$pregeneration_chunks", "objective": "fetchr.settings" }}]\
 }'
 #NEUN_SCRIPT end
-#NEUN_SCRIPT since 65
+#NEUN_SCRIPT since 69
 data modify block 7 0 7 front_text.messages[0] set value {\
 	translate: "fetchr.lobby.settings.pre_gen.sign.radius",\
 	color: "green",\
@@ -53,14 +53,14 @@ execute \
 		"with": [{ "score": { "name": "@s", "objective": "fetchr.pre_gen_radius" }}]\
 	}
 
-#NEUN_SCRIPT until 65
+#NEUN_SCRIPT until 69
 #execute \
 	if score @s fetchr.pre_gen_radius matches 144 \
 	run data \
 		modify entity @e[type=minecraft:marker, tag=fetchr.pre_gen_sign, distance=0.., limit=1] data.front_text.messages[3] \
 		set value '{ "translate": "fetchr.lobby.settings.pre_gen.sign.minimal", "color": "gray" }'
 #NEUN_SCRIPT end
-#NEUN_SCRIPT since 65
+#NEUN_SCRIPT since 69
 execute \
 	if score @s fetchr.pre_gen_radius matches 144 \
 	run data \

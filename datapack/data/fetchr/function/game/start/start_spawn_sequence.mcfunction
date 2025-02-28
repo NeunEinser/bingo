@@ -38,7 +38,7 @@ teleport @e[type=!#fetchr:keep_on_game_start, tag=!fetchr.generated_entity, dist
 teleport @e[type=minecraft:item, distance=..9] ~ -128 ~
 kill @e[y=-128, distance=..1]
 
-#NEUN_SCRIPT until 65
+#NEUN_SCRIPT until 69
 #execute \
 	if score $allow_spectating fetchr.settings matches 1 \
 	in fetchr:lobby \
@@ -73,7 +73,7 @@ kill @e[y=-128, distance=..1]
 		'{ "translate": "fetchr.lobby.card_generation.join_as_spectator.sign.line4", "bold": true, "color": "#8eedeb" }'\
 	]
 #NEUN_SCRIPT end
-#NEUN_SCRIPT since 65
+#NEUN_SCRIPT since 69
 execute \
 	if score $allow_spectating fetchr.settings matches 1 \
 	in fetchr:lobby \

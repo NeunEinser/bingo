@@ -26,7 +26,7 @@ execute \
 	if score $show_seed fetchr.settings matches 1 \
 	run tellraw @s { "translate": "fetchr.lobby.settings.show_seed.toggle.on", "color": "green" }
 
-#NEUN_SCRIPT until 65
+#NEUN_SCRIPT until 69
 #execute \
 	if score $show_seed fetchr.settings matches 0 \
 	run data \
@@ -42,7 +42,7 @@ execute \
 			data.front_text.messages[3] \
 		set value '{ "translate": "fetchr.lobby.settings.show_seed.sign.on", "color": "green" }'
 #NEUN_SCRIPT end
-#NEUN_SCRIPT since 65
+#NEUN_SCRIPT since 69
 execute \
 	if score $show_seed fetchr.settings matches 0 \
 	run data \

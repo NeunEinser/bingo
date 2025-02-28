@@ -6,7 +6,7 @@
 #	item_text_component: #[text_component] string
 # @within function fetchr:item_detection/handle_item_from_inventory/exec
 
-#NEUN_SCRIPT until 65
+#NEUN_SCRIPT until 69
 #$tellraw @a [\
 	"[",\
 	{\

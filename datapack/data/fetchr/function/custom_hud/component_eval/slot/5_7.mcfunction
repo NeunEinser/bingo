@@ -4,7 +4,7 @@
 #
 # @within function fetchr:custom_hud/component_eval/slot/5_10
 
-#NEUN_SCRIPT until 65
+#NEUN_SCRIPT until 69
 #execute \
 	if score $custom_hud/eval.slot fetchr.tmp matches 5 \
 	run data \
@@ -66,7 +66,7 @@
 			"\\uffa5"\
 		]'
 #NEUN_SCRIPT end
-#NEUN_SCRIPT since 65
+#NEUN_SCRIPT since 69
 execute \
 	if score $custom_hud/eval.slot fetchr.tmp matches 5 \
 	run data \

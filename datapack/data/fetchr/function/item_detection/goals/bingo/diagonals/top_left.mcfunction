@@ -12,10 +12,10 @@
 # @private
 #declare score_holder $item_detect/bingo/diagonal/tl/1.success
 
-#NEUN_SCRIPT until 65
+#NEUN_SCRIPT until 69
 #data modify storage tmp.fetchr:item_detect/bingo/diagonal/top_left icon set value '"\\uFFFF"'
 #NEUN_SCRIPT end
-#NEUN_SCRIPT since 65
+#NEUN_SCRIPT since 69
 data modify storage tmp.fetchr:item_detect/bingo/diagonal/top_left icon set value "\uFFFF"
 #NEUN_SCRIPT end
 execute \

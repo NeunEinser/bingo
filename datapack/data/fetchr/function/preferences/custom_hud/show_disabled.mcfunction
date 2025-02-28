@@ -37,12 +37,12 @@ tellraw @s [\
 	"\n"\
 ]
 
-#NEUN_SCRIPT until 65
+#NEUN_SCRIPT until 69
 #data modify storage tmp.fetchr:preferences/hud addCol0 set value '""'
 #data modify storage tmp.fetchr:preferences/hud addCol1 set value '""'
 #data modify storage tmp.fetchr:preferences/hud col01Space set value '""'
 #NEUN_SCRIPT end
-#NEUN_SCRIPT since 65
+#NEUN_SCRIPT since 69
 data modify storage tmp.fetchr:preferences/hud addCol0 set value ""
 data modify storage tmp.fetchr:preferences/hud addCol1 set value ""
 data modify storage tmp.fetchr:preferences/hud col01Space set value ""
@@ -52,7 +52,7 @@ data modify storage tmp.fetchr:preferences/hud col01Space set value ""
 data \
 	modify storage tmp.fetchr:preferences/hud hudComponent \
 	set from storage fetchr:custom_hud currentPlayer.components[4]
-#NEUN_SCRIPT until 65
+#NEUN_SCRIPT until 69
 #execute \
 	if data storage tmp.fetchr:preferences/hud hudComponent{ id: "fetchr:empty" } \
 	run data modify storage tmp.fetchr:preferences/hud addCol0 set value '[\
@@ -68,7 +68,7 @@ data \
 		"]"\
 	]'
 #NEUN_SCRIPT end
-#NEUN_SCRIPT since 65
+#NEUN_SCRIPT since 69
 execute \
 	if data storage tmp.fetchr:preferences/hud hudComponent{ id: "fetchr:empty" } \
 	run data modify storage tmp.fetchr:preferences/hud addCol0 set value [\
@@ -88,7 +88,7 @@ execute \
 data \
 	modify storage tmp.fetchr:preferences/hud hudComponent \
 	set from storage fetchr:custom_hud currentPlayer.components[10]
-#NEUN_SCRIPT until 65
+#NEUN_SCRIPT until 69
 #execute \
 	if data storage tmp.fetchr:preferences/hud hudComponent{ id: "fetchr:empty" } \
 	run data modify storage tmp.fetchr:preferences/hud addCol1 set value '[\
@@ -108,7 +108,7 @@ data \
 	unless data storage tmp.fetchr:preferences/hud { addCol1: '""' } \
 	run data modify storage tmp.fetchr:preferences/hud col01Space set value '" "'
 #NEUN_SCRIPT end
-#NEUN_SCRIPT since 65
+#NEUN_SCRIPT since 69
 execute \
 	if data storage tmp.fetchr:preferences/hud hudComponent{ id: "fetchr:empty" } \
 	run data modify storage tmp.fetchr:preferences/hud addCol1 set value [\
@@ -354,7 +354,7 @@ scoreboard players operation $preferences/hud.page_count fetchr.tmp -= $preferen
 scoreboard players remove $preferences/hud.page_count fetchr.tmp 1
 scoreboard players operation $preferences/hud.page_count fetchr.tmp /= 10 fetchr.const
 
-#NEUN_SCRIPT until 65
+#NEUN_SCRIPT until 69
 #data \
 	modify storage tmp.fetchr:preferences/hud prev \
 	set value '[ "[", { "translate": "fetchr.preferences.previous", "color": "gray" }, "]" ]'
@@ -385,7 +385,7 @@ scoreboard players operation $preferences/hud.page_count fetchr.tmp /= 10 fetchr
 		"]"\
 	]'
 #NEUN_SCRIPT end
-#NEUN_SCRIPT since 65
+#NEUN_SCRIPT since 69
 data \
 	modify storage tmp.fetchr:preferences/hud prev \
 	set value [ "[", { translate: "fetchr.preferences.previous", color: "gray" }, "]" ]
@@ -420,7 +420,7 @@ execute \
 scoreboard players add $preferences/hud.page_count fetchr.tmp 1
 scoreboard players operation $preferences/hud.page fetchr.tmp = @s fetchr.menu_page
 scoreboard players add $preferences/hud.page fetchr.tmp 1
-#NEUN_SCRIPT until 65
+#NEUN_SCRIPT until 69
 #execute \
 	unless data storage tmp.fetchr:preferences/hud {\
 		prev: '[ "[", { "translate": "fetchr.preferences.previous", "color": "gray" }, "]" ]',\
@@ -441,7 +441,7 @@ scoreboard players add $preferences/hud.page fetchr.tmp 1
 		}\
 	]
 #NEUN_SCRIPT end
-#NEUN_SCRIPT since 65
+#NEUN_SCRIPT since 69
 execute \
 	unless data storage tmp.fetchr:preferences/hud {\
 		prev: [ "[", { translate: "fetchr.preferences.previous", color: "gray" }, "]" ],\

@@ -4,14 +4,14 @@
 #
 # @within function fetchr:game/start/init_teams
 
-#NEUN_SCRIPT until 65
+#NEUN_SCRIPT until 69
 #data \
 	modify block 7 0 7 front_text.messages[0] set value '[\
 	{ "storage": "tmp.fetchr:game/start", "nbt": "backgroundTemplate[0]", "interpret": true, "color": "aqua" },\
 	{ "text": "\\uffeb", "font": "fetchr:space" }\
 ]'
 #NEUN_SCRIPT end
-#NEUN_SCRIPT since 65
+#NEUN_SCRIPT since 69
 data \
 	modify block 7 0 7 front_text.messages[0] set value [\
 	{ storage: "tmp.fetchr:game/start", nbt: "backgroundTemplate[0]", interpret: true, color: "aqua" },\
@@ -21,14 +21,14 @@ data \
 data \
 	modify storage fetchr:card teams[{ id: "fetchr:light_blue" }].background \
 	set from block 7 0 7 front_text.messages[0]
-#NEUN_SCRIPT until 65
+#NEUN_SCRIPT until 69
 #data \
 	modify block 7 0 7 front_text.messages[0] set value '[\
 	{ "storage": "tmp.fetchr:game/start", "nbt": "backgroundTemplate[0]", "interpret": true, "color": "#8b8b8b" },\
 	{ "text": "\\uffeb", "font": "fetchr:space" }\
 ]'
 #NEUN_SCRIPT end
-#NEUN_SCRIPT since 65
+#NEUN_SCRIPT since 69
 data \
 	modify block 7 0 7 front_text.messages[0] set value [\
 	{ storage: "tmp.fetchr:game/start", nbt: "backgroundTemplate[0]", interpret: true, color: "#8b8b8b" },\

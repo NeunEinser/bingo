@@ -19,13 +19,13 @@ setblock ~-1 4 ~-1 minecraft:redstone_block
 # @private
 #declare tag fetchr.detect_mp_aec
 kill @e[type=minecraft:marker, tag=fetchr.detect_mp_aec]
-#NEUN_SCRIPT until 65
+#NEUN_SCRIPT until 69
 #summon minecraft:marker 0 0 0 {\
 	CustomName: '{ "translate": "fetchr.technical.detect_multiplayer" }',\
 	Tags: ["fetchr.detect_mp_aec"]\
 }
 #NEUN_SCRIPT end
-#NEUN_SCRIPT since 65
+#NEUN_SCRIPT since 69
 summon minecraft:marker 0 0 0 {\
 	CustomName: { translate: "fetchr.technical.detect_multiplayer" },\
 	Tags: ["fetchr.detect_mp_aec"]\

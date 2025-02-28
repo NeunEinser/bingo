@@ -4,7 +4,7 @@
 #
 # @within function fetchr:custom_hud/components/player_position/update_xz/set_compass_text/27_35
 
-#NEUN_SCRIPT until 65
+#NEUN_SCRIPT until 69
 #execute \
 	if score $custom_hud/player_pos.rot fetchr.tmp matches 30 \
 	run data modify storage io.fetchr:custom_hud component.icon set value '"\\u0242"'
@@ -15,7 +15,7 @@
 	if score $custom_hud/player_pos.rot fetchr.tmp matches 32 \
 	run data modify storage io.fetchr:custom_hud component.icon set value '"\\u0240"'
 #NEUN_SCRIPT end
-#NEUN_SCRIPT since 65
+#NEUN_SCRIPT since 69
 execute \
 	if score $custom_hud/player_pos.rot fetchr.tmp matches 30 \
 	run data modify storage io.fetchr:custom_hud component.icon set value "\u0242"

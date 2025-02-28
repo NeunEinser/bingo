@@ -5,17 +5,17 @@
 # @within function fetchr:card_generation/generate_slot
 # @params ::fetchr::storage::card::CardSlot
 
-#NEUN_SCRIPT until 65
+#NEUN_SCRIPT until 69
 #$data modify storage fetchr:card slots[-1].icon_display set value '"\\u$(icon)"'
 #NEUN_SCRIPT end
-#NEUN_SCRIPT since 65
+#NEUN_SCRIPT since 69
 $data modify storage fetchr:card slots[-1].icon_display set value "\u$(icon)"
 #NEUN_SCRIPT end
 $data \
 	modify storage fetchr:card slots[-1].current_font \
 	set from storage fetchr:card slots[-1].icon_font.actionbar[$(row)]
 
-#NEUN_SCRIPT until 65
+#NEUN_SCRIPT until 69
 #$execute \
 	unless score $concealed_card fetchr.state matches 1 \
 	run data \
@@ -25,7 +25,7 @@ $data \
 		"\\u$(icon)"\
 	]'
 #NEUN_SCRIPT end
-#NEUN_SCRIPT since 65
+#NEUN_SCRIPT since 69
 $execute \
 	unless score $concealed_card fetchr.state matches 1 \
 	run data \
@@ -40,14 +40,14 @@ execute \
 	run function fetchr:card_generation/apply_custom_font \
 		with storage fetchr:card slots[-1]
 
-#NEUN_SCRIPT until 65
+#NEUN_SCRIPT until 69
 #execute \
 	if score $concealed_card fetchr.state matches 1 \
 	run data \
 		modify storage fetchr:card slots[-1].current_display \
 		set value '{ "text": "\\u0013", "font": "fetchr:space" }'
 #NEUN_SCRIPT end
-#NEUN_SCRIPT since 65
+#NEUN_SCRIPT since 69
 execute \
 	if score $concealed_card fetchr.state matches 1 \
 	run data \

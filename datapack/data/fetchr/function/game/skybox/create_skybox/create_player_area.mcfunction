@@ -16,7 +16,7 @@ execute \
 	if block ~-1 ~1 ~-1 minecraft:redstone_block \
 	run setblock ~-1 ~1 ~-1 minecraft:air
 
-#NEUN_SCRIPT until 65
+#NEUN_SCRIPT until 69
 #execute \
 	if score $is_multiplayer fetchr.state matches 1 \
 	run setblock ~ ~2 ~9 minecraft:warped_wall_sign[facing=east]{\
@@ -52,7 +52,7 @@ execute \
 		}\
 	}
 #NEUN_SCRIPT end
-#NEUN_SCRIPT since 65
+#NEUN_SCRIPT since 69
 execute \
 	if score $is_multiplayer fetchr.state matches 1 \
 	run setblock ~ ~2 ~9 minecraft:warped_wall_sign[facing=east]{\

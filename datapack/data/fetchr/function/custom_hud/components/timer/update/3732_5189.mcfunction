@@ -4,7 +4,7 @@
 #
 # @within function fetchr:custom_hud/components/timer/update/3732_8268
 
-#NEUN_SCRIPT until 65
+#NEUN_SCRIPT until 69
 #execute \
 	if score $custom_hud/timer.daytime fetchr.tmp matches ..4197 \
 	run data modify storage io.fetchr:custom_hud component.icon set value '"\\u013C"'
@@ -15,7 +15,7 @@
 	if score $custom_hud/timer.daytime fetchr.tmp matches 4683.. \
 	run data modify storage io.fetchr:custom_hud component.icon set value '"\\u013E"'
 #NEUN_SCRIPT end
-#NEUN_SCRIPT since 65
+#NEUN_SCRIPT since 69
 execute \
 	if score $custom_hud/timer.daytime fetchr.tmp matches ..4197 \
 	run data modify storage io.fetchr:custom_hud component.icon set value "\u013C"

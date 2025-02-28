@@ -32,7 +32,7 @@ $data \
 	append from storage fetchr:items active_items[-1].categories[{ id: "$(id)" }]
 
 # set lore
-#NEUN_SCRIPT until 65
+#NEUN_SCRIPT until 69
 #data \
 	modify block 7 0 7 front_text.messages[0] \
 	set value '[\
@@ -45,7 +45,7 @@ $data \
 		")"\
 	]'
 #NEUN_SCRIPT end
-#NEUN_SCRIPT since 65
+#NEUN_SCRIPT since 69
 data \
 	modify block 7 0 7 front_text.messages[0] \
 	set value [\

@@ -10,7 +10,7 @@
 # 	i: int
 # 	id: #[id] string
 
-#NEUN_SCRIPT until 65
+#NEUN_SCRIPT until 69
 #data \
 	modify storage tmp.fetchr:apply_active_item_tags category_items[-1].item.components.minecraft:lore \
 	append value '""'
@@ -22,7 +22,7 @@
 		{ "storage": "tmp.fetchr:apply_active_item_tags", "nbt": "category_items[-1].weight" }\
 	]'
 #NEUN_SCRIPT end
-#NEUN_SCRIPT since 65
+#NEUN_SCRIPT since 69
 data \
 	modify storage tmp.fetchr:apply_active_item_tags category_items[-1].item.components.minecraft:lore \
 	append value ""

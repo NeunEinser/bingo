@@ -20,10 +20,10 @@ tellraw @s [\
 	"\n"\
 ]
 
-#NEUN_SCRIPT until 65
+#NEUN_SCRIPT until 69
 #data modify storage tmp.fetchr:preferences/hud move set value '""'
 #NEUN_SCRIPT end
-#NEUN_SCRIPT since 65
+#NEUN_SCRIPT since 69
 data modify storage tmp.fetchr:preferences/hud move set value ""
 #NEUN_SCRIPT end
 
@@ -32,7 +32,7 @@ data modify storage tmp.fetchr:preferences/hud move set value ""
 data \
 	modify storage tmp.fetchr:preferences/hud hudComponent \
 	set from storage fetchr:custom_hud currentPlayer.components[10]
-#NEUN_SCRIPT until 65
+#NEUN_SCRIPT until 69
 #execute \
 	if data storage tmp.fetchr:preferences/hud hudComponent{ id: "fetchr:empty" } \
 	run data modify storage tmp.fetchr:preferences/hud move set value '[\
@@ -48,7 +48,7 @@ data \
 		"]"\
 	]'
 #NEUN_SCRIPT end
-#NEUN_SCRIPT since 65
+#NEUN_SCRIPT since 69
 execute \
 	if data storage tmp.fetchr:preferences/hud hudComponent{ id: "fetchr:empty" } \
 	run data modify storage tmp.fetchr:preferences/hud move set value [\

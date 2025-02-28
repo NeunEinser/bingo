@@ -11,7 +11,7 @@ data \
 	append from storage fetchr:card teams[0]
 data remove storage fetchr:card teams[0]
 
-#NEUN_SCRIPT until 65
+#NEUN_SCRIPT until 69
 #data \
 	modify block 7 0 7 front_text.messages[0] \
 	set value '[\
@@ -115,7 +115,7 @@ data remove storage fetchr:card teams[0]
 		"\\uff97"\
 	]'
 #NEUN_SCRIPT end
-#NEUN_SCRIPT since 65
+#NEUN_SCRIPT since 69
 data \
 	modify block 7 0 7 front_text.messages[0] \
 	set value [\

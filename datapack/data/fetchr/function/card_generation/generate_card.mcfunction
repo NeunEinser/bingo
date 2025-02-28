@@ -58,7 +58,7 @@ execute \
 # Reset teams
 data modify storage fetchr:card teams set value [{ id: "fetchr:none" }]
 
-#NEUN_SCRIPT until 65
+#NEUN_SCRIPT until 69
 #data \
 	modify block 7 0 7 front_text.messages[0] set value '[\
 	"",\
@@ -111,7 +111,7 @@ data modify storage fetchr:card teams set value [{ id: "fetchr:none" }]
 	"\\uff99"\
 ]'
 #NEUN_SCRIPT end
-#NEUN_SCRIPT since 65
+#NEUN_SCRIPT since 69
 data \
 	modify block 7 0 7 front_text.messages[0] set value [\
 	"",\
