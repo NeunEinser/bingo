@@ -8,8 +8,11 @@
 # @within tag/function minecraft:tick
 # @handles #minecraft:tick
 
-#NEUN_SCRIPT since 69
+#NEUN_SCRIPT since 70
 #tellraw @a { "translate": "fetchr.error.incompatible_minecraft_version.multiple_compatible", "color": "red", "with": [ "1.21.1", "1.21.4" ]}
+#NEUN_SCRIPT end
+#NEUN_SCRIPT until 69 until 68
+#tellraw @a { "translate": "fetchr.error.incompatible_minecraft_version.incompatible_snapshot", "color": "red", "with": [ "25w02a", "25w09a", "25w09b" ]}
 #NEUN_SCRIPT end
 #NEUN_SCRIPT until 45
 #tellraw @a { "translate": "fetchr.error.incompatible_minecraft_version.multiple_compatible", "color": "red", "with": [ "1.21.1", "1.21.4" ]}
