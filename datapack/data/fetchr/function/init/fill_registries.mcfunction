@@ -656,6 +656,7 @@ data \
 	translation: "block.minecraft.cake",\
 	icon: "0004",\
 	categories: [ "fetchr:milk", "fetchr:egg" ]\
+}
 #NEUN_SCRIPT end
 #NEUN_SCRIPT since 69
 data \
@@ -1553,7 +1554,8 @@ data \
 	item: { id: "minecraft:bush" },\
 	translation: "block.minecraft.bush",\
 	icon: "0054",\
-	categories: [ "fetchr:shearable" ]\
+	categories: [ "fetchr:shearable" ],\
+	weight: 2\
 }
 #NEUN_SCRIPT end
 
