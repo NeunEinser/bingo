@@ -7,6 +7,10 @@
 # 	function fetchr:init/items/second_pass
 # 	function fetchr:init/items/add_to_category
 
+$execute \
+	unless data storage fetchr:items categories[{ id: "$(id)" }] \
+	run return fail
+
 $data \
 	modify storage fetchr:items categories[{ id: "$(id)" }].items \
 	append from storage tmp.fetchr:init initialized_items[-1]

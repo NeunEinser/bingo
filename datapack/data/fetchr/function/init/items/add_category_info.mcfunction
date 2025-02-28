@@ -13,18 +13,7 @@
 
 $execute \
 	unless data storage fetchr:items categories[{ id: "$(id)" }] \
-	run tellraw @a [\
-		{ "text": "[ ", "color": "red" },\
-		{ "translate": "fetchr.logging.error" },\
-		" ] ",\
-		{\
-			"translate": "fetchr.setup.error.unknown_category",\
-			"with": [\
-				{ "storage": "tmp.fetchr:init", "nbt": "items[-1].id" },\
-				{ "storage": "tmp.fetchr:init", "nbt": "category" }\
-			]\
-		}\
-	]
+	run return fail
 
 $data \
 	modify storage tmp.fetchr:init item_categories[-1] \

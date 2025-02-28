@@ -7,6 +7,25 @@
 # 	function fetchr:init/items/first_pass
 # 	function fetchr:init/items/update_category_total_weight
 
+$execute \
+	unless data storage fetchr:items categories[{ id: "$(id)" }] \
+	run tellraw @a [\
+		{ "text": "[", "color": "red" },\
+		{ "translate": "fetchr.logging.error" },\
+		"] ",\
+		{\
+			"translate": "fetchr.setup.error.unknown_category",\
+			"with": [\
+				{ "storage": "tmp.fetchr:init", "nbt": "items[-1].id" },\
+				"$(id)"\
+			]\
+		}\
+	]
+
+$execute \
+	unless data storage fetchr:items categories[{ id: "$(id)" }] \
+	run return fail
+
 #>
 # @private
 #declare score_holder $init/items/category.total_weight
