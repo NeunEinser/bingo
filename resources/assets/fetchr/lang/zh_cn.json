@@ -19,6 +19,7 @@
 	"fetchr.resourcepack_check.wrong_version.link": "此处",
 	"fetchr.resourcepack_check.wrong_version.server": "如果你是通过服务器自动接收的资源包，请通知管理员更新它。",
 	"fetchr.resourcepack_check.wrong_version.recheck": "再次检查",
+	"fetchr.resourcepack_check.wrong_version.sign.line1": "",
 	"fetchr.resourcepack_check.wrong_version.sign.line2": "下载",
 	"fetchr.resourcepack_check.wrong_version.sign.line3": "资源包",
 	"fetchr.game.menu.hover_text": "Fetchr 菜单",
