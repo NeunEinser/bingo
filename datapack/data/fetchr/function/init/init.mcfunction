@@ -505,7 +505,7 @@ forceload add 0 0
 		# @public
 		scoreboard objectives add fetchr.state dummy
 
-		#NEUN_SCRIPT unless realms
+		#NEUN_SCRIPT unless {NEUN_SCRIPT:realms}
 		#>
 		# This objective is set to 1 for players who confirmed their operator status in
 		# strict mode.
@@ -645,7 +645,7 @@ forceload add 0 0
 		# @user
 		scoreboard objectives add fetchr.menu trigger
 
-		#NEUN_SCRIPT unless realms
+		#NEUN_SCRIPT unless {NEUN_SCRIPT:realms}
 		#>
 		# Trigger objective used to change the pre-generation radius.
 		#
@@ -667,7 +667,7 @@ forceload add 0 0
 		# @internal
 		scoreboard objectives add fetchr.pref trigger
 
-		#NEUN_SCRIPT unless realms
+		#NEUN_SCRIPT unless {NEUN_SCRIPT:realms}
 		#>
 		# This trigger is used for confirming that the resource pack is active
 		#
@@ -856,10 +856,10 @@ forceload add 0 0
 		#
 		# @public
 		#declare score_holder $is_multiplayer
-		#NEUN_SCRIPT unless realms
+		#NEUN_SCRIPT unless {NEUN_SCRIPT:realms}
 		scoreboard players add $is_multiplayer fetchr.state 0
 		#NEUN_SCRIPT end
-		#NEUN_SCRIPT if realms
+		#NEUN_SCRIPT if {NEUN_SCRIPT:realms}
 		#scoreboard players set $is_multiplayer fetchr.state 1
 		#NEUN_SCRIPT end
 		#>
@@ -912,7 +912,7 @@ forceload add 0 0
 		#
 		# @internal
 		#declare score_holder $lobby_gamemode
-		#NEUN_SCRIPT unless realms
+		#NEUN_SCRIPT unless {NEUN_SCRIPT:realms}
 		scoreboard players add $lobby_gamemode fetchr.settings 0
 		#NEUN_SCRIPT end
 		#>
@@ -1209,7 +1209,7 @@ forceload add 0 0
 #endregion
 
 # Create overworld resourcepack check
-	#NEUN_SCRIPT unless realms
+	#NEUN_SCRIPT unless {NEUN_SCRIPT:realms}
 	fill 0 0 0 2 3 2 minecraft:black_concrete outline
 	setblock 1 2 2 minecraft:sea_lantern
 	#NEUN_SCRIPT until 69

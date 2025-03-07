@@ -85,19 +85,44 @@ def main():
 				if v["type"] == "release" and v["data_version"] >= mc_version_info["initial_supported"]["data_version"]
 		), mc_versions[-1])
 
+
+	if mc_version_info["latest_supported"] is not None:
+		mc_version_info["latest_release"] = next((
+			v for v in reversed(mc_versions) if v["type"] == "release" and v["data_version"] <= mc_version_info["latest_supported"]["data_version"]
+		), mc_versions[-1])
+
+
 	mc_versions = [v for v in mc_versions if v["data_version"] >= mc_version_info["initial_supported"]["data_version"]]
+
+	vars = config.get("vars")
+	if(vars is None):
+		vars = {}
+	vars["minecraft_latest_release"] = mc_version_info.get("latest_release") and mc_version_info["latest_release"]["name"]
+	vars["minecraft_initial_release"] = mc_version_info.get("lowest_release") and mc_version_info["lowest_release"]["name"]
+	vars["minecraft_latest_snapshot"] = mc_version_info.get("latest_supported") and mc_version_info["latest_supported"]["name"]
+	vars["minecraft_initial_snapshot"] = mc_version_info.get("initial_supported") and mc_version_info["initial_supported"]["name"]
+	config["vars"] = vars
 
 	requested_rp_sha = []
 	if resourcepack_config is not None:
+		vars["min_pack_format"] = mc_version_info.get("initial_supported") and mc_version_info["initial_supported"]["resource_pack_version"]
+		vars["max_pack_format"] = mc_version_info.get("latest_supported") and mc_version_info["latest_supported"]["resource_pack_version"]
+		config["vars"] = vars
 		requested_rp_sha.extend(iterate_files(config, resourcepack_config, f"{target}{os.sep}tmp{os.sep}resourcepack", mc_versions, mc_version_info, True))
 
 		version_json: dict = requests.get(f"https://piston-meta.mojang.com/v1/packages/{mc_version_info['latest_supported']['sha1']}/{mc_version_info['latest_supported']['id']}.json").json()
 		override_default_lang_strings(f"{target}{os.sep}tmp{os.sep}resourcepack", version_json["assetIndex"]["url"])
 
 	if datapack_config is not None:
+		vars["min_pack_format"] = mc_version_info.get("initial_supported") and mc_version_info["initial_supported"]["data_pack_version"]
+		vars["max_pack_format"] = mc_version_info.get("latest_supported") and mc_version_info["latest_supported"]["data_pack_version"]
+		config["vars"] = vars
 		requested_rp_sha.extend(iterate_files(config, datapack_config, f"{target}{os.sep}tmp{os.sep}datapack", mc_versions, mc_version_info))
 
 	if world_config is not None:
+		vars["min_pack_format"] = None
+		vars["max_pack_format"] = None
+		config["vars"] = vars
 		requested_rp_sha.extend(iterate_files(config, world_config, f"{target}{os.sep}tmp{os.sep}world", mc_versions, mc_version_info))
 
 	includes = config.get("include")
@@ -346,7 +371,7 @@ def replace_variables(content: str, file_path: str, config, requested_rp_sha: li
 	indexDiff = 0
 	for match in re.finditer(r"\{NEUN_SCRIPT:([a-zA-Z0-9_-]+)(?:\s*([+\-*/%])\s*([+-]?\d+))?\}", content):
 		variable = match.group(1)
-		replace=get_variable(variable, config, requested_rp_sha, file_path)
+		replace=str(get_variable(variable, config, requested_rp_sha, file_path))
 		if replace == None:
 			continue
 		if replace == variable:
@@ -686,11 +711,34 @@ def minify_function_file(file_content: str, config: dict, pack_format: int, min_
 						remove = 0
 					if len(command) < 2:
 						raise ValueError("if/unless needs at least one argument")
-					value = get_variable(command[1], config)
-					if bool(value) == (command[0] == "if"):
+					
+					result = True
+					if len(command) == 2:
+						result = bool(command[1]) == (command[0] == "if")
+					elif len(command) == 4:
+						match command[2]:
+							case "=":
+								result = command[1] == command[3]
+							case "!=":
+								result = command[1] != command[3]
+							case "<":
+								result = int(command[1]) < int(command[3])
+							case "<=":
+								result = int(command[1]) <= int(command[3])
+							case ">":
+								result = int(command[1]) > int(command[3])
+							case ">=":
+								result = int(command[1]) >= int(command[3])
+							case _:
+								raise ValueError(f"cannot parse conditional {command[2]} in if/unless")
+					else:
+						raise ValueError(f"if/unless needs either 1 or 3 arguments")
+					
+					if result:
 						uncomment = -1
 					else:
 						remove = -1
+
 					stack.append({ "remove": remove, "uncomment": uncomment })
 				
 				elif command[0] == "until" or command[0] == "since":

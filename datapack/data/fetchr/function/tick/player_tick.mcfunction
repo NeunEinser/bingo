@@ -69,7 +69,7 @@ execute \
 
 #region resourcepack check
 # Auto-validate if Singleplayer
-#NEUN_SCRIPT unless realms
+#NEUN_SCRIPT unless {NEUN_SCRIPT:realms}
 #execute \
 	if score $is_multiplayer fetchr.state matches 0 \
 	run scoreboard players \
@@ -91,7 +91,7 @@ execute \
 # Send Resource pack check chat message
 # Uses fallback messages to check for the resource pack
 
-#NEUN_SCRIPT unless realms
+#NEUN_SCRIPT unless {NEUN_SCRIPT:realms}
 #tellraw @s[scores={fetchr.resource_pack_check=1}] [\
 	"\n\n\n\n\n",\
 	{\
@@ -256,7 +256,7 @@ tellraw @s[scores={fetchr.resource_pack_check=1}] [\
 ]
 
 # Validate checked players, reenable trigger
-#NEUN_SCRIPT unless realms
+#NEUN_SCRIPT unless {NEUN_SCRIPT:realms}
 #tag @s[scores={fetchr.resource_pack_check={NEUN_SCRIPT:rp_version * 91}}] remove fetchr.resourcepack_check
 #execute \
 	if score @s fetchr.resource_pack_check matches {NEUN_SCRIPT:rp_version * 91} \

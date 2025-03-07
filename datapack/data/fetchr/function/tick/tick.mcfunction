@@ -8,23 +8,60 @@
 # @within tag/function minecraft:tick
 # @handles #minecraft:tick
 
-#NEUN_SCRIPT since 70
-#tellraw @a { "translate": "fetchr.error.incompatible_minecraft_version.multiple_compatible", "color": "red", "with": [ "1.21.1", "1.21.4" ]}
+#NEUN_SCRIPT since {NEUN_SCRIPT:max_pack_format + 1}
+#NEUN_SCRIPT if {NEUN_SCRIPT:minecraft_initial_release} = {NEUN_SCRIPT:minecraft_latest_snapshot}
+#tellraw @a { "translate": "fetchr.error.incompatible_minecraft_version.single_compatible", "color": "red", "with": [ "{NEUN_SCRIPT:minecraft_initial_release}" ]}
 #NEUN_SCRIPT end
+
+#NEUN_SCRIPT if {NEUN_SCRIPT:minecraft_initial_release} != {NEUN_SCRIPT:minecraft_latest_snapshot}
+#NEUN_SCRIPT if {NEUN_SCRIPT:minecraft_initial_release} = {NEUN_SCRIPT:minecraft_latest_release}
+#tellraw @a { "translate": "fetchr.error.incompatible_minecraft_version.single_compatible.with_latest_snapshot", "color": "red", "with": [ "{NEUN_SCRIPT:minecraft_initial_release}", "{NEUN_SCRIPT:minecraft_latest_snapshot}" ]}
+#NEUN_SCRIPT end
+
+#NEUN_SCRIPT if {NEUN_SCRIPT:minecraft_initial_release} != {NEUN_SCRIPT:minecraft_latest_release}
+#NEUN_SCRIPT if {NEUN_SCRIPT:minecraft_latest_release} = {NEUN_SCRIPT:minecraft_latest_snapshot}
+#tellraw @a { "translate": "fetchr.error.incompatible_minecraft_version.multiple_compatible", "color": "red", "with": [ "{NEUN_SCRIPT:minecraft_initial_release}", "{NEUN_SCRIPT:minecraft_latest_release}" ]}
+#NEUN_SCRIPT end
+
+#NEUN_SCRIPT if {NEUN_SCRIPT:minecraft_latest_release} != {NEUN_SCRIPT:minecraft_latest_snapshot}
+#tellraw @a { "translate": "fetchr.error.incompatible_minecraft_version.multiple_compatible.with_latest_snapshot", "color": "red", "with": [ "{NEUN_SCRIPT:minecraft_initial_release}", "{NEUN_SCRIPT:minecraft_latest_release}", "{NEUN_SCRIPT:minecraft_latest_snapshot}" ]}
+#NEUN_SCRIPT end
+#NEUN_SCRIPT end
+#NEUN_SCRIPT end
+#NEUN_SCRIPT end
+
 #NEUN_SCRIPT since 62 until 69
 #tellraw @a { "translate": "fetchr.error.incompatible_minecraft_version.incompatible_snapshot", "color": "red", "with": [ "25w02a", "25w09a", "25w09b" ]}
 #return fail
 #NEUN_SCRIPT end
-#NEUN_SCRIPT until 45
-#tellraw @a { "translate": "fetchr.error.incompatible_minecraft_version.multiple_compatible", "color": "red", "with": [ "1.21.1", "25w09b" ]}
+
+#NEUN_SCRIPT until {NEUN_SCRIPT:min_pack_format}
+#NEUN_SCRIPT if {NEUN_SCRIPT:minecraft_initial_release} = {NEUN_SCRIPT:minecraft_latest_snapshot}
+#tellraw @a { "translate": "fetchr.error.incompatible_minecraft_version.single_compatible", "color": "red", "with": [ "{NEUN_SCRIPT:minecraft_initial_release}" ]}
 #NEUN_SCRIPT end
-#NEUN_SCRIPT until 70
-#NEUN_SCRIPT since 45
+
+#NEUN_SCRIPT if {NEUN_SCRIPT:minecraft_initial_release} != {NEUN_SCRIPT:minecraft_latest_snapshot}
+#NEUN_SCRIPT if {NEUN_SCRIPT:minecraft_initial_release} = {NEUN_SCRIPT:minecraft_latest_release}
+#tellraw @a { "translate": "fetchr.error.incompatible_minecraft_version.single_compatible.with_latest_snapshot", "color": "red", "with": [ "{NEUN_SCRIPT:minecraft_initial_release}", "{NEUN_SCRIPT:minecraft_latest_snapshot}" ]}
+#NEUN_SCRIPT end
+
+#NEUN_SCRIPT if {NEUN_SCRIPT:minecraft_initial_release} != {NEUN_SCRIPT:minecraft_latest_release}
+#NEUN_SCRIPT if {NEUN_SCRIPT:minecraft_latest_release} = {NEUN_SCRIPT:minecraft_latest_snapshot}
+#tellraw @a { "translate": "fetchr.error.incompatible_minecraft_version.multiple_compatible", "color": "red", "with": [ "{NEUN_SCRIPT:minecraft_initial_release}", "{NEUN_SCRIPT:minecraft_latest_release}" ]}
+#NEUN_SCRIPT end
+
+#NEUN_SCRIPT if {NEUN_SCRIPT:minecraft_latest_release} != {NEUN_SCRIPT:minecraft_latest_snapshot}
+#tellraw @a { "translate": "fetchr.error.incompatible_minecraft_version.multiple_compatible.with_latest_snapshot", "color": "red", "with": [ "{NEUN_SCRIPT:minecraft_initial_release}", "{NEUN_SCRIPT:minecraft_latest_release}", "{NEUN_SCRIPT:minecraft_latest_snapshot}" ]}
+#NEUN_SCRIPT end
+#NEUN_SCRIPT end
+#NEUN_SCRIPT end
+#NEUN_SCRIPT end
+#NEUN_SCRIPT since {NEUN_SCRIPT:min_pack_format} until {NEUN_SCRIPT:max_pack_format + 1}
 function fetchr:tick/spigot
 function neun_einser.timer:store_current_time
 
 # Detect second (or more) players in a LAN world
-#NEUN_SCRIPT unless realms
+#NEUN_SCRIPT unless {NEUN_SCRIPT:realms}
 execute \
 	store result score $is_multiplayer fetchr.state \
 	if entity @a
@@ -197,5 +234,4 @@ execute \
 	run function fetchr:tick/player_tick
 data modify storage fetchr:custom_hud players append from storage tmp.fetchr:custom_hud handled[]
 scoreboard players reset $update_card fetchr.state
-#NEUN_SCRIPT end
 #NEUN_SCRIPT end

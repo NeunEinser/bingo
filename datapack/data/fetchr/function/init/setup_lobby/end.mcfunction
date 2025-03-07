@@ -52,7 +52,7 @@ execute \
 execute \
 	in fetchr:lobby as @e[x=0.5, y=0, z=0.5, type=minecraft:marker, tag=fetchr.string_tester, distance=..0.1, limit=1] \
 	run function fetchr:init/items/lobby_loaded
-#NEUN_SCRIPT if realms
+#NEUN_SCRIPT if {NEUN_SCRIPT:realms}
 #tag @e remove fetchr.multiplayer_only
 #tag @e remove fetchr.singleplayer_only
 #execute \

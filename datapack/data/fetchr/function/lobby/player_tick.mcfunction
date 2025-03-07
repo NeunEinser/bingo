@@ -9,7 +9,7 @@
 effect give @s minecraft:saturation 2 255 true
 
 # adventure mode
-#NEUN_SCRIPT unless realms
+#NEUN_SCRIPT unless {NEUN_SCRIPT:realms}
 execute if score $is_multiplayer fetchr.state matches 1 if score $lobby_gamemode fetchr.settings matches 0 run gamemode adventure @s[gamemode=survival]
 execute if score $is_multiplayer fetchr.state matches 1 if score $lobby_gamemode fetchr.settings matches 1 run gamemode survival @s[gamemode=adventure]
 execute if score $is_multiplayer fetchr.state matches 0 run gamemode survival @s[gamemode=adventure]
