@@ -1,4 +1,6 @@
 {
+	"NEUN_SCRIPT remove_self until {NEUN_SCRIPT:min_pack_format}": null,
+	"NEUN_SCRIPT remove_self since {NEUN_SCRIPT:max_pack_format + 1}": null,
 	"values": [
 		"neun_einser.math:init/init",
 		"neun_einser.timer:internal/init",

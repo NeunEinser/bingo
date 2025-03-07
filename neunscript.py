@@ -310,7 +310,7 @@ def iterate_files(config: dict, pack_config: dict, target: str, mc_versions: lis
 					for i in range(0, len(pack_formats)):
 						pack_format = pack_formats[i]
 						max_format = pack_formats[i+1] - 1 if i+1 < len(pack_formats) else None
-						if main_pack_format >= pack_format and (max_format is None or main_pack_format < max_format):
+						if main_pack_format >= pack_format and (max_format is None or main_pack_format <= max_format):
 							continue
 
 						write_overlay = handle_file(source, file_name, relative_path, out_root, pack_format,
@@ -420,7 +420,7 @@ def get_format_range(formats: list[int], format: int):
 		min_format = formats[i]
 		max_format = None
 		if len(formats) > i + 1:
-			max_format = formats[i+1]
+			max_format = formats[i+1]-1
 		if min_format <= format and (max_format is None or max_format >= format):
 			break
 	return [min_format, max_format]
@@ -556,20 +556,20 @@ def handle_structued(
 									if bool(value) == (command[command_offset] == "if"):
 										should_execute_action = True
 									
-								case "from" | "until":
+								case "since" | "until":
 									force_child_evaluation = True
 
 									if len(command) < command_offset + 2:
-										raise ValueError("until / from needs at least one argument")
+										raise ValueError("until / since needs at least one argument")
 
 									min_value = 1
 									max_value = None
 
-									if command[command_offset] == "from":
+									if command[command_offset] == "since":
 										min_value = int(command[command_offset + 1])
 										if len(command) > command_offset + 2 and command[command_offset + 2] == "until":
 											if len(command) < command_offset + 4:
-												raise ValueError("Syntax: from <pack_format> until <pack_format>")
+												raise ValueError("Syntax: since <pack_format> until <pack_format>")
 											max_value = int(command[command_offset + 3])
 									else:
 										max_value = int(command[command_offset + 1])
