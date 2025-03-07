@@ -22,7 +22,7 @@
 			],\
 			[\
 				{ "storage": "io.fetchr:custom_hud", "nbt": "component.iconFont[6]", "interpret": true },\
-				{ "storage": "io.fetchr:custom_hud", "nbt": "component.icon", "interpret": true }\
+				{ "storage": "io.fetchr:custom_hud", "nbt": "component.icon", "shadow_color": 0, "interpret": true }\
 			],\
 			{ "storage": "io.fetchr:custom_hud", "nbt": "component.padding", "interpret": true }\
 		]'
@@ -43,7 +43,7 @@
 			],\
 			[\
 				{ "storage": "io.fetchr:custom_hud", "nbt": "component.iconFont[7]", "interpret": true },\
-				{ "storage": "io.fetchr:custom_hud", "nbt": "component.icon", "interpret": true }\
+				{ "storage": "io.fetchr:custom_hud", "nbt": "component.icon", "shadow_color": 0, "interpret": true }\
 			],\
 			{ "storage": "io.fetchr:custom_hud", "nbt": "component.padding", "interpret": true }\
 		]'
@@ -66,7 +66,7 @@ execute \
 			],\
 			[\
 				{ storage: "io.fetchr:custom_hud", nbt: "component.iconFont[6]", interpret: true },\
-				{ storage: "io.fetchr:custom_hud", nbt: "component.icon", interpret: true }\
+				{ storage: "io.fetchr:custom_hud", nbt: "component.icon", shadow_color: 0, interpret: true }\
 			],\
 			{ storage: "io.fetchr:custom_hud", nbt: "component.padding", interpret: true }\
 		]
@@ -87,7 +87,7 @@ execute \
 			],\
 			[\
 				{ storage: "io.fetchr:custom_hud", nbt: "component.iconFont[7]", interpret: true },\
-				{ storage: "io.fetchr:custom_hud", nbt: "component.icon", interpret: true }\
+				{ storage: "io.fetchr:custom_hud", nbt: "component.icon", shadow_color: 0, interpret: true }\
 			],\
 			{ storage: "io.fetchr:custom_hud", nbt: "component.padding", interpret: true }\
 		]
