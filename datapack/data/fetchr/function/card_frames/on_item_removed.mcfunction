@@ -23,6 +23,7 @@ execute \
 	run function fetchr:card_frames/find_item
 
 data modify entity @s Item set from storage tmp.fetchr:card_frames foundItem
+data modify entity @s ItemDropChance set value 0f
 execute \
 	if dimension fetchr:default \
 	if items entity @s contents *[minecraft:lodestone_tracker] \
