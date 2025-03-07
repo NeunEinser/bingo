@@ -1,9 +1,9 @@
-#> fetchr:init/setup_lobby/spawn_structures
+#> fetchr:init/setup_lobby/spawn_structure
 #
-# This function spawns all registered structures
+# Spawns the next structure
 #
 # @within
-# 	function fetchr:init/setup_lobby/spawn_structures_schedule
+# 	function fetchr:init/setup_lobby/spawn_structure_schedule
 # @context
 # 	entity Marker entity which is at the end of the structure spawned in the
 # 		last step
@@ -19,29 +19,35 @@
 # @private
 #declare score_holder $init/lobby.posx
 
-data modify block 15 3 -17 name set from storage fetchr:registries structures[0]
+data \
+	modify storage fetchr:structure structures \
+	append from storage tmp.fetchr:init/structures structures[0]
 
-setblock 15 4 -17 minecraft:redstone_block
-setblock 15 4 -17 minecraft:air
 execute \
-	store result score $init/lobby.offsetx fetchr.tmp \
-	run data get block 15 3 -17 sizeX
+	at @e[type=minecraft:marker, x=0, tag=fetchr.structure_test, limit=1] \
+	run function fetchr:init/setup_lobby/get_structure_dimensions
+
 scoreboard players operation $init/lobby.offsetx fetchr.tmp *= -1 fetchr.const
-scoreboard players add $init/lobby.offsetx fetchr.tmp 1
-execute \
-	store result score $init/lobby.offsetz fetchr.tmp \
-	run data get block 15 3 -17 sizeZ
 scoreboard players operation $init/lobby.offsetz fetchr.tmp /= -2 fetchr.const
 scoreboard players add $init/lobby.offsetz fetchr.tmp 1
 
-setblock ~-1 ~ ~ minecraft:structure_block[mode=load]{ mode: "LOAD", ignoreEntities: false, posY: 0 }
-data modify block ~-1 ~ ~ name set from storage fetchr:registries structures[0]
+# Can't use /place template, as it doesn't allow for ignoreEntities
+setblock ~-1 ~ ~ minecraft:structure_block[mode=load]{\
+	mode: "LOAD",\
+	ignoreEntities: true,\
+	strict: true\
+}
+data \
+	modify block ~-1 ~ ~ name \
+	set from storage tmp.fetchr:init/structures structures[0].id
+
 execute \
 	store result block ~-1 ~ ~ posX int 1 \
 	run scoreboard players get $init/lobby.offsetx fetchr.tmp
 execute \
 	store result block ~-1 ~ ~ posZ int 1 \
 	run scoreboard players get $init/lobby.offsetz fetchr.tmp
+
 setblock ~-1 ~1 ~ minecraft:redstone_block
 execute \
 	if block ~-1 ~ ~ minecraft:structure_block \
@@ -60,14 +66,16 @@ execute \
 	store result entity @s Pos[0] double 1 \
 	run scoreboard players get $init/lobby.posx fetchr.tmp
 
-data remove storage fetchr:registries structures[0]
+data remove storage tmp.fetchr:init/structures structures[0]
 
 execute \
-	unless data storage fetchr:registries structures[0] at @s \
+	unless data storage tmp.fetchr:init/structures structures[0] \
+	at @s \
 	run function fetchr:init/setup_lobby/end
 execute \
-	if data storage fetchr:registries structures[0] at @s \
+	if data storage tmp.fetchr:init/structures structures[0] \
+	at @s \
 	run forceload add ~-48 ~-24 ~-1 ~23
 execute \
-	if data storage fetchr:registries structures[0] \
-	run schedule function fetchr:init/setup_lobby/spawn_structures_schedule 1t
+	if data storage tmp.fetchr:init/structures structures[0] \
+	run function fetchr:init/setup_lobby/spawn_structure_schedule

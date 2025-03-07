@@ -1,0 +1,20 @@
+use ::fetchr::storages::registry::StructureRegistry
+
+dispatch minecraft:storage[tmp.fetchr:init/structures] to struct StructureTmpStorage {
+	continue_with?: ("place_lobby" | "check_and_update_lobby"),
+	structures: [StructureRegistry]
+}
+
+dispatch minecraft:storage[fetchr:structure] to struct StructureStorage {
+	structures: [
+		struct Structure {
+			id: #[id=structure] string,
+			size: struct Pos {
+				x: int,
+				y: int,
+				z: int
+			},
+			version: int
+		}
+	]
+}

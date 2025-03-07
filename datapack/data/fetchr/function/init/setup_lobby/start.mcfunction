@@ -2,7 +2,7 @@
 #
 # This function places relevant structures in the lobby.
 #
-# @within function fetchr:init/setup_lobby/root
+# @within function fetchr:init/setup_lobby/schedule
 # @context
 # 	dimension fetchr:lobby
 
@@ -17,9 +17,10 @@
 # 	function fetchr:game/**
 #declare tag fetchr.card_frame_start
 
-forceload add -34 -17 14 30
-summon minecraft:marker 14 1 7 { Tags: ["fetchr.structure_spawner"]}
-setblock 15 3 -17 minecraft:structure_block[mode=load]{\
+forceload add ~-34 ~-17 ~14 ~30
+summon minecraft:marker ~14 1 ~7 { Tags: ["fetchr.structure_spawner"]}
+summon minecraft:marker ~15 3 ~-17 { Tags: ["fetchr.structure_test"]}
+setblock ~15 3 ~-17 minecraft:structure_block[mode=load]{\
 	mode: "LOAD",\
 	ignoreEntities: true,\
 	integrity: 0f,\
@@ -28,7 +29,4 @@ setblock 15 3 -17 minecraft:structure_block[mode=load]{\
 	posY: 0\
 }
 
-kill @e[type=minecraft:marker, tag=fetchr.lobby_sign]
-kill @e[type=minecraft:marker, tag=fetchr.card_frame_start]
-
-schedule function fetchr:init/setup_lobby/spawn_structures_schedule 1t
+schedule function fetchr:init/setup_lobby/spawn_structure_schedule 1t

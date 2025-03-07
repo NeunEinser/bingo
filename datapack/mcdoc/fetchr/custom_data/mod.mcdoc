@@ -1,0 +1,9 @@
+use ::java::server::world::block::sign::SignText
+use ::java::server::world::item::firework::Explosion
+use ::java::server::world::item::ItemStack
+
+dispatch mcdoc:marker_data["front_text"] to SignText
+dispatch mcdoc:marker_data["back_text"] to SignText
+dispatch mcdoc:marker_data["Book"] to ItemStack
+
+dispatch mcdoc:custom_data["fetchr"] to [Explosion] @ 0..256

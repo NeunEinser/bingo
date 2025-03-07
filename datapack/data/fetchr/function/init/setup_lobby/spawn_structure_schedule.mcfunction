@@ -1,6 +1,6 @@
-#> fetchr:init/setup_lobby/spawn_structures_schedule
+#> fetchr:init/setup_lobby/spawn_structure_schedule
 #
-# This function spawns all registered structures
+# Loads chunks and spawns the next structure
 #
 # @within
 # 	function fetchr:init/setup_lobby/*
@@ -11,7 +11,8 @@
 scoreboard players set $init/setup_lobby/spawn_structures.loaded fetchr.tmp 0
 
 execute \
-	as @e[type=minecraft:marker, tag=fetchr.structure_spawner, limit=1] \
+	in fetchr:lobby \
+	as @e[type=minecraft:marker, x=0, tag=fetchr.structure_spawner, limit=1] \
 	at @s \
 	if loaded ~-48 ~ ~-24 \
 	if loaded ~-32 ~ ~-24 \
@@ -33,9 +34,10 @@ execute \
 
 execute \
 	if score $init/setup_lobby/spawn_structures.loaded fetchr.tmp matches 1 \
-	as @e[type=minecraft:marker, tag=fetchr.structure_spawner, limit=1] \
+	in fetchr:lobby \
+	as @e[type=minecraft:marker, x=0, tag=fetchr.structure_spawner, limit=1] \
 	at @s \
-	run function fetchr:init/setup_lobby/spawn_structures
+	run function fetchr:init/setup_lobby/spawn_structure
 execute \
 	unless score $init/setup_lobby/spawn_structures.loaded fetchr.tmp matches 1 \
-	run schedule function fetchr:init/setup_lobby/spawn_structures_schedule 1t
+	run schedule function fetchr:init/setup_lobby/spawn_structure_schedule 1t

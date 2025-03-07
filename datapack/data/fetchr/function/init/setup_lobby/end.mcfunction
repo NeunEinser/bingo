@@ -3,17 +3,27 @@
 # This function is called at the end, after all structures were placed
 # successfully.
 #
-# @within function fetchr:init/setup_lobby/spawn_structures
+# @within function fetchr:init/setup_lobby/spawn_structure
 # @context
 #  	entity structure spawner
 # 	positon @s
 # 	dimension fetchr:lobby
 
-setblock 15 3 -17 minecraft:air
+execute \
+	at @e[type=minecraft:marker, x=0, tag=fetchr.structure_test, limit=1] \
+	run setblock ~ ~ ~ minecraft:air
 kill @s
+kill @e[type=minecraft:marker, x=0, tag=fetchr.structure_test, limit=1]
 
 setblock ~-1 3 ~-1 minecraft:structure_block[mode=load]{ mode: "LOAD", ignoreEntities: false, posY: 0, name: "fetchr:lobby_end" }
 setblock ~-1 4 ~-1 minecraft:redstone_block
+
+execute \
+	if data storage tmp.fetchr:init/structures {continue_with: "place_lobby"} \
+	run return run function fetchr:init/setup_lobby/schedule_lobby
+execute \
+	if data storage tmp.fetchr:init/structures {continue_with: "check_and_update_lobby"} \
+	run return 0
 
 #>
 # @private

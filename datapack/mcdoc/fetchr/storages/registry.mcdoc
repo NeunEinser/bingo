@@ -92,7 +92,12 @@ struct PreferencesRegistryData {
 dispatch minecraft:storage[fetchr:registries] to struct RegistryStorage {
 	items: [ItemRegistryData],
 	categories: [CategroyRegistryData],
-	structures: [#[id=structure] string],
+	structures: [
+		struct StructureRegistry {
+			id: #[id=structure] string,
+			version: int
+		}
+	],
 	hud_components: [HudComponentRegistryData],
 	preferences: struct {
 		main: [PreferencesRegistryData],
