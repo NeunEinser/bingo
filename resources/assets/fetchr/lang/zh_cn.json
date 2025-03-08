@@ -1,7 +1,9 @@
 {
 	"fetchr.error.incompatible_minecraft_version.multiple_compatible": "你正在使用不受支持的Minecraft版本。本数据包兼容 %s-%s 版本。",
+	"fetchr.error.incompatible_minecraft_version.multiple_compatible.with_latest_snapshot": "你正在使用不受支持的Minecraft版本。本数据包兼容 %s-%s 版本或最高到 %s 的快照版。",
 	"fetchr.error.incompatible_minecraft_version.incompatible_snapshot": "你正在使用不受支持的快照。快照 %s-%s 不受支持。请使用快照 %s 或更高的版本。",
 	"fetchr.error.incompatible_minecraft_version.single_compatible": "你正在使用不受支持的Minecraft版本。本数据包兼容 %s 版本。",
+	"fetchr.error.incompatible_minecraft_version.single_compatible.with_latest_snapshot": "你正在使用不受支持的Minecraft版本。本数据包兼容 %s 版本或最高到 %s 的快照版。",
 	"fetchr.error.spigot_paper": "你可能正在使用Spigot或Paper服务端。Paper和Spigot更改原版的行为，与 Fetchr 不兼容。",
 	"fetchr.error.spigot_paper.help": "你可以使用原版服务端，或使用安装了锂的Fabric或Quilt服务端来获得最好的表现。\n\n如果您需要更多帮助，或者收到了此消息却并没有使用Paper或Spigot服务端，请通过 %s 或 %s 来报告此问题。",
 	"fetchr.logging.error": "错误",
