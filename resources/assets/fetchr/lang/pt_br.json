@@ -1,7 +1,9 @@
 {
 	"fetchr.error.incompatible_minecraft_version.multiple_compatible": "Você está usando uma versão não suportada do Minecraft. Este pacote é compatível com as versões %s-%s do Minecraft",
+	"fetchr.error.incompatible_minecraft_version.multiple_compatible.with_latest_snapshot": "Você está usando uma versão não suportada do Minecraft. Este pacote é compatível com as versões %s-%s ou com o snapshot %s.",
 	"fetchr.error.incompatible_minecraft_version.incompatible_snapshot": "Você está usando um snapshot não suportado. Os snapshots %s-%s são incompatíveis. Certifique-se de usar o snapshot %s ou superior.",
 	"fetchr.error.incompatible_minecraft_version.single_compatible": "Você está usando uma versão não suportada do Minecraft. Este pacote é compatível com a versão %s do Minecraft",
+	"fetchr.error.incompatible_minecraft_version.single_compatible.with_latest_snapshot": "Você está usando uma versão não suportada do Minecraft. Este pacote é compatível com a versão %s ou com o snapshot %s.",
 	"fetchr.error.spigot_paper": "Parece que você está usando uma versão do Spigot ou Paper. Ambos alteram o comportamento do jogo e são incompatíveis com o Fetchr.",
 	"fetchr.error.spigot_paper.help": "Você pode usar um servidor padrão ou usar o Fabric ou o Quilt com Lithium para um melhor desempenho\n\nSe você precisar de mais ajuda ou está vendo essa mensagem mesmo sem usar o Paper ou Spigot, relate este problema no %s ou %s",
 	"fetchr.logging.error": "ERRO",
