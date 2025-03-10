@@ -228,6 +228,7 @@
 	"fetchr.lobby.settings.points_goal.sign.line1": "Puntos",
 	"fetchr.lobby.settings.points_goal.sign.line2": "Carrera",
 	"fetchr.lobby.settings.points_goal.sign.off": "Apagado",
+	"fetchr.lobby.settings.points_goal.sign.minutes": "%s minutos",
 	"fetchr.lobby.settings.advanced_settings.sign.line2": "Avanzado",
 	"fetchr.lobby.settings.advanced_settings.sign.line3": "Ajustes",
 	"fetchr.lobby.settings.timer_method.sign.line1": "Tiempo",
