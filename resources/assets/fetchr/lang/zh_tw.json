@@ -540,7 +540,7 @@
 	"fetchr.game.start.preparing_spawn": "正在準備預先生成...",
 	"fetchr.game.start.loading_terrain": "正在載入地形…",
 	"fetchr.game.start.pre_gen_progress": "預先生成區塊…",
-	"fetchr.game.start.countdown_completed": "完成！",
+	"fetchr.game.start.countdown_completed": "開始！",
 	"fetchr.item.blue_trimmed_leather_boots": "藍色紋樣皮革靴子",
 	"fetchr.item.description.any_trim": "任何盔甲紋樣",
 	"fetchr.got_item": "[%2$s | #%1$s] %3$s 獲得了 [%4$s]",
