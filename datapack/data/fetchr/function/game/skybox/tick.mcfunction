@@ -4,8 +4,6 @@
 #
 # @within function fetchr:tick/tick
 
-execute at @e[type=minecraft:marker, tag=fetchr.skybox_button, distance=..13] if block ~ ~ ~ minecraft:stone_button[powered=true] run function fetchr:game/skybox/button_pressed
-
 execute unless entity @a[team=fetchr.black] run scoreboard players reset $black
 execute unless entity @a[team=fetchr.blue] run scoreboard players reset $blue
 execute unless entity @a[team=fetchr.cyan] run scoreboard players reset $cyan
@@ -47,5 +45,11 @@ particle minecraft:happy_villager ~ ~-7 ~ .125 2 .125 1 2 force
 particle minecraft:happy_villager ~ ~-3 ~ .125 1 .125 1 1 force
 
 scoreboard players set $card_frames.count fetchr.io 0
-execute positioned ~-2 ~-1 ~-7.49 as @e[type=minecraft:item_frame, tag=fetchr.card_frame, dx=5, dy=5, dz=.1] at @s run function fetchr:card_frames/check_item
-execute if score $card_frames.count fetchr.io matches ..24 run function fetchr:card_frames/spawn
+execute \
+	positioned ~-2 ~-1 ~-7.49 \
+	as @e[type=minecraft:item_frame, tag=fetchr.card_frame, dx=5, dy=5, dz=.1] \
+	at @s \
+	run function fetchr:card_frames/check_item
+execute \
+	if score $card_frames.count fetchr.io matches ..24 \
+	run function fetchr:card_frames/spawn

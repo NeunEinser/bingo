@@ -17,6 +17,6 @@
 		}	
 	},
 	"rewards": {
-		"function": "fetchr:lobby/press_button"
+		"function": "fetchr:game/skybox/press_button"
 	}
 }
