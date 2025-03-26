@@ -616,8 +616,7 @@ data \
 }
 
 # 0002: pumpkin_pie
-#NEUN_SCRIPT until 69
-#data \
+data \
 	modify storage fetchr:registries items append value {\
 	id: "fetchr:pumpkin_pie",\
 	item: { id: "minecraft:pumpkin_pie" },\
@@ -625,17 +624,6 @@ data \
 	icon: "0002",\
 	categories: [ "fetchr:pumpkin", "fetchr:egg" ]\
 }
-#NEUN_SCRIPT end
-#NEUN_SCRIPT since 69
-data \
-	modify storage fetchr:registries items append value {\
-	id: "fetchr:pumpkin_pie",\
-	item: { id: "minecraft:pumpkin_pie" },\
-	translation: "item.minecraft.pumpkin_pie",\
-	icon: "0002",\
-	categories: [ "fetchr:pumpkin", {id: "fetchr:egg", weight: 2 } ]\
-}
-#NEUN_SCRIPT end
 
 # 0003: egg
 data \
@@ -648,8 +636,7 @@ data \
 }
 
 # 0004: cake
-#NEUN_SCRIPT until 69
-#data \
+data \
 	modify storage fetchr:registries items append value {\
 	id: "fetchr:cake",\
 	item: { id: "minecraft:cake" },\
@@ -657,17 +644,6 @@ data \
 	icon: "0004",\
 	categories: [ "fetchr:milk", "fetchr:egg" ]\
 }
-#NEUN_SCRIPT end
-#NEUN_SCRIPT since 69
-data \
-	modify storage fetchr:registries items append value {\
-	id: "fetchr:cake",\
-	item: { id: "minecraft:cake" },\
-	translation: "block.minecraft.cake",\
-	icon: "0004",\
-	categories: [ "fetchr:milk", {id: "fetchr:egg", weight: 2 } ]\
-}
-#NEUN_SCRIPT end
 
 # 0005: acacia_sapling
 data \
@@ -1533,18 +1509,6 @@ data \
 	categories: [ "fetchr:gold_and_ruined_portal" ],\
 	weight: 2\
 }
-
-#NEUN_SCRIPT since 69
-# 0053: blue_egg
-data \
-	modify storage fetchr:registries items append value {\
-	id: "fetchr:blue_egg",\
-	item: { id: "minecraft:blue_egg" },\
-	translation: "item.minecraft.blue_egg",\
-	icon: "0053",\
-	categories: [ "fetchr:egg" ]\
-}
-#NEUN_SCRIPT end
 
 #NEUN_SCRIPT since 69
 # 0054: bush
