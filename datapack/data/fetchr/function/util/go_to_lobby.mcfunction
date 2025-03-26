@@ -20,6 +20,7 @@ execute \
 	run tellraw @a { "translate": "fetchr.lobby.returned", "with": [{ "selector": "@s" }]}
 
 effect clear @s
+clear @s minecraft:spyglass[minecraft:custom_data={ fetchr: { skybox_spyglass: true }}]
 
 function fetchr:util/find_leashed_entities
 execute \

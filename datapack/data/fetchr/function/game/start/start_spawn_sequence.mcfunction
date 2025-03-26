@@ -25,6 +25,7 @@ setblock ~ ~-1 ~ minecraft:lime_stained_glass
 teleport @a[predicate=fetchr:is_in_game] ~ ~ ~
 tag @a remove fetchr.in_skybox
 effect give @a[predicate=fetchr:is_in_game] minecraft:invisibility infinite 1 true
+clear @a
 
 execute \
 	in fetchr:lobby \
