@@ -553,7 +553,11 @@ def handle_structued(
 									if len(command) != command_offset + 2:
 										raise ValueError("if/unless needs one argument")
 									value = get_variable(command[command_offset + 1], config)
-									if bool(value) == (command[command_offset] == "if"):
+									value = value != None and (
+										(isinstance(value, bool) and value)
+										or (isinstance(value, str) and value.lower() == "true")
+									)
+									if value == (command[command_offset] == "if"):
 										should_execute_action = True
 									
 								case "since" | "until":
@@ -714,7 +718,7 @@ def minify_function_file(file_content: str, config: dict, pack_format: int, min_
 					
 					result = True
 					if len(command) == 2:
-						result = bool(command[1]) == (command[0] == "if")
+						result = (command[1].lower() == "true") == (command[0] == "if")
 					elif len(command) == 4:
 						match command[2]:
 							case "=":
