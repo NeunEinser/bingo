@@ -25,31 +25,9 @@
 # 	function fetchr:card_frames/spawn_iter
 #declare storage tmp.fetchr:card_frames/spawn_frames
 
-summon minecraft:item_frame ~ ~ ~ {\
-	Facing: 3b,\
-	Silent: true,\
-	Tags: [ "fetchr.card_frame", "fetchr.new" ],\
-	Item: { id: "minecraft:barrier" },\
-	ItemDropChance: 0.0f\
-}
-scoreboard players \
-	operation @e[type=minecraft:item_frame, tag=fetchr.card_frame, tag=fetchr.new] fetchr.lobby_card_frame_id \
-		= $card_frames/spawn.i fetchr.tmp
-
 execute \
-	unless score $concealed_card fetchr.state matches 1 \
-	run data \
-		modify entity @e[type=minecraft:item_frame, tag=fetchr.new, limit=1] Item \
-		set from storage tmp.fetchr:card_frames/spawn_frames slots[0].item
-execute \
-	if dimension fetchr:default \
-	if items entity @s contents *[minecraft:lodestone_tracker] \
-	run data \
-		modify entity @s Item.components.minecraft:lodestone_tracker.target.dimension \
-		set value "fetchr:default"
-data remove storage tmp.fetchr:card_frames/spawn_frames slots[0]
-
-tag @e[type=minecraft:item_frame, tag=fetchr.card_frame] remove fetchr.new
+	summon minecraft:item_frame \
+	run function fetchr:card_frames/setup_frame
 
 scoreboard players add $card_frames/spawn.i fetchr.tmp 1
 scoreboard players operation $card_frames/spawn.row fetchr.tmp = $card_frames/spawn.i fetchr.tmp
