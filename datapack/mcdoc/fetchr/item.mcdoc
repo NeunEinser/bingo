@@ -1,5 +1,4 @@
-use ::java::server::world::item::SingleItem
-use ::java::data::advancement::predicate::ItemSubPredicate
+use ::java::world::item::SingleItem
 
 use ::fetchr::storages::registry::CategroyRegistryData
 

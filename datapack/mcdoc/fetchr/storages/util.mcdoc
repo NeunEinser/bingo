@@ -1,5 +1,5 @@
-use ::java::server::world::item::SingleItem
-use ::java::server::world::item::DataComponentPatch
+use ::java::world::item::SingleItem
+use ::java::world::component::DataComponentPatch
 
 dispatch minecraft:storage[io.fetchr:util] to struct {
 	nbt?: any ,
