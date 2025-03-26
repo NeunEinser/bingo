@@ -90,7 +90,7 @@ execute \
 			translate: "fetchr.lobby.card_generation.join_game.sign.line1",\
 			bold: true,\
 			color: "#8eedeb",\
-			clickEvent: { action: "run_command", value: "/function fetchr:lobby/settings/join_game" }\
+			click_event: { action: "run_command", value: "function fetchr:lobby/settings/join_game" }\
 		},\
 		{ translate: "fetchr.lobby.card_generation.join_game.sign.line2", bold: true, color: "#8eedeb" },\
 		{ translate: "fetchr.lobby.card_generation.join_game.sign.line3", bold: true, color: "#8eedeb" },\
@@ -107,7 +107,7 @@ execute \
 			translate: "fetchr.lobby.card_generation.join_game.sign.line1",\
 			bold: true,\
 			color: "#8eedeb",\
-			clickEvent: { action: "run_command", value: "/function fetchr:lobby/settings/join_game" }\
+			click_event: { action: "run_command", value: "function fetchr:lobby/settings/join_game" }\
 		},\
 		{ translate: "fetchr.lobby.card_generation.join_game.sign.line2", bold: true, color: "#8eedeb" },\
 		{ translate: "fetchr.lobby.card_generation.join_game.sign.line3", bold: true, color: "#8eedeb" },\
