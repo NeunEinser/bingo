@@ -4,6 +4,11 @@
 #
 # @within function fetchr:tick/tick
 
+execute \
+	as @a[tag=fetchr.in_skybox, distance=..64] \
+	at @s \
+	run function fetchr:game/skybox/player_tick
+
 execute unless entity @a[team=fetchr.black] run scoreboard players reset $black
 execute unless entity @a[team=fetchr.blue] run scoreboard players reset $blue
 execute unless entity @a[team=fetchr.cyan] run scoreboard players reset $cyan

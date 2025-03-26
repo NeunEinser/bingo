@@ -477,6 +477,7 @@ forceload add 0 0
 	scoreboard objectives remove fetchr.prev_y_pos
 	scoreboard objectives remove fetchr.prev_z_pos
 	scoreboard objectives remove fetchr.seed
+	scoreboard objectives remove fetchr.spyglass_dropped
 	scoreboard objectives remove fetchr.resource_pack_check
 
 	#region public objectives
@@ -823,6 +824,15 @@ forceload add 0 0
 		#		function fetchr:init/init
 		#		function fetchr:custom_hud/*
 		scoreboard objectives add fetchr.last_hud_update dummy
+
+		#>
+		# This objective is used to detect a player dropping a spyglass
+		#
+		# @within
+		#		function fetchr:init/init
+		#		function fetchr:game/skybox/tick
+		scoreboard objectives add fetchr.spyglass_dropped minecraft.dropped:minecraft.spyglass
+
 		#>
 		# This objective is used to detect a player reconnecting
 		#

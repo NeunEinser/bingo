@@ -179,6 +179,10 @@ tag @s remove fetchr.has_slot22
 tag @s remove fetchr.has_slot23
 tag @s remove fetchr.has_slot24
 
+scoreboard players set @s fetchr.spyglass_dropped 0
+item replace entity @s weapon.offhand \
+	with minecraft:spyglass[minecraft:custom_data={ fetchr: { skybox_spyglass: true }}]
+
 #>
 # @within
 # 	function fetchr:game/skybox/join_game
