@@ -545,7 +545,7 @@
 	"fetchr.item.description.any_trim": "任何盔甲紋樣",
 	"fetchr.got_item": "[%2$s | #%1$s] %3$s 獲得了 [%4$s]",
 	"fetchr.goal.blackout.chat": "[%s] %s 成功收集全部25個物品！",
-	"fetchr.goal.20_no_bingo.chat": "[%s] %s 成功收集25個物品並且無賓果！",
+	"fetchr.goal.20_no_bingo.chat": "[%s] %s 成功收集 20 個物品並且無賓果！",
 	"fetchr.goal.lockout.chat": "[%s]%s 贏了獨佔模式！",
 	"fetchr.goal.points.chat": "[%s] %s 以 %s 分贏了這場賓果！",
 	"fetchr.goal.blackout.title": "全物品！",
