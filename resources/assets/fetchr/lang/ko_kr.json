@@ -1,7 +1,9 @@
 {
 	"fetchr.error.incompatible_minecraft_version.multiple_compatible": "지원되지 않는 버전의 Minecraft를 실행하고 있습니다. 이 팩은 %s-%s 버전의 Minecraft를 위해 제작되었습니다.",
+	"fetchr.error.incompatible_minecraft_version.multiple_compatible.with_latest_snapshot": "지원되지 않는 버전의 Minecraft를 실행하고 있습니다. 이 팩은 %s-%s 버전 또는 %s 스냅샷의 Minecraft를 위해 제작되었습니다.",
 	"fetchr.error.incompatible_minecraft_version.incompatible_snapshot": "지원되지 않는 스냅샷을 사용하고 있습니다. %s-%s 버전의 스냅샷은 지원되지 않습니다. %s 이상의 버전을 사용하십시오.",
 	"fetchr.error.incompatible_minecraft_version.single_compatible": "지원되지 않는 버전의 Minecraft를 실행하고 있습니다. 이 팩은 %s 버전의 Minecraft를 위해 제작되었습니다.",
+	"fetchr.error.incompatible_minecraft_version.single_compatible.with_latest_snapshot": "지원되지 않는 버전의 Minecraft를 실행하고 있습니다. 이 팩은 %s 버전 또는 %s 스냅샷의 Minecraft를 위해 제작되었습니다.",
 	"fetchr.error.spigot_paper": "Spigot 또는 Paper를 통해 실행하는 것으로 보입니다. Paper와 Spigot은 바닐라를 변형하여 Fetchr와 호환되지 않습니다.",
 	"fetchr.error.spigot_paper.help": "바닐라 서버를 사용하거나, Fabric 또는 Quilt를 Lithium과 사용하여 최고의 성능을 내십시오.\n\nPaper 또는 Spigot을 사용하지 않음에도 이 메시지가 보여 추가적인 지원이 필요하다면 %s 또는 %s에 이 문제를 보고하십시오.",
 	"fetchr.logging.error": "오류",
