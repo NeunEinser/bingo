@@ -16,35 +16,13 @@ tellraw @s [\
 	"\n"\
 ]
 
-#NEUN_SCRIPT until 69
-#data modify storage tmp.fetchr:preferences/hud move set value '""'
-#NEUN_SCRIPT end
-#NEUN_SCRIPT since 69
 data modify storage tmp.fetchr:preferences/hud move set value ""
-#NEUN_SCRIPT end
 
 # Move left indicator
 # Work around for """WAI""" https://bugs.mojang.com/browse/MC-139625 :mad_neun:
 data \
 	modify storage tmp.fetchr:preferences/hud hudComponent \
 	set from storage fetchr:custom_hud currentPlayer.components[4]
-#NEUN_SCRIPT until 69
-#execute \
-	if data storage tmp.fetchr:preferences/hud hudComponent{ id: "fetchr:empty" } \
-	run data modify storage tmp.fetchr:preferences/hud move set value '[\
-		" [",\
-		{\
-			"translate": "fetchr.preferences.custom_hud.adjust_col.move_left.title",\
-			"color": "#00c3ff",\
-			"hoverEvent": {\
-				"action": "show_text",\
-				"contents": { "translate": "fetchr.preferences.custom_hud.adjust_col.move_left_right.description", "color": "gold" }\
-			}\
-		},\
-		"]"\
-	]'
-#NEUN_SCRIPT end
-#NEUN_SCRIPT since 69
 execute \
 	if data storage tmp.fetchr:preferences/hud hudComponent{ id: "fetchr:empty" } \
 	run data modify storage tmp.fetchr:preferences/hud move set value [\
@@ -59,7 +37,6 @@ execute \
 		},\
 		"]"\
 	]
-#NEUN_SCRIPT end
 
 #region Work around for """WAI""" https://bugs.mojang.com/browse/MC-139625 :mad_neun:
 data modify storage tmp.fetchr:preferences/hud filledComponets set value []

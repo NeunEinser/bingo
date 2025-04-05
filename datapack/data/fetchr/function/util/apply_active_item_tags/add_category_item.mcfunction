@@ -10,19 +10,6 @@
 # 	i: int
 # 	id: #[id] string
 
-#NEUN_SCRIPT until 69
-#data \
-	modify storage tmp.fetchr:apply_active_item_tags category_items[-1].item.components.minecraft:lore \
-	append value '""'
-#data \
-	modify block 7 0 7 front_text.messages[0] \
-	set value '[\
-		{ "translate": "fetchr.item.global_weight", "color": "gray", "italic": false },\
-		": ",\
-		{ "storage": "tmp.fetchr:apply_active_item_tags", "nbt": "category_items[-1].weight" }\
-	]'
-#NEUN_SCRIPT end
-#NEUN_SCRIPT since 69
 data \
 	modify storage tmp.fetchr:apply_active_item_tags category_items[-1].item.components.minecraft:lore \
 	append value ""
@@ -33,7 +20,6 @@ data \
 		": ",\
 		{ storage: "tmp.fetchr:apply_active_item_tags", nbt: "category_items[-1].weight" }\
 	]
-#NEUN_SCRIPT end
 
 data \
 	modify storage tmp.fetchr:apply_active_item_tags category_items[-1].item.components.minecraft:lore \

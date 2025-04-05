@@ -1,7 +1,6 @@
 {
 	"pack": {
 		"pack_format": 71,
-		"supported_formats": {"min_inclusive": 45, "max_inclusive": 71},
 		"description": "Fetchr"
 	}
 }

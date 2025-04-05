@@ -11,7 +11,6 @@
 # @private
 #declare tag fetchr.sign_lobby_end_sign
 
-#NEUN_SCRIPT unless {NEUN_SCRIPT:realms}
 execute \
 	if score $is_multiplayer fetchr.state matches 1 \
 	as @e[type=minecraft:marker, tag=fetchr.multiplayer_door] \
@@ -27,7 +26,6 @@ execute \
 	as @e[type=minecraft:marker, tag=fetchr.multiplayer_door] \
 	at @s \
 	run fill ~ ~ ~ ~ ~1 ~ minecraft:gray_concrete
-#NEUN_SCRIPT end
 execute \
 	as @e[type=minecraft:marker, tag=fetchr.lobby_sign] \
 	at @s \

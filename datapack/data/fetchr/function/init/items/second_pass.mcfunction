@@ -8,16 +8,9 @@
 # 	function fetchr:init/items/second_pass
 # @writes storage fetchr:items categories
 
-#NEUN_SCRIPT until 69
-#data \
-	modify storage tmp.fetchr:init initialized_items[-1].item.components.minecraft:lore \
-	append value '{ "translate": "fetchr.categories.header", "color": "gray", "italic": false }'
-#NEUN_SCRIPT end
-#NEUN_SCRIPT since 69
 data \
 	modify storage tmp.fetchr:init initialized_items[-1].item.components.minecraft:lore \
 	append value { translate: "fetchr.categories.header", color: "gray", italic: false }
-#NEUN_SCRIPT end
 
 data \
 	modify storage tmp.fetchr:init item_categories \

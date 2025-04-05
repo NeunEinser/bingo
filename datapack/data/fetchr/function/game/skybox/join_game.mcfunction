@@ -131,7 +131,6 @@ tag @s add fetchr.in_skybox
 scoreboard players reset @s fetchr.pref
 scoreboard players reset @s fetchr.seed
 scoreboard players reset @s fetchr.settings
-scoreboard players reset @s fetchr.pre_gen_radius
 scoreboard players reset @s fetchr.points_race_minutes
 scoreboard players enable @s fetchr.lobby
 
@@ -144,14 +143,8 @@ effect give @s minecraft:saturation infinite 255 true
 effect give @s minecraft:resistance infinite 255 true
 effect give @s minecraft:weakness infinite 255 true
 
-#NEUN_SCRIPT until 49
-#attribute @s minecraft:player.entity_interaction_range \
-	modifier add fetchr:card_item_frame_range 20 add_value
-#NEUN_SCRIPT end
-#NEUN_SCRIPT since 49
 attribute @s minecraft:entity_interaction_range \
 	modifier add fetchr:card_item_frame_range 20 add_value
-#NEUN_SCRIPT end
 
 tag @s remove fetchr.has_slot0
 tag @s remove fetchr.has_slot1
@@ -229,4 +222,3 @@ execute \
 execute \
 	in fetchr:lobby \
 	run function fetchr:custom_hud/components/timer/update
-bossbar set fetchr:start/pre_gen/progress players @a[predicate=fetchr:is_in_game]

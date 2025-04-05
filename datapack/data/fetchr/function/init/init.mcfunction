@@ -383,12 +383,6 @@ forceload add 0 0
 		#declare tag fetchr.gamemode_sign
 		#>
 		# @within
-		# 	function fetchr:lobby/settings/set_pre_gen_radius_internal
-		# 	function fetchr:init/setup_lobby/*
-		# 	structure fetchr:card_generation
-		#declare tag fetchr.pre_gen_sign
-		#>
-		# @within
 		# 	function fetchr:lobby/settings/toggle_allow_spectating
 		# 	function fetchr:init/setup_lobby/*
 		# 	structure fetchr:card_generation
@@ -506,7 +500,6 @@ forceload add 0 0
 		# @public
 		scoreboard objectives add fetchr.state dummy
 
-		#NEUN_SCRIPT unless {NEUN_SCRIPT:realms}
 		#>
 		# This objective is set to 1 for players who confirmed their operator status in
 		# strict mode.
@@ -516,7 +509,6 @@ forceload add 0 0
 		#
 		# @public
 		scoreboard objectives add fetchr.operator dummy
-		#NEUN_SCRIPT end
 
 		#>
 		# Whether this player's hud needs to be forcefully updated entirely
@@ -646,15 +638,6 @@ forceload add 0 0
 		# @user
 		scoreboard objectives add fetchr.menu trigger
 
-		#NEUN_SCRIPT unless {NEUN_SCRIPT:realms}
-		#>
-		# Trigger objective used to change the pre-generation radius.
-		#
-		# @internal
-		# @user
-		scoreboard objectives add fetchr.pre_gen_radius trigger
-		#NEUN_SCRIPT end
-
 		#>
 		# Trigger objective used to change the announcement time for the points goal.
 		#
@@ -668,13 +651,11 @@ forceload add 0 0
 		# @internal
 		scoreboard objectives add fetchr.pref trigger
 
-		#NEUN_SCRIPT unless {NEUN_SCRIPT:realms}
 		#>
 		# This trigger is used for confirming that the resource pack is active
 		#
 		# @internal
 		scoreboard objectives add fetchr.resource_pack_check trigger
-		#NEUN_SCRIPT end
 
 		#>
 		# Trigger objective for revealing a concealed card.
@@ -866,12 +847,7 @@ forceload add 0 0
 		#
 		# @public
 		#declare score_holder $is_multiplayer
-		#NEUN_SCRIPT unless {NEUN_SCRIPT:realms}
 		scoreboard players add $is_multiplayer fetchr.state 0
-		#NEUN_SCRIPT end
-		#NEUN_SCRIPT if {NEUN_SCRIPT:realms}
-		#scoreboard players set $is_multiplayer fetchr.state 1
-		#NEUN_SCRIPT end
 		#>
 		# The status of chunk pregeneration.
 		# 0 = not started
@@ -922,9 +898,7 @@ forceload add 0 0
 		#
 		# @internal
 		#declare score_holder $lobby_gamemode
-		#NEUN_SCRIPT unless {NEUN_SCRIPT:realms}
 		scoreboard players add $lobby_gamemode fetchr.settings 0
-		#NEUN_SCRIPT end
 		#>
 		# The amount of chunks to pre-generate
 		#
@@ -1219,65 +1193,8 @@ forceload add 0 0
 #endregion
 
 # Create overworld resourcepack check
-	#NEUN_SCRIPT unless {NEUN_SCRIPT:realms}
 	fill 0 0 0 2 3 2 minecraft:black_concrete outline
 	setblock 1 2 2 minecraft:sea_lantern
-	#NEUN_SCRIPT until 69
-	#execute \
-		if entity @a[tag=fetchr.resourcepack_check, limit=1] \
-		run setblock 1 2 1 minecraft:warped_wall_sign{ front_text: { messages: [\
-			'{\
-				"translate": "fetchr.technical.resourcepack_version_{NEUN_SCRIPT:rp_version}",\
-				"fallback": "%2$s",\
-				"color": "#8eedeb",\
-				"with": [\
-					{ "translate": "fetchr.resourcepack_check.sign.line1" },\
-					{ "translate": "fetchr.resourcepack_check.wrong_version.sign.line1", "fallback": "", "bold": true }\
-				],\
-				"clickEvent": { "action": "run_command", "value": "trigger fetchr.resource_pack_check" }\
-			}',\
-			'{\
-				"translate": "fetchr.technical.resourcepack_version_{NEUN_SCRIPT:rp_version}",\
-				"fallback": "%2$s",\
-				"color": "#8eedeb",\
-				"with": [\
-					{ "translate": "fetchr.resourcepack_check.sign.line2" },\
-					{\
-						"translate": "fetchr.resourcepack_check.wrong_version.sign.line2",\
-						"fallback": "Download",\
-						"bold": true\
-					}\
-				]\
-			}',\
-			'{\
-				"translate": "fetchr.technical.resourcepack_version_{NEUN_SCRIPT:rp_version}",\
-				"fallback": "%2$s",\
-				"color": "#8eedeb",\
-				"with": [\
-					{ "translate": "fetchr.resourcepack_check.sign.line3" },\
-					{\
-						"translate": "fetchr.resourcepack_check.wrong_version.sign.line3",\
-						"fallback": "Resource Pack",\
-						"bold": true\
-					}\
-				]\
-			}',\
-			'{\
-				"translate": "fetchr.technical.resourcepack_version_{NEUN_SCRIPT:rp_version}",\
-				"fallback": "%2$s",\
-				"color": "#8eedeb",\
-				"with": [\
-					{ "translate": "fetchr.resourcepack_check.sign.line4" },\
-					{\
-						"translate": "fetchr.resourcepack_check.wrong_version.sign.line4",\
-						"fallback": "",\
-						"bold": true\
-					}\
-				]\
-			}'\
-		]}}
-	#NEUN_SCRIPT end
-	#NEUN_SCRIPT since 69
 	execute \
 		if entity @a[tag=fetchr.resourcepack_check, limit=1] \
 		run setblock 1 2 1 minecraft:warped_wall_sign{ front_text: { messages: [\
@@ -1331,16 +1248,7 @@ forceload add 0 0
 				]\
 			}\
 		]}}
-	#NEUN_SCRIPT end
 	gamerule spawnRadius 0
-	#NEUN_SCRIPT end
-
-# Add pregen bossbar
-	bossbar add fetchr:start/pre_gen/progress { "translate": "fetchr.game.start.pre_gen_progress" }
-	bossbar set fetchr:start/pre_gen/progress color red
-	execute \
-		unless score $game_state fetchr.state matches 2 \
-		run bossbar set fetchr:start/pre_gen/progress visible false
 
 # Set gamerules
 	gamerule commandBlockOutput false
@@ -1390,66 +1298,6 @@ forceload add 0 0
 		team modify fetchr.yellow color yellow
 
 	## set completed backgrounds
-		#NEUN_SCRIPT until 69
-		#data modify storage fetchr:card completedBackgroundTemplates set value []
-		#data modify storage fetchr:card completedBackgroundTemplates append value [\
-			'"\\uf000"'\
-		]
-		#data modify storage fetchr:card completedBackgroundTemplates append value [\
-			'"\\uf000"', '"\\uf001"'\
-		]
-		#data modify storage fetchr:card completedBackgroundTemplates append value [\
-			'"\\uf000"', '"\\uf001"', '"\\uf002"'\
-		]
-		#data modify storage fetchr:card completedBackgroundTemplates append value [\
-			'"\\uf000"', '"\\uf001"', '"\\uf003"', '"\\uf004"'\
-		]
-		#data modify storage fetchr:card completedBackgroundTemplates append value [\
-			'"\\uf000"', '"\\uf001"', '"\\uf005"', '"\\uf006"', '"\\uf007"'\
-		]
-		#data modify storage fetchr:card completedBackgroundTemplates append value [\
-			'"\\uf000"', '"\\uf001"', '"\\uf008"', '"\\uf002"', '"\\uf004"', '"\\uf009"'\
-		]
-		#data modify storage fetchr:card completedBackgroundTemplates append value [\
-			'"\\uf000"', '"\\uf001"', '"\\uf00a"', '"\\uf00b"', '"\\uf00c"', '"\\uf00d"', '"\\uf00e"'\
-		]
-		#data modify storage fetchr:card completedBackgroundTemplates append value [\
-			'"\\uf000"', '"\\uf001"', '"\\uf00f"', '"\\uf003"', '"\\uf010"', '"\\uf004"', '"\\uf011"', '"\\uf012"'\
-		]
-		#data modify storage fetchr:card completedBackgroundTemplates append value [\
-			'"\\uf000"', '"\\uf001"', '"\\uf013"', '"\\uf014"', '"\\uf002"', '"\\uf015"',\
-			'"\\uf016"', '"\\uf009"', '"\\uf017"'\
-		]
-		#data modify storage fetchr:card completedBackgroundTemplates append value [\
-			'"\\uf000"', '"\\uf001"', '"\\uf018"', '"\\uf005"', '"\\uf019"', '"\\uf006"',\
-			'"\\uf004"', '"\\uf007"', '"\\uf01a"', '"\\uf01b"'\
-		]
-		#data modify storage fetchr:card completedBackgroundTemplates append value [\
-			'"\\uf000"', '"\\uf001"', '"\\uf01c"', '"\\uf01d"', '"\\uf01e"', '"\\uf01f"',\
-			'"\\uf020"', '"\\uf021"', '"\\uf022"', '"\\uf023"', '"\\uf024"'\
-		]
-		#data modify storage fetchr:card completedBackgroundTemplates append value [\
-			'"\\uf000"', '"\\uf001"', '"\\uf025"', '"\\uf008"', '"\\uf003"', '"\\uf002"',\
-			'"\\uf026"', '"\\uf004"', '"\\uf027"', '"\\uf009"', '"\\uf012"', '"\\uf028"'\
-		]
-		#data modify storage fetchr:card completedBackgroundTemplates append value [\
-			'"\\uf000"', '"\\uf001"', '"\\uf029"', '"\\uf02a"', '"\\uf02b"', '"\\uf02c"', '"\\uf02d"',\
-			'"\\uf02e"', '"\\uf02f"', '"\\uf030"', '"\\uf031"', '"\\uf032"', '"\\uf033"'\
-		]
-		#data modify storage fetchr:card completedBackgroundTemplates append value [\
-			'"\\uf000"', '"\\uf001"', '"\\uf034"', '"\\uf00a"', '"\\uf035"', '"\\uf00b"', '"\\uf036"',\
-			'"\\uf00c"', '"\\uf004"', '"\\uf00d"', '"\\uf037"', '"\\uf00e"', '"\\uf038"', '"\\uf039"'\
-		]
-		#data modify storage fetchr:card completedBackgroundTemplates append value [\
-			'"\\uf000"', '"\\uf001"', '"\\uf03a"', '"\\uf03b"', '"\\uf005"', '"\\uf03c"', '"\\uf002"', '"\\uf006"',\
-			'"\\uf03d"', '"\\uf03e"', '"\\uf007"', '"\\uf009"', '"\\uf03f"', '"\\uf01b"', '"\\uf040"'\
-		]
-		#data modify storage fetchr:card completedBackgroundTemplates append value [\
-			'"\\uf000"', '"\\uf001"', '"\\uf041"', '"\\uf00f"', '"\\uf042"', '"\\uf003"', '"\\uf043"', '"\\uf010"',\
-			'"\\uf044"', '"\\uf004"', '"\\uf045"', '"\\uf011"', '"\\uf046"', '"\\uf012"', '"\\uf047"', '"\\uf048"'\
-		]
-		#NEUN_SCRIPT end
-		#NEUN_SCRIPT since 69
 		data modify storage fetchr:card completedBackgroundTemplates set value []
 		data modify storage fetchr:card completedBackgroundTemplates append value [\
 			"\uf000"\
@@ -1507,7 +1355,6 @@ forceload add 0 0
 			"\uf000", "\uf001", "\uf041", "\uf00f", "\uf042", "\uf003", "\uf043", "\uf010",\
 			"\uf044", "\uf004", "\uf045", "\uf011", "\uf046", "\uf012", "\uf047", "\uf048"\
 		]
-		#NEUN_SCRIPT end
 #region run registries
 	data remove storage fetchr:registries categories
 	data remove storage fetchr:registries items
@@ -1578,17 +1425,6 @@ forceload add 0 0
 		unless data storage fetchr:custom_hud default[4] \
 		run function fetchr:init/initialize_hud_components/fill_default_col0
 	
-	#NEUN_SCRIPT until 69
-	#execute \
-		unless data storage tmp.fetchr:init/hud columns[1][5] \
-		run data \
-			modify storage fetchr:custom_hud default append value {\
-			id: "fetchr:spacer",\
-			name: '{ "translate": "fetchr.custom_hud.components.spacer" }',\
-			slot_id: 5b\
-		}
-	#NEUN_SCRIPT end
-	#NEUN_SCRIPT since 69
 	execute \
 		unless data storage tmp.fetchr:init/hud columns[1][5] \
 		run data \
@@ -1597,7 +1433,6 @@ forceload add 0 0
 			name: { translate: "fetchr.custom_hud.components.spacer" },\
 			slot_id: 5b\
 		}
-	#NEUN_SCRIPT end
 	data modify storage fetchr:custom_hud default append from storage tmp.fetchr:init/hud columns[1][0]
 	data modify storage fetchr:custom_hud default append from storage tmp.fetchr:init/hud columns[1][1]
 	data modify storage fetchr:custom_hud default append from storage tmp.fetchr:init/hud columns[1][2]

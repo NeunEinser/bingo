@@ -5,12 +5,7 @@
 # @within function fetchr:custom_hud/components/player_position/update_xz
 # @context entity Player whose hud is currently being updated
 
-#NEUN_SCRIPT until 69
-#data modify storage io.fetchr:custom_hud component.iconWidth set value '"\\u000a"'
-#NEUN_SCRIPT end
-#NEUN_SCRIPT since 69
 data modify storage io.fetchr:custom_hud component.iconWidth set value "\u000a"
-#NEUN_SCRIPT end
 
 execute \
 	if score $custom_hud/player_pos.rot fetchr.tmp matches 0..80 \

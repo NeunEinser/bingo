@@ -32,20 +32,6 @@ $data \
 	append from storage fetchr:items active_items[-1].categories[{ id: "$(id)" }]
 
 # set lore
-#NEUN_SCRIPT until 69
-#data \
-	modify block 7 0 7 front_text.messages[0] \
-	set value '[\
-		{ "text": "  • ", "color": "gray", "italic": false },\
-		{ "storage": "fetchr:items", "nbt": "active_items[-1].active_categories[-1].name", "interpret": true },\
-		" (",\
-		{ "storage": "fetchr:items", "nbt": "active_items[-1].active_categories[-1].weight" },\
-		"/",\
-		{ "storage": "fetchr:items", "nbt": "active_items[-1].active_categories[-1].total_item_weight" },\
-		")"\
-	]'
-#NEUN_SCRIPT end
-#NEUN_SCRIPT since 69
 data \
 	modify block 7 0 7 front_text.messages[0] \
 	set value [\
@@ -57,7 +43,6 @@ data \
 		{ storage: "fetchr:items", nbt: "active_items[-1].active_categories[-1].total_item_weight" },\
 		")"\
 	]
-#NEUN_SCRIPT end
 data \
 	modify storage fetchr:items active_items[-1].item.components.minecraft:lore \
 	append from block 7 0 7 front_text.messages[0]

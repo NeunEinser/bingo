@@ -8,23 +8,8 @@
 # @input storage io.fetchr:util concat_strings
 # @outputs storage io.fetchr:util string
 
-#NEUN_SCRIPT until 69
-#data modify block 7 0 7 front_text.messages set value [\
-	'{ "storage": "io.fetchr:util", "nbt": "concat_strings.first" }',\
-	'{ "storage": "io.fetchr:util", "nbt": "concat_strings.second" }',\
-	'""',\
-	'""'\
-]
 
-#data \
-	modify storage tmp.fetchr:util concat_strings.first \
-	set string block 7 0 7 front_text.messages[0] 1 -1
 
-#data \
-	modify storage tmp.fetchr:util concat_strings.second \
-	set string block 7 0 7 front_text.messages[1] 1 -1
-#NEUN_SCRIPT end
-#NEUN_SCRIPT since 69
 data modify storage tmp.fetchr:util concat_strings.first set value []
 data modify storage tmp.fetchr:util concat_strings.second set value []
 data modify storage tmp.fetchr:util concat_strings.first append from storage io.fetchr:util concat_strings.first
@@ -69,6 +54,5 @@ execute \
 data \
 	modify storage tmp.fetchr:util concat_strings.second \
 	set from storage io.fetchr:util string
-#NEUN_SCRIPT end
 
 function fetchr:util/string/concat_escaped with storage tmp.fetchr:util concat_strings

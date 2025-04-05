@@ -1,5 +1,4 @@
 {
-	"NEUN_SCRIPT remove_self until 56": null,
 	"type": "minecraft:random_selector",
 	"config": {
 		"default": "minecraft:pale_oak_checked",

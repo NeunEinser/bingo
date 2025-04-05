@@ -46,7 +46,7 @@ execute \
 	unless data storage tmp.fetchr:init category.weight \
 	run data modify storage tmp.fetchr:init category.weight set value 1
 
-#sanity checks
+# sanity checks
 #>
 # @private
 #declare score_holder $init/items/normalize.weight

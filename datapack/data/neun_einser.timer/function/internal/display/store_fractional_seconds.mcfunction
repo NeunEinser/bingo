@@ -4,19 +4,6 @@
 #
 # @internal
 
-#NEUN_SCRIPT until 69
-#data \
-	merge storage neun_einser.timer:display {\
-		internal: {\
-			secondSeparator: ["."],\
-			millis: '[\
-				{ "storage": "neun_einser.timer:display", "nbt": "internal.secondSeparator", "interpret": true },\
-				{ "score": { "name": "$millis", "objective": "91.timer.io" }}\
-			]'\
-		}\
-	}
-#NEUN_SCRIPT end
-#NEUN_SCRIPT since 69
 data \
 	merge storage neun_einser.timer:display {\
 		internal: {\
@@ -27,7 +14,6 @@ data \
 			]\
 		}\
 	}
-#NEUN_SCRIPT end
 execute \
 	if score $blocks_per_second 91.timer.intern matches 100.. \
 	if score $millis 91.timer.io matches ..9 \

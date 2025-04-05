@@ -8,8 +8,6 @@ scoreboard players reset * fetchr.lobby
 scoreboard players reset $spawn_x fetchr.state
 scoreboard players reset $spawn_z fetchr.state
 
-schedule clear fetchr:game/start/pre_gen/schedule_entity_check
-
 execute \
 	if score $game_state fetchr.state matches 3.. \
 	as @a[predicate=fetchr:is_in_game] \
@@ -46,41 +44,7 @@ team leave @a[predicate=fetchr:is_in_lobby]
 tag @a remove fetchr.automatically_join_game
 tag @s add fetchr.automatically_join_game
 
-#NEUN_SCRIPT until 69
-#execute \
-	in fetchr:lobby \
-	as @e[type=minecraft:marker, tag=fetchr.join_game_sign, distance=0..] \
-	run data \
-		modify entity @s data.front_text.messages set value [\
-		'{\
-			"translate": "fetchr.lobby.card_generation.join_game.sign.line1",\
-			"bold": true,\
-			"color": "#8eedeb",\
-			"clickEvent": { "action": "run_command", "value": "/function fetchr:lobby/settings/join_game" }\
-		}',\
-		'{ "translate": "fetchr.lobby.card_generation.join_game.sign.line2", "bold": true, "color": "#8eedeb" }',\
-		'{ "translate": "fetchr.lobby.card_generation.join_game.sign.line3", "bold": true, "color": "#8eedeb" }',\
-		'{ "translate": "fetchr.lobby.card_generation.join_game.sign.line4", "bold": true, "color": "#8eedeb" }'\
-	]
 
-#execute \
-	in fetchr:lobby \
-	as @e[type=minecraft:marker, tag=fetchr.join_game_sign, distance=0..] \
-	if data entity @s data.back_text \
-	run data \
-		modify entity @s data.front_text.messages set value [\
-		'{\
-			"translate": "fetchr.lobby.card_generation.join_game.sign.line1",\
-			"bold": true,\
-			"color": "#8eedeb",\
-			"clickEvent": { "action": "run_command", "value": "/function fetchr:lobby/settings/join_game" }\
-		}',\
-		'{ "translate": "fetchr.lobby.card_generation.join_game.sign.line2", "bold": true, "color": "#8eedeb" }',\
-		'{ "translate": "fetchr.lobby.card_generation.join_game.sign.line3", "bold": true, "color": "#8eedeb" }',\
-		'{ "translate": "fetchr.lobby.card_generation.join_game.sign.line4", "bold": true, "color": "#8eedeb" }'\
-	]
-#NEUN_SCRIPT end
-#NEUN_SCRIPT since 69
 execute \
 	in fetchr:lobby \
 	as @e[type=minecraft:marker, tag=fetchr.join_game_sign, distance=0..] \
@@ -113,5 +77,4 @@ execute \
 		{ translate: "fetchr.lobby.card_generation.join_game.sign.line3", bold: true, color: "#8eedeb" },\
 		{ translate: "fetchr.lobby.card_generation.join_game.sign.line4", bold: true, color: "#8eedeb" }\
 	]
-#NEUN_SCRIPT end
 function fetchr:lobby/place_indestructible_blocks

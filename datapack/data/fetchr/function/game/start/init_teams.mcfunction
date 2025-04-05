@@ -167,20 +167,11 @@ data \
 #declare score_holder $game/start.team_count
 scoreboard players operation $game/start.team_count fetchr.tmp = $team_count fetchr.state
 function fetchr:game/start/get_completed_background_template
-#NEUN_SCRIPT until 69
-#execute \
-	if score $lockout_mode fetchr.state matches 1 \
-	run data \
-		modify storage tmp.fetchr:game/start backgroundTemplate[] \
-		set value '"\\uf000"'
-#NEUN_SCRIPT end
-#NEUN_SCRIPT since 69
 execute \
 	if score $lockout_mode fetchr.state matches 1 \
 	run data \
 		modify storage tmp.fetchr:game/start backgroundTemplate[] \
 		set value "\uf000"
-#NEUN_SCRIPT end
 
 data modify storage tmp.fetchr:game/start defaultBackground set value []
 
@@ -233,23 +224,6 @@ execute \
 	if entity @a[predicate=fetchr:is_in_game, team=fetchr.black, limit=1] \
 	run function fetchr:game/start/init_teams/black
 
-#NEUN_SCRIPT until 69
-#data \
-		modify storage fetchr:card teams[].slots set value [ \
-		'"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"',\
-		'"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"',\
-		'"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"',\
-		'"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"',\
-		'"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"', '"\\uFFFF"'\
-	]
-#execute \
-	if score $lockout_mode fetchr.state matches 1 \
-	run data modify storage tmp.fetchr:game/start defaultBackground set value ['[\
-		{ "text": "\\uf000", "interpret": true, "color": "#8b8b8b" },\
-		{ "text": "\\uffeb", "font": "fetchr:space" }\
-	]']
-#NEUN_SCRIPT end
-#NEUN_SCRIPT since 69
 data \
 		modify storage fetchr:card teams[].slots set value [ \
 		"\uFFFF", "\uFFFF", "\uFFFF", "\uFFFF", "\uFFFF",\
@@ -264,7 +238,6 @@ execute \
 		{ text: "\uf000", interpret: true, color: "#8b8b8b" },\
 		{ text: "\uffeb", font: "fetchr:space" }\
 	]]
-#NEUN_SCRIPT end
 execute \
 	if score $lockout_mode fetchr.state matches 1 \
 	run data modify storage fetchr:card teams[].background_index set value 0b

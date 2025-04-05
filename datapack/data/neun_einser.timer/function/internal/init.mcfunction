@@ -196,26 +196,6 @@ scoreboard players set 5 91.timer.intern 5
 # @internal
 #declare score_holder $last_worldborder_value
 
-#NEUN_SCRIPT until 69
-#data merge storage neun_einser.timer:display {\
-	"hh:mm:ss.s": '[\
-		{ "storage": "neun_einser.timer:display", "nbt": "internal.hours", "interpret": true },\
-		{ "storage": "neun_einser.timer:display", "nbt": "internal.minutes", "interpret": true },\
-		{ "storage": "neun_einser.timer:display", "nbt": "internal.seconds", "interpret": true },\
-		{ "storage": "neun_einser.timer:display", "nbt": "internal.millis", "interpret": true }\
-	]',\
-	"hh:mm:ss": '[\
-		{ "storage": "neun_einser.timer:display", "nbt": "internal.hours", "interpret": true },\
-		{ "storage": "neun_einser.timer:display", "nbt": "internal.minutes", "interpret": true },\
-		{ "storage": "neun_einser.timer:display", "nbt": "internal.seconds", "interpret": true }\
-	]',\
-	"hh:mm": '[\
-		{ "storage": "neun_einser.timer:display", "nbt": "internal.hours", "interpret": true },\
-		{ "storage": "neun_einser.timer:display", "nbt": "internal.minutes", "interpret": true }\
-	]'\
-}
-#NEUN_SCRIPT end
-#NEUN_SCRIPT since 69
 data merge storage neun_einser.timer:display {\
 	"hh:mm:ss.s": [\
 		{ storage: "neun_einser.timer:display", nbt: "internal.hours", interpret: true },\
@@ -233,4 +213,3 @@ data merge storage neun_einser.timer:display {\
 		{ storage: "neun_einser.timer:display", nbt: "internal.minutes", interpret: true }\
 	]\
 }
-#NEUN_SCRIPT end

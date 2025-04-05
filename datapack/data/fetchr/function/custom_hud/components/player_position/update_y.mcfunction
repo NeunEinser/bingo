@@ -8,18 +8,6 @@
 data \
 	modify storage io.fetchr:custom_hud component \
 	set from storage fetchr:custom_hud currentPlayer.components[{ id: "fetchr:y_position" }]
-#NEUN_SCRIPT until 69
-#data \
-	modify storage io.fetchr:custom_hud component \
-	merge value {\
-		textComponent: '[\
-			"Y: ",\
-			{ "score": { "name": "$custom_hud/player_pos.y", "objective": "fetchr.tmp" }}\
-		]',\
-		changed: true\
-	}
-#NEUN_SCRIPT end
-#NEUN_SCRIPT since 69
 data \
 	modify storage io.fetchr:custom_hud component \
 	merge value {\
@@ -29,7 +17,6 @@ data \
 		],\
 		changed: true\
 	}
-#NEUN_SCRIPT end
 
 scoreboard players set $custom_hud/width.padding fetchr.io 79
 scoreboard players operation $custom_hud/width.number fetchr.io = $custom_hud/player_pos.y fetchr.tmp

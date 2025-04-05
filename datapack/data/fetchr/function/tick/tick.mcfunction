@@ -8,100 +8,18 @@
 # @within tag/function minecraft:tick
 # @handles #minecraft:tick
 
-#NEUN_SCRIPT since {NEUN_SCRIPT:max_pack_format + 1}
-	#NEUN_SCRIPT if {NEUN_SCRIPT:minecraft_initial_release} = {NEUN_SCRIPT:minecraft_latest_snapshot}
-		#tellraw @a {\
-			"translate": "fetchr.error.incompatible_minecraft_version.single_compatible",\
-			"color": "red",\
-			"with": [ "{NEUN_SCRIPT:minecraft_initial_release}" ]\
-		}
-	#NEUN_SCRIPT end
 
-	#NEUN_SCRIPT if {NEUN_SCRIPT:minecraft_initial_release} != {NEUN_SCRIPT:minecraft_latest_snapshot}
-		#NEUN_SCRIPT if {NEUN_SCRIPT:minecraft_initial_release} = {NEUN_SCRIPT:minecraft_latest_release}
-			#tellraw @a {\
-				"translate": "fetchr.error.incompatible_minecraft_version.single_compatible.with_latest_snapshot",\
-				"color": "red",\
-				"with": [ "{NEUN_SCRIPT:minecraft_initial_release}", "{NEUN_SCRIPT:minecraft_latest_snapshot}" ]\
-			}
-		#NEUN_SCRIPT end
 
-		#NEUN_SCRIPT if {NEUN_SCRIPT:minecraft_initial_release} != {NEUN_SCRIPT:minecraft_latest_release}
-			#NEUN_SCRIPT if {NEUN_SCRIPT:minecraft_latest_release} = {NEUN_SCRIPT:minecraft_latest_snapshot}
-				#tellraw @a {\
-					"translate": "fetchr.error.incompatible_minecraft_version.multiple_compatible",\
-					"color": "red",\
-					"with": [ "{NEUN_SCRIPT:minecraft_initial_release}", "{NEUN_SCRIPT:minecraft_latest_release}" ]\
-				}
-			#NEUN_SCRIPT end
 
-			#NEUN_SCRIPT if {NEUN_SCRIPT:minecraft_latest_release} != {NEUN_SCRIPT:minecraft_latest_snapshot}
-				#tellraw @a {\
-					"translate": "fetchr.error.incompatible_minecraft_version.multiple_compatible.with_latest_snapshot",\
-					"color": "red",\
-					"with": [\
-						"{NEUN_SCRIPT:minecraft_initial_release}",\
-						"{NEUN_SCRIPT:minecraft_latest_release}",\
-						"{NEUN_SCRIPT:minecraft_latest_snapshot}"\
-					]\
-				}
-			#NEUN_SCRIPT end
-		#NEUN_SCRIPT end
-	#NEUN_SCRIPT end
-#NEUN_SCRIPT end
 
-#NEUN_SCRIPT since 62 until 69
-	#tellraw @a { "translate": "fetchr.error.incompatible_minecraft_version.incompatible_snapshot", "color": "red", "with": [ "25w02a", "25w09a", "25w09b" ]}
-	#return fail
-#NEUN_SCRIPT end
 
-#NEUN_SCRIPT until {NEUN_SCRIPT:min_pack_format}
-	#NEUN_SCRIPT if {NEUN_SCRIPT:minecraft_initial_release} = {NEUN_SCRIPT:minecraft_latest_snapshot}
-		#tellraw @a {\
-			"translate": "fetchr.error.incompatible_minecraft_version.single_compatible",\
-			"color": "red",\
-			"with": [ "{NEUN_SCRIPT:minecraft_initial_release}" ]\
-		}
-	#NEUN_SCRIPT end
 
-	#NEUN_SCRIPT if {NEUN_SCRIPT:minecraft_initial_release} != {NEUN_SCRIPT:minecraft_latest_snapshot}
-		#NEUN_SCRIPT if {NEUN_SCRIPT:minecraft_initial_release} = {NEUN_SCRIPT:minecraft_latest_release}
-			#tellraw @a {\
-				"translate": "fetchr.error.incompatible_minecraft_version.single_compatible.with_latest_snapshot",\
-				"color": "red",\
-				"with": [ "{NEUN_SCRIPT:minecraft_initial_release}", "{NEUN_SCRIPT:minecraft_latest_snapshot}" ]\
-			}
-		#NEUN_SCRIPT end
 
-		#NEUN_SCRIPT if {NEUN_SCRIPT:minecraft_initial_release} != {NEUN_SCRIPT:minecraft_latest_release}
-			#NEUN_SCRIPT if {NEUN_SCRIPT:minecraft_latest_release} = {NEUN_SCRIPT:minecraft_latest_snapshot}
-				#tellraw @a {\
-					"translate": "fetchr.error.incompatible_minecraft_version.multiple_compatible",\
-					"color": "red",\
-					"with": [ "{NEUN_SCRIPT:minecraft_initial_release}", "{NEUN_SCRIPT:minecraft_latest_release}" ]\
-				}
-			#NEUN_SCRIPT end
 
-			#NEUN_SCRIPT if {NEUN_SCRIPT:minecraft_latest_release} != {NEUN_SCRIPT:minecraft_latest_snapshot}
-				#tellraw @a {\
-					"translate": "fetchr.error.incompatible_minecraft_version.multiple_compatible.with_latest_snapshot",\
-					"color": "red",\
-					"with": [\
-						"{NEUN_SCRIPT:minecraft_initial_release}",\
-						"{NEUN_SCRIPT:minecraft_latest_release}",\
-						"{NEUN_SCRIPT:minecraft_latest_snapshot}"\
-					]\
-				}
-			#NEUN_SCRIPT end
-		#NEUN_SCRIPT end
-	#NEUN_SCRIPT end
-#NEUN_SCRIPT end
-#NEUN_SCRIPT since {NEUN_SCRIPT:min_pack_format} until {NEUN_SCRIPT:max_pack_format + 1}
 	function fetchr:tick/spigot
 	function neun_einser.timer:store_current_time
 
 	# Detect second (or more) players in a LAN world
-	#NEUN_SCRIPT unless {NEUN_SCRIPT:realms}
 		execute \
 			store result score $is_multiplayer fetchr.state \
 			if entity @a
@@ -134,62 +52,6 @@
 		execute \
 			if entity @a[tag=fetchr.resourcepack_check, limit=1] \
 			run setblock 1 2 1 minecraft:warped_wall_sign
-		#NEUN_SCRIPT until 69
-			#execute \
-				if entity @a[tag=fetchr.resourcepack_check, limit=1] \
-				run data modify block 1 2 1 front_text.messages set value [\
-					'{\
-						"translate": "fetchr.technical.resourcepack_version_{NEUN_SCRIPT:rp_version}",\
-						"fallback": "%2$s",\
-						"color": "#8eedeb",\
-						"with": [\
-							{ "translate": "fetchr.resourcepack_check.sign.line1" },\
-							{ "translate": "fetchr.resourcepack_check.wrong_version.sign.line1", "fallback": "", "bold": true }\
-						],\
-						"clickEvent": { "action": "run_command", "value": "trigger fetchr.resource_pack_check" }\
-					}',\
-					'{\
-						"translate": "fetchr.technical.resourcepack_version_{NEUN_SCRIPT:rp_version}",\
-						"fallback": "%2$s",\
-						"color": "#8eedeb",\
-						"with": [\
-							{ "translate": "fetchr.resourcepack_check.sign.line2" },\
-							{\
-								"translate": "fetchr.resourcepack_check.wrong_version.sign.line2",\
-								"fallback": "Download",\
-								"bold": true\
-							}\
-						]\
-					}',\
-					'{\
-						"translate": "fetchr.technical.resourcepack_version_{NEUN_SCRIPT:rp_version}",\
-						"fallback": "%2$s",\
-						"color": "#8eedeb",\
-						"with": [\
-							{ "translate": "fetchr.resourcepack_check.sign.line3" },\
-							{\
-								"translate": "fetchr.resourcepack_check.wrong_version.sign.line3",\
-								"fallback": "Resource Pack",\
-								"bold": true\
-							}\
-						]\
-					}',\
-					'{\
-						"translate": "fetchr.technical.resourcepack_version_{NEUN_SCRIPT:rp_version}",\
-						"fallback": "%2$s",\
-						"color": "#8eedeb",\
-						"with": [\
-							{ "translate": "fetchr.resourcepack_check.sign.line4" },\
-							{\
-								"translate": "fetchr.resourcepack_check.wrong_version.sign.line4",\
-								"fallback": "",\
-								"bold": true\
-							}\
-						]\
-					}'\
-				]
-		#NEUN_SCRIPT end
-		#NEUN_SCRIPT since 69
 			execute \
 				if entity @a[tag=fetchr.resourcepack_check, limit=1] \
 				run data modify block 1 2 1 front_text.messages set value [\
@@ -243,8 +105,6 @@
 						]\
 					}\
 				]
-		#NEUN_SCRIPT end
-	#NEUN_SCRIPT end
 
 	# Loop depending on game state
 	execute \
@@ -270,4 +130,3 @@
 		run function fetchr:tick/player_tick
 	data modify storage fetchr:custom_hud players append from storage tmp.fetchr:custom_hud handled[]
 	scoreboard players reset $update_card fetchr.state
-#NEUN_SCRIPT end

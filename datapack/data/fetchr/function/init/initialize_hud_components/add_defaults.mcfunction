@@ -22,30 +22,6 @@ execute \
 		set from storage tmp.fetchr:init/hud cur.iconSeparator
 data remove storage tmp.fetchr:init/hud cur.iconSeparator
 
-#NEUN_SCRIPT until 69
-#setblock 0 15 0 minecraft:oak_sign{ front_text: { messages: [\
-	'[\
-		"[",\
-			{\
-				"storage": "tmp.fetchr:init/hud",\
-				"nbt": "cur.settingsClickEvent",\
-				"interpret": true,\
-				"color": "#00c3ff",\
-				"bold": true,\
-				"hoverEvent": {\
-					"action": "show_text",\
-					"contents": { "translate": "fetchr.preferences.custom_hud.adjust_col.settings.hover_text", "color": "gold" }\
-				},\
-				"extra": ["⚙"]\
-			},\
-			"] "\
-		]',\
-	'""',\
-	'""',\
-	'""'\
-]}}
-#NEUN_SCRIPT end
-#NEUN_SCRIPT since 69
 setblock 0 15 0 minecraft:oak_sign{ front_text: { messages: [\
 	[\
 		"[",\
@@ -67,7 +43,6 @@ setblock 0 15 0 minecraft:oak_sign{ front_text: { messages: [\
 	"",\
 	""\
 ]}}
-#NEUN_SCRIPT end
 execute \
 	if data storage tmp.fetchr:init/hud cur.settingsClickEvent \
 	run data \

@@ -20,16 +20,9 @@ gamemode survival @s
 experience set @s 0 levels
 experience set @s 0 points
 
-#NEUN_SCRIPT until 49
-#execute \
-	as @a \
-	run attribute @s minecraft:player.entity_interaction_range modifier remove fetchr:card_item_frame_range
-#NEUN_SCRIPT end
-#NEUN_SCRIPT since 49
 execute \
 	as @a \
 	run attribute @s minecraft:entity_interaction_range modifier remove fetchr:card_item_frame_range
-#NEUN_SCRIPT end
 
 execute \
 	if score $allow_spectating fetchr.settings matches 1 \

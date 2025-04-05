@@ -1,11 +1,4 @@
 {
-	"NEUN_SCRIPT replace carvers until 49": {
-		"air": [
-			"minecraft:cave",
-			"minecraft:cave_extra_underground",
-			"minecraft:canyon"
-		]
-	},
 	"carvers": [
 		"minecraft:cave",
 		"minecraft:cave_extra_underground",
@@ -20,78 +13,11 @@
 			"sound": "minecraft:ambient.cave",
 			"tick_delay": 6000
 		},
-		"NEUN_SCRIPT remove music_volume until 58": null,
 		"music_volume": 1.0,
 		"sky_color": 7254527,
 		"water_color": 4159204,
 		"water_fog_color": 329011
 	},
-	"NEUN_SCRIPT replace features until 65": [
-		[],
-		[
-			"minecraft:lake_lava_underground",
-			"minecraft:lake_lava_surface"
-		],
-		[
-			"minecraft:amethyst_geode"
-		],
-		[
-			"minecraft:monster_room",
-			"minecraft:monster_room_deep"
-		],
-		[],
-		[],
-		[
-			"minecraft:ore_dirt",
-			"minecraft:ore_gravel",
-			"minecraft:ore_granite_upper",
-			"minecraft:ore_granite_lower",
-			"minecraft:ore_diorite_upper",
-			"minecraft:ore_diorite_lower",
-			"minecraft:ore_andesite_upper",
-			"minecraft:ore_andesite_lower",
-			"minecraft:ore_tuff",
-			"minecraft:ore_coal_upper",
-			"minecraft:ore_coal_lower",
-			"minecraft:ore_iron_upper",
-			"minecraft:ore_iron_middle",
-			"minecraft:ore_iron_small",
-			"minecraft:ore_gold",
-			"minecraft:ore_gold_lower",
-			"minecraft:ore_redstone",
-			"minecraft:ore_redstone_lower",
-			"minecraft:ore_diamond",
-			"minecraft:ore_diamond_medium",
-			"minecraft:ore_diamond_large",
-			"minecraft:ore_diamond_buried",
-			"minecraft:ore_lapis",
-			"minecraft:ore_lapis_buried",
-			"minecraft:ore_copper",
-			"minecraft:underwater_magma",
-			"minecraft:disk_sand",
-			"minecraft:disk_clay",
-			"minecraft:disk_gravel"
-		],
-		[],
-		[
-			"minecraft:spring_water",
-			"minecraft:spring_lava"
-		],
-		[
-			"minecraft:glow_lichen",
-			"minecraft:patch_tall_grass",
-			"minecraft:trees_savanna",
-			"minecraft:flower_warm",
-			"minecraft:patch_grass_savanna",
-			"minecraft:brown_mushroom_normal",
-			"minecraft:red_mushroom_normal",
-			"minecraft:patch_sugar_cane",
-			"minecraft:patch_pumpkin"
-		],
-		[
-			"minecraft:freeze_top_layer"
-		]
-	],
 	"features": [
 		[],
 		[

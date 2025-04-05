@@ -11,17 +11,17 @@
 #>
 # Input for neun_einser.math:greatest_common_divisor
 #
-#@api
+# @api
 #declare score_holder $gcd.a
 #>
 # Input for neun_einser.math:greatest_common_divisor
 #
-#@api
+# @api
 #declare score_holder $gcd.b
 #>
 # Output for neun_einser.math:greatest_common_divisor
 #
-#@api
+# @api
 #declare score_holder $gcd.result
 
 execute if score $gcd.b 91.math.io > $gcd.a 91.math.io run function neun_einser.math:greatest_common_divisor/swap

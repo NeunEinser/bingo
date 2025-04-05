@@ -16,43 +16,6 @@ execute \
 	if block ~-1 ~1 ~-1 minecraft:redstone_block \
 	run setblock ~-1 ~1 ~-1 minecraft:air
 
-#NEUN_SCRIPT until 69
-#execute \
-	if score $is_multiplayer fetchr.state matches 1 \
-	run setblock ~ ~2 ~9 minecraft:warped_wall_sign[facing=east]{\
-		front_text: {\
-			messages: [\
-				'{\
-					"translate": "fetchr.skybox.teleport_all.sign.line1",\
-					"bold": true,\
-					"color": "#8eedeb",\
-					"clickEvent": { "action": "run_command", "value": "function fetchr:game/skybox/teleport_all" }\
-				}',\
-				'{ "translate": "fetchr.skybox.teleport_all.sign.line2", "bold": true, "color": "#8eedeb" }',\
-				'{ "translate": "fetchr.skybox.teleport_all.sign.line3", "bold": true, "color": "#8eedeb" }',\
-				'{ "translate": "fetchr.skybox.teleport_all.sign.line4", "bold": true, "color": "#8eedeb" }'\
-			]\
-		}\
-	}
-#execute \
-	if score $is_multiplayer fetchr.state matches 1 \
-	run setblock ~15 ~2 ~5 minecraft:warped_wall_sign[facing=west]{\
-		front_text: {\
-			messages: [\
-				'{\
-					"translate": "fetchr.skybox.teleport_all.sign.line1",\
-					"bold": true,\
-					"color": "#8eedeb",\
-					"clickEvent": { "action": "run_command", "value": "function fetchr:game/skybox/teleport_all" }\
-				}',\
-				'{ "translate": "fetchr.skybox.teleport_all.sign.line2", "bold": true, "color": "#8eedeb" }',\
-				'{ "translate": "fetchr.skybox.teleport_all.sign.line3", "bold": true, "color": "#8eedeb" }',\
-				'{ "translate": "fetchr.skybox.teleport_all.sign.line4", "bold": true, "color": "#8eedeb" }'\
-			]\
-		}\
-	}
-#NEUN_SCRIPT end
-#NEUN_SCRIPT since 69
 execute \
 	if score $is_multiplayer fetchr.state matches 1 \
 	run setblock ~ ~2 ~9 minecraft:warped_wall_sign[facing=east]{\
@@ -87,7 +50,6 @@ execute \
 			]\
 		}\
 	}
-#NEUN_SCRIPT end
 
 teleport @s ~7 ~1 ~7
 execute \

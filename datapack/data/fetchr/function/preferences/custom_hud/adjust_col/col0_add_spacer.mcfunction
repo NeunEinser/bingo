@@ -8,16 +8,9 @@
 # @reads score @s fetchr.pref
 # @writes storage fetchr:custom_hud currentPlayer.components
 
-#NEUN_SCRIPT until 69
-#data \
-	modify storage tmp.fetchr:preferences/hud toBeAdded \
-	set value { id: "fetchr:spacer", name: '{ "translate": "fetchr.custom_hud.components.spacer" }' }
-#NEUN_SCRIPT end
-#NEUN_SCRIPT since 69
 data \
 	modify storage tmp.fetchr:preferences/hud toBeAdded \
 	set value { id: "fetchr:spacer", name: { translate: "fetchr.custom_hud.components.spacer" } }
-#NEUN_SCRIPT end
 function fetchr:preferences/custom_hud/add_to_col0
 
 scoreboard players set $preferences.next_page fetchr.tmp 9

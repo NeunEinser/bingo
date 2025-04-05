@@ -7,7 +7,7 @@
 data modify storage tmp.fetchr:item_detection teams set from storage fetchr:card teams
 #>
 # @within function fetchr:item_detection/goals/points/*
-#delcare score_holder $item_detect/announce/points.winning_score
+#declare score_holder $item_detect/announce/points.winning_score
 scoreboard players set $item_detect/announce/points.winning_score fetchr.tmp 0
 data modify storage tmp.fetchr:item_detection teams set from storage fetchr:card teams
 function fetchr:item_detection/goals/points/find_winners

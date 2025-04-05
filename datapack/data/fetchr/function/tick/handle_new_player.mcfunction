@@ -7,7 +7,6 @@
 
 recipe give @s *
 scoreboard players set @s fetchr.card_position 0
-#NEUN_SCRIPT unless {NEUN_SCRIPT:realms}
 tp ~ 1 ~
 
 gamemode adventure
@@ -16,11 +15,7 @@ scoreboard players enable @s fetchr.resource_pack_check
 effect give @s minecraft:weakness infinite 255 true
 tag @s add fetchr.resourcepack_check
 scoreboard players add @s fetchr.operator 0
-#NEUN_SCRIPT end
 
-#NEUN_SCRIPT if {NEUN_SCRIPT:realms}
-#function fetchr:util/go_to_lobby
-#NEUN_SCRIPT end
 
 # Set player ID
 #>

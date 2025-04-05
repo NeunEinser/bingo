@@ -20,293 +20,6 @@
 # Probably should just keep the order of initial definition
 
 # categories
-#NEUN_SCRIPT until 69
-#data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:amethyst",\
-	name: '{ "translate": "fetchr.category.amethyst" }',\
-	tags: [ "fetchr:default" ]\
-}
-#data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:armadillo",\
-	name: '{ "translate": "fetchr.category.armadillo" }',\
-	tags: [ "fetchr:default" ]\
-}
-#data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:basic_iron",\
-	name: '{ "translate": "fetchr.category.basic_iron" }',\
-	tags: [ "fetchr:default" ]\
-}
-#data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:book",\
-	name: '{ "translate": "fetchr.category.book" }',\
-	tags: [ "fetchr:default" ]\
-}
-#data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:bow",\
-	name: '{ "translate": "fetchr.category.bow" }',\
-	tags: [ "fetchr:default" ]\
-}
-#data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:cherry_grove",\
-	name: '{ "translate": "fetchr.category.cherry_grove" }',\
-	tags: [ "fetchr:default" ]\
-}
-#data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:clay",\
-	name: '{ "translate": "fetchr.category.clay" }',\
-	tags: [ "fetchr:default" ]\
-}
-#data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:copper",\
-	name: '{ "translate": "fetchr.category.copper" }',\
-	tags: [ "fetchr:default" ]\
-}
-#data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:chest_iron",\
-	name: '{ "translate": "fetchr.category.chest_iron" }',\
-	tags: [ "fetchr:default" ]\
-}
-#data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:compass",\
-	name: '{ "translate": "fetchr.category.compass" }',\
-	tags: [ "fetchr:default" ]\
-}
-#data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:deepslate",\
-	name: '{ "translate": "fetchr.category.deepslate" }',\
-	tags: [ "fetchr:default" ]\
-}
-#data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:diamond",\
-	name: '{ "translate": "fetchr.category.diamond" }',\
-	tags: [ "fetchr:default" ]\
-}
-#data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:dripstone_cave",\
-	name: '{ "translate": "fetchr.category.dripstone_cave" }',\
-	tags: [ "fetchr:default" ]\
-}
-#data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:egg",\
-	name: '{ "translate": "fetchr.category.egg" }',\
-	tags: [ "fetchr:default" ]\
-}
-#data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:fish",\
-	name: '{ "translate": "fetchr.category.fish" }',\
-	tags: [ "fetchr:default" ]\
-}
-#data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:flint",\
-	name: '{ "translate": "fetchr.category.flint" }',\
-	tags: [ "fetchr:default" ]\
-}
-#data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:furnace",\
-	name: '{ "translate": "fetchr.category.furnace" }',\
-	tags: [ "fetchr:default" ]\
-}
-#data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:glow_ink",\
-	name: '{ "translate": "fetchr.category.glow_ink" }',\
-	tags: [ "fetchr:default" ]\
-}
-#data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:gold_and_ruined_portal",\
-	name: '{ "translate": "fetchr.category.gold_and_ruined_portal" }',\
-	tags: [ "fetchr:default" ]\
-}
-#data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:gunpowder",\
-	name: '{ "translate": "fetchr.category.gunpowder" }',\
-	tags: [ "fetchr:default" ]\
-}
-#data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:ink",\
-	name: '{ "translate": "fetchr.category.ink" }',\
-	tags: [ "fetchr:default" ]\
-}
-#data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:jungle",\
-	name: '{ "translate": "fetchr.category.jungle" }',\
-	tags: [ "fetchr:default" ]\
-}
-#data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:kelp",\
-	name: '{ "translate": "fetchr.category.kelp" }',\
-	tags: [ "fetchr:default" ]\
-}
-#data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:lapis",\
-	name: '{ "translate": "fetchr.category.lapis" }',\
-	tags: [ "fetchr:default" ]\
-}
-#data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:leather",\
-	name: '{ "translate": "fetchr.category.leather" }',\
-	tags: [ "fetchr:default" ]\
-}
-#data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:lush_cave",\
-	name: '{ "translate": "fetchr.category.lush_cave" }',\
-	tags: [ "fetchr:default" ]\
-}
-#data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:mangrove",\
-	name: '{ "translate": "fetchr.category.mangrove" }',\
-	tags: [ "fetchr:default" ]\
-}
-#data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:milk",\
-	name: '{ "translate": "fetchr.category.milk" }',\
-	tags: [ "fetchr:default" ]\
-}
-#data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:mushroom",\
-	name: '{ "translate": "fetchr.category.mushroom" }',\
-	tags: [ "fetchr:default" ]\
-}
-#data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:nighttime_mob_drops",\
-	name: '{ "translate": "fetchr.category.nighttime_mob_drops" }',\
-	tags: [ "fetchr:default" ]\
-}
-#data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:oak",\
-	name: '{ "translate": "fetchr.category.oak" }',\
-	tags: [ "fetchr:default" ]\
-}
-#NEUN_SCRIPT since 58
-#data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:pale_garden",\
-	name: '{ "translate": "fetchr.category.pale_garden" }',\
-	tags: [ "fetchr:default" ]\
-}
-#NEUN_SCRIPT end
-#data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:piston",\
-	name: '{ "translate": "fetchr.category.piston" }',\
-	tags: [ "fetchr:default" ]\
-}
-#data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:pumpkin",\
-	name: '{ "translate": "fetchr.category.pumpkin" }',\
-	tags: [ "fetchr:default" ]\
-}
-#data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:rabbit",\
-	name: '{ "translate": "fetchr.category.rabbit" }',\
-	tags: [ "fetchr:default" ]\
-}
-#data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:rail",\
-	name: '{ "translate": "fetchr.category.rail" }',\
-	tags: [ "fetchr:default" ]\
-}
-#data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:redstone",\
-	name: '{ "translate": "fetchr.category.redstone" }',\
-	tags: [ "fetchr:default" ]\
-}
-#data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:roots",\
-	name: '{ "translate": "fetchr.category.roots" }',\
-	tags: [ "fetchr:default" ]\
-}
-#data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:sand",\
-	name: '{ "translate": "fetchr.category.sand" }',\
-	tags: [ "fetchr:default" ]\
-}
-#data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:shearable",\
-	name: '{ "translate": "fetchr.category.shearable" }',\
-	tags: [ "fetchr:default" ]\
-}
-#data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:shipwreck",\
-	name: '{ "translate": "fetchr.category.shipwreck" }',\
-	tags: [ "fetchr:default" ]\
-}
-#data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:skeleton_drops",\
-	name: '{ "translate": "fetchr.category.skeleton_drops" }',\
-	tags: [ "fetchr:default" ]\
-}
-#data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:spider",\
-	name: '{ "translate": "fetchr.category.spider" }',\
-	tags: [ "fetchr:default" ]\
-}
-#data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:taiga",\
-	name: '{ "translate": "fetchr.category.taiga" }',\
-	tags: [ "fetchr:default" ]\
-}
-#data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:warm_biome",\
-	name: '{ "translate": "fetchr.category.warm_biome" }',\
-	tags: [ "fetchr:default" ]\
-}
-#data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:wheat",\
-	name: '{ "translate": "fetchr.category.wheat" }',\
-	tags: [ "fetchr:default" ]\
-}
-#data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:wool",\
-	name: '{ "translate": "fetchr.category.wool" }',\
-	tags: [ "fetchr:default" ]\
-}
-#NEUN_SCRIPT end
-#NEUN_SCRIPT since 69
 data \
 	modify storage fetchr:registries categories append value {\
 	id: "fetchr:amethyst",\
@@ -601,7 +314,6 @@ data \
 	name: { translate: "fetchr.category.wool" },\
 	tags: [ "fetchr:default" ]\
 }
-#NEUN_SCRIPT end
 
 # items
 
@@ -711,17 +423,6 @@ data \
 }
 
 # 000b: dead_bush
-#NEUN_SCRIPT until 69
-#data \
-	modify storage fetchr:registries items append value {\
-	id: "fetchr:dead_bush",\
-	item: { id: "minecraft:dead_bush" },\
-	translation: "block.minecraft.dead_bush",\
-	icon: "000b",\
-	categories: [ { id: "fetchr:shearable", weight: 2 }, { id: "fetchr:warm_biome", weight: 6 } ]\
-}
-#NEUN_SCRIPT end
-#NEUN_SCRIPT since 69
 data \
 	modify storage fetchr:registries items append value {\
 	id: "fetchr:dead_bush",\
@@ -730,7 +431,6 @@ data \
 	icon: "000b",\
 	categories: [ "fetchr:shearable", { id: "fetchr:warm_biome", weight: 3 } ]\
 }
-#NEUN_SCRIPT end
 
 # 000c: fern
 data \
@@ -816,18 +516,6 @@ data \
 }
 
 # 0014: slime_ball
-#NEUN_SCRIPT until 69
-#data \
-	modify storage fetchr:registries items append value {\
-	id: "fetchr:slime_ball",\
-	item: { id: "minecraft:slime_ball" },\
-	translation: "item.minecraft.slime_ball",\
-	icon: "0014",\
-	categories: [ "fetchr:nighttime_mob_drops" ],\
-	weight: 2\
-}
-#NEUN_SCRIPT end
-#NEUN_SCRIPT since 69
 data \
 	modify storage fetchr:registries items append value {\
 	id: "fetchr:slime_ball",\
@@ -836,7 +524,6 @@ data \
 	icon: "0014",\
 	categories: [ "fetchr:swamp", { id: "fetchr:nighttime_mob_drops", weight: 2 } ]\
 }
-#NEUN_SCRIPT end
 
 # 0015: firework_rocket
 data \
@@ -919,7 +606,6 @@ data \
 	categories: [ "fetchr:shipwreck" ]\
 }
 
-#NEUN_SCRIPT since 69
 # 001d: lodestone_compass
 data \
 	modify storage fetchr:registries items append value {\
@@ -943,7 +629,6 @@ data \
 	icon: "001d",\
 	categories: [ "fetchr:lodestone", "fetchr:compass" ]\
 }
-#NEUN_SCRIPT end
 
 # 001e: diamond_hoe
 data \
@@ -955,7 +640,6 @@ data \
 	categories: [ "fetchr:diamond" ]\
 }
 
-#NEUN_SCRIPT since 69
 # 001f: cactus_flower
 data \
 	modify storage fetchr:registries items append value {\
@@ -966,7 +650,6 @@ data \
 	categories: [ "fetchr:warm_biome" ],\
 	weight: 6\
 }
-#NEUN_SCRIPT end
 
 # 0020: axolotl_bucket
 data \
@@ -1379,7 +1062,6 @@ data \
 	categories: [ "fetchr:fish" ]\
 }
 
-#NEUN_SCRIPT since 69
 # 0047: firefly_bush
 data \
 	modify storage fetchr:registries items append value {\
@@ -1390,7 +1072,6 @@ data \
 	categories: [ "fetchr:swamp" ],\
 	weight: 3\
 }
-#NEUN_SCRIPT end
 
 # 0049: dark_oak_sapling
 data \
@@ -1403,18 +1084,6 @@ data \
 }
 
 # 004a: lead
-#NEUN_SCRIPT until 69
-#data \
-	modify storage fetchr:registries items append value {\
-	id: "fetchr:lead",\
-	item: { id: "minecraft:lead" },\
-	translation: "item.minecraft.lead",\
-	icon: "004a",\
-	categories: [ "fetchr:nighttime_mob_drops" ],\
-	weight: 2\
-}
-#NEUN_SCRIPT end
-#NEUN_SCRIPT since 69
 data \
 	modify storage fetchr:registries items append value {\
 	id: "fetchr:lead",\
@@ -1423,7 +1092,6 @@ data \
 	icon: "004a",\
 	categories: [ "fetchr:swamp", { id: "fetchr:nighttime_mob_drops", weight: 2 } ]\
 }
-#NEUN_SCRIPT end
 
 # 004b: detector_rail
 data \
@@ -1477,7 +1145,6 @@ data \
 }
 
 # 0050: short_dry_grass
-#NEUN_SCRIPT since 69
 data \
 	modify storage fetchr:registries items append value {\
 	id: "fetchr:short_dry_grass",\
@@ -1486,7 +1153,6 @@ data \
 	icon: "0050",\
 	categories: [ "fetchr:shearable", { id: "fetchr:warm_biome", weight: 3 } ]\
 }
-#NEUN_SCRIPT end
 
 # 0051: diamond_pickaxe
 data \
@@ -1510,7 +1176,6 @@ data \
 	weight: 2\
 }
 
-#NEUN_SCRIPT since 69
 # 0054: bush
 data \
 	modify storage fetchr:registries items append value {\
@@ -1521,7 +1186,6 @@ data \
 	categories: [ "fetchr:shearable" ],\
 	weight: 2\
 }
-#NEUN_SCRIPT end
 
 # 0055: crossbow
 data \
@@ -1681,32 +1345,6 @@ data \
 }
 
 # 0064: blue_trimmed_leather_boots
-#NEUN_SCRIPT until 69
-#data \
-	modify storage fetchr:registries items append value {\
-	id: "fetchr:blue_trimmed_leather_boots",\
-	item: {\
-		id: "minecraft:leather_boots",\
-		components: {\
-			"minecraft:trim": {\
-				pattern: "minecraft:shaper",\
-				material: "minecraft:lapis",\
-				show_in_tooltip: false\
-			},\
-			"minecraft:lore": [\
-				'{ translate: "item.minecraft.smithing_template.upgrade", color: "gray", italic: false }',\
-				'{ translate: "fetchr.item.description.any_trim", color: "#406d95", italic: false }',\
-				'{ translate: "trim_material.minecraft.lapis", color: "#406d95", italic: false }'\
-			]\
-		}\
-	},\
-	item_tests: [{ type: "fetchr:predicate", id: "minecraft:trim", predicate: { material: "minecraft:lapis" }}],\
-	translation: "fetchr.item.blue_trimmed_leather_boots",\
-	icon: "0064",\
-	categories: [ "fetchr:shipwreck" ]\
-}
-#NEUN_SCRIPT end
-#NEUN_SCRIPT since 69
 data \
 	modify storage fetchr:registries items append value {\
 	id: "fetchr:blue_trimmed_leather_boots",\
@@ -1732,7 +1370,6 @@ data \
 	icon: "0064",\
 	categories: [ "fetchr:shipwreck" ]\
 }
-#NEUN_SCRIPT end
 
 # 0065: hanging_acacia_sign
 data \
@@ -1818,7 +1455,6 @@ data \
 	weight: 6\
 }
 
-#NEUN_SCRIPT since 55
 # 006d: light_blue_bundle
 data \
 	modify storage fetchr:registries items append value {\
@@ -1829,7 +1465,6 @@ data \
 	categories: [ "fetchr:leather" ],\
 	weight: 2\
 }
-#NEUN_SCRIPT end
 
 # 006e: armadillo_scute
 data \
@@ -1852,20 +1487,6 @@ data \
 }
 
 # 0070: poison_arrow
-#NEUN_SCRIPT until 69
-#data \
-	modify storage fetchr:registries items append value {\
-	id: "fetchr:poison_arrow",\
-	item: {\
-		id: "minecraft:tipped_arrow",\
-		components: { "minecraft:potion_contents": { potion: "minecraft:poison" }}\
-	},\
-	translation: "item.minecraft.tipped_arrow.effect.poison",\
-	icon: "0070",\
-	categories: [{ id: "fetchr:skeleton_drops" }, { id: "fetchr:nighttime_mob_drops", weight: 3 }]\
-}
-#NEUN_SCRIPT end
-#NEUN_SCRIPT since 69
 data \
 	modify storage fetchr:registries items append value {\
 	id: "fetchr:poison_arrow",\
@@ -1878,9 +1499,7 @@ data \
 	categories: [{ id: "fetchr:skeleton_drops", weight: 1 }, "fetchr:nighttime_mob_drops", "fetchr:swamp"],\
 	weight: 3\
 }
-#NEUN_SCRIPT end
 
-#NEUN_SCRIPT since 58
 # 0071: closed_eyeblossom
 data \
 	modify storage fetchr:registries items append value {\
@@ -1923,7 +1542,6 @@ data \
 	icon: "0074",\
 	categories: [{ id: "fetchr:pale_garden", weight: 6 }, { id: "fetchr:shearable", weight: 2 }]\
 }
-#NEUN_SCRIPT end
 
 # 0100: iron_block
 data \
@@ -2215,17 +1833,6 @@ data \
 }
 
 # 011c: sticky_piston
-#NEUN_SCRIPT until 69
-#data \
-	modify storage fetchr:registries items append value {\
-	id: "fetchr:sticky_piston",\
-	item: { id: "minecraft:sticky_piston" },\
-	translation: "block.minecraft.sticky_piston",\
-	icon: "011c",\
-	categories: [{ id: "fetchr:piston" }, { id : "fetchr:nighttime_mob_drops", weight: 2 }]\
-}
-#NEUN_SCRIPT end
-#NEUN_SCRIPT since 69
 data \
 	modify storage fetchr:registries items append value {\
 	id: "fetchr:sticky_piston",\
@@ -2235,7 +1842,6 @@ data \
 	categories: [{ id: "fetchr:piston", weight: 1 }, "fetchr:nighttime_mob_drops", "fetchr:swamp" ],\
 	weight: 2\
 }
-#NEUN_SCRIPT end
 
 # 011d: orange_concrete
 data \
@@ -2465,7 +2071,6 @@ data \
 	weight: 2\
 }
 
-#NEUN_SCRIPT since 58
 # 0133: chiseled_resin_bricks
 data \
 	modify storage fetchr:registries items append value {\
@@ -2498,9 +2103,7 @@ data \
 	categories: [ "fetchr:pale_garden" ],\
 	weight: 6\
 }
-#NEUN_SCRIPT end
 
-#NEUN_SCRIPT since 69
 # 0136: lodestone
 data \
 	modify storage fetchr:registries items append value {\
@@ -2510,7 +2113,6 @@ data \
 	icon: "0136",\
 	categories: [ "fetchr:lodestone" ]\
 }
-#NEUN_SCRIPT end
 
 # structures
 data modify storage fetchr:registries structures append value "fetchr:credits"
@@ -2518,177 +2120,8 @@ data modify storage fetchr:registries structures append value "fetchr:card_gener
 data modify storage fetchr:registries structures append value "fetchr:tutorial"
 
 # hud components
-#NEUN_SCRIPT until 69
-#data \
-	modify storage fetchr:registries hud_components append value {\
-	id: "fetchr:timer",\
-	addByDefault: true,\
-	preferredColumn: 0,\
-	name: '{ "translate": "fetchr.custom_hud.components.timer" }',\
-	iconWidth: '"\\u0008"',\
-	iconSeparator: '" "',\
-	iconFont: [\
-		'{ "text": "", "font": "fetchr:clock/line0" }',\
-		'{ "text": "", "font": "fetchr:clock/line1" }',\
-		'{ "text": "", "font": "fetchr:clock/line2" }',\
-		'{ "text": "", "font": "fetchr:clock/line3" }',\
-		'{ "text": "", "font": "fetchr:clock/line4" }',\
-		'{ "text": "", "font": "fetchr:clock/line5" }',\
-		'{ "text": "", "font": "fetchr:clock/line6" }',\
-		'{ "text": "", "font": "fetchr:clock/line7" }',\
-		'{ "text": "", "font": "fetchr:clock/line8" }',\
-		'{ "text": "", "font": "fetchr:clock/line9" }',\
-		'{ "text": "", "font": "fetchr:clock/line10" }'\
-	]\
-}
-#data \
-	modify storage fetchr:registries hud_components append value {\
-	id: "fetchr:y_position",\
-	addByDefault: true,\
-	preferredColumn: 1,\
-	name: '{ "translate": "fetchr.custom_hud.components.y_position" }'\
-}
-#data \
-	modify storage fetchr:registries hud_components append value {\
-	id: "fetchr:player_chunk_position",\
-	addByDefault: true,\
-	preferredColumn: 1,\
-	name: '{ "translate": "fetchr.custom_hud.components.player_chunk_position" }',\
-	settingsClickEvent: '{ "text": "", "clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 70" }}',\
-	iconWidth: '"\\u0008"',\
-	iconSeparator: '" "',\
-	iconFont: [\
-		'{ "text": "", "font": "fetchr:position/line0" }',\
-		'{ "text": "", "font": "fetchr:position/line1" }',\
-		'{ "text": "", "font": "fetchr:position/line2" }',\
-		'{ "text": "", "font": "fetchr:position/line3" }',\
-		'{ "text": "", "font": "fetchr:position/line4" }',\
-		'{ "text": "", "font": "fetchr:position/line5" }',\
-		'{ "text": "", "font": "fetchr:position/line6" }',\
-		'{ "text": "", "font": "fetchr:position/line7" }',\
-		'{ "text": "", "font": "fetchr:position/line8" }',\
-		'{ "text": "", "font": "fetchr:position/line9" }',\
-		'{ "text": "", "font": "fetchr:position/line10" }'\
-	],\
-	icon: '"c"'\
-}
-#data \
-	modify storage fetchr:registries hud_components append value {\
-	id: "fetchr:player_position",\
-	addByDefault: true,\
-	preferredColumn: 1,\
-	name: '{ "translate": "fetchr.custom_hud.components.player_position" }',\
-	settingsClickEvent: '{ "text": "", "clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 72" }}',\
-	iconWidth: '"\\u000a"',\
-	iconSeparator: '" "',\
-	iconFont: [\
-		'{ "text": "", "font": "fetchr:position/line0" }',\
-		'{ "text": "", "font": "fetchr:position/line1" }',\
-		'{ "text": "", "font": "fetchr:position/line2" }',\
-		'{ "text": "", "font": "fetchr:position/line3" }',\
-		'{ "text": "", "font": "fetchr:position/line4" }',\
-		'{ "text": "", "font": "fetchr:position/line5" }',\
-		'{ "text": "", "font": "fetchr:position/line6" }',\
-		'{ "text": "", "font": "fetchr:position/line7" }',\
-		'{ "text": "", "font": "fetchr:position/line8" }',\
-		'{ "text": "", "font": "fetchr:position/line9" }',\
-		'{ "text": "", "font": "fetchr:position/line10" }'\
-	]\
-}
-#data \
-	modify storage fetchr:registries hud_components append value {\
-	id: "fetchr:seed",\
-	addByDefault: true,\
-	preferredColumn: 1,\
-	icon: '"s"',\
-	iconWidth: '"\\u0009"',\
-	iconSeparator: '" "',\
-	name: '{ "translate": "fetchr.custom_hud.components.seed" }',\
-	settingsClickEvent: '{ "text": "", "clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 74" }}',\
-	iconFont: [\
-		'{ "text": "", "font": "fetchr:seed/line0" }',\
-		'{ "text": "", "font": "fetchr:seed/line1" }',\
-		'{ "text": "", "font": "fetchr:seed/line2" }',\
-		'{ "text": "", "font": "fetchr:seed/line3" }',\
-		'{ "text": "", "font": "fetchr:seed/line4" }',\
-		'{ "text": "", "font": "fetchr:seed/line5" }',\
-		'{ "text": "", "font": "fetchr:seed/line6" }',\
-		'{ "text": "", "font": "fetchr:seed/line7" }',\
-		'{ "text": "", "font": "fetchr:seed/line8" }',\
-		'{ "text": "", "font": "fetchr:seed/line9" }',\
-		'{ "text": "", "font": "fetchr:seed/line10" }'\
-	]\
-}
 
 # preference pages
-#data \
-	modify storage fetchr:registries preferences.main append value {\
-	id: "fetchr:spectator_mode",\
-	textComponent: '[{ "translate": "fetchr.preferences.spectator_mode.title" }, ": ", { "translate": "fetchr.preferences.spectator_mode.enabled" }]',\
-	hoverText: '{ "translate": "fetchr.preferences.spectator_mode.description" }',\
-	clickEvent: '{ "text": "", "clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 2" }}'\
-}
-#data \
-	modify storage fetchr:registries preferences.main append value {\
-	id: "fetchr:custom_hud",\
-	textComponent: '{ "translate": "fetchr.preferences.custom_hud.title" }',\
-	hoverText: '{ "translate": "fetchr.preferences.custom_hud.description" }',\
-	clickEvent: '{ "text": "", "clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 5" }}'\
-}
-#data \
-	modify storage fetchr:registries preferences.custom_hud append value {\
-	id: "fetchr:custom_hud/add_disabled",\
-	textComponent: '{ "translate": "fetchr.preferences.custom_hud.add_disabled.title" }',\
-	hoverText: '{ "translate": "fetchr.preferences.custom_hud.add_disabled.description" }',\
-	disabledHoverText: '{ "translate": "fetchr.preferences.custom_hud.add_disabled.disabled" }',\
-	clickEvent: '{ "text": "", "clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 6" }}'\
-}
-#data \
-	modify storage fetchr:registries preferences.custom_hud append value {\
-	id: "fetchr:custom_hud/adjust_col0",\
-	textComponent: '{ "translate": "fetchr.preferences.custom_hud.adjust_col0.title" }',\
-	hoverText: '{ "translate": "fetchr.preferences.custom_hud.adjust_col.description" }',\
-	disabledHoverText: '{ "translate": "fetchr.preferences.custom_hud.adjust_col.disabled" }',\
-	clickEvent: '{ "text": "", "clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 9" }}'\
-}
-#data \
-	modify storage fetchr:registries preferences.custom_hud append value {\
-	id: "fetchr:custom_hud/adjust_col1",\
-	textComponent: '{ "translate": "fetchr.preferences.custom_hud.adjust_col1.title" }',\
-	hoverText: '{ "translate": "fetchr.preferences.custom_hud.adjust_col.description" }',\
-	disabledHoverText: '{ "translate": "fetchr.preferences.custom_hud.adjust_col.disabled" }',\
-	clickEvent: '{ "text": "", "clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 10" }}'\
-}
-#data \
-	modify storage fetchr:registries preferences.custom_hud append value {\
-	id: "fetchr:custom_hud/adjust_card",\
-	textComponent: '{ "translate": "fetchr.preferences.custom_hud.adjust_card.title" }',\
-	hoverText: '{ "translate": "fetchr.preferences.custom_hud.adjust_card.description" }',\
-	clickEvent: '{ "text": "", "clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 11" }}'\
-}
-#data \
-	modify storage fetchr:registries preferences.adjust_card append value {\
-	id: "fetchr:custom_hud/adjust_card/left_of_hotbar",\
-	textComponent: '{ "translate": "fetchr.preferences.custom_hud.adjust_card.left_of_hotbar.title" }',\
-	hoverText: '{ "translate": "fetchr.preferences.custom_hud.adjust_card.left_of_hotbar.description" }',\
-	clickEvent: '{ "text": "", "clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 67" }}'\
-}
-#data \
-	modify storage fetchr:registries preferences.adjust_card append value {\
-	id: "fetchr:custom_hud/adjust_card/right_of_hotbar_no_attack",\
-	textComponent: '{ "translate": "fetchr.preferences.custom_hud.adjust_card.right_of_hotbar_no_attack.title" }',\
-	hoverText: '{ "translate": "fetchr.preferences.custom_hud.adjust_card.right_of_hotbar_no_attack.description" }',\
-	clickEvent: '{ "text": "", "clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 68" }}'\
-}
-#data \
-	modify storage fetchr:registries preferences.adjust_card append value {\
-	id: "fetchr:custom_hud/adjust_card/right_of_hotbar_with_attack",\
-	textComponent: '{ "translate": "fetchr.preferences.custom_hud.adjust_card.right_of_hotbar_with_attack.title" }',\
-	hoverText: '{ "translate": "fetchr.preferences.custom_hud.adjust_card.right_of_hotbar_with_attack.description" }',\
-	clickEvent: '{ "text": "", "clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 69" }}'\
-}
-#NEUN_SCRIPT end
-#NEUN_SCRIPT since 69
 data \
 	modify storage fetchr:registries hud_components append value {\
 	id: "fetchr:timer",\
@@ -2857,4 +2290,3 @@ data \
 	hoverText: { translate: "fetchr.preferences.custom_hud.adjust_card.right_of_hotbar_with_attack.description" },\
 	clickEvent: { text: "", click_event: { action: "run_command", command: "trigger fetchr.pref set 69" }}\
 }
-#NEUN_SCRIPT end
