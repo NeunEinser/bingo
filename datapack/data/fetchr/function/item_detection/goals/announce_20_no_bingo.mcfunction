@@ -101,8 +101,5 @@ execute \
 	as @a[tag=fetchr.in_current_team] \
 	run function fetchr:item_detection/goals/completed_goal_effects/init
 execute \
-	as @a[predicate=fetchr:is_in_game] \
-	run function fetchr:game/menu/print_without_hint
-execute \
 	as @a[tag=!fetchr.in_current_team, predicate=fetchr:is_in_game] \
 	at @s run playsound minecraft:entity.wither.spawn voice @a ~ ~ ~ 1 1.5

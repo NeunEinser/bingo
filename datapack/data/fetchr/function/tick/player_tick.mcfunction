@@ -9,8 +9,8 @@
 # @within function fetchr:tick/*
 #declare storage tmp.fetchr:tick
 execute \
-	in minecraft:overworld \
-	run teleport @s[tag=fetchr.resourcepack_check, predicate=!fetchr:is_in_overworld] 1 1 1 0 0
+	in fetchr:resourcepack_check \
+	run teleport @s[tag=fetchr.resourcepack_check, predicate=!fetchr:is_in_resourcepack_check_dimension] 1 1 1 0 0
 
 #region check player position change
 execute \
@@ -256,19 +256,35 @@ tellraw @s[scores={fetchr.resource_pack_check=1}] [\
 ]
 
 # Validate checked players, reenable trigger
+scoreboard players enable @a[tag=fetchr.resourcepack_check] fetchr.resource_pack_check
+scoreboard players set @s[scores={fetchr.resource_pack_check=1}] fetchr.resource_pack_check 0
 #NEUN_SCRIPT unless {NEUN_SCRIPT:realms}
 #tag @s[scores={fetchr.resource_pack_check={NEUN_SCRIPT:rp_version * 91}}] remove fetchr.resourcepack_check
 #execute \
 	if score @s fetchr.resource_pack_check matches {NEUN_SCRIPT:rp_version * 91} \
-	run function fetchr:util/go_to_lobby
-scoreboard players enable @a[tag=fetchr.resourcepack_check] fetchr.resource_pack_check
-scoreboard players set @s[scores={fetchr.resource_pack_check=1}] fetchr.resource_pack_check 0
+	in minecraft:overworld \
+	run teleport @s 13 2 8
+#execute \
+	if score @s fetchr.resource_pack_check matches {NEUN_SCRIPT:rp_version * 91} \
+	run gamemode survival
+#execute \
+	if score @s fetchr.resource_pack_check matches {NEUN_SCRIPT:rp_version * 91} \
+	run advancement revoke @s everything
 #NEUN_SCRIPT end
-#NEUN_SCRIPT remove 2
+#NEUN_SCRIPT remove
 tag @s[scores={fetchr.resource_pack_check=91}] remove fetchr.resourcepack_check
 execute \
 	if score @s fetchr.resource_pack_check matches 91 \
-	run function fetchr:util/go_to_lobby
+	run gamemode survival
+execute \
+	if score @s fetchr.resource_pack_check matches 91 \
+	in minecraft:overworld \
+	run teleport @s 13 2 8
+execute \
+	if score @s fetchr.resource_pack_check matches 91 \
+	run advancement revoke @s everything
+#NEUN_SCRIPT end
+scoreboard players reset @s fetchr.resource_pack_check
 #endregion
 
 # Assign each player a unique ID
@@ -281,19 +297,11 @@ execute \
 
 # custom hud
 execute \
-	if entity @s[predicate=!fetchr:is_in_overworld] \
-	in fetchr:lobby \
+	if entity @s[predicate=fetchr:is_in_game] \
+	in fetchr:resourcepack_check \
 	run function fetchr:custom_hud/tick
-execute \
-	if entity @s[scores={fetchr.reveal_card=1}] \
-	in fetchr:lobby \
-	run function fetchr:game/reveal_card_operator_check
 
 # End
-execute \
-	if entity @s[scores={fetchr.lobby=1}] \
-	run function fetchr:util/go_to_lobby
-
 scoreboard players operation @s fetchr.prev_x_pos = $tick/player.x fetchr.tmp
 scoreboard players operation @s fetchr.prev_y_pos = $tick/player.y fetchr.tmp
 scoreboard players operation @s fetchr.prev_z_pos = $tick/player.z fetchr.tmp

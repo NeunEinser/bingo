@@ -7,16 +7,6 @@
 #
 # @within tag/function minecraft:tick
 # @handles #minecraft:tick
-
-
-
-
-
-
-
-
-
-	function fetchr:tick/spigot
 	function neun_einser.timer:store_current_time
 
 	# Detect second (or more) players in a LAN world
@@ -37,7 +27,7 @@
 		execute \
 			if score $is_multiplayer fetchr.state matches 0 \
 			unless score $integrated_server fetchr.state matches 1 \
-			in fetchr:lobby positioned 0 0 0 \
+			in fetchr:resourcepack_check positioned 0 0 0 \
 			if entity @e[name="DoNotTranslateThis{NEUN_SCRIPT:rp_version}", distance=..0.1, limit=1] \
 			run scoreboard players set $integrated_server fetchr.state 1
 		execute \
@@ -49,68 +39,7 @@
 			if entity @a[tag=fetchr.resourcepack_check, limit=1] \
 			run setblock 1 2 1 minecraft:air
 
-		execute \
-			if entity @a[tag=fetchr.resourcepack_check, limit=1] \
-			run setblock 1 2 1 minecraft:warped_wall_sign
-			execute \
-				if entity @a[tag=fetchr.resourcepack_check, limit=1] \
-				run data modify block 1 2 1 front_text.messages set value [\
-					{\
-						translate: "fetchr.technical.resourcepack_version_{NEUN_SCRIPT:rp_version}",\
-						fallback: "%2$s",\
-						color: "#8eedeb",\
-						with: [\
-							{ translate: "fetchr.resourcepack_check.sign.line1" },\
-							{ translate: "fetchr.resourcepack_check.wrong_version.sign.line1", fallback: "", bold: true }\
-						],\
-						click_event: { action: "run_command", command: "trigger fetchr.resource_pack_check" }\
-					},\
-					{\
-						translate: "fetchr.technical.resourcepack_version_{NEUN_SCRIPT:rp_version}",\
-						fallback: "%2$s",\
-						color: "#8eedeb",\
-						with: [\
-							{ translate: "fetchr.resourcepack_check.sign.line2" },\
-							{\
-								translate: "fetchr.resourcepack_check.wrong_version.sign.line2",\
-								fallback: "Download",\
-								bold: true\
-							}\
-						]\
-					},\
-					{\
-						translate: "fetchr.technical.resourcepack_version_{NEUN_SCRIPT:rp_version}",\
-						fallback: "%2$s",\
-						color: "#8eedeb",\
-						with: [\
-							{ translate: "fetchr.resourcepack_check.sign.line3" },\
-							{\
-								translate: "fetchr.resourcepack_check.wrong_version.sign.line3",\
-								fallback: "Resource Pack",\
-								bold: true\
-							}\
-						]\
-					},\
-					{\
-						translate: "fetchr.technical.resourcepack_version_{NEUN_SCRIPT:rp_version}",\
-						fallback: "%2$s",\
-						color: "#8eedeb",\
-						with: [\
-							{ translate: "fetchr.resourcepack_check.sign.line4" },\
-							{\
-								translate: "fetchr.resourcepack_check.wrong_version.sign.line4",\
-								fallback: "",\
-								bold: true\
-							}\
-						]\
-					}\
-				]
-
 	# Loop depending on game state
-	execute \
-		if entity @a[predicate=fetchr:is_in_lobby, limit=1] \
-		in fetchr:lobby \
-		run function fetchr:lobby/tick
 	execute \
 		at @a[tag=fetchr.in_skybox, limit=1] \
 		as @e[type=minecraft:marker, tag=fetchr.spawn, distance=..12, limit=1] \

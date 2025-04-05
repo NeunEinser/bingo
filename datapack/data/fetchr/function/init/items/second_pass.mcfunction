@@ -17,7 +17,7 @@ data \
 	set from storage tmp.fetchr:init initialized_items[-1].categories
 data remove storage tmp.fetchr:init initialized_items[-1].categories
 execute \
-	in fetchr:lobby \
+	in fetchr:resourcepack_check \
 	run function fetchr:init/items/add_category_info with storage tmp.fetchr:init item_categories[-1]
 
 data \

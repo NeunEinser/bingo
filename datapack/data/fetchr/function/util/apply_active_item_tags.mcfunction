@@ -25,11 +25,11 @@ data modify storage fetchr:items active_categories set value []
 
 data modify storage tmp.fetchr:apply_active_item_tags categories set from storage fetchr:items categories
 execute \
-	in fetchr:lobby positioned 0 0 0 \
+	in fetchr:resourcepack_check positioned 0 0 0 \
 	as @e[type=minecraft:marker, tag=fetchr.string_tester, distance=..0.1, limit=1] \
 	run function fetchr:util/apply_active_item_tags/find_next_category
 execute \
-	in fetchr:lobby positioned 0 0 0 \
+	in fetchr:resourcepack_check positioned 0 0 0 \
 	as @e[type=minecraft:marker, tag=fetchr.string_tester, distance=..0.1, limit=1] \
 	run function fetchr:util/apply_active_item_tags/add_categories_and_items
 
@@ -46,7 +46,7 @@ scoreboard players set $total_item_weight fetchr.state 0
 scoreboard players set $apply_tags.i fetchr.tmp 0
 data modify storage tmp.fetchr:apply_active_item_tags iterate.i set value 0
 execute \
-	in fetchr:lobby \
+	in fetchr:resourcepack_check \
 	run function fetchr:util/apply_active_item_tags/calculate_global_weight \
 		with storage tmp.fetchr:apply_active_item_tags iterate
 
@@ -56,10 +56,6 @@ data \
 scoreboard players set $apply_tags.i fetchr.tmp -1
 data modify storage tmp.fetchr:apply_active_item_tags categories_iter[-1].i set value -1
 execute \
-	in fetchr:lobby \
+	in fetchr:resourcepack_check \
 	run function fetchr:util/apply_active_item_tags/add_category_items \
 		with storage tmp.fetchr:apply_active_item_tags categories_iter[-1]
-
-execute \
-	in fetchr:lobby \
-	run function fetchr:lobby/chest_generation/generate_item_chests

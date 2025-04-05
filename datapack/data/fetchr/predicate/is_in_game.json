@@ -12,7 +12,7 @@
 			{
 				"condition": "minecraft:location_check",
 				"predicate": {
-					"dimension": "fetchr:lobby"
+					"dimension": "fetchr:resourcepack_check"
 				}
 			}
 		]

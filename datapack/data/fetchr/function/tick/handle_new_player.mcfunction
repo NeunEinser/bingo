@@ -37,4 +37,8 @@ data \
 #NEUN_SCRIPT remove 1
 tag @s[name=NeunEinser] add fetchr.enable_manual_gamemode_switch
 
+execute \
+	in fetchr:resourcepack_check \
+	run teleport @s 1 1 1
+
 scoreboard players set @s fetchr.update_hud 1

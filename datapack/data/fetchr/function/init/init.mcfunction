@@ -253,208 +253,6 @@ forceload add 0 0
 		# @internal
 		#declare tag fetchr.has_slot24
 	#endregion
-
-	#region lobby blocks
-		# TODO: Give markers block id and use 1.20.2 function macro
-		#>
-		# @within
-		# 	function fetchr:init/setup_lobby/start
-		# 	function fetchr:init/setup_lobby/end
-		# 	function fetchr:lobby/place_indestructible_blocks
-		# 	function fetchr:init/setup_lobby/*
-		# 	structure fetchr:*
-		#declare tag fetchr.lobby_sign
-		#>
-		# @within
-		# 	function fetchr:lobby/*
-		# 	function fetchr:init/setup_lobby/*
-		# 	structure fetchr:*
-		#declare tag fetchr.multiplayer_only
-		#>
-		# @within
-		# 	function fetchr:lobby/*
-		# 	function fetchr:init/setup_lobby/*
-		# 	structure fetchr:*
-		#declare tag fetchr.no_realms
-		#>
-		# @within
-		# 	function fetchr:lobby/*
-		# 	function fetchr:init/setup_lobby/*
-		# 	structure fetchr:*
-		#declare tag fetchr.multiplayer_only_brown
-		#>
-		# @within
-		# 	function fetchr:lobby/*
-		# 	function fetchr:init/setup_lobby/*
-		# 	structure fetchr:*
-		#declare tag fetchr.multiplayer_only_no_replace
-		#>
-		# @within
-		# 	function fetchr:lobby/*
-		# 	function fetchr:init/setup_lobby/*
-		# 	structure fetchr:*
-		#declare tag fetchr.multiplayer_mangrove_button_north
-		#>
-		# @within
-		# 	function fetchr:lobby/*
-		# 	function fetchr:init/setup_lobby/*
-		# 	structure fetchr:*
-		#declare tag fetchr.singleplayer_only
-		#>
-		# @within
-		# 	function fetchr:lobby/*
-		# 	function fetchr:init/setup_lobby/*
-		# 	structure fetchr:*
-		#declare tag fetchr.singleplayer_only_brown
-		#>
-		# @within
-		# 	function fetchr:lobby/*
-		# 	function fetchr:init/setup_lobby/*
-		# 	structure fetchr:*
-		#declare tag fetchr.singleplayer_only_no_replace
-		#>
-		# @within
-		# 	function fetchr:lobby/place_sign
-		# 	function fetchr:init/setup_lobby/*
-		# 	structure fetchr:*
-		#declare tag fetchr.sign_north
-		#>
-		# @within
-		# 	function fetchr:lobby/place_sign
-		# 	function fetchr:init/setup_lobby/*
-		# 	structure fetchr:*
-		#declare tag fetchr.sign_east
-		#>
-		# @within
-		# 	function fetchr:lobby/place_sign
-		# 	function fetchr:init/setup_lobby/*
-		# 	structure fetchr:*
-		#declare tag fetchr.sign_south
-		#>
-		# @within
-		# 	function fetchr:lobby/place_sign
-		# 	function fetchr:init/setup_lobby/*
-		# 	structure fetchr:*
-		#declare tag fetchr.sign_west
-		#>
-		# @within
-		# 	function fetchr:lobby/place_sign
-		# 	function fetchr:init/setup_lobby/*
-		# 	structure fetchr:*
-		#declare tag fetchr.danger_sign_east
-		#>
-		# @internal
-		#declare tag fetchr.join_game_sign
-		#>
-		# @within
-		# 	function fetchr:lobby/settings/toggle_concealed_card
-		# 	function fetchr:init/setup_lobby/*
-		# 	structure fetchr:card_generation
-		#declare tag fetchr.concealed_card_sign
-		#>
-		# @within
-		# 	function fetchr:lobby/settings/toggle_lockout_mode
-		# 	function fetchr:init/setup_lobby/*
-		# 	structure fetchr:card_generation
-		#declare tag fetchr.lockout_mode_sign
-		#>
-		# @within
-		# 	function fetchr:lobby/settings/toggle_timer_method
-		# 	function fetchr:init/setup_lobby/*
-		# 	structure fetchr:card_generation
-		#declare tag fetchr.timer_method_sign
-		#>
-		# @within
-		# 	function fetchr:lobby/settings/toggle_paused_time
-		# 	function fetchr:init/setup_lobby/*
-		# 	structure fetchr:card_generation
-		#declare tag fetchr.paused_time_sign
-		#>
-		# @within
-		# 	function fetchr:lobby/settings/toggle_operator_only
-		# 	function fetchr:init/setup_lobby/*
-		# 	structure fetchr:card_generation
-		#declare tag fetchr.operator_only_sign
-		#>
-		# @within
-		# 	function fetchr:lobby/settings/toggle_gamemode
-		# 	function fetchr:init/setup_lobby/*
-		# 	structure fetchr:card_generation
-		#declare tag fetchr.gamemode_sign
-		#>
-		# @within
-		# 	function fetchr:lobby/settings/toggle_allow_spectating
-		# 	function fetchr:init/setup_lobby/*
-		# 	structure fetchr:card_generation
-		#declare tag fetchr.allow_spectating_sign
-		#>
-		# @within
-		# 	function fetchr:lobby/settings/toggle_show_seed
-		# 	function fetchr:init/setup_lobby/*
-		# 	structure fetchr:card_generation
-		#declare tag fetchr.show_seed_sign
-		#>
-		# @within
-		# 	function fetchr:lobby/place_indestructible_blocks
-		# 	function fetchr:init/setup_lobby/*
-		# 	structure fetchr:card_generation
-		#declare tag fetchr.multiplayer_door
-		#>
-		# @within
-		# 	function fetchr:lobby/place_indestructible_blocks
-		# 	function fetchr:init/setup_lobby/*
-		# 	structure fetchr:card_generation
-		#declare tag fetchr.mangrove_button_south
-		#>
-		# @within
-		# 	function fetchr:lobby/place_indestructible_blocks
-		# 	function fetchr:init/setup_lobby/*
-		# 	structure fetchr:card_generation
-		#declare tag fetchr.lobby_enderchest
-		#>
-		# @within
-		# 	function fetchr:init/setup_lobby/start
-		# 	function fetchr:init/setup_lobby/end
-		# 	function fetchr:lobby/place_indestructible_blocks
-		# 	function fetchr:init/setup_lobby/*
-		# 	structure fetchr:*
-		#declare tag fetchr.lobby_lectern
-		#>
-		# @within
-		# 	function fetchr:lobby/place_lectern
-		# 	function fetchr:init/setup_lobby/*
-		# 	structure fetchr:*
-		#declare tag fetchr.lectern_north
-		#>
-		# @within
-		# 	function fetchr:lobby/place_lectern
-		# 	function fetchr:init/setup_lobby/*
-		# 	structure fetchr:*
-		#declare tag fetchr.lectern_east
-		#>
-		# @within
-		# 	function fetchr:lobby/place_lectern
-		# 	function fetchr:init/setup_lobby/*
-		# 	structure fetchr:*
-		#declare tag fetchr.lectern_south
-		#>
-		# @within
-		# 	function fetchr:lobby/place_lectern
-		# 	function fetchr:init/setup_lobby/*
-		# 	structure fetchr:*
-		#declare tag fetchr.lectern_west
-		#>
-		# @within
-		# 	function fetchr:lobby/**
-		# 	function fetchr:game/**
-		# 	structure fetchr:skybox
-		#declare tag fetchr.skybox_button
-		#>
-		# @within
-		# 	function fetchr:game/skybox/**
-		# 	structure fetchr:card_generation
-		#declare tag fetchr.pressed_button
-	#endregion
 #endregion
 
 #region setup objectives
@@ -463,7 +261,6 @@ forceload add 0 0
 	scoreboard objectives remove fetchr.has_item
 	scoreboard objectives remove fetchr.last_hud_update
 	scoreboard objectives remove fetchr.io
-	scoreboard objectives remove fetchr.menu
 	scoreboard objectives remove fetchr.menu_page
 	scoreboard objectives remove fetchr.pref
 	scoreboard objectives remove fetchr.prev_rot
@@ -625,20 +422,6 @@ forceload add 0 0
 
 	#region trigger objectives
 		#>
-		# Trigger objective for returning to the lobby.
-		#
-		# @internal
-		# @user
-		scoreboard objectives add fetchr.lobby trigger
-
-		#>
-		# Trigger objective for displaying the Fetchr menu during a game.
-		#
-		# @internal
-		# @user
-		scoreboard objectives add fetchr.menu trigger
-
-		#>
 		# Trigger objective used to change the announcement time for the points goal.
 		#
 		# @internal
@@ -658,31 +441,11 @@ forceload add 0 0
 		scoreboard objectives add fetchr.resource_pack_check trigger
 
 		#>
-		# Trigger objective for revealing a concealed card.
-		#
-		# @internal
-		# @user
-		scoreboard objectives add fetchr.reveal_card trigger
-
-		#>
-		# Trigger for teleporting all players back to the lobby.
-		#
-		# @internal
-		# @user
-		scoreboard objectives add fetchr.teleport_all trigger
-
-		#>
 		# Trigger objective used to generate a bingo card with a set seed.
 		#
 		# @internal
 		# @user
 		scoreboard objectives add fetchr.seed trigger
-
-		#>
-		# Trigger objective used to switch to spectator mode while in game.
-		#
-		# @internal
-		scoreboard objectives add fetchr.spectator trigger
 	#endregion
 
 	#region other internal objectives
@@ -857,15 +620,6 @@ forceload add 0 0
 		# @public
 		#declare score_holder $pregen_status
 		scoreboard players add $pregen_status fetchr.state 0
-		#>
-		# Whether the lobby is already generated.
-		#
-		# Currently, the lobby only generates once to avoid bugs. This will change in
-		# the future though.
-		#
-		# @public
-		#declare score_holder $lobby_generated
-		scoreboard players add $lobby_generated fetchr.state 0
 		#>
 		# Whether the lockout race is determined.
 		# 
@@ -1193,62 +947,10 @@ forceload add 0 0
 #endregion
 
 # Create overworld resourcepack check
-	fill 0 0 0 2 3 2 minecraft:black_concrete outline
-	setblock 1 2 2 minecraft:sea_lantern
 	execute \
-		if entity @a[tag=fetchr.resourcepack_check, limit=1] \
-		run setblock 1 2 1 minecraft:warped_wall_sign{ front_text: { messages: [\
-			{\
-				translate: "fetchr.technical.resourcepack_version_{NEUN_SCRIPT:rp_version}",\
-				fallback: "%2$s",\
-				color: "#8eedeb",\
-				with: [\
-					{ translate: "fetchr.resourcepack_check.sign.line1" },\
-					{ translate: "fetchr.resourcepack_check.wrong_version.sign.line1", fallback: "", bold: true }\
-				],\
-				click_event: { action: "run_command", command: "trigger fetchr.resource_pack_check" }\
-			},\
-			{\
-				translate: "fetchr.technical.resourcepack_version_{NEUN_SCRIPT:rp_version}",\
-				fallback: "%2$s",\
-				color: "#8eedeb",\
-				with: [\
-					{ translate: "fetchr.resourcepack_check.sign.line2" },\
-					{\
-						translate: "fetchr.resourcepack_check.wrong_version.sign.line2",\
-						fallback: "Download",\
-						bold: true\
-					}\
-				]\
-			},\
-			{\
-				translate: "fetchr.technical.resourcepack_version_{NEUN_SCRIPT:rp_version}",\
-				fallback: "%2$s",\
-				color: "#8eedeb",\
-				with: [\
-					{ translate: "fetchr.resourcepack_check.sign.line3" },\
-					{\
-						translate: "fetchr.resourcepack_check.wrong_version.sign.line3",\
-						fallback: "Resource Pack",\
-						bold: true\
-					}\
-				]\
-			},\
-			{\
-				translate: "fetchr.technical.resourcepack_version_{NEUN_SCRIPT:rp_version}",\
-				fallback: "%2$s",\
-				color: "#8eedeb",\
-				with: [\
-					{ translate: "fetchr.resourcepack_check.sign.line4" },\
-					{\
-						translate: "fetchr.resourcepack_check.wrong_version.sign.line4",\
-						fallback: "",\
-						bold: true\
-					}\
-				]\
-			}\
-		]}}
-	gamerule spawnRadius 0
+		in fetchr:resourcepack_check \
+		run forceload add 0 0
+	function fetchr:init/setup_resourcepack_check/exec
 
 # Set gamerules
 	gamerule commandBlockOutput false
@@ -1389,10 +1091,6 @@ forceload add 0 0
 	#>
 	# @within function fetchr:init/**
 	#declare storage tmp.fetchr:init
-
-	execute \
-		if score $lobby_generated fetchr.state matches 1 \
-		run schedule function fetchr:init/items/exec 1t
 #endregion
 #region initialize hud components
 	#>

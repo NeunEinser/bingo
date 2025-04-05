@@ -13,5 +13,5 @@ scoreboard players reset @s fetchr.seed
 function neun_einser.math:random/set_seed with storage tmp.fetchr:rand_data
 
 execute \
-	in fetchr:lobby \
+	in fetchr:resourcepack_check \
 	run function fetchr:card_generation/generate_card

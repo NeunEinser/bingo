@@ -49,9 +49,6 @@ execute \
 	as @a[tag=!fetchr.in_team, predicate=fetchr:is_in_game] \
 	at @s \
 	run playsound minecraft:entity.wither.spawn voice @a ~ ~ ~ 1 1.5
-execute \
-	as @a[predicate=fetchr:is_in_game] \
-	run function fetchr:game/menu/print_without_hint
 
 tag @a[predicate=fetchr:is_in_game] add fetchr.spectator
 tag @a remove fetchr.in_team

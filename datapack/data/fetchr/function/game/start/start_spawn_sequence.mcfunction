@@ -16,11 +16,6 @@ fill ~-8 ~-1 ~-8 ~9 ~5 ~9 minecraft:air
 fill ~-1 62 ~-1 ~1 ~3 ~1 minecraft:barrier replace #fetchr:sky_box_chute_replaceables
 fill ~ 62 ~ ~ ~2 ~ minecraft:air replace minecraft:barrier
 
-execute \
-	as @a[predicate=fetchr:is_in_game] \
-	unless score @s fetchr.game_id = $current_game_id fetchr.game_id \
-	run function fetchr:util/go_to_lobby
-
 setblock ~ ~-1 ~ minecraft:lime_stained_glass
 teleport @a[predicate=fetchr:is_in_game] ~ ~ ~
 tag @a remove fetchr.in_skybox
@@ -28,7 +23,7 @@ effect give @a[predicate=fetchr:is_in_game] minecraft:invisibility infinite 1 tr
 clear @a
 
 execute \
-	in fetchr:lobby \
+	in fetchr:resourcepack_check \
 	run function fetchr:game/start/init_teams
 execute \
 	if score $team_count fetchr.state matches 1 \
@@ -38,39 +33,5 @@ teleport @e[type=!#fetchr:keep_on_game_start, tag=!fetchr.generated_entity, dist
 
 teleport @e[type=minecraft:item, distance=..9] ~ -128 ~
 kill @e[y=-128, distance=..1]
-
-execute \
-	if score $allow_spectating fetchr.settings matches 1 \
-	in fetchr:lobby \
-	as @e[type=minecraft:marker, tag=fetchr.join_game_sign, distance=0..] \
-	run data \
-		modify entity @s data.front_text.messages set value [\
-		{\
-			translate: "fetchr.lobby.card_generation.join_as_spectator.sign.line1",\
-			bold: true,\
-			color: "#8eedeb",\
-			click_event: { action: "run_command", command: "function fetchr:lobby/settings/join_game" }\
-		},\
-		{ translate: "fetchr.lobby.card_generation.join_as_spectator.sign.line2", bold: true, color: "#8eedeb" },\
-		{ translate: "fetchr.lobby.card_generation.join_as_spectator.sign.line3", bold: true, color: "#8eedeb" },\
-		{ translate: "fetchr.lobby.card_generation.join_as_spectator.sign.line4", bold: true, color: "#8eedeb" }\
-	]
-execute \
-	if score $allow_spectating fetchr.settings matches 1 \
-	in fetchr:lobby \
-	as @e[type=minecraft:marker, tag=fetchr.join_game_sign, distance=0..] \
-	if data entity @s data.back_text \
-	run data \
-		modify entity @s data.back_text.messages set value [\
-		{\
-			translate: "fetchr.lobby.card_generation.join_as_spectator.sign.line1",\
-			bold: true,\
-			color: "#8eedeb",\
-			click_event: { action: "run_command", command: "function fetchr:lobby/settings/join_game" }\
-		},\
-		{ translate: "fetchr.lobby.card_generation.join_as_spectator.sign.line2", bold: true, color: "#8eedeb" },\
-		{ translate: "fetchr.lobby.card_generation.join_as_spectator.sign.line3", bold: true, color: "#8eedeb" },\
-		{ translate: "fetchr.lobby.card_generation.join_as_spectator.sign.line4", bold: true, color: "#8eedeb" }\
-	]
 
 schedule function fetchr:game/start/start_falling 2s

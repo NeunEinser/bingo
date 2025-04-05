@@ -614,7 +614,7 @@ data \
 		id: "minecraft:compass",\
 		components: {\
 			"minecraft:lodestone_tracker": {\
-				target: { dimension: "fetchr:lobby", pos: [I; 0, 0, 0] },\
+				target: { dimension: "minecraft:overworld", pos: [I; 0, 0, 0] },\
 				tracked: false\
 			}\
 		}\

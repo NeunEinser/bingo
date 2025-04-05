@@ -8,7 +8,6 @@ execute \
 	rotated as @s \
 	run teleport ~ ~ ~
 tellraw @s { "translate": "fetchr.game.start.countdown_completed" }
-function fetchr:game/menu/print_with_hint
 execute \
 	at @s \
 	run playsound minecraft:block.note_block.pling voice @s ~ ~ ~ 1 1
