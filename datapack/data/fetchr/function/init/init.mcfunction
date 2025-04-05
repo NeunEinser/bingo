@@ -1611,17 +1611,3 @@ forceload add 0 0
 	data remove storage fetchr:custom_hud default[].addByDefault
 	data remove storage fetchr:custom_hud default[].preferredColumn
 #endregion
-
-# spawn strcutures
-	
-	#Temporary forceload to make sure all needed chunks are actually loaded.
-	#This forceload is undone at the end of the function fetchr:init/setup_lobby
-	execute \
-		if score $lobby_generated fetchr.state matches 0 \
-		run schedule function fetchr:init/setup_lobby/root 1t
-	scoreboard players set $lobby_generated fetchr.state 1
-
-# summon multi noise pos marker
-	execute \
-		in fetchr:default \
-		run forceload add 0 0

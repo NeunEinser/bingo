@@ -257,10 +257,6 @@
 		at @s \
 		run function fetchr:game/skybox/tick
 	execute \
-		if score $game_state fetchr.state matches 1..2 \
-		in fetchr:default \
-		run function fetchr:game/start/pre_gen/tick
-	execute \
 		if score $game_state fetchr.state matches 4 \
 		run function fetchr:game/tick
 

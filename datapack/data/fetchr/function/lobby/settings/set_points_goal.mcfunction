@@ -1,4 +1,4 @@
-#> fetchr:lobby/settings/set_pre_gen_radius
+#> fetchr:lobby/settings/set_points_goal
 #
 # This function checks whether strict mode is active and the player clicking is
 # a confirmed operator, and the either asks the player to confirm their op
