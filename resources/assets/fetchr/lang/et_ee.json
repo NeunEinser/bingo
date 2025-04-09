@@ -1,7 +1,9 @@
 {
 	"fetchr.error.incompatible_minecraft_version.multiple_compatible": "Kasutad mittetoetatud Minecrafti versiooni. See pakk on tehtud Minecrafti versioonidele %s-%s",
+	"fetchr.error.incompatible_minecraft_version.multiple_compatible.with_latest_snapshot": "Kasutad mittetoetatud Minecrafti versiooni. See pakk on tehtud Minecrafti versioonidele %s-%s või kuni ketsetusversioonini %s.",
 	"fetchr.error.incompatible_minecraft_version.incompatible_snapshot": "Kasutate mitte toetatud katsetusversiooni. Katsetusversioonid %s-%s pole toetatud. Kasutage katsetusversiooni %s või uuemat.",
 	"fetchr.error.incompatible_minecraft_version.single_compatible": "Kasutad mittetoetatud Minecrafti versiooni. See pakk on tehtud Minecrafti versioonile %s",
+	"fetchr.error.incompatible_minecraft_version.single_compatible.with_latest_snapshot": "Kasutad mittetoetatud Minecrafti versiooni. See pakk on tehtud Minecrafti versioonile %s või kuni ketsetusversioonini %s.",
 	"fetchr.error.spigot_paper": "Tõenäoliselt kasutad mõnda Spigoti või Paperi versiooni. Paper ja Spigot muudavad põhimängu käitumist ning ei ühildu Fetchr'iga.",
 	"fetchr.error.spigot_paper.help": "Saad kasutada tavaserverit või kõrgema jõudluse jaoks Fabricut või Quilt'i.\n\nKui vajad rohkem abi või kui näete seda sõnumit ilma Paperit või Spigot'it kasutamata, palun andke sellest teada %s või %s",
 	"fetchr.logging.error": "VIGA",
