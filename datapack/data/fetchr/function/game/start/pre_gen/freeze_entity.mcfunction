@@ -7,13 +7,15 @@
 # @within function fetchr:game/start/pre_gen/**
 
 execute \
-	if entity @s[tag=fetchr.generated_entity] \
+	if entity @s[tag=fetchr.frozen_entity] \
 	run return 0
+
 execute \
 	unless entity @s[type=#fetchr:do_not_forceload] \
 	run forceload add ~ ~
 
 tag @s add fetchr.generated_entity
+tag @s add fetchr.frozen_entity
 tag @s[nbt={ PersistenceRequired: true }] add fetchr.persistance_required
 tag @s[type=minecraft:chicken, nbt={ IsChickenJockey: true }] add fetchr.chicken_jockey
 tag @s[nbt={ Invulnerable: true }] add fetchr.invulnerable

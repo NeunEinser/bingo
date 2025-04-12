@@ -11,6 +11,8 @@
 teleport @s[type=!#fetchr:keep_on_game_start, tag=!fetchr.generated_entity] ~ -128 ~
 kill @s[type=!#fetchr:keep_on_game_start, tag=!fetchr.generated_entity]
 
+tag @s remove fetchr.frozen_entity
+
 data \
 	merge entity @s {\
 	NoGravity: false,\
