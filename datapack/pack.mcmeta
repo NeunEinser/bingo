@@ -7,22 +7,6 @@
 		"block": [
 			{
 				"namespace": "minecraft",
-				"path": "advancement/story/follow_exit_eye.json"
-			},
-			{
-				"namespace": "minecraft",
-				"path": "recipe/exit_eye.json"
-			},
-			{
-				"namespace": "minecraft",
-				"path": "worldgen/structure_set/cave_mine_exits.json"
-			},
-			{
-				"namespace": "minecraft",
-				"path": "worldgen/structure_set/surface_mine_exits.json"
-			},
-			{
-				"namespace": "minecraft",
 				"path": "worldgen/structure_set/rare_surface_mine_exits.json"
 			}
 		]
