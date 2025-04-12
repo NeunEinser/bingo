@@ -11,9 +11,6 @@
 # @within tag/function minecraft:load
 # @handles #minecraft:load
 
-setworldspawn 1 0 1
-forceload add 0 0
-
 #TODO change to use tmp.fetchr:<name> everywhere
 #declare storage fetchr:tmp
 
