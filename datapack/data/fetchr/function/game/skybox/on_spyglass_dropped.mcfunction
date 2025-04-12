@@ -1,13 +1,12 @@
-#> fetchr:game/skybox/player_tick
+#> fetchr:game/skybox/on_spyglass_dropped
 #
-# This function is called for every player during the skybox phase
+# This function is called when a player drops a spyglass in the skybox
 #
 # @within function fetchr:game/skybox/tick
 # @context entity Player
 
 execute \
-	if score @s fetchr.spyglass_dropped matches 1 \
-	as @n[type=minecraft:item, distance=..5] \
+	as @e[type=minecraft:item, distance=..20] \
 	if items entity @s contents minecraft:spyglass[minecraft:custom_data={ fetchr: { skybox_spyglass: true } }] \
 	run data modify entity @s PickupDelay set value 0s
 
