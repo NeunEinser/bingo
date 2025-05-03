@@ -1,0 +1,28 @@
+{
+	"model": {
+		"type": "minecraft:composite",
+		"models": [
+			{
+				"type": "minecraft:select",
+				"property": "minecraft:component",
+				"component": "minecraft:world_modifiers",
+				"cases": [
+					{
+						"when": { "effects": [ "minecraft:no_drops" ], "include_description": true },
+						"model": {
+							"type": "minecraft:model",
+							"model": "minecraft:item/barrier"
+						}
+					}
+				],
+				"fallback": {
+					"type": "minecraft:level_ingredient"
+				}
+			},
+			{
+				"type": "minecraft:model",
+				"model": "minecraft:item/mine_ingredient"
+			}
+		]
+	}
+ }

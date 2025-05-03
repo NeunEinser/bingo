@@ -20,256 +20,1181 @@
 # Probably should just keep the order of initial definition
 
 # categories
-data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:amethyst",\
-	name: { translate: "fetchr.category.amethyst" },\
-	tags: [ "fetchr:default" ]\
-}
-data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:armadillo",\
-	name: { translate: "fetchr.category.armadillo" },\
-	tags: [ "fetchr:default" ]\
-}
+
+#region always active
 data \
 	modify storage fetchr:registries categories append value {\
 	id: "fetchr:basic_iron",\
 	name: { translate: "fetchr.category.basic_iron" },\
-	tags: [ "fetchr:default" ]\
 }
-data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:book",\
-	name: { translate: "fetchr.category.book" },\
-	tags: [ "fetchr:default" ]\
-}
-data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:bow",\
-	name: { translate: "fetchr.category.bow" },\
-	tags: [ "fetchr:default" ]\
-}
-data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:cherry_grove",\
-	name: { translate: "fetchr.category.cherry_grove" },\
-	tags: [ "fetchr:default" ]\
-}
-data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:clay",\
-	name: { translate: "fetchr.category.clay" },\
-	tags: [ "fetchr:default" ]\
-}
+
 data \
 	modify storage fetchr:registries categories append value {\
 	id: "fetchr:copper",\
-	name: { translate: "fetchr.category.copper" },\
-	tags: [ "fetchr:default" ]\
+	name: { translate: "fetchr.category.copper" }\
 }
+
 data \
 	modify storage fetchr:registries categories append value {\
 	id: "fetchr:chest_iron",\
-	name: { translate: "fetchr.category.chest_iron" },\
-	tags: [ "fetchr:default" ]\
+	name: { translate: "fetchr.category.chest_iron" }\
 }
-data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:compass",\
-	name: { translate: "fetchr.category.compass" },\
-	tags: [ "fetchr:default" ]\
-}
-data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:deepslate",\
-	name: { translate: "fetchr.category.deepslate" },\
-	tags: [ "fetchr:default" ]\
-}
-data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:diamond",\
-	name: { translate: "fetchr.category.diamond" },\
-	tags: [ "fetchr:default" ]\
-}
-data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:dripstone_cave",\
-	name: { translate: "fetchr.category.dripstone_cave" },\
-	tags: [ "fetchr:default" ]\
-}
-data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:egg",\
-	name: { translate: "fetchr.category.egg" },\
-	tags: [ "fetchr:default" ]\
-}
-data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:fish",\
-	name: { translate: "fetchr.category.fish" },\
-	tags: [ "fetchr:default" ]\
-}
+
 data \
 	modify storage fetchr:registries categories append value {\
 	id: "fetchr:flint",\
-	name: { translate: "fetchr.category.flint" },\
-	tags: [ "fetchr:default" ]\
+	name: { translate: "fetchr.category.flint" }\
 }
+
 data \
 	modify storage fetchr:registries categories append value {\
 	id: "fetchr:furnace",\
 	name: { translate: "fetchr.category.furnace" },\
-	tags: [ "fetchr:default" ]\
 }
+
 data \
 	modify storage fetchr:registries categories append value {\
-	id: "fetchr:glow_ink",\
-	name: { translate: "fetchr.category.glow_ink" },\
-	tags: [ "fetchr:default" ]\
-}
-data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:gold_and_ruined_portal",\
-	name: { translate: "fetchr.category.gold_and_ruined_portal" },\
-	tags: [ "fetchr:default" ]\
-}
-data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:gunpowder",\
-	name: { translate: "fetchr.category.gunpowder" },\
-	tags: [ "fetchr:default" ]\
-}
-data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:ink",\
-	name: { translate: "fetchr.category.ink" },\
-	tags: [ "fetchr:default" ]\
-}
-data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:jungle",\
-	name: { translate: "fetchr.category.jungle" },\
-	tags: [ "fetchr:default" ]\
-}
-data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:kelp",\
-	name: { translate: "fetchr.category.kelp" },\
-	tags: [ "fetchr:default" ]\
+	id: "fetchr:gold",\
+	name: { translate: "fetchr.category.gold" },\
 }
 data \
 	modify storage fetchr:registries categories append value {\
 	id: "fetchr:lapis",\
 	name: { translate: "fetchr.category.lapis" },\
-	tags: [ "fetchr:default" ]\
+}
+
+data \
+	modify storage fetchr:registries categories append value {\
+	id: "fetchr:bow",\
+	name: { translate: "fetchr.category.bow" },\
+	requirements: {\
+		type: "negation",\
+		value: [\
+			"minecraft:surface_world",\
+			"minecraft:amplified",\
+			"minecraft:shattered_blocks_world",\
+			"minecraft:cave_world",\
+			"minecraft:dark_cave_world",\
+			"fetchr:village",\
+		]\
+	}\
 }
 data \
 	modify storage fetchr:registries categories append value {\
-	id: "fetchr:leather",\
-	name: { translate: "fetchr.category.leather" },\
-	tags: [ "fetchr:default" ]\
+	id: "fetchr:bow_plus_dispenser",\
+	name: { translate: "fetchr.category.bow" },\
+	requirements: [\
+		"minecraft:surface_world",\
+		"minecraft:amplified",\
+		"minecraft:shattered_blocks_world",\
+		"minecraft:cave_world",\
+		"minecraft:dark_cave_world",\
+		"fetchr:village",\
+	]\
 }
+
 data \
 	modify storage fetchr:registries categories append value {\
 	id: "fetchr:lodestone",\
 	name: { translate: "fetchr.category.lodestone" },\
-	tags: [ "fetchr:default" ]\
+	requirements: {\
+		type: "negation",\
+		value: [\
+			"minecraft:surface_world",\
+			"minecraft:amplified",\
+			"minecraft:shattered_blocks_world",\
+			"minecraft:cave_world",\
+			"minecraft:dark_cave_world",\
+			"fetchr:village",\
+			"fetchr:shipwreck",\
+		]\
+	}\
 }
+
 data \
 	modify storage fetchr:registries categories append value {\
-	id: "fetchr:lush_cave",\
-	name: { translate: "fetchr.category.lush_cave" },\
-	tags: [ "fetchr:default" ]\
-}
-data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:mangrove",\
-	name: { translate: "fetchr.category.mangrove" },\
-	tags: [ "fetchr:default" ]\
-}
-data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:milk",\
-	name: { translate: "fetchr.category.milk" },\
-	tags: [ "fetchr:default" ]\
-}
-data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:mushroom",\
-	name: { translate: "fetchr.category.mushroom" },\
-	tags: [ "fetchr:default" ]\
-}
-data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:nighttime_mob_drops",\
-	name: { translate: "fetchr.category.nighttime_mob_drops" },\
-	tags: [ "fetchr:default" ]\
-}
-data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:oak",\
-	name: { translate: "fetchr.category.oak" },\
-	tags: [ "fetchr:default" ]\
-}
-data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:pale_garden",\
-	name: { translate: "fetchr.category.pale_garden" },\
-	tags: [ "fetchr:default" ]\
-}
-data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:piston",\
-	name: { translate: "fetchr.category.piston" },\
-	tags: [ "fetchr:default" ]\
-}
-data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:pumpkin",\
-	name: { translate: "fetchr.category.pumpkin" },\
-	tags: [ "fetchr:default" ]\
-}
-data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:rabbit",\
-	name: { translate: "fetchr.category.rabbit" },\
-	tags: [ "fetchr:default" ]\
+	id: "fetchr:lodestone_compass",\
+	name: { translate: "fetchr.category.lodestone" },\
+	requirements: [\
+		"minecraft:surface_world",\
+		"minecraft:amplified",\
+		"minecraft:shattered_blocks_world",\
+		"minecraft:cave_world",\
+		"minecraft:dark_cave_world",\
+		"fetchr:village",\
+		"fetchr:shipwreck",\
+	]\
 }
 data \
 	modify storage fetchr:registries categories append value {\
 	id: "fetchr:rail",\
 	name: { translate: "fetchr.category.rail" },\
-	tags: [ "fetchr:default" ]\
+	requirements: {\
+		type: "negation",\
+		value: [\
+			"minecraft:surface_world",\
+			"minecraft:amplified",\
+			"minecraft:shattered_blocks_world",\
+			"minecraft:cave_world",\
+			"minecraft:dark_cave_world",\
+			"fetchr:village",\
+			"fetchr:mineshaft",\
+		]\
+	}\
+}
+data \
+	modify storage fetchr:registries categories append value {\
+	id: "fetchr:redstone_rail",\
+	name: { translate: "fetchr.category.rail" },\
+	requirements: [\
+		"minecraft:surface_world",\
+		"minecraft:amplified",\
+		"minecraft:shattered_blocks_world",\
+		"minecraft:cave_world",\
+		"minecraft:dark_cave_world",\
+		"fetchr:village",\
+		"fetchr:mineshaft",\
+	]\
+}
+
+data \
+	modify storage fetchr:registries categories append value {\
+	id: "fetchr:shearable",\
+	name: { translate: "fetchr.category.shearable" },\
+	requirements: [
+		{\
+			type: "negation",\
+			value: [\
+				"minecraft:surface_world",\
+				"minecraft:amplified",\
+				"minecraft:floating_islands_world",\
+				"minecraft:shattered_blocks_world",\
+			]\
+		},\
+		{\
+			type: "negation",\
+			value: [\
+				"fetchr:forest",
+				"fetchr:plains",
+			]\
+		}\
+	]
+}
+
+data \
+	modify storage fetchr:registries categories append value {\
+	id: "fetchr:shearable_bush",\
+	name: { translate: "fetchr.category.shearable" },\
+	requirements: {\
+		type: "conjunction",\
+		value: [\
+			[\
+				"fetchr:forest",
+				"fetchr:plains",
+			],\
+			[\
+				"minecraft:surface_world",\
+				"minecraft:amplified",\
+				"minecraft:floating_islands_world",\
+				"minecraft:shattered_blocks_world",\
+			],\
+		]\
+	},\
+}
+#endregion always active
+
+#region basic
+data \
+	modify storage fetchr:registries categories append value {\
+	id: "fetchr:amethyst",\
+	name: { translate: "fetchr.category.amethyst" },\
+	requirements: ["minecraft:surface_world", "minecraft:amplified", "minecraft:floating_islands_world", "minecraft:shattered_blocks_world", "minecraft:cave_world", "minecraft:dark_cave_world"]\
+}
+
+data \
+	modify storage fetchr:registries categories append value {\
+	id: "fetchr:clay",\
+	name: { translate: "fetchr.category.clay" },\
+	requirements: [ "fetchr:lush_cave", "minecraft:surface_world", "minecraft:floating_islands_world", "minecraft:amplified", "minecraft:shattered_blocks_world", "minecraft:cave_world", "minecraft:dark_cave_world"]\
+}
+
+data \
+	modify storage fetchr:registries categories append value {\
+	id: "fetchr:compass",\
+	name: { translate: "fetchr.category.compass" },\
+	requirements: ["fetchr:village", "fetchr:shipwreck", "minecraft:surface_world", "minecraft:amplified", "minecraft:shattered_blocks_world", "minecraft:cave_world", "minecraft:dark_cave_world"]\
+}
+
+data \
+	modify storage fetchr:registries categories append value {\
+	id: "fetchr:diamond",\
+	name: { translate: "fetchr.category.diamond" },\
+	requirements: ["minecraft:surface_world", "minecraft:amplified", "minecraft:shattered_blocks_world", "minecraft:cave_world", "minecraft:dark_cave_world"]\
+}
+
+data \
+	modify storage fetchr:registries categories append value {\
+	id: "fetchr:redstone_gold",\
+	name: { translate: "fetchr.category.redstone_gold" },\
+	requirements: ["fetchr:village", "minecraft:surface_world", "minecraft:amplified", "minecraft:shattered_blocks_world", "minecraft:cave_world", "minecraft:dark_cave_world"]\
+}
+
+data \
+	modify storage fetchr:registries categories append value {\
+	id: "fetchr:magma",\
+	name: { translate: "fetchr.category.magma" },\
+	requirements: [\
+		"fetchr:ruined_portal",\
+		"fetchr:nether_wastes",\
+		"fetchr:basalt_deltas",\
+		{\
+			type: "conjunction",\
+			value: [\
+				[\
+					"minecraft:surface_world",\
+					"minecraft:amplified",\
+					"minecraft:shattered_blocks_world",\
+				],\
+				{\
+					type: "negation",\
+					value: [\
+						"minecraft:dry_land",\
+						"minecraft:nether_barrens",\
+						"minecraft:nether_forests",\
+						"minecraft:end",\
+					]\
+				},\
+			]\
+		}\
+	]\
+}
+data \
+	modify storage fetchr:registries categories append value {\
+	id: "fetchr:kelp",\
+	name: { translate: "fetchr.category.kelp" },\
+	requirements: {\
+		type: "conjunction",\
+		value: [\
+			[\
+				"minecraft:surface_world",\
+				"minecraft:amplified",\
+				"minecraft:shattered_blocks_world",\
+			],\
+			{\
+				type: "negation",\
+				value: [\
+					"minecraft:dry_land",\
+					"minecraft:ultrawarm",\
+					"minecraft:nether_barrens",\
+					"minecraft:nether_forests",\
+					"minecraft:end",\
+				]\
+			},\
+			[\
+				"fetchr:lukewarm_ocean",\
+				"fetchr:cold_ocean",\
+				"fetchr:ocean",\
+			]\
+		]\
+	}\
+}
+data \
+	modify storage fetchr:registries categories append value {\
+	id: "fetchr:mushroom",\
+	name: { translate: "fetchr.category.mushroom" },\
+	requirements: [\
+		"fetchr:taiga",\
+		"fetchr:swamp",\
+		"fetchr:dark_forest",\
+		{\
+			type: "conjunction",\
+			value: [\
+				"minecraft:mooshrooms",\
+				[\
+					"minecraft:surface_world",\
+					"minecraft:amplified",\
+					"minecraft:floating_islands_world",\
+					"minecraft:shattered_blocks_world",\
+				],\
+				[\
+					"fetchr:plains",\
+					"fetchr:savanna",\
+					"fetchr:forest",\
+					"fetchr:taiga",\
+					"fetchr:jungle",\
+					"fetchr:swamp",\
+					"fetchr:dark_forest"\
+				],\
+			]\
+		}\
+	]\
+}
+data \
+	modify storage fetchr:registries categories append value {\
+	id: "fetchr:piston",\
+	name: { translate: "fetchr.category.piston" },\
+	requirements: {\
+		type: "conjunction",\
+		value: [\
+			[\
+			"minecraft:surface_world",\
+			"minecraft:amplified",\
+			"minecraft:shattered_blocks_world",\
+			"minecraft:cave_world",\
+			"minecraft:dark_cave_world",\
+			"fetchr:village",\
+			],\
+			{\
+				type: "negation",\
+				value: [\
+					"minecraft:slimes",\
+					"minecraft:swamp",\
+				]\
+			},\
+		]\
+	}\
+}
+data \
+	modify storage fetchr:registries categories append value {\
+	id: "fetchr:slime_piston",\
+	name: { translate: "fetchr.category.piston" },\
+	requirements: {\
+		type: "conjunction",\
+		value: [\
+			"minecraft:slimes",\
+			"minecraft:swamp",\
+			[\
+				"minecraft:surface_world",\
+				"minecraft:amplified",\
+				"minecraft:shattered_blocks_world",\
+				"minecraft:cave_world",\
+				"minecraft:dark_cave_world",\
+				"fetchr:village",\
+			],\
+		]\
+	}\
+}
+data \
+	modify storage fetchr:registries categories append value {\
+	id: "fetchr:pumpkin",\
+	name: { translate: "fetchr.category.pumpkin" },\
+	requirements: [\
+		"minecraft:surface_world",\
+		"minecraft:amplified",\
+		"minecraft:shattered_blocks_world",\
+	]\
 }
 data \
 	modify storage fetchr:registries categories append value {\
 	id: "fetchr:redstone",\
 	name: { translate: "fetchr.category.redstone" },\
-	tags: [ "fetchr:default" ]\
+	requirements: [\
+		"minecraft:surface_world",\
+		"minecraft:amplified",\
+		"minecraft:shattered_blocks_world",\
+		"minecraft:cave_world",\
+		"minecraft:dark_cave_world",\
+		"fetchr:village",\
+	]\
 }
 data \
 	modify storage fetchr:registries categories append value {\
 	id: "fetchr:roots",\
 	name: { translate: "fetchr.category.roots" },\
-	tags: [ "fetchr:default" ]\
+	requirements: [\
+		"fetchr:village",\
+		"fetchr:shipwreck",\
+	]\
 }
 data \
 	modify storage fetchr:registries categories append value {\
 	id: "fetchr:sand",\
 	name: { translate: "fetchr.category.sand" },\
-	tags: [ "fetchr:default" ]\
+	requirements: {\
+		type: "conjunction",\
+		value: [\
+			"fetchr:desert",\
+			{\
+				type: "negation",\
+				value: "minecraft:skeletons"\
+			},\
+			[\
+				"minecraft:dry_land",\
+				"minecraft:ultrawarm",\
+				"minecraft:nether_barrens",\
+				"minecraft:nether_forests",\
+				"minecraft:end",\
+				{\
+					type: "negation",\
+					value: {\
+						type: "conjunction",\
+						value: [\
+							"minecraft:surface_world",\
+							"minecraft:amplified",\
+							"minecraft:floating_islands_world",\
+							"minecraft:shattered_blocks_world",\
+						],\
+					},\
+				},\
+			]\
+		]\
+	}\
 }
 data \
 	modify storage fetchr:registries categories append value {\
-	id: "fetchr:shearable",\
-	name: { translate: "fetchr.category.shearable" },\
-	tags: [ "fetchr:default" ]\
+	id: "fetchr:sand_bone",\
+	name: { translate: "fetchr.category.sand" },\
+	requirements: [\
+		{\
+			type: "conjunction",\
+			value: [\
+				[\
+					"minecraft:surface_world",\
+					"minecraft:amplified",\
+					"minecraft:floating_islands_world",\
+					"minecraft:shattered_blocks_world",\
+				],\
+				{\
+					type: "negation",\
+					value: [\
+						"minecraft:dry_land",\
+						"minecraft:ultrawarm",\
+						"minecraft:nether_barrens",\
+						"minecraft:nether_forests",\
+						"minecraft:end",\
+					]\
+				},\
+			]\
+		},\
+		{\
+			type: "conjunction",\
+			value: [\
+				"fetchr:desert",\
+				"minecraft:skeletons",\
+			]\
+		},\
+	]\
 }
+#endregion basic
+
+#region biomes
+data \
+	modify storage fetchr:registries categories append value {\
+	id: "fetchr:cherry_grove",\
+	name: { translate: "fetchr.category.cherry_grove" },\
+	requirements: {\
+		type: "conjunction",\
+		value: [\
+			"fetchr:cherry_grove",\
+			[\
+				"minecraft:grid_world",\
+				"minecraft:surface_world",\
+				"minecraft:amplified",\
+				"minecraft:floating_islands_world",\
+				"minecraft:shattered_blocks_world",\
+			],\
+			[\
+				"fetchr:plains",\
+				"fetchr:savanna",\
+				"fetchr:forest",\
+				"fetchr:taiga",\
+				"fetchr:jungle",\
+				"fetchr:badlands",\
+				"fetchr:swamp",\
+				"fetchr:pale_garden"\
+			]\
+		]\
+	}\
+}
+
+data \
+	modify storage fetchr:registries categories append value {\
+	id: "fetchr:dripstone_cave",\
+	name: { translate: "fetchr.category.dripstone_cave" },\
+	requirements: [ "fetchr:dripstone_caves" ]\
+}
+data \
+	modify storage fetchr:registries categories append value {\
+	id: "fetchr:lush_cave",\
+	name: { translate: "fetchr.category.lush_cave" },\
+	requirements: [ "fetchr:lush_caves" ]\
+}
+
+data \
+	modify storage fetchr:registries categories append value {\
+	id: "fetchr:jungle",\
+	name: { translate: "fetchr.category.jungle" },\
+	requirements: {\
+		type: "conjunction",\
+		value: [\
+			"fetchr:jungle",\
+			[\
+				"minecraft:grid_world",\
+				"minecraft:surface_world",\
+				"minecraft:amplified",\
+				"minecraft:floating_islands_world",\
+				"minecraft:shattered_blocks_world",\
+			],\
+		],\
+	}\
+}
+data \
+	modify storage fetchr:registries categories append value {\
+	id: "fetchr:mangrove",\
+	name: { translate: "fetchr.category.mangrove" },\
+	requirements: {\
+		type: "conjunction",\
+		value: [\
+			"fetchr:mangrove",\
+			[\
+				"minecraft:grid_world",\
+				"minecraft:surface_world",\
+				"minecraft:amplified",\
+				"minecraft:floating_islands_world",\
+				"minecraft:shattered_blocks_world",\
+			],\
+		],\
+	}\
+}
+data \
+	modify storage fetchr:registries categories append value {\
+	id: "fetchr:oak",\
+	name: { translate: "fetchr.category.oak" },\
+	requirements: {\
+		type: "conjunction",\
+		value: [\
+			"fetchr:forest",\
+			[\
+				"minecraft:grid_world",\
+				"minecraft:surface_world",\
+				"minecraft:amplified",\
+				"minecraft:floating_islands_world",\
+				"minecraft:shattered_blocks_world",\
+			],\
+			{\
+				type: "negation",\
+				value: "fetchr:dark_forest",\
+			}\
+		],\
+	}\
+}
+data \
+	modify storage fetchr:registries categories append value {\
+	id: "fetchr:dark_oak",\
+	name: { translate: "fetchr.category.oak" },\
+	requirements: {\
+		type: "conjunction",\
+		value: [\
+			"fetchr:dark_forest",\
+			[\
+				"minecraft:grid_world",\
+				"minecraft:surface_world",\
+				"minecraft:amplified",\
+				"minecraft:floating_islands_world",\
+				"minecraft:shattered_blocks_world",\
+			],\
+		],\
+	}\
+}
+data \
+	modify storage fetchr:registries categories append value {\
+	id: "fetchr:pale_garden",\
+	name: { translate: "fetchr.category.pale_garden" },\
+	requirements: {\
+		type: "conjunction",\
+		value: [\
+			"fetchr:dark_forest",\
+			[\
+				"minecraft:grid_world",\
+				"minecraft:surface_world",\
+				"minecraft:amplified",\
+				"minecraft:floating_islands_world",\
+				"minecraft:shattered_blocks_world",\
+			],\
+		],\
+	}\
+}
+
+data \
+	modify storage fetchr:registries categories append value {\
+	id: "fetchr:vines",\
+	name: { translate: "fetchr.category.vines" },\
+	requirements: [\
+		{\
+			type: "conjunction",\
+			value: [\
+				"fetchr:jungle",\
+				[\
+					"minecraft:surface_world",\
+					"minecraft:amplified",\
+					"minecraft:floating_islands_world",\
+					"minecraft:shattered_blocks_world",\
+					"minecraft:cave_world",\
+					"minecraft:dark_cave_world",\
+				],\
+			],\
+		},\
+		{\
+			type: "conjunction",\
+			value: [\
+				"fetchr:swamp",\
+				[\
+					"minecraft:surface_world",\
+					"minecraft:amplified",\
+					"minecraft:floating_islands_world",\
+					"minecraft:shattered_blocks_world",\
+				],\
+			],\
+		}\
+	]\
+}
+#endregion biomes
+
+#region stone
+data \
+	modify storage fetchr:registries categories append value {\
+	id: "fetchr:andesite",\
+	name: { translate: "fetchr.category.andesite" },\
+	requirements: [ "minecraft:grid_world", "minecraft:base_blackstone", "minecraft:base_diorite", "minecraft:base_granite", "minecraft:base_tuff", "minecraft:base_deepslate", "minecraft:base_end_stone" ]\
+}
+
+data \
+	modify storage fetchr:registries categories append value {\
+	id: "fetchr:deepslate",\
+	name: { translate: "fetchr.category.deepslate" },\
+	requirements: [\
+		{\
+			type: "conjunction",\
+			value: [\
+				[\
+					"minecraft:surface_world",\
+					"minecraft:amplified",\
+					"minecraft:shattered_blocks_world",\
+					"minecraft:cave_world",\
+					"minecraft:dark_cave_world"\
+				],\
+				[\
+					"minecraft:base_andesite",\
+					"minecraft:base_blackstone",\
+					"minecraft:base_diorite",\
+					"minecraft:base_granite",\
+					"minecraft:base_tuff",\
+					"minecraft:base_end_stone"\
+				]\
+			]\
+		},\
+		{\
+			type: "conjunction",\
+			value: [\
+				"minecraft:grid_world",\
+				"minecraft:base_deepslate"\
+			]\
+		}\
+	]\
+}
+data \
+	modify storage fetchr:registries categories append value {\
+	id: "fetchr:diorite",\
+	name: { translate: "fetchr.category.granite" },\
+	requirements: [ "minecraft:grid_world", "minecraft:base_andesite", "minecraft:base_blackstone", "minecraft:base_granite", "minecraft:base_tuff", "minecraft:base_deepslate", "minecraft:base_end_stone" ]\
+}
+#endregion stone
+
+#region peaceful mobs
+data \
+	modify storage fetchr:registries categories append value {\
+	id: "fetchr:armadillo",\
+	name: { translate: "fetchr.category.armadillo" },\
+	requirements: {\
+		type: "conjunction",\
+		value: [\
+			"minecraft:armadillos",\
+			[\
+				"minecraft:surface_world",\
+				"minecraft:amplified",\
+				"minecraft:floating_islands_world",\
+				"minecraft:shattered_blocks_world",\
+				"minecraft:floating_islands_world"\
+			],\
+			[\
+				"fetchr:plains",\
+				"fetchr:savanna",\
+				"fetchr:forest",\
+				"fetchr:taiga",\
+				"fetchr:jungle",\
+				"fetchr:badlands",\
+				"fetchr:swamp",\
+				"fetchr:dark_forest"\
+			]\
+		]\
+	}\
+}
+
+data \
+	modify storage fetchr:registries categories append value {\
+	id: "fetchr:book",\
+	name: { translate: "fetchr.category.book" },\
+	requirements: {\
+		type: "conjunction",\
+		value: [\
+			"minecraft:cows",\
+			[\
+				"minecraft:surface_world",\
+				"minecraft:amplified",\
+				"minecraft:shattered_blocks_world",\
+			],\
+			[\
+				"fetchr:plains",\
+				"fetchr:savanna",\
+				"fetchr:forest",\
+				"fetchr:taiga",\
+				"fetchr:jungle",\
+				"fetchr:swamp",\
+				"fetchr:dark_forest"\
+			],\
+			{\
+				type: "negation",\
+				value: [\
+					"minecraft:dry_land",\
+					"minecraft:ultrawarm",\
+					"minecraft:nether_barrens",\
+					"minecraft:nether_forests",\
+					"minecraft:end",\
+				]\
+			},\
+		]\
+	}\
+}
+
+data \
+	modify storage fetchr:registries categories append value {\
+	id: "fetchr:leather",\
+	name: { translate: "fetchr.category.leather" },\
+	requirements: {\
+		type: "conjunction",\
+		value: [\
+			"minecraft:cows",\
+			[\
+				"minecraft:surface_world",\
+				"minecraft:amplified",\
+				"minecraft:floating_islands_world",\
+				"minecraft:shattered_blocks_world",\
+			],\
+			[\
+				"fetchr:plains",\
+				"fetchr:savanna",\
+				"fetchr:forest",\
+				"fetchr:taiga",\
+				"fetchr:jungle",\
+				"fetchr:swamp",\
+				"fetchr:dark_forest"\
+			],\
+		]\
+	}\
+}
+
+data \
+	modify storage fetchr:registries categories append value {\
+	id: "fetchr:leather_glow_ink",\
+	name: { translate: "fetchr.category.leather" },\
+	requirements: {\
+		type: "conjunction",\
+		value: [\
+			"minecraft:cows",\
+			[\
+				"minecraft:surface_world",\
+				"minecraft:amplified",\
+				"minecraft:floating_islands_world",\
+				"minecraft:shattered_blocks_world",\
+				"minecraft:floating_islands_world"\
+			],\
+			[\
+				"fetchr:plains",\
+				"fetchr:savanna",\
+				"fetchr:forest",\
+				"fetchr:taiga",\
+				"fetchr:jungle",\
+				"fetchr:swamp",\
+				"fetchr:pale_garden"\
+			],\
+			{\
+				type: "negation",\
+				value: [\
+					"minecraft:floating_islands_world",\
+					"minecraft:dry_land",\
+					"minecraft:ultrawarm",\
+					"minecraft:nether_barrens",\
+					"minecraft:nether_forests",\
+					"minecraft:end",\
+				]\
+			}\
+		]\
+	}\
+}
+
+data \
+	modify storage fetchr:registries categories append value {\
+	id: "fetchr:egg",\
+	name: { translate: "fetchr.category.egg" },\
+	requirements: {\
+		type: "conjunction",\
+		value: [\
+			"minecraft:chickens",\
+			[\
+				"minecraft:surface_world",\
+				"minecraft:amplified",\
+				"minecraft:floating_islands_world",\
+				"minecraft:shattered_blocks_world",\
+			],\
+			[\
+				"fetchr:plains",\
+				"fetchr:savanna",\
+				"fetchr:forest",\
+				"fetchr:taiga",\
+				"fetchr:jungle",\
+				"fetchr:swamp",\
+				"fetchr:dark_forest"\
+			],\
+			{\
+				type: "negation",\
+				value: [\
+					"minecraft:cows",\
+					"minecraft:goats",\
+				]\
+			}\
+		]\
+	}\
+}
+
+data \
+	modify storage fetchr:registries categories append value {\
+	id: "fetchr:egg_cake",\
+	name: { translate: "fetchr.category.egg" },\
+	requirements: {\
+		type: "conjunction",\
+		value: [\
+			"minecraft:chickens",\
+			[\
+				"minecraft:cows",\
+				"minecraft:goats",\
+			],\
+			[\
+				"minecraft:surface_world",\
+				"minecraft:amplified",\
+				"minecraft:floating_islands_world",\
+				"minecraft:shattered_blocks_world",\
+			],\
+			[\
+				"fetchr:plains",\
+				"fetchr:savanna",\
+				"fetchr:forest",\
+				"fetchr:taiga",\
+				"fetchr:jungle",\
+				"fetchr:swamp",\
+				"fetchr:dark_forest"\
+			],\
+		]\
+	}\
+}
+
+data \
+	modify storage fetchr:registries categories append value {\
+	id: "fetchr:milk",\
+	name: { translate: "fetchr.category.milk" },\
+	requirements: {\
+		type: "conjunction",\
+		value: [\
+			[\
+				"minecraft:cows",\
+				"minecraft:goats",\
+			],\
+			[\
+				"minecraft:surface_world",\
+				"minecraft:amplified",\
+				"minecraft:floating_islands_world",\
+				"minecraft:shattered_blocks_world",\
+			],\
+			[\
+				"fetchr:plains",\
+				"fetchr:savanna",\
+				"fetchr:forest",\
+				"fetchr:taiga",\
+				"fetchr:jungle",\
+				"fetchr:swamp",\
+				"fetchr:dark_forest"\
+			],\
+		]\
+	}\
+}
+#endregion peaceful mobs
+
+#region aquatic mobs
+data \
+	modify storage fetchr:registries categories append value {\
+	id: "fetchr:fish",\
+	name: { translate: "fetchr.category.fish" },\
+	requirements: {\
+		type: "conjunction",\
+		value: [\
+			[\
+				"minecraft:surface_world",\
+				"minecraft:amplified",\
+				"minecraft:shattered_blocks_world",\
+			],\
+			{\
+				type: "negation",\
+				value: [\
+					"minecraft:dry_land",\
+					"minecraft:ultrawarm",\
+					"minecraft:nether_barrens",\
+					"minecraft:nether_forests",\
+					"minecraft:end",\
+				]\
+			},\
+			[\
+				"fetchr:warm_ocean",\
+				"fetchr:lukewarm_ocean",\
+			]\
+		]\
+	}\
+}
+data \
+	modify storage fetchr:registries categories append value {\
+	id: "fetchr:cod_salmon",\
+	name: { translate: "fetchr.category.fish" },\
+	requirements: {\
+		type: "conjunction",\
+		value: [\
+			[\
+				"minecraft:surface_world",\
+				"minecraft:amplified",\
+				"minecraft:shattered_blocks_world",\
+			],\
+			{\
+				type: "negation",\
+				value: [\
+					"minecraft:dry_land",\
+					"minecraft:ultrawarm",\
+					"minecraft:nether_barrens",\
+					"minecraft:nether_forests",\
+					"minecraft:end",\
+					"fetchr:warm_ocean",\
+					"fetchr:lukewarm_ocean",\
+				]\
+			},\
+			[\
+				"fetchr:frozen_ocean",\
+				"fetchr:cold_ocean",\
+				"fetchr:ocean",\
+			]\
+		]\
+	}\
+}
+data \
+	modify storage fetchr:registries categories append value {\
+	id: "fetchr:salmon",\
+	name: { translate: "fetchr.category.fish" },\
+	requirements: {\
+		type: "conjunction",\
+		value: [\
+			[\
+				"minecraft:surface_world",\
+				"minecraft:amplified",\
+				"minecraft:shattered_blocks_world",\
+			],\
+			{\
+				type: "negation",\
+				value: [\
+					"minecraft:dry_land",\
+					"minecraft:ultrawarm",\
+					"minecraft:nether_barrens",\
+					"minecraft:nether_forests",\
+					"minecraft:end",\
+					"fetchr:warm_ocean",\
+					"fetchr:lukewarm_ocean",\
+					"fetchr:frozen_ocean",\
+					"fetchr:cold_ocean",\
+					"fetchr:ocean",\
+				]\
+			},\
+			[\
+				"fetchr:frozen_river",\
+				"fetchr:river",\
+			]\
+		]\
+	}\
+}
+
+data \
+	modify storage fetchr:registries categories append value {\
+	id: "fetchr:ink",\
+	name: { translate: "fetchr.category.ink" },\
+	requirements: {\
+		type: "conjunction",\
+		value: [\
+			[\
+				"minecraft:surface_world",\
+				"minecraft:amplified",\
+				"minecraft:shattered_blocks_world",\
+			],\
+			{\
+				type: "negation",\
+				value: [\
+					"minecraft:dry_land",\
+					"minecraft:ultrawarm",\
+					"minecraft:nether_barrens",\
+					"minecraft:nether_forests",\
+					"minecraft:end",\
+				]\
+			},\
+			[\
+				"fetchr:frozen_river",\
+				"fetchr:river",\
+				"fetchr:warm_ocean",\
+				"fetchr:lukewarm_ocean",\
+				"fetchr:frozen_ocean",\
+				"fetchr:cold_ocean",\
+				"fetchr:ocean",\
+			]\
+		]\
+	}\
+}
+
+data \
+	modify storage fetchr:registries categories append value {\
+	id: "fetchr:glow_ink",\
+	name: { translate: "fetchr.category.glow_ink" },\
+	requirements: {\
+		type: "conjunction",\
+		value: [\
+			[\
+				"minecraft:surface_world",\
+				"minecraft:amplified",\
+				"minecraft:shattered_blocks_world",\
+				"minecraft:cave_world",\
+				"minecraft:dark_cave_world",\
+			],\
+			[\
+				"minecraft:cave_world",\
+				"minecraft:dark_cave_world",\
+				{\
+					type: "negation",\
+					value: [\
+						"minecraft:dry_land",\
+						"minecraft:ultrawarm",\
+						"minecraft:nether_barrens",\
+						"minecraft:nether_forests",\
+						"minecraft:end",\
+						"minecraft:cows",\
+					]\
+				},\
+			]\
+		]\
+	}\
+}
+
+data \
+	modify storage fetchr:registries categories append value {\
+	id: "fetchr:glow_ink_leather",\
+	name: { translate: "fetchr.category.glow_ink" },\
+	requirements: {\
+		type: "conjunction",\
+		value: [\
+			"minecraft:cows",\
+			[\
+				"minecraft:surface_world",\
+				"minecraft:amplified",\
+				"minecraft:shattered_blocks_world",\
+			],\
+			{\
+				type: "negation",\
+				value: [\
+					"minecraft:dry_land",\
+					"minecraft:ultrawarm",\
+					"minecraft:nether_barrens",\
+					"minecraft:nether_forests",\
+					"minecraft:end",\
+				]\
+			},\
+		]\
+	}\
+}
+#endregion aquatic mobs
+
+#region hostile mobs
+data \
+	modify storage fetchr:registries categories append value {\
+	id: "fetchr:gunpowder",\
+	name: { translate: "fetchr.category.gunpowder" },\
+	requirements: [ "minecraft:creepers" ]\
+}
+data \
+	modify storage fetchr:registries categories append value {\
+	id: "fetchr:enderman",\
+	name: { translate: "fetchr.category.enderman" },\
+	requirements: [ "minecraft:endermen" ]\
+}
+#endregion hostile mobs
+
+#region shipwreck
 data \
 	modify storage fetchr:registries categories append value {\
 	id: "fetchr:shipwreck",\
-	name: { translate: "fetchr.category.shipwreck" },\
+	name: { translate: "fetchr.category.shipwreck" },\{\
+		type: "conjunction",\
+		value: [\
+			"fetchr:shipwreck",\
+			{\
+				type: "negation",\
+				value: "fetchr:burried_treasure"\
+			},\
+		]\
+	}\
+}
+data \
+	modify storage fetchr:registries categories append value {\
+	id: "fetchr:shipwreck_hots",\
+	name: { translate: "fetchr.category.shipwreck" },\{\
+		type: "conjunction",\
+		value: [\
+			"fetchr:shipwreck",\
+			"fetchr:burried_treasure",\
+		]\
+	}\
+}
+data \
+	modify storage fetchr:registries categories append value {\
+	id: "fetchr:emerald",\
+	name: { translate: "fetchr.category.emerald" },\{\
+		type: "conjunction",\
+		value: [\
+			[\
+				"fetchr:cherry_grove",\
+				"fetchr:cherry_meadow",\
+				"fetchr:snowy_slopes",\
+				"fetchr:frozen_peaks",\
+				"fetchr:stony_peaks",\
+				"fetchr:windswept_forest",\
+				"fetchr:windswept_hills",\
+				"fetchr:windswept_gravelly_hills",\
+			],\
+			{\
+				type: "negation",\
+				value: [\
+					"fetchr:shipwreck",\
+					"fetchr:burried_treasure",\
+					"fetchr:village",\
+				]\
+			},\
+		]\
+	}\
+}
+#endregion shipwreck
+
+# data \
+	modify storage fetchr:registries categories append value {\
+	id: "fetchr:rabbit",\
+	name: { translate: "fetchr.category.rabbit" },\
 	tags: [ "fetchr:default" ]\
 }
 data \
@@ -294,6 +1219,12 @@ data \
 	modify storage fetchr:registries categories append value {\
 	id: "fetchr:taiga",\
 	name: { translate: "fetchr.category.taiga" },\
+	tags: [ "fetchr:default" ]\
+}
+data \
+	modify storage fetchr:registries categories append value {\
+	id: "fetchr:tuff",\
+	name: { translate: "fetchr.category.tuff" },\
 	tags: [ "fetchr:default" ]\
 }
 data \
@@ -334,7 +1265,7 @@ data \
 	item: { id: "minecraft:pumpkin_pie" },\
 	translation: "item.minecraft.pumpkin_pie",\
 	icon: "0002",\
-	categories: [ "fetchr:pumpkin", "fetchr:egg" ]\
+	categories: [ "fetchr:pumpkin", "fetchr:egg", "fetchr:egg_cake" ]\
 }
 
 # 0003: egg
@@ -344,7 +1275,7 @@ data \
 	item: { id: "minecraft:egg" },\
 	translation: "item.minecraft.egg",\
 	icon: "0003",\
-	categories: [ "fetchr:egg" ]\
+	categories: [ "fetchr:egg", "fetchr:egg_cake" ]\
 }
 
 # 0004: cake
@@ -354,7 +1285,7 @@ data \
 	item: { id: "minecraft:cake" },\
 	translation: "block.minecraft.cake",\
 	icon: "0004",\
-	categories: [ "fetchr:milk", "fetchr:egg" ]\
+	categories: [ "fetchr:milk", "fetchr:egg_cake" ]\
 }
 
 # 0005: acacia_sapling
@@ -429,7 +1360,7 @@ data \
 	item: { id: "minecraft:dead_bush" },\
 	translation: "block.minecraft.dead_bush",\
 	icon: "000b",\
-	categories: [ "fetchr:shearable", { id: "fetchr:warm_biome", weight: 3 } ]\
+	categories: [ { id: "fetchr:warm_biome", weight: 3 } ]\
 }
 
 # 000c: fern
@@ -439,7 +1370,7 @@ data \
 	item: { id: "minecraft:fern" },\
 	translation: "block.minecraft.fern",\
 	icon: "000c",\
-	categories: [{ id: "fetchr:shearable", weight: 2 }, { id: "fetchr:taiga" }]\
+	categories: [{ id: "fetchr:taiga" }]\
 }
 
 # 000d: vine
@@ -449,7 +1380,7 @@ data \
 	item: { id: "minecraft:vine" },\
 	translation: "block.minecraft.vine",\
 	icon: "000d",\
-	categories: [ "fetchr:shearable" ]\
+	categories: [ "fetchr:vines" ]\
 }
 
 # 000e: rail
@@ -469,7 +1400,7 @@ data \
 	item: { id: "minecraft:powered_rail" },\
 	translation: "block.minecraft.powered_rail",\
 	icon: "000f",\
-	categories: [ "fetchr:gold_and_ruined_portal" ],\
+	categories: [ "fetchr:redstone_gold" ],\
 	weight: 3\
 }
 
@@ -511,8 +1442,7 @@ data \
 	item: { id: "minecraft:ender_pearl" },\
 	translation: "item.minecraft.ender_pearl",\
 	icon: "0013",\
-	categories: [ "fetchr:nighttime_mob_drops" ],\
-	weight: 6\
+	categories: [ "fetchr:enderman" ],\
 }
 
 # 0014: slime_ball
@@ -522,7 +1452,7 @@ data \
 	item: { id: "minecraft:slime_ball" },\
 	translation: "item.minecraft.slime_ball",\
 	icon: "0014",\
-	categories: [ "fetchr:swamp", { id: "fetchr:nighttime_mob_drops", weight: 2 } ]\
+	categories: [ "fetchr:swamp"]\
 }
 
 # 0015: firework_rocket
@@ -603,7 +1533,7 @@ data \
 	item: { id: "minecraft:emerald" },\
 	translation: "item.minecraft.emerald",\
 	icon: "001c",\
-	categories: [ "fetchr:shipwreck" ]\
+	categories: [ "fetchr:shipwreck", "fetchr:emerald", "fetchr:village" ]\
 }
 
 # 001d: lodestone_compass
@@ -627,7 +1557,7 @@ data \
 	],\
 	translation: "item.minecraft.lodestone_compass",\
 	icon: "001d",\
-	categories: [ "fetchr:lodestone", "fetchr:compass" ]\
+	categories: [ "fetchr:lodestone_compass", "fetchr:compass" ]\
 }
 
 # 001e: diamond_hoe
@@ -709,7 +1639,7 @@ data \
 	item: { id: "minecraft:apple" },\
 	translation: "item.minecraft.apple",\
 	icon: "0025",\
-	categories: [ "fetchr:oak" ]\
+	categories: [ "fetchr:oak", "fetchr:dark_oak" ]\
 }
 
 # 0026: golden_apple
@@ -719,7 +1649,7 @@ data \
 	item: { id: "minecraft:golden_apple" },\
 	translation: "item.minecraft.golden_apple",\
 	icon: "0026",\
-	categories: [ "fetchr:oak" ]\
+	categories: [ "fetchr:oak", "fetchr:dark_oak" ]\
 }
 
 # 0027: golden_shovel
@@ -729,7 +1659,7 @@ data \
 	item: { id: "minecraft:golden_shovel" },\
 	translation: "item.minecraft.golden_shovel",\
 	icon: "0027",\
-	categories: [ "fetchr:gold_and_ruined_portal" ],\
+	categories: [ "fetchr:gold" ],\
 	weight: 2\
 }
 
@@ -740,7 +1670,7 @@ data \
 	item: { id: "minecraft:golden_sword" },\
 	translation: "item.minecraft.golden_sword",\
 	icon: "0028",\
-	categories: [ "fetchr:gold_and_ruined_portal" ],\
+	categories: [ "fetchr:gold" ],\
 	weight: 2\
 }
 
@@ -751,7 +1681,7 @@ data \
 	item: { id: "minecraft:clock" },\
 	translation: "item.minecraft.clock",\
 	icon: "0029",\
-	categories: [ "fetchr:gold_and_ruined_portal" ],\
+	categories: [ "fetchr:redstone_gold" ],\
 	weight: 3\
 }
 
@@ -999,7 +1929,7 @@ data \
 	item: { id: "minecraft:glass_bottle" },\
 	translation: "item.minecraft.glass_bottle",\
 	icon: "0041",\
-	categories: [ "fetchr:sand" ]\
+	categories: [ "fetchr:sand", "fetchr:sand_bone" ]\
 }
 
 # 0042: cod
@@ -1009,7 +1939,7 @@ data \
 	item: { id: "minecraft:cod" },\
 	translation: "item.minecraft.cod",\
 	icon: "0042",\
-	categories: [ "fetchr:fish" ]\
+	categories: [ "fetchr:cod_salmon", "fetchr:fish" ]\
 }
 
 # 0043: cod_bucket
@@ -1019,7 +1949,7 @@ data \
 	item: { id: "minecraft:cod_bucket" },\
 	translation: "item.minecraft.cod_bucket",\
 	icon: "0043",\
-	categories: [ "fetchr:fish" ]\
+	categories: [ "fetchr:cod_salmon", "fetchr:fish" ]\
 }
 
 # 0044: salmon
@@ -1029,7 +1959,7 @@ data \
 	item: { id: "minecraft:salmon" },\
 	translation: "item.minecraft.salmon",\
 	icon: "0044",\
-	categories: [ "fetchr:fish" ]\
+	categories: [ "fetchr:salmon", "fetchr:cod_salmon", "fetchr:fish" ]\
 }
 
 # 0045: salmon_bucket
@@ -1039,7 +1969,7 @@ data \
 	item: { id: "minecraft:salmon_bucket" },\
 	translation: "item.minecraft.salmon_bucket",\
 	icon: "0045",\
-	categories: [ "fetchr:fish" ]\
+	categories: [ "fetchr:salmon", "fetchr:cod_salmon", "fetchr:fish" ]\
 }
 
 # 0046: tropical_fish
@@ -1080,7 +2010,7 @@ data \
 	item: { id: "minecraft:dark_oak_sapling" },\
 	translation: "block.minecraft.dark_oak_sapling",\
 	icon: "0049",\
-	categories: [ "fetchr:oak" ]\
+	categories: [ "fetchr:dark_oak" ]\
 }
 
 # 004a: lead
@@ -1090,7 +2020,7 @@ data \
 	item: { id: "minecraft:lead" },\
 	translation: "item.minecraft.lead",\
 	icon: "004a",\
-	categories: [ "fetchr:swamp", { id: "fetchr:nighttime_mob_drops", weight: 2 } ]\
+	categories: [ "fetchr:swamp" ]\
 }
 
 # 004b: detector_rail
@@ -1100,7 +2030,7 @@ data \
 	item: { id: "minecraft:detector_rail" },\
 	translation: "block.minecraft.detector_rail",\
 	icon: "004b",\
-	categories: [ "fetchr:rail" ]\
+	categories: [ "fetchr:rail", "fetchr:redstone_rail" ]\
 }
 
 # 004c: activator_rail
@@ -1110,7 +2040,7 @@ data \
 	item: { id: "minecraft:activator_rail" },\
 	translation: "block.minecraft.activator_rail",\
 	icon: "004c",\
-	categories: [ "fetchr:rail" ]\
+	categories: [ "fetchr:rail", "fetchr:redstone_rail" ]\
 }
 
 # 004d: heart_of_the_sea
@@ -1120,7 +2050,7 @@ data \
 	item: { id: "minecraft:heart_of_the_sea" },\
 	translation: "item.minecraft.heart_of_the_sea",\
 	icon: "004d",\
-	categories: [ "fetchr:shipwreck" ]\
+	categories: [ "fetchr:shipwreck_hots" ]\
 }
 
 # 004e: glow_berries
@@ -1151,7 +2081,7 @@ data \
 	item: { id: "minecraft:short_dry_grass" },\
 	translation: "block.minecraft.short_dry_grass",\
 	icon: "0050",\
-	categories: [ "fetchr:shearable", { id: "fetchr:warm_biome", weight: 3 } ]\
+	categories: [ { id: "fetchr:warm_biome", weight: 3 } ]\
 }
 
 # 0051: diamond_pickaxe
@@ -1172,7 +2102,7 @@ data \
 	item: { id: "minecraft:golden_axe" },\
 	translation: "item.minecraft.golden_axe",\
 	icon: "0052",\
-	categories: [ "fetchr:gold_and_ruined_portal" ],\
+	categories: [ "fetchr:gold" ],\
 	weight: 2\
 }
 
@@ -1183,7 +2113,7 @@ data \
 	item: { id: "minecraft:bush" },\
 	translation: "block.minecraft.bush",\
 	icon: "0054",\
-	categories: [ "fetchr:shearable" ],\
+	categories: [ "fetchr:shearable_bush" ],\
 	weight: 2\
 }
 
@@ -1194,7 +2124,7 @@ data \
 	item: { id: "minecraft:crossbow" },\
 	translation: "item.minecraft.crossbow",\
 	icon: "0055",\
-	categories: [ "fetchr:bow" ]\
+	categories: [ "fetchr:bow", { id: "fetchr:bow_plus_dispenser", weight: 2 } ]\
 }
 
 # 0056: bamboo
@@ -1220,7 +2150,7 @@ data \
 }
 
 # 0058: seagrass
-data \
+# data \
 	modify storage fetchr:registries items append value {\
 	id: "fetchr:seagrass",\
 	item: { id: "minecraft:seagrass" },\
@@ -1231,7 +2161,7 @@ data \
 }
 
 # 0059: rabbit_hide
-data \
+# data \
 	modify storage fetchr:registries items append value {\
 	id: "fetchr:rabbit_hide",\
 	item: { id: "minecraft:rabbit_hide" },\
@@ -1241,7 +2171,7 @@ data \
 }
 
 # 005a: cooked_rabbit
-data \
+# data \
 	modify storage fetchr:registries items append value {\
 	id: "fetchr:cooked_rabbit",\
 	item: { id: "minecraft:cooked_rabbit" },\
@@ -1261,7 +2191,7 @@ data \
 }
 
 # 005c: slowness_arrow
-data \
+# data \
 	modify storage fetchr:registries items append value {\
 	id: "fetchr:slowness_arrow",\
 	item: {\
@@ -1290,7 +2220,7 @@ data \
 	item: { id: "minecraft:glow_item_frame" },\
 	translation: "item.minecraft.glow_item_frame",\
 	icon: "005e",\
-	categories: [ "fetchr:glow_ink", "fetchr:leather" ]\
+	categories: [ "fetchr:glow_ink_leather", "fetchr:leather_glow_ink" ]\
 }
 
 # 005f: pointed_dripstone
@@ -1320,7 +2250,7 @@ data \
 	item: { id: "minecraft:glow_lichen" },\
 	translation: "block.minecraft.glow_lichen",\
 	icon: "0061",\
-	categories: [ "fetchr:shearable" ],\
+	categories: [ "fetchr:shearable", "fetchr:shearable_bush" ],\
 	weight: 2\
 }
 
@@ -1368,7 +2298,7 @@ data \
 	item_tests: [{ type: "fetchr:predicate", id: "minecraft:trim", predicate: { material: "minecraft:lapis" }}],\
 	translation: "fetchr.item.blue_trimmed_leather_boots",\
 	icon: "0064",\
-	categories: [ "fetchr:shipwreck" ]\
+	categories: [ "fetchr:shipwreck", "fetchr:shipwreck_hots" ]\
 }
 
 # 0065: hanging_acacia_sign
@@ -1378,7 +2308,7 @@ data \
 	item: { id: "minecraft:acacia_hanging_sign" },\
 	translation: "block.minecraft.acacia_hanging_sign",\
 	icon: "0065",\
-	categories: [ "fetchr:basic_iron" ],\
+	categories: [ "fetchr:acacia" ],\
 	weight: 3\
 }
 
@@ -1487,7 +2417,7 @@ data \
 }
 
 # 0070: poison_arrow
-data \
+# data \
 	modify storage fetchr:registries items append value {\
 	id: "fetchr:poison_arrow",\
 	item: {\
@@ -1529,7 +2459,7 @@ data \
 	item: { id: "minecraft:resin_clump" },\
 	translation: "item.minecraft.resin_clump",\
 	icon: "0073",\
-	categories: [ "fetchr:pale_garden", "fetchr:nighttime_mob_drops" ],\
+	categories: [ "fetchr:pale_garden" ],\
 	weight: 2\
 }
 
@@ -1540,7 +2470,17 @@ data \
 	item: { id: "minecraft:pale_hanging_moss" },\
 	translation: "block.minecraft.pale_hanging_moss",\
 	icon: "0074",\
-	categories: [{ id: "fetchr:pale_garden", weight: 6 }, { id: "fetchr:shearable", weight: 2 }]\
+	categories: [{ id: "fetchr:pale_garden", weight: 6 }]\
+}
+
+# 0075: bow
+data \
+	modify storage fetchr:registries items append value {\
+	id: "fetchr:bow",\
+	item: { id: "minecraft:bow" },\
+	translation: "item.minecraft.bow",\
+	icon: "0075",\
+	categories: [ "fetchr:bow", "fetchr:bow_plus_dispenser" ]\
 }
 
 # 0100: iron_block
@@ -1602,7 +2542,7 @@ data \
 	item: { id: "minecraft:mossy_stone_bricks" },\
 	translation: "block.minecraft.mossy_stone_bricks",\
 	icon: "0105",\
-	categories: [ "fetchr:shearable" ]\
+	categories: [ "fetchr:vines" ]\
 }
 
 # 0106: jukebox
@@ -1623,7 +2563,7 @@ data \
 	item: { id: "minecraft:magma_block" },\
 	translation: "block.minecraft.magma_block",\
 	icon: "0107",\
-	categories: [ "fetchr:gold_and_ruined_portal" ],\
+	categories: [ "fetchr:magma" ],\
 	weight: 6\
 }
 
@@ -1736,7 +2676,7 @@ data \
 	item: { id: "minecraft:dispenser" },\
 	translation: "block.minecraft.dispenser",\
 	icon: "0112",\
-	categories: [ "fetchr:bow" ]\
+	categories: [ "fetchr:bow_plus_dispenser" ]\
 }
 
 # 0113: smoker
@@ -1796,7 +2736,7 @@ data \
 	item: { id: "minecraft:raw_gold_block" },\
 	translation: "block.minecraft.raw_gold_block",\
 	icon: "0118",\
-	categories: [ "fetchr:gold_and_ruined_portal" ],\
+	categories: [ "fetchr:gold" ],\
 	weight: 3\
 }
 
@@ -1807,7 +2747,7 @@ data \
 	item: { id: "minecraft:gold_block" },\
 	translation: "block.minecraft.gold_block",\
 	icon: "0119",\
-	categories: [ "fetchr:gold_and_ruined_portal" ],\
+	categories: [ "fetchr:gold" ],\
 	weight: 3\
 }
 
@@ -1839,7 +2779,7 @@ data \
 	item: { id: "minecraft:sticky_piston" },\
 	translation: "block.minecraft.sticky_piston",\
 	icon: "011c",\
-	categories: [{ id: "fetchr:piston", weight: 1 }, "fetchr:nighttime_mob_drops", "fetchr:swamp" ],\
+	categories: [{ id: "fetchr:piston", weight: 1 }, "fetchr:swamp" ],\
 	weight: 2\
 }
 
@@ -1850,7 +2790,7 @@ data \
 	item: { id: "minecraft:orange_concrete" },\
 	translation: "block.minecraft.orange_concrete",\
 	icon: "011d",\
-	categories: [ "fetchr:sand" ],\
+	categories: [ "fetchr:sand", "fetchr:sand_bone" ],\
 	weight: 2\
 }
 
@@ -2036,7 +2976,7 @@ data \
 	item: { id: "minecraft:white_stained_glass" },\
 	translation: "block.minecraft.white_stained_glass",\
 	icon: "012f",\
-	categories: [ "fetchr:sand" ]\
+	categories: [ "fetchr:sand_bone" ]\
 }
 
 # 0130: brown_banner
@@ -2078,7 +3018,7 @@ data \
 	item: { id: "minecraft:chiseled_resin_bricks" },\
 	translation: "block.minecraft.chiseled_resin_bricks",\
 	icon: "0133",\
-	categories: [ "fetchr:pale_garden", "fetchr:nighttime_mob_drops" ],\
+	categories: [ "fetchr:pale_garden" ],\
 	weight: 2\
 }
 
@@ -2089,7 +3029,7 @@ data \
 	item: { id: "minecraft:creaking_heart" },\
 	translation: "block.minecraft.creaking_heart",\
 	icon: "0134",\
-	categories: [ "fetchr:pale_garden", "fetchr:nighttime_mob_drops" ],\
+	categories: [ "fetchr:pale_garden" ],\
 	weight: 2\
 }
 
@@ -2111,7 +3051,7 @@ data \
 	item: { id: "minecraft:lodestone" },\
 	translation: "block.minecraft.lodestone",\
 	icon: "0136",\
-	categories: [ "fetchr:lodestone" ]\
+	categories: [ "fetchr:lodestone", "fetchr:lodestone_compass" ]\
 }
 
 # structures

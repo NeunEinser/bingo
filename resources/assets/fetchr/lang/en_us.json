@@ -596,7 +596,7 @@
 	"fetchr.category.mangrove": "Mangrove",
 	"fetchr.category.milk": "Milk",
 	"fetchr.category.mushroom": "Mushroom",
-	"fetchr.category.nighttime_mob_drops": "Nighttime Mob Drops",
+	"fetchr.category.enderman": "Enderman",
 	"fetchr.category.oak": "Oak",
 	"fetchr.category.pale_garden": "Pale Garden",
 	"fetchr.category.piston": "Piston",
@@ -613,6 +613,7 @@
 	"fetchr.category.swamp": "Swamp",
 	"fetchr.category.taiga": "Taiga",
 	"fetchr.category.warm_biome": "Warm Biomes",
+	"fetchr.category.vines": "Vines",
 	"fetchr.category.wheat": "Wheat",
 	"fetchr.category.wool": "Wool",
 
