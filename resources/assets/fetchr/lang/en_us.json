@@ -228,6 +228,9 @@
 	"fetchr.lobby.card_generation.from_seed.instructions": "%s to receive the command for setting the seed. Add the numeric seed at the very end of the command.",
 	"fetchr.lobby.card_generation.from_seed.instructions.link": "Click here",
 	"fetchr.lobby.card_generation.from_seed.explanation": "The seed determines which items generate on the bingo card and where you spawn. You can use this for example for competitive races, where everyone is using the same seed.",
+	"fetchr.lobby.card_generation.from_seed.dialog.title": "Generate Card From Seed",
+	"fetchr.lobby.card_generation.from_seed.dialog.input.seed": "Seed",
+	"fetchr.lobby.card_generation.from_seed.dialog.submit": "Generate",
 
 	"fetchr.lobby.card_generation.join_game.sign.line1": "",
 	"fetchr.lobby.card_generation.join_game.sign.line2": "Join",
@@ -328,6 +331,11 @@
 	"fetchr.lobby.settings.points_goal.lectern.heading": "Points Race",
 	"fetchr.lobby.settings.points_goal.lectern.page_1": "During a points race, you try to get as many items as possible in the specified time. Whoever gets the most amount of items within the time, or whoever gets a blackout the fastest, wins.\n\nYou can use this to limit the amount of time spend on a game.",
 	"fetchr.lobby.settings.points_goal.lectern.page_2": "Like with any other goal, there is no forced game end and you can continue playing after the race has ended, for example when you are close to a blackout.",
+	"fetchr.lobby.settings.points_goal.dialog.title": "Points Race",
+	"fetchr.lobby.settings.points_goal.dialog.description": "During a points race, you try to collect as many items as possible in a set amount of time. There will be a notification with the points winner once the time is over. You can still continue playing for a blackout if you want.\n",
+	"fetchr.lobby.settings.points_goal.dialog.input.end_time": "End Time (in minutes)",
+	"fetchr.lobby.settings.points_goal.dialog.set_time": "Set Time",
+	"fetchr.lobby.settings.points_goal.dialog.disable": "Disable",
 
 	"fetchr.lobby.settings.advanced_settings.sign.line1": "",
 	"fetchr.lobby.settings.advanced_settings.sign.line2": "Advanced",

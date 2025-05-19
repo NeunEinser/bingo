@@ -1,0 +1,26 @@
+{
+	"type": "minecraft:simple_input_form",
+	"title": { "translate": "fetchr.lobby.card_generation.from_seed.dialog.title" },
+	"body": [
+		{
+			"type": "minecraft:plain_message",
+			"width": 400,
+			"contents": { "translate": "fetchr.lobby.card_generation.from_seed.explanation" }
+		}
+	],
+	"inputs": [
+		{
+			"type": "minecraft:text",
+			"key": "seed",
+			"label": { "translate": "fetchr.lobby.card_generation.from_seed.dialog.input.seed" }
+		}
+	],
+	"action": {
+		"id": "submit",
+		"label": { "translate": "fetchr.lobby.card_generation.from_seed.dialog.submit" },
+		"on_submit": {
+			"type": "minecraft:command_template",
+			"template": "trigger fetchr.seed set $(seed)"
+		}
+	}
+}

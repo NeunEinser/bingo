@@ -1,0 +1,40 @@
+{
+	"type": "minecraft:multi_action_input_form",
+	"title": { "translate": "fetchr.lobby.settings.points_goal.dialog.title" },
+	"body": [
+		{
+			"type": "minecraft:plain_message",
+			"width": 400,
+			"contents": { "translate": "fetchr.lobby.settings.points_goal.dialog.description" }
+		}
+	],
+	"inputs": [
+		{
+			"type": "minecraft:number_range",
+			"start": 1,
+			"end": 60,
+			"steps": 59,
+			"initial": 25,
+			"key": "end_time",
+			"label": { "translate": "fetchr.lobby.settings.points_goal.dialog.input.end_time" }
+		}
+	],
+	"actions": [
+		{
+			"id": "set_time",
+			"label": { "translate": "fetchr.lobby.settings.points_goal.dialog.set_time" },
+			"on_submit": {
+				"type": "minecraft:command_template",
+				"template": "trigger fetchr.points_race_minutes set $(end_time)"
+			}
+		},
+		{
+			"id": "-1",
+			"label": { "translate": "fetchr.lobby.settings.points_goal.dialog.disable" },
+			"on_submit": {
+				"type": "minecraft:command_template",
+				"template": "trigger fetchr.points_race_minutes set $(action)"
+			}
+		}
+	]
+}

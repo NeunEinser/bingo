@@ -15,7 +15,9 @@ execute \
 	if score $operator_only fetchr.settings matches 1 \
 	unless score @s fetchr.operator matches 1 \
 	run return 0
-tellraw @s [\
+
+#NEUN_SCRIPT until 77
+#tellraw @s [\
 	{\
 		"translate": "fetchr.lobby.card_generation.from_seed.instructions",\
 		"with": [\
@@ -30,3 +32,8 @@ tellraw @s [\
 	"\n",\
 	{ "translate": "fetchr.lobby.card_generation.from_seed.explanation", "italic": true, "color": "gray" }\
 ]
+#NEUN_SCRIPT end
+
+#NEUN_SCRIPT since 77
+dialog show @s fetchr:set_seed
+#NEUN_SCRIPT end

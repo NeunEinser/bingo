@@ -18,7 +18,8 @@ execute \
 
 scoreboard players enable @s fetchr.points_race_minutes
 
-tellraw @s [\
+#NEUN_SCRIPT until 77
+#tellraw @s [\
 	"\n\n\n\n\n=== ",\
 	{ "translate": "fetchr.lobby.settings.points_goal.menu.heading", "bold": true, "color": "green" },\
 	" ===\n\n[ ",\
@@ -101,3 +102,8 @@ tellraw @s [\
 	},\
 	"]"\
 ]
+#NEUN_SCRIPT end
+
+#NEUN_SCRIPT since 77
+dialog show @s fetchr:points_race
+#NEUN_SCRIPT end
