@@ -47,7 +47,7 @@
 	"fetchr.game.switch_gamemode.prevented.click": "Click here",
 	"fetchr.game.switch_gamemode.hint": "Hint: You can use the command %s at any time manually to switch to spectator mode as well.\nIf you do not like this functionality, you can disable it in your preferences in the lobby.",
 
-	"fetchr.preferences.title": "Change Preferences",
+	"fetchr.preferences.title": "Personal Preferences",
 	"fetchr.preferences.description": "This menu allows you to configure your own preferences.",
 	"fetchr.preferences.back": "Back",
 	"fetchr.preferences.previous": "Previous",
@@ -289,7 +289,7 @@
 	"fetchr.lobby.team_selection.join_magenta": "%s joined the magenta team.",
 
 	"fetchr.lobby.settings.preferences.sign.line1": "",
-	"fetchr.lobby.settings.preferences.sign.line2": "Change",
+	"fetchr.lobby.settings.preferences.sign.line2": "Personal",
 	"fetchr.lobby.settings.preferences.sign.line3": "Preferences",
 	"fetchr.lobby.settings.preferences.sign.line4": "",
 	
