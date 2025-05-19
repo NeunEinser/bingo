@@ -1,7 +1,4 @@
 {
-	"env": {
-		"gameVersion": "1.21.5"
-	},
 	"format": {
 		"blockStateBracketSpacing": { "inside": 0 },
 		"blockStateCommaSpacing": { "before": 0, "after": 1 },
