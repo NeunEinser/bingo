@@ -203,7 +203,6 @@
 	"fetchr.lobby.team_selection.join_dark_blue": "%s 加入了深蓝队。",
 	"fetchr.lobby.team_selection.join_purple": "%s 加入了紫队。",
 	"fetchr.lobby.team_selection.join_magenta": "%s 加入了品红队。",
-	"fetchr.lobby.settings.preferences.sign.line3": "偏好",
 	"fetchr.lobby.settings.concealed_card.sign.line1": "隐藏卡片",
 	"fetchr.lobby.settings.concealed_card.sign.line2": "",
 	"fetchr.lobby.settings.concealed_card.sign.off": "关",
