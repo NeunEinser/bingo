@@ -189,7 +189,6 @@
 	"fetchr.lobby.team_selection.join_dark_blue": "%s присоединился к синей команде.",
 	"fetchr.lobby.team_selection.join_purple": "%s присоединился к фиолетовой команде.",
 	"fetchr.lobby.team_selection.join_magenta": "%s присоединился к пурпурной команде.",
-	"fetchr.lobby.settings.preferences.sign.line3": "Настройки",
 	"fetchr.lobby.settings.lockout_mode.sign.line1": "Режим",
 	"fetchr.lobby.settings.lockout_mode.sign.line2": "Режим",
 	"fetchr.lobby.settings.lockout_mode.sign.off": "Выкл",
