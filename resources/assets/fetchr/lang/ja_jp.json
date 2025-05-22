@@ -29,7 +29,6 @@
 	"fetchr.game.menu.options.teleport_all": "みんなのゲームを終了する",
 	"fetchr.game.menu.hint": "ヒント：どこにいても%sをクリックしてFetchrメニューを表示できます。また、%sを直接に入力して%sに入れた動作を実行できます。",
 	"fetchr.game.menu.hint.action_param": "動作",
-	"fetchr.preferences.title": "好みの設定",
 	"fetchr.preferences.description": "このメニューでは、自分の好みの設定ができます。",
 	"fetchr.preferences.back": "戻る",
 	"fetchr.preferences.previous": "前へ",
