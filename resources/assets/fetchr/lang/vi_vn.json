@@ -29,7 +29,6 @@
 	"fetchr.game.menu.hint": "Gợi ý: Bạn có thể bấm %s bất cứ đâu để hiển thị danh mục Fetchr. Bạn cũng có thể kích hoạt %s thủ công, thay thế %s bằng hành động có thể tự động hoàn thành.",
 	"fetchr.game.menu.hint.action_param": "hành động",
 	"fetchr.game.switch_gamemode.prevented.click": "Bấm vào đây",
-	"fetchr.preferences.title": "Thay Đổi Tùy Chọn",
 	"fetchr.preferences.back": "Quay lại",
 	"fetchr.preferences.previous": "Trước đó",
 	"fetchr.preferences.next": "Tiếp theo",
