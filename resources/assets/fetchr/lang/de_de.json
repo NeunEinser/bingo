@@ -204,8 +204,6 @@
 	"fetchr.lobby.team_selection.join_dark_blue": "%s ist dem dunkelblauen Team beigetreten.",
 	"fetchr.lobby.team_selection.join_purple": "%s ist dem violetten Team beigetreten.",
 	"fetchr.lobby.team_selection.join_magenta": "%s ist dem magenta Team beigetreten.",
-	"fetchr.lobby.settings.preferences.sign.line1": "Spieler-",
-	"fetchr.lobby.settings.preferences.sign.line3": "ändern",
 	"fetchr.lobby.settings.concealed_card.sign.line1": "Versteckte",
 	"fetchr.lobby.settings.concealed_card.sign.line2": "Karte",
 	"fetchr.lobby.settings.concealed_card.sign.off": "Aus",
