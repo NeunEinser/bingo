@@ -160,7 +160,6 @@
 	"fetchr.lobby.team_selection.join_blue": "%s is toegetreden tot het blauwe team.",
 	"fetchr.lobby.team_selection.join_purple": "%s is toegetreden tot het paarse team.",
 	"fetchr.lobby.team_selection.join_magenta": "%s is toegetreden tot het magenta team.",
-	"fetchr.lobby.settings.preferences.sign.line3": "Aanpassen",
 	"fetchr.lobby.settings.lockout_mode.sign.line1": "Uitsluit",
 	"fetchr.lobby.settings.lockout_mode.sign.line2": "Modus",
 	"fetchr.lobby.settings.lockout_mode.sign.off": "Uit",
