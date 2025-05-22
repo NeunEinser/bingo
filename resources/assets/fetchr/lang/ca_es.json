@@ -35,7 +35,6 @@
 	"fetchr.game.switch_gamemode.prevented": "S'ha aturat el canvi de mode de joc. %s per activar el mode espectador.\nDesprés, pots canviar a qualsevol altre mode de joc.",
 	"fetchr.game.switch_gamemode.prevented.click": "Feu clic aquí",
 	"fetchr.game.switch_gamemode.hint": "Pista: També podeu emprar el comandament %s a qualsevol moment per activar el mode espectador manualment.\nSi no us agrada aquesta funcionalitat, la pots desactivar al vestíbul.",
-	"fetchr.preferences.title": "Canviar Preferències",
 	"fetchr.preferences.description": "Aquest menú us permet configurar les vostres pròpies preferències.",
 	"fetchr.preferences.back": "Enrere",
 	"fetchr.preferences.previous": "Anterior",
