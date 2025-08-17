@@ -1,5 +1,7 @@
 {
-	"type": "minecraft:multi_action_input_form",
+	"NEUN_SCRIPT remove_self until 77": null,
+	"NEUN_SCRIPT replace type until 79": "minecraft:multi_action_input_form",
+	"type": "minecraft:multi_action",
 	"title": { "translate": "fetchr.lobby.settings.points_goal.dialog.title" },
 	"body": [
 		{
@@ -13,6 +15,9 @@
 			"type": "minecraft:number_range",
 			"start": 1,
 			"end": 60,
+			"NEUN_SCRIPT remove step until 78": null,
+			"step": 1,
+			"NEUN_SCRIPT remove steps since 78": null,
 			"steps": 59,
 			"initial": 25,
 			"key": "end_time",
@@ -21,16 +26,30 @@
 	],
 	"actions": [
 		{
+			"NEUN_SCRIPT remove id since 79": null,
 			"id": "set_time",
 			"label": { "translate": "fetchr.lobby.settings.points_goal.dialog.set_time" },
+			"NEUN_SCRIPT remove action until 79": null,
+			"action": {
+				"type": "minecraft:dynamic/run_command",
+				"template": "trigger fetchr.points_race_minutes set $(end_time)"
+			},
+			"NEUN_SCRIPT remove on_submit since 79": null,
 			"on_submit": {
 				"type": "minecraft:command_template",
 				"template": "trigger fetchr.points_race_minutes set $(end_time)"
 			}
 		},
 		{
+			"NEUN_SCRIPT remove id since 79": null,
 			"id": "-1",
 			"label": { "translate": "fetchr.lobby.settings.points_goal.dialog.disable" },
+			"NEUN_SCRIPT remove action until 79": null,
+			"action": {
+				"type": "minecraft:run_command",
+				"command": "trigger fetchr.points_race_minutes set -1"
+			},
+			"NEUN_SCRIPT remove on_submit since 79": null,
 			"on_submit": {
 				"type": "minecraft:command_template",
 				"template": "trigger fetchr.points_race_minutes set $(action)"

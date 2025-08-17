@@ -1,5 +1,7 @@
 {
-	"type": "minecraft:simple_input_form",
+	"NEUN_SCRIPT remove_self until 77": null,
+	"NEUN_SCRIPT replace type until 79": "minecraft:multi_action_input_form",
+	"type": "minecraft:confirmation",
 	"title": { "translate": "fetchr.lobby.card_generation.from_seed.dialog.title" },
 	"body": [
 		{
@@ -15,12 +17,29 @@
 			"label": { "translate": "fetchr.lobby.card_generation.from_seed.dialog.input.seed" }
 		}
 	],
-	"action": {
-		"id": "submit",
+		"yes": {
 		"label": { "translate": "fetchr.lobby.card_generation.from_seed.dialog.submit" },
-		"on_submit": {
-			"type": "minecraft:command_template",
+		"action": {
+			"type": "minecraft:dynamic/run_command",
 			"template": "trigger fetchr.seed set $(seed)"
 		}
-	}
+	},
+	"no": {
+		"label": { "translate": "gui.cancel" }
+	},
+	"NEUN_SCRIPT remove actions since 79": null,
+	"actions": [
+		{
+			"id": "submit",
+			"label": { "translate": "fetchr.lobby.card_generation.from_seed.dialog.submit" },
+			"on_submit": {
+				"type": "minecraft:command_template",
+				"template": "trigger fetchr.seed set $(seed)"
+			}
+		},
+		{
+			"id": "cancel",
+			"label": { "translate": "gui.cancel" }
+		}
+	]
 }
