@@ -526,6 +526,7 @@ def handle_file(
 			formats = sorted(nbt_result[0])
 
 			min_format = get_format_range(formats, pack_format, format_versions)[0]
+			min_format = max(min_pack_format, min_format)
 			version = next(v for v in versions if (get_version_from_version_info(v, False)) >= min_format)
 			data_version.value = version["data_version"]
 
