@@ -2000,6 +2000,32 @@ data \
 }
 #NEUN_SCRIPT end
 
+#NEUN_SCRIPT since 72
+# 0075: yellow_harness
+data \
+	modify storage fetchr:registries items append value {\
+	id: "fetchr:yellow_harness",\
+	item: { id: "minecraft:yellow_harness" },\
+	translation: "item.minecraft.yellow_harness",\
+	icon: "0075",\
+	categories: ["fetchr:leather"],\
+	weight: 2\
+}
+#NEUN_SCRIPT end
+
+#NEUN_SCRIPT since 77
+# 0076: saddle
+data \
+	modify storage fetchr:registries items append value {\
+	id: "fetchr:saddle",\
+	item: { id: "minecraft:saddle" },\
+	translation: "item.minecraft.saddle",\
+	icon: "0076",\
+	categories: ["fetchr:leather"],\
+	weight: 2\
+}
+#NEUN_SCRIPT end
+
 # 0100: iron_block
 data \
 	modify storage fetchr:registries items append value {\
