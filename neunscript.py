@@ -327,22 +327,22 @@ def iterate_files(config: dict, pack_config: dict, target: str, mc_versions: lis
 
 				if not file_name.endswith(remove_extensions):
 					file_result = handle_file(source, file_name, relative_path, out_root, main_pack_format,
-					  min_pack_format, mc_versions, version_config, requested_rp_sha, version_info)
+					  min_pack_format, mc_versions, format_versions, version_config, requested_rp_sha, version_info)
 
 					pack_formats = sorted(file_result["formats"])
 					should_create_main_as_overlay = False
 					for i in range(0, len(pack_formats)):
-						pack_format_range = pack_formats[i]
+						min_format = pack_formats[i]
 						max_format = max_excl_to_max_inc(pack_formats[i+1], format_versions) if i+1 < len(pack_formats) else None
 
-						write_overlay = handle_file(source, file_name, relative_path, out_root, pack_format_range,
-					  		min_pack_format, mc_versions, version_config, requested_rp_sha, version_info)\
+						write_overlay = handle_file(source, file_name, relative_path, out_root, min_format,
+							min_pack_format, mc_versions, format_versions, version_config, requested_rp_sha, version_info)\
 							["write_file"]
 
 						if write_overlay is not None:
-							pack_format_ranges.add((pack_format_range, max_format))
+							pack_format_ranges.add((min_format, max_format))
 							overlay_path = f"{out_root}{os.sep}\
-								{get_overlay_dir_name((pack_format_range, max_format), is_rp)}\
+								{get_overlay_dir_name((min_format, max_format), is_rp)}\
 								{os.sep}{relative_path}".replace("\t", "")
 							os.makedirs(overlay_path, exist_ok=True)
 							write_overlay(f"{overlay_path}{os.sep}{file_name}")
@@ -505,6 +505,7 @@ def handle_file(
 	pack_format: tuple[int, int],
 	min_pack_format: tuple[int, int],
 	versions: list[dict],
+	format_versions: list[tuple[int, int]],
 	version_config: dict,
 	requested_rp_sha: list[str],
 	version_info: VersionInfo
@@ -521,7 +522,7 @@ def handle_file(
 		if data_version is not None:
 			formats = sorted(nbt_result[0])
 
-			min_format = get_format_range(formats, pack_format, formats)[0]
+			min_format = get_format_range(formats, pack_format, format_versions)[0]
 			version = next(v for v in versions if (get_version_from_version_info(v, False)) >= min_format)
 			data_version.value = version["data_version"]
 
