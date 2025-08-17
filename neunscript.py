@@ -476,7 +476,9 @@ def max_excl_to_max_inc(max_excl: tuple[int, int], format_versions: list[tuple[i
 def get_overlay_dir_name(format_range: tuple[tuple[int, int] | None, tuple[int, int] | None], is_rp: bool):
 	from_part = ""
 	if format_range[0] is not None and format_range[0] > (1, 0):
-		from_part = "_from_" + (str(format_range[0][0]) if format_range[0][1] == 0 else f"{format_range[0][0]}.{format_range[0][1]}")
+		from_part = "_from_" + (str(format_range[0][0])
+			if (format_range[0] < (65, 0) if is_rp else format_range[0] < (82, 0))
+			else f"{format_range[0][0]}.{format_range[0][1]}")
 	to_part = ""
 	if format_range[1] is not None and format_range[0] < (2**31-1, 0):
 		if (format_range[1] < (65, 0) if is_rp else format_range[1] < (82, 0)):
