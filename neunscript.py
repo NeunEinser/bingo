@@ -279,7 +279,9 @@ def iterate_files(config: dict, pack_config: dict, target: str, mc_versions: lis
 	if os.path.isfile(f"{source}{os.sep}pack.mcmeta"):
 		with open(f"{source}{os.sep}pack.mcmeta") as file:
 			pack_mcmeta: PackFormat = json.loads(file.read())
-			main_pack_format = (pack_mcmeta["pack"]["pack_format"], 2**31-1)
+			main_format_major = pack_mcmeta["pack"].get("pack_format")
+			if main_pack_format[0] != main_format_major:
+				main_pack_format = (pack_mcmeta["pack"]["pack_format"], next((v[1] for v in reversed(format_versions) if v[0] <= main_format_major), 2**31-1))
 			if min_pack_format < main_pack_format:
 				min_pack_format = main_pack_format
 			supported_formats = pack_mcmeta["pack"].get("supported_formats")
