@@ -440,7 +440,7 @@ def get_variable(variable: str, config: dict, requested_rp_sha: list[str] | None
 		return config.get("version")
 	elif variable == "resource_pack_sha1" and requested_rp_sha != None and file_path != None:
 		requested_rp_sha.append(file_path)
-		return None
+		return "{NEUN_SCRIPT:resource_pack_sha1}"
 	elif vars != None:
 		ret = vars.get(variable)
 		if ret != None:
