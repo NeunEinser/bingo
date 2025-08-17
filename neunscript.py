@@ -410,7 +410,8 @@ def replace_variables(content: str, file_path: str, config, requested_rp_sha: li
 	indexDiff = 0
 	for match in re.finditer(r"\{NEUN_SCRIPT:([a-zA-Z0-9_-]+)(?:\s*([+\-*/%])\s*([+-]?\d+))?\}", content):
 		variable = match.group(1)
-		replace=str(get_variable(variable, config, requested_rp_sha, file_path))
+		replace = get_variable(variable, config, requested_rp_sha, file_path)
+		replace = str(replace) if replace is not None else None
 		if replace == None:
 			continue
 		if replace == variable:
@@ -440,12 +441,11 @@ def get_variable(variable: str, config: dict, requested_rp_sha: list[str] | None
 		return config.get("version")
 	elif variable == "resource_pack_sha1" and requested_rp_sha != None and file_path != None:
 		requested_rp_sha.append(file_path)
-		return "{NEUN_SCRIPT:resource_pack_sha1}"
+		return None
 	elif vars != None:
 		ret = vars.get(variable)
 		if ret != None:
 			return ret
-		return variable
 	return variable
 
 class FileResult(TypedDict):
