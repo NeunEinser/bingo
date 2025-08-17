@@ -10,12 +10,16 @@ class Range(TypedDict):
 	min_inclusive: int
 	max_inclusive: int
 class Pack(TypedDict):
-	pack_format: int
+	pack_format: int | None
+	min_format: int | list[int] | None
+	max_format: int | list[int] | None
 	supported_formats: Range | list[int] | None
 	description: Any
 class Overlay(TypedDict):
 	directory: str
-	formats: Range | list[int]
+	min_format: int | list[int] | None
+	max_format: int | list[int] | None
+	formats: Range | list[int] | None
 class Overlays(TypedDict):
 	entries: list[Overlay]
 class PackFormat(TypedDict):
@@ -91,9 +95,6 @@ def main():
 			v for v in reversed(mc_versions) if v["type"] == "release" and v["data_version"] <= mc_version_info["latest_supported"]["data_version"]
 		), mc_versions[-1])
 
-
-	mc_versions = [v for v in mc_versions if v["data_version"] >= mc_version_info["initial_supported"]["data_version"]]
-
 	vars = config.get("vars")
 	if(vars is None):
 		vars = {}
@@ -103,10 +104,21 @@ def main():
 	vars["minecraft_initial_snapshot"] = mc_version_info.get("initial_supported") and mc_version_info["initial_supported"]["name"]
 	config["vars"] = vars
 
+	def get_version_string(pack_format: tuple[int, int] | None):
+		return pack_format and f"{pack_format[0]}.{pack_format[1]}"
+	
+	def set_version_vars(is_rp: bool):
+		vars["min_pack_format"] = mc_version_info.get("initial_supported") and get_version_string(get_version_from_version_info(mc_version_info["initial_supported"], is_rp))
+		max_pack_format = mc_version_info.get("latest_supported") and get_version_from_version_info(mc_version_info["latest_supported"], is_rp)
+		vars["max_pack_format"] = get_version_string(max_pack_format)
+		vars["first_unsupported_format"] = None
+		if max_pack_format is not None:
+			vars["first_unsupported_format"] = get_version_string(next((get_version_from_version_info(v, is_rp) for v in mc_versions if get_version_from_version_info(v, is_rp) > max_pack_format), (max_pack_format[0] + 1, 0)))
+
 	requested_rp_sha = []
 	if resourcepack_config is not None:
-		vars["min_pack_format"] = mc_version_info.get("initial_supported") and mc_version_info["initial_supported"]["resource_pack_version"]
-		vars["max_pack_format"] = mc_version_info.get("latest_supported") and mc_version_info["latest_supported"]["resource_pack_version"]
+		set_version_vars(True)
+
 		config["vars"] = vars
 		requested_rp_sha.extend(iterate_files(config, resourcepack_config, f"{target}{os.sep}tmp{os.sep}resourcepack", mc_versions, mc_version_info, True))
 
@@ -114,14 +126,15 @@ def main():
 		override_default_lang_strings(f"{target}{os.sep}tmp{os.sep}resourcepack", version_json["assetIndex"]["url"])
 
 	if datapack_config is not None:
-		vars["min_pack_format"] = mc_version_info.get("initial_supported") and mc_version_info["initial_supported"]["data_pack_version"]
-		vars["max_pack_format"] = mc_version_info.get("latest_supported") and mc_version_info["latest_supported"]["data_pack_version"]
+		set_version_vars(False)
+
 		config["vars"] = vars
 		requested_rp_sha.extend(iterate_files(config, datapack_config, f"{target}{os.sep}tmp{os.sep}datapack", mc_versions, mc_version_info))
 
 	if world_config is not None:
 		vars["min_pack_format"] = None
 		vars["max_pack_format"] = None
+		vars["first_unsupported_format"] = None
 		config["vars"] = vars
 		requested_rp_sha.extend(iterate_files(config, world_config, f"{target}{os.sep}tmp{os.sep}world", mc_versions, mc_version_info))
 
@@ -197,32 +210,40 @@ def get_version(pack_path: str, mc_versions: list[dict], is_rp: bool):
 		return (None, None)
 	with open(f"{pack_path}{os.sep}pack.mcmeta") as file:
 		pack_mcmeta: PackFormat = json.loads(file.read())
-		min_pack_format = pack_mcmeta["pack"]["pack_format"]
-		max_pack_format = min_pack_format
-		supported_versions = pack_mcmeta["pack"].get("supported_formats")
 
-		if isinstance(supported_versions, dict):
-			if min_pack_format > supported_versions["min_inclusive"]:
-				min_pack_format = supported_versions["min_inclusive"]
-			if max_pack_format < supported_versions["max_inclusive"]:
-				max_pack_format = supported_versions["max_inclusive"]
-		elif supported_versions is not None:
-			min_version = min(supported_versions)
-			if min_pack_format > min_version:
-				min_pack_format = min_version
-			max_version = max(supported_versions)
-			if max_pack_format < max_version:
-				max_pack_format = max_version
+		min_pack_format = pack_mcmeta["pack"].get("min_format")
+		if min_pack_format is not None: min_pack_format = to_pack_format_tuple(min_pack_format)
+		max_pack_format = pack_mcmeta["pack"].get("max_format")
+		if max_pack_format is not None: max_pack_format = to_pack_format_tuple(max_pack_format, 2**31-1)
 
+		if min_pack_format is None or max_pack_format is None:
+			if min_pack_format is None:
+				min_pack_format = (pack_mcmeta["pack"]["pack_format"], 0)
+			if max_pack_format is None:
+				max_pack_format = (min_pack_format[0], 2**31-1)
+			supported_versions = pack_mcmeta["pack"].get("supported_formats")
+
+			if isinstance(supported_versions, dict):
+				if min_pack_format > (supported_versions["min_inclusive"], 0):
+					min_pack_format = (supported_versions["min_inclusive"], 0)
+				if max_pack_format < (supported_versions["max_inclusive"], 0):
+					max_pack_format = (supported_versions["max_inclusive"], 2**31-1)
+			elif supported_versions is not None:
+				min_version = (min(supported_versions), 0)
+				if min_pack_format > min_version:
+					min_pack_format = min_version
+				max_version = max(supported_versions)
+				if max_pack_format < (max_version, 0):
+					max_pack_format = (max_version, 2**31-1)
 
 		return (
-			next((v for v in mc_versions if v["resource_pack_version" if is_rp else "data_pack_version"] == min_pack_format), None),
-			next((v for v in reversed(mc_versions) if v["resource_pack_version" if is_rp else "data_pack_version"] == max_pack_format), None)
+			next((v for v in mc_versions if get_version_from_version_info(v, is_rp) >= min_pack_format), None),
+			next((v for v in reversed(mc_versions) if get_version_from_version_info(v, is_rp) <= max_pack_format), None)
 		)
 
 def iterate_files(config: dict, pack_config: dict, target: str, mc_versions: list[dict], version_info: VersionInfo, is_rp: bool = False):
 	requested_rp_sha: list[str] = []
-	pack_formats_for_overlay = []
+	pack_format_ranges: set[tuple[tuple[int, int], tuple[int, int]]] = set()
 	remove_extensions = config.get("remove_file_types")
 	versionDict: dict | None = config.get("versions")
 	if versionDict == None:
@@ -233,41 +254,42 @@ def iterate_files(config: dict, pack_config: dict, target: str, mc_versions: lis
 	source = pack_config.get("path")
 	if source is None:
 		print("invalid datapack config")
-		return;
+		return
+	
+	format_versions = sorted({
+		(v["resource_pack_version"], v["resource_pack_version_minor"]) if is_rp
+		else (v["data_pack_version"], v["data_pack_version_minor"])
+		for v in mc_versions
+	})
 
-	main_pack_format = None
-	min_pack_format = None
-	existing_overlays: list[ExistingOverlay] = []
+	main_pack_format: tuple[int, int] = (
+		version_info["latest_supported"]["resource_pack_version"],
+		version_info["latest_supported"]["resource_pack_version_minor"]
+	) if is_rp else (
+		version_info["latest_supported"]["data_pack_version"],
+		version_info["latest_supported"]["data_pack_version_minor"]
+	)
+	min_pack_format: tuple[int, int] = (
+		version_info["initial_supported"]["resource_pack_version"],
+		version_info["initial_supported"]["resource_pack_version_minor"]
+	) if is_rp else (
+		version_info["initial_supported"]["data_pack_version"],
+		version_info["initial_supported"]["data_pack_version_minor"]
+	)
 	if os.path.isfile(f"{source}{os.sep}pack.mcmeta"):
 		with open(f"{source}{os.sep}pack.mcmeta") as file:
 			pack_mcmeta: PackFormat = json.loads(file.read())
-			main_pack_format = pack_mcmeta["pack"]["pack_format"]
-			min_pack_format = main_pack_format
+			main_pack_format = (pack_mcmeta["pack"]["pack_format"], 0)
+			if min_pack_format < main_pack_format:
+				min_pack_format = main_pack_format
 			supported_formats = pack_mcmeta["pack"].get("supported_formats")
 			if supported_formats is not None:
 				if isinstance(supported_formats, dict):
-					min_pack_format = supported_formats["min_inclusive"]
+					min_pack_format = min(min_pack_format, (supported_formats["min_inclusive"], 0))
 				else:
-					min_pack_format = min(supported_formats)
-				if min_pack_format < 16 and main_pack_format >= 16:
-					main_pack_format = 15
-			overlays = pack_mcmeta.get("overlays")
-			if overlays is not None:
-				for overlay in overlays["entries"]:
-					min_format = 0
-					max_format = 2**31-1
-					formats = overlay.get("formats")
-					if (isinstance(formats, dict)):
-						min_format = formats["min_inclusive"]
-						max_format = formats["max_inclusive"]
-					else:
-						min_format = min(formats)
-						max_format = max(formats)
-					existing_overlays.append({
-						"dir": overlay["directory"],
-						"min": min_format,
-						"max": max_format
-					})
+					min_pack_format = min(min_pack_format, (supported_formats[0], 0))
+				if min_pack_format < (16, 0) and main_pack_format >= (16, 0):
+					main_pack_format = (15, 0)
 
 	versions:list[tuple[str,dict|None]] = list(versionDict.items())
 	versions.insert(0, ("", None))
@@ -308,19 +330,17 @@ def iterate_files(config: dict, pack_config: dict, target: str, mc_versions: lis
 					pack_formats = sorted(file_result["formats"])
 					should_create_main_as_overlay = False
 					for i in range(0, len(pack_formats)):
-						pack_format = pack_formats[i]
-						max_format = pack_formats[i+1] - 1 if i+1 < len(pack_formats) else None
-						if main_pack_format >= pack_format and (max_format is None or main_pack_format <= max_format):
-							continue
+						pack_format_range = pack_formats[i]
+						max_format = max_excl_to_max_inc(pack_formats[i+1], format_versions) if i+1 < len(pack_formats) else None
 
-						write_overlay = handle_file(source, file_name, relative_path, out_root, pack_format,
+						write_overlay = handle_file(source, file_name, relative_path, out_root, pack_format_range,
 					  		min_pack_format, mc_versions, version_config, requested_rp_sha, version_info)\
 							["write_file"]
 
 						if write_overlay is not None:
-							pack_formats_for_overlay.append([pack_format, max_format])
+							pack_format_ranges.add((pack_format_range, max_format))
 							overlay_path = f"{out_root}{os.sep}\
-								{get_overlay_dir_name(pack_formats_for_overlay[-1])}\
+								{get_overlay_dir_name((pack_format_range, max_format), is_rp)}\
 								{os.sep}{relative_path}".replace("\t", "")
 							os.makedirs(overlay_path, exist_ok=True)
 							write_overlay(f"{overlay_path}{os.sep}{file_name}")
@@ -331,21 +351,21 @@ def iterate_files(config: dict, pack_config: dict, target: str, mc_versions: lis
 					if write_file is not None:
 						main_path = out_dir
 						if should_create_main_as_overlay:
-							format_range = get_format_range(pack_formats, main_pack_format)
-							pack_formats_for_overlay.append(format_range)
+							format_range = get_format_range(pack_formats, main_pack_format, format_versions)
+							pack_format_ranges.add(format_range)
 							main_path = f"{out_root}{os.sep}\
-								{get_overlay_dir_name(format_range)}\
+								{get_overlay_dir_name(format_range, is_rp)}\
 								{os.sep}{relative_path}".replace("\t", "")
 							
 						os.makedirs(main_path, exist_ok=True)
 						write_file(f"{main_path}{os.sep}{file_name}")
 
 	pack_path = f"{target}{os.sep}pack.mcmeta"
-	if os.path.exists(pack_path) and len(pack_formats_for_overlay) > 0:
+	if os.path.exists(pack_path) and len(pack_format_ranges) > 0:
 		with open(f"{target}{os.sep}pack.mcmeta", "r+", encoding="utf-8") as file:
 			pack_def: PackFormat = json.loads(file.read())
 			pack = pack_def["pack"]
-			pack["pack_format"] = main_pack_format
+			pack["pack_format"] = main_pack_format[0]
 			overlays = pack_def.get("overlays")
 			if overlays is None:
 				overlays = {}
@@ -353,12 +373,27 @@ def iterate_files(config: dict, pack_config: dict, target: str, mc_versions: lis
 			if entries is None:
 				entries = []
 
-			for pack_format in pack_formats_for_overlay:
-				min_inc = pack_format[0] if pack_format[0] != None else 1
-				max_inc = pack_format[1] if pack_format[1] != None else 2**31-1
-				overlay_name = get_overlay_dir_name(pack_format)
-				if not any (entry["directory"] == overlay_name for entry in entries):
-					entries.append({"formats": {"min_inclusive": min_inc, "max_inclusive": max_inc}, "directory": overlay_name })
+			existing_overlays = { e["directory"] for e in entries }
+			min_overlay_format = min(f[0] for f in pack_format_ranges)
+			requires_old = min_overlay_format < (65, 0) if is_rp else min_overlay_format < (82, 0)
+
+			for pack_format_range in sorted(pack_format_ranges, key=lambda f: (f[0] or (1, 0), f[1] or (2**31-1, 2**31-1))):
+				overlay_name = get_overlay_dir_name(pack_format_range, is_rp)
+				if overlay_name in existing_overlays:
+					continue
+
+				min_inc = pack_format_range[0] if pack_format_range[0] != None else (1, 0)
+				max_inc = pack_format_range[1] if pack_format_range[1] != None else (2**31-1, 2**31-1)
+				overlay = { "directory": overlay_name }
+				if requires_old:
+					overlay["formats"] = [ min_inc[0],  max_inc[0] ]
+				if max_inc >= (82, 0):
+					overlay["min_format"] = min_inc[0] if min_inc[1] == 0 else min_inc
+					overlay["max_format"] = max_inc[0] \
+						if max_inc[1] == 2**31-1 or (max_inc[0] < format_versions[-1][0] \
+							and next(f for f in format_versions if f > max_inc)[0] > max_inc[0]) \
+						else max_inc
+				entries.append(overlay)
 			overlays["entries"] = entries
 			pack_def["overlays"] = overlays
 			file.seek(0)
@@ -410,31 +445,53 @@ def get_variable(variable: str, config: dict, requested_rp_sha: list[str] | None
 	return variable
 
 class FileResult(TypedDict):
-	formats: set[int]
+	formats: set[tuple[int, int]]
 	write_file: Callable[[str], None]
 
-def get_format_range(formats: list[int], format: int):
-	min_format = 0
+def get_format_range(formats: list[tuple[int, int]], format: tuple[int, int], format_versions: list[tuple[int, int]]):
+	min_format = (0, 0)
 	max_format = None
 	for i in range(0, len(formats)):
 		min_format = formats[i]
 		max_format = None
 		if len(formats) > i + 1:
-			max_format = formats[i+1]-1
+			max_format = max_excl_to_max_inc(formats[i+1], format_versions)
 		if min_format <= format and (max_format is None or max_format >= format):
 			break
-	return [min_format, max_format]
+	return (min_format, max_format)
 
-def get_overlay_dir_name(format_range: list[int | None]):
-	return f"pack_format{f'_from_{format_range[0]}' if format_range[0] > 1 else ''}{f'_until_{format_range[1]}' if format_range[1] is not None else ''}"
+def max_excl_to_max_inc(max_excl: tuple[int, int], format_versions: list[tuple[int, int]]):
+	max_inc = max_excl
+	if max_excl is not None:
+		if max_excl not in format_versions:
+			if max_excl[1] == 0:
+				max_inc = (max_excl[0] - 1, 2**31-1)
+			elif max_excl[1] < 2**31-1:
+				max_inc =  (max_excl[0], max_excl[1] - 1)
+		else: max_inc =  next(v for v in reversed(format_versions) if v < max_excl)
+	if (max_excl == format_versions[-1]):
+		max_inc = (max_excl[0], 2**31 - 1)
+	return max_inc
+
+def get_overlay_dir_name(format_range: tuple[tuple[int, int] | None, tuple[int, int] | None], is_rp: bool):
+	from_part = ""
+	if format_range[0] is not None and format_range[0] > (1, 0):
+		from_part = "_from_" + (str(format_range[0][0]) if format_range[0][1] == 0 else f"{format_range[0][0]}.{format_range[0][1]}")
+	to_part = ""
+	if format_range[1] is not None and format_range[0] < (2**31-1, 0):
+		if (format_range[1] < (65, 0) if is_rp else format_range[1] < (82, 0)):
+			to_part = f"_to_{format_range[1][0]}"
+		else:
+			to_part = "_to_" + (f"{format_range[1][0]}.{format_range[1][1]}" if format_range[1][1] != 2**31-1 else f"{format_range[1][0]}.x")
+	return "pack_format" + from_part + to_part
 
 def handle_file(
 	source: str,
 	file_name: str,
 	relative_path: str,
 	out_root: str,
-	pack_format: int,
-	min_pack_format: int,
+	pack_format: tuple[int, int],
+	min_pack_format: tuple[int, int],
 	versions: list[dict],
 	version_config: dict,
 	requested_rp_sha: list[str],
@@ -452,8 +509,8 @@ def handle_file(
 		if data_version is not None:
 			formats = sorted(nbt_result[0])
 
-			min_format = get_format_range(formats, pack_format)[0]
-			version = next(v for v in versions if v["data_pack_version"] >= min_format)
+			min_format = get_format_range(formats, pack_format, formats)[0]
+			version = next(v for v in versions if (get_version_from_version_info(v, False)) >= min_format)
 			data_version.value = version["data_version"]
 
 		return {
@@ -509,12 +566,12 @@ def handle_structued(
 	file_path: str,
 	config: dict,
 	mc_version_info: VersionInfo,
-	pack_format: int,
-	min_format: int,
+	pack_format: list[int],
+	min_format: list[int],
 	is_nbt: bool,
 	key: str | None = None
 ):
-	pack_formats = set()
+	pack_formats: set[tuple[int, int]] = set()
 	keep_self = True
 	if isinstance(tag, dict):
 		if is_nbt and file_path.endswith("level.dat") and key == "Version" and mc_version_info["lowest_release"] != None:
@@ -566,26 +623,27 @@ def handle_structued(
 									if len(command) < command_offset + 2:
 										raise ValueError("until / since needs at least one argument")
 
-									min_value = 1
+									min_value = (1, 0)
 									max_value = None
 
 									if command[command_offset] == "since":
-										min_value = int(command[command_offset + 1])
+										min_value = to_pack_format_tuple(list(map(lambda v: int(v), command[command_offset + 1].split("."))))
 										if len(command) > command_offset + 2 and command[command_offset + 2] == "until":
 											if len(command) < command_offset + 4:
 												raise ValueError("Syntax: since <pack_format> until <pack_format>")
-											max_value = int(command[command_offset + 3])
+											max_value = map(lambda v: int(v), command[command_offset + 3].split("."))
 									else:
-										max_value = int(command[command_offset + 1])
+										max_value = map(lambda v: int(v), command[command_offset + 1].split("."))
 
 									pack_formats.add(min_value)
 
 									if max_value is not None:
+										max_value = to_pack_format_tuple(list(max_value))
 										pack_formats.add(max_value)
 									if pack_format >= min_value and (max_value is None or pack_format < max_value):
 										should_execute_action = True
 										if min_value > min_format:
-											pack_formats.add(1)
+											pack_formats.add((1, 0))
 
 						val_result = None
 						if should_execute_action:
@@ -665,10 +723,10 @@ class StackEntry(TypedDict):
 	remove: int
 	uncomment: int
 
-def minify_function_file(file_content: str, config: dict, pack_format: int, min_format: int) -> StringFileMinifyResult:
+def minify_function_file(file_content: str, config: dict, pack_format: tuple[int, int], min_format: tuple[int, int]) -> StringFileMinifyResult:
 	output=""
 	stack: list[StackEntry] = [{"remove": 0, "uncomment": 0}]
-	pack_formats = set()
+	pack_formats: set[tuple[int, int]] = set()
 	file_content = re.sub(r"\\\r?\n\s*", "", file_content)
 
 	for line in file_content.splitlines():
@@ -752,21 +810,22 @@ def minify_function_file(file_content: str, config: dict, pack_format: int, min_
 						remove = 0
 					if len(command) < 2:
 						raise ValueError("until/since needs at least one argument")
-					min_value = 1
+					min_value = (1, 0)
 					max_value = None
 					if command[0] == "since":
-						min_value = int(command[1])
+						min_value = to_pack_format_tuple(list(map(lambda v: int(v), command[1].split("."))))
 						if len(command) >= 4 and command[2] == "until":
-							max_value = int(command[3])
+							max_value = map(lambda v: int(v), command[3].split("."))
 					else:
-						max_value = int(command[1])
+						max_value = map(lambda v: int(v), command[1].split("."))
 					pack_formats.add(min_value)
 					if max_value is not None:
+						max_value = to_pack_format_tuple(list(max_value))
 						pack_formats.add(max_value)
 					if pack_format >= min_value and (max_value is None or pack_format < max_value):
 						uncomment = -1
 						if min_value > min_format:
-							pack_formats.add(1)
+							pack_formats.add((1, 0))
 					else:
 						remove = -1
 					stack.append({ "remove": remove, "uncomment": uncomment })
@@ -843,6 +902,13 @@ def override_default_lang_strings(rp_root: str, assetUrl: str):
 				with open(lang_path, "w", encoding="utf-8") as lang_file:
 					lang_file.write(json.dumps(default_strings))
 					print("write " + lang_path)
+
+def to_pack_format_tuple(format: list[int] | int, default_minor: int = 0):
+	return (format[0], format[1] if len(format) >= 2 else default_minor) if not isinstance(format, int) else (format, default_minor)
+
+def get_version_from_version_info(mc_version: dict, is_rp: bool):
+	return (mc_version["resource_pack_version" if is_rp else "data_pack_version"], 
+		mc_version["resource_pack_version_minor" if is_rp else "data_pack_version_minor"])
 
 if __name__ == '__main__':
 	main()

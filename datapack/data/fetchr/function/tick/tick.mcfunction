@@ -8,7 +8,7 @@
 # @within tag/function minecraft:tick
 # @handles #minecraft:tick
 
-#NEUN_SCRIPT since {NEUN_SCRIPT:max_pack_format + 1}
+#NEUN_SCRIPT since {NEUN_SCRIPT:first_unsupported_format}
 	#NEUN_SCRIPT if {NEUN_SCRIPT:minecraft_initial_release} = {NEUN_SCRIPT:minecraft_latest_snapshot}
 		#tellraw @a {\
 			"translate": "fetchr.error.incompatible_minecraft_version.single_compatible",\
@@ -96,7 +96,7 @@
 		#NEUN_SCRIPT end
 	#NEUN_SCRIPT end
 #NEUN_SCRIPT end
-#NEUN_SCRIPT since {NEUN_SCRIPT:min_pack_format} until {NEUN_SCRIPT:max_pack_format + 1}
+#NEUN_SCRIPT since {NEUN_SCRIPT:min_pack_format} until {NEUN_SCRIPT:first_unsupported_format}
 	function fetchr:tick/spigot
 	function neun_einser.timer:store_current_time
 

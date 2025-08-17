@@ -1,7 +1,9 @@
 {
 	"pack": {
-		"pack_format": 61,
-		"supported_formats": {"min_inclusive": 34, "max_inclusive": 61},
+		"pack_format": 65,
+		"min_version": 34,
+		"max_version": 65,
+		"supported_formats": [ 34, 65 ],
 		"description": "Fetchr resources"
 	}
 }
