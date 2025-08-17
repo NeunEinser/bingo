@@ -25,8 +25,13 @@
 # 	function fetchr:card_frames/spawn_iter
 #declare storage tmp.fetchr:card_frames/spawn_frames
 
+summon minecraft:item_frame ~ ~ ~ {\
+	Facing: 3b,\
+	Tags: [ "fetchr.card_frame", "fetchr.new" ]\
+}
+
 execute \
-	summon minecraft:item_frame \
+	as @e[type=minecraft:item_frame, tag=fetchr.card_frame, tag=fetchr.new] \
 	run function fetchr:card_frames/setup_frame
 
 scoreboard players add $card_frames/spawn.i fetchr.tmp 1

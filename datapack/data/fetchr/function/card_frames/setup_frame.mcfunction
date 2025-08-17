@@ -8,7 +8,6 @@
 # 	function fetchr:card_frames/spawn_iter
 
 data merge entity @s {\
-	Facing: 3b,\
 	Silent: true,\
 	Tags: [ "fetchr.card_frame" ],\
 	Item: { id: "minecraft:barrier" },\
@@ -29,3 +28,5 @@ execute \
 		modify entity @s Item.components.minecraft:lodestone_tracker.target.dimension \
 		set value "fetchr:default"
 data remove storage tmp.fetchr:card_frames/spawn_frames slots[0]
+
+tag @s remove fetchr.new
