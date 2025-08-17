@@ -335,6 +335,9 @@ def iterate_files(config: dict, pack_config: dict, target: str, mc_versions: lis
 						min_format = pack_formats[i]
 						max_format = max_excl_to_max_inc(pack_formats[i+1], format_versions) if i+1 < len(pack_formats) else None
 
+						if main_pack_format >= min_format and (max_format is None or main_pack_format <= max_format):
+							continue
+
 						write_overlay = handle_file(source, file_name, relative_path, out_root, min_format,
 							min_pack_format, mc_versions, format_versions, version_config, requested_rp_sha, version_info)\
 							["write_file"]
