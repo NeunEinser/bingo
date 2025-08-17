@@ -351,6 +351,8 @@ def iterate_files(config: dict, pack_config: dict, target: str, mc_versions: lis
 					if write_file is not None:
 						main_path = out_dir
 						if should_create_main_as_overlay:
+							if (pack_formats[0] != (1, 0)):
+								pack_formats.insert(0, (1, 0))
 							format_range = get_format_range(pack_formats, main_pack_format, format_versions)
 							pack_format_ranges.add(format_range)
 							main_path = f"{out_root}{os.sep}\
