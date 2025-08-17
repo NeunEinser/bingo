@@ -2000,27 +2000,40 @@ data \
 }
 #NEUN_SCRIPT end
 
+#NEUN_SCRIPT since 83
+# 0075: copper_lantern
+data \
+	modify storage fetchr:registries items append value {\
+	id: "fetchr:copper_lantern",\
+	item: { id: "minecraft:copper_lantern" },\
+	translation: "block.minecraft.copper_lantern",\
+	icon: "0075",\
+	categories: ["fetchr:copper"],\
+	weight: 3\
+}
+#NEUN_SCRIPT end
+
 #NEUN_SCRIPT since 72
-# 0075: yellow_harness
+# 0076: yellow_harness
 data \
 	modify storage fetchr:registries items append value {\
 	id: "fetchr:yellow_harness",\
 	item: { id: "minecraft:yellow_harness" },\
 	translation: "item.minecraft.yellow_harness",\
-	icon: "0075",\
+	icon: "0076",\
 	categories: ["fetchr:leather"],\
 	weight: 2\
 }
 #NEUN_SCRIPT end
 
 #NEUN_SCRIPT since 77
-# 0076: saddle
+# 0077: saddle
 data \
 	modify storage fetchr:registries items append value {\
 	id: "fetchr:saddle",\
 	item: { id: "minecraft:saddle" },\
 	translation: "item.minecraft.saddle",\
-	icon: "0076",\
+	icon: "0077",\
 	categories: ["fetchr:leather"],\
 	weight: 2\
 }
