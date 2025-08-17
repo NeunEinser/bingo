@@ -827,14 +827,24 @@ data \
 	weight: 2\
 }
 #NEUN_SCRIPT end
-#NEUN_SCRIPT since 69
-data \
+#NEUN_SCRIPT since 69 until 75
+#data \
 	modify storage fetchr:registries items append value {\
 	id: "fetchr:slime_ball",\
 	item: { id: "minecraft:slime_ball" },\
 	translation: "item.minecraft.slime_ball",\
 	icon: "0014",\
 	categories: [ "fetchr:swamp", { id: "fetchr:nighttime_mob_drops", weight: 2 } ]\
+}
+#NEUN_SCRIPT end
+#NEUN_SCRIPT since 75
+data \
+	modify storage fetchr:registries items append value {\
+	id: "fetchr:slime_ball",\
+	item: { id: "minecraft:slime_ball" },\
+	translation: "item.minecraft.slime_ball",\
+	icon: "0014",\
+	categories: [ "fetchr:swamp", { id: "fetchr:nighttime_mob_drops", weight: 3 } ]\
 }
 #NEUN_SCRIPT end
 
@@ -1379,7 +1389,19 @@ data \
 	categories: [ "fetchr:fish" ]\
 }
 
-#NEUN_SCRIPT since 69
+#NEUN_SCRIPT since 69 until 75
+# 0047: firefly_bush
+#data \
+	modify storage fetchr:registries items append value {\
+	id: "fetchr:firefly_bush",\
+	item: { id: "minecraft:firefly_bush" },\
+	translation: "block.minecraft.firefly_bush",\
+	icon: "0048",\
+	categories: [ "fetchr:swamp" ],\
+	weight: 3\
+}
+#NEUN_SCRIPT end
+#NEUN_SCRIPT since 75
 # 0047: firefly_bush
 data \
 	modify storage fetchr:registries items append value {\
@@ -1388,7 +1410,7 @@ data \
 	translation: "block.minecraft.firefly_bush",\
 	icon: "0048",\
 	categories: [ "fetchr:swamp" ],\
-	weight: 3\
+	weight: 2\
 }
 #NEUN_SCRIPT end
 
@@ -1414,14 +1436,25 @@ data \
 	weight: 2\
 }
 #NEUN_SCRIPT end
-#NEUN_SCRIPT since 69
-data \
+#NEUN_SCRIPT since 69 until 75
+#data \
 	modify storage fetchr:registries items append value {\
 	id: "fetchr:lead",\
 	item: { id: "minecraft:lead" },\
 	translation: "item.minecraft.lead",\
 	icon: "004a",\
 	categories: [ "fetchr:swamp", { id: "fetchr:nighttime_mob_drops", weight: 2 } ]\
+}
+#NEUN_SCRIPT end
+#NEUN_SCRIPT since 75
+data \
+	modify storage fetchr:registries items append value {\
+	id: "fetchr:lead",\
+	item: { id: "minecraft:lead" },\
+	translation: "item.minecraft.lead",\
+	icon: "004a",\
+	categories: [ "fetchr:spider" ],\
+	weight: 2\
 }
 #NEUN_SCRIPT end
 
@@ -1865,8 +1898,8 @@ data \
 	categories: [{ id: "fetchr:skeleton_drops" }, { id: "fetchr:nighttime_mob_drops", weight: 3 }]\
 }
 #NEUN_SCRIPT end
-#NEUN_SCRIPT since 69
-data \
+#NEUN_SCRIPT since 69 until 75
+#data \
 	modify storage fetchr:registries items append value {\
 	id: "fetchr:poison_arrow",\
 	item: {\
@@ -1877,6 +1910,19 @@ data \
 	icon: "0070",\
 	categories: [{ id: "fetchr:skeleton_drops", weight: 1 }, "fetchr:nighttime_mob_drops", "fetchr:swamp"],\
 	weight: 3\
+}
+#NEUN_SCRIPT end
+#NEUN_SCRIPT since 75
+data \
+	modify storage fetchr:registries items append value {\
+	id: "fetchr:poison_arrow",\
+	item: {\
+		id: "minecraft:tipped_arrow",\
+		components: { "minecraft:potion_contents": { potion: "minecraft:poison" }}\
+	},\
+	translation: "item.minecraft.tipped_arrow.effect.poison",\
+	icon: "0070",\
+	categories: ["fetchr:skeleton_drops", { id: "fetchr:nighttime_mob_drops", weight: 3 }, { id: "fetchr:swamp", weight: 2 }]\
 }
 #NEUN_SCRIPT end
 
@@ -2225,8 +2271,8 @@ data \
 	categories: [{ id: "fetchr:piston" }, { id : "fetchr:nighttime_mob_drops", weight: 2 }]\
 }
 #NEUN_SCRIPT end
-#NEUN_SCRIPT since 69
-data \
+#NEUN_SCRIPT since 69 until 75
+#data \
 	modify storage fetchr:registries items append value {\
 	id: "fetchr:sticky_piston",\
 	item: { id: "minecraft:sticky_piston" },\
@@ -2234,6 +2280,16 @@ data \
 	icon: "011c",\
 	categories: [{ id: "fetchr:piston", weight: 1 }, "fetchr:nighttime_mob_drops", "fetchr:swamp" ],\
 	weight: 2\
+}
+#NEUN_SCRIPT end
+#NEUN_SCRIPT since 75
+data \
+	modify storage fetchr:registries items append value {\
+	id: "fetchr:sticky_piston",\
+	item: { id: "minecraft:sticky_piston" },\
+	translation: "block.minecraft.sticky_piston",\
+	icon: "011c",\
+	categories: ["fetchr:piston", { id: "fetchr:nighttime_mob_drops", weight: 3 }, "fetchr:swamp" ]\
 }
 #NEUN_SCRIPT end
 
