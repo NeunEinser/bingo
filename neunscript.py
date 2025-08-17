@@ -381,6 +381,12 @@ def iterate_files(config: dict, pack_config: dict, target: str, mc_versions: lis
 			min_overlay_format = min(f[0] for f in pack_format_ranges)
 			requires_old = min_overlay_format < (65, 0) if is_rp else min_overlay_format < (82, 0)
 
+			if requires_old:
+				for existing_overlay in entries:
+					min_format = to_pack_format_tuple(existing_overlay["min_format"])
+					max_format = to_pack_format_tuple(existing_overlay["max_format"])
+					existing_overlay["formats"] = [min_format[0], max_format[0]]
+
 			for pack_format_range in sorted(pack_format_ranges, key=lambda f: (f[0] or (1, 0), f[1] or (2**31-1, 2**31-1))):
 				overlay_name = get_overlay_dir_name(pack_format_range, is_rp)
 				if overlay_name in existing_overlays:
