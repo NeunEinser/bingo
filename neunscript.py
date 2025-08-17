@@ -395,7 +395,7 @@ def iterate_files(config: dict, pack_config: dict, target: str, mc_versions: lis
 				if overlay_name in existing_overlays:
 					continue
 
-				min_inc = pack_format_range[0] if pack_format_range[0] != None else (1, 0)
+				min_inc = pack_format_range[0] if pack_format_range[0] != None else (16, 0)
 				max_inc = pack_format_range[1] if pack_format_range[1] != None else (2**31-1, 2**31-1)
 				overlay = { "directory": overlay_name }
 				if requires_old:
