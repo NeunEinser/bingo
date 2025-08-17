@@ -1543,6 +1543,35 @@ data \
 	weight: 2\
 }
 
+#NEUN_SCRIPT since 82
+# 0053: blue_trimmed_copper_boots
+data \
+	modify storage fetchr:registries items append value {\
+	id: "fetchr:blue_trimmed_copper_boots",\
+	item: {\
+		id: "minecraft:copper_boots",\
+		components: {\
+			"minecraft:trim": {\
+				pattern: "minecraft:shaper",\
+				material: "minecraft:lapis"\
+			},\
+			"minecraft:lore": [\
+				{ translate: "item.minecraft.smithing_template.upgrade", color: "gray", italic: false },\
+				{ translate: "fetchr.item.description.any_trim", color: "#406d95", italic: false },\
+				{ translate: "trim_material.minecraft.lapis", color: "#406d95", italic: false }\
+			],\
+			"minecraft:tooltip_display": {\
+				hidden_components: [ "minecraft:trim" ]\
+			}\
+		}\
+	},\
+	item_tests: [{ type: "fetchr:predicate", id: "minecraft:trim", predicate: { material: "minecraft:lapis" }}],\
+	translation: "fetchr.item.blue_trimmed_copper_boots",\
+	icon: "0053",\
+	categories: [ "fetchr:shipwreck" ]\
+}
+#NEUN_SCRIPT end
+
 #NEUN_SCRIPT since 69
 # 0054: bush
 data \
@@ -1713,13 +1742,13 @@ data \
 	categories: [ "fetchr:amethyst" ]\
 }
 
-# 0064: blue_trimmed_leather_boots
+# 0064: blue_trimmed_golden_boots
 #NEUN_SCRIPT until 69
 #data \
 	modify storage fetchr:registries items append value {\
-	id: "fetchr:blue_trimmed_leather_boots",\
+	id: "fetchr:blue_trimmed_golden_boots",\
 	item: {\
-		id: "minecraft:leather_boots",\
+		id: "minecraft:golden_boots",\
 		components: {\
 			"minecraft:trim": {\
 				pattern: "minecraft:shaper",\
@@ -1734,17 +1763,17 @@ data \
 		}\
 	},\
 	item_tests: [{ type: "fetchr:predicate", id: "minecraft:trim", predicate: { material: "minecraft:lapis" }}],\
-	translation: "fetchr.item.blue_trimmed_leather_boots",\
+	translation: "fetchr.item.blue_trimmed_golden_boots",\
 	icon: "0064",\
 	categories: [ "fetchr:shipwreck" ]\
 }
 #NEUN_SCRIPT end
-#NEUN_SCRIPT since 69
-data \
+#NEUN_SCRIPT since 69 until 82
+#data \
 	modify storage fetchr:registries items append value {\
-	id: "fetchr:blue_trimmed_leather_boots",\
+	id: "fetchr:blue_trimmed_golden_boots",\
 	item: {\
-		id: "minecraft:leather_boots",\
+		id: "minecraft:golden_boots",\
 		components: {\
 			"minecraft:trim": {\
 				pattern: "minecraft:shaper",\
@@ -1761,7 +1790,7 @@ data \
 		}\
 	},\
 	item_tests: [{ type: "fetchr:predicate", id: "minecraft:trim", predicate: { material: "minecraft:lapis" }}],\
-	translation: "fetchr.item.blue_trimmed_leather_boots",\
+	translation: "fetchr.item.blue_trimmed_golden_boots",\
 	icon: "0064",\
 	categories: [ "fetchr:shipwreck" ]\
 }
