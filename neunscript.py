@@ -387,7 +387,7 @@ def iterate_files(config: dict, pack_config: dict, target: str, mc_versions: lis
 				overlay = { "directory": overlay_name }
 				if requires_old:
 					overlay["formats"] = [ min_inc[0],  max_inc[0] ]
-				if max_inc >= (82, 0):
+				if max_inc >= ((65, 0) if is_rp else (82, 0)):
 					overlay["min_format"] = min_inc[0] if min_inc[1] == 0 else min_inc
 					overlay["max_format"] = max_inc[0] \
 						if max_inc[1] == 2**31-1 or (max_inc[0] < format_versions[-1][0] \
