@@ -1350,6 +1350,12 @@ forceload add 0 0
 	gamerule disableElytraMovementCheck true
 	gamerule doPatrolSpawning false
 	gamerule maxCommandChainLength 131072
+
+	#NEUN_SCRIPT since 85
+	gamerule pvp false
+	gamerule allowEnteringNetherUsingPortals false
+	#NEUN_SCRIPT end
+
 	difficulty easy
 
 # setup teams
