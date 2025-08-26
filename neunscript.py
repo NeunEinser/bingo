@@ -1,5 +1,5 @@
 # This script is used for building this pack
-import hashlib, json, os, re, requests, shutil, pyjson5
+import hashlib, json, os, re, requests, shutil
 from typing import Any, Callable, TypedDict
 from distutils.dir_util import copy_tree
 from sys import stderr
@@ -728,7 +728,7 @@ def minify_json_file(
 	min_format: int
 ) -> StringFileMinifyResult:
 	# pyjson5 allows for comments and other json5 features when reading
-	json_content = pyjson5.decode(file_content)
+	json_content = json.loads(file_content)
 	sturctured_result = handle_structued(json_content, file_path, config, mc_version_info, pack_format, min_format, False)
 	# json serializes as utf-8 when called like this, increasing minification 
 	return {
@@ -892,7 +892,7 @@ def override_default_lang_strings(rp_root: str, assetUrl: str):
 	default_strings = None
 	if os.path.isfile(f"{rp_root}{os.sep}assets{os.sep}minecraft{os.sep}lang{os.sep}en_us.json"):
 		with open(f"{rp_root}{os.sep}assets{os.sep}minecraft{os.sep}lang{os.sep}en_us.json", "r", encoding="utf-8") as lang_file:
-			default_strings: dict[str, str] = pyjson5.decode(lang_file.read())
+			default_strings: dict[str, str] = json.loads(lang_file.read())
 
 	if default_strings == None:
 		return
@@ -907,7 +907,7 @@ def override_default_lang_strings(rp_root: str, assetUrl: str):
 			lang_path=f"{rp_root}{os.sep}assets{os.sep}minecraft{os.sep}lang{os.sep}{lang}.json"
 			if os.path.isfile(lang_path):
 				with open(lang_path, "r+", encoding="utf-8") as lang_file:
-					lang_json: dict[str, str] = pyjson5.decode(lang_file.read())
+					lang_json: dict[str, str] = json.loads(lang_file.read())
 					for (key, default) in default_strings.items():
 						if key not in lang_json or not lang_json[key] or lang_json[key].isspace():
 							lang_json[key] = default
