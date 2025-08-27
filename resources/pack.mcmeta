@@ -9,9 +9,8 @@
 	"overlays": {
 		"entries": [
 			{
-				"directory": "pack_format_from_65.0",
-				"min_format": 65,
-				"max_format": 2147483647
+				"directory": "pack_format_to_64",
+				"formats": [ 16, 64 ]
 			}
 		]
 	}
