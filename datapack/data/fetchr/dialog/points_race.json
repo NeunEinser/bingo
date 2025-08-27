@@ -54,6 +54,11 @@
 				"type": "minecraft:command_template",
 				"template": "trigger fetchr.points_race_minutes set $(action)"
 			}
+		},
+		{
+			"NEUN_SCRIPT remove id since 79": null,
+			"id": "cancel",
+			"label": { "translate": "gui.cancel" }
 		}
 	]
 }
