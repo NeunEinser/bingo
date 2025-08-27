@@ -18,7 +18,7 @@ scoreboard players set $item_detect/announce/lockout.second_place fetchr.tmp 0
 function fetchr:item_detection/goals/lockout/team_item_count_iter
 
 data modify storage tmp.fetchr:item_detection openItems set from storage fetchr:card slots
-data remove storage tmp.fetchr:item_detection openItems[{ itemCollected: true }]
+data remove storage tmp.fetchr:item_detection openItems[{ item_collected: true }]
 #>
 # @private
 #declare score_holder $item_detect/announce/lockout.open_items
