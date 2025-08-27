@@ -1,0 +1,64 @@
+{
+	"NEUN_SCRIPT remove_self until 77": null,
+	"NEUN_SCRIPT replace type until 79": "minecraft:multi_action_input_form",
+	"type": "minecraft:multi_action",
+	"title": { "translate": "fetchr.lobby.settings.pre_gen.dialog.title" },
+	"body": [
+		{
+			"type": "minecraft:plain_message",
+			"width": 400,
+			"contents": { "translate": "fetchr.lobby.settings.pre_gen.dialog.description" }
+		}
+	],
+	"inputs": [
+		{
+			"type": "minecraft:number_range",
+			"start": 250,
+			"end": 2000,
+			"NEUN_SCRIPT remove step until 78": null,
+			"step": 250,
+			"NEUN_SCRIPT remove steps since 78": null,
+			"steps": 7,
+			"initial": 250,
+			"key": "blocks",
+			"label": { "translate": "fetchr.lobby.settings.pre_gen.dialog.input.blocks" }
+		}
+	],
+	"actions": [
+		{
+			"NEUN_SCRIPT remove id since 79": null,
+			"id": "set_time",
+			"label": { "translate": "fetchr.lobby.settings.pre_gen.dialog.action.set_blocks" },
+			"NEUN_SCRIPT remove action until 79": null,
+			"action": {
+				"type": "minecraft:dynamic/run_command",
+				"template": "trigger fetchr.pre_gen_radius set $(blocks)"
+			},
+			"NEUN_SCRIPT remove on_submit since 79": null,
+			"on_submit": {
+				"type": "minecraft:command_template",
+				"template": "trigger fetchr.pre_gen_radius set $(blocks)"
+			}
+		},
+		{
+			"NEUN_SCRIPT remove id since 79": null,
+			"id": "144",
+			"label": { "translate": "fetchr.lobby.settings.pre_gen.dialog.action.set_minimal" },
+			"NEUN_SCRIPT remove action until 79": null,
+			"action": {
+				"type": "minecraft:run_command",
+				"command": "trigger fetchr.pre_gen_radius set 144"
+			},
+			"NEUN_SCRIPT remove on_submit since 79": null,
+			"on_submit": {
+				"type": "minecraft:command_template",
+				"template": "trigger fetchr.pre_gen_radius set $(action)"
+			}
+		},
+		{
+			"NEUN_SCRIPT remove id since 79": null,
+			"id": "cancel",
+			"label": { "translate": "gui.cancel" }
+		}
+	]
+}

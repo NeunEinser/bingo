@@ -16,7 +16,8 @@ execute \
 
 scoreboard players enable @s fetchr.pre_gen_radius
 
-tellraw @s [\
+#NEUN_SCRIPT until 77
+#tellraw @s [\
 	"\n\n\n\n\n=== ",\
 	{\
 		"translate": "fetchr.lobby.settings.pre_gen.menu.heading",\
@@ -87,3 +88,8 @@ tellraw @s [\
 	},\
 	"]"\
 ]
+#NEUN_SCRIPT end
+
+#NEUN_SCRIPT since 77
+dialog show @s fetchr:pre_generation_radius
+#NEUN_SCRIPT end
