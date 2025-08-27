@@ -488,7 +488,7 @@ def max_excl_to_max_inc(max_excl: tuple[int, int], format_versions: list[tuple[i
 			elif max_excl[1] < 2**31-1:
 				max_inc =  (max_excl[0], max_excl[1] - 1)
 		else: max_inc =  next(v for v in reversed(format_versions) if v < max_excl)
-	if (max_excl == format_versions[-1]):
+	if (max_inc == format_versions[-1]):
 		max_inc = (max_excl[0], 2**31 - 1)
 	return max_inc
 
