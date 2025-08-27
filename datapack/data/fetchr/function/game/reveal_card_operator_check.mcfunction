@@ -8,6 +8,7 @@
 # @within function fetchr:tick/player_tick
 # @context entity Player changing the setting
 
+scoreboard players set @s fetchr.operator_check_callback_action 14
 scoreboard players reset @s fetchr.reveal_card
 scoreboard players enable @s fetchr.reveal_card
 execute \

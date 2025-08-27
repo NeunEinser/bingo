@@ -5,6 +5,7 @@
 # @internal
 # @user
 
+scoreboard players set @s fetchr.operator_check_callback_action 13
 execute if score $operator_only fetchr.settings matches 1 unless score @s fetchr.operator matches 1 run function fetchr:util/show_confirm_operator_status_prompt
 execute if score $operator_only fetchr.settings matches 1 unless score @s fetchr.operator matches 1 run return 0
 

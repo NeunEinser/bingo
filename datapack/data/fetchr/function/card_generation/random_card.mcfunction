@@ -4,6 +4,7 @@
 #
 # @within function fetchr:lobby/settings/random_seed
 
+scoreboard players set @s fetchr.operator_check_callback_action 1
 execute \
 	if score $operator_only fetchr.settings matches 1 \
 	unless score @s fetchr.operator matches 1 \

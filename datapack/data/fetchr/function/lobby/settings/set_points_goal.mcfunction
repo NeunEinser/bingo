@@ -7,6 +7,7 @@
 # @user
 # @context entity Player changing the setting
 
+scoreboard players set @s fetchr.operator_check_callback_action 4
 execute \
 	if score $operator_only fetchr.settings matches 1 \
 	unless score @s fetchr.operator matches 1 \
