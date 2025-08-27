@@ -386,8 +386,14 @@ def iterate_files(config: dict, pack_config: dict, target: str, mc_versions: lis
 
 			if requires_old:
 				for existing_overlay in entries:
-					min_format = to_pack_format_tuple(existing_overlay["min_format"])
-					max_format = to_pack_format_tuple(existing_overlay["max_format"])
+					if "formats" in existing_overlay.keys():
+						continue
+					min_format = existing_overlay.get("min_format")
+					max_format = existing_overlay.get("max_format")
+					if min_format == None or max_format == None:
+						continue
+					min_format = to_pack_format_tuple(min_format)
+					max_format = to_pack_format_tuple(max_format)
 					existing_overlay["formats"] = [min_format[0], max_format[0]]
 
 			for pack_format_range in sorted(pack_format_ranges, key=lambda f: (f[0] or (1, 0), f[1] or (2**31-1, 2**31-1))):
