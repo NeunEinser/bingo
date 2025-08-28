@@ -326,7 +326,6 @@
 	"fetchr.operator_only.confirm_op": "이 설정은 서버 관리자에게만 허용됩니다.\n%s 서버 관리자 상태를 확인하십시오.",
 	"fetchr.operator_only.confirm_op.click": "여기를 클릭하여",
 	"fetchr.operator_only.confirm_op.success": "성공적으로 서버 관리자 상태를 확인하였습니다.",
-	"fetchr.operator_only.confirm_op.success.info": "사용하고 싶은 표지판을 다시 클릭해 보세요.",
 	"fetchr.lobby.settings.gamemode.sign.line1": "로비",
 	"fetchr.lobby.settings.gamemode.sign.line2": "게임 모드",
 	"fetchr.lobby.settings.gamemode.sign.line3": "",
