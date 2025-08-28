@@ -263,7 +263,6 @@
 	"fetchr.operator_only.confirm_op": "To ustawienie jest dostępne tylko dla operatorów.\n%s, aby potwierdzić swój status operatora.",
 	"fetchr.operator_only.confirm_op.click": "Kliknij tutaj",
 	"fetchr.operator_only.confirm_op.success": "Status operatora potwierdzony pomyślnie.",
-	"fetchr.operator_only.confirm_op.success.info": "Kliknij ponownie znak, z którym chciałeś wejść w interakcję.",
 	"fetchr.lobby.settings.gamemode.sign.line1": "Tryb Gry",
 	"fetchr.lobby.settings.gamemode.sign.line2": "w Lobby",
 	"fetchr.lobby.settings.gamemode.sign.line3": "",
