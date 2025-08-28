@@ -16,7 +16,7 @@ tellraw @s [\
 		"translate": "fetchr.preferences.custom_hud.component_settings.player_chunk_position.description",\
 		"color": "gray"\
 	},\
-	"\n\n[ ",\
+	"\n\n[",\
 	{\
 		"translate": "fetchr.preferences.custom_hud.component_settings.player_chunk_position.merge_with_pos.title",\
 		"color": "#00c3ff",\
@@ -49,7 +49,7 @@ execute \
 execute \
 	if score $hud/settings/chnk_pos_settings.slot fetchr.tmp matches 0..4 \
 	run tellraw @s [\
-		"\n[ ",\
+		"\n[",\
 		{\
 			"translate": "fetchr.preferences.back",\
 			"color": "#00c3ff",\
@@ -61,7 +61,7 @@ execute \
 execute \
 	if score $hud/settings/chnk_pos_settings.slot fetchr.tmp matches 5..10 \
 	run tellraw @s [\
-		"\n[ ",\
+		"\n[",\
 		{\
 			"translate": "fetchr.preferences.back",\
 			"color": "#00c3ff",\

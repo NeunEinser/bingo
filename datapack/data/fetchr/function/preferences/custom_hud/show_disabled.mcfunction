@@ -464,7 +464,7 @@ execute \
 #NEUN_SCRIPT end
 
 tellraw @s [\
-	"\n[ ",\
+	"\n[",\
 	{\
 		"translate": "fetchr.preferences.back",\
 		"color": "#00c3ff",\

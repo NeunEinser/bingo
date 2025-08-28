@@ -91,7 +91,7 @@ execute \
 	run tellraw @s [\
 		"[",\
 		{ "translate": "fetchr.preferences.custom_hud.adjust_col.move_up.title", "color": "gray" },\
-		" ] [ ",\
+		"] [",\
 		{\
 			"translate": "fetchr.preferences.custom_hud.adjust_col.move_down.title",\
 			"color": "#00c3ff",\
@@ -140,7 +140,7 @@ execute \
 	run tellraw @s [\
 		"[",\
 		{ "translate": "fetchr.preferences.custom_hud.adjust_col.move_up.title", "color": "gray" },\
-		" ] [ ",\
+		"] [",\
 		{ \
 			"translate": "fetchr.preferences.custom_hud.adjust_col.move_down.title",\
 			"color": "#00c3ff",\
@@ -201,7 +201,7 @@ execute \
 			},\
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 32" }\
 		},\
-		" ] [ ",\
+		"] [",\
 		{\
 			"translate": "fetchr.preferences.custom_hud.adjust_col.move_down.title",\
 			"color": "#00c3ff",\
@@ -250,7 +250,7 @@ execute \
 	run tellraw @s [\
 		"[",\
 		{ "translate": "fetchr.preferences.custom_hud.adjust_col.move_up.title", "color": "gray" },\
-		" ] [ ",\
+		"] [",\
 		{ \
 			"translate": "fetchr.preferences.custom_hud.adjust_col.move_down.title",\
 			"color": "#00c3ff",\
@@ -311,7 +311,7 @@ execute \
 			},\
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 35" }\
 		},\
-		" ] [ ",\
+		"] [",\
 		{\
 			"translate": "fetchr.preferences.custom_hud.adjust_col.move_down.title",\
 			"color": "#00c3ff",\
@@ -360,7 +360,7 @@ execute \
 	run tellraw @s [\
 		"[",\
 		{ "translate": "fetchr.preferences.custom_hud.adjust_col.move_up.title", "color": "gray" },\
-		" ] [ ",\
+		"] [",\
 		{ \
 			"translate": "fetchr.preferences.custom_hud.adjust_col.move_down.title",\
 			"color": "#00c3ff",\
@@ -421,7 +421,7 @@ execute \
 			},\
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 38" }\
 		},\
-		" ] [ ",\
+		"] [",\
 		{\
 			"translate": "fetchr.preferences.custom_hud.adjust_col.move_down.title",\
 			"color": "#00c3ff",\
@@ -470,7 +470,7 @@ execute \
 	run tellraw @s [ \
 		"[",\
 		{ "translate": "fetchr.preferences.custom_hud.adjust_col.move_up.title", "color": "gray" },\
-		" ] [ ",\
+		"] [",\
 		{ "translate": "fetchr.preferences.custom_hud.adjust_col.move_down.title", "color": "gray" },\
 		"]",\
 		{\
@@ -518,7 +518,7 @@ execute \
 			},\
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 41" }\
 		},\
-		" ] [ ",\
+		"] [",\
 		{ "translate": "fetchr.preferences.custom_hud.adjust_col.move_down.title", "color": "gray" },\
 		"]",\
 		{\
@@ -551,14 +551,14 @@ execute \
 execute \
 	unless data storage tmp.fetchr:preferences/hud filledComponets[4] \
 	run tellraw @s [\
-		"\n[ ",\
+		"\n[",\
 		 {\
 		 	"translate": "fetchr.preferences.back",\
 			"color": "#00c3ff",\
 			"clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 5" },\
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 5" }\
 		},\
-		" ] [ ",\
+		"] [",\
 		{\
 			"translate": "fetchr.preferences.custom_hud.adjust_col.add_spacer",\
 			"color": "#00c3ff",\
@@ -570,14 +570,14 @@ execute \
 execute \
 	if data storage tmp.fetchr:preferences/hud filledComponets[4] \
 	run tellraw @s [\
-		"\n[ ",\
+		"\n[",\
 		{\
 			"translate": "fetchr.preferences.back",\
 			"color": "#00c3ff",\
 			"clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 5" },\
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 5" }\
 		},\
-		" ] [ ",\
+		"] [",\
 		{ "translate": "fetchr.preferences.custom_hud.adjust_col.add_spacer", "color": "gray" },\
 		"]"\
 	]

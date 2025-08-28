@@ -76,7 +76,7 @@ execute \
 	run tellraw @s [\
 		"===",\
 		{ "translate": "fetchr.game.menu.heading.lobby", "bold": true, "color": "green" },\
-		"===\n[ ",\
+		"===\n[",\
 		{\
 			"translate": "fetchr.game.menu.options.reveal_card",\
 			"color": "#00c3ff",\

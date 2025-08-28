@@ -25,14 +25,14 @@ scoreboard players enable @s fetchr.pre_gen_radius
 		"bold": true,\
 		"color": "green"\
 	},\
-	" ===\n\n[ ",\
+	" ===\n\n[",\
 	{\
 		"translate": "fetchr.lobby.settings.pre_gen.menu.option.minimal",\
 		"color": "#00c3ff",\
 		"clickEvent": { "action": "run_command", "value": "/trigger fetchr.pre_gen_radius set 144" },\
 		"click_event": { "action": "run_command", "command": "trigger fetchr.pre_gen_radius set 144" }\
 	},\
-	" ]\n[ ",\
+	"]\n[",\
 	{\
 		"translate": "fetchr.lobby.settings.pre_gen.menu.option.radius",\
 		"color": "#00c3ff",\
@@ -40,7 +40,7 @@ scoreboard players enable @s fetchr.pre_gen_radius
 		"clickEvent": { "action": "run_command", "value": "/trigger fetchr.pre_gen_radius set 250" },\
 		"click_event": { "action": "run_command", "command": "trigger fetchr.pre_gen_radius set 250" }\
 	},\
-	" ]\n[ ",\
+	"]\n[",\
 	{\
 		"translate": "fetchr.lobby.settings.pre_gen.menu.option.radius",\
 		"color": "#00c3ff",\
@@ -48,7 +48,7 @@ scoreboard players enable @s fetchr.pre_gen_radius
 		"clickEvent": { "action": "run_command", "value": "/trigger fetchr.pre_gen_radius set 500" },\
 		"click_event": { "action": "run_command", "command": "trigger fetchr.pre_gen_radius set 500" }\
 	},\
-	" ]\n[ ",\
+	"]\n[",\
 	{\
 		"translate": "fetchr.lobby.settings.pre_gen.menu.option.radius",\
 		"color": "#00c3ff",\
@@ -56,7 +56,7 @@ scoreboard players enable @s fetchr.pre_gen_radius
 		"clickEvent": { "action": "run_command", "value": "/trigger fetchr.pre_gen_radius set 750" },\
 		"click_event": { "action": "run_command", "command": "trigger fetchr.pre_gen_radius set 750" }\
 	},\
-	" ]\n[ ",\
+	"]\n[",\
 	{\
 		"translate": "fetchr.lobby.settings.pre_gen.menu.option.radius",\
 		"color": "#00c3ff",\
@@ -64,7 +64,7 @@ scoreboard players enable @s fetchr.pre_gen_radius
 		"clickEvent": { "action": "run_command", "value": "/trigger fetchr.pre_gen_radius set 1000" },\
 		"click_event": { "action": "run_command", "command": "trigger fetchr.pre_gen_radius set 1000" }\
 	},\
-	" ]\n[ ",\
+	"]\n[",\
 	{\
 		"translate": "fetchr.lobby.settings.pre_gen.menu.option.radius",\
 		"color": "#00c3ff",\
@@ -72,7 +72,7 @@ scoreboard players enable @s fetchr.pre_gen_radius
 		"clickEvent": { "action": "run_command", "value": "/trigger fetchr.pre_gen_radius set 1500" },\
 		"click_event": { "action": "run_command", "command": "trigger fetchr.pre_gen_radius set 1500" }\
 	},\
-	" ]\n[ ",\
+	"]\n[",\
 	{\
 		"translate": "fetchr.lobby.settings.pre_gen.menu.option.radius",\
 		"color": "#00c3ff",\
@@ -80,7 +80,7 @@ scoreboard players enable @s fetchr.pre_gen_radius
 		"clickEvent": { "action": "run_command", "value": "/trigger fetchr.pre_gen_radius set 2000" },\
 		"click_event": { "action": "run_command", "command": "trigger fetchr.pre_gen_radius set 2000" }\
 	},\
-	" ]\n[ ",\
+	"]\n[",\
 	{\
 		"translate": "fetchr.lobby.settings.pre_gen.menu.option.custom",\
 		"color": "#00c3ff",\

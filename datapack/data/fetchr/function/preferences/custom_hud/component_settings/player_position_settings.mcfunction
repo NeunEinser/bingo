@@ -157,7 +157,7 @@ execute \
 execute \
 	if score $hud/settings/pos_settings.slot fetchr.tmp matches 0..4 \
 	run tellraw @s [\
-		"\n[ ",\
+		"\n[",\
 		{\
 			"translate": "fetchr.preferences.back",\
 			"color": "#00c3ff",\
@@ -169,7 +169,7 @@ execute \
 execute \
 	if score $hud/settings/pos_settings.slot fetchr.tmp matches 5..10 \
 	run tellraw @s [\
-		"\n[ ",\
+		"\n[",\
 		{\
 			"translate": "fetchr.preferences.back",\
 			"color": "#00c3ff",\

@@ -132,7 +132,7 @@ execute \
 execute \
 	if score @s fetchr.pref matches 5 \
 	run tellraw @s [\
-		"\n[ ",\
+		"\n[",\
 		{\
 			"translate": "fetchr.preferences.back",\
 			"color": "#00c3ff",\
@@ -144,7 +144,7 @@ execute \
 execute \
 	if score @s fetchr.pref matches 11 \
 	run tellraw @s [\
-		"\n[ ",\
+		"\n[",\
 		{\
 			"translate": "fetchr.preferences.back",\
 			"color": "#00c3ff",\

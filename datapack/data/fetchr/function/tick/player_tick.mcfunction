@@ -198,7 +198,7 @@ execute \
 						}\
 					]\
 				},\
-				"\n\n[ ",\
+				"\n\n[",\
 				{\
 					"translate": "fetchr.resourcepack_check.wrong_version.recheck",\
 					"fallback": "Re-check",\

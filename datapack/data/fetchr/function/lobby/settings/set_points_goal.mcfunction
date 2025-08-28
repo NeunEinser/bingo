@@ -23,14 +23,14 @@ scoreboard players enable @s fetchr.points_race_minutes
 #tellraw @s [\
 	"\n\n\n\n\n=== ",\
 	{ "translate": "fetchr.lobby.settings.points_goal.menu.heading", "bold": true, "color": "green" },\
-	" ===\n\n[ ",\
+	" ===\n\n[",\
 	{\
 		"translate": "fetchr.lobby.settings.points_goal.menu.option.off",\
 		"color": "#00c3ff",\
 		"clickEvent": { "action": "run_command", "value": "/trigger fetchr.points_race_minutes set -1" },\
 		"click_event": { "action": "run_command", "command": "trigger fetchr.points_race_minutes set -1" }\
 	}\
-	, " ]\n[ ",\
+	, "]\n[",\
 	{\
 		"translate": "fetchr.lobby.settings.points_goal.menu.option.minutes",\
 		"color": "#00c3ff",\
@@ -38,7 +38,7 @@ scoreboard players enable @s fetchr.points_race_minutes
 		"clickEvent": { "action": "run_command", "value": "/trigger fetchr.points_race_minutes set 10" },\
 		"click_event": { "action": "run_command", "command": "trigger fetchr.points_race_minutes set 10" }\
 	},\
-	" ]\n[ ",\
+	"]\n[",\
 	{\
 		"translate": "fetchr.lobby.settings.points_goal.menu.option.minutes",\
 		"color": "#00c3ff",\
@@ -46,7 +46,7 @@ scoreboard players enable @s fetchr.points_race_minutes
 		"clickEvent": { "action": "run_command", "value": "/trigger fetchr.points_race_minutes set 15" },\
 		"click_event": { "action": "run_command", "command": "trigger fetchr.points_race_minutes set 15" }\
 	},\
-	" ]\n[ ",\
+	"]\n[",\
 	{\
 		"translate": "fetchr.lobby.settings.points_goal.menu.option.minutes",\
 		"color": "#00c3ff",\
@@ -54,7 +54,7 @@ scoreboard players enable @s fetchr.points_race_minutes
 		"clickEvent": { "action": "run_command", "value": "/trigger fetchr.points_race_minutes set 20" },\
 		"click_event": { "action": "run_command", "command": "trigger fetchr.points_race_minutes set 20" }\
 	},\
-	" ]\n[ ",\
+	"]\n[",\
 	{\
 		"translate": "fetchr.lobby.settings.points_goal.menu.option.minutes",\
 		"color": "#00c3ff",\
@@ -62,7 +62,7 @@ scoreboard players enable @s fetchr.points_race_minutes
 		"clickEvent": { "action": "run_command", "value": "/trigger fetchr.points_race_minutes set 25" },\
 		"click_event": { "action": "run_command", "command": "trigger fetchr.points_race_minutes set 25" }\
 	},\
-	" ]\n[ ",\
+	"]\n[",\
 	{\
 		"translate": "fetchr.lobby.settings.points_goal.menu.option.minutes",\
 		"color": "#00c3ff",\
@@ -70,7 +70,7 @@ scoreboard players enable @s fetchr.points_race_minutes
 		"clickEvent": { "action": "run_command", "value": "/trigger fetchr.points_race_minutes set 30" },\
 		"click_event": { "action": "run_command", "command": "trigger fetchr.points_race_minutes set 30" }\
 	},\
-	" ]\n[ ",\
+	"]\n[",\
 	{\
 		"translate": "fetchr.lobby.settings.points_goal.menu.option.minutes",\
 		"color": "#00c3ff",\
@@ -78,7 +78,7 @@ scoreboard players enable @s fetchr.points_race_minutes
 		"clickEvent": { "action": "run_command", "value": "/trigger fetchr.points_race_minutes set 40" },\
 		"click_event": { "action": "run_command", "command": "trigger fetchr.points_race_minutes set 40" }\
 	},\
-	" ]\n[ ",\
+	"]\n[",\
 	{\
 		"translate": "fetchr.lobby.settings.points_goal.menu.option.minutes",\
 		"color": "#00c3ff",\
@@ -86,7 +86,7 @@ scoreboard players enable @s fetchr.points_race_minutes
 		"clickEvent": { "action": "run_command", "value": "/trigger fetchr.points_race_minutes set 45" },\
 		"click_event": { "action": "run_command", "command": "trigger fetchr.points_race_minutes set 45" }\
 	},\
-	" ]\n[ ",\
+	"]\n[",\
 	{\
 		"translate": "fetchr.lobby.settings.points_goal.menu.option.minutes",\
 		"color": "#00c3ff",\
@@ -94,7 +94,7 @@ scoreboard players enable @s fetchr.points_race_minutes
 		"clickEvent": { "action": "run_command", "value": "/trigger fetchr.points_race_minutes set 60" },\
 		"click_event": { "action": "run_command", "command": "trigger fetchr.points_race_minutes set 60" }\
 	},\
-	" ]\n[ ",\
+	"]\n[",\
 	{\
 		"translate": "fetchr.lobby.settings.points_goal.menu.option.custom",\
 		"color": "#00c3ff",\
