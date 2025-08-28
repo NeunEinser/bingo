@@ -326,7 +326,6 @@
 	"fetchr.operator_only.confirm_op": "Questa impostazione è limitata agli operatori.\nSi prega di %s per confermare lo stato dell'operatore.",
 	"fetchr.operator_only.confirm_op.click": "cliccare qui",
 	"fetchr.operator_only.confirm_op.success": "Hai confermato con successo lo stato dell'operatore.",
-	"fetchr.operator_only.confirm_op.success.info": "Fare clic sul segno con cui si desidera interagire di nuovo.",
 	"fetchr.lobby.settings.gamemode.sign.line1": "Lobby",
 	"fetchr.lobby.settings.gamemode.sign.line2": "Modalità Del Gioco",
 	"fetchr.lobby.settings.gamemode.sign.line3": "",
