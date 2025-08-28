@@ -288,7 +288,6 @@
 	"fetchr.operator_only.confirm_op": "Ce paramètre est réservé aux opérateurs.\nVeuillez %s pour confirmer votre statut d'opérateur.",
 	"fetchr.operator_only.confirm_op.click": "cliquez ici",
 	"fetchr.operator_only.confirm_op.success": "Vous avez confirmé votre statut d'opérateur avec succès.",
-	"fetchr.operator_only.confirm_op.success.info": "Veuillez de nouveau cliquer sur le panneau avec lequel vous vouliez interagir.",
 	"fetchr.lobby.settings.gamemode.sign.line1": "Mode de Jeu",
 	"fetchr.lobby.settings.gamemode.sign.line2": "du Lobby",
 	"fetchr.lobby.settings.gamemode.sign.line3": "",
