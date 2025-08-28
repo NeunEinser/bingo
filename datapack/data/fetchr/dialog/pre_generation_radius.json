@@ -1,5 +1,4 @@
 {
-	"NEUN_SCRIPT remove_self until 77": null,
 	"NEUN_SCRIPT replace type until 79": "minecraft:multi_action_input_form",
 	"type": "minecraft:multi_action",
 	"title": { "translate": "fetchr.lobby.settings.pre_gen.dialog.title" },
@@ -15,9 +14,8 @@
 			"type": "minecraft:number_range",
 			"start": 250,
 			"end": 2000,
-			"NEUN_SCRIPT remove step until 78": null,
 			"step": 250,
-			"NEUN_SCRIPT remove steps since 78": null,
+			"NEUN_SCRIPT remove steps since 79": null,
 			"steps": 7,
 			"initial": 250,
 			"key": "blocks",

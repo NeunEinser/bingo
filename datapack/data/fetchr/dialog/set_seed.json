@@ -1,5 +1,4 @@
 {
-	"NEUN_SCRIPT remove_self until 77": null,
 	"NEUN_SCRIPT replace type until 79": "minecraft:multi_action_input_form",
 	"type": "minecraft:confirmation",
 	"title": { "translate": "fetchr.lobby.card_generation.from_seed.dialog.title" },
