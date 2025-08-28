@@ -289,6 +289,7 @@
 	"fetchr.operator_only.confirm_op": "Diese Einstellungen sind Operatoren vorbehalten.\nBitte %s, um deinen Operatorenstatus zu festzustellen.",
 	"fetchr.operator_only.confirm_op.click": "klicke hier",
 	"fetchr.operator_only.confirm_op.success": "Du hast deine Operatorenberechtigungen erfolgreich bestätigt.",
+	"fetchr.operator_only.confirm_op.dialog.title": "Oparatorrechte bestätigen",
 	"fetchr.operator_only.confirm_op.dialog.description": "Du musst ein Operator sein, um diese Aktion auszuführen. Bitte bestätige deine Operatorrechte mit dem Knopf unten.",
 	"fetchr.operator_only.confirm_op.dialog.confirm": "Oparatorrechte bestätigen",
 	"fetchr.lobby.settings.gamemode.sign.line1": "Lobbyspiel-",
