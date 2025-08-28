@@ -12,11 +12,11 @@
 	"inputs": [
 		{
 			"type": "minecraft:number_range",
-			"start": 1,
+			"start": 5,
 			"end": 60,
-			"step": 1,
+			"step": 5,
 			"NEUN_SCRIPT remove steps since 79": null,
-			"steps": 59,
+			"steps": 11,
 			"initial": 25,
 			"key": "end_time",
 			"label": { "translate": "fetchr.lobby.settings.points_goal.dialog.input.end_time" }
