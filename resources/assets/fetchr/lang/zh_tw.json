@@ -326,7 +326,6 @@
 	"fetchr.operator_only.confirm_op": "此設定僅限管理員更改。\n請 %s 驗證您是否為管理員。",
 	"fetchr.operator_only.confirm_op.click": "點擊這裡",
 	"fetchr.operator_only.confirm_op.success": "您已成功驗證管理員身份。",
-	"fetchr.operator_only.confirm_op.dialog.title": "驗證管理員身份",
 	"fetchr.operator_only.confirm_op.dialog.description": "您必須是管理員才能進行更改。請點擊下方的按鈕進行驗證管理員身份。",
 	"fetchr.operator_only.confirm_op.dialog.confirm": "驗證管理員身份",
 	"fetchr.lobby.settings.gamemode.sign.line1": "大廳",
