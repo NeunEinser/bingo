@@ -284,7 +284,6 @@
 	"fetchr.operator_only.confirm_op": "这个设置仅限管理员修改，请 %s 来确认你是否为管理员。",
 	"fetchr.operator_only.confirm_op.click": "点击这里",
 	"fetchr.operator_only.confirm_op.success": "你成功了确认你的管理员身份。",
-	"fetchr.operator_only.confirm_op.success.info": "请再次单击你想要修改的选项木牌。",
 	"fetchr.lobby.settings.gamemode.sign.line1": "大厅",
 	"fetchr.lobby.settings.gamemode.sign.line2": "游戏模式",
 	"fetchr.lobby.settings.gamemode.sign.adventure": "冒险模式",
