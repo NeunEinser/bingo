@@ -12,12 +12,12 @@
 	"inputs": [
 		{
 			"type": "minecraft:number_range",
-			"start": 250,
+			"start": 150,
 			"end": 2000,
-			"step": 250,
+			"step": 50,
 			"NEUN_SCRIPT remove steps since 79": null,
-			"steps": 7,
-			"initial": 250,
+			"steps": 37,
+			"initial": 500,
 			"key": "blocks",
 			"label": { "translate": "fetchr.lobby.settings.pre_gen.dialog.input.blocks" }
 		}
