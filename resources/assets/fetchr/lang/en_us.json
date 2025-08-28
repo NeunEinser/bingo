@@ -381,7 +381,7 @@
 	"fetchr.operator_only.confirm_op": "This setting is restricted to operators.\nPlease %s to confirm your operator status.",
 	"fetchr.operator_only.confirm_op.click": "click here",
 	"fetchr.operator_only.confirm_op.success": "You have successfully confirmed your operator status.",
-	"fetchr.operator_only.confirm_op.dialog.title": "Confirm Oparator Status",
+	"fetchr.operator_only.confirm_op.dialog.title": "Confirm Operator Status",
 	"fetchr.operator_only.confirm_op.dialog.description": "You need to be an operator in order to perform this action. Please confirm your operator status with the button below.",
 	"fetchr.operator_only.confirm_op.dialog.confirm": "Confirm Operator Status",
 
