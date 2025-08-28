@@ -312,7 +312,6 @@
 	"fetchr.operator_only.confirm_op": "Це налаштування доступно лише операторам.\nБудь ласка, %s для підтвердження свого статусу оператора.",
 	"fetchr.operator_only.confirm_op.click": "натисніть тут",
 	"fetchr.operator_only.confirm_op.success": "Ви успішно підтвердили свій статус оператора.",
-	"fetchr.operator_only.confirm_op.success.info": "Будь ласка, повторно натисніть на табличку з якою ви намагалися провзаємодіяти.",
 	"fetchr.lobby.settings.gamemode.sign.line1": "Режим Гри",
 	"fetchr.lobby.settings.gamemode.sign.line2": "Лобі",
 	"fetchr.lobby.settings.gamemode.sign.line3": "",
