@@ -5,7 +5,8 @@
 # @public
 # @context entity Player changing the setting
 
-tellraw @s [\
+#NEUN_SCRIPT until 77
+#tellraw @s [\
 	"\n\n\n\n\n",\
 	{\
 		"translate": "fetchr.operator_only.confirm_op",\
@@ -19,3 +20,8 @@ tellraw @s [\
 		]\
 	}\
 ]
+#NEUN_SCRIPT end
+
+#NEUN_SCRIPT since 77
+dialog show @s fetchr:confirm_operator_status
+#NEUN_SCRIPT end

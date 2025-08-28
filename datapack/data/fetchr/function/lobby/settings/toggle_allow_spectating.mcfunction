@@ -7,6 +7,7 @@
 # @user
 # @context entity Player changing the setting
 
+scoreboard players set @s fetchr.operator_check_callback_action 10
 execute \
 	unless score @s fetchr.operator matches 1 \
 	run function fetchr:util/show_confirm_operator_status_prompt

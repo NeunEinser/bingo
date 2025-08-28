@@ -728,6 +728,30 @@ forceload add 0 0
 		scoreboard objectives add fetchr.lobby_card_frame_id dummy
 
 		#>
+		# This objective is used to store the callback to use after successfully
+		# confirming the operator status of a player.
+		#
+		# 0 = toggle operator only
+		# 1 = generate random card
+		# 2 = set seed
+		# 3 = toggle concealed card
+		# 4 = set points goal
+		# 5 = toggle lockout mode
+		# 6 = toggle timer method
+		# 7 = toggle paused time
+		# 8 = set pre-gen radius
+		# 9 = toggle show seed
+		# 10 = toggle allow spectating
+		# 11 = toggle gamemode
+		# 12 = start if ready
+		# 13 = teleport all (skybox)
+		# 14 = reveal card
+		# 15 = teleport all (lobby)
+		#
+		# @internal
+		scoreboard objectives add fetchr.operator_check_callback_action dummy
+
+		#>
 		# Setting storage
 		#
 		# @internal
@@ -1350,6 +1374,12 @@ forceload add 0 0
 	gamerule disableElytraMovementCheck true
 	gamerule doPatrolSpawning false
 	gamerule maxCommandChainLength 131072
+
+	#NEUN_SCRIPT since 85
+	gamerule pvp false
+	gamerule allowEnteringNetherUsingPortals false
+	#NEUN_SCRIPT end
+
 	difficulty easy
 
 # setup teams

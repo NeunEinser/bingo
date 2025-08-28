@@ -74,4 +74,3 @@ execute \
 		set from block 7 0 7 front_text.messages[0]
 
 scoreboard players reset @s fetchr.pre_gen_radius
-scoreboard players enable @s fetchr.pre_gen_radius

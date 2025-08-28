@@ -7,6 +7,7 @@
 # @user
 # @context entity Player changing the setting
 
+scoreboard players set @s fetchr.operator_check_callback_action 8
 execute \
 	unless score @s fetchr.operator matches 1 \
 	run function fetchr:util/show_confirm_operator_status_prompt
@@ -16,7 +17,8 @@ execute \
 
 scoreboard players enable @s fetchr.pre_gen_radius
 
-tellraw @s [\
+#NEUN_SCRIPT until 77
+#tellraw @s [\
 	"\n\n\n\n\n=== ",\
 	{\
 		"translate": "fetchr.lobby.settings.pre_gen.menu.heading",\
@@ -87,3 +89,8 @@ tellraw @s [\
 	},\
 	"]"\
 ]
+#NEUN_SCRIPT end
+
+#NEUN_SCRIPT since 77
+dialog show @s fetchr:pre_generation_radius
+#NEUN_SCRIPT end

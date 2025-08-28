@@ -1,0 +1,28 @@
+{
+	"NEUN_SCRIPT remove_self until 77": null,
+	"type": "minecraft:confirmation",
+	"title": { "translate": "fetchr.operator_only.confirm_op.dialog.title" },
+	"body": [
+		{
+			"type": "minecraft:plain_message",
+			"width": 400,
+			"contents": { "translate": "fetchr.operator_only.confirm_op.dialog.description" }
+		}
+	],
+	"yes": {
+		"label": { "translate": "fetchr.operator_only.confirm_op.dialog.confirm" },
+		"NEUN_SCRIPT remove action until 79": null,
+		"action": {
+			"type": "minecraft:run_command",
+			"command": "function fetchr:util/confirm_operator_status"
+		},
+		"NEUN_SCRIPT remove on_click since 79": null,
+		"on_click": {
+			"action": "run_command",
+			"command": "function fetchr:util/confirm_operator_status"
+		}
+	},
+	"no": {
+		"label": { "translate": "gui.cancel" }
+	}
+}

@@ -1,17 +1,16 @@
 {
 	"pack": {
-		"pack_format": 65,
+		"pack_format": 67,
 		"min_format": 34,
-		"max_format": 65,
-		"supported_formats": [ 34, 65 ],
+		"max_format": 67,
+		"supported_formats": [ 34, 67 ],
 		"description": "Fetchr resources"
 	},
 	"overlays": {
 		"entries": [
 			{
-				"directory": "pack_format_from_65.0",
-				"min_format": 65,
-				"max_format": 2147483647
+				"directory": "pack_format_to_64",
+				"formats": [ 16, 64 ]
 			}
 		]
 	}

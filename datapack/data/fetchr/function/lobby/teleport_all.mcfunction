@@ -4,6 +4,7 @@
 #
 # @within function fetchr:lobby/player_tick
 
+scoreboard players set @s fetchr.operator_check_callback_action 15
 scoreboard players reset @s fetchr.teleport_all
 scoreboard players enable @s fetchr.teleport_all
 execute if score $operator_only fetchr.settings matches 1 unless score @s fetchr.operator matches 1 run function fetchr:util/show_confirm_operator_status_prompt
