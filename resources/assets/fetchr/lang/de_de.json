@@ -290,7 +290,6 @@
 	"fetchr.operator_only.confirm_op": "Diese Einstellungen sind Operatoren vorbehalten.\nBitte %s, um deinen Operatorenstatus zu festzustellen.",
 	"fetchr.operator_only.confirm_op.click": "klicke hier",
 	"fetchr.operator_only.confirm_op.success": "Du hast deine Operatorenberechtigungen erfolgreich bestätigt.",
-	"fetchr.operator_only.confirm_op.success.info": "Bitte klicke das Schild, mit dem du interagieren wolltest, erneut.",
 	"fetchr.lobby.settings.gamemode.sign.line1": "Lobbyspiel-",
 	"fetchr.lobby.settings.gamemode.sign.line2": "modus",
 	"fetchr.lobby.settings.gamemode.sign.adventure": "Abentuermodus",
