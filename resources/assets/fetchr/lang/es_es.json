@@ -321,7 +321,6 @@
 	"fetchr.operator_only.confirm_op": "Esta configuración está restringida a los operadores.\nPor favor %s para confirmar su estado de operador.",
 	"fetchr.operator_only.confirm_op.click": "Clic aquí",
 	"fetchr.operator_only.confirm_op.success": "Ha confirmado con éxito su estado de operador.",
-	"fetchr.operator_only.confirm_op.success.info": "Haga clic nuevamente en el letrero con el que desea interactuar.",
 	"fetchr.lobby.settings.gamemode.sign.line1": "Lobby",
 	"fetchr.lobby.settings.gamemode.sign.line2": "Game Mode",
 	"fetchr.lobby.settings.gamemode.sign.adventure": "Aventura",
