@@ -326,7 +326,6 @@
 	"fetchr.operator_only.confirm_op": "See seade on lubatud ainult Operaatoritele.\nPalun %s enda õiguste kinnitamiseks.",
 	"fetchr.operator_only.confirm_op.click": "vajuta siia",
 	"fetchr.operator_only.confirm_op.success": "Sinu operaatoristaatus on kinnitatud.",
-	"fetchr.operator_only.confirm_op.success.info": "Palun vajuta sildile, mida kasutada tahtsid, uuesti.",
 	"fetchr.lobby.settings.gamemode.sign.line1": "Ooteruumi",
 	"fetchr.lobby.settings.gamemode.sign.line2": "mängurežiim",
 	"fetchr.lobby.settings.gamemode.sign.line3": " ",
