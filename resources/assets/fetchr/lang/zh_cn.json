@@ -296,6 +296,7 @@
 	"fetchr.lobby.settings.pre_gen.sign.line2": "",
 	"fetchr.lobby.settings.pre_gen.sign.minimal": "最小",
 	"fetchr.lobby.settings.pre_gen.sign.radius": "%s 个方块",
+	"fetchr.lobby.settings.pre_gen.dialog.title": "预加载半径",
 	"fetchr.lobby.settings.pre_gen.menu.heading": "更改预加载半径",
 	"fetchr.lobby.settings.pre_gen.menu.option.minimal": "设为最小值",
 	"fetchr.lobby.settings.pre_gen.menu.option.radius": "设置为 %s 方块",
