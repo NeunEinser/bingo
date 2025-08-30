@@ -1,12 +1,12 @@
 {
 	"NEUN_SCRIPT replace type until 79": "minecraft:multi_action_input_form",
 	"type": "minecraft:multi_action",
-	"title": { "translate": "fetchr.lobby.settings.pre_gen.dialog.title" },
+	"title": { "translate": "fetchr.settings.pre_gen.name" },
 	"body": [
 		{
 			"type": "minecraft:plain_message",
 			"width": 400,
-			"contents": { "translate": "fetchr.lobby.settings.pre_gen.dialog.description" }
+			"contents": { "translate": "fetchr.settings.pre_gen.description" }
 		}
 	],
 	"inputs": [
@@ -19,14 +19,14 @@
 			"steps": 37,
 			"initial": 500,
 			"key": "blocks",
-			"label": { "translate": "fetchr.lobby.settings.pre_gen.dialog.input.blocks" }
+			"label": { "translate": "fetchr.settings.pre_gen.input.blocks" }
 		}
 	],
 	"actions": [
 		{
 			"NEUN_SCRIPT remove id since 79": null,
 			"id": "set_time",
-			"label": { "translate": "fetchr.lobby.settings.pre_gen.dialog.action.set_blocks" },
+			"label": { "translate": "fetchr.settings.pre_gen.action.set_blocks" },
 			"NEUN_SCRIPT remove action until 79": null,
 			"action": {
 				"type": "minecraft:dynamic/run_command",
@@ -41,7 +41,7 @@
 		{
 			"NEUN_SCRIPT remove id since 79": null,
 			"id": "144",
-			"label": { "translate": "fetchr.lobby.settings.pre_gen.dialog.action.set_minimal" },
+			"label": { "translate": "fetchr.settings.pre_gen.action.set_minimal" },
 			"NEUN_SCRIPT remove action until 79": null,
 			"action": {
 				"type": "minecraft:run_command",

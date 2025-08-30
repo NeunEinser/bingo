@@ -21,20 +21,17 @@ scoreboard players add $lockout_mode fetchr.setting_values 1
 execute \
 	if score $lockout_mode fetchr.setting_values matches 2 \
 	run scoreboard players set $lockout_mode fetchr.setting_values 0
-execute \
-	if score $game_state fetchr.state matches ..2 \
-	run scoreboard players operation $lockout_mode fetchr.state = $lockout_mode fetchr.setting_values
 
 execute \
 	if score $lockout_mode fetchr.setting_values matches 0 \
-	run tellraw @s { "translate": "fetchr.lobby.settings.lockout_mode.toggle.off", "color": "red" }
+	run tellraw @s { "translate": "fetchr.settings.lockout_mode.confirmation.toggle_off", "color": "red" }
 execute \
 	if score $lockout_mode fetchr.setting_values matches 1 \
-	run tellraw @s { "translate": "fetchr.lobby.settings.lockout_mode.toggle.on", "color": "green" }
+	run tellraw @s { "translate": "fetchr.settings.lockout_mode.confirmation.toggle_on", "color": "green" }
 execute \
 	if score $game_state fetchr.state matches 3.. \
 	run tellraw @s { \
-		"translate": "fetchr.lobby.settings.lockout_mode.toggle.ongoing_game.info",\
+		"translate": "fetchr.settings.info.takes_effect_after_starting_game",\
 		"color": "gray",\
 		"italic": true\
 	}
@@ -46,14 +43,14 @@ execute \
 		modify \
 			entity @e[type=minecraft:marker, tag=fetchr.lockout_mode_sign, distance=..1, limit=1] \
 			data.front_text.messages[3] \
-		set value '{ "translate": "fetchr.lobby.settings.lockout_mode.sign.off", "color": "gray" }'
+		set value '{ "translate": "options.off", "color": "gray" }'
 #execute \
 	if score $lockout_mode fetchr.setting_values matches 1 \
 	run data \
 		modify \
 			entity @e[type=minecraft:marker, tag=fetchr.lockout_mode_sign, distance=..1, limit=1] \
 			data.front_text.messages[3] \
-		set value '{ "translate": "fetchr.lobby.settings.lockout_mode.sign.on", "color": "green" }'
+		set value '{ "translate": "options.on", "color": "green" }'
 #NEUN_SCRIPT end
 #NEUN_SCRIPT since 69
 execute \
@@ -62,14 +59,14 @@ execute \
 		modify \
 			entity @e[type=minecraft:marker, tag=fetchr.lockout_mode_sign, distance=..1, limit=1] \
 			data.front_text.messages[3] \
-		set value { translate: "fetchr.lobby.settings.lockout_mode.sign.off", color: "gray" }
+		set value { translate: "options.off", color: "gray" }
 execute \
 	if score $lockout_mode fetchr.setting_values matches 1 \
 	run data \
 		modify \
 			entity @e[type=minecraft:marker, tag=fetchr.lockout_mode_sign, distance=..1, limit=1] \
 			data.front_text.messages[3] \
-		set value { translate: "fetchr.lobby.settings.lockout_mode.sign.on", color: "green" }
+		set value { translate: "options.on", color: "green" }
 #NEUN_SCRIPT end
 
 function fetchr:lobby/place_indestructible_blocks

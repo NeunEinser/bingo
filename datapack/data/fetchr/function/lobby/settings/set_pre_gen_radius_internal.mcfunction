@@ -11,7 +11,7 @@
 execute \
 	if score @s fetchr.pre_gen_radius matches ..143 \
 	run tellraw @s {\
-		"translate": "fetchr.lobby.settings.pre_gen.menu.error.too_low",\
+		"translate": "fetchr.settings.pre_gen.error.too_low",\
 		"color": "red",\
 		"with": [\
 			{ "score": { "name": "@s", "objective": "fetchr.pre_gen_radius" }},\
@@ -25,16 +25,16 @@ execute \
 scoreboard players operation $pregeneration_chunks fetchr.setting_values = @s fetchr.pre_gen_radius
 #NEUN_SCRIPT until 69
 #data modify block 7 0 7 front_text.messages[0] set value '{\
-	"translate": "fetchr.lobby.settings.pre_gen.sign.radius",\
+	"translate": "fetchr.settings.pre_gen.value.radius",\
 	"color": "green",\
-	"with": [{ "score": { "name": "$pregeneration_chunks", "objective": "fetchr.settings" }}]\
+	"with": [{ "score": { "name": "$pregeneration_chunks", "objective": "fetchr.setting_values" }}]\
 }'
 #NEUN_SCRIPT end
 #NEUN_SCRIPT since 69
 data modify block 7 0 7 front_text.messages[0] set value {\
-	translate: "fetchr.lobby.settings.pre_gen.sign.radius",\
+	translate: "fetchr.settings.pre_gen.value.radius",\
 	color: "green",\
-	with: [{ score: { name: "$pregeneration_chunks", objective: "fetchr.settings" }}]\
+	with: [{ score: { name: "$pregeneration_chunks", objective: "fetchr.setting_values" }}]\
 }
 #NEUN_SCRIPT end
 scoreboard players operation $pregeneration_chunks fetchr.setting_values /= 16 fetchr.const
@@ -44,11 +44,11 @@ scoreboard players operation $pregeneration_chunks fetchr.setting_values *= $pre
 
 execute \
 	if score @s fetchr.pre_gen_radius matches 144 \
-	run tellraw @s { "translate": "fetchr.lobby.settings.pre_gen.menu.set.minimal", "color": "green" }
+	run tellraw @s { "translate": "fetchr.settings.pre_gen.confirmation.set_minimal", "color": "green" }
 execute \
 	if score @s fetchr.pre_gen_radius matches 145.. \
 	run tellraw @s {\
-		"translate": "fetchr.lobby.settings.pre_gen.menu.set.radius",\
+		"translate": "fetchr.settings.pre_gen.confirmation.set_radius",\
 		"color": "green",\
 		"with": [{ "score": { "name": "@s", "objective": "fetchr.pre_gen_radius" }}]\
 	}
@@ -58,14 +58,14 @@ execute \
 	if score @s fetchr.pre_gen_radius matches 144 \
 	run data \
 		modify entity @e[type=minecraft:marker, tag=fetchr.pre_gen_sign, distance=0.., limit=1] data.front_text.messages[3] \
-		set value '{ "translate": "fetchr.lobby.settings.pre_gen.sign.minimal", "color": "gray" }'
+		set value '{ "translate": "fetchr.settings.pre_gen.value.minimal", "color": "gray" }'
 #NEUN_SCRIPT end
 #NEUN_SCRIPT since 69
 execute \
 	if score @s fetchr.pre_gen_radius matches 144 \
 	run data \
 		modify entity @e[type=minecraft:marker, tag=fetchr.pre_gen_sign, distance=0.., limit=1] data.front_text.messages[3] \
-		set value { translate: "fetchr.lobby.settings.pre_gen.sign.minimal", color: "gray" }
+		set value { translate: "fetchr.settings.pre_gen.value.minimal", color: "gray" }
 #NEUN_SCRIPT end
 execute \
 	if score @s fetchr.pre_gen_radius matches 145.. \

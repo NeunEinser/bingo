@@ -40,7 +40,6 @@ scoreboard players add $current_game_id fetchr.game_id 1
 scoreboard players set $game_state fetchr.state 0
 
 scoreboard players operation $concealed_card fetchr.state = $concealed_card fetchr.setting_values
-scoreboard players operation $lockout_mode fetchr.state = $lockout_mode fetchr.setting_values
 team leave @a[predicate=fetchr:is_in_lobby]
 
 tag @a remove fetchr.automatically_join_game

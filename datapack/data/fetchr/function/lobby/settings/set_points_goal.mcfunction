@@ -22,17 +22,17 @@ scoreboard players enable @s fetchr.points_race_minutes
 #NEUN_SCRIPT until 77
 #tellraw @s [\
 	"\n\n\n\n\n=== ",\
-	{ "translate": "fetchr.lobby.settings.points_goal.menu.heading", "bold": true, "color": "green" },\
+	{ "translate": "fetchr.settings.points_goal.name", "bold": true, "color": "green" },\
 	" ===\n\n[",\
 	{\
-		"translate": "fetchr.lobby.settings.points_goal.menu.option.off",\
+		"translate": "fetchr.settings.points_goal.menu.option.off",\
 		"color": "#00c3ff",\
 		"clickEvent": { "action": "run_command", "value": "/trigger fetchr.points_race_minutes set -1" },\
 		"click_event": { "action": "run_command", "command": "trigger fetchr.points_race_minutes set -1" }\
 	}\
 	, "]\n[",\
 	{\
-		"translate": "fetchr.lobby.settings.points_goal.menu.option.minutes",\
+		"translate": "fetchr.settings.points_goal.menu.option.minutes",\
 		"color": "#00c3ff",\
 		"with": ["10"],\
 		"clickEvent": { "action": "run_command", "value": "/trigger fetchr.points_race_minutes set 10" },\
@@ -40,7 +40,7 @@ scoreboard players enable @s fetchr.points_race_minutes
 	},\
 	"]\n[",\
 	{\
-		"translate": "fetchr.lobby.settings.points_goal.menu.option.minutes",\
+		"translate": "fetchr.settings.points_goal.menu.option.minutes",\
 		"color": "#00c3ff",\
 		"with": ["15"],\
 		"clickEvent": { "action": "run_command", "value": "/trigger fetchr.points_race_minutes set 15" },\
@@ -48,7 +48,7 @@ scoreboard players enable @s fetchr.points_race_minutes
 	},\
 	"]\n[",\
 	{\
-		"translate": "fetchr.lobby.settings.points_goal.menu.option.minutes",\
+		"translate": "fetchr.settings.points_goal.menu.option.minutes",\
 		"color": "#00c3ff",\
 		"with": ["20"],\
 		"clickEvent": { "action": "run_command", "value": "/trigger fetchr.points_race_minutes set 20" },\
@@ -56,7 +56,7 @@ scoreboard players enable @s fetchr.points_race_minutes
 	},\
 	"]\n[",\
 	{\
-		"translate": "fetchr.lobby.settings.points_goal.menu.option.minutes",\
+		"translate": "fetchr.settings.points_goal.menu.option.minutes",\
 		"color": "#00c3ff",\
 		"with": ["25"],\
 		"clickEvent": { "action": "run_command", "value": "/trigger fetchr.points_race_minutes set 25" },\
@@ -64,7 +64,7 @@ scoreboard players enable @s fetchr.points_race_minutes
 	},\
 	"]\n[",\
 	{\
-		"translate": "fetchr.lobby.settings.points_goal.menu.option.minutes",\
+		"translate": "fetchr.settings.points_goal.menu.option.minutes",\
 		"color": "#00c3ff",\
 		"with": ["30"],\
 		"clickEvent": { "action": "run_command", "value": "/trigger fetchr.points_race_minutes set 30" },\
@@ -72,7 +72,7 @@ scoreboard players enable @s fetchr.points_race_minutes
 	},\
 	"]\n[",\
 	{\
-		"translate": "fetchr.lobby.settings.points_goal.menu.option.minutes",\
+		"translate": "fetchr.settings.points_goal.menu.option.minutes",\
 		"color": "#00c3ff",\
 		"with": ["40"],\
 		"clickEvent": { "action": "run_command", "value": "/trigger fetchr.points_race_minutes set 40" },\
@@ -80,7 +80,7 @@ scoreboard players enable @s fetchr.points_race_minutes
 	},\
 	"]\n[",\
 	{\
-		"translate": "fetchr.lobby.settings.points_goal.menu.option.minutes",\
+		"translate": "fetchr.settings.points_goal.menu.option.minutes",\
 		"color": "#00c3ff",\
 		"with": ["45"],\
 		"clickEvent": { "action": "run_command", "value": "/trigger fetchr.points_race_minutes set 45" },\
@@ -88,7 +88,7 @@ scoreboard players enable @s fetchr.points_race_minutes
 	},\
 	"]\n[",\
 	{\
-		"translate": "fetchr.lobby.settings.points_goal.menu.option.minutes",\
+		"translate": "fetchr.settings.points_goal.menu.option.minutes",\
 		"color": "#00c3ff",\
 		"with": ["60"],\
 		"clickEvent": { "action": "run_command", "value": "/trigger fetchr.points_race_minutes set 60" },\
@@ -96,7 +96,7 @@ scoreboard players enable @s fetchr.points_race_minutes
 	},\
 	"]\n[",\
 	{\
-		"translate": "fetchr.lobby.settings.points_goal.menu.option.custom",\
+		"translate": "fetchr.settings.points_goal.menu.option.custom",\
 		"color": "#00c3ff",\
 		"clickEvent": { "action": "suggest_command", "value": "/trigger fetchr.points_race_minutes set "},\
 		"click_event": { "action": "suggest_command", "command": "/trigger fetchr.points_race_minutes set "}\

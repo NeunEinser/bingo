@@ -1,9 +1,9 @@
 {
 	"type": "minecraft:multi_action",
-	"title": { "translate": "fetchr.settings.dialog.custom_options.title" },
+	"title": { "translate": "fetchr.settings.pause_menu.custom_options.title" },
 	"actions": [
 		{
-			"label": { "translate": "fetchr.settings.dialog.custom_options.settings.title" },
+			"label": { "translate": "fetchr.settings.pause_menu.custom_options.settings.title" },
 			"action": { "type": "minecraft:run_command", "command": "trigger fetchr.settings set 3" }
 		},
 		{

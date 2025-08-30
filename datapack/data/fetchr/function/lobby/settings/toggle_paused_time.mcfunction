@@ -24,10 +24,10 @@ execute \
 
 execute \
 	if score $count_pauses 91.timer.io matches 0 \
-	run tellraw @s { "translate": "fetchr.lobby.settings.paused_time.toggle.off", "color": "green" }
+	run tellraw @s { "translate": "fetchr.settings.paused_time.confirmation.toggle_on", "color": "green" }
 execute \
 	if score $count_pauses 91.timer.io matches 1 \
-	run tellraw @s { "translate": "fetchr.lobby.settings.paused_time.toggle.on", "color": "green" }
+	run tellraw @s { "translate": "fetchr.settings.paused_time.confirmation.toggle_off", "color": "green" }
 
 #NEUN_SCRIPT until 69
 #execute \
@@ -35,13 +35,13 @@ execute \
 	as @e[type=minecraft:marker, tag=fetchr.paused_time_sign, distance=0.., limit=2] \
 	run data \
 		modify entity @s data.front_text.messages[3] \
-		set value '{ "translate": "fetchr.lobby.settings.paused_time.sign.off", "color": "gray" }'
+		set value '{ "translate": "options.off", "color": "gray" }'
 #execute \
 	if score $count_pauses 91.timer.io matches 1 \
 	as @e[type=minecraft:marker, tag=fetchr.paused_time_sign, distance=0.., limit=2] \
 	run data \
 		modify entity @s data.front_text.messages[3] \
-		set value '{ "translate": "fetchr.lobby.settings.paused_time.sign.on", "color": "green" }'
+		set value '{ "translate": "options.on", "color": "green" }'
 #NEUN_SCRIPT end
 #NEUN_SCRIPT since 69
 execute \
@@ -49,13 +49,13 @@ execute \
 	as @e[type=minecraft:marker, tag=fetchr.paused_time_sign, distance=0.., limit=2] \
 	run data \
 		modify entity @s data.front_text.messages[3] \
-		set value { translate: "fetchr.lobby.settings.paused_time.sign.off", color: "gray" }
+		set value { translate: "options.off", color: "gray" }
 execute \
 	if score $count_pauses 91.timer.io matches 1 \
 	as @e[type=minecraft:marker, tag=fetchr.paused_time_sign, distance=0.., limit=2] \
 	run data \
 		modify entity @s data.front_text.messages[3] \
-		set value { translate: "fetchr.lobby.settings.paused_time.sign.on", color: "green" }
+		set value { translate: "options.on", color: "green" }
 #NEUN_SCRIPT end
 
 function fetchr:lobby/place_indestructible_blocks

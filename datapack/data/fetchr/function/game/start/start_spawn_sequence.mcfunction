@@ -27,6 +27,7 @@ tag @a remove fetchr.in_skybox
 effect give @a[predicate=fetchr:is_in_game] minecraft:invisibility infinite 1 true
 clear @a
 
+scoreboard players operation $lockout_mode fetchr.state = $lockout_mode fetchr.setting_values
 execute \
 	in fetchr:lobby \
 	run function fetchr:game/start/init_teams

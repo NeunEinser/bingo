@@ -22,10 +22,10 @@ execute \
 
 execute \
 	if score $lobby_gamemode fetchr.setting_values matches 0 \
-	run tellraw @s { "translate": "fetchr.lobby.settings.gamemode.toggle.adventure", "color": "green" }
+	run tellraw @s { "translate": "fetchr.settings.gamemode.confirmation.toggle_adventure", "color": "green" }
 execute \
 	if score $lobby_gamemode fetchr.setting_values matches 1 \
-	run tellraw @s { "translate": "fetchr.lobby.settings.gamemode.toggle.survival", "color": "red" }
+	run tellraw @s { "translate": "fetchr.settings.gamemode.confirmation.toggle_adventure", "color": "red" }
 
 #NEUN_SCRIPT until 69
 #execute \
@@ -34,14 +34,14 @@ execute \
 		modify \
 			entity @e[type=minecraft:marker, tag=fetchr.gamemode_sign, distance=..1, limit=1] \
 			data.front_text.messages[3] \
-		set value '{ "translate": "fetchr.lobby.settings.gamemode.sign.adventure", "color": "gray" }'
+		set value '{ "translate": "fetchr.settings.gamemode.value.adventure", "color": "gray" }'
 #execute \
 	if score $lobby_gamemode fetchr.setting_values matches 1 \
 	run data \
 		modify \
 			entity @e[type=minecraft:marker, tag=fetchr.gamemode_sign, distance=..1, limit=1] \
 			data.front_text.messages[3] \
-		set value '{ "translate": "fetchr.lobby.settings.gamemode.sign.survival", "color": "red" }'
+		set value '{ "translate": "fetchr.settings.gamemode.value.survival", "color": "red" }'
 #NEUN_SCRIPT end
 #NEUN_SCRIPT since 69
 execute \
@@ -50,14 +50,14 @@ execute \
 		modify \
 			entity @e[type=minecraft:marker, tag=fetchr.gamemode_sign, distance=..1, limit=1] \
 			data.front_text.messages[3] \
-		set value { translate: "fetchr.lobby.settings.gamemode.sign.adventure", color: "gray" }
+		set value { translate: "fetchr.settings.gamemode.value.adventure", color: "gray" }
 execute \
 	if score $lobby_gamemode fetchr.setting_values matches 1 \
 	run data \
 		modify \
 			entity @e[type=minecraft:marker, tag=fetchr.gamemode_sign, distance=..1, limit=1] \
 			data.front_text.messages[3] \
-		set value { translate: "fetchr.lobby.settings.gamemode.sign.survival", color: "red" }
+		set value { translate: "fetchr.settings.gamemode.value.survival", color: "red" }
 #NEUN_SCRIPT end
 
 function fetchr:lobby/place_indestructible_blocks

@@ -1,12 +1,12 @@
 {
 	"NEUN_SCRIPT replace type until 79": "minecraft:multi_action_input_form",
 	"type": "minecraft:multi_action",
-	"title": { "translate": "fetchr.lobby.settings.points_goal.dialog.title" },
+	"title": { "translate": "fetchr.settings.points_goal.name" },
 	"body": [
 		{
 			"type": "minecraft:plain_message",
 			"width": 400,
-			"contents": { "translate": "fetchr.lobby.settings.points_goal.dialog.description" }
+			"contents": { "translate": "fetchr.settings.points_goal.description" }
 		}
 	],
 	"inputs": [
@@ -19,14 +19,14 @@
 			"steps": 11,
 			"initial": 25,
 			"key": "end_time",
-			"label": { "translate": "fetchr.lobby.settings.points_goal.dialog.input.end_time" }
+			"label": { "translate": "fetchr.settings.points_goal.input.end_time" }
 		}
 	],
 	"actions": [
 		{
 			"NEUN_SCRIPT remove id since 79": null,
 			"id": "set_time",
-			"label": { "translate": "fetchr.lobby.settings.points_goal.dialog.set_time" },
+			"label": { "translate": "fetchr.settings.points_goal.action.set_time" },
 			"NEUN_SCRIPT remove action until 79": null,
 			"action": {
 				"type": "minecraft:dynamic/run_command",
@@ -41,7 +41,7 @@
 		{
 			"NEUN_SCRIPT remove id since 79": null,
 			"id": "-1",
-			"label": { "translate": "fetchr.lobby.settings.points_goal.dialog.disable" },
+			"label": { "translate": "fetchr.settings.points_goal.action.disable" },
 			"NEUN_SCRIPT remove action until 79": null,
 			"action": {
 				"type": "minecraft:run_command",

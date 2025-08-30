@@ -23,6 +23,16 @@ execute \
 	run function fetchr:lobby/settings/toggle_concealed_card
 
 execute \
+	if score @s fetchr.settings matches 7 \
+	in fetchr:lobby \
+	run function fetchr:lobby/settings/set_points_goal
+
+execute \
+	if score @s fetchr.settings matches 8 \
+	in fetchr:lobby \
+	run function fetchr:lobby/settings/toggle_lockout_mode
+
+execute \
 	if score @s fetchr.settings matches 6.. \
 	run function fetchr:settings/prepare_and_show_custom_options
 

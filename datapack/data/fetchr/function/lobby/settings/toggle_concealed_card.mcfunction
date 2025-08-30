@@ -26,17 +26,17 @@ execute \
 	if score $concealed_card fetchr.setting_values matches 0 \
 	run tellraw @s [\
 		"",\
-		{ "translate": "fetchr.lobby.settings.concealed_card.toggle.off", "color": "red" },\
+		{ "translate": "fetchr.settings.concealed_card.confirmation.toggle_off", "color": "red" },\
 		"\n",\
-		{ "translate": "fetchr.lobby.settings.concealed_card.toggle.info", "color": "gray", "italic": true }\
+		{ "translate": "fetchr.settings.concealed_card.toggle.info", "color": "gray", "italic": true }\
 	]
 execute \
 	if score $concealed_card fetchr.setting_values matches 1 \
 	run tellraw @s [\
 		"",\
-		{ "translate": "fetchr.lobby.settings.concealed_card.toggle.on", "color": "green" },\
+		{ "translate": "fetchr.settings.concealed_card.confirmation.toggle_on", "color": "green" },\
 		"\n",\
-		{ "translate": "fetchr.lobby.settings.concealed_card.toggle.info", "color": "gray", "italic": true }\
+		{ "translate": "fetchr.settings.info.takes_effect_after_generating_new", "color": "gray", "italic": true }\
 	]
 
 #NEUN_SCRIPT until 69
@@ -46,14 +46,14 @@ execute \
 		modify \
 			entity @e[type=minecraft:marker, tag=fetchr.concealed_card_sign, distance=..1, limit=1] \
 			data.front_text.messages[3] \
-		set value '{ "translate": "fetchr.lobby.settings.concealed_card.sign.off", "color": "gray" }'
+		set value '{ "translate": "options.off", "color": "gray" }'
 #execute \
 	if score $concealed_card fetchr.setting_values matches 1 \
 	run data \
 		modify \
 			entity @e[type=minecraft:marker, tag=fetchr.concealed_card_sign, distance=..1, limit=1] \
 			data.front_text.messages[3] \
-		set value '{ "translate": "fetchr.lobby.settings.concealed_card.sign.on", "color": "green" }'
+		set value '{ "translate": "options.on", "color": "green" }'
 #NEUN_SCRIPT end
 #NEUN_SCRIPT since 69
 execute \
@@ -63,7 +63,7 @@ execute \
 		modify \
 			entity @s \
 			data.front_text.messages[3] \
-		set value { "translate": "fetchr.lobby.settings.concealed_card.sign.off", "color": "gray" }
+		set value { "translate": "options.off", "color": "gray" }
 execute \
 	if score $concealed_card fetchr.setting_values matches 1 \
 	as @e[type=minecraft:marker, tag=fetchr.concealed_card_sign, x=0] \
@@ -71,7 +71,7 @@ execute \
 		modify \
 			entity @s \
 			data.front_text.messages[3] \
-		set value { "translate": "fetchr.lobby.settings.concealed_card.sign.on", "color": "green" }
+		set value { "translate": "options.on", "color": "green" }
 #NEUN_SCRIPT end
 
 function fetchr:lobby/place_indestructible_blocks

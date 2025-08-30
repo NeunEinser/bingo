@@ -1,15 +1,15 @@
 {
 	"type": "minecraft:confirmation",
-	"title": { "translate": "fetchr.operator_only.confirm_op.dialog.title" },
+	"title": { "translate": "fetchr.settings.operator_only.confirm_op.name" },
 	"body": [
 		{
 			"type": "minecraft:plain_message",
 			"width": 400,
-			"contents": { "translate": "fetchr.operator_only.confirm_op.dialog.description" }
+			"contents": { "translate": "fetchr.settings.operator_only.confirm_op.description" }
 		}
 	],
 	"yes": {
-		"label": { "translate": "fetchr.operator_only.confirm_op.dialog.confirm" },
+		"label": { "translate": "fetchr.settings.operator_only.confirm_op.action.confirm" },
 		"action": {
 			"type": "minecraft:run_command",
 			"command": "function fetchr:util/confirm_operator_status"

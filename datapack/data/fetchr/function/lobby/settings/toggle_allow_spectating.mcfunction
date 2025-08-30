@@ -22,10 +22,10 @@ execute \
 
 execute \
 	if score $allow_spectating fetchr.setting_values matches 0 \
-	run tellraw @s { "translate": "fetchr.lobby.settings.allow_spectating.toggle.off", "color": "red" }
+	run tellraw @s { "translate": "fetchr.settings.allow_spectating.confirmation.toggle_off", "color": "red" }
 execute \
 	if score $allow_spectating fetchr.setting_values matches 1 \
-	run tellraw @s { "translate": "fetchr.lobby.settings.allow_spectating.toggle.on", "color": "green" }
+	run tellraw @s { "translate": "fetchr.settings.allow_spectating.confirmation.toggle_on", "color": "green" }
 
 #NEUN_SCRIPT until 69
 #execute \
@@ -34,14 +34,14 @@ execute \
 		modify \
 			entity @e[type=minecraft:marker, tag=fetchr.allow_spectating_sign, distance=..1, limit=1] \
 			data.front_text.messages[3] \
-		set value '{ "translate": "fetchr.lobby.settings.allow_spectating.sign.off", "color": "gray" }'
+		set value '{ "translate": "options.off", "color": "gray" }'
 #execute \
 	if score $allow_spectating fetchr.setting_values matches 1 \
 	run data \
 		modify \
 			entity @e[type=minecraft:marker, tag=fetchr.allow_spectating_sign, distance=..1, limit=1] \
 			data.front_text.messages[3] \
-		set value '{ "translate": "fetchr.lobby.settings.allow_spectating.sign.on", "color": "green" }'
+		set value '{ "translate": "options.on", "color": "green" }'
 #NEUN_SCRIPT end
 #NEUN_SCRIPT since 69
 execute \
@@ -50,14 +50,14 @@ execute \
 		modify \
 			entity @e[type=minecraft:marker, tag=fetchr.allow_spectating_sign, distance=..1, limit=1] \
 			data.front_text.messages[3] \
-		set value { translate: "fetchr.lobby.settings.allow_spectating.sign.off", color: "gray" }
+		set value { translate: "options.off", color: "gray" }
 execute \
 	if score $allow_spectating fetchr.setting_values matches 1 \
 	run data \
 		modify \
 			entity @e[type=minecraft:marker, tag=fetchr.allow_spectating_sign, distance=..1, limit=1] \
 			data.front_text.messages[3] \
-		set value { translate: "fetchr.lobby.settings.allow_spectating.sign.on", color: "green" }
+		set value { translate: "options.on", color: "green" }
 #NEUN_SCRIPT end
 
 function fetchr:lobby/place_indestructible_blocks
