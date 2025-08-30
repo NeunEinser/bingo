@@ -15,28 +15,28 @@ execute \
 	unless score @s fetchr.operator matches 1 \
 	run return 0
 
-scoreboard players add $allow_spectating fetchr.settings 1
+scoreboard players add $allow_spectating fetchr.setting_values 1
 execute \
-	if score $allow_spectating fetchr.settings matches 2 \
-	run scoreboard players set $allow_spectating fetchr.settings 0
+	if score $allow_spectating fetchr.setting_values matches 2 \
+	run scoreboard players set $allow_spectating fetchr.setting_values 0
 
 execute \
-	if score $allow_spectating fetchr.settings matches 0 \
+	if score $allow_spectating fetchr.setting_values matches 0 \
 	run tellraw @s { "translate": "fetchr.lobby.settings.allow_spectating.toggle.off", "color": "red" }
 execute \
-	if score $allow_spectating fetchr.settings matches 1 \
+	if score $allow_spectating fetchr.setting_values matches 1 \
 	run tellraw @s { "translate": "fetchr.lobby.settings.allow_spectating.toggle.on", "color": "green" }
 
 #NEUN_SCRIPT until 69
 #execute \
-	if score $allow_spectating fetchr.settings matches 0 \
+	if score $allow_spectating fetchr.setting_values matches 0 \
 	run data \
 		modify \
 			entity @e[type=minecraft:marker, tag=fetchr.allow_spectating_sign, distance=..1, limit=1] \
 			data.front_text.messages[3] \
 		set value '{ "translate": "fetchr.lobby.settings.allow_spectating.sign.off", "color": "gray" }'
 #execute \
-	if score $allow_spectating fetchr.settings matches 1 \
+	if score $allow_spectating fetchr.setting_values matches 1 \
 	run data \
 		modify \
 			entity @e[type=minecraft:marker, tag=fetchr.allow_spectating_sign, distance=..1, limit=1] \
@@ -45,14 +45,14 @@ execute \
 #NEUN_SCRIPT end
 #NEUN_SCRIPT since 69
 execute \
-	if score $allow_spectating fetchr.settings matches 0 \
+	if score $allow_spectating fetchr.setting_values matches 0 \
 	run data \
 		modify \
 			entity @e[type=minecraft:marker, tag=fetchr.allow_spectating_sign, distance=..1, limit=1] \
 			data.front_text.messages[3] \
 		set value { translate: "fetchr.lobby.settings.allow_spectating.sign.off", color: "gray" }
 execute \
-	if score $allow_spectating fetchr.settings matches 1 \
+	if score $allow_spectating fetchr.setting_values matches 1 \
 	run data \
 		modify \
 			entity @e[type=minecraft:marker, tag=fetchr.allow_spectating_sign, distance=..1, limit=1] \

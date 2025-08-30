@@ -41,7 +41,7 @@ kill @e[y=-128, distance=..1]
 
 #NEUN_SCRIPT until 69
 #execute \
-	if score $allow_spectating fetchr.settings matches 1 \
+	if score $allow_spectating fetchr.setting_values matches 1 \
 	in fetchr:lobby \
 	as @e[type=minecraft:marker, tag=fetchr.join_game_sign, distance=0..] \
 	run data \
@@ -57,7 +57,7 @@ kill @e[y=-128, distance=..1]
 		'{ "translate": "fetchr.lobby.card_generation.join_as_spectator.sign.line4", "bold": true, "color": "#8eedeb" }'\
 	]
 #execute \
-	if score $allow_spectating fetchr.settings matches 1 \
+	if score $allow_spectating fetchr.setting_values matches 1 \
 	in fetchr:lobby \
 	as @e[type=minecraft:marker, tag=fetchr.join_game_sign, distance=0..] \
 	if data entity @s data.back_text \
@@ -76,7 +76,7 @@ kill @e[y=-128, distance=..1]
 #NEUN_SCRIPT end
 #NEUN_SCRIPT since 69
 execute \
-	if score $allow_spectating fetchr.settings matches 1 \
+	if score $allow_spectating fetchr.setting_values matches 1 \
 	in fetchr:lobby \
 	as @e[type=minecraft:marker, tag=fetchr.join_game_sign, distance=0..] \
 	run data \
@@ -92,7 +92,7 @@ execute \
 		{ translate: "fetchr.lobby.card_generation.join_as_spectator.sign.line4", bold: true, color: "#8eedeb" }\
 	]
 execute \
-	if score $allow_spectating fetchr.settings matches 1 \
+	if score $allow_spectating fetchr.setting_values matches 1 \
 	in fetchr:lobby \
 	as @e[type=minecraft:marker, tag=fetchr.join_game_sign, distance=0..] \
 	if data entity @s data.back_text \

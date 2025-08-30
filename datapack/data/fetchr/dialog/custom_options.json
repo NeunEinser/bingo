@@ -1,0 +1,20 @@
+{
+	"type": "minecraft:multi_action",
+	"title": { "translate": "fetchr.settings.dialog.custom_options.title" },
+	"actions": [
+		{
+			"label": { "translate": "fetchr.settings.dialog.custom_options.settings.title" },
+			"action": { "type": "minecraft:run_command", "command": "trigger fetchr.settings set 3" }
+		},
+		{
+			"label": { "translate": "menu.quick_actions.title" },
+			"action": { "type": "minecraft:run_command", "command": "trigger fetchr.settings set 4" }
+		}
+	],
+	"pause": false,
+	"after_action": "none",
+	"exit_action": {
+		"label": { "translate": "gui.back" },
+		"action": { "type": "minecraft:run_command", "command": "trigger fetchr.settings set 1" }
+	}
+}

@@ -7,7 +7,7 @@
 # @input
 # 	score @s fetchr.points_race_minutes The minutes when the points goal triggers
 
-scoreboard players operation $points_goal_announcement_minutes fetchr.settings = @s fetchr.points_race_minutes
+scoreboard players operation $points_goal_announcement_minutes fetchr.setting_values = @s fetchr.points_race_minutes
 #NEUN_SCRIPT until 69
 #data modify block 7 0 7 front_text.messages[0] set value '{\
 	"translate": "fetchr.lobby.settings.points_goal.sign.minutes",\

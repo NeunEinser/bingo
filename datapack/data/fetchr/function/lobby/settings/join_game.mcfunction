@@ -17,11 +17,11 @@ execute \
 	if score $game_state fetchr.state matches ..1 \
 	run tag @s add fetchr.automatically_join_game
 execute \
-	if score $allow_spectating fetchr.settings matches 0 \
+	if score $allow_spectating fetchr.setting_values matches 0 \
 	if score $game_state fetchr.state matches 3.. \
 	run tellraw @s { "translate": "fetchr.lobby.card_generation.join_game.error.in_progress", "color": "red" }
 execute \
-	if score $allow_spectating fetchr.settings matches 1 \
+	if score $allow_spectating fetchr.setting_values matches 1 \
 	if score $game_state fetchr.state matches 3.. \
 	run function fetchr:game/join_as_spectator
 

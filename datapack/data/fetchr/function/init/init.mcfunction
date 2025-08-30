@@ -467,6 +467,7 @@ forceload add 0 0
 	scoreboard objectives remove fetchr.const
 	scoreboard objectives remove fetchr.completed_goal_effect_state
 	scoreboard objectives remove fetchr.has_item
+	scoreboard objectives remove fetchr.last_tick_pause_time
 	scoreboard objectives remove fetchr.last_hud_update
 	scoreboard objectives remove fetchr.io
 	scoreboard objectives remove fetchr.menu
@@ -477,6 +478,7 @@ forceload add 0 0
 	scoreboard objectives remove fetchr.prev_y_pos
 	scoreboard objectives remove fetchr.prev_z_pos
 	scoreboard objectives remove fetchr.seed
+	scoreboard objectives remove fetchr.settings
 	scoreboard objectives remove fetchr.spyglass_dropped
 	scoreboard objectives remove fetchr.resource_pack_check
 
@@ -684,13 +686,6 @@ forceload add 0 0
 		scoreboard objectives add fetchr.reveal_card trigger
 
 		#>
-		# Trigger for teleporting all players back to the lobby.
-		#
-		# @internal
-		# @user
-		scoreboard objectives add fetchr.teleport_all trigger
-
-		#>
 		# Trigger objective used to generate a bingo card with a set seed.
 		#
 		# @internal
@@ -698,13 +693,36 @@ forceload add 0 0
 		scoreboard objectives add fetchr.seed trigger
 
 		#>
+		# Trigger objective used to navigate the custom options menu.
+		#
+		# @internal
+		# @user
+		scoreboard objectives add fetchr.settings trigger
+
+		#>
 		# Trigger objective used to switch to spectator mode while in game.
 		#
 		# @internal
 		scoreboard objectives add fetchr.spectator trigger
+
+		#>
+		# Trigger for teleporting all players back to the lobby.
+		#
+		# @internal
+		# @user
+		scoreboard objectives add fetchr.teleport_all trigger
 	#endregion
 
-	#region other internal objectives
+	#region private objectives
+		#>
+		# This objective is used to detect player sleeping for night skipping
+		#
+		# @within
+		#		function fetchr:init/init
+		#		function fetchr:game/tick
+		#		function fetchr:game/player_tick
+		scoreboard objectives add fetchr.bed minecraft.custom:minecraft.sleep_in_bed
+
 		#>
 		# This objective holds the position preference of where a player's card should
 		# be displayed.
@@ -717,6 +735,14 @@ forceload add 0 0
 		#
 		# @internal
 		scoreboard objectives add fetchr.completed_goal_effect_state dummy
+
+		#>
+		# The last time the hud was refreshed for each player
+		#
+		# @within
+		#		function fetchr:init/init
+		#		function fetchr:custom_hud/*
+		scoreboard objectives add fetchr.last_hud_update dummy
 
 		#>
 		# This objective contains unique IDs for the item frames in the lobby.
@@ -755,7 +781,7 @@ forceload add 0 0
 		# Setting storage
 		#
 		# @internal
-		scoreboard objectives add fetchr.settings dummy
+		scoreboard objectives add fetchr.setting_values dummy
 
 		#>
 		# This objective is used to keep track of the current game id. Players who
@@ -786,6 +812,14 @@ forceload add 0 0
 		#
 		# @internal
 		scoreboard objectives add fetchr.player_id dummy
+
+		#>
+		# This objective contains the amount of client ticks passed in the last game
+		# meaning it will contain the amount of ticks the game was paused if it was
+		# paused, or 1 if it wasn't paused
+		#
+		# @internal
+		scoreboard objectives add fetchr.last_tick_pause_time minecraft.custom:minecraft.total_world_time
 
 		#>
 		# This objective stores the page number of a paginated tellraw
@@ -825,37 +859,18 @@ forceload add 0 0
 		scoreboard objectives add fetchr.prev_z_pos dummy
 
 		#>
-		# This objective is used for temporary calculations.
-		#
-		# @internal
-		scoreboard objectives add fetchr.tmp dummy
-	#endregion
-
-	#region private objectives
-		#>
-		# This objective is used to detect player sleeping for night skipping
-		#
-		# @within
-		#		function fetchr:init/init
-		#		function fetchr:game/tick
-		#		function fetchr:game/player_tick
-		scoreboard objectives add fetchr.bed minecraft.custom:minecraft.sleep_in_bed
-
-		#>
-		# The last time the hud was refreshed for each player
-		#
-		# @within
-		#		function fetchr:init/init
-		#		function fetchr:custom_hud/*
-		scoreboard objectives add fetchr.last_hud_update dummy
-
-		#>
 		# This objective is used to detect a player dropping a spyglass
 		#
 		# @within
 		#		function fetchr:init/init
 		#		function fetchr:game/skybox/tick
 		scoreboard objectives add fetchr.spyglass_dropped minecraft.dropped:minecraft.spyglass
+
+		#>
+		# This objective is used for temporary calculations.
+		#
+		# @internal
+		scoreboard objectives add fetchr.tmp dummy
 
 		#>
 		# This objective is used to detect a player reconnecting
@@ -937,7 +952,7 @@ forceload add 0 0
 		#
 		# @internal
 		#declare score_holder $operator_only
-		scoreboard players add $operator_only fetchr.settings 0
+		scoreboard players add $operator_only fetchr.setting_values 0
 		#>
 		# Which gamemode to use in the lobby.
 		#
@@ -947,7 +962,7 @@ forceload add 0 0
 		# @internal
 		#declare score_holder $lobby_gamemode
 		#NEUN_SCRIPT unless {NEUN_SCRIPT:realms}
-		scoreboard players add $lobby_gamemode fetchr.settings 0
+		scoreboard players add $lobby_gamemode fetchr.setting_values 0
 		#NEUN_SCRIPT end
 		#>
 		# The amount of chunks to pre-generate
@@ -955,15 +970,15 @@ forceload add 0 0
 		# @internal
 		#declare score_holder $pregeneration_chunks
 		execute \
-			unless score $pregeneration_chunks fetchr.settings matches 361.. \
-			run scoreboard players set $pregeneration_chunks fetchr.settings 361
+			unless score $pregeneration_chunks fetchr.setting_values matches 361.. \
+			run scoreboard players set $pregeneration_chunks fetchr.setting_values 361
 		#>
 		# Minutes after which the points goal is announced
 		# 0 or less means, no announcement
 		#
 		# @internal
 		#declare score_holder $points_goal_announcement_minutes
-		scoreboard players add $points_goal_announcement_minutes fetchr.settings 0
+		scoreboard players add $points_goal_announcement_minutes fetchr.setting_values 0
 		#>
 		# Wether the points goal has already been announced this game
 		#
@@ -976,22 +991,22 @@ forceload add 0 0
 		# @internal
 		#declare score_holder $allow_spectating
 		execute \
-			unless score $allow_spectating fetchr.settings matches 0..1 \
-			run scoreboard players set $allow_spectating fetchr.settings 1
+			unless score $allow_spectating fetchr.setting_values matches 0..1 \
+			run scoreboard players set $allow_spectating fetchr.setting_values 1
 		#>
 		# Whether you see the seed before the game has ended.
 		#
 		# @internal
 		#declare score_holder $show_seed
 		execute \
-			unless score $show_seed fetchr.settings matches 0..1 \
-			run scoreboard players set $show_seed fetchr.settings 1
+			unless score $show_seed fetchr.setting_values matches 0..1 \
+			run scoreboard players set $show_seed fetchr.setting_values 1
 		#>
 		# Whether in-game time should be used instead if real time.
 		#
 		# @internal
 		#declare score_holder $use_in_game_time
-		scoreboard players add $use_in_game_time fetchr.settings 0
+		scoreboard players add $use_in_game_time fetchr.setting_values 0
 		#>
 		# Whether concealed card is enabled. With a concealed card, players cannot
 		# see items on the card until some team has obtained them.

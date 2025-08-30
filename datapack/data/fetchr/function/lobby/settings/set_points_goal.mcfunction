@@ -9,11 +9,11 @@
 
 scoreboard players set @s fetchr.operator_check_callback_action 4
 execute \
-	if score $operator_only fetchr.settings matches 1 \
+	if score $operator_only fetchr.setting_values matches 1 \
 	unless score @s fetchr.operator matches 1 \
 	run function fetchr:util/show_confirm_operator_status_prompt
 execute \
-	if score $operator_only fetchr.settings matches 1 \
+	if score $operator_only fetchr.setting_values matches 1 \
 	unless score @s fetchr.operator matches 1 \
 	run return 0
 

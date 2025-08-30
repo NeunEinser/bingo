@@ -35,7 +35,7 @@ execute \
 	run data get storage fetchr:card teams[-1].item_count
 execute \
 	if score $seed fetchr.state matches -2147483648.. \
-	if score $show_seed fetchr.settings matches 1 \
+	if score $show_seed fetchr.setting_values matches 1 \
 	unless data storage fetchr:custom_hud currentPlayer.\
 	components[{ id: "fetchr:seed" }]\
 	.custom\
@@ -43,7 +43,7 @@ execute \
 	run function fetchr:custom_hud/component_eval
 execute \
 	if score $seed fetchr.state matches -2147483648.. \
-	if score $show_seed fetchr.settings matches 1 \
+	if score $show_seed fetchr.setting_values matches 1 \
 	if data storage fetchr:custom_hud currentPlayer.\
 	components[{ id: "fetchr:seed" }]\
 	.custom\
@@ -53,7 +53,7 @@ execute \
 	run function fetchr:custom_hud/component_eval
 execute \
 	if score $seed fetchr.state matches -2147483648.. \
-	if score $show_seed fetchr.settings matches 1 \
+	if score $show_seed fetchr.setting_values matches 1 \
 	if data storage fetchr:custom_hud currentPlayer\
 		.components[{ id: "fetchr:seed" }]\
 		.custom\
@@ -64,13 +64,13 @@ execute \
 	run function fetchr:custom_hud/component_eval
 execute \
 	if score $seed fetchr.state matches -2147483648.. \
-	if score $show_seed fetchr.settings matches 0 \
+	if score $show_seed fetchr.setting_values matches 0 \
 	if score $custom_hud/seed.items fetchr.tmp matches 25 \
 	run function fetchr:custom_hud/component_eval
 execute \
 	if score $seed fetchr.state matches -2147483648.. \
 	if score $game_state fetchr.state matches 4 \
-	if score $show_seed fetchr.settings matches 0 \
+	if score $show_seed fetchr.setting_values matches 0 \
 	unless score $custom_hud/seed.items fetchr.tmp matches 25 \
 	unless entity @a[predicate=fetchr:is_in_game] \
 	run function fetchr:custom_hud/component_eval

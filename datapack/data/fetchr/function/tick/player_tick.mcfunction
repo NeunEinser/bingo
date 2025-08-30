@@ -298,3 +298,11 @@ scoreboard players operation @s fetchr.prev_x_pos = $tick/player.x fetchr.tmp
 scoreboard players operation @s fetchr.prev_y_pos = $tick/player.y fetchr.tmp
 scoreboard players operation @s fetchr.prev_z_pos = $tick/player.z fetchr.tmp
 scoreboard players operation @s fetchr.prev_rot = $tick/player.rot fetchr.tmp
+
+execute \
+	if score @s fetchr.settings matches 1.. \
+	run function fetchr:settings/handle_settings
+
+scoreboard players enable @s fetchr.settings
+
+scoreboard players reset @s fetchr.last_tick_pause_time

@@ -32,7 +32,7 @@ execute \
 #NEUN_SCRIPT end
 
 execute \
-	if score $allow_spectating fetchr.settings matches 1 \
+	if score $allow_spectating fetchr.setting_values matches 1 \
 	run scoreboard players enable @s fetchr.spectator
 execute \
 	if score $concealed_card fetchr.state matches 1 \

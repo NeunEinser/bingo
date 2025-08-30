@@ -127,6 +127,10 @@
 	"fetchr.preferences.custom_hud.component_settings.player_position.use_text_icon.description": "Changes the coordinate icon to a textual representation of cardinal directions.",
 
 	
+	"fetchr.settings.dialog.custom_options.settings.title": "Game Settings",
+	"fetchr.settings.dialog.custom_options.title": "Fetchr Options",
+	"fetchr.lobby.settings.concealed_card.dialog.title": "Concealed Card",
+	
 	"fetchr.lobby.returned": "%s returned to the lobby.",
 
 	"fetchr.lobby.credits.neun_einser.sign.line2": "Fetchr",

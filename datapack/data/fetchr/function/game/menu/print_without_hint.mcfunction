@@ -23,7 +23,7 @@ tellraw @s [\
 	"]"\
 ]
 execute \
-	if score $allow_spectating fetchr.settings matches 1 \
+	if score $allow_spectating fetchr.setting_values matches 1 \
 	run tellraw @s [\
 		"[",\
 		{\

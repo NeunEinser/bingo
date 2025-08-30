@@ -22,7 +22,7 @@ execute \
 	if score @s fetchr.pre_gen_radius matches ..143 \
 	run return 0
 
-scoreboard players operation $pregeneration_chunks fetchr.settings = @s fetchr.pre_gen_radius
+scoreboard players operation $pregeneration_chunks fetchr.setting_values = @s fetchr.pre_gen_radius
 #NEUN_SCRIPT until 69
 #data modify block 7 0 7 front_text.messages[0] set value '{\
 	"translate": "fetchr.lobby.settings.pre_gen.sign.radius",\
@@ -37,10 +37,10 @@ data modify block 7 0 7 front_text.messages[0] set value {\
 	with: [{ score: { name: "$pregeneration_chunks", objective: "fetchr.settings" }}]\
 }
 #NEUN_SCRIPT end
-scoreboard players operation $pregeneration_chunks fetchr.settings /= 16 fetchr.const
-scoreboard players operation $pregeneration_chunks fetchr.settings += $pregeneration_chunks fetchr.settings
-scoreboard players add $pregeneration_chunks fetchr.settings 1
-scoreboard players operation $pregeneration_chunks fetchr.settings *= $pregeneration_chunks fetchr.settings
+scoreboard players operation $pregeneration_chunks fetchr.setting_values /= 16 fetchr.const
+scoreboard players operation $pregeneration_chunks fetchr.setting_values += $pregeneration_chunks fetchr.setting_values
+scoreboard players add $pregeneration_chunks fetchr.setting_values 1
+scoreboard players operation $pregeneration_chunks fetchr.setting_values *= $pregeneration_chunks fetchr.setting_values
 
 execute \
 	if score @s fetchr.pre_gen_radius matches 144 \
