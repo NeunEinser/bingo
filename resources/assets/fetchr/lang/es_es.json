@@ -237,8 +237,6 @@
 	"fetchr.lobby.team_selection.join_dark_blue": "%s Se ha unido al equipo Azul Oscuro.",
 	"fetchr.lobby.team_selection.join_purple": "%s Se ha unido al equipo Morado.",
 	"fetchr.lobby.team_selection.join_magenta": "%s Se ha unido al equipo Magenta.",
-	"fetchr.lobby.settings.preferences.sign.line2": "Preferencias",
-	"fetchr.lobby.settings.preferences.sign.line3": "Personales",
 	"fetchr.lobby.settings.concealed_card.sign.line1": "Esconder",
 	"fetchr.lobby.settings.concealed_card.sign.line2": "Tarjeta",
 	"fetchr.lobby.settings.concealed_card.sign.line3": "",
@@ -404,5 +402,7 @@
 	"fetchr.lobby.tutorial.goals.introduction": "En Fetchr, hay diferentes tipos de metas para lograr.\n\nEn las páginas siguientes se detallan todas las metas que se detectaron.\n\nNo necesitas seleccionar una meta, simplemente sigue jugando hasta que estes listo.",
 	"fetchr.lobby.tutorial.goals.planning.heading": "Planificación",
 	"fetchr.lobby.tutorial.goals.planning": "Es recomendado tener un plan antes de iniciar el juego\n\nPara planear la ronda, puedes usar la función de marcar en la carta del lobby. Simplemente usa el click derecho en los item frames.",
-	"fetchr.lobby.tutorial.goals.bingo.heading": "Bingo"
+	"fetchr.lobby.tutorial.goals.bingo.heading": "Bingo",
+	"fetchr.settings.preferences.sign.line2": "Preferencias",
+	"fetchr.settings.preferences.sign.line3": "Personales"
 }
