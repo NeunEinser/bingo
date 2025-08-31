@@ -207,8 +207,6 @@
 	"fetchr.lobby.team_selection.join_dark_blue": "%s entrou no time azul-escuro.",
 	"fetchr.lobby.team_selection.join_purple": "%s entrou no time roxo.",
 	"fetchr.lobby.team_selection.join_magenta": "%s entrou no time magenta.",
-	"fetchr.lobby.settings.preferences.sign.line2": "Preferências",
-	"fetchr.lobby.settings.preferences.sign.line3": "pessoais",
 	"fetchr.lobby.settings.concealed_card.sign.line1": "Cartela",
 	"fetchr.lobby.settings.concealed_card.sign.line2": "oculta",
 	"fetchr.lobby.settings.concealed_card.sign.off": "Não",
@@ -579,5 +577,7 @@
 	"fetchr.goal.bingo.sniper.triple.bottom_left": "[%s] %s concluiu um bingo certeiro triplo na coluna %s, linha %s e na diagonal da inferior esquerda para superior direita!",
 	"fetchr.goal.bingo.sniper.triple.col_diags": "[%s] %s concluiu um bingo certeiro triplo na coluna %s e em ambas diagonais!",
 	"fetchr.goal.bingo.sniper.triple.row_diags": "[%s] %s concluiu um bingo certeiro triplo na linha %s e em ambas diagonais!",
-	"fetchr.goal.bingo.sniper.quadruple": "[%s] %s concluiu um bingo certeiro quádruplo!"
+	"fetchr.goal.bingo.sniper.quadruple": "[%s] %s concluiu um bingo certeiro quádruplo!",
+	"fetchr.settings.preferences.sign.line2": "Preferências",
+	"fetchr.settings.preferences.sign.line3": "pessoais"
 }
