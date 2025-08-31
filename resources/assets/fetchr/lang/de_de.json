@@ -211,8 +211,6 @@
 	"fetchr.lobby.team_selection.join_dark_blue": "%s ist dem dunkelblauen Team beigetreten.",
 	"fetchr.lobby.team_selection.join_purple": "%s ist dem violetten Team beigetreten.",
 	"fetchr.lobby.team_selection.join_magenta": "%s ist dem magenta Team beigetreten.",
-	"fetchr.lobby.settings.preferences.sign.line2": "Persönliche",
-	"fetchr.lobby.settings.preferences.sign.line3": "Einstellungen",
 	"fetchr.lobby.settings.concealed_card.sign.line1": "Verdeckte",
 	"fetchr.lobby.settings.concealed_card.sign.line2": "Karte",
 	"fetchr.lobby.settings.concealed_card.sign.off": "Aus",
@@ -584,5 +582,7 @@
 	"fetchr.goal.bingo.sniper.triple.bottom_left": "[%s] %s erzielte(n) ein Sniper-Dreifach-Bingo in Spalte %s, Zeile %4$s und diagonal von unten links nach oben rechts!",
 	"fetchr.goal.bingo.sniper.triple.col_diags": "[%s] %s erzielte(n) ein Sniper-Dreifach-Bingo in Spalte %s und beiden Diagonalen!",
 	"fetchr.goal.bingo.sniper.triple.row_diags": "[%s] %s erzielte(n) ein Sniper-Dreifach-Bingo in Zeile %s und beiden Diagonalen!",
-	"fetchr.goal.bingo.sniper.quadruple": "[%s] %s erzielte(n) ein Sniper-Vierfach-Bingo!"
+	"fetchr.goal.bingo.sniper.quadruple": "[%s] %s erzielte(n) ein Sniper-Vierfach-Bingo!",
+	"fetchr.settings.preferences.sign.line2": "Persönliche",
+	"fetchr.settings.preferences.sign.line3": "Einstellungen"
 }
