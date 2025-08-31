@@ -238,9 +238,6 @@
 	"fetchr.lobby.team_selection.join_dark_blue": "%s ühines tumesinise tiimiga.",
 	"fetchr.lobby.team_selection.join_purple": "%s ühines lilla tiimiga.",
 	"fetchr.lobby.team_selection.join_magenta": "%s ühines magentapunase tiimiga.",
-	"fetchr.lobby.settings.preferences.sign.line1": "",
-	"fetchr.lobby.settings.preferences.sign.line2": "Isiklikud",
-	"fetchr.lobby.settings.preferences.sign.line3": "Seaded",
 	"fetchr.lobby.settings.preferences.sign.line4": "",
 	"fetchr.lobby.settings.concealed_card.sign.line1": "Varjatud",
 	"fetchr.lobby.settings.concealed_card.sign.line2": "kaart",
@@ -628,5 +625,8 @@
 	"fetchr.goal.bingo.sniper.triple.bottom_left": "[%s] %s sai kolmekordse snaiperbingo %s. veerus, %s. reas ja paremalt vasakule alla diagonaalis!",
 	"fetchr.goal.bingo.sniper.triple.col_diags": "[%s] %s sai kolmekordse snaiperbingo %s. veerus ja mõlemas diagonaalis!",
 	"fetchr.goal.bingo.sniper.triple.row_diags": "[%s] %s sai kolmekordse snaiperbingo %s. reas ja mõlemas diagonaalis!",
-	"fetchr.goal.bingo.sniper.quadruple": "[%s] %s sai neljakordse snaiperbingo!"
+	"fetchr.goal.bingo.sniper.quadruple": "[%s] %s sai neljakordse snaiperbingo!",
+	"fetchr.settings.preferences.sign.line1": "",
+	"fetchr.settings.preferences.sign.line2": "Isiklikud",
+	"fetchr.settings.preferences.sign.line3": "Seaded"
 }
