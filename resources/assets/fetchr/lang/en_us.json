@@ -243,7 +243,6 @@
 	"fetchr.settings.pre_gen.error.too_low": "%s is below the minimum radius of %s blocks.",
 	"fetchr.settings.pre_gen.confirmation.set_minimal": "Pre-generation now only generates minimal terrain.",
 	"fetchr.settings.pre_gen.confirmation.set_radius": "A %s radius of blocks is now pre-generated before every game.",
-	"fetchr.settings.pre_gen.lectern.heading": "Pre-generation Radius",
 	"fetchr.settings.pre_gen.lectern.page_1": "Pre-generation is the process of generating the terrain around spawn before the game starts.\n\nThis is useful to avoid lag spikes when exploring the world, as the terrain is already generated.",
 	"fetchr.settings.pre_gen.lectern.page_2": "This, however, has the disadvantage that you will need to wait before starting the game for the pre-generation to be completed.\n\nIf you experience lag, you can experiment with this setting.",
 	"fetchr.settings.pre_gen.lectern.page_3": "The default minimal setting will only generate the immediate spawn point.\n\nThis is the fastest option for wait time and comes at the disadvantage of potential lag spikes as players explore in different directions.",
