@@ -1,6 +1,4 @@
 {
-	"fetchr.technical.detect_multiplayer": "",
-	"fetchr.technical.resourcepack_version_{NEUN_SCRIPT:rp_version}": "",
 	"fetchr.error.incompatible_minecraft_version.multiple_compatible": "Ви використовуєте непідтримувану версію Minecraft. Цей пакет сумісний з версіями Minecraft %s-%s",
 	"fetchr.error.incompatible_minecraft_version.multiple_compatible.with_latest_snapshot": "Ви використовуєте непідтримувану версію Minecraft. Цей датапак був зроблений для версій: %s-%s, або до снапшоту %s.",
 	"fetchr.error.incompatible_minecraft_version.incompatible_snapshot": "Ви використовуєте непідтримуваний снапшот. Снапшоти %s-%s непідтримувані. Використовуйте снапшот %s або вище.",
@@ -40,7 +38,6 @@
 	"fetchr.game.switch_gamemode.prevented": "Запобігання перемикання ігрового режиму. %s щоб перейти в режим спостерігача.\nПісля цього, ви можете перемкнутися до будь-якого іншого режиму гри.",
 	"fetchr.game.switch_gamemode.prevented.click": "Натисніть тут",
 	"fetchr.game.switch_gamemode.hint": "Підказка: Ви також можете використати команду %s в будь-яку мить, щоб вручну перемкнутися до режиму спостерігача.\nЯкщо вам не подобається ця функція, ви можете вимкнути її у ваших налаштуваннях у лобі.",
-	"fetchr.preferences.title": "",
 	"fetchr.preferences.description": "Це меню дозволяє змінювати власні налаштування.",
 	"fetchr.preferences.back": "Повернутися",
 	"fetchr.preferences.previous": "Попереднє",
@@ -189,9 +186,6 @@
 	"fetchr.lobby.card_generation.from_seed.instructions": "%s щоб отримати команду для встановлення зерна. Додайте числове зерно в кінці команди.",
 	"fetchr.lobby.card_generation.from_seed.instructions.link": "Натисніть тут",
 	"fetchr.lobby.card_generation.from_seed.explanation": "Зерно визначає які предмети будуть згенеровані на картці бінго та стартову позицію. Ви можете використовувати, наприклад, для змагальних ігор, де кожен використовує одне і те саме зерно.",
-	"fetchr.lobby.card_generation.from_seed.dialog.title": "",
-	"fetchr.lobby.card_generation.from_seed.dialog.input.seed": "",
-	"fetchr.lobby.card_generation.from_seed.dialog.submit": "",
 	"fetchr.lobby.card_generation.join_game.sign.line1": "",
 	"fetchr.lobby.card_generation.join_game.sign.line2": "Приєднатися",
 	"fetchr.lobby.card_generation.join_game.sign.line3": "До гри",
@@ -408,7 +402,6 @@
 	"fetchr.category.shearable": "Підстригаємі",
 	"fetchr.category.shipwreck": "Лут Корабельних Уламків",
 	"fetchr.category.skeleton_drops": "Дроп зі скелета",
-	"fetchr.category.spider": "",
 	"fetchr.category.swamp": "Болото",
 	"fetchr.category.taiga": "Тайга",
 	"fetchr.category.warm_biome": "Теплі біоми",
@@ -419,8 +412,6 @@
 	"fetchr.game.start.loading_terrain": "Завантаження Місцевості...",
 	"fetchr.game.start.pre_gen_progress": "Pre-генерація Чанків...",
 	"fetchr.game.start.countdown_completed": "ВПЕРЕД!",
-	"fetchr.item.blue_trimmed_golden_boots": "",
-	"fetchr.item.blue_trimmed_copper_boots": "",
 	"fetchr.item.description.any_trim": "Будь-який орнамент обладунків",
 	"fetchr.got_item": "[%2$s | #%1$s] %3$s отримав [%4$s]",
 	"fetchr.goal.blackout.chat": "[%s] %s виконав блекаут!",
@@ -501,7 +492,6 @@
 	"fetchr.goal.bingo.sniper.triple.col_diags": "[%s] %s виконав потрійне бінго снайпера в стовпці %s та обох діагоналях!",
 	"fetchr.goal.bingo.sniper.triple.row_diags": "[%s] %s виконав потрійне бінго снайпера в рядку %s та обох діагоналях!",
 	"fetchr.goal.bingo.sniper.quadruple": "[%s] %s виконав четверне бінго снайпера!",
-	"fetchr.settings.preferences.sign.line3": "",
 	"fetchr.settings.lockout_mode.sign.line2": "Блокування",
 	"fetchr.settings.lockout_mode.sign.line1": "Режим",
 	"fetchr.settings.lockout_mode.sign.off": "Вимкнено",
@@ -572,12 +562,6 @@
 	"fetchr.settings.concealed_card.lectern.page_1": "У сліпому режимі, ви не бачите картку до, та під час гри.\n\nКоли команда розблокувала предмет, предмет буде видимий для гравців усі команд.",
 	"fetchr.settings.concealed_card.lectern.page_2": "Знання взаємно виключних предметів може сильно допомогти!\n\nОгляньте скриню категорій у кутку!",
 	"fetchr.settings.operator_only.lectern.page_2": "Ігрові налаштування, обмежені з цим налаштуванням, містять генерацію картки, початок гри, телепортацію всіх гравців, зміна налаштування таймеру, або перемикання сліпого режиму та режиму блокування.",
-	"fetchr.settings.points_goal.dialog.title": "",
-	"fetchr.settings.pre_gen.dialog.title": "",
-	"fetchr.settings.preferences.sign.line2": "",
-	"fetchr.settings.preferences.sign.line1": "",
-	"fetchr.settings.preferences.sign.line4": "",
-	"fetchr.settings.concealed_card.sign.line3": "",
 	"fetchr.settings.lockout_mode.sign.line3": "",
 	"fetchr.settings.points_goal.sign.line3": "",
 	"fetchr.settings.advanced_settings.sign.line1": "",
@@ -617,15 +601,6 @@
 	"fetchr.settings.pre_gen.confirmation.set_minimal": "Pre-генерація генерує лише мінімальний рельєф.",
 	"fetchr.settings.pre_gen.confirmation.set_radius": "Відтепер перед початком кожної гри буде pre-генеруватися місцевість з радіусом %s блоків.",
 	"fetchr.settings.allow_spectating.confirmation.toggle_off": "Гравці не в змозі використовувати режим спостерігача.",
-	"\"fetchr": {
-		"settings": {
-			"allow_spectating": {
-				"confirmation": {
-					"toggle_on": "Тепер гравці можуть використовувати режим спостерігача."
-				}
-			}
-		}
-	},
 	"fetchr.settings.show_seed.confirmation.toggle_off": "Відтепер гравці не бачать зерно Fetchr під час гри.",
 	"fetchr.settings.show_seed.confirmation.toggle_on": "Відтепер гравці бачать зерно Fetchr навіть під час гри.",
 	"fetchr.settings.info.takes_effect_after_generating_new": "Це налаштування набуде чинності лише після генерації випадкової картки.",
@@ -636,15 +611,5 @@
 	"fetchr.settings.gamemode.value.survival": "Виживання",
 	"fetchr.settings.pre_gen.value.minimal": "Мінімальний",
 	"fetchr.settings.pre_gen.value.radius": "%s блоків",
-	"fetchr.settings.operator_only.confirm_op.name": "",
-	"fetchr.settings.operator_only.confirm_op.description": "",
-	"fetchr.settings.operator_only.confirm_op.action.confirm": "",
-	"fetchr.settings.points_goal.description": "",
-	"fetchr.settings.points_goal.input.end_time": "",
-	"fetchr.settings.points_goal.action.set_time": "",
-	"fetchr.settings.points_goal.action.disable": "",
-	"fetchr.settings.pre_gen.description": "",
-	"fetchr.settings.pre_gen.input.blocks": "",
-	"fetchr.settings.pre_gen.action.set_blocks": "",
-	"fetchr.settings.pre_gen.action.set_minimal": ""
+	"fetchr.settings.allow_spectating.confirmation.toggle_on": "Тепер гравці можуть використовувати режим спостерігача."
 }
