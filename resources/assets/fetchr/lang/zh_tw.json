@@ -16,8 +16,8 @@
 	"fetchr.resourcepack_check.go_to_lobby.part1": "資源包已成功套用。",
 	"fetchr.resourcepack_check.go_to_lobby.part2": "%s 前往大廳。",
 	"fetchr.resourcepack_check.go_to_lobby.click": "點擊這裡",
-	"fetchr.resourcepack_check.wrong_version.title": "已套用錯誤版本的資料包。",
-	"fetchr.resourcepack_check.wrong_version.description": "您正在使用錯誤版本的 Fetchr 資料包。\n請下載正確的版本 %s ，套用後點擊\"重新檢查\"。",
+	"fetchr.resourcepack_check.wrong_version.title": "已套用錯誤版本的資源包。",
+	"fetchr.resourcepack_check.wrong_version.description": "您正在使用錯誤版本的 Fetchr 資源包。\n請下載正確的版本 %s ，套用後點擊\"重新檢查\"。",
 	"fetchr.resourcepack_check.wrong_version.link": "這裡",
 	"fetchr.resourcepack_check.wrong_version.server": "如果資源包是透過伺服器自動套用，請聯絡伺服器管理員更新。",
 	"fetchr.resourcepack_check.wrong_version.recheck": "重新檢查",
@@ -238,9 +238,6 @@
 	"fetchr.lobby.team_selection.join_dark_blue": "%s 加入深藍隊。",
 	"fetchr.lobby.team_selection.join_purple": "%s 加入紫隊。",
 	"fetchr.lobby.team_selection.join_magenta": "%s 加入洋紅隊。",
-	"fetchr.lobby.settings.preferences.sign.line1": "",
-	"fetchr.lobby.settings.preferences.sign.line2": "個人",
-	"fetchr.lobby.settings.preferences.sign.line3": "偏好設定",
 	"fetchr.lobby.settings.preferences.sign.line4": "",
 	"fetchr.lobby.settings.concealed_card.sign.line1": "隱藏",
 	"fetchr.lobby.settings.concealed_card.sign.line2": "賓果卡",
@@ -636,5 +633,8 @@
 	"fetchr.goal.bingo.sniper.triple.bottom_left": "[%s] %s 達成了第 %s 列、第 %s 行以及左下至右上對角線的三重狙擊賓果！",
 	"fetchr.goal.bingo.sniper.triple.col_diags": "[%s] %s 達成了第 %s 列和兩條對角線的三重狙擊賓果！",
 	"fetchr.goal.bingo.sniper.triple.row_diags": "[%s] %s 達成了第 %s 行和兩條對角線的三重狙擊賓果！",
-	"fetchr.goal.bingo.sniper.quadruple": "[%s] %s 達成了四重狙擊賓果！"
+	"fetchr.goal.bingo.sniper.quadruple": "[%s] %s 達成了四重狙擊賓果！",
+	"fetchr.settings.preferences.sign.line1": "",
+	"fetchr.settings.preferences.sign.line2": "個人",
+	"fetchr.settings.preferences.sign.line3": "偏好設定"
 }
