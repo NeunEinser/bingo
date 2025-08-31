@@ -148,6 +148,7 @@
 	"fetchr.settings.concealed_card.confirmation.toggle_on": "Concealed card has been enabled.",
 
 	"fetchr.settings.points_goal.name": "Points Race",
+	"fetchr.settings.points_goal.description": "During a points race, you try to collect as many items as possible in a set amount of time. There will be a notification with the points winner once the time is over. You can still continue playing for a blackout if you want.\n",
 	"fetchr.settings.points_goal.sign.line1": "Points",
 	"fetchr.settings.points_goal.sign.line2": "Race",
 	"fetchr.settings.points_goal.sign.line3": "",
@@ -159,7 +160,6 @@
 	"fetchr.settings.points_goal.confirmation.toggle_off": "The points race has been disabled",
 	"fetchr.settings.points_goal.lectern.page_1": "During a points race, you try to get as many items as possible in the specified time. Whoever gets the most amount of items within the time, or whoever gets a blackout the fastest, wins.\n\nYou can use this to limit the amount of time spend on a game.",
 	"fetchr.settings.points_goal.lectern.page_2": "Like with any other goal, there is no forced game end and you can continue playing after the race has ended, for example when you are close to a blackout.",
-	"fetchr.settings.points_goal.description": "During a points race, you try to collect as many items as possible in a set amount of time. There will be a notification with the points winner once the time is over. You can still continue playing for a blackout if you want.\n",
 	"fetchr.settings.points_goal.input.end_time": "End Time (in Minutes)",
 	"fetchr.settings.points_goal.action.set_time": "Set Time",
 	"fetchr.settings.points_goal.action.disable": "Disable",
@@ -195,7 +195,6 @@
 	"fetchr.settings.timer.lectern.page_4": "With lag, you also might have a harder time exploring, as chunks may take longer to load in, and you might need to wait for the world to appear, while players with better computers can just move and cover ground the entire time.",
 	"fetchr.settings.timer.lectern.page_5": "Using in-game time could put players who experience lag at an advantage, as they will generally be able to explore with less time passed, especially when being at roughly the same area, for example in a cave system.",
 	"fetchr.settings.timer.lectern.page_6": "There is no “better” way to measure time, and you can try to evaluate which you consider fairer.",
-	"fetchr.settings.timer.lectern.paused_time.heading": "Count Paused Time",
 	"fetchr.settings.timer.lectern.page_7": "This setting is mostly relevant for singleplayer.\n\nWhen active, the timer will keep increasing, even when the game is paused.",
 	"fetchr.settings.timer.lectern.page_8": "In multiplayer, the timer will not increase while no player is online when this setting is inactive.\n\nBy default, paused time is not counted.",
 
