@@ -206,8 +206,6 @@
 	"fetchr.lobby.team_selection.join_dark_blue": "%s 加入了深蓝队。",
 	"fetchr.lobby.team_selection.join_purple": "%s 加入了紫队。",
 	"fetchr.lobby.team_selection.join_magenta": "%s 加入了品红队。",
-	"fetchr.lobby.settings.preferences.sign.line2": "偏好",
-	"fetchr.lobby.settings.preferences.sign.line3": "设置",
 	"fetchr.lobby.settings.concealed_card.sign.line1": "隐藏卡片",
 	"fetchr.lobby.settings.concealed_card.sign.line2": "",
 	"fetchr.lobby.settings.concealed_card.sign.off": "关",
@@ -570,5 +568,7 @@
 	"fetchr.goal.bingo.sniper.triple.bottom_left": "[%s] %s 达成了第 %s 列、第 %s 行以及左下至右上对角线的三重狙击宾果！",
 	"fetchr.goal.bingo.sniper.triple.col_diags": "[%s] %s 达成了第 %s 列和两条对角线的三重狙击宾果！",
 	"fetchr.goal.bingo.sniper.triple.row_diags": "[%s] %s 达成了第 %s 行和两条对角线的三重狙击宾果！",
-	"fetchr.goal.bingo.sniper.quadruple": "[%s] %s 达成了四重狙击宾果！"
+	"fetchr.goal.bingo.sniper.quadruple": "[%s] %s 达成了四重狙击宾果！",
+	"fetchr.settings.preferences.sign.line2": "偏好",
+	"fetchr.settings.preferences.sign.line3": "设置"
 }
