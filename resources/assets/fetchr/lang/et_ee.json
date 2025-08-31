@@ -1,6 +1,4 @@
 {
-	"fetchr.technical.detect_multiplayer": "",
-	"fetchr.technical.resourcepack_version_{NEUN_SCRIPT:rp_version}": "",
 	"fetchr.error.incompatible_minecraft_version.multiple_compatible": "Kasutad mittetoetatud Minecrafti versiooni. See pakk on tehtud Minecrafti versioonidele %s-%s",
 	"fetchr.error.incompatible_minecraft_version.multiple_compatible.with_latest_snapshot": "Kasutad mittetoetatud Minecrafti versiooni. See pakk on tehtud Minecrafti versioonidele %s-%s või kuni ketsetusversioonini %s.",
 	"fetchr.error.incompatible_minecraft_version.incompatible_snapshot": "Kasutate mitte toetatud katsetusversiooni. Katsetusversioonid %s-%s pole toetatud. Kasutage katsetusversiooni %s või uuemat.",
@@ -573,7 +571,6 @@
 	"fetchr.settings.concealed_card.lectern.page_2": "Üksteist välistavate esemete teadmine on siin kindlasti kasulik.\n\nEsemete kategooriatega tutvumiseks vaata kirstudesse nurga taga!",
 	"fetchr.settings.operator_only.lectern.page_2": "Mängureeglid, mida see säte piirab tavamängijatele, on muuhulgas bingokaardi genereerimine, mängu alustamine, kõikide mängijate teleporteerimine, varjatud kaardi ja lukustusrežiimi sisse- või väljalülitamiseks.",
 	"fetchr.settings.points_goal.dialog.title": "Punktivõistlus",
-	"fetchr.settings.pre_gen.dialog.title": "",
 	"fetchr.settings.preferences.sign.line2": "Isiklikud",
 	"fetchr.settings.preferences.sign.line1": "",
 	"fetchr.settings.preferences.sign.line4": "",
@@ -617,15 +614,6 @@
 	"fetchr.settings.pre_gen.confirmation.set_minimal": "Eelgenereerimine genereerib nüüd minimaalselt maapinda.",
 	"fetchr.settings.pre_gen.confirmation.set_radius": "Eelgenereerimine genereerib nüüd %s ploki raadiuses maapinda enne igat mängu.",
 	"fetchr.settings.allow_spectating.confirmation.toggle_off": "Mängijatel ei lubata kasutada vaatlusrežiimi.",
-	"\"fetchr": {
-		"settings": {
-			"allow_spectating": {
-				"confirmation": {
-					"toggle_on": "Mängijatel lubatakse nüüd vaatlusrežiimi kasutamine."
-				}
-			}
-		}
-	},
 	"fetchr.settings.show_seed.confirmation.toggle_off": "Mängijad ei näe enam Fetchr'i seemet mängu jooksul.",
 	"fetchr.settings.show_seed.confirmation.toggle_on": "Mängijad näevad nüüd Fetchr'i seemet mängu jooksul.",
 	"fetchr.settings.info.takes_effect_after_generating_new": "Muudatus läheb käiku alles peale uue kaardi genereerimist.",
@@ -636,15 +624,9 @@
 	"fetchr.settings.gamemode.value.survival": "Ellujäämisrežiim",
 	"fetchr.settings.pre_gen.value.minimal": "Minimaalne",
 	"fetchr.settings.pre_gen.value.radius": "%s plokki",
-	"fetchr.settings.operator_only.confirm_op.name": "",
-	"fetchr.settings.operator_only.confirm_op.description": "",
-	"fetchr.settings.operator_only.confirm_op.action.confirm": "",
 	"fetchr.settings.points_goal.description": "Punktivõistluse ajal on eesmärgiks koguda võimalikult palju esemeid kindla aja jooksul. Aja lõppedes antakse teade võitja. Soovi korral võid jätkata mängimist täisbingo saavutamiseks.\n",
 	"fetchr.settings.points_goal.input.end_time": "Lõppaeg (minutites)",
 	"fetchr.settings.points_goal.action.set_time": "Määra aeg",
 	"fetchr.settings.points_goal.action.disable": "Lülita välja",
-	"fetchr.settings.pre_gen.description": "",
-	"fetchr.settings.pre_gen.input.blocks": "",
-	"fetchr.settings.pre_gen.action.set_blocks": "",
-	"fetchr.settings.pre_gen.action.set_minimal": ""
+	"fetchr.settings.allow_spectating.confirmation.toggle_on": "Mängijatel lubatakse nüüd vaatlusrežiimi kasutamine."
 }
