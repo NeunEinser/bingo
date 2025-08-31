@@ -1,6 +1,4 @@
 {
-	"fetchr.technical.detect_multiplayer": "",
-	"fetchr.technical.resourcepack_version_{NEUN_SCRIPT:rp_version}": "",
 	"fetchr.error.incompatible_minecraft_version.multiple_compatible": "您正在使用不支援的 Minecraft 版本。此資料包僅支援 Minecraft %s-%s 版本。",
 	"fetchr.error.incompatible_minecraft_version.multiple_compatible.with_latest_snapshot": "您正在使用不支援的 Minecraft 版本。此資料包僅支援 Minecraft %s-%s 版本，或最高支援至快照 %s 版本。",
 	"fetchr.error.incompatible_minecraft_version.incompatible_snapshot": "您正在使用不支援的快照版本。快照 %s-%s 版本不支援。請確認使用快照 %s 版本或更高版本。",
@@ -617,15 +615,6 @@
 	"fetchr.settings.pre_gen.confirmation.set_minimal": "預先生成區塊大小現在為最小。",
 	"fetchr.settings.pre_gen.confirmation.set_radius": "現在每次遊戲開始前都會預先生成一個 %s 半徑的地形。",
 	"fetchr.settings.allow_spectating.confirmation.toggle_off": "現在玩家無法使用旁觀者模式。",
-	"\"fetchr": {
-		"settings": {
-			"allow_spectating": {
-				"confirmation": {
-					"toggle_on": "現在玩家可以使用旁觀者模式。"
-				}
-			}
-		}
-	},
 	"fetchr.settings.show_seed.confirmation.toggle_off": "玩家在遊戲中不能看到Fetchr種子碼。",
 	"fetchr.settings.show_seed.confirmation.toggle_on": "玩家在遊戲中能看到Fetchr種子碼。",
 	"fetchr.settings.info.takes_effect_after_generating_new": "此設定僅在生成新賓果卡後生效。",
@@ -646,5 +635,6 @@
 	"fetchr.settings.pre_gen.description": "預先生成可避免在探索世界時出現延遲，但必須等待生成完成後才能開始遊戲。",
 	"fetchr.settings.pre_gen.input.blocks": "半徑 (以方塊為單位)",
 	"fetchr.settings.pre_gen.action.set_blocks": "設定為所選半徑",
-	"fetchr.settings.pre_gen.action.set_minimal": "重設為最小半徑"
+	"fetchr.settings.pre_gen.action.set_minimal": "重設為最小半徑",
+	"fetchr.settings.allow_spectating.confirmation.toggle_on": "現在玩家可以使用旁觀者模式。"
 }
