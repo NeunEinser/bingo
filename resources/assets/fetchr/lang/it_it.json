@@ -1,6 +1,4 @@
 {
-	"fetchr.technical.detect_multiplayer": "",
-	"fetchr.technical.resourcepack_version_{NEUN_SCRIPT:rp_version}": "",
 	"fetchr.error.incompatible_minecraft_version.multiple_compatible": "Stai utilizzando una versione non supportata di Minecraft. Questo pacchetto è stato reso compatibile per le versioni di Minecraft %s-%s",
 	"fetchr.error.incompatible_minecraft_version.multiple_compatible.with_latest_snapshot": "Stai usando una versione non supportata di Minecraft. Questo pacchetto è stato reso compatibile per le versioni di Minecraft %s-%s, o fino allo snapshot %s.",
 	"fetchr.error.incompatible_minecraft_version.incompatible_snapshot": "Stai usando un'istantanea non supportata. Le istantanee %s-%s non sono supportate. Assicurati di utilizzare l'istantanea %s o superiore.",
@@ -573,7 +571,6 @@
 	"fetchr.settings.concealed_card.lectern.page_2": "Conoscere oggetti reciprocamente esclusivi ti aiuterà molto.\n\nScopri i bauli della categoria dietro l'angolo!",
 	"fetchr.settings.operator_only.lectern.page_2": "I controlli del gioco sono limitati con questa impostazione inclusa la generazione delle carte, iniziando un gioco, teletrasportando tutti i giocatori, modificando delle impostazioni del timer o attivando la modalità cieca o blocco.",
 	"fetchr.settings.points_goal.dialog.title": "Gara a Punti",
-	"fetchr.settings.pre_gen.dialog.title": "",
 	"fetchr.settings.preferences.sign.line2": "Impostazioni",
 	"fetchr.settings.preferences.sign.line1": "",
 	"fetchr.settings.preferences.sign.line4": "",
@@ -617,15 +614,6 @@
 	"fetchr.settings.pre_gen.confirmation.set_minimal": "La pregenerazione ora genera solo con terreno minimo.",
 	"fetchr.settings.pre_gen.confirmation.set_radius": "%s raggio di blocchi è ora pregenerato prima di ogni partita.",
 	"fetchr.settings.allow_spectating.confirmation.toggle_off": "Ai giocatori viene impedito di utilizzare la modalità spettatore.",
-	"\"fetchr": {
-		"settings": {
-			"allow_spectating": {
-				"confirmation": {
-					"toggle_on": "I giocatori possono usare la modalità spettatore ora."
-				}
-			}
-		}
-	},
 	"fetchr.settings.show_seed.confirmation.toggle_off": "I giocatori non vedono più il seme Fetchr durante la partita.",
 	"fetchr.settings.show_seed.confirmation.toggle_on": "I giocatori ora vedono il seme Fetchr, anche durante la partita.",
 	"fetchr.settings.info.takes_effect_after_generating_new": "La modifica dell'impostazione avrà effetto solo dopo la generazione di una nuova carta casuale.",
@@ -636,15 +624,9 @@
 	"fetchr.settings.gamemode.value.survival": "Sopravvivenza",
 	"fetchr.settings.pre_gen.value.minimal": "Minimo",
 	"fetchr.settings.pre_gen.value.radius": "%s blocchi",
-	"fetchr.settings.operator_only.confirm_op.name": "",
-	"fetchr.settings.operator_only.confirm_op.description": "",
-	"fetchr.settings.operator_only.confirm_op.action.confirm": "",
 	"fetchr.settings.points_goal.description": "Durante una gara a punti, si tenta di raccogliere il maggior numero possibile di oggetti in un determinato periodo di tempo. Ci sarà una notifica con i punti vincitori una volta che il tempo è finito. Puoi ancora continuare a giocare per un blackout se vuoi.\n",
 	"fetchr.settings.points_goal.input.end_time": "Fine Tempo (in minuti)",
 	"fetchr.settings.points_goal.action.set_time": "Imposta Tempo",
 	"fetchr.settings.points_goal.action.disable": "Disabilita",
-	"fetchr.settings.pre_gen.description": "",
-	"fetchr.settings.pre_gen.input.blocks": "",
-	"fetchr.settings.pre_gen.action.set_blocks": "",
-	"fetchr.settings.pre_gen.action.set_minimal": ""
+	"fetchr.settings.allow_spectating.confirmation.toggle_on": "I giocatori possono usare la modalità spettatore ora."
 }
