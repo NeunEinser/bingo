@@ -206,8 +206,6 @@
 	"fetchr.lobby.team_selection.join_dark_blue": "˙ɯɐǝʇ ǝnꞁq ʞɹɐp ǝɥʇ pǝuᴉoɾ %s",
 	"fetchr.lobby.team_selection.join_purple": "˙ɯɐǝʇ ǝꞁdɹnd ǝɥʇ pǝuᴉoɾ %s",
 	"fetchr.lobby.team_selection.join_magenta": "˙ɯɐǝʇ ɐʇuǝᵷɐɯ ǝɥʇ pǝuᴉoɾ %s",
-	"fetchr.lobby.settings.preferences.sign.line2": "ꞁɐuosɹǝԀ",
-	"fetchr.lobby.settings.preferences.sign.line3": "sǝɔuǝɹǝɟǝɹԀ",
 	"fetchr.lobby.settings.concealed_card.sign.line1": "pǝꞁɐǝɔuoƆ",
 	"fetchr.lobby.settings.concealed_card.sign.line2": "pɹɐƆ",
 	"fetchr.lobby.settings.concealed_card.sign.off": "ɟɟO",
@@ -566,5 +564,7 @@
 	"fetchr.goal.bingo.sniper.triple.bottom_left": "¡ꞁɐuoᵷɐᴉp ʇɥᵷᴉɹ doʇ oʇ ʇɟǝꞁ ɯoʇʇoq ǝɥʇ puɐ %4$s ʍoɹ '%3$s ꞁoɔ uᴉ oᵷuᴉq ǝꞁdᴉɹʇ ɹǝdᴉus ɐ ʇoᵷ %2$s [%1$s]",
 	"fetchr.goal.bingo.sniper.triple.col_diags": "¡sꞁɐuoᵷɐᴉp ɥʇoq puɐ %3$s ꞁoɔ uᴉ oᵷuᴉq ǝꞁdᴉɹʇ ɹǝdᴉus ɐ ʇoᵷ %2$s [%1$s]",
 	"fetchr.goal.bingo.sniper.triple.row_diags": "¡sꞁɐuoᵷɐᴉp ɥʇoq puɐ %3$s ʍoɹ uᴉ oᵷuᴉq ǝꞁdᴉɹʇ ɹǝdᴉus ɐ ʇoᵷ %2$s [%1$s]",
-	"fetchr.goal.bingo.sniper.quadruple": "¡oᵷuᴉq ǝꞁdnɹpɐnb ɹǝdᴉus ɐ ʇoᵷ %2$s [%1$s]"
+	"fetchr.goal.bingo.sniper.quadruple": "¡oᵷuᴉq ǝꞁdnɹpɐnb ɹǝdᴉus ɐ ʇoᵷ %2$s [%1$s]",
+	"fetchr.settings.preferences.sign.line2": "ꞁɐuosɹǝԀ",
+	"fetchr.settings.preferences.sign.line3": "sǝɔuǝɹǝɟǝɹԀ"
 }
