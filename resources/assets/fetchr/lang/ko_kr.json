@@ -1,6 +1,4 @@
 {
-	"fetchr.technical.detect_multiplayer": "",
-	"fetchr.technical.resourcepack_version_{NEUN_SCRIPT:rp_version}": "",
 	"fetchr.error.incompatible_minecraft_version.multiple_compatible": "지원되지 않는 버전의 Minecraft를 실행하고 있습니다. 이 팩은 %s-%s 버전의 Minecraft를 위해 제작되었습니다.",
 	"fetchr.error.incompatible_minecraft_version.multiple_compatible.with_latest_snapshot": "지원되지 않는 버전의 Minecraft를 실행하고 있습니다. 이 팩은 %s-%s 버전 또는 %s 스냅샷의 Minecraft를 위해 제작되었습니다.",
 	"fetchr.error.incompatible_minecraft_version.incompatible_snapshot": "지원되지 않는 스냅샷을 사용하고 있습니다. %s-%s 버전의 스냅샷은 지원되지 않습니다. %s 이상의 버전을 사용하십시오.",
@@ -617,15 +615,6 @@
 	"fetchr.settings.pre_gen.confirmation.set_minimal": "이제 사전 생성은 최소 지형에서 생성됩니다.",
 	"fetchr.settings.pre_gen.confirmation.set_radius": "이제 %s 블록의 반경은 매 게임에서 사전 생성됩니다.",
 	"fetchr.settings.allow_spectating.confirmation.toggle_off": "이제 플레이어들은 관전 모드를 사용할 수 없습니다.",
-	"\"fetchr": {
-		"settings": {
-			"allow_spectating": {
-				"confirmation": {
-					"toggle_on": "이제 플레이어들은 관전 모드를 사용할 수 있습니다."
-				}
-			}
-		}
-	},
 	"fetchr.settings.show_seed.confirmation.toggle_off": "이제 플레이어들은 Fetchr 시드를 게임 중에 볼 수 없습니다.",
 	"fetchr.settings.show_seed.confirmation.toggle_on": "이제 플레이어들은 Fetchr 시드를 게임 중에도 볼 수 있습니다.",
 	"fetchr.settings.info.takes_effect_after_generating_new": "이 설정은 새로운 랜덤 카드를 생성할 때부터 적용됩니다.",
@@ -646,5 +635,6 @@
 	"fetchr.settings.pre_gen.description": "사전 생성 기능은 세계를 탐험할 때 갑자기 발생하는 렉을 방지하지만, 게임 시작 전 준비 시간이 길어집니다.",
 	"fetchr.settings.pre_gen.input.blocks": "반경 (단위: 블록)",
 	"fetchr.settings.pre_gen.action.set_blocks": "선택된 반경으로 설정",
-	"fetchr.settings.pre_gen.action.set_minimal": "최소 반경으로 초기화"
+	"fetchr.settings.pre_gen.action.set_minimal": "최소 반경으로 초기화",
+	"fetchr.settings.allow_spectating.confirmation.toggle_on": "이제 플레이어들은 관전 모드를 사용할 수 있습니다."
 }
