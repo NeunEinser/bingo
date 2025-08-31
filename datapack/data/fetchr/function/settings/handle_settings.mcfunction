@@ -15,7 +15,7 @@ execute \
 
 execute \
 	if score @s fetchr.settings matches 3 \
-	run function fetchr:settings/prepare_and_show_custom_options
+	run function fetchr:settings/prepare_and_show_game_settings
 
 execute \
 	if score @s fetchr.settings matches 6 \
@@ -25,15 +25,55 @@ execute \
 execute \
 	if score @s fetchr.settings matches 7 \
 	in fetchr:lobby \
-	run function fetchr:lobby/settings/set_points_goal
+	run function fetchr:lobby/settings/toggle_lockout_mode
 
 execute \
 	if score @s fetchr.settings matches 8 \
 	in fetchr:lobby \
-	run function fetchr:lobby/settings/toggle_lockout_mode
+	run function fetchr:lobby/settings/toggle_timer_method
 
 execute \
-	if score @s fetchr.settings matches 6.. \
-	run function fetchr:settings/prepare_and_show_custom_options
+	if score @s fetchr.settings matches 9 \
+	in fetchr:lobby \
+	run function fetchr:lobby/settings/toggle_paused_time
+
+execute \
+	if score @s fetchr.settings matches 10 \
+	in fetchr:lobby \
+	run function fetchr:lobby/settings/toggle_show_seed
+
+execute \
+	if score @s fetchr.settings matches 11 \
+	in fetchr:lobby \
+	run function fetchr:lobby/settings/toggle_allow_spectating
+
+execute \
+	if score @s fetchr.settings matches 12 \
+	in fetchr:lobby \
+	run function fetchr:lobby/settings/toggle_operator_only
+
+execute \
+	if score @s fetchr.settings matches 13 \
+	in fetchr:lobby \
+	run function fetchr:lobby/settings/toggle_gamemode
+
+execute \
+	if score @s fetchr.settings matches 14 \
+	in fetchr:lobby \
+	run function fetchr:lobby/settings/set_points_goal
+
+execute \
+	if score @s fetchr.settings matches 15 \
+	in fetchr:lobby \
+	run function fetchr:lobby/settings/set_pre_gen_radius
+
+execute \
+	if score @s fetchr.settings matches 6..9 \
+	run function fetchr:settings/prepare_and_show_game_settings
+
+execute \
+	if score @s fetchr.settings matches 9..13 \
+	if score @s fetchr.operator matches 1 \
+	run function fetchr:settings/prepare_and_show_game_settings
 
 scoreboard players reset @s fetchr.settings

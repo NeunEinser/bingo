@@ -22,25 +22,26 @@ execute \
 	if score @s fetchr.pre_gen_radius matches ..143 \
 	run return 0
 
-scoreboard players operation $pregeneration_chunks fetchr.setting_values = @s fetchr.pre_gen_radius
+scoreboard players operation $pregeneration_radius fetchr.setting_values = @s fetchr.pre_gen_radius
+scoreboard players operation $pregeneration_chunks fetchr.setting_values = $pregeneration_radius fetchr.setting_values
+scoreboard players operation $pregeneration_chunks fetchr.setting_values /= 16 fetchr.const
+scoreboard players operation $pregeneration_chunks fetchr.setting_values += $pregeneration_chunks fetchr.setting_values
+scoreboard players add $pregeneration_chunks fetchr.setting_values 1
+scoreboard players operation $pregeneration_chunks fetchr.setting_values *= $pregeneration_chunks fetchr.setting_values
 #NEUN_SCRIPT until 69
 #data modify block 7 0 7 front_text.messages[0] set value '{\
 	"translate": "fetchr.settings.pre_gen.value.radius",\
 	"color": "green",\
-	"with": [{ "score": { "name": "$pregeneration_chunks", "objective": "fetchr.setting_values" }}]\
+	"with": [{ "score": { "name": "$pregeneration_radius", "objective": "fetchr.setting_values" }}]\
 }'
 #NEUN_SCRIPT end
 #NEUN_SCRIPT since 69
 data modify block 7 0 7 front_text.messages[0] set value {\
 	translate: "fetchr.settings.pre_gen.value.radius",\
 	color: "green",\
-	with: [{ score: { name: "$pregeneration_chunks", objective: "fetchr.setting_values" }}]\
+	with: [{ score: { name: "$pregeneration_radius", objective: "fetchr.setting_values" }}]\
 }
 #NEUN_SCRIPT end
-scoreboard players operation $pregeneration_chunks fetchr.setting_values /= 16 fetchr.const
-scoreboard players operation $pregeneration_chunks fetchr.setting_values += $pregeneration_chunks fetchr.setting_values
-scoreboard players add $pregeneration_chunks fetchr.setting_values 1
-scoreboard players operation $pregeneration_chunks fetchr.setting_values *= $pregeneration_chunks fetchr.setting_values
 
 execute \
 	if score @s fetchr.pre_gen_radius matches 144 \

@@ -211,7 +211,7 @@
 	"fetchr.settings.operator_only.lectern.page_3": "Changing this setting, the lobby game mode, the pre-generation radius, or allowing / disallowing spectator mode and showing the seed always requires operator permissions, regardless of this setting.",
 	"fetchr.settings.operator_only.menu.confirm_op": "This setting is restricted to operators.\nPlease %s to confirm your operator status.",
 	"fetchr.settings.operator_only.menu.confirm_op.click": "click here",
-	"fetchr.settings.operator_only.confirmaion": "You have successfully confirmed your operator status.",
+	"fetchr.settings.operator_only.confirmation": "You have successfully confirmed your operator status.",
 	"fetchr.settings.operator_only.confirm_op.name": "Confirm Operator Status",
 	"fetchr.settings.operator_only.confirm_op.description": "You need to be an operator in order to perform this action. Please confirm your operator status with the button below.",
 	"fetchr.settings.operator_only.confirm_op.action.confirm": "Confirm Operator Status",

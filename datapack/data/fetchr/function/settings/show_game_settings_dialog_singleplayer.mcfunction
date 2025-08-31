@@ -1,8 +1,8 @@
-#> fetchr:settings/show_custom_options_dialog
+#> fetchr:settings/show_game_settings_dialog
 #
 # Function that is run to show the settings dialog
 #
-# @within function fetchr:settings/prepare_and_show_custom_options
+# @within function fetchr:settings/prepare_and_show_game_settings
 
 $dialog show @s {\
 	type: "minecraft:multi_action",\
@@ -24,16 +24,23 @@ $dialog show @s {\
 				": ",\
 				$(points_goal),\
 			],\
-			action: { type: "minecraft:run_command", command: "trigger fetchr.settings set 7" },\
+			action: { type: "minecraft:run_command", command: "trigger fetchr.settings set 14" },\
 		},\
 		{\
 			label: [\
-				{ translate: "fetchr.settings.lockout_mode.name" },\
+				{ translate: "fetchr.settings.timer_method.name" },\
 				": ",\
-				{ translate: "options.$(lockout_mode)" },\
+				{ translate: "fetchr.settings.timer_method.value.$(timer_method)" },\
 			],\
-			tooltip: { translate: "fetchr.settings.info.takes_effect_after_starting_game" },\
 			action: { type: "minecraft:run_command", command: "trigger fetchr.settings set 8" },\
+		},\
+		{\
+			label: [\
+				{ translate: "fetchr.settings.paused_time.name" },\
+				": ",\
+				{ translate: "options.$(paused_time)" },\
+			],\
+			action: { type: "minecraft:run_command", command: "trigger fetchr.settings set 9" },\
 		},\
 	],\
 	after_action: "none",\

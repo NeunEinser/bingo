@@ -32,14 +32,14 @@ execute \
 	if score $lobby_gamemode fetchr.setting_values matches 0 \
 	run data \
 		modify \
-			entity @e[type=minecraft:marker, tag=fetchr.gamemode_sign, distance=..1, limit=1] \
+			entity @e[type=minecraft:marker, tag=fetchr.gamemode_sign, x=0, limit=1] \
 			data.front_text.messages[3] \
 		set value '{ "translate": "fetchr.settings.gamemode.value.adventure", "color": "gray" }'
 #execute \
 	if score $lobby_gamemode fetchr.setting_values matches 1 \
 	run data \
 		modify \
-			entity @e[type=minecraft:marker, tag=fetchr.gamemode_sign, distance=..1, limit=1] \
+			entity @e[type=minecraft:marker, tag=fetchr.gamemode_sign, x=0, limit=1] \
 			data.front_text.messages[3] \
 		set value '{ "translate": "fetchr.settings.gamemode.value.survival", "color": "red" }'
 #NEUN_SCRIPT end
@@ -48,14 +48,14 @@ execute \
 	if score $lobby_gamemode fetchr.setting_values matches 0 \
 	run data \
 		modify \
-			entity @e[type=minecraft:marker, tag=fetchr.gamemode_sign, distance=..1, limit=1] \
+			entity @e[type=minecraft:marker, tag=fetchr.gamemode_sign, x=0, limit=1] \
 			data.front_text.messages[3] \
 		set value { translate: "fetchr.settings.gamemode.value.adventure", color: "gray" }
 execute \
 	if score $lobby_gamemode fetchr.setting_values matches 1 \
 	run data \
 		modify \
-			entity @e[type=minecraft:marker, tag=fetchr.gamemode_sign, distance=..1, limit=1] \
+			entity @e[type=minecraft:marker, tag=fetchr.gamemode_sign, x=0, limit=1] \
 			data.front_text.messages[3] \
 		set value { translate: "fetchr.settings.gamemode.value.survival", color: "red" }
 #NEUN_SCRIPT end

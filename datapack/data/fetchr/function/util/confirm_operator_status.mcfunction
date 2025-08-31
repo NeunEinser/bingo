@@ -8,7 +8,7 @@
 scoreboard players set @s fetchr.operator 1
 tellraw @s [\
 	"\n\n\n\n\n",\
-	{ "translate": "fetchr.operator_only.confirm_op.success", "color": "green" },\
+	{ "translate": "fetchr.settings.operator_only.confirmation", "color": "green" },\
 	"\n",\
 ]
 
@@ -60,5 +60,8 @@ execute \
 execute \
 	if score @s fetchr.operator_check_callback_action matches 15 \
 	run function fetchr:lobby/teleport_all
+execute \
+	if score @s fetchr.operator_check_callback_action matches 16 \
+	run function fetchr:settings/prepare_and_show_game_settings
 
 scoreboard players reset @s fetchr.operator_check_callback_action

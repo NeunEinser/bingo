@@ -773,6 +773,7 @@ forceload add 0 0
 		# 13 = teleport all (skybox)
 		# 14 = reveal card
 		# 15 = teleport all (lobby)
+		# 16 = show game settings dialog
 		#
 		# @internal
 		scoreboard objectives add fetchr.operator_check_callback_action dummy
