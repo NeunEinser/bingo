@@ -238,9 +238,6 @@
 	"fetchr.lobby.team_selection.join_dark_blue": "%s이(가) 남색 팀에 참가했습니다.",
 	"fetchr.lobby.team_selection.join_purple": "%s이(가) 보라 팀에 참가했습니다.",
 	"fetchr.lobby.team_selection.join_magenta": "%s이(가) 자주 팀에 참가했습니다.",
-	"fetchr.lobby.settings.preferences.sign.line1": "",
-	"fetchr.lobby.settings.preferences.sign.line2": "개인화",
-	"fetchr.lobby.settings.preferences.sign.line3": "설정",
 	"fetchr.lobby.settings.preferences.sign.line4": "",
 	"fetchr.lobby.settings.concealed_card.sign.line1": "가려진",
 	"fetchr.lobby.settings.concealed_card.sign.line2": "카드",
@@ -636,5 +633,8 @@
 	"fetchr.goal.bingo.sniper.triple.bottom_left": "[%s] %s이(가) %s번째 열과 %s번째 행, 좌측 하단부터 우측 상단까지의 대각선에서 스나이퍼 트리플 빙고를 완성했습니다!",
 	"fetchr.goal.bingo.sniper.triple.col_diags": "[%s] %s이(가) %s번째 열과 두 대각선에서 스나이퍼 트리플 빙고를 완성했습니다!",
 	"fetchr.goal.bingo.sniper.triple.row_diags": "[%s] %s이(가) %s번째 행과 두 대각선에서 스나이퍼 트리플 빙고를 완성했습니다!",
-	"fetchr.goal.bingo.sniper.quadruple": "[%s] %s이(가) 스나이퍼 쿼드러플 빙고를 완성했습니다!"
+	"fetchr.goal.bingo.sniper.quadruple": "[%s] %s이(가) 스나이퍼 쿼드러플 빙고를 완성했습니다!",
+	"fetchr.settings.preferences.sign.line1": "",
+	"fetchr.settings.preferences.sign.line2": "개인화",
+	"fetchr.settings.preferences.sign.line3": "설정"
 }
