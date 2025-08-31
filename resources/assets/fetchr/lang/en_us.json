@@ -617,15 +617,6 @@
 	"fetchr.settings.pre_gen.confirmation.set_minimal": "Pre-generation now only generates minimal terrain.",
 	"fetchr.settings.pre_gen.confirmation.set_radius": "A %s radius of blocks is now pre-generated before every game.",
 	"fetchr.settings.allow_spectating.confirmation.toggle_off": "Players are prevented from using spectator mode.",
-	"\"fetchr": {
-		"settings": {
-			"allow_spectating": {
-				"confirmation": {
-					"toggle_on": "Players may use spectator mode now."
-				}
-			}
-		}
-	},
 	"fetchr.settings.show_seed.confirmation.toggle_off": "Players no longer see the Fetchr seed during the game.",
 	"fetchr.settings.show_seed.confirmation.toggle_on": "Players now see the Fetchr seed, even during the game.",
 	"fetchr.settings.info.takes_effect_after_generating_new": "This setting change will only take effect after generating a new random card.",
@@ -646,5 +637,6 @@
 	"fetchr.settings.pre_gen.description": "Pre-generating can be used to avoid lag spikes when exploring the world, and comes at the cost of wait time for the generation to finish before the game starts.",
 	"fetchr.settings.pre_gen.input.blocks": "Radius (in Blocks)",
 	"fetchr.settings.pre_gen.action.set_blocks": "Set To Selected Radius",
-	"fetchr.settings.pre_gen.action.set_minimal": "Reset To Minimal Radius"
+	"fetchr.settings.pre_gen.action.set_minimal": "Reset To Minimal Radius",
+	"fetchr.settings.allow_spectating.confirmation.toggle_on": "Players may use spectator mode now."
 }
