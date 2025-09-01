@@ -105,6 +105,8 @@
 	"fetchr.preferences.custom_hud.component_settings.player_position.use_compass_icon.description": "Ändert das Koordinatensymbol zu einem Minecraft-Kompass.",
 	"fetchr.preferences.custom_hud.component_settings.player_position.use_text_icon.title": "Textsymbol verwenden",
 	"fetchr.preferences.custom_hud.component_settings.player_position.use_text_icon.description": "Ändert das Koordinatensymbol zu einer textuellen Representation der Himmelsrichtungen.",
+	"fetchr.settings.section.advanced_settings.sign.line2": "Erweiterte",
+	"fetchr.settings.section.advanced_settings.sign.line3": "Einstellungen",
 	"fetchr.settings.concealed_card.name": "Verdeckte Karte",
 	"fetchr.settings.concealed_card.sign.line1": "Verdeckte",
 	"fetchr.settings.concealed_card.sign.line2": "Karte",
