@@ -18,7 +18,7 @@ You will also need a font file that looks like this inside of `assets/<your name
 	"providers": [
 		{
 			"type": "bitmap",
-			"file": "<namespace>:<path/from/textures/file_name_without_png_suffix>",
+			"file": "<namespace>:<path/from/textures/file_name_including_png_suffix>",
 			"ascent": 37,
 			"height": 48,
 			"chars": [
