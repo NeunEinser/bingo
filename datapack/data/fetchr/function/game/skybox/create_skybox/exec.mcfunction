@@ -5,7 +5,9 @@
 # @within
 # 	function fetchr:game/start/pre_gen/**
 
-function neun_einser.timer:pause
+execute \
+	in minecraft:overworld \
+	run function neun_einser.timer:pause
 execute \
 	as @e[type=minecraft:marker, tag=fetchr.old_spawn] \
 	at @s \
@@ -23,4 +25,6 @@ execute \
 	summon minecraft:marker \
 	run function fetchr:game/skybox/create_skybox/internal
 
-function neun_einser.timer:resume
+execute \
+	in minecraft:overworld \
+	run function neun_einser.timer:resume

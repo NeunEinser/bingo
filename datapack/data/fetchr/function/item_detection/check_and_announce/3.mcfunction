@@ -98,7 +98,9 @@ execute \
 	store result storage fetchr:card teams[-1].item_count int 1 \
 	run scoreboard players add $item_detect/announce.items fetchr.tmp 1
 
-function neun_einser.timer:store_current_time
+execute \
+	in minecraft:overworld \
+	run function neun_einser.timer:store_current_time
 $data \
 	modify storage tmp.fetchr:item_detect translation \
 	set from storage fetchr:card slots[$(slot_id)].translation

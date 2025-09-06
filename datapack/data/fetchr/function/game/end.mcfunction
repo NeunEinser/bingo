@@ -27,7 +27,9 @@ execute \
 	run function fetchr:game/black_skybox
 
 scoreboard players set $pregen_status fetchr.state 0
-function neun_einser.timer:stop
+execute \
+	in minecraft:overworld \
+	run function neun_einser.timer:stop
 
 execute \
 	as @e[type=minecraft:item_frame, tag=fetchr.card_frame] \

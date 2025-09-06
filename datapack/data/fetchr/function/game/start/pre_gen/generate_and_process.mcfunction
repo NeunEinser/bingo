@@ -4,7 +4,9 @@
 # 	function fetchr:game/start/pre_gen/start
 # 	function fetchr:game/start/pre_gen/tick
 
-function neun_einser.timer:read
+execute \
+	in minecraft:overworld \
+	run function neun_einser.timer:read
 scoreboard players operation $game_start/pre_gen.chunks_per_tick fetchr.tmp = $game_start/pre_gen/generate.i fetchr.tmp
 scoreboard players operation $game_start/pre_gen.chunks_per_tick fetchr.tmp *= 60 fetchr.const
 scoreboard players operation $game_start/pre_gen.chunks_per_tick fetchr.tmp /= $raw 91.timer.io

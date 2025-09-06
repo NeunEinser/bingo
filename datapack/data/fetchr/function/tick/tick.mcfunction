@@ -98,7 +98,9 @@
 #NEUN_SCRIPT end
 #NEUN_SCRIPT since {NEUN_SCRIPT:min_pack_format} until {NEUN_SCRIPT:first_unsupported_format}
 	function fetchr:tick/spigot
-	function neun_einser.timer:store_current_time
+	execute \
+	in minecraft:overworld \
+	run function neun_einser.timer:store_current_time
 
 	# Detect second (or more) players in a LAN world
 	#NEUN_SCRIPT unless {NEUN_SCRIPT:realms}
