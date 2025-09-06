@@ -92,5 +92,35 @@ scoreboard players enable @s fetchr.pre_gen_radius
 #NEUN_SCRIPT end
 
 #NEUN_SCRIPT since 77
-dialog show @s fetchr:pre_generation_radius
+data modify storage tmp.fetchr:settings/dialog pre_gen_radius set value {\
+	pre_gen_radius: 250,\
+	exit_callback_setting_trigger: 1,\
+	cancel_button_translate: "cancel",\
+}
+
+execute \
+	if score $pregeneration_radius fetchr.setting_values matches 145.. \
+	store result storage tmp.fetchr:settings/dialog pre_gen_radius.pre_gen_radius int 1 \
+	run scoreboard players get $pregeneration_radius fetchr.setting_values
+
+execute \
+	if score $exit_callback_setting_trigger fetchr.io matches 1.. \
+	store result storage tmp.fetchr:settings/dialog pre_gen_radius.exit_callback_setting_trigger int 1 \
+	run scoreboard players get $exit_callback_setting_trigger fetchr.io
+
+execute \
+	if score $exit_callback_setting_trigger fetchr.io matches 1.. \
+	run data \
+		modify storage tmp.fetchr:settings/dialog pre_gen_radius.cancel_button_translate \
+		set value "back"
+
+scoreboard players set @s fetchr.setting_callback 1
+execute \
+	if score $exit_callback_setting_trigger fetchr.io matches 1.. \
+	run scoreboard players operation @s fetchr.setting_callback = \
+		$exit_callback_setting_trigger fetchr.io
+scoreboard players reset $exit_callback_setting_trigger fetchr.io
+
+function fetchr:settings/show_pre_gen_radius_dialog \
+	with storage tmp.fetchr:settings/dialog pre_gen_radius
 #NEUN_SCRIPT end

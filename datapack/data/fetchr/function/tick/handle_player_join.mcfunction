@@ -23,5 +23,6 @@ execute store result score $player_join.item_count fetchr.tmp run data get stora
 execute if score $player_join.item_count fetchr.tmp matches 25 run tag @s add fetchr.spectator
 
 scoreboard players reset @s fetchr.reconnect
+scoreboard players reset @s fetchr.setting_callback
 
 execute if entity @s[predicate=fetchr:is_in_lobby] run schedule function fetchr:lobby/place_indestructible_blocks 1t replace

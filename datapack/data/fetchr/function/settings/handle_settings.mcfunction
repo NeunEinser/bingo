@@ -15,6 +15,7 @@ execute \
 
 execute \
 	if score @s fetchr.settings matches 3 \
+	if score @s fetchr.last_tick_pause_time matches ..1 \
 	run function fetchr:settings/prepare_and_show_game_settings
 
 execute \
@@ -59,9 +60,15 @@ execute \
 
 execute \
 	if score @s fetchr.settings matches 14 \
+	run scoreboard players set $exit_callback_setting_trigger fetchr.io 3
+execute \
+	if score @s fetchr.settings matches 14 \
 	in fetchr:lobby \
 	run function fetchr:lobby/settings/set_points_goal
 
+execute \
+	if score @s fetchr.settings matches 15 \
+	run scoreboard players set $exit_callback_setting_trigger fetchr.io 3
 execute \
 	if score @s fetchr.settings matches 15 \
 	in fetchr:lobby \

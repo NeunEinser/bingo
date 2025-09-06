@@ -106,5 +106,34 @@ scoreboard players enable @s fetchr.points_race_minutes
 #NEUN_SCRIPT end
 
 #NEUN_SCRIPT since 77
-dialog show @s fetchr:points_race
+data modify storage tmp.fetchr:settings/dialog points_goal set value {\
+	game_end: 25,\
+	exit_callback_setting_trigger: 1,\
+	cancel_button_translate: "cancel",\
+}
+
+execute \
+	if score $points_goal_announcement_minutes fetchr.setting_values matches 1.. \
+	store result storage tmp.fetchr:settings/dialog points_goal.game_end int 1 \
+	run scoreboard players get $points_goal_announcement_minutes fetchr.setting_values
+
+execute \
+	if score $exit_callback_setting_trigger fetchr.io matches 1.. \
+	store result storage tmp.fetchr:settings/dialog points_goal.exit_callback_setting_trigger int 1 \
+	run scoreboard players get $exit_callback_setting_trigger fetchr.io
+
+execute \
+	if score $exit_callback_setting_trigger fetchr.io matches 1.. \
+	run data \
+		modify storage tmp.fetchr:settings/dialog points_goal.cancel_button_translate \
+		set value "back"
+
+scoreboard players set @s fetchr.setting_callback 1
+execute \
+	if score $exit_callback_setting_trigger fetchr.io matches 1.. \
+	run scoreboard players operation @s fetchr.setting_callback = \
+		$exit_callback_setting_trigger fetchr.io
+scoreboard players reset $exit_callback_setting_trigger fetchr.io
+
+function fetchr:settings/show_points_goal_dialog with storage tmp.fetchr:settings/dialog points_goal
 #NEUN_SCRIPT end

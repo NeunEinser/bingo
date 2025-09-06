@@ -74,4 +74,6 @@ execute \
 		modify entity @e[type=minecraft:marker, tag=fetchr.pre_gen_sign, distance=0.., limit=1] data.front_text.messages[3] \
 		set from block 7 0 7 front_text.messages[0]
 
+scoreboard players operation @s fetchr.settings = @s fetchr.setting_callback
+scoreboard players reset @s fetchr.setting_callback
 scoreboard players reset @s fetchr.pre_gen_radius

@@ -860,6 +860,12 @@ forceload add 0 0
 		scoreboard objectives add fetchr.prev_z_pos dummy
 
 		#>
+		# This objective contains the callback setting to show after the dialog closes.
+		#
+		# @internal
+		scoreboard objectives add fetchr.setting_callback dummy
+
+		#>
 		# This objective is used to detect a player dropping a spyglass
 		#
 		# @within
