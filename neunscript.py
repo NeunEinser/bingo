@@ -391,13 +391,23 @@ def iterate_files(config: dict, pack_config: dict, outpath: str, mc_versions: li
 			rppath = config.get("resource_pack_path")
 			dppath = config.get("data_pack_path")
 			if (rppath != None):
-				out.write(rppath, "resources.zip")
+				zipinfo = zipfile.ZipInfo.from_file(rppath, "resources.zip")
+				rp_source = config["resourcepack"].get("path")
+				zipinfo.date_time = get_zipinfo(repo, rp_source, "resources.zip").date_time
+
+				with open(rppath, "rb") as pack_file:
+					out.writestr(zipinfo, pack_file.read(), zipfile.ZIP_DEFLATED, 9)
+
 			if (dppath != None):
-				zipinfo = zipfile.ZipInfo.from_file(source, "datapacks")
-				zipinfo.date_time = zipfile.ZipInfo.from_file(dppath).date_time
-				zipinfo.CRC = 0
+				zipinfo = zipfile.ZipInfo.from_file(dppath, "datapacks/Fetchr.zip")
+				dp_source = config["datapack"].get("path")
+				zipinfo.date_time = get_zipinfo(repo, dp_source, "datapacks/Fetchr.zip").date_time
+
+				with open(dppath, "rb") as pack_file:
+					out.writestr(zipinfo, pack_file.read(), zipfile.ZIP_DEFLATED, 9)
+
+				zipinfo = get_zipinfo(repo, dp_source, "datapacks")
 				out.mkdir(zipinfo)
-				out.write(dppath, "datapacks/Fetchr.zip")
 
 		pack_path = f"{source}{os.sep}pack.mcmeta"
 		if os.path.exists(pack_path) and len(pack_format_ranges) > 0:
