@@ -1,7 +1,10 @@
 certifi==2025.8.3
 charset-normalizer==3.4.3
+gitdb==4.0.12
+GitPython==3.1.45
 idna==3.10
 nbtlib==2.0.4
-numpy==2.3.2
+numpy==2.3.3
 requests==2.32.5
+smmap==5.0.2
 urllib3==2.5.0
