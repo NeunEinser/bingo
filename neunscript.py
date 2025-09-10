@@ -250,10 +250,10 @@ def iterate_files(config: dict, pack_config: dict, outpath: str, mc_versions: li
 		if excludes == None:
 			excludes = []
 		source = pack_config.get("path")
-		repo = find_repo(source)
 		if source is None:
-			print("invalid datapack config")
+			print("Pack config was missing a path, skipping", stderr)
 			return
+		repo = find_repo(source)
 
 		default_lang_path = f"{source}{os.sep}assets{os.sep}minecraft{os.sep}lang{os.sep}en_us.json"
 		default_strings = {}
@@ -953,12 +953,12 @@ def get_zipinfo(repo: Repo | None, path: str, target_path: str | None):
 		except:
 			return zipinfo
 		zipinfo.date_time = (
-			last_commit.committed_datetime.year,
-			last_commit.committed_datetime.month,
-			last_commit.committed_datetime.day,
-			last_commit.committed_datetime.hour,
-			last_commit.committed_datetime.minute,
-			last_commit.committed_datetime.second
+			last_commit.authored_datetime.year,
+			last_commit.authored_datetime.month,
+			last_commit.authored_datetime.day,
+			last_commit.authored_datetime.hour,
+			last_commit.authored_datetime.minute,
+			last_commit.authored_datetime.second
 		)
 	return zipinfo
 
