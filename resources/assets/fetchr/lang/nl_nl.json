@@ -96,6 +96,7 @@
 	"fetchr.settings.lockout_mode.lectern.page_2": "Zodra een team meer voorwerpen heeft gekregen dan enig ander team nog beschikbaar heeft, zal de winnaar van de uitsluit race automatisch worden aangekondigd.",
 	"fetchr.settings.lockout_mode.confirmation.toggle_off": "Uitsluit modus is uitgeschakeld.",
 	"fetchr.settings.lockout_mode.confirmation.toggle_on": "Uitsluit modus is ingeschakeld.",
+	"fetchr.settings.lockout_mode.toggle.ongoing_game.info": "Deze instelling verandering zal pas van kracht worden als het huidige spel is voltooid.",
 	"fetchr.lobby.credits.neun_einser.sign.line2": "Fetchr",
 	"fetchr.lobby.credits.neun_einser.sign.line3": "Hoofd & Lead",
 	"fetchr.lobby.credits.neun_einser.sign.line4": "Ontwikkelaar",
