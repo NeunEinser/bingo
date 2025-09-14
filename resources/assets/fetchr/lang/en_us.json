@@ -226,7 +226,7 @@
 	"fetchr.settings.gamemode.lectern.page_1": "By default, all players in the lobby are in adventure mode, which means they cannot place or break any blocks.\n\nIn singleplayer, you are intentionally left in survival mode and allowed to alter the lobby in this way.",
 	"fetchr.settings.gamemode.lectern.page_2": "All essential parts like signs and lecterns are always preserved.\n\nThis can be used for nice decorations and giving the place a story from things collected from different runs.",
 
-	"fetchr.settings.pre_gen.name": "Pre-genreration Radius",
+	"fetchr.settings.pre_gen.name": "Pre-generation Radius",
 	"fetchr.settings.pre_gen.description": "Pre-generating can be used to avoid lag spikes when exploring the world, and comes at the cost of wait time for the generation to finish before the game starts.",
 	"fetchr.settings.pre_gen.sign.line1": "Pre-Gener-",
 	"fetchr.settings.pre_gen.sign.line2": "ation Radius",
