@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 # This script is used for building this pack
 import hashlib
 import json
@@ -8,7 +10,7 @@ import requests
 import shutil
 import zipfile
 from io import BytesIO
-from typing import Any, Callable, TypedDict
+from typing import Any, TypedDict
 from distutils.dir_util import copy_tree
 from sys import stderr
 from git import Repo
