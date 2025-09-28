@@ -398,7 +398,7 @@ def iterate_files(config: dict, pack_config: dict, outpath: str, mc_versions: li
 				zipinfo = zipfile.ZipInfo.from_file(rppath, "resources.zip")
 				rp_source = config["resourcepack"].get("path")
 				rp_is_repo = is_git_repo(rp_source)
-				zipinfo.date_time = get_zipinfo(rp_is_repo, rp_source, rp_source, "resources.zip").date_time
+				zipinfo.date_time = get_zipinfo(rp_is_repo, rp_source, rp_source, "resources.zip", True).date_time
 
 				with open(rppath, "rb") as pack_file:
 					out.writestr(zipinfo, pack_file.read(), zipfile.ZIP_DEFLATED, 9)
@@ -407,12 +407,12 @@ def iterate_files(config: dict, pack_config: dict, outpath: str, mc_versions: li
 				zipinfo = zipfile.ZipInfo.from_file(dppath, "datapacks/Fetchr.zip")
 				dp_source = config["datapack"].get("path")
 				dp_is_repo = is_git_repo(dp_source)
-				zipinfo.date_time = get_zipinfo(dp_is_repo, dp_source, dp_source, "datapacks/Fetchr.zip").date_time
+				zipinfo.date_time = get_zipinfo(dp_is_repo, dp_source, dp_source, "datapacks/Fetchr.zip", True).date_time
 
 				with open(dppath, "rb") as pack_file:
 					out.writestr(zipinfo, pack_file.read(), zipfile.ZIP_DEFLATED, 9)
 
-				zipinfo = get_zipinfo(dp_is_repo, dp_source, dp_source, "datapacks")
+				zipinfo = get_zipinfo(dp_is_repo, dp_source, dp_source, "datapacks", True)
 				out.mkdir(zipinfo)
 
 		pack_path = f"{source}{os.sep}pack.mcmeta"
@@ -957,7 +957,7 @@ def is_git_repo(path: str):
 		abspath = abspath[:abspath.rfind(os.sep)]
 	return False
 
-def get_zipinfo(is_repo: bool, source: str, path: str, target_path: str | None):
+def get_zipinfo(is_repo: bool, source: str, path: str, target_path: str | None, include_renames = False):
 	zipinfo = zipfile.ZipInfo.from_file(path, target_path)
 	if zipinfo.is_dir():
 		zipinfo.CRC = 0
@@ -965,7 +965,7 @@ def get_zipinfo(is_repo: bool, source: str, path: str, target_path: str | None):
 	if is_repo:
 		try:
 			git_result = subprocess.Popen(
-				["git", "log", "--follow", "--diff-filter=r", '--pretty="%at"', "-n", "1", "--", os.path.abspath(path)],
+				["git", "log", "--follow", "--diff-filter" , "r" if not include_renames else "", '--pretty="%at"', "-n", "1", "--", os.path.abspath(path)],
 				cwd=source,
 				stdout=subprocess.PIPE
 			)
