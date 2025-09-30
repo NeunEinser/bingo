@@ -249,6 +249,13 @@ def iterate_files(config: dict, pack_config: dict, outpath: str, mc_versions: li
 		pack_format_ranges: set[tuple[tuple[int, int], tuple[int, int]]] = set()
 		remove_extensions = config.get("remove_file_types")
 
+
+		zip_root_path = ""
+		if type == 2:
+			zip_root_path = outpath[outpath.rfind(os.sep) + 1:]
+			if zip_root_path.endswith(".zip"):
+				zip_root_path = zip_root_path[:-4]
+
 		excludes: list[str] | None = pack_config.get("exclude")
 		if excludes == None:
 			excludes = []
@@ -316,12 +323,10 @@ def iterate_files(config: dict, pack_config: dict, outpath: str, mc_versions: li
 			contains_file = False
 			relative_path: str = directory.removeprefix(source).strip(os.sep)
 			for file_name in files:
-				file_path = f"{relative_path}{os.sep}{file_name}"
+				file_path = f"{relative_path}{os.sep}{file_name}".strip(os.sep)
 				if file_name == "pack.mcmeta" or any(file_path.startswith(exclude) for exclude in excludes):
 					continue
 				contains_file = True
-
-				print(f"{outpath}: {file_path}")
 
 				if not file_name.endswith(remove_extensions):
 					default_contents = {}
@@ -346,31 +351,33 @@ def iterate_files(config: dict, pack_config: dict, outpath: str, mc_versions: li
 
 						if overlay_content is not None:
 							pack_format_ranges.add((min_format, max_format))
-							overlay_dir_name = get_overlay_dir_name((min_format, max_format), type == 1)
-							overlay_path = f"{overlay_dir_name}{os.sep}{file_path}"
+							overlay_prefix = f"{zip_root_path}{os.sep}{get_overlay_dir_name((min_format, max_format), type == 1)}".strip(os.sep)
+							overlay_path = f"{overlay_prefix}{os.sep}{file_path}"
+							print(f"{outpath}: {overlay_path}")
 							out.writestr(get_zipinfo(is_repo, source, f"{source}{os.sep}{file_path}", overlay_path), overlay_content, zipfile.ZIP_DEFLATED, 9)
 
-							mkdirs_zip(is_repo, out, source, relative_path, created_directories, overlay_dir_name)
+							mkdirs_zip(is_repo, out, source, relative_path, created_directories, overlay_prefix)
 						else:
 							should_create_main_as_overlay = True
 
 					file_content = file_result["content"]
 					if file_content is not None:
-						main_path = file_path
+						main_path = f"{zip_root_path}{os.sep}{file_path}".strip(os.sep)
 						if should_create_main_as_overlay:
 							if (pack_formats[0] != (1, 0)):
 								pack_formats.insert(0, (1, 0))
 							format_range = get_format_range(pack_formats, main_pack_format, format_versions)
 							pack_format_ranges.add(format_range)
-							overlay_dir_name = get_overlay_dir_name(format_range, type == 1)
-							main_path = f"{overlay_dir_name}{os.sep}{file_path}"
+							overlay_prefix = f"{zip_root_path}{os.sep}{get_overlay_dir_name(format_range, type == 1)}"
+							main_path = f"{overlay_prefix}{os.sep}{file_path}"
 							
-							mkdirs_zip(is_repo, out, source, relative_path, created_directories, overlay_dir_name)
+							mkdirs_zip(is_repo, out, source, relative_path, created_directories, overlay_prefix)
 						
+						print(f"{outpath}: {main_path}")
 						out.writestr(get_zipinfo(is_repo, source, f"{source}{os.sep}{file_path}", main_path), file_content, zipfile.ZIP_DEFLATED, 9)
 
 			if contains_file:
-				mkdirs_zip(is_repo, out, source, relative_path, created_directories)
+				mkdirs_zip(is_repo, out, source, relative_path, created_directories, zip_root_path)
 
 		if type == 1:
 			version_json: dict = requests.get(f"https://piston-meta.mojang.com/v1/packages/{version_info['latest_supported']['sha1']}/{version_info['latest_supported']['id']}.json").json()
@@ -390,33 +397,45 @@ def iterate_files(config: dict, pack_config: dict, outpath: str, mc_versions: li
 				out.writestr(get_zipinfo(is_repo, source, default_lang_path, lang_path), default_lang_contents, zipfile.ZIP_DEFLATED, 9)
 		elif type == 2:
 			if "region" not in created_directories:
-				out.mkdir(get_zipinfo(is_repo, source, source, "region"))
+				region_path = f"{zip_root_path}{os.sep}region"
+				out.mkdir(get_zipinfo(is_repo, source, source, region_path))
+				print(f"{outpath}: {region_path}")
 
 			rppath = config.get("resource_pack_path")
 			dppath = config.get("data_pack_path")
+			zip_rootpath_info = out.getinfo(f"{zip_root_path}{os.sep}")
 			if (rppath != None):
-				zipinfo = zipfile.ZipInfo.from_file(rppath, "resources.zip")
+				rp_filename = f"{zip_root_path}{os.sep}resources.zip"
+				print(f"{outpath}: {rp_filename}")
+				zipinfo = zipfile.ZipInfo.from_file(rppath, rp_filename)
 				rp_source = config["resourcepack"].get("path")
 				rp_is_repo = is_git_repo(rp_source)
-				zipinfo.date_time = get_zipinfo(rp_is_repo, rp_source, rp_source, "resources.zip", True).date_time
+				zipinfo.date_time = get_zipinfo(rp_is_repo, rp_source, rp_source, rp_filename, True).date_time
+				if zipinfo.date_time > zip_rootpath_info.date_time:
+					zip_rootpath_info.date_time = zipinfo.date_time
 
 				with open(rppath, "rb") as pack_file:
 					out.writestr(zipinfo, pack_file.read(), zipfile.ZIP_DEFLATED, 9)
 
 			if (dppath != None):
-				zipinfo = zipfile.ZipInfo.from_file(dppath, "datapacks/Fetchr.zip")
+				dp_filename = f"{zip_root_path}{os.sep}datapacks{os.sep}Fetchr.zip"
+				print(f"{outpath}: {dp_filename}")
+				zipinfo = zipfile.ZipInfo.from_file(dppath, dp_filename)
 				dp_source = config["datapack"].get("path")
 				dp_is_repo = is_git_repo(dp_source)
-				zipinfo.date_time = get_zipinfo(dp_is_repo, dp_source, dp_source, "datapacks/Fetchr.zip", True).date_time
+				zipinfo.date_time = get_zipinfo(dp_is_repo, dp_source, dp_source, dp_filename, True).date_time
+				if zipinfo.date_time > zip_rootpath_info.date_time:
+					zip_rootpath_info.date_time = zipinfo.date_time
 
 				with open(dppath, "rb") as pack_file:
 					out.writestr(zipinfo, pack_file.read(), zipfile.ZIP_DEFLATED, 9)
 
-				zipinfo = get_zipinfo(dp_is_repo, dp_source, dp_source, "datapacks", True)
+				zipinfo = get_zipinfo(dp_is_repo, dp_source, dp_source, f"{zip_root_path}{os.sep}datapacks", True)
 				out.mkdir(zipinfo)
 
 		pack_path = f"{source}{os.sep}pack.mcmeta"
 		if os.path.exists(pack_path) and len(pack_format_ranges) > 0:
+			print(f"{outpath}: pack.mcmeta")
 			pack_def = dict()
 			with open(pack_path, "r", encoding="utf-8") as file:
 				pack_def: PackFormat = json.loads(file.read())
@@ -990,7 +1009,8 @@ def mkdirs_zip(is_repo: bool, zip: zipfile.ZipFile, source: str, path: str, exis
 		return (f"{source}{os.sep}{dir_name}".strip("/"), f"{target_prefix}{os.sep}{dir_name}".strip("/"))
 
 	prefix_path_members = [ p for p in target_prefix.split(os.sep) if p != "" ]
-	dirs = ([ (f"{source}{os.sep}{path_members[0]}".strip("/"), os.sep.join(prefix_path_members[:i+1]).strip("/")) for i in range(len(prefix_path_members)) ])
+	prefix_source = f"{source}{os.sep}{path_members[0]}".strip("/") if len(path_members) > 0 else source
+	dirs = ([ (prefix_source, os.sep.join(prefix_path_members[:i+1]).strip("/")) for i in range(len(prefix_path_members)) ])
 	dirs.extend([ get_tuple(i) for i in range(len(path_members)) ])
 
 	for source_dir, target_dir in reversed(dirs):
