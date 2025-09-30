@@ -6,7 +6,18 @@
 		{
 			"type": "minecraft:plain_message",
 			"width": 400,
-			"contents": { "translate": "fetchr.lobby.card_generation.from_seed.explanation" }
+			"contents": [
+				{ "translate": "fetchr.lobby.card_generation.from_seed.explanation" },
+				"\n\n",
+				{
+					"translate": "fetchr.lobby.card_generation.from_seed.weekly_challenges_self_promo",
+					"with": [{
+						"text": "playminecraftbingo.com",
+						"color": "#00c3ff",
+						"click_event": { "action": "open_url", "url": "https://playminecraftbingo.com/fetchr-weekly-seeds/" }
+					}]
+				}
+			]
 		}
 	],
 	"inputs": [
