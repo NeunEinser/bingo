@@ -8,7 +8,17 @@
 		},
 		{
 			"label": { "translate": "menu.quick_actions.title" },
-			"action": { "type": "minecraft:run_command", "command": "trigger fetchr.settings set 4" }
+			"action": {
+				"type": "minecraft:show_dialog",
+				"dialog": {
+					"type": "minecraft:notice",
+					"title": { "translate": "menu.quick_actions.title" },
+					"body": {
+						"type": "minecraft:plain_message",
+						"contents": "Quick actions are not implemented yet and will come at a later point."
+					}
+				}
+			}
 		}
 	],
 	"pause": false,
