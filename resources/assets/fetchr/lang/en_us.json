@@ -370,7 +370,7 @@
 	"fetchr.lobby.card_generation.from_seed.instructions": "%s to receive the command for setting the seed. Add the numeric seed at the very end of the command.",
 	"fetchr.lobby.card_generation.from_seed.instructions.link": "Click here",
 	"fetchr.lobby.card_generation.from_seed.explanation": "The seed determines which items generate on the bingo card and where you spawn. You can use this for example for competitive races, where everyone is using the same seed.",
-	"fetchr.lobby.card_generation.from_seed.weekly_challenges_self_promo": "There are also weekly seeds posted on %s you can compete in with the community.",
+	"fetchr.lobby.card_generation.from_seed.weekly_challenges_self_promo": "There are also weekly seed challenges posted on %s you can compete in with the community.",
 	"fetchr.lobby.card_generation.from_seed.dialog.title": "Generate Card From Seed",
 	"fetchr.lobby.card_generation.from_seed.dialog.input.seed": "Seed",
 	"fetchr.lobby.card_generation.from_seed.dialog.submit": "Generate",
