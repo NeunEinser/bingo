@@ -1,10 +1,10 @@
 {
 	"name": "Fetchr",
-	"version": "5.3-beta4",
+	"version": "5.3-beta5",
 	"target": "dist",
 	"vars": {
-		"version_long_name": "5.3 Beta 4",
-		"rp_version": "33",
+		"version_long_name": "5.3 Beta 5",
+		"rp_version": "34",
 		"realms": false
 	},
 	"remove_file_types": [
