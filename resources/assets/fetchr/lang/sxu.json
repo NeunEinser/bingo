@@ -317,6 +317,7 @@
 	"fetchr.lobby.card_generation.from_seed.instructions": "%s, um einen Befehl zum Setzten des Seeds zu erhalten. Füge den numerischen Seed am Ende des Befehls hinzu.",
 	"fetchr.lobby.card_generation.from_seed.instructions.link": "Hier klicken",
 	"fetchr.lobby.card_generation.from_seed.explanation": "Der Seed bestimmt die Gegenstände auf der Bingokarte und den Spawnpunkt. Dies kann zum Beispiel für Rennen verwendet werden, bei denen alle Teilnehmer denselben Seed verwenden.",
+	"fetchr.lobby.card_generation.from_seed.weekly_challenges_self_promo": "Es gibt außerdem noch wöchentliche Seedchallenges, die auf %s veröffentlicht werden, in denen du gegen die Community antreten kannst.",
 	"fetchr.lobby.card_generation.from_seed.dialog.title": "Karte aus Seed generieren",
 	"fetchr.lobby.card_generation.from_seed.dialog.input.seed": "Seed",
 	"fetchr.lobby.card_generation.from_seed.dialog.submit": "Generieren",
