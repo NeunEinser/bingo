@@ -160,7 +160,7 @@ def main():
 
 		if datapack_config is not None:
 			dppath = f"{target}{os.sep}{name}-{version}-datapack{variant_name_part}.zip"
-			set_version_vars(variant_config["vars"], True)
+			set_version_vars(variant_config["vars"], False)
 			iterate_files(variant_config, datapack_config, dppath, mc_versions, mc_version_info, 0)
 			variant_config["data_pack_path"] = dppath
 
