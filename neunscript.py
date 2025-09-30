@@ -602,7 +602,7 @@ def handle_file(
 			nbt_content["DataVersion"] = nbtlib.Int(data_version)
 
 		buffer = BytesIO()
-		nbt_content.write(buffer)
+		nbt_content.save(buffer)
 		buffer.seek(0)
 		binary_contents = buffer.read()
 
