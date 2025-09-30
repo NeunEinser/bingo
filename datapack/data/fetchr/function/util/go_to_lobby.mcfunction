@@ -46,9 +46,16 @@ execute \
 	unless entity @s[predicate=fetchr:is_in_lobby] \
 	in fetchr:lobby \
 	run teleport @s 7.5 3 7.5 180 0
-execute \
+#NEUN_SCRIPT until 87.1
+#execute \
 	in fetchr:lobby \
 	run spawnpoint @s 7 3 7 180
+#NEUN_SCRIPT end
+#NEUN_SCRIPT since 87.1
+execute \
+	in fetchr:lobby \
+	run spawnpoint @s 7 3 7 180 0
+#NEUN_SCRIPT end
 scoreboard players reset @s fetchr.lobby
 scoreboard players reset @s fetchr.spectator
 scoreboard players reset @s fetchr.resource_pack_check
