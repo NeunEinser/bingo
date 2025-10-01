@@ -283,6 +283,7 @@
 	"fetchr.lobby.card_generation.from_seed.instructions": "%s para receber o comando para definir a semente. Adicione uma semente numérica no fim do comando.",
 	"fetchr.lobby.card_generation.from_seed.instructions.link": "Clique aqui",
 	"fetchr.lobby.card_generation.from_seed.explanation": "A semente determina quais itens serão gerados na cartela do bingo e onde você nasce. Você pode usar isto em jogos competitivos, onde todos estão usando a mesma semente.",
+	"fetchr.lobby.card_generation.from_seed.weekly_challenges_self_promo": "Há também desafios de semente publicados semanalmente no %s para que você possa competir com a comunidade.",
 	"fetchr.lobby.card_generation.from_seed.dialog.title": "Gerar cartela a partir da semente",
 	"fetchr.lobby.card_generation.from_seed.dialog.input.seed": "Semente",
 	"fetchr.lobby.card_generation.from_seed.dialog.submit": "Gerar",
