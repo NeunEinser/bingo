@@ -317,6 +317,7 @@
 	"fetchr.lobby.card_generation.from_seed.instructions": "%s 以接收設定種子碼的指令。請將數字種子碼增加到指令的最後。",
 	"fetchr.lobby.card_generation.from_seed.instructions.link": "點擊這裡",
 	"fetchr.lobby.card_generation.from_seed.explanation": "種子碼決定了賓果卡上生成的物品以及您的重生位置。例如，在競賽中，所有玩家都可以使用相同的種子碼。",
+	"fetchr.lobby.card_generation.from_seed.weekly_challenges_self_promo": "此外，在 %s 每週都會公布挑戰種子碼，您可以與社群互相競爭。",
 	"fetchr.lobby.card_generation.from_seed.dialog.title": "從種子碼生成賓果卡",
 	"fetchr.lobby.card_generation.from_seed.dialog.input.seed": "種子碼",
 	"fetchr.lobby.card_generation.from_seed.dialog.submit": "生成",
