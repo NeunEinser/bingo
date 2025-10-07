@@ -1764,7 +1764,7 @@ data \
 	},\
 	item_tests: [{ type: "fetchr:predicate", id: "minecraft:trim", predicate: { material: "minecraft:lapis" }}],\
 	translation: "fetchr.item.blue_trimmed_golden_boots",\
-	icon: "0064",\
+	icon: "0053",\
 	categories: [ "fetchr:shipwreck" ]\
 }
 #NEUN_SCRIPT end
