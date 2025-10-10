@@ -5,7 +5,8 @@
 # @within function fetchr:init/init
 # @within function fetchr:init/setup_lobby/end
 
-data remove storage tmp.fetchr:init/structures continue_with
+scoreboard players set $init/lobby.is_reference fetchr.tmp 0
+data modify storage fetchr:structure structures set value []
 
 execute \
 	in fetchr:lobby \

@@ -7,19 +7,20 @@
 # @context
 # 	pos The reference structure block
 
-data modify block ~ ~ ~ name set from storage fetchr:structure structures[-1].id
+data modify block ~ ~ ~ name set from storage tmp.fetchr:init/structures structures[0].id
 
 setblock ~ ~1 ~ minecraft:redstone_block
 setblock ~ ~1 ~ minecraft:barrier
+data modify storage tmp.fetchr:init/structures structures[0].size set value [I; 0, 0, 0]
 execute \
-	store result storage fetchr:structure structures[-1].size[0] int 1 \
+	store result storage tmp.fetchr:init/structures structures[0].size[0] int 1 \
 	store result score $init/lobby.offsetx fetchr.tmp \
 	run data get block ~ ~ ~ sizeX
 
 execute \
-	store result storage fetchr:structure structures[-1].size[1] int 1 \
+	store result storage tmp.fetchr:init/structures structures[0].size[1] int 1 \
 	run data get block ~ ~ ~ sizeY
 
 execute \
-	store result storage fetchr:structure structures[-1].size[2] int 1 \
+	store result storage tmp.fetchr:init/structures structures[0].size[2] int 1 \
 	run data get block ~ ~ ~ sizeZ

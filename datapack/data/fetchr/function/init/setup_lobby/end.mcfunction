@@ -15,15 +15,29 @@ execute \
 kill @s
 kill @e[type=minecraft:marker, x=0, tag=fetchr.structure_test, limit=1]
 
-setblock ~-1 3 ~-1 minecraft:structure_block[mode=load]{ mode: "LOAD", ignoreEntities: false, posY: 0, name: "fetchr:lobby_end" }
+setblock ~-1 3 ~-1 minecraft:structure_block[mode=load]{\
+	name: "fetchr:lobby_end",\
+	mode: "LOAD",\
+	ignoreEntities: false,\
+	posY: 0,\
+}
+execute \
+	if score $init/lobby.is_reference fetchr.tmp matches 1 \
+	run data modify block ~-1 3 ~-1 ignoreEntities set value true
 setblock ~-1 4 ~-1 minecraft:redstone_block
 
+forceload remove all
+forceload add 0 0
 execute \
-	if data storage tmp.fetchr:init/structures {continue_with: "place_lobby"} \
-	run return run function fetchr:init/setup_lobby/schedule_lobby
-# execute \
-# 	if data storage tmp.fetchr:init/structures {continue_with: "check_and_update_lobby"} \
-# 	run return 0
+	at @e[type=minecraft:marker, tag=fetchr.chest_generation_marker] \
+	run forceload add ~ ~
+
+execute \
+	if score $init/lobby.is_reference fetchr.tmp matches 0 \
+	run schedule function fetchr:init/setup_lobby/schedule_reference 1t
+execute \
+	if score $init/lobby.is_reference fetchr.tmp matches 1 \
+	run return 0
 
 #>
 # @private
@@ -79,11 +93,5 @@ execute \
 #tag @e remove fetchr.multiplayer_mangrove_button_north
 #kill @e[tag=fetchr.no_realms]
 #NEUN_SCRIPT end
-
-forceload remove all
-forceload add 0 0
-execute \
-	at @e[type=minecraft:marker, tag=fetchr.chest_generation_marker] \
-	run forceload add ~ ~
 
 function fetchr:custom_hud/components/timer/update
