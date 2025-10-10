@@ -9,12 +9,9 @@ dispatch minecraft:storage[fetchr:structure] to struct StructureStorage {
 	structures: [
 		struct Structure {
 			id: #[id=structure] string,
-			size: struct Pos {
-				x: int,
-				y: int,
-				z: int
-			},
-			version: int
+			entrance_position: int @ 0..[] @ 2,
+			size: int @0..[] @ 3,
+			version: int,
 		}
 	]
 }

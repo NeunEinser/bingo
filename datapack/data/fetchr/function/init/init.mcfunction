@@ -1668,36 +1668,43 @@ forceload add 0 0
 #endregion
 
 # spawn strcutures
+	data \
+		modify storage tmp.fetchr:init/structures structures \
+		set from storage fetchr:registries structures
 	execute \
 		if score $lobby_generated fetchr.state matches 0 \
-		run data \
-			modify storage tmp.fetchr:init/structures structures \
-			set from storage fetchr:registries structures
-	execute \
-		if score $lobby_generated fetchr.state matches 1 \
-		run data modify storage tmp.fetchr:init/structures structures set value [\
-			{ id: "fetchr:credits", version: 1 },\
-			{ id: "fetchr:5.2/card_generation", version: 1 },\
-			{ id: "fetchr:tutorial", version: 1 },\
-		]
+		run schedule function fetchr:init/setup_lobby/schedule_lobby 1t
+	scoreboard players set $lobby_generated fetchr.state 1
+	# execute \
+	# 	if score $lobby_generated fetchr.state matches 0 \
+	# 	run data \
+	# 		modify storage tmp.fetchr:init/structures structures \
+	# 		set from storage fetchr:registries structures
+	# execute \
+	# 	if score $lobby_generated fetchr.state matches 1 \
+	# 	run data modify storage tmp.fetchr:init/structures structures set value [\
+	# 		{ id: "fetchr:credits", version: 1 },\
+	# 		{ id: "fetchr:5.2/card_generation", version: 1 },\
+	# 		{ id: "fetchr:tutorial", version: 1 },\
+	# 	]
 
-	execute \
-		if score $lobby_generated fetchr.state matches 0 \
-		run data modify storage tmp.fetchr:init/structures continue_with set value "place_lobby"
-	execute \
-		if score $lobby_generated fetchr.state matches 1 \
-		run data modify storage tmp.fetchr:init/structures continue_with set value "check_and_update_lobby"
+	# execute \
+	# 	if score $lobby_generated fetchr.state matches 0 \
+	# 	run data modify storage tmp.fetchr:init/structures continue_with set value "place_lobby"
+	# execute \
+	# 	if score $lobby_generated fetchr.state matches 1 \
+	# 	run data modify storage tmp.fetchr:init/structures continue_with set value "check_and_update_lobby"
 
-	scoreboard players add $lobby_previously_generated fetchr.state 0
-	execute \
-		if score $lobby_generated fetchr.state matches 0 \
-		run scoreboard players set $lobby_previously_generated fetchr.state 1
-	execute \
-		if score $lobby_generated fetchr.state matches 0..1 \
-		run schedule function fetchr:init/setup_lobby/schedule_reference 1t
-	execute \
-		if score $lobby_generated fetchr.state matches 0..1 \
-		run scoreboard players add $lobby_generated fetchr.state 2
+	# scoreboard players add $lobby_previously_generated fetchr.state 0
+	# execute \
+	# 	if score $lobby_generated fetchr.state matches 0 \
+	# 	run scoreboard players set $lobby_previously_generated fetchr.state 1
+	# execute \
+	# 	if score $lobby_generated fetchr.state matches 0..1 \
+	# 	run schedule function fetchr:init/setup_lobby/schedule_reference 1t
+	# execute \
+	# 	if score $lobby_generated fetchr.state matches 0..1 \
+	# 	run scoreboard players add $lobby_generated fetchr.state 2
 
 # multi noise pos marker
 	execute \

@@ -95,7 +95,8 @@ dispatch minecraft:storage[fetchr:registries] to struct RegistryStorage {
 	structures: [
 		struct StructureRegistry {
 			id: #[id=structure] string,
-			version: int
+			version: int,
+			entrance_position: int @ 0..[] @ 2,
 		}
 	],
 	hud_components: [HudComponentRegistryData],

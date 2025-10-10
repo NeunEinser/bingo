@@ -21,9 +21,9 @@ setblock ~-1 4 ~-1 minecraft:redstone_block
 execute \
 	if data storage tmp.fetchr:init/structures {continue_with: "place_lobby"} \
 	run return run function fetchr:init/setup_lobby/schedule_lobby
-execute \
-	if data storage tmp.fetchr:init/structures {continue_with: "check_and_update_lobby"} \
-	run return 0
+# execute \
+# 	if data storage tmp.fetchr:init/structures {continue_with: "check_and_update_lobby"} \
+# 	run return 0
 
 #>
 # @private

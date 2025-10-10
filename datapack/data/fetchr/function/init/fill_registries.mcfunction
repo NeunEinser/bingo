@@ -2637,9 +2637,21 @@ data \
 #NEUN_SCRIPT end
 
 # structures
-data modify storage fetchr:registries structures append value "fetchr:credits"
-data modify storage fetchr:registries structures append value "fetchr:card_generation"
-data modify storage fetchr:registries structures append value "fetchr:tutorial"
+data modify storage fetchr:registries structures append value {\
+	id: "fetchr:credits",\
+	version: 1,\
+	entrance_position: [I; 2, 19],\
+}
+data modify storage fetchr:registries structures append value {\
+	id: "fetchr:card_generation",\
+	version: 1,\
+	entrance_position: [I; 2, 10],\
+}
+data modify storage fetchr:registries structures append value {\
+	id: "fetchr:tutorial",\
+	version: 1,\
+	entrance_position: [I; 2, 19],\
+}
 
 # hud components
 #NEUN_SCRIPT until 69
