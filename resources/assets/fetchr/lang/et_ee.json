@@ -148,6 +148,7 @@
 	"fetchr.settings.lockout_mode.confirmation.toggle_on": "Lukustusrežiim on sisse lülitatud.",
 	"fetchr.settings.lockout_mode.toggle.ongoing_game.info": "Muudatus läheb käiku alles peale käimasoleva mängu lõppemist.",
 	"fetchr.settings.timer.name": "Taimeri sätted",
+	"fetchr.settings.timer_method.name": "Ajamõõtmismeetod",
 	"fetchr.settings.timer_method.sign.line1": "Ajamõõtmis",
 	"fetchr.settings.timer_method.sign.line2": "meetod",
 	"fetchr.settings.timer_method.sign.line3": "",
