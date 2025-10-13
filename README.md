@@ -25,19 +25,23 @@ The map will always detect all goals. Don't worry when a Bingo is announced whil
 
 ## Download and Installation
 
-You may also download from [CurseForge](https://www.curseforge.com/minecraft/worlds/fetchr).  
+Releases are published on github in the [release section](https://github.com/NeunEinser/bingo/releases).
+
+If you have trouble navigating that, or need additonal information such as supported Minecraft versions, [CurseForge](https://www.curseforge.com/minecraft/worlds/fetchr) is easiest for most people.
+
+There is also a datapack version over on [Modrinth](https://modrinth.com/datapack/fetchr), however since it is currently not possible to distribute world files on Modrinth, the installation process is more complicated. Other than that, you will get all information just like on Curseforge.
 
 ### Singleplayer
-1. Download the world file called `Fetchr-<version>.zip` from [the release page](https://github.com/NeunEinser/bingo/releases/latest)
+1. Download the world file called `Fetchr-<version>.zip` 
 2. Extract/unzip it to your Minecraft saves directory.
-3. Make sure you are using the correct Minecraft Version (currently 1.20.2)
+3. Make sure you are using the correct Minecraft Version, as indicated on other download sources.
 4. When you start Minecraft, you should now find the Fetchr map right at the top of your worlds. Just open the map now. You do not need anything else.
 
 ### Multiplayer
 1. Download the world file called `Fetchr-<version>.zip` from [the release page](https://github.com/NeunEinser/bingo/releases/latest)
-2. Make sure you are using a supported version (currently 1.20.2, vanilla, or Fabric with Lithium. Paper/Spigot are **not** supported and may break the map in subtle ways)
+2. Make sure you are using a supported version (vanilla, or Fabric with Lithium. Paper/Spigot are **not** supported and may break the map in subtle ways)
 2. Extract/unzip it in the same directory as your `server.jar` file is located.
-3. Make sure the `server.properties` file is set according to the server.properties file attached to [the release](https://github.com/NeunEinser/bingo/releases/latest)
+3. Make sure the `server.properties` file is set according to the server.properties file attached to the release
    - If you already have a custom server.properties, make sure all the settings mentioned in that file are set correctly.
    - If you don't have a custom `server.properties` override it with that file. When the server starts, all missing settings will be filled with default values
 5. Start the server - everything is setup now.
