@@ -1,17 +1,18 @@
 use ::fetchr::storages::registry::StructureRegistry
 
 dispatch minecraft:storage[tmp.fetchr:init/structures] to struct StructureTmpStorage {
-	continue_with?: ("place_lobby" | "check_and_update_lobby"),
-	structures: [StructureRegistry]
+	structures: [struct {
+		...StructureRegistry,
+			size?: int @0..[] @ 3,
+	}],
+	location: struct {x: int, z: int},
 }
 
 dispatch minecraft:storage[fetchr:structure] to struct StructureStorage {
 	structures: [
 		struct Structure {
-			id: #[id=structure] string,
-			entrance_position: int @ 0..[] @ 2,
+			...StructureRegistry,
 			size: int @0..[] @ 3,
-			version: int,
 		}
 	]
 }

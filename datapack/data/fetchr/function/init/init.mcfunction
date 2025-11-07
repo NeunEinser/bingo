@@ -1599,7 +1599,7 @@ forceload add 0 0
 	#declare storage tmp.fetchr:init
 
 	execute \
-		if score $lobby_generated fetchr.state matches 2 \
+		if score $lobby_generated fetchr.state matches 1 \
 		run schedule function fetchr:init/items/exec 1t
 #endregion
 #region initialize hud components
@@ -1668,12 +1668,9 @@ forceload add 0 0
 #endregion
 
 # spawn strcutures
-	data \
-		modify storage tmp.fetchr:init/structures structures \
-		set from storage fetchr:registries structures
 	execute \
 		if score $lobby_generated fetchr.state matches 0 \
-		run schedule function fetchr:init/setup_lobby/schedule_lobby 1t
+		run schedule function fetchr:init/setup_lobby/setup_lobby 1t
 	scoreboard players set $lobby_generated fetchr.state 1
 
 # multi noise pos marker

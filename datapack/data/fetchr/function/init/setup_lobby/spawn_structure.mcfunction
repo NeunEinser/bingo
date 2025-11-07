@@ -19,9 +19,30 @@
 # @private
 #declare score_holder $init/lobby.posx
 
+setblock ~ ~ ~ minecraft:structure_block[mode=load]{\
+	mode: "LOAD",\
+	ignoreEntities: true,\
+	integrity: 0f,\
+	strict: true\
+}
+
+data modify block ~ ~ ~ name set from storage tmp.fetchr:init/structures structures[0].id
+
+setblock ~ ~1 ~ minecraft:redstone_block
+setblock ~ ~1 ~ minecraft:air
+data modify storage tmp.fetchr:init/structures structures[0].size set value [I; 0, 0, 0]
 execute \
-	at @e[type=minecraft:marker, x=0, tag=fetchr.structure_test, limit=1] \
-	run function fetchr:init/setup_lobby/get_structure_dimensions
+	store result storage tmp.fetchr:init/structures structures[0].size[0] int 1 \
+	store result score $init/lobby.offsetx fetchr.tmp \
+	run data get block ~ ~ ~ sizeX
+
+execute \
+	store result storage tmp.fetchr:init/structures structures[0].size[1] int 1 \
+	run data get block ~ ~ ~ sizeY
+
+execute \
+	store result storage tmp.fetchr:init/structures structures[0].size[2] int 1 \
+	run data get block ~ ~ ~ sizeZ
 
 execute \
 	if score $init/lobby.is_reference fetchr.tmp matches 0 \
@@ -33,41 +54,38 @@ scoreboard players remove $init/lobby.offsetx fetchr.tmp 1
 scoreboard players operation $init/lobby.offsetx fetchr.tmp *= -1 fetchr.const
 
 execute \
-	store result score $init/lobby.offsety fetchr.tmp \
+	store result score $init/lobby.entrance_offsetx fetchr.tmp \
 	run data get storage tmp.fetchr:init/structures structures[0].entrance_position[0]
+scoreboard players operation $init/lobby.offsetx fetchr.tmp += $init/lobby.entrance_offsetx fetchr.tmp
+
+execute \
+	store result score $init/lobby.offsety fetchr.tmp \
+	run data get storage tmp.fetchr:init/structures structures[0].entrance_position[1]
 scoreboard players operation $init/lobby.offsety fetchr.tmp *= -1 fetchr.const
 
 execute \
 	store result score $init/lobby.offsetz fetchr.tmp \
-	run data get storage tmp.fetchr:init/structures structures[0].entrance_position[1]
+	run data get storage tmp.fetchr:init/structures structures[0].entrance_position[2]
 scoreboard players operation $init/lobby.offsetz fetchr.tmp *= -1 fetchr.const
 
-setblock ~-1 ~ ~ minecraft:structure_block[mode=load]{\
-	mode: "LOAD",\
-	ignoreEntities: false,\
-	strict: true\
-}
-data \
-	modify block ~-1 ~ ~ name \
-	set from storage tmp.fetchr:init/structures structures[0].id
-
+data merge block ~ ~ ~ { ignoreEntities: false, integrity: 1f }
 execute \
-	store result block ~-1 ~ ~ posX int 1 \
+	store result block ~ ~ ~ posX int 1 \
 	run scoreboard players get $init/lobby.offsetx fetchr.tmp
 execute \
-	store result block ~-1 ~ ~ posY int 1 \
+	store result block ~ ~ ~ posY int 1 \
 	run scoreboard players get $init/lobby.offsety fetchr.tmp
 execute \
-	store result block ~-1 ~ ~ posZ int 1 \
+	store result block ~ ~ ~ posZ int 1 \
 	run scoreboard players get $init/lobby.offsetz fetchr.tmp
 
-setblock ~-1 ~1 ~ minecraft:redstone_block
+setblock ~ ~1 ~ minecraft:redstone_block
 execute \
-	if block ~-1 ~ ~ minecraft:structure_block \
-	run setblock ~-1 ~ ~ minecraft:air
+	if block ~ ~ ~ minecraft:structure_block \
+	run setblock ~ ~ ~ minecraft:air
 execute \
-	if block ~-1 ~1 ~ minecraft:redstone_block \
-	run setblock ~-1 ~1 ~ minecraft:air
+	if block ~ ~1 ~ minecraft:redstone_block \
+	run setblock ~ ~1 ~ minecraft:air
 
 execute \
 	if score $init/lobby.is_reference fetchr.tmp matches 1 \
@@ -76,24 +94,24 @@ execute \
 
 execute \
 	store result score $init/lobby.posx fetchr.tmp \
-	run data get entity @s Pos[0]
+	run data get storage tmp.fetchr:init/structures location.x
 scoreboard players operation $init/lobby.posx fetchr.tmp += $init/lobby.offsetx fetchr.tmp
 scoreboard players remove $init/lobby.posx fetchr.tmp 1
 
 execute \
-	store result entity @s Pos[0] double 1 \
+	store result storage tmp.fetchr:init/structures location.x int 1 \
 	run scoreboard players get $init/lobby.posx fetchr.tmp
 
 data remove storage tmp.fetchr:init/structures structures[0]
 
 execute \
-	unless data storage tmp.fetchr:init/structures structures[0] \
-	at @s \
-	run function fetchr:init/setup_lobby/end
+	if score $init/lobby.is_reference fetchr.tmp matches 1 \
+	run forceload remove ~ ~
+
 execute \
-	if data storage tmp.fetchr:init/structures structures[0] \
-	at @s \
-	run forceload add ~-48 ~-24 ~-1 ~23
+	unless data storage tmp.fetchr:init/structures structures[0] \
+	if score $init/lobby.is_reference fetchr.tmp matches 0 \
+	run function fetchr:init/setup_lobby/end
 execute \
 	if data storage tmp.fetchr:init/structures structures[0] \
 	run function fetchr:init/setup_lobby/spawn_structure_schedule

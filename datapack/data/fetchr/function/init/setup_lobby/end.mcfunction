@@ -9,35 +9,11 @@
 # 	positon @s
 # 	dimension fetchr:lobby
 
-execute \
-	at @e[type=minecraft:marker, x=0, tag=fetchr.structure_test, limit=1] \
-	run setblock ~ ~ ~ minecraft:air
-kill @s
-kill @e[type=minecraft:marker, x=0, tag=fetchr.structure_test, limit=1]
-
-setblock ~-1 3 ~-1 minecraft:structure_block[mode=load]{\
-	name: "fetchr:lobby_end",\
-	mode: "LOAD",\
-	ignoreEntities: false,\
-	posY: 0,\
-}
-execute \
-	if score $init/lobby.is_reference fetchr.tmp matches 1 \
-	run data modify block ~-1 3 ~-1 ignoreEntities set value true
-setblock ~-1 4 ~-1 minecraft:redstone_block
-
 forceload remove all
 forceload add 0 0
 execute \
 	at @e[type=minecraft:marker, tag=fetchr.chest_generation_marker] \
 	run forceload add ~ ~
-
-execute \
-	if score $init/lobby.is_reference fetchr.tmp matches 0 \
-	run schedule function fetchr:init/setup_lobby/schedule_reference 1t
-execute \
-	if score $init/lobby.is_reference fetchr.tmp matches 1 \
-	run return 0
 
 #>
 # @private
@@ -90,3 +66,4 @@ execute \
 #NEUN_SCRIPT end
 
 function fetchr:custom_hud/components/timer/update
+function fetchr:init/setup_lobby/setup_reference
