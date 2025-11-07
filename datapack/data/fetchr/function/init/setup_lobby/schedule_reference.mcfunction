@@ -12,5 +12,5 @@ data \
 
 execute \
 	in fetchr:lobby \
-	positioned 29999984 0 29999742 \
+	positioned 29999984 0 29999744 \
 	run function fetchr:init/setup_lobby/setup { type: "reference" }

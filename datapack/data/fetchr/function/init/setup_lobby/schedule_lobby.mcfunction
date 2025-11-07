@@ -10,5 +10,5 @@ data modify storage fetchr:structure structures set value []
 
 execute \
 	in fetchr:lobby \
-	positioned 0 0 0 \
+	positioned 0 0 7 \
 	run function fetchr:init/setup_lobby/setup { type: "lobby" }

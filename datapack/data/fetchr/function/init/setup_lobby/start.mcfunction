@@ -17,10 +17,10 @@
 # 	function fetchr:game/**
 #declare tag fetchr.card_frame_start
 
-forceload add ~-34 ~-17 ~14 ~30
-summon minecraft:marker ~14 3 ~7 { Tags: ["fetchr.structure_spawner"]}
-summon minecraft:marker ~15 0 ~-17 { Tags: ["fetchr.structure_test"]}
-setblock ~15 0 ~-17 minecraft:structure_block[mode=load]{\
+forceload add ~-34 ~-24 ~14 ~23
+summon minecraft:marker ~14 3 ~ { Tags: ["fetchr.structure_spawner"]}
+summon minecraft:marker ~15 0 ~-24 { Tags: ["fetchr.structure_test"]}
+setblock ~15 0 ~-24 minecraft:structure_block[mode=load]{\
 	mode: "LOAD",\
 	ignoreEntities: true,\
 	integrity: 0f,\
