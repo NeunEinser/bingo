@@ -933,11 +933,13 @@ forceload add 0 0
 		# 0 = no lobby generated
 		# 1 = legacy version generated (no reference exists)
 		# 2 = lobby generation in progress
-		# 3 = legacy lobby generated and reference generation in progress
-		# 4 = lobby generated and updated
+		# 3 = reference generation in progress
+		# 4 = lobby generated
+		# 5 = lobby update in progress
 		#
 		# @public
 		#declare score_holder $lobby_generated
+		scoreboard players operation $lobby_generated fetchr.state = $lobby_generated bingo.state
 		scoreboard players add $lobby_generated fetchr.state 0
 		#>
 		# Whether the lockout race is determined.
@@ -1564,6 +1566,16 @@ forceload add 0 0
 		]
 		#NEUN_SCRIPT end
 #region run registries
+	execute \
+		if score $lobby_generated fetchr.state matches 1 \
+		run data \
+			modify storage fetchr:structure legacy_structures \
+			set from storage fetchr:registries structures
+	execute \
+		if score $lobby_generated fetchr.state matches 1 \
+		run data \
+			modify storage fetchr:structure legacy_bingo_structures \
+			set from storage bingo:registries structures
 	data remove storage fetchr:registries categories
 	data remove storage fetchr:registries items
 	data remove storage fetchr:registries structures
@@ -1599,7 +1611,7 @@ forceload add 0 0
 	#declare storage tmp.fetchr:init
 
 	execute \
-		if score $lobby_generated fetchr.state matches 1 \
+		if score $lobby_generated fetchr.state matches 3..4 \
 		run schedule function fetchr:init/items/exec 1t
 #endregion
 #region initialize hud components
@@ -1671,7 +1683,9 @@ forceload add 0 0
 	execute \
 		if score $lobby_generated fetchr.state matches 0 \
 		run schedule function fetchr:init/setup_lobby/setup_lobby 1t
-	scoreboard players set $lobby_generated fetchr.state 1
+	execute \
+		if score $lobby_generated fetchr.state matches 1 \
+		run schedule function fetchr:init/setup_lobby/setup_reference 1t
 
 # multi noise pos marker
 	execute \

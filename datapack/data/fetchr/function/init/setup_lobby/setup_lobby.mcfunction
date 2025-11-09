@@ -5,6 +5,8 @@
 # @within function fetchr:init/init
 # @within function fetchr:init/setup_lobby/end
 
+scoreboard players set $lobby_generated fetchr.state 2
+
 data \
 	modify storage tmp.fetchr:init/structures structures \
 	set from storage fetchr:registries structures
@@ -13,7 +15,7 @@ data \
 	modify storage tmp.fetchr:init/structures structures \
 	append value { id: "fetchr:lobby_end", entrance_position: [I; 1, 0, 1], version: 1 }
 
-scoreboard players set $init/lobby.is_reference fetchr.tmp 0
+scoreboard players set $init/lobby.lobby_type fetchr.tmp 0
 data modify storage fetchr:structure structures set value []
 data modify storage tmp.fetchr:init/structures location set value {\
 	x: 13,\

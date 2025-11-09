@@ -1,18 +1,34 @@
 use ::fetchr::storages::registry::StructureRegistry
 
-dispatch minecraft:storage[tmp.fetchr:init/structures] to struct StructureTmpStorage {
-	structures: [struct {
-		...StructureRegistry,
-			size?: int @0..[] @ 3,
-	}],
-	location: struct {x: int, z: int},
-}
-
 dispatch minecraft:storage[fetchr:structure] to struct StructureStorage {
 	structures: [
 		struct Structure {
 			...StructureRegistry,
 			size: int @0..[] @ 3,
+			legacy_id?: #[id=structure] string,
 		}
-	]
+	],
+	legacy_structures?: [ #[id=structure] string ],
+	legacy_bingo_structures?: [ #[id] string ],
+}
+
+dispatch minecraft:storage[io.fetchr:structures] to struct StructureIoStorage {
+	structure: struct LegacyStructureData {
+			id: #[id=structure] string,
+			entrance_position?: int @ 0..[] @ 3,
+			legacy_id?: #[id=structure] string,
+	}
+}
+
+dispatch minecraft:storage[tmp.fetchr:init/structures] to struct StructureTmpStorage {
+	structures: [struct {
+		...StructureRegistry,
+			size?: int @0..[] @ 3,
+			legacy_id?: #[id=structure] string,
+	}],
+	location: struct {x: int, z: int},
+	legacy_structures?: [ #[id=structure] string ],
+	legacy_bingo_structures?: [ #[id] string ],
+	namespace: string,
+	name: struct { first: string, second: string },
 }

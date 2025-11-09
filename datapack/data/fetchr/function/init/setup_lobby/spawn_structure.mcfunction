@@ -27,6 +27,9 @@ setblock ~ ~ ~ minecraft:structure_block[mode=load]{\
 }
 
 data modify block ~ ~ ~ name set from storage tmp.fetchr:init/structures structures[0].id
+execute \
+	if data storage tmp.fetchr:init/structures structures[0].legacy_id \
+	run data modify block ~ ~ ~ name set from storage tmp.fetchr:init/structures structures[0].legacy_id
 
 setblock ~ ~1 ~ minecraft:redstone_block
 setblock ~ ~1 ~ minecraft:air
@@ -45,7 +48,7 @@ execute \
 	run data get block ~ ~ ~ sizeZ
 
 execute \
-	if score $init/lobby.is_reference fetchr.tmp matches 0 \
+	unless score $init/lobby.lobby_type fetchr.tmp matches 1 \
 	run data \
 		modify storage fetchr:structure structures \
 		append from storage tmp.fetchr:init/structures structures[0]
@@ -88,7 +91,7 @@ execute \
 	run setblock ~ ~1 ~ minecraft:air
 
 execute \
-	if score $init/lobby.is_reference fetchr.tmp matches 1 \
+	if score $init/lobby.lobby_type fetchr.tmp matches 1..2 \
 	positioned ~-256 0 ~-256 \
 	run kill @e[type=minecraft:marker, dx=512, dy=512, dz=512, tag=!fetchr.structure_spawner, tag=!fetchr.structure_test]
 
@@ -105,13 +108,17 @@ execute \
 data remove storage tmp.fetchr:init/structures structures[0]
 
 execute \
-	if score $init/lobby.is_reference fetchr.tmp matches 1 \
+	if score $init/lobby.lobby_type fetchr.tmp matches 1..2 \
 	run forceload remove ~ ~
 
 execute \
 	unless data storage tmp.fetchr:init/structures structures[0] \
-	if score $init/lobby.is_reference fetchr.tmp matches 0 \
+	if score $init/lobby.lobby_type fetchr.tmp matches 0 \
 	run function fetchr:init/setup_lobby/end
+execute \
+	unless data storage tmp.fetchr:init/structures structures[0] \
+	if score $init/lobby.lobby_type fetchr.tmp matches 1 \
+	run scoreboard players set $lobby_generated fetchr.state 4
 execute \
 	if data storage tmp.fetchr:init/structures structures[0] \
 	run function fetchr:init/setup_lobby/spawn_structure_schedule

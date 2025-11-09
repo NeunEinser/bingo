@@ -599,7 +599,10 @@ def handle_file(
 			if isinstance(data, dict):
 				data["DataVersion"] = nbtlib.Int(data_version)
 		else:
-			nbt_content["DataVersion"] = nbtlib.Int(data_version)
+			file_data_version = nbt_content["DataVersion"]
+
+			if min_pack_format > min_format or not isinstance(file_data_version, int) or file_data_version > data_version:
+				nbt_content["DataVersion"] = nbtlib.Int(data_version)
 
 		buffer = BytesIO()
 		nbt_content.save(buffer)
