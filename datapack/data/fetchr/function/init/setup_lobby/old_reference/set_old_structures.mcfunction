@@ -39,4 +39,11 @@ execute \
 	run function fetchr:init/setup_lobby/old_reference/set_5.2-pre4
 
 scoreboard players set $init/lobby.lobby_type fetchr.tmp 2
+
+scoreboard players set $init/lobby.start_x fetchr.tmp 29999999
+scoreboard players operation $init/lobby.start_x fetchr.tmp -= $init/lobby.entrance_offsetx fetchr.tmp
+execute \
+	store result storage tmp.fetchr:init/structures location.x int 1 \
+	run scoreboard players get $init/lobby.start_x fetchr.tmp
+
 function fetchr:init/setup_lobby/spawn_structure_schedule

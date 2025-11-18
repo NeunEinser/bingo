@@ -117,4 +117,6 @@ execute \
 		"]"\
 	]
 
-schedule function fetchr:lobby/place_indestructible_blocks 1t replace
+execute \
+	if score $lobby_generated fetchr.state matches 4 \
+	run schedule function fetchr:lobby/place_indestructible_blocks 1t replace

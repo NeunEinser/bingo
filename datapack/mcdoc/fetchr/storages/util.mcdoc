@@ -5,8 +5,18 @@ dispatch minecraft:storage[io.fetchr:util] to struct {
 	nbt?: any ,
 	"string"?: string ,
 	concat_strings?: ConcatStringsData,
-	item: SingleItem,
-	command_argument: #[item] string,
+	item?: SingleItem,
+	command_argument?: #[item] string,
+	callback?: #[id=function] string,
+	forceload_coordinates: [struct ForceloadCoordinateArea {
+		dimension?: #[id=dimension] string,
+		start_x?: int @ -30000000..29999999,
+		start_z?: int @ -30000000..29999999,
+		negative_x?: int @ -30000000..0,
+		positive_x?: int @ 0..29999999,
+		negative_z?: int @ -30000000..0,
+		positive_z?: int @ 0..29999999,
+	}],
 }
 
 dispatch minecraft:storage[tmp.fetchr:util] to struct {
@@ -30,6 +40,12 @@ dispatch minecraft:storage[tmp.fetchr:util] to struct {
 	component?: struct {
 		name: #[id="data_component_type"] string,
 	},
+	forceload_coordinates: [ForceloadCoordinateArea],
+	forceload_queue: [struct ForceloadQueue {
+		forceload_coordinates?: [ForceloadCoordinateArea],
+		callback?: #[id=function] string,
+	}],
+	forceload_queue_copy: [ForceloadQueue],
 }
 
 struct ConcatStringsData {

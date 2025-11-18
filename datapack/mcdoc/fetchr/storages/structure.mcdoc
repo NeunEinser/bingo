@@ -21,14 +21,16 @@ dispatch minecraft:storage[io.fetchr:structures] to struct StructureIoStorage {
 }
 
 dispatch minecraft:storage[tmp.fetchr:init/structures] to struct StructureTmpStorage {
-	structures: [struct {
+	structures: [struct TmpStructure {
 		...StructureRegistry,
 			size?: int @0..[] @ 3,
 			legacy_id?: #[id=structure] string,
 	}],
-	location: struct {x: int, z: int},
+	old_structures: [Structure],
+	location: struct {x?: int, z?: int},
 	legacy_structures?: [ #[id=structure] string ],
 	legacy_bingo_structures?: [ #[id] string ],
 	namespace: string,
+	current_id: #[id=structure] string,
 	name: struct { first: string, second: string },
 }
