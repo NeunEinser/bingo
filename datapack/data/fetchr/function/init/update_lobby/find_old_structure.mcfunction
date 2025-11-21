@@ -26,7 +26,9 @@ execute \
 		modify storage tmp.fetchr:init/structures current_id \
 		set from storage tmp.fetchr:init/structures old_structures[0].id
 
-data remove storage tmp.fetchr:init/structures old_structures[0]
+execute \
+	if score $init/lobby/update.continue_search fetchr.tmp matches 1 \
+	run data remove storage tmp.fetchr:init/structures old_structures[0]
 
 execute \
 	if score $init/lobby/update.continue_search fetchr.tmp matches 1 \

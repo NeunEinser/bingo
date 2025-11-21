@@ -7,7 +7,13 @@
 #	fetchr:init/update_lobby/update_structure
 # @context dimension fetchr:lobby
 
-#region get new dimensions 
+#region get new dimensions
+	data \
+		modify block -30000000 3 -30000000 name \
+		set from storage tmp.fetchr:init/structures structures[-1].id
+	setblock -30000000 4 -30000000 minecraft:redstone_block
+	setblock -30000000 4 -30000000 minecraft:air
+
 	#>
 	# The x overlap with the previous structure for the new structure
 	#
@@ -17,35 +23,25 @@
 		store result score $init/lobby/update.new_x_overlap fetchr.tmp \
 		run data get storage tmp.fetchr:init/structures structures[-1].entrance_position[0]
 	#>
-	# The negative y offset releative from the structure block from the new
-	# strucuture
+	# The lower y coordinate of the new structure
 	#
 	# @private
-	#declare score_holder $init/lobby/update.new_negative_y
+	#declare score_holder $init/lobby/update.new_y
 	execute \
-		store result score $init/lobby/update.new_negative_y fetchr.tmp \
+		store result score $init/lobby/update.new_y fetchr.tmp \
 		run data get storage tmp.fetchr:init/structures structures[-1].entrance_position[1]
-	scoreboard players operation $init/lobby/update.new_negative_y fetchr.tmp *= -1 fetchr.const
+	scoreboard players operation $init/lobby/update.new_y fetchr.tmp *= -1 fetchr.const
+	scoreboard players add $init/lobby/update.new_y fetchr.tmp 3
 	#>
-	# The negative z offset releative from the structure block from the new
-	# strucuture
+	# The lower z coordinate of the new structure
 	#
 	# @private
-	#declare score_holder $init/lobby/update.new_negative_z
+	#declare score_holder $init/lobby/update.new_z
 	execute \
-		store result score $init/lobby/update.new_negative_z fetchr.tmp \
+		store result score $init/lobby/update.new_z fetchr.tmp \
 		run data get storage tmp.fetchr:init/structures structures[-1].entrance_position[2]
-	scoreboard players operation $init/lobby/update.new_negative_z fetchr.tmp *= -1 fetchr.const
-
-	execute \
-		store result block -30000000 3 -30000000 posY int 1 \
-		run scoreboard players get $init/lobby/update.new_negative_y fetchr.tmp
-
-	data \
-		modify block -30000000 3 -30000000 name \
-		set from storage tmp.fetchr:init/structures structures[-1].id
-	setblock -30000000 4 -30000000 minecraft:redstone_block
-	setblock -30000000 4 -30000000 minecraft:air
+	scoreboard players operation $init/lobby/update.new_z fetchr.tmp *= -1 fetchr.const
+	scoreboard players add $init/lobby/update.new_z fetchr.tmp 7
 
 	#>
 	# The x-size of the new structure.
@@ -55,7 +51,11 @@
 	execute \
 		store result score $init/lobby/update.new_size_x fetchr.tmp \
 		run data get block -30000000 3 -30000000 sizeX
-
+	# Do not compare overlap with the previous structure.
+	# Overlapping structure parts must be empty of blocks right now.
+	execute \
+		if data storage tmp.fetchr:init/structures structures[2] \
+		run scoreboard players operation $init/lobby/update.new_size_x fetchr.tmp -= $init/lobby/update.new_x_overlap fetchr.tmp
 	#>
 	# The y-size of the new structure.
 	#
@@ -64,7 +64,6 @@
 	execute \
 		store result score $init/lobby/update.new_size_y fetchr.tmp \
 		run data get block -30000000 3 -30000000 sizeY
-
 	#>
 	# The z-size of the new structure.
 	#
@@ -111,25 +110,25 @@
 		store result score $init/lobby/update.old_x_overlap fetchr.tmp \
 		run data get storage tmp.fetchr:init/structures structures[-1].entrance_position[0]
 	#>
-	# The negative y offset releative from the structure block from the old
-	# strucuture
+	# The lower y coordinate of the old structure
 	#
 	# @private
-	#declare score_holder $init/lobby/update.old_negative_y
+	#declare score_holder $init/lobby/update.old_y
 	execute \
-		store result score $init/lobby/update.old_negative_y fetchr.tmp \
+		store result score $init/lobby/update.old_y fetchr.tmp \
 		run data get storage tmp.fetchr:init/structures structures[-1].entrance_position[1]
-	scoreboard players operation $init/lobby/update.old_negative_y fetchr.tmp *= -1 fetchr.const
+	scoreboard players operation $init/lobby/update.old_y fetchr.tmp *= -1 fetchr.const
+	scoreboard players add $init/lobby/update.old_y fetchr.tmp 3
 	#>
-	# The negative z offset releative from the structure block from the old
-	# strucuture
+	# The lower z coordinate of the old structure
 	#
 	# @private
-	#declare score_holder $init/lobby/update.old_negative_z
+	#declare score_holder $init/lobby/update.old_z
 	execute \
-		store result score $init/lobby/update.old_negative_z fetchr.tmp \
+		store result score $init/lobby/update.old_z fetchr.tmp \
 		run data get storage tmp.fetchr:init/structures structures[-1].entrance_position[2]
-	scoreboard players operation $init/lobby/update.old_negative_z fetchr.tmp *= -1 fetchr.const
+	scoreboard players operation $init/lobby/update.old_z fetchr.tmp *= -1 fetchr.const
+	scoreboard players add $init/lobby/update.old_z fetchr.tmp 7
 	#>
 	# The x-size of the old structure.
 	#
@@ -138,6 +137,11 @@
 	execute \
 		store result score $init/lobby/update.old_size_x fetchr.tmp \
 		run data get storage tmp.fetchr:init/structures old_structures[0].size[0]
+	# Do not compare overlap with the previous structure.
+	# Overlapping structure parts must be empty of blocks right now.
+	execute \
+		if data storage tmp.fetchr:init/structures structures[2] \
+		run scoreboard players operation $init/lobby/update.old_size_x fetchr.tmp -= $init/lobby/update.old_x_overlap fetchr.tmp
 	#>
 	# The y-size of the old structure.
 	#
@@ -152,191 +156,189 @@
 	# @private
 	#declare score_holder $init/lobby/update.old_size_z
 	execute \
-		store result score $init/lobby/update.old_size_x fetchr.tmp \
+		store result score $init/lobby/update.old_size_z fetchr.tmp \
 		run data get storage tmp.fetchr:init/structures old_structures[0].size[2]
 #endregion
 
-#region calculate new and old coordinate offsets (new/old positive and old negative)
+#region calculate new and old coordinate offsets
 	#>
-	# The positive x offset releative from the structure block from the new
-	# strucuture
+	# The high y coordinate of the new structure
 	#
 	# @private
-	#declare score_holder $init/lobby/update.new_positive_x
-	scoreboard players operation $init/lobby/update.new_positive_x fetchr.tmp = $init/lobby/update.new_size_x fetchr.tmp
-	scoreboard players remove $init/lobby/update.new_positive_x fetchr.tmp 1
-	# Do not compare overlap with the previous structure.
-	# Overlapping structure parts must be empty of blocks right now.
-	execute \
-		if data storage tmp.fetchr:init/structures structures[2] \
-		run scoreboard players operation $init/lobby/update.new_positive_x fetchr.tmp -= $init/lobby/update.new_x_overlap fetchr.tmp
+	#declare score_holder $init/lobby/update.new_high_y
+	scoreboard players operation $init/lobby/update.new_high_y fetchr.tmp = $init/lobby/update.new_y fetchr.tmp
+	scoreboard players operation $init/lobby/update.new_high_y fetchr.tmp += $init/lobby/update.new_size_y fetchr.tmp
+	scoreboard players remove $init/lobby/update.new_high_y fetchr.tmp 1
 	#>
-	# The positive y offset releative from the structure block from the new
-	# strucuture
+	# The high z coordinate of the new structure
 	#
 	# @private
-	#declare score_holder $init/lobby/update.new_positive_y
-	scoreboard players operation $init/lobby/update.new_positive_y fetchr.tmp = $init/lobby/update.new_negative_y fetchr.tmp
-	scoreboard players remove $init/lobby/update.new_positive_y fetchr.tmp 1
-	scoreboard players operation $init/lobby/update.new_positive_y fetchr.tmp += $init/lobby/update.new_size_y fetchr.tmp
-	#>
-	# The positive z offset releative from the structure block from the new
-	# strucuture
-	#
-	# @private
-	#declare score_holder $init/lobby/update.new_positive_z
-	scoreboard players operation $init/lobby/update.new_positive_z fetchr.tmp = $init/lobby/update.new_negative_z fetchr.tmp
-	scoreboard players remove $init/lobby/update.new_positive_z fetchr.tmp 1
-	scoreboard players operation $init/lobby/update.new_positive_z fetchr.tmp += $init/lobby/update.new_size_z fetchr.tmp
+	#declare score_holder $init/lobby/update.new_high_z
+	scoreboard players operation $init/lobby/update.new_high_z fetchr.tmp = $init/lobby/update.new_z fetchr.tmp
+	scoreboard players operation $init/lobby/update.new_high_z fetchr.tmp += $init/lobby/update.new_size_z fetchr.tmp
+	scoreboard players remove $init/lobby/update.new_high_z fetchr.tmp 1
 
 	#>
-	# The positive x offset releative from the structure block from the old
-	# strucuture
+	# The high x coordinate of the old structure
 	#
 	# @private
-	#declare score_holder $init/lobby/update.old_positive_x
-	scoreboard players operation $init/lobby/update.old_positive_x fetchr.tmp = $init/lobby/update.old_size_x fetchr.tmp
-	scoreboard players remove $init/lobby/update.old_positive_x fetchr.tmp 1
-	# Do not compare overlap with the previous structure.
-	# Overlapping structure parts must be empty. The exception is the fist structure
-	# in the list which may be offset around the origin.
-	execute \
-		if data storage tmp.fetchr:init/structures structures[2] \
-		run scoreboard players operation $init/lobby/update.old_positive_x fetchr.tmp -= $init/lobby/update.old_x_overlap fetchr.tmp
+	#declare score_holder $init/lobby/update.old_high_x
+	scoreboard players operation $init/lobby/update.old_high_x fetchr.tmp = $init/lobby/update.old_x fetchr.tmp
+	scoreboard players operation $init/lobby/update.old_high_x fetchr.tmp += $init/lobby/update.old_size_x fetchr.tmp
+	scoreboard players remove $init/lobby/update.old_high_x fetchr.tmp 1
 	#>
-	# The positive y offset releative from the structure block from the old
-	# strucuture
+	# The high y coordinate of the old structure
 	#
 	# @private
-	#declare score_holder $init/lobby/update.old_positive_y
-	scoreboard players operation $init/lobby/update.old_positive_y fetchr.tmp = $init/lobby/update.old_negative_y fetchr.tmp
-	scoreboard players operation $init/lobby/update.old_positive_y fetchr.tmp += $init/lobby/update.old_size_y fetchr.tmp
-	scoreboard players remove $init/lobby/update.old_positive_y fetchr.tmp 1
+	#declare score_holder $init/lobby/update.old_high_y
+	scoreboard players operation $init/lobby/update.old_high_y fetchr.tmp = $init/lobby/update.old_y fetchr.tmp
+	scoreboard players operation $init/lobby/update.old_high_y fetchr.tmp += $init/lobby/update.old_size_y fetchr.tmp
+	scoreboard players remove $init/lobby/update.old_high_y fetchr.tmp 1
 	#>
-	# The positive z offset releative from the structure block from the old
-	# strucuture
+	# The high z coordinate of the old structure
 	#
 	# @private
-	#declare score_holder $init/lobby/update.old_positive_z
-	scoreboard players operation $init/lobby/update.old_positive_z fetchr.tmp = $init/lobby/update.old_negative_z fetchr.tmp
-	scoreboard players operation $init/lobby/update.old_positive_z fetchr.tmp += $init/lobby/update.old_size_z fetchr.tmp
-	scoreboard players remove $init/lobby/update.old_positive_z fetchr.tmp 1
-
-	#>
-	# The positive z offset releative from the structure block from the old
-	# strucuture
-	#
-	# @private
-	#declare score_holder $init/lobby/update.old_positive_z
-	scoreboard players operation $init/lobby/update.old_positive_z fetchr.tmp = $init/lobby/update.old_negative_z fetchr.tmp
-	scoreboard players operation $init/lobby/update.old_positive_z fetchr.tmp += $init/lobby/update.old_size_z fetchr.tmp
-	scoreboard players remove $init/lobby/update.old_positive_z fetchr.tmp 1
+	#declare score_holder $init/lobby/update.old_high_z
+	scoreboard players operation $init/lobby/update.old_high_z fetchr.tmp = $init/lobby/update.old_z fetchr.tmp
+	scoreboard players operation $init/lobby/update.old_high_z fetchr.tmp += $init/lobby/update.old_size_z fetchr.tmp
+	scoreboard players remove $init/lobby/update.old_high_z fetchr.tmp 1
 #endregion
 
 #region calculate combined maximum offsets
 	#>
-	# The higher positive x offset between new and old
+	# The lower y coordinate, picking the lower one from either old or new
 	#
 	# @private
-	#declare score_holder $init/lobby/update.positive_x
-	scoreboard players operation $init/lobby/update.positive_x fetchr.tmp = $init/lobby/update.positive_x fetchr.tmp
-	scoreboard players operation $init/lobby/update.positive_x fetchr.tmp > $init/lobby/update.positive_x fetchr.tmp
-
+	#declare score_holder $init/lobby/update.y
+	scoreboard players operation $init/lobby/update.y fetchr.tmp = $init/lobby/update.old_y fetchr.tmp
+	scoreboard players operation $init/lobby/update.y fetchr.tmp < $init/lobby/update.new_y fetchr.tmp
 	#>
-	# The higher negative y offset between new and old
+	# The higher y coordinate, picking the higher one from either old or new
 	#
 	# @private
-	#declare score_holder $init/lobby/update.negative_y
-	scoreboard players operation $init/lobby/update.negative_y fetchr.tmp = $init/lobby/update.old_negative_y fetchr.tmp
-	scoreboard players operation $init/lobby/update.negative_y fetchr.tmp < $init/lobby/update.new_negative_y fetchr.tmp
+	#declare score_holder $init/lobby/update.high_y
+	scoreboard players operation $init/lobby/update.high_y fetchr.tmp = $init/lobby/update.old_high_y fetchr.tmp
+	scoreboard players operation $init/lobby/update.high_y fetchr.tmp > $init/lobby/update.new_high_y fetchr.tmp
 	#>
-	# The higher positive y offset between new and old
-	#
-	# @private
-	#declare score_holder $init/lobby/update.positive_y
-	scoreboard players operation $init/lobby/update.positive_y fetchr.tmp = $init/lobby/update.old_positive_y fetchr.tmp
-	scoreboard players operation $init/lobby/update.positive_y fetchr.tmp > $init/lobby/update.new_positive_y fetchr.tmp
-	#>
-	# The combined y size
+	# The higher y size
 	#
 	# @private
 	#declare score_holder $init/lobby/update.size_y
-	scoreboard players operation $init/lobby/update.size_y fetchr.tmp = $init/lobby/update.positive_y fetchr.tmp
-	scoreboard players operation $init/lobby/update.size_y fetchr.tmp -= $init/lobby/update.negative_y fetchr.tmp
+	scoreboard players operation $init/lobby/update.size_y fetchr.tmp = $init/lobby/update.old_size_y fetchr.tmp
+	scoreboard players operation $init/lobby/update.size_y fetchr.tmp > $init/lobby/update.new_size_y fetchr.tmp
 
 	#>
-	# The higher negative z offset between new and old
+	# The lower z coordinate, picking the lower one from either old or new
 	#
 	# @private
-	#declare score_holder $init/lobby/update.negative_z
-	scoreboard players operation $init/lobby/update.negative_z fetchr.tmp = $init/lobby/update.old_negative_z fetchr.tmp
-	scoreboard players operation $init/lobby/update.negative_z fetchr.tmp < $init/lobby/update.new_negative_z fetchr.tmp
+	#declare score_holder $init/lobby/update.z
+	scoreboard players operation $init/lobby/update.z fetchr.tmp = $init/lobby/update.old_z fetchr.tmp
+	scoreboard players operation $init/lobby/update.z fetchr.tmp < $init/lobby/update.new_z fetchr.tmp
 	#>
-	# The higher positive z offset between new and old
+	# The higher z coordinate, picking the higher one from either old or new
 	#
 	# @private
-	#declare score_holder $init/lobby/update.positive_z
-	scoreboard players operation $init/lobby/update.positive_z fetchr.tmp = $init/lobby/update.old_positive_z fetchr.tmp
-	scoreboard players operation $init/lobby/update.positive_z fetchr.tmp > $init/lobby/update.new_positive_z fetchr.tmp
+	#declare score_holder $init/lobby/update.high_z
+	scoreboard players operation $init/lobby/update.high_z fetchr.tmp = $init/lobby/update.old_high_z fetchr.tmp
+	scoreboard players operation $init/lobby/update.high_z fetchr.tmp > $init/lobby/update.new_high_z fetchr.tmp
 	#>
-	# The combined z size
+	# The higher z size
 	#
 	# @private
 	#declare score_holder $init/lobby/update.size_z
-	scoreboard players operation $init/lobby/update.size_z fetchr.tmp = $init/lobby/update.positive_z fetchr.tmp
-	scoreboard players operation $init/lobby/update.size_z fetchr.tmp -= $init/lobby/update.negative_z fetchr.tmp
+	scoreboard players operation $init/lobby/update.size_z fetchr.tmp = $init/lobby/update.old_size_z fetchr.tmp
+	scoreboard players operation $init/lobby/update.size_z fetchr.tmp > $init/lobby/update.new_size_z fetchr.tmp
+
+	#>
+	# The reference low x coordinate
+	#
+	# @private
+	#declare score_holder $init/lobby/update.reference_x
+	scoreboard players operation $init/lobby/update.reference_x fetchr.tmp = $init/lobby/update.old_x fetchr.tmp
+	scoreboard players add $init/lobby/update.reference_x fetchr.tmp 29999999
+	#>
+	# The reference high x coordinate
+	#
+	# @private
+	#declare score_holder $init/lobby/update.reference_high_x
+	scoreboard players operation $init/lobby/update.reference_high_x fetchr.tmp = $init/lobby/update.old_high_x fetchr.tmp
+	scoreboard players add $init/lobby/update.reference_high_x fetchr.tmp 29999999
+
+	#>
+	# The clone high x coordinate
+	#
+	# @private
+	#declare score_holder $init/lobby/update.clone_high_x
+	scoreboard players operation $init/lobby/update.clone_high_x fetchr.tmp = $init/lobby/update.clone_x fetchr.tmp
+	scoreboard players operation $init/lobby/update.clone_high_x fetchr.tmp += $init/lobby/update.new_size_x fetchr.tmp
+
+	#>
+	# The compare high x coordinate
+	#
+	# @private
+	#declare score_holder $init/lobby/update.compare_high_x
+	scoreboard players set $init/lobby/update.compare_high_x fetchr.tmp -30000000
+	scoreboard players operation $init/lobby/update.compare_high_x fetchr.tmp += $init/lobby/update.new_size_x fetchr.tmp
+	#>
+	# The compare high z coordinate
+	#
+	# @private
+	#declare score_holder $init/lobby/update.compare_high_z
+	scoreboard players set $init/lobby/update.compare_high_z fetchr.tmp -30000001
+	scoreboard players operation $init/lobby/update.compare_high_z fetchr.tmp += $init/lobby/update.size_z fetchr.tmp
 #endregion
 
 #region forceload
 	data modify storage io.fetchr:util forceload_coordinates set value [\
-		{ dimension: "fetchr:lobby", start_z: 7, negative_x: 0 },\
-		{ dimension: "fetchr:lobby", start_z: 7, negative_x: 0 },\
-		{ dimension: "fetchr:lobby", start_z: 7, negative_x: 0 },\
-		{ dimension: "fetchr:lobby", start_x: -30000000, start_z: -30000000, negative_x: 0, negative_z: 0 }\
+		{ dimension: "fetchr:lobby" },\
+		{ dimension: "fetchr:lobby" },\
+		{ dimension: "fetchr:lobby" },\
+		{ dimension: "fetchr:lobby", start_x: -29999999, start_z: -30000000 }\
 	]
 
 	execute \
 		store result storage io.fetchr:util forceload_coordinates[0].start_x int 1 \
 		run scoreboard players get $init/lobby/update.old_x fetchr.tmp
 	execute \
-		store result storage io.fetchr:util forceload_coordinates[0].positive_x int 1 \
-		run scoreboard players get $init/lobby/update.old_positive_x fetchr.tmp
+		store result storage io.fetchr:util forceload_coordinates[0].end_x int 1 \
+		run scoreboard players get $init/lobby/update.old_high_x fetchr.tmp
 	execute \
-		store result storage io.fetchr:util forceload_coordinates[0].negative_z int 1 \
-		run scoreboard players get $init/lobby/update.old_negative_z fetchr.tmp
+		store result storage io.fetchr:util forceload_coordinates[0].start_z int 1 \
+		run scoreboard players get $init/lobby/update.old_z fetchr.tmp
 	execute \
-		store result storage io.fetchr:util forceload_coordinates[0].positive_z int 1 \
-		run scoreboard players get $init/lobby/update.old_positive_z fetchr.tmp
+		store result storage io.fetchr:util forceload_coordinates[0].end_z int 1 \
+		run scoreboard players get $init/lobby/update.old_high_z fetchr.tmp
 
 	data \
 		modify storage io.fetchr:util forceload_coordinates[1] \
 		set from storage io.fetchr:util forceload_coordinates[0]
-	scoreboard players operation $init/lobby/update.reference_x fetchr.tmp = $init/lobby/update.old_x fetchr.tmp
-	scoreboard players add $init/lobby/update.reference_x fetchr.tmp 29999999
 	execute \
 		store result storage io.fetchr:util forceload_coordinates[1].start_x int 1 \
 		run scoreboard players get $init/lobby/update.reference_x fetchr.tmp
+	execute \
+		store result storage io.fetchr:util forceload_coordinates[1].end_x int 1 \
+		run scoreboard players get $init/lobby/update.reference_high_x fetchr.tmp
 
 	execute \
 		store result storage io.fetchr:util forceload_coordinates[2].start_x int 1 \
 		run scoreboard players get $init/lobby/update.clone_x fetchr.tmp
 	execute \
-		store result storage io.fetchr:util forceload_coordinates[2].positive_x int 1 \
-		run scoreboard players get $init/lobby/update.positive_x fetchr.tmp
+		store result storage io.fetchr:util forceload_coordinates[2].end_x int 1 \
+		run scoreboard players get $init/lobby/update.clone_high_x fetchr.tmp
 	execute \
-		store result storage io.fetchr:util forceload_coordinates[2].negative_z int 1 \
-		run scoreboard players get $init/lobby/update.negative_z fetchr.tmp
+		store result storage io.fetchr:util forceload_coordinates[2].start_z int 1 \
+		run scoreboard players get $init/lobby/update.z fetchr.tmp
 	execute \
-		store result storage io.fetchr:util forceload_coordinates[2].positive_z int 1 \
-		run scoreboard players get $init/lobby/update.positive_z fetchr.tmp
+		store result storage io.fetchr:util forceload_coordinates[2].end_z int 1 \
+		run scoreboard players get $init/lobby/update.high_z fetchr.tmp
 
 	execute \
-		store result storage io.fetchr:util forceload_coordinates[3].positive_x int 1 \
-		run scoreboard players get $init/lobby/update.size_z fetchr.tmp
+		store result storage io.fetchr:util forceload_coordinates[3].end_x int 1 \
+		run scoreboard players get $init/lobby/update.compare_high_x fetchr.tmp
 	execute \
-		store result storage io.fetchr:util forceload_coordinates[3].positive_z int 1 \
-		run scoreboard players get $init/lobby/update.size_z fetchr.tmp
+		store result storage io.fetchr:util forceload_coordinates[3].end_z int 1 \
+		run scoreboard players get $init/lobby/update.compare_high_z fetchr.tmp
 
-	data modify storage io.fetchr:util callback set value "fetchr:init/update_lobby/update_structure"
+	data modify storage io.fetchr:util callback set value "fetchr:init/update_lobby/update_structure_callback"
 	function fetchr:util/forceload_and_wait
 #endregion

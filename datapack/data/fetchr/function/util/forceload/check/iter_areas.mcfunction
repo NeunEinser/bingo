@@ -9,8 +9,6 @@
 # 	dimension: #[id=dimension] string,
 # 	start_x: int @ -30000000..29999999,
 # 	start_z: int @ -30000000..29999999,
-# 	negative_x: int @ -30000000..0,
-# 	positive_x: int @ 0..29999999,
 
 #>
 # The remaining z range to check
@@ -21,16 +19,16 @@
 #declare score_holder $util/forceload.z
 execute \
 	store result score $util/forceload.z fetchr.tmp \
-	run data get storage tmp.fetchr:util forceload_queue_copy[-1].forceload_coordinates[-1].positive_z
+	run data get storage tmp.fetchr:util forceload_queue_copy[-1].forceload_coordinates[-1].end_z
 #>
-# Tmp neg z offset
+# Tmp start z
 #
 # @private
-#declare score_holder $util/forceload.neg_z
+#declare score_holder $util/forceload.start_z
 execute \
-	store result score $util/forceload.neg_z fetchr.tmp \
-	run data get storage tmp.fetchr:util forceload_queue_copy[-1].forceload_coordinates[-1].negative_z
-scoreboard players operation $util/forceload.z fetchr.tmp -= $util/forceload.neg_z fetchr.tmp
+	store result score $util/forceload.start_z fetchr.tmp \
+	run data get storage tmp.fetchr:util forceload_queue_copy[-1].forceload_coordinates[-1].start_z
+scoreboard players operation $util/forceload.z fetchr.tmp -= $util/forceload.start_z fetchr.tmp
 #>
 # The total x range to check
 #
@@ -40,19 +38,18 @@ scoreboard players operation $util/forceload.z fetchr.tmp -= $util/forceload.neg
 #declare score_holder $util/forceload.total_x
 execute \
 	store result score $util/forceload.total_x fetchr.tmp \
-	run data get storage tmp.fetchr:util forceload_queue_copy[-1].forceload_coordinates[-1].positive_x
+	run data get storage tmp.fetchr:util forceload_queue_copy[-1].forceload_coordinates[-1].end_x
 #>
-# Tmp neg x offset
+# Tmp start x
 #
 # @private
-#declare score_holder $util/forceload.neg_x
+#declare score_holder $util/forceload.start_x
 execute \
-	store result score $util/forceload.neg_x fetchr.tmp \
-	run data get storage tmp.fetchr:util forceload_queue_copy[-1].forceload_coordinates[-1].negative_x
-scoreboard players operation $util/forceload.total_x fetchr.tmp -= $util/forceload.neg_x fetchr.tmp
+	store result score $util/forceload.start_x fetchr.tmp \
+	run data get storage tmp.fetchr:util forceload_queue_copy[-1].forceload_coordinates[-1].start_x
+scoreboard players operation $util/forceload.total_x fetchr.tmp -= $util/forceload.start_x fetchr.tmp
 $execute \
 	positioned $(start_x) 0 $(start_z) \
-	positioned ~$(negative_x) 0 ~$(positive_x) \
 	run function fetchr:util/forceload/check/iter_z
 
 data remove storage tmp.fetchr:util forceload_queue_copy[-1].forceload_coordinates[-1]
