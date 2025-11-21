@@ -8,19 +8,21 @@
 # 	function fetchr:util/forceload/check/iter_z
 
 #>
-# The remaining x range to check
+# The current x coordinate
 #
 # @within
 # 	function fetchr:util/forceload/check/iter_z
 # 	function fetchr:util/forceload/check/iter_x
 #declare score_holder $util/forceload.x
-scoreboard players operation $util/forceload.x fetchr.tmp = $util/forceload.total_x fetchr.tmp
-
+execute \
+	store result score $util/forceload.x fetchr.tmp \
+	run data get storage tmp.fetchr:util forceload_queue_copy[-1].forceload_coordinates[-1].start_x
 function fetchr:util/forceload/check/iter_x
-scoreboard players remove $util/forceload.z fetchr.tmp 16
+
+scoreboard players add $util/forceload.z fetchr.tmp 16
 
 execute \
-	if score $util/forceload.z fetchr.tmp matches 0.. \
+	if score $util/forceload.z fetchr.tmp <= $util/forceload.target_z fetchr.tmp \
 	if score $util/forceload.is_loaded fetchr.tmp matches 1 \
 	positioned ~ ~ ~16 \
 	run function fetchr:util/forceload/check/iter_z

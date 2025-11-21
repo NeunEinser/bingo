@@ -256,13 +256,14 @@
 	#declare score_holder $init/lobby/update.reference_x
 	scoreboard players operation $init/lobby/update.reference_x fetchr.tmp = $init/lobby/update.old_x fetchr.tmp
 	scoreboard players add $init/lobby/update.reference_x fetchr.tmp 29999999
+	scoreboard players operation $init/lobby/update.reference_x fetchr.tmp -= $init/lobby/update.old_lobby_start fetchr.tmp
 	#>
 	# The reference high x coordinate
 	#
 	# @private
 	#declare score_holder $init/lobby/update.reference_high_x
-	scoreboard players operation $init/lobby/update.reference_high_x fetchr.tmp = $init/lobby/update.old_high_x fetchr.tmp
-	scoreboard players add $init/lobby/update.reference_high_x fetchr.tmp 29999999
+	scoreboard players operation $init/lobby/update.reference_high_x fetchr.tmp = $init/lobby/update.reference_x fetchr.tmp
+	scoreboard players operation $init/lobby/update.reference_high_x fetchr.tmp += $init/lobby/update.old_size_x fetchr.tmp
 
 	#>
 	# The clone high x coordinate

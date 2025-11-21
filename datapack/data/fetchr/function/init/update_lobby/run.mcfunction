@@ -51,4 +51,8 @@ data modify storage tmp.fetchr:init/structures structures append value {\
 }
 
 scoreboard players set $init/lobby/update.clone_x fetchr.tmp -30000000
+execute \
+	store result score $init/lobby/update.old_lobby_start fetchr.tmp \
+	run data get storage tmp.fetchr:init/structures old_structures[0].entrance_position[0]
+scoreboard players add $init/lobby/update.old_lobby_start fetchr.tmp 7
 execute in fetchr:lobby run function fetchr:init/update_lobby/place_structure_block

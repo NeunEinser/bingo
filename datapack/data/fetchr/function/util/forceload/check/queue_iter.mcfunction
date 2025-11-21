@@ -8,6 +8,7 @@
 # @param callback: #[id=function] string
 
 scoreboard players set $util/forceload.is_loaded fetchr.tmp 1
+
 function fetchr:util/forceload/check/iter_areas \
 	with storage tmp.fetchr:util forceload_queue_copy[-1].forceload_coordinates[-1]
 
