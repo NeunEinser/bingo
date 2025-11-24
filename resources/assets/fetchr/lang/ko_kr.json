@@ -317,6 +317,7 @@
 	"fetchr.lobby.card_generation.from_seed.instructions": "%s 시드를 설정하는 명령어를 받으세요. 명령어의 끝에 숫자로 된 시드를 입력하십시오.",
 	"fetchr.lobby.card_generation.from_seed.instructions.link": "여기를 클릭하여",
 	"fetchr.lobby.card_generation.from_seed.explanation": "시드는 어떤 아이템이 빙고에 위치하고 어디에 플레이어가 소환되는지를 결정합니다. 모든 사람이 같은 시드를 사용하는 경쟁 레이스 등에서 사용할 수 있습니다.",
+	"fetchr.lobby.card_generation.from_seed.weekly_challenges_self_promo": "%s에서 주간 시드 챌린지를 게시하고 있습니다. 커뮤니티와 대전할 수 있습니다.",
 	"fetchr.lobby.card_generation.from_seed.dialog.title": "시드로부터 카드 생성하기",
 	"fetchr.lobby.card_generation.from_seed.dialog.input.seed": "시드",
 	"fetchr.lobby.card_generation.from_seed.dialog.submit": "생성",
