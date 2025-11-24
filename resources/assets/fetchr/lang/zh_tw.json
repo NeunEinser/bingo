@@ -37,7 +37,7 @@
 	"fetchr.game.menu.hint.action_param": "動作",
 	"fetchr.game.switch_gamemode.prevented": "已阻止遊戲模式切換。%s 切換為旁觀者模式。\n之後，您可以切換到任何其他遊戲模式。",
 	"fetchr.game.switch_gamemode.prevented.click": "點擊這裡",
-	"fetchr.game.switch_gamemode.hint": "提示：您隨時可以手動使用命令 %s 來切換到旁觀者模式。\n如果您不喜歡此功能，您可以在大廳的偏好設定中禁用它。",
+	"fetchr.game.switch_gamemode.hint": "提示：您隨時可以手動使用指令 %s 來切換到旁觀者模式。\n如果您不喜歡此功能，您可以在大廳的偏好設定中禁用它。",
 	"fetchr.preferences.title": "個人偏好設定",
 	"fetchr.preferences.description": "此選單允許您更改個人偏好設定。",
 	"fetchr.preferences.back": "返回",
