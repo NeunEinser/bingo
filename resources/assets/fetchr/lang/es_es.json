@@ -110,6 +110,7 @@
 	"fetchr.settings.info.takes_effect_after_starting_game": "Esta configuración solo tendrá efecto después de iniciar una nueva partida.",
 	"fetchr.settings.pause_menu.custom_options.title": "Opciones de Fetchr",
 	"fetchr.settings.pause_menu.custom_options.settings.title": "Configuración del juego",
+	"fetchr.settings.section.advanced_settings.sign.line1": "",
 	"fetchr.settings.section.advanced_settings.sign.line2": "Ajustes",
 	"fetchr.settings.section.advanced_settings.sign.line3": "avanzados",
 	"fetchr.settings.concealed_card.name": "Cartón oculto",
