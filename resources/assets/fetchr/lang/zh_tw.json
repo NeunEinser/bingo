@@ -374,7 +374,7 @@
 	"fetchr.lobby.tutorial.generate_chests.sign.line3": "箱子",
 	"fetchr.lobby.tutorial.generate_chests.sign.line4": "",
 	"fetchr.lobby.tutorial.chests.lectern.heading": "分類箱子",
-	"fetchr.lobby.tutorial.chests.lectern.page_1": "右側的箱子顯示了所有在 Fetchr 物品池中的物品。\n\n每一列都是一個分類。在任何給予的賓果卡上，每個分類只能出現一個物品。",
+	"fetchr.lobby.tutorial.chests.lectern.page_1": "右側的箱子顯示了所有在 Fetchr 物品池中的物品。\n\n每一行都是一個分類。每張賓果卡上每個分類只能出現一個物品。",
 	"fetchr.lobby.tutorial.chests.lectern.page_2": "以空位開頭的行是上一行分類的延伸。\n\n一個物品也可以有多個分類，這進一步限制了該物品的選擇，因為只有當它所屬分類中的所有物品都不在卡片上時，該物品才可以被選擇。",
 	"fetchr.lobby.tutorial.chests.lectern.page_3": "物品也擁有權重。權重越高，遊戲從該分類中選擇該物品的機率就越大。\n\n使用上方的告示牌來重新生成箱子。",
 	"fetchr.lobby.tutorial.basics.sign.line1": "",
