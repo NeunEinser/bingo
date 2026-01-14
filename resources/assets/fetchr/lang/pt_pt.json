@@ -1,1 +1,12 @@
-{}
+{
+	"fetchr.error.incompatible_minecraft_version.multiple_compatible": "Estás a utilizar uma versão não suportada do Minecraft. Este pacote foi criado para ser compatível com as versões %s a %s do Minecraft.",
+	"fetchr.error.incompatible_minecraft_version.multiple_compatible.with_latest_snapshot": "Estás a utilizar uma versão não suportada do Minecraft. Este pacote foi criado para ser compatível com as versões %s a %s, ou até à snapshot %s do Minecraft.",
+	"fetchr.error.incompatible_minecraft_version.incompatible_snapshot": "Estás a utilizar uma snapshot não suportada. As snapshots %s a %s não são suportadas. Certifica-te que usas a snapshot %s ou superior.",
+	"fetchr.error.incompatible_minecraft_version.single_compatible": "Estás a utilizar uma versão não suportada do Minecraft. Este pacote foi criado para ser compatível com a versão %s do Minecraft.",
+	"fetchr.error.incompatible_minecraft_version.single_compatible.with_latest_snapshot": "Estás a utilizar uma versão não suportada do Minecraft. Este pacote foi criado para ser compatível com a versão %s, ou até à snapshot %s do Minecraft.",
+	"fetchr.error.spigot_paper": "É provável que estejas a usar Spigot ou Paper. Paper e Spigot modificam o comportamento do vanilla e, por isso, são incompatíveis com o Fetchr.",
+	"fetchr.error.spigot_paper.help": "Podes usar um servidor vanilla, ou usar Fabric ou Quilt com o Lithium para uma melhor performance.\n\nSe precisares de mais ajuda ou estiveres a ver esta mensagem apesar de não estares a usar Paper ou Spigot, por favor, comunica este problema em %s ou %s.",
+	"fetchr.logging.error": "ERRO",
+	"fetchr.setup.error.unknown_category": "O item %1$s tem a categoria %2$s, mas a categoria %2$s não foi encontrada.",
+	"fetchr.actionbar.wrong_resourcepack_error": "Versão incompatível do pacote de recursos do Fetch ativado."
+}
