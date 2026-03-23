@@ -1403,12 +1403,12 @@ data \
 	categories: [ "fetchr:jungle", "fetchr:taiga" ]\
 }
 
-# 001a: melon
+# 001a: melon_slice
 data \
 	modify storage fetchr:registries items append value {\
-	id: "fetchr:melon",\
-	item: { id: "minecraft:melon" },\
-	translation: "item.minecraft.melon",\
+	id: "fetchr:melon_slice",\
+	item: { id: "minecraft:melon_slice" },\
+	translation: "item.minecraft.melon_slice",\
 	icon: "001a",\
 	categories: [ "fetchr:jungle" ]\
 }
@@ -1592,6 +1592,16 @@ data \
 	icon: "002c",\
 	categories: [ "fetchr:swamp", "fetchr:jungle" ]\
 }
+
+# 002d: green_dye
+data \
+	modify storage fetchr:registries items append value {\
+	id: "fetchr:green_dye",\
+	item: { id: "minecraft:green_dye" },\
+	translation: "item.minecraft.green_dye",\
+	icon: "002d",\
+	categories: [ "fetchr:desert" ]\
+}
  
 # 002e: soul_torch
 data \
@@ -1733,14 +1743,14 @@ data \
 	categories: [ "fetchr:mineshaft" ]\
 }
 
-# 003c: end_rod
+# 003c: arrow
 data \
 	modify storage fetchr:registries items append value {\
-	id: "fetchr:end_rod",\
-	item: { id: "minecraft:end_rod" },\
-	translation: "block.minecraft.end_rod",\
+	id: "fetchr:arrow",\
+	item: { id: "minecraft:arrow" },\
+	translation: "item.minecraft.arrow",\
 	icon: "003c",\
-	categories: [ "fetchr:end_city" ]\
+	categories: [ "fetchr:skeleton" ]\
 }
 
 # 003d: shulker_shell
@@ -2241,7 +2251,7 @@ data \
 	item: { id: "minecraft:fletching_table" },\
 	translation: "block.minecraft.fletching_table",\
 	icon: "0105",\
-	categories: [ "fetchr:flint" ]\
+	categories: [ "fetchr:flint", "minecraft:village" ]\
 }
 
 # 0106: furnace
@@ -2551,7 +2561,7 @@ data \
 	item: { id: "minecraft:nether_wart_block" },\
 	translation: "block.minecraft.nether_wart_block",\
 	icon: "0124",\
-	categories: [ "fetchr:crimson" ]\
+	categories: [ "fetchr:crimson", "fetchr:nether_fortress" ]\
 }
 
 # 0125: warped_wart_block
@@ -2652,6 +2662,16 @@ data \
 	translation: "block.minecraft.glowstone",\
 	icon: "012e",\
 	categories: [ "fetchr:glowstone" ]\
+}
+
+# 012f: end_rod
+data \
+	modify storage fetchr:registries items append value {\
+	id: "fetchr:end_rod",\
+	item: { id: "minecraft:end_rod" },\
+	translation: "block.minecraft.end_rod",\
+	icon: "012f",\
+	categories: [ "fetchr:end_city" ]\
 }
 
 
