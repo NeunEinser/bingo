@@ -13,6 +13,13 @@
 							"type": "minecraft:model",
 							"model": "minecraft:item/barrier"
 						}
+					},
+					{
+						"when": { "effects": [ "minecraft:wither_skeletons" ], "include_description": true },
+						"model": {
+							"type": "minecraft:model",
+							"model": "minecraft:item/wither_skeleton_spawn_egg"
+						}
 					}
 				],
 				"fallback": {
