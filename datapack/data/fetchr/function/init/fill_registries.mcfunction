@@ -240,8 +240,8 @@ data \
 }
 data \
 	modify storage fetchr:registries categories append value {\
-	id: "fetchr:lush_cave",\
-	name: { translate: "fetchr.category.lush_cave" },\
+	id: "fetchr:lush_caves",\
+	name: { translate: "fetchr.category.lush_caves" },\
 	requirements: [ "fetchr:lush_caves" ]\
 }
 
@@ -541,8 +541,8 @@ data \
 			"fetchr:ancient_city",\
 			[\
 				"minecraft:grid_world",\
-				"minecraft:floating_island_world"
-			]
+				"minecraft:floating_island_world"\
+			]\
 		]\
 	}\
 }
@@ -567,19 +567,19 @@ data \
 	modify storage fetchr:registries categories append value {\
 	id: "fetchr:end_city",\
 	name: { translate: "fetchr.category.end_city" },\
-	requirements: ["fetchr:end_city" ]
+	requirements: ["fetchr:end_city" ],\
 }
 data \
 	modify storage fetchr:registries categories append value {\
 	id: "fetchr:nether_fortress",\
 	name: { translate: "fetchr.category.nether_fortress" },\
-	requirements: [ "fetchr:nether_fortress" ]
+	requirements: [ "fetchr:nether_fortress" ],\
 }
 data \
 	modify storage fetchr:registries categories append value {\
 	id: "fetchr:bastion_remnant",\
 	name: { translate: "fetchr.category.bastion_remnant" },\
-	requirements: [ "fetchr:bastion_remnant" ]
+	requirements: [ "fetchr:bastion_remnant" ],\
 }
 data \
 	modify storage fetchr:registries categories append value {\
@@ -597,7 +597,7 @@ data \
 	modify storage fetchr:registries categories append value {\
 	id: "fetchr:village",\
 	name: { translate: "fetchr.category.village" },\
-	requirements: [ "fetchr:village" ]
+	requirements: [ "fetchr:village" ],\
 }
 data \
 	modify storage fetchr:registries categories append value {\
@@ -803,7 +803,7 @@ data \
 }
 data \
 	modify storage fetchr:registries categories append value {\
-	id: "goat",\
+	id: "fetchr:goat",\
 	name: { translate: "fetchr.category.goat" },\
 	requirements: {\
 		type: "conjunction",\
@@ -829,7 +829,7 @@ data \
 }
 data \
 	modify storage fetchr:registries categories append value {\
-	id: "pig",\
+	id: "fetchr:pig",\
 	name: { translate: "fetchr.category.pig" },\
 	requirements: {\
 		type: "conjunction",\
@@ -857,13 +857,13 @@ data \
 	modify storage fetchr:registries categories append value {\
 	id: "fetchr:strider",\
 	name: { translate: "fetchr.category.strider" },\
-	requirements: [ "minecraft:striders" ]
+	requirements: [ "minecraft:striders" ],\
 }
 data \
 	modify storage fetchr:registries categories append value {\
 	id: "fetchr:sheep",\
 	name: { translate: "fetchr.category.sheep" },\
-	requirements: [
+	requirements: [\
 		{\
 			type: "conjunction",\
 			value: [\
@@ -884,7 +884,7 @@ data \
 					"fetchr:dark_forest"\
 				],\
 			]\
-		}
+		},\
 	]\
 }
 #endregion peaceful mobs
@@ -1122,7 +1122,7 @@ data \
 		type: "conjunction",\
 		value: [\
 			"minecraft:guardians"\
-		],
+		],\
 	}\
 }
 data \
@@ -1170,7 +1170,7 @@ data \
 	item: { id: "minecraft:cauldron" },\
 	translation: "block.minecraft.cauldron",\
 	icon: "0002",\
-	categories: [ "fetchr:copper" ]\
+	categories: [ "fetchr:basic_iron" ]\
 }
 
 # 0003: copper_ingot
@@ -1213,12 +1213,12 @@ data \
 	categories: [ "fetchr:gold" ]\
 }
 
-# 0007: gold_shovel
+# 0007: golden_shovel
 data \
 	modify storage fetchr:registries items append value {\
-	id: "fetchr:gold_shovel",\
-	item: { id: "minecraft:gold_shovel" },\
-	translation: "item.minecraft.gold_shovel",\
+	id: "fetchr:golden_shovel",\
+	item: { id: "minecraft:golden_shovel" },\
+	translation: "item.minecraft.golden_shovel",\
 	icon: "0007",\
 	categories: [ "fetchr:gold" ]\
 }
@@ -1400,7 +1400,7 @@ data \
 	item: { id: "minecraft:fern" },\
 	translation: "block.minecraft.fern",\
 	icon: "0019",\
-	categories: [ "fetchr:jungle", "taiga" ]\
+	categories: [ "fetchr:jungle", "fetchr:taiga" ]\
 }
 
 # 001a: melon
@@ -1592,17 +1592,7 @@ data \
 	icon: "002c",\
 	categories: [ "fetchr:swamp", "fetchr:jungle" ]\
 }
-
-# 002d: vine
-data \
-	modify storage fetchr:registries items append value {\
-	id: "fetchr:vine",\
-	item: { id: "minecraft:vine" },\
-	translation: "block.minecraft.vine",\
-	icon: "002d",\
-	categories: [ "fetchr:swamp", "fetchr:jungle" ]\
-}
-
+ 
 # 002e: soul_torch
 data \
 	modify storage fetchr:registries items append value {\
@@ -1994,12 +1984,12 @@ data \
 	categories: [ "fetchr:fish", "fetchr:guardian" ]\
 }
 
-# 0055: ink
+# 0055: ink_sac
 data \
 	modify storage fetchr:registries items append value {\
-	id: "fetchr:ink",\
-	item: { id: "minecraft:ink" },\
-	translation: "item.minecraft.ink",\
+	id: "fetchr:ink_sac",\
+	item: { id: "minecraft:ink_sac" },\
+	translation: "item.minecraft.ink_sac",\
 	icon: "0055",\
 	categories: [ "fetchr:ink" ]\
 }
@@ -2014,12 +2004,12 @@ data \
 	categories: [ "fetchr:ink" ]\
 }
 
-# 0057: glow_ink
+# 0057: glow_ink_sac
 data \
 	modify storage fetchr:registries items append value {\
-	id: "fetchr:glow_ink",\
-	item: { id: "minecraft:glow_ink" },\
-	translation: "item.minecraft.glow_ink",\
+	id: "fetchr:glow_ink_sac",\
+	item: { id: "minecraft:glow_ink_sac" },\
+	translation: "item.minecraft.glow_ink_sac",\
 	icon: "0057",\
 	categories: [ "fetchr:glow_ink" ]\
 }
@@ -2031,7 +2021,7 @@ data \
 	item: { id: "minecraft:gunpowder" },\
 	translation: "item.minecraft.gunpowder",\
 	icon: "0058",\
-	categories: [ "fetchr:gunpowder", "fetchr:ghast" ]\
+	categories: [ "fetchr:creeper", "fetchr:ghast" ]\
 }
 
 # 0059: ender_pearl
@@ -2061,7 +2051,7 @@ data \
 	item: { id: "minecraft:bone_meal" },\
 	translation: "item.minecraft.bone_meal",\
 	icon: "005b",\
-	categories: [ "fetchr:skeleton", "soulsand_valley" ]\
+	categories: [ "fetchr:skeleton", "fetchr:soulsand_valley" ]\
 }
 
 # 005c: rotten_flesh
@@ -2314,14 +2304,14 @@ data \
 	categories: [ "fetchr:magma", "fetchr:magma_cube" ]\
 }
 
-# 010c: glass_block
+# 010c: glass
 data \
 	modify storage fetchr:registries items append value {\
-	id: "fetchr:glass_block",\
-	item: { id: "minecraft:glass_block" },\
-	translation: "block.minecraft.glass_block",\
+	id: "fetchr:glass",\
+	item: { id: "minecraft:glass" },\
+	translation: "block.minecraft.glass",\
 	icon: "010c",\
-	categories: [ "fetchr:sand" ]\
+	categories: [ "fetchr:glass" ]\
 }
 
 # 010d: cobbled_deepslate
