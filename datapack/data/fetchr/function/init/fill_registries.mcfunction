@@ -1268,8 +1268,8 @@ data \
 	modify storage fetchr:registries items append value {\
 	id: "fetchr:kelp",\
 	item: { id: "minecraft:kelp" },\
-	translation: "item.minecraft.kelp",\
-	icon: "000b",\
+	translation: "block.minecraft.kelp",\
+	icon: "000c",\
 	categories: [ "fetchr:kelp" ]\
 }
 
@@ -1288,7 +1288,7 @@ data \
 	modify storage fetchr:registries items append value {\
 	id: "fetchr:red_mushroom",\
 	item: { id: "minecraft:red_mushroom" },\
-	translation: "item.minecraft.red_mushroom",\
+	translation: "block.minecraft.red_mushroom",\
 	icon: "000e",\
 	categories: [ "fetchr:mushroom" ]\
 }
@@ -1428,7 +1428,7 @@ data \
 	modify storage fetchr:registries items append value {\
 	id: "fetchr:bamboo",\
 	item: { id: "minecraft:bamboo" },\
-	translation: "item.minecraft.bamboo",\
+	translation: "block.minecraft.bamboo",\
 	icon: "001c",\
 	categories: [ "fetchr:jungle" ]\
 }
@@ -1658,7 +1658,7 @@ data \
 	modify storage fetchr:registries items append value {\
 	id: "fetchr:warped_roots",\
 	item: { id: "minecraft:warped_roots" },\
-	translation: "item.minecraft.warped_roots",\
+	translation: "block.minecraft.warped_roots",\
 	icon: "0033",\
 	categories: [ "fetchr:warped_forest" ]\
 }
@@ -1668,7 +1668,7 @@ data \
 	modify storage fetchr:registries items append value {\
 	id: "fetchr:chorus_fruit",\
 	item: { id: "minecraft:chorus_fruit" },\
-	translation: "block.minecraft.chorus_fruit",\
+	translation: "item.minecraft.chorus_fruit",\
 	icon: "0034",\
 	categories: [ "fetchr:end" ]\
 }
@@ -1758,7 +1758,7 @@ data \
 	modify storage fetchr:registries items append value {\
 	id: "fetchr:shulker_shell",\
 	item: { id: "minecraft:shulker_shell" },\
-	translation: "block.minecraft.shulker_shell",\
+	translation: "item.minecraft.shulker_shell",\
 	icon: "003d",\
 	categories: [ "fetchr:end_city", "fetchr:shulker" ]\
 }
@@ -1818,8 +1818,8 @@ data \
 	modify storage fetchr:registries items append value {\
 	id: "fetchr:bell",\
 	item: { id: "minecraft:bell" },\
-	translation: "item.minecraft.bell",\
-	icon: "0042",\
+	translation: "block.minecraft.bell",\
+	icon: "0043",\
 	categories: [ "fetchr:village" ]\
 }
 
@@ -2251,7 +2251,7 @@ data \
 	item: { id: "minecraft:fletching_table" },\
 	translation: "block.minecraft.fletching_table",\
 	icon: "0105",\
-	categories: [ "fetchr:flint", "minecraft:village" ]\
+	categories: [ "fetchr:flint", "fetchr:village" ]\
 }
 
 # 0106: furnace
@@ -2360,7 +2360,7 @@ data \
 	id: "fetchr:cherry_leaves",\
 	item: { id: "minecraft:cherry_leaves" },\
 	translation: "block.minecraft.cherry_leaves",\
-	icon: "010f",\
+	icon: "0110",\
 	categories: [ "fetchr:cherry_grove" ]\
 }
 
@@ -2380,7 +2380,7 @@ data \
 	id: "fetchr:flowering_azalea",\
 	item: { id: "minecraft:flowering_azalea" },\
 	translation: "block.minecraft.flowering_azalea",\
-	icon: "0111",\
+	icon: "0112",\
 	categories: [ "fetchr:lush_caves" ]\
 }
 
