@@ -8,6 +8,8 @@
 # 	function fetchr:init/items/second_pass
 # @writes storage fetchr:items categories
 
+# function fetchr:init/items/add_icon with storage tmp.fetchr:init initialized_items[-1]
+
 data \
 	modify storage tmp.fetchr:init initialized_items[-1].item.components.minecraft:lore \
 	append value { translate: "fetchr.categories.header", color: "gray", italic: false }
