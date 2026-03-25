@@ -41,11 +41,6 @@
 
 	# Loop depending on game state
 	execute \
-		at @a[tag=fetchr.in_skybox, limit=1] \
-		as @e[type=minecraft:marker, tag=fetchr.spawn, distance=..12, limit=1] \
-		at @s \
-		run function fetchr:game/skybox/tick
-	execute \
 		if score $game_state fetchr.state matches 4 \
 		run function fetchr:game/tick
 

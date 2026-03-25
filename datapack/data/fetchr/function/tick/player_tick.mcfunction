@@ -9,6 +9,11 @@
 # @within function fetchr:tick/*
 #declare storage tmp.fetchr:tick
 execute \
+	if score @s fetchr.pref matches -2147483648.. \
+	unless score @s fetchr.pref matches 0 \
+	run function fetchr:preferences/show
+
+execute \
 	in fetchr:resourcepack_check \
 	run teleport @s[tag=fetchr.resourcepack_check, predicate=!fetchr:is_in_resourcepack_check_dimension] 1 1 1 0 0
 

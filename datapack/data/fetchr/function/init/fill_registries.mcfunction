@@ -20,7 +20,7 @@
 # Probably should just keep the order of initial definition
 
 # categories
-
+#/give @p minecraft:mine_ingredient[minecraft:world_modifiers={effects:["surface_world","floating_islands_world","amplified","cave_world","shattered_blocks_world","grid_world","dark_cave_world","surface_exits","cave_exits","rare_surface_exits","sheep","cows","pigs","chickens","frogs","foxes","goats","ocelots","axolotls","armadillos","mooshrooms","pandas","parrots","rabbits","sniffers","striders","zombies","skeletons","spiders","cave_spiders","creepers","slimes","endermen","witches","magma_cubes","blazes","breezes","pillagers","vindicators","evokers","ravagers","illusioners","guardians","endermites","shulkers","ghasts","zombified_piglins","piglins","wither_skeletons","bees","hoglins","zoglins","base_stone","base_blackstone","base_diorite","base_andesite","base_granite","base_tuff","base_deepslate","base_end_stone","plains","savannas","forests","taigas","jungles","snowy","desert","badlands","swamps","dark_forests","ice_spikes","mushroom_fields","nether_barrens","nether_forests","deep_dark","end","dry_land","water_world","ultrawarm","icy","one_hp","wednesday_frogs","universal_anger","eternal_night","eternal_rain","eternal_lightning","insomniacs","no_drops","explosive_traps","fish_out_of_water","soul_link"],include_description:false}]
 #region always active
 data \
 	modify storage fetchr:registries categories append value {\
@@ -63,7 +63,7 @@ data \
 	modify storage fetchr:registries categories append value {\
 	id: "fetchr:clay",\
 	name: { translate: "fetchr.category.clay" },\
-	requirements: [ "fetchr:lush_cave", "minecraft:surface_world", "minecraft:floating_islands_world", "minecraft:amplified", "minecraft:shattered_blocks_world", "minecraft:cave_world", "minecraft:dark_cave_world"]\
+	requirements: [ "fetchr:lush_caves", "minecraft:surface_world", "minecraft:floating_islands_world", "minecraft:amplified", "minecraft:shattered_blocks_world", "minecraft:cave_world", "minecraft:dark_cave_world"]\
 }
 
 data \
@@ -174,6 +174,7 @@ data \
 		"fetchr:desert",\
 		"fetchr:badlands",\
 		"fetchr:beach",\
+		"fetchr:snowy_beach",\
 	]\
 }
 data \
@@ -270,7 +271,7 @@ data \
 	requirements: {\
 		type: "conjunction",\
 		value: [\
-			"fetchr:mangrove",\
+			"fetchr:mangrove_swamp",\
 			[\
 				"minecraft:grid_world",\
 				"minecraft:surface_world",\
@@ -299,10 +300,6 @@ data \
 				"minecraft:floating_islands_world",\
 				"minecraft:shattered_blocks_world",\
 			],\
-			{\
-				type: "negation",\
-				value: "fetchr:dark_forest",\
-			}\
 		],\
 	}\
 }
@@ -331,7 +328,7 @@ data \
 	requirements: {\
 		type: "conjunction",\
 		value: [\
-			"fetchr:dark_forest",\
+			"fetchr:pale_garden",\
 			[\
 				"minecraft:grid_world",\
 				"minecraft:surface_world",\
@@ -445,7 +442,7 @@ data \
 	requirements: {\
 		type: "conjunction",\
 		value: [\
-			"fetchr:soulsand_valley",\
+			"fetchr:soul_sand_valley",\
 			[\
 				"minecraft:grid_world",\
 				"minecraft:surface_world",\
@@ -463,7 +460,7 @@ data \
 	requirements: {\
 		type: "conjunction",\
 		value: [\
-			"fetchr:basalt_delta",\
+			"fetchr:basalt_deltas",\
 			[\
 				"minecraft:grid_world",\
 				"minecraft:surface_world",\
@@ -517,7 +514,7 @@ data \
 	requirements: {\
 		type: "conjunction",\
 		value: [\
-			"fetchr:end",\
+			"fetchr:end_highlands",\
 			[\
 				"minecraft:grid_world",\
 				"minecraft:surface_world",\
@@ -573,7 +570,7 @@ data \
 	modify storage fetchr:registries categories append value {\
 	id: "fetchr:nether_fortress",\
 	name: { translate: "fetchr.category.nether_fortress" },\
-	requirements: [ "fetchr:nether_fortress" ],\
+	requirements: [ "fetchr:fortress" ],\
 }
 data \
 	modify storage fetchr:registries categories append value {\
@@ -608,8 +605,7 @@ data \
 		value: [\
 			[\
 				"fetchr:cherry_grove",\
-				"fetchr:cherry_grove",\
-				"fetchr:cherry_meadow",\
+				"fetchr:meadow",\
 				"fetchr:snowy_slopes",\
 				"fetchr:frozen_peaks",\
 				"fetchr:stony_peaks",\
@@ -939,6 +935,9 @@ data \
 				value: [\
 					"minecraft:dry_land",\
 					"minecraft:ultrawarm",\
+					"minecraft:nether_barrens",\
+					"minecraft:nether_forests",\
+					"minecraft:end",\
 					"fetchr:warm_ocean",\
 				]\
 			},\
@@ -968,6 +967,9 @@ data \
 				value: [\
 					"minecraft:dry_land",\
 					"minecraft:ultrawarm",\
+					"minecraft:nether_barrens",\
+					"minecraft:nether_forests",\
+					"minecraft:end",\
 					"fetchr:warm_ocean",\
 					"fetchr:lukewarm_ocean",\
 					"fetchr:frozen_ocean",\
@@ -1000,6 +1002,9 @@ data \
 				value: [\
 					"minecraft:dry_land",\
 					"minecraft:ultrawarm",\
+					"minecraft:nether_barrens",\
+					"minecraft:nether_forests",\
+					"minecraft:end",\
 				]\
 			},\
 			[\
@@ -1034,6 +1039,9 @@ data \
 				value: [\
 					"minecraft:dry_land",\
 					"minecraft:ultrawarm",\
+					"minecraft:nether_barrens",\
+					"minecraft:nether_forests",\
+					"minecraft:end",\
 				]\
 			},\
 		]\
@@ -1121,7 +1129,24 @@ data \
 	requirements: {\
 		type: "conjunction",\
 		value: [\
-			"minecraft:guardians"\
+			"minecraft:guardians",\
+			[\
+				"minecraft:surface_world",\
+				"minecraft:amplified",\
+				"minecraft:shattered_blocks_world",\
+				"minecraft:cave_world",\
+				"minecraft:dark_cave_world",\
+			],\
+			{\
+				type: "negation",\
+				value: [\
+					"minecraft:dry_land",\
+					"minecraft:ultrawarm",\
+					"minecraft:nether_barrens",\
+					"minecraft:nether_forests",\
+					"minecraft:end",\
+				]\
+			},\
 		],\
 	}\
 }

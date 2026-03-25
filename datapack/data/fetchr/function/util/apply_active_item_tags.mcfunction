@@ -17,8 +17,7 @@
 scoreboard players set $available_category_weight fetchr.state 1
 execute \
 	store result score $apply_tags.tag_count fetchr.tmp \
-	run data get storage fetchr:items active_tags
-scoreboard players add $apply_tags.tag_count fetchr.tmp 1
+	run data get storage fetchr:items effects
 
 data modify storage fetchr:items active_items set value []
 data modify storage fetchr:items active_categories set value []

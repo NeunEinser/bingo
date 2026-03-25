@@ -3,7 +3,6 @@
 # This function is called every tick when a game is running
 #
 # @within function fetchr:tick/tick
-execute if score $points_goal_announcement_minutes fetchr.settings matches 1.. if score $points_goal_announced fetchr.state matches 0 if score $minutes 91.timer.io >= $points_goal_announcement_minutes fetchr.settings run function fetchr:item_detection/goals/points/announce
 
 execute as @a[predicate=fetchr:is_in_game] at @s run function fetchr:game/player_tick
 
