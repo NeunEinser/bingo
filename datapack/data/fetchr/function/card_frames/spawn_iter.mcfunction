@@ -31,15 +31,15 @@ execute \
 
 scoreboard players add $card_frames/spawn.i fetchr.tmp 1
 scoreboard players operation $card_frames/spawn.row fetchr.tmp = $card_frames/spawn.i fetchr.tmp
-scoreboard players operation $card_frames/spawn.row fetchr.tmp %= 5 fetchr.const
+scoreboard players operation $card_frames/spawn.row fetchr.tmp %= 3 fetchr.const
 
 execute \
-	if score $card_frames/spawn.i fetchr.tmp matches ..24 \
+	if score $card_frames/spawn.i fetchr.tmp matches ..8 \
 	if score $card_frames/spawn.row fetchr.tmp matches 1.. \
 	positioned ~1 ~ ~ \
 	run function fetchr:card_frames/spawn_iter
 execute \
-	if score $card_frames/spawn.i fetchr.tmp matches ..24 \
+	if score $card_frames/spawn.i fetchr.tmp matches ..8 \
 	if score $card_frames/spawn.row fetchr.tmp matches 0 \
-	positioned ~-4 ~-1 ~ \
+	positioned ~-2 ~ ~1 \
 	run function fetchr:card_frames/spawn_iter

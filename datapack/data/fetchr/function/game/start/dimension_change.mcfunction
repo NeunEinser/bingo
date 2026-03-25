@@ -18,6 +18,10 @@ execute \
 	run return 0
 execute \
 	in minecraft:overworld \
+	if data block 8 2 8 Items[{Slot: 0b}].components.minecraft:special_mine \
+	run return 0
+execute \
+	in minecraft:overworld \
 	run data \
 		modify storage tmp.fetchr:game/start level_data.dimension_id \
 		set from block 8 2 8 Items[{Slot: 0b}].components.minecraft:dimension_id

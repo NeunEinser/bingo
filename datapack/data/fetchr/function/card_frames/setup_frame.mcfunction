@@ -8,11 +8,13 @@
 # 	function fetchr:card_frames/spawn_iter
 
 data merge entity @s {\
-	Facing: 3b,\
+	Facing: 1b,\
 	Silent: true,\
 	Tags: [ "fetchr.card_frame" ],\
 	Item: { id: "minecraft:barrier" },\
-	ItemDropChance: 0.0f\
+	ItemDropChance: 0.0f,\
+	Invulnerable: true,\
+	Fixed: true\
 }
 
 scoreboard players operation @s fetchr.lobby_card_frame_id = $card_frames/spawn.i fetchr.tmp
@@ -22,10 +24,4 @@ execute \
 	run data \
 		modify entity @s Item \
 		set from storage tmp.fetchr:card_frames/spawn_frames slots[0].item
-execute \
-	if dimension fetchr:default \
-	if items entity @s contents *[minecraft:lodestone_tracker] \
-	run data \
-		modify entity @s Item.components.minecraft:lodestone_tracker.target.dimension \
-		set value "fetchr:default"
 data remove storage tmp.fetchr:card_frames/spawn_frames slots[0]

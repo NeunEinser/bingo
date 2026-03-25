@@ -163,3 +163,5 @@ execute \
 	run data modify storage fetchr:items effects append value "fetchr:village"
 
 function fetchr:util/apply_active_item_tags
+execute positioned ~-1 ~ ~-1 run function fetchr:card_frames/spawn_frames
+function fetchr:card_generation/random_card

@@ -959,7 +959,7 @@ execute as @a unless dimension minecraft:overworld run say not ow
 	gamerule doTraderSpawning false
 	gamerule disableElytraMovementCheck true
 	gamerule doPatrolSpawning false
-	gamerule maxCommandChainLength 131072
+	gamerule maxCommandChainLength 262144
 	difficulty easy
 
 # setup teams

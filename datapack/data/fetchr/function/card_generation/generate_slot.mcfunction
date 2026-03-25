@@ -29,5 +29,5 @@ execute \
 function fetchr:card_generation/set_item_data with storage fetchr:card slots[-1]
 
 execute \
-	if score $card_gen.slot fetchr.tmp matches ..23 \
+	if score $card_gen.slot fetchr.tmp matches ..7 \
 	run function fetchr:card_generation/cleanup_and_next_slot

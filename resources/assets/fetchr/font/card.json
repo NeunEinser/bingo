@@ -3,8 +3,8 @@
 		{
 			"type": "bitmap",
 			"file": "fetchr:font/bingo_card_background.png",
-			"ascent": 39,
-			"height": 104,
+			"ascent": -3,
+			"height": 62,
 			"chars": [
 				"a"
 			]
@@ -13,7 +13,7 @@
 			"type": "bitmap",
 			"file": "fetchr:font/bingo_card_background.png",
 			"ascent": 10,
-			"height": 104,
+			"height": 62,
 			"chars": [
 				"b"
 			]

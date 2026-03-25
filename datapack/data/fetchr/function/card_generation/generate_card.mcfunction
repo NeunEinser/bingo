@@ -47,11 +47,6 @@ function fetchr:card_generation/generate_slot
 
 function neun_einser.math:random/next_full_int with storage tmp.fetchr:rand_data
 execute \
-	store result storage fetchr:card spawn_location int 1 \
-	run scoreboard players get $rand.out 91.math.io
-
-function neun_einser.math:random/next_full_int with storage tmp.fetchr:rand_data
-execute \
 	store result storage fetchr:card random_sequence_data.seed int 1 \
 	run scoreboard players get $rand.out 91.math.io
 
@@ -62,52 +57,28 @@ data \
 	modify block 7 0 7 front_text.messages[0] set value [\
 	"",\
 	{ text: "a", font: "fetchr:card" },\
-	"\uff97",\
-	[\
-		{ text: "", font: "fetchr:actionbar_card/row0" },\
-		{ storage: "fetchr:card", nbt: "slots[0].current_display", interpret: true }, { text: "\u0002", font: "fetchr:space" },\
-		{ storage: "fetchr:card", nbt: "slots[1].current_display", interpret: true }, { text: "\u0002", font: "fetchr:space" },\
-		{ storage: "fetchr:card", nbt: "slots[2].current_display", interpret: true }, { text: "\u0002", font: "fetchr:space" },\
-		{ storage: "fetchr:card", nbt: "slots[3].current_display", interpret: true }, { text: "\u0002", font: "fetchr:space" },\
-		{ storage: "fetchr:card", nbt: "slots[4].current_display", interpret: true }\
-	],\
-	"\uff99",\
-	[\
-		{ text: "", font: "fetchr:actionbar_card/row1" },\
-		{ storage: "fetchr:card", nbt: "slots[5].current_display", interpret: true }, { text: "\u0002", font: "fetchr:space" },\
-		{ storage: "fetchr:card", nbt: "slots[6].current_display", interpret: true }, { text: "\u0002", font: "fetchr:space" },\
-		{ storage: "fetchr:card", nbt: "slots[7].current_display", interpret: true }, { text: "\u0002", font: "fetchr:space" },\
-		{ storage: "fetchr:card", nbt: "slots[8].current_display", interpret: true }, { text: "\u0002", font: "fetchr:space" },\
-		{ storage: "fetchr:card", nbt: "slots[9].current_display", interpret: true }\
-	],\
-	"\uff99",\
+	"\uffc1",\
 	[\
 		{ text: "", font: "fetchr:actionbar_card/row2" },\
-		{ storage: "fetchr:card", nbt: "slots[10].current_display", interpret: true }, { text: "\u0002", font: "fetchr:space" },\
-		{ storage: "fetchr:card", nbt: "slots[11].current_display", interpret: true }, { text: "\u0002", font: "fetchr:space" },\
-		{ storage: "fetchr:card", nbt: "slots[12].current_display", interpret: true }, { text: "\u0002", font: "fetchr:space" },\
-		{ storage: "fetchr:card", nbt: "slots[13].current_display", interpret: true }, { text: "\u0002", font: "fetchr:space" },\
-		{ storage: "fetchr:card", nbt: "slots[14].current_display", interpret: true }\
+		{ storage: "fetchr:card", nbt: "slots[0].current_display", interpret: true }, { text: "\u0002", font: "fetchr:space" },\
+		{ storage: "fetchr:card", nbt: "slots[1].current_display", interpret: true }, { text: "\u0002", font: "fetchr:space" },\
+		{ storage: "fetchr:card", nbt: "slots[2].current_display", interpret: true }\
 	],\
-	"\uff99",\
+	"\uffc3",\
 	[\
 		{ text: "", font: "fetchr:actionbar_card/row3" },\
-		{ storage: "fetchr:card", nbt: "slots[15].current_display", interpret: true }, { text: "\u0002", font: "fetchr:space" },\
-		{ storage: "fetchr:card", nbt: "slots[16].current_display", interpret: true }, { text: "\u0002", font: "fetchr:space" },\
-		{ storage: "fetchr:card", nbt: "slots[17].current_display", interpret: true }, { text: "\u0002", font: "fetchr:space" },\
-		{ storage: "fetchr:card", nbt: "slots[18].current_display", interpret: true }, { text: "\u0002", font: "fetchr:space" },\
-		{ storage: "fetchr:card", nbt: "slots[19].current_display", interpret: true }\
+		{ storage: "fetchr:card", nbt: "slots[3].current_display", interpret: true }, { text: "\u0002", font: "fetchr:space" },\
+		{ storage: "fetchr:card", nbt: "slots[4].current_display", interpret: true }, { text: "\u0002", font: "fetchr:space" },\
+		{ storage: "fetchr:card", nbt: "slots[5].current_display", interpret: true }\
 	],\
-	"\uff99",\
+	"\uffc3",\
 	[\
 		{ text: "", font: "fetchr:actionbar_card/row4" },\
-		{ storage: "fetchr:card", nbt: "slots[20].current_display", interpret: true }, { text: "\u0002", font: "fetchr:space" },\
-		{ storage: "fetchr:card", nbt: "slots[21].current_display", interpret: true }, { text: "\u0002", font: "fetchr:space" },\
-		{ storage: "fetchr:card", nbt: "slots[22].current_display", interpret: true }, { text: "\u0002", font: "fetchr:space" },\
-		{ storage: "fetchr:card", nbt: "slots[23].current_display", interpret: true }, { text: "\u0002", font: "fetchr:space" },\
-		{ storage: "fetchr:card", nbt: "slots[24].current_display", interpret: true }\
+		{ storage: "fetchr:card", nbt: "slots[6].current_display", interpret: true }, { text: "\u0002", font: "fetchr:space" },\
+		{ storage: "fetchr:card", nbt: "slots[7].current_display", interpret: true }, { text: "\u0002", font: "fetchr:space" },\
+		{ storage: "fetchr:card", nbt: "slots[8].current_display", interpret: true }\
 	],\
-	"\uff99"\
+	"\uffc3"\
 ]
 data \
 	modify storage fetchr:card teams[0].card \
@@ -118,25 +89,9 @@ execute \
 	run data modify entity @s Item set value { id: "minecraft:barrier" }
 
 scoreboard players reset * fetchr.neutral_display
-scoreboard players reset * fetchr.black_display
-scoreboard players reset * fetchr.blue_display
-scoreboard players reset * fetchr.cyan_display
-scoreboard players reset * fetchr.dark_blue_display
-scoreboard players reset * fetchr.dark_gray_display
-scoreboard players reset * fetchr.dark_red_display
-scoreboard players reset * fetchr.gray_display
-scoreboard players reset * fetchr.green_display
-scoreboard players reset * fetchr.light_blue_display
-scoreboard players reset * fetchr.lime_display
-scoreboard players reset * fetchr.magenta_display
-scoreboard players reset * fetchr.orange_display
-scoreboard players reset * fetchr.purple_display
-scoreboard players reset * fetchr.red_display
-scoreboard players reset * fetchr.white_display
-scoreboard players reset * fetchr.yellow_display
 
 execute \
-	as @e[tag=fetchr.card_frame, scores={fetchr.lobby_card_frame_id=12}, distance=0.., limit=1] \
+	as @e[tag=fetchr.card_frame, scores={fetchr.lobby_card_frame_id=4}, distance=0.., limit=1] \
 	at @s \
 	run playsound minecraft:entity.item_frame.add_item voice @a ~ ~ ~ 1 0.8
 
@@ -146,5 +101,3 @@ function fetchr:custom_hud/components/timer/update
 # @api
 #declare tag/function fetchr:post_card_gen
 function #fetchr:post_card_gen
-
-schedule function fetchr:game/start/locate_spawnpoint 1s
