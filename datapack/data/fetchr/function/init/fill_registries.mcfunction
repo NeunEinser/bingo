@@ -86,6 +86,7 @@ data \
 					type: "negation",\
 					value: [\
 						"minecraft:dry_land",\
+						"minecraft:ultra_warm",\
 						"minecraft:nether_barrens",\
 						"minecraft:nether_forests",\
 						"minecraft:end",\
@@ -617,15 +618,12 @@ data \
 			],\
 			{\
 				type: "negation",\
-				value: {\
-					type: "conjunction",\
-					value: [\
-						"fetchr:shipwreck",\
-						"fetchr:burried_treasure",\
-						"fetchr:village",\
-						"minecraft:evokers",\
-					]\
-				}\
+				value:  [\
+					"fetchr:shipwreck",\
+					"fetchr:burried_treasure",\
+					"fetchr:village",\
+					"minecraft:evokers",\
+				]\
 			},\
 		]\
 	}\
@@ -848,12 +846,6 @@ data \
 			],\
 		]\
 	}\
-}
-data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:strider",\
-	name: { translate: "fetchr.category.strider" },\
-	requirements: [ "minecraft:striders" ],\
 }
 data \
 	modify storage fetchr:registries categories append value {\
@@ -1745,7 +1737,7 @@ data \
 	item: { id: "minecraft:string" },\
 	translation: "item.minecraft.string",\
 	icon: "0039",\
-	categories: [ "fetchr:mineshaft", "fetchr:spider", "fetchr:strider" ]\
+	categories: [ "fetchr:mineshaft", "fetchr:spider" ]\
 }
 
 # 003a: spider_eye
@@ -1986,7 +1978,7 @@ data \
 	item: { id: "minecraft:painting" },\
 	translation: "item.minecraft.painting",\
 	icon: "0051",\
-	categories: [ "fetchr:sheep", "fetchr:strider", "fetchr:spider" ]\
+	categories: [ "fetchr:sheep", "fetchr:spider" ]\
 }
 
 # 0052: cod
@@ -2656,7 +2648,7 @@ data \
 	item: { id: "minecraft:white_wool" },\
 	translation: "block.minecraft.white_wool",\
 	icon: "012b",\
-	categories: [ "fetchr:sheep", "fetchr:strider", "fetchr:spider" ]\
+	categories: [ "fetchr:sheep", "fetchr:spider" ]\
 }
 
 # 012c: bone_block
