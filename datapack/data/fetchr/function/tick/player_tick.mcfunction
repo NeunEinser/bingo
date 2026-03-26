@@ -306,6 +306,19 @@ execute \
 	in fetchr:resourcepack_check \
 	run function fetchr:custom_hud/tick
 
+execute \
+	if score @s fetchr.open_barrel matches 1 \
+	if entity @e[type=minecraft:marker, tag=fetchr.mine_exit, distance=..20] \
+	run tag @s add fetchr.exit_barrel_open
+
+scoreboard players set @s fetchr.open_barrel 0
+
+execute \
+	if entity @s[tag=fetchr.exit_barrel_open] \
+	run function fetchr:tick/handle_barrels
+
+	
+
 # End
 scoreboard players operation @s fetchr.prev_x_pos = $tick/player.x fetchr.tmp
 scoreboard players operation @s fetchr.prev_y_pos = $tick/player.y fetchr.tmp

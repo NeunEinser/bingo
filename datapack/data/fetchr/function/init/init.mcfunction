@@ -585,6 +585,8 @@ execute as @a unless dimension minecraft:overworld run say not ow
 		#		function fetchr:tick/player_tick
 		#		function fetchr:tick/handle_player_join
 		scoreboard objectives add fetchr.reconnect minecraft.custom:minecraft.leave_game
+
+		scoreboard objectives add fetchr.open_barrel minecraft.custom:minecraft.open_barrel
 	#endregion
 
 	#region score holders

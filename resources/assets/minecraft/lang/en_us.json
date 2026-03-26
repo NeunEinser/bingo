@@ -3,20 +3,17 @@
 
 
 	"world.effect.rabbits.name": "§mRabbits§r Parrots",
-	"world.effect.rabbits.description": "§mJumpy meals§r Mojang messed this up. Just adds Parrots.",
+	"world.effect.rabbits.description": "§mJumpy meals§r Mojang messed this up. Also adds parrots..",
 
 	"world.effect.no_drops.name": "No Fetchr card?",
-	"world.effect.no_drops.description": "Am I blind?",
-	"world.effect.no_drops.hint": "Found by chance",
+	"world.effect.no_drops.description": "Maybe testing an item in the correct slot reveals something?",
 
 	"world.effect.surface_exits.name": "Bingo Exits",
-	"world.effect.surface_exits.description": "Complete a Bingo to spawn the exit",
+	"world.effect.surface_exits.description": "Lay out a Bingo in the barrel to open the exit",
 	
 	"world.effect.cave_exits.name": "Blackout Exits",
-	"world.effect.cave_exits.description": "Complete a Blackout to spawn the exit",
-	"world.effect.cave_exits.hint": "Get a sniper Bingo",
+	"world.effect.cave_exits.description": "Lay out a Blackout in the barrel to open the exit",
 
-	"world.effect.rare_surface_exits.description": "Mine Exits are found after a mutli-Bingo. Before getting any Bingo, set up two intersecting Bingos and get the item in the intersection last. Obtaining a normal Bingo fails this mine.",
-	"world.effect.rare_surface_exits.hint": "Get a fast blackout in a mine that requires a blackout",
-	"world.effect.rare_surface_exits.name": "Multi-Bingo Exits"
+	"world.effect.rare_surface_exits.description": "Lay out 6 items without creating a Bingo in the barrel to open the exit",
+	"world.effect.rare_surface_exits.name": "6 No Bingo Exits"
 }

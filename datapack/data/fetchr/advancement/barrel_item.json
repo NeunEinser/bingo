@@ -1,0 +1,20 @@
+{
+	"criteria": {
+		"inventory_changed": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": "minecraft:gray_stained_glass_pane",
+						"components": {
+							"minecraft:item_model": "fetchr:hidden"
+						}
+					}
+				]
+			}
+		}
+	},
+	"rewards": {
+		"function": "fetchr:tick/barrel_item_stolen"
+	}
+}

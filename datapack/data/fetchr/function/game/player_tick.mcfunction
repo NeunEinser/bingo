@@ -15,7 +15,6 @@ tellraw @s[tag=!fetchr.spectator, gamemode=!survival] [\
 		"with": [{\
 			"translate": "fetchr.game.switch_gamemode.prevented.click",\
 			"color": "#00c3ff",\
-			"clickEvent": { "action": "run_command", "value": "/trigger fetchr.spectator" },\
 			"click_event": { "action": "run_command", "command": "trigger fetchr.spectator" }\
 		}]\
 	},\
@@ -28,14 +27,16 @@ tellraw @s[tag=!fetchr.spectator, gamemode=!survival] [\
 			"text": "/trigger fetchr.spectator",\
 			"color": "white",\
 			"italic": false,\
-			"clickEvent": { "action": "suggest_command", "value": "/trigger fetchr.spectator" },\
 			"click_event": { "action": "suggest_command", "command": "/trigger fetchr.spectator" }\
 		}]\
 	}\
 ]
 
-scoreboard players add @s[scores={fetchr.bed=1..}] fetchr.bed 1
 execute \
-	if score @s fetchr.bed matches 99.. \
-	store result score @s fetchr.bed \
-	run data get entity @s SleepTimer
+	at @e[type=minecraft:marker, tag=fetchr.mine_exit, tag=!fetchr.unlocked_exit, distance=..20] \
+	run function fetchr:game/tick_exit
+
+execute \
+	at @e[type=minecraft:marker, tag=fetchr.mine_exit, distance=20..30] \
+	unless entity @a[limit=1, distance=..20] \
+	run function fetchr:game/open_exit

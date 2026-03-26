@@ -162,6 +162,11 @@ execute \
 	if score $start.structure_test fetchr.tmp matches 1.. \
 	run data modify storage fetchr:items effects append value "fetchr:village"
 
+execute \
+	in fetchr:resourcepack_check positioned 0 0 0 \
+	as @e[type=minecraft:marker, tag=fetchr.string_tester, distance=..0.1, limit=1] \
+	run function fetchr:game/start/set_game_mode
+
 function fetchr:util/apply_active_item_tags
 execute positioned ~-1 ~ ~-1 run function fetchr:card_frames/spawn_frames
-function fetchr:card_generation/random_card
+schedule function fetchr:card_generation/random_card 1t
