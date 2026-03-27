@@ -594,7 +594,19 @@ data \
 	modify storage fetchr:registries categories append value {\
 	id: "fetchr:end_city",\
 	name: { translate: "fetchr.category.end_city" },\
-	requirements: ["fetchr:end_city" ],\
+	requirements: {\
+		type: "conjunction",\
+		value: [\
+			"fetchr:end_city",\
+			[\
+				"minecraft:grid_world",\
+				"minecraft:floating_island_world",\
+				"minecraft:surface_world",\
+				"minecraft:shattered_blocks_world",\
+				"minecraft:amplified",\
+			]\
+		]\
+	}\
 }
 data \
 	modify storage fetchr:registries categories append value {\
@@ -617,6 +629,13 @@ data \
 		value: [\
 			"fetchr:shipwreck",\
 			"fetchr:burried_treasure",\
+			[\
+				"minecraft:grid_world",\
+				"minecraft:floating_island_world",\
+				"minecraft:surface_world",\
+				"minecraft:shattered_blocks_world",\
+				"minecraft:amplified",\
+			]\
 		]\
 	}\
 }
@@ -624,7 +643,19 @@ data \
 	modify storage fetchr:registries categories append value {\
 	id: "fetchr:village",\
 	name: { translate: "fetchr.category.village" },\
-	requirements: [ "fetchr:village" ],\
+	requirements: {\
+		type: "conjunction",\
+		value: [\
+			"fetchr:village",\
+			[\
+				"minecraft:grid_world",\
+				"minecraft:floating_island_world",\
+				"minecraft:surface_world",\
+				"minecraft:shattered_blocks_world",\
+				"minecraft:amplified",\
+			]\
+		]\
+	}\
 }
 data \
 	modify storage fetchr:registries categories append value {\
