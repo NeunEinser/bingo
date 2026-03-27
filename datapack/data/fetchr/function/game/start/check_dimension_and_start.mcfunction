@@ -13,25 +13,29 @@
 # 	position The location the player spawned at
 # @within function fetchr:game/start/dimension_change
 
-$say $(dimension_id) $(level_number)
+scoreboard players set $start/check_dimension.is_dim fetchr.tmp 0
+$execute if dimension $(dimension_id) run scoreboard players set $start/check_dimension.is_dim fetchr.tmp 1
+execute if score $start/check_dimension.is_dim fetchr.tmp matches 0 run return 0
 
-$execute unless dimension $(dimension_id) run return 0
+$scoreboard players set $level_number fetchr.state $(level_number)
+
+data modify storage tmp.fetchr:game/start exclude_surface set value []
+data modify storage tmp.fetchr:game/start exclude_special set value []
+
+execute \
+	in fetchr:resourcepack_check positioned 0 0 0 \
+	as @e[type=minecraft:marker, tag=fetchr.string_tester, distance=..0.1, limit=1] \
+	run function fetchr:game/start/check_special_world
 
 $function fetchr:game/start/test_biome { level_number: $(level_number), biome: "badlands" }
 $function fetchr:game/start/test_biome { level_number: $(level_number), biome: "bamboo_jungle" }
-$function fetchr:game/start/test_biome { level_number: $(level_number), biome: "basalt_deltas" }
 $function fetchr:game/start/test_biome { level_number: $(level_number), biome: "beach" }
 $function fetchr:game/start/test_biome { level_number: $(level_number), biome: "birch_forest" }
 $function fetchr:game/start/test_biome { level_number: $(level_number), biome: "cherry_grove" }
 $function fetchr:game/start/test_biome { level_number: $(level_number), biome: "cold_ocean" }
-$function fetchr:game/start/test_biome { level_number: $(level_number), biome: "crimson_forest" }
 $function fetchr:game/start/test_biome { level_number: $(level_number), biome: "dark_forest" }
-$function fetchr:game/start/test_biome { level_number: $(level_number), biome: "deep_dark" }
 $function fetchr:game/start/test_biome { level_number: $(level_number), biome: "desert" }
 $function fetchr:game/start/test_biome { level_number: $(level_number), biome: "dripstone_caves" }
-$function fetchr:game/start/test_biome { level_number: $(level_number), biome: "end_barrens" }
-$function fetchr:game/start/test_biome { level_number: $(level_number), biome: "end_highlands" }
-$function fetchr:game/start/test_biome { level_number: $(level_number), biome: "end_midlands" }
 $function fetchr:game/start/test_biome { level_number: $(level_number), biome: "forest" }
 $function fetchr:game/start/test_biome { level_number: $(level_number), biome: "frozen_ocean" }
 $function fetchr:game/start/test_biome { level_number: $(level_number), biome: "frozen_peaks" }
@@ -44,27 +48,80 @@ $function fetchr:game/start/test_biome { level_number: $(level_number), biome: "
 $function fetchr:game/start/test_biome { level_number: $(level_number), biome: "mangrove_swamp" }
 $function fetchr:game/start/test_biome { level_number: $(level_number), biome: "meadow" }
 $function fetchr:game/start/test_biome { level_number: $(level_number), biome: "mushroom_fields" }
-$function fetchr:game/start/test_biome { level_number: $(level_number), biome: "nether_wastes" }
 $function fetchr:game/start/test_biome { level_number: $(level_number), biome: "ocean" }
-$function fetchr:game/start/test_biome { level_number: $(level_number), biome: "pale_garden" }
 $function fetchr:game/start/test_biome { level_number: $(level_number), biome: "plains" }
 $function fetchr:game/start/test_biome { level_number: $(level_number), biome: "river" }
 $function fetchr:game/start/test_biome { level_number: $(level_number), biome: "savanna" }
-$function fetchr:game/start/test_biome { level_number: $(level_number), biome: "small_end_islands" }
-$function fetchr:game/start/test_biome { level_number: $(level_number), biome: "snowy_beach" }
-$function fetchr:game/start/test_biome { level_number: $(level_number), biome: "snowy_plains" }
-$function fetchr:game/start/test_biome { level_number: $(level_number), biome: "snowy_slopes" }
-$function fetchr:game/start/test_biome { level_number: $(level_number), biome: "snowy_taiga" }
-$function fetchr:game/start/test_biome { level_number: $(level_number), biome: "soul_sand_valley" }
 $function fetchr:game/start/test_biome { level_number: $(level_number), biome: "sparse_jungle" }
 $function fetchr:game/start/test_biome { level_number: $(level_number), biome: "stony_peaks" }
 $function fetchr:game/start/test_biome { level_number: $(level_number), biome: "sunflower_plains" }
 $function fetchr:game/start/test_biome { level_number: $(level_number), biome: "swamp" }
 $function fetchr:game/start/test_biome { level_number: $(level_number), biome: "taiga" }
-$function fetchr:game/start/test_biome { level_number: $(level_number), biome: "the_end" }
 $function fetchr:game/start/test_biome { level_number: $(level_number), biome: "warm_ocean" }
+
+data modify storage tmp.fetchr:game/start exclude_surface set value ["fetchr:plains","fetchr:savanna"]
+data modify storage tmp.fetchr:game/start exclude_special set value ["fetchr:plains","fetchr:savanna","fetchr:forest"]
+$function fetchr:game/start/test_biome { level_number: $(level_number), biome: "basalt_deltas" }
+
+data modify storage tmp.fetchr:game/start exclude_surface set value ["fetchr:jungle"]
+data modify storage tmp.fetchr:game/start exclude_special set value ["fetchr:plains","fetchr:savanna","fetchr:forest","fetchr:jungle"]
+$function fetchr:game/start/test_biome { level_number: $(level_number), biome: "nether_wastes" }
+
+data modify storage tmp.fetchr:game/start exclude_surface set value ["fetchr:savanna"]
+data modify storage tmp.fetchr:game/start exclude_special set value ["fetchr:plains","fetchr:savanna","fetchr:forest","fetchr:jungle"]
+$function fetchr:game/start/test_biome { level_number: $(level_number), biome: "soul_sand_valley" }
+
+data modify storage tmp.fetchr:game/start exclude_surface set value ["fetchr:savanna"]
+data modify storage tmp.fetchr:game/start exclude_special set value ["fetchr:plains","fetchr:savanna","fetchr:forest","fetchr:jungle"]
+$function fetchr:game/start/test_biome { level_number: $(level_number), biome: "crimson_forest" }
+
+data modify storage tmp.fetchr:game/start exclude_surface set value ["fetchr:forest","fetchr:jungle"]
+data modify storage tmp.fetchr:game/start exclude_special set value ["fetchr:swamp","fetchr:forest","fetchr:jungle"]
 $function fetchr:game/start/test_biome { level_number: $(level_number), biome: "warped_forest" }
 
+data modify storage tmp.fetchr:game/start exclude_surface set value ["fetchr:savanna","fetchr:forest","fetchr:desert","fetchr:badlands"]
+data modify storage tmp.fetchr:game/start exclude_special set value ["fetchr:plains","fetchr:savanna","fetchr:forest","fetchr:desert","fetchr:badlands"]
+$function fetchr:game/start/test_biome { level_number: $(level_number), biome: "the_end" }
+
+data modify storage tmp.fetchr:game/start exclude_surface set value ["fetchr:savanna","fetchr:desert","fetchr:badlands"]
+data modify storage tmp.fetchr:game/start exclude_special set value ["fetchr:plains","fetchr:savanna","fetchr:forest","fetchr:desert","fetchr:badlands"]
+$function fetchr:game/start/test_biome { level_number: $(level_number), biome: "end_barrens" }
+
+data modify storage tmp.fetchr:game/start exclude_surface set value ["fetchr:savanna","fetchr:desert","fetchr:badlands"]
+data modify storage tmp.fetchr:game/start exclude_special set value ["fetchr:plains","fetchr:savanna","fetchr:forest","fetchr:desert","fetchr:badlands"]
+$function fetchr:game/start/test_biome { level_number: $(level_number), biome: "end_midlands" }
+
+data modify storage tmp.fetchr:game/start exclude_surface set value ["fetchr:savanna","fetchr:forest","fetchr:desert","fetchr:badlands"]
+data modify storage tmp.fetchr:game/start exclude_special set value ["fetchr:plains","fetchr:savanna","fetchr:forest","fetchr:desert","fetchr:badlands"]
+$function fetchr:game/start/test_biome { level_number: $(level_number), biome: "end_highlands" }
+
+data modify storage tmp.fetchr:game/start exclude_surface set value ["fetchr:savanna","fetchr:forest","fetchr:desert","fetchr:badlands"]
+data modify storage tmp.fetchr:game/start exclude_special set value ["fetchr:plains","fetchr:savanna","fetchr:forest","fetchr:desert","fetchr:badlands"]
+$function fetchr:game/start/test_biome { level_number: $(level_number), biome: "small_end_islands" }
+
+data modify storage tmp.fetchr:game/start exclude_surface set value []
+data modify storage tmp.fetchr:game/start exclude_special set value ["fetchr:nether_wastes","fetchr:soulsand_valley","fetchr:basalt_deltas","fetchr:crimson_forest","fetchr:warped_forest"]
+$function fetchr:game/start/test_biome { level_number: $(level_number), biome: "deep_dark" }
+
+data modify storage tmp.fetchr:game/start exclude_surface set value []
+data modify storage tmp.fetchr:game/start exclude_special set value ["fetchr:nether_wastes","fetchr:soulsand_valley","fetchr:basalt_deltas"]
+$function fetchr:game/start/test_biome { level_number: $(level_number), biome: "pale_garden" }
+
+data modify storage tmp.fetchr:game/start exclude_surface set value []
+data modify storage tmp.fetchr:game/start exclude_special set value ["fetchr:crimson_forest","fetchr:warped_forest"]
+$function fetchr:game/start/test_biome { level_number: $(level_number), biome: "snowy_beach" }
+
+data modify storage tmp.fetchr:game/start exclude_surface set value []
+data modify storage tmp.fetchr:game/start exclude_special set value ["fetchr:crimson_forest","fetchr:warped_forest"]
+$function fetchr:game/start/test_biome { level_number: $(level_number), biome: "snowy_plains" }
+
+data modify storage tmp.fetchr:game/start exclude_surface set value []
+data modify storage tmp.fetchr:game/start exclude_special set value ["fetchr:crimson_forest","fetchr:warped_forest"]
+$function fetchr:game/start/test_biome { level_number: $(level_number), biome: "snowy_slopes" }
+
+data modify storage tmp.fetchr:game/start exclude_surface set value []
+data modify storage tmp.fetchr:game/start exclude_special set value ["fetchr:crimson_forest","fetchr:warped_forest"]
+$function fetchr:game/start/test_biome { level_number: $(level_number), biome: "snowy_taiga" }
 
 function fetchr:game/start/test_structure { biome: "deep_dark", structure: "ancient_city" }
 function fetchr:game/start/test_structure { biome: "end_midlands", structure: "end_city" }
@@ -168,5 +225,12 @@ execute \
 	run function fetchr:game/start/set_game_mode
 
 function fetchr:util/apply_active_item_tags
-execute positioned ~-1 ~ ~-1 run function fetchr:card_frames/spawn_frames
-schedule function fetchr:card_generation/random_card 1t
+function fetchr:card_frames/spawn_frames
+function fetchr:card_generation/random_card
+
+data modify storage tmp.fetchr:card_generation items set from storage fetchr:items active_items
+execute \
+	store result score $card_gen.slot fetchr.tmp \
+	run data get storage fetchr:items active_items
+
+scoreboard players set $game_state fetchr.state 4

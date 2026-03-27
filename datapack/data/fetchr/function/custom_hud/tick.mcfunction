@@ -31,6 +31,10 @@ execute \
 	if data storage fetchr:custom_hud currentPlayer.components[{ changed: true }] \
 	run function fetchr:custom_hud/update_actionbar
 execute \
+	unless score @s fetchr.last_hud_update matches 40.. \
+	if score $update_card fetchr.state matches 1 \
+	run function fetchr:custom_hud/update_actionbar
+execute \
 	if score @s fetchr.last_hud_update matches 40.. \
 	run function fetchr:custom_hud/update_actionbar
 

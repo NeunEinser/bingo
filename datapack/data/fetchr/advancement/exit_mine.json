@@ -1,0 +1,13 @@
+{
+	"criteria": {
+		"change_dimension": {
+			"trigger": "minecraft:changed_dimension",
+			"conditions": {
+				"to": "minecraft:overworld"
+			}
+		}
+	},
+	"rewards": {
+		"function": "fetchr:game/end"
+	} 
+}

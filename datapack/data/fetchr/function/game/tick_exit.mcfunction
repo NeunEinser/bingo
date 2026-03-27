@@ -1,32 +1,10 @@
 
+
 execute \
+	as @e[tag=fetchr.mine_exit,distance=...1] \
 	unless entity @s[tag=fetchr.closed_exit] \
 	run function fetchr:game/close_exit
 
 execute \
-	positioned ~3 ~-1 ~ \
-	run function fetchr:game/check_barrel
-execute \
-	unless score $game/goal_detection.success fetchr.tmp matches 0 \
-	run function fetchr:game/unlock_exit
-
-execute \
-	positioned ~ ~-1 ~3 \
-	run function fetchr:game/check_barrel
-execute \
-	unless score $game/goal_detection.success fetchr.tmp matches 0 \
-	run function fetchr:game/unlock_exit
-
-execute \
-	positioned ~-3 ~-1 ~ \
-	run function fetchr:game/check_barrel
-execute \
-	unless score $game/goal_detection.success fetchr.tmp matches 0 \
-	run function fetchr:game/unlock_exit
-
-execute \
-	positioned ~ ~-1 ~-3 \
-	run function fetchr:game/check_barrel
-execute \
-	unless score $game/goal_detection.success fetchr.tmp matches 0 \
-	run function fetchr:game/unlock_exit
+	if entity @s[tag=fetchr.exit_barrel_open] \
+	run function fetchr:game/check_barrels

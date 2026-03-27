@@ -10,7 +10,9 @@
 # 	function fetchr:util/update_card_iter
 #declare storage tmp.fetchr:item_detect/update_card
 
-data \
+execute \
+	in fetchr:resourcepack_check \
+	run data \
 	modify block 7 0 7 front_text.messages[0] set value [\
 	"",\
 	{ text: "a", font: "fetchr:card" },\
@@ -37,6 +39,10 @@ data \
 	],\
 	"\uffc3"\
 ]
-data \
-	modify storage fetchr:card teams[0].card \
-	set from block 7 0 7 front_text.messages[0]
+execute \
+	in fetchr:resourcepack_check \
+	run data \
+		modify storage fetchr:card teams[].card \
+		set from block 7 0 7 front_text.messages[0]
+
+scoreboard players set $update_card fetchr.state 1

@@ -1,0 +1,22 @@
+{
+	"placement": {
+		"type": "minecraft:random_spread",
+		"salt": 5657987,
+		"separation": 16,
+		"spacing": 40
+	},
+	"structures": [
+		{
+			"structure": "minecraft:surface_mine_exit_cave",
+			"weight": 1
+		},
+		{
+			"structure": "minecraft:surface_mine_exit_surface",
+			"weight": 1
+		},
+		{
+			"structure": "minecraft:surface_mine_exit_rare_surface",
+			"weight": 1
+		}
+	]
+}

@@ -127,5 +127,7 @@
 	"fetchr.preferences.custom_hud.component_settings.player_position.use_text_icon.description": "Changes the coordinate icon to a textual representation of cardinal directions.",
 
 	"fetchr.mine_exit_opened": "%s opened a mine exit!",
-	"fetchr.item_revealed": "%s revealed [%s] on the Fetchr card!"
+	"fetchr.item_revealed": "%s revealed [%s] on the Fetchr card!",
+
+	"fetchr.duplicated_categories": "Due to a limited item pool in this mine, at least one category has been reused. Typical rules for the card generation do not apply."
 }

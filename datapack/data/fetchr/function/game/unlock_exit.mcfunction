@@ -5,5 +5,7 @@ execute \
 	at @s \
 	run playsound minecraft:entity.player.levelup voice @s
 
-tag @n[type=minecraft:marker, tag=fetchr.mine_exit] add fetchr.unlocked_exit
-function fetchr:game/open_exit
+tag @e[type=minecraft:marker, tag=fetchr.mine_exit, distance=...1] add fetchr.unlocked_exit
+execute \
+	as @e[type=minecraft:marker, tag=fetchr.mine_exit, distance=...1] \
+	run function fetchr:game/open_exit

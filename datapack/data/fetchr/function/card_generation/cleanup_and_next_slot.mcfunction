@@ -25,4 +25,14 @@ execute \
 	run function fetchr:card_generation/update_affected_item_weights/exec
 
 scoreboard players add $card_gen.slot fetchr.tmp 1
+
+
+# Fallback in case mine has too few categories available
+execute \
+	unless data storage tmp.fetchr:card_generation items[0] \
+	run tellraw @a {translate: "fetchr.duplicated_categories", color: "red"}
+execute \
+	unless data storage tmp.fetchr:card_generation items[0] \
+	run data modify storage tmp.fetchr:card_generation items set from storage fetchr:items active_items
+
 function fetchr:card_generation/generate_slot

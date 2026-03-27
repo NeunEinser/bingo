@@ -14,9 +14,6 @@
 #TODO change to use tmp.fetchr:<name> everywhere
 #declare storage fetchr:tmp
 
-say reload
-execute as @a unless dimension minecraft:overworld run say not ow
-
 #region Storage declarations
 	#>
 	#

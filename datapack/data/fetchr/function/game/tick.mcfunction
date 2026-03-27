@@ -23,3 +23,5 @@ execute if score $game/tick.player_count fetchr.tmp matches 1.. if score $game/t
 
 scoreboard players operation $raw 91.timer.io /= $current_percision 91.timer.io
 execute in fetchr:resourcepack_check unless score $raw 91.timer.io = $last_tick_second fetchr.state run function fetchr:custom_hud/components/timer/update
+
+scoreboard players reset $update_card fetchr.state

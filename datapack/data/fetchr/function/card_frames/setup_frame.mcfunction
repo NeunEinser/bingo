@@ -7,16 +7,6 @@
 # 	function fetchr:card_frames/spawn_frames
 # 	function fetchr:card_frames/spawn_iter
 
-data merge entity @s {\
-	Facing: 1b,\
-	Silent: true,\
-	Tags: [ "fetchr.card_frame" ],\
-	Item: { id: "minecraft:barrier" },\
-	ItemDropChance: 0.0f,\
-	Invulnerable: true,\
-	Fixed: true\
-}
-
 scoreboard players operation @s fetchr.lobby_card_frame_id = $card_frames/spawn.i fetchr.tmp
 
 execute \
@@ -25,3 +15,4 @@ execute \
 		modify entity @s Item \
 		set from storage tmp.fetchr:card_frames/spawn_frames slots[0].item
 data remove storage tmp.fetchr:card_frames/spawn_frames slots[0]
+tag @s remove fetchr.new

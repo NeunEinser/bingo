@@ -63,7 +63,36 @@ data \
 	modify storage fetchr:registries categories append value {\
 	id: "fetchr:clay",\
 	name: { translate: "fetchr.category.clay" },\
-	requirements: [ "fetchr:lush_caves", "minecraft:surface_world", "minecraft:floating_islands_world", "minecraft:amplified", "minecraft:shattered_blocks_world", "minecraft:cave_world", "minecraft:dark_cave_world"]\
+	requirements: [\
+		"fetchr:lush_caves",\
+		{\
+			type: "conjunction",\
+			value: [\
+				[\
+					"minecraft:surface_world",\
+					"minecraft:amplified",\
+					"minecraft:shattered_blocks_world",\
+				],\
+				{\
+					type: "negation",\
+					value: [\
+						"minecraft:dry_land",\
+						"minecraft:ultrawarm",\
+						"minecraft:nether_barrens",\
+						"minecraft:nether_forests",\
+						"minecraft:end",\
+					]\
+				},\
+				[\
+					"fetchr:lukewarm_ocean",\
+					"fetchr:cold_ocean",\
+					"fetchr:ocean",\
+					"fetchr:river",\
+					"fetchr:frozen_river",\
+				]\
+			]\
+		}\
+	]\
 }
 
 data \
@@ -714,7 +743,6 @@ data \
 			[\
 				"fetchr:savanna",\
 				"fetchr:jungle",\
-				"fetchr:badlands"\
 			],\
 		]\
 	}\
@@ -1112,7 +1140,17 @@ data \
 	modify storage fetchr:registries categories append value {\
 	id: "fetchr:sadgle",\
 	name: { translate: "fetchr.category.sadgle" },\
-	requirements: [ "minecraft:ravagers" ]\
+	requirements: {\
+		type: "conjunction",\
+		value: [\
+			"minecraft:ravagers",\
+			[\
+				"minecraft:surface_world",\
+				"minecraft:amplified",\
+				"minecraft:shattered_blocks_world",\
+			],\
+		]\
+	}\
 }
 data \
 	modify storage fetchr:registries categories append value {\

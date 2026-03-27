@@ -25,8 +25,18 @@
 # 	function fetchr:card_frames/spawn_iter
 #declare storage tmp.fetchr:card_frames/spawn_frames
 
+summon minecraft:item_frame ~ ~ ~ {\
+	Facing: 1b,\
+	Silent: true,\
+	Tags: [ "fetchr.card_frame", "fetchr.new" ],\
+	Item: { id: "minecraft:barrier" },\
+	ItemDropChance: 0.0f,\
+	Invulnerable: true,\
+	Fixed: true\
+}
+
 execute \
-	summon minecraft:item_frame \
+	as @e[type=minecraft:item_frame, tag=fetchr.new, distance=..1, limit=1] \
 	run function fetchr:card_frames/setup_frame
 
 scoreboard players add $card_frames/spawn.i fetchr.tmp 1

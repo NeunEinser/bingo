@@ -53,4 +53,3 @@
 		at @s \
 		run function fetchr:tick/player_tick
 	data modify storage fetchr:custom_hud players append from storage tmp.fetchr:custom_hud handled[]
-	scoreboard players reset $update_card fetchr.state

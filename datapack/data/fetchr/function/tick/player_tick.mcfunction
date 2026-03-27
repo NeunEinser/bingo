@@ -287,6 +287,10 @@ execute \
 	run teleport @s 13 2 8
 execute \
 	if score @s fetchr.resource_pack_check matches 91 \
+	at @s \
+	run spawnpoint
+execute \
+	if score @s fetchr.resource_pack_check matches 91 \
 	run advancement revoke @s everything
 #NEUN_SCRIPT end
 scoreboard players reset @s fetchr.resource_pack_check
@@ -301,11 +305,6 @@ execute \
 	run function #fetchr:new_player
 
 # custom hud
-execute \
-	if entity @s[predicate=fetchr:is_in_game] \
-	in fetchr:resourcepack_check \
-	run function fetchr:custom_hud/tick
-
 execute \
 	if score @s fetchr.open_barrel matches 1 \
 	if entity @e[type=minecraft:marker, tag=fetchr.mine_exit, distance=..20] \

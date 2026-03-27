@@ -12,8 +12,6 @@
 # @within function fetchr:card_generation/**
 #declare storage tmp.fetchr:card_generation
 
-function fetchr:game/end
-
 scoreboard players set $update_card fetchr.state 1
 
 #>
@@ -38,6 +36,7 @@ scoreboard players operation $card_gen.total_weight fetchr.tmp = $total_item_wei
 #declare score_holder $card_gen.available_category_weight
 scoreboard players operation $card_gen.available_category_weight fetchr.tmp = $available_category_weight fetchr.state
 data modify storage tmp.fetchr:card_generation items set from storage fetchr:items active_items
+
 data remove storage fetchr:card slots
 data modify storage tmp.fetchr:rand_data min set value 1
 execute \

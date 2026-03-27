@@ -1,5 +1,4 @@
 
-
 execute \
 	if score $concealed_card fetchr.state matches 1 \
 	run function fetchr:game/check_barrel/reveal_items
@@ -14,5 +13,9 @@ execute \
 	run function fetchr:game/check_barrel/blackout
 
 execute \
-	if score $mode fetchr.state matches 1 \
+	if score $mode fetchr.state matches 2 \
 	run function fetchr:game/check_barrel/6_no_bingo
+
+execute \
+	unless score $game/goal_detection.success fetchr.tmp matches 0 \
+	run function fetchr:game/check_barrel/clear_submitted_items
