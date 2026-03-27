@@ -13,6 +13,10 @@
 # 	position The location the player spawned at
 # @within function fetchr:game/start/dimension_change
 
+execute \
+	if score $game_state fetchr.state matches 4 \
+	run return 0
+
 scoreboard players set $start/check_dimension.is_dim fetchr.tmp 0
 $execute if dimension $(dimension_id) run scoreboard players set $start/check_dimension.is_dim fetchr.tmp 1
 execute if score $start/check_dimension.is_dim fetchr.tmp matches 0 run return 0
@@ -234,3 +238,7 @@ execute \
 	run data get storage fetchr:items active_items
 
 scoreboard players set $game_state fetchr.state 4
+
+execute \
+	if score $concealed_card fetchr.state matches 1 \
+	run schedule function fetchr:game/track_uuid_schedule 5t

@@ -1,0 +1,2 @@
+
+$loot spawn ~ ~ ~ kill $(uuid)

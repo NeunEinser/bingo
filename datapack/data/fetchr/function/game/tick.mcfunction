@@ -25,3 +25,21 @@ scoreboard players operation $raw 91.timer.io /= $current_percision 91.timer.io
 execute in fetchr:resourcepack_check unless score $raw 91.timer.io = $last_tick_second fetchr.state run function fetchr:custom_hud/components/timer/update
 
 scoreboard players reset $update_card fetchr.state
+
+data modify storage tmp.fetchr:game still_active_uuids set value []
+data modify storage tmp.fetchr:game uuids set from storage fetchr:track_uuid uuids
+execute \
+	if score $concealed_card fetchr.state matches 1 \
+	run function fetchr:game/check_entities
+
+data modify storage fetchr:track_uuid uuids set from storage tmp.fetchr:game still_active_uuids
+execute \
+	as @a[tag=fetchr.killed_entity] \
+	at @s \
+	at @n[type=minecraft:marker, tag=fetchr.dead_entity, distance=..500] \
+	run function fetchr:game/spawn_loot
+execute \
+	at @n[type=minecraft:marker, tag=fetchr.dead_entity] \
+	run function fetchr:game/spawn_loot
+
+tag @a remove fetchr.killed_entity

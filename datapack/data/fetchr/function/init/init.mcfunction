@@ -958,7 +958,8 @@
 	gamerule doTraderSpawning false
 	gamerule disableElytraMovementCheck true
 	gamerule doPatrolSpawning false
-	gamerule maxCommandChainLength 262144
+	gamerule maxCommandForkCount 524288
+	gamerule maxCommandChainLength 524288
 	difficulty easy
 
 # setup teams

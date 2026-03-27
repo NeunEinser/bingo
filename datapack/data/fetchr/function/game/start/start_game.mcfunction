@@ -20,7 +20,7 @@ execute \
 	unless loaded ~ ~ ~-32 \
 	run return run schedule function fetchr:game/start/start_game 5t
 
-#execute \
+execute \
 	if score $game_state fetchr.state matches 4 \
 	run return 0
 execute \
@@ -42,9 +42,10 @@ execute \
 	run data \
 		modify storage fetchr:items effects \
 		set from block 8 2 8 Items[{Slot: 0b}].components.minecraft:world_modifiers.effects
+data modify storage fetchr:card dimension.id set from storage tmp.fetchr:game/start level_data.dimension_id
 
 execute \
-	at @a[predicate=fetchr:is_in_game, limit=1] \
+	at @a[predicate=fetchr:is_in_game] \
 	at @e[tag=fetchr.spawn, distance=..10, limit=1] \
 	positioned ~-1 ~.5 ~-1 \
 	run function fetchr:game/start/check_dimension_and_start with storage tmp.fetchr:game/start level_data

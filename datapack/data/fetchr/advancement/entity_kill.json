@@ -5,6 +5,6 @@
 		}
 	},
 	"rewards": {
-		"function": "fetchr:test"
+		"function": "fetchr:game/killed"
 	}
 }
