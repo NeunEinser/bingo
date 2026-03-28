@@ -23,9 +23,7 @@ title @s actionbar {\
 	"fallback":"%2$s",\
 	"with": [\
 		[\
-			{ "text": "\u0001", "font": "fetchr:space" },\
-			{ "text": "\uffff", "font": "fetchr:space" },\
-			{ "storage": "tmp.fetchr:custom_hud", "nbt": "texts[]", "interpret": true, "separator": "" },\
+			{ "text": "", "font": "fetchr:space" },\
 			{ "storage": "fetchr:tmp", "nbt": "cardOffset", "interpret": true },\
 			{ "storage": "fetchr:card", "nbt": "teams[-1].card", "shadow_color": 0, "interpret": true },\
 			{ "storage": "fetchr:tmp", "nbt": "cardNegOffset", "interpret": true }\

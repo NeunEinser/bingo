@@ -287,10 +287,6 @@ execute \
 	run teleport @s 13 2 8
 execute \
 	if score @s fetchr.resource_pack_check matches 91 \
-	at @s \
-	run spawnpoint
-execute \
-	if score @s fetchr.resource_pack_check matches 91 \
 	run advancement revoke @s everything
 #NEUN_SCRIPT end
 scoreboard players reset @s fetchr.resource_pack_check

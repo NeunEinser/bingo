@@ -313,110 +313,6 @@
 		scoreboard players set @a fetchr.update_hud 1
 	#endregion
 
-	#region display objectives
-		#>
-		# Display objective for the black team
-		#
-		# @internal
-		scoreboard objectives add fetchr.neutral_display dummy { "translate": "fetchr.scoreboard.header" }
-		
-		#>
-		# Display objective for the black team
-		#
-		# @internal
-		scoreboard objectives add fetchr.black_display dummy { "translate": "fetchr.scoreboard.header" }
-		
-		#>
-		# Display objective for the blue team
-		#
-		# @internal
-		scoreboard objectives add fetchr.blue_display dummy { "translate": "fetchr.scoreboard.header" }
-		
-		#>
-		# Display objective for the cyan team
-		#
-		# @internal
-		scoreboard objectives add fetchr.cyan_display dummy { "translate": "fetchr.scoreboard.header" }
-		
-		#>
-		# Display objective for the dark blue team
-		#
-		# @internal
-		scoreboard objectives add fetchr.dark_blue_display dummy { "translate": "fetchr.scoreboard.header" }
-		
-		#>
-		# Display objective for the dark gray team
-		#
-		# @internal
-		scoreboard objectives add fetchr.dark_gray_display dummy { "translate": "fetchr.scoreboard.header" }
-		
-		#>
-		# Display objective for the dark red team
-		#
-		# @internal
-		scoreboard objectives add fetchr.dark_red_display dummy { "translate": "fetchr.scoreboard.header" }
-		
-		#>
-		# Display objective for the gray team
-		#
-		# @internal
-		scoreboard objectives add fetchr.gray_display dummy { "translate": "fetchr.scoreboard.header" }
-		
-		#>
-		# Display objective for the green team
-		#
-		# @internal
-		scoreboard objectives add fetchr.green_display dummy { "translate": "fetchr.scoreboard.header" }
-		
-		#>
-		# Display objective for the light blue team
-		#
-		# @internal
-		scoreboard objectives add fetchr.light_blue_display dummy { "translate": "fetchr.scoreboard.header" }
-		
-		#>
-		# Display objective for the lime team
-		#
-		# @internal
-		scoreboard objectives add fetchr.lime_display dummy { "translate": "fetchr.scoreboard.header" }
-		
-		#>
-		# Display objective for the magenta team
-		#
-		# @internal
-		scoreboard objectives add fetchr.magenta_display dummy { "translate": "fetchr.scoreboard.header" }
-		
-		#>
-		# Display objective for the orange team
-		#
-		# @internal
-		scoreboard objectives add fetchr.orange_display dummy { "translate": "fetchr.scoreboard.header" }
-		
-		#>
-		# Display objective for the purple team
-		#
-		# @internal
-		scoreboard objectives add fetchr.purple_display dummy { "translate": "fetchr.scoreboard.header" }
-		
-		#>
-		# Display objective for the red team
-		#
-		# @internal
-		scoreboard objectives add fetchr.red_display dummy { "translate": "fetchr.scoreboard.header" }
-		
-		#>
-		# Display objective for the white team
-		#
-		# @internal
-		scoreboard objectives add fetchr.white_display dummy { "translate": "fetchr.scoreboard.header" }
-		
-		#>
-		# Display objective for the yellow team
-		#
-		# @internal
-		scoreboard objectives add fetchr.yellow_display dummy { "translate": "fetchr.scoreboard.header" }
-	#endregion
-
 	#region trigger objectives
 		#>
 		# Trigger objective used to change the announcement time for the points goal.
@@ -926,23 +822,6 @@
 			#declare score_holder $yellow
 		#endregion
 	#endregion
-	scoreboard objectives setdisplay sidebar fetchr.neutral_display
-	scoreboard objectives setdisplay sidebar.team.black fetchr.black_display
-	scoreboard objectives setdisplay sidebar.team.blue fetchr.blue_display
-	scoreboard objectives setdisplay sidebar.team.dark_aqua fetchr.cyan_display
-	scoreboard objectives setdisplay sidebar.team.dark_blue fetchr.dark_blue_display
-	scoreboard objectives setdisplay sidebar.team.dark_gray fetchr.dark_gray_display
-	scoreboard objectives setdisplay sidebar.team.dark_red fetchr.dark_red_display
-	scoreboard objectives setdisplay sidebar.team.gray fetchr.gray_display
-	scoreboard objectives setdisplay sidebar.team.dark_green fetchr.green_display
-	scoreboard objectives setdisplay sidebar.team.aqua fetchr.light_blue_display
-	scoreboard objectives setdisplay sidebar.team.green fetchr.lime_display
-	scoreboard objectives setdisplay sidebar.team.light_purple fetchr.magenta_display
-	scoreboard objectives setdisplay sidebar.team.gold fetchr.orange_display
-	scoreboard objectives setdisplay sidebar.team.dark_purple fetchr.purple_display
-	scoreboard objectives setdisplay sidebar.team.red fetchr.red_display
-	scoreboard objectives setdisplay sidebar.team.white fetchr.white_display
-	scoreboard objectives setdisplay sidebar.team.yellow fetchr.yellow_display
 #endregion
 
 # Create overworld resourcepack check
@@ -1144,3 +1023,4 @@
 	data remove storage fetchr:custom_hud default[].addByDefault
 	data remove storage fetchr:custom_hud default[].preferredColumn
 #endregion
+execute in minecraft:overworld run setworldspawn 13 2 8 90
