@@ -121,6 +121,13 @@ data \
 						"minecraft:end",\
 					]\
 				},\
+				[\
+					"fetchr:warm_ocean",\
+					"fetchr:ocean",\
+					"fetchr:frozen_ocean",\
+					"fetchr:cold_ocean",\
+					"fetchr:lukewarm_ocean",\
+				]\
 			]\
 		}\
 	]\
@@ -258,7 +265,20 @@ data \
 				"minecraft:amplified",\
 				"minecraft:floating_islands_world",\
 				"minecraft:shattered_blocks_world",\
-			]\
+			],\
+			{\
+				type: "negation",\
+				value: {\
+					type: "conjunction",\
+					value: [\
+						"minecraft:water_world",\
+						{\
+							type: "negation",\
+							value: "minecraft:amplified"\
+						}\
+					],\
+				}\
+			}\
 		]\
 	}\
 }
@@ -273,7 +293,16 @@ data \
 	modify storage fetchr:registries categories append value {\
 	id: "fetchr:lush_caves",\
 	name: { translate: "fetchr.category.lush_caves" },\
-	requirements: [ "fetchr:lush_caves" ]\
+	requirements: {\
+		type: "conjunction",\
+		value: [\
+			"fetchr:lush_caves",\
+			{\
+				type: "negation",\
+				value: "minecraft:water_world",\
+			}\
+		]\
+	}\
 }
 
 data \
@@ -291,6 +320,19 @@ data \
 				"minecraft:floating_islands_world",\
 				"minecraft:shattered_blocks_world",\
 			],\
+			{\
+				type: "negation",\
+				value: {\
+					type: "conjunction",\
+					value: [\
+						"minecraft:water_world",\
+						{\
+							type: "negation",\
+							value: "minecraft:amplified"\
+						}\
+					],\
+				}\
+			}\
 		],\
 	}\
 }
@@ -309,6 +351,19 @@ data \
 				"minecraft:floating_islands_world",\
 				"minecraft:shattered_blocks_world",\
 			],\
+			{\
+				type: "negation",\
+				value: {\
+					type: "conjunction",\
+					value: [\
+						"minecraft:water_world",\
+						{\
+							type: "negation",\
+							value: "minecraft:amplified"\
+						}\
+					],\
+				}\
+			}\
 		],\
 	}\
 }
@@ -330,6 +385,19 @@ data \
 				"minecraft:floating_islands_world",\
 				"minecraft:shattered_blocks_world",\
 			],\
+			{\
+				type: "negation",\
+				value: {\
+					type: "conjunction",\
+					value: [\
+						"minecraft:water_world",\
+						{\
+							type: "negation",\
+							value: "minecraft:amplified"\
+						}\
+					],\
+				}\
+			}\
 		],\
 	}\
 }
@@ -348,6 +416,19 @@ data \
 				"minecraft:floating_islands_world",\
 				"minecraft:shattered_blocks_world",\
 			],\
+			{\
+				type: "negation",\
+				value: {\
+					type: "conjunction",\
+					value: [\
+						"minecraft:water_world",\
+						{\
+							type: "negation",\
+							value: "minecraft:amplified"\
+						}\
+					],\
+				}\
+			}\
 		],\
 	}\
 }
@@ -366,6 +447,19 @@ data \
 				"minecraft:floating_islands_world",\
 				"minecraft:shattered_blocks_world",\
 			],\
+			{\
+				type: "negation",\
+				value: {\
+					type: "conjunction",\
+					value: [\
+						"minecraft:water_world",\
+						{\
+							type: "negation",\
+							value: "minecraft:amplified"\
+						}\
+					],\
+				}\
+			}\
 		],\
 	}\
 }
@@ -384,6 +478,19 @@ data \
 				"minecraft:floating_islands_world",\
 				"minecraft:shattered_blocks_world",\
 			],\
+			{\
+				type: "negation",\
+				value: {\
+					type: "conjunction",\
+					value: [\
+						"minecraft:water_world",\
+						{\
+							type: "negation",\
+							value: "minecraft:amplified"\
+						}\
+					],\
+				}\
+			}\
 		],\
 	}\
 }
@@ -402,6 +509,19 @@ data \
 				"minecraft:floating_islands_world",\
 				"minecraft:shattered_blocks_world",\
 			],\
+			{\
+				type: "negation",\
+				value: {\
+					type: "conjunction",\
+					value: [\
+						"minecraft:water_world",\
+						{\
+							type: "negation",\
+							value: "minecraft:amplified"\
+						}\
+					],\
+				}\
+			}\
 		],\
 	}\
 }
@@ -423,6 +543,19 @@ data \
 				"minecraft:floating_islands_world",\
 				"minecraft:shattered_blocks_world",\
 			],\
+			{\
+				type: "negation",\
+				value: {\
+					type: "conjunction",\
+					value: [\
+						"minecraft:water_world",\
+						{\
+							type: "negation",\
+							value: "minecraft:amplified"\
+						}\
+					],\
+				}\
+			}\
 		],\
 	}\
 }
@@ -444,6 +577,19 @@ data \
 				"minecraft:floating_islands_world",\
 				"minecraft:shattered_blocks_world",\
 			],\
+			{\
+				type: "negation",\
+				value: {\
+					type: "conjunction",\
+					value: [\
+						"minecraft:water_world",\
+						{\
+							type: "negation",\
+							value: "minecraft:amplified"\
+						}\
+					],\
+				}\
+			}\
 		],\
 	}\
 }
@@ -462,6 +608,19 @@ data \
 				"minecraft:floating_islands_world",\
 				"minecraft:shattered_blocks_world",\
 			],\
+			{\
+				type: "negation",\
+				value: {\
+					type: "conjunction",\
+					value: [\
+						"minecraft:water_world",\
+						{\
+							type: "negation",\
+							value: "minecraft:amplified"\
+						}\
+					],\
+				}\
+			}\
 		],\
 	}\
 }
@@ -515,6 +674,21 @@ data \
 				"minecraft:amplified",\
 				"minecraft:floating_islands_world",\
 				"minecraft:shattered_blocks_world",\
+				{\
+					type: "conjunction",\
+					value: [\
+						[\
+							"minecraft:cave_world",\
+							"minecraft:dark_cave_world",\
+						],\
+						{\
+							type: "negation",\
+							value: [\
+								"minecraft:water_world",\
+							],\
+						}\
+					],\
+				}\
 			],\
 		],\
 	}\
@@ -533,6 +707,22 @@ data \
 				"minecraft:amplified",\
 				"minecraft:floating_islands_world",\
 				"minecraft:shattered_blocks_world",\
+				"minecraft:shattered_blocks_world",\
+				{\
+					type: "conjunction",\
+					value: [\
+						[\
+							"minecraft:cave_world",\
+							"minecraft:dark_cave_world",\
+						],\
+						{\
+							type: "negation",\
+							value: [\
+								"minecraft:water_world",\
+							],\
+						}\
+					],\
+				}\
 			],\
 		],\
 	}\
@@ -552,6 +742,19 @@ data \
 				"minecraft:floating_islands_world",\
 				"minecraft:shattered_blocks_world",\
 			],\
+			{\
+				type: "negation",\
+				value: {\
+					type: "conjunction",\
+					value: [\
+						"minecraft:water_world",\
+						{\
+							type: "negation",\
+							value: "minecraft:amplified"\
+						}\
+					],\
+				}\
+			}\
 		],\
 	}\
 }
@@ -715,7 +918,20 @@ data \
 				"fetchr:badlands",\
 				"fetchr:swamp",\
 				"fetchr:dark_forest"\
-			]\
+			],\
+			{\
+				type: "negation",\
+				value: {\
+					type: "conjunction",\
+					value: [\
+						"minecraft:water_world",\
+						{\
+							type: "negation",\
+							value: "minecraft:amplified"\
+						}\
+					],\
+				}\
+			}\
 		]\
 	}\
 }
@@ -753,6 +969,19 @@ data \
 				"fetchr:dark_forest",\
 				"fetchr:swamp"\
 			],\
+			{\
+				type: "negation",\
+				value: {\
+					type: "conjunction",\
+					value: [\
+						"minecraft:water_world",\
+						{\
+							type: "negation",\
+							value: "minecraft:amplified"\
+						}\
+					],\
+				}\
+			}\
 		]\
 	}\
 }
@@ -775,6 +1004,19 @@ data \
 				"fetchr:savanna",\
 				"fetchr:jungle",\
 			],\
+			{\
+				type: "negation",\
+				value: {\
+					type: "conjunction",\
+					value: [\
+						"minecraft:water_world",\
+						{\
+							type: "negation",\
+							value: "minecraft:amplified"\
+						}\
+					],\
+				}\
+			}\
 		]\
 	}\
 }
@@ -797,6 +1039,19 @@ data \
 				"fetchr:taiga",\
 				"fetchr:snowy_taiga",\
 			],\
+			{\
+				type: "negation",\
+				value: {\
+					type: "conjunction",\
+					value: [\
+						"minecraft:water_world",\
+						{\
+							type: "negation",\
+							value: "minecraft:amplified"\
+						}\
+					],\
+				}\
+			}\
 		]\
 	}\
 }
@@ -824,6 +1079,19 @@ data \
 				"fetchr:swamp",\
 				"fetchr:dark_forest"\
 			],\
+			{\
+				type: "negation",\
+				value: {\
+					type: "conjunction",\
+					value: [\
+						"minecraft:water_world",\
+						{\
+							type: "negation",\
+							value: "minecraft:amplified"\
+						}\
+					],\
+				}\
+			}\
 		]\
 	}\
 }
@@ -851,6 +1119,19 @@ data \
 				"fetchr:swamp",\
 				"fetchr:dark_forest"\
 			],\
+			{\
+				type: "negation",\
+				value: {\
+					type: "conjunction",\
+					value: [\
+						"minecraft:water_world",\
+						{\
+							type: "negation",\
+							value: "minecraft:amplified"\
+						}\
+					],\
+				}\
+			}\
 		]\
 	}\
 }
@@ -877,6 +1158,19 @@ data \
 				"fetchr:swamp",\
 				"fetchr:dark_forest"\
 			],\
+			{\
+				type: "negation",\
+				value: {\
+					type: "conjunction",\
+					value: [\
+						"minecraft:water_world",\
+						{\
+							type: "negation",\
+							value: "minecraft:amplified"\
+						}\
+					],\
+				}\
+			}\
 		]\
 	}\
 }
@@ -903,6 +1197,19 @@ data \
 				"fetchr:swamp",\
 				"fetchr:dark_forest"\
 			],\
+			{\
+				type: "negation",\
+				value: {\
+					type: "conjunction",\
+					value: [\
+						"minecraft:water_world",\
+						{\
+							type: "negation",\
+							value: "minecraft:amplified"\
+						}\
+					],\
+				}\
+			}\
 		]\
 	}\
 }
@@ -930,7 +1237,20 @@ data \
 					"fetchr:swamp",\
 					"fetchr:dark_forest"\
 				],\
-			]\
+				{\
+					type: "negation",\
+					value: {\
+						type: "conjunction",\
+						value: [\
+							"minecraft:water_world",\
+							{\
+								type: "negation",\
+								value: "minecraft:amplified"\
+							}\
+						],\
+					}\
+				}\
+			],\
 		},\
 	]\
 }
@@ -1141,7 +1461,19 @@ data \
 	modify storage fetchr:registries categories append value {\
 	id: "fetchr:glowstone",\
 	name: { translate: "fetchr.category.slime" },\
-	requirements: [ "fetchr:nether_wastes", "minecraft:witches" ]\
+	requirements: [\
+		"minecraft:witches",\
+		{\
+			type: "conjunction",\
+			value: [\
+				"fetchr:nether_wastes",\
+				[\
+					"minecraft:cave_world",\
+					"minecraft:dark_cave_world",\
+				],\
+			]\
+		}\
+	]\
 }
 data \
 	modify storage fetchr:registries categories append value {\

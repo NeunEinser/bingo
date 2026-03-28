@@ -30,6 +30,9 @@ scoreboard players add $card_gen.slot fetchr.tmp 1
 # Fallback in case mine has too few categories available
 execute \
 	unless data storage tmp.fetchr:card_generation items[0] \
+	run scoreboard players operation $card_gen.total_weight fetchr.tmp = $total_item_weight fetchr.state
+execute \
+	unless data storage tmp.fetchr:card_generation items[0] \
 	run tellraw @a {translate: "fetchr.duplicated_categories", color: "red"}
 execute \
 	unless data storage tmp.fetchr:card_generation items[0] \

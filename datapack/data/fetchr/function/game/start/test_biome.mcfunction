@@ -14,7 +14,6 @@ execute \
 	in fetchr:resourcepack_check positioned 0 0 0 \
 	as @e[type=minecraft:marker, tag=fetchr.string_tester, distance=..0.1, limit=1] \
 	run function fetchr:game/start/check_excluded_biomes
-$execute unless score $start/check_dimension.should_skip fetchr.tmp matches 0 run say skipping $(biome)
 execute unless score $start/check_dimension.should_skip fetchr.tmp matches 0 run return 0
 
 scoreboard players set $start/biome_test.distance fetchr.tmp 0

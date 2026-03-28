@@ -8,10 +8,10 @@
 # @writes storage fetchr:items effects
 # @within function fetchr:game/start/test_biome
 
+scoreboard players set $start.structure_test fetchr.tmp -1
 $execute \
 	unless score $start/biome_test.$(biome) fetchr.tmp = $level_number fetchr.state \
 	run return 0
-scoreboard players set $start.structure_test fetchr.tmp 0
 $execute \
 	store result score $start.structure_test fetchr.tmp \
 	run locate structure $(structure)
@@ -24,5 +24,5 @@ execute \
 	if score $start/structure_test.success fetchr.tmp matches 0 \
 	run return 0
 $execute \
-	if score $start.structure_test fetchr.tmp matches ..800 \
+	if score $start.structure_test fetchr.tmp matches 0..800 \
 	run data modify storage fetchr:items effects append value "fetchr:$(structure)"
