@@ -7,9 +7,8 @@
 # 	function fetchr:init/setup_resourcepack_check/exec
 # @context dimension the resourcepack check dimension
 
-fill 0 0 0 2 3 2 minecraft:black_concrete outline
-setblock 1 2 2 minecraft:sea_lantern
-setblock 1 2 1 minecraft:warped_wall_sign{ front_text: { messages: [\
+fill 0 0 0 2 3 2 minecraft:sky outline
+setblock 1 2 1 minecraft:warped_wall_sign[facing=east]{ front_text: { messages: [\
 	{\
 		translate: "fetchr.technical.resourcepack_version_{NEUN_SCRIPT:rp_version}",\
 		fallback: "%2$s",\

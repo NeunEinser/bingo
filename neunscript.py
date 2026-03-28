@@ -324,7 +324,7 @@ def iterate_files(config: dict, pack_config: dict, outpath: str, mc_versions: li
 			relative_path: str = directory.removeprefix(source).strip(os.sep)
 			for file_name in files:
 				file_path = f"{relative_path}{os.sep}{file_name}".strip(os.sep)
-				if file_name == "pack.mcmeta" or any(file_path.startswith(exclude) for exclude in excludes):
+				if any(file_path.startswith(exclude) for exclude in excludes):
 					continue
 				contains_file = True
 
@@ -607,7 +607,7 @@ def handle_file(
 		buffer = BytesIO()
 		nbt_content.save(buffer)
 		buffer.seek(0)
-		binary_contents = buffer.read() 'data/data/minecraft/structures/village/taiga/houses/taiga_medium_house_4.nbt'
+		binary_contents = buffer.read()
 
 		return {
 			"formats": nbt_result[0],
@@ -851,7 +851,7 @@ def minify_function_file(file_content: str, config: dict, pack_format: tuple[int
 					stack.append({ "remove": remove, "uncomment": uncomment })
 
 				elif command[0] == "remove":
-					remove = 1
+					remove = -1
 					if len(command) > 1:
 						try:
 							remove = int(command[1])

@@ -34,8 +34,8 @@ execute \
 data \
 	modify storage fetchr:custom_hud players[-1].components \
 	set from storage fetchr:custom_hud default
-#NEUN_SCRIPT remove 1
-tag @s[name=NeunEinser] add fetchr.enable_manual_gamemode_switch
+
+tag @s add fetchr.enable_manual_gamemode_switch
 
 execute \
 	in fetchr:resourcepack_check \

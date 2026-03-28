@@ -261,7 +261,7 @@ tellraw @s[scores={fetchr.resource_pack_check=1}] [\
 ]
 
 # Validate checked players, reenable trigger
-scoreboard players enable @a[tag=fetchr.resourcepack_check] fetchr.resource_pack_check
+scoreboard players enable @s[tag=fetchr.resourcepack_check] fetchr.resource_pack_check
 scoreboard players set @s[scores={fetchr.resource_pack_check=1}] fetchr.resource_pack_check 0
 #NEUN_SCRIPT unless {NEUN_SCRIPT:realms}
 #tag @s[scores={fetchr.resource_pack_check={NEUN_SCRIPT:rp_version * 91}}] remove fetchr.resourcepack_check
@@ -289,7 +289,7 @@ execute \
 	if score @s fetchr.resource_pack_check matches 91 \
 	run advancement revoke @s everything
 #NEUN_SCRIPT end
-scoreboard players reset @s fetchr.resource_pack_check
+scoreboard players reset @s[tag=!fetchr.resourcepack_check] fetchr.resource_pack_check
 #endregion
 
 # Assign each player a unique ID
