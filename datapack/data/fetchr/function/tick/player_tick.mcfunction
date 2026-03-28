@@ -149,14 +149,14 @@ execute \
 							"clickEvent": {\
 								"action": "open_url",\
 								"value": "\
-									https://github.com/NeunEinser/bingo/releases/download/\
+									https://github.com/NeunEinser/bingo-craftmine/releases/download/\
 									{NEUN_SCRIPT:version}/Fetchr-{NEUN_SCRIPT:version}-resourcepack.zip\
 								"\
 							},\
 							"click_event": {\
 								"action": "open_url",\
 								"url": "\
-									https://github.com/NeunEinser/bingo/releases/download/\
+									https://github.com/NeunEinser/bingo-craftmine/releases/download/\
 									{NEUN_SCRIPT:version}/Fetchr-{NEUN_SCRIPT:version}-resourcepack.zip\
 								"\
 							}\
@@ -176,14 +176,14 @@ execute \
 									"clickEvent": {\
 										"action": "open_url",\
 										"value": "\
-											https://github.com/NeunEinser/bingo/releases/download/\
+											https://github.com/NeunEinser/bingo-craftmine/releases/download/\
 											{NEUN_SCRIPT:version}/Fetchr-{NEUN_SCRIPT:version}-resourcepack.zip\
 										"\
 									},\
 									"click_event": {\
 										"action": "open_url",\
 										"url": "\
-											https://github.com/NeunEinser/bingo/releases/download/\
+											https://github.com/NeunEinser/bingo-craftmine/releases/download/\
 											{NEUN_SCRIPT:version}/Fetchr-{NEUN_SCRIPT:version}-resourcepack.zip\
 										"\
 									}\
@@ -238,8 +238,8 @@ tellraw @s[scores={fetchr.resource_pack_check=1}] [\
 				{\
 					"text": "this page",\
 					"color": "#00c3ff",\
-					"clickEvent": { "action": "open_url", "value": "https://github.com/NeunEinser/bingo/releases" },\
-					"click_event": { "action": "open_url", "url": "https://github.com/NeunEinser/bingo/releases" }\
+					"clickEvent": { "action": "open_url", "value": "https://github.com/NeunEinser/bingo-craftmine/releases" },\
+					"click_event": { "action": "open_url", "url": "https://github.com/NeunEinser/bingo-craftmine/releases" }\
 				},\
 				"."\
 			]\

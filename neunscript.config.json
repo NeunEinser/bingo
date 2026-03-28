@@ -1,9 +1,9 @@
 {
 	"name": "Fetchr",
-	"version": "5.3-beta2",
+	"version": "5.craftmine",
 	"target": "dist",
 	"vars": {
-		"version_long_name": "5.3 Beta 2",
+		"version_long_name": "5.craftmine",
 		"rp_version": "31",
 		"realms": false
 	},
