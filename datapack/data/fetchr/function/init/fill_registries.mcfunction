@@ -1455,7 +1455,44 @@ data \
 	modify storage fetchr:registries categories append value {\
 	id: "fetchr:slime",\
 	name: { translate: "fetchr.category.slime" },\
-	requirements: [ "minecraft:slimes" ]\
+	requirements: {\
+		type: "conjunction",\
+		value: [\
+			"minecraft:slimes",\
+			[\
+				"minecraft:cave_world",\
+				"minecraft:dark_cave_world",\
+				{\
+					type: "conjunction",\
+					value: [\
+						[\
+							"minecraft:surface_world",\
+							"minecraft:amplified",\
+							"minecraft:floating_islands_world",\
+							"minecraft:shattered_blocks_world",\
+						],\
+						[\
+							"fetchr:swamp",\
+							"fetchr:mangrove_swamp",\
+						],\
+						{\
+							type: "negation",\
+							value: {\
+								type: "conjunction",\
+								value: [\
+									"minecraft:water_world",\
+									{\
+										type: "negation",\
+										value: "minecraft:amplified"\
+									}\
+								],\
+							}\
+						}\
+					],\
+				},\
+			],\
+		],\
+	}\
 }
 data \
 	modify storage fetchr:registries categories append value {\
