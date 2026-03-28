@@ -15,5 +15,11 @@
 	"world.effect.cave_exits.description": "Lay out a Blackout in the barrel to open the exit",
 
 	"world.effect.rare_surface_exits.description": "Lay out 6 items without creating a Bingo in the barrel to open the exit",
-	"world.effect.rare_surface_exits.name": "6 No Bingo Exits"
+	"world.effect.rare_surface_exits.name": "6 No Bingo Exits",
+
+	"block.minecraft.fletching_table": "Fetching Table",
+	"block.minecraft.candle": "Sea Pickle",
+	"block.minecraft.sea_pickle": "Candle",
+	"item.minecraft.saddle": "Sadgle",
+	"item.minecraft.axolotl_bucket": "Avocado Bucket"
 }
