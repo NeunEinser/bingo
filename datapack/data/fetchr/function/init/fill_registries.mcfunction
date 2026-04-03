@@ -196,15 +196,6 @@ data \
 }
 data \
 	modify storage fetchr:registries categories append value {\
-	id: "fetchr:roots",\
-	name: { translate: "fetchr.category.roots" },\
-	requirements: [\
-		"fetchr:village",\
-		"fetchr:shipwreck",\
-	]\
-}
-data \
-	modify storage fetchr:registries categories append value {\
 	id: "fetchr:glass",\
 	name: { translate: "fetchr.category.glass" },\
 	requirements: [\
@@ -1775,7 +1766,7 @@ data \
 	item: { id: "minecraft:carrot" },\
 	translation: "item.minecraft.carrot",\
 	icon: "0011",\
-	categories: [ "fetchr:roots" ]\
+	categories: [ "fetchr:shipwreck" ]\
 }
 
 # 0012: potato
@@ -1785,7 +1776,7 @@ data \
 	item: { id: "minecraft:potato" },\
 	translation: "item.minecraft.potato",\
 	icon: "0012",\
-	categories: [ "fetchr:roots" ]\
+	categories: [ "fetchr:village", "fetchr:shipwreck" ]\
 }
 
 # 0013: glass_bottle
