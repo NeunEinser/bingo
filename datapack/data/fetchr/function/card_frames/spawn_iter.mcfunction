@@ -27,6 +27,7 @@
 
 summon minecraft:item_frame ~ ~ ~ {\
 	Facing: 1b,\
+	ItemRotation: 4b,\
 	Silent: true,\
 	Tags: [ "fetchr.card_frame", "fetchr.new" ],\
 	Item: { id: "minecraft:barrier" },\
@@ -46,10 +47,10 @@ scoreboard players operation $card_frames/spawn.row fetchr.tmp %= 3 fetchr.const
 execute \
 	if score $card_frames/spawn.i fetchr.tmp matches ..8 \
 	if score $card_frames/spawn.row fetchr.tmp matches 1.. \
-	positioned ~1 ~ ~ \
+	positioned ~-1 ~ ~ \
 	run function fetchr:card_frames/spawn_iter
 execute \
 	if score $card_frames/spawn.i fetchr.tmp matches ..8 \
 	if score $card_frames/spawn.row fetchr.tmp matches 0 \
-	positioned ~-2 ~ ~1 \
+	positioned ~2 ~ ~-1 \
 	run function fetchr:card_frames/spawn_iter

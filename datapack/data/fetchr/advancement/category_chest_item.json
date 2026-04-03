@@ -1,0 +1,21 @@
+{
+	"criteria": {
+		"inventory_changed": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"predicates": {
+							"minecraft:custom_data": {
+								"category_chest_item": true
+							}
+						}
+					}
+				]
+			}
+		}
+	},
+	"rewards": {
+		"function": "fetchr:tick/category_chest_item_stolen"
+	}
+}

@@ -306,7 +306,23 @@ execute \
 	unless score @s fetchr.player_id matches -2147483648.. \
 	run function #fetchr:new_player
 
-# custom hud
+# handle exit barrels and category chest
+execute \
+	if score @s fetchr.open_chest matches 1 \
+	if entity @e[type=minecraft:marker, tag=fetchr.spawn, distance=..20] \
+	run tag @s add fetchr.category_chest_open
+
+scoreboard players set @s fetchr.open_chest 0
+
+execute \
+	if entity @s[tag=fetchr.category_chest_open] \
+	run function fetchr:tick/handle_category_chests
+execute \
+	if score @s fetchr.break_chest matches 1 \
+	if entity @e[type=minecraft:marker, tag=fetchr.spawn, distance=..20] \
+	run function fetchr:tick/handle_category_chests
+scoreboard players set @s fetchr.break_chest 0
+
 execute \
 	if score @s fetchr.open_barrel matches 1 \
 	if entity @e[type=minecraft:marker, tag=fetchr.mine_exit, distance=..20] \
@@ -318,7 +334,13 @@ execute \
 	if entity @s[tag=fetchr.exit_barrel_open] \
 	run function fetchr:tick/handle_barrels
 
-	
+execute \
+	if score @s fetchr.break_barrel matches 1 \
+	if entity @e[type=minecraft:marker, tag=fetchr.mine_exit, distance=..20] \
+	run function fetchr:tick/handle_barrels
+scoreboard players set @s fetchr.break_barrel 0
+
+
 
 # End
 scoreboard players operation @s fetchr.prev_x_pos = $tick/player.x fetchr.tmp

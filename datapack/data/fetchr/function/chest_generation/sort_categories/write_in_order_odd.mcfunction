@@ -1,11 +1,11 @@
-#> fetchr:lobby/chest_generation/sort_categories/write_in_order_odd
+#> fetchr:chest_generation/sort_categories/write_in_order_odd
 #
 # This function sorts the next 2 elements into the array for the merge sort.
 #
 # @writes storage tmp.fetchr:chest_generation categories
 # @within
-# 	function fetchr:lobby/chest_generation/sort_categories/sort_by_length_odd
-# 	function fetchr:lobby/chest_generation/sort_categories/write_in_order_odd
+# 	function fetchr:chest_generation/sort_categories/sort_by_length_odd
+# 	function fetchr:chest_generation/sort_categories/write_in_order_odd
 
 #>
 # @private
@@ -27,4 +27,4 @@ execute if score $chest_generation/sort.a fetchr.tmp >= $chest_generation/sort.b
 data remove storage tmp.fetchr:chest_generation categories[-1]
 data remove storage tmp.fetchr:chest_generation categories[-1]
 
-execute if data storage tmp.fetchr:chest_generation categories[1] run function fetchr:lobby/chest_generation/sort_categories/write_in_order_odd
+execute if data storage tmp.fetchr:chest_generation categories[1] run function fetchr:chest_generation/sort_categories/write_in_order_odd

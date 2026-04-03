@@ -231,11 +231,7 @@ execute \
 function fetchr:util/apply_active_item_tags
 function fetchr:card_frames/spawn_frames
 function fetchr:card_generation/random_card
-
-data modify storage tmp.fetchr:card_generation items set from storage fetchr:items active_items
-execute \
-	store result score $card_gen.slot fetchr.tmp \
-	run data get storage fetchr:items active_items
+execute positioned ~-3 ~ ~1 run function fetchr:chest_generation/generate_item_chests
 
 scoreboard players set $game_state fetchr.state 4
 

@@ -129,5 +129,8 @@
 	"fetchr.mine_exit_opened": "%s opened a mine exit!",
 	"fetchr.item_revealed": "%s revealed [%s] on the Fetchr card!",
 
-	"fetchr.duplicated_categories": "Due to a limited item pool in this mine, at least one category has been reused. Typical rules for the card generation do not apply, items may even appear in multiple slots."
+	"fetchr.duplicated_categories": "Due to a limited item pool in this mine, at least one category has been reused. Typical rules for the card generation do not apply, items may even appear in multiple slots.",
+
+	"fetchr.category_chest.name": "Item Pool Display",
+	"fetchr.category_chest.stolen": "The Bingo Gods cast an eternal curse on you as punishment for your attempt to steal from them."
 }

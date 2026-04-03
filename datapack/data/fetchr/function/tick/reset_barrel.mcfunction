@@ -1,5 +1,4 @@
 
-
 execute \
 	unless items block ~ ~ ~ container.0 minecraft:gray_stained_glass_pane[minecraft:item_model="fetchr:hidden"] \
 	run function fetchr:tick/reset_barrel_slot { slot_id: 0 }

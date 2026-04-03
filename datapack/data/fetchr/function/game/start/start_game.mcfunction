@@ -47,5 +47,5 @@ data modify storage fetchr:card dimension.id set from storage tmp.fetchr:game/st
 execute \
 	at @a[predicate=fetchr:is_in_game] \
 	at @e[tag=fetchr.spawn, distance=..10, limit=1] \
-	positioned ~-1 ~.5 ~-1 \
+	positioned ~1 ~ ~1 \
 	run function fetchr:game/start/check_dimension_and_start with storage tmp.fetchr:game/start level_data

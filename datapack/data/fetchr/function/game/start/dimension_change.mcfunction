@@ -13,6 +13,9 @@
 
 advancement revoke @s only fetchr:enter_mine
 kill @e[tag=fetchr.spawn]
-summon minecraft:marker ~ ~ ~ {Tags: ["fetchr.spawn"]}
+execute \
+	positioned ~ ~.5 ~ \
+	align xyz \
+	run summon minecraft:marker ~.5 ~ ~.5 {Tags: ["fetchr.spawn"]}
 
 schedule function fetchr:game/start/start_game 20t

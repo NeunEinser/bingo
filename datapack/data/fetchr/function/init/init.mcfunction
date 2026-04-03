@@ -480,6 +480,9 @@
 		scoreboard objectives add fetchr.reconnect minecraft.custom:minecraft.leave_game
 
 		scoreboard objectives add fetchr.open_barrel minecraft.custom:minecraft.open_barrel
+		scoreboard objectives add fetchr.open_chest minecraft.custom:minecraft.open_chest
+		scoreboard objectives add fetchr.break_barrel minecraft.mined:minecraft.barrel
+		scoreboard objectives add fetchr.break_chest minecraft.mined:minecraft.chest
 	#endregion
 
 	#region score holders

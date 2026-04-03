@@ -1,23 +1,17 @@
-#> fetchr:lobby/chest_generation/next_chest
+#> fetchr:chest_generation/next_chest
 #
 # Moves to the next chest position and places the chest there
 #
-# @within function fetchr:lobby/chest_generation/increment_column
+# @within function fetchr:chest_generation/increment_column
 # @context
 # 	entity Marker area effect cloud that marks the right side of the chest
 # 	position @s
 
-$execute \
-	if score $chest_generation.height fetchr.tmp matches 5.. \
-	positioned ~-4 $(height) ~-3 \
-	run function fetchr:lobby/chest_generation/place_ceiling
-$execute if score $chest_generation.height fetchr.tmp matches 4.. \
-	positioned ~ $(height) ~ \
-	run function fetchr:lobby/chest_generation/place_scaffolding
+execute \
+	if score $chest_generation.remaining_cols fetchr.tmp matches 1.. \
+	run function fetchr:chest_generation/block_remaining_columns
 
-scoreboard players add $chest_generation.height fetchr.tmp 1
-
-clone ~ ~ ~ ~1 62 ~ ~ ~1 ~ filtered minecraft:chest move
+clone ~ ~ ~ ~1 318 ~ ~ ~1 ~ filtered minecraft:chest move
 
 #>
 # @private
@@ -25,10 +19,10 @@ clone ~ ~ ~ ~1 62 ~ ~ ~1 ~ filtered minecraft:chest move
 scoreboard players set $lobby/chest_gen.use_single_chest fetchr.tmp 0
 execute unless data storage tmp.fetchr:chest_generation categories[-1].items[5] unless data storage tmp.fetchr:chest_generation categories[-5].items[3] run scoreboard players set $lobby/chest_gen.use_single_chest fetchr.tmp 1
 
-execute unless score $lobby/chest_gen.use_single_chest fetchr.tmp matches 1 run setblock ~ ~ ~ minecraft:chest[type=left]
-execute unless score $lobby/chest_gen.use_single_chest fetchr.tmp matches 1 run setblock ~1 ~ ~ minecraft:chest[type=right]
-execute if score $lobby/chest_gen.use_single_chest fetchr.tmp matches 1 run setblock ~ ~ ~ minecraft:chest[type=single]
-execute if score $lobby/chest_gen.use_single_chest fetchr.tmp matches 1 run setblock ~1 ~ ~ minecraft:chest[type=single]
+execute unless score $lobby/chest_gen.use_single_chest fetchr.tmp matches 1 run setblock ~ ~ ~ minecraft:chest[type=left]{CustomName:{translate:"fetchr.category_chest.name"}}
+execute unless score $lobby/chest_gen.use_single_chest fetchr.tmp matches 1 run setblock ~1 ~ ~ minecraft:chest[type=right]{CustomName:{translate:"fetchr.category_chest.name"}}
+execute if score $lobby/chest_gen.use_single_chest fetchr.tmp matches 1 run setblock ~ ~ ~ minecraft:chest[type=single]{CustomName:{translate:"fetchr.category_chest.name"}}
+execute if score $lobby/chest_gen.use_single_chest fetchr.tmp matches 1 run setblock ~1 ~ ~ minecraft:chest[type=single]{CustomName:{translate:"fetchr.category_chest.name"}}
 
 scoreboard players set $chest_generation.column fetchr.tmp 0
 scoreboard players set $chest_generation.row fetchr.tmp 0
