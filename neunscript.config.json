@@ -1,10 +1,10 @@
 {
 	"name": "Fetchr",
-	"version": "5.craftmine",
+	"version": "5.craftmine.1",
 	"target": "dist",
 	"vars": {
-		"version_long_name": "5.craftmine",
-		"rp_version": "31",
+		"version_long_name": "5.craftmine.1",
+		"rp_version": "-1",
 		"realms": false
 	},
 	"remove_file_types": [
