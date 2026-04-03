@@ -201,12 +201,30 @@ data \
 	modify storage fetchr:registries categories append value {\
 	id: "fetchr:glass",\
 	name: { translate: "fetchr.category.glass" },\
-	requirements: [\
-		"fetchr:desert",\
-		"fetchr:badlands",\
-		"fetchr:beach",\
-		"fetchr:snowy_beach",\
-	],\
+	requirements: {\
+		type: "conjunction",\
+		value: [\
+			[\
+				"fetchr:desert",\
+				"fetchr:badlands",\
+				"fetchr:beach",\
+				"fetchr:snowy_beach",\
+			],\
+			{\
+				type: "negation",\
+				value: {\
+					type: "conjunction",\
+					value: [\
+						"minecraft:water_world",\
+						{\
+							type: "negation",\
+							value: "minecraft:amplified"\
+						}\
+					],\
+				}\
+			}\
+		],\
+	},\
 	weight: 100\
 }
 data \
