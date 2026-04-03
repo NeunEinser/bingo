@@ -275,6 +275,9 @@ scoreboard players set @s[scores={fetchr.resource_pack_check=1}] fetchr.resource
 #execute \
 	if score @s fetchr.resource_pack_check matches {NEUN_SCRIPT:rp_version * 91} \
 	run advancement revoke @s everything
+#execute \
+	if score @s fetchr.resource_pack_check matches {NEUN_SCRIPT:rp_version * 91} \
+	run effect clear @s
 #NEUN_SCRIPT end
 #NEUN_SCRIPT remove
 tag @s[scores={fetchr.resource_pack_check=91}] remove fetchr.resourcepack_check
@@ -288,6 +291,9 @@ execute \
 execute \
 	if score @s fetchr.resource_pack_check matches 91 \
 	run advancement revoke @s everything
+execute \
+	if score @s fetchr.resource_pack_check matches 91 \
+	run effect clear @s
 #NEUN_SCRIPT end
 scoreboard players reset @s[tag=!fetchr.resourcepack_check] fetchr.resource_pack_check
 #endregion
