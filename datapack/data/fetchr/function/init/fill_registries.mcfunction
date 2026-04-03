@@ -418,7 +418,7 @@ data \
 			}\
 		],\
 	},\
-	weight: 1000\
+	weight: 200\
 }
 data \
 	modify storage fetchr:registries categories append value {\
