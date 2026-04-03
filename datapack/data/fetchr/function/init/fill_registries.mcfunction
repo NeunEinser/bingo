@@ -559,13 +559,6 @@ data \
 				"fetchr:snowy_plains",\
 				"fetchr:ice_spikes",\
 			],\
-			[\
-				"minecraft:grid_world",\
-				"minecraft:surface_world",\
-				"minecraft:amplified",\
-				"minecraft:floating_islands_world",\
-				"minecraft:shattered_blocks_world",\
-			],\
 			{\
 				type: "negation",\
 				value: {\
