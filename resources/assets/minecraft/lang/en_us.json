@@ -21,5 +21,8 @@
 	"block.minecraft.candle": "Sea Pickle",
 	"block.minecraft.sea_pickle": "Candle",
 	"item.minecraft.saddle": "Sadgle",
-	"item.minecraft.axolotl_bucket": "Avocado Bucket"
+	"item.minecraft.axolotl_bucket": "Avocado Bucket",
+
+	"mine.lost": "THE BINGO GODS ARE VERY DISAPPOINTED",
+	"mine.won": "THE BINGO GODS ARE ONLY MILDLY ANNOYED AT YOUR PERFORMANCE"
 }
