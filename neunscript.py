@@ -62,7 +62,7 @@ def main():
 	resourcepack_config : dict | None = config.get("resourcepack")
 	datapack_config: dict | None = config.get("datapack")
 
-	mc_versions: list[dict] = requests.get("https://raw.githubusercontent.com/misode/mcmeta/refs/heads/summary/versions/data.json").json()
+	mc_versions: list[dict] = requests.get("https://raw.githubusercontent.com/misode/mcmeta/refs/tags/25w14craftmine-summary/versions/data.json").json()
 	mc_versions.reverse()
 
 	name=config.get("name")
@@ -175,14 +175,14 @@ def main():
 		if includes != None:
 			pack_format = (
 				mc_version_info["latest_supported"]["data_pack_version"],
-				mc_version_info["latest_supported"]["data_pack_version_minor"]
+				0
 			)
 			min_pack_format = (
 				mc_version_info["initial_supported"]["data_pack_version"],
-				mc_version_info["initial_supported"]["data_pack_version_minor"]
+				0
 			)
 			format_versions = sorted({
-				(v["data_pack_version"], v["data_pack_version_minor"]) for v in mc_versions
+				(v["data_pack_version"], 0) for v in mc_versions
 			})
 			for path in includes:
 				file_name: str = path[max(path.rfind("/"), 0):]
@@ -273,24 +273,24 @@ def iterate_files(config: dict, pack_config: dict, outpath: str, mc_versions: li
 				default_strings: dict[str, str] = json.loads(lang_file.read())
 		
 		format_versions = sorted({
-			(v["resource_pack_version"], v["resource_pack_version_minor"]) if type == 1
-			else (v["data_pack_version"], v["data_pack_version_minor"])
+			(v["resource_pack_version"], 0) if type == 1
+			else (v["data_pack_version"], 0)
 			for v in mc_versions
 		})
 
 		main_pack_format: tuple[int, int] = (
 			version_info["latest_supported"]["resource_pack_version"],
-			version_info["latest_supported"]["resource_pack_version_minor"]
+			0
 		) if type == 1 else (
 			version_info["latest_supported"]["data_pack_version"],
-			version_info["latest_supported"]["data_pack_version_minor"]
+			0
 		)
 		min_pack_format: tuple[int, int] = (
 			version_info["initial_supported"]["resource_pack_version"],
-			version_info["initial_supported"]["resource_pack_version_minor"]
+			0
 		) if type == 1 else (
 			version_info["initial_supported"]["data_pack_version"],
-			version_info["initial_supported"]["data_pack_version_minor"]
+			0
 		)
 		if os.path.isfile(f"{source}{os.sep}pack.mcmeta"):
 			with open(f"{source}{os.sep}pack.mcmeta") as file:
@@ -665,115 +665,111 @@ def handle_structued(
 	pack_formats: set[tuple[int, int]] = set()
 	keep_self = True
 	if isinstance(tag, dict):
-		if is_nbt and file_path.endswith("level.dat") and key == "Version" and mc_version_info["lowest_release"] != None:
-			tag["Id"] = nbtlib.Int(mc_version_info["lowest_release"]["data_version"])
-			tag["Name"] = nbtlib.String(mc_version_info["lowest_release"]["id"])
-		else:
-			to_remove = set()
-			to_replace = {}
-			for key, value in tag.items():
-				new_key = replace_variables(key, config)
-				if new_key != key:
-					to_remove.add(key)
-					to_replace[new_key] = value
-					
-				if isinstance(value, str):
-					new_value = replace_variables(value, config)
-					if new_value != value:
-						if is_nbt:
-							new_value = nbtlib.String(new_value)
-						value = new_value
-						to_replace[key] = new_value
+		to_remove = set()
+		to_replace = {}
+		for key, value in tag.items():
+			new_key = replace_variables(key, config)
+			if new_key != key:
+				to_remove.add(key)
+				to_replace[new_key] = value
+				
+			if isinstance(value, str):
+				new_value = replace_variables(value, config)
+				if new_value != value:
+					if is_nbt:
+						new_value = nbtlib.String(new_value)
+					value = new_value
+					to_replace[key] = new_value
 
-				if new_key.startswith("NEUN_SCRIPT "):
-					match=re.match("NEUN_SCRIPT\s+(.*)", new_key)
-					if match != None:
-						should_execute_action = False
-						force_child_evaluation = False
-						command = re.sub("\s+", " ", match.group(1)).lower().split(" ")
+			if new_key.startswith("NEUN_SCRIPT "):
+				match=re.match("NEUN_SCRIPT\s+(.*)", new_key)
+				if match != None:
+					should_execute_action = False
+					force_child_evaluation = False
+					command = re.sub("\s+", " ", match.group(1)).lower().split(" ")
 
-						command_offset = 1 if command[0] not in ["replace", "remove"] else 2
-						if len(command) == command_offset:
-							should_execute_action = True
-						elif len(command) < command_offset:
-							raise ValueError(f"command needs {command_offset} arguments")
-						else:
-							match command[command_offset]:
-								case "if" | "unless":
-									if len(command) != command_offset + 2:
-										raise ValueError("if/unless needs one argument")
-									value = get_variable(command[command_offset + 1], config)
-									value = value != None and (
-										(isinstance(value, bool) and value)
-										or (isinstance(value, str) and value.lower() == "true")
-									)
-									if value == (command[command_offset] == "if"):
-										should_execute_action = True
-									
-								case "since" | "until":
-									force_child_evaluation = True
-
-									if len(command) < command_offset + 2:
-										raise ValueError("until / since needs at least one argument")
-
-									min_value = (1, 0)
-									max_value = None
-
-									if command[command_offset] == "since":
-										min_value = to_pack_format_tuple(list(map(lambda v: int(v), command[command_offset + 1].split("."))))
-										if len(command) > command_offset + 2 and command[command_offset + 2] == "until":
-											if len(command) < command_offset + 4:
-												raise ValueError("Syntax: since <pack_format> until <pack_format>")
-											max_value = map(lambda v: int(v), command[command_offset + 3].split("."))
-									else:
-										max_value = map(lambda v: int(v), command[command_offset + 1].split("."))
-
-									pack_formats.add(min_value)
-
-									if max_value is not None:
-										max_value = to_pack_format_tuple(list(max_value))
-										pack_formats.add(max_value)
-									if pack_format >= min_value and (max_value is None or pack_format < max_value):
-										should_execute_action = True
-										if min_value > min_format:
-											pack_formats.add((1, 0))
-
-						val_result = None
-						if should_execute_action:
-							match command[0]:
-								case "remove_self":
-									keep_self = False
-								case "remove":
-									to_remove.add(command[1])
-								case "merge":
-									val_result = handle_structued(value, file_path, config, mc_version_info, pack_format, min_format, is_nbt, new_key)
-									if val_result[1] and isinstance(value, dict):
-										for k, v in value.items():
-											to_replace[k] = v
-								case "replace":
-									val_result = handle_structued(value, file_path, config, mc_version_info, pack_format, min_format, is_nbt, new_key)
-									if val_result[1]:
-										to_replace[command[1]] = value
-									else:
-										to_remove.add(command[1])
-
-						if force_child_evaluation and val_result is None:
-							val_result = handle_structued(value, file_path, config, mc_version_info, pack_format, min_format, is_nbt, new_key)
-						if val_result is not None:
-							pack_formats.update(val_result[0])
-						to_remove.add(new_key)
-							
-				else:
-					val_result = handle_structued(value, file_path, config, mc_version_info, pack_format, min_format, is_nbt, new_key)
-					if val_result[1]:
-						pack_formats.update(val_result[0])
+					command_offset = 1 if command[0] not in ["replace", "remove"] else 2
+					if len(command) == command_offset:
+						should_execute_action = True
+					elif len(command) < command_offset:
+						raise ValueError(f"command needs {command_offset} arguments")
 					else:
-						to_remove.add(new_key)
+						match command[command_offset]:
+							case "if" | "unless":
+								if len(command) != command_offset + 2:
+									raise ValueError("if/unless needs one argument")
+								value = get_variable(command[command_offset + 1], config)
+								value = value != None and (
+									(isinstance(value, bool) and value)
+									or (isinstance(value, str) and value.lower() == "true")
+								)
+								if value == (command[command_offset] == "if"):
+									should_execute_action = True
+								
+							case "since" | "until":
+								force_child_evaluation = True
 
-			for key, val in to_replace.items():
-				tag[key] = val
-			for key in to_remove:
-				del tag[key]
+								if len(command) < command_offset + 2:
+									raise ValueError("until / since needs at least one argument")
+
+								min_value = (1, 0)
+								max_value = None
+
+								if command[command_offset] == "since":
+									min_value = to_pack_format_tuple(list(map(lambda v: int(v), command[command_offset + 1].split("."))))
+									if len(command) > command_offset + 2 and command[command_offset + 2] == "until":
+										if len(command) < command_offset + 4:
+											raise ValueError("Syntax: since <pack_format> until <pack_format>")
+										max_value = map(lambda v: int(v), command[command_offset + 3].split("."))
+								else:
+									max_value = map(lambda v: int(v), command[command_offset + 1].split("."))
+
+								pack_formats.add(min_value)
+
+								if max_value is not None:
+									max_value = to_pack_format_tuple(list(max_value))
+									pack_formats.add(max_value)
+								if pack_format >= min_value and (max_value is None or pack_format < max_value):
+									should_execute_action = True
+									if min_value > min_format:
+										pack_formats.add((1, 0))
+
+					val_result = None
+					if should_execute_action:
+						match command[0]:
+							case "remove_self":
+								keep_self = False
+							case "remove":
+								to_remove.add(command[1])
+							case "merge":
+								val_result = handle_structued(value, file_path, config, mc_version_info, pack_format, min_format, is_nbt, new_key)
+								if val_result[1] and isinstance(value, dict):
+									for k, v in value.items():
+										to_replace[k] = v
+							case "replace":
+								val_result = handle_structued(value, file_path, config, mc_version_info, pack_format, min_format, is_nbt, new_key)
+								if val_result[1]:
+									to_replace[command[1]] = value
+								else:
+									to_remove.add(command[1])
+
+					if force_child_evaluation and val_result is None:
+						val_result = handle_structued(value, file_path, config, mc_version_info, pack_format, min_format, is_nbt, new_key)
+					if val_result is not None:
+						pack_formats.update(val_result[0])
+					to_remove.add(new_key)
+						
+			else:
+				val_result = handle_structued(value, file_path, config, mc_version_info, pack_format, min_format, is_nbt, new_key)
+				if val_result[1]:
+					pack_formats.update(val_result[0])
+				else:
+					to_remove.add(new_key)
+
+		for key, val in to_replace.items():
+			tag[key] = val
+		for key in to_remove:
+			del tag[key]
 
 	elif isinstance(tag, list):
 		remove_indices = []
@@ -1027,7 +1023,7 @@ def to_pack_format_tuple(format: list[int] | int, default_minor: int = 0):
 
 def get_version_from_version_info(mc_version: dict, is_rp: bool):
 	return (mc_version["resource_pack_version" if is_rp else "data_pack_version"], 
-		mc_version["resource_pack_version_minor" if is_rp else "data_pack_version_minor"])
+		0)
 
 if __name__ == '__main__':
 	main()
