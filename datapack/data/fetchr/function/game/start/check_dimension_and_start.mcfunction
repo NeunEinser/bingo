@@ -41,9 +41,6 @@ $function fetchr:game/start/test_biome { level_number: $(level_number), biome: "
 $function fetchr:game/start/test_biome { level_number: $(level_number), biome: "desert" }
 $function fetchr:game/start/test_biome { level_number: $(level_number), biome: "dripstone_caves" }
 $function fetchr:game/start/test_biome { level_number: $(level_number), biome: "forest" }
-$function fetchr:game/start/test_biome { level_number: $(level_number), biome: "frozen_ocean" }
-$function fetchr:game/start/test_biome { level_number: $(level_number), biome: "frozen_peaks" }
-$function fetchr:game/start/test_biome { level_number: $(level_number), biome: "frozen_river" }
 $function fetchr:game/start/test_biome { level_number: $(level_number), biome: "grove" }
 $function fetchr:game/start/test_biome { level_number: $(level_number), biome: "ice_spikes" }
 $function fetchr:game/start/test_biome { level_number: $(level_number), biome: "jungle" }
@@ -104,27 +101,39 @@ data modify storage tmp.fetchr:game/start exclude_special set value ["fetchr:pla
 $function fetchr:game/start/test_biome { level_number: $(level_number), biome: "small_end_islands" }
 
 data modify storage tmp.fetchr:game/start exclude_surface set value []
-data modify storage tmp.fetchr:game/start exclude_special set value ["fetchr:nether_wastes","fetchr:soulsand_valley","fetchr:basalt_deltas","fetchr:crimson_forest","fetchr:warped_forest"]
+data modify storage tmp.fetchr:game/start exclude_special set value ["fetchr:nether_wastes","fetchr:soulsand_valley","fetchr:basalt_deltas","fetchr:crimson_forest","fetchr:warped_forest","fetchr:cold_ocean"]
 $function fetchr:game/start/test_biome { level_number: $(level_number), biome: "deep_dark" }
 
 data modify storage tmp.fetchr:game/start exclude_surface set value []
-data modify storage tmp.fetchr:game/start exclude_special set value ["fetchr:nether_wastes","fetchr:soulsand_valley","fetchr:basalt_deltas"]
+data modify storage tmp.fetchr:game/start exclude_special set value ["fetchr:nether_wastes","fetchr:soulsand_valley","fetchr:basalt_deltas","fetchr:cold_ocean"]
 $function fetchr:game/start/test_biome { level_number: $(level_number), biome: "pale_garden" }
 
 data modify storage tmp.fetchr:game/start exclude_surface set value []
-data modify storage tmp.fetchr:game/start exclude_special set value ["fetchr:crimson_forest","fetchr:warped_forest"]
+data modify storage tmp.fetchr:game/start exclude_special set value ["fetchr:crimson_forest","fetchr:warped_forest","fetchr:cold_ocean"]
+$function fetchr:game/start/test_biome { level_number: $(level_number), biome: "frozen_ocean" }
+
+data modify storage tmp.fetchr:game/start exclude_surface set value []
+data modify storage tmp.fetchr:game/start exclude_special set value ["fetchr:crimson_forest","fetchr:warped_forest","fetchr:cold_ocean"]
+$function fetchr:game/start/test_biome { level_number: $(level_number), biome: "frozen_peaks" }
+
+data modify storage tmp.fetchr:game/start exclude_surface set value []
+data modify storage tmp.fetchr:game/start exclude_special set value ["fetchr:crimson_forest","fetchr:warped_forest","fetchr:cold_ocean"]
+$function fetchr:game/start/test_biome { level_number: $(level_number), biome: "frozen_river" }
+
+data modify storage tmp.fetchr:game/start exclude_surface set value []
+data modify storage tmp.fetchr:game/start exclude_special set value ["fetchr:crimson_forest","fetchr:warped_forest","fetchr:cold_ocean"]
 $function fetchr:game/start/test_biome { level_number: $(level_number), biome: "snowy_beach" }
 
 data modify storage tmp.fetchr:game/start exclude_surface set value []
-data modify storage tmp.fetchr:game/start exclude_special set value ["fetchr:crimson_forest","fetchr:warped_forest"]
+data modify storage tmp.fetchr:game/start exclude_special set value ["fetchr:crimson_forest","fetchr:warped_forest","fetchr:cold_ocean"]
 $function fetchr:game/start/test_biome { level_number: $(level_number), biome: "snowy_plains" }
 
 data modify storage tmp.fetchr:game/start exclude_surface set value []
-data modify storage tmp.fetchr:game/start exclude_special set value ["fetchr:crimson_forest","fetchr:warped_forest"]
+data modify storage tmp.fetchr:game/start exclude_special set value ["fetchr:crimson_forest","fetchr:warped_forest","fetchr:cold_ocean"]
 $function fetchr:game/start/test_biome { level_number: $(level_number), biome: "snowy_slopes" }
 
 data modify storage tmp.fetchr:game/start exclude_surface set value []
-data modify storage tmp.fetchr:game/start exclude_special set value ["fetchr:crimson_forest","fetchr:warped_forest"]
+data modify storage tmp.fetchr:game/start exclude_special set value ["fetchr:crimson_forest","fetchr:warped_forest","fetchr:cold_ocean"]
 $function fetchr:game/start/test_biome { level_number: $(level_number), biome: "snowy_taiga" }
 
 function fetchr:game/start/test_structure { biome: "deep_dark", structure: "ancient_city" }
