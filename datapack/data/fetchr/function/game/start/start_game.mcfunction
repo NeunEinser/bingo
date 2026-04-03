@@ -25,6 +25,10 @@ execute \
 	run return 0
 execute \
 	in minecraft:overworld \
+	unless data block 8 2 8 Items[{Slot: 0b}].components.minecraft:dimension_id \
+	run return 0
+execute \
+	in minecraft:overworld \
 	if data block 8 2 8 Items[{Slot: 0b}].components.minecraft:special_mine \
 	run return 0
 execute \
