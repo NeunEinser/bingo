@@ -18,4 +18,6 @@ execute \
 	align xyz \
 	run summon minecraft:marker ~.5 ~ ~.5 {Tags: ["fetchr.spawn"]}
 
-schedule function fetchr:game/start/start_game 20t
+title @a actionbar {translate:"fetchr.generating_card.waiting_for_terrain"}
+
+schedule function fetchr:game/start/start_game_schedule 20t

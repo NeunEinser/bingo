@@ -133,6 +133,9 @@
 
 	"fetchr.category_chest.name": "Item Pool Display",
 	"fetchr.category_chest.stolen": "The Bingo Gods cast an eternal curse on you as punishment for your attempt to steal from them.",
+
+	"fetchr.generating_card.waiting_for_terrain": "Waiting for terrain to generate",
+	"fetchr.generating_card.generating": "Determining biomes, structures and generating card",
 	
 	"fetchr.categories.header": "Categories:",
 
