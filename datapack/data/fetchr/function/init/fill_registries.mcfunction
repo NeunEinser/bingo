@@ -1366,7 +1366,7 @@ data \
 data \
 	modify storage fetchr:registries categories append value {\
 	id: "fetchr:salmon",\
-	name: { translate: "fetchr.category.fish" },\
+	name: { translate: "fetchr.category.salmon" },\
 	requirements: {\
 		type: "conjunction",\
 		value: [\
@@ -1542,7 +1542,7 @@ data \
 data \
 	modify storage fetchr:registries categories append value {\
 	id: "fetchr:glowstone",\
-	name: { translate: "fetchr.category.slime" },\
+	name: { translate: "fetchr.category.glowstone" },\
 	requirements: [\
 		"minecraft:witches",\
 		{\
@@ -1568,7 +1568,7 @@ data \
 data \
 	modify storage fetchr:registries categories append value {\
 	id: "fetchr:blaze",\
-	name: { translate: "fetchr.category.blazes" },\
+	name: { translate: "fetchr.category.blaze" },\
 	requirements: [ "minecraft:blazes" ],\
 	weight: 1000\
 }

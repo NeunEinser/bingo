@@ -39,6 +39,11 @@ execute \
 	store result score $chest_generation/sort/card.size fetchr.tmp \
 	run data modify storage tmp.fetchr:chest_generation item_categories set from storage tmp.fetchr:chest_generation item.categories
 
+execute \
+	unless predicate fetchr:is_in_game \
+	store result score $chest_generation/sort/card.size fetchr.tmp \
+	run data modify storage tmp.fetchr:chest_generation item.item.components.minecraft:lore append from storage tmp.fetchr:chest_generation item.categories[].name
+
 data remove storage tmp.fetchr:chest_generation items[-1]
 
 execute \
