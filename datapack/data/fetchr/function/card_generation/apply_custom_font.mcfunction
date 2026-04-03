@@ -8,13 +8,13 @@
 
 
 $data \
-	modify storage fetchr:card slots[-1].icon_display \
+	modify storage fetchr:card slots[$(slot_id)].icon_display \
 	set value { text: "\u$(icon)", font: "$(current_font)" }
 
 $execute \
 	unless score $concealed_card fetchr.state matches 1 \
 	run data \
-		modify storage fetchr:card slots[-1].current_display set value [\
+		modify storage fetchr:card slots[$(slot_id)].current_display set value [\
 		"",\
 		{ text: "\u0002", font: "fetchr:space" },\
 		{ text: "\u$(icon)", font: "$(current_font)" }\

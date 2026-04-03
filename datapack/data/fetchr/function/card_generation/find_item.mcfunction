@@ -18,5 +18,5 @@ data remove storage tmp.fetchr:card_generation items[-1]
 scoreboard players operation $rand.out 91.math.io -= $card_gen/find_item.current_weight fetchr.tmp
 
 execute \
-	if score $rand.out 91.math.io matches 1.. \
+	if score $rand.out 91.math.io matches 0.. \
 	run function fetchr:card_generation/find_item

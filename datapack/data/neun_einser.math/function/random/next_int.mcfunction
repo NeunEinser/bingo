@@ -9,6 +9,7 @@
 # 	min: int
 # 	max: int
 
+$scoreboard players set $rand.out 91.math.io $(min)
 $execute \
 	store result score $rand.out 91.math.io \
 	run random value $(min)..$(max) $(sequence)

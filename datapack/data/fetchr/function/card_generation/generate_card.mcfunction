@@ -27,6 +27,7 @@ scoreboard players set $card_gen.slot fetchr.tmp 0
 # @within function fetchr:card_generation/**
 #declare score_holder $card_gen.total_weight
 scoreboard players operation $card_gen.total_weight fetchr.tmp = $total_item_weight fetchr.state
+scoreboard players remove $card_gen.total_weight fetchr.tmp 1
 #>
 # The current weight available per category. Might change if a category's total
 # item weight changes in such a way that the available category weight cannot
@@ -38,11 +39,21 @@ scoreboard players operation $card_gen.available_category_weight fetchr.tmp = $a
 data modify storage tmp.fetchr:card_generation items set from storage fetchr:items active_items
 
 data remove storage fetchr:card slots
-data modify storage tmp.fetchr:rand_data min set value 1
+data modify storage tmp.fetchr:rand_data min set value 0
 execute \
 	as @e[type=minecraft:item_frame, tag=fetchr.card_frame] \
 	run data modify entity @s Item set value { id: "minecraft:barrier" }
 function fetchr:card_generation/generate_slot
+
+function fetchr:card_generation/set_item_data with storage fetchr:card slots[0]
+function fetchr:card_generation/set_item_data with storage fetchr:card slots[1]
+function fetchr:card_generation/set_item_data with storage fetchr:card slots[2]
+function fetchr:card_generation/set_item_data with storage fetchr:card slots[3]
+function fetchr:card_generation/set_item_data with storage fetchr:card slots[4]
+function fetchr:card_generation/set_item_data with storage fetchr:card slots[5]
+function fetchr:card_generation/set_item_data with storage fetchr:card slots[6]
+function fetchr:card_generation/set_item_data with storage fetchr:card slots[7]
+function fetchr:card_generation/set_item_data with storage fetchr:card slots[8]
 
 function neun_einser.math:random/next_full_int with storage tmp.fetchr:rand_data
 execute \
