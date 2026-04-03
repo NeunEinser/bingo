@@ -1450,38 +1450,33 @@ data \
 		type: "conjunction",\
 		value: [\
 			"minecraft:slimes",\
-			[\
-				"minecraft:cave_world",\
-				"minecraft:dark_cave_world",\
-				{\
-					type: "conjunction",\
-					value: [\
-						[\
-							"minecraft:surface_world",\
-							"minecraft:amplified",\
-							"minecraft:floating_islands_world",\
-							"minecraft:shattered_blocks_world",\
-						],\
-						[\
-							"fetchr:swamp",\
-							"fetchr:mangrove_swamp",\
-						],\
-						{\
-							type: "negation",\
-							value: {\
-								type: "conjunction",\
-								value: [\
-									"minecraft:water_world",\
-									{\
-										type: "negation",\
-										value: "minecraft:amplified"\
-									}\
-								],\
-							}\
-						}\
+			{\
+				type: "conjunction",\
+				value: [\
+					[\
+						"minecraft:surface_world",\
+						"minecraft:amplified",\
+						"minecraft:shattered_blocks_world",\
 					],\
-				},\
-			],\
+					[\
+						"fetchr:swamp",\
+						"fetchr:mangrove_swamp",\
+					],\
+					{\
+						type: "negation",\
+						value: {\
+							type: "conjunction",\
+							value: [\
+								"minecraft:water_world",\
+								{\
+									type: "negation",\
+									value: "minecraft:amplified"\
+								}\
+							],\
+						}\
+					}\
+				],\
+			},\
 		],\
 	}\
 }
