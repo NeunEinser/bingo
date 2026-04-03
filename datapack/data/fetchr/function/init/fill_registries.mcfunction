@@ -2822,7 +2822,7 @@ data \
 	item: { id: "minecraft:magma_block" },\
 	translation: "block.minecraft.magma_block",\
 	icon: "010b",\
-	categories: [ "fetchr:magma", "fetchr:magma_cube" ]\
+	categories: [ "fetchr:magma" ]\
 }
 
 # 010c: glass
