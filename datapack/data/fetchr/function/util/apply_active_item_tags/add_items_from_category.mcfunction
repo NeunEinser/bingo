@@ -43,6 +43,21 @@ data \
 		{ storage: "fetchr:items", nbt: "active_items[-1].active_categories[-1].total_item_weight" },\
 		")"\
 	]
+execute \
+	unless score $apply_active_item_tags/add_categories_and_items.category_weight fetchr.tmp matches 1 \
+	run data \
+		modify block 7 0 7 front_text.messages[0] \
+		set value [\
+			{ text: "  • ", color: "gray", italic: false },\
+			{ storage: "fetchr:items", nbt: "active_items[-1].active_categories[-1].name", interpret: true },\
+			" (",\
+			{ storage: "fetchr:items", nbt: "active_items[-1].active_categories[-1].weight" },\
+			"/",\
+			{ storage: "fetchr:items", nbt: "active_items[-1].active_categories[-1].total_item_weight" },\
+			" * ",\
+			{ score: {name:"$apply_active_item_tags/add_categories_and_items.category_weight", objective: "fetchr.tmp"} },\
+			")",\
+		]
 data \
 	modify storage fetchr:items active_items[-1].item.components.minecraft:lore \
 	append from block 7 0 7 front_text.messages[0]

@@ -12,6 +12,12 @@ data modify storage fetchr:items active_items[-1].active_categories set value []
 data \
 	modify storage fetchr:items active_items[-1].weight_denom \
 	set from storage tmp.fetchr:apply_active_item_tags categories[-1].total_item_weight
-data \
-	modify storage fetchr:items active_items[-1].weight_nom \
-	set from storage fetchr:items active_items[-1].weight
+
+execute \
+	store result score $apply_tags/add_new.cur_nom fetchr.tmp \
+	run data get storage fetchr:items active_items[-1].weight
+scoreboard players operation $apply_tags/add_new.cur_nom fetchr.tmp *= $apply_active_item_tags/add_categories_and_items.category_weight fetchr.tmp
+
+execute \
+	store result storage fetchr:items active_items[-1].weight_nom int 1 \
+	run scoreboard players get $apply_tags/add_new.cur_nom fetchr.tmp

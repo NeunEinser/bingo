@@ -11,7 +11,7 @@
 
 data modify storage tmp.fetchr:init item_categories set from storage tmp.fetchr:init items[-1].categories
 data remove storage tmp.fetchr:init items[-1].categories[]
-function fetchr:init/items/normalize_categories
+function fetchr:init/items/normalize_item_categories
 
 data modify storage tmp.fetchr:init item_categories set from storage tmp.fetchr:init items[-1].categories
 function fetchr:init/items/update_category_total_weight with storage tmp.fetchr:init item_categories[-1]

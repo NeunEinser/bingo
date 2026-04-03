@@ -1,4 +1,4 @@
-say hi
+
 execute \
 	unless entity @e[type=minecraft:marker, tag=fetchr.spawn, distance=..20] \
 	run tag @s remove fetchr.category_chest_open

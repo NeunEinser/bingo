@@ -33,6 +33,8 @@ execute \
 	store result score $apply_tags/mod_existing.cur_nom fetchr.tmp \
 	run data get storage tmp.fetchr:apply_active_item_tags categories[-1].items[-1].weight
 
+scoreboard players operation $apply_tags/mod_existing.cur_nom fetchr.tmp *= $apply_active_item_tags/add_categories_and_items.category_weight fetchr.tmp
+
 scoreboard players operation $apply_tags/mod_existing.cur_nom fetchr.tmp \
 	*= $apply_tags/mod_existing.result_denom fetchr.tmp
 execute \

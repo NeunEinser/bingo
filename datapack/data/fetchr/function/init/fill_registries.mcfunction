@@ -92,7 +92,8 @@ data \
 				]\
 			]\
 		}\
-	]\
+	],\
+	weight: 100\
 }
 
 data \
@@ -160,7 +161,8 @@ data \
 				"fetchr:ocean",\
 			]\
 		]\
-	}\
+	},\
+	weight: 100\
 }
 data \
 	modify storage fetchr:registries categories append value {\
@@ -192,7 +194,8 @@ data \
 				],\
 			]\
 		}\
-	]\
+	],\
+	weight: 1000\
 }
 data \
 	modify storage fetchr:registries categories append value {\
@@ -203,7 +206,8 @@ data \
 		"fetchr:badlands",\
 		"fetchr:beach",\
 		"fetchr:snowy_beach",\
-	]\
+	],\
+	weight: 100\
 }
 data \
 	modify storage fetchr:registries categories append value {\
@@ -271,14 +275,16 @@ data \
 				}\
 			}\
 		]\
-	}\
+	},\
+	weight: 1000\
 }
 
 data \
 	modify storage fetchr:registries categories append value {\
 	id: "fetchr:dripstone_cave",\
 	name: { translate: "fetchr.category.dripstone_cave" },\
-	requirements: [ "fetchr:dripstone_caves" ]\
+	requirements: [ "fetchr:dripstone_caves" ],\
+	weight: 1000\
 }
 data \
 	modify storage fetchr:registries categories append value {\
@@ -293,7 +299,8 @@ data \
 				value: "minecraft:water_world",\
 			}\
 		]\
-	}\
+	},\
+	weight: 1000\
 }
 
 data \
@@ -325,7 +332,8 @@ data \
 				}\
 			}\
 		],\
-	}\
+	},\
+	weight: 1000\
 }
 data \
 	modify storage fetchr:registries categories append value {\
@@ -356,7 +364,8 @@ data \
 				}\
 			}\
 		],\
-	}\
+	},\
+	weight: 1000\
 }
 data \
 	modify storage fetchr:registries categories append value {\
@@ -390,7 +399,8 @@ data \
 				}\
 			}\
 		],\
-	}\
+	},\
+	weight: 1000\
 }
 data \
 	modify storage fetchr:registries categories append value {\
@@ -421,7 +431,8 @@ data \
 				}\
 			}\
 		],\
-	}\
+	},\
+	weight: 1000\
 }
 data \
 	modify storage fetchr:registries categories append value {\
@@ -452,7 +463,8 @@ data \
 				}\
 			}\
 		],\
-	}\
+	},\
+	weight: 1000\
 }
 data \
 	modify storage fetchr:registries categories append value {\
@@ -483,7 +495,8 @@ data \
 				}\
 			}\
 		],\
-	}\
+	},\
+	weight: 1000\
 }
 data \
 	modify storage fetchr:registries categories append value {\
@@ -514,7 +527,8 @@ data \
 				}\
 			}\
 		],\
-	}\
+	},\
+	weight: 1000\
 }
 data \
 	modify storage fetchr:registries categories append value {\
@@ -548,7 +562,8 @@ data \
 				}\
 			}\
 		],\
-	}\
+	},\
+	weight: 1000\
 }
 data \
 	modify storage fetchr:registries categories append value {\
@@ -582,7 +597,8 @@ data \
 				}\
 			}\
 		],\
-	}\
+	},\
+	weight: 1000\
 }
 data \
 	modify storage fetchr:registries categories append value {\
@@ -613,7 +629,8 @@ data \
 				}\
 			}\
 		],\
-	}\
+	},\
+	weight: 1000\
 }
 data \
 	modify storage fetchr:registries categories append value {\
@@ -631,7 +648,8 @@ data \
 				"minecraft:shattered_blocks_world",\
 			],\
 		],\
-	}\
+	},\
+	weight: 1000\
 }
 data \
 	modify storage fetchr:registries categories append value {\
@@ -649,7 +667,8 @@ data \
 				"minecraft:shattered_blocks_world",\
 			],\
 		],\
-	}\
+	},\
+	weight: 1000\
 }
 data \
 	modify storage fetchr:registries categories append value {\
@@ -682,7 +701,8 @@ data \
 				}\
 			],\
 		],\
-	}\
+	},\
+	weight: 1000\
 }
 data \
 	modify storage fetchr:registries categories append value {\
@@ -716,7 +736,8 @@ data \
 				}\
 			],\
 		],\
-	}\
+	},\
+	weight: 1000\
 }
 data \
 	modify storage fetchr:registries categories append value {\
@@ -747,7 +768,8 @@ data \
 				}\
 			}\
 		],\
-	}\
+	},\
+	weight: 1000\
 }
 #endregion biomes
 
@@ -765,7 +787,8 @@ data \
 				"minecraft:floating_island_world"\
 			]\
 		]\
-	}\
+	},\
+	weight: 1000\
 }
 
 data \
@@ -782,7 +805,8 @@ data \
 				"fetchr:badlands"\
 			]\
 		]\
-	}\
+	},\
+	weight: 1000\
 }
 data \
 	modify storage fetchr:registries categories append value {\
@@ -800,19 +824,22 @@ data \
 				"minecraft:amplified",\
 			]\
 		]\
-	}\
+	},\
+	weight: 1000\
 }
 data \
 	modify storage fetchr:registries categories append value {\
 	id: "fetchr:nether_fortress",\
 	name: { translate: "fetchr.category.nether_fortress" },\
 	requirements: [ "fetchr:fortress" ],\
+	weight: 1000\
 }
 data \
 	modify storage fetchr:registries categories append value {\
 	id: "fetchr:bastion_remnant",\
 	name: { translate: "fetchr.category.bastion_remnant" },\
 	requirements: [ "fetchr:bastion_remnant" ],\
+	weight: 1000\
 }
 data \
 	modify storage fetchr:registries categories append value {\
@@ -831,7 +858,8 @@ data \
 				"minecraft:amplified",\
 			]\
 		]\
-	}\
+	},\
+	weight: 100\
 }
 data \
 	modify storage fetchr:registries categories append value {\
@@ -924,7 +952,8 @@ data \
 				}\
 			}\
 		]\
-	}\
+	},\
+	weight: 1000\
 }
 
 data \
@@ -937,7 +966,8 @@ data \
 			"minecraft:axolotls",\
 			"fetchr:lush_caves"\
 		]\
-	}\
+	},\
+	weight: 1000\
 }
 
 data \
@@ -974,7 +1004,8 @@ data \
 				}\
 			}\
 		]\
-	}\
+	},\
+	weight: 1000\
 }
 
 data \
@@ -1009,7 +1040,8 @@ data \
 				}\
 			}\
 		]\
-	}\
+	},\
+	weight: 1000\
 }
 
 data \
@@ -1044,7 +1076,8 @@ data \
 				}\
 			}\
 		]\
-	}\
+	},\
+	weight: 1000\
 }
 
 data \
@@ -1084,7 +1117,8 @@ data \
 				}\
 			}\
 		]\
-	}\
+	},\
+	weight: 1000\
 }
 
 data \
@@ -1124,7 +1158,8 @@ data \
 				}\
 			}\
 		]\
-	}\
+	},\
+	weight: 1000\
 }
 data \
 	modify storage fetchr:registries categories append value {\
@@ -1163,7 +1198,8 @@ data \
 				}\
 			}\
 		]\
-	}\
+	},\
+	weight: 1000\
 }
 data \
 	modify storage fetchr:registries categories append value {\
@@ -1202,7 +1238,8 @@ data \
 				}\
 			}\
 		]\
-	}\
+	},\
+	weight: 1000\
 }
 data \
 	modify storage fetchr:registries categories append value {\
@@ -1243,7 +1280,8 @@ data \
 				}\
 			],\
 		},\
-	]\
+	],\
+	weight: 1000\
 }
 #endregion peaceful mobs
 
@@ -1278,7 +1316,8 @@ data \
 				"fetchr:lukewarm_ocean",\
 			]\
 		]\
-	}\
+	},\
+	weight: 100\
 }
 data \
 	modify storage fetchr:registries categories append value {\
@@ -1310,7 +1349,8 @@ data \
 				"fetchr:ocean",\
 			]\
 		]\
-	}\
+	},\
+	weight: 100\
 }
 data \
 	modify storage fetchr:registries categories append value {\
@@ -1344,7 +1384,8 @@ data \
 				"fetchr:river",\
 			]\
 		]\
-	}\
+	},\
+	weight: 100\
 }
 
 data \
@@ -1379,7 +1420,8 @@ data \
 				"fetchr:ocean",\
 			]\
 		]\
-	}\
+	},\
+	weight: 100\
 }
 
 data \
@@ -1416,31 +1458,36 @@ data \
 	modify storage fetchr:registries categories append value {\
 	id: "fetchr:creeper",\
 	name: { translate: "fetchr.category.creeper" },\
-	requirements: [ "minecraft:creepers" ]\
+	requirements: [ "minecraft:creepers" ],\
+	weight: 1000\
 }
 data \
 	modify storage fetchr:registries categories append value {\
 	id: "fetchr:enderman",\
 	name: { translate: "fetchr.category.enderman" },\
-	requirements: [ "minecraft:endermen" ]\
+	requirements: [ "minecraft:endermen" ],\
+	weight: 1000\
 }
 data \
 	modify storage fetchr:registries categories append value {\
 	id: "fetchr:skeleton",\
 	name: { translate: "fetchr.category.skeleton" },\
-	requirements: [ "minecraft:skeletons", "minecraft:wither_skeletons" ]\
+	requirements: [ "minecraft:skeletons", "minecraft:wither_skeletons" ],\
+	weight: 1000\
 }
 data \
 	modify storage fetchr:registries categories append value {\
 	id: "fetchr:spider",\
 	name: { translate: "fetchr.category.spider" },\
-	requirements: [ "minecraft:spiders", "minecraft:cave_spiders" ]\
+	requirements: [ "minecraft:spiders", "minecraft:cave_spiders" ],\
+	weight: 1000\
 }
 data \
 	modify storage fetchr:registries categories append value {\
 	id: "fetchr:zombie",\
 	name: { translate: "fetchr.category.zombie" },\
-	requirements: [ "minecraft:zombies", "minecraft:zombified_piglins", "minecraft:zoglins" ]\
+	requirements: [ "minecraft:zombies", "minecraft:zombified_piglins", "minecraft:zoglins" ],\
+	weight: 1000\
 }
 data \
 	modify storage fetchr:registries categories append value {\
@@ -1478,7 +1525,8 @@ data \
 				],\
 			},\
 		],\
-	}\
+	},\
+	weight: 1000\
 }
 data \
 	modify storage fetchr:registries categories append value {\
@@ -1496,31 +1544,36 @@ data \
 				],\
 			]\
 		}\
-	]\
+	],\
+	weight: 1000\
 }
 data \
 	modify storage fetchr:registries categories append value {\
 	id: "fetchr:magma_cube",\
 	name: { translate: "fetchr.category.magma_cube" },\
-	requirements: [ "minecraft:magma_cubes" ]\
+	requirements: [ "minecraft:magma_cubes" ],\
+	weight: 1000\
 }
 data \
 	modify storage fetchr:registries categories append value {\
 	id: "fetchr:blaze",\
 	name: { translate: "fetchr.category.blazes" },\
-	requirements: [ "minecraft:blazes" ]\
+	requirements: [ "minecraft:blazes" ],\
+	weight: 1000\
 }
 data \
 	modify storage fetchr:registries categories append value {\
 	id: "fetchr:breeze",\
 	name: { translate: "fetchr.category.breeze" },\
-	requirements: [ "minecraft:breezes" ]\
+	requirements: [ "minecraft:breezes" ],\
+	weight: 1000\
 }
 data \
 	modify storage fetchr:registries categories append value {\
 	id: "fetchr:evoker",\
 	name: { translate: "fetchr.category.evoker" },\
-	requirements: [ "minecraft:evokers" ]\
+	requirements: [ "minecraft:evokers" ],\
+	weight: 1000\
 }
 data \
 	modify storage fetchr:registries categories append value {\
@@ -1536,7 +1589,8 @@ data \
 				"minecraft:shattered_blocks_world",\
 			],\
 		]\
-	}\
+	},\
+	weight: 1000\
 }
 data \
 	modify storage fetchr:registries categories append value {\
@@ -1564,31 +1618,36 @@ data \
 				]\
 			},\
 		],\
-	}\
+	},\
+	weight: 1000\
 }
 data \
 	modify storage fetchr:registries categories append value {\
 	id: "fetchr:shulker",\
 	name: { translate: "fetchr.category.shulker" },\
-	requirements: [ "minecraft:shulkers" ]\
+	requirements: [ "minecraft:shulkers" ],\
+	weight: 1000\
 }
 data \
 	modify storage fetchr:registries categories append value {\
 	id: "fetchr:ghast",\
 	name: { translate: "fetchr.category.ghast" },\
-	requirements: [ "minecraft:ghasts" ]\
+	requirements: [ "minecraft:ghasts" ],\
+	weight: 1000\
 }
 data \
 	modify storage fetchr:registries categories append value {\
 	id: "fetchr:batering",\
 	name: { translate: "fetchr.category.batering" },\
-	requirements: [ "minecraft:piglins" ]\
+	requirements: [ "minecraft:piglins" ],\
+	weight: 1000\
 }
 data \
 	modify storage fetchr:registries categories append value {\
 	id: "fetchr:hoglin",\
 	name: { translate: "fetchr.category.hoglin" },\
-	requirements: [ "minecraft:hoglins" ]\
+	requirements: [ "minecraft:hoglins" ],\
+	weight: 1000\
 }
 #endregion hostile mobs
 

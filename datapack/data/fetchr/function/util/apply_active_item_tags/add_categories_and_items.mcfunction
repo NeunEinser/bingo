@@ -11,6 +11,9 @@
 
 data modify storage fetchr:items active_categories append from storage tmp.fetchr:apply_active_item_tags categories[-1]
 data modify storage fetchr:items active_categories[-1].items set value []
+execute \
+	store result score $apply_active_item_tags/add_categories_and_items.category_weight fetchr.tmp \
+	run data get storage fetchr:items active_categories[-1].category_weight
 function fetchr:util/apply_active_item_tags/add_items_from_category \
 	with storage tmp.fetchr:apply_active_item_tags categories[-1]
 
