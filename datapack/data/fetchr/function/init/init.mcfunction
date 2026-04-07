@@ -1611,7 +1611,7 @@ forceload add 0 0
 	#declare storage tmp.fetchr:init
 
 	execute \
-		if score $lobby_generated fetchr.state matches 3..4 \
+		if score $lobby_generated fetchr.state matches 3.. \
 		run schedule function fetchr:init/items/exec 1t
 #endregion
 #region initialize hud components
