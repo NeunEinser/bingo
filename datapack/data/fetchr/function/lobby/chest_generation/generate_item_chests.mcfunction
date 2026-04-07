@@ -15,7 +15,7 @@
 #>
 # @within function fetchr:lobby/chest_generation/*
 #declare score_holder $chest_generation.column
-scoreboard players set $chest_generation.column fetchr.tmp -1
+scoreboard players set $chest_generation.column fetchr.tmp 19
 
 data modify storage tmp.fetchr:chest_generation categories set from storage fetchr:items active_categories
 
