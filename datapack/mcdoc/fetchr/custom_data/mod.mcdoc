@@ -1,6 +1,6 @@
-use ::java::server::world::block::sign::SignText
-use ::java::server::world::item::firework::Explosion
-use ::java::server::world::item::ItemStack
+use ::java::world::block::sign::SignText
+use ::java::world::item::firework::Explosion
+use ::java::world::item::ItemStack
 
 dispatch mcdoc:marker_data["front_text"] to SignText
 dispatch mcdoc:marker_data["back_text"] to SignText

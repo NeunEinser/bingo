@@ -44,6 +44,7 @@ schedule clear fetchr:lobby/place_indestructible_blocks
 data \
 	modify storage tmp.fetchr:init/structures structures \
 	set from storage fetchr:registries structures
+
 data modify storage tmp.fetchr:init/structures structures append value {\
 	id: "fetchr:lobby_end",\
 	entrance_position: [I; 1, 0, 1],\

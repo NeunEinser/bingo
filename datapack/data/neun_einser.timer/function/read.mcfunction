@@ -1,7 +1,7 @@
 #> neun_einser.timer:read
 #
 # Reads the timer and stores the result in the score holders $hours, $minutes,
-# \$seconds and $millis.
+# $seconds and $millis.
 #
 # @api
 # @output

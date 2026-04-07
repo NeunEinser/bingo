@@ -31,3 +31,32 @@ $clone \
 	$(clone_x) $(old_y) $(old_z) \
 	strict
 #NEUN_SCRIPT end
+data modify storage tmp.fetchr:init/structures compare_coordinates set value [{\
+	compare_x: -29999999,\
+	compare_z: -30000000\
+}]
+
+execute \
+	store result storage tmp.fetchr:init/structures compare_coordinates[0].y int 1 \
+	run scoreboard players get $init/lobby/update.y fetchr.tmp
+execute \
+	store result storage tmp.fetchr:init/structures compare_coordinates[0].size_x int 1 \
+	run scoreboard players get $init/lobby/update.new_size_x fetchr.tmp
+execute \
+	store result storage tmp.fetchr:init/structures compare_coordinates[0].size_y int 1 \
+	run scoreboard players get $init/lobby/update.size_y fetchr.tmp
+execute \
+	store result storage tmp.fetchr:init/structures compare_coordinates[0].size_z int 1 \
+	run scoreboard players get $init/lobby/update.size_z fetchr.tmp
+execute \
+	store result storage tmp.fetchr:init/structures compare_coordinates[0].reference_x int 1 \
+	run scoreboard players get $init/lobby/update.reference_x fetchr.tmp
+execute \
+	store result storage tmp.fetchr:init/structures compare_coordinates[0].reference_z int 1 \
+	run scoreboard players get $init/lobby/update.z fetchr.tmp
+execute \
+	store result storage tmp.fetchr:init/structures compare_coordinates[0].clone_x int 1 \
+	run scoreboard players get $init/lobby/update.clone_x fetchr.tmp
+
+function fetchr:init/update_lobby/compare_and_update/x_iter \
+	with storage tmp.fetchr:init/structures compare_coordinates[0]

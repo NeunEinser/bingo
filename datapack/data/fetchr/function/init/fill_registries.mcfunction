@@ -10,11 +10,9 @@
 #TODO versioning for most registries
 
 #TODO make sure categories are in stable order. Pretty sure they are curremtly
-# in arbitary order after having been processed,\
-	meaning that if a new category
+# in arbitary order after having been processed, meaning that if a new category
 # is added which is not in the fetchr:default tag and some vanilla Fetchr items
-# are added to it,\
-	existing seeds might shuffle without the item pool or active
+# are added to it, existing seeds might shuffle without the item pool or active
 # categories actually changing.
 #
 # Probably should just keep the order of initial definition

@@ -1,4 +1,7 @@
 {
+	"env": {
+		"exclude": ["datapack/data/fetchr/function/init/fill_registries.mcfunction"]
+	},
 	"format": {
 		"blockStateBracketSpacing": { "inside": 0 },
 		"blockStateCommaSpacing": { "before": 0, "after": 1 },

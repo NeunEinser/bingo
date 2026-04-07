@@ -40,18 +40,18 @@
 #>
 # This objective contains the current time.
 #
-# \$raw contains the raw time with the chosen percision (example: if the timer
+# $raw contains the raw time with the chosen percision (example: if the timer
 # was started with start/seconds, this is the time in seconds since the start.)
 #
-# \$millis is between 0 and 999 and contains the millisecond part
+# $millis is between 0 and 999 and contains the millisecond part
 #
-# \$seconds is between 0 and 59 and contains the second part
+# $seconds is between 0 and 59 and contains the second part
 #
-# \$minutes is between 0 and 59 and contains the minute part
+# $minutes is between 0 and 59 and contains the minute part
 #
-# \$hours is 0 or higher and contains the hour part.
+# $hours is 0 or higher and contains the hour part.
 #
-# \$count_pauses is 0 or 1 and indicates whether game pauses should be counted
+# $count_pauses is 0 or 1 and indicates whether game pauses should be counted
 # towards the total time. You may write to this value. 0 by default, but is
 # never reset, even when restarting the timer. Setting this in your init function
 # once will work fine.
