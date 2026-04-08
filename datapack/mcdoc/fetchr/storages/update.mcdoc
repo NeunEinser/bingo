@@ -8,13 +8,15 @@ dispatch minecraft:storage[tmp.fetchr:init/update_lobby] to struct {
 	update_coordinates: struct {
 		structure_id?: #[id=structure] string,
 		compare_z?: int @ -30000000..29999999,
+		compare_y_above_barriers?: int @ 3..64,
 		compare_y?: int @ 0..64,
 		old_x?: int @ -30000000..29999999,
 		old_y?: int @ 0..64,
 		old_z?: int @ -30000000..29999999,
-		old_high_x?: int @ -30000000..29999999,
-		old_high_y?: int @ 0..64,
-		old_high_z?: int @ -30000000..29999999,
+		offset_x?: int @ 0..60000000,
+		offset_y?: int @ 0..64,
+		offset_y_above_barriers?: int @ 0..64,
+		offset_z?: int @ 0..60000000,
 		clone_x?: int @ -30000000..29999999,
 	},
 	compare_coordinates: [struct {

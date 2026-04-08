@@ -226,6 +226,7 @@
 	#declare score_holder $init/lobby/update.size_y
 	scoreboard players operation $init/lobby/update.size_y fetchr.tmp = $init/lobby/update.high_y fetchr.tmp
 	scoreboard players operation $init/lobby/update.size_y fetchr.tmp -= $init/lobby/update.y fetchr.tmp
+	scoreboard players add $init/lobby/update.size_y fetchr.tmp 1
 
 	#>
 	# The lower z coordinate, picking the lower one from either old or new
@@ -249,6 +250,7 @@
 	scoreboard players operation $init/lobby/update.size_z fetchr.tmp = $init/lobby/update.old_high_z fetchr.tmp
 	scoreboard players operation $init/lobby/update.size_z fetchr.tmp > $init/lobby/update.new_high_z fetchr.tmp
 	scoreboard players operation $init/lobby/update.size_z fetchr.tmp -= $init/lobby/update.z fetchr.tmp
+	scoreboard players add $init/lobby/update.size_z fetchr.tmp 1
 
 	#>
 	# The reference low x coordinate
