@@ -28,7 +28,7 @@ dispatch minecraft:storage[tmp.fetchr:util] to struct {
 		start: int,
 		end: int,
 	},
-	components?: DataComponentPatch<minecraft:item_component[%fallback]>,
+	components?: DataComponentPatch,
 	test_string?: string,
 	inner_test_string?: string,
 	#[until="1.21.5"]

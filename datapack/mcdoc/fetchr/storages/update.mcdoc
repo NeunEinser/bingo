@@ -1,0 +1,34 @@
+use super::structure::TmpStructure
+use super::structure::Structure
+
+dispatch minecraft:storage[tmp.fetchr:init/update_lobby] to struct {
+	structures: [TmpStructure],
+	old_structures: [Structure],
+	current_id: #[id=structure] string,
+	update_coordinates: struct {
+		structure_id?: #[id=structure] string,
+		compare_z?: int @ -30000000..29999999,
+		compare_y?: int @ 0..64,
+		old_x?: int @ -30000000..29999999,
+		old_y?: int @ 0..64,
+		old_z?: int @ -30000000..29999999,
+		old_high_x?: int @ -30000000..29999999,
+		old_high_y?: int @ 0..64,
+		old_high_z?: int @ -30000000..29999999,
+		clone_x?: int @ -30000000..29999999,
+	},
+	compare_coordinates: [struct {
+		y?: int @ 0..64,
+		compare_x?: int @ -30000000..29999999,
+		compare_z?: int @ -30000000..29999999,
+		reference_x?: int @ -30000000..29999999,
+		reference_z?: int @ -30000000..29999999,
+		size_x?: int @ 0..60000000,
+		size_y?: int @ 0..64,
+		size_z?: int @ 0..60000000,
+		offset_x?: int @ 0..60000000,
+		offset_y?: int @ 0..64,
+		offset_z?: int @ 0..60000000,
+		clone_x?: int @ -30000000..29999999,
+	}],
+}

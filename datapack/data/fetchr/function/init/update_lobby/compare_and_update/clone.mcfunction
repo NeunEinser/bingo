@@ -12,8 +12,16 @@
 # 	reference_z: int @ -30000000..29999999,
 # 	clone_x: int @ -30000000..29999999,
 
-$execute \
+#NEUN_SCRIPT until 62
+#$execute \
 	positioned $(compare_x) $(y) $(compare_z) \
 	unless blocks ~ ~ ~ ~ ~ ~ $(reference_x) $(y) $(reference_z) all \
 	run clone ~ ~ ~ ~ ~ ~ $(clone_x) $(y) $(reference_z)
-$clone $(compare_x) $(y) $(compare_z) $(compare_x) $(y) $(compare_z) $(reference_x) $(y) $(reference_z) 
+#NEUN_SCRIPT end
+#NEUN_SCRIPT since 62
+
+$execute \
+	positioned $(compare_x) $(y) $(compare_z) \
+	unless blocks ~ ~ ~ ~ ~ ~ $(reference_x) $(y) $(reference_z) all \
+	run clone ~ ~ ~ ~ ~ ~ $(clone_x) $(y) $(reference_z) strict
+#NEUN_SCRIPT end

@@ -117,8 +117,12 @@ execute \
 	run function fetchr:init/setup_lobby/end
 execute \
 	unless data storage tmp.fetchr:init/structures structures[0] \
-	if score $init/lobby.lobby_type fetchr.tmp matches 1 \
+	if score $init/lobby.lobby_type fetchr.tmp matches 1..2 \
 	run scoreboard players set $lobby_generated fetchr.state 4
+execute \
+	unless data storage tmp.fetchr:init/structures structures[0] \
+	if score $init/lobby.lobby_type fetchr.tmp matches 2 \
+	run function fetchr:init/update_lobby/run
 execute \
 	if data storage tmp.fetchr:init/structures structures[0] \
 	run function fetchr:init/setup_lobby/spawn_structure_schedule

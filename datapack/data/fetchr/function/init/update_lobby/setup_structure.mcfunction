@@ -10,7 +10,7 @@
 #region get new dimensions
 	data \
 		modify block -30000000 3 -30000000 name \
-		set from storage tmp.fetchr:init/structures structures[-1].id
+		set from storage tmp.fetchr:init/update_lobby structures[-1].id
 	setblock -30000000 4 -30000000 minecraft:redstone_block
 	setblock -30000000 4 -30000000 minecraft:air
 
@@ -21,7 +21,7 @@
 	#declare score_holder $init/lobby/update.new_x_overlap
 	execute \
 		store result score $init/lobby/update.new_x_overlap fetchr.tmp \
-		run data get storage tmp.fetchr:init/structures structures[-1].entrance_position[0]
+		run data get storage tmp.fetchr:init/update_lobby structures[-1].entrance_position[0]
 	#>
 	# The lower y coordinate of the new structure
 	#
@@ -29,7 +29,7 @@
 	#declare score_holder $init/lobby/update.new_y
 	execute \
 		store result score $init/lobby/update.new_y fetchr.tmp \
-		run data get storage tmp.fetchr:init/structures structures[-1].entrance_position[1]
+		run data get storage tmp.fetchr:init/update_lobby structures[-1].entrance_position[1]
 	scoreboard players operation $init/lobby/update.new_y fetchr.tmp *= -1 fetchr.const
 	scoreboard players add $init/lobby/update.new_y fetchr.tmp 3
 	#>
@@ -39,7 +39,7 @@
 	#declare score_holder $init/lobby/update.new_z
 	execute \
 		store result score $init/lobby/update.new_z fetchr.tmp \
-		run data get storage tmp.fetchr:init/structures structures[-1].entrance_position[2]
+		run data get storage tmp.fetchr:init/update_lobby structures[-1].entrance_position[2]
 	scoreboard players operation $init/lobby/update.new_z fetchr.tmp *= -1 fetchr.const
 	scoreboard players add $init/lobby/update.new_z fetchr.tmp 7
 
@@ -54,7 +54,7 @@
 	# Do not compare overlap with the previous structure.
 	# Overlapping structure parts must be empty of blocks right now.
 	execute \
-		if data storage tmp.fetchr:init/structures structures[2] \
+		if data storage tmp.fetchr:init/update_lobby structures[2] \
 		run scoreboard players operation $init/lobby/update.new_size_x fetchr.tmp -= $init/lobby/update.new_x_overlap fetchr.tmp
 	#>
 	# The y-size of the new structure.
@@ -73,21 +73,21 @@
 		store result score $init/lobby/update.new_size_z fetchr.tmp \
 		run data get block -30000000 3 -30000000 sizeZ
 
-	data modify storage tmp.fetchr:init/structures structures[-1].size set value [I; 0, 0, 0]
+	data modify storage tmp.fetchr:init/update_lobby structures[-1].size set value [I; 0, 0, 0]
 	execute \
-		store result storage tmp.fetchr:init/structures structures[-1].size[0] int 1 \
+		store result storage tmp.fetchr:init/update_lobby structures[-1].size[0] int 1 \
 		run scoreboard players get $init/lobby/update.new_size_x fetchr.tmp
 	execute \
-		store result storage tmp.fetchr:init/structures structures[-1].size[1] int 1 \
+		store result storage tmp.fetchr:init/update_lobby structures[-1].size[1] int 1 \
 		run scoreboard players get $init/lobby/update.new_size_y fetchr.tmp
 	execute \
-		store result storage tmp.fetchr:init/structures structures[-1].size[2] int 1 \
+		store result storage tmp.fetchr:init/update_lobby structures[-1].size[2] int 1 \
 		run scoreboard players get $init/lobby/update.new_size_z fetchr.tmp
 #endregion
 
 #region get old structure and dimensions
 	data \
-		modify storage tmp.fetchr:init/structures old_structures \
+		modify storage tmp.fetchr:init/update_lobby old_structures \
 		set from storage fetchr:structure structures
 
 	#>
@@ -108,7 +108,7 @@
 	#declare score_holder $init/lobby/update.old_x_overlap
 	execute \
 		store result score $init/lobby/update.old_x_overlap fetchr.tmp \
-		run data get storage tmp.fetchr:init/structures structures[-1].entrance_position[0]
+		run data get storage tmp.fetchr:init/update_lobby structures[-1].entrance_position[0]
 	#>
 	# The lower y coordinate of the old structure
 	#
@@ -116,7 +116,7 @@
 	#declare score_holder $init/lobby/update.old_y
 	execute \
 		store result score $init/lobby/update.old_y fetchr.tmp \
-		run data get storage tmp.fetchr:init/structures structures[-1].entrance_position[1]
+		run data get storage tmp.fetchr:init/update_lobby old_structures[0].entrance_position[1]
 	scoreboard players operation $init/lobby/update.old_y fetchr.tmp *= -1 fetchr.const
 	scoreboard players add $init/lobby/update.old_y fetchr.tmp 3
 	#>
@@ -126,7 +126,7 @@
 	#declare score_holder $init/lobby/update.old_z
 	execute \
 		store result score $init/lobby/update.old_z fetchr.tmp \
-		run data get storage tmp.fetchr:init/structures structures[-1].entrance_position[2]
+		run data get storage tmp.fetchr:init/update_lobby old_structures[0].entrance_position[2]
 	scoreboard players operation $init/lobby/update.old_z fetchr.tmp *= -1 fetchr.const
 	scoreboard players add $init/lobby/update.old_z fetchr.tmp 7
 	#>
@@ -136,11 +136,11 @@
 	#declare score_holder $init/lobby/update.old_size_x
 	execute \
 		store result score $init/lobby/update.old_size_x fetchr.tmp \
-		run data get storage tmp.fetchr:init/structures old_structures[0].size[0]
+		run data get storage tmp.fetchr:init/update_lobby old_structures[0].size[0]
 	# Do not compare overlap with the previous structure.
 	# Overlapping structure parts must be empty of blocks right now.
 	execute \
-		if data storage tmp.fetchr:init/structures structures[2] \
+		if data storage tmp.fetchr:init/update_lobby structures[2] \
 		run scoreboard players operation $init/lobby/update.old_size_x fetchr.tmp -= $init/lobby/update.old_x_overlap fetchr.tmp
 	#>
 	# The y-size of the old structure.
@@ -149,7 +149,7 @@
 	#declare score_holder $init/lobby/update.old_size_y
 	execute \
 		store result score $init/lobby/update.old_size_y fetchr.tmp \
-		run data get storage tmp.fetchr:init/structures old_structures[0].size[1]
+		run data get storage tmp.fetchr:init/update_lobby old_structures[0].size[1]
 	#>
 	# The z-size of the old structure.
 	#
@@ -157,7 +157,7 @@
 	#declare score_holder $init/lobby/update.old_size_z
 	execute \
 		store result score $init/lobby/update.old_size_z fetchr.tmp \
-		run data get storage tmp.fetchr:init/structures old_structures[0].size[2]
+		run data get storage tmp.fetchr:init/update_lobby old_structures[0].size[2]
 #endregion
 
 #region calculate new and old coordinate offsets
