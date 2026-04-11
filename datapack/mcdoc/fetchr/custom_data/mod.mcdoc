@@ -6,4 +6,6 @@ dispatch mcdoc:marker_data["front_text"] to SignText
 dispatch mcdoc:marker_data["back_text"] to SignText
 dispatch mcdoc:marker_data["Book"] to ItemStack
 
-dispatch mcdoc:custom_data["fetchr"] to [Explosion] @ 0..256
+dispatch mcdoc:custom_data["fetchr"] to ([Explosion] @ 0..256 | struct {
+	display_entity_id: #[id] string
+})

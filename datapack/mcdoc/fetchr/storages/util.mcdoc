@@ -21,19 +21,19 @@ dispatch minecraft:storage[tmp.fetchr:util] to struct {
 	char?: string @1,
 	"string"?: string ,
 	substring: struct { until: int @0.. },
-	concat_strings?: ConcatStringsData,
+	concat_strings?: struct { ...ConcatStringsData, quote?: string @ 1 },
 	until_quote?: struct UntilQuoteIterData {
-		current: string,
 		char?: string @1,
 		start: int,
 		end: int,
 	},
+	until: struct {
+		until: int
+	},
 	components?: DataComponentPatch,
 	test_string?: string,
 	inner_test_string?: string,
-	#[until="1.21.5"]
 	inner_snbt?: struct { snbt: string },
-	#[since="1.21.5"]
 	snbt?: ( string | struct { "": string } ),
 	component?: struct {
 		name: #[id="data_component_type"] string,
@@ -43,6 +43,10 @@ dispatch minecraft:storage[tmp.fetchr:util] to struct {
 		forceload_coordinates?: [ForceloadCoordinateArea],
 		callback?: #[id=function] string,
 	}],
+	convert_quote_type: struct {
+		"string": string,
+		list: [string] @ 0..1
+	},
 	forceload_queue_copy: [ForceloadQueue],
 }
 

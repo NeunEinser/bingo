@@ -6,31 +6,12 @@
 # 	function function fetchr:util/item_nbt_to_command_argument
 # 	function function fetchr:util/item_nbt_to_command_argument_iter
 
-#NEUN_SCRIPT until 69
-#data \
-	modify block 7 0 7 front_text.messages[0] \
-	set value '{ "storage": "tmp.fetchr:util", "nbt": "components" }'
-#data modify storage tmp.fetchr:util inner_snbt.snbt set from block 7 0 7 front_text.messages[0]
-#execute \
-	if data storage tmp.fetchr:util inner_snbt{ snbt: '"{}"' } \
-	run return 0
-#function fetchr:util/string/parse_snbt with storage tmp.fetchr:util inner_snbt
+data modify storage io.fetchr:util nbt set from storage tmp.fetchr:util components
+function fetchr:util/string/get_next_compound_key
 
-#data modify storage io.fetchr:util string set string storage io.fetchr:util nbt 2
-#NEUN_SCRIPT end
-#NEUN_SCRIPT since 69
-data \
-	modify block 7 0 7 front_text.messages[0] \
-	set value { storage: "tmp.fetchr:util", nbt: "components" }
-data modify storage tmp.fetchr:util snbt set from block 7 0 7 front_text.messages[0]
 execute \
-	if data storage tmp.fetchr:util { snbt: "{}" } \
+	if data storage io.fetchr:util { string: "" } \
 	run return 0
-
-data modify storage io.fetchr:util string set string storage tmp.fetchr:util snbt 2
-#NEUN_SCRIPT end
-
-function fetchr:util/string/until_quote
 
 data modify storage tmp.fetchr:util char set string storage io.fetchr:util string 0 1
 data modify storage tmp.fetchr:util component.name set from storage io.fetchr:util string

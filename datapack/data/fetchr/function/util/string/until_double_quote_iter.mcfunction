@@ -1,8 +1,8 @@
-#> fetchr:util/string/until_quote_iter
+#> fetchr:util/string/until_double_quote_iter
 #
 # @within
-# 	function fetchr:util/string/until_quote
-# 	function fetchr:util/string/until_quote_iter
+# 	function fetchr:util/string/until_double_quote
+# 	function fetchr:util/string/until_double_quote_iter
 # @params ::fetchr::storages::util::UntilQuoteIterData
 # @outputs storage io.fetchr:util chars
 
@@ -13,7 +13,9 @@ execute \
 
 $data modify storage tmp.fetchr:util until_quote.char set string storage tmp.fetchr:util string $(start) $(end)
 
-scoreboard players operation $util/string.index fetchr.tmp = $util/string.until fetchr.tmp
+execute \
+	store result score $util/string.index fetchr.tmp \
+	run data get storage tmp.fetchr:util until_quote.start
 execute \
 	store result storage tmp.fetchr:util until_quote.start int 1 \
 	run scoreboard players add $util/string.index fetchr.tmp 1
@@ -30,21 +32,16 @@ execute \
 	run scoreboard players set $util/string.escaped fetchr.tmp 1
 
 execute \
-	if score $util/string.escaped fetchr.tmp matches 1 \
-	run scoreboard players set $util/string.contains_backslash fetchr.io 1
-
-execute \
 	if data storage tmp.fetchr:util until_quote{ char: "." } \
 	run scoreboard players set $util/string.contains_dot fetchr.io 1
 
 execute \
 	if data storage tmp.fetchr:util until_quote{ char: "'" } \
-	if score $util/string.escaped fetchr.tmp matches 2 \
 	run scoreboard players set $util/string.contains_quote fetchr.io 1
 
 execute \
-	if data storage tmp.fetchr:util until_quote{ char: '"' } \
 	if score $util/string.escaped fetchr.tmp matches 2 \
+	if data storage tmp.fetchr:util until_quote{ char: '"' } \
 	run scoreboard players set $util/string.contains_quote fetchr.io 1
 
 execute \
@@ -53,6 +50,5 @@ execute \
 
 execute \
 	unless data storage tmp.fetchr:util until_quote{ char: '"' } \
-	unless data storage tmp.fetchr:util until_quote{ char: "'" } \
 	if score $util/string.length fetchr.tmp >= $util/string.index fetchr.tmp \
-	run function fetchr:util/string/until_quote_iter with storage tmp.fetchr:util until_quote
+	run function fetchr:util/string/until_double_quote_iter with storage tmp.fetchr:util until_quote

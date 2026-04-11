@@ -90,6 +90,11 @@ execute \
 function fetchr:init/update_lobby/compare_and_update/x_iter \
 	with storage tmp.fetchr:init/update_lobby compare_coordinates[0]
 
+$execute \
+	positioned -29999999 $(compare_y) $(compare_z) \
+	as @e[type=!#fetchr:technical_entities,dx=$(size_x),dy=$(size_y),dz=$(size_z)] \
+	run function fetchr:init/update_lobby/update_entity/exec
+
 scoreboard players operation $init/lobby/update.clone_x fetchr.tmp += $init/lobby/update.new_size_x fetchr.tmp
 
 data remove storage tmp.fetchr:init/update_lobby structures[-1]

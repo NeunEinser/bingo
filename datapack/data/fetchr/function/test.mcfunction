@@ -1,0 +1,1 @@
+execute as @e run return run say hi

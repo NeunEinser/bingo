@@ -1,6 +1,7 @@
 use super::structure::TmpStructure
 use super::structure::Structure
 
+
 dispatch minecraft:storage[tmp.fetchr:init/update_lobby] to struct {
 	structures: [TmpStructure],
 	old_structures: [Structure],
@@ -13,6 +14,9 @@ dispatch minecraft:storage[tmp.fetchr:init/update_lobby] to struct {
 		old_x?: int @ -30000000..29999999,
 		old_y?: int @ 0..64,
 		old_z?: int @ -30000000..29999999,
+		size_x?: int @ 0..60000000,
+		size_y?: int @ 0..64,
+		size_z?: int @ 0..60000000,
 		offset_x?: int @ 0..60000000,
 		offset_y?: int @ 0..64,
 		offset_y_above_barriers?: int @ 0..64,
@@ -33,4 +37,36 @@ dispatch minecraft:storage[tmp.fetchr:init/update_lobby] to struct {
 		offset_z?: int @ 0..60000000,
 		clone_x?: int @ -30000000..29999999,
 	}],
+	update_entity: struct {
+		entity_id: #[id] string,
+		entity_type: #[id=entity_type] string,
+		y?: int @ 0..64,
+		z?: int @ -30000000..29999999,
+		reference_x?: int @ -30000000..29999999,
+		size_x?: int @ 0..60000000,
+		size_y?: int @ 0..64,
+		size_z?: int @ 0..60000000,
+		old_x?: int @ -30000000..29999999,
+		clone_x?: int @ -30000000..29999999,
+		entity_x?: int @ -30000000..29999999,
+		entity_y?: double @ -30000000..29999999,
+		entity_z?: double @ -30000000..29999999,
+	},
+	"double": struct { value: double },
+	decimal_parts : struct {
+		integer: int,
+		decimal: string
+	},
+	char: string @ 1,
+	reference_entity: minecraft:entity[%fallback],
+	old_entity: minecraft:entity[%fallback],
+	new_entity: minecraft:entity[%fallback],
+	data_comparision: any,
+	entity_data_stack: [struct {[string]: any}],
+	entity_path_data: struct {
+		path: string,
+		index?: int,
+		previously_handled_subkey?: string,
+	},
+	stash_to_check_if_compound_which_is_needed_because_mojank_thinks_mc_139625_works_as_intended_mad_neun: any
 }
