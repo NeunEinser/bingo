@@ -18,7 +18,7 @@ data \
 	modify storage tmp.fetchr:init/update_lobby old_entity.data.fetchr.display_entity_id \
 	set from storage tmp.fetchr:init/update_lobby new_entity.data.fetchr.display_entity_id
 
-data modify entity @s {} merge from storage tmp.fetchr:init/update_lobby old_entity
+data modify entity @s {} set from storage tmp.fetchr:init/update_lobby old_entity
 tag @s remove fetchr.current_old
 
 $teleport @s ~$(compare_to_clone_x_offset) ~ ~$(compare_to_clone_z_offset) ~ ~
