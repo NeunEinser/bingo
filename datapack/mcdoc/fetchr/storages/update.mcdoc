@@ -22,6 +22,7 @@ dispatch minecraft:storage[tmp.fetchr:init/update_lobby] to struct {
 		offset_y_above_barriers?: int @ 0..64,
 		offset_z?: int @ 0..60000000,
 		clone_x?: int @ -30000000..29999999,
+		reference_x?: int @ -30000000..29999999,
 	},
 	compare_coordinates: [struct {
 		y?: int @ 0..64,
@@ -48,16 +49,10 @@ dispatch minecraft:storage[tmp.fetchr:init/update_lobby] to struct {
 		size_z?: int @ 0..60000000,
 		old_x?: int @ -30000000..29999999,
 		clone_x?: int @ -30000000..29999999,
-		entity_x?: int @ -30000000..29999999,
-		entity_y?: double @ -30000000..29999999,
-		entity_z?: double @ -30000000..29999999,
+		reference_to_old_x_offset: int @ -60000000..60000000,
+		compare_to_clone_x_offset: int @ -60000000..60000000,
+		compare_to_clone_z_offset: int @ -60000000..60000000,
 	},
-	"double": struct { value: double },
-	decimal_parts : struct {
-		integer: int,
-		decimal: string
-	},
-	char: string @ 1,
 	reference_entity: minecraft:entity[%fallback],
 	old_entity: minecraft:entity[%fallback],
 	new_entity: minecraft:entity[%fallback],

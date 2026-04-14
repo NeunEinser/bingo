@@ -19,13 +19,16 @@ execute \
 execute \
 	at @e[type=#fetchr:marker_entity, tag=fetchr.mangrove_button_south] \
 	run setblock ~ ~ ~ minecraft:air
-
-scoreboard players set $init/lobby/update.compare_z_position fetchr.tmp -30000000
-scoreboard players operation $init/lobby/update.compare_z_position fetchr.tmp -= $init/lobby/update.old_z fetchr.tmp
-scoreboard players operation $init/lobby/update.compare_z_position fetchr.tmp += $init/lobby/update.new_z fetchr.tmp
 execute \
-	if score $init/lobby/update.compare_z_position fetchr.tmp matches ..-30000001 \
-	run scoreboard players set $init/lobby/update.compare_z_position fetchr.tmp -30000000
+	at @e[type=#fetchr:marker_entity, tag=fetchr.chest_generation_marker] \
+	run function fetchr:init/update_lobby/reset_category_chests
+
+scoreboard players set $init/lobby/update.compare_z fetchr.tmp -30000000
+scoreboard players operation $init/lobby/update.compare_z fetchr.tmp -= $init/lobby/update.old_z fetchr.tmp
+scoreboard players operation $init/lobby/update.compare_z fetchr.tmp += $init/lobby/update.new_z fetchr.tmp
+execute \
+	if score $init/lobby/update.compare_z fetchr.tmp matches ..-30000001 \
+	run scoreboard players set $init/lobby/update.compare_z fetchr.tmp -30000000
 
 scoreboard players operation $init/lobby/update.x_diff fetchr.tmp = $init/lobby/update.old_size_x fetchr.tmp
 scoreboard players operation $init/lobby/update.x_diff fetchr.tmp -= $init/lobby/update.new_size_x fetchr.tmp
@@ -42,7 +45,7 @@ data \
 	set from storage tmp.fetchr:init/update_lobby structures[-1].id
 execute \
 	store result storage tmp.fetchr:init/update_lobby update_coordinates.compare_z int 1 \
-	run scoreboard players get $init/lobby/update.compare_z_position fetchr.tmp
+	run scoreboard players get $init/lobby/update.compare_z fetchr.tmp
 
 scoreboard players set $init/lobby/update.compare_y_above_barriers fetchr.tmp 3
 execute \
@@ -94,6 +97,9 @@ execute \
 execute \
 	store result storage tmp.fetchr:init/update_lobby update_coordinates.clone_x int 1 \
 	run scoreboard players get $init/lobby/update.clone_x fetchr.tmp
+execute \
+	store result storage tmp.fetchr:init/update_lobby update_coordinates.reference_x int 1 \
+	run scoreboard players get $init/lobby/update.reference_x fetchr.tmp
 
 execute \
 	in fetchr:lobby \

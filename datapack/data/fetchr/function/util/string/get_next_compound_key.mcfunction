@@ -27,8 +27,6 @@ execute \
 	if data storage tmp.fetchr:util { snbt: "{}" } \
 	run return 0
 
-tellraw NeunEinser {storage:"tmp.fetchr:util", nbt:"snbt"}
-
 data modify storage tmp.fetchr:util char set string storage tmp.fetchr:util snbt 1 2
 data modify storage io.fetchr:util string set string storage tmp.fetchr:util snbt 2
 

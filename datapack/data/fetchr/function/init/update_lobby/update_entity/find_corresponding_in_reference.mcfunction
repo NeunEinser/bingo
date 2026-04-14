@@ -34,7 +34,6 @@ $execute \
 execute \
 	unless score $init/lobby/update/entity.found_reference fetchr.tmp matches 0 \
 	run return 1
-
 $execute \
 	as @e[\
 		type=#fetchr:marker_entity,\
@@ -43,7 +42,8 @@ $execute \
 		nbt={data: {fetchr: { display_entity_id: "$(entity_id)" }}},\
 		limit=1\
 	] \
-	on vehicle \
+	at @s \
+	as @n[type=!#fetchr:marker_entity, distance=...1] \
 	run return run function fetchr:init/update_lobby/update_entity/handle_reference \
 		with storage tmp.fetchr:init/update_lobby update_entity
 
