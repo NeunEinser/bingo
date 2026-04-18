@@ -32,9 +32,14 @@ execute \
 
 scoreboard players operation $init/lobby/update.x_diff fetchr.tmp = $init/lobby/update.old_size_x fetchr.tmp
 scoreboard players operation $init/lobby/update.x_diff fetchr.tmp -= $init/lobby/update.new_size_x fetchr.tmp
+scoreboard players operation $init/lobby/update.clone_from_x fetchr.tmp = $init/lobby/update.old_x fetchr.tmp
 execute \
 	if score $init/lobby/update.x_diff fetchr.tmp matches 1.. \
-	run scoreboard players operation $init/lobby/update.old_x fetchr.tmp += $init/lobby/update.x_diff fetchr.tmp
+	run scoreboard players operation $init/lobby/update.clone_from_x fetchr.tmp += $init/lobby/update.x_diff fetchr.tmp
+scoreboard players operation $init/lobby/update.reference_for_clone_x fetchr.tmp = $init/lobby/update.reference_x fetchr.tmp
+execute \
+	if score $init/lobby/update.x_diff fetchr.tmp matches 1.. \
+	run scoreboard players operation $init/lobby/update.reference_for_clone_x fetchr.tmp += $init/lobby/update.x_diff fetchr.tmp
 execute \
 	if score $init/lobby/update.x_diff fetchr.tmp matches ..-1 \
 	run scoreboard players operation $init/lobby/update.clone_x fetchr.tmp -= $init/lobby/update.x_diff fetchr.tmp
@@ -56,7 +61,7 @@ execute \
 	run scoreboard players get $init/lobby/update.new_y fetchr.tmp
 execute \
 	store result storage tmp.fetchr:init/update_lobby update_coordinates.old_x int 1 \
-	run scoreboard players get $init/lobby/update.old_x fetchr.tmp
+	run scoreboard players get $init/lobby/update.clone_from_x fetchr.tmp
 execute \
 	store result storage tmp.fetchr:init/update_lobby update_coordinates.old_y int 1 \
 	run scoreboard players get $init/lobby/update.y fetchr.tmp
@@ -99,7 +104,7 @@ execute \
 	run scoreboard players get $init/lobby/update.clone_x fetchr.tmp
 execute \
 	store result storage tmp.fetchr:init/update_lobby update_coordinates.reference_x int 1 \
-	run scoreboard players get $init/lobby/update.reference_x fetchr.tmp
+	run scoreboard players get $init/lobby/update.reference_for_clone_x fetchr.tmp
 
 execute \
 	in fetchr:lobby \
