@@ -20,11 +20,11 @@ data \
 	} 
 
 execute \
-	if entity @e[type=minecraft:area_effect_cloud, tag=bingo.sign_credits_amber_wat, limit=1] \
+	if entity @e[type=minecraft:area_effect_cloud, tag=bingo.lobby_sign, limit=1] \
 	run function fetchr:init/setup_lobby/old_reference/set_5.1-pre1
 
 execute \
-	unless entity @e[type=minecraft:area_effect_cloud, tag=bingo.sign_credits_amber_wat, limit=1] \
+	unless entity @e[type=minecraft:area_effect_cloud, tag=bingo.lobby_sign, limit=1] \
 	if entity @e[type=minecraft:marker, tag=fetchr.lobby_sign, nbt={data: {\
 		front_text: {\
 			messages: [\
@@ -38,7 +38,7 @@ execute \
 	run function fetchr:init/setup_lobby/old_reference/set_5.1-pre1
 
 execute \
-	unless entity @e[type=minecraft:area_effect_cloud, tag=bingo.sign_credits_amber_wat] \
+	unless entity @e[type=minecraft:area_effect_cloud, tag=bingo.lobby_sign] \
 	unless entity @e[type=minecraft:marker, tag=fetchr.lobby_sign, nbt={data: {\
 		front_text: {\
 			messages: [\

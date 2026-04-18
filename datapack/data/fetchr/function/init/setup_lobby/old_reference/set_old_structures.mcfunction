@@ -35,8 +35,12 @@ execute \
 
 function fetchr:init/setup_lobby/old_reference/init_structures
 execute \
+	if entity @e[type=minecraft:marker, tag=fetchr.join_game_sign, limit=1] \
+	unless block 1 2 2 minecraft:barrier \
+	run function fetchr:init/setup_lobby/old_reference/set_5.3-beta-1
+execute \
 	unless entity @e[type=minecraft:marker, tag=fetchr.join_game_sign, limit=1] \
-	run function fetchr:init/setup_lobby/old_reference/set_5.2-pre4
+	run function fetchr:init/setup_lobby/old_reference/set_5.3-beta-1
 
 scoreboard players set $init/lobby.lobby_type fetchr.tmp 2
 

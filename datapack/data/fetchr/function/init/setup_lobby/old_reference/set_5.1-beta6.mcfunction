@@ -21,5 +21,5 @@ execute \
 
 execute \
 	unless entity @e[type=minecraft:marker, tag=fetchr.lobby_button, limit=1] \
-	if entity @e[type=minecraft:marker, tag=bingo.lobby_button, limit=1] \
+	if entity @e[type=minecraft:marker, tag=bingo.lobby_sign, limit=1] \
 	run function fetchr:init/setup_lobby/old_reference/set_5.1-beta5

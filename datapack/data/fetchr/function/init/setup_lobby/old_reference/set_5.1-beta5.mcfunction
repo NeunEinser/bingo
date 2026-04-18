@@ -9,5 +9,5 @@ data \
 	set value "fetchr:old/5.1-beta5-card_generation"
 
 execute \
-	unless block 7 12 7 minecraft:chain_command_block \
-	run function fetchr:init/setup_lobby/old_reference/set_5.0
+	if entity @e[tag=bingo.lobby_sign, limit=1] \
+	run function fetchr:init/setup_lobby/old_reference/set_5.0.1

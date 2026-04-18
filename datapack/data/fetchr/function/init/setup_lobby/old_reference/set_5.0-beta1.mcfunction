@@ -7,6 +7,9 @@
 data \
 	modify storage tmp.fetchr:init/structures structures[{id: "fetchr:machinery"}].legacy_id \
 	set value "fetchr:old/5.0-beta1-machinery"
+data \
+	modify storage tmp.fetchr:init/structures structures[{id: "fetchr:tutorial"}].legacy_id \
+	set value "fetchr:old/5.0-beta1-tutorial"
 
 
 execute \

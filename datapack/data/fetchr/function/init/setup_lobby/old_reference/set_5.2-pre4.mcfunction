@@ -2,7 +2,7 @@
 #
 # Overrides legacy structure ids with ones for 5.2-pre4
 #
-# @within function fetchr:init/setup_lobby/old_reference/set_old_structures
+# @within function fetchr:init/setup_lobby/old_reference/5.3-beta1
 
 data \
 	modify storage tmp.fetchr:init/structures structures[{id: "fetchr:tutorial"}].legacy_id \
