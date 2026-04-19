@@ -30,7 +30,7 @@ $execute \
 		limit=1\
 	] \
 	run function fetchr:init/update_lobby/update_entity/handle_reference \
-		with storage tmp.fetchr:init/update_lobby update_entity
+		with storage tmp.fetchr:init/update_lobby update_coordinates
 execute \
 	unless score $init/lobby/update/entity.found_reference fetchr.tmp matches 0 \
 	run return 1
@@ -45,6 +45,6 @@ $execute \
 	at @s \
 	as @n[type=!#fetchr:marker_entity, distance=...1] \
 	run return run function fetchr:init/update_lobby/update_entity/handle_reference \
-		with storage tmp.fetchr:init/update_lobby update_entity
+		with storage tmp.fetchr:init/update_lobby update_coordinates
 
 return fail

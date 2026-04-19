@@ -36,10 +36,6 @@ scoreboard players operation $init/lobby/update.clone_from_x fetchr.tmp = $init/
 execute \
 	if score $init/lobby/update.x_diff fetchr.tmp matches 1.. \
 	run scoreboard players operation $init/lobby/update.clone_from_x fetchr.tmp += $init/lobby/update.x_diff fetchr.tmp
-scoreboard players operation $init/lobby/update.reference_for_clone_x fetchr.tmp = $init/lobby/update.reference_x fetchr.tmp
-execute \
-	if score $init/lobby/update.x_diff fetchr.tmp matches 1.. \
-	run scoreboard players operation $init/lobby/update.reference_for_clone_x fetchr.tmp += $init/lobby/update.x_diff fetchr.tmp
 execute \
 	if score $init/lobby/update.x_diff fetchr.tmp matches ..-1 \
 	run scoreboard players operation $init/lobby/update.clone_x fetchr.tmp -= $init/lobby/update.x_diff fetchr.tmp
@@ -52,21 +48,18 @@ execute \
 	store result storage tmp.fetchr:init/update_lobby update_coordinates.compare_z int 1 \
 	run scoreboard players get $init/lobby/update.compare_z fetchr.tmp
 
-scoreboard players set $init/lobby/update.compare_y_above_barriers fetchr.tmp 3
 execute \
-	store result storage tmp.fetchr:init/update_lobby update_coordinates.compare_y_above_barriers int 1 \
-	run scoreboard players operation $init/lobby/update.compare_y_above_barriers fetchr.tmp > $init/lobby/update.new_y fetchr.tmp
-execute \
-	store result storage tmp.fetchr:init/update_lobby update_coordinates.compare_y int 1 \
+	store result storage tmp.fetchr:init/update_lobby update_coordinates.new_y int 1 \
 	run scoreboard players get $init/lobby/update.new_y fetchr.tmp
+scoreboard players set $init/lobby/update.new_y_above_barriers fetchr.tmp 3
 execute \
-	store result storage tmp.fetchr:init/update_lobby update_coordinates.old_x int 1 \
-	run scoreboard players get $init/lobby/update.clone_from_x fetchr.tmp
+	store result storage tmp.fetchr:init/update_lobby update_coordinates.new_y_above_barriers int 1 \
+	run scoreboard players operation $init/lobby/update.new_y_above_barriers fetchr.tmp > $init/lobby/update.new_y fetchr.tmp
 execute \
-	store result storage tmp.fetchr:init/update_lobby update_coordinates.old_y int 1 \
+	store result storage tmp.fetchr:init/update_lobby update_coordinates.y int 1 \
 	run scoreboard players get $init/lobby/update.y fetchr.tmp
 execute \
-	store result storage tmp.fetchr:init/update_lobby update_coordinates.old_z int 1 \
+	store result storage tmp.fetchr:init/update_lobby update_coordinates.z int 1 \
 	run scoreboard players get $init/lobby/update.z fetchr.tmp
 
 execute \
@@ -90,7 +83,7 @@ execute \
 	run scoreboard players remove $init/lobby/update.offset_y fetchr.tmp 1
 
 scoreboard players operation $init/lobby/update.offset_y_above_barriers fetchr.tmp = $init/lobby/update.offset_y fetchr.tmp
-scoreboard players operation $init/lobby/update.offset_y_above_barriers fetchr.tmp -= $init/lobby/update.compare_y_above_barriers fetchr.tmp
+scoreboard players operation $init/lobby/update.offset_y_above_barriers fetchr.tmp -= $init/lobby/update.new_y_above_barriers fetchr.tmp
 execute \
 	store result storage tmp.fetchr:init/update_lobby update_coordinates.offset_y_above_barriers int 1 \
 	run scoreboard players operation $init/lobby/update.offset_y_above_barriers fetchr.tmp += $init/lobby/update.new_y fetchr.tmp
@@ -100,11 +93,39 @@ execute \
 	store result storage tmp.fetchr:init/update_lobby update_coordinates.offset_z int 1 \
 	run scoreboard players remove $init/lobby/update.offset_z fetchr.tmp 1
 execute \
+	store result storage tmp.fetchr:init/update_lobby update_coordinates.clone_from_x int 1 \
+	run scoreboard players get $init/lobby/update.clone_from_x fetchr.tmp
+execute \
+	store result storage tmp.fetchr:init/update_lobby update_coordinates.old_x int 1 \
+	run scoreboard players get $init/lobby/update.old_x fetchr.tmp
+execute \
 	store result storage tmp.fetchr:init/update_lobby update_coordinates.clone_x int 1 \
 	run scoreboard players get $init/lobby/update.clone_x fetchr.tmp
 execute \
 	store result storage tmp.fetchr:init/update_lobby update_coordinates.reference_x int 1 \
-	run scoreboard players get $init/lobby/update.reference_for_clone_x fetchr.tmp
+	run scoreboard players get $init/lobby/update.reference_x fetchr.tmp
+
+scoreboard players operation \
+	$init/lobby/update.reference_to_old_x_offset fetchr.tmp \
+	= $init/lobby/update.old_x fetchr.tmp
+execute \
+	store result storage tmp.fetchr:init/update_lobby update_coordinates.reference_to_old_x_offset int 1 \
+	run scoreboard players operation \
+		$init/lobby/update.reference_to_old_x_offset fetchr.tmp \
+		-= $init/lobby/update.reference_x fetchr.tmp
+
+scoreboard players operation \
+	$init/lobby/update.compare_to_clone_x_offset fetchr.tmp \
+	= $init/lobby/update.clone_x fetchr.tmp
+execute \
+	store result storage tmp.fetchr:init/update_lobby update_coordinates.compare_to_clone_x_offset int 1 \
+	run scoreboard players add $init/lobby/update.compare_to_clone_x_offset fetchr.tmp 29999999
+scoreboard players operation \
+	$init/lobby/update.compare_to_clone_z_offset fetchr.tmp \
+	= $init/lobby/update.z fetchr.tmp
+execute \
+	store result storage tmp.fetchr:init/update_lobby update_coordinates.compare_to_clone_z_offset int 1 \
+	run scoreboard players add $init/lobby/update.compare_to_clone_z_offset fetchr.tmp 30000000
 
 execute \
 	in fetchr:lobby \

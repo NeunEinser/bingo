@@ -23,32 +23,32 @@ $execute \
 	run return run teleport @s ~$(compare_to_clone_x_offset) ~ ~$(compare_to_clone_z_offset)
 
 # Get display entity id and return if missing
-data remove storage tmp.fetchr:init/update_lobby update_entity.entity_id
+data remove storage tmp.fetchr:init/update_lobby update_coordinates.entity_id
 data \
-	modify storage tmp.fetchr:init/update_lobby update_entity.entity_id \
+	modify storage tmp.fetchr:init/update_lobby update_coordinates.entity_id \
 	set from entity @s data.fetchr.display_entity_id
 
 execute \
 	unless data entity @s data.fetchr.display_entity_id \
 	as @n[type=#fetchr:marker_entity, distance=...1] \
 	run data \
-		modify storage tmp.fetchr:init/update_lobby update_entity.entity_id \
+		modify storage tmp.fetchr:init/update_lobby update_coordinates.entity_id \
 		set from entity @s data.fetchr.display_entity_id
 
 $execute \
-	unless data storage tmp.fetchr:init/update_lobby update_entity.entity_id \
+	unless data storage tmp.fetchr:init/update_lobby update_coordinates.entity_id \
 	run return run teleport @s ~$(compare_to_clone_x_offset) ~ ~$(compare_to_clone_z_offset)
 
 # Get entity type id and find reference
 summon minecraft:text_display ~ ~ ~ {Tags: ["fetchr.vehicle"]}
 ride @s mount @e[type=minecraft:text_display, tag=fetchr.vehicle, distance=...1, limit=1]
 data \
-	modify storage tmp.fetchr:init/update_lobby update_entity.entity_type \
+	modify storage tmp.fetchr:init/update_lobby update_coordinates.entity_type \
 	set from entity @e[type=minecraft:text_display, tag=fetchr.vehicle, distance=...1, limit=1] Passengers[0].id
 kill @e[type=minecraft:text_display, tag=fetchr.vehicle, distance=...1, limit=1]
 
 function fetchr:init/update_lobby/update_entity/find_corresponding_in_reference \
-	with storage tmp.fetchr:init/update_lobby update_entity
+	with storage tmp.fetchr:init/update_lobby update_coordinates
 
 # If reference and old is found, update old entity with differences between
 # new and reference
@@ -65,4 +65,4 @@ function fetchr:init/update_lobby/update_entity/update_path {path: ""}
 execute \
 	as @e[tag=fetchr.current_old] \
 	run function fetchr:init/update_lobby/update_entity/update_old \
-		with storage tmp.fetchr:init/update_lobby update_entity
+		with storage tmp.fetchr:init/update_lobby update_coordinates

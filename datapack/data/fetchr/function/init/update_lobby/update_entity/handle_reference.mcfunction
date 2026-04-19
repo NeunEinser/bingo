@@ -59,7 +59,7 @@ $execute \
 	at @s \
 	positioned ~$(reference_to_old_x_offset) ~ ~ \
 	run function fetchr:init/update_lobby/update_entity/find_entity_at_position \
-		with storage tmp.fetchr:init/update_lobby update_entity
+		with storage tmp.fetchr:init/update_lobby update_coordinates
 
 execute \
 	if data storage tmp.fetchr:init/update_lobby old_entity \
