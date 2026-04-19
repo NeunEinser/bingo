@@ -89,20 +89,16 @@ function fetchr:init/update_lobby/compare_and_update/x_iter \
 	with storage tmp.fetchr:init/update_lobby compare_coordinates[0]
 
 $execute \
-	positioned -29999999 $(new_y) $(compare_z) \
-	as @e[dx=$(size_x),dy=$(size_y),dz=$(size_z)] \
+	as @e[x=-29999999,y=$(new_y),z=$(compare_z),dx=$(size_x),dy=$(size_y),dz=$(size_z)] \
 	at @s \
 	run function fetchr:init/update_lobby/update_entity/exec \
 		with storage tmp.fetchr:init/update_lobby update_coordinates
 
 $execute \
-	positioned $(reference_x) $(y) $(z) \
-	as @e[tag=!fetchr.matched,dx=$(size_x),dy=$(size_y),dz=$(size_z)] \
+	as @e[tag=!fetchr.matched,x=$(reference_x),y=$(y),z=$(z),dx=$(size_x),dy=$(size_y),dz=$(size_z)] \
 	run function fetchr:init/update_lobby/update_entity/kill_removed_entity
 
-$execute \
-	positioned -29999999 $(new_y) $(compare_z) \
-	run teleport @e[dx=$(size_x),dy=$(size_y),dz=$(size_z)] 0 -127 0
+$teleport @e[x=-29999999,y=$(new_y),z=$(compare_z),dx=$(size_x),dy=$(size_y),dz=$(size_z)] 0 -127 0
 kill @e[x=0,y=-127,z=0,distance=...1]
 
 scoreboard players operation $init/lobby/update.clone_x fetchr.tmp += $init/lobby/update.new_size_x fetchr.tmp
