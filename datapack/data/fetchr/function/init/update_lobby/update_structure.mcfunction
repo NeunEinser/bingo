@@ -16,6 +16,8 @@
 # 	old_high_z: int @ -30000000..29999999
 # 	clone_x: int @ -30000000..29999999
 
+# Reset compare area, place compare structure and clone old to clone area
+
 #NEUN_SCRIPT until 62
 #$execute \
 	positioned -29999999 $(new_y_above_barriers) $(compare_z) \
@@ -32,7 +34,8 @@
 #NEUN_SCRIPT end
 #NEUN_SCRIPT since 62
 $execute \
-	positioned -29999999 $(new_y_above_barriers) $(compare_z) \
+	if score $init/lobby/update.offset_y_above_barriers fetchr.tmp matches 0.. \
+	positioned -29999999 $(y_above_barriers) $(compare_z) \
 	run fill ~ ~ ~ ~$(offset_x) ~$(offset_y_above_barriers) ~$(offset_z) minecraft:air strict
 $execute \
 	positioned -29999999 0 $(compare_z) \
@@ -45,6 +48,8 @@ $execute \
 		$(clone_x) $(y) $(z) \
 		strict
 #NEUN_SCRIPT end
+
+# Compare and update
 data modify storage tmp.fetchr:init/update_lobby compare_coordinates set value [{\
 	compare_x: -29999999,\
 	compare_z: -30000000\
@@ -79,6 +84,7 @@ execute \
 function fetchr:init/update_lobby/compare_and_update/x_iter \
 	with storage tmp.fetchr:init/update_lobby compare_coordinates[0]
 
+# Update entities
 $execute \
 	as @e[x=-29999999,y=$(new_y),z=$(compare_z),dx=$(size_x),dy=$(size_y),dz=$(size_z)] \
 	at @s \
@@ -92,6 +98,84 @@ $execute \
 $teleport @e[x=-29999999,y=$(new_y),z=$(compare_z),dx=$(size_x),dy=$(size_y),dz=$(size_z)] 0 -127 0
 kill @e[x=0,y=-127,z=0,distance=...1]
 
+# Delete old and reference
+data modify storage tmp.fetchr:init/update_lobby spawn_items_coordinates set value [{}]
+
+execute \
+	store result storage tmp.fetchr:init/update_lobby spawn_items_coordinates[0].y int 1 \
+	run scoreboard players get $init/lobby/update.y fetchr.tmp
+execute \
+	store result storage tmp.fetchr:init/update_lobby spawn_items_coordinates[0].z int 1 \
+	run scoreboard players get $init/lobby/update.z fetchr.tmp
+scoreboard players operation $init/lobby/update.spawn_items_offset fetchr.tmp = $init/lobby/update.x_diff fetchr.tmp
+execute \
+	store result storage tmp.fetchr:init/update_lobby spawn_items_coordinates[0].offset_x int 1 \
+	run scoreboard players remove $init/lobby/update.spawn_items_offset fetchr.tmp 1
+execute \
+	store result storage tmp.fetchr:init/update_lobby spawn_items_coordinates[0].offset_y int 1 \
+	run scoreboard players get $init/lobby/update.offset_y fetchr.tmp
+execute \
+	store result storage tmp.fetchr:init/update_lobby spawn_items_coordinates[0].offset_z int 1 \
+	run scoreboard players get $init/lobby/update.offset_z fetchr.tmp
+execute \
+	store result storage tmp.fetchr:init/update_lobby spawn_items_coordinates[0].old_x int 1 \
+	run scoreboard players get $init/lobby/update.old_x fetchr.tmp
+execute \
+	store result storage tmp.fetchr:init/update_lobby spawn_items_coordinates[0].reference_x int 1 \
+	run scoreboard players get $init/lobby/update.reference_x fetchr.tmp
+
+execute \
+	if score $init/lobby/update.x_diff fetchr.tmp matches 1.. \
+	run function fetchr:init/update_lobby/spawn_items_for_player_placed_blocks/x_iter \
+		with storage tmp.fetchr:init/update_lobby spawn_items_coordinates[0]
+
+#NEUN_SCRIPT until 62
+#$execute \
+	if score $init/lobby/update.y fetchr.tmp matches ..2 \
+	positioned $(old_x) $(y) $(z) \
+	run fill ~ ~ ~ ~$(offset_old_x) 2 ~$(offset_z) minecraft:barrier
+#$execute \
+	if score $init/lobby/update.offset_y_above_barriers fetchr.tmp matches 0.. \
+	positioned $(old_x) $(y_above_barriers) $(z) \
+	run fill ~ ~ ~ ~$(offset_old_x) ~$(offset_y_above_barriers) ~$(offset_z) minecraft:air
+#NEUN_SCRIPT end
+#NEUN_SCRIPT since 62
+$execute \
+	if score $init/lobby/update.y fetchr.tmp matches ..2 \
+	positioned $(old_x) $(y) $(z) \
+	run fill ~ ~ ~ ~$(offset_old_x) 2 ~$(offset_z) minecraft:barrier strict
+$execute \
+	if score $init/lobby/update.offset_y_above_barriers fetchr.tmp matches 0.. \
+	positioned $(old_x) $(y_above_barriers) $(z) \
+	run fill ~ ~ ~ ~$(offset_old_x) ~$(offset_y_above_barriers) ~$(offset_z) minecraft:air strict
+#NEUN_SCRIPT end
+$kill @e[type=#fetchr:marker_entity,x=$(old_x),y=$(y),z=$(z),dx=$(old_size_x),dy=$(size_y),dz=$(size_z)]
+
+#NEUN_SCRIPT until 62
+#$execute \
+	if score $init/lobby/update.y fetchr.tmp matches ..2 \
+	positioned $(reference_x) $(y) $(z) \
+	run fill ~ ~ ~ ~$(offset_old_x) 2 ~$(offset_z) minecraft:barrier
+#$execute \
+	if score $init/lobby/update.offset_y_above_barriers fetchr.tmp matches 0.. \
+	positioned $(reference_x) $(y_above_barriers) $(z) \
+	run fill ~ ~ ~ ~$(offset_old_x) ~$(offset_y_above_barriers) ~$(offset_z) minecraft:air
+#NEUN_SCRIPT end
+#NEUN_SCRIPT since 62
+$execute \
+	if score $init/lobby/update.y fetchr.tmp matches ..2 \
+	positioned $(reference_x) $(y) $(z) \
+	run fill ~ ~ ~ ~$(offset_old_x) 2 ~$(offset_z) minecraft:barrier strict
+$execute \
+	if score $init/lobby/update.offset_y_above_barriers fetchr.tmp matches 0.. \
+	positioned $(reference_x) $(y_above_barriers) $(z) \
+	run fill ~ ~ ~ ~$(offset_old_x) ~$(offset_y_above_barriers) ~$(offset_z) minecraft:air strict
+#NEUN_SCRIPT end
+
+$teleport @e[x=$(reference_x),y=$(y),z=$(z),dx=$(old_size_x),dy=$(size_y),dz=$(size_z)] 0 -127 0
+kill @e[x=0,y=-127,z=0,distance=...1]
+
+# Continue with next structure
 scoreboard players operation $init/lobby/update.clone_x fetchr.tmp += $init/lobby/update.new_size_x fetchr.tmp
 
 data remove storage tmp.fetchr:init/update_lobby structures[-1]

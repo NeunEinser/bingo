@@ -23,14 +23,13 @@ $execute \
 		with storage tmp.fetchr:init/update_lobby compare_coordinates[-1]
 
 $execute \
-	positioned $(clone_x) $(y) $(reference_z) \
-	unless blocks ~ ~ ~ ~ ~ ~ $(reference_x) $(y) ~ all \
-	if block ~ ~ ~ #fetchr:blocks_with_inventory \
-	run setblock ~ ~ ~ minecraft:air destroy
+	unless blocks $(clone_x) $(y) $(reference_z) $(clone_x) $(y) $(reference_z) $(reference_x) $(y) $(reference_z) all \
+	if block $(clone_x) $(y) $(reference_z) #fetchr:blocks_with_inventory \
+	run setblock $(clone_x) $(y) $(reference_z) minecraft:air destroy
 $execute \
-	positioned $(clone_x) $(y) $(reference_z) \
-	unless blocks ~ ~ ~ ~ ~ ~ $(reference_x) $(y) ~ all \
-	run loot spawn ~ ~ ~ mine ~ ~ ~ minecraft:clay[minecraft:enchantments={"minecraft:silk_touch":1}]
+	unless blocks $(clone_x) $(y) $(reference_z) $(clone_x) $(y) $(reference_z) $(reference_x) $(y) $(reference_z) all \
+	unless block $(clone_x) $(y) $(reference_z) #fetchr:blocks_with_inventory \
+	run loot spawn $(clone_x) $(y) $(reference_z) mine $(clone_x) $(y) $(reference_z) minecraft:shears[minecraft:enchantments={"minecraft:silk_touch":1}]
 
 #NEUN_SCRIPT until 62
 #$clone $(compare_x) $(y) $(compare_z) $(compare_x) $(y) $(compare_z) $(clone_x) $(y) $(reference_z)

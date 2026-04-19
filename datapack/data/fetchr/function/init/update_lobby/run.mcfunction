@@ -41,6 +41,9 @@ execute \
 scoreboard players set $lobby_generated fetchr.state 5
 schedule clear fetchr:lobby/place_indestructible_blocks
 
+kill @e[type=minecraft:item_frame, tag=fetchr.card_frame]
+kill @e[type=minecraft:item_frame, tag=bingo.card_frame]
+
 data \
 	modify storage tmp.fetchr:init/update_lobby structures \
 	set from storage fetchr:registries structures
