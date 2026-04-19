@@ -54,15 +54,6 @@ execute \
 	store result storage tmp.fetchr:init/update_lobby compare_coordinates[0].y int 1 \
 	run scoreboard players get $init/lobby/update.y fetchr.tmp
 execute \
-	store result storage tmp.fetchr:init/update_lobby compare_coordinates[0].size_x int 1 \
-	run scoreboard players get $init/lobby/update.new_size_x fetchr.tmp
-execute \
-	store result storage tmp.fetchr:init/update_lobby compare_coordinates[0].size_y int 1 \
-	run scoreboard players get $init/lobby/update.size_y fetchr.tmp
-execute \
-	store result storage tmp.fetchr:init/update_lobby compare_coordinates[0].size_z int 1 \
-	run scoreboard players get $init/lobby/update.size_z fetchr.tmp
-execute \
 	store result storage tmp.fetchr:init/update_lobby compare_coordinates[0].offset_x int 1 \
 	run scoreboard players get $init/lobby/update.offset_x fetchr.tmp
 execute \

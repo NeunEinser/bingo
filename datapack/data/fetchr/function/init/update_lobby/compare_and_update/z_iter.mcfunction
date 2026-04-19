@@ -21,7 +21,8 @@ $execute \
 
 execute \
 	store result score $init/lobby/update/compare_and_update.size_z fetchr.tmp \
-	run data get storage tmp.fetchr:init/update_lobby compare_coordinates[-1].size_z
+	run data get storage tmp.fetchr:init/update_lobby compare_coordinates[-1].offset_z
+scoreboard players add $init/lobby/update/compare_and_update.size_z fetchr.tmp 1
 execute \
 	store result score $init/lobby/update/compare_and_update.compare_z fetchr.tmp \
 	run data get storage tmp.fetchr:init/update_lobby compare_coordinates[-1].compare_z
@@ -36,9 +37,7 @@ data \
 	append from storage tmp.fetchr:init/update_lobby compare_coordinates[-1]
 
 scoreboard players operation $init/lobby/update/compare_and_update.size_low_z fetchr.tmp = $init/lobby/update/compare_and_update.size_z fetchr.tmp
-execute \
-	store result storage tmp.fetchr:init/update_lobby compare_coordinates[-1].size_z int 1 \
-	run scoreboard players operation $init/lobby/update/compare_and_update.size_low_z fetchr.tmp /= 2 fetchr.const
+scoreboard players operation $init/lobby/update/compare_and_update.size_low_z fetchr.tmp /= 2 fetchr.const
 
 scoreboard players operation $init/lobby/update/compare_and_update.offset_low_z fetchr.tmp = $init/lobby/update/compare_and_update.size_low_z fetchr.tmp
 execute \
@@ -52,9 +51,6 @@ data \
 
 scoreboard players operation $init/lobby/update/compare_and_update.size_high_z fetchr.tmp = $init/lobby/update/compare_and_update.size_z fetchr.tmp
 scoreboard players operation $init/lobby/update/compare_and_update.size_high_z fetchr.tmp -= $init/lobby/update/compare_and_update.size_low_z fetchr.tmp
-execute \
-	store result storage tmp.fetchr:init/update_lobby compare_coordinates[-1].size_z int 1 \
-	run scoreboard players get $init/lobby/update/compare_and_update.size_high_z fetchr.tmp
 
 scoreboard players operation $init/lobby/update/compare_and_update.offset_high_z fetchr.tmp = $init/lobby/update/compare_and_update.size_high_z fetchr.tmp
 execute \
@@ -80,15 +76,15 @@ data remove storage tmp.fetchr:init/update_lobby compare_coordinates[-1]
 
 # recurse low
 execute \
-	store result score $init/lobby/update/compare_and_update.size_low_z fetchr.tmp \
-	run data get storage tmp.fetchr:init/update_lobby compare_coordinates[-1].size_z
+	store result score $init/lobby/update/compare_and_update.offset_low_z fetchr.tmp \
+	run data get storage tmp.fetchr:init/update_lobby compare_coordinates[-1].offset_z
 
 execute \
-	if score $init/lobby/update/compare_and_update.size_low_z fetchr.tmp matches 1 \
+	if score $init/lobby/update/compare_and_update.offset_low_z fetchr.tmp matches 0 \
 	run function fetchr:init/update_lobby/compare_and_update/y_iter \
 		with storage tmp.fetchr:init/update_lobby compare_coordinates[-1]
 execute \
-	if score $init/lobby/update/compare_and_update.size_low_z fetchr.tmp matches 2.. \
+	if score $init/lobby/update/compare_and_update.offset_low_z fetchr.tmp matches 1.. \
 	run function fetchr:init/update_lobby/compare_and_update/z_iter \
 		with storage tmp.fetchr:init/update_lobby compare_coordinates[-1]
 data remove storage tmp.fetchr:init/update_lobby compare_coordinates[-1]
