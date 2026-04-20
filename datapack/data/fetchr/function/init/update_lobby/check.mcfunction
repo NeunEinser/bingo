@@ -18,15 +18,32 @@ execute \
 	run scoreboard players set $init/lobby/update.should_update fetchr.tmp 1
 
 data \
-	modify storage tmp.fetchr:init/update_lobby current_id \
+	modify storage tmp.fetchr:init/update_lobby data_comparision \
 	set from storage tmp.fetchr:init/update_lobby structures[-1].id
 
 execute \
 	if score $init/lobby/update.should_update fetchr.tmp matches 0 \
 	store success score $init/lobby/update.should_update fetchr.tmp \
 	run data \
-		modify storage tmp.fetchr:init/update_lobby current_id \
+		modify storage tmp.fetchr:init/update_lobby data_comparision \
 		set from storage tmp.fetchr:init/update_lobby old_structures[-1].id
+
+execute \
+	if data storage tmp.fetchr:init/update_lobby structures[-1].override_namespace \
+	unless data storage tmp.fetchr:init/update_lobby old_structures[-1].override_namespace \
+	run scoreboard players set $init/lobby/update.should_update fetchr.tmp 1
+
+data remove storage tmp.fetchr:init/update_lobby data_comparision
+data \
+	modify storage tmp.fetchr:init/update_lobby data_comparision \
+	set from storage tmp.fetchr:init/update_lobby structures[-1].override_namespace
+
+execute \
+	if score $init/lobby/update.should_update fetchr.tmp matches 0 \
+	store success score $init/lobby/update.should_update fetchr.tmp \
+	run data \
+		modify storage tmp.fetchr:init/update_lobby data_comparision \
+		set from storage tmp.fetchr:init/update_lobby old_structures[-1].override_namespace
 
 data remove storage tmp.fetchr:init/update_lobby structures[-1]
 data remove storage tmp.fetchr:init/update_lobby old_structures[-1]

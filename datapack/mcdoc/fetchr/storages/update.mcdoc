@@ -5,7 +5,7 @@ use super::structure::Structure
 dispatch minecraft:storage[tmp.fetchr:init/update_lobby] to struct {
 	structures: [TmpStructure],
 	old_structures: [Structure],
-	current_id: #[id=structure] string,
+	data_comparision: any,
 	update_coordinates: struct {
 		entity_id?: #[id] string,
 		entity_type?: #[id=entity_type] string,
@@ -55,7 +55,6 @@ dispatch minecraft:storage[tmp.fetchr:init/update_lobby] to struct {
 	reference_entity: minecraft:entity[%fallback],
 	old_entity: minecraft:entity[%fallback],
 	new_entity: minecraft:entity[%fallback],
-	data_comparision: any,
 	entity_data_stack: [struct {[string]: any}],
 	entity_path_data: struct {
 		path: string,

@@ -95,7 +95,22 @@ dispatch minecraft:storage[fetchr:registries] to struct RegistryStorage {
 	structures: [
 		struct StructureRegistry {
 			id: #[id=structure] string,
+			/// The numeric version of this structure. Should be changed whenever
+			/// the structure file is updated.
 			version: int,
+			/// Together with version, this must form a unique value.
+			/// For own structures, you do not need to set this.
+			///
+			/// This is intended for packs overriding existing structures to be
+			/// able to specify unique versions without having to pollute ids of
+			/// the version integer value.
+			///
+			/// version together with this value must be globally unique. It is
+			/// recommended you put your namespace into this value.
+			override_namespace?: string,
+			/// The x,y,z position of the entrance. For x positions > 0 it is
+			/// currently not properly supported to have blocks in front of the
+			/// entrance's x position.
 			entrance_position: int @ 0..[] @ 3,
 		}
 	],
