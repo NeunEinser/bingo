@@ -16,7 +16,7 @@ setblock -30000000 3 -30000000 minecraft:structure_block[mode=load]{\
 
 execute \
 	if loaded -30000000 3 -30000000 \
-	run function fetchr:init/update_lobby/setup_structure
+	run function fetchr:init/update_lobby/setup_structure_update
 execute \
 	unless loaded -30000000 3 -30000000 \
 	run schedule function fetchr:init/update_lobby/place_structure_block_schedule 1t

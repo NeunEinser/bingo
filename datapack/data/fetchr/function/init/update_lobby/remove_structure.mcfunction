@@ -53,7 +53,7 @@ function fetchr:init/update_lobby/spawn_items_for_player_placed_blocks/x_iter \
 	with storage tmp.fetchr:init/update_lobby spawn_items_coordinates[0]
 
 $execute \
-	as @e[x=$(reference_x),y=$(y),z=$(z),dx=$(size_x),dy=$(size_y),dz=$(size_z)] \
+	as @e[x=$(reference_x),y=$(y),z=$(z),dx=$(offset_x),dy=$(offset_y),dz=$(offset_z)] \
 	run function fetchr:init/update_lobby/update_entity/kill_removed_entity
 
 #NEUN_SCRIPT until 62
@@ -76,7 +76,7 @@ $execute \
 	positioned $(old_x) $(y_above_barriers) $(z) \
 	run fill ~ ~ ~ ~$(offset_x) ~$(offset_y_above_barriers) ~$(offset_z) minecraft:air strict
 #NEUN_SCRIPT end
-$kill @e[type=#fetchr:marker_entity,x=$(old_x),y=$(y),z=$(z),dx=$(size_x),dy=$(size_y),dz=$(size_z)]
+$kill @e[type=#fetchr:marker_entity,x=$(old_x),y=$(y),z=$(z),dx=$(offset_x),dy=$(offset_y),dz=$(offset_z)]
 
 #NEUN_SCRIPT until 62
 #$execute \
@@ -99,7 +99,7 @@ $execute \
 	run fill ~ ~ ~ ~$(offset_x) ~$(offset_y_above_barriers) ~$(offset_z) minecraft:air strict
 #NEUN_SCRIPT end
 
-$teleport @e[x=$(reference_x),y=$(y),z=$(z),dx=$(size_x),dy=$(size_y),dz=$(size_z)] 0 -127 0
+$teleport @e[x=$(reference_x),y=$(y),z=$(z),dx=$(offset_x),dy=$(offset_y),dz=$(offset_z)] 0 -127 0
 kill @e[x=0,y=-127,z=0,distance=...1]
 
 data remove storage tmp.fetchr:init/update_lobby old_structures[0]

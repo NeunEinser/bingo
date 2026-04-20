@@ -16,15 +16,8 @@
 # 	old_high_z: int @ -30000000..29999999
 # 	clone_x: int @ -30000000..29999999
 
-# Reset compare area, place compare structure and clone old to clone area
-
+# Place compare structure and clone old to clone area
 #NEUN_SCRIPT until 62
-#$execute \
-	positioned -29999999 $(y_above_barriers) $(compare_z) \
-	run fill ~ ~ ~ ~$(offset_x) ~$(offset_y_above_barriers) ~$(offset_z) minecraft:air
-#$execute \
-	positioned -29999999 0 $(compare_z) \
-	run fill ~ 0 ~ ~$(offset_x) 2 ~$(offset_z) minecraft:barrier strict
 #$place template $(structure_id) -29999999 $(new_y) $(compare_z) none none 1 1
 #$execute \
 	positioned $(clone_from_x) $(y) $(z) \
@@ -33,13 +26,6 @@
 		$(clone_x) $(y) $(z)
 #NEUN_SCRIPT end
 #NEUN_SCRIPT since 62
-$execute \
-	if score $init/lobby/update.offset_y_above_barriers fetchr.tmp matches 0.. \
-	positioned -29999999 $(y_above_barriers) $(compare_z) \
-	run fill ~ ~ ~ ~$(offset_x) ~$(offset_y_above_barriers) ~$(offset_z) minecraft:air strict
-$execute \
-	positioned -29999999 0 $(compare_z) \
-	run fill ~ 0 ~ ~$(offset_x) 2 ~$(offset_z) minecraft:barrier strict
 $place template $(structure_id) -29999999 $(new_y) $(compare_z) none none 1 1 strict
 $execute \
 	positioned $(clone_from_x) $(y) $(z) \
@@ -86,16 +72,34 @@ function fetchr:init/update_lobby/compare_and_update/x_iter \
 
 # Update entities
 $execute \
-	as @e[x=-29999999,y=$(new_y),z=$(compare_z),dx=$(size_x),dy=$(size_y),dz=$(size_z)] \
+	as @e[x=-29999999,y=$(new_y),z=$(compare_z),dx=$(offset_x_including_overlap),dy=$(offset_y),dz=$(offset_z)] \
 	at @s \
 	run function fetchr:init/update_lobby/update_entity/exec \
 		with storage tmp.fetchr:init/update_lobby update_coordinates
 
 $execute \
-	as @e[tag=!fetchr.matched,x=$(reference_x),y=$(y),z=$(z),dx=$(size_x),dy=$(size_y),dz=$(size_z)] \
+	as @e[tag=!fetchr.matched,x=$(reference_x),y=$(y),z=$(z),dx=$(offset_x),dy=$(offset_y),dz=$(offset_z)] \
 	run function fetchr:init/update_lobby/update_entity/kill_removed_entity
 
-$teleport @e[x=-29999999,y=$(new_y),z=$(compare_z),dx=$(size_x),dy=$(size_y),dz=$(size_z)] 0 -127 0
+# Reset compare area
+#NEUN_SCRIPT until 62
+#$execute \
+	positioned -29999999 $(y_above_barriers) $(compare_z) \
+	run fill ~ ~ ~ ~$(offset_x) ~$(offset_y_above_barriers) ~$(offset_z) minecraft:air
+#$execute \
+	positioned -29999999 0 $(compare_z) \
+	run fill ~ 0 ~ ~$(offset_x) 2 ~$(offset_z) minecraft:barrier strict
+#NEUN_SCRIPT end
+#NEUN_SCRIPT since 62
+$execute \
+	if score $init/lobby/update.offset_y_above_barriers fetchr.tmp matches 0.. \
+	positioned -29999999 $(y_above_barriers) $(compare_z) \
+	run fill ~ ~ ~ ~$(offset_x) ~$(offset_y_above_barriers) ~$(offset_z) minecraft:air strict
+$execute \
+	positioned -29999999 0 $(compare_z) \
+	run fill ~ 0 ~ ~$(offset_x) 2 ~$(offset_z) minecraft:barrier strict
+#NEUN_SCRIPT end
+$teleport @e[x=-29999999,y=$(new_y),z=$(compare_z),dx=$(offset_x_including_overlap),dy=$(offset_y),dz=$(offset_z)] 0 -127 0
 kill @e[x=0,y=-127,z=0,distance=...1]
 
 # Delete old and reference
@@ -149,7 +153,7 @@ $execute \
 	positioned $(old_x) $(y_above_barriers) $(z) \
 	run fill ~ ~ ~ ~$(offset_old_x) ~$(offset_y_above_barriers) ~$(offset_z) minecraft:air strict
 #NEUN_SCRIPT end
-$kill @e[type=#fetchr:marker_entity,x=$(old_x),y=$(y),z=$(z),dx=$(old_size_x),dy=$(size_y),dz=$(size_z)]
+$kill @e[type=#fetchr:marker_entity,x=$(old_x),y=$(y),z=$(z),dx=$(offset_old_x),dy=$(offset_y),dz=$(offset_z)]
 
 #NEUN_SCRIPT until 62
 #$execute \
@@ -172,7 +176,7 @@ $execute \
 	run fill ~ ~ ~ ~$(offset_old_x) ~$(offset_y_above_barriers) ~$(offset_z) minecraft:air strict
 #NEUN_SCRIPT end
 
-$teleport @e[x=$(reference_x),y=$(y),z=$(z),dx=$(old_size_x),dy=$(size_y),dz=$(size_z)] 0 -127 0
+$teleport @e[x=$(reference_x),y=$(y),z=$(z),dx=$(offset_old_x),dy=$(offset_y),dz=$(offset_z)] 0 -127 0
 kill @e[x=0,y=-127,z=0,distance=...1]
 
 # Continue with next structure
@@ -181,4 +185,4 @@ scoreboard players operation $init/lobby/update.clone_x fetchr.tmp += $init/lobb
 data remove storage tmp.fetchr:init/update_lobby structures[-1]
 execute \
 	if data storage tmp.fetchr:init/update_lobby structures[0] \
-	run function fetchr:init/update_lobby/setup_structure
+	run function fetchr:init/update_lobby/setup_structure_update

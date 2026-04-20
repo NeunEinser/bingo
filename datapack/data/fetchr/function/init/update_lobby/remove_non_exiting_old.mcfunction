@@ -53,7 +53,6 @@ execute \
 scoreboard players operation $init/lobby/update.old_z fetchr.tmp *= -1 fetchr.const
 scoreboard players add $init/lobby/update.old_z fetchr.tmp 7
 
-# scoreboard players operation $init/lobby/update.old_size_x fetchr.tmp -= $init/lobby/update.old_x_overlap fetchr.tmp
 execute \
 	store result score $init/lobby/update.old_size_y fetchr.tmp \
 	run data get storage tmp.fetchr:init/update_lobby old_structures[0].size[1]

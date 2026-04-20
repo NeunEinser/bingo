@@ -31,7 +31,7 @@ $execute \
 	as @e[\
 		type=$(entity_type),\
 		x=$(old_x),y=$(y),z=$(z),\
-		dx=$(size_x),dy=$(size_y),dz=$(size_z),\
+		dx=$(offset_old_x_including_overlap),dy=$(offset_y),dz=$(offset_z),\
 		nbt={data: {fetchr: { display_entity_id: "$(entity_id)" }}},\
 		limit=1\
 	] \
@@ -40,7 +40,7 @@ $execute \
 	as @e[\
 		type=#fetchr:marker_entity,\
 		x=$(old_x),y=$(y),z=$(z),\
-		dx=$(size_x),dy=$(size_y),dz=$(size_z),\
+		dx=$(offset_old_x_including_overlap),dy=$(offset_y),dz=$(offset_z),\
 		nbt={data: {fetchr: { display_entity_id: "$(entity_id)" }}},\
 		limit=1\
 	] \

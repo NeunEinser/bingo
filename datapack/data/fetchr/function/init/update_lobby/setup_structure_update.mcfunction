@@ -1,4 +1,4 @@
-#> fetchr:init/update_lobby/setup_structure
+#> fetchr:init/update_lobby/setup_structure_update
 #
 # Setups a single structure and forceloads the required areas
 #
@@ -49,13 +49,8 @@
 	# @private
 	#declare score_holder $init/lobby/update.new_size_x
 	execute \
-		store result score $init/lobby/update.new_size_x fetchr.tmp \
+		store result score $init/lobby/update.new_size_x_including_overlap fetchr.tmp \
 		run data get block -30000000 3 -30000000 sizeX
-	# Do not compare overlap with the previous structure.
-	# Overlapping structure parts must be empty of blocks right now.
-	execute \
-		if data storage tmp.fetchr:init/update_lobby structures[2] \
-		run scoreboard players operation $init/lobby/update.new_size_x fetchr.tmp -= $init/lobby/update.new_x_overlap fetchr.tmp
 	#>
 	# The y-size of the new structure.
 	#
@@ -73,16 +68,12 @@
 		store result score $init/lobby/update.new_size_z fetchr.tmp \
 		run data get block -30000000 3 -30000000 sizeZ
 
-	data modify storage tmp.fetchr:init/update_lobby structures[-1].size set value [I; 0, 0, 0]
+	# Do not compare overlap with the previous structure.
+	# Overlapping structure parts must be empty of blocks right now.
+	scoreboard players operation $init/lobby/update.new_size_x fetchr.tmp = $init/lobby/update.new_size_x_including_overlap fetchr.tmp
 	execute \
-		store result storage tmp.fetchr:init/update_lobby structures[-1].size[0] int 1 \
-		run scoreboard players get $init/lobby/update.new_size_x fetchr.tmp
-	execute \
-		store result storage tmp.fetchr:init/update_lobby structures[-1].size[1] int 1 \
-		run scoreboard players get $init/lobby/update.new_size_y fetchr.tmp
-	execute \
-		store result storage tmp.fetchr:init/update_lobby structures[-1].size[2] int 1 \
-		run scoreboard players get $init/lobby/update.new_size_z fetchr.tmp
+		if data storage tmp.fetchr:init/update_lobby structures[1] \
+		run scoreboard players operation $init/lobby/update.new_size_x fetchr.tmp -= $init/lobby/update.new_x_overlap fetchr.tmp
 #endregion
 
 #region get old structure and dimensions
@@ -135,12 +126,13 @@
 	# @private
 	#declare score_holder $init/lobby/update.old_size_x
 	execute \
-		store result score $init/lobby/update.old_size_x fetchr.tmp \
+		store result score $init/lobby/update.old_size_x_including_overlap fetchr.tmp \
 		run data get storage tmp.fetchr:init/update_lobby old_structures[0].size[0]
 	# Do not compare overlap with the previous structure.
 	# Overlapping structure parts must be empty of blocks right now.
+	scoreboard players operation $init/lobby/update.old_size_x fetchr.tmp = $init/lobby/update.old_size_x_including_overlap fetchr.tmp
 	execute \
-		if data storage tmp.fetchr:init/update_lobby structures[2] \
+		if data storage tmp.fetchr:init/update_lobby structures[1] \
 		run scoreboard players operation $init/lobby/update.old_size_x fetchr.tmp -= $init/lobby/update.old_x_overlap fetchr.tmp
 	#>
 	# The y-size of the old structure.
@@ -282,7 +274,7 @@
 	# @private
 	#declare score_holder $init/lobby/update.compare_high_x
 	scoreboard players set $init/lobby/update.compare_high_x fetchr.tmp -30000000
-	scoreboard players operation $init/lobby/update.compare_high_x fetchr.tmp += $init/lobby/update.new_size_x fetchr.tmp
+	scoreboard players operation $init/lobby/update.compare_high_x fetchr.tmp += $init/lobby/update.new_size_x_including_overlap fetchr.tmp
 	#>
 	# The compare high z coordinate
 	#
