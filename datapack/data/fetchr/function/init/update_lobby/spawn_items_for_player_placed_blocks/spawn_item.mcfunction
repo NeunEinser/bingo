@@ -14,8 +14,7 @@
 # 	offset_y: int @ 0..64,
 # 	offset_z: int @ 0..60000000
 $execute \
-	positioned $(old_x) $(y) $(z) \
-	if blocks ~ ~ ~ ~$(offset_x) ~$(offset_y) ~$(offset_z) $(reference_x) ~ ~ all \
+	if blocks $(old_x) $(y) $(z) $(old_x) $(y) $(z) $(reference_x) $(y) $(z) all \
 	run return 0
 
 $execute \

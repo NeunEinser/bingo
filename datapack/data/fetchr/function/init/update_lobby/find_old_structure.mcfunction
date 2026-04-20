@@ -1,10 +1,10 @@
-#> fetchr:init/update_lobby/find_structure
+#> fetchr:init/update_lobby/find_old_structure
 #
-# Finds the corresponding compare structure's position
+# Finds the corresponding old structure
 #
 # @within
 # 	function fetchr:init/update_lobby/update_structure
-# 	function fetchr:init/update_lobby/flint_and_steel
+# 	function fetchr:init/update_lobby/find_old_structure
 
 execute \
 	store result score $init/lobby/update.current_x fetchr.tmp \
@@ -16,14 +16,14 @@ execute \
 scoreboard players operation $init/lobby/update.old_x fetchr.tmp += $init/lobby/update.current_x_offset fetchr.tmp
 
 data \
-	modify storage tmp.fetchr:init/update_lobby current_id \
+	modify storage tmp.fetchr:init/update_lobby data_comparision \
 	set from storage tmp.fetchr:init/update_lobby structures[-1].id
 
 scoreboard players set $init/lobby/update.continue_search fetchr.tmp 0
 execute \
 	store success score $init/lobby/update.continue_search fetchr.tmp \
 	run data \
-		modify storage tmp.fetchr:init/update_lobby current_id \
+		modify storage tmp.fetchr:init/update_lobby data_comparision \
 		set from storage tmp.fetchr:init/update_lobby old_structures[0].id
 
 execute \

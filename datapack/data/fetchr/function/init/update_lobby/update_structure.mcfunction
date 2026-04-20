@@ -20,7 +20,7 @@
 
 #NEUN_SCRIPT until 62
 #$execute \
-	positioned -29999999 $(new_y_above_barriers) $(compare_z) \
+	positioned -29999999 $(y_above_barriers) $(compare_z) \
 	run fill ~ ~ ~ ~$(offset_x) ~$(offset_y_above_barriers) ~$(offset_z) minecraft:air
 #$execute \
 	positioned -29999999 0 $(compare_z) \

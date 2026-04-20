@@ -7,7 +7,7 @@ dispatch minecraft:storage[io.fetchr:util] to struct {
 	concat_strings?: ConcatStringsData,
 	item?: SingleItem,
 	command_argument?: #[item] string,
-	callback?: #[id=function] string,
+	callback?: #[id=(registry=function,tags="allowed")] string,
 	forceload_coordinates: [struct ForceloadCoordinateArea {
 		dimension?: #[id=dimension] string,
 		start_x?: int @ -30000000..29999999,

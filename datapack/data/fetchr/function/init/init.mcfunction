@@ -1400,7 +1400,7 @@ forceload add 0 0
 	gamerule doTraderSpawning false
 	gamerule disableElytraMovementCheck true
 	gamerule doPatrolSpawning false
-	gamerule maxCommandChainLength 131072
+	gamerule maxCommandChainLength 262144
 
 	#NEUN_SCRIPT since 85
 	gamerule pvp false

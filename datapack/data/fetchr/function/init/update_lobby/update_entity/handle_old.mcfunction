@@ -9,5 +9,3 @@
 
 tag @s add fetchr.current_old
 data modify storage tmp.fetchr:init/update_lobby old_entity set from entity @s
-
-return 1
