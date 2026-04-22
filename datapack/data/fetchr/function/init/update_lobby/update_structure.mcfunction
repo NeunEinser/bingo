@@ -185,4 +185,6 @@ scoreboard players operation $init/lobby/update.clone_x fetchr.tmp += $init/lobb
 data remove storage tmp.fetchr:init/update_lobby structures[-1]
 execute \
 	if data storage tmp.fetchr:init/update_lobby structures[0] \
-	run function fetchr:init/update_lobby/setup_structure_update
+	run return run function fetchr:init/update_lobby/setup_structure_update
+
+function fetchr:init/update_lobby/move_clones_back

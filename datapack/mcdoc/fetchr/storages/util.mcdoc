@@ -12,8 +12,8 @@ dispatch minecraft:storage[io.fetchr:util] to struct {
 		dimension?: #[id=dimension] string,
 		start_x?: int @ -30000000..29999999,
 		start_z?: int @ -30000000..29999999,
-		end_x?: int @ -30000000..0,
-		end_z?: int @ 0..29999999,
+		end_x?: int @ -30000000..29999999,
+		end_z?: int @ -30000000..29999999,
 	}],
 }
 

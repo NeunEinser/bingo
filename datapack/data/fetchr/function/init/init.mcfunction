@@ -1611,7 +1611,7 @@ forceload add 0 0
 	#declare storage tmp.fetchr:init
 
 	execute \
-		if score $lobby_generated fetchr.state matches 3.. \
+		if score $lobby_generated fetchr.state matches 3..4 \
 		run schedule function fetchr:init/items/exec 1t
 #endregion
 #region initialize hud components
@@ -1686,6 +1686,9 @@ forceload add 0 0
 	execute \
 		if score $lobby_generated fetchr.state matches 1 \
 		run schedule function fetchr:init/setup_lobby/setup_reference 1t
+	execute \
+		if score $lobby_generated fetchr.state matches 4 \
+		run function fetchr:init/update_lobby/run
 
 # multi noise pos marker
 	execute \

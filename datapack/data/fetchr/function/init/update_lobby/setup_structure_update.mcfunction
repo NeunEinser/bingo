@@ -176,7 +176,7 @@
 	# @private
 	#declare score_holder $init/lobby/update.old_high_x
 	scoreboard players operation $init/lobby/update.old_high_x fetchr.tmp = $init/lobby/update.old_x fetchr.tmp
-	scoreboard players operation $init/lobby/update.old_high_x fetchr.tmp += $init/lobby/update.old_size_x fetchr.tmp
+	scoreboard players operation $init/lobby/update.old_high_x fetchr.tmp += $init/lobby/update.old_size_x_including_overlap fetchr.tmp
 	scoreboard players remove $init/lobby/update.old_high_x fetchr.tmp 1
 	#>
 	# The high y coordinate of the old structure
@@ -258,7 +258,8 @@
 	# @private
 	#declare score_holder $init/lobby/update.reference_high_x
 	scoreboard players operation $init/lobby/update.reference_high_x fetchr.tmp = $init/lobby/update.reference_x fetchr.tmp
-	scoreboard players operation $init/lobby/update.reference_high_x fetchr.tmp += $init/lobby/update.old_size_x fetchr.tmp
+	scoreboard players operation $init/lobby/update.reference_high_x fetchr.tmp += $init/lobby/update.old_size_x_including_overlap fetchr.tmp
+	scoreboard players remove $init/lobby/update.reference_high_x fetchr.tmp 1
 
 	#>
 	# The clone high x coordinate
@@ -266,7 +267,8 @@
 	# @private
 	#declare score_holder $init/lobby/update.clone_high_x
 	scoreboard players operation $init/lobby/update.clone_high_x fetchr.tmp = $init/lobby/update.clone_x fetchr.tmp
-	scoreboard players operation $init/lobby/update.clone_high_x fetchr.tmp += $init/lobby/update.new_size_x fetchr.tmp
+	scoreboard players operation $init/lobby/update.clone_high_x fetchr.tmp += $init/lobby/update.new_size_x_including_overlap fetchr.tmp
+	scoreboard players remove $init/lobby/update.clone_high_x fetchr.tmp 1
 
 	#>
 	# The compare high x coordinate
@@ -282,6 +284,23 @@
 	#declare score_holder $init/lobby/update.compare_high_z
 	scoreboard players set $init/lobby/update.compare_high_z fetchr.tmp -30000001
 	scoreboard players operation $init/lobby/update.compare_high_z fetchr.tmp += $init/lobby/update.size_z fetchr.tmp
+#endregion
+
+#region Set new structure
+	data \
+		modify storage tmp.fetchr:init/update_lobby new_structures \
+		prepend from storage tmp.fetchr:init/update_lobby structures[-1]
+	
+	data modify storage tmp.fetchr:init/update_lobby new_structures[0].size set value [I;0,0,0]
+	execute \
+		store result storage tmp.fetchr:init/update_lobby new_structures[0].size[0] int 1 \
+		run scoreboard players get $init/lobby/update.new_size_x_including_overlap fetchr.tmp
+	execute \
+		store result storage tmp.fetchr:init/update_lobby new_structures[0].size[1] int 1 \
+		run scoreboard players get $init/lobby/update.new_size_y fetchr.tmp
+	execute \
+		store result storage tmp.fetchr:init/update_lobby new_structures[0].size[2] int 1 \
+		run scoreboard players get $init/lobby/update.new_size_z fetchr.tmp
 #endregion
 
 #region forceload
@@ -300,10 +319,10 @@
 		run scoreboard players get $init/lobby/update.old_high_x fetchr.tmp
 	execute \
 		store result storage io.fetchr:util forceload_coordinates[0].start_z int 1 \
-		run scoreboard players get $init/lobby/update.old_z fetchr.tmp
+		run scoreboard players get $init/lobby/update.z fetchr.tmp
 	execute \
 		store result storage io.fetchr:util forceload_coordinates[0].end_z int 1 \
-		run scoreboard players get $init/lobby/update.old_high_z fetchr.tmp
+		run scoreboard players get $init/lobby/update.high_z fetchr.tmp
 
 	data \
 		modify storage io.fetchr:util forceload_coordinates[1] \
@@ -315,19 +334,19 @@
 		store result storage io.fetchr:util forceload_coordinates[1].end_x int 1 \
 		run scoreboard players get $init/lobby/update.reference_high_x fetchr.tmp
 
+	data \
+		modify storage io.fetchr:util forceload_coordinates[2] \
+		set from storage io.fetchr:util forceload_coordinates[0]
 	execute \
 		store result storage io.fetchr:util forceload_coordinates[2].start_x int 1 \
 		run scoreboard players get $init/lobby/update.clone_x fetchr.tmp
 	execute \
 		store result storage io.fetchr:util forceload_coordinates[2].end_x int 1 \
 		run scoreboard players get $init/lobby/update.clone_high_x fetchr.tmp
-	execute \
-		store result storage io.fetchr:util forceload_coordinates[2].start_z int 1 \
-		run scoreboard players get $init/lobby/update.z fetchr.tmp
-	execute \
-		store result storage io.fetchr:util forceload_coordinates[2].end_z int 1 \
-		run scoreboard players get $init/lobby/update.high_z fetchr.tmp
 
+	data \
+		modify storage io.fetchr:util forceload_coordinates[3] \
+		set from storage io.fetchr:util forceload_coordinates[0]
 	execute \
 		store result storage io.fetchr:util forceload_coordinates[3].end_x int 1 \
 		run scoreboard players get $init/lobby/update.compare_high_x fetchr.tmp
