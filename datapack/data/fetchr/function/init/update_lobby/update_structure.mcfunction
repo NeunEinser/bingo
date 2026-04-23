@@ -22,31 +22,38 @@
 #$execute \
 	positioned $(clone_from_x) $(y) $(z) \
 	run clone ~ ~ ~ \
-		~$(offset_x) ~$(offset_y) ~$(offset_z) \
-		$(clone_x) $(y) $(z)
+		~$(offset_x_for_clone) ~$(offset_y) ~$(offset_z) \
+		$(clone_to_x) ~ ~
 #NEUN_SCRIPT end
 #NEUN_SCRIPT since 62
 $place template $(structure_id) -29999999 $(new_y) $(compare_z) none none 1 1 strict
 $execute \
 	positioned $(clone_from_x) $(y) $(z) \
 	run clone ~ ~ ~ \
-		~$(offset_x) ~$(offset_y) ~$(offset_z) \
-		$(clone_x) $(y) $(z) \
+		~$(offset_x_for_clone) ~$(offset_y) ~$(offset_z) \
+		$(clone_to_x) ~ ~ \
 		strict
 #NEUN_SCRIPT end
 
 # Compare and update
 data modify storage tmp.fetchr:init/update_lobby compare_coordinates set value [{\
-	compare_x: -29999999,\
 	compare_z: -30000000\
 }]
 
+scoreboard players set $init/lobby/update.compare_x fetchr.tmp -29999999
+execute \
+	if score $init/lobby/update.x_diff fetchr.tmp matches ..-1 \
+	run scoreboard players operation $init/lobby/update.compare_x fetchr.tmp -= $init/lobby/update.x_diff fetchr.tmp
+
+execute \
+	store result storage tmp.fetchr:init/update_lobby compare_coordinates[0].compare_x int 1 \
+	run scoreboard players get $init/lobby/update.compare_x fetchr.tmp
 execute \
 	store result storage tmp.fetchr:init/update_lobby compare_coordinates[0].y int 1 \
 	run scoreboard players get $init/lobby/update.y fetchr.tmp
 execute \
 	store result storage tmp.fetchr:init/update_lobby compare_coordinates[0].offset_x int 1 \
-	run scoreboard players get $init/lobby/update.offset_x fetchr.tmp
+	run scoreboard players get $init/lobby/update.offset_x_for_clone fetchr.tmp
 execute \
 	store result storage tmp.fetchr:init/update_lobby compare_coordinates[0].offset_y int 1 \
 	run scoreboard players get $init/lobby/update.offset_y fetchr.tmp
@@ -65,10 +72,24 @@ execute \
 	run scoreboard players get $init/lobby/update.z fetchr.tmp
 execute \
 	store result storage tmp.fetchr:init/update_lobby compare_coordinates[0].clone_x int 1 \
-	run scoreboard players get $init/lobby/update.clone_x fetchr.tmp
+	run scoreboard players get $init/lobby/update.clone_to_x fetchr.tmp
 
 function fetchr:init/update_lobby/compare_and_update/x_iter \
 	with storage tmp.fetchr:init/update_lobby compare_coordinates[0]
+
+# In case structure size increased, copy increased area from compare area
+#NEUN_SCRIPT until 62
+#$execute \
+	if score $init/lobby/update.x_diff fetchr.tmp matches ..-1 \
+	positioned -29999999 $(new_y) $(compare_z) \
+	run clone ~ ~ ~ ~$(x_diff_offset) ~$(offset_y) ~$(offset_z) $(clone_x) ~ $(new_z) strict
+#NEUN_SCRIPT end
+#NEUN_SCRIPT since 62
+$execute \
+	if score $init/lobby/update.x_diff fetchr.tmp matches ..-1 \
+	positioned -29999999 $(new_y) $(compare_z) \
+	run clone ~ ~ ~ ~$(x_diff_offset) ~$(offset_y) ~$(offset_z) $(clone_x) ~ $(new_z) strict
+#NEUN_SCRIPT end
 
 # Update entities
 $execute \
