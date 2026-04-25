@@ -13,10 +13,10 @@
 kill @s
 $summon $(entity_type) ~ ~ ~ $(entity_nbt)
 
-$teleport @e[type=$(entity_type), distance=...1, tag=fetchr.current_old] ~$(compare_to_clone_x_offset) ~ ~$(compare_to_clone_z_offset) ~ ~
 $execute \
+	as @e[type=$(entity_type), distance=...1, tag=fetchr.current_old, limit=1] \
 	positioned ~$(compare_to_clone_x_offset) ~ ~$(compare_to_clone_z_offset) \
-	run tag @e[type=$(entity_type), distance=...1, tag=fetchr.current_old] remove fetchr.current_old
+	run function #fetchr:lobby_update/manipulate_updated_entity
 
 #NEUN_SCRIPT until 70
 #$teleport @e[type=#fetchr:marker_entity, distance=...1, nbt={data:{fetchr:{display_entity_id: "$(entity_id)"}}}] \

@@ -1,6 +1,6 @@
 #> fetchr:init/update_lobby/clear_target_area/clear_block
 #
-# CLears the block by either moving to the clone, or spawning an item
+# Clears the block by either moving to the clone, or spawning an item
 #
 # @within function fetchr:init/update_lobby/update_structure/clear_target_area/y_iter
 # @context dimension fetchr:lobby

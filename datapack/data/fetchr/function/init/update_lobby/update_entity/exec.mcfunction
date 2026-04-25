@@ -87,7 +87,10 @@ data \
 	set from block 7 0 7 front_text.messages[0]
 #NEUN_SCRIPT end
 
+tag @s add fetchr.current_new
 execute \
 	as @e[tag=fetchr.current_old] \
 	run function fetchr:init/update_lobby/update_entity/update_old \
 		with storage tmp.fetchr:init/update_lobby update_coordinates
+
+tag @s remove fetchr.current_new

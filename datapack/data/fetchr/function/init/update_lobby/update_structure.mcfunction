@@ -68,7 +68,7 @@ execute \
 	store result storage tmp.fetchr:init/update_lobby compare_coordinates[0].reference_x int 1 \
 	run scoreboard players get $init/lobby/update.reference_for_clone_x fetchr.tmp
 execute \
-	store result storage tmp.fetchr:init/update_lobby compare_coordinates[0].reference_z int 1 \
+	store result storage tmp.fetchr:init/update_lobby compare_coordinates[0].z int 1 \
 	run scoreboard players get $init/lobby/update.z fetchr.tmp
 execute \
 	store result storage tmp.fetchr:init/update_lobby compare_coordinates[0].clone_x int 1 \

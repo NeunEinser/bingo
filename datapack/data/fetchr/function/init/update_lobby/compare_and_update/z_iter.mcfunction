@@ -7,16 +7,32 @@
 # @context dimension fetchr:lobby
 # @params
 # 	y: int @ 0..64,
+# 	z: int @ -30000000..29999999,
 # 	compare_x: int @ -30000000..29999999,
 # 	compare_z: int @ -30000000..29999999,
 # 	reference_x: int @ -30000000..29999999,
-# 	reference_z: int @ -30000000..29999999,
 # 	offset_x: int @ 0..60000000,
 # 	offset_y: int @ 0..64,
 # 	offset_z: int @ 0..60000000,
+
+scoreboard players set $init/lobby/update/compare_and_update.needs_update fetchr.tmp 1
+#NEUN_SCRIPT until 62
+#$execute \
+	positioned $(compare_x) $(y) $(compare_z) \
+	if blocks ~ ~ ~ ~$(offset_x) ~$(offset_y) ~$(offset_z) $(reference_x) ~ $(z) all \
+	store success score $init/lobby/update/compare_and_update.needs_update fetchr.tmp \
+	run clone ~ ~ ~ ~$(offset_x) ~$(offset_y) ~$(offset_z) ~ ~ ~ filtered #fetchr:forces_lobby_update move
+#NEUN_SCRIPT end
+#NEUN_SCRIPT since 62
 $execute \
 	positioned $(compare_x) $(y) $(compare_z) \
-	if blocks ~ ~ ~ ~$(offset_x) ~$(offset_y) ~$(offset_z) $(reference_x) $(y) $(reference_z) all \
+	if blocks ~ ~ ~ ~$(offset_x) ~$(offset_y) ~$(offset_z) $(reference_x) ~ $(z) all \
+	store success score $init/lobby/update/compare_and_update.needs_update fetchr.tmp \
+	run clone ~ ~ ~ ~$(offset_x) ~$(offset_y) ~$(offset_z) ~ ~ ~ strict filtered #fetchr:forces_lobby_update move
+#NEUN_SCRIPT end
+
+execute \
+	if score $init/lobby/update/compare_and_update.needs_update fetchr.tmp matches 0 \
 	run return 0
 
 execute \
@@ -27,8 +43,8 @@ execute \
 	store result score $init/lobby/update/compare_and_update.compare_z fetchr.tmp \
 	run data get storage tmp.fetchr:init/update_lobby compare_coordinates[-1].compare_z
 execute \
-	store result score $init/lobby/update/compare_and_update.reference_z fetchr.tmp \
-	run data get storage tmp.fetchr:init/update_lobby compare_coordinates[-1].reference_z
+	store result score $init/lobby/update/compare_and_update.z fetchr.tmp \
+	run data get storage tmp.fetchr:init/update_lobby compare_coordinates[-1].z
 
 
 # low
@@ -60,8 +76,8 @@ execute \
 	store result storage tmp.fetchr:init/update_lobby compare_coordinates[-1].compare_z int 1 \
 	run scoreboard players operation $init/lobby/update/compare_and_update.compare_z fetchr.tmp += $init/lobby/update/compare_and_update.size_low_z fetchr.tmp
 execute \
-	store result storage tmp.fetchr:init/update_lobby compare_coordinates[-1].reference_z int 1 \
-	run scoreboard players operation $init/lobby/update/compare_and_update.reference_z fetchr.tmp += $init/lobby/update/compare_and_update.size_low_z fetchr.tmp
+	store result storage tmp.fetchr:init/update_lobby compare_coordinates[-1].z int 1 \
+	run scoreboard players operation $init/lobby/update/compare_and_update.z fetchr.tmp += $init/lobby/update/compare_and_update.size_low_z fetchr.tmp
 
 # recurse high
 execute \

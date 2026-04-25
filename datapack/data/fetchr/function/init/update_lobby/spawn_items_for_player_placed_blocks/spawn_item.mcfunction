@@ -18,6 +18,17 @@ $execute \
 	run return 0
 
 $execute \
+	positioned $(old_x) $(y) $(z) \
+	if block $(reference_x) $(y) $(z) #fetchr:has_special_lobby_update_behavior \
+	if block ~ ~ ~ #fetchr:has_special_lobby_update_behavior \
+	run function #fetchr:lobby_update/manipulate_special_block \
+		with storage tmp.fetchr:init/update_lobby spawn_items_coordinates[-1]
+$execute \
+	if block $(compare_x) $(y) $(compare_z) #fetchr:has_special_lobby_update_behavior \
+	if blocks $(compare_x) $(y) $(compare_z) $(compare_x) $(y) $(compare_z) $(reference_x) $(y) $(z) all \
+	run return 0
+
+$execute \
 	if block $(old_x) $(y) $(z) #fetchr:blocks_with_inventory \
 	run setblock $(old_x) $(y) $(z) minecraft:air destroy
 $teleport @e[x=$(old_x),y=$(y),z=$(z),distance=..1, type=minecraft:item] 7.5 3 7.5
