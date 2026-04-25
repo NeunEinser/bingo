@@ -10,7 +10,7 @@ dispatch minecraft:storage[tmp.fetchr:init/update_lobby] to struct {
 	update_coordinates: struct {
 		entity_id?: #[id] string,
 		entity_type?: #[id=entity_type] string,
-		entity_nbt: minecraft:entity[%fallback],
+		entity_nbt?: minecraft:entity[%fallback],
 		structure_id?: #[id=structure] string,
 		compare_z?: int @ -30000000..29999999,
 		new_y?: int @ 0..64,

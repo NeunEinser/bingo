@@ -6,23 +6,23 @@
 # @context dimension fetchr:lobby
 
 execute \
-	at @e[type=#fetchr:marker_entity, tag=fetchr.multiplayer_door] \
-	run fill ~ ~ ~ ~ ~1 ~ minecraft:air
-execute \
 	at @e[type=#fetchr:marker_entity, tag=fetchr.lobby_sign] \
 	run setblock ~ ~ ~ minecraft:air
 execute \
 	at @e[type=#fetchr:marker_entity, tag=fetchr.lobby_lectern] \
 	run setblock ~ ~ ~ minecraft:air
 execute \
+	at @e[type=#fetchr:marker_entity, tag=fetchr.chest_generation_marker] \
+	run function fetchr:init/update_lobby/reset_category_chests
+execute \
 	at @e[type=#fetchr:marker_entity, tag=fetchr.lobby_enderchest] \
 	run setblock ~ ~ ~ minecraft:air
 execute \
+	at @e[type=#fetchr:marker_entity, tag=fetchr.multiplayer_door] \
+	run fill ~ ~ ~ ~ ~1 ~ minecraft:air
+execute \
 	at @e[type=#fetchr:marker_entity, tag=fetchr.mangrove_button_south] \
 	run setblock ~ ~ ~ minecraft:air
-execute \
-	at @e[type=#fetchr:marker_entity, tag=fetchr.chest_generation_marker] \
-	run function fetchr:init/update_lobby/reset_category_chests
 
 # Delete old and reference
 data modify storage tmp.fetchr:init/update_lobby spawn_items_coordinates set value [{}]

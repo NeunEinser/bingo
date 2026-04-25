@@ -5,23 +5,23 @@
 # @within fetchr:init/update_lobby/setup_structure_update
 
 execute \
-	at @e[type=#fetchr:marker_entity, tag=fetchr.multiplayer_door] \
-	run fill ~ ~ ~ ~ ~1 ~ minecraft:air
-execute \
 	at @e[type=#fetchr:marker_entity, tag=fetchr.lobby_sign] \
 	run setblock ~ ~ ~ minecraft:air
 execute \
 	at @e[type=#fetchr:marker_entity, tag=fetchr.lobby_lectern] \
 	run setblock ~ ~ ~ minecraft:air
 execute \
+	at @e[type=#fetchr:marker_entity, tag=fetchr.chest_generation_marker] \
+	run function fetchr:init/update_lobby/reset_category_chests
+execute \
 	at @e[type=#fetchr:marker_entity, tag=fetchr.lobby_enderchest] \
 	run setblock ~ ~ ~ minecraft:air
 execute \
+	at @e[type=#fetchr:marker_entity, tag=fetchr.multiplayer_door] \
+	run fill ~ ~ ~ ~ ~1 ~ minecraft:air
+execute \
 	at @e[type=#fetchr:marker_entity, tag=fetchr.mangrove_button_south] \
 	run setblock ~ ~ ~ minecraft:air
-execute \
-	at @e[type=#fetchr:marker_entity, tag=fetchr.chest_generation_marker] \
-	run function fetchr:init/update_lobby/reset_category_chests
 
 scoreboard players set $init/lobby/update.compare_z fetchr.tmp -30000000
 scoreboard players operation $init/lobby/update.compare_z fetchr.tmp -= $init/lobby/update.old_z fetchr.tmp
