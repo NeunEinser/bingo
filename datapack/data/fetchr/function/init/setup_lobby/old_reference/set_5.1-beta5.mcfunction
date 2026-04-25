@@ -9,5 +9,5 @@ data \
 	set value "fetchr:old/5.1-beta5-card_generation"
 
 execute \
-	if entity @e[tag=bingo.lobby_sign, limit=1] \
-	run function fetchr:init/setup_lobby/old_reference/set_5.0.1
+	if entity @e[tag=fetchr.lobby_sign, nbt={data:{Text2:'{"translate":"fetchr.lobby.credits.neun_einser.sign.line2","color":"#8eedeb"}'}}, limit=1] \
+	run function fetchr:init/setup_lobby/old_reference/set_5.1-beta3

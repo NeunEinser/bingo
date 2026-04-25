@@ -6,6 +6,9 @@
 
 data \
 	modify storage tmp.fetchr:init/structures structures[{id: "fetchr:card_generation"}].legacy_id \
+	set value "fetchr:old/5.1-beta6-machinery"
+data \
+	modify storage tmp.fetchr:init/structures structures[{id: "fetchr:card_generation"}].legacy_id \
 	set value "fetchr:old/5.1-beta6-card_generation"
 
 data \
