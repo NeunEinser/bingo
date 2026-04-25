@@ -23,16 +23,12 @@ function fetchr:util/string/concat
 data modify storage tmp.fetchr:init/update_lobby entity_path_data.path set from storage io.fetchr:util string
 
 # Stash data to retrive after recursion
-data modify storage tmp.fetchr:init/update_lobby entity_data_stack[-1] set value {}
 execute \
 	store result storage tmp.fetchr:init/update_lobby entity_data_stack[-1].index int 1 \
 	run scoreboard players add $init/lobby/update/entity.list_index fetchr.tmp 1
 
+data modify storage tmp.fetchr:init/update_lobby entity_path_data.index set value 0
 # Recurse
-data \
-	modify storage tmp.fetchr:init/update_lobby entity_data_stack[-1].path \
-	set from storage tmp.fetchr:init/update_lobby entity_path_data.path
-
 function fetchr:init/update_lobby/update_entity/update_path \
 	with storage tmp.fetchr:init/update_lobby entity_path_data
 
@@ -56,9 +52,12 @@ scoreboard players operation $init/lobby/update/entity.size fetchr.tmp < $init/l
 data \
 	modify storage tmp.fetchr:init/update_lobby entity_path_data.path \
 	set from storage tmp.fetchr:init/update_lobby entity_data_stack[-1].path
-data \
-	modify storage tmp.fetchr:init/update_lobby entity_path_data.index \
-	set from storage tmp.fetchr:init/update_lobby entity_data_stack[-1].index
+
+execute \
+	if score $init/lobby/update/entity.list_index fetchr.tmp < $init/lobby/update/entity.size fetchr.tmp \
+	run data \
+		modify storage tmp.fetchr:init/update_lobby entity_path_data.index \
+		set from storage tmp.fetchr:init/update_lobby entity_data_stack[-1].index
 
 execute \
 	if score $init/lobby/update/entity.list_index fetchr.tmp >= $init/lobby/update/entity.size fetchr.tmp \

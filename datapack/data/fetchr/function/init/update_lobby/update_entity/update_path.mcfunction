@@ -46,11 +46,14 @@ execute \
 	if score $init/lobby/update/entity.is_different fetchr.tmp matches 0 \
 	run return 0
 
-$data \
+data \
 	modify storage tmp.fetchr:init/update_lobby entity_data_stack \
-	append from storage tmp.fetchr:init/update_lobby reference_entity$(path)
+	append from storage tmp.fetchr:init/update_lobby entity_path_data
 $data \
-	modify storage tmp.fetchr:init/update_lobby entity_data_stack[-1] \
+	modify storage tmp.fetchr:init/update_lobby entity_data_stack[-1].data \
+	set from storage tmp.fetchr:init/update_lobby reference_entity$(path)
+$data \
+	modify storage tmp.fetchr:init/update_lobby entity_data_stack[-1].data \
 	merge from storage tmp.fetchr:init/update_lobby new_entity$(path)
 
 $data \

@@ -59,8 +59,33 @@ $execute \
 data modify storage tmp.fetchr:init/update_lobby new_entity set from entity @s
 data modify storage tmp.fetchr:init/update_lobby entity_data_stack set value []
 
-data modify storage tmp.fetchr:init/update_lobby entity_path_data set value {path:"", index:0}
+data modify storage tmp.fetchr:init/update_lobby entity_path_data set value {previously_handled_subkey:"", path:"", index:0}
 function fetchr:init/update_lobby/update_entity/update_path {path: ""}
+
+data remove storage tmp.fetchr:init/update_lobby old_entity.UUID
+data remove storage tmp.fetchr:init/update_lobby old_entity.Pos
+data remove storage tmp.fetchr:init/update_lobby old_entity.Rotation
+
+data \
+	modify storage tmp.fetchr:init/update_lobby old_entity.data.fetchr.display_entity_id \
+	set from storage tmp.fetchr:init/update_lobby new_entity.data.fetchr.display_entity_id
+data modify storage tmp.fetchr:init/update_lobby old_entity.Tags append value "fetchr.current_old"
+
+data modify block 7 0 7 front_text.messages[0] set value { "storage": "tmp.fetchr:init/update_lobby", "nbt": "old_entity" }
+
+#NEUN_SCRIPT until 69
+#data modify storage tmp.fetchr:init/update_lobby snbt_macro.snbt set from block 7 0 7 front_text.messages[0]
+#function fetchr:util/string/parse_snbt with storage tmp.fetchr:init/update_lobby snbt_macro
+#data \
+	modify storage tmp.fetchr:init/update_lobby update_coordinates.entity_nbt \
+	set from storage io.fetchr:util string
+#NEUN_SCRIPT end
+
+#NEUN_SCRIPT since 69
+data \
+	modify storage tmp.fetchr:init/update_lobby update_coordinates.entity_nbt \
+	set from block 7 0 7 front_text.messages[0]
+#NEUN_SCRIPT end
 
 execute \
 	as @e[tag=fetchr.current_old] \

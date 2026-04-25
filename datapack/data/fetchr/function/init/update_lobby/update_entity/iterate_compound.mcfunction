@@ -17,10 +17,10 @@
 # Remove previous subkey if applicable
 $execute \
 	unless data storage tmp.fetchr:init/update_lobby entity_path_data{previously_handled_subkey: ""} \
-	run data remove storage tmp.fetchr:init/update_lobby entity_data_stack[-1]$(previously_handled_subkey)
+	run data remove storage tmp.fetchr:init/update_lobby entity_data_stack[-1].data$(previously_handled_subkey)
 
 # Get next subkey and prepend with dot, or stop iteration if empty compound
-data modify storage io.fetchr:util nbt set from storage tmp.fetchr:init/update_lobby entity_data_stack[-1]
+data modify storage io.fetchr:util nbt set from storage tmp.fetchr:init/update_lobby entity_data_stack[-1].data
 function fetchr:util/string/get_next_compound_key
 
 execute \
@@ -37,10 +37,6 @@ data \
 function fetchr:util/string/concat
 
 # Save data to retrieve after recursion
-data modify storage tmp.fetchr:init/update_lobby entity_data_stack append value {}
-data \
-	modify storage tmp.fetchr:init/update_lobby entity_data_stack[-1].path \
-	set from storage tmp.fetchr:init/update_lobby entity_path_data.path
 data \
 	modify storage tmp.fetchr:init/update_lobby entity_data_stack[-1].previously_handled_subkey \
 	set from storage io.fetchr:util string
@@ -48,8 +44,11 @@ data \
 # Concat path
 data modify storage io.fetchr:util concat_strings.first set from storage tmp.fetchr:init/update_lobby entity_path_data.path
 data \
-	modify storage io.fetchr:util string \
+	modify storage io.fetchr:util concat_strings.first \
 	set from storage tmp.fetchr:init/update_lobby entity_path_data.path
+data \
+	modify storage io.fetchr:util concat_strings.second \
+	set from storage io.fetchr:util string
 function fetchr:util/string/concat
 
 # Recurse
@@ -68,6 +67,5 @@ data \
 data \
 	modify storage tmp.fetchr:init/update_lobby entity_path_data.previously_handled_subkey \
 	set from storage tmp.fetchr:init/update_lobby entity_data_stack[-1].previously_handled_subkey
-data remove storage tmp.fetchr:init/update_lobby entity_data_stack[-1]
 
 function fetchr:init/update_lobby/update_entity/iterate_compound with storage tmp.fetchr:init/update_lobby entity_path_data
