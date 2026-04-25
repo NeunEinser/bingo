@@ -39,10 +39,12 @@ execute \
 	run return 0
 
 scoreboard players set $lobby_generated fetchr.state 5
-schedule clear fetchr:lobby/place_indestructible_blocks
 
-kill @e[type=minecraft:item_frame, tag=fetchr.card_frame]
-kill @e[type=minecraft:item_frame, tag=bingo.card_frame]
+function fetchr:game/end
+scoreboard players reset $seed fetchr.state
+data modify storage fetchr:card slots set value []
+
+schedule clear fetchr:lobby/place_indestructible_blocks
 
 data modify storage tmp.fetchr:init/update_lobby new_structures set value []
 
