@@ -10,6 +10,7 @@
 # 	compare_to_clone_x_offset: int The relative x offset from compare to clone location
 # 	compare_to_clone_z_offset: int The relative z offset from compare to clone location
 
+teleport @s 0 -127 0
 kill @s
 $summon $(entity_type) ~ ~ ~ $(entity_nbt)
 
