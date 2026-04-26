@@ -100,7 +100,7 @@ $execute \
 #NEUN_SCRIPT end
 
 $teleport @e[x=$(reference_x),y=$(y),z=$(z),dx=$(offset_x),dy=$(offset_y),dz=$(offset_z)] 0 -127 0
-kill @e[x=0,y=-127,z=0,distance=...1]
+kill @e[x=0.5,y=-127,z=0.5,distance=...1]
 
 data remove storage tmp.fetchr:init/update_lobby old_structures[0]
 

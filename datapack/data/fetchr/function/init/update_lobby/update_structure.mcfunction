@@ -121,7 +121,7 @@ $execute \
 	run fill ~ 0 ~ ~$(offset_x) 2 ~$(offset_z) minecraft:barrier strict
 #NEUN_SCRIPT end
 $teleport @e[x=-29999999,y=$(new_y),z=$(compare_z),dx=$(offset_x_including_overlap),dy=$(offset_y),dz=$(offset_z)] 0 -127 0
-kill @e[x=0,y=-127,z=0,distance=...1]
+kill @e[x=0.5,y=-127,z=0.5,distance=...1]
 
 # Delete old and reference
 data modify storage tmp.fetchr:init/update_lobby spawn_items_coordinates set value [{}]
@@ -200,7 +200,7 @@ $execute \
 #NEUN_SCRIPT end
 
 $teleport @e[x=$(reference_x),y=$(y),z=$(z),dx=$(offset_old_x),dy=$(offset_y),dz=$(offset_z)] 0 -127 0
-kill @e[x=0,y=-127,z=0,distance=...1]
+kill @e[x=0.5,y=-127,z=0.5,distance=...1]
 
 # Continue with next structure
 scoreboard players operation $init/lobby/update.clone_x fetchr.tmp += $init/lobby/update.new_size_x fetchr.tmp
