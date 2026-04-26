@@ -42,7 +42,9 @@ scoreboard players set $lobby_generated fetchr.state 5
 
 function fetchr:game/end
 scoreboard players reset $seed fetchr.state
+scoreboard players set $update_card fetchr.state 1
 data modify storage fetchr:card slots set value []
+data modify storage fetchr:card teams set value []
 
 schedule clear fetchr:lobby/place_indestructible_blocks
 
