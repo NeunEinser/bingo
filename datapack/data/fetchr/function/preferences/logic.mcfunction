@@ -7,7 +7,7 @@
 # @context entity Player who triggered fetchr.pref
 # @reads
 # 	storage fetchr:custom_hud components
-# 	storage fetchr:custom_hud currentPlayer.components
+# 	storage fetchr:custom_hud current_player.components
 
 #NEUN_SCRIPT until 69
 #execute \
@@ -15,7 +15,7 @@
 	run data \
 		modify \
 			storage io.fetchr:preferences \
-			menuOptions[{ id: "fetchr:spectator_mode" }].textComponent \
+			menu_options[{ id: "fetchr:spectator_mode" }].title \
 		set value '[\
 			{ "translate": "fetchr.preferences.spectator_mode.title" },\
 			": ",\
@@ -26,7 +26,7 @@
 	run data \
 		modify \
 			storage io.fetchr:preferences \
-			menuOptions[{ id: "fetchr:spectator_mode" }].textComponent \
+			menu_options[{ id: "fetchr:spectator_mode" }].title \
 		set value '[\
 			{ "translate": "fetchr.preferences.spectator_mode.title" },\
 			": ",\
@@ -39,7 +39,7 @@ execute \
 	run data \
 		modify \
 			storage io.fetchr:preferences \
-			menuOptions[{ id: "fetchr:spectator_mode" }].textComponent \
+			menu_options[{ id: "fetchr:spectator_mode" }].title \
 		set value [\
 			{ translate: "fetchr.preferences.spectator_mode.title" },\
 			": ",\
@@ -50,7 +50,7 @@ execute \
 	run data \
 		modify \
 			storage io.fetchr:preferences \
-			menuOptions[{ id: "fetchr:spectator_mode" }].textComponent \
+			menu_options[{ id: "fetchr:spectator_mode" }].title \
 		set value [\
 			{ translate: "fetchr.preferences.spectator_mode.title" },\
 			": ",\

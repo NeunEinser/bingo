@@ -11,7 +11,7 @@ scoreboard players operation $custom_hud/player_pos.z fetchr.tmp %= 16 fetchr.co
 
 #NEUN_SCRIPT until 69
 #data \
-	modify storage io.fetchr:custom_hud component.textComponent set value '[\
+	modify storage io.fetchr:custom_hud component.text_component set value '[\
 	{\
 		"score": { "name": "$custom_hud/player_pos.x", "objective": "fetchr.tmp" },\
 		"color": "yellow"\
@@ -22,7 +22,7 @@ scoreboard players operation $custom_hud/player_pos.z fetchr.tmp %= 16 fetchr.co
 #NEUN_SCRIPT end
 #NEUN_SCRIPT since 69
 data \
-	modify storage io.fetchr:custom_hud component.textComponent set value [\
+	modify storage io.fetchr:custom_hud component.text_component set value [\
 	{\
 		score: { name: "$custom_hud/player_pos.x", objective: "fetchr.tmp" },\
 		color: "yellow"\

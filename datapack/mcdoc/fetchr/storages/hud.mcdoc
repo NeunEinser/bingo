@@ -1,4 +1,6 @@
+use ::java::server::util::text::Text
 use ::fetchr::hud::HudComponent
+use ::fetchr::hud::HudComponentBase
 use ::fetchr::hud::PlayerHudComponent
 use ::fetchr::storages::registry::HudComponentRegistryData
 use ::fetchr::storages::registry::PreferencesRegistryData
@@ -14,22 +16,70 @@ dispatch minecraft:storage[fetchr:custom_hud] to struct {
 	components: [HudComponent],
 	default: PlayerHudComponents,
 	players: [PlayerHudConfiguration],
-	currentPlayer?: PlayerHudConfiguration,
+	current_player?: PlayerHudConfiguration,
 }
 
 dispatch minecraft:storage[io.fetchr:preferences] to struct {
-	menuOptions: [PreferencesRegistryData],
+	menu_options: [PreferencesRegistryData],
 	components: [HudComponentRegistryData],
 }
 
 dispatch minecraft:storage[tmp.fetchr:preferences] to struct {
-	menuOption: PreferencesRegistryData
+	menu_option: PreferencesRegistryData
+}
+
+struct TmpHudComponent {
+	...HudComponentBase,
+	slot_id?: byte,
+	/// The text component to show for custom settings.
+	settings?: (
+		#[until="1.21.5"] #[text_component] string
+		| #[since="1.21.5"] Text
+	)
+}
+
+dispatch minecraft:storage[tmp.fetchr:preferences/hud] to struct {
+	filled_components:[HudComponent],
+	to_be_added: TmpHudComponent,
+	id_comparision: #[id] string,
+	player_components: [HudComponent],
+	player_components_copy: [HudComponent],
+	skipped_huds: [HudComponent],
+	active_components: [HudComponent],
+	component: HudComponent,
+	swap: HudComponent,
+	first_component: HudComponent,
+	page_elements: [HudComponent],
+	move: (
+		#[until="1.21.5"] #[text_component] string
+		| #[since="1.21.5"] Text
+	),
+	next: (
+		#[until="1.21.5"] #[text_component] string
+		| #[since="1.21.5"] Text
+	),
+	prev: (
+		#[until="1.21.5"] #[text_component] string
+		| #[since="1.21.5"] Text
+	),
+	add_col0: (
+		#[until="1.21.5"] #[text_component] string
+		| #[since="1.21.5"] Text
+	),
+	add_col1: (
+		#[until="1.21.5"] #[text_component] string
+		| #[since="1.21.5"] Text
+	),
+	col01_space: (
+		#[until="1.21.5"] #[text_component] string
+		| #[since="1.21.5"] Text
+	),
 }
 
 dispatch minecraft:storage[tmp.fetchr:init/hud] to struct {
 	cur: (HudComponentRegistryData | HudComponent),
 	columns: [[PlayerHudComponent] @ ..6 ] @ ..2,
-	whereSpace: [HudComponent],
+	where_space: [HudComponent],
 	unpreferred: [HudComponent],
-	dontAdd: [HudComponent],
+	not_in_default_selection: [HudComponent],
 }

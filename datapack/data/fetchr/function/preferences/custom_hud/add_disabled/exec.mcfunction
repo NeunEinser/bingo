@@ -7,11 +7,11 @@ scoreboard players set $preferences/hud.page fetchr.tmp 0
 scoreboard players set $preferences/hud.element fetchr.tmp 0
 data modify storage io.fetchr:preferences components set from storage fetchr:custom_hud components
 function #fetchr:preferences/custom_hud/filter_disabled
-data modify storage tmp.fetchr:preferences/hud pageElements set value []
+data modify storage tmp.fetchr:preferences/hud page_elements set value []
 data \
-	modify storage tmp.fetchr:preferences/hud playerComponents \
-	set from storage fetchr:custom_hud currentPlayer.components
-data remove storage tmp.fetchr:preferences/hud playerComponents[{ id: "fetchr:empty" }]
+	modify storage tmp.fetchr:preferences/hud player_components \
+	set from storage fetchr:custom_hud current_player.components
+data remove storage tmp.fetchr:preferences/hud player_components[{ id: "fetchr:empty" }]
 function fetchr:preferences/custom_hud/select_page
 
 execute \
@@ -38,7 +38,7 @@ execute \
 	run function fetchr:preferences/custom_hud/add_to_col1
 
 execute \
-	unless data storage tmp.fetchr:preferences/hud pageElements[1] \
+	unless data storage tmp.fetchr:preferences/hud page_elements[1] \
 	run scoreboard players remove @s fetchr.menu_page 1
 
 scoreboard players set $preferences.next_page fetchr.tmp 5

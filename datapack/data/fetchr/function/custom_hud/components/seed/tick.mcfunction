@@ -5,9 +5,9 @@
 
 execute \
 	if score $update_card fetchr.state matches 1 \
-	if data storage fetchr:custom_hud currentPlayer.components[{ id: "fetchr:seed" }] \
+	if data storage fetchr:custom_hud current_player.components[{ id: "fetchr:seed" }] \
 	run function fetchr:custom_hud/components/seed/update
 execute \
 	if score @s fetchr.update_hud matches 1 \
-	if data storage fetchr:custom_hud currentPlayer.components[{ id: "fetchr:seed" }] \
+	if data storage fetchr:custom_hud current_player.components[{ id: "fetchr:seed" }] \
 	run function fetchr:custom_hud/components/seed/update

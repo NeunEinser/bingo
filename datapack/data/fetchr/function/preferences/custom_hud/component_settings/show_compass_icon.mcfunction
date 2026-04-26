@@ -7,7 +7,7 @@
 data \
 	modify \
 		storage fetchr:custom_hud \
-		currentPlayer.components[{ id: "fetchr:player_position" }].custom.fetchr.iconType \
+		current_player.components[{ id: "fetchr:player_position" }].custom.fetchr.icon_type \
 	set value "compass"
 
 scoreboard players set @s fetchr.update_hud 1

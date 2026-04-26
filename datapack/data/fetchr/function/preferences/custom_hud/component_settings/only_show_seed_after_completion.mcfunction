@@ -8,7 +8,7 @@
 data \
 	modify \
 		storage fetchr:custom_hud \
-		currentPlayer.components[{ id: "fetchr:seed" }].custom.fetchr.onlyShowAfterRun \
+		current_player.components[{ id: "fetchr:seed" }].custom.fetchr.only_show_after_run \
 	set value true
 
 scoreboard players set @s fetchr.update_hud 1

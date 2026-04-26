@@ -6,10 +6,10 @@
 # @context entity Player whose hud is currently being updated
 
 #NEUN_SCRIPT until 69
-#data modify storage io.fetchr:custom_hud component.iconWidth set value '"\\u000a"'
+#data modify storage io.fetchr:custom_hud component.icon_width set value '"\\u000a"'
 #NEUN_SCRIPT end
 #NEUN_SCRIPT since 69
-data modify storage io.fetchr:custom_hud component.iconWidth set value "\u000a"
+data modify storage io.fetchr:custom_hud component.icon_width set value "\u000a"
 #NEUN_SCRIPT end
 
 execute \

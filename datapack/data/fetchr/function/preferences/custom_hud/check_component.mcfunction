@@ -9,7 +9,7 @@
 # @context entity Player who triggered fetchr.pref
 #
 # @reads storage io.fetchr:preferences components[-1]
-# @input storage tmp.fetchr:preferences/hud playerComponentsCpy
+# @input storage tmp.fetchr:preferences/hud player_components_copy
 # @output score $preferences/hud.disabled fetchr.tmp
 
 #>
@@ -20,8 +20,8 @@
 # 	function fetchr:preferences/custom_hud/check_component
 #declare score_holder $preferences/hud.disabled
 
-data modify storage tmp.fetchr:preferences/hud idCheck set from storage io.fetchr:preferences components[-1].id
-execute store success score $preferences/hud.disabled fetchr.tmp run data modify storage tmp.fetchr:preferences/hud idCheck set from storage tmp.fetchr:preferences/hud playerComponentsCpy[-1].id
+data modify storage tmp.fetchr:preferences/hud id_comparision set from storage io.fetchr:preferences components[-1].id
+execute store success score $preferences/hud.disabled fetchr.tmp run data modify storage tmp.fetchr:preferences/hud id_comparision set from storage tmp.fetchr:preferences/hud player_components_copy[-1].id
 
-data remove storage tmp.fetchr:preferences/hud playerComponentsCpy[-1]
-execute if data storage tmp.fetchr:preferences/hud playerComponentsCpy[0] if score $preferences/hud.disabled fetchr.tmp matches 1 run function fetchr:preferences/custom_hud/check_component
+data remove storage tmp.fetchr:preferences/hud player_components_copy[-1]
+execute if data storage tmp.fetchr:preferences/hud player_components_copy[0] if score $preferences/hud.disabled fetchr.tmp matches 1 run function fetchr:preferences/custom_hud/check_component

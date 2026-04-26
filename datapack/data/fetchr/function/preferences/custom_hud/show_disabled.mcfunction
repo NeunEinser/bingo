@@ -7,7 +7,7 @@
 # 	function fetchr:preferences/custom_hud/add_disabled/exec
 # @context entity Player who triggered fetchr.pref
 # @reads
-# 	storage fetchr:custom_hud currentPlayer.components
+# 	storage fetchr:custom_hud current_player.components
 # 	storage fetchr:custom_hud components
 
 execute \
@@ -24,9 +24,9 @@ scoreboard players set $preferences/hud.page fetchr.tmp 0
 scoreboard players set $preferences/hud.element fetchr.tmp 0
 data modify storage io.fetchr:preferences components set from storage fetchr:custom_hud components
 function #fetchr:preferences/custom_hud/filter_disabled
-data modify storage tmp.fetchr:preferences/hud pageElements set value []
-data modify storage tmp.fetchr:preferences/hud playerComponents set from storage fetchr:custom_hud currentPlayer.components
-data remove storage tmp.fetchr:preferences/hud playerComponents[{ id: "fetchr:empty" }]
+data modify storage tmp.fetchr:preferences/hud page_elements set value []
+data modify storage tmp.fetchr:preferences/hud player_components set from storage fetchr:custom_hud current_player.components
+data remove storage tmp.fetchr:preferences/hud player_components[{ id: "fetchr:empty" }]
 function fetchr:preferences/custom_hud/select_page
 
 tellraw @s [\
@@ -38,24 +38,24 @@ tellraw @s [\
 ]
 
 #NEUN_SCRIPT until 69
-#data modify storage tmp.fetchr:preferences/hud addCol0 set value '""'
-#data modify storage tmp.fetchr:preferences/hud addCol1 set value '""'
-#data modify storage tmp.fetchr:preferences/hud col01Space set value '""'
+#data modify storage tmp.fetchr:preferences/hud add_col0 set value '""'
+#data modify storage tmp.fetchr:preferences/hud add_col1 set value '""'
+#data modify storage tmp.fetchr:preferences/hud col01_space set value '""'
 #NEUN_SCRIPT end
 #NEUN_SCRIPT since 69
-data modify storage tmp.fetchr:preferences/hud addCol0 set value ""
-data modify storage tmp.fetchr:preferences/hud addCol1 set value ""
-data modify storage tmp.fetchr:preferences/hud col01Space set value ""
+data modify storage tmp.fetchr:preferences/hud add_col0 set value ""
+data modify storage tmp.fetchr:preferences/hud add_col1 set value ""
+data modify storage tmp.fetchr:preferences/hud col01_space set value ""
 #NEUN_SCRIPT end
 
 # Work around for """WAI""" https://bugs.mojang.com/browse/MC-139625 :mad_neun:
 data \
-	modify storage tmp.fetchr:preferences/hud hudComponent \
-	set from storage fetchr:custom_hud currentPlayer.components[4]
+	modify storage tmp.fetchr:preferences/hud component \
+	set from storage fetchr:custom_hud current_player.components[4]
 #NEUN_SCRIPT until 69
 #execute \
-	if data storage tmp.fetchr:preferences/hud hudComponent{ id: "fetchr:empty" } \
-	run data modify storage tmp.fetchr:preferences/hud addCol0 set value '[\
+	if data storage tmp.fetchr:preferences/hud component{ id: "fetchr:empty" } \
+	run data modify storage tmp.fetchr:preferences/hud add_col0 set value '[\
 		"[",\
 		{\
 			"translate": "fetchr.preferences.custom_hud.add_disabled.add_col0.title",\
@@ -70,8 +70,8 @@ data \
 #NEUN_SCRIPT end
 #NEUN_SCRIPT since 69
 execute \
-	if data storage tmp.fetchr:preferences/hud hudComponent{ id: "fetchr:empty" } \
-	run data modify storage tmp.fetchr:preferences/hud addCol0 set value [\
+	if data storage tmp.fetchr:preferences/hud component{ id: "fetchr:empty" } \
+	run data modify storage tmp.fetchr:preferences/hud add_col0 set value [\
 		"[",\
 		{\
 			translate: "fetchr.preferences.custom_hud.add_disabled.add_col0.title",\
@@ -86,12 +86,12 @@ execute \
 #NEUN_SCRIPT end
 # Work around for """WAI""" https://bugs.mojang.com/browse/MC-139625 :mad_neun:
 data \
-	modify storage tmp.fetchr:preferences/hud hudComponent \
-	set from storage fetchr:custom_hud currentPlayer.components[10]
+	modify storage tmp.fetchr:preferences/hud component \
+	set from storage fetchr:custom_hud current_player.components[10]
 #NEUN_SCRIPT until 69
 #execute \
-	if data storage tmp.fetchr:preferences/hud hudComponent{ id: "fetchr:empty" } \
-	run data modify storage tmp.fetchr:preferences/hud addCol1 set value '[\
+	if data storage tmp.fetchr:preferences/hud component{ id: "fetchr:empty" } \
+	run data modify storage tmp.fetchr:preferences/hud add_col1 set value '[\
 		"[",\
 		{\
 			"translate": "fetchr.preferences.custom_hud.add_disabled.add_col1.title",\
@@ -104,14 +104,14 @@ data \
 		"]"\
 	]'
 #execute \
-	unless data storage tmp.fetchr:preferences/hud { addCol0: '""' } \
-	unless data storage tmp.fetchr:preferences/hud { addCol1: '""' } \
-	run data modify storage tmp.fetchr:preferences/hud col01Space set value '" "'
+	unless data storage tmp.fetchr:preferences/hud { add_col0: '""' } \
+	unless data storage tmp.fetchr:preferences/hud { add_col1: '""' } \
+	run data modify storage tmp.fetchr:preferences/hud col01_space set value '" "'
 #NEUN_SCRIPT end
 #NEUN_SCRIPT since 69
 execute \
-	if data storage tmp.fetchr:preferences/hud hudComponent{ id: "fetchr:empty" } \
-	run data modify storage tmp.fetchr:preferences/hud addCol1 set value [\
+	if data storage tmp.fetchr:preferences/hud component{ id: "fetchr:empty" } \
+	run data modify storage tmp.fetchr:preferences/hud add_col1 set value [\
 		"[",\
 		{\
 			translate: "fetchr.preferences.custom_hud.add_disabled.add_col1.title",\
@@ -124,214 +124,214 @@ execute \
 		"]"\
 	]
 execute \
-	unless data storage tmp.fetchr:preferences/hud { addCol0: "" } \
-	unless data storage tmp.fetchr:preferences/hud { addCol1: "" } \
-	run data modify storage tmp.fetchr:preferences/hud col01Space set value " "
+	unless data storage tmp.fetchr:preferences/hud { add_col0: "" } \
+	unless data storage tmp.fetchr:preferences/hud { add_col1: "" } \
+	run data modify storage tmp.fetchr:preferences/hud col01_space set value " "
 #NEUN_SCRIPT end
 
 tellraw @s [\
-	{ "storage": "tmp.fetchr:preferences/hud", "nbt": "pageElements[0].name", "interpret": true },\
+	{ "storage": "tmp.fetchr:preferences/hud", "nbt": "page_elements[0].name", "interpret": true },\
 	" ",\
 	{\
 		"storage": "tmp.fetchr:preferences/hud",\
-		"nbt": "addCol0",\
+		"nbt": "add_col0",\
 		"interpret": true,\
 		"clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 12" },\
 		"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 12" }\
 	},\
-	{ "storage": "tmp.fetchr:preferences/hud", "nbt": "col01Space", "interpret": true },\
+	{ "storage": "tmp.fetchr:preferences/hud", "nbt": "col01_space", "interpret": true },\
 	{\
 		"storage": "tmp.fetchr:preferences/hud",\
-		"nbt": "addCol1",\
+		"nbt": "add_col1",\
 		"interpret": true,\
 		"clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 13" },\
 		"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 13" }\
 	}\
 ]
 execute \
-	if data storage tmp.fetchr:preferences/hud pageElements[1] \
+	if data storage tmp.fetchr:preferences/hud page_elements[1] \
 	run tellraw @s [\
-		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "pageElements[1].name", "interpret": true },\
+		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "page_elements[1].name", "interpret": true },\
 		" ",\
 		{\
 			"storage": "tmp.fetchr:preferences/hud",\
-			"nbt": "addCol0",\
+			"nbt": "add_col0",\
 			"interpret": true,\
 			"clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 14" },\
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 14" }\
 		},\
-		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "col01Space", "interpret": true },\
+		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "col01_space", "interpret": true },\
 		{\
 			"storage": "tmp.fetchr:preferences/hud",\
-			"nbt": "addCol1",\
+			"nbt": "add_col1",\
 			"interpret": true,\
 			"clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 15" },\
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 15" }\
 		}\
 	]
 execute \
-	if data storage tmp.fetchr:preferences/hud pageElements[2] \
+	if data storage tmp.fetchr:preferences/hud page_elements[2] \
 	run tellraw @s [\
-		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "pageElements[2].name", "interpret": true },\
+		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "page_elements[2].name", "interpret": true },\
 		" ",\
 		{\
 			"storage": "tmp.fetchr:preferences/hud",\
-			"nbt": "addCol0",\
+			"nbt": "add_col0",\
 			"interpret": true,\
 			"clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 16" },\
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 16" }\
 		},\
-		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "col01Space", "interpret": true },\
+		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "col01_space", "interpret": true },\
 		{\
 			"storage": "tmp.fetchr:preferences/hud",\
-			"nbt": "addCol1",\
+			"nbt": "add_col1",\
 			"interpret": true,\
 			"clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 17" },\
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 17" }\
 		}\
 	]
 execute \
-	if data storage tmp.fetchr:preferences/hud pageElements[3] \
+	if data storage tmp.fetchr:preferences/hud page_elements[3] \
 	run tellraw @s [\
-		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "pageElements[3].name", "interpret": true },\
+		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "page_elements[3].name", "interpret": true },\
 		" ",\
 		{\
 			"storage": "tmp.fetchr:preferences/hud",\
-			"nbt": "addCol0",\
+			"nbt": "add_col0",\
 			"interpret": true,\
 			"clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 18" },\
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 18" }\
 		},\
-		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "col01Space", "interpret": true },\
+		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "col01_space", "interpret": true },\
 		{\
 			"storage": "tmp.fetchr:preferences/hud",\
-			"nbt": "addCol1",\
+			"nbt": "add_col1",\
 			"interpret": true,\
 			"clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 19" },\
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 19" }\
 		}\
 	]
 execute \
-	if data storage tmp.fetchr:preferences/hud pageElements[4] \
+	if data storage tmp.fetchr:preferences/hud page_elements[4] \
 	run tellraw @s [\
-		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "pageElements[4].name", "interpret": true },\
+		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "page_elements[4].name", "interpret": true },\
 		" ",\
 		{\
 			"storage": "tmp.fetchr:preferences/hud",\
-			"nbt": "addCol0",\
+			"nbt": "add_col0",\
 			"interpret": true,\
 			"clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 20" },\
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 20" }\
 		},\
-		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "col01Space", "interpret": true },\
+		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "col01_space", "interpret": true },\
 		{\
 			"storage": "tmp.fetchr:preferences/hud",\
-			"nbt": "addCol1",\
+			"nbt": "add_col1",\
 			"interpret": true,\
 			"clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 21" },\
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 21" }\
 		}\
 	]
 execute \
-	if data storage tmp.fetchr:preferences/hud pageElements[5] \
+	if data storage tmp.fetchr:preferences/hud page_elements[5] \
 	run tellraw @s [\
-		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "pageElements[5].name", "interpret": true },\
+		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "page_elements[5].name", "interpret": true },\
 		" ",\
 		{\
 			"storage": "tmp.fetchr:preferences/hud",\
-			"nbt": "addCol0",\
+			"nbt": "add_col0",\
 			"interpret": true,\
 			"clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 22" },\
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 22" }\
 		},\
-		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "col01Space", "interpret": true },\
+		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "col01_space", "interpret": true },\
 		{\
 			"storage": "tmp.fetchr:preferences/hud",\
-			"nbt": "addCol1",\
+			"nbt": "add_col1",\
 			"interpret": true,\
 			"clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 23" },\
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 23" }\
 		}\
 	]
 execute \
-	if data storage tmp.fetchr:preferences/hud pageElements[6] \
+	if data storage tmp.fetchr:preferences/hud page_elements[6] \
 	run tellraw @s [\
-		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "pageElements[6].name", "interpret": true },\
+		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "page_elements[6].name", "interpret": true },\
 		" ",\
 		{\
 			"storage": "tmp.fetchr:preferences/hud",\
-			"nbt": "addCol0",\
+			"nbt": "add_col0",\
 			"interpret": true,\
 			"clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 24" },\
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 24" }\
 		},\
-		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "col01Space", "interpret": true },\
+		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "col01_space", "interpret": true },\
 		{\
 			"storage": "tmp.fetchr:preferences/hud",\
-			"nbt": "addCol1",\
+			"nbt": "add_col1",\
 			"interpret": true,\
 			"clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 25" },\
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 25" }\
 		}\
 	]
 execute \
-	if data storage tmp.fetchr:preferences/hud pageElements[7] \
+	if data storage tmp.fetchr:preferences/hud page_elements[7] \
 	run tellraw @s [\
-		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "pageElements[7].name", "interpret": true },\
+		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "page_elements[7].name", "interpret": true },\
 		" ",\
 		{\
 			"storage": "tmp.fetchr:preferences/hud",\
-			"nbt": "addCol0",\
+			"nbt": "add_col0",\
 			"interpret": true,\
 			"clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 26" },\
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 26" }\
 		},\
-		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "col01Space", "interpret": true },\
+		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "col01_space", "interpret": true },\
 		{\
 			"storage": "tmp.fetchr:preferences/hud",\
-			"nbt": "addCol1",\
+			"nbt": "add_col1",\
 			"interpret": true,\
 			"clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 27" },\
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 27" }\
 		}\
 	]
 execute \
-	if data storage tmp.fetchr:preferences/hud pageElements[8] \
+	if data storage tmp.fetchr:preferences/hud page_elements[8] \
 	run tellraw @s [\
-		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "pageElements[8].name", "interpret": true },\
+		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "page_elements[8].name", "interpret": true },\
 		" ",\
 		{\
 			"storage": "tmp.fetchr:preferences/hud",\
-			"nbt": "addCol0",\
+			"nbt": "add_col0",\
 			"interpret": true,\
 			"clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 28" },\
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 28" }\
 		},\
-		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "col01Space", "interpret": true },\
+		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "col01_space", "interpret": true },\
 		{\
 			"storage": "tmp.fetchr:preferences/hud",\
-			"nbt": "addCol1",\
+			"nbt": "add_col1",\
 			"interpret": true,\
 			"clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 29" },\
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 29" }\
 		}\
 	]
 execute \
-	if data storage tmp.fetchr:preferences/hud pageElements[9] \
+	if data storage tmp.fetchr:preferences/hud page_elements[9] \
 	run tellraw @s [\
-		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "pageElements[9].name", "interpret": true },\
+		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "page_elements[9].name", "interpret": true },\
 		" ",\
 		{\
 			"storage": "tmp.fetchr:preferences/hud",\
-			"nbt": "addCol0",\
+			"nbt": "add_col0",\
 			"interpret": true,\
 			"clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 30" },\
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 30" }\
 		},\
-		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "col01Space", "interpret": true },\
+		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "col01_space", "interpret": true },\
 		{\
 			"storage": "tmp.fetchr:preferences/hud",\
-			"nbt": "addCol1",\
+			"nbt": "add_col1",\
 			"interpret": true,\
 			"clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 31" },\
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 31" }\
@@ -343,7 +343,7 @@ execute \
 #declare score_holder $preferences/hud.enabled_count
 execute \
 	store result score $preferences/hud.enabled_count fetchr.tmp \
-	run data get storage tmp.fetchr:preferences/hud playerComponents
+	run data get storage tmp.fetchr:preferences/hud player_components
 #> 
 # @private
 #declare score_holder $preferences/hud.page_count
@@ -400,7 +400,7 @@ execute \
 		{\
 			translate: "fetchr.preferences.previous",\
 			color: "#00c3ff",\
-			clickEvent: { action: "run_command", value: "/trigger fetchr.pref set 7" }\
+			click_event: { action: "run_command", command: "/trigger fetchr.pref set 7" }\
 		},\
 		"]"\
 	]
@@ -411,7 +411,7 @@ execute \
 		{\
 			translate: "fetchr.preferences.next",\
 			color: "#00c3ff",\
-			clickEvent: { action: "run_command", value: "/trigger fetchr.pref set 8" }\
+			click_event: { action: "run_command", command: "/trigger fetchr.pref set 8" }\
 		},\
 		"]"\
 	]

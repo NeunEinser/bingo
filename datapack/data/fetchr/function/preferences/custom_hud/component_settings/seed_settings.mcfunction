@@ -19,7 +19,7 @@ tellraw @s [\
 execute \
 	unless \
 		data storage fetchr:custom_hud \
-		currentPlayer.components[{ id: "fetchr:seed" }].custom.fetchr{ onlyShowAfterRun: true } \
+		current_player.components[{ id: "fetchr:seed" }].custom.fetchr{ only_show_after_run: true } \
 	run tellraw @s [\
 		"[",\
 		{\
@@ -47,7 +47,7 @@ execute \
 execute \
 	if \
 		data storage fetchr:custom_hud \
-		currentPlayer.components[{ id: "fetchr:seed" }].custom.fetchr{ onlyShowAfterRun: true } \
+		current_player.components[{ id: "fetchr:seed" }].custom.fetchr{ only_show_after_run: true } \
 	run tellraw @s [\
 		"[",\
 		{\
@@ -78,7 +78,7 @@ execute \
 #declare score_holder $hud/settings/pos_settings.slot
 execute \
 	store result score $hud/settings/pos_settings.slot fetchr.tmp \
-	run data get storage fetchr:custom_hud currentPlayer.components[{ id: "fetchr:seed" }].slot_id
+	run data get storage fetchr:custom_hud current_player.components[{ id: "fetchr:seed" }].slot_id
 execute \
 	if score $hud/settings/pos_settings.slot fetchr.tmp matches 0..4 \
 	run tellraw @s [\

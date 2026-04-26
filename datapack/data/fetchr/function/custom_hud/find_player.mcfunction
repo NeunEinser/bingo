@@ -14,13 +14,13 @@
 # 	function fetchr:custom_hud/tick
 # 	function fetchr:custom_hud/find_player
 
-data modify storage tmp.fetchr:custom_hud skipped prepend from storage fetchr:custom_hud currentPlayer
-data modify storage fetchr:custom_hud currentPlayer set from storage fetchr:custom_hud players[-1]
+data modify storage tmp.fetchr:custom_hud skipped prepend from storage fetchr:custom_hud current_player
+data modify storage fetchr:custom_hud current_player set from storage fetchr:custom_hud players[-1]
 data remove storage fetchr:custom_hud players[-1]
 
 #>
 # @private
 #declare score_holder $custom_hud/player.id
-execute store result score $custom_hud/player.id fetchr.tmp run data get storage fetchr:custom_hud currentPlayer.id
+execute store result score $custom_hud/player.id fetchr.tmp run data get storage fetchr:custom_hud current_player.id
 
 execute unless score $custom_hud/player.id fetchr.tmp = @s fetchr.player_id run function fetchr:custom_hud/find_player

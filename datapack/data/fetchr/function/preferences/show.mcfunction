@@ -8,7 +8,7 @@
 # @reads storage fetchr:registries preferences.custom_hud.main
 
 #>
-# This storage contains the menuOptions nbt, which can be modified in functions
+# This storage contains the menu_options nbt, which can be modified in functions
 # referenced in #fetchr:preferences/* function tags to set disabled and hidden
 # attributes on specific entries.
 #
@@ -38,7 +38,7 @@ tag @s remove fetchr.pref.added
 execute \
 	if score @s fetchr.pref matches 1..2 \
 	run data \
-		modify storage io.fetchr:preferences menuOptions \
+		modify storage io.fetchr:preferences menu_options \
 		set from storage fetchr:registries preferences.main
 execute \
 	if score @s fetchr.pref matches 1..2 \

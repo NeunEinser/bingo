@@ -187,7 +187,7 @@ execute \
 
 #NEUN_SCRIPT until 69
 #data \
-	modify storage io.fetchr:custom_hud component.textComponent set value '[\
+	modify storage io.fetchr:custom_hud component.text_component set value '[\
 	{ "storage": "tmp.fetchr:custom_hud", "nbt": "xComp", "interpret": true },\
 	" ",\
 	{ "storage": "tmp.fetchr:custom_hud", "nbt": "zComp", "interpret": true }\
@@ -211,7 +211,7 @@ execute \
 #NEUN_SCRIPT end
 #NEUN_SCRIPT since 69
 data \
-	modify storage io.fetchr:custom_hud component.textComponent set value [\
+	modify storage io.fetchr:custom_hud component.text_component set value [\
 	{ storage: "tmp.fetchr:custom_hud", nbt: "xComp", interpret: true },\
 	" ",\
 	{ storage: "tmp.fetchr:custom_hud", nbt: "zComp", interpret: true }\

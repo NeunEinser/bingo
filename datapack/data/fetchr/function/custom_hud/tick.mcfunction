@@ -14,7 +14,7 @@
 
 function fetchr:util/find_player_team
 
-data remove storage fetchr:custom_hud currentPlayer
+data remove storage fetchr:custom_hud current_player
 data modify storage tmp.fetchr:custom_hud skipped set value []
 function fetchr:custom_hud/find_player
 data modify storage fetchr:custom_hud players append from storage tmp.fetchr:custom_hud skipped[]
@@ -28,14 +28,14 @@ execute \
 scoreboard players add @s fetchr.last_hud_update 1
 
 execute \
-	if data storage fetchr:custom_hud currentPlayer.components[{ changed: true }] \
+	if data storage fetchr:custom_hud current_player.components[{ changed: true }] \
 	run function fetchr:custom_hud/update_actionbar
 execute \
 	if score @s fetchr.last_hud_update matches 40.. \
 	run function fetchr:custom_hud/update_actionbar
 
-data modify storage fetchr:custom_hud currentPlayer.components[].changed set value false
+data modify storage fetchr:custom_hud current_player.components[].changed set value false
 data \
 	modify storage tmp.fetchr:custom_hud handled \
-	prepend from storage fetchr:custom_hud currentPlayer
+	prepend from storage fetchr:custom_hud current_player
 scoreboard players reset @s fetchr.update_hud

@@ -29,19 +29,19 @@ execute \
 
 execute \
 	if score $custom_hud/player_pos.xz_changed fetchr.tmp matches 1 \
-	if data storage fetchr:custom_hud currentPlayer.components[{ id: "fetchr:player_position" }] \
+	if data storage fetchr:custom_hud current_player.components[{ id: "fetchr:player_position" }] \
 	run function fetchr:custom_hud/components/player_position/update_xz
 execute \
 	unless score $custom_hud/player_pos.xz_changed fetchr.tmp matches 1 \
 	unless score $tick/player.rot fetchr.tmp = @s fetchr.prev_rot \
-	if data storage fetchr:custom_hud currentPlayer.components[{ id: "fetchr:player_position" }] \
+	if data storage fetchr:custom_hud current_player.components[{ id: "fetchr:player_position" }] \
 	run function fetchr:custom_hud/components/player_position/update_xz
 execute \
 	if score $custom_hud/player_pos.xz_changed fetchr.tmp matches 1 \
-	if data storage fetchr:custom_hud currentPlayer.components[{ id: "fetchr:player_chunk_position" }] \
+	if data storage fetchr:custom_hud current_player.components[{ id: "fetchr:player_chunk_position" }] \
 	run function fetchr:custom_hud/components/player_position/update_chunk_xz
 
 execute \
 	unless score $tick/player.y fetchr.tmp = @s fetchr.prev_y_pos \
-	if data storage fetchr:custom_hud currentPlayer.components[{ id: "fetchr:y_position" }] \
+	if data storage fetchr:custom_hud current_player.components[{ id: "fetchr:y_position" }] \
 	run function fetchr:custom_hud/components/player_position/update_y

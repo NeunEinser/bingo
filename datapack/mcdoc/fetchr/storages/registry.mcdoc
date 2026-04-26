@@ -41,14 +41,14 @@ struct HudComponentRegistryData {
 	
 	/// In the hud menu, this can be used for custom settings. This is expected
 	/// to have an empty text and a click event.
-	settingsClickEvent?: (
+	settings_click_event?: (
 		#[until="1.21.5"] #[text_component] string
 		| #[since="1.21.5"] Text
 	),
 
 	/// Text to display between the icon and the value. Can be used to define
-	/// `iconSeparatorAlignLeft` and `iconSeparatorAlignRight`at the same time.
-	iconSeparator?: (
+	/// `icon_separator_align_left` and `icon_separator_align_right`at the same time.
+	icon_separator?: (
 		#[until="1.21.5"] #[text_component] string
 		| #[since="1.21.5"] Text
 	),
@@ -57,14 +57,14 @@ struct HudComponentRegistryData {
 struct PreferencesRegistryData {	
 	id: #[id] string,
 
-	textComponent: (
+	title: (
 		#[until="1.21.5"] #[text_component] string
 		| #[since="1.21.5"] Text
 	),
 
 	/// This can be used to show a custom hover event in the preferences menu.
 	/// This is expected to have an empty text and a hover event.
-	hoverText?: (
+	hover?: (
 		#[until="1.21.5"] #[text_component] string
 		| #[since="1.21.5"] Text
 	),
@@ -72,14 +72,14 @@ struct PreferencesRegistryData {
 	/// This can be used to show a custom hover event in the preferences menu,
 	/// when the setting is changed to `disabled: true`.
 	/// This is expected to have an empty text and a hover event.
-	disabledHoverText?: (
+	disabled_hover?: (
 		#[until="1.21.5"] #[text_component] string
 		| #[since="1.21.5"] Text
 	),
 
 	/// The click event to run when clicking this preferences entry.
 	/// This is expected to have an empty text and a click event.
-	clickEvent: (
+	click_event: (
 		#[until="1.21.5"] #[text_component] string
 		| #[since="1.21.5"] Text
 	),

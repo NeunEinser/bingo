@@ -11,16 +11,16 @@ data modify storage tmp.fetchr:init/hud cur set from storage fetchr:registries h
 data remove storage fetchr:registries hud_components[0]
 
 execute \
-	unless data storage tmp.fetchr:init/hud cur.iconSeparatorAlignLeft \
+	unless data storage tmp.fetchr:init/hud cur.icon_separator_align_left \
 	run data \
-		modify storage tmp.fetchr:init/hud cur.iconSeparatorAlignLeft \
-		set from storage tmp.fetchr:init/hud cur.iconSeparator
+		modify storage tmp.fetchr:init/hud cur.icon_separator_align_left \
+		set from storage tmp.fetchr:init/hud cur.icon_separator
 execute \
-	unless data storage tmp.fetchr:init/hud cur.iconSeparatorAlignRight \
+	unless data storage tmp.fetchr:init/hud cur.icon_separator_align_right \
 	run data \
-		modify storage tmp.fetchr:init/hud cur.iconSeparatorAlignRight \
-		set from storage tmp.fetchr:init/hud cur.iconSeparator
-data remove storage tmp.fetchr:init/hud cur.iconSeparator
+		modify storage tmp.fetchr:init/hud cur.icon_separator_align_right \
+		set from storage tmp.fetchr:init/hud cur.icon_separator
+data remove storage tmp.fetchr:init/hud cur.icon_separator
 
 #NEUN_SCRIPT until 69
 #setblock 0 15 0 minecraft:oak_sign{ front_text: { messages: [\
@@ -28,7 +28,7 @@ data remove storage tmp.fetchr:init/hud cur.iconSeparator
 		"[",\
 			{\
 				"storage": "tmp.fetchr:init/hud",\
-				"nbt": "cur.settingsClickEvent",\
+				"nbt": "cur.settings_click_event",\
 				"interpret": true,\
 				"color": "#00c3ff",\
 				"bold": true,\
@@ -51,7 +51,7 @@ setblock 0 15 0 minecraft:oak_sign{ front_text: { messages: [\
 		"[",\
 			{\
 				storage: "tmp.fetchr:init/hud",\
-				nbt: "cur.settingsClickEvent",\
+				nbt: "cur.settings_click_event",\
 				interpret: true,\
 				color: "#00c3ff",\
 				bold: true,\
@@ -69,41 +69,41 @@ setblock 0 15 0 minecraft:oak_sign{ front_text: { messages: [\
 ]}}
 #NEUN_SCRIPT end
 execute \
-	if data storage tmp.fetchr:init/hud cur.settingsClickEvent \
+	if data storage tmp.fetchr:init/hud cur.settings_click_event \
 	run data \
-		modify storage tmp.fetchr:init/hud cur.settingsTextComponent \
+		modify storage tmp.fetchr:init/hud cur.settings \
 		set from block 0 15 0 front_text.messages[0]
 setblock 0 15 0 minecraft:air
-data remove storage tmp.fetchr:init/hud cur.settingsClickEvent
+data remove storage tmp.fetchr:init/hud cur.settings_click_event
 
 execute \
-	if data storage tmp.fetchr:init/hud cur{ addByDefault: true, preferredColumn: 0 } \
+	if data storage tmp.fetchr:init/hud cur{ default: true, preferred_column: 0 } \
 	if data storage tmp.fetchr:init/hud columns[0][4] \
 	run data modify storage tmp.fetchr:init/hud unpreferred append from storage tmp.fetchr:init/hud cur
 execute \
-	if data storage tmp.fetchr:init/hud cur{ addByDefault: true, preferredColumn: 0 } \
+	if data storage tmp.fetchr:init/hud cur{ default: true, preferred_column: 0 } \
 	unless data storage tmp.fetchr:init/hud columns[0][4] \
 	run function fetchr:init/initialize_hud_components/add_to_0
 
 execute \
-	if data storage tmp.fetchr:init/hud cur{ addByDefault: true, preferredColumn: 1 } \
+	if data storage tmp.fetchr:init/hud cur{ default: true, preferred_column: 1 } \
 	if data storage tmp.fetchr:init/hud columns[1][5] \
 	run data modify storage tmp.fetchr:init/hud unpreferred append from storage tmp.fetchr:init/hud cur
 execute \
-	if data storage tmp.fetchr:init/hud cur{ addByDefault: true, preferredColumn: 1 } \
+	if data storage tmp.fetchr:init/hud cur{ default: true, preferred_column: 1 } \
 	unless data storage tmp.fetchr:init/hud columns[1][5] \
 	run function fetchr:init/initialize_hud_components/add_to_1
 
 execute \
-	if data storage tmp.fetchr:init/hud cur{ addByDefault: true } \
-	unless data storage tmp.fetchr:init/hud cur.preferredColumn \
+	if data storage tmp.fetchr:init/hud cur{ default: true } \
+	unless data storage tmp.fetchr:init/hud cur.preferred_column \
 	run data \
-		modify storage tmp.fetchr:init/hud whereSpace \
+		modify storage tmp.fetchr:init/hud where_space \
 		append from storage tmp.fetchr:init/hud cur
 execute \
-	unless data storage tmp.fetchr:init/hud cur{ addByDefault: true } \
+	unless data storage tmp.fetchr:init/hud cur{ default: true } \
 	run data \
-		modify storage tmp.fetchr:init/hud dontAdd \
+		modify storage tmp.fetchr:init/hud not_in_default_selection \
 		append from storage tmp.fetchr:init/hud cur
 
 execute \

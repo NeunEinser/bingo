@@ -1623,17 +1623,17 @@ forceload add 0 0
 	data modify storage fetchr:custom_hud components set value []
 
 	data modify storage tmp.fetchr:init/hud columns set value [[], []]
-	data modify storage tmp.fetchr:init/hud whereSpace set value []
+	data modify storage tmp.fetchr:init/hud where_space set value []
 	data modify storage tmp.fetchr:init/hud unpreferred set value []
-	data modify storage tmp.fetchr:init/hud dontAdd set value []
+	data modify storage tmp.fetchr:init/hud not_in_default_selection set value []
 	function fetchr:init/initialize_hud_components/add_defaults
-	data modify storage tmp.fetchr:init/hud whereSpace append from storage tmp.fetchr:init/hud unpreferred[]
+	data modify storage tmp.fetchr:init/hud where_space append from storage tmp.fetchr:init/hud unpreferred[]
 
 	data modify storage fetchr:custom_hud components set value []
 	data modify storage fetchr:custom_hud components append from storage tmp.fetchr:init/hud columns[0][]
 	data modify storage fetchr:custom_hud components append from storage tmp.fetchr:init/hud columns[1][]
-	data modify storage fetchr:custom_hud components append from storage tmp.fetchr:init/hud whereSpace[]
-	data modify storage fetchr:custom_hud components append from storage tmp.fetchr:init/hud dontAdd[]
+	data modify storage fetchr:custom_hud components append from storage tmp.fetchr:init/hud where_space[]
+	data modify storage fetchr:custom_hud components append from storage tmp.fetchr:init/hud not_in_default_selection[]
 
 	data modify storage fetchr:custom_hud default set value []
 	data modify storage fetchr:custom_hud default append from storage tmp.fetchr:init/hud columns[0][0]
@@ -1675,8 +1675,8 @@ forceload add 0 0
 		unless data storage fetchr:custom_hud default[10] \
 		run function fetchr:init/initialize_hud_components/fill_default_col1
 	
-	data remove storage fetchr:custom_hud default[].addByDefault
-	data remove storage fetchr:custom_hud default[].preferredColumn
+	data remove storage fetchr:custom_hud default[].default
+	data remove storage fetchr:custom_hud default[].preferred_column
 #endregion
 
 # spawn strcutures

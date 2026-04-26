@@ -9,21 +9,21 @@
 # @reads
 # 	storage fetchr:custom_hud players
 # 	storage fetchr:registries preferences.custom_hud
-# @writes torage fetchr:custom_hud currentPlayer
+# @writes torage fetchr:custom_hud current_player
 
 #>
 # @within function fetchr:preferences/custom_hud/**
 #declare storage tmp.fetchr:preferences/hud
 
-data modify storage tmp.fetchr:preferences/hud skippedHuds set value []
+data modify storage tmp.fetchr:preferences/hud skipped_huds set value []
 function fetchr:preferences/custom_hud/find_player
-data modify storage fetchr:custom_hud currentPlayer set from storage tmp.fetchr:preferences/hud skippedHuds[0]
-data remove storage tmp.fetchr:preferences/hud skippedHuds[0]
+data modify storage fetchr:custom_hud current_player set from storage tmp.fetchr:preferences/hud skipped_huds[0]
+data remove storage tmp.fetchr:preferences/hud skipped_huds[0]
 
 execute \
 	if score @s fetchr.pref matches 5 \
 	run data \
-		modify storage io.fetchr:preferences menuOptions \
+		modify storage io.fetchr:preferences menu_options \
 		set from storage fetchr:registries preferences.custom_hud
 execute \
 	if score @s fetchr.pref matches 5 \
@@ -96,7 +96,7 @@ execute \
 execute \
 	if score @s fetchr.pref matches 11 \
 	run data \
-		modify storage io.fetchr:preferences menuOptions \
+		modify storage io.fetchr:preferences menu_options \
 		set from storage fetchr:registries preferences.adjust_card
 execute \
 	if score @s fetchr.pref matches 11 \
@@ -110,8 +110,8 @@ execute \
 		"\n"\
 	]
 
-data modify storage fetchr:custom_hud players append from storage fetchr:custom_hud currentPlayer
-data modify storage fetchr:custom_hud players append from storage tmp.fetchr:preferences/hud skippedHuds[]
+data modify storage fetchr:custom_hud players append from storage fetchr:custom_hud current_player
+data modify storage fetchr:custom_hud players append from storage tmp.fetchr:preferences/hud skipped_huds[]
 
 execute \
 	if score @s fetchr.pref matches 67 \

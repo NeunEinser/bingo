@@ -4,19 +4,19 @@
 
 data \
 	modify storage io.fetchr:custom_hud component \
-	set from storage fetchr:custom_hud currentPlayer.components[{ id: "fetchr:seed" }]
+	set from storage fetchr:custom_hud current_player.components[{ id: "fetchr:seed" }]
 data remove storage io.fetchr:custom_hud component.evaluated
 #NEUN_SCRIPT until 69
 #data \
 	modify storage io.fetchr:custom_hud component merge value {\
-	textComponent: '{ "score": { "objective": "fetchr.state", "name": "$seed" }}',\
+	text_component: '{ "score": { "objective": "fetchr.state", "name": "$seed" }}',\
 	changed: true\
 }
 #NEUN_SCRIPT end
 #NEUN_SCRIPT since 69
 data \
 	modify storage io.fetchr:custom_hud component merge value {\
-	textComponent: { score: { objective: "fetchr.state", name: "$seed" }},\
+	text_component: { score: { objective: "fetchr.state", name: "$seed" }},\
 	changed: true\
 }
 #NEUN_SCRIPT end
@@ -36,28 +36,28 @@ execute \
 execute \
 	if score $seed fetchr.state matches -2147483648.. \
 	if score $show_seed fetchr.setting_values matches 1 \
-	unless data storage fetchr:custom_hud currentPlayer.\
+	unless data storage fetchr:custom_hud current_player.\
 	components[{ id: "fetchr:seed" }]\
 	.custom\
-	.fetchr{ onlyShowAfterRun: true } \
+	.fetchr{ only_show_after_run: true } \
 	run function fetchr:custom_hud/component_eval
 execute \
 	if score $seed fetchr.state matches -2147483648.. \
 	if score $show_seed fetchr.setting_values matches 1 \
-	if data storage fetchr:custom_hud currentPlayer.\
+	if data storage fetchr:custom_hud current_player.\
 	components[{ id: "fetchr:seed" }]\
 	.custom\
-	.fetchr{ onlyShowAfterRun: true } \
+	.fetchr{ only_show_after_run: true } \
 	if score $game_state fetchr.state matches 4 \
 	if entity @s[predicate=fetchr:is_in_lobby] \
 	run function fetchr:custom_hud/component_eval
 execute \
 	if score $seed fetchr.state matches -2147483648.. \
 	if score $show_seed fetchr.setting_values matches 1 \
-	if data storage fetchr:custom_hud currentPlayer\
+	if data storage fetchr:custom_hud current_player\
 		.components[{ id: "fetchr:seed" }]\
 		.custom\
-		.fetchr{ onlyShowAfterRun: true } \
+		.fetchr{ only_show_after_run: true } \
 	if score $game_state fetchr.state matches 4 \
 	if entity @s[predicate=fetchr:is_in_game] \
 	if score $custom_hud/seed.items fetchr.tmp matches 25 \
@@ -74,4 +74,4 @@ execute \
 	unless score $custom_hud/seed.items fetchr.tmp matches 25 \
 	unless entity @a[predicate=fetchr:is_in_game] \
 	run function fetchr:custom_hud/component_eval
-data modify storage fetchr:custom_hud currentPlayer.components[{ id: "fetchr:seed" }] set from storage io.fetchr:custom_hud component
+data modify storage fetchr:custom_hud current_player.components[{ id: "fetchr:seed" }] set from storage io.fetchr:custom_hud component

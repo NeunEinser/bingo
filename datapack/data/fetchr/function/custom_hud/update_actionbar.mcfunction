@@ -9,13 +9,13 @@
 # @within function fetchr:custom_hud/tick
 # @context entity The current player
 #
-# @reads storage fetchr:custom_hud currentPlayer.components
+# @reads storage fetchr:custom_hud current_player.components
 
 scoreboard players set @s fetchr.last_hud_update 0
 data modify storage tmp.fetchr:custom_hud texts set value []
 data \
 	modify storage tmp.fetchr:custom_hud texts \
-	append from storage fetchr:custom_hud currentPlayer.components[].evaluated
+	append from storage fetchr:custom_hud current_player.components[].evaluated
 
 # quoted keys to avoid overlay
 title @s actionbar {\

@@ -10,12 +10,12 @@ scoreboard players operation $custom_hud/player_pos.z fetchr.tmp %= 16 fetchr.co
 
 data \
 	modify storage io.fetchr:custom_hud component \
-	set from storage fetchr:custom_hud currentPlayer.components[{ id: "fetchr:player_chunk_position" }]
+	set from storage fetchr:custom_hud current_player.components[{ id: "fetchr:player_chunk_position" }]
 #NEUN_SCRIPT until 69
 #data \
 	modify storage io.fetchr:custom_hud component \
 	merge value { \
-		textComponent: '[\
+		text_component: '[\
 			{ "score": { "name": "$custom_hud/player_pos.x", "objective": "fetchr.tmp" }},\
 			" ",\
 			{ "score": { "name": "$custom_hud/player_pos.z", "objective": "fetchr.tmp" }}\
@@ -27,7 +27,7 @@ data \
 data \
 	modify storage io.fetchr:custom_hud component \
 	merge value { \
-		textComponent: \
+		text_component: \
 		[\
 			{ score: { name: "$custom_hud/player_pos.x", objective: "fetchr.tmp" }},\
 			" ",\
@@ -47,5 +47,5 @@ execute \
 
 function fetchr:custom_hud/component_eval
 data \
-	modify storage fetchr:custom_hud currentPlayer.components[{ id: "fetchr:player_chunk_position" }] \
+	modify storage fetchr:custom_hud current_player.components[{ id: "fetchr:player_chunk_position" }] \
 	merge from storage io.fetchr:custom_hud component

@@ -12,19 +12,19 @@
 		set value '[\
 			{ "storage": "io.fetchr:custom_hud", "nbt": "component.padding", "interpret": true },\
 			[\
-				{ "storage": "io.fetchr:custom_hud", "nbt": "component.iconFont[8]", "interpret": true },\
+				{ "storage": "io.fetchr:custom_hud", "nbt": "component.icon_font[8]", "interpret": true },\
 				{ "storage": "io.fetchr:custom_hud", "nbt": "component.icon", "shadow_color": 0, "interpret": true }\
 			],\
 			[\
 				{\
 					"storage": "io.fetchr:custom_hud",\
-					"nbt": "component.iconSeparatorAlignRight",\
+					"nbt": "component.icon_separator_align_right",\
 					"interpret": true,\
 					"font": "fetchr:line8"\
 				},\
 				{\
 					"storage": "io.fetchr:custom_hud",\
-					"nbt": "component.textComponent",\
+					"nbt": "component.text_component",\
 					"interpret": true\
 				}\
 			],\
@@ -37,19 +37,19 @@
 		set value '[\
 			{ "storage": "io.fetchr:custom_hud", "nbt": "component.padding", "interpret": true },\
 			[\
-				{ "storage": "io.fetchr:custom_hud", "nbt": "component.iconFont[9]", "interpret": true },\
+				{ "storage": "io.fetchr:custom_hud", "nbt": "component.icon_font[9]", "interpret": true },\
 				{ "storage": "io.fetchr:custom_hud", "nbt": "component.icon", "shadow_color": 0, "interpret": true }\
 			],\
 			[\
 				{\
 					"storage": "io.fetchr:custom_hud",\
-					"nbt": "component.iconSeparatorAlignRight",\
+					"nbt": "component.icon_separator_align_right",\
 					"interpret": true,\
 					"font": "fetchr:line9"\
 				},\
 				{\
 					"storage": "io.fetchr:custom_hud",\
-					"nbt": "component.textComponent",\
+					"nbt": "component.text_component",\
 					"interpret": true\
 				}\
 			],\
@@ -62,19 +62,19 @@
 		set value '[\
 			{ "storage": "io.fetchr:custom_hud", "nbt": "component.padding", "interpret": true },\
 			[\
-				{ "storage": "io.fetchr:custom_hud", "nbt": "component.iconFont[10]", "interpret": true },\
+				{ "storage": "io.fetchr:custom_hud", "nbt": "component.icon_font[10]", "interpret": true },\
 				{ "storage": "io.fetchr:custom_hud", "nbt": "component.icon", "shadow_color": 0, "interpret": true }\
 			],\
 			[\
 				{\
 					"storage": "io.fetchr:custom_hud",\
-					"nbt": "component.iconSeparatorAlignRight",\
+					"nbt": "component.icon_separator_align_right",\
 					"interpret": true,\
 					"font": "fetchr:line10"\
 				},\
 				{\
 					"storage": "io.fetchr:custom_hud",\
-					"nbt": "component.textComponent",\
+					"nbt": "component.text_component",\
 					"interpret": true\
 				}\
 			],\
@@ -89,19 +89,19 @@ execute \
 		set value [\
 			{ storage: "io.fetchr:custom_hud", nbt: "component.padding", interpret: true },\
 			[\
-				{ storage: "io.fetchr:custom_hud", nbt: "component.iconFont[8]", interpret: true },\
+				{ storage: "io.fetchr:custom_hud", nbt: "component.icon_font[8]", interpret: true },\
 				{ storage: "io.fetchr:custom_hud", nbt: "component.icon", shadow_color: 0, interpret: true }\
 			],\
 			[\
 				{\
 					storage: "io.fetchr:custom_hud",\
-					nbt: "component.iconSeparatorAlignRight",\
+					nbt: "component.icon_separator_align_right",\
 					interpret: true,\
 					font: "fetchr:line8"\
 				},\
 				{\
 					storage: "io.fetchr:custom_hud",\
-					nbt: "component.textComponent",\
+					nbt: "component.text_component",\
 					interpret: true\
 				}\
 			],\
@@ -114,19 +114,19 @@ execute \
 		set value [\
 			{ storage: "io.fetchr:custom_hud", nbt: "component.padding", interpret: true },\
 			[\
-				{ storage: "io.fetchr:custom_hud", nbt: "component.iconFont[9]", interpret: true },\
+				{ storage: "io.fetchr:custom_hud", nbt: "component.icon_font[9]", interpret: true },\
 				{ storage: "io.fetchr:custom_hud", nbt: "component.icon", shadow_color: 0, interpret: true }\
 			],\
 			[\
 				{\
 					storage: "io.fetchr:custom_hud",\
-					nbt: "component.iconSeparatorAlignRight",\
+					nbt: "component.icon_separator_align_right",\
 					interpret: true,\
 					font: "fetchr:line9"\
 				},\
 				{\
 					storage: "io.fetchr:custom_hud",\
-					nbt: "component.textComponent",\
+					nbt: "component.text_component",\
 					interpret: true\
 				}\
 			],\
@@ -139,19 +139,19 @@ execute \
 		set value [\
 			{ storage: "io.fetchr:custom_hud", nbt: "component.padding", interpret: true },\
 			[\
-				{ storage: "io.fetchr:custom_hud", nbt: "component.iconFont[10]", interpret: true },\
+				{ storage: "io.fetchr:custom_hud", nbt: "component.icon_font[10]", interpret: true },\
 				{ storage: "io.fetchr:custom_hud", nbt: "component.icon", shadow_color: 0, interpret: true }\
 			],\
 			[\
 				{\
 					storage: "io.fetchr:custom_hud",\
-					nbt: "component.iconSeparatorAlignRight",\
+					nbt: "component.icon_separator_align_right",\
 					interpret: true,\
 					font: "fetchr:line10"\
 				},\
 				{\
 					storage: "io.fetchr:custom_hud",\
-					nbt: "component.textComponent",\
+					nbt: "component.text_component",\
 					interpret: true\
 				}\
 			],\

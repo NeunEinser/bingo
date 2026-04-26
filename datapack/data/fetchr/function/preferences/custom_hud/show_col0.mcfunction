@@ -6,7 +6,7 @@
 # 	function fetchr:preferences/custom_hud/show
 # 	function fetchr:preferences/custom_hud/adjust_col/col0
 # @context entity Player who triggered fetchr.pref
-# @reads storage fetchr:custom_hud currentPlayer.components
+# @reads storage fetchr:custom_hud current_player.components
 
 tellraw @s [\
 	"\n\n\n\n\n=== ",\
@@ -30,11 +30,11 @@ data modify storage tmp.fetchr:preferences/hud move set value ""
 # Move right indicator
 # Work around for """WAI""" https://bugs.mojang.com/browse/MC-139625 :mad_neun:
 data \
-	modify storage tmp.fetchr:preferences/hud hudComponent \
-	set from storage fetchr:custom_hud currentPlayer.components[10]
+	modify storage tmp.fetchr:preferences/hud component \
+	set from storage fetchr:custom_hud current_player.components[10]
 #NEUN_SCRIPT until 69
 #execute \
-	if data storage tmp.fetchr:preferences/hud hudComponent{ id: "fetchr:empty" } \
+	if data storage tmp.fetchr:preferences/hud component{ id: "fetchr:empty" } \
 	run data modify storage tmp.fetchr:preferences/hud move set value '[\
 		" [",\
 		{\
@@ -50,7 +50,7 @@ data \
 #NEUN_SCRIPT end
 #NEUN_SCRIPT since 69
 execute \
-	if data storage tmp.fetchr:preferences/hud hudComponent{ id: "fetchr:empty" } \
+	if data storage tmp.fetchr:preferences/hud component{ id: "fetchr:empty" } \
 	run data modify storage tmp.fetchr:preferences/hud move set value [\
 		" [",\
 		{\
@@ -66,28 +66,28 @@ execute \
 #NEUN_SCRIPT end
 
 #region Work around for """WAI""" https://bugs.mojang.com/browse/MC-139625 :mad_neun:
-data modify storage tmp.fetchr:preferences/hud filledComponets set value []
+data modify storage tmp.fetchr:preferences/hud filled_components set value []
 data \
-	modify storage tmp.fetchr:preferences/hud filledComponets \
-	append from storage fetchr:custom_hud currentPlayer.components[0]
+	modify storage tmp.fetchr:preferences/hud filled_components \
+	append from storage fetchr:custom_hud current_player.components[0]
 data \
-	modify storage tmp.fetchr:preferences/hud filledComponets \
-	append from storage fetchr:custom_hud currentPlayer.components[1]
+	modify storage tmp.fetchr:preferences/hud filled_components \
+	append from storage fetchr:custom_hud current_player.components[1]
 data \
-	modify storage tmp.fetchr:preferences/hud filledComponets \
-	append from storage fetchr:custom_hud currentPlayer.components[2]
+	modify storage tmp.fetchr:preferences/hud filled_components \
+	append from storage fetchr:custom_hud current_player.components[2]
 data \
-	modify storage tmp.fetchr:preferences/hud filledComponets \
-	append from storage fetchr:custom_hud currentPlayer.components[3]
+	modify storage tmp.fetchr:preferences/hud filled_components \
+	append from storage fetchr:custom_hud current_player.components[3]
 data \
-	modify storage tmp.fetchr:preferences/hud filledComponets \
-	append from storage fetchr:custom_hud currentPlayer.components[4]
+	modify storage tmp.fetchr:preferences/hud filled_components \
+	append from storage fetchr:custom_hud current_player.components[4]
 
-data remove storage tmp.fetchr:preferences/hud filledComponets[{ id: "fetchr:empty" }]
+data remove storage tmp.fetchr:preferences/hud filled_components[{ id: "fetchr:empty" }]
 #endregion
 
 execute \
-	if data storage tmp.fetchr:preferences/hud filledComponets[4] \
+	if data storage tmp.fetchr:preferences/hud filled_components[4] \
 	run tellraw @s [\
 		"[",\
 		{ "translate": "fetchr.preferences.custom_hud.adjust_col.move_up.title", "color": "gray" },\
@@ -130,13 +130,13 @@ execute \
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 34" }\
 		},\
 		"] ",\
-		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "filledComponets[4].settingsTextComponent", "interpret": true },\
-		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "filledComponets[4].name", "interpret": true }\
+		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "filled_components[4].settings", "interpret": true },\
+		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "filled_components[4].name", "interpret": true }\
 	]
 
 execute \
-	unless data storage tmp.fetchr:preferences/hud filledComponets[4] \
-	if data storage tmp.fetchr:preferences/hud filledComponets[3] \
+	unless data storage tmp.fetchr:preferences/hud filled_components[4] \
+	if data storage tmp.fetchr:preferences/hud filled_components[3] \
 	run tellraw @s [\
 		"[",\
 		{ "translate": "fetchr.preferences.custom_hud.adjust_col.move_up.title", "color": "gray" },\
@@ -179,12 +179,12 @@ execute \
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 37" }\
 		},\
 		"] ",\
-		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "filledComponets[3].settingsTextComponent", "interpret": true },\
-		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "filledComponets[3].name", "interpret": true }\
+		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "filled_components[3].settings", "interpret": true },\
+		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "filled_components[3].name", "interpret": true }\
 	]
 execute \
-	if data storage tmp.fetchr:preferences/hud filledComponets[4] \
-	if data storage tmp.fetchr:preferences/hud filledComponets[3] \
+	if data storage tmp.fetchr:preferences/hud filled_components[4] \
+	if data storage tmp.fetchr:preferences/hud filled_components[3] \
 	run tellraw @s [\
 		"[",\
 		{\
@@ -240,13 +240,13 @@ execute \
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 37" }\
 		},\
 		"] ",\
-		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "filledComponets[3].settingsTextComponent", "interpret": true },\
-		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "filledComponets[3].name", "interpret": true }\
+		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "filled_components[3].settings", "interpret": true },\
+		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "filled_components[3].name", "interpret": true }\
 	]
 
 execute \
-	unless data storage tmp.fetchr:preferences/hud filledComponets[3] \
-	if data storage tmp.fetchr:preferences/hud filledComponets[2] \
+	unless data storage tmp.fetchr:preferences/hud filled_components[3] \
+	if data storage tmp.fetchr:preferences/hud filled_components[2] \
 	run tellraw @s [\
 		"[",\
 		{ "translate": "fetchr.preferences.custom_hud.adjust_col.move_up.title", "color": "gray" },\
@@ -289,12 +289,12 @@ execute \
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 40" }\
 		},\
 		"] ",\
-		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "filledComponets[2].settingsTextComponent", "interpret": true },\
-		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "filledComponets[2].name", "interpret": true }\
+		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "filled_components[2].settings", "interpret": true },\
+		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "filled_components[2].name", "interpret": true }\
 	]
 execute \
-	if data storage tmp.fetchr:preferences/hud filledComponets[3] \
-	if data storage tmp.fetchr:preferences/hud filledComponets[2] \
+	if data storage tmp.fetchr:preferences/hud filled_components[3] \
+	if data storage tmp.fetchr:preferences/hud filled_components[2] \
 	run tellraw @s [\
 		"[",\
 		{\
@@ -350,13 +350,13 @@ execute \
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 40" }\
 		},\
 		"] ",\
-		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "filledComponets[2].settingsTextComponent", "interpret": true },\
-		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "filledComponets[2].name", "interpret": true }\
+		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "filled_components[2].settings", "interpret": true },\
+		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "filled_components[2].name", "interpret": true }\
 	]
 
 execute \
-	unless data storage tmp.fetchr:preferences/hud filledComponets[2] \
-	if data storage tmp.fetchr:preferences/hud filledComponets[1] \
+	unless data storage tmp.fetchr:preferences/hud filled_components[2] \
+	if data storage tmp.fetchr:preferences/hud filled_components[1] \
 	run tellraw @s [\
 		"[",\
 		{ "translate": "fetchr.preferences.custom_hud.adjust_col.move_up.title", "color": "gray" },\
@@ -399,12 +399,12 @@ execute \
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 43" }\
 		},\
 		"] ",\
-		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "filledComponets[1].settingsTextComponent", "interpret": true },\
-		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "filledComponets[1].name", "interpret": true }\
+		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "filled_components[1].settings", "interpret": true },\
+		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "filled_components[1].name", "interpret": true }\
 	]
 execute \
-	if data storage tmp.fetchr:preferences/hud filledComponets[2] \
-	if data storage tmp.fetchr:preferences/hud filledComponets[1] \
+	if data storage tmp.fetchr:preferences/hud filled_components[2] \
+	if data storage tmp.fetchr:preferences/hud filled_components[1] \
 	run tellraw @s [\
 		"[",\
 		{\
@@ -460,13 +460,13 @@ execute \
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 43" }\
 		},\
 		"] ",\
-		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "filledComponets[1].settingsTextComponent", "interpret": true },\
-		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "filledComponets[1].name", "interpret": true }\
+		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "filled_components[1].settings", "interpret": true },\
+		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "filled_components[1].name", "interpret": true }\
 	]
 
 execute \
-	unless data storage tmp.fetchr:preferences/hud filledComponets[1] \
-	if data storage tmp.fetchr:preferences/hud filledComponets[0] \
+	unless data storage tmp.fetchr:preferences/hud filled_components[1] \
+	if data storage tmp.fetchr:preferences/hud filled_components[0] \
 	run tellraw @s [ \
 		"[",\
 		{ "translate": "fetchr.preferences.custom_hud.adjust_col.move_up.title", "color": "gray" },\
@@ -496,12 +496,12 @@ execute \
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 45" }\
 		},\
 		"] ",\
-		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "filledComponets[0].settingsTextComponent", "interpret": true },\
-		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "filledComponets[0].name", "interpret": true }\
+		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "filled_components[0].settings", "interpret": true },\
+		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "filled_components[0].name", "interpret": true }\
 	]
 execute \
-	if data storage tmp.fetchr:preferences/hud filledComponets[1] \
-	if data storage tmp.fetchr:preferences/hud filledComponets[0] \
+	if data storage tmp.fetchr:preferences/hud filled_components[1] \
+	if data storage tmp.fetchr:preferences/hud filled_components[0] \
 	run tellraw @s [\
 		"[",\
 		{\
@@ -544,12 +544,12 @@ execute \
 			"click_event": { "action": "run_command", "command": "trigger fetchr.pref set 45" }\
 		},\
 		"] ",\
-		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "filledComponets[0].settingsTextComponent", "interpret": true },\
-		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "filledComponets[0].name", "interpret": true }\
+		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "filled_components[0].settings", "interpret": true },\
+		{ "storage": "tmp.fetchr:preferences/hud", "nbt": "filled_components[0].name", "interpret": true }\
 	]
 
 execute \
-	unless data storage tmp.fetchr:preferences/hud filledComponets[4] \
+	unless data storage tmp.fetchr:preferences/hud filled_components[4] \
 	run tellraw @s [\
 		"\n[",\
 		 {\
@@ -568,7 +568,7 @@ execute \
 		"]"\
 	]
 execute \
-	if data storage tmp.fetchr:preferences/hud filledComponets[4] \
+	if data storage tmp.fetchr:preferences/hud filled_components[4] \
 	run tellraw @s [\
 		"\n[",\
 		{\

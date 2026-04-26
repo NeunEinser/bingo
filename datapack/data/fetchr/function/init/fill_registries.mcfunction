@@ -2651,17 +2651,17 @@ data modify storage fetchr:registries structures append value {\
 	entrance_position: [I; 0, 2, 19]\
 }
 
-# hud components
 #NEUN_SCRIPT until 69
+# hud components
 #data \
 	modify storage fetchr:registries hud_components append value {\
 	id: "fetchr:timer",\
-	addByDefault: true,\
-	preferredColumn: 0,\
+	default: true,\
+	preferred_column: 0,\
 	name: '{ "translate": "fetchr.custom_hud.components.timer" }',\
-	iconWidth: '"\\u0008"',\
-	iconSeparator: '" "',\
-	iconFont: [\
+	icon_width: '"\\u0008"',\
+	icon_separator: '" "',\
+	icon_font: [\
 		'{ "text": "", "font": "fetchr:clock/line0" }',\
 		'{ "text": "", "font": "fetchr:clock/line1" }',\
 		'{ "text": "", "font": "fetchr:clock/line2" }',\
@@ -2678,20 +2678,20 @@ data modify storage fetchr:registries structures append value {\
 #data \
 	modify storage fetchr:registries hud_components append value {\
 	id: "fetchr:y_position",\
-	addByDefault: true,\
-	preferredColumn: 1,\
+	default: true,\
+	preferred_column: 1,\
 	name: '{ "translate": "fetchr.custom_hud.components.y_position" }'\
 }
 #data \
 	modify storage fetchr:registries hud_components append value {\
 	id: "fetchr:player_chunk_position",\
-	addByDefault: true,\
-	preferredColumn: 1,\
+	default: true,\
+	preferred_column: 1,\
 	name: '{ "translate": "fetchr.custom_hud.components.player_chunk_position" }',\
-	settingsClickEvent: '{ "text": "", "clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 70" }}',\
-	iconWidth: '"\\u0008"',\
-	iconSeparator: '" "',\
-	iconFont: [\
+	settings_click_event: '{ "text": "", "clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 70" }}',\
+	icon_width: '"\\u0008"',\
+	icon_separator: '" "',\
+	icon_font: [\
 		'{ "text": "", "font": "fetchr:position/line0" }',\
 		'{ "text": "", "font": "fetchr:position/line1" }',\
 		'{ "text": "", "font": "fetchr:position/line2" }',\
@@ -2709,13 +2709,13 @@ data modify storage fetchr:registries structures append value {\
 #data \
 	modify storage fetchr:registries hud_components append value {\
 	id: "fetchr:player_position",\
-	addByDefault: true,\
-	preferredColumn: 1,\
+	default: true,\
+	preferred_column: 1,\
 	name: '{ "translate": "fetchr.custom_hud.components.player_position" }',\
-	settingsClickEvent: '{ "text": "", "clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 72" }}',\
-	iconWidth: '"\\u000a"',\
-	iconSeparator: '" "',\
-	iconFont: [\
+	settings_click_event: '{ "text": "", "clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 72" }}',\
+	icon_width: '"\\u000a"',\
+	icon_separator: '" "',\
+	icon_font: [\
 		'{ "text": "", "font": "fetchr:position/line0" }',\
 		'{ "text": "", "font": "fetchr:position/line1" }',\
 		'{ "text": "", "font": "fetchr:position/line2" }',\
@@ -2732,14 +2732,14 @@ data modify storage fetchr:registries structures append value {\
 #data \
 	modify storage fetchr:registries hud_components append value {\
 	id: "fetchr:seed",\
-	addByDefault: true,\
-	preferredColumn: 1,\
+	default: true,\
+	preferred_column: 1,\
 	icon: '"s"',\
-	iconWidth: '"\\u0009"',\
-	iconSeparator: '" "',\
+	icon_width: '"\\u0009"',\
+	icon_separator: '" "',\
 	name: '{ "translate": "fetchr.custom_hud.components.seed" }',\
-	settingsClickEvent: '{ "text": "", "clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 74" }}',\
-	iconFont: [\
+	settings_click_event: '{ "text": "", "clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 74" }}',\
+	icon_font: [\
 		'{ "text": "", "font": "fetchr:seed/line0" }',\
 		'{ "text": "", "font": "fetchr:seed/line1" }',\
 		'{ "text": "", "font": "fetchr:seed/line2" }',\
@@ -2758,80 +2758,81 @@ data modify storage fetchr:registries structures append value {\
 #data \
 	modify storage fetchr:registries preferences.main append value {\
 	id: "fetchr:spectator_mode",\
-	textComponent: '[{ "translate": "fetchr.preferences.spectator_mode.title" }, ": ", { "translate": "fetchr.preferences.spectator_mode.enabled" }]',\
-	hoverText: '{ "translate": "fetchr.preferences.spectator_mode.description" }',\
-	clickEvent: '{ "text": "", "clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 2" }}'\
+	title: '[{ "translate": "fetchr.preferences.spectator_mode.title" }, ": ", { "translate": "fetchr.preferences.spectator_mode.enabled" }]',\
+	hover: '{ "translate": "fetchr.preferences.spectator_mode.description" }',\
+	click_event: '{ "text": "", "clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 2" }}'\
 }
 #data \
 	modify storage fetchr:registries preferences.main append value {\
 	id: "fetchr:custom_hud",\
-	textComponent: '{ "translate": "fetchr.preferences.custom_hud.title" }',\
-	hoverText: '{ "translate": "fetchr.preferences.custom_hud.description" }',\
-	clickEvent: '{ "text": "", "clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 5" }}'\
+	title: '{ "translate": "fetchr.preferences.custom_hud.title" }',\
+	hover: '{ "translate": "fetchr.preferences.custom_hud.description" }',\
+	click_event: '{ "text": "", "clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 5" }}'\
 }
 #data \
 	modify storage fetchr:registries preferences.custom_hud append value {\
 	id: "fetchr:custom_hud/add_disabled",\
-	textComponent: '{ "translate": "fetchr.preferences.custom_hud.add_disabled.title" }',\
-	hoverText: '{ "translate": "fetchr.preferences.custom_hud.add_disabled.description" }',\
-	disabledHoverText: '{ "translate": "fetchr.preferences.custom_hud.add_disabled.disabled" }',\
-	clickEvent: '{ "text": "", "clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 6" }}'\
+	title: '{ "translate": "fetchr.preferences.custom_hud.add_disabled.title" }',\
+	hover: '{ "translate": "fetchr.preferences.custom_hud.add_disabled.description" }',\
+	disabled_hover: '{ "translate": "fetchr.preferences.custom_hud.add_disabled.disabled" }',\
+	click_event: '{ "text": "", "clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 6" }}'\
 }
 #data \
 	modify storage fetchr:registries preferences.custom_hud append value {\
 	id: "fetchr:custom_hud/adjust_col0",\
-	textComponent: '{ "translate": "fetchr.preferences.custom_hud.adjust_col0.title" }',\
-	hoverText: '{ "translate": "fetchr.preferences.custom_hud.adjust_col.description" }',\
-	disabledHoverText: '{ "translate": "fetchr.preferences.custom_hud.adjust_col.disabled" }',\
-	clickEvent: '{ "text": "", "clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 9" }}'\
+	title: '{ "translate": "fetchr.preferences.custom_hud.adjust_col0.title" }',\
+	hover: '{ "translate": "fetchr.preferences.custom_hud.adjust_col.description" }',\
+	disabled_hover: '{ "translate": "fetchr.preferences.custom_hud.adjust_col.disabled" }',\
+	click_event: '{ "text": "", "clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 9" }}'\
 }
 #data \
 	modify storage fetchr:registries preferences.custom_hud append value {\
 	id: "fetchr:custom_hud/adjust_col1",\
-	textComponent: '{ "translate": "fetchr.preferences.custom_hud.adjust_col1.title" }',\
-	hoverText: '{ "translate": "fetchr.preferences.custom_hud.adjust_col.description" }',\
-	disabledHoverText: '{ "translate": "fetchr.preferences.custom_hud.adjust_col.disabled" }',\
-	clickEvent: '{ "text": "", "clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 10" }}'\
+	title: '{ "translate": "fetchr.preferences.custom_hud.adjust_col1.title" }',\
+	hover: '{ "translate": "fetchr.preferences.custom_hud.adjust_col.description" }',\
+	disabled_hover: '{ "translate": "fetchr.preferences.custom_hud.adjust_col.disabled" }',\
+	click_event: '{ "text": "", "clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 10" }}'\
 }
 #data \
 	modify storage fetchr:registries preferences.custom_hud append value {\
 	id: "fetchr:custom_hud/adjust_card",\
-	textComponent: '{ "translate": "fetchr.preferences.custom_hud.adjust_card.title" }',\
-	hoverText: '{ "translate": "fetchr.preferences.custom_hud.adjust_card.description" }',\
-	clickEvent: '{ "text": "", "clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 11" }}'\
+	title: '{ "translate": "fetchr.preferences.custom_hud.adjust_card.title" }',\
+	hover: '{ "translate": "fetchr.preferences.custom_hud.adjust_card.description" }',\
+	click_event: '{ "text": "", "clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 11" }}'\
 }
 #data \
 	modify storage fetchr:registries preferences.adjust_card append value {\
 	id: "fetchr:custom_hud/adjust_card/left_of_hotbar",\
-	textComponent: '{ "translate": "fetchr.preferences.custom_hud.adjust_card.left_of_hotbar.title" }',\
-	hoverText: '{ "translate": "fetchr.preferences.custom_hud.adjust_card.left_of_hotbar.description" }',\
-	clickEvent: '{ "text": "", "clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 67" }}'\
+	title: '{ "translate": "fetchr.preferences.custom_hud.adjust_card.left_of_hotbar.title" }',\
+	hover: '{ "translate": "fetchr.preferences.custom_hud.adjust_card.left_of_hotbar.description" }',\
+	click_event: '{ "text": "", "clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 67" }}'\
 }
 #data \
 	modify storage fetchr:registries preferences.adjust_card append value {\
 	id: "fetchr:custom_hud/adjust_card/right_of_hotbar_no_attack",\
-	textComponent: '{ "translate": "fetchr.preferences.custom_hud.adjust_card.right_of_hotbar_no_attack.title" }',\
-	hoverText: '{ "translate": "fetchr.preferences.custom_hud.adjust_card.right_of_hotbar_no_attack.description" }',\
-	clickEvent: '{ "text": "", "clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 68" }}'\
+	title: '{ "translate": "fetchr.preferences.custom_hud.adjust_card.right_of_hotbar_no_attack.title" }',\
+	hover: '{ "translate": "fetchr.preferences.custom_hud.adjust_card.right_of_hotbar_no_attack.description" }',\
+	click_event: '{ "text": "", "clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 68" }}'\
 }
 #data \
 	modify storage fetchr:registries preferences.adjust_card append value {\
 	id: "fetchr:custom_hud/adjust_card/right_of_hotbar_with_attack",\
-	textComponent: '{ "translate": "fetchr.preferences.custom_hud.adjust_card.right_of_hotbar_with_attack.title" }',\
-	hoverText: '{ "translate": "fetchr.preferences.custom_hud.adjust_card.right_of_hotbar_with_attack.description" }',\
-	clickEvent: '{ "text": "", "clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 69" }}'\
+	title: '{ "translate": "fetchr.preferences.custom_hud.adjust_card.right_of_hotbar_with_attack.title" }',\
+	hover: '{ "translate": "fetchr.preferences.custom_hud.adjust_card.right_of_hotbar_with_attack.description" }',\
+	click_event: '{ "text": "", "clickEvent": { "action": "run_command", "value": "/trigger fetchr.pref set 69" }}'\
 }
 #NEUN_SCRIPT end
 #NEUN_SCRIPT since 69
+# hud components
 data \
 	modify storage fetchr:registries hud_components append value {\
 	id: "fetchr:timer",\
-	addByDefault: true,\
-	preferredColumn: 0,\
+	default: true,\
+	preferred_column: 0,\
 	name: { translate: "fetchr.custom_hud.components.timer" },\
-	iconWidth: "\u0008",\
-	iconSeparator: " ",\
-	iconFont: [\
+	icon_width: "\u0008",\
+	icon_separator: " ",\
+	icon_font: [\
 		{ text: "", font: "fetchr:clock/line0" },\
 		{ text: "", font: "fetchr:clock/line1" },\
 		{ text: "", font: "fetchr:clock/line2" },\
@@ -2848,20 +2849,20 @@ data \
 data \
 	modify storage fetchr:registries hud_components append value {\
 	id: "fetchr:y_position",\
-	addByDefault: true,\
-	preferredColumn: 1,\
+	default: true,\
+	preferred_column: 1,\
 	name: { translate: "fetchr.custom_hud.components.y_position" }\
 }
 data \
 	modify storage fetchr:registries hud_components append value {\
 	id: "fetchr:player_chunk_position",\
-	addByDefault: true,\
-	preferredColumn: 1,\
+	default: true,\
+	preferred_column: 1,\
 	name: { translate: "fetchr.custom_hud.components.player_chunk_position" },\
-	settingsClickEvent: { text: "", click_event: { action: "run_command", command: "trigger fetchr.pref set 70" }},\
-	iconWidth: "\u0008",\
-	iconSeparator: " ",\
-	iconFont: [\
+	settings_click_event: { text: "", click_event: { action: "run_command", command: "trigger fetchr.pref set 70" }},\
+	icon_width: "\u0008",\
+	icon_separator: " ",\
+	icon_font: [\
 		{ text: "", font: "fetchr:position/line0" },\
 		{ text: "", font: "fetchr:position/line1" },\
 		{ text: "", font: "fetchr:position/line2" },\
@@ -2879,13 +2880,13 @@ data \
 data \
 	modify storage fetchr:registries hud_components append value {\
 	id: "fetchr:player_position",\
-	addByDefault: true,\
-	preferredColumn: 1,\
+	default: true,\
+	preferred_column: 1,\
 	name: { translate: "fetchr.custom_hud.components.player_position" },\
-	settingsClickEvent: { text: "", click_event: { action: "run_command", command: "trigger fetchr.pref set 72" }},\
-	iconWidth: "\u000a",\
-	iconSeparator: " ",\
-	iconFont: [\
+	settings_click_event: { text: "", click_event: { action: "run_command", command: "trigger fetchr.pref set 72" }},\
+	icon_width: "\u000a",\
+	icon_separator: " ",\
+	icon_font: [\
 		{ text: "", font: "fetchr:position/line0" },\
 		{ text: "", font: "fetchr:position/line1" },\
 		{ text: "", font: "fetchr:position/line2" },\
@@ -2902,14 +2903,14 @@ data \
 data \
 	modify storage fetchr:registries hud_components append value {\
 	id: "fetchr:seed",\
-	addByDefault: true,\
-	preferredColumn: 1,\
+	default: true,\
+	preferred_column: 1,\
 	icon: "s",\
-	iconWidth: "\u0009",\
-	iconSeparator: " ",\
+	icon_width: "\u0009",\
+	icon_separator: " ",\
 	name: { translate: "fetchr.custom_hud.components.seed" },\
-	settingsClickEvent: { text: "", click_event: { action: "run_command", command: "trigger fetchr.pref set 74" }},\
-	iconFont: [\
+	settings_click_event: { text: "", click_event: { action: "run_command", command: "trigger fetchr.pref set 74" }},\
+	icon_font: [\
 		{ text: "", font: "fetchr:seed/line0" },\
 		{ text: "", font: "fetchr:seed/line1" },\
 		{ text: "", font: "fetchr:seed/line2" },\
@@ -2928,67 +2929,67 @@ data \
 data \
 	modify storage fetchr:registries preferences.main append value {\
 	id: "fetchr:spectator_mode",\
-	textComponent: [{ translate: "fetchr.preferences.spectator_mode.title" }, ": ", { translate: "fetchr.preferences.spectator_mode.enabled" }],\
-	hoverText: { translate: "fetchr.preferences.spectator_mode.description" },\
-	clickEvent: { text: "", click_event: { action: "run_command", command: "trigger fetchr.pref set 2" }}\
+	title: [{ translate: "fetchr.preferences.spectator_mode.title" }, ": ", { translate: "fetchr.preferences.spectator_mode.enabled" }],\
+	hover: { translate: "fetchr.preferences.spectator_mode.description" },\
+	click_event: { text: "", click_event: { action: "run_command", command: "trigger fetchr.pref set 2" }}\
 }
 data \
 	modify storage fetchr:registries preferences.main append value {\
 	id: "fetchr:custom_hud",\
-	textComponent: { translate: "fetchr.preferences.custom_hud.title" },\
-	hoverText: { translate: "fetchr.preferences.custom_hud.description" },\
-	clickEvent: { text: "", click_event: { action: "run_command", command: "trigger fetchr.pref set 5" }}\
+	title: { translate: "fetchr.preferences.custom_hud.title" },\
+	hover: { translate: "fetchr.preferences.custom_hud.description" },\
+	click_event: { text: "", click_event: { action: "run_command", command: "trigger fetchr.pref set 5" }}\
 }
 data \
 	modify storage fetchr:registries preferences.custom_hud append value {\
 	id: "fetchr:custom_hud/add_disabled",\
-	textComponent: { translate: "fetchr.preferences.custom_hud.add_disabled.title" },\
-	hoverText: { translate: "fetchr.preferences.custom_hud.add_disabled.description" },\
-	disabledHoverText: { translate: "fetchr.preferences.custom_hud.add_disabled.disabled" },\
-	clickEvent: { text: "", click_event: { action: "run_command", command: "trigger fetchr.pref set 6" }}\
+	title: { translate: "fetchr.preferences.custom_hud.add_disabled.title" },\
+	hover: { translate: "fetchr.preferences.custom_hud.add_disabled.description" },\
+	disabled_hover: { translate: "fetchr.preferences.custom_hud.add_disabled.disabled" },\
+	click_event: { text: "", click_event: { action: "run_command", command: "trigger fetchr.pref set 6" }}\
 }
 data \
 	modify storage fetchr:registries preferences.custom_hud append value {\
 	id: "fetchr:custom_hud/adjust_col0",\
-	textComponent: { translate: "fetchr.preferences.custom_hud.adjust_col0.title" },\
-	hoverText: { translate: "fetchr.preferences.custom_hud.adjust_col.description" },\
-	disabledHoverText: { translate: "fetchr.preferences.custom_hud.adjust_col.disabled" },\
-	clickEvent: { text: "", click_event: { action: "run_command", command: "trigger fetchr.pref set 9" }}\
+	title: { translate: "fetchr.preferences.custom_hud.adjust_col0.title" },\
+	hover: { translate: "fetchr.preferences.custom_hud.adjust_col.description" },\
+	disabled_hover: { translate: "fetchr.preferences.custom_hud.adjust_col.disabled" },\
+	click_event: { text: "", click_event: { action: "run_command", command: "trigger fetchr.pref set 9" }}\
 }
 data \
 	modify storage fetchr:registries preferences.custom_hud append value {\
 	id: "fetchr:custom_hud/adjust_col1",\
-	textComponent: { translate: "fetchr.preferences.custom_hud.adjust_col1.title" },\
-	hoverText: { translate: "fetchr.preferences.custom_hud.adjust_col.description" },\
-	disabledHoverText: { translate: "fetchr.preferences.custom_hud.adjust_col.disabled" },\
-	clickEvent: { text: "", click_event: { action: "run_command", command: "trigger fetchr.pref set 10" }}\
+	title: { translate: "fetchr.preferences.custom_hud.adjust_col1.title" },\
+	hover: { translate: "fetchr.preferences.custom_hud.adjust_col.description" },\
+	disabled_hover: { translate: "fetchr.preferences.custom_hud.adjust_col.disabled" },\
+	click_event: { text: "", click_event: { action: "run_command", command: "trigger fetchr.pref set 10" }}\
 }
 data \
 	modify storage fetchr:registries preferences.custom_hud append value {\
 	id: "fetchr:custom_hud/adjust_card",\
-	textComponent: { translate: "fetchr.preferences.custom_hud.adjust_card.title" },\
-	hoverText: { translate: "fetchr.preferences.custom_hud.adjust_card.description" },\
-	clickEvent: { text: "", click_event: { action: "run_command", command: "trigger fetchr.pref set 11" }}\
+	title: { translate: "fetchr.preferences.custom_hud.adjust_card.title" },\
+	hover: { translate: "fetchr.preferences.custom_hud.adjust_card.description" },\
+	click_event: { text: "", click_event: { action: "run_command", command: "trigger fetchr.pref set 11" }}\
 }
 data \
 	modify storage fetchr:registries preferences.adjust_card append value {\
 	id: "fetchr:custom_hud/adjust_card/left_of_hotbar",\
-	textComponent: { translate: "fetchr.preferences.custom_hud.adjust_card.left_of_hotbar.title" },\
-	hoverText: { translate: "fetchr.preferences.custom_hud.adjust_card.left_of_hotbar.description" },\
-	clickEvent: { text: "", click_event: { action: "run_command", command: "trigger fetchr.pref set 67" }}\
+	title: { translate: "fetchr.preferences.custom_hud.adjust_card.left_of_hotbar.title" },\
+	hover: { translate: "fetchr.preferences.custom_hud.adjust_card.left_of_hotbar.description" },\
+	click_event: { text: "", click_event: { action: "run_command", command: "trigger fetchr.pref set 67" }}\
 }
 data \
 	modify storage fetchr:registries preferences.adjust_card append value {\
 	id: "fetchr:custom_hud/adjust_card/right_of_hotbar_no_attack",\
-	textComponent: { translate: "fetchr.preferences.custom_hud.adjust_card.right_of_hotbar_no_attack.title" },\
-	hoverText: { translate: "fetchr.preferences.custom_hud.adjust_card.right_of_hotbar_no_attack.description" },\
-	clickEvent: { text: "", click_event: { action: "run_command", command: "trigger fetchr.pref set 68" }}\
+	title: { translate: "fetchr.preferences.custom_hud.adjust_card.right_of_hotbar_no_attack.title" },\
+	hover: { translate: "fetchr.preferences.custom_hud.adjust_card.right_of_hotbar_no_attack.description" },\
+	click_event: { text: "", click_event: { action: "run_command", command: "trigger fetchr.pref set 68" }}\
 }
 data \
 	modify storage fetchr:registries preferences.adjust_card append value {\
 	id: "fetchr:custom_hud/adjust_card/right_of_hotbar_with_attack",\
-	textComponent: { translate: "fetchr.preferences.custom_hud.adjust_card.right_of_hotbar_with_attack.title" },\
-	hoverText: { translate: "fetchr.preferences.custom_hud.adjust_card.right_of_hotbar_with_attack.description" },\
-	clickEvent: { text: "", click_event: { action: "run_command", command: "trigger fetchr.pref set 69" }}\
+	title: { translate: "fetchr.preferences.custom_hud.adjust_card.right_of_hotbar_with_attack.title" },\
+	hover: { translate: "fetchr.preferences.custom_hud.adjust_card.right_of_hotbar_with_attack.description" },\
+	click_event: { text: "", click_event: { action: "run_command", command: "trigger fetchr.pref set 69" }}\
 }
 #NEUN_SCRIPT end

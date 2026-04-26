@@ -45,7 +45,7 @@ tellraw @s [\
 #declare score_holder $hud/settings/chnk_pos_settings.slot
 execute \
 	store result score $hud/settings/chnk_pos_settings.slot fetchr.tmp \
-	run data get storage fetchr:custom_hud currentPlayer.components[{ id: "fetchr:player_chunk_position" }].slot_id
+	run data get storage fetchr:custom_hud current_player.components[{ id: "fetchr:player_chunk_position" }].slot_id
 execute \
 	if score $hud/settings/chnk_pos_settings.slot fetchr.tmp matches 0..4 \
 	run tellraw @s [\

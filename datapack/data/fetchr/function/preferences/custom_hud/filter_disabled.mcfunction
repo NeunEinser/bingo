@@ -8,7 +8,7 @@
 execute \
 	if data \
 		storage fetchr:custom_hud \
-		currentPlayer\
+		current_player\
 		.components[{ id: "fetchr:player_position" }]\
 		.custom\
 		.fetchr{ chunkCoordinatesOnTreasureMap: true } \

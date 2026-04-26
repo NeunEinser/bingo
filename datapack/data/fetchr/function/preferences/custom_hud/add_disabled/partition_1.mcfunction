@@ -6,9 +6,9 @@
 # @context entity Player who triggered fetchr.pref
 #
 # @reads score @s fetchr.pref
-# @output tmp.fetchr:preferences/hud toBeAdded
+# @output tmp.fetchr:preferences/hud to_be_added
 
 
-execute if score @s fetchr.pref matches 18..19 run data modify storage tmp.fetchr:preferences/hud toBeAdded set from storage tmp.fetchr:preferences/hud pageElements[3]
-execute if score @s fetchr.pref matches 20..21 run data modify storage tmp.fetchr:preferences/hud toBeAdded set from storage tmp.fetchr:preferences/hud pageElements[4]
-execute if score @s fetchr.pref matches 22..23 run data modify storage tmp.fetchr:preferences/hud toBeAdded set from storage tmp.fetchr:preferences/hud pageElements[5]
+execute if score @s fetchr.pref matches 18..19 run data modify storage tmp.fetchr:preferences/hud to_be_added set from storage tmp.fetchr:preferences/hud page_elements[3]
+execute if score @s fetchr.pref matches 20..21 run data modify storage tmp.fetchr:preferences/hud to_be_added set from storage tmp.fetchr:preferences/hud page_elements[4]
+execute if score @s fetchr.pref matches 22..23 run data modify storage tmp.fetchr:preferences/hud to_be_added set from storage tmp.fetchr:preferences/hud page_elements[5]

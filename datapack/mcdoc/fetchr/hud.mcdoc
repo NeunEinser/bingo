@@ -4,13 +4,13 @@ struct HudComponentBase {
 	id: #[id] string,
 
 	/// Whether this component should be added to the HUD for a new player
-	addByDefault?: boolean,
+	default?: boolean,
 
-	/// The coulmn index this component is added to if there is space and 
-	/// `addByDefault` is true. If there is no space, it will be added to a
+	/// The column index this component is added to if there is space and 
+	/// `default` is true. If there is no space, it will be added to a
 	/// different coulmn instead. If there is no space in no coulmn, it will not
 	/// be added by default.
-	preferredColumn?: int,
+	preferred_column?: int,
 
 	name: (
 		#[until="1.21.5"] #[text_component] string
@@ -19,21 +19,21 @@ struct HudComponentBase {
 
 	/// This should be a unicode character matching a space from the
 	/// `fetchr:space` font.
-	iconWidth?: (
+	icon_width?: (
 		#[until="1.21.5"] #[text_component] string
 		| #[since="1.21.5"] Text
 	),
 
 	/// Text to display between the icon and the value when the component is
 	// left-aligned.
-	iconSeparatorAlignLeft?: (
+	icon_separator_align_left?: (
 		#[until="1.21.5"] #[text_component] string
 		| #[since="1.21.5"] Text
 	),
 
 	/// Text to display between the icon and the value when the component is
 	// right-aligned.
-	iconSeparatorAlignRight?: (
+	icon_separator_align_right?: (
 		#[until="1.21.5"] #[text_component] string
 		| #[since="1.21.5"] Text
 	),
@@ -43,7 +43,7 @@ struct HudComponentBase {
 	///
 	/// Each entry corresponds to a different line with the correct vertical
 	/// offset
-	iconFont?: [ (
+	icon_font?: [ (
 		#[until="1.21.5"] #[text_component] string
 		| #[since="1.21.5"] Text
 	) ] @ 11,
@@ -62,7 +62,7 @@ struct HudComponent {
 	slot_id: byte,
 
 	/// The text component to show for custom settings.
-	settingsTextComponent?: (
+	settings?: (
 		#[until="1.21.5"] #[text_component] string
 		| #[since="1.21.5"] Text
 	)
@@ -83,5 +83,23 @@ struct PlayerHudComponent {
 		#[until="1.21.5"] #[text_component] string
 		| #[since="1.21.5"] Text
 	),
-	custom?: struct { [string]: any },
+	custom?: fetchr:hud_component_data[[id]],
+}
+
+dispatch fetchr:hud_component_data[fetchr:player_position] to struct {
+	fetchr: struct {
+		/// Defaults to “text”
+		icon_type?: PlayerPositionIconType,
+	}
+}
+dispatch fetchr:hud_component_data[fetchr:seed] to struct {
+	fetchr: struct {
+		/// Defaults to false
+		only_show_after_run?: boolean,
+	}
+}
+
+enum (string) PlayerPositionIconType {
+	Text = "text",
+	Compass = "compass",
 }

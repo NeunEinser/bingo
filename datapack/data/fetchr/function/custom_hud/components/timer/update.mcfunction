@@ -12,7 +12,7 @@ data \
 data modify storage io.fetchr:custom_hud component merge value { icon: "\u0132", changed: true }
 #NEUN_SCRIPT end
 data \
-	modify storage io.fetchr:custom_hud component.textComponent \
+	modify storage io.fetchr:custom_hud component.text_component \
 	set from storage neun_einser.timer:display "hh:mm:ss" 
 
 # set icon
@@ -78,12 +78,12 @@ execute \
 #NEUN_SCRIPT until 69
 #execute \
 	if score $game_state fetchr.state matches ..2 \
-	run data modify storage io.fetchr:custom_hud component.textComponent set value '"0"'
+	run data modify storage io.fetchr:custom_hud component.text_component set value '"0"'
 #NEUN_SCRIPT end
 #NEUN_SCRIPT since 69
 execute \
 	if score $game_state fetchr.state matches ..2 \
-	run data modify storage io.fetchr:custom_hud component.textComponent set value "0"
+	run data modify storage io.fetchr:custom_hud component.text_component set value "0"
 #NEUN_SCRIPT end
 execute \
 	if score $game_state fetchr.state matches ..2 \

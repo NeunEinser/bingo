@@ -41,11 +41,11 @@ execute \
 	run scoreboard players operation $custom_hud/player_pos.z fetchr.tmp -= $spawn_z fetchr.state
 
 execute \
-	if data storage fetchr:custom_hud currentPlayer.components[{ id: "fetchr:player_position" }] \
+	if data storage fetchr:custom_hud current_player.components[{ id: "fetchr:player_position" }] \
 	run function fetchr:custom_hud/components/player_position/update_xz
 execute \
-	if data storage fetchr:custom_hud currentPlayer.components[{ id: "fetchr:player_chunk_position" }] \
+	if data storage fetchr:custom_hud current_player.components[{ id: "fetchr:player_chunk_position" }] \
 	run function fetchr:custom_hud/components/player_position/update_chunk_xz
 execute \
-	if data storage fetchr:custom_hud currentPlayer.components[{ id: "fetchr:y_position" }] \
+	if data storage fetchr:custom_hud current_player.components[{ id: "fetchr:y_position" }] \
 	run function fetchr:custom_hud/components/player_position/update_y

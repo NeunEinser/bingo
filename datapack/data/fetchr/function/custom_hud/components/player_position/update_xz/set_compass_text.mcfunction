@@ -7,10 +7,10 @@
 
 scoreboard players remove $custom_hud/width.padding fetchr.io 4
 #NEUN_SCRIPT until 69
-#data modify storage io.fetchr:custom_hud component.iconWidth set value '"\\u000e"'
+#data modify storage io.fetchr:custom_hud component.icon_width set value '"\\u000e"'
 #NEUN_SCRIPT end
 #NEUN_SCRIPT since 69
-data modify storage io.fetchr:custom_hud component.iconWidth set value "\u000e"
+data modify storage io.fetchr:custom_hud component.icon_width set value "\u000e"
 #NEUN_SCRIPT end
 
 execute \

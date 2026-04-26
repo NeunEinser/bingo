@@ -7,13 +7,13 @@
 scoreboard players set $custom_hud/width.padding fetchr.io 73
 data \
 	modify storage io.fetchr:custom_hud component \
-	set from storage fetchr:custom_hud currentPlayer.components[{ id: "fetchr:player_position" }]
+	set from storage fetchr:custom_hud current_player.components[{ id: "fetchr:player_position" }]
 
 #NEUN_SCRIPT until 69
 #data \
 	modify storage io.fetchr:custom_hud component \
 	merge value {\
-		textComponent: '[\
+		text_component: '[\
 			{ "score": { "name": "$custom_hud/player_pos.x", "objective": "fetchr.tmp" }},\
 			" ",\
 			{ "score": { "name": "$custom_hud/player_pos.z", "objective": "fetchr.tmp" }}\
@@ -25,7 +25,7 @@ data \
 data \
 	modify storage io.fetchr:custom_hud component \
 	merge value {\
-		textComponent: [\
+		text_component: [\
 			{ score: { name: "$custom_hud/player_pos.x", objective: "fetchr.tmp" }},\
 			" ",\
 			{ score: { name: "$custom_hud/player_pos.z", objective: "fetchr.tmp" }}\
@@ -37,19 +37,19 @@ data \
 execute \
 	if \
 		data storage fetchr:custom_hud \
-		currentPlayer.components[{ id: "fetchr:player_position" }].custom.fetchr{ iconType: "compass" } \
+		current_player.components[{ id: "fetchr:player_position" }].custom.fetchr{ icon_type: "compass" } \
 		run function fetchr:custom_hud/components/player_position/update_xz/set_compass_icon
 execute \
 	unless \
 		data storage fetchr:custom_hud \
-		currentPlayer.components[{ id: "fetchr:player_position" }].custom.fetchr{ iconType: "compass" } \
+		current_player.components[{ id: "fetchr:player_position" }].custom.fetchr{ icon_type: "compass" } \
 		run function fetchr:custom_hud/components/player_position/update_xz/set_compass_text
 
 
 execute \
 	if \
 		data storage fetchr:custom_hud \
-		currentPlayer\
+		current_player\
 		.components[{ id: "fetchr:player_position" }]\
 		.custom\
 		.fetchr{ chunkCoordinatesOnTreasureMap: true } \
@@ -68,4 +68,4 @@ execute \
 
 function fetchr:custom_hud/component_eval
 
-data modify storage fetchr:custom_hud currentPlayer.components[{ id: "fetchr:player_position" }] merge from storage io.fetchr:custom_hud component
+data modify storage fetchr:custom_hud current_player.components[{ id: "fetchr:player_position" }] merge from storage io.fetchr:custom_hud component

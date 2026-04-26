@@ -12,20 +12,20 @@ execute \
 	store result score $hud/settings/merge_chunk_coord.slot fetchr.tmp \
 	run data get \
 		storage fetchr:custom_hud \
-		currentPlayer.components[{ id: "fetchr:player_chunk_position" }].slot_id
+		current_player.components[{ id: "fetchr:player_chunk_position" }].slot_id
 
 execute \
-	if data storage fetchr:custom_hud currentPlayer.components[{ id: "fetchr:player_chunk_position" }] \
-	if data storage fetchr:custom_hud currentPlayer.components[{ id: "fetchr:player_position" }] \
+	if data storage fetchr:custom_hud current_player.components[{ id: "fetchr:player_chunk_position" }] \
+	if data storage fetchr:custom_hud current_player.components[{ id: "fetchr:player_position" }] \
 	run function fetchr:preferences/custom_hud/component_settings/merge_to_enabled_position
 execute \
-	unless data storage fetchr:custom_hud currentPlayer.components[{ id: "fetchr:player_position" }] \
+	unless data storage fetchr:custom_hud current_player.components[{ id: "fetchr:player_position" }] \
 	run function fetchr:preferences/custom_hud/component_settings/add_player_position_with_chunk_coordinates
 
 data \
 	modify \
 		storage fetchr:custom_hud \
-		currentPlayer\
+		current_player\
 		.components[{ id: "fetchr:player_position" }]\
 		.custom\
 		.fetchr\

@@ -96,7 +96,7 @@ execute \
 
 #NEUN_SCRIPT until 69
 #data \
-	modify storage io.fetchr:custom_hud component.textComponent set value '[\
+	modify storage io.fetchr:custom_hud component.text_component set value '[\
 	{ "score": { "name": "$custom_hud/player_pos.int_x", "objective": "fetchr.tmp" }},\
 	".", { "storage": "tmp.fetchr:custom_hud", "nbt": "xFillerZeros", "interpret": true },\
 	{ "score": { "name": "$custom_hud/player_pos.dec_x", "objective": "fetchr.tmp" }},\
@@ -107,7 +107,7 @@ execute \
 #NEUN_SCRIPT end
 #NEUN_SCRIPT since 69
 data \
-	modify storage io.fetchr:custom_hud component.textComponent set value [\
+	modify storage io.fetchr:custom_hud component.text_component set value [\
 	{ score: { name: "$custom_hud/player_pos.int_x", objective: "fetchr.tmp" }},\
 	".", { storage: "tmp.fetchr:custom_hud", nbt: "xFillerZeros", interpret: true },\
 	{ score: { name: "$custom_hud/player_pos.dec_x", objective: "fetchr.tmp" }},\

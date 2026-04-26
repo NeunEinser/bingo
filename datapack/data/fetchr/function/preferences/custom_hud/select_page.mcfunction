@@ -9,11 +9,11 @@
 # @context entity Player who triggered fetchr.pref
 #
 # @input storage io.fetchr:preferences components
-# @output storage tmp.fetchr:preferences/hud pageElements
+# @output storage tmp.fetchr:preferences/hud page_elements
 #
 # @reads
 #	score @s fetchr.menu_page
-# 	storage tmp.fetchr:preferences/hud playerComponents
+# 	storage tmp.fetchr:preferences/hud player_components
 # @writes score $preferences/hud.page fetchr.tmp
 
 #>
@@ -29,14 +29,28 @@
 # 	function fetchr:preferences/custom_hud/select_page
 #declare score_holder $preferences/hud.page
 
-data modify storage tmp.fetchr:preferences/hud playerComponentsCpy set from storage tmp.fetchr:preferences/hud playerComponents
+data \
+	modify storage tmp.fetchr:preferences/hud player_components_copy \
+	set from storage tmp.fetchr:preferences/hud player_components
 function fetchr:preferences/custom_hud/check_component
 
-execute if score $preferences/hud.disabled fetchr.tmp matches 1 if score $preferences/hud.page fetchr.tmp = @s fetchr.menu_page run data modify storage tmp.fetchr:preferences/hud pageElements append from storage io.fetchr:preferences components[-1]
+execute \
+	if score $preferences/hud.disabled fetchr.tmp matches 1 \
+	if score $preferences/hud.page fetchr.tmp = @s fetchr.menu_page \
+	run data \
+		modify storage tmp.fetchr:preferences/hud page_elements \
+		append from storage io.fetchr:preferences components[-1]
 data remove storage io.fetchr:preferences components[-1]
 
-execute if score $preferences/hud.disabled fetchr.tmp matches 1 run scoreboard players add $preferences/hud.element fetchr.tmp 1
-execute if score $preferences/hud.element fetchr.tmp matches 10 run scoreboard players add $preferences/hud.page fetchr.tmp 1
+execute \
+	if score $preferences/hud.disabled fetchr.tmp matches 1 \
+	run scoreboard players add $preferences/hud.element fetchr.tmp 1
+execute \
+	if score $preferences/hud.element fetchr.tmp matches 10 \
+	run scoreboard players add $preferences/hud.page fetchr.tmp 1
 scoreboard players operation $preferences/hud.element fetchr.tmp %= 10 fetchr.const
 
-execute if score $preferences/hud.page fetchr.tmp <= @s fetchr.menu_page if data storage io.fetchr:preferences components[-1] run function fetchr:preferences/custom_hud/select_page
+execute \
+	if score $preferences/hud.page fetchr.tmp <= @s fetchr.menu_page \
+	if data storage io.fetchr:preferences components[-1] \
+	run function fetchr:preferences/custom_hud/select_page

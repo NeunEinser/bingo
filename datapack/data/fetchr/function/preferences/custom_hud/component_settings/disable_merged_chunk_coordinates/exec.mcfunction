@@ -7,7 +7,7 @@
 data \
 	modify \
 		storage fetchr:custom_hud \
-		currentPlayer\
+		current_player\
 		.components[{ id: "fetchr:player_position" }]\
 		.custom\
 		.fetchr\
@@ -19,12 +19,12 @@ data \
 #declare score_holder $hud/settings/disable_chunk_coord.slot
 execute \
 	store result score $hud/settings/disable_chunk_coord.slot fetchr.tmp \
-	run data get storage fetchr:custom_hud currentPlayer.components[{ id: "fetchr:player_position" }].slot_id
+	run data get storage fetchr:custom_hud current_player.components[{ id: "fetchr:player_position" }].slot_id
 
 # Work around for """WAI""" https://bugs.mojang.com/browse/MC-139625 :mad_neun:
 data \
 	modify storage tmp.fetchr:preferences/hud component \
-	set from storage fetchr:custom_hud currentPlayer.components[4]
+	set from storage fetchr:custom_hud current_player.components[4]
 
 execute \
 	if score $hud/settings/disable_chunk_coord.slot fetchr.tmp matches 0..3 \
@@ -38,7 +38,7 @@ execute \
 
 data \
 	modify storage tmp.fetchr:preferences/hud component \
-	set from storage fetchr:custom_hud currentPlayer.components[10]
+	set from storage fetchr:custom_hud current_player.components[10]
 execute \
 	if score $hud/settings/disable_chunk_coord.slot fetchr.tmp matches 5..9 \
 	if data storage tmp.fetchr:preferences/hud component{ id: "fetchr:empty" } \
@@ -49,14 +49,14 @@ execute \
 	run function fetchr:preferences/custom_hud/component_settings/disable_merged_chunk_coordinates/add_to_col0
 
 scoreboard players set @s fetchr.update_hud 1
-data modify storage fetchr:custom_hud currentPlayer.components[0].slot_id set value 0b
-data modify storage fetchr:custom_hud currentPlayer.components[1].slot_id set value 1b
-data modify storage fetchr:custom_hud currentPlayer.components[2].slot_id set value 2b
-data modify storage fetchr:custom_hud currentPlayer.components[3].slot_id set value 3b
-data modify storage fetchr:custom_hud currentPlayer.components[5].slot_id set value 5b
-data modify storage fetchr:custom_hud currentPlayer.components[6].slot_id set value 6b
-data modify storage fetchr:custom_hud currentPlayer.components[7].slot_id set value 7b
-data modify storage fetchr:custom_hud currentPlayer.components[8].slot_id set value 8b
-data modify storage fetchr:custom_hud currentPlayer.components[9].slot_id set value 9b
+data modify storage fetchr:custom_hud current_player.components[0].slot_id set value 0b
+data modify storage fetchr:custom_hud current_player.components[1].slot_id set value 1b
+data modify storage fetchr:custom_hud current_player.components[2].slot_id set value 2b
+data modify storage fetchr:custom_hud current_player.components[3].slot_id set value 3b
+data modify storage fetchr:custom_hud current_player.components[5].slot_id set value 5b
+data modify storage fetchr:custom_hud current_player.components[6].slot_id set value 6b
+data modify storage fetchr:custom_hud current_player.components[7].slot_id set value 7b
+data modify storage fetchr:custom_hud current_player.components[8].slot_id set value 8b
+data modify storage fetchr:custom_hud current_player.components[9].slot_id set value 9b
 
 scoreboard players set $preferences.next_page fetchr.tmp 72
