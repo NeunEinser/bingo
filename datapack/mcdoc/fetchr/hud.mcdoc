@@ -12,10 +12,7 @@ struct HudComponentBase {
 	/// be added by default.
 	preferred_column?: int,
 
-	name: (
-		#[until="1.21.5"] #[text_component] string
-		| #[since="1.21.5"] Text
-	),
+	...fetchr:additional_hud_data[[id]],
 
 	/// This should be a unicode character matching a space from the
 	/// `fetchr:space` font.
@@ -68,12 +65,9 @@ struct HudComponent {
 	)
 }
 
-
-
 struct PlayerHudComponent {
 	...HudComponent,
 
-	slot_id: byte,
 	changed?: boolean,
 	padding?: (
 		#[until="1.21.5"] #[text_component] string
@@ -86,13 +80,13 @@ struct PlayerHudComponent {
 	custom?: fetchr:hud_component_data[[id]],
 }
 
-dispatch fetchr:hud_component_data[fetchr:player_position] to struct {
+dispatch fetchr:hud_component_data[fetchr:player_position] to struct PlayerPostionSettings {
 	fetchr: struct {
 		/// Defaults to “text”
 		icon_type?: PlayerPositionIconType,
 	}
 }
-dispatch fetchr:hud_component_data[fetchr:seed] to struct {
+dispatch fetchr:hud_component_data[fetchr:seed] to struct SeedSettings {
 	fetchr: struct {
 		/// Defaults to false
 		only_show_after_run?: boolean,
@@ -102,4 +96,13 @@ dispatch fetchr:hud_component_data[fetchr:seed] to struct {
 enum (string) PlayerPositionIconType {
 	Text = "text",
 	Compass = "compass",
+}
+
+dispatch fetchr:additional_hud_data[%unknown] to struct {
+	name: (
+		#[until="1.21.5"] #[text_component] string
+		| #[since="1.21.5"] Text
+	),
+}
+dispatch fetchr:additional_hud_data[fetchr:empty] to struct {
 }

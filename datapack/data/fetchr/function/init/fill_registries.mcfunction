@@ -2844,14 +2844,14 @@ data \
 		{ text: "", font: "fetchr:clock/line8" },\
 		{ text: "", font: "fetchr:clock/line9" },\
 		{ text: "", font: "fetchr:clock/line10" }\
-	]\
+	],\
 }
 data \
 	modify storage fetchr:registries hud_components append value {\
 	id: "fetchr:y_position",\
 	default: true,\
 	preferred_column: 1,\
-	name: { translate: "fetchr.custom_hud.components.y_position" }\
+	name: { translate: "fetchr.custom_hud.components.y_position" },\
 }
 data \
 	modify storage fetchr:registries hud_components append value {\
@@ -2875,7 +2875,7 @@ data \
 		{ text: "", font: "fetchr:position/line9" },\
 		{ text: "", font: "fetchr:position/line10" }\
 	],\
-	icon: "c"\
+	icon: "c",\
 }
 data \
 	modify storage fetchr:registries hud_components append value {\
@@ -2898,7 +2898,7 @@ data \
 		{ text: "", font: "fetchr:position/line8" },\
 		{ text: "", font: "fetchr:position/line9" },\
 		{ text: "", font: "fetchr:position/line10" }\
-	]\
+	],\
 }
 data \
 	modify storage fetchr:registries hud_components append value {\
@@ -2922,7 +2922,7 @@ data \
 		{ text: "", font: "fetchr:seed/line8" },\
 		{ text: "", font: "fetchr:seed/line9" },\
 		{ text: "", font: "fetchr:seed/line10" }\
-	]\
+	],\
 }
 
 # preference pages

@@ -1677,6 +1677,13 @@ forceload add 0 0
 	
 	data remove storage fetchr:custom_hud default[].default
 	data remove storage fetchr:custom_hud default[].preferred_column
+
+	data modify storage tmp.fetchr:init/hud players \
+		set from storage fetchr:custom_hud players
+	data modify storage fetchr:custom_hud players set value []
+	execute \
+		if data storage tmp.fetchr:init/hud players[0] \
+		run function fetchr:init/update_hud/iter_players
 #endregion
 
 # spawn strcutures

@@ -5,7 +5,7 @@ use ::fetchr::hud::PlayerHudComponent
 use ::fetchr::storages::registry::HudComponentRegistryData
 use ::fetchr::storages::registry::PreferencesRegistryData
 
-type PlayerHudComponents = [PlayerHudComponent] @ ..12
+type PlayerHudComponents = [PlayerHudComponent] @ 11
 
 struct PlayerHudConfiguration {
 	id: int,
@@ -82,4 +82,12 @@ dispatch minecraft:storage[tmp.fetchr:init/hud] to struct {
 	where_space: [HudComponent],
 	unpreferred: [HudComponent],
 	not_in_default_selection: [HudComponent],
+	players: [PlayerHudConfiguration],
+	custom: fetchr:hud_component_data[%fallback],
+	component: PlayerHudComponent,
+}
+
+dispatch minecraft:storage[io.fetchr:custom_hud] to struct {
+	component: HudComponent,
+	custom: fetchr:hud_component_data[%fallback],
 }
