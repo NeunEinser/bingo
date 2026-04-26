@@ -4,6 +4,7 @@
 #
 # @within function fetchr:tick/player_tick
 
+#NEUN_SCRIPT since 77
 execute \
 	if score @s fetchr.settings matches 1 \
 	run dialog clear @s
@@ -84,3 +85,4 @@ execute \
 	run function fetchr:settings/prepare_and_show_game_settings
 
 scoreboard players reset @s fetchr.settings
+#NEUN_SCRIPT end

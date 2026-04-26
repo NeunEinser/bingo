@@ -4,7 +4,7 @@
 #
 # @within function fetchr:settings/prepare_and_show_game_settings
 
-#NEUN_SCRIPT until 79
+#NEUN_SCRIPT since 77 until 79
 #$dialog show @s {\
 	type: "minecraft:multi_action_input_form",\
 	title: { translate: "fetchr.settings.pre_gen.name" },\

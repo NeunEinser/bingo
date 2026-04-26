@@ -5,6 +5,7 @@
 #
 # @within function fetchr:settings/handle_settings
 
+#NEUN_SCRIPT since 77
 scoreboard players set @s fetchr.operator_check_callback_action 16
 execute \
 	if score $operator_only fetchr.setting_values matches 1 \
@@ -91,3 +92,4 @@ execute \
 execute \
 	if score $is_multiplayer fetchr.state matches 0 \
 	run function fetchr:settings/show_game_settings_dialog_singleplayer with storage tmp.fetchr:settings/dialog custom_options
+#NEUN_SCRIPT end

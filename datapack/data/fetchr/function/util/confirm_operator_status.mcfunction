@@ -9,7 +9,7 @@ scoreboard players set @s fetchr.operator 1
 tellraw @s [\
 	"\n\n\n\n\n",\
 	{ "translate": "fetchr.settings.operator_only.confirmation", "color": "green" },\
-	"\n",\
+	"\n"\
 ]
 
 execute \

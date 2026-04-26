@@ -4,6 +4,7 @@
 #
 # @within function fetchr:settings/prepare_and_show_game_settings
 
+#NEUN_SCRIPT since 77
 $dialog show @s {\
 	type: "minecraft:multi_action",\
 	title: { "translate": "fetchr.settings.pause_menu.custom_options.settings.title" },\
@@ -98,3 +99,4 @@ $dialog show @s {\
 		action: { type: "minecraft:run_command", command: "trigger fetchr.settings set 2" },\
 	},\
 }
+#NEUN_SCRIPT end

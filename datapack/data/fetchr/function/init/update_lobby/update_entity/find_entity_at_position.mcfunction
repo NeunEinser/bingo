@@ -10,7 +10,7 @@
 
 $execute as @e[\
 		type=$(entity_type),\
-		distance=...1,\
+		distance=...1\
 	] \
 	unless data entity @s data.fetchr.display_entity_id \
 	run return run function fetchr:init/update_lobby/update_entity/handle_old
