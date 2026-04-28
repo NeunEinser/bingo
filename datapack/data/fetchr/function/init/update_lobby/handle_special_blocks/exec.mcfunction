@@ -8,15 +8,12 @@
 # @params
 # 	y: int @ 0..64,
 # 	z: int @ -30000000..29999999,
-# 	compare_x: int @ -30000000..29999999,
-# 	compare_z: int @ -30000000..29999999,
 # 	reference_x: int @ -30000000..29999999,
 
 $execute \
 	if block $(reference_x) ~ ~ #minecraft:doors \
 	if block ~ ~ ~ #minecraft:doors \
-	run return run function fetchr:init/update_lobby/handle_special_blocks/doors/check_door_id \
-		with storage tmp.fetchr:init/update_lobby compare_coordinates[-1]
+	run return run function fetchr:init/update_lobby/handle_special_blocks/check_door_id {reference_x:$(reference_x)}
 
 $execute \
 	unless block $(reference_x) ~ ~ #fetchr:player_heads \

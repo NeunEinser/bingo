@@ -13,6 +13,7 @@
 # 	offset_x: int @ 0..60000000,
 # 	offset_y: int @ 0..64,
 # 	offset_z: int @ 0..60000000
+
 $execute \
 	if blocks $(old_x) $(y) $(z) $(old_x) $(y) $(z) $(reference_x) $(y) $(z) all \
 	run return 0
@@ -24,8 +25,8 @@ $execute \
 	run function #fetchr:lobby_update/manipulate_special_block \
 		with storage tmp.fetchr:init/update_lobby spawn_items_coordinates[-1]
 $execute \
-	if block $(compare_x) $(y) $(compare_z) #fetchr:has_special_lobby_update_behavior \
-	if blocks $(compare_x) $(y) $(compare_z) $(compare_x) $(y) $(compare_z) $(reference_x) $(y) $(z) all \
+	if block $(reference_x) $(y) $(z) #fetchr:has_special_lobby_update_behavior \
+	if blocks $(old_x) $(y) $(z) $(old_x) $(y) $(z) $(reference_x) $(y) $(z) all \
 	run return 0
 
 $execute \
