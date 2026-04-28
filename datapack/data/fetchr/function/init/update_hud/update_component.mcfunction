@@ -9,7 +9,7 @@
 
 $data \
 	modify storage tmp.fetchr:init/hud component \
-	set from storage tmp.fetchr:init/hud players[-1].components[$(slot_id)]
+	set from storage tmp.fetchr:init/hud players[0].components[$(slot_id)]
 
 execute \
 	if data storage tmp.fetchr:init/hud component{id: "fetchr:empty"} \
@@ -19,7 +19,7 @@ execute \
 $execute \
 	if data storage tmp.fetchr:init/hud component{id: "fetchr:spacer"} \
 	run data \
-		modify storage tmp.fetchr:init/hud players[-1].components[$(slot_id)].name \
+		modify storage tmp.fetchr:init/hud players[0].components[$(slot_id)].name \
 		set value {translate: "fetchr.custom_hud.components.spacer"}
 #NEUN_SCRIPT end
 
@@ -30,7 +30,7 @@ execute \
 
 $execute \
 	unless data storage fetchr:custom_hud components[{id: "$(id)"}] \
-	run return run data remove storage tmp.fetchr:init/hud players[-1].components[$(slot_id)]
+	run return run data remove storage tmp.fetchr:init/hud players[0].components[$(slot_id)]
 
 scoreboard players set $init/hud.all_above_empty fetchr.tmp 0
 
@@ -42,8 +42,8 @@ data \
 function #fetchr:update_hud_custom
 
 $data \
-	modify storage tmp.fetchr:init/hud players[-1].components[$(slot_id)] \
+	modify storage tmp.fetchr:init/hud players[0].components[$(slot_id)] \
 	set from storage fetchr:custom_hud components[{id: "$(id)"}]
 $data \
-	modify storage tmp.fetchr:init/hud players[-1].components[$(slot_id)].custom \
+	modify storage tmp.fetchr:init/hud players[0].components[$(slot_id)].custom \
 	set from storage io.fetchr:custom_hud custom
