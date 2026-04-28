@@ -35,3 +35,9 @@ $execute \
 	if data block ~ ~ ~ profile.id \
 	run data remove block ~ ~ ~ profile.id
 
+# Tod_NL changed their minecraft name at some point in time, leading to
+# inconcistencies depending on when the world was first loaded.
+$execute \
+	if data block $(reference_x) ~ ~ profile{name: "Tod_NL"} \
+	if data block ~ ~ ~ profile{name: "tod_nl"} \
+	run data modify block ~ ~ ~ profile set from block $(reference_x) ~ ~ profile
