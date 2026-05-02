@@ -7,7 +7,6 @@
 
 forceload add 16 -12 -57 18
 execute at @e[type=minecraft:marker] run forceload add ~ ~
-execute at @e[type=minecraft:area_effect_cloud] run forceload add ~ ~
 
 scoreboard players set $init/lobby.is_loaded fetchr.tmp 0
 
@@ -22,12 +21,6 @@ execute \
 
 execute \
 	at @e[type=minecraft:marker] \
-	unless loaded ~ ~ ~ \
-	run scoreboard players set $init/lobby.is_loaded fetchr.tmp 0
-
-
-execute \
-	at @e[type=minecraft:area_effect_cloud] \
 	unless loaded ~ ~ ~ \
 	run scoreboard players set $init/lobby.is_loaded fetchr.tmp 0
 

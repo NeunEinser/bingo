@@ -99,8 +99,7 @@
 #NEUN_SCRIPT since {NEUN_SCRIPT:min_pack_format} until {NEUN_SCRIPT:first_unsupported_format}
 	function fetchr:tick/spigot
 	execute \
-		if score $lobby_generated fetchr.state matches 1 \
-		unless entity @e[type=minecraft:marker,tag=fetchr.lobby_sign,limit=1] \
+		if score $lobby_generated fetchr.state matches -1 \
 		run tellraw @a {"translate": "fetchr.error.cannot_update", with:["5.0.1", "5.1-beta1"], "color": "red"}
 
 	execute \

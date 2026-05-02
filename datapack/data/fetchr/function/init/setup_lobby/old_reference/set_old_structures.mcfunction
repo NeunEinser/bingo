@@ -6,7 +6,7 @@
 
 execute \
 	unless entity @e[type=minecraft:marker,tag=fetchr.lobby_sign,limit=1] \
-	run return run scoreboard players set $lobby_generated fetchr.state 1
+	run return run scoreboard players set $lobby_generated fetchr.state -1
 
 data modify storage tmp.fetchr:init/structures structures set value []
 
