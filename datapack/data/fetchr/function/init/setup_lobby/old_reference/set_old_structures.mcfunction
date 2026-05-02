@@ -4,6 +4,10 @@
 #
 # @within function fetchr:init/setup_lobby/old_reference/forceload
 
+execute \
+	unless entity @e[type=minecraft:marker,tag=fetchr.lobby_sign,limit=1] \
+	run return run scoreboard players set $lobby_generated fetchr.state 1
+
 data modify storage tmp.fetchr:init/structures structures set value []
 
 data \
@@ -13,11 +17,6 @@ data \
 data \
 	modify storage tmp.fetchr:init/structures legacy_bingo_structures \
 	set from storage fetchr:structure legacy_bingo_structures
-
-execute \
-	unless data storage tmp.fetchr:init/structures legacy_structures[0] \
-	if data storage tmp.fetchr:init/structures legacy_bingo_structures[0] \
-	run function fetchr:init/setup_lobby/old_reference/set_from_bingo_namespace
 
 execute \
 	unless data storage tmp.fetchr:init/structures legacy_structures[0] \

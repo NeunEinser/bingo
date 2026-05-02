@@ -20,6 +20,6 @@ $execute \
 	run function #fetchr:lobby_update/manipulate_updated_entity
 
 #NEUN_SCRIPT until 70
-#$teleport @e[type=#fetchr:marker_entity, distance=...1, nbt={data:{fetchr:{display_entity_id: "$(entity_id)"}}}] \
+#$teleport @e[type=minecraft:marker, distance=...1, nbt={data:{fetchr:{display_entity_id: "$(entity_id)"}}}] \
 	~$(compare_to_clone_x_offset) ~ ~$(compare_to_clone_z_offset)
 #NEUN_SCRIPT end

@@ -93,7 +93,7 @@ execute \
 execute \
 	if score $init/lobby.lobby_type fetchr.tmp matches 1..2 \
 	positioned ~-256 0 ~-256 \
-	as @e[type=#fetchr:marker_entity, dx=512, dy=512, dz=512, tag=!fetchr.structure_spawner, tag=!fetchr.structure_test] \
+	as @e[type=minecraft:marker, dx=512, dy=512, dz=512, tag=!fetchr.structure_spawner, tag=!fetchr.structure_test] \
 	unless data entity @s data.fetchr.display_entity_id \
 	run kill @s
 

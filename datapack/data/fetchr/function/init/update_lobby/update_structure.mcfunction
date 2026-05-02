@@ -174,9 +174,8 @@ $execute \
 	positioned $(old_x) $(y_above_barriers) $(z) \
 	run fill ~ ~ ~ ~$(offset_old_x) ~$(offset_y_above_barriers) ~$(offset_z) minecraft:air strict
 #NEUN_SCRIPT end
-$kill @e[type=#fetchr:marker_entity,x=$(old_x),y=$(y),z=$(z),dx=$(offset_old_x),dy=$(offset_y),dz=$(offset_z)]
+$kill @e[type=minecraft:marker,x=$(old_x),y=$(y),z=$(z),dx=$(offset_old_x),dy=$(offset_y),dz=$(offset_z)]
 $kill @e[type=minecraft:item_frame,tag=fetchr.card_frame,x=$(old_x),y=$(y),z=$(z),dx=$(offset_old_x),dy=$(offset_y),dz=$(offset_z)]
-$kill @e[type=minecraft:item_frame,tag=bingo.card_frame,x=$(old_x),y=$(y),z=$(z),dx=$(offset_old_x),dy=$(offset_y),dz=$(offset_z)]
 
 #NEUN_SCRIPT until 62
 #$execute \

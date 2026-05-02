@@ -14,12 +14,12 @@
 # 	compare_to_clone_z_offset: int The relative z offset from compare to clone location
 
 execute \
-	if entity @s[type=#fetchr:marker_entity] \
+	if entity @s[type=minecraft:marker] \
 	if data entity @s data.fetchr.display_entity_id \
 	run return 0
 
 $execute \
-	if entity @s[type=#fetchr:marker_entity] \
+	if entity @s[type=minecraft:marker] \
 	run return run teleport @s ~$(compare_to_clone_x_offset) ~ ~$(compare_to_clone_z_offset)
 
 # Get display entity id and return if missing
@@ -30,7 +30,7 @@ data \
 
 execute \
 	unless data entity @s data.fetchr.display_entity_id \
-	as @n[type=#fetchr:marker_entity, distance=...1] \
+	as @n[type=minecraft:marker, distance=...1] \
 	run data \
 		modify storage tmp.fetchr:init/update_lobby update_coordinates.entity_id \
 		set from entity @s data.fetchr.display_entity_id

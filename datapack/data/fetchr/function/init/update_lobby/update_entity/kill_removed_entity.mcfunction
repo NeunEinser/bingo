@@ -15,7 +15,7 @@ data \
 
 execute \
 	unless data entity @s data.fetchr.display_entity_id \
-	as @n[type=#fetchr:marker_entity, distance=...1] \
+	as @n[type=minecraft:marker, distance=...1] \
 	run data \
 		modify storage tmp.fetchr:init/update_lobby update_coordinates.entity_id \
 		set from entity @s data.fetchr.display_entity_id

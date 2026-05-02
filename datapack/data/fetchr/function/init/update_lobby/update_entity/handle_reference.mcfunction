@@ -38,14 +38,14 @@ $execute \
 	run return run function fetchr:init/update_lobby/update_entity/handle_old
 $execute \
 	as @e[\
-		type=#fetchr:marker_entity,\
+		type=minecraft:marker,\
 		x=$(old_x),y=$(y),z=$(z),\
 		dx=$(offset_old_x_including_overlap),dy=$(offset_y),dz=$(offset_z),\
 		nbt={data: {fetchr: { display_entity_id: "$(entity_id)" }}},\
 		limit=1\
 	] \
 	at @s \
-	as @n[type=!#fetchr:marker_entity, distance=...1] \
+	as @n[type=!minecraft:marker, distance=...1] \
 	run return run function fetchr:init/update_lobby/update_entity/handle_old
 
 # Entity with same id was not found above, look for entity with the same type

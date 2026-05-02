@@ -37,7 +37,7 @@ execute \
 	run return 1
 $execute \
 	as @e[\
-		type=#fetchr:marker_entity,\
+		type=minecraft:marker,\
 		tag=!fetchr.matched,\
 		x=$(reference_x),y=$(y),z=$(z),\
 		dx=$(offset_old_x_including_overlap),dy=$(offset_y),dz=$(offset_z),\
@@ -45,7 +45,7 @@ $execute \
 		limit=1\
 	] \
 	at @s \
-	as @n[type=!#fetchr:marker_entity, distance=...1] \
+	as @n[type=!minecraft:marker, distance=...1] \
 	run return run function fetchr:init/update_lobby/update_entity/handle_reference \
 		with storage tmp.fetchr:init/update_lobby update_coordinates
 

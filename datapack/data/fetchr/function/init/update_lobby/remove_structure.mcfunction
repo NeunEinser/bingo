@@ -6,22 +6,22 @@
 # @context dimension fetchr:lobby
 
 execute \
-	at @e[type=#fetchr:marker_entity, tag=fetchr.lobby_sign] \
+	at @e[type=minecraft:marker, tag=fetchr.lobby_sign] \
 	run setblock ~ ~ ~ minecraft:air
 execute \
-	at @e[type=#fetchr:marker_entity, tag=fetchr.lobby_lectern] \
+	at @e[type=minecraft:marker, tag=fetchr.lobby_lectern] \
 	run setblock ~ ~ ~ minecraft:air
 execute \
-	at @e[type=#fetchr:marker_entity, tag=fetchr.chest_generation_marker] \
+	at @e[type=minecraft:marker, tag=fetchr.chest_generation_marker] \
 	run function fetchr:init/update_lobby/reset_category_chests
 execute \
-	at @e[type=#fetchr:marker_entity, tag=fetchr.lobby_enderchest] \
+	at @e[type=minecraft:marker, tag=fetchr.lobby_enderchest] \
 	run setblock ~ ~ ~ minecraft:air
 execute \
-	at @e[type=#fetchr:marker_entity, tag=fetchr.multiplayer_door] \
+	at @e[type=minecraft:marker, tag=fetchr.multiplayer_door] \
 	run fill ~ ~ ~ ~ ~1 ~ minecraft:air
 execute \
-	at @e[type=#fetchr:marker_entity, tag=fetchr.mangrove_button_south] \
+	at @e[type=minecraft:marker, tag=fetchr.mangrove_button_south] \
 	run setblock ~ ~ ~ minecraft:air
 
 # Delete old and reference
@@ -76,7 +76,7 @@ $execute \
 	positioned $(old_x) $(y_above_barriers) $(z) \
 	run fill ~ ~ ~ ~$(offset_x) ~$(offset_y_above_barriers) ~$(offset_z) minecraft:air strict
 #NEUN_SCRIPT end
-$kill @e[type=#fetchr:marker_entity,x=$(old_x),y=$(y),z=$(z),dx=$(offset_x),dy=$(offset_y),dz=$(offset_z)]
+$kill @e[type=minecraft:marker,x=$(old_x),y=$(y),z=$(z),dx=$(offset_x),dy=$(offset_y),dz=$(offset_z)]
 
 #NEUN_SCRIPT until 62
 #$execute \
