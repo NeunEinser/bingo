@@ -9,5 +9,10 @@ data \
 	set value "fetchr:old/5.2-pre4-tutorial"
 
 execute \
-	unless entity @e[type=minecraft:area_effect_cloud, tag=fetchr.standing_sign_south] \
+	unless entity @e[type=minecraft:marker, tag=fetchr.standing_sign_south] \
+	run function fetchr:init/setup_lobby/old_reference/set_5.2-pre1
+
+execute \
+	unless entity @e[type=minecraft:marker, tag=fetchr.standing_sign_south] \
+	if entity @e[type=minecraft:area_effect_cloud, tag=bingo.lobby_sign, limit=1] \
 	run function fetchr:init/setup_lobby/old_reference/set_5.2-pre1
