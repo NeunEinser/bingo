@@ -67,3 +67,7 @@ execute \
 
 function fetchr:custom_hud/components/timer/update
 function fetchr:init/setup_lobby/setup_reference
+
+execute \
+	if entity @a[predicate=fetchr:is_in_lobby] \
+	run function fetchr:lobby/place_indestructible_blocks
