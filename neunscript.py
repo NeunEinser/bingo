@@ -723,11 +723,11 @@ def handle_structued(
 						to_replace[key] = new_value
 
 				if new_key.startswith("NEUN_SCRIPT "):
-					match=re.match("NEUN_SCRIPT\s+(.*)", new_key)
+					match=re.match(r"NEUN_SCRIPT\s+(.*)", new_key)
 					if match != None:
 						should_execute_action = False
 						force_child_evaluation = False
-						command = re.sub("\s+", " ", match.group(1)).lower().split(" ")
+						command = re.sub(r"\s+", " ", match.group(1)).lower().split(" ")
 
 						command_offset = 1 if command[0] not in ["replace", "remove"] else 2
 						if len(command) == command_offset:
@@ -873,10 +873,10 @@ def minify_function_file(file_content: str, pack_format: tuple[int, int], min_fo
 			continue
 
 		if line.startswith("#NEUN_SCRIPT"):
-			match=re.match("#NEUN_SCRIPT\s+(.*)", line)
+			match=re.match(r"#NEUN_SCRIPT\s+(.*)", line)
 
 			if match != None:
-				command = re.sub("\s+", " ", match.group(1)).lower().split(" ")
+				command = re.sub(r"\s+", " ", match.group(1)).lower().split(" ")
 				if command[0] == "end":
 					if len(stack) < 1:
 						raise IndexError("Encountered unexpected end instruction")
