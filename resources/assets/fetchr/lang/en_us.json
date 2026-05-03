@@ -1,6 +1,9 @@
 {
 	"fetchr.technical.detect_multiplayer": "DoNotTranslateThis{NEUN_SCRIPT:rp_version}",
 	"fetchr.technical.resourcepack_version_{NEUN_SCRIPT:rp_version}": "%s",
+	"NEUN_SCRIPT remove fetchr.technical.minecraft_version until {NEUN_SCRIPT:min_pack_format}": "",
+	"NEUN_SCRIPT remove fetchr.technical.minecraft_version since {NEUN_SCRIPT:first_unsupported_format}": "",
+	"fetchr.technical.minecraft_version": "%s",
 	
 	"fetchr.error.incompatible_minecraft_version.multiple_compatible": "You are using an unsupported version of Minecraft. This pack has been made compatible for Minecraft versions %s-%s.",
 	"fetchr.error.incompatible_minecraft_version.multiple_compatible.with_latest_snapshot": "You are using an unsupported version of Minecraft. This pack has been made compatible for Minecraft versions %s-%s, or up to snapshot %s.",
@@ -17,6 +20,7 @@
 	"fetchr.setup.error.unknown_category": "Item %1$s has category %2$s, but category %2$s could not be found.",
 
 	"fetchr.actionbar.wrong_resourcepack_error": "Incompatible version of the Fetchr resource pack enabled.",
+	"fetchr.actionbar.wrong_minecraft_error": "Incompatible version of Minecraft.",
 
 	"fetchr.resourcepack_check.sign.line1": "Resource pack",
 	"fetchr.resourcepack_check.sign.line2": "was installed.",

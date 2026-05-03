@@ -22,14 +22,24 @@ title @s actionbar {\
 	"translate": "fetchr.technical.resourcepack_version_{NEUN_SCRIPT:rp_version}",\
 	"fallback":"%2$s",\
 	"with": [\
-		[\
-			{ "text": "\u0001", "font": "fetchr:space" },\
-			{ "text": "\uffff", "font": "fetchr:space" },\
-			{ "storage": "tmp.fetchr:custom_hud", "nbt": "texts[]", "interpret": true, "separator": "" },\
-			{ "storage": "fetchr:tmp", "nbt": "cardOffset", "interpret": true },\
-			{ "storage": "fetchr:card", "nbt": "teams[-1].card", "shadow_color": 0, "interpret": true },\
-			{ "storage": "fetchr:tmp", "nbt": "cardNegOffset", "interpret": true }\
-		],\
+		{\
+			"translate": "fetchr.technical.minecraft_version",\
+			"fallback":"%2$s",\
+			"with": [\
+				[\
+					{ "text": "\u0001", "font": "fetchr:space" },\
+					{ "text": "\uffff", "font": "fetchr:space" },\
+					{ "storage": "tmp.fetchr:custom_hud", "nbt": "texts[]", "interpret": true, "separator": "" },\
+					{ "storage": "fetchr:tmp", "nbt": "cardOffset", "interpret": true },\
+					{ "storage": "fetchr:card", "nbt": "teams[-1].card", "shadow_color": 0, "interpret": true },\
+					{ "storage": "fetchr:tmp", "nbt": "cardNegOffset", "interpret": true }\
+				],\
+				{\
+					"translate": "fetchr.actionbar.wrong_minecraft_error",\
+					"color": "red"\
+				}\
+			]\
+		},\
 		{\
 			"translate": "fetchr.actionbar.wrong_resourcepack_error",\
 			"fallback": "Resource pack not enabled.",\
