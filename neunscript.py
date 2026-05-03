@@ -39,6 +39,7 @@ class VersionInfo(TypedDict):
 	initial_supported: dict | None
 	lowest_release: dict | None
 	latest_supported: dict | None
+	first_unsupported_format: dict | None
 
 def main():
 	config: dict[str, Any] = {}
@@ -117,12 +118,15 @@ def main():
 		return pack_format and f"{pack_format[0]}.{pack_format[1]}"
 	
 	def set_version_vars(vars: dict, is_rp: bool):
+		first_unsupported = None
 		vars["min_pack_format"] = mc_version_info.get("initial_supported") and get_version_string(get_version_from_version_info(mc_version_info["initial_supported"], is_rp))
 		max_pack_format = mc_version_info.get("latest_supported") and get_version_from_version_info(mc_version_info["latest_supported"], is_rp)
 		vars["max_pack_format"] = get_version_string(max_pack_format)
 		vars["first_unsupported_format"] = None
 		if max_pack_format is not None:
-			vars["first_unsupported_format"] = get_version_string(next((get_version_from_version_info(v, is_rp) for v in mc_versions if get_version_from_version_info(v, is_rp) > max_pack_format), (max_pack_format[0] + 1, 0)))
+			first_unsupported = next((get_version_from_version_info(v, is_rp) for v in mc_versions if get_version_from_version_info(v, is_rp) > max_pack_format), (max_pack_format[0] + 1, 0))
+			vars["first_unsupported_format"] = get_version_string(first_unsupported)
+		return first_unsupported
 
 	os.mkdir("dist")
 
@@ -145,7 +149,7 @@ def main():
 		if "data_pack_path" in variant_config:
 			del variant_config["data_pack_path"]
 		if resourcepack_config is not None:
-			set_version_vars(variant_config["vars"], True)
+			mc_version_info["first_unsupported_format"] = set_version_vars(variant_config["vars"], True)
 
 			rppath = f"{target}{os.sep}{name}-{version}-resourcepack{variant_name_part}.zip"
 			iterate_files(variant_config, resourcepack_config, rppath, mc_versions, mc_version_info, 1)
@@ -159,7 +163,7 @@ def main():
 
 		if datapack_config is not None:
 			dppath = f"{target}{os.sep}{name}-{version}-datapack{variant_name_part}.zip"
-			set_version_vars(variant_config["vars"], False)
+			mc_version_info["first_unsupported_format"] = set_version_vars(variant_config["vars"], False)
 			iterate_files(variant_config, datapack_config, dppath, mc_versions, mc_version_info, 0)
 			variant_config["data_pack_path"] = dppath
 
@@ -168,6 +172,7 @@ def main():
 			world_vars["min_pack_format"] = None
 			world_vars["max_pack_format"] = None
 			world_vars["first_unsupported_format"] = None
+			mc_version_info["first_unsupported_format"] = None
 			iterate_files(variant_config, world_config, f"{target}{os.sep}{name}-{version}{variant_name_part}.zip", mc_versions, mc_version_info, 2)
 
 		includes = config.get("include")
@@ -180,6 +185,10 @@ def main():
 				mc_version_info["initial_supported"]["data_pack_version"],
 				mc_version_info["initial_supported"]["data_pack_version_minor"]
 			)
+			max_pack_format = (
+				mc_version_info["latest_supported"]["data_pack_version"],
+				mc_version_info["latest_supported"]["data_pack_version_minor"]
+			)
 			format_versions = sorted({
 				(v["data_pack_version"], v["data_pack_version_minor"]) for v in mc_versions
 			})
@@ -190,7 +199,7 @@ def main():
 				out_path = f"{path[:len(path) - len(extension)]}{variant_name_part}{extension}"
 				print(out_path)
 				out_path = f"{target}{os.sep}{out_path}"
-				result = handle_file("", file_name, path[:-len(file_name)], pack_format, min_pack_format, mc_versions, format_versions, variant_config, mc_version_info, {})["content"]
+				result = handle_file("", file_name, path[:-len(file_name)], pack_format, min_pack_format, max_pack_format, mc_versions, format_versions, variant_config, mc_version_info, {})["content"]
 
 				try:
 					if isinstance(result, str):
@@ -291,6 +300,8 @@ def iterate_files(config: dict, pack_config: dict, outpath: str, mc_versions: li
 			version_info["initial_supported"]["data_pack_version"],
 			version_info["initial_supported"]["data_pack_version_minor"]
 		)
+
+		max_pack_format: tuple[int, int] = version_info["first_unsupported_format"] or (2**31-1, 2**31-1)
 		if os.path.isfile(f"{source}{os.sep}pack.mcmeta"):
 			with open(f"{source}{os.sep}pack.mcmeta") as file:
 				pack_mcmeta: PackFormat = json.loads(file.read())
@@ -333,19 +344,18 @@ def iterate_files(config: dict, pack_config: dict, outpath: str, mc_versions: li
 						default_contents = default_strings
 
 					file_result = handle_file(source, file_name, relative_path, main_pack_format,
-					min_pack_format, mc_versions, format_versions, config, version_info, default_contents)
+					min_pack_format, max_pack_format, mc_versions, format_versions, config, version_info, default_contents)
 
 					pack_formats = sorted(file_result["formats"])
-					should_create_main_as_overlay = False
-					for i in range(0, len(pack_formats)):
+					for i in range(0, len(pack_formats) - 1):
 						min_format = pack_formats[i]
-						max_format = max_excl_to_max_inc(pack_formats[i+1], format_versions) if i+1 < len(pack_formats) else None
+						max_format = max_excl_to_max_inc(pack_formats[i+1], format_versions)
 
-						if main_pack_format >= min_format and (max_format is None or main_pack_format <= max_format):
+						if main_pack_format >= min_format and main_pack_format <= max_format:
 							continue
 
 						overlay_content = handle_file(source, file_name, relative_path, min_format,
-							min_pack_format, mc_versions, format_versions, config, version_info, default_contents)\
+							min_pack_format, max_pack_format, mc_versions, format_versions, config, version_info, default_contents)\
 							["content"]
 
 						if overlay_content is not None:
@@ -356,26 +366,24 @@ def iterate_files(config: dict, pack_config: dict, outpath: str, mc_versions: li
 							out.writestr(get_zipinfo(is_repo, source, f"{source}{os.sep}{file_path}", overlay_path), overlay_content, zipfile.ZIP_DEFLATED, 9)
 
 							mkdirs_zip(is_repo, out, source, relative_path, created_directories, overlay_prefix)
-						else:
-							should_create_main_as_overlay = True
 
 					file_content = file_result["content"]
 					if file_content is not None:
 						main_path = f"{zip_root_path}{os.sep}{file_path}".strip(os.sep)
-						if should_create_main_as_overlay:
-							if (pack_formats[0] != (1, 0)):
-								pack_formats.insert(0, (1, 0))
+						if not re.match(f"assets\{os.sep}[^{os.sep}]+\{os.sep}lang", file_path) and (file_path.startswith("assets") or file_path.startswith("data")):
+							if len(pack_formats) == 0:
+								pack_formats = [min_pack_format, max_pack_format]
 							format_range = get_format_range(pack_formats, main_pack_format, format_versions)
 							pack_format_ranges.add(format_range)
-							overlay_prefix = f"{zip_root_path}{os.sep}{get_overlay_dir_name(format_range, type == 1)}"
+							overlay_prefix = f"{zip_root_path}{os.sep}{get_overlay_dir_name(format_range, type == 1)}".strip(os.sep)
 							main_path = f"{overlay_prefix}{os.sep}{file_path}"
-							
+						
 							mkdirs_zip(is_repo, out, source, relative_path, created_directories, overlay_prefix)
 						
 						print(f"{outpath}: {main_path}")
 						out.writestr(get_zipinfo(is_repo, source, f"{source}{os.sep}{file_path}", main_path), file_content, zipfile.ZIP_DEFLATED, 9)
 
-			if contains_file:
+			if contains_file and (re.match(f"assets\{os.sep}[^\{os.sep}]+\{os.sep}lang", file_path) or (not file_path.startswith("assets") and not file_path.startswith("data"))):
 				mkdirs_zip(is_repo, out, source, relative_path, created_directories, zip_root_path)
 
 		if type == 1:
@@ -562,7 +570,7 @@ def get_overlay_dir_name(format_range: tuple[tuple[int, int] | None, tuple[int, 
 			if (format_range[0] < (65, 0) if is_rp else format_range[0] < (82, 0))
 			else f"{format_range[0][0]}.{format_range[0][1]}")
 	to_part = ""
-	if format_range[1] is not None and format_range[0] < (2**31-1, 0):
+	if format_range[1] is not None and format_range[1] < (2**31-1, 0):
 		if (format_range[1] < (65, 0) if is_rp else format_range[1] < (82, 0)):
 			to_part = f"_to_{format_range[1][0]}"
 		else:
@@ -575,6 +583,7 @@ def handle_file(
 	relative_path: str,
 	pack_format: tuple[int, int],
 	min_pack_format: tuple[int, int],
+	max_pack_format: tuple[int, int],
 	versions: list[dict],
 	format_versions: list[tuple[int, int]],
 	version_config: dict,
@@ -584,7 +593,7 @@ def handle_file(
 	file_path = f"{source}{os.sep}{relative_path}{os.sep}{file_name}".strip("/")
 	if file_name.endswith(".nbt") or file_name.endswith(".dat"):
 		nbt_content = nbtlib.load(file_path)
-		nbt_result = handle_structued(nbt_content, file_path, version_config, version_info, pack_format, min_pack_format, True)
+		nbt_result = handle_structued(nbt_content, file_path, version_config, version_info, pack_format, min_pack_format, max_pack_format, True)
 		set_default_values(nbt_result, default_contents)
 
 		formats = sorted(nbt_result[0])
@@ -637,11 +646,11 @@ def handle_file(
 	}
 
 	if file_name.endswith(".json") or file_name.endswith(".mcmeta"):
-		minify_result = minify_json_file(file_content, file_path, version_config, version_info, pack_format, min_pack_format, default_contents)
+		minify_result = minify_json_file(file_content, file_path, version_config, version_info, pack_format, min_pack_format, max_pack_format, default_contents)
 
 	elif file_name.endswith(".mcfunction"):
 		file_content = replace_variables(file_content, version_config)
-		minify_result = minify_function_file(file_content, version_config, pack_format, min_pack_format)
+		minify_result = minify_function_file(file_content, pack_format, min_pack_format, max_pack_format)
 	else:
 		minify_result["content"] = replace_variables(file_content, version_config)
 
@@ -656,8 +665,9 @@ def handle_structued(
 	file_path: str,
 	config: dict,
 	mc_version_info: VersionInfo,
-	pack_format: list[int],
-	min_format: list[int],
+	pack_format: tuple[int, int],
+	min_format: tuple[int, int],
+	max_format: tuple[int, int],
 	is_nbt: bool,
 	key: str | None = None
 ):
@@ -715,27 +725,33 @@ def handle_structued(
 									if len(command) < command_offset + 2:
 										raise ValueError("until / since needs at least one argument")
 
-									min_value = (1, 0)
-									max_value = None
+									min_value = min_format
+									max_value = max_format
 
 									if command[command_offset] == "since":
 										min_value = to_pack_format_tuple(list(map(lambda v: int(v), command[command_offset + 1].split("."))))
 										if len(command) > command_offset + 2 and command[command_offset + 2] == "until":
 											if len(command) < command_offset + 4:
 												raise ValueError("Syntax: since <pack_format> until <pack_format>")
-											max_value = map(lambda v: int(v), command[command_offset + 3].split("."))
+											max_value = to_pack_format_tuple(list(map(lambda v: int(v), command[command_offset + 3].split("."))))
+										elif min_value >= max_format:
+											max_value = (2**31 - 1, 2**31 - 1)
 									else:
-										max_value = map(lambda v: int(v), command[command_offset + 1].split("."))
+										max_value = to_pack_format_tuple(list(map(lambda v: int(v), command[command_offset + 1].split("."))))
+										if max_value < max_format:
+											pack_formats.add(max_format)
+										else:
+											pack_formats.add((2**31 - 1, 2**31 - 1))
+										if max_value <= min_format:
+											min_value = (1, 0)
 
 									pack_formats.add(min_value)
+									pack_formats.add(max_value)
 
-									if max_value is not None:
-										max_value = to_pack_format_tuple(list(max_value))
-										pack_formats.add(max_value)
-									if pack_format >= min_value and (max_value is None or pack_format < max_value):
+									if pack_format >= min_value and pack_format < max_value:
 										should_execute_action = True
 										if min_value > min_format:
-											pack_formats.add((1, 0))
+											pack_formats.add(min_format)
 
 						val_result = None
 						if should_execute_action:
@@ -745,25 +761,25 @@ def handle_structued(
 								case "remove":
 									to_remove.add(command[1])
 								case "merge":
-									val_result = handle_structued(value, file_path, config, mc_version_info, pack_format, min_format, is_nbt, new_key)
+									val_result = handle_structued(value, file_path, config, mc_version_info, pack_format, min_format, max_format, is_nbt, new_key)
 									if val_result[1] and isinstance(value, dict):
 										for k, v in value.items():
 											to_replace[k] = v
 								case "replace":
-									val_result = handle_structued(value, file_path, config, mc_version_info, pack_format, min_format, is_nbt, new_key)
+									val_result = handle_structued(value, file_path, config, mc_version_info, pack_format, min_format, max_format, is_nbt, new_key)
 									if val_result[1]:
 										to_replace[command[1]] = value
 									else:
 										to_remove.add(command[1])
 
 						if force_child_evaluation and val_result is None:
-							val_result = handle_structued(value, file_path, config, mc_version_info, pack_format, min_format, is_nbt, new_key)
+							val_result = handle_structued(value, file_path, config, mc_version_info, pack_format, min_format, max_format, is_nbt, new_key)
 						if val_result is not None:
 							pack_formats.update(val_result[0])
 						to_remove.add(new_key)
 							
 				else:
-					val_result = handle_structued(value, file_path, config, mc_version_info, pack_format, min_format, is_nbt, new_key)
+					val_result = handle_structued(value, file_path, config, mc_version_info, pack_format, min_format, max_format, is_nbt, new_key)
 					if val_result[1]:
 						pack_formats.update(val_result[0])
 					else:
@@ -777,7 +793,7 @@ def handle_structued(
 	elif isinstance(tag, list):
 		remove_indices = []
 		for i, value in enumerate(tag):
-			val_result = handle_structued(value, file_path, config, mc_version_info, pack_format, min_format, is_nbt)
+			val_result = handle_structued(value, file_path, config, mc_version_info, pack_format, min_format, max_format, is_nbt)
 			if val_result[1]:
 				pack_formats.update(val_result[0])
 			else:
@@ -796,12 +812,13 @@ def minify_json_file(
 	file_path: str,
 	config: dict,
 	mc_version_info: VersionInfo,
-	pack_format: int,
-	min_format: int,
+	pack_format: tuple[int, int],
+	min_format: tuple[int, int],
+	max_format: tuple[int, int],
 	default_contents: dict
 ) -> StringFileMinifyResult:
 	json_content = json.loads(file_content)
-	structured_result = handle_structued(json_content, file_path, config, mc_version_info, pack_format, min_format, False)
+	structured_result = handle_structued(json_content, file_path, config, mc_version_info, pack_format, min_format, max_format, False)
 
 	set_default_values(json_content, default_contents)
 
@@ -815,7 +832,7 @@ class StackEntry(TypedDict):
 	remove: int
 	uncomment: int
 
-def minify_function_file(file_content: str, config: dict, pack_format: tuple[int, int], min_format: tuple[int, int]) -> StringFileMinifyResult:
+def minify_function_file(file_content: str, pack_format: tuple[int, int], min_format: tuple[int, int], max_format: tuple[int, int]) -> StringFileMinifyResult:
 	output=""
 	stack: list[StackEntry] = [{"remove": 0, "uncomment": 0}]
 	pack_formats: set[tuple[int, int]] = set()
@@ -902,22 +919,30 @@ def minify_function_file(file_content: str, config: dict, pack_format: tuple[int
 						remove = 0
 					if len(command) < 2:
 						raise ValueError("until/since needs at least one argument")
-					min_value = (1, 0)
-					max_value = None
+					min_value = min_format
+					max_value = max_format
 					if command[0] == "since":
 						min_value = to_pack_format_tuple(list(map(lambda v: int(v), command[1].split("."))))
 						if len(command) >= 4 and command[2] == "until":
-							max_value = map(lambda v: int(v), command[3].split("."))
+							max_value = to_pack_format_tuple(list(map(lambda v: int(v), command[3].split("."))))
+						elif min_value >= max_format:
+							max_value = (2**31 - 1, 2**31 - 1) 
 					else:
-						max_value = map(lambda v: int(v), command[1].split("."))
+						max_value = to_pack_format_tuple(list(map(lambda v: int(v), command[1].split("."))))
+						if max_value < max_format:
+							pack_formats.add(max_format)
+						else:
+							pack_formats.add((2**31 - 1, 2**31 - 1))
+						if max_value <= min_format and command[0]:
+							min_value = (1, 0)
+
 					pack_formats.add(min_value)
-					if max_value is not None:
-						max_value = to_pack_format_tuple(list(max_value))
-						pack_formats.add(max_value)
-					if pack_format >= min_value and (max_value is None or pack_format < max_value):
+					pack_formats.add(max_value)
+
+					if pack_format >= min_value and pack_format < max_value:
 						uncomment = -1
 						if min_value > min_format:
-							pack_formats.add((1, 0))
+							pack_formats.add(min_format)
 					else:
 						remove = -1
 					stack.append({ "remove": remove, "uncomment": uncomment })
