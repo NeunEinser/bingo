@@ -336,7 +336,10 @@ def iterate_files(config: dict, pack_config: dict, outpath: str, mc_versions: li
 				file_path = f"{relative_path}{os.sep}{file_name}".strip(os.sep)
 				if file_name == "pack.mcmeta" or any(file_path.startswith(exclude) for exclude in excludes):
 					continue
-				contains_file = True
+				keep_in_main = (type == 1 and not file_path.startswith("assets"))\
+					or (type == 2 and not file_path.startswith("data"))\
+					or pack_config.get("keep_main_format_in_main_pack_folder")\
+					or any(x for x in pack_config.get("main_pack_prefixes") or [] if file_path.startswith(x.replace("/", os.sep)))
 
 				if not file_name.endswith(remove_extensions):
 					default_contents = {}
@@ -344,8 +347,11 @@ def iterate_files(config: dict, pack_config: dict, outpath: str, mc_versions: li
 						default_contents = default_strings
 
 					file_result = handle_file(source, file_name, relative_path, main_pack_format,
-					min_pack_format, max_pack_format, mc_versions, format_versions, config, version_info, default_contents)
+						(1, 0) if keep_in_main else min_pack_format,
+						(2**31-1, 2**31-1) if keep_in_main else max_pack_format,
+						mc_versions, format_versions, config, version_info, default_contents)
 
+					generate_main_as_overlay = not keep_in_main
 					pack_formats = sorted(file_result["formats"])
 					for i in range(0, len(pack_formats) - 1):
 						min_format = pack_formats[i]
@@ -366,11 +372,13 @@ def iterate_files(config: dict, pack_config: dict, outpath: str, mc_versions: li
 							out.writestr(get_zipinfo(is_repo, source, f"{source}{os.sep}{file_path}", overlay_path), overlay_content, zipfile.ZIP_DEFLATED, 9)
 
 							mkdirs_zip(is_repo, out, source, relative_path, created_directories, overlay_prefix)
+						else:
+							generate_main_as_overlay = True
 
 					file_content = file_result["content"]
 					if file_content is not None:
 						main_path = f"{zip_root_path}{os.sep}{file_path}".strip(os.sep)
-						if not re.match(f"assets\{os.sep}[^{os.sep}]+\{os.sep}lang", file_path) and (file_path.startswith("assets") or file_path.startswith("data")):
+						if generate_main_as_overlay:
 							if len(pack_formats) == 0:
 								pack_formats = [min_pack_format, max_pack_format]
 							format_range = get_format_range(pack_formats, main_pack_format, format_versions)
@@ -379,11 +387,13 @@ def iterate_files(config: dict, pack_config: dict, outpath: str, mc_versions: li
 							main_path = f"{overlay_prefix}{os.sep}{file_path}"
 						
 							mkdirs_zip(is_repo, out, source, relative_path, created_directories, overlay_prefix)
+						else:
+							contains_file = True
 						
 						print(f"{outpath}: {main_path}")
 						out.writestr(get_zipinfo(is_repo, source, f"{source}{os.sep}{file_path}", main_path), file_content, zipfile.ZIP_DEFLATED, 9)
 
-			if contains_file and (re.match(f"assets\{os.sep}[^\{os.sep}]+\{os.sep}lang", file_path) or (not file_path.startswith("assets") and not file_path.startswith("data"))):
+			if contains_file:
 				mkdirs_zip(is_repo, out, source, relative_path, created_directories, zip_root_path)
 
 		if type == 1:
@@ -397,10 +407,28 @@ def iterate_files(config: dict, pack_config: dict, outpath: str, mc_versions: li
 			default_lang_contents = json.dumps(default_strings, ensure_ascii=False, separators=(",", ":")).encode()
 
 			for lang in languages:
-				lang_path = f"assets{os.sep}minecraft{os.sep}lang{os.sep}{lang}.json"
-				if lang == "en_us" or any(i.filename == lang_path  for i in out.infolist()):
+				if lang == "en_us":
 					continue
 
+				relative_path = f"assets{os.sep}minecraft{os.sep}lang"
+				lang_path = f"{zip_root_path}{os.sep}{relative_path}{os.sep}{lang}.json".strip(os.sep)
+
+				keep_in_main = pack_config.get("keep_main_format_in_main_pack_folder")\
+					or any(x for x in pack_config.get("main_pack_prefixes") or [] if lang_path.startswith(x.replace("/", os.sep)))
+				
+				overlay_prefix = zip_root_path
+				if not keep_in_main:
+					format_range = get_format_range([min_pack_format, max_pack_format], main_pack_format, format_versions)
+					pack_format_ranges.add(format_range)
+					overlay_prefix = f"{zip_root_path}{os.sep}{get_overlay_dir_name(format_range, type == 1)}".strip(os.sep)
+					lang_path = f"{overlay_prefix}{os.sep}{lang_path}"
+				
+				if any(i.filename == lang_path  for i in out.infolist()):
+					continue
+
+				mkdirs_zip(is_repo, out, source, relative_path, created_directories, overlay_prefix)
+
+				print(f"{outpath}: {lang_path}")
 				out.writestr(get_zipinfo(is_repo, source, default_lang_path, lang_path), default_lang_contents, zipfile.ZIP_DEFLATED, 9)
 		elif type == 2:
 			if "region" not in created_directories:
