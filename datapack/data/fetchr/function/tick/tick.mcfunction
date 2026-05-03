@@ -100,7 +100,7 @@
 	function fetchr:tick/spigot
 	execute \
 		if score $lobby_generated fetchr.state matches -1 \
-		run tellraw @a {"translate": "fetchr.error.cannot_update", with:["5.0.1", "5.1-beta1"], "color": "red"}
+		run tellraw @a {"translate": "fetchr.error.cannot_update", "with":["5.0.1", "5.1-beta1"], "color": "red"}
 
 	execute \
 	in minecraft:overworld \
