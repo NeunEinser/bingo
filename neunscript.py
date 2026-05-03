@@ -13,7 +13,6 @@ import subprocess
 import zipfile
 from io import BytesIO
 from typing import Any, TypedDict
-from distutils.dir_util import copy_tree
 from sys import stderr
 
 class Range(TypedDict):
@@ -946,7 +945,7 @@ def minify_function_file(file_content: str, config: dict, pack_format: tuple[int
 
 def copy_file_or_dir(src: str, target: str):
 	if os.path.isdir(src):
-		copy_tree(src, target)
+		shutil.copytree(src, target)
 	elif os.path.exists(src):
 		shutil.copy2(src, target)
 
