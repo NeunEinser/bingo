@@ -10,6 +10,7 @@
 	"fetchr.logging.error": "ERRO",
 	"fetchr.setup.error.unknown_category": "O item %1$s tem categoria %2$s, mas a categoria %2$s não foi encontrada.",
 	"fetchr.actionbar.wrong_resourcepack_error": "Versão incompatível do pacote de recursos do Fetchr ativada.",
+	"fetchr.actionbar.wrong_minecraft_error": "Versão incompatível do Minecraft.",
 	"fetchr.resourcepack_check.sign.line1": "Pacote de recur",
 	"fetchr.resourcepack_check.sign.line2": "sos instalado.",
 	"fetchr.resourcepack_check.sign.line3": "Clique aqui para",
