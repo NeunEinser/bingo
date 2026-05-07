@@ -18,5 +18,23 @@
 		"minecraft:lectern",
 		"#minecraft:wooden_shelves",
 		"minecraft:jukebox"
+	],
+	"NEUN_SCRIPT replace values until 82.0": [
+		"minecraft:barrel",
+		"minecraft:chest",
+		"#minecraft:shulker_boxes",
+		"minecraft:trapped_chest",
+		"minecraft:furnace",
+		"minecraft:blast_furnace",
+		"minecraft:smoker",
+		"minecraft:dispenser",
+		"minecraft:dropper",
+		"minecraft:brewing_stand",
+		"minecraft:hopper",
+		"#minecraft:campfires",
+		"minecraft:chiseled_bookshelf",
+		"minecraft:crafter",
+		"minecraft:lectern",
+		"minecraft:jukebox"
 	]
 }
