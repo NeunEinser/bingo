@@ -10,7 +10,7 @@
 # 	compare_x: int @ -30000000..29999999,
 # 	compare_z: int @ -30000000..29999999,
 # 	reference_x: int @ -30000000..29999999,
-
+$say check_door_id $(reference_x)
 $execute \
 	if block $(reference_x) ~ ~ minecraft:acacia_door \
 	if block ~ ~ ~ minecraft:acacia_door \

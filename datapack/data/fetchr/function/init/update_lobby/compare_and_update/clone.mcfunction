@@ -18,7 +18,7 @@ $execute \
 	run return 0
 
 $execute \
-	positioned $(clone_x) $(y) $(z) \
+	positioned $(clone_x). $(y). $(z). \
 	if block $(reference_x) $(y) $(z) #fetchr:has_special_lobby_update_behavior \
 	if block ~ ~ ~ #fetchr:has_special_lobby_update_behavior \
 	run function #fetchr:lobby_update/manipulate_special_block \
