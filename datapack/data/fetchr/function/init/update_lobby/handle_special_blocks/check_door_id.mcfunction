@@ -39,10 +39,12 @@ $execute \
 	if block $(reference_x) ~ ~ minecraft:jungle_door \
 	if block ~ ~ ~ minecraft:jungle_door \
 	run function fetchr:init/update_lobby/handle_special_blocks/check_door_half {reference_x:$(reference_x)}
+#NEUN_SCRIPT since 58
 $execute \
 	if block $(reference_x) ~ ~ minecraft:pale_oak_door \
 	if block ~ ~ ~ minecraft:pale_oak_door \
 	run function fetchr:init/update_lobby/handle_special_blocks/check_door_half {reference_x:$(reference_x)}
+#NEUN_SCRIPT end
 $execute \
 	if block $(reference_x) ~ ~ minecraft:spruce_door \
 	if block ~ ~ ~ minecraft:spruce_door \
