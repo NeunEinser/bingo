@@ -82,7 +82,7 @@ function fetchr:init/update_lobby/compare_and_update/x_iter \
 #$execute \
 	if score $init/lobby/update.x_diff fetchr.tmp matches ..-1 \
 	positioned -29999999 $(new_y) $(compare_z) \
-	run clone ~ ~ ~ ~$(x_diff_offset) ~$(offset_y) ~$(offset_z) $(clone_x) ~ $(new_z) strict
+	run clone ~ ~ ~ ~$(x_diff_offset) ~$(offset_y) ~$(offset_z) $(clone_x) ~ $(new_z)
 #NEUN_SCRIPT end
 #NEUN_SCRIPT since 62
 $execute \
@@ -109,7 +109,7 @@ $execute \
 	run fill ~ ~ ~ ~$(offset_x) ~$(offset_y_above_barriers) ~$(offset_z) minecraft:air
 #$execute \
 	positioned -29999999 0 $(compare_z) \
-	run fill ~ 0 ~ ~$(offset_x) 2 ~$(offset_z) minecraft:barrier strict
+	run fill ~ 0 ~ ~$(offset_x) 2 ~$(offset_z) minecraft:barrier
 #NEUN_SCRIPT end
 #NEUN_SCRIPT since 62
 $execute \
