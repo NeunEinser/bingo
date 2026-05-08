@@ -19,12 +19,12 @@ $execute \
 #NEUN_SCRIPT until 62
 #$execute \
 	if block $(clone_x) $(y) $(z) minecraft:air \
-	run return run clone $(new_x) $(y) $(z) $(new_x) $(y) $(z) $(clone_x) $(y) $(z) replace move
+	run return run clone $(new_x) $(y) $(z) $(new_x) $(y) $(z) $(clone_x) $(y) $(z)
 #NEUN_SCRIPT end
 #NEUN_SCRIPT since 62
 $execute \
 	if block $(clone_x) $(y) $(z) minecraft:air \
-	run return run clone $(new_x) $(y) $(z) $(new_x) $(y) $(z) $(clone_x) $(y) $(z) strict replace move
+	run return run clone $(new_x) $(y) $(z) $(new_x) $(y) $(z) $(clone_x) $(y) $(z) strict
 #NEUN_SCRIPT end
 
 execute \
@@ -34,13 +34,13 @@ execute \
 #$execute \
 	if score $init/lobby/update/clear_target.y fetchr.tmp matches 0..2 \
 	if block $(clone_x) $(y) $(z) minecraft:barrier \
-	run return run clone $(new_x) $(y) $(z) $(new_x) $(y) $(z) $(clone_x) $(y) $(z) replace move
+	run return run clone $(new_x) $(y) $(z) $(new_x) $(y) $(z) $(clone_x) $(y) $(z)
 #NEUN_SCRIPT end
 #NEUN_SCRIPT since 62
 $execute \
 	if score $init/lobby/update/clear_target.y fetchr.tmp matches 0..2 \
 	if block $(clone_x) $(y) $(z) minecraft:barrier \
-	run return run clone $(new_x) $(y) $(z) $(new_x) $(y) $(z) $(clone_x) $(y) $(z) strict replace move
+	run return run clone $(new_x) $(y) $(z) $(new_x) $(y) $(z) $(clone_x) $(y) $(z) strict
 #NEUN_SCRIPT end
 
 $execute \

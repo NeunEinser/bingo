@@ -8,6 +8,10 @@
 execute \
 	store result storage tmp.fetchr:init/update_lobby move_back_coordinates.y int 1 \
 	run scoreboard players get $init/lobby/update.y fetchr.tmp
+scoreboard players set $init/lobby/update.y_above_barriers fetchr.tmp 3
+execute \
+	store result storage tmp.fetchr:init/update_lobby move_back_coordinates.y_above_barriers int 1 \
+	run scoreboard players operation $init/lobby/update.y_above_barriers fetchr.tmp > $init/lobby/update.y fetchr.tmp
 execute \
 	store result storage tmp.fetchr:init/update_lobby move_back_coordinates.z int 1 \
 	run scoreboard players get $init/lobby/update.z fetchr.tmp
@@ -21,6 +25,12 @@ scoreboard players operation $init/lobby/update.offset_y fetchr.tmp = $init/lobb
 execute \
 	store result storage tmp.fetchr:init/update_lobby move_back_coordinates.offset_y int 1 \
 	run scoreboard players remove $init/lobby/update.offset_y fetchr.tmp 1
+
+scoreboard players operation $init/lobby/update.offset_y_above_barriers fetchr.tmp = $init/lobby/update.offset_y fetchr.tmp
+scoreboard players operation $init/lobby/update.offset_y_above_barriers fetchr.tmp -= $init/lobby/update.y_above_barriers fetchr.tmp
+execute \
+	store result storage tmp.fetchr:init/update_lobby move_back_coordinates.offset_y_above_barriers int 1 \
+	run scoreboard players operation $init/lobby/update.offset_y_above_barriers fetchr.tmp += $init/lobby/update.y fetchr.tmp
 
 scoreboard players operation $init/lobby/update.offset_z fetchr.tmp = $init/lobby/update.size_z fetchr.tmp
 execute \

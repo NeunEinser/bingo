@@ -60,9 +60,11 @@ dispatch minecraft:storage[tmp.fetchr:init/update_lobby] to struct {
 	}],
 	move_back_coordinates: struct {
 		y?: int @ 0..64,
+		y_above_barriers?: int @ 3..64,
 		z?: int @ -30000000..29999999,
 		offset_x?: int @ 0..60000000,
 		offset_y?: int @ 0..64,
+		offset_y_above_barriers?: int @ 0..64,
 		offset_z?: int @ 0..60000000,
 		new_x?: int @ -30000000..29999999,
 		clone_x?: int @ -30000000..29999999,

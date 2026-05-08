@@ -37,12 +37,28 @@ function fetchr:init/update_lobby/clear_target_area/x_iter \
 #NEUN_SCRIPT until 62
 #$execute \
 	positioned $(clone_x) $(y) $(z) \
-	run clone ~ ~ ~ ~$(offset_x) ~$(offset_y) ~$(offset_z) $(new_x) ~ ~ replace move
+	run clone ~ ~ ~ ~$(offset_x) ~$(offset_y) ~$(offset_z) $(new_x) ~ ~
+#$execute \
+	if score $init/lobby/update.y fetchr.tmp matches ..2 \
+	positioned $(clone_x) $(y) $(z) \
+	run fill ~ ~ ~ ~$(offset_x) 2 ~$(offset_z) minecraft:barrier
+#$execute \
+	if score $init/lobby/update.offset_y_above_barriers fetchr.tmp matches 0.. \
+	positioned $(clone_x) $(y_above_barriers) $(z) \
+	run fill ~ ~ ~ ~$(offset_x) ~$(offset_y_above_barriers) ~$(offset_z) minecraft:air
 #NEUN_SCRIPT end
 #NEUN_SCRIPT since 62
 $execute \
 	positioned $(clone_x) $(y) $(z) \
-	run clone ~ ~ ~ ~$(offset_x) ~$(offset_y) ~$(offset_z) $(new_x) ~ ~ strict replace move
+	run clone ~ ~ ~ ~$(offset_x) ~$(offset_y) ~$(offset_z) $(new_x) ~ ~ strict
+$execute \
+	if score $init/lobby/update.y fetchr.tmp matches ..2 \
+	positioned $(clone_x) $(y) $(z) \
+	run fill ~ ~ ~ ~$(offset_x) 2 ~$(offset_z) minecraft:barrier strict
+$execute \
+	if score $init/lobby/update.offset_y_above_barriers fetchr.tmp matches 0.. \
+	positioned $(clone_x) $(y_above_barriers) $(z) \
+	run fill ~ ~ ~ ~$(offset_x) ~$(offset_y_above_barriers) ~$(offset_z) minecraft:air strict
 #NEUN_SCRIPT end
 $execute \
 	as @e[x=$(clone_x),y=$(y),z=$(z),dx=$(offset_x),dy=$(offset_y),dz=$(offset_z)] \
