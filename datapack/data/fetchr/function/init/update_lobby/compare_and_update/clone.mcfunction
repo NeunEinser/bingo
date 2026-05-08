@@ -13,7 +13,6 @@
 # 	clone_x: int @ -30000000..29999999,
 
 $execute \
-	unless block $(compare_x) $(y) $(compare_z) #fetchr:forces_lobby_update \
 	if blocks $(compare_x) $(y) $(compare_z) $(compare_x) $(y) $(compare_z) $(reference_x) $(y) $(z) all \
 	run return 0
 

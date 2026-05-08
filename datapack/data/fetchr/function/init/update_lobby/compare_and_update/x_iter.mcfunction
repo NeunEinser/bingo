@@ -15,24 +15,9 @@
 # 	offset_y: int @ 0..64,
 # 	offset_z: int @ 0..60000000,
 
-scoreboard players set $init/lobby/update/compare_and_update.needs_update fetchr.tmp 1
-#NEUN_SCRIPT until 62
-#$execute \
-	positioned $(compare_x) $(y) $(compare_z) \
-	if blocks ~ ~ ~ ~$(offset_x) ~$(offset_y) ~$(offset_z) $(reference_x) ~ $(z) all \
-	store success score $init/lobby/update/compare_and_update.needs_update fetchr.tmp \
-	run clone ~ ~ ~ ~$(offset_x) ~$(offset_y) ~$(offset_z) ~ ~ ~ filtered #fetchr:forces_lobby_update move
-#NEUN_SCRIPT end
-#NEUN_SCRIPT since 62
 $execute \
 	positioned $(compare_x) $(y) $(compare_z) \
 	if blocks ~ ~ ~ ~$(offset_x) ~$(offset_y) ~$(offset_z) $(reference_x) ~ $(z) all \
-	store success score $init/lobby/update/compare_and_update.needs_update fetchr.tmp \
-	run clone ~ ~ ~ ~$(offset_x) ~$(offset_y) ~$(offset_z) ~ ~ ~ strict filtered #fetchr:forces_lobby_update move
-#NEUN_SCRIPT end
-
-execute \
-	if score $init/lobby/update/compare_and_update.needs_update fetchr.tmp matches 0 \
 	run return 0
 
 execute \
@@ -48,11 +33,9 @@ execute \
 execute \
 	store result score $init/lobby/update/compare_and_update.clone_x fetchr.tmp \
 	run data get storage tmp.fetchr:init/update_lobby compare_coordinates[-1].clone_x
-#NEUN_SCRIPT until 62
-#execute \
+execute \
 	store result score $init/lobby/update/compare_and_update.old_x fetchr.tmp \
 	run data get storage tmp.fetchr:init/update_lobby compare_coordinates[-1].old_x
-#NEUN_SCRIPT end
 
 # low
 data \
@@ -88,11 +71,9 @@ execute \
 execute \
 	store result storage tmp.fetchr:init/update_lobby compare_coordinates[-1].clone_x int 1 \
 	run scoreboard players operation $init/lobby/update/compare_and_update.clone_x fetchr.tmp += $init/lobby/update/compare_and_update.size_low_x fetchr.tmp
-#NEUN_SCRIPT until 62
-#execute \
+execute \
 	store result storage tmp.fetchr:init/update_lobby compare_coordinates[-1].old_x int 1 \
 	run scoreboard players operation $init/lobby/update/compare_and_update.old_x fetchr.tmp += $init/lobby/update/compare_and_update.size_low_x fetchr.tmp
-#NEUN_SCRIPT end
 
 # recurse high
 execute \

@@ -2636,17 +2636,17 @@ data \
 
 # structures
 #NEUN_SCRIPT until 62
-data modify storage fetchr:registries structures append value {\
+#data modify storage fetchr:registries structures append value {\
 	id: "fetchr:credits",\
 	version: 1,\
 	entrance_position: [I; 6, 2, 19]\
 }
-data modify storage fetchr:registries structures append value {\
+#data modify storage fetchr:registries structures append value {\
 	id: "fetchr:card_generation",\
 	version: 1,\
 	entrance_position: [I; 0, 2, 10]\
 }
-data modify storage fetchr:registries structures append value {\
+#data modify storage fetchr:registries structures append value {\
 	id: "fetchr:tutorial",\
 	version: 1,\
 	entrance_position: [I; 0, 2, 19]\
@@ -2666,7 +2666,7 @@ data modify storage fetchr:registries structures append value {\
 }
 #NEUN_SCRIPT end
 #NEUN_SCRIPT since 62 until 70
-data modify storage fetchr:registries structures append value {\
+#data modify storage fetchr:registries structures append value {\
 	id: "fetchr:tutorial",\
 	version: 2,\
 	entrance_position: [I; 0, 2, 19]\

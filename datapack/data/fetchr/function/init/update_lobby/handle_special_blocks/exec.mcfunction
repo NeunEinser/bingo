@@ -29,6 +29,18 @@ $execute \
 	if data block ~ ~ ~ profile{name: "tod_nl"} \
 	run data modify block ~ ~ ~ profile set from block $(reference_x) ~ ~ profile
 
+# Remove additional data from refercence for most meaningful comparision
+$execute \
+	if data block $(reference_x) ~ ~ profile.id \
+	run data remove block $(reference_x) ~ ~ profile.name
+$execute \
+	if data block $(reference_x) ~ ~ profile.id \
+	run data remove block $(reference_x) ~ ~ profile.properties
+$execute \
+	if data block $(reference_x) ~ ~ profile.name \
+	run data remove block $(reference_x) ~ ~ profile.properties
+
+# Remove additional data from old lobby for most meaningful comparision
 $execute \
 	unless data block $(reference_x) ~ ~ profile.properties \
 	if data block ~ ~ ~ profile.properties \
