@@ -15,24 +15,19 @@
 #$execute \
 	if block ~ ~ ~ #minecraft:doors[half=lower] \
 	if block $(reference_x) ~ ~ #minecraft:doors[half=lower] \
+	run setblock ~ ~ ~ air
+#$execute \
+	if block ~ ~ ~ #minecraft:doors[half=upper] \
+	if block $(reference_x) ~ ~ #minecraft:doors[half=upper] \
+	run setblock ~ ~-1 ~ air
+#$execute \
+	if block ~ ~ ~ minecraft:air \
+	if block $(reference_x) ~ ~ #minecraft:doors[half=lower] \
 	run clone $(reference_x) ~ ~ $(reference_x) ~1 ~ ~ ~ ~
 #$execute \
-	if block ~ ~ ~ #minecraft:doors[half=upper] \
+	if block ~ ~ ~ minecraft:air \
 	if block $(reference_x) ~ ~ #minecraft:doors[half=upper] \
 	run clone $(reference_x) ~ ~ $(reference_x) ~-1 ~ ~ ~-1 ~
-#$execute \
-	if block ~ ~ ~ #minecraft:doors[half=lower] \
-	if block $(reference_x) ~ ~ #minecraft:doors[half=lower] \
-	as @e[type=minecraft:item,dx=0,dy=1,dz=0] \
-	if items entity @s contents #minecraft:doors \
-	run return run kill @s
-#$execute \
-	if block ~ ~ ~ #minecraft:doors[half=upper] \
-	if block $(reference_x) ~ ~ #minecraft:doors[half=upper] \
-	positioned ~ ~-1 ~ \
-	as @e[type=minecraft:item,dx=0,dy=1,dz=0] \
-	if items entity @s contents #minecraft:doors \
-	run return run kill @s
 #NEUN_SCRIPT end
 #NEUN_SCRIPT since 62
 $execute \
