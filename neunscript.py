@@ -347,9 +347,8 @@ def iterate_files(config: dict, pack_config: dict, outpath: str, mc_versions: li
 						default_contents = default_strings
 
 					file_result = handle_file(source, file_name, relative_path, main_pack_format,
-						(1, 0) if keep_in_main else min_pack_format,
-						(2**31-1, 2**31-1) if keep_in_main else max_pack_format,
-						mc_versions, format_versions, config, version_info, default_contents)
+						min_pack_format, max_pack_format, mc_versions, format_versions, config,
+						version_info, default_contents)
 
 					generate_main_as_overlay = not keep_in_main
 					pack_formats = sorted(file_result["formats"])
