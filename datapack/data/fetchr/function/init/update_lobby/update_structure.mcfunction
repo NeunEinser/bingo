@@ -73,6 +73,11 @@ execute \
 execute \
 	store result storage tmp.fetchr:init/update_lobby compare_coordinates[0].clone_x int 1 \
 	run scoreboard players get $init/lobby/update.clone_to_x fetchr.tmp
+#NEUN_SCRIPT until 62
+#execute \
+	store result storage tmp.fetchr:init/update_lobby compare_coordinates[0].old_x int 1 \
+	run scoreboard players get $init/lobby/update.clone_from_x fetchr.tmp
+#NEUN_SCRIPT end
 
 function fetchr:init/update_lobby/compare_and_update/x_iter \
 	with storage tmp.fetchr:init/update_lobby compare_coordinates[0]

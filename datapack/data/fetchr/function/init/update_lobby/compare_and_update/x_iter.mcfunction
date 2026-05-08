@@ -48,7 +48,11 @@ execute \
 execute \
 	store result score $init/lobby/update/compare_and_update.clone_x fetchr.tmp \
 	run data get storage tmp.fetchr:init/update_lobby compare_coordinates[-1].clone_x
-
+#NEUN_SCRIPT until 62
+#execute \
+	store result score $init/lobby/update/compare_and_update.old_x fetchr.tmp \
+	run data get storage tmp.fetchr:init/update_lobby compare_coordinates[-1].old_x
+#NEUN_SCRIPT end
 
 # low
 data \
@@ -84,7 +88,11 @@ execute \
 execute \
 	store result storage tmp.fetchr:init/update_lobby compare_coordinates[-1].clone_x int 1 \
 	run scoreboard players operation $init/lobby/update/compare_and_update.clone_x fetchr.tmp += $init/lobby/update/compare_and_update.size_low_x fetchr.tmp
-
+#NEUN_SCRIPT until 62
+#execute \
+	store result storage tmp.fetchr:init/update_lobby compare_coordinates[-1].old_x int 1 \
+	run scoreboard players operation $init/lobby/update/compare_and_update.old_x fetchr.tmp += $init/lobby/update/compare_and_update.size_low_x fetchr.tmp
+#NEUN_SCRIPT end
 
 # recurse high
 execute \

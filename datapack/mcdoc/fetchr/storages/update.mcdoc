@@ -46,6 +46,8 @@ dispatch minecraft:storage[tmp.fetchr:init/update_lobby] to struct {
 		offset_y?: int @ 0..64,
 		offset_z?: int @ 0..60000000,
 		clone_x?: int @ -30000000..29999999,
+		#[until="1.21.5"]
+		old_x?: int @ -30000000..29999999,
 	}],
 	spawn_items_coordinates: [struct {
 		y?: int @ 0..64,
