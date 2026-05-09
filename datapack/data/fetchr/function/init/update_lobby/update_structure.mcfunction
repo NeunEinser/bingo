@@ -120,10 +120,10 @@ $execute \
 $execute \
 	if score $init/lobby/update.offset_y_above_barriers fetchr.tmp matches 0.. \
 	positioned -29999999 $(y_above_barriers) $(compare_z) \
-	run fill ~ ~ ~ ~$(offset_x) ~$(offset_y_above_barriers) ~$(offset_z) minecraft:air strict
+	run fill ~ ~ ~ ~$(offset_x_including_overlap) ~$(offset_y_above_barriers) ~$(offset_z) minecraft:air strict
 $execute \
 	positioned -29999999 0 $(compare_z) \
-	run fill ~ 0 ~ ~$(offset_x) 2 ~$(offset_z) minecraft:barrier strict
+	run fill ~ 0 ~ ~$(offset_x_including_overlap) 2 ~$(offset_z) minecraft:barrier strict
 #NEUN_SCRIPT end
 $teleport @e[x=-29999999,y=$(new_y),z=$(compare_z),dx=$(offset_x_including_overlap),dy=$(offset_y),dz=$(offset_z)] 0 -127 0
 kill @e[x=0.5,y=-127,z=0.5,distance=...1]
