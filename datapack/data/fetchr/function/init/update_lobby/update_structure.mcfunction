@@ -112,6 +112,13 @@ $execute \
 	as @e[tag=!fetchr.matched,x=$(reference_x),y=$(y),z=$(z),dx=$(offset_x),dy=$(offset_y),dz=$(offset_z)] \
 	run function fetchr:init/update_lobby/update_entity/kill_removed_entity
 
+$kill @e[type=minecraft:marker,x=$(old_x),y=$(y),z=$(z),dx=$(offset_old_x_including_overlap),dy=$(offset_y),dz=$(offset_z)]
+$kill @e[type=minecraft:item_frame,tag=fetchr.card_frame,x=$(old_x),y=$(y),z=$(z),dx=$(offset_old_x_including_overlap),dy=$(offset_y),dz=$(offset_z)]
+$execute as \
+	@e[x=$(old_x),y=$(y),z=$(z),dx=$(offset_x),dy=$(offset_y),dz=$(offset_z)] \
+	at @s \
+	run teleport @s ~$(old_to_clone_x_offset) ~ ~
+
 # Reset compare area
 #NEUN_SCRIPT until 62
 #$execute \
@@ -184,8 +191,6 @@ $execute \
 	positioned $(old_x) $(y_above_barriers) $(z) \
 	run fill ~ ~ ~ ~$(offset_old_x) ~$(offset_y_above_barriers) ~$(offset_z) minecraft:air strict
 #NEUN_SCRIPT end
-$kill @e[type=minecraft:marker,x=$(old_x),y=$(y),z=$(z),dx=$(offset_old_x),dy=$(offset_y),dz=$(offset_z)]
-$kill @e[type=minecraft:item_frame,tag=fetchr.card_frame,x=$(old_x),y=$(y),z=$(z),dx=$(offset_old_x),dy=$(offset_y),dz=$(offset_z)]
 
 #NEUN_SCRIPT until 62
 #$execute \

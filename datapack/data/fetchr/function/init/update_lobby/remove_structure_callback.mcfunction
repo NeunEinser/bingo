@@ -21,6 +21,10 @@ scoreboard players operation $init/lobby/update.offset_x fetchr.tmp = $init/lobb
 execute \
 	store result storage tmp.fetchr:init/update_lobby update_coordinates.offset_x int 1 \
 	run scoreboard players remove $init/lobby/update.offset_x fetchr.tmp 1
+scoreboard players operation $init/lobby/update.offset_old_x_including_overlap fetchr.tmp = $init/lobby/update.old_size_x_including_overlap fetchr.tmp
+execute \
+	store result storage tmp.fetchr:init/update_lobby update_coordinates.offset_old_x_including_overlap int 1 \
+	run scoreboard players remove $init/lobby/update.offset_old_x_including_overlap fetchr.tmp 1
 scoreboard players operation $init/lobby/update.offset_y fetchr.tmp = $init/lobby/update.old_size_y fetchr.tmp
 execute \
 	store result storage tmp.fetchr:init/update_lobby update_coordinates.offset_y int 1 \

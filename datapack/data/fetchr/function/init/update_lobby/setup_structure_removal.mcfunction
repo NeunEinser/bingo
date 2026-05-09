@@ -6,10 +6,10 @@
 # @context dimension fetchr:lobby
 
 execute \
-	store result score $init/lobby/update.old_size_x fetchr.tmp \
+	store result score $init/lobby/update.old_size_x_including_overlap fetchr.tmp \
 	run data get storage tmp.fetchr:init/update_lobby old_structures[0].size[0]
-scoreboard players operation $init/lobby/update.old_x fetchr.tmp -= $init/lobby/update.old_size_x fetchr.tmp
-scoreboard players operation $init/lobby/update.reference_x fetchr.tmp -= $init/lobby/update.old_size_x fetchr.tmp
+scoreboard players operation $init/lobby/update.old_x fetchr.tmp -= $init/lobby/update.old_size_x_including_overlap fetchr.tmp
+scoreboard players operation $init/lobby/update.reference_x fetchr.tmp -= $init/lobby/update.old_size_x_including_overlap fetchr.tmp
 execute \
 	store result score $init/lobby/update.old_x_overlap fetchr.tmp \
 	run data get storage tmp.fetchr:init/update_lobby old_structures[0].entrance_position[0]
@@ -24,6 +24,7 @@ execute \
 	run data \
 		modify storage tmp.fetchr:init/update_lobby data_comparision \
 		set from storage tmp.fetchr:init/update_lobby old_structures[0].id
+scoreboard players operation $init/lobby/update.old_size_x fetchr.tmp = $init/lobby/update.old_size_x_including_overlap fetchr.tmp
 execute \
 	if score $init/lobby/update.is_past_first fetchr.tmp matches 1 \
 	run scoreboard players operation $init/lobby/update.old_size_x fetchr.tmp -= $init/lobby/update.old_x_overlap fetchr.tmp

@@ -152,6 +152,15 @@ execute \
 	store result storage tmp.fetchr:init/update_lobby update_coordinates.compare_to_clone_z_offset int 1 \
 	run scoreboard players add $init/lobby/update.compare_to_clone_z_offset fetchr.tmp 30000000
 
+scoreboard players operation \
+	$init/lobby/update.old_to_clone_x_offset fetchr.tmp \
+	= $init/lobby/update.clone_x fetchr.tmp
+execute \
+	store result storage tmp.fetchr:init/update_lobby update_coordinates.old_to_clone_x_offset int 1 \
+	run scoreboard players operation \
+		$init/lobby/update.old_to_clone_x_offset fetchr.tmp \
+		-= $init/lobby/update.old_x fetchr.tmp
+
 execute \
 	in fetchr:lobby \
 	run function fetchr:init/update_lobby/update_structure \

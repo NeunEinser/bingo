@@ -76,7 +76,11 @@ $execute \
 	positioned $(old_x) $(y_above_barriers) $(z) \
 	run fill ~ ~ ~ ~$(offset_x) ~$(offset_y_above_barriers) ~$(offset_z) minecraft:air strict
 #NEUN_SCRIPT end
-$kill @e[type=minecraft:marker,x=$(old_x),y=$(y),z=$(z),dx=$(offset_x),dy=$(offset_y),dz=$(offset_z)]
+$kill @e[type=minecraft:marker,x=$(old_x),y=$(y),z=$(z),dx=$(offset_old_x_including_overlap),dy=$(offset_y),dz=$(offset_z)]
+$kill @e[type=minecraft:item_frame,tag=fetchr.card_frame,x=$(old_x),y=$(y),z=$(z),dx=$(offset_old_x_including_overlap),dy=$(offset_y),dz=$(offset_z)]
+$execute as \
+	@e[x=$(old_x),y=$(y),z=$(z),dx=$(offset_x),dy=$(offset_y),dz=$(offset_z)] \
+	run teleport @s 7 3 7
 
 #NEUN_SCRIPT until 62
 #$execute \
