@@ -20,6 +20,7 @@
 #NEUN_SCRIPT until 62
 #$place template $(structure_id) -29999999 $(new_y) $(compare_z) none none 1 1
 #$execute \
+	if score $init/lobby/update.old_size_x fetchr.tmp matches 1.. \
 	positioned $(clone_from_x) $(y) $(z) \
 	run clone ~ ~ ~ \
 		~$(offset_x_for_clone) ~$(offset_y) ~$(offset_z) \
@@ -28,6 +29,7 @@
 #NEUN_SCRIPT since 62
 $place template $(structure_id) -29999999 $(new_y) $(compare_z) none none 1 1 strict
 $execute \
+	if score $init/lobby/update.old_size_x fetchr.tmp matches 1.. \
 	positioned $(clone_from_x) $(y) $(z) \
 	run clone ~ ~ ~ \
 		~$(offset_x_for_clone) ~$(offset_y) ~$(offset_z) \
@@ -79,8 +81,10 @@ execute \
 	run scoreboard players get $init/lobby/update.clone_from_x fetchr.tmp
 #NEUN_SCRIPT end
 
-function fetchr:init/update_lobby/compare_and_update/x_iter \
-	with storage tmp.fetchr:init/update_lobby compare_coordinates[0]
+execute \
+	if score $init/lobby/update.old_size_x fetchr.tmp matches 1.. \
+	run function fetchr:init/update_lobby/compare_and_update/x_iter \
+		with storage tmp.fetchr:init/update_lobby compare_coordinates[0]
 
 # In case structure size increased, copy increased area from compare area
 #NEUN_SCRIPT until 62
@@ -98,6 +102,7 @@ $execute \
 
 # Update entities
 $execute \
+	if score $init/lobby/update.old_size_x fetchr.tmp matches 1.. \
 	as @e[x=-29999999,y=$(new_y),z=$(compare_z),dx=$(offset_x_including_overlap),dy=$(offset_y),dz=$(offset_z)] \
 	at @s \
 	run function fetchr:init/update_lobby/update_entity/exec \

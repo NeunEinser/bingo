@@ -1,4 +1,4 @@
-#> fetchr:init/update_lobby/remove_non_exiting_old
+#> fetchr:init/update_lobby/setup_structure_removal
 #
 # Removes old structures that used to exist, but have been removed.
 #
@@ -15,6 +15,18 @@ execute \
 	run data get storage tmp.fetchr:init/update_lobby old_structures[0].entrance_position[0]
 scoreboard players operation $init/lobby/update.old_x fetchr.tmp += $init/lobby/update.old_x_overlap fetchr.tmp
 scoreboard players operation $init/lobby/update.reference_x fetchr.tmp += $init/lobby/update.old_x_overlap fetchr.tmp
+
+data \
+	modify storage tmp.fetchr:init/update_lobby data_comparision \
+	set from storage fetchr:structure structures[0].id
+execute \
+	store success score $init/lobby/update.is_past_first fetchr.tmp \
+	run data \
+		modify storage tmp.fetchr:init/update_lobby data_comparision \
+		set from storage tmp.fetchr:init/update_lobby old_structures[0].id
+execute \
+	if score $init/lobby/update.is_past_first fetchr.tmp matches 1 \
+	run scoreboard players operation $init/lobby/update.old_size_x fetchr.tmp -= $init/lobby/update.old_x_overlap fetchr.tmp
 
 scoreboard players set $init/lobby/update.should_remove fetchr.tmp 1
 
@@ -39,7 +51,7 @@ execute \
 	run return run function fetchr:init/update_lobby/update_structures
 execute \
 	if score $init/lobby/update.should_remove fetchr.tmp matches 0 \
-	run return run function fetchr:init/update_lobby/remove_non_exiting_old
+	run return run function fetchr:init/update_lobby/setup_structure_removal
 
 execute \
 	store result score $init/lobby/update.old_y fetchr.tmp \

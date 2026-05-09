@@ -109,4 +109,4 @@ execute \
 	run function fetchr:init/update_lobby/update_structures
 execute \
 	if data storage tmp.fetchr:init/update_lobby old_structures[0] \
-	run function fetchr:init/update_lobby/remove_non_exiting_old
+	run function fetchr:init/update_lobby/setup_structure_removal

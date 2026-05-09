@@ -64,4 +64,4 @@ scoreboard players operation $init/lobby/update.reference_x fetchr.tmp -= $init/
 
 execute \
 	in fetchr:lobby \
-	run function fetchr:init/update_lobby/remove_non_exiting_old
+	run function fetchr:init/update_lobby/setup_structure_removal

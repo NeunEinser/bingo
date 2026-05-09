@@ -74,6 +74,9 @@
 	execute \
 		if data storage tmp.fetchr:init/update_lobby structures[1] \
 		run scoreboard players operation $init/lobby/update.new_size_x fetchr.tmp -= $init/lobby/update.new_x_overlap fetchr.tmp
+	execute \
+		if score $init/lobby/update.new_size_x fetchr.tmp matches ..-1 \
+		run scoreboard players set $init/lobby/update.new_size_x fetchr.tmp 0
 #endregion
 
 #region get old structure and dimensions
@@ -134,6 +137,9 @@
 	execute \
 		if data storage tmp.fetchr:init/update_lobby structures[1] \
 		run scoreboard players operation $init/lobby/update.old_size_x fetchr.tmp -= $init/lobby/update.old_x_overlap fetchr.tmp
+	execute \
+		if score $init/lobby/update.old_size_x fetchr.tmp matches ..-1 \
+		run scoreboard players set $init/lobby/update.old_size_x fetchr.tmp 0
 	#>
 	# The y-size of the old structure.
 	#
