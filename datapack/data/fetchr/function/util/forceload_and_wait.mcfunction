@@ -25,4 +25,4 @@ data \
 	modify storage tmp.fetchr:util forceload_coordinates \
 	set from storage io.fetchr:util forceload_coordinates
 
-function fetchr:util/forceload/check/schedule
+schedule function fetchr:util/forceload/check/schedule 1t
