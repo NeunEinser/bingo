@@ -52,5 +52,7 @@ execute \
 	store result storage tmp.fetchr:init/update_lobby move_back_coordinates.clone_to_new_x_offset int 1 \
 	run scoreboard players operation $init/lobby/update.clone_to_new_x_offset fetchr.tmp -= $init/lobby/update.clone_x fetchr.tmp
 
-function fetchr:init/update_lobby/move_clone \
-	with storage tmp.fetchr:init/update_lobby move_back_coordinates
+execute \
+	in fetchr:lobby \
+	run function fetchr:init/update_lobby/move_clone \
+		with storage tmp.fetchr:init/update_lobby move_back_coordinates
