@@ -112,6 +112,12 @@ dispatch minecraft:storage[fetchr:registries] to struct RegistryStorage {
 			/// currently not properly supported to have blocks in front of the
 			/// entrance's x position.
 			entrance_position: int @ 0..[] @ 3,
+			/// If set, the structure will be placed after the structure with that
+			/// id, or after a structure that has the same `after_structure` set.
+			///
+			/// This should _never_ be a structure of your own namespace. The order
+			/// you define them in will always be preserved.
+			after_structure?: #[id=structure] string,
 		}
 	],
 	hud_components: [HudComponentRegistryData],

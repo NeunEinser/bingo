@@ -32,3 +32,9 @@ dispatch minecraft:storage[tmp.fetchr:init/structures] to struct StructureTmpSto
 	namespace: string,
 	name: struct { first: string, second: string },
 }
+
+dispatch minecraft:storage[tmp.fetchr:init/sort_structures] to struct {
+	structures: [StructureRegistry],
+	skipped: [StructureRegistry],
+	id_comparision: #[id=structure] string
+}

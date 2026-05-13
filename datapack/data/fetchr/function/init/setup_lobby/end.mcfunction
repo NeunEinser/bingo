@@ -64,7 +64,6 @@ execute \
 #tag @e remove fetchr.multiplayer_mangrove_button_north
 #kill @e[tag=fetchr.no_realms]
 #NEUN_SCRIPT end
-
 function fetchr:custom_hud/components/timer/update
 function fetchr:init/setup_lobby/setup_reference
 

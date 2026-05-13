@@ -1682,6 +1682,13 @@ forceload add 0 0
 #endregion
 
 # spawn strcutures
+	data \
+		modify storage tmp.fetchr:init/sort_structures structures \
+		set from storage fetchr:registries structures
+	data modify storage fetchr:registries structures set value []
+	data modify storage tmp.fetchr:init/sort_structures skipped set value []
+	function fetchr:init/sort_structures/exec
+
 	execute \
 		if score $lobby_generated fetchr.state matches 0 \
 		run schedule function fetchr:init/setup_lobby/setup_lobby 1t
