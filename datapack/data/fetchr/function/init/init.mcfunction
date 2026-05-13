@@ -1576,6 +1576,7 @@ forceload add 0 0
 	data remove storage fetchr:registries structures
 	data remove storage fetchr:registries hud_components
 	data remove storage fetchr:registries preferences
+	function fetchr:init/fill_registries
 	function #fetchr:fill_registries
 
 	#TODO probably should make a new tag for sanity checking and post-processing
