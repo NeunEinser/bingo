@@ -7,6 +7,8 @@
 # 	entity Marker area effect cloud that marks the right side of the chest
 # 	position @s
 
+function #fetchr:lobby/before_item_pool_chest_incremented
+
 $execute \
 	if score $chest_generation.height fetchr.tmp matches 5.. \
 	positioned ~-4 $(height) ~-3 \
@@ -32,3 +34,5 @@ execute if score $lobby/chest_gen.use_single_chest fetchr.tmp matches 1 run setb
 
 scoreboard players set $chest_generation.column fetchr.tmp 0
 scoreboard players set $chest_generation.row fetchr.tmp 0
+
+function #fetchr:lobby/item_pool_chest_incremented

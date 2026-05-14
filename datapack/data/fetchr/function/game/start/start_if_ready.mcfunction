@@ -21,4 +21,4 @@ execute \
 execute \
 	if score $pregen_status fetchr.state matches 2 \
 	at @e[type=minecraft:marker, tag=fetchr.spawn, limit=1] \
-	run function fetchr:game/start/start_spawn_sequence
+	run function #fetchr:start_sequence/start_sequence

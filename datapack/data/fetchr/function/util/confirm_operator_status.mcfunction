@@ -65,3 +65,5 @@ execute \
 	run function fetchr:settings/prepare_and_show_game_settings
 
 scoreboard players reset @s fetchr.operator_check_callback_action
+
+function #fetchr:confirmed_operator_status

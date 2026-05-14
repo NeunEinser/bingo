@@ -256,19 +256,19 @@
 	execute \
 		if entity @a[predicate=fetchr:is_in_lobby, limit=1] \
 		in fetchr:lobby \
-		run function fetchr:lobby/tick
+		run function #fetchr:lobby/tick
 	execute \
 		at @a[tag=fetchr.in_skybox, limit=1] \
 		as @e[type=minecraft:marker, tag=fetchr.spawn, distance=..12, limit=1] \
 		at @s \
-		run function fetchr:game/skybox/tick
+		run function #fetchr:spawn_preview/tick
 	execute \
 		if score $game_state fetchr.state matches 1..2 \
 		in fetchr:default \
 		run function fetchr:game/start/pre_gen/tick
 	execute \
 		if score $game_state fetchr.state matches 4 \
-		run function fetchr:game/tick
+		run function #fetchr:game/tick
 
 	scoreboard players operation $last_tick_second fetchr.state = $raw 91.timer.io
 
@@ -277,7 +277,7 @@
 	execute \
 		as @a \
 		at @s \
-		run function fetchr:tick/player_tick
+		run function #fetchr:player_tick
 	data modify storage fetchr:custom_hud players append from storage tmp.fetchr:custom_hud handled[]
 	scoreboard players reset $update_card fetchr.state
 #NEUN_SCRIPT end

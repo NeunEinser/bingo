@@ -558,3 +558,5 @@ scoreboard players set $concealed_card fetchr.state 0
 scoreboard players reset @a fetchr.reveal_card
 function fetchr:card_frames/spawn
 function fetchr:util/update_card
+
+function #fetchr:game/revealed_concealed_card

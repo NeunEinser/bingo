@@ -15,3 +15,5 @@ execute as @a[predicate=fetchr:is_in_game] run function fetchr:util/go_to_lobby
 scoreboard players reset * fetchr.game_id
 scoreboard players set $current_game_id fetchr.game_id 0
 scoreboard players reset @a fetchr.teleport_all
+
+function #fetchr:lobby/teleported_all_players

@@ -37,3 +37,5 @@ tellraw @a { "translate": "fetchr.game.start_spectating", "with": [{ "selector":
 execute \
 	if score $game_state fetchr.state matches 3 \
 	run schedule function fetchr:game/start/countdown 1t replace
+
+function #fetchr:game/joined_as_spectator

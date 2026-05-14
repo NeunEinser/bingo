@@ -34,7 +34,7 @@ execute \
 	unless entity @e[type=minecraft:marker, tag=fetchr.join_game_sign, limit=1] \
 	run function fetchr:init/setup_lobby/old_reference/set_5.3-beta1
 
-function #fetchr:add_legacy_structures
+function #fetchr:lobby_update/add_legacy_structures
 
 data modify storage io.fetchr:structures structures append value {\
 	id: "fetchr:lobby_end",\

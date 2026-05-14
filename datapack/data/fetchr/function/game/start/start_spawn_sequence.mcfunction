@@ -112,4 +112,4 @@ execute \
 #NEUN_SCRIPT end
 
 schedule clear fetchr:game/start/pre_gen/schedule_entity_check
-schedule function fetchr:game/start/start_falling 2s
+schedule function #fetchr:start_sequence/players_start_falling 2s

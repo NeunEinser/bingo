@@ -39,7 +39,7 @@ data remove storage io.fetchr:custom_hud custom
 data \
 	modify storage io.fetchr:custom_hud custom \
 	set from storage tmp.fetchr:init/hud component.custom
-function #fetchr:update_hud_custom
+function #fetchr:hud_component_updated
 
 $data \
 	modify storage tmp.fetchr:init/hud players[0].components[$(slot_id)] \

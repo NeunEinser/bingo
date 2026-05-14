@@ -20,6 +20,8 @@
 # 	function fetchr:item_detection/**
 #declare score_holder $item_detect/announce.items
 
+function #fetchr:goal_and_item_detection/item_gotten with storage io.fetchr:find_team current_team
+
 execute as @a[tag=fetchr.in_current_team] at @s run playsound minecraft:block.end_portal_frame.fill voice @s ~ ~ ~ 1 2
 scoreboard players reset @s fetchr.has_item
 tag @s add fetchr.clear
@@ -64,3 +66,5 @@ execute \
 	run function fetchr:item_detection/goals/lockout/detect
 
 scoreboard players set $update_card fetchr.state 1
+
+function #fetchr:goal_and_item_detection/item_gotten_and_card_updated with storage io.fetchr:find_team current_team

@@ -23,4 +23,4 @@ kill @e[y=-128, distance=..1]
 spawnpoint @a[predicate=fetchr:is_in_game] ~ ~ ~
 execute as @a[predicate=fetchr:is_in_game, gamemode=adventure] rotated as @s run teleport @s ~ ~ ~
 
-schedule function fetchr:game/start/countdown 1s
+schedule function #fetchr:start_sequence/advance_countdown 1s

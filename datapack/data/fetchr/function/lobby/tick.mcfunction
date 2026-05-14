@@ -8,7 +8,7 @@
 execute \
 	as @a[predicate=fetchr:is_in_lobby] \
 	at @s \
-	run function fetchr:lobby/player_tick
+	run function #fetchr:lobby/player_tick
 
 execute \
 	as @e[x=0, type=minecraft:creeper] \

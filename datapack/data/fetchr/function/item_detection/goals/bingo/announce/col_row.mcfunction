@@ -59,3 +59,5 @@ execute \
 	run function fetchr:game/menu/print_without_hint
 
 data modify storage fetchr:card teams[-1].has_bingo set value true
+
+function #fetchr:goal_and_item_detection/achieved_bingo

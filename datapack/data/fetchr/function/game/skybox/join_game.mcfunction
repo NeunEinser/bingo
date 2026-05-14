@@ -229,3 +229,5 @@ execute \
 	in fetchr:lobby \
 	run function fetchr:custom_hud/components/timer/update
 bossbar set fetchr:start/pre_gen/progress players @a[predicate=fetchr:is_in_game]
+
+function #fetchr:spawn_preview/player_entered

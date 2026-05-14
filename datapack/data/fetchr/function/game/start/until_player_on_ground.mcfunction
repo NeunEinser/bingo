@@ -12,14 +12,14 @@ execute \
 	positioned over motion_blocking_no_leaves \
 	unless block ~ ~ ~ #minecraft:leaves \
 	unless block ~ ~1 ~ #minecraft:leaves \
-	run function fetchr:game/start/initialize_countdown
+	run function #fetchr:start_sequence/all_players_landed
 execute \
 	unless entity @a[predicate=fetchr:is_in_game, gamemode=adventure, nbt=!{ OnGround: true }, limit=1] \
 	at @e[type=minecraft:marker, tag=fetchr.spawn, limit=1] \
 	positioned over motion_blocking_no_leaves \
 	if block ~ ~ ~ #minecraft:leaves \
 	positioned over motion_blocking \
-	run function fetchr:game/start/initialize_countdown
+	run function #fetchr:start_sequence/all_players_landed
 execute \
 	unless entity @a[predicate=fetchr:is_in_game, gamemode=adventure, nbt=!{ OnGround: true }, limit=1] \
 	at @e[type=minecraft:marker, tag=fetchr.spawn, limit=1] \
@@ -27,7 +27,7 @@ execute \
 	unless block ~ ~ ~ #minecraft:leaves \
 	if block ~ ~1 ~ #minecraft:leaves \
 	positioned over motion_blocking \
-	run function fetchr:game/start/initialize_countdown
+	run function #fetchr:start_sequence/all_players_landed
 
 
 execute \

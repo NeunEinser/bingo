@@ -116,3 +116,5 @@ execute \
 	]
 #NEUN_SCRIPT end
 function fetchr:lobby/place_indestructible_blocks
+
+function #fetchr:game/ended

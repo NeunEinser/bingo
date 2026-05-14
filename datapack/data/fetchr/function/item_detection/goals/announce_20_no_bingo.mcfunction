@@ -106,3 +106,5 @@ execute \
 execute \
 	as @a[tag=!fetchr.in_current_team, predicate=fetchr:is_in_game] \
 	at @s run playsound minecraft:entity.wither.spawn voice @a ~ ~ ~ 1 1.5
+
+function #fetchr:goal_and_item_detection/achieved_20_no_bingo

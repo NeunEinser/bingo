@@ -57,3 +57,5 @@ tag @a[predicate=fetchr:is_in_game] add fetchr.spectator
 tag @a remove fetchr.in_team
 
 scoreboard players set $points_goal_announced fetchr.state 1
+
+function #fetchr:goal_and_item_detection/finished_points_race

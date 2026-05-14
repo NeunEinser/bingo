@@ -40,3 +40,5 @@ execute \
 scoreboard players operation @s fetchr.game_id = $current_game_id fetchr.game_id
 
 setblock ~ ~ ~ minecraft:stone_button[facing=north, powered=false]
+
+function #fetchr:spawn_preview/joined_team

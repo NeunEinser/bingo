@@ -20,3 +20,5 @@ setblock ~-3 ~2 ~-3 minecraft:gray_concrete
 scoreboard players set $chest_generation.height fetchr.tmp 1
 
 function fetchr:lobby/chest_generation/category_iter
+
+function #fetchr:lobby/item_pool_chests_generated

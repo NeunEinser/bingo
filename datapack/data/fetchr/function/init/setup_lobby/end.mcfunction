@@ -70,4 +70,4 @@ execute \
 	if entity @a[predicate=fetchr:is_in_lobby] \
 	run function fetchr:lobby/place_indestructible_blocks
 
-function #fetchr:lobby_generated
+function #fetchr:lobby/generated
