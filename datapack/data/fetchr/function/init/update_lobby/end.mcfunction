@@ -10,4 +10,6 @@ data \
 	set from storage tmp.fetchr:init/update_lobby new_structures
 
 # This will place all required entities and spawn a new reference
-function fetchr:init/setup_lobby/end
+execute \
+	positioned 7 3 7 \
+	run function fetchr:init/setup_lobby/end

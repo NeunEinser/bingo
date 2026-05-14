@@ -5,9 +5,8 @@
 #
 # @within function fetchr:init/setup_lobby/spawn_structure
 # @context
-#  	entity structure spawner
-# 	positon @s
 # 	dimension fetchr:lobby
+# 	position 7 3 7 The lobby spawnpoint
 
 forceload remove all
 forceload add 0 0
@@ -70,3 +69,5 @@ function fetchr:init/setup_lobby/setup_reference
 execute \
 	if entity @a[predicate=fetchr:is_in_lobby] \
 	run function fetchr:lobby/place_indestructible_blocks
+
+function #fetchr:lobby_generated

@@ -115,6 +115,7 @@ execute \
 execute \
 	unless data storage tmp.fetchr:init/structures structures[0] \
 	if score $init/lobby.lobby_type fetchr.tmp matches 0 \
+	positioned 7 3 7 \
 	run function fetchr:init/setup_lobby/end
 execute \
 	unless data storage tmp.fetchr:init/structures structures[0] \
