@@ -11,6 +11,9 @@
 	data \
 		modify block -30000000 3 -30000000 name \
 		set from storage tmp.fetchr:init/update_lobby structures[-1].id
+	data \
+		modify block -30000000 3 -30000000 name \
+		set from storage tmp.fetchr:init/update_lobby structures[-1].override_id
 	setblock -30000000 4 -30000000 minecraft:redstone_block
 	setblock -30000000 4 -30000000 minecraft:air
 

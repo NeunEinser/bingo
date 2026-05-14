@@ -27,9 +27,8 @@ setblock ~ ~ ~ minecraft:structure_block[mode=load]{\
 }
 
 data modify block ~ ~ ~ name set from storage tmp.fetchr:init/structures structures[0].id
-execute \
-	if data storage tmp.fetchr:init/structures structures[0].legacy_id \
-	run data modify block ~ ~ ~ name set from storage tmp.fetchr:init/structures structures[0].legacy_id
+data modify block ~ ~ ~ name set from storage tmp.fetchr:init/structures structures[0].override_id
+data modify block ~ ~ ~ name set from storage tmp.fetchr:init/structures structures[0].legacy_id
 
 setblock ~ ~1 ~ minecraft:redstone_block
 setblock ~ ~1 ~ minecraft:air

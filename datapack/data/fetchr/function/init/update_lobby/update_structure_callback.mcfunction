@@ -45,6 +45,9 @@ data modify storage tmp.fetchr:init/update_lobby update_coordinates set value {x
 data \
 	modify storage tmp.fetchr:init/update_lobby update_coordinates.structure_id \
 	set from storage tmp.fetchr:init/update_lobby structures[-1].id
+data \
+	modify storage tmp.fetchr:init/update_lobby update_coordinates.structure_id \
+	set from storage tmp.fetchr:init/update_lobby structures[-1].override_id
 execute \
 	store result storage tmp.fetchr:init/update_lobby update_coordinates.compare_z int 1 \
 	run scoreboard players get $init/lobby/update.compare_z fetchr.tmp
