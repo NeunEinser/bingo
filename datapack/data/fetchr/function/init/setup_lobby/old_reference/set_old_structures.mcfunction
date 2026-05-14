@@ -8,31 +8,24 @@ execute \
 	unless entity @e[type=minecraft:marker,tag=fetchr.lobby_sign,limit=1] \
 	run return run scoreboard players set $lobby_generated fetchr.state -1
 
-data modify storage tmp.fetchr:init/structures structures set value []
+data modify storage io.fetchr:structures structures set value [\
+	{\
+		id: "fetchr:credits",\
+		entrance_position: [I; 6, 2, 19],\
+		legacy_id: "fetchr:old/5.3-beta5-credits"\
+	},\
+	{\
+		id: "fetchr:card_generation",\
+		entrance_position: [I; 0, 2, 10],\
+		legacy_id: "fetchr:old/5.3-beta5-card_generation"\
+	},\
+	{\
+		id: "fetchr:tutorial",\
+		entrance_position: [I; 0, 2, 19],\
+		legacy_id: "fetchr:old/5.3-beta5-tutorial"\
+	}\
+]
 
-data \
-	modify storage tmp.fetchr:init/structures legacy_structures \
-	set from storage fetchr:structure legacy_structures
-
-data \
-	modify storage tmp.fetchr:init/structures legacy_bingo_structures \
-	set from storage fetchr:structure legacy_bingo_structures
-
-execute \
-	unless data storage tmp.fetchr:init/structures legacy_structures[0] \
-	run data modify storage tmp.fetchr:init/structures legacy_structures set value [\
-		"fetchr:credits",\
-		"fetchr:card_generation",\
-		"fetchr:tutorial"\
-	]
-
-execute \
-	unless data storage tmp.fetchr:init/structures legacy_structures[{id: "fetchr:lobby_end"}] \
-	run data \
-		modify storage tmp.fetchr:init/structures legacy_structures \
-		append value "fetchr:lobby_end"
-
-function fetchr:init/setup_lobby/old_reference/init_structures
 execute \
 	if entity @e[type=minecraft:marker, tag=fetchr.join_game_sign, limit=1] \
 	unless block 1 2 2 minecraft:barrier \
@@ -40,6 +33,20 @@ execute \
 execute \
 	unless entity @e[type=minecraft:marker, tag=fetchr.join_game_sign, limit=1] \
 	run function fetchr:init/setup_lobby/old_reference/set_5.3-beta1
+
+function #fetchr:add_legacy_structures
+
+data modify storage io.fetchr:structures structures append value {\
+	id: "fetchr:lobby_end",\
+	entrance_position: [I; 1, 0, 1],\
+	legacy_id: "fetchr:old/5.3-beta5-lobby_end"\
+}
+
+data \
+	modify storage tmp.fetchr:init/structures structures \
+	set from storage io.fetchr:structures structures
+
+data modify storage tmp.fetchr:init/structures structures[].version set value 0
 
 scoreboard players set $init/lobby.lobby_type fetchr.tmp 2
 

@@ -5,7 +5,7 @@
 # @within function fetchr:init/setup_lobby/old_reference/5.3-beta1
 
 data \
-	modify storage tmp.fetchr:init/structures structures[{id: "fetchr:tutorial"}].legacy_id \
+	modify storage io.fetchr:structures structures[{id: "fetchr:tutorial"}].legacy_id \
 	set value "fetchr:old/5.2-pre4-tutorial"
 
 execute \

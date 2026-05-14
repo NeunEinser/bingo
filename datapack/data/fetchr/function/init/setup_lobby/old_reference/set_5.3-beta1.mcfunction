@@ -5,7 +5,7 @@
 # @within function fetchr:init/setup_lobby/old_reference/set_old_structures
 
 data \
-	modify storage tmp.fetchr:init/structures structures[{id: "fetchr:credits"}].legacy_id \
+	modify storage io.fetchr:structures structures[{id: "fetchr:credits"}].legacy_id \
 	set value "fetchr:old/5.3-beta1-credits"
 
 execute \

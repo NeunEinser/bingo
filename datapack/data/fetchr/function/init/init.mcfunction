@@ -1566,11 +1566,6 @@ forceload add 0 0
 		]
 		#NEUN_SCRIPT end
 #region run registries
-	execute \
-		if score $lobby_generated fetchr.state matches 1 \
-		run data \
-			modify storage fetchr:structure legacy_structures \
-			set from storage fetchr:registries structures
 	data remove storage fetchr:registries categories
 	data remove storage fetchr:registries items
 	data remove storage fetchr:registries structures

@@ -5,7 +5,7 @@
 # @within function fetchr:init/setup_lobby/old_reference/set_5.2-pre4
 
 data \
-	modify storage tmp.fetchr:init/structures structures[{id: "fetchr:card_generation"}].legacy_id \
+	modify storage io.fetchr:structures structures[{id: "fetchr:card_generation"}].legacy_id \
 	set value "fetchr:old/5.2-pre1-card_generation"
 
 execute \

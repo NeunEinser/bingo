@@ -5,17 +5,16 @@
 # @within function fetchr:init/setup_lobby/old_reference/set_5.2-pre1
 
 data \
-	modify storage tmp.fetchr:init/structures structures[{id: "fetchr:credits"}].legacy_id \
+	modify storage io.fetchr:structures structures[{id: "fetchr:credits"}].legacy_id \
 	set value "fetchr:old/5.1.3-credits"
 data \
-	modify storage tmp.fetchr:init/structures structures[0].entrance_position[0] \
+	modify storage io.fetchr:structures structures[0].entrance_position[0] \
 	set value 0
 
 data \
-	modify storage tmp.fetchr:init/structures structures prepend value {\
+	modify storage io.fetchr:structures structures prepend value {\
 		id: "fetchr:machinery",\
 		entrance_position: [I; 9, 2, 9],\
-		version: 0,\
 		legacy_id: "fetchr:old/5.1.3-machinery"\
 	} 
 

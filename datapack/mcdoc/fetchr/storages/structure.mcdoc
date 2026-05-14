@@ -13,11 +13,11 @@ dispatch minecraft:storage[fetchr:structure] to struct StructureStorage {
 }
 
 dispatch minecraft:storage[io.fetchr:structures] to struct StructureIoStorage {
-	structure: struct LegacyStructureData {
-			id: #[id=structure] string,
-			entrance_position?: int @ 0..[] @ 3,
-			legacy_id?: #[id=structure] string,
-	}
+	structures: [struct LegacyStructureData {
+		id: #[id=structure] string,
+		entrance_position?: int @ 0..[] @ 3,
+		legacy_id?: #[id=structure] string,
+	}]
 }
 
 dispatch minecraft:storage[tmp.fetchr:init/structures] to struct StructureTmpStorage {

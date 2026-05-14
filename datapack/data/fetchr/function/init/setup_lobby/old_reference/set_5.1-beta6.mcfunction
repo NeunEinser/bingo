@@ -5,14 +5,14 @@
 # @within function fetchr:init/setup_lobby/old_reference/set_5.1-pre1
 
 data \
-	modify storage tmp.fetchr:init/structures structures[{id: "fetchr:card_generation"}].legacy_id \
+	modify storage io.fetchr:structures structures[{id: "fetchr:card_generation"}].legacy_id \
 	set value "fetchr:old/5.1-beta6-machinery"
 data \
-	modify storage tmp.fetchr:init/structures structures[{id: "fetchr:card_generation"}].legacy_id \
+	modify storage io.fetchr:structures structures[{id: "fetchr:card_generation"}].legacy_id \
 	set value "fetchr:old/5.1-beta6-card_generation"
 
 data \
-	modify storage tmp.fetchr:init/structures structures[{id: "fetchr:tutorial"}] \
+	modify storage io.fetchr:structures structures[{id: "fetchr:tutorial"}] \
 	merge value {\
 		entrance_position: [I; 0, 2, 7],\
 		legacy_id: "fetchr:old/5.1-beta6-tutorial"\

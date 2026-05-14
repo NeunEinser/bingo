@@ -5,5 +5,5 @@
 # @within function fetchr:init/setup_lobby/old_reference/set_5.1-beta3
 
 data \
-	modify storage tmp.fetchr:init/structures structures[{id: "fetchr:machinery"}].legacy_id \
+	modify storage io.fetchr:structures structures[{id: "fetchr:machinery"}].legacy_id \
 	set value "fetchr:old/5.1-beta3-machinery"
