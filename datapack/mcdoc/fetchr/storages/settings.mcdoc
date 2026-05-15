@@ -1,0 +1,36 @@
+use ::java::server::util::text::Text
+
+dispatch minecraft:storage[tmp.fetchr:settings/dialog] to struct {
+	custom_options: struct {
+		concealed_card: ("on" | "off"),
+		points_goal: Text,
+		lockout_mode: ("on" | "off"),
+		timer_method: ("real_time" | "in_game_time"),
+		paused_time: ("on" | "off"),
+		pre_gen: Text,
+		show_seed: ("on" | "off"),
+		allow_spectating: ("on" | "off"),
+		operator_only: ("on" | "off"),
+		gamemode: ("adventure" | "survival"),
+	},
+	points_goal: struct {
+		game_end: int @ 1..,
+		exit_callback_setting_trigger: int @ 1..,
+		cancel_button_translate: string,
+	},
+	pre_gen_radius: struct {
+		pre_gen_radius: int @ 144..,
+		exit_callback_setting_trigger: int @ 1..,
+		cancel_button_translate: string,
+	},
+	quick_actions: struct {
+		dialog: #[nbt=MultiActionDialog] string,
+	},
+}
+
+dispatch minecraft:storage[io.fetchr:dialog] to struct {
+	dialog: struct MultiActionDialog {
+		type: #[id=dialog_type] "multi_action",
+		...minecraft:dialog[multi_action]
+	}
+}

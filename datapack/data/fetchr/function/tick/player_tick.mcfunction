@@ -299,10 +299,12 @@ scoreboard players operation @s fetchr.prev_y_pos = $tick/player.y fetchr.tmp
 scoreboard players operation @s fetchr.prev_z_pos = $tick/player.z fetchr.tmp
 scoreboard players operation @s fetchr.prev_rot = $tick/player.rot fetchr.tmp
 
+#NEUN_SCRIPT since 77
 execute \
 	if score @s fetchr.settings matches 1.. \
 	run function fetchr:settings/handle_settings
 
 scoreboard players enable @s fetchr.settings
+#NEUN_SCRIPT end
 
 scoreboard players reset @s fetchr.last_tick_pause_time

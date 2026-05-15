@@ -1,0 +1,23 @@
+{
+	"type": "minecraft:confirmation",
+	"pause": false,
+	"title": { "translate": "fetchr.lobby.card_generation.random_card.dialog.title" },
+	"body": {
+		"type": "minecraft:plain_message",
+		"contents": { "translate": "fetchr.lobby.card_generation.dialog.confirmation" }
+	},
+	"yes": {
+		"label": { "translate": "gui.yes" },
+		"action": {
+			"type": "minecraft:run_command",
+			"command": "trigger fetchr.settings set 17"
+		},
+		"on_click": {
+			"action": "run_command",
+			"command": "trigger fetchr.settings set 17"
+		}
+	},
+	"no": {
+		"label": { "translate": "gui.no" }
+	}
+}

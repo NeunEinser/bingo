@@ -6,9 +6,16 @@
 # @context entity Player
 
 scoreboard players enable @s fetchr.menu
-execute \
-	if entity @s[scores={fetchr.menu=1}] \
+#NEUN_SCRIPT until 77
+#execute \
+	if score @s fetchr.menu matches 1 \
 	run function fetchr:game/menu/print_without_hint
+#NEUN_SCRIPT end
+#NEUN_SCRIPT since 77
+execute \
+	if score @s fetchr.menu matches 1 \
+	run function fetchr:settings/generate_dynamic_quick_actions { exit_callback_setting_trigger: 1, cancel_button_translate: "cancel" }
+#NEUN_SCRIPT end
 scoreboard players reset @s[scores={fetchr.menu=1}] fetchr.menu
 
 execute \
@@ -56,3 +63,9 @@ execute \
 	if score @s fetchr.bed matches 99.. \
 	store result score @s fetchr.bed \
 	run data get entity @s SleepTimer
+
+# generate card from seed
+execute \
+	if score @s fetchr.seed matches -2147483648.. \
+	unless score @s fetchr.seed matches 0 \
+	run function fetchr:card_generation/generate_from_seed

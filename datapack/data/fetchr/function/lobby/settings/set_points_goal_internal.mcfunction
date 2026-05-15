@@ -62,7 +62,6 @@ execute \
 		set from block 7 0 7 front_text.messages[0]
 
 scoreboard players reset @s fetchr.points_race_minutes
-scoreboard players enable @s fetchr.points_race_minutes
 
 scoreboard players operation @s fetchr.settings = @s fetchr.setting_callback
 scoreboard players reset @s fetchr.setting_callback

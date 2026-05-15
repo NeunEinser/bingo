@@ -17,6 +17,8 @@ execute \
 	unless score @s fetchr.operator matches 1 \
 	run return 0
 
+scoreboard players enable @s fetchr.seed
+
 #NEUN_SCRIPT until 77
 #tellraw @s [\
 	{\

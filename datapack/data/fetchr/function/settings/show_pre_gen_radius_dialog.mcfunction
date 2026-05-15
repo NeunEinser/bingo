@@ -1,6 +1,6 @@
-#> fetchr:settings/show_game_settings_dialog
+#> fetchr:settings/show_pre_gen_radius_dialog
 #
-# Function that is run to show the points goal dialog
+# Function that is run to show the pre gen radius dialog
 #
 # @within function fetchr:settings/prepare_and_show_game_settings
 
@@ -45,14 +45,15 @@
 				template: "trigger fetchr.pre_gen_radius set \x24(action)"\
 			}\
 		},\
-	],\
-	on_cancel: {\
-		label: { translate: "gui.$(cancel_button_translate)" },\
-		action: {\
-			type: "minecraft:run_command",\
-			command: "trigger fetchr.settings set $(exit_callback_setting_trigger)",\
+		{\
+			id: "settings",\
+			label: { translate: "gui.$(cancel_button_translate)" },\
+			on_submit: {\
+				type: "minecraft:command_template",\
+				template: "trigger fetchr.\x24(action) set $(exit_callback_setting_trigger)",\
+			},\
 		},\
-	},\
+	],\
 }
 #NEUN_SCRIPT end
 

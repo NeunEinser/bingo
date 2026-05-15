@@ -56,6 +56,7 @@ execute \
 	in fetchr:lobby \
 	run spawnpoint @s 7 3 7 180 0
 #NEUN_SCRIPT end
+scoreboard players reset @s fetchr.menu
 scoreboard players reset @s fetchr.lobby
 scoreboard players reset @s fetchr.spectator
 scoreboard players reset @s fetchr.resource_pack_check
@@ -75,7 +76,19 @@ attribute @s minecraft:entity_interaction_range \
 
 gamemode creative
 gamemode survival
-scoreboard players enable @s fetchr.teleport_all
+
+execute \
+	if score $game_state fetchr.state matches 3.. \
+	if score $is_multiplayer fetchr.state matches 1 \
+	unless entity @a[scores={fetchr.teleport_all=1}] \
+	if score @s fetchr.operator matches 1 \
+	run scoreboard players enable @s fetchr.teleport_all
+execute \
+	if score $game_state fetchr.state matches 3.. \
+	if score $is_multiplayer fetchr.state matches 1 \
+	unless entity @a[scores={fetchr.teleport_all=1}] \
+	unless score $operator_only fetchr.setting_values matches 1 \
+	run scoreboard players enable @s fetchr.teleport_all
 
 execute \
 	if score $game_state fetchr.state matches 3.. \
@@ -103,9 +116,7 @@ execute \
 		"==="\
 	]
 execute \
-	if score $game_state fetchr.state matches 3.. \
-	if score $is_multiplayer fetchr.state matches 1 \
-	unless entity @a[scores={fetchr.teleport_all=1}] \
+	if score @s fetchr.teleport_all matches 0 \
 	run tellraw @s [\
 		"[",\
 		{\

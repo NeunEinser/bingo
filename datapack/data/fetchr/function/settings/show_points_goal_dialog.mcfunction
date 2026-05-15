@@ -1,4 +1,4 @@
-#> fetchr:settings/show_game_settings_dialog
+#> fetchr:settings/show_points_goal_dialog
 #
 # Function that is run to show the points goal dialog
 #
@@ -45,18 +45,14 @@
 			}\
 		},\
 		{\
-			"NEUN_SCRIPT remove id since 79": null,\
-			id: "cancel",\
-			label: { translate: "gui.cancel" }\
-		}\
-	],\
-	on_cancel: {\
-		label: { translate: "gui.$(cancel_button_translate)" },\
-		on_click: {\
-			type: "minecraft:run_command",\
-			command: "trigger fetchr.settings set $(exit_callback_setting_trigger)",\
+			id: "settings",\
+			label: { translate: "gui.$(cancel_button_translate)" },\
+			on_submit: {\
+				type: "minecraft:command_template",\
+				template: "trigger fetchr.\x24(action) set $(exit_callback_setting_trigger)",\
+			},\
 		},\
-	},\
+	],\
 }
 #NEUN_SCRIPT end
 

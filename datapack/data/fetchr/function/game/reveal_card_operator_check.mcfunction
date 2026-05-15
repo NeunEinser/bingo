@@ -19,7 +19,9 @@ execute \
 	if score $operator_only fetchr.setting_values matches 1 \
 	unless score @s fetchr.operator matches 1 \
 	run return 0
-
+#NEUN_SCRIPT since 77
+dialog clear @s
+#NEUN_SCRIPT end
 function fetchr:game/reveal_card
 
 tellraw @a { "translate": "fetchr.game.menu.options.reveal_card.activated", "with": [{ "selector": "@s" }]}

@@ -129,7 +129,6 @@ tag @s remove fetchr.spectator
 tag @s add fetchr.in_skybox
 
 scoreboard players reset @s fetchr.pref
-scoreboard players reset @s fetchr.seed
 scoreboard players reset @s fetchr.pre_gen_radius
 scoreboard players reset @s fetchr.points_race_minutes
 scoreboard players enable @s fetchr.lobby

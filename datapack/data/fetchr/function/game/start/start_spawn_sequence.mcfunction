@@ -5,6 +5,8 @@
 #
 # @within function fetchr:game/start/start_if_ready
 
+scoreboard players reset @a fetchr.seed
+
 scoreboard players set $game_state fetchr.state 3
 
 kill @e[type=minecraft:marker, tag=fetchr.skybox_button, distance=..9]

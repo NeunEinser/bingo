@@ -35,7 +35,11 @@
 		}
 	},
 	"no": {
-		"label": { "translate": "gui.cancel" }
+		"label": { "translate": "gui.cancel" },
+		"action": {
+			"type": "minecraft:run_command",
+			"command": "trigger fetchr.settings set 20"
+		}
 	},
 	"NEUN_SCRIPT remove actions since 79": null,
 	"actions": [
@@ -48,8 +52,12 @@
 			}
 		},
 		{
-			"id": "cancel",
-			"label": { "translate": "gui.cancel" }
+			"id": "20",
+			"label": { "translate": "gui.cancel" },
+			"on_submit": {
+				"type": "minecraft:command_template",
+				"template": "trigger fetchr.settings set $(action)"
+			}
 		}
 	]
 }

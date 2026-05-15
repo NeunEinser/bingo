@@ -1,0 +1,58 @@
+{
+	"NEUN_SCRIPT remove_self until 79": null,
+	"type": "minecraft:multi_action",
+	"title": { "translate": "menu.quick_actions.title" },
+	"external_title": { "translate": "fetchr.settings.pause_menu.custom_options.title" },
+	"columns": 1,
+	"actions": [
+		{
+			"label": { "translate": "fetchr.lobby.card_generation.random_card.dialog.title" },
+			"action": {
+				"type": "minecraft:run_command",
+				"command": "trigger fetchr.settings set 16"
+			},
+			"width": 200
+		},
+		{
+			"label": { "translate": "fetchr.lobby.card_generation.from_seed.dialog.title" },
+			"action": {
+				"type": "minecraft:run_command",
+				"command": "trigger fetchr.settings set 18"
+			},
+			"width": 200
+		},
+		{
+			"label": { "translate": "fetchr.quick_actions.teleport_self" },
+			"action": {
+				"type": "minecraft:run_command",
+				"command": "trigger fetchr.settings set 21"
+			},
+			"width": 200
+		},
+		{
+			"label": { "translate": "fetchr.quick_actions.enter_spectator_mode" },
+			"action": {
+				"type": "minecraft:run_command",
+				"command": "trigger fetchr.spectator"
+			},
+			"width": 200
+		},
+		{
+			"label": { "translate": "fetchr.quick_actions.teleport_all" },
+			"tooltip": { "translate": "fetchr.quick_actions.teleport_all.tooltip" },
+			"action": {
+				"type": "minecraft:run_command",
+				"command": "trigger fetchr.settings set 22"
+			},
+			"width": 200
+		},
+		{
+			"label": { "translate": "fetchr.quick_actions.reveal_card" },
+			"action": {
+				"type": "minecraft:run_command",
+				"command": "trigger fetchr.reveal_card"
+			},
+			"width": 200
+		}
+	]
+}

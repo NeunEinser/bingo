@@ -52,6 +52,23 @@
 	"fetchr.game.switch_gamemode.prevented": "Prevented game mode switch. %s for spectator mode.\nAfterwards, you can switch to any other game mode.",
 	"fetchr.game.switch_gamemode.prevented.click": "Click here",
 	"fetchr.game.switch_gamemode.hint": "Hint: You can use the command %s at any time manually to switch to spectator mode as well.\nIf you do not like this functionality, you can disable it in your preferences in the lobby.",
+	
+	"fetchr.quick_actions.teleport_self": "Return to Lobby or Join Game",
+	"fetchr.quick_actions.teleport_all": "Move Players to Lobby or Spawn Preview",
+	"fetchr.quick_actions.teleport_all.tooltip": "Moves all players to the lobby if a game is in progress, or teleports all players to the spawn preview if the spawn preview is ready.",
+	"fetchr.quick_actions.reveal_card": "Reveal Bingo Card",
+	"fetchr.quick_actions.reveal_card.tooltip": "Reveals the Bingo card during a concealed card run.",
+	"fetchr.quick_actions.enter_spectator_mode": "Enter Spectator Mode",
+	"fetchr.quick_actions.enter_spectator_mode.tooltip": "Start spectating a game you were participating in until now.",
+
+	"fetchr.quick_actions.lobby.join_game" : "Join Game",
+	"fetchr.quick_actions.lobby.teleport_all" : "Add All Players to Spawn Preview",
+	"fetchr.quick_actions.lobby.teleport_all.no_card" : "You need to generate a card before moving all players to the spawn preview.",
+	"fetchr.quick_actions.lobby.teleport_all.not_ready" : "The spawn preview is not ready yet.",
+	"fetchr.quick_actions.lobby.teleport_all.game_starting" : "You cannot move all players while the game is in its countdown phase.",
+	
+	"fetchr.quick_actions.game.return_to_lobby" : "Return to Lobby",
+	"fetchr.quick_actions.game.teleport_all" : "Return All Players to Lobby",
 
 	"fetchr.preferences.title": "Personal Preferences",
 	"fetchr.preferences.description": "This menu allows you to configure your own preferences.",
@@ -369,6 +386,7 @@
 	"fetchr.lobby.card_generation.random_card.sign.line2": "Generate",
 	"fetchr.lobby.card_generation.random_card.sign.line3": "Random Card",
 	"fetchr.lobby.card_generation.random_card.sign.line4": "",
+	"fetchr.lobby.card_generation.random_card.dialog.title": "Generate Random Card",
 
 	"fetchr.lobby.card_generation.from_seed.sign.line1": "",
 	"fetchr.lobby.card_generation.from_seed.sign.line2": "Generate Card",
@@ -379,6 +397,7 @@
 	"fetchr.lobby.card_generation.from_seed.explanation": "The seed determines which items generate on the bingo card and where you spawn. You can use this for example for competitive races, where everyone is using the same seed.",
 	"fetchr.lobby.card_generation.from_seed.weekly_challenges_self_promo": "There are also weekly seed challenges posted on %s you can compete in with the community.",
 	"fetchr.lobby.card_generation.from_seed.dialog.title": "Generate Card From Seed",
+	"fetchr.lobby.card_generation.dialog.confirmation": "Generating a new card during the game will end the current game.\n\nDo you want to continue?",
 	"fetchr.lobby.card_generation.from_seed.dialog.input.seed": "Seed",
 	"fetchr.lobby.card_generation.from_seed.dialog.submit": "Generate",
 
@@ -559,7 +578,7 @@
 	"fetchr.skybox.teleport_all.sign.line1": "Teleport",
 	"fetchr.skybox.teleport_all.sign.line2": "All Players",
 	"fetchr.skybox.teleport_all.sign.line3": "to the",
-	"fetchr.skybox.teleport_all.sign.line4": "Skybox",
+	"fetchr.skybox.teleport_all.sign.line4": "Spawn Preview",
 
 	"fetchr.scoreboard.header": "Points",
 	"fetchr.team.black": "Black",
