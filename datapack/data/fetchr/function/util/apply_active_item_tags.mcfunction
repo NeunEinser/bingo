@@ -60,6 +60,7 @@ execute \
 	run function fetchr:util/apply_active_item_tags/add_category_items \
 		with storage tmp.fetchr:apply_active_item_tags categories_iter[-1]
 
+
 execute \
 	in fetchr:lobby \
-	run function fetchr:lobby/chest_generation/generate_item_chests
+	run function #fetchr:item_pool_changed
