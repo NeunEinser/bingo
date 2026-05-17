@@ -21,6 +21,8 @@ data modify storage fetchr:custom_hud players append from storage tmp.fetchr:cus
 
 function #fetchr:tick_hud_components
 
+data remove storage fetchr:tmp cardOffset
+data remove storage fetchr:tmp cardNegOffset
 execute \
 	if score $seed fetchr.state matches -2147483648.. \
 	run function fetchr:custom_hud/display_card
