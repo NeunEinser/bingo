@@ -115,6 +115,6 @@ execute \
 		{ translate: "fetchr.lobby.card_generation.join_game.sign.line4", bold: true, color: "#8eedeb" }\
 	]
 #NEUN_SCRIPT end
-function fetchr:lobby/place_indestructible_blocks
+bossbar set fetchr:start/pre_gen/progress visible false
 
 function #fetchr:game/ended
