@@ -2,5 +2,8 @@
 	"values": [
 		"neun_einser.timer:internal/tick",
 		"fetchr:tick/tick"
+	],
+	"NEUN_SCRIPT replace values until {NEUN_SCRIPT:min_pack_format}": [
+		"fetchr:tick/tick"
 	]
 }

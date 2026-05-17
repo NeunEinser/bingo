@@ -341,12 +341,21 @@ def iterate_files(config: dict, pack_config: dict, outpath: str, mc_versions: li
 					or pack_config.get("keep_main_format_in_main_pack_folder")\
 					or any(x for x in pack_config.get("main_pack_prefixes") or [] if file_path.startswith(x.replace("/", os.sep)))
 
+				main_format = (pack_config.get("main_format_overrides") or {}).get(file_path.replace(os.sep, "/"))
+
+				if isinstance(main_format, int):
+					main_format = (main_format, 0)
+				elif isinstance(main_format, list) and len(main_format) >= 1 and len(main_format) <= 2 and all(isinstance(f, int) for f in main_format):
+					main_format = (main_format[0], main_format[1] if len(main_format) == 2 else 0)
+				else:
+					main_format = main_pack_format
+
 				if not file_name.endswith(remove_extensions):
 					default_contents = {}
 					if type == 1 and relative_path.startswith(f"assets{os.sep}minecraft{os.sep}lang"):
 						default_contents = default_strings
 
-					file_result = handle_file(source, file_name, relative_path, main_pack_format,
+					file_result = handle_file(source, file_name, relative_path, main_format,
 						min_pack_format, max_pack_format, mc_versions, format_versions, config,
 						version_info, default_contents)
 
@@ -356,7 +365,7 @@ def iterate_files(config: dict, pack_config: dict, outpath: str, mc_versions: li
 						min_format = pack_formats[i]
 						max_format = max_excl_to_max_inc(pack_formats[i+1], format_versions)
 
-						if main_pack_format >= min_format and main_pack_format <= max_format:
+						if main_format >= min_format and main_format <= max_format:
 							continue
 
 						overlay_content = handle_file(source, file_name, relative_path, min_format,
@@ -380,7 +389,7 @@ def iterate_files(config: dict, pack_config: dict, outpath: str, mc_versions: li
 						if generate_main_as_overlay:
 							if len(pack_formats) == 0:
 								pack_formats = [min_pack_format, max_pack_format]
-							format_range = get_format_range(pack_formats, main_pack_format, format_versions)
+							format_range = get_format_range(pack_formats, main_format, format_versions)
 							pack_format_ranges.add(format_range)
 							overlay_prefix = f"{zip_root_path}{os.sep}{get_overlay_dir_name(format_range, type == 1)}".strip(os.sep)
 							main_path = f"{overlay_prefix}{os.sep}{file_path}"
@@ -414,10 +423,19 @@ def iterate_files(config: dict, pack_config: dict, outpath: str, mc_versions: li
 
 				keep_in_main = pack_config.get("keep_main_format_in_main_pack_folder")\
 					or any(x for x in pack_config.get("main_pack_prefixes") or [] if lang_path.startswith(x.replace("/", os.sep)))
+
+				main_format = (pack_config.get("main_format_overrides") or {}).get(file_path.replace(os.sep, "/"))
+
+				if isinstance(main_format, int):
+					main_format = (main_format, 0)
+				elif isinstance(main_format, list) and len(main_format) >= 1 and len(main_format) <= 2 and all(isinstance(f, int) for f in main_format):
+					main_format = (main_format[0], main_format[1] if len(main_format) == 2 else 0)
+				else:
+					main_format = main_pack_format
 				
 				overlay_prefix = zip_root_path
 				if not keep_in_main:
-					format_range = get_format_range([min_pack_format, max_pack_format], main_pack_format, format_versions)
+					format_range = get_format_range([min_pack_format, max_pack_format], main_format, format_versions)
 					pack_format_ranges.add(format_range)
 					overlay_prefix = f"{zip_root_path}{os.sep}{get_overlay_dir_name(format_range, type == 1)}".strip(os.sep)
 					lang_path = f"{overlay_prefix}{os.sep}{lang_path}"

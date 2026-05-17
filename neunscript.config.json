@@ -19,13 +19,26 @@
 		"main_pack_prefixes": [
 			"assets/fetchr/lang",
 			"assets/minecraft/lang"
-		]
+		],
+		"main_format_overrides": {
+			"assets/fetchr/lang/en_us.json": 1
+		}
 	},
 	"datapack": {
 		"path": "datapack",
 		"exclude": [
 			"mcdoc"
-		]
+		],
+		"main_pack_prefixes": [
+			"data/minecraft/tags/function/tick.json",
+			"data/fetchr/function/tick/tick.mcfunction",
+			"data/minecraft/tags/functions/tick.json",
+			"data/fetchr/functions/tick.mcfunction"
+		],
+		"main_format_overrides": {
+			"data/minecraft/tags/function/tick.json": 1,
+			"data/fetchr/function/tick/tick.mcfunction": 1
+		}
 	},
 	"world": {
 		"path": "world"
