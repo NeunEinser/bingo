@@ -13,3 +13,7 @@ data \
 execute \
 	positioned 7 3 7 \
 	run function fetchr:init/setup_lobby/end
+
+execute \
+	as @a[predicate=fetchr:is_in_game] \
+	run function fetchr:util/go_to_lobby
