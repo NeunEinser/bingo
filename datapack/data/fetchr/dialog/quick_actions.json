@@ -31,6 +31,7 @@
 		},
 		{
 			"label": { "translate": "fetchr.quick_actions.enter_spectator_mode" },
+			"tooltip": { "translate": "fetchr.quick_actions.enter_spectator_mode.tooltip" },
 			"action": {
 				"type": "minecraft:run_command",
 				"command": "trigger fetchr.spectator"
@@ -48,6 +49,7 @@
 		},
 		{
 			"label": { "translate": "fetchr.quick_actions.reveal_card" },
+			"tooltip": { "translate": "fetchr.quick_actions.reveal_card.tooltip" },
 			"action": {
 				"type": "minecraft:run_command",
 				"command": "trigger fetchr.reveal_card"
