@@ -47,6 +47,8 @@ data modify storage fetchr:card slots set value []
 data modify storage fetchr:card teams set value []
 
 schedule clear fetchr:lobby/place_indestructible_blocks
+schedule clear fetchr:game/start/pre_gen/schedule_entity_check
+schedule clear fetchr:game/start/locate_spawnpoint
 
 data modify storage tmp.fetchr:init/update_lobby new_structures set value []
 
