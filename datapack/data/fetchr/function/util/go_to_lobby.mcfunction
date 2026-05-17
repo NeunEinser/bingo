@@ -77,6 +77,7 @@ attribute @s minecraft:entity_interaction_range \
 gamemode creative
 gamemode survival
 
+scoreboard players reset @s fetchr.teleport_all
 execute \
 	if score $game_state fetchr.state matches 3.. \
 	if score $is_multiplayer fetchr.state matches 1 \
