@@ -221,6 +221,7 @@
 		at @s \
 		run function #fetchr:spawn_preview/tick
 	execute \
+		if score $lobby_generated fetchr.state matches 4 \
 		if score $game_state fetchr.state matches 1..2 \
 		in fetchr:default \
 		run function fetchr:game/start/pre_gen/tick
