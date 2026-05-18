@@ -38,6 +38,7 @@ execute \
 
 gamerule doDaylightCycle true
 gamerule doFireTick true
+gamerule randomTickSpeed 3
 
 team modify fetchr.light_blue seeFriendlyInvisibles true
 team modify fetchr.black seeFriendlyInvisibles true
