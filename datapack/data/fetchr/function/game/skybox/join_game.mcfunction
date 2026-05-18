@@ -13,8 +13,8 @@ execute \
 	run clone from fetchr:lobby ~ ~-4 ~-1 ~4 ~ ~-1 to fetchr:default 0 315 0
 execute \
 	unless entity @a[predicate=fetchr:is_in_game] \
-	at @e[type=minecraft:marker, tag=fetchr.card_frame_start, distance=..8, limit=1] \
-	run clone 0 315 0 4 319 0 ~ ~-4 ~-1 masked
+	run clone 0 315 0 4 319 0 ~-2 ~ ~-8 masked
+fill 0 315 0 4 319 0 minecraft:air
 
 #>
 # @private
