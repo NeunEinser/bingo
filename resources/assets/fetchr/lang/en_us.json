@@ -12,6 +12,8 @@
 
 	"fetchr.error.cannot_update": "You are attempting to update a Fetchr version from %s or before. This is currently not supported. Updating is only supported for versions %s and onwards",
 
+	"fetchr.error.lobby_update.duplicated_entities": "Something went wrong during your lobby upgrade. If you have a backup of your world from before the upgrade, please send it to NeunEinser over on %s or %s.",
+
 	"fetchr.error.spigot_paper": "You are likely using a version of Spigot or Paper. Paper and Spigot alter vanilla behavior and are incompatible with Fetchr.",
 	"fetchr.error.spigot_paper.help": "You can use a vanilla server, or use Fabric or Quilt with Lithium for best performance\n\nIf you need further assistance or are seeing this message despite not using Paper or Spigot, please report this issue on %s or %s.",
 
