@@ -9,8 +9,8 @@ execute if score $blocks_per_second 91.timer.intern matches 100 run worldborder 
 execute if score $blocks_per_second 91.timer.intern matches 10 run worldborder set 59999960 5999894
 execute if score $blocks_per_second 91.timer.intern matches 1 run worldborder set 59999968 59998932
 
-execute if score $in_game 91.timer.intern matches 2 run scoreboard players set $in_game 91.timer.intern 1
 execute if score $in_game 91.timer.intern matches 2 run worldborder set 59999968
+execute if score $in_game 91.timer.intern matches 2 run scoreboard players set $in_game 91.timer.intern 1
 
 scoreboard players reset * 91.timer.total_ticks
 scoreboard players reset * 91.timer.unpaused_ticks
