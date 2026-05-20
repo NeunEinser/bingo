@@ -159,8 +159,8 @@ execute \
 						{\
 							"translate": "bingo.resourcepack_check.wrong_version.description",\
 							"fallback": "\
-								If there is a server resource pack in place, enable it and wait\
-								until the Mojang loading screen is done.\n\nOtherwise, please download\
+								If there is a server resource pack in place, enable it and wait \
+								until the Mojang loading screen is done.\n\nOtherwise, please download \
 								the Resourcepack %s and enable it.\
 							",\
 							"with": [\
