@@ -6,6 +6,7 @@
 
 execute \
 	as @a[predicate=fetchr:is_in_game] \
+	at @s \
 	run function #fetchr:spawn_preview/player_tick
 
 execute unless entity @a[team=fetchr.black] run scoreboard players reset $black
