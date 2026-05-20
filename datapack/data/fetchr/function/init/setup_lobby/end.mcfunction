@@ -8,6 +8,13 @@
 # 	dimension fetchr:lobby
 # 	position 7 3 7 The lobby spawnpoint
 
+execute \
+	if score $is_multiplayer fetchr.state matches 1 \
+	as @e[tag=fetchr.multiplayer_mangrove_button_north] \
+	at @s \
+	if block ~ ~ ~ minecraft:air \
+	run setblock ~ ~ ~ minecraft:mangrove_button[facing=north]
+
 forceload remove all
 forceload add 0 0
 execute \
