@@ -25,7 +25,7 @@ execute \
 	run tellraw @s { "translate": "fetchr.settings.gamemode.confirmation.toggle_adventure", "color": "green" }
 execute \
 	if score $lobby_gamemode fetchr.setting_values matches 1 \
-	run tellraw @s { "translate": "fetchr.settings.gamemode.confirmation.toggle_adventure", "color": "red" }
+	run tellraw @s { "translate": "fetchr.settings.gamemode.confirmation.toggle_survival", "color": "red" }
 
 #NEUN_SCRIPT until 69
 #execute \
