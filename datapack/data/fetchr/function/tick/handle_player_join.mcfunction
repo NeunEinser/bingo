@@ -25,4 +25,43 @@ execute if score $player_join.item_count fetchr.tmp matches 25 run tag @s add fe
 scoreboard players reset @s fetchr.reconnect
 scoreboard players reset @s fetchr.setting_callback
 
+execute \
+	in fetchr:lobby \
+	as @e[type=minecraft:marker,tag=fetchr.lobby_sign] \
+	at @s \
+	store result score @s fetchr.tmp \
+	if entity @e[type=minecraft:marker,tag=fetchr.lobby_sign,distance=...1]
+execute \
+	in fetchr:lobby \
+	as @e[type=minecraft:marker,tag=fetchr.card_frame_start] \
+	at @s \
+	store result score @s fetchr.tmp \
+	if entity @e[type=minecraft:marker,tag=fetchr.card_frame_start,distance=...1]
+
+execute \
+	in fetchr:lobby \
+	if entity @e[type=minecraft:marker,x=0,scores={fetchr.tmp=2..}] \
+	run tellraw @s {\
+		"translate": "fetchr.error.lobby_update.duplicated_entities",\
+		"color": "red",\
+		"fallback": "Something went wrong during your lobby upgrade. If you have a \
+			backup of your world from before the upgrade, please send it to \
+			NeunEinser over on %s or %s.",\
+		"with": [\
+			{\
+				"text": "Discord",\
+				"color": "#00c3ff",\
+				"click_event": { "action": "open_url", "url": "https://discord.gg/9f6E3AxGA8" },\
+				"clickEvent": { "action": "open_url", "value": "https://discord.gg/9f6E3AxGA8" }\
+			},\
+			{\
+				"text": "Github",\
+				"color": "#00c3ff",\
+				"click_event": { "action": "open_url", "url": "https://github.com/NeunEinser/bingo/issues/304" },\
+				"clickEvent": { "action": "open_url", "value": "https://github.com/NeunEinser/bingo/issues/304" }\
+			}\
+		]\
+	}
+scoreboard players reset @e[type=minecraft:marker,x=0] fetchr.tmp
+
 execute if entity @s[predicate=fetchr:is_in_lobby] run schedule function fetchr:lobby/place_indestructible_blocks 1t replace
