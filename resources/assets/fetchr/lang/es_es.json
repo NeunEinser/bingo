@@ -123,7 +123,6 @@
 	"fetchr.settings.concealed_card.confirmation.toggle_on": "El cartón oculto ha sido activado.",
 	"fetchr.settings.points_goal.sign.line3": "",
 	"fetchr.settings.points_goal.value.minutes": "%s minutos",
-	"fetchr.settings.points_goal.menu.option.minutes": "Finalizar carrera a %s minutos",
 	"fetchr.settings.points_goal.action.set_time": "Establecer tiempo",
 	"fetchr.settings.points_goal.action.disable": "Deshabilitar",
 	"fetchr.settings.lockout_mode.name": "Modo bloqueo",
