@@ -109,7 +109,6 @@
 	"fetchr.settings.concealed_card.lectern.page_2": "Connaître les objets qui s'excluent mutuellement vous sera d'une aide précieuse.\n\nJetez un coup d'œil aux coffres de catégories aux alentours !",
 	"fetchr.settings.points_goal.sign.line3": "",
 	"fetchr.settings.points_goal.value.minutes": "%s minutes",
-	"fetchr.settings.points_goal.menu.option.minutes": "Définir la fin de la course à %s minutes",
 	"fetchr.settings.lockout_mode.name": "Mode Strict",
 	"fetchr.settings.lockout_mode.sign.line1": "Mode",
 	"fetchr.settings.lockout_mode.sign.line2": "Strict",
