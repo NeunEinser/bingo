@@ -140,7 +140,6 @@
 	"fetchr.settings.concealed_card.confirmation.toggle_on": "Verdeckte Karte wurde aktiviert.",
 	"fetchr.settings.points_goal.sign.line3": "",
 	"fetchr.settings.points_goal.value.minutes": "%s Minuten",
-	"fetchr.settings.points_goal.menu.option.minutes": "Ende des Rennens auf %s Minuten festlegen",
 	"fetchr.settings.points_goal.action.set_time": "Endzeit einstellen",
 	"fetchr.settings.points_goal.action.disable": "Deaktivieren",
 	"fetchr.settings.lockout_mode.name": "Lockout-Modus",
