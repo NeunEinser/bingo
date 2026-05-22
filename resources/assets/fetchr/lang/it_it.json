@@ -120,7 +120,6 @@
 	"fetchr.settings.concealed_card.confirmation.toggle_on": "La carta occulta è stata abilitata.",
 	"fetchr.settings.points_goal.sign.line3": "",
 	"fetchr.settings.points_goal.value.minutes": "%s minuti/o",
-	"fetchr.settings.points_goal.menu.option.minutes": "Imposta la fine della gara a %s minuti/o",
 	"fetchr.settings.points_goal.action.set_time": "Imposta Tempo",
 	"fetchr.settings.points_goal.action.disable": "Disabilita",
 	"fetchr.settings.lockout_mode.name": "Modalità Blocco",
