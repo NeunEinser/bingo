@@ -283,7 +283,7 @@ execute \
 	run title @a[tag=!fetchr.in_winning_team] subtitle {\
 		"translate": "fetchr.goal.points.subtitle.player",\
 		"with": [\
-			{ selector: "@s" },\
+			{ "selector": "@s" },\
 			{\
 				"score": {\
 					"name": "$item_detect/announce/points.winning_score",\
