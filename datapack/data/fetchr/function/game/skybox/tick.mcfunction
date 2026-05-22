@@ -26,22 +26,22 @@ execute unless entity @a[team=fetchr.red] run scoreboard players reset $red
 execute unless entity @a[team=fetchr.white] run scoreboard players reset $white
 execute unless entity @a[team=fetchr.yellow] run scoreboard players reset $yellow
 
-execute if entity @a[team=fetchr.black] run function fetchr:game/skybox/setup_team_display/black
-execute if entity @a[team=fetchr.blue] run function fetchr:game/skybox/setup_team_display/blue
-execute if entity @a[team=fetchr.cyan] run function fetchr:game/skybox/setup_team_display/cyan
-execute if entity @a[team=fetchr.dark_blue] run function fetchr:game/skybox/setup_team_display/dark_blue
-execute if entity @a[team=fetchr.dark_gray] run function fetchr:game/skybox/setup_team_display/dark_gray
-execute if entity @a[team=fetchr.dark_red] run function fetchr:game/skybox/setup_team_display/dark_red
-execute if entity @a[team=fetchr.gray] run function fetchr:game/skybox/setup_team_display/gray
-execute if entity @a[team=fetchr.green] run function fetchr:game/skybox/setup_team_display/green
-execute if entity @a[team=fetchr.light_blue] run function fetchr:game/skybox/setup_team_display/light_blue
-execute if entity @a[team=fetchr.lime] run function fetchr:game/skybox/setup_team_display/lime
-execute if entity @a[team=fetchr.magenta] run function fetchr:game/skybox/setup_team_display/magenta
-execute if entity @a[team=fetchr.orange] run function fetchr:game/skybox/setup_team_display/orange
-execute if entity @a[team=fetchr.purple] run function fetchr:game/skybox/setup_team_display/purple
-execute if entity @a[team=fetchr.red] run function fetchr:game/skybox/setup_team_display/red
-execute if entity @a[team=fetchr.white] run function fetchr:game/skybox/setup_team_display/white
-execute if entity @a[team=fetchr.yellow] run function fetchr:game/skybox/setup_team_display/yellow
+execute as @a[team=fetchr.black,limit=1] run function fetchr:game/skybox/setup_team_display/black
+execute as @a[team=fetchr.blue,limit=1] run function fetchr:game/skybox/setup_team_display/blue
+execute as @a[team=fetchr.cyan,limit=1] run function fetchr:game/skybox/setup_team_display/cyan
+execute as @a[team=fetchr.dark_blue,limit=1] run function fetchr:game/skybox/setup_team_display/dark_blue
+execute as @a[team=fetchr.dark_gray,limit=1] run function fetchr:game/skybox/setup_team_display/dark_gray
+execute as @a[team=fetchr.dark_red,limit=1] run function fetchr:game/skybox/setup_team_display/dark_red
+execute as @a[team=fetchr.gray,limit=1] run function fetchr:game/skybox/setup_team_display/gray
+execute as @a[team=fetchr.green,limit=1] run function fetchr:game/skybox/setup_team_display/green
+execute as @a[team=fetchr.light_blue,limit=1] run function fetchr:game/skybox/setup_team_display/light_blue
+execute as @a[team=fetchr.lime,limit=1] run function fetchr:game/skybox/setup_team_display/lime
+execute as @a[team=fetchr.magenta,limit=1] run function fetchr:game/skybox/setup_team_display/magenta
+execute as @a[team=fetchr.orange,limit=1] run function fetchr:game/skybox/setup_team_display/orange
+execute as @a[team=fetchr.purple,limit=1] run function fetchr:game/skybox/setup_team_display/purple
+execute as @a[team=fetchr.red,limit=1] run function fetchr:game/skybox/setup_team_display/red
+execute as @a[team=fetchr.white,limit=1] run function fetchr:game/skybox/setup_team_display/white
+execute as @a[team=fetchr.yellow,limit=1] run function fetchr:game/skybox/setup_team_display/yellow
 
 particle minecraft:happy_villager ~ ~-63 ~ .125 16 .125 1 16 force
 particle minecraft:happy_villager ~ ~-31 ~ .125 8 .125 1 8 force

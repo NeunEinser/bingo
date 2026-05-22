@@ -255,6 +255,11 @@ tellraw @s[scores={fetchr.resource_pack_check=1}] [\
 	}\
 ]
 
+execute \
+	if score @s fetchr.resource_pack_check matches 1 \
+	in fetchr:lobby \
+	run function fetchr:util/check_lobby_upgrade_and_show_error_message
+
 # Validate checked players, reenable trigger
 #NEUN_SCRIPT unless {NEUN_SCRIPT:realms}
 #tag @s[scores={fetchr.resource_pack_check={NEUN_SCRIPT:rp_version * 91}}] remove fetchr.resourcepack_check

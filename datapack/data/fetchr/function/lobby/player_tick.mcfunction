@@ -26,11 +26,9 @@ execute \
 	run function fetchr:card_generation/generate_from_seed
 scoreboard players reset @s fetchr.seed
 execute \
-	unless score $game_state fetchr.state matches 4 \
 	unless score $operator_only fetchr.setting_values matches 1 \
 	run scoreboard players enable @s fetchr.seed
 execute \
-	unless score $game_state fetchr.state matches 4 \
 	if score @s fetchr.operator matches 1 \
 	run scoreboard players enable @s fetchr.seed
 

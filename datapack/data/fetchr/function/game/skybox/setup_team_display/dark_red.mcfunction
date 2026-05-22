@@ -5,20 +5,28 @@
 #
 # @within function fetchr:skybox/tick
 
-scoreboard players display name $dark_red fetchr.neutral_display { "translate": "fetchr.team.dark_red", "color": "dark_red" }
-scoreboard players display name $dark_red fetchr.black_display { "translate": "fetchr.team.dark_red", "color": "dark_red" }
-scoreboard players display name $dark_red fetchr.blue_display { "translate": "fetchr.team.dark_red", "color": "dark_red" }
-scoreboard players display name $dark_red fetchr.cyan_display { "translate": "fetchr.team.dark_red", "color": "dark_red" }
-scoreboard players display name $dark_red fetchr.dark_blue_display { "translate": "fetchr.team.dark_red", "color": "dark_red" }
-scoreboard players display name $dark_red fetchr.dark_gray_display { "translate": "fetchr.team.dark_red", "color": "dark_red" }
-scoreboard players display name $dark_red fetchr.dark_red_display { "translate": "fetchr.team.dark_red", "color": "dark_red", "bold": true }
-scoreboard players display name $dark_red fetchr.gray_display { "translate": "fetchr.team.dark_red", "color": "dark_red" }
-scoreboard players display name $dark_red fetchr.green_display { "translate": "fetchr.team.dark_red", "color": "dark_red" }
-scoreboard players display name $dark_red fetchr.light_blue_display { "translate": "fetchr.team.dark_red", "color": "dark_red" }
-scoreboard players display name $dark_red fetchr.lime_display { "translate": "fetchr.team.dark_red", "color": "dark_red" }
-scoreboard players display name $dark_red fetchr.magenta_display { "translate": "fetchr.team.dark_red", "color": "dark_red" }
-scoreboard players display name $dark_red fetchr.orange_display { "translate": "fetchr.team.dark_red", "color": "dark_red" }
-scoreboard players display name $dark_red fetchr.purple_display { "translate": "fetchr.team.dark_red", "color": "dark_red" }
-scoreboard players display name $dark_red fetchr.red_display { "translate": "fetchr.team.dark_red", "color": "dark_red" }
-scoreboard players display name $dark_red fetchr.white_display { "translate": "fetchr.team.dark_red", "color": "dark_red" }
-scoreboard players display name $dark_red fetchr.yellow_display { "translate": "fetchr.team.dark_red", "color": "dark_red" }
+data modify storage tmp.fetchr:skybox team_name set value { "translate": "fetchr.team.dark_red", "color": "dark_red" }
+execute \
+	store result score $game/start/skybox/team_name.player_count fetchr.tmp \
+	if entity @a[team=fetchr.dark_red]
+execute \
+	if score $game/start/skybox/team_name.player_count fetchr.tmp matches 1 \
+	run data modify storage tmp.fetchr:skybox team_name set value { "selector": "@s", "color": "dark_red" }
+
+scoreboard players display name $dark_red fetchr.neutral_display { "storage": "tmp.fetchr:skybox", "nbt": "team_name", "interpret": true }
+scoreboard players display name $dark_red fetchr.black_display { "storage": "tmp.fetchr:skybox", "nbt": "team_name", "interpret": true }
+scoreboard players display name $dark_red fetchr.blue_display { "storage": "tmp.fetchr:skybox", "nbt": "team_name", "interpret": true }
+scoreboard players display name $dark_red fetchr.cyan_display { "storage": "tmp.fetchr:skybox", "nbt": "team_name", "interpret": true }
+scoreboard players display name $dark_red fetchr.dark_blue_display { "storage": "tmp.fetchr:skybox", "nbt": "team_name", "interpret": true }
+scoreboard players display name $dark_red fetchr.dark_gray_display { "storage": "tmp.fetchr:skybox", "nbt": "team_name", "interpret": true }
+scoreboard players display name $dark_red fetchr.dark_red_display { "storage": "tmp.fetchr:skybox", "nbt": "team_name", "interpret": true, "bold": true }
+scoreboard players display name $dark_red fetchr.gray_display { "storage": "tmp.fetchr:skybox", "nbt": "team_name", "interpret": true }
+scoreboard players display name $dark_red fetchr.green_display { "storage": "tmp.fetchr:skybox", "nbt": "team_name", "interpret": true }
+scoreboard players display name $dark_red fetchr.light_blue_display { "storage": "tmp.fetchr:skybox", "nbt": "team_name", "interpret": true }
+scoreboard players display name $dark_red fetchr.lime_display { "storage": "tmp.fetchr:skybox", "nbt": "team_name", "interpret": true }
+scoreboard players display name $dark_red fetchr.magenta_display { "storage": "tmp.fetchr:skybox", "nbt": "team_name", "interpret": true }
+scoreboard players display name $dark_red fetchr.orange_display { "storage": "tmp.fetchr:skybox", "nbt": "team_name", "interpret": true }
+scoreboard players display name $dark_red fetchr.purple_display { "storage": "tmp.fetchr:skybox", "nbt": "team_name", "interpret": true }
+scoreboard players display name $dark_red fetchr.red_display { "storage": "tmp.fetchr:skybox", "nbt": "team_name", "interpret": true }
+scoreboard players display name $dark_red fetchr.white_display { "storage": "tmp.fetchr:skybox", "nbt": "team_name", "interpret": true }
+scoreboard players display name $dark_red fetchr.yellow_display { "storage": "tmp.fetchr:skybox", "nbt": "team_name", "interpret": true }
