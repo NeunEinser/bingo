@@ -141,7 +141,6 @@
 	"fetchr.settings.concealed_card.confirmation.toggle_on": "隱藏賓果卡已開啟。",
 	"fetchr.settings.points_goal.sign.line3": "",
 	"fetchr.settings.points_goal.value.minutes": "%s 分鐘",
-	"fetchr.settings.points_goal.menu.option.minutes": "設定競賽結束時間為 %s 分鐘",
 	"fetchr.settings.points_goal.action.set_time": "設定時間",
 	"fetchr.settings.points_goal.action.disable": "關閉",
 	"fetchr.settings.lockout_mode.name": "獨佔模式",
