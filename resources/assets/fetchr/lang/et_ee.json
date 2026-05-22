@@ -124,7 +124,6 @@
 	"fetchr.settings.concealed_card.confirmation.toggle_on": "Varjatud kaart on sisse lülitatud.",
 	"fetchr.settings.points_goal.sign.line3": "",
 	"fetchr.settings.points_goal.value.minutes": "%s minutit",
-	"fetchr.settings.points_goal.menu.option.minutes": "Määra võistluse pikkuseks %s minutit",
 	"fetchr.settings.points_goal.action.set_time": "Määra aeg",
 	"fetchr.settings.points_goal.action.disable": "Lülita välja",
 	"fetchr.settings.lockout_mode.name": "Kes ees, see mees režiim",
