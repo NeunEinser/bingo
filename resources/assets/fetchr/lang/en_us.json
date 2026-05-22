@@ -3,26 +3,19 @@
 	"fetchr.technical.resourcepack_version_{NEUN_SCRIPT:rp_version}": "%s",
 	"NEUN_SCRIPT remove fetchr.technical.minecraft_version until {NEUN_SCRIPT:min_pack_format}": "",
 	"fetchr.technical.minecraft_version": "%s",
-	
 	"fetchr.error.incompatible_minecraft_version.multiple_compatible": "You are using an unsupported version of Minecraft. This pack has been made compatible for Minecraft versions %s-%s.",
 	"fetchr.error.incompatible_minecraft_version.multiple_compatible.with_latest_snapshot": "You are using an unsupported version of Minecraft. This pack has been made compatible for Minecraft versions %s-%s, or up to snapshot %s.",
 	"fetchr.error.incompatible_minecraft_version.incompatible_snapshot": "You are using an unsupported snapshot. Snapshots %s-%s are unsupported. Make sure to use snapshot %s or higher.",
 	"fetchr.error.incompatible_minecraft_version.single_compatible": "You are using an unsupported version of Minecraft. This pack has been made compatible for Minecraft version %s.",
 	"fetchr.error.incompatible_minecraft_version.single_compatible.with_latest_snapshot": "You are using an unsupported version of Minecraft. This pack has been made compatible for Minecraft version %s, or up to snapshot %s.",
-
 	"fetchr.error.cannot_update": "You are attempting to update a Fetchr version from %s or before. This is currently not supported. Updating is only supported for versions %s and onwards",
-
 	"fetchr.error.lobby_update.duplicated_entities": "Something went wrong during your lobby upgrade. If you have a backup of your world from before the upgrade, please send it to NeunEinser over on %s or %s.",
-
 	"fetchr.error.spigot_paper": "You are likely using a version of Spigot or Paper. Paper and Spigot alter vanilla behavior and are incompatible with Fetchr.",
 	"fetchr.error.spigot_paper.help": "You can use a vanilla server, or use Fabric or Quilt with Lithium for best performance\n\nIf you need further assistance or are seeing this message despite not using Paper or Spigot, please report this issue on %s or %s.",
-
 	"fetchr.logging.error": "ERROR",
 	"fetchr.setup.error.unknown_category": "Item %1$s has category %2$s, but category %2$s could not be found.",
-
 	"fetchr.actionbar.wrong_resourcepack_error": "Incompatible version of the Fetchr resource pack enabled.",
 	"fetchr.actionbar.wrong_minecraft_error": "Incompatible version of Minecraft.",
-
 	"fetchr.resourcepack_check.sign.line1": "Resource pack",
 	"fetchr.resourcepack_check.sign.line2": "was installed.",
 	"fetchr.resourcepack_check.sign.line3": "Click here for",
@@ -39,7 +32,6 @@
 	"fetchr.resourcepack_check.wrong_version.sign.line2": "Download",
 	"fetchr.resourcepack_check.wrong_version.sign.line3": "Resource Pack",
 	"fetchr.resourcepack_check.wrong_version.sign.line4": "",
-
 	"fetchr.game.menu.hover_text": "Fetchr Menu",
 	"fetchr.game.menu.heading": "Fetchr Menu",
 	"fetchr.game.menu.heading.lobby": "Lobby Menu",
@@ -53,7 +45,6 @@
 	"fetchr.game.switch_gamemode.prevented": "Prevented game mode switch. %s for spectator mode.\nAfterwards, you can switch to any other game mode.",
 	"fetchr.game.switch_gamemode.prevented.click": "Click here",
 	"fetchr.game.switch_gamemode.hint": "Hint: You can use the command %s at any time manually to switch to spectator mode as well.\nIf you do not like this functionality, you can disable it in your preferences in the lobby.",
-	
 	"fetchr.quick_actions.teleport_self": "Return to Lobby or Join Game",
 	"fetchr.quick_actions.teleport_all": "Move Players to Lobby or Spawn Preview",
 	"fetchr.quick_actions.teleport_all.tooltip": "Moves all players to the lobby if a game is in progress, or teleports all players to the spawn preview if the spawn preview is ready.",
@@ -61,31 +52,25 @@
 	"fetchr.quick_actions.reveal_card.tooltip": "Reveals the Bingo card during a concealed card run.",
 	"fetchr.quick_actions.enter_spectator_mode": "Enter Spectator Mode",
 	"fetchr.quick_actions.enter_spectator_mode.tooltip": "Start spectating a game you were participating in until now.",
-
-	"fetchr.quick_actions.lobby.join_game" : "Join Game",
-	"fetchr.quick_actions.lobby.teleport_all" : "Add All Players to Spawn Preview",
-	"fetchr.quick_actions.lobby.teleport_all.no_card" : "You need to generate a card before moving all players to the spawn preview.",
-	"fetchr.quick_actions.lobby.teleport_all.not_ready" : "The spawn preview is not ready yet.",
-	"fetchr.quick_actions.lobby.teleport_all.game_starting" : "You cannot move all players while the game is in its countdown phase.",
-	
-	"fetchr.quick_actions.game.return_to_lobby" : "Return to Lobby",
-	"fetchr.quick_actions.game.teleport_all" : "Return All Players to Lobby",
-
+	"fetchr.quick_actions.lobby.join_game": "Join Game",
+	"fetchr.quick_actions.lobby.teleport_all": "Add All Players to Spawn Preview",
+	"fetchr.quick_actions.lobby.teleport_all.no_card": "You need to generate a card before moving all players to the spawn preview.",
+	"fetchr.quick_actions.lobby.teleport_all.not_ready": "The spawn preview is not ready yet.",
+	"fetchr.quick_actions.lobby.teleport_all.game_starting": "You cannot move all players while the game is in its countdown phase.",
+	"fetchr.quick_actions.game.return_to_lobby": "Return to Lobby",
+	"fetchr.quick_actions.game.teleport_all": "Return All Players to Lobby",
 	"fetchr.preferences.title": "Personal Preferences",
 	"fetchr.preferences.description": "This menu allows you to configure your own preferences.",
 	"fetchr.preferences.back": "Back",
 	"fetchr.preferences.previous": "Previous",
 	"fetchr.preferences.next": "Next",
 	"fetchr.preferences.page": "Page %s/%s",
-
 	"fetchr.preferences.custom_hud.title": "Configure Fetchr HUD",
 	"fetchr.preferences.custom_hud.description": "In this menu, you can move components of the custom HUD around, disable them, or adjust some component-specific settings.",
-
 	"fetchr.preferences.spectator_mode.title": "Prevent manual game mode switching",
 	"fetchr.preferences.spectator_mode.description": "When on, you will not be able to use /gamemode commands, F3+N or F3+F4 to switch your game mode while in game.\n\nThis is done to prevent accidentally hitting those button combinations.\n\nThere is a chat message you can use for switching to spectator mode instead. After switching to spectator mode or getting all 25 items on the card, you can switch your game mode freely again.",
 	"fetchr.preferences.spectator_mode.enabled": "On",
 	"fetchr.preferences.spectator_mode.disabled": "Off",
-
 	"fetchr.preferences.custom_hud.add_disabled.title": "Add Disabled Components",
 	"fetchr.preferences.custom_hud.add_disabled.description": "Here, you can view disabled components and add them somewhere to your HUD.",
 	"fetchr.preferences.custom_hud.add_disabled.disabled": "You currently have all components enabled.",
@@ -93,7 +78,6 @@
 	"fetchr.preferences.custom_hud.add_disabled.add_col1.title": "Add Above Hotbar, Right",
 	"fetchr.preferences.custom_hud.add_disabled.add.description": "Adds the component to the display slot.",
 	"fetchr.preferences.custom_hud.add_disabled.add.disabled": "Cannot add component to this slot, as there is no space left.",
-
 	"fetchr.preferences.custom_hud.adjust_col0.title": "Adjust Components Above Hotbar, Left",
 	"fetchr.preferences.custom_hud.adjust_col1.title": "Adjust Components Above Hotbar, Right",
 	"fetchr.preferences.custom_hud.adjust_col.description": "Here, you can switch positions of components, move them to a different column, or adjust component-specific settings.",
@@ -109,7 +93,6 @@
 	"fetchr.preferences.custom_hud.adjust_col.remove.description": "Removes the component from your HUD.",
 	"fetchr.preferences.custom_hud.adjust_col.settings.hover_text": "Component Settings",
 	"fetchr.preferences.custom_hud.adjust_col.add_spacer": "Add Spacer",
-
 	"fetchr.preferences.custom_hud.adjust_card.title": "Adjust Bingo Card",
 	"fetchr.preferences.custom_hud.adjust_card.description": "Here, you can change settings about the bingo card.",
 	"fetchr.preferences.custom_hud.adjust_card.left_of_hotbar.title": "Move to Left of Hotbar",
@@ -118,50 +101,40 @@
 	"fetchr.preferences.custom_hud.adjust_card.right_of_hotbar_no_attack.description": "Moves the bingo card to the right side of the hotbar without leaving space for the attack indicator.\nIn case “Options → Video Settings → Attack Indicator” is set to “Hotbar”, please select the other option.",
 	"fetchr.preferences.custom_hud.adjust_card.right_of_hotbar_with_attack.title": "Move to Right of Hotbar (Attack Indicator)",
 	"fetchr.preferences.custom_hud.adjust_card.right_of_hotbar_with_attack.description": "Moves the bingo card to the right side of the hotbar while leaving space for the attack indicator.\nOnly use this option if “Options → Video Settings → Attack Indicator” is set to “Hotbar”.",
-
 	"fetchr.custom_hud.components.spacer": "Spacer",
 	"fetchr.custom_hud.components.seed": "Fetchr Seed",
 	"fetchr.custom_hud.components.player_position": "X/Z coordinates",
 	"fetchr.custom_hud.components.player_chunk_position": "Chunk coordinates",
 	"fetchr.custom_hud.components.y_position": "Y coordinate",
 	"fetchr.custom_hud.components.timer": "Timer",
-
 	"fetchr.preferences.custom_hud.component_settings.seed.title": "Seed Settings",
 	"fetchr.preferences.custom_hud.component_settings.seed.description": "This page allows you to customize settings for the seed display",
 	"fetchr.preferences.custom_hud.component_settings.seed.only_show_after_run.title": "Only show seed after run completion",
 	"fetchr.preferences.custom_hud.component_settings.seed.only_show_after_run.description": "With this setting, the Fetchr seed will only be revealed after a completed run.\n\nSpecifically, this means after collecting all 25 items, or after returning to the lobby.\n\nIf you want to properly disguise your spawn location, you also need to either not use F3 or set Options -> Chat Settings -> Reduced Debug Info to ON.",
 	"fetchr.preferences.custom_hud.component_settings.seed.always_show.title": "Always show seed",
 	"fetchr.preferences.custom_hud.component_settings.seed.always_show.description": "With this setting, the Fetchr seed will always be shown.",
-
 	"fetchr.preferences.custom_hud.component_settings.player_chunk_position.title": "Chunk Coordinate Settings",
 	"fetchr.preferences.custom_hud.component_settings.player_chunk_position.description": "This page allows you to customize settings for the chunk coordinate display",
 	"fetchr.preferences.custom_hud.component_settings.player_chunk_position.merge_with_pos.title": "Show instead of position when holding treasure map",
 	"fetchr.preferences.custom_hud.component_settings.player_chunk_position.merge_with_pos.description": "This setting removes this component from the list and instead shows the chunk coordinates in place of the normal coordinates when you are holding a treasure map.\n\nThis is useful for finding the specific block of treasure, as it's always on chunk coordinates 9 9.\n\nUse the settings of the normal coordinates to change this back.",
-
 	"fetchr.preferences.custom_hud.component_settings.player_position.title": "Coordinate Settings",
 	"fetchr.preferences.custom_hud.component_settings.player_position.description": "This page allows you to customize settings for the coordinate display",
 	"fetchr.preferences.custom_hud.component_settings.player_position.enable_chunk_coordinates.title": "Show chunk coordinates when holding treasure map",
 	"fetchr.preferences.custom_hud.component_settings.player_position.enable_chunk_coordinates.description": "With this setting, chunk coordinates are shown instead of regular coordinates when holding a treasure map.\n\nThis is useful for finding the specific block of treasure, as it's always on chunk coordinates 9 9.",
 	"fetchr.preferences.custom_hud.component_settings.player_position.disable_chunk_coordinates.title": "Enable separate chunk coordinate component",
 	"fetchr.preferences.custom_hud.component_settings.player_position.disable_chunk_coordinates.description": "With this, the coordinates are no longer replaced by chunk coordinates when holding a treasure map, and instead a separate component with chunk coordinates is inserted if there is space.\n\nYou can of course also disable that component like any other component.",
-
 	"fetchr.preferences.custom_hud.component_settings.player_position.use_compass_icon.title": "Use Compass Icon",
 	"fetchr.preferences.custom_hud.component_settings.player_position.use_compass_icon.description": "Changes the coordinate icon to a Minecraft compass item.",
 	"fetchr.preferences.custom_hud.component_settings.player_position.use_text_icon.title": "Use Text Icon",
 	"fetchr.preferences.custom_hud.component_settings.player_position.use_text_icon.description": "Changes the coordinate icon to a textual representation of cardinal directions.",
-
-
 	"fetchr.settings.info.takes_effect_after_generating_new": "This setting change will only take effect after generating a new card.",
 	"fetchr.settings.info.takes_effect_after_starting_game": "This setting change will only take effect after starting a new game.",
-
 	"fetchr.settings.pause_menu.custom_options.title": "Fetchr Options",
 	"fetchr.settings.pause_menu.custom_options.settings.title": "Game Settings",
-
 	"fetchr.settings.section.advanced_settings.sign.line1": "",
 	"fetchr.settings.section.advanced_settings.sign.line2": "Advanced",
 	"fetchr.settings.section.advanced_settings.sign.line3": "Settings",
 	"fetchr.settings.section.advanced_settings.sign.line4": "",
-
 	"fetchr.settings.concealed_card.name": "Concealed Card",
 	"fetchr.settings.concealed_card.sign.line1": "Concealed",
 	"fetchr.settings.concealed_card.sign.line2": "Card",
@@ -170,7 +143,6 @@
 	"fetchr.settings.concealed_card.lectern.page_2": "Knowing mutually exclusive items will help you greatly.\n\nCheck out the category chests around the corner!",
 	"fetchr.settings.concealed_card.confirmation.toggle_off": "Concealed card has been disabled.",
 	"fetchr.settings.concealed_card.confirmation.toggle_on": "Concealed card has been enabled.",
-
 	"fetchr.settings.points_goal.name": "Target Time",
 	"fetchr.settings.points_goal.description": "When activating target time, you try to collect as many items as possible in a set amount of time. There will be a notification when the target time was reached, and the team(s) with the most points will be declared Points Winner. You can still continue playing after the announcement if you want.",
 	"fetchr.settings.points_goal.sign.line1": "Target",
@@ -178,16 +150,15 @@
 	"fetchr.settings.points_goal.sign.line3": "",
 	"fetchr.settings.points_goal.value.minutes": "%s minutes",
 	"fetchr.settings.points_goal.menu.option.off": "Disable target time",
-	"fetchr.settings.points_goal.menu.option.minutes": "Set race end to %s minutes",
-	"fetchr.settings.points_goal.menu.option.custom": "Set a custom time",
+	"fetchr.settings.points_goal.menu.option.minutes": "Set target time to %s minutes",
+	"fetchr.settings.points_goal.menu.option.custom": "Set a custom target time",
 	"fetchr.settings.points_goal.confirmation.set_value": "Target time was set to %s minutes",
 	"fetchr.settings.points_goal.confirmation.toggle_off": "Target time has been disabled",
 	"fetchr.settings.points_goal.lectern.page_1": "When activating target time, you try to get as many items as possible in the specified time. The team(s) with the most amount of items after the time was reached wins, or if a team achieves a blackout, that team wins immediately.",
-	"fetchr.settings.points_goal.lectern.page_2": "You can use this to limit the amount of time spend on a game.\n\nLike with any other goal, there is no forced game end and you can continue playing after the race has ended if you want.",
+	"fetchr.settings.points_goal.lectern.page_2": "You can use this to limit the amount of time spend on a game.\n\nLike with any other goal, there is no forced game end and if you want, you can continue playing after the time has been reached.",
 	"fetchr.settings.points_goal.input.end_time": "Target Time (in Minutes)",
 	"fetchr.settings.points_goal.action.set_time": "Set Time",
 	"fetchr.settings.points_goal.action.disable": "Disable",
-
 	"fetchr.settings.lockout_mode.name": "Lockout Mode",
 	"fetchr.settings.lockout_mode.sign.line1": "Lockout",
 	"fetchr.settings.lockout_mode.sign.line2": "Mode",
@@ -197,7 +168,6 @@
 	"fetchr.settings.lockout_mode.confirmation.toggle_off": "Lockout mode has been disabled.",
 	"fetchr.settings.lockout_mode.confirmation.toggle_on": "Lockout mode has been enabled.",
 	"fetchr.settings.lockout_mode.toggle.ongoing_game.info": "This setting change will only take effect after the ongoing game has completed.",
-
 	"fetchr.settings.timer.name": "Timer Settings",
 	"fetchr.settings.timer_method.name": "Timer Method",
 	"fetchr.settings.timer_method.sign.line1": "Timer",
@@ -221,7 +191,6 @@
 	"fetchr.settings.timer.lectern.page_6": "There is no “better” way to measure time, and you can try to evaluate which you consider fairer.",
 	"fetchr.settings.timer.lectern.page_7": "This setting is mostly relevant for singleplayer.\n\nWhen active, the timer will keep increasing, even when the game is paused.",
 	"fetchr.settings.timer.lectern.page_8": "In multiplayer, the timer will not increase while no player is online when this setting is inactive.\n\nBy default, paused time is not counted.",
-
 	"fetchr.settings.operator_only.name": "Operator-Only Controls",
 	"fetchr.settings.operator_only.sign.line1": "Operator-Only",
 	"fetchr.settings.operator_only.sign.line2": "Controls",
@@ -238,7 +207,6 @@
 	"fetchr.settings.operator_only.confirm_op.name": "Confirm Operator Status",
 	"fetchr.settings.operator_only.confirm_op.description": "You need to be an operator in order to perform this action. Please confirm your operator status with the button below.",
 	"fetchr.settings.operator_only.confirm_op.action.confirm": "Confirm Operator Status",
-
 	"fetchr.settings.gamemode.name": "Lobby Game Mode",
 	"fetchr.settings.gamemode.sign.line1": "Lobby",
 	"fetchr.settings.gamemode.sign.line2": "Game Mode",
@@ -249,7 +217,6 @@
 	"fetchr.settings.gamemode.confirmation.toggle_survival": "Players in the lobby now use survival mode.",
 	"fetchr.settings.gamemode.lectern.page_1": "By default, all players in the lobby are in adventure mode, which means they cannot place or break any blocks.\n\nIn singleplayer, you are intentionally left in survival mode and allowed to alter the lobby in this way.",
 	"fetchr.settings.gamemode.lectern.page_2": "All essential parts like signs and lecterns are always preserved.\n\nThis can be used for nice decorations and giving the place a story from things collected from different runs.",
-
 	"fetchr.settings.pre_gen.name": "Pre-generation Radius",
 	"fetchr.settings.pre_gen.description": "Pre-generating can be used to avoid lag spikes when exploring the world, and comes at the cost of wait time for the generation to finish before the game starts.",
 	"fetchr.settings.pre_gen.sign.line1": "Pre-Gener-",
@@ -270,7 +237,6 @@
 	"fetchr.settings.pre_gen.lectern.page_1": "Pre-generation is the process of generating the terrain around spawn before the game starts.\n\nThis is useful to avoid lag spikes when exploring the world, as the terrain is already generated.",
 	"fetchr.settings.pre_gen.lectern.page_2": "This, however, has the disadvantage that you will need to wait before starting the game for the pre-generation to be completed.\n\nIf you experience lag, you can experiment with this setting.",
 	"fetchr.settings.pre_gen.lectern.page_3": "The default minimal setting will only generate the immediate spawn point.\n\nThis is the fastest option for wait time and comes at the disadvantage of potential lag spikes as players explore in different directions.",
-
 	"fetchr.settings.allow_spectating.name": "Allow Spectating",
 	"fetchr.settings.allow_spectating.sign.line1": "Allow",
 	"fetchr.settings.allow_spectating.sign.line2": "Spectators",
@@ -279,7 +245,6 @@
 	"fetchr.settings.allow_spectating.confirmation.toggle_on": "Players may use spectator mode now.",
 	"fetchr.settings.allow_spectating.lectern.page_1": "Players can usually enter spectator mode at any point during a game as a way to stop playing.\n\nPlayers who cooperate could potentially abuse this to gain an advantage.",
 	"fetchr.settings.allow_spectating.lectern.page_2": "With this setting, you can disable spectator mode entirely if you are worried about players abusing spectator mode.",
-
 	"fetchr.settings.show_seed.name": "Show Fetchr Seed",
 	"fetchr.settings.show_seed.sign.line1": "Show",
 	"fetchr.settings.show_seed.sign.line2": "Fetchr Seed",
@@ -288,30 +253,23 @@
 	"fetchr.settings.show_seed.confirmation.toggle_on": "Players now see the Fetchr seed, even during the game.",
 	"fetchr.settings.show_seed.lectern.page_1": "Above the hotbar on the right, the Fetchr Seed is shown by default.\n\nGenerating a card with the same seed will result in the same card and spawn point.",
 	"fetchr.settings.show_seed.lectern.page_2": "This could be abused by players who could look at the spawn point in spectator or creative mode in singleplayer to gain an advantage.\n\nIf you are concerned about this, you can use this setting to hide the seed until the game has ended.",
-
 	"fetchr.settings.preferences.sign.line1": "",
 	"fetchr.settings.preferences.sign.line2": "Personal",
 	"fetchr.settings.preferences.sign.line3": "Preferences",
 	"fetchr.settings.preferences.sign.line4": "",
-	
 	"fetchr.lobby.returned": "%s returned to the lobby.",
-
 	"fetchr.lobby.credits.neun_einser.sign.line2": "Fetchr",
 	"fetchr.lobby.credits.neun_einser.sign.line3": "Main & Lead",
 	"fetchr.lobby.credits.neun_einser.sign.line4": "Developer",
-
 	"fetchr.lobby.credits.unlucks_mc_gee.sign.line2": "",
 	"fetchr.lobby.credits.unlucks_mc_gee.sign.line3": "Code",
 	"fetchr.lobby.credits.unlucks_mc_gee.sign.line4": "Contributor",
-
 	"fetchr.lobby.credits.kristof.sign.line2": "",
 	"fetchr.lobby.credits.kristof.sign.line3": "Code",
 	"fetchr.lobby.credits.kristof.sign.line4": "Contributor",
-
 	"fetchr.lobby.credits.dr_brian_lorgon111.sign.line2": "",
 	"fetchr.lobby.credits.dr_brian_lorgon111.sign.line3": "Original Minecraft",
 	"fetchr.lobby.credits.dr_brian_lorgon111.sign.line4": "Bingo creator",
-
 	"fetchr.lobby.credits.community_and_support.sign.line1": "",
 	"fetchr.lobby.credits.community_and_support.sign.line2": "Community &",
 	"fetchr.lobby.credits.community_and_support.sign.line3": "Support",
@@ -320,45 +278,34 @@
 	"fetchr.lobby.credits.community_and_support.description": "In this book, you find some useful links for support, bug reports and suggestions.",
 	"fetchr.lobby.credits.community_and_support.issue_link": "Bug & Issue Tracker",
 	"fetchr.lobby.credits.community_and_support.discord_link": "Discord Server",
-
 	"fetchr.lobby.credits.playtesters.sign.line1": "",
 	"fetchr.lobby.credits.playtesters.sign.line2": "Wall of",
 	"fetchr.lobby.credits.playtesters.sign.line3": "Alpha-Testing",
 	"fetchr.lobby.credits.playtesters.sign.line4": "",
-
 	"fetchr.lobby.credits.special_thanks.sign.line1": "",
 	"fetchr.lobby.credits.special_thanks.sign.line2": "Special",
 	"fetchr.lobby.credits.special_thanks.sign.line3": "Thanks",
 	"fetchr.lobby.credits.special_thanks.sign.line4": "",
-
 	"fetchr.lobby.credits.tools.sign.line1": "",
 	"fetchr.lobby.credits.tools.sign.line2": "Used",
 	"fetchr.lobby.credits.tools.sign.line3": "Tools",
 	"fetchr.lobby.credits.tools.sign.line4": "",
-
 	"fetchr.lobby.credits.tools.vscode.sign.line3": "by",
 	"fetchr.lobby.credits.tools.vscode.sign.line4": "Microsoft",
-
 	"fetchr.lobby.credits.tools.datapack_helper_plus.sign.line3": "by",
 	"fetchr.lobby.credits.tools.datapack_helper_plus.sign.line4": "SPGoding",
-
 	"fetchr.lobby.credits.tools.minecraft_multi_noise_visualizer.sign.line3": "by",
 	"fetchr.lobby.credits.tools.minecraft_multi_noise_visualizer.sign.line4": "Jochen Jacobs",
-
 	"fetchr.lobby.credits.tools.nbt_explorer.sign.line3": "by",
 	"fetchr.lobby.credits.tools.nbt_explorer.sign.line4": "Justin Aquadro",
-
 	"fetchr.lobby.credits.tools.nbt_studio.sign.line3": "by tryashtar",
 	"fetchr.lobby.credits.tools.nbt_studio.sign.line4": "",
-
 	"fetchr.lobby.credits.tools.nbt_viewer.sign.line3": "by Misode",
 	"fetchr.lobby.credits.tools.nbt_viewer.sign.line4": "",
-
 	"fetchr.lobby.credits.translators.sign.line1": "",
 	"fetchr.lobby.credits.translators.sign.line2": "Translators",
 	"fetchr.lobby.credits.translators.sign.line3": "",
 	"fetchr.lobby.credits.translators.sign.line4": "",
-
 	"fetchr.lobby.credits.translators.german.sign.line1": "German",
 	"fetchr.lobby.credits.translators.polish.sign.line1": "Polish",
 	"fetchr.lobby.credits.translators.italian.sign.line1": "Italian",
@@ -378,17 +325,14 @@
 	"fetchr.lobby.credits.translators.ukrainian.sign.line1": "Ukrainian",
 	"fetchr.lobby.credits.translators.estonian.sign.line1": "Estonian",
 	"fetchr.lobby.credits.translators.incomplete": "(incomplete)",
-
 	"fetchr.lobby.credits.translators.upside_down_english.sign.line1": "Upside Down",
 	"fetchr.lobby.credits.translators.upside_down_english.sign.line2": "English",
 	"fetchr.lobby.credits.translators.pirate_english.sign.line1": "Pirate English",
-
 	"fetchr.lobby.card_generation.random_card.sign.line1": "",
 	"fetchr.lobby.card_generation.random_card.sign.line2": "Generate",
 	"fetchr.lobby.card_generation.random_card.sign.line3": "Random Card",
 	"fetchr.lobby.card_generation.random_card.sign.line4": "",
 	"fetchr.lobby.card_generation.random_card.dialog.title": "Generate Random Card",
-
 	"fetchr.lobby.card_generation.from_seed.sign.line1": "",
 	"fetchr.lobby.card_generation.from_seed.sign.line2": "Generate Card",
 	"fetchr.lobby.card_generation.from_seed.sign.line3": "From Seed",
@@ -401,7 +345,6 @@
 	"fetchr.lobby.card_generation.dialog.confirmation": "Generating a new card during the game will end the current game.\n\nDo you want to continue?",
 	"fetchr.lobby.card_generation.from_seed.dialog.input.seed": "Seed",
 	"fetchr.lobby.card_generation.from_seed.dialog.submit": "Generate",
-
 	"fetchr.lobby.card_generation.join_game.sign.line1": "",
 	"fetchr.lobby.card_generation.join_game.sign.line2": "Join",
 	"fetchr.lobby.card_generation.join_game.sign.line3": "Game",
@@ -409,38 +352,31 @@
 	"fetchr.lobby.card_generation.join_game.not_ready": "The game is not ready yet. You will automatically join the game once it is.",
 	"fetchr.lobby.card_generation.join_game.error.no_card": "You have to generate a card before joining a game.",
 	"fetchr.lobby.card_generation.join_game.error.in_progress": "You cannot join an ongoing game. If you want to start a new game, generate a new card first.",
-
 	"fetchr.lobby.card_generation.join_as_spectator.sign.line1": "",
 	"fetchr.lobby.card_generation.join_as_spectator.sign.line2": "Join",
 	"fetchr.lobby.card_generation.join_as_spectator.sign.line3": "As Spectator",
 	"fetchr.lobby.card_generation.join_as_spectator.sign.line4": "",
 	"fetchr.game.start_spectating": "%s is now spectating the game",
-
 	"fetchr.lobby.card_generation.crafting_table.sign.line1": "Crafting",
 	"fetchr.lobby.card_generation.crafting_table.sign.line2": "Recipe",
 	"fetchr.lobby.card_generation.crafting_table.sign.line3": "Lookup",
 	"fetchr.lobby.card_generation.crafting_table.sign.line4": "Device",
-
 	"fetchr.lobby.card_generation.furnace.sign.line1": "Smelting",
 	"fetchr.lobby.card_generation.furnace.sign.line2": "Recipe",
 	"fetchr.lobby.card_generation.furnace.sign.line3": "Lookup",
 	"fetchr.lobby.card_generation.furnace.sign.line4": "Device",
-
 	"fetchr.lobby.trophy_box.sign.line1": "",
 	"fetchr.lobby.trophy_box.sign.line2": "Trophy",
 	"fetchr.lobby.trophy_box.sign.line3": "Box",
 	"fetchr.lobby.trophy_box.sign.line4": "",
-
 	"fetchr.lobby.trap.sign.line1": "",
 	"fetchr.lobby.trap.sign.line2": "It's",
 	"fetchr.lobby.trap.sign.line3": "a trap!",
 	"fetchr.lobby.trap.sign.line4": "",
-
 	"fetchr.lobby.outside.sign.line1": "What are you",
 	"fetchr.lobby.outside.sign.line2": "doing here?",
 	"fetchr.lobby.outside.sign.line3": "Didn't you read",
 	"fetchr.lobby.outside.sign.line4": "the door sign?",
-
 	"fetchr.lobby.team_selection.sign.line1": "",
 	"fetchr.lobby.team_selection.sign.line2": "Switch",
 	"fetchr.lobby.team_selection.sign.line3": "Team",
@@ -457,8 +393,6 @@
 	"fetchr.lobby.team_selection.join_dark_blue": "%s joined the dark blue team.",
 	"fetchr.lobby.team_selection.join_purple": "%s joined the purple team.",
 	"fetchr.lobby.team_selection.join_magenta": "%s joined the magenta team.",
-
-
 	"fetchr.lobby.tutorial.generate_chests.sign.line1": "Re-generate",
 	"fetchr.lobby.tutorial.generate_chests.sign.line2": "Category",
 	"fetchr.lobby.tutorial.generate_chests.sign.line3": "Chests",
@@ -467,47 +401,38 @@
 	"fetchr.lobby.tutorial.chests.lectern.page_1": "The chests to the right display all the items that are in the Fetchr item pool.\n\nEach column is a category. Only one item of each category can appear at the same time on any given card.",
 	"fetchr.lobby.tutorial.chests.lectern.page_2": "A column starting with an empty slot is a continuation of the category in the last column.\n\nAn item can also have multiple categories, which restricts it more, as the item can only be picked when none of the items in any of its categories are on the card.",
 	"fetchr.lobby.tutorial.chests.lectern.page_3": "Items can also have weights. The higher the weight is, the more likely it is for the game to pick the item from the category.\n\nUse the sign above to re-generate the chests.",
-
 	"fetchr.lobby.tutorial.basics.sign.line1": "",
 	"fetchr.lobby.tutorial.basics.sign.line2": "Fetchr",
 	"fetchr.lobby.tutorial.basics.sign.line3": "Basics",
 	"fetchr.lobby.tutorial.basics.sign.line4": "",
-
 	"fetchr.lobby.tutorial.basics1.sign.line1": "Fetchr is a",
 	"fetchr.lobby.tutorial.basics1.sign.line2": "Minecraft Bingo",
 	"fetchr.lobby.tutorial.basics1.sign.line3": "map about",
 	"fetchr.lobby.tutorial.basics1.sign.line4": "collecting items.",
-
 	"fetchr.lobby.tutorial.basics2.sign.line1": "A bingo card is",
 	"fetchr.lobby.tutorial.basics2.sign.line2": "a 5x5 grid with",
 	"fetchr.lobby.tutorial.basics2.sign.line3": "each slot",
 	"fetchr.lobby.tutorial.basics2.sign.line4": "picturing an item.",
-
 	"fetchr.lobby.tutorial.basics3.sign.line1": "To unlock a",
 	"fetchr.lobby.tutorial.basics3.sign.line2": "slot, obtain the",
 	"fetchr.lobby.tutorial.basics3.sign.line3": "item contained",
 	"fetchr.lobby.tutorial.basics3.sign.line4": "within it.",
-
 	"fetchr.lobby.tutorial.basics4.sign.line1": "After generating",
 	"fetchr.lobby.tutorial.basics4.sign.line2": "a card, you get",
 	"fetchr.lobby.tutorial.basics4.sign.line3": "the chance to",
 	"fetchr.lobby.tutorial.basics4.sign.line4": "analyze it.",
-
 	"fetchr.lobby.tutorial.basics5.sign.line1": "When you are",
 	"fetchr.lobby.tutorial.basics5.sign.line2": "done, simply",
 	"fetchr.lobby.tutorial.basics5.sign.line3": "start the game",
 	"fetchr.lobby.tutorial.basics5.sign.line4": "and enjoy :)",
-
 	"fetchr.lobby.tutorial.basics6.sign.line1": "To the right,",
 	"fetchr.lobby.tutorial.basics6.sign.line2": "you will find an",
 	"fetchr.lobby.tutorial.basics6.sign.line3": "overview of goals",
 	"fetchr.lobby.tutorial.basics6.sign.line4": "to go for.",
-
 	"fetchr.lobby.tutorial.skybox.sign.line1": "When generating",
 	"fetchr.lobby.tutorial.skybox.sign.line2": "a card, you will",
 	"fetchr.lobby.tutorial.skybox.sign.line3": "spawn at a",
 	"fetchr.lobby.tutorial.skybox.sign.line4": "random location.",
-
 	"fetchr.lobby.tutorial.skybox.dummy_card_frame.trident": "So Annoying!",
 	"fetchr.lobby.tutorial.skybox.dummy_card_frame.lime_stained_terracotta": "Block of sliced limes",
 	"fetchr.lobby.tutorial.skybox.dummy_card_frame.totem_of_undying": "HHH Bingo?",
@@ -517,12 +442,10 @@
 	"fetchr.lobby.tutorial.skybox.dummy_card_frame.jack_o_lantern": "Item Id: 91",
 	"fetchr.lobby.tutorial.skybox.dummy_card_frame.pufferfish": "Nemesis",
 	"fetchr.lobby.tutorial.skybox.dummy_card_frame.axolotl": "Ancient Cutie",
-
 	"fetchr.lobby.tutorial.get_tools.sign.line1": "After starting,",
 	"fetchr.lobby.tutorial.get_tools.sign.line2": "you will need to",
 	"fetchr.lobby.tutorial.get_tools.sign.line3": "get basic gear",
 	"fetchr.lobby.tutorial.get_tools.sign.line4": "first.",
-
 	"fetchr.lobby.tutorial.goals.sign.line1": "",
 	"fetchr.lobby.tutorial.goals.sign.line2": "Goals",
 	"fetchr.lobby.tutorial.goals.sign.line3": "",
@@ -539,7 +462,6 @@
 	"fetchr.lobby.tutorial.goals.20_no_bingo": "Get 20 items without achieving any bingo.\n\nWhen planning, try to think about which items to avoid in order to achieve this goal. Beware of items you might pick up accidentally, such as arrows when fighting skeletons.",
 	"fetchr.lobby.tutorial.goals.multiple_bingo.heading": "Multi-Bingo",
 	"fetchr.lobby.tutorial.goals.multiple_bingo": "For this goal, you need to get multiple bingos at once.\n\nThis works by getting 4 items in intersecting rows, columns or diagonals, and the item at the intersection last.\nThis includes double, triple and quadruple bingo.",
-
 	"fetchr.lobby.tutorial.game_info.sign.line1": "",
 	"fetchr.lobby.tutorial.game_info.sign.line2": "Game",
 	"fetchr.lobby.tutorial.game_info.sign.line3": "Info",
@@ -558,29 +480,23 @@
 	"fetchr.lobby.tutorial.game_info.ites": "Ore blobs of all stone variants like DiorITE, GranITE and AndesITE are completely removed. Granite may still occur as part of copper ore veins.\n\nThis is done to reduce inventory clutter.",
 	"fetchr.lobby.tutorial.game_info.ambient.heading": "Ambient lighting",
 	"fetchr.lobby.tutorial.game_info.ambient": "There is a dimension setting in place that lets you see in the dark similarly to the vanilla nether.\n\nThis works without night vision, and you are still able to tell darkness apart from light to some degree.",
-
 	"fetchr.lobby.end.sign.line1": "The Outside",
 	"fetchr.lobby.end.sign.line2": "",
 	"fetchr.lobby.end.sign.line3": "Danger!",
 	"fetchr.lobby.end.sign.line4": "Stay Inside!",
-
-
 	"fetchr.skybox.start_game.error.not_ready": "Please wait for the pre-generation bar at the top to complete.",
 	"fetchr.skybox.start_game.sign.line1": "",
 	"fetchr.skybox.start_game.sign.line2": "Start",
 	"fetchr.skybox.start_game.sign.line3": "Game",
 	"fetchr.skybox.start_game.sign.line4": "",
-
 	"fetchr.skybox.leave_game.sign.line1": "",
 	"fetchr.skybox.leave_game.sign.line2": "Leave",
 	"fetchr.skybox.leave_game.sign.line3": "Game",
 	"fetchr.skybox.leave_game.sign.line4": "",
-
 	"fetchr.skybox.teleport_all.sign.line1": "Teleport",
 	"fetchr.skybox.teleport_all.sign.line2": "All Players",
 	"fetchr.skybox.teleport_all.sign.line3": "to the",
 	"fetchr.skybox.teleport_all.sign.line4": "Spawn Preview",
-
 	"fetchr.scoreboard.header": "Points",
 	"fetchr.team.black": "Black",
 	"fetchr.team.blue": "Blue",
@@ -598,7 +514,6 @@
 	"fetchr.team.red": "Red",
 	"fetchr.team.white": "White",
 	"fetchr.team.yellow": "Yellow",
-
 	"fetchr.categories.header": "Categories:",
 	"fetchr.category.amethyst": "Amethyst",
 	"fetchr.category.armadillo": "Armadillo",
@@ -649,24 +564,19 @@
 	"fetchr.category.warm_biome": "Warm Biomes",
 	"fetchr.category.wheat": "Wheat",
 	"fetchr.category.wool": "Wool",
-
 	"fetchr.item.global_weight": "Global Weight",
-
 	"fetchr.game.start.preparing_spawn": "Preparing Spawn...",
 	"fetchr.game.start.loading_terrain": "Loading Terrain...",
 	"fetchr.game.start.pre_gen_progress": "Pre-generating Chunks...",
 	"fetchr.game.start.countdown_completed": "GO!",
-
 	"fetchr.item.blue_trimmed_golden_boots": "Blue Trimmed Golden Boots",
 	"fetchr.item.blue_trimmed_copper_boots": "Blue Trimmed Copper Boots",
 	"fetchr.item.description.any_trim": "Any Armor Trim",
-
 	"fetchr.got_item": "[%2$s | #%1$s] %3$s got [%4$s]",
 	"fetchr.goal.blackout.chat": "[%s] %s got a blackout!",
 	"fetchr.goal.20_no_bingo.chat": "[%s] %s got a 20 no bingo!",
 	"fetchr.goal.lockout.chat": "[%s] %s won the lockout race!",
 	"fetchr.goal.points.chat": "[%s] %s got %s points within %s minutes!",
-
 	"fetchr.goal.blackout.title": "Blackout!",
 	"fetchr.goal.blackout.subtitle.black": "The black team got a blackout!",
 	"fetchr.goal.blackout.subtitle.blue": "The blue team got a blackout!",
@@ -687,7 +597,6 @@
 	"fetchr.goal.blackout.subtitle.your_team": "Your team got a blackout!",
 	"fetchr.goal.blackout.subtitle.you": "You got a blackout!",
 	"fetchr.goal.blackout.subtitle.player": "%s got a blackout!",
-
 	"fetchr.goal.20_no_bingo.title": "20 No Bingo!",
 	"fetchr.goal.20_no_bingo.subtitle.black": "The black team got a 20 No Bingo!",
 	"fetchr.goal.20_no_bingo.subtitle.blue": "The blue team got a 20 No Bingo!",
@@ -708,7 +617,6 @@
 	"fetchr.goal.20_no_bingo.subtitle.your_team": "Your team got a 20 No Bingo!",
 	"fetchr.goal.20_no_bingo.subtitle.you": "You got a 20 No Bingo!",
 	"fetchr.goal.20_no_bingo.subtitle.player": "%s got a 20 No Bingo!",
-
 	"fetchr.goal.lockout.title": "Lockout Concluded!",
 	"fetchr.goal.lockout.subtitle.black": "The black team won the lockout race!",
 	"fetchr.goal.lockout.subtitle.blue": "The blue team won the lockout race!",
@@ -732,7 +640,6 @@
 	"fetchr.goal.lockout.subtitle.tie_lost": "Multiple other teams won the lockout race!",
 	"fetchr.goal.lockout.subtitle.tie_team": "Your team tied the lockout race!",
 	"fetchr.goal.lockout.subtitle.tie_player": "You tied the lockout race!",
-
 	"fetchr.goal.points.title": "Target Time Reached!",
 	"fetchr.goal.points.subtitle.black": "The black team won with %s points!",
 	"fetchr.goal.points.subtitle.blue": "The blue team won with %s points!",
@@ -757,42 +664,34 @@
 	"fetchr.goal.points.subtitle.tie_team": "Your team tied with %s points!",
 	"fetchr.goal.points.subtitle.tie_player": "You tied with %s points!",
 	"fetchr.goal.points.subtitle.single_player": "You reached %s points!",
-
 	"fetchr.goal.bingo.row": "[%s] %s got a bingo in row %s!",
 	"fetchr.goal.bingo.col": "[%s] %s got a bingo in col %s!",
 	"fetchr.goal.bingo.diag.top_left": "[%s] %s got a bingo in the top left to bottom right diagonal!",
 	"fetchr.goal.bingo.diag.bottom_left": "[%s] %s got a bingo in the bottom left to top right diagonal!",
-
 	"fetchr.goal.bingo.double.col_row": "[%s] %s got a double bingo in col %s and row %s!",
 	"fetchr.goal.bingo.double.col_diag.top_left": "[%s] %s got a double bingo in col %s and the top left to bottom right diagonal!",
 	"fetchr.goal.bingo.double.col_diag.bottom_left": "[%s] %s got a double bingo in col %s and the bottom left to top right diagonal!",
 	"fetchr.goal.bingo.double.row_diag.top_left": "[%s] %s got a double bingo in row %s and the top left to bottom right diagonal!",
 	"fetchr.goal.bingo.double.row_diag.bottom_left": "[%s] %s got a double bingo in row %s and the bottom left to top right diagonal!",
 	"fetchr.goal.bingo.double.diags": "[%s] %s got a double bingo in both diagonals!",
-
 	"fetchr.goal.bingo.triple.top_left": "[%s] %s got a triple bingo in col %s, row %s and the top left to bottom right diagonal!",
 	"fetchr.goal.bingo.triple.bottom_left": "[%s] %s got a triple bingo in col %s, row %s and the bottom left to top right diagonal!",
 	"fetchr.goal.bingo.triple.col_diags": "[%s] %s got a triple bingo in col %s and both diagonals!",
 	"fetchr.goal.bingo.triple.row_diags": "[%s] %s got a triple bingo in row %s and both diagonals!",
-
 	"fetchr.goal.bingo.quadruple": "[%s] %s got a quadruple bingo!",
-
 	"fetchr.goal.bingo.sniper.row": "[%s] %s got a sniper bingo in row %s!",
 	"fetchr.goal.bingo.sniper.col": "[%s] %s got a sniper bingo in col %s!",
 	"fetchr.goal.bingo.sniper.diag.top_left": "[%s] %s got a sniper bingo in the top left to bottom right diagonal!",
 	"fetchr.goal.bingo.sniper.diag.bottom_left": "[%s] %s got a sniper bingo in the bottom left to top right diagonal!",
-
 	"fetchr.goal.bingo.sniper.double.col_row": "[%s] %s got a sniper double bingo in col %s and row %s!",
 	"fetchr.goal.bingo.sniper.double.col_diag.top_left": "[%s] %s got a sniper double bingo in col %s and the top left to bottom right diagonal!",
 	"fetchr.goal.bingo.sniper.double.col_diag.bottom_left": "[%s] %s got a sniper double bingo in col %s and the bottom left to top right diagonal!",
 	"fetchr.goal.bingo.sniper.double.row_diag.top_left": "[%s] %s got a sniper double bingo in row %s and the top left to bottom right diagonal!",
 	"fetchr.goal.bingo.sniper.double.row_diag.bottom_left": "[%s] %s got a sniper double bingo in row %s and the bottom left to top right diagonal!",
 	"fetchr.goal.bingo.sniper.double.diags": "[%s] %s got a sniper double bingo in both diagonals!",
-
 	"fetchr.goal.bingo.sniper.triple.top_left": "[%s] %s got a sniper triple bingo in col %s, row %s and the top left to bottom right diagonal!",
 	"fetchr.goal.bingo.sniper.triple.bottom_left": "[%s] %s got a sniper triple bingo in col %s, row %s and the bottom left to top right diagonal!",
 	"fetchr.goal.bingo.sniper.triple.col_diags": "[%s] %s got a sniper triple bingo in col %s and both diagonals!",
 	"fetchr.goal.bingo.sniper.triple.row_diags": "[%s] %s got a sniper triple bingo in row %s and both diagonals!",
-
 	"fetchr.goal.bingo.sniper.quadruple": "[%s] %s got a sniper quadruple bingo!"
 }
