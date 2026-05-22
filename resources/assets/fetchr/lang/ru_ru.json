@@ -104,7 +104,6 @@
 	"fetchr.settings.section.advanced_settings.sign.line3": "настройки",
 	"fetchr.settings.concealed_card.lectern.page_2": "Знание несовместимых предметов вам очень поможет.\n\nПосмотрите в сундуки с категориями за углом!",
 	"fetchr.settings.points_goal.value.minutes": "%s минут",
-	"fetchr.settings.points_goal.menu.option.minutes": "Установить окончание гонки на %s минут",
 	"fetchr.settings.lockout_mode.name": "Режим Lockout",
 	"fetchr.settings.lockout_mode.sign.line1": "Режим",
 	"fetchr.settings.lockout_mode.sign.line2": "Режим",
