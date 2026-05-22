@@ -121,7 +121,6 @@
 	"fetchr.settings.concealed_card.confirmation.toggle_on": "Сліпий режим був увімкнений.",
 	"fetchr.settings.points_goal.sign.line3": "",
 	"fetchr.settings.points_goal.value.minutes": "%s хвилин",
-	"fetchr.settings.points_goal.menu.option.minutes": "Встановити кінець гри на %s хвилин",
 	"fetchr.settings.points_goal.action.set_time": "Встановити Час",
 	"fetchr.settings.points_goal.action.disable": "Вимкнути",
 	"fetchr.settings.lockout_mode.name": "Режим Блокування",
