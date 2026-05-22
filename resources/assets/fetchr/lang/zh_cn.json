@@ -122,7 +122,6 @@
 	"fetchr.settings.concealed_card.confirmation.toggle_off": "隐藏卡片已经被关闭。",
 	"fetchr.settings.concealed_card.confirmation.toggle_on": "隐藏卡片已经被打开。",
 	"fetchr.settings.points_goal.value.minutes": "%s 分钟",
-	"fetchr.settings.points_goal.menu.option.minutes": "设置竞赛结束时间为 %s 分钟",
 	"fetchr.settings.points_goal.action.set_time": "设置时间",
 	"fetchr.settings.points_goal.action.disable": "禁用",
 	"fetchr.settings.lockout_mode.name": "独占模式",
