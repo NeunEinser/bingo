@@ -135,7 +135,6 @@
 	"fetchr.settings.concealed_card.confirmation.toggle_off": "A cartela oculta foi desativada.",
 	"fetchr.settings.concealed_card.confirmation.toggle_on": "A cartela oculta foi ativada.",
 	"fetchr.settings.points_goal.value.minutes": "%s minutos",
-	"fetchr.settings.points_goal.menu.option.minutes": "Definir o fim da corrida para %s minutos",
 	"fetchr.settings.points_goal.action.set_time": "Definir tempo",
 	"fetchr.settings.points_goal.action.disable": "Desativar",
 	"fetchr.settings.lockout_mode.name": "Modo bloqueio",
