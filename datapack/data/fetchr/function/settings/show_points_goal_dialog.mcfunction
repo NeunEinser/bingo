@@ -12,7 +12,7 @@
 		{\
 			type: "minecraft:plain_message",\
 			width: 400,\
-			contents: { translate: "fetchr.settings.points_goal.description" }\
+			contents: [{ translate: "fetchr.settings.points_goal.description" }, "\n"]\
 		}\
 	],\
 	inputs: [\
@@ -66,7 +66,7 @@ $dialog show @s {\
 		{\
 			type: "minecraft:plain_message",\
 			width: 400,\
-			contents: { translate: "fetchr.settings.points_goal.description" }\
+			contents: [{ translate: "fetchr.settings.points_goal.description" }, "\n"]\
 		}\
 	],\
 	inputs: [\

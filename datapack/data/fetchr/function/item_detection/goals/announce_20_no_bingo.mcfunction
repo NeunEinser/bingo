@@ -28,7 +28,15 @@ tellraw @a [\
 # Work around for """WAI""" https://bugs.mojang.com/browse/MC-139625 :mad_neun:
 data modify storage tmp.fetchr:item_detection team set from storage fetchr:card teams[-1]
 
-title @a[tag=fetchr.in_current_team] subtitle { "translate": "fetchr.goal.20_no_bingo.subtitle.you" }
+execute \
+	store result score $item_detect/goal.winner_count fetchr.tmp \
+	if entity @a[tag=fetchr.in_current_team]
+
+title @a[tag=fetchr.in_current_team] subtitle { "translate": "fetchr.goal.20_no_bingo.subtitle.your_team" }
+execute \
+	if score $item_detect/goal.winner_count fetchr.tmp matches 1 \
+	run title @a[tag=fetchr.in_current_team] \
+		subtitle { "translate": "fetchr.goal.20_no_bingo.subtitle.you" }
 execute \
 	if data storage tmp.fetchr:item_detection team{ id: "fetchr:black" } \
 	run title @a[tag=!fetchr.in_current_team] \
@@ -93,6 +101,10 @@ execute \
 	if data storage tmp.fetchr:item_detection team{ id: "fetchr:yellow" } \
 	run title @a[tag=!fetchr.in_current_team] \
 		subtitle { "translate": "fetchr.goal.20_no_bingo.subtitle.yellow" }
+execute \
+	if score $item_detect/goal.winner_count fetchr.tmp matches 1 \
+	run title @a[tag=!fetchr.in_current_team] \
+		subtitle { "translate": "fetchr.goal.20_no_bingo.subtitle.player", "with": [{"selector": "@s"}] }
 
 title @a[tag=fetchr.in_current_team] title { "translate": "fetchr.goal.20_no_bingo.title", "color": "green" }
 title @a[tag=!fetchr.in_current_team] title { "translate": "fetchr.goal.20_no_bingo.title", "color": "red" }
