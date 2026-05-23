@@ -63,6 +63,14 @@
 				"dialog": "fetchr:fetchr_links_quick_actions"
 			},
 			"width": 200
+		},
+		{
+			"label": { "translate": "fetchr.settings.pause_menu.custom_options.settings.title" },
+			"action": {
+				"type": "minecraft:run_command",
+				"command": "trigger fetchr.settings set 4"
+			},
+			"width": 200
 		}
 	]
 }

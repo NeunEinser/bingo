@@ -9,7 +9,7 @@
 		},
 		{
 			"label": { "translate": "menu.quick_actions.title" },
-			"action": { "type": "minecraft:run_command", "command": "trigger fetchr.settings set 4" }
+			"action": { "type": "minecraft:run_command", "command": "trigger fetchr.settings set 5" }
 		},
 		{
 			"label": { "translate": "fetchr.dialog.links" },

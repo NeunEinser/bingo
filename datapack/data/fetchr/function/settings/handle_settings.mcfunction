@@ -22,6 +22,10 @@ execute \
 
 execute \
 	if score @s fetchr.settings matches 4 \
+	run function fetchr:settings/prepare_and_show_game_settings
+
+execute \
+	if score @s fetchr.settings matches 5 \
 	run function fetchr:settings/generate_dynamic_quick_actions { exit_callback_setting_trigger: 2, cancel_button_translate: "back" }
 
 execute \
