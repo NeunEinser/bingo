@@ -23,7 +23,6 @@ execute \
 execute \
 	if score $start_game.countdown fetchr.tmp matches ..0 \
 	at @e[type=minecraft:marker, tag=fetchr.spawn] \
-	positioned over motion_blocking_no_leaves \
 	run function #fetchr:start_sequence/countdown_ended with storage fetchr:card random_sequence_data
 
 scoreboard players remove $start_game.countdown fetchr.tmp 1

@@ -123,4 +123,6 @@ execute \
 fill 0 315 0 4 319 0 minecraft:air
 
 function fetchr:card_frames/spawn
-function #fetchr:spawn_preview/created
+execute \
+	positioned ~7 ~1 ~7 \
+	run function #fetchr:spawn_preview/created

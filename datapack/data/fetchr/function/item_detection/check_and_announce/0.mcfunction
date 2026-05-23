@@ -110,7 +110,12 @@ function fetchr:item_detection/handle_item_from_inventory/exec \
 data \
 	modify storage io.fetchr:find_team current_team.color \
 	set string storage fetchr:card teams[-1].id 7
+
+$function #fetchr:goal_and_item_detection/item_gotten \
+	with storage fetchr:card slots[$(slot_id)]
 function fetchr:item_detection/announce with storage io.fetchr:find_team current_team
+$function #fetchr:goal_and_item_detection/item_get_announced \
+	with storage fetchr:card slots[$(slot_id)]
 
 #NEUN_SCRIPT until 69
 #$data \
