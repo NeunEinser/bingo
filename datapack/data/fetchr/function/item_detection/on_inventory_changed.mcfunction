@@ -8,6 +8,7 @@
 execute \
 	if score $game_state fetchr.state matches 4 \
 	if predicate fetchr:is_in_game \
+	if entity @s[gamemode=!spectator] \
 	run function fetchr:item_detection/check_all_slots
 
 execute \
