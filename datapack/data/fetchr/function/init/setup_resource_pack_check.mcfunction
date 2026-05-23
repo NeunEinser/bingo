@@ -116,3 +116,5 @@ execute \
 		}\
 	]}}
 #NEUN_SCRIPT end
+
+teleport @a[x=0] 1 1 1

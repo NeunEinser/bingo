@@ -8,7 +8,6 @@
 recipe give @s *
 scoreboard players set @s fetchr.card_position 0
 #NEUN_SCRIPT unless {NEUN_SCRIPT:realms}
-tp ~ 1 ~
 
 gamemode adventure
 scoreboard players set @s fetchr.resource_pack_check 1
