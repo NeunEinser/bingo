@@ -5,8 +5,6 @@
 	"fetchr.error.incompatible_minecraft_version.single_compatible": "你正在使用不受支持的 Minecraft 版本。此数据包被设计为仅兼容 Minecraft %s。",
 	"fetchr.error.incompatible_minecraft_version.single_compatible.with_latest_snapshot": "你正在使用不受支持的 Minecraft 版本。此数据包被设计为仅兼容 Minecraft %s 或最高至 %s 的快照版本。",
 	"fetchr.error.cannot_update": "你正在尝试从 %s 及以下版本更新 Fetchr。 目前不支持此操作。仅支持从 %s 及以上版本更新",
-	"fetchr.error.spigot_paper": "你似乎正在使用 Spigot 或 Paper。Paper 和 Spigot 修改了原版行为，与 Fetchr 不兼容。",
-	"fetchr.error.spigot_paper.help": "你可以使用原版服务器，或使用安装了 Lithium 的 Fabric 或 Quilt 服务器以获得最佳体验。\n\n若需要进一步协助，或在未使用 Paper 或 Spigot 的情况下仍看到此消息，请在 %s 或 %s 上报告此问题。",
 	"fetchr.logging.error": "错误",
 	"fetchr.setup.error.unknown_category": "物品 %1$s 属于类别 %2$s，但未找到类别 %2$s。",
 	"fetchr.actionbar.wrong_resourcepack_error": "使用的 Fetchr 资源包版本不兼容。",

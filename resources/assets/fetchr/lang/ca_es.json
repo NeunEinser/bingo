@@ -5,8 +5,6 @@
 	"fetchr.error.incompatible_minecraft_version.single_compatible": "Esteu utilitzant una versió de Minecraft incompatible. Aquest pack s'ha fet amb compatibilitat per les versions %s de Minecraft",
 	"fetchr.error.incompatible_minecraft_version.single_compatible.with_latest_snapshot": "Esteu utilitzant una versió de Minecraft incompatible. Aquest paquet s'ha fet amb compatibilitat per la versió %s, o fins a la versió de prova %s.",
 	"fetchr.error.cannot_update": "Esteu intentant actualitzar Fetchr de la versió %s o anterior. Actualment, això no és possible. Només es poden actualitzar la versió %s i posteriors",
-	"fetchr.error.spigot_paper": "Probablement estau emprant una versió de Spigot o Paper, els quals alteren el comportament del joc per defecte i són incompatibles amb Fetchr.",
-	"fetchr.error.spigot_paper.help": "Podeu emprar un servidor vanilla o Fabric o Quilt amb Lithium per millorar el rendiment\n\nSi necessiteu assistència o estau veient aquest missatge encara que no emprau Paper o Spigot, per favor, informau d'aquest error a %s o %s",
 	"fetchr.logging.error": "ERROR",
 	"fetchr.setup.error.unknown_category": "L'ítem %1$s té la categoria %2$s, però la categoria %2$s no s'ha pogut trobar.",
 	"fetchr.actionbar.wrong_resourcepack_error": "S'ha activat una versió incompatible del paquet de recursos de Fetchr.",

@@ -4,8 +4,6 @@
 	"fetchr.error.incompatible_minecraft_version.incompatible_snapshot": "Ви використовуєте непідтримуваний снапшот. Снапшоти %s-%s непідтримувані. Використовуйте снапшот %s або вище.",
 	"fetchr.error.incompatible_minecraft_version.single_compatible": "Ви використовуєте непідтримувану версію Minecraft. Цей пакет сумісний з версією Minecraft %s",
 	"fetchr.error.incompatible_minecraft_version.single_compatible.with_latest_snapshot": "Ви використовуєте непідтримувану версію Minecraft. Цей датапак був зроблений для версії %s, або до снапшоту %s.",
-	"fetchr.error.spigot_paper": "Ймовірно, ви використовуєте версію Spigot, або Paper. Paper та Spigot змінюють ванільну поведінку та несумісні з Fetchr.",
-	"fetchr.error.spigot_paper.help": "Ви можете використовувати ванільний сервер, або використовуйте Fabric чи Quilt з інстальованим Lithium для найкращої продуктивності.\n\nЯкщо вам необхідна подальша підтримка, або ви бачите це повідомлення, хоча не використовуєте Paper чи Spigot, будь ласка, повідомте про цю проблему на %s або %s",
 	"fetchr.logging.error": "ПОМИЛКА",
 	"fetchr.setup.error.unknown_category": "Предмет %1$s має категорію %2$s, але категорію %2$s не знайдено.",
 	"fetchr.actionbar.wrong_resourcepack_error": "Використовується непідтримувана версія пакету ресурсів Fetchr.",
