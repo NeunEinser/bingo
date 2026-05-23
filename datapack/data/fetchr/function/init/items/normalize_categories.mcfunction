@@ -16,23 +16,20 @@
 #>
 # @private
 #declare score_holder $init/items/normalize.is_string
-data modify entity @s Tags append from storage tmp.fetchr:init item_categories[-1]
-execute \
-	store result score $init/items/normalize.is_string fetchr.tmp \
-	run data get entity @s Tags
 
-execute \
-	if score $init/items/normalize.is_string fetchr.tmp matches 2 \
-	run data modify entity @s Tags set value ["fetchr.string_tester"]
+# Workaround for that stupid """WAI""" again
+data \
+	modify storage tmp.fetchr:init item_category \
+	set from storage tmp.fetchr:init item_categories[-1]
 
 data modify storage tmp.fetchr:init category set value {}
 execute \
-	if score $init/items/normalize.is_string fetchr.tmp matches 2 \
+	unless data storage tmp.fetchr:init item_category{} \
 	run data \
 		modify storage tmp.fetchr:init category.id \
 		set from storage tmp.fetchr:init item_categories[-1]
 execute \
-	if score $init/items/normalize.is_string fetchr.tmp matches 1 \
+	if data storage tmp.fetchr:init item_category{} \
 	run data \
 		modify storage tmp.fetchr:init category \
 		set from storage tmp.fetchr:init item_categories[-1]
