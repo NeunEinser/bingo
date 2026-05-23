@@ -1,0 +1,15 @@
+{
+	"parent": "minecraft:block/cube_bottom_top",
+	"textures": {
+		"bottom": "minecraft:block/piston_bottom",
+		"side": "minecraft:block/piston_side",
+		"top": "minecraft:block/piston_top_sticky"
+	},
+	"display": {
+		"fixed": {
+			"rotation": [ -90, 0, 0 ],
+			"translation": [ 0, 0, 0 ],
+			"scale": [ 0.5, 0.5, 0.5 ]
+		}
+	}
+}
