@@ -12,10 +12,10 @@
 
 	"fetchr.error.cannot_update": "You are attempting to update a Fetchr version from %s or before. This is currently not supported. Updating is only supported for versions %s and onwards",
 
-	"fetchr.error.lobby_update.duplicated_entities": "Something went wrong during your lobby upgrade. If you have a backup of your world from before the upgrade, please send it to NeunEinser over on %s or %s.",
+	"fetchr.error.lobby_update.duplicated_entities": "Something went wrong during your lobby upgrade. Please report to %s or %s with any information you can provide.",
 
-	"fetchr.error.spigot_paper": "You are likely using a version of Spigot or Paper. Paper and Spigot alter vanilla behavior and are incompatible with Fetchr.",
-	"fetchr.error.spigot_paper.help": "You can use a vanilla server, or use Fabric or Quilt with Lithium for best performance\n\nIf you need further assistance or are seeing this message despite not using Paper or Spigot, please report this issue on %s or %s.",
+	"fetchr.error.spigot_paper": "You are using a version of Spigot or Paper. Paper and Spigot alter vanilla behavior and are incompatible with Fetchr.",
+	"fetchr.error.spigot_paper.help": "You can use a vanilla server, or use Fabric with Lithium for best performance\n\nIf you need further assistance you can go to %s or %s.",
 
 	"fetchr.logging.error": "ERROR",
 	"fetchr.setup.error.unknown_category": "Item %1$s has category %2$s, but category %2$s could not be found.",
@@ -53,7 +53,13 @@
 	"fetchr.game.switch_gamemode.prevented": "Prevented game mode switch. %s for spectator mode.\nAfterwards, you can switch to any other game mode.",
 	"fetchr.game.switch_gamemode.prevented.click": "Click here",
 	"fetchr.game.switch_gamemode.hint": "Hint: You can use the command %s at any time manually to switch to spectator mode as well.\nIf you do not like this functionality, you can disable it in your preferences in the lobby.",
-	
+
+	"fetchr.dialog.links": "Links",
+	"fetchr.dialog.links.github_issues": "Issue Tracker",
+	"fetchr.dialog.links.discord": "Discord Server",
+	"fetchr.dialog.links.fetchr_download": "Download Link",
+	"fetchr.dialog.links.fetchr_download.modrinth": "Datapack Version (Modrinth)",
+
 	"fetchr.quick_actions.teleport_self": "Return to Lobby or Join Game",
 	"fetchr.quick_actions.teleport_all": "Move Players to Lobby or Spawn Preview",
 	"fetchr.quick_actions.teleport_all.tooltip": "Moves all players to the lobby if a game is in progress, or teleports all players to the spawn preview if the spawn preview is ready.",
