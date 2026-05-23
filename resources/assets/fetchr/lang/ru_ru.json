@@ -1,8 +1,6 @@
 {
 	"fetchr.error.incompatible_minecraft_version.multiple_compatible": "Вы используете неподдерживаемую версию Minecraft. Этот набор совместим с версиями Minecraft %s-%s",
 	"fetchr.error.incompatible_minecraft_version.single_compatible": "Вы используете неподдерживаемую версию Minecraft. Этот набор совместим с версией Minecraft %s",
-	"fetchr.error.spigot_paper": "Скорее всего, вы используете Spigot или Paper. Paper и Spigot изменяют ванильное поведение и несовместимы с Fetchr.",
-	"fetchr.error.spigot_paper.help": "Вы можете использовать ванильный сервер, или использовать Fabric или Quilt с Lithium для лучшей производительности\n\nЕсли вам нужна помощь или вы видите это сообщение, несмотря на то, что не используете Paper или Spigot, сообщите об этой проблеме на %s или %s",
 	"fetchr.logging.error": "ОШИБКА",
 	"fetchr.setup.error.unknown_category": "Предмет %1$s имеет категорию %2$s, но категория %2$s не найдена.",
 	"fetchr.actionbar.wrong_resourcepack_error": "Несовместимая версия ресурс-пака Fetchr включена.",
