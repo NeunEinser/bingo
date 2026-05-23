@@ -3,7 +3,7 @@
 	"textures": {
 		"bottom": "minecraft:block/piston_bottom",
 		"side": "minecraft:block/piston_side",
-		"top": "minecraft:block/piston_top_sticky"
+		"top": "minecraft:block/piston_top"
 	},
 	"display": {
 		"fixed": {
