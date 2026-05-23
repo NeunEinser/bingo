@@ -265,6 +265,7 @@ execute \
 #tag @s[scores={fetchr.resource_pack_check={NEUN_SCRIPT:rp_version * 91}}] remove fetchr.resourcepack_check
 #execute \
 	if score @s fetchr.resource_pack_check matches {NEUN_SCRIPT:rp_version * 91} \
+	if score $lobby_generated fetchr.state matches 3..4 \
 	run function fetchr:util/go_to_lobby
 scoreboard players enable @a[tag=fetchr.resourcepack_check] fetchr.resource_pack_check
 scoreboard players set @s[scores={fetchr.resource_pack_check=1}] fetchr.resource_pack_check 0
@@ -273,6 +274,7 @@ scoreboard players set @s[scores={fetchr.resource_pack_check=1}] fetchr.resource
 tag @s[scores={fetchr.resource_pack_check=91}] remove fetchr.resourcepack_check
 execute \
 	if score @s fetchr.resource_pack_check matches 91 \
+	if score $lobby_generated fetchr.state matches 3..4 \
 	run function fetchr:util/go_to_lobby
 #endregion
 
