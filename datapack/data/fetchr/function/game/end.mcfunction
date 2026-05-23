@@ -117,4 +117,8 @@ execute \
 #NEUN_SCRIPT end
 bossbar set fetchr:start/pre_gen/progress visible false
 
+execute \
+	in fetchr:lobby \
+	run setworldspawn 7 3 7
+
 function #fetchr:game/ended

@@ -1383,7 +1383,6 @@ forceload add 0 0
 			}\
 		]}}
 	#NEUN_SCRIPT end
-	gamerule spawnRadius 0
 	#NEUN_SCRIPT end
 
 # Add pregen bossbar

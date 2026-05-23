@@ -14,6 +14,7 @@ data \
 	modify storage fetchr:structure structures \
 	set from storage tmp.fetchr:init/update_lobby new_structures
 
+gamerule spawnRadius 10
 # This will place all required entities and spawn a new reference
 execute \
 	positioned 7 3 7 \

@@ -133,4 +133,9 @@ execute \
 	if score $lobby_generated fetchr.state matches 3..4 \
 	run schedule function fetchr:lobby/place_indestructible_blocks 1t replace
 
+execute \
+	unless entity @a[predicate=fetchr:is_in_game,limit=1] \
+	in fetchr:lobby \
+	run setworldspawn 7 3 7
+
 function #fetchr:lobby/player_returned

@@ -4,6 +4,8 @@
 #
 # @within function fetchr:game/start/countdown
 
+setworldspawn
+
 execute \
 	as @e[distance=..10000] \
 	run function fetchr:game/start/unfreeze_entity

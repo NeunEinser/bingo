@@ -8,6 +8,8 @@
 # 	dimension fetchr:lobby
 # 	position 7 3 7 The lobby spawnpoint
 
+setworldspawn
+
 execute \
 	if score $is_multiplayer fetchr.state matches 1 \
 	as @e[tag=fetchr.multiplayer_mangrove_button_north] \
