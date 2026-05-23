@@ -9,6 +9,26 @@ data modify storage tmp.fetchr:skybox team_name set value { "translate": "fetchr
 execute \
 	store result score $game/start/skybox/team_name.player_count fetchr.tmp \
 	if entity @a[team=fetchr.white]
+
+#NEUN_SCRIPT until 69
+#execute \
+	if score $game/start/skybox/team_name.player_count fetchr.tmp matches 1 \
+	run function fetchr:game/skybox/setup_team_display/set_player_name
+#execute \
+	in fetchr:lobby \
+	run data \
+		modify block 7 0 7 front_text.messages[0] \
+		set value '{ "storage": "tmp.fetchr:skybox", "nbt": "team_name", "interpret": true }'
+#execute \
+	in fetchr:lobby \
+	run data \
+		modify storage tmp.fetchr:skybox team_name \
+		set from block 7 0 7 front_text.messages[0]
+#data modify storage tmp.fetchr:skybox team_color set value "white"
+#function fetchr:game/skybox/setup_team_display/set_team_name with storage tmp.fetchr:skybox
+#NEUN_SCRIPT end
+
+#NEUN_SCRIPT since 69
 execute \
 	if score $game/start/skybox/team_name.player_count fetchr.tmp matches 1 \
 	run data modify storage tmp.fetchr:skybox team_name set value { "selector": "@s", "color": "white" }
@@ -30,3 +50,4 @@ scoreboard players display name $white fetchr.purple_display { "storage": "tmp.f
 scoreboard players display name $white fetchr.red_display { "storage": "tmp.fetchr:skybox", "nbt": "team_name", "interpret": true }
 scoreboard players display name $white fetchr.white_display { "storage": "tmp.fetchr:skybox", "nbt": "team_name", "interpret": true, "bold": true }
 scoreboard players display name $white fetchr.yellow_display { "storage": "tmp.fetchr:skybox", "nbt": "team_name", "interpret": true }
+#NEUN_SCRIPT end
