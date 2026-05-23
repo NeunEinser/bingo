@@ -4,8 +4,6 @@
 	"fetchr.error.incompatible_minecraft_version.incompatible_snapshot": "Stai usando un'istantanea non supportata. Le istantanee %s-%s non sono supportate. Assicurati di utilizzare l'istantanea %s o superiore.",
 	"fetchr.error.incompatible_minecraft_version.single_compatible": "Stai utilizzando una versione non supportata di Minecraft. Questo pacchetto è stato reso compatibile per le versioni di Minecraft %s",
 	"fetchr.error.incompatible_minecraft_version.single_compatible.with_latest_snapshot": "Stai usando una versione non supportata di Minecraft. Questo pacchetto è stato reso compatibile per la versione %s di Minecraft o fino allo snapshot %s.",
-	"fetchr.error.spigot_paper": "Probabilmente stai usando una versione di Spigot o Paper. Paper e Spigot alterano il comportamento vanilla e sono incompatibili con Fetchr.",
-	"fetchr.error.spigot_paper.help": "È possibile utilizzare un server vanilla, o usa Fabric o Quilt con Lithium per le migliori prestazioni\n\nSe hai bisogno di ulteriore assistenza o stai vedendo questo messaggio nonostante non usi Paper o Spigot, si prega di segnalare questo problema su %s o %s",
 	"fetchr.logging.error": "ERRORE",
 	"fetchr.setup.error.unknown_category": "L'elemento %1$s ha la categoria %2$s, ma la categoria %2$s non è stata trovata.",
 	"fetchr.actionbar.wrong_resourcepack_error": "Versione incompatibile del pacchetto risorse Fetchr abilitato.",
