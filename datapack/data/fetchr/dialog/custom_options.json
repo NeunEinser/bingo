@@ -10,6 +10,13 @@
 		{
 			"label": { "translate": "menu.quick_actions.title" },
 			"action": { "type": "minecraft:run_command", "command": "trigger fetchr.settings set 4" }
+		},
+		{
+			"label": { "translate": "fetchr.dialog.links" },
+			"action": {
+				"type": "minecraft:show_dialog",
+				"dialog": "fetchr:fetchr_links"
+			}
 		}
 	],
 	"pause": false,

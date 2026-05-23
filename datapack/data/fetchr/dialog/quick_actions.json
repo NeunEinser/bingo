@@ -55,6 +55,14 @@
 				"command": "trigger fetchr.reveal_card"
 			},
 			"width": 200
+		},
+		{
+			"label": { "translate": "fetchr.dialog.links" },
+			"action": {
+				"type": "minecraft:show_dialog",
+				"dialog": "fetchr:fetchr_links_quick_actions"
+			},
+			"width": 200
 		}
 	]
 }

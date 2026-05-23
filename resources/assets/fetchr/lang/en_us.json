@@ -53,7 +53,13 @@
 	"fetchr.game.switch_gamemode.prevented": "Prevented game mode switch. %s for spectator mode.\nAfterwards, you can switch to any other game mode.",
 	"fetchr.game.switch_gamemode.prevented.click": "Click here",
 	"fetchr.game.switch_gamemode.hint": "Hint: You can use the command %s at any time manually to switch to spectator mode as well.\nIf you do not like this functionality, you can disable it in your preferences in the lobby.",
-	
+
+	"fetchr.dialog.links": "Links",
+	"fetchr.dialog.links.github_issues": "Issue Tracker",
+	"fetchr.dialog.links.discord": "Discord Server",
+	"fetchr.dialog.links.fetchr_download": "Download Link",
+	"fetchr.dialog.links.fetchr_download.modrinth": "Datapack Version (Modrinth)",
+
 	"fetchr.quick_actions.teleport_self": "Return to Lobby or Join Game",
 	"fetchr.quick_actions.teleport_all": "Move Players to Lobby or Spawn Preview",
 	"fetchr.quick_actions.teleport_all.tooltip": "Moves all players to the lobby if a game is in progress, or teleports all players to the spawn preview if the spawn preview is ready.",
