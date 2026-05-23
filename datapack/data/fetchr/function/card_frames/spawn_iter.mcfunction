@@ -27,7 +27,8 @@
 
 summon minecraft:item_frame ~ ~ ~ {\
 	Facing: 3b,\
-	Tags: [ "fetchr.card_frame", "fetchr.new" ]\
+	Tags: [ "fetchr.card_frame", "fetchr.new" ],\
+	block_pos:[I; 0, 0, 0]\
 }
 
 execute \
