@@ -55,7 +55,17 @@
 	#NEUN_SCRIPT end
 #NEUN_SCRIPT end
 #NEUN_SCRIPT since {NEUN_SCRIPT:min_pack_format} until {NEUN_SCRIPT:first_unsupported_format}
-	function fetchr:tick/spigot
+	execute \
+		in fetchr:lobby \
+		as @e[x=0,y=0,z=0,distance=..1,limit=1] \
+		if data entity @s "Bukkit.updateLevel" \
+		run function fetchr:tick/spigot
+	execute \
+		in fetchr:lobby \
+		as @e[x=0,y=0,z=0,distance=..1,limit=1] \
+		if data entity @s "Spigot.ticksLived" \
+		unless data entity @s "Bukkit.updateLevel" \
+		run function fetchr:tick/spigot
 	execute \
 		if score $lobby_generated fetchr.state matches -1 \
 		run tellraw @a {"translate": "fetchr.error.cannot_update", "with":["5.0.1", "5.1-beta1"], "color": "red"}

@@ -1,10 +1,9 @@
 #> fetchr:tick/spigot
 #
-# This function fails to parse in a vanilla environment and detects Spigot by
-# attempting to run the plugins command.
+# This function is run in case a special entity NBT tag that only exists on
+# Spigot / Paper is detected.
 #
 # @within function fetchr:tick/tick
-plugins
 
 effect give @a minecraft:blindness 2 255 true
 effect give @a minecraft:slowness 2 255 true
