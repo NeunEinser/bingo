@@ -77,3 +77,5 @@ execute \
 scoreboard players operation @s fetchr.settings = @s fetchr.setting_callback
 scoreboard players reset @s fetchr.setting_callback
 scoreboard players reset @s fetchr.pre_gen_radius
+
+function fetchr:lobby/place_indestructible_blocks
