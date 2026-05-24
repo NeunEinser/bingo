@@ -10,7 +10,7 @@
 scoreboard players operation $points_goal_announcement_minutes fetchr.setting_values = @s fetchr.points_race_minutes
 #NEUN_SCRIPT until 69
 #data modify block 7 0 7 front_text.messages[0] set value '{\
-	"translate": "fetchr.settings.points_goal.sign.minutes",\
+	"translate": "fetchr.settings.points_goal.value.minutes",\
 	"color": "green",\
 	"with": [\
 		{ "score": { "name": "$points_goal_announcement_minutes", "objective": "fetchr.setting_values" }}\
