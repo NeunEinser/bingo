@@ -1,3 +1,5 @@
 {
-	"values": []
+	"values": [
+		"fetchr:init/items/lobby_loaded"
+	]
 }

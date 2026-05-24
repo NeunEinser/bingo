@@ -7,4 +7,3 @@
 # 	function fetchr:init/items/exec
 
 function fetchr:init/items/lobby_loaded
-schedule function fetchr:init/items/exec 1t
