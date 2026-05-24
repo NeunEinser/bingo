@@ -1586,6 +1586,18 @@ execute \
 		if score $lobby_generated fetchr.state matches 4 \
 		run function fetchr:init/update_lobby/run
 
+# Update lobby sign settings
+	function fetchr:lobby/settings/update_points_goal_sign_string
+	function fetchr:lobby/settings/update_pre_gen_radius_sign_string
+	function fetchr:lobby/settings/update_allow_spectating_sign_string
+	function fetchr:lobby/settings/update_concealed_card_sign_string
+	function fetchr:lobby/settings/update_gamemode_sign_string
+	function fetchr:lobby/settings/update_lockout_sign_string
+	function fetchr:lobby/settings/update_operator_only_sign_string
+	function fetchr:lobby/settings/update_paused_time_sign_string
+	function fetchr:lobby/settings/update_show_seed_sign_string
+	function fetchr:lobby/settings/update_timer_method_sign_string
+
 # multi noise pos marker
 	execute \
 		in fetchr:default \

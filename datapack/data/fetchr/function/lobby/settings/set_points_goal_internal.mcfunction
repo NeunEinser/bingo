@@ -8,24 +8,6 @@
 # 	score @s fetchr.points_race_minutes The minutes when the points goal triggers
 
 scoreboard players operation $points_goal_announcement_minutes fetchr.setting_values = @s fetchr.points_race_minutes
-#NEUN_SCRIPT until 69
-#data modify block 7 0 7 front_text.messages[0] set value '{\
-	"translate": "fetchr.settings.points_goal.value.minutes",\
-	"color": "green",\
-	"with": [\
-		{ "score": { "name": "$points_goal_announcement_minutes", "objective": "fetchr.setting_values" }}\
-	]\
-}'
-#NEUN_SCRIPT end
-#NEUN_SCRIPT since 69
-data modify block 7 0 7 front_text.messages[0] set value {\
-	translate: "fetchr.settings.points_goal.value.minutes",\
-	color: "green",\
-	with: [\
-		{ score: { name: "$points_goal_announcement_minutes", objective: "fetchr.setting_values" }}\
-	]\
-}
-#NEUN_SCRIPT end
 
 execute \
 	if score @s fetchr.points_race_minutes matches ..0 \
@@ -38,29 +20,10 @@ execute \
 		"with": [{ "score": { "name": "@s", "objective": "fetchr.points_race_minutes" }}]\
 	}
 
-#NEUN_SCRIPT until 69
-#execute \
-	if score @s fetchr.points_race_minutes matches ..0 \
-	run data \
-		modify storage fetchr:settings points_goal \
-		set value '{ "translate": "options.off", "color": "gray" }'
-#NEUN_SCRIPT end
-#NEUN_SCRIPT since 69
-execute \
-	if score @s fetchr.points_race_minutes matches ..0 \
-	run data \
-		modify storage fetchr:settings points_goal \
-		set value { translate: "options.off", color: "gray" }
-#NEUN_SCRIPT end
-execute \
-	if score @s fetchr.points_race_minutes matches 1.. \
-	run data \
-		modify storage fetchr:settings points_goal \
-		set from block 7 0 7 front_text.messages[0]
-
 scoreboard players reset @s fetchr.points_race_minutes
 
 scoreboard players operation @s fetchr.settings = @s fetchr.setting_callback
 scoreboard players reset @s fetchr.setting_callback
 
+function fetchr:lobby/settings/update_points_goal_sign_string
 function fetchr:lobby/place_indestructible_blocks
