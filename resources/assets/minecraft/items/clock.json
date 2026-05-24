@@ -1,5 +1,5 @@
 {
-	"NEUN_SCRIPT remove_self since 45": null,
+	"NEUN_SCRIPT remove_self until 45": null,
 	"model": {
 		"property": "minecraft:context_dimension",
 		"type": "minecraft:select",
