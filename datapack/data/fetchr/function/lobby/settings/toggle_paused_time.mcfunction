@@ -32,29 +32,25 @@ execute \
 #NEUN_SCRIPT until 69
 #execute \
 	if score $count_pauses 91.timer.io matches 0 \
-	as @e[type=minecraft:marker, tag=fetchr.paused_time_sign, distance=0.., limit=2] \
 	run data \
-		modify entity @s data.front_text.messages[3] \
+		modify storage fetchr:settings count_paused_time \
 		set value '{ "translate": "options.off", "color": "gray" }'
 #execute \
 	if score $count_pauses 91.timer.io matches 1 \
-	as @e[type=minecraft:marker, tag=fetchr.paused_time_sign, distance=0.., limit=2] \
 	run data \
-		modify entity @s data.front_text.messages[3] \
+		modify storage fetchr:settings count_paused_time \
 		set value '{ "translate": "options.on", "color": "green" }'
 #NEUN_SCRIPT end
 #NEUN_SCRIPT since 69
 execute \
 	if score $count_pauses 91.timer.io matches 0 \
-	as @e[type=minecraft:marker, tag=fetchr.paused_time_sign, distance=0.., limit=2] \
 	run data \
-		modify entity @s data.front_text.messages[3] \
+		modify storage fetchr:settings count_paused_time \
 		set value { translate: "options.off", color: "gray" }
 execute \
 	if score $count_pauses 91.timer.io matches 1 \
-	as @e[type=minecraft:marker, tag=fetchr.paused_time_sign, distance=0.., limit=2] \
 	run data \
-		modify entity @s data.front_text.messages[3] \
+		modify storage fetchr:settings count_paused_time \
 		set value { translate: "options.on", color: "green" }
 #NEUN_SCRIPT end
 

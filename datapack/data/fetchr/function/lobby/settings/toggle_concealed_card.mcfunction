@@ -42,37 +42,25 @@ execute \
 #NEUN_SCRIPT until 69
 #execute \
 	if score $concealed_card fetchr.setting_values matches 0 \
-	as @e[type=minecraft:marker, tag=fetchr.concealed_card_sign, x=0, limit=2] \
 	run data \
-		modify \
-			entity @s \
-			data.front_text.messages[3] \
+		modify storage fetchr:settings concealed_card \
 		set value '{ "translate": "options.off", "color": "gray" }'
 #execute \
 	if score $concealed_card fetchr.setting_values matches 1 \
-	as @e[type=minecraft:marker, tag=fetchr.concealed_card_sign, x=0, limit=2] \
 	run data \
-		modify \
-			entity @s \
-			data.front_text.messages[3] \
+		modify storage fetchr:settings concealed_card \
 		set value '{ "translate": "options.on", "color": "green" }'
 #NEUN_SCRIPT end
 #NEUN_SCRIPT since 69
 execute \
 	if score $concealed_card fetchr.setting_values matches 0 \
-	as @e[type=minecraft:marker, tag=fetchr.concealed_card_sign, x=0, limit=2] \
 	run data \
-		modify \
-			entity @s \
-			data.front_text.messages[3] \
+		modify storage fetchr:settings concealed_card \
 		set value { "translate": "options.off", "color": "gray" }
 execute \
 	if score $concealed_card fetchr.setting_values matches 1 \
-	as @e[type=minecraft:marker, tag=fetchr.concealed_card_sign, x=0, limit=2] \
 	run data \
-		modify \
-			entity @s \
-			data.front_text.messages[3] \
+		modify storage fetchr:settings concealed_card \
 		set value { "translate": "options.on", "color": "green" }
 #NEUN_SCRIPT end
 

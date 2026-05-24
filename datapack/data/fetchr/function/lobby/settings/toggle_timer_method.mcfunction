@@ -32,29 +32,25 @@ execute \
 #NEUN_SCRIPT until 69
 #execute \
 	if score $use_in_game_time fetchr.setting_values matches 0 \
-	as @e[type=minecraft:marker, tag=fetchr.timer_method_sign, distance=0.., limit=2] \
 	run data \
-		modify entity @s data.front_text.messages[3] \
+		modify storage fetchr:settings timer_method \
 		set value '{ "translate": "fetchr.settings.timer_method.value.real_time", "color": "green" }'
 #execute \
 	if score $use_in_game_time fetchr.setting_values matches 1 \
-	as @e[type=minecraft:marker, tag=fetchr.timer_method_sign, distance=0.., limit=2] \
 	run data \
-		modify entity @s data.front_text.messages[3] \
+		modify storage fetchr:settings timer_method \
 		set value '{ "translate": "fetchr.settings.timer_method.value.in_game_time", "color": "green" }'
 #NEUN_SCRIPT end
 #NEUN_SCRIPT since 69
 execute \
 	if score $use_in_game_time fetchr.setting_values matches 0 \
-	as @e[type=minecraft:marker, tag=fetchr.timer_method_sign, distance=0.., limit=2] \
 	run data \
-		modify entity @s data.front_text.messages[3] \
+		modify storage fetchr:settings timer_method \
 		set value { translate: "fetchr.settings.timer_method.value.real_time", color: "green" }
 execute \
 	if score $use_in_game_time fetchr.setting_values matches 1 \
-	as @e[type=minecraft:marker, tag=fetchr.timer_method_sign, distance=0.., limit=2] \
 	run data \
-		modify entity @s data.front_text.messages[3] \
+		modify storage fetchr:settings timer_method \
 		set value { translate: "fetchr.settings.timer_method.value.in_game_time", color: "green" }
 #NEUN_SCRIPT end
 

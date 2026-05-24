@@ -71,8 +71,8 @@
 		run tellraw @a {"translate": "fetchr.error.cannot_update", "with":["5.0.1", "5.1-beta1"], "color": "red"}
 
 	execute \
-	in minecraft:overworld \
-	run function neun_einser.timer:store_current_time
+		in minecraft:overworld \
+		run function neun_einser.timer:store_current_time
 
 	# Detect second (or more) players in a LAN world
 	#NEUN_SCRIPT unless {NEUN_SCRIPT:realms}

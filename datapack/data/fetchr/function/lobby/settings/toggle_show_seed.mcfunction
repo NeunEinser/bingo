@@ -31,32 +31,24 @@ execute \
 #execute \
 	if score $show_seed fetchr.setting_values matches 0 \
 	run data \
-		modify \
-			entity @e[type=minecraft:marker, tag=fetchr.show_seed_sign, x=0, limit=1] \
-			data.front_text.messages[3] \
+		modify storage fetchr:settings show_seed \
 		set value '{ "translate": "options.off", "color": "gray" }'
 #execute \
 	if score $show_seed fetchr.setting_values matches 1 \
 	run data \
-		modify \
-			entity @e[type=minecraft:marker, tag=fetchr.show_seed_sign, x=0, limit=1] \
-			data.front_text.messages[3] \
+		modify storage fetchr:settings show_seed \
 		set value '{ "translate": "options.on", "color": "green" }'
 #NEUN_SCRIPT end
 #NEUN_SCRIPT since 69
 execute \
 	if score $show_seed fetchr.setting_values matches 0 \
 	run data \
-		modify \
-			entity @e[type=minecraft:marker, tag=fetchr.show_seed_sign, x=0, limit=1] \
-			data.front_text.messages[3] \
+		modify storage fetchr:settings show_seed \
 		set value { translate: "options.off", color: "gray" }
 execute \
 	if score $show_seed fetchr.setting_values matches 1 \
 	run data \
-		modify \
-			entity @e[type=minecraft:marker, tag=fetchr.show_seed_sign, x=0, limit=1] \
-			data.front_text.messages[3] \
+		modify storage fetchr:settings show_seed \
 		set value { translate: "options.on", color: "green" }
 #NEUN_SCRIPT end
 

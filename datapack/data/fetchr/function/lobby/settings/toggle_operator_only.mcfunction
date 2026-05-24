@@ -31,32 +31,24 @@ execute \
 #execute \
 	if score $operator_only fetchr.setting_values matches 0 \
 	run data \
-		modify \
-			entity @e[type=minecraft:marker, tag=fetchr.operator_only_sign, x=0, limit=1] \
-			data.front_text.messages[3] \
+		modify storage fetchr:settings operator_only \
 		set value '{ "translate": "options.off", "color": "gray" }'
 #execute \
 	if score $operator_only fetchr.setting_values matches 1 \
 	run data \
-		modify \
-			entity @e[type=minecraft:marker, tag=fetchr.operator_only_sign, x=0, limit=1] \
-			data.front_text.messages[3] \
+		modify storage fetchr:settings operator_only \
 		set value '{ "translate": "options.on", "color": "green" }'
 #NEUN_SCRIPT end
 #NEUN_SCRIPT since 69
 execute \
 	if score $operator_only fetchr.setting_values matches 0 \
 	run data \
-		modify \
-			entity @e[type=minecraft:marker, tag=fetchr.operator_only_sign, x=0, limit=1] \
-			data.front_text.messages[3] \
+		modify storage fetchr:settings operator_only \
 		set value { translate: "options.off", color: "gray" }
 execute \
 	if score $operator_only fetchr.setting_values matches 1 \
 	run data \
-		modify \
-			entity @e[type=minecraft:marker, tag=fetchr.operator_only_sign, x=0, limit=1] \
-			data.front_text.messages[3] \
+		modify storage fetchr:settings operator_only \
 		set value { translate: "options.on", color: "green" }
 #NEUN_SCRIPT end
 
