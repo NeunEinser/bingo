@@ -8,6 +8,22 @@
 scoreboard players reset @a fetchr.seed
 
 scoreboard players set $game_state fetchr.state 3
+scoreboard players reset $black_player_count fetchr.state
+scoreboard players reset $blue_player_count fetchr.state
+scoreboard players reset $cyan_player_count fetchr.state
+scoreboard players reset $dark_blue_player_count fetchr.state
+scoreboard players reset $dark_gray_player_count fetchr.state
+scoreboard players reset $dark_red_player_count fetchr.state
+scoreboard players reset $gray_player_count fetchr.state
+scoreboard players reset $green_player_count fetchr.state
+scoreboard players reset $light_blue_player_count fetchr.state
+scoreboard players reset $lime_player_count fetchr.state
+scoreboard players reset $magenta_player_count fetchr.state
+scoreboard players reset $orange_player_count fetchr.state
+scoreboard players reset $purple_player_count fetchr.state
+scoreboard players reset $red_player_count fetchr.state
+scoreboard players reset $white_player_count fetchr.state
+scoreboard players reset $yellow_player_count fetchr.state
 
 kill @e[type=minecraft:marker, tag=fetchr.skybox_button, distance=..9]
 kill @e[type=minecraft:item_frame, tag=fetchr.card_frame, distance=..9]

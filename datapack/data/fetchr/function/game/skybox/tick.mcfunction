@@ -26,22 +26,137 @@ execute unless entity @a[team=fetchr.red] run scoreboard players reset $red
 execute unless entity @a[team=fetchr.white] run scoreboard players reset $white
 execute unless entity @a[team=fetchr.yellow] run scoreboard players reset $yellow
 
-execute as @a[team=fetchr.black,limit=1] run function fetchr:game/skybox/setup_team_display/black
-execute as @a[team=fetchr.blue,limit=1] run function fetchr:game/skybox/setup_team_display/blue
-execute as @a[team=fetchr.cyan,limit=1] run function fetchr:game/skybox/setup_team_display/cyan
-execute as @a[team=fetchr.dark_blue,limit=1] run function fetchr:game/skybox/setup_team_display/dark_blue
-execute as @a[team=fetchr.dark_gray,limit=1] run function fetchr:game/skybox/setup_team_display/dark_gray
-execute as @a[team=fetchr.dark_red,limit=1] run function fetchr:game/skybox/setup_team_display/dark_red
-execute as @a[team=fetchr.gray,limit=1] run function fetchr:game/skybox/setup_team_display/gray
-execute as @a[team=fetchr.green,limit=1] run function fetchr:game/skybox/setup_team_display/green
-execute as @a[team=fetchr.light_blue,limit=1] run function fetchr:game/skybox/setup_team_display/light_blue
-execute as @a[team=fetchr.lime,limit=1] run function fetchr:game/skybox/setup_team_display/lime
-execute as @a[team=fetchr.magenta,limit=1] run function fetchr:game/skybox/setup_team_display/magenta
-execute as @a[team=fetchr.orange,limit=1] run function fetchr:game/skybox/setup_team_display/orange
-execute as @a[team=fetchr.purple,limit=1] run function fetchr:game/skybox/setup_team_display/purple
-execute as @a[team=fetchr.red,limit=1] run function fetchr:game/skybox/setup_team_display/red
-execute as @a[team=fetchr.white,limit=1] run function fetchr:game/skybox/setup_team_display/white
-execute as @a[team=fetchr.yellow,limit=1] run function fetchr:game/skybox/setup_team_display/yellow
+
+execute \
+	store result score $skybox.black_player_count fetchr.tmp \
+	if entity @a[team=fetchr.black]
+execute \
+	store result score $skybox.blue_player_count fetchr.tmp \
+	if entity @a[team=fetchr.blue]
+execute \
+	store result score $skybox.cyan_player_count fetchr.tmp \
+	if entity @a[team=fetchr.cyan]
+execute \
+	store result score $skybox.dark_blue_player_count fetchr.tmp \
+	if entity @a[team=fetchr.dark_blue]
+execute \
+	store result score $skybox.dark_gray_player_count fetchr.tmp \
+	if entity @a[team=fetchr.dark_gray]
+execute \
+	store result score $skybox.dark_red_player_count fetchr.tmp \
+	if entity @a[team=fetchr.dark_red]
+execute \
+	store result score $skybox.gray_player_count fetchr.tmp \
+	if entity @a[team=fetchr.gray]
+execute \
+	store result score $skybox.green_player_count fetchr.tmp \
+	if entity @a[team=fetchr.green]
+execute \
+	store result score $skybox.light_blue_player_count fetchr.tmp \
+	if entity @a[team=fetchr.light_blue]
+execute \
+	store result score $skybox.lime_player_count fetchr.tmp \
+	if entity @a[team=fetchr.lime]
+execute \
+	store result score $skybox.magenta_player_count fetchr.tmp \
+	if entity @a[team=fetchr.magenta]
+execute \
+	store result score $skybox.orange_player_count fetchr.tmp \
+	if entity @a[team=fetchr.orange]
+execute \
+	store result score $skybox.purple_player_count fetchr.tmp \
+	if entity @a[team=fetchr.purple]
+execute \
+	store result score $skybox.red_player_count fetchr.tmp \
+	if entity @a[team=fetchr.red]
+execute \
+	store result score $skybox.white_player_count fetchr.tmp \
+	if entity @a[team=fetchr.white]
+execute \
+	store result score $skybox.yellow_player_count fetchr.tmp \
+	if entity @a[team=fetchr.yellow]
+
+execute \
+	unless score $skybox.black_player_count fetchr.tmp = $black_player_count fetchr.state \
+	as @a[team=fetchr.black,limit=1] \
+	run function fetchr:game/skybox/setup_team_display/black
+execute \
+	unless score $skybox.blue_player_count fetchr.tmp = $blue_player_count fetchr.state \
+	as @a[team=fetchr.blue,limit=1] \
+	run function fetchr:game/skybox/setup_team_display/blue
+execute \
+	unless score $skybox.cyan_player_count fetchr.tmp = $cyan_player_count fetchr.state \
+	as @a[team=fetchr.cyan,limit=1] \
+	run function fetchr:game/skybox/setup_team_display/cyan
+execute \
+	unless score $skybox.dark_blue_player_count fetchr.tmp = $dark_blue_player_count fetchr.state \
+	as @a[team=fetchr.dark_blue,limit=1] \
+	run function fetchr:game/skybox/setup_team_display/dark_blue
+execute \
+	unless score $skybox.dark_gray_player_count fetchr.tmp = $dark_gray_player_count fetchr.state \
+	as @a[team=fetchr.dark_gray,limit=1] \
+	run function fetchr:game/skybox/setup_team_display/dark_gray
+execute \
+	unless score $skybox.dark_red_player_count fetchr.tmp = $dark_red_player_count fetchr.state \
+	as @a[team=fetchr.dark_red,limit=1] \
+	run function fetchr:game/skybox/setup_team_display/dark_red
+execute \
+	unless score $skybox.gray_player_count fetchr.tmp = $gray_player_count fetchr.state \
+	as @a[team=fetchr.gray,limit=1] \
+	run function fetchr:game/skybox/setup_team_display/gray
+execute \
+	unless score $skybox.green_player_count fetchr.tmp = $green_player_count fetchr.state \
+	as @a[team=fetchr.green,limit=1] \
+	run function fetchr:game/skybox/setup_team_display/green
+execute \
+	unless score $skybox.light_blue_player_count fetchr.tmp = $light_blue_player_count fetchr.state \
+	as @a[team=fetchr.light_blue,limit=1] \
+	run function fetchr:game/skybox/setup_team_display/light_blue
+execute \
+	unless score $skybox.lime_player_count fetchr.tmp = $lime_player_count fetchr.state \
+	as @a[team=fetchr.lime,limit=1] \
+	run function fetchr:game/skybox/setup_team_display/lime
+execute \
+	unless score $skybox.magenta_player_count fetchr.tmp = $magenta_player_count fetchr.state \
+	as @a[team=fetchr.magenta,limit=1] \
+	run function fetchr:game/skybox/setup_team_display/magenta
+execute \
+	unless score $skybox.orange_player_count fetchr.tmp = $orange_player_count fetchr.state \
+	as @a[team=fetchr.orange,limit=1] \
+	run function fetchr:game/skybox/setup_team_display/orange
+execute \
+	unless score $skybox.purple_player_count fetchr.tmp = $purple_player_count fetchr.state \
+	as @a[team=fetchr.purple,limit=1] \
+	run function fetchr:game/skybox/setup_team_display/purple
+execute \
+	unless score $skybox.red_player_count fetchr.tmp = $red_player_count fetchr.state \
+	as @a[team=fetchr.red,limit=1] \
+	run function fetchr:game/skybox/setup_team_display/red
+execute \
+	unless score $skybox.white_player_count fetchr.tmp = $white_player_count fetchr.state \
+	as @a[team=fetchr.white,limit=1] \
+	run function fetchr:game/skybox/setup_team_display/white
+execute \
+	unless score $skybox.yellow_player_count fetchr.tmp = $yellow_player_count fetchr.state \
+	as @a[team=fetchr.yellow,limit=1] \
+	run function fetchr:game/skybox/setup_team_display/yellow
+
+scoreboard players operation $black_player_count fetchr.state = $skybox.black_player_count fetchr.tmp
+scoreboard players operation $blue_player_count fetchr.state = $skybox.blue_player_count fetchr.tmp
+scoreboard players operation $cyan_player_count fetchr.state = $skybox.cyan_player_count fetchr.tmp
+scoreboard players operation $dark_blue_player_count fetchr.state = $skybox.dark_blue_player_count fetchr.tmp
+scoreboard players operation $dark_gray_player_count fetchr.state = $skybox.dark_gray_player_count fetchr.tmp
+scoreboard players operation $dark_red_player_count fetchr.state = $skybox.dark_red_player_count fetchr.tmp
+scoreboard players operation $gray_player_count fetchr.state = $skybox.gray_player_count fetchr.tmp
+scoreboard players operation $green_player_count fetchr.state = $skybox.green_player_count fetchr.tmp
+scoreboard players operation $light_blue_player_count fetchr.state = $skybox.light_blue_player_count fetchr.tmp
+scoreboard players operation $lime_player_count fetchr.state = $skybox.lime_player_count fetchr.tmp
+scoreboard players operation $magenta_player_count fetchr.state = $skybox.magenta_player_count fetchr.tmp
+scoreboard players operation $orange_player_count fetchr.state = $skybox.orange_player_count fetchr.tmp
+scoreboard players operation $purple_player_count fetchr.state = $skybox.purple_player_count fetchr.tmp
+scoreboard players operation $red_player_count fetchr.state = $skybox.red_player_count fetchr.tmp
+scoreboard players operation $white_player_count fetchr.state = $skybox.white_player_count fetchr.tmp
+scoreboard players operation $yellow_player_count fetchr.state = $skybox.yellow_player_count fetchr.tmp
 
 particle minecraft:happy_villager ~ ~-63 ~ .125 16 .125 1 16 force
 particle minecraft:happy_villager ~ ~-31 ~ .125 8 .125 1 8 force
