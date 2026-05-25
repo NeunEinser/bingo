@@ -1285,17 +1285,30 @@ execute \
 		run bossbar set fetchr:start/pre_gen/progress visible false
 
 # Set gamerules
-	gamerule commandBlockOutput false
-	gamerule doWeatherCycle false
-	gamerule doInsomnia false
-	gamerule doTraderSpawning false
-	gamerule disableElytraMovementCheck true
-	gamerule doPatrolSpawning false
-	gamerule maxCommandChainLength 262144
+	#NEUN_SCRIPT until 92
+	#gamerule commandBlockOutput false
+	#gamerule doWeatherCycle false
+	#gamerule doInsomnia false
+	#gamerule doTraderSpawning false
+	#gamerule disableElytraMovementCheck true
+	#gamerule doPatrolSpawning false
+	#gamerule maxCommandChainLength 262144
+	#NEUN_SCRIPT end
 
-	#NEUN_SCRIPT since 85
+	#NEUN_SCRIPT since 85 until 92
+	#gamerule pvp false
+	#gamerule allowEnteringNetherUsingPortals false
+	#NEUN_SCRIPT end
+	#NEUN_SCRIPT since 92
+	gamerule minecraft:command_block_output false
+	gamerule minecraft:advance_weather false
+	gamerule minecraft:spawn_phantoms false
+	gamerule minecraft:spawn_wandering_traders false
+	gamerule minecraft:elytra_movement_check false
+	gamerule minecraft:spawn_patrols false
+	gamerule minecraft:max_command_sequence_length 262144
 	gamerule pvp false
-	gamerule allowEnteringNetherUsingPortals false
+	gamerule minecraft:allow_entering_nether_using_portals false
 	#NEUN_SCRIPT end
 
 	difficulty easy

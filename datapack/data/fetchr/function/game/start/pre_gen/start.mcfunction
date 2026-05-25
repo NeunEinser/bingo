@@ -15,9 +15,16 @@ scoreboard players set $pregen_status fetchr.state 1
 
 $random reset * $(seed) false
 
-gamerule doFireTick false
-gamerule randomTickSpeed 0
-gamerule doDaylightCycle false
+#NEUN_SCRIPT until 92
+#gamerule doFireTick false
+#gamerule randomTickSpeed 0
+#gamerule doDaylightCycle false
+#NEUN_SCRIPT end
+#NEUN_SCRIPT since 92
+gamerule minecraft:fire_spread_radius_around_player 0
+gamerule minecraft:random_tick_speed 0
+gamerule minecraft:advance_time false
+#NEUN_SCRIPT end
 time set 0
 
 execute \
