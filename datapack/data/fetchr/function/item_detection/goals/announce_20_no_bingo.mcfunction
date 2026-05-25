@@ -19,7 +19,7 @@ tellraw @a [\
 	{\
 		"translate": "fetchr.goal.20_no_bingo.chat",\
 		"with": [\
-			{ "storage": "neun_einser.timer:display", "nbt": "\"hh:mm:ss.s\"", "interpret": true },\
+			{ "storage": "neun_einser.timer:display", "nbt": "\"hh:mm:ss.ff\"", "interpret": true },\
 			{ "selector": "@a[tag=fetchr.in_current_team]" }\
 		]\
 	}\

@@ -22,7 +22,7 @@ tellraw @a [\
 	{\
 		"translate": "fetchr.goal.lockout.chat",\
 		"with": [\
-			{ "storage": "neun_einser.timer:display", "nbt": "\"hh:mm:ss.s\"", "interpret": true },\
+			{ "storage": "neun_einser.timer:display", "nbt": "\"hh:mm:ss.ff\"", "interpret": true },\
 			{ "selector": "@a[tag=fetchr.in_winning_team]" }\
 		]\
 	}\

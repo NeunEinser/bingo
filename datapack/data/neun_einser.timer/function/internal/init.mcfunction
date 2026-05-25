@@ -9,14 +9,16 @@
 # Storage containing the time since start in some default formats
 #
 # Available are:
-# hh:mm:ss.s (.s means fractions of a second, 1 - 3 digits depending on the value)
+# hh:mm:ss.fff
+# hh:mm:ss.ff
+# hh:mm:ss.f
 # hh:mm:ss
 # hh:mm
 #
 # All of these are keys in this storage and contain a text component meant for
 # use like this:
 #
-# { "storage": "neun_einser.timer:display", "nbt": "hh:mm:ss.s", "interpret":
+# { "storage": "neun_einser.timer:display", "nbt": "hh:mm:ss.ff", "interpret":
 # true }
 #
 # This accounts for appending 0s where neccesary and only contains components >
@@ -28,11 +30,6 @@
 # 1:00:00 (for 1h 0m 0s)
 # 1:02 (for 1m 2s)
 # 1 (for 1s)
-#
-# For hh:mm:ss.s, seconds is always set. Examples:
-# 0.5 (for 0s, 500 millis)
-# 0.023 (for 0s, 23 millis)
-# 1:15.31 (for 1m 15s 310 millis)
 #
 # @api
 #declare storage neun_einser.timer:display
@@ -150,12 +147,28 @@ scoreboard objectives add 91.timer.tmp dummy
 
 #>
 # @internal
+#declare score_holder 1000
+scoreboard players set 1000 91.timer.intern 1000
+#>
+# @internal
+#declare score_holder 100
+scoreboard players set 100 91.timer.intern 100
+#>
+# @internal
 #declare score_holder 60
 scoreboard players set 60 91.timer.intern 60
 #>
 # @internal
+#declare score_holder 50
+scoreboard players set 50 91.timer.intern 50
+#>
+# @internal
 #declare score_holder 20
 scoreboard players set 20 91.timer.intern 20
+#>
+# @internal
+#declare score_holder 10
+scoreboard players set 10 91.timer.intern 10
 #>
 # @internal
 #declare score_holder 5
@@ -177,15 +190,6 @@ scoreboard players set 5 91.timer.intern 5
 # @internal
 #declare score_holder $in_game
 #>
-# Blocks the world border travels per second. Used for some internal
-# calculations.
-#
-# For example, if this was started with neun_einser.timer:start/millis, this
-# will be 1000.
-#
-# @internal
-#declare score_holder $blocks_per_second
-#>
 # Ticks that have passed since last call of read_raw
 #
 # @internal
@@ -198,11 +202,23 @@ scoreboard players set 5 91.timer.intern 5
 
 #NEUN_SCRIPT until 69
 #data merge storage neun_einser.timer:display {\
-	"hh:mm:ss.s": '[\
+	"hh:mm:ss.fff": '[\
 		{ "storage": "neun_einser.timer:display", "nbt": "internal.hours", "interpret": true },\
 		{ "storage": "neun_einser.timer:display", "nbt": "internal.minutes", "interpret": true },\
 		{ "storage": "neun_einser.timer:display", "nbt": "internal.seconds", "interpret": true },\
 		{ "storage": "neun_einser.timer:display", "nbt": "internal.millis", "interpret": true }\
+	]',\
+	"hh:mm:ss.ff": '[\
+		{ "storage": "neun_einser.timer:display", "nbt": "internal.hours", "interpret": true },\
+		{ "storage": "neun_einser.timer:display", "nbt": "internal.minutes", "interpret": true },\
+		{ "storage": "neun_einser.timer:display", "nbt": "internal.seconds", "interpret": true },\
+		{ "storage": "neun_einser.timer:display", "nbt": "internal.hundredths", "interpret": true }\
+	]',\
+	"hh:mm:ss.f": '[\
+		{ "storage": "neun_einser.timer:display", "nbt": "internal.hours", "interpret": true },\
+		{ "storage": "neun_einser.timer:display", "nbt": "internal.minutes", "interpret": true },\
+		{ "storage": "neun_einser.timer:display", "nbt": "internal.seconds", "interpret": true },\
+		{ "storage": "neun_einser.timer:display", "nbt": "internal.tens", "interpret": true }\
 	]',\
 	"hh:mm:ss": '[\
 		{ "storage": "neun_einser.timer:display", "nbt": "internal.hours", "interpret": true },\
@@ -217,11 +233,23 @@ scoreboard players set 5 91.timer.intern 5
 #NEUN_SCRIPT end
 #NEUN_SCRIPT since 69
 data merge storage neun_einser.timer:display {\
-	"hh:mm:ss.s": [\
+	"hh:mm:ss.fff": [\
 		{ storage: "neun_einser.timer:display", nbt: "internal.hours", interpret: true },\
 		{ storage: "neun_einser.timer:display", nbt: "internal.minutes", interpret: true },\
 		{ storage: "neun_einser.timer:display", nbt: "internal.seconds", interpret: true },\
 		{ storage: "neun_einser.timer:display", nbt: "internal.millis", interpret: true }\
+	],\
+	"hh:mm:ss.ff": [\
+		{ storage: "neun_einser.timer:display", nbt: "internal.hours", interpret: true },\
+		{ storage: "neun_einser.timer:display", nbt: "internal.minutes", interpret: true },\
+		{ storage: "neun_einser.timer:display", nbt: "internal.seconds", interpret: true },\
+		{ storage: "neun_einser.timer:display", nbt: "internal.hundredths", interpret: true }\
+	],\
+	"hh:mm:ss.f": [\
+		{ storage: "neun_einser.timer:display", nbt: "internal.hours", interpret: true },\
+		{ storage: "neun_einser.timer:display", nbt: "internal.minutes", interpret: true },\
+		{ storage: "neun_einser.timer:display", nbt: "internal.seconds", interpret: true },\
+		{ storage: "neun_einser.timer:display", nbt: "internal.tens", interpret: true }\
 	],\
 	"hh:mm:ss": [\
 		{ storage: "neun_einser.timer:display", nbt: "internal.hours", interpret: true },\

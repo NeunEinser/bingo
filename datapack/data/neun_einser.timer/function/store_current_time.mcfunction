@@ -12,9 +12,12 @@
 #
 # @api
 # @output
-# 	storage neun_einser.timer:display hh:mm:ss.s - The current time in the
-# 		format hh:mm:ss.s, with an amount of decimal places depending on the
-# 		precision of the timer.
+# 	storage neun_einser.timer:display hh:mm:ss.fff - The current time in the
+# 		format hh:mm:ss.fff (milliseconds)
+# 	storage neun_einser.timer:display hh:mm:ss.ff - The current time in the
+# 		format hh:mm:ss.ff (hundredths of seconds)
+# 	storage neun_einser.timer:display hh:mm:ss.f - The current time in the
+# 		format hh:mm:ss.f (tens of seconds)
 # 	storage neun_einser.timer:display hh:mm:ss - The current time in the
 # 		format hh:mm:ss.
 # 	storage neun_einser.timer:display hh:mm - The current time in the format
@@ -28,7 +31,7 @@
 # 	score $current_percision 91.timer.io The current precision of the timer.
 
 function neun_einser.timer:read
-data remove storage neun_einser.timer:display internal
+data modify storage neun_einser.timer:display internal set value {}
 
 execute if score $hours 91.timer.io matches 1.. run function neun_einser.timer:internal/display/store_hours
 execute if score $hours 91.timer.io matches 0 if score $minutes 91.timer.io matches 1.. run function neun_einser.timer:internal/display/store_minutes

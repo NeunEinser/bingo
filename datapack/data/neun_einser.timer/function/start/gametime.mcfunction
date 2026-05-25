@@ -6,7 +6,10 @@
 #
 # @api
 
-worldborder set 59999968
+#NEUN_SCRIPT until 90
+#worldborder set 59999968
+#NEUN_SCRIPT end
+scoreboard players set $start 91.timer.intern 0
 scoreboard players set $in_game 91.timer.intern 1
 scoreboard players set $ticks 91.timer.intern 0
 

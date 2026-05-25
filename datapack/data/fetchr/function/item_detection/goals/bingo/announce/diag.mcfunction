@@ -21,7 +21,7 @@ execute \
 		{\
 			"translate": "fetchr.goal.bingo.diag.top_left",\
 			"with": [\
-				{ "storage": "neun_einser.timer:display", "nbt": "\"hh:mm:ss.s\"", "interpret": true },\
+				{ "storage": "neun_einser.timer:display", "nbt": "\"hh:mm:ss.ff\"", "interpret": true },\
 				{ "selector": "@a[tag=fetchr.in_current_team]" }\
 			]\
 		}\
@@ -43,7 +43,7 @@ execute \
 		{\
 			"translate": "fetchr.goal.bingo.diag.bottom_left",\
 			"with": [\
-				{ "storage": "neun_einser.timer:display", "nbt": "\"hh:mm:ss.s\"", "interpret": true },\
+				{ "storage": "neun_einser.timer:display", "nbt": "\"hh:mm:ss.ff\"", "interpret": true },\
 				{ "selector": "@a[tag=fetchr.in_current_team]" }\
 			]\
 		}\
@@ -65,7 +65,7 @@ execute \
 		{\
 			"translate": "fetchr.goal.bingo.double.diags",\
 			"with": [\
-				{ "storage": "neun_einser.timer:display", "nbt": "\"hh:mm:ss.s\"", "interpret": true },\
+				{ "storage": "neun_einser.timer:display", "nbt": "\"hh:mm:ss.ff\"", "interpret": true },\
 				{ "selector": "@a[tag=fetchr.in_current_team]" }\
 			]\
 		}\
@@ -87,7 +87,7 @@ execute \
 		{\
 			"translate": "fetchr.goal.bingo.sniper.diag.top_left",\
 			"with": [\
-				{ "storage": "neun_einser.timer:display", "nbt": "\"hh:mm:ss.s\"", "interpret": true },\
+				{ "storage": "neun_einser.timer:display", "nbt": "\"hh:mm:ss.ff\"", "interpret": true },\
 				{ "selector": "@a[tag=fetchr.in_current_team]" }\
 			]\
 		}\
@@ -109,7 +109,7 @@ execute \
 		{\
 			"translate": "fetchr.goal.bingo.sniper.diag.bottom_left",\
 			"with": [\
-				{ "storage": "neun_einser.timer:display", "nbt": "\"hh:mm:ss.s\"", "interpret": true },\
+				{ "storage": "neun_einser.timer:display", "nbt": "\"hh:mm:ss.ff\"", "interpret": true },\
 				{ "selector": "@a[tag=fetchr.in_current_team]" }\
 			]\
 		}\
@@ -131,7 +131,7 @@ execute \
 		{\
 			"translate": "fetchr.goal.bingo.sniper.double.diags",\
 			"with": [\
-				{ "storage": "neun_einser.timer:display", "nbt": "\"hh:mm:ss.s\"", "interpret": true },\
+				{ "storage": "neun_einser.timer:display", "nbt": "\"hh:mm:ss.ff\"", "interpret": true },\
 				{ "selector": "@a[tag=fetchr.in_current_team]" }\
 			]\
 		}\
