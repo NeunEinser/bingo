@@ -21,7 +21,7 @@ execute \
 		{\
 			"translate": "fetchr.goal.bingo.triple.top_left",\
 			"with": [\
-				{ "storage": "neun_einser.timer:display", "nbt": "\"hh:mm:ss.s\"", "interpret": true },\
+				{ "storage": "neun_einser.timer:display", "nbt": "\"hh:mm:ss.ff\"", "interpret": true },\
 				{ "selector": "@a[tag=fetchr.in_current_team]" },\
 				{ "score": { "name": "$item_detect/bingo.column", "objective": "fetchr.tmp" }},\
 				{ "score": { "name": "$item_detect/bingo.row", "objective": "fetchr.tmp" }}\
@@ -45,7 +45,7 @@ execute \
 		{\
 			"translate": "fetchr.goal.bingo.triple.bottom_left",\
 			"with": [\
-				{ "storage": "neun_einser.timer:display", "nbt": "\"hh:mm:ss.s\"", "interpret": true },\
+				{ "storage": "neun_einser.timer:display", "nbt": "\"hh:mm:ss.ff\"", "interpret": true },\
 				{ "selector": "@a[tag=fetchr.in_current_team]" },\
 				{ "score": { "name": "$item_detect/bingo.column", "objective": "fetchr.tmp" }},\
 				{ "score": { "name": "$item_detect/bingo.row", "objective": "fetchr.tmp" }}\
@@ -69,7 +69,7 @@ execute \
 		{\
 			"translate": "fetchr.goal.bingo.quadruple",\
 			"with": [\
-				{ "storage": "neun_einser.timer:display", "nbt": "\"hh:mm:ss.s\"", "interpret": true },\
+				{ "storage": "neun_einser.timer:display", "nbt": "\"hh:mm:ss.ff\"", "interpret": true },\
 				{ "selector": "@a[tag=fetchr.in_current_team]" }\
 			]\
 		}\
@@ -91,7 +91,7 @@ execute \
 		{\
 			"translate": "fetchr.goal.bingo.sniper.triple.top_left",\
 			"with": [\
-				{ "storage": "neun_einser.timer:display", "nbt": "\"hh:mm:ss.s\"", "interpret": true },\
+				{ "storage": "neun_einser.timer:display", "nbt": "\"hh:mm:ss.ff\"", "interpret": true },\
 				{ "selector": "@a[tag=fetchr.in_current_team]" },\
 				{ "score": { "name": "$item_detect/bingo.column", "objective": "fetchr.tmp" }},\
 				{ "score": { "name": "$item_detect/bingo.row", "objective": "fetchr.tmp" }}\
@@ -115,7 +115,7 @@ execute \
 		{\
 			"translate": "fetchr.goal.bingo.sniper.triple.bottom_left",\
 			"with": [\
-				{ "storage": "neun_einser.timer:display", "nbt": "\"hh:mm:ss.s\"", "interpret": true },\
+				{ "storage": "neun_einser.timer:display", "nbt": "\"hh:mm:ss.ff\"", "interpret": true },\
 				{ "selector": "@a[tag=fetchr.in_current_team]" },\
 				{ "score": { "name": "$item_detect/bingo.column", "objective": "fetchr.tmp" }},\
 				{ "score": { "name": "$item_detect/bingo.row", "objective": "fetchr.tmp" }}\
@@ -139,7 +139,7 @@ execute \
 		{\
 			"translate": "fetchr.goal.bingo.sniper.quadruple",\
 			"with": [\
-				{ "storage": "neun_einser.timer:display", "nbt": "\"hh:mm:ss.s\"", "interpret": true },\
+				{ "storage": "neun_einser.timer:display", "nbt": "\"hh:mm:ss.ff\"", "interpret": true },\
 				{ "selector": "@a[tag=fetchr.in_current_team]" }\
 			]\
 		}\

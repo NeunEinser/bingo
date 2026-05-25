@@ -27,7 +27,7 @@ tellraw @a [\
 	{\
 		"translate": "fetchr.goal.points.chat",\
 		"with": [\
-			{ "storage": "neun_einser.timer:display", "nbt": "\"hh:mm:ss.s\"", "interpret": true },\
+			{ "storage": "neun_einser.timer:display", "nbt": "\"hh:mm:ss.ff\"", "interpret": true },\
 			{ "selector": "@a[tag=fetchr.in_winning_team]" },\
 			{ "score": { "name": "$item_detect/announce/points.winning_score", "objective": "fetchr.tmp" }},\
 			{ "score": { "name": "$points_goal_announcement_minutes", "objective": "fetchr.setting_values" }}\

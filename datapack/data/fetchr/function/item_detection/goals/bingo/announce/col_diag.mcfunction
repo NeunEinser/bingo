@@ -21,7 +21,7 @@ execute \
 		{\
 			"translate": "fetchr.goal.bingo.double.col_diag.top_left",\
 			"with": [\
-				{ "storage": "neun_einser.timer:display", "nbt": "\"hh:mm:ss.s\"", "interpret": true },\
+				{ "storage": "neun_einser.timer:display", "nbt": "\"hh:mm:ss.ff\"", "interpret": true },\
 				{ "selector": "@a[tag=fetchr.in_current_team]" },\
 				{ "score": { "name": "$item_detect/bingo.column", "objective": "fetchr.tmp" }}\
 			]\
@@ -44,7 +44,7 @@ execute \
 		{\
 			"translate": "fetchr.goal.bingo.double.col_diag.bottom_left",\
 			"with": [\
-				{ "storage": "neun_einser.timer:display", "nbt": "\"hh:mm:ss.s\"", "interpret": true },\
+				{ "storage": "neun_einser.timer:display", "nbt": "\"hh:mm:ss.ff\"", "interpret": true },\
 				{ "selector": "@a[tag=fetchr.in_current_team]" },\
 				{ "score": { "name": "$item_detect/bingo.column", "objective": "fetchr.tmp" }}\
 			]\
@@ -67,7 +67,7 @@ execute \
 		{\
 			"translate": "fetchr.goal.bingo.triple.col_diags",\
 			"with": [\
-				{ "storage": "neun_einser.timer:display", "nbt": "\"hh:mm:ss.s\"", "interpret": true },\
+				{ "storage": "neun_einser.timer:display", "nbt": "\"hh:mm:ss.ff\"", "interpret": true },\
 				{ "selector": "@a[tag=fetchr.in_current_team]" },\
 				{ "score": { "name": "$item_detect/bingo.column", "objective": "fetchr.tmp" }}\
 			]\
@@ -90,7 +90,7 @@ execute \
 		{\
 			"translate": "fetchr.goal.bingo.sniper.double.col_diag.top_left",\
 			"with": [\
-				{ "storage": "neun_einser.timer:display", "nbt": "\"hh:mm:ss.s\"", "interpret": true },\
+				{ "storage": "neun_einser.timer:display", "nbt": "\"hh:mm:ss.ff\"", "interpret": true },\
 				{ "selector": "@a[tag=fetchr.in_current_team]" },\
 				{ "score": { "name": "$item_detect/bingo.column", "objective": "fetchr.tmp" }}\
 			]\
@@ -113,7 +113,7 @@ execute \
 		{\
 			"translate": "fetchr.goal.bingo.sniper.double.col_diag.bottom_left",\
 			"with": [\
-				{ "storage": "neun_einser.timer:display", "nbt": "\"hh:mm:ss.s\"", "interpret": true },\
+				{ "storage": "neun_einser.timer:display", "nbt": "\"hh:mm:ss.ff\"", "interpret": true },\
 				{ "selector": "@a[tag=fetchr.in_current_team]" },\
 				{ "score": { "name": "$item_detect/bingo.column", "objective": "fetchr.tmp" }}\
 			]\
@@ -136,7 +136,7 @@ execute \
 		{\
 			"translate": "fetchr.goal.bingo.sniper.triple.col_diags",\
 			"with": [\
-				{ "storage": "neun_einser.timer:display", "nbt": "\"hh:mm:ss.s\"", "interpret": true },\
+				{ "storage": "neun_einser.timer:display", "nbt": "\"hh:mm:ss.ff\"", "interpret": true },\
 				{ "selector": "@a[tag=fetchr.in_current_team]" },\
 				{ "score": { "name": "$item_detect/bingo.column", "objective": "fetchr.tmp" }}\
 			]\

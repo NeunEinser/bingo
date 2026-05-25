@@ -104,7 +104,7 @@ tellraw @a [\
 		translate: "fetchr.got_item",\
 		with: [\
 			{ score: { name: "$item_detect/announce.items", objective: "fetchr.tmp" }},\
-			{ storage: "neun_einser.timer:display", nbt: "\"hh:mm:ss.s\"", interpret: true },\
+			{ storage: "neun_einser.timer:display", nbt: "\"hh:mm:ss.ff\"", interpret: true },\
 			{ selector: "@s" },\
 			{ storage: "tmp.fetchr:item_detect", nbt: "item_text_component", interpret: true }\
 		]\

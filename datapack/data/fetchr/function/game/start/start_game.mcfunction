@@ -62,7 +62,7 @@ fill ~-1 62 ~-1 ~1 319 ~1 minecraft:air replace minecraft:barrier
 execute \
 	in minecraft:overworld \
 	if score $use_in_game_time fetchr.setting_values matches 0 \
-	run function neun_einser.timer:start/hundredth_of_second
+	run function neun_einser.timer:start/realtime
 execute \
 	in minecraft:overworld \
 	if score $use_in_game_time fetchr.setting_values matches 1 \

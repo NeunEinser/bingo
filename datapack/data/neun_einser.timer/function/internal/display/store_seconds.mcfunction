@@ -26,6 +26,4 @@ data merge storage neun_einser.timer:display {\
 	}\
 }
 #NEUN_SCRIPT end
-execute \
-	if score $blocks_per_second 91.timer.intern matches 10.. \
-	run function neun_einser.timer:internal/display/store_fractional_seconds
+function neun_einser.timer:internal/display/store_fractional_seconds
