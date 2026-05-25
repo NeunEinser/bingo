@@ -14,7 +14,12 @@ data \
 	modify storage fetchr:structure structures \
 	set from storage tmp.fetchr:init/update_lobby new_structures
 
-gamerule spawnRadius 10
+#NEUN_SCRIPT until 92
+#gamerule spawnRadius 10
+#NEUN_SCRIPT end
+#NEUN_SCRIPT since 92
+gamerule minecraft:respawn_radius 10
+#NEUN_SCRIPT end
 # This will place all required entities and spawn a new reference
 execute \
 	positioned 7 3 7 \

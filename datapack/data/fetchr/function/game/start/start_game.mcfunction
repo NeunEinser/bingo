@@ -27,9 +27,16 @@ execute \
 	as @a[predicate=fetchr:is_in_game, team=!] \
 	run function fetchr:game/start/player_init
 
-gamerule doDaylightCycle true
-gamerule doFireTick true
-gamerule randomTickSpeed 3
+#NEUN_SCRIPT until 92
+#gamerule doDaylightCycle true
+#gamerule doFireTick true
+#gamerule randomTickSpeed 3
+#NEUN_SCRIPT end
+#NEUN_SCRIPT since 92
+gamerule minecraft:advance_time true
+gamerule minecraft:fire_spread_radius_around_player 128
+gamerule minecraft:random_tick_speed 3
+#NEUN_SCRIPT end
 
 team modify fetchr.light_blue seeFriendlyInvisibles true
 team modify fetchr.black seeFriendlyInvisibles true
