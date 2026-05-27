@@ -17,13 +17,13 @@ execute \
 	unless entity @e[type=minecraft:marker, x=0.5, y=0, z=0.5, distance=..0.1, tag=fetchr.pos_reader, limit=1] \
 	run summon minecraft:marker 0 0 0 { Tags: ["fetchr.pos_reader"]}
 execute \
-	positioned over motion_blocking \
-	summon minecraft:marker \
-	run function fetchr:game/skybox/create_skybox/internal
-execute \
 	as @e[type=minecraft:marker, tag=fetchr.old_spawn] \
 	at @s \
 	run function fetchr:game/skybox/create_skybox/remove_old_skybox
+execute \
+	positioned over motion_blocking \
+	summon minecraft:marker \
+	run function fetchr:game/skybox/create_skybox/internal
 
 execute \
 	in minecraft:overworld \
