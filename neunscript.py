@@ -199,7 +199,9 @@ def main():
 				out_path = f"{path[:len(path) - len(extension)]}{variant_name_part}{extension}"
 				print(out_path)
 				out_path = f"{target}{os.sep}{out_path}"
-				result = handle_file("", file_name, path[:-len(file_name)], pack_format, min_pack_format, max_pack_format, mc_versions, format_versions, variant_config, mc_version_info, {})["content"]
+				result = handle_file("", file_name, path[:-len(file_name)], pack_format,
+					min_pack_format, max_pack_format, mc_versions, format_versions,
+					variant_config, {}, mc_version_info, {})["content"]
 
 				try:
 					if isinstance(result, str):
@@ -357,7 +359,7 @@ def iterate_files(config: dict, pack_config: dict, outpath: str, mc_versions: li
 
 					file_result = handle_file(source, file_name, relative_path, main_format,
 						min_pack_format, max_pack_format, mc_versions, format_versions, config,
-						version_info, default_contents)
+						pack_config, version_info, default_contents)
 
 					generate_main_as_overlay = not keep_in_main
 					pack_formats = sorted(file_result["formats"])
@@ -369,7 +371,8 @@ def iterate_files(config: dict, pack_config: dict, outpath: str, mc_versions: li
 							continue
 
 						overlay_content = handle_file(source, file_name, relative_path, min_format,
-							min_pack_format, max_pack_format, mc_versions, format_versions, config, version_info, default_contents)\
+							min_pack_format, max_pack_format, mc_versions, format_versions, config,
+							pack_config, version_info, default_contents)\
 							["content"]
 
 						if overlay_content is not None:
@@ -632,12 +635,14 @@ def handle_file(
 	versions: list[dict],
 	format_versions: list[tuple[int, int]],
 	version_config: dict,
+	pack_config: dict,
 	version_info: VersionInfo,
 	default_contents: dict,
 ) -> FileResult:
-	file_path = f"{source}{os.sep}{relative_path}{os.sep}{file_name}".strip("/")
+	file_path = f"{relative_path}{os.sep}{file_name}".strip("/")
+	file_src = f"{source}{os.sep}{file_path}".strip("/")
 	if file_name.endswith(".nbt") or file_name.endswith(".dat"):
-		nbt_content = nbtlib.load(file_path)
+		nbt_content = nbtlib.load(file_src)
 		nbt_result = handle_structued(nbt_content, file_path, version_config, version_info, pack_format, min_pack_format, max_pack_format, True)
 		set_default_values(nbt_result, default_contents)
 
@@ -647,15 +652,24 @@ def handle_file(
 		version = next(v for v in versions if (get_version_from_version_info(v, False)) >= min_format)
 		data_version = version["data_version"]
 
-		if file_name == "level.dat":
+		override_data_version = pack_config.get("override_data_version")
+		if isinstance(override_data_version, dict):
+			include = override_data_version.get("include")
+			if isinstance(include, list):
+				if not any(True for x in include if file_path.startswith(x)):
+					override_data_version = False
+			exclude = override_data_version.get("exclude")
+			if isinstance(exclude, list):
+				if any(True for x in exclude if file_path.startswith(x)):
+					override_data_version = False
+			if override_data_version != False:
+				override_data_version = True
+		if override_data_version and file_name == "level.dat":
 			data = nbt_content.get("Data")
 			if isinstance(data, dict):
 				data["DataVersion"] = nbtlib.Int(data_version)
-		else:
-			file_data_version = nbt_content["DataVersion"]
-
-			if min_pack_format > min_format or not isinstance(file_data_version, int) or file_data_version > data_version:
-				nbt_content["DataVersion"] = nbtlib.Int(data_version)
+		elif override_data_version:
+			nbt_content["DataVersion"] = nbtlib.Int(data_version)
 
 		buffer = BytesIO()
 		nbt_content.save(buffer)
@@ -672,13 +686,13 @@ def handle_file(
 	file_content: str | None = None
 	if not binary:
 		try:
-			with open(file_path, "r", encoding="utf-8") as file:
+			with open(file_src, "r", encoding="utf-8") as file:
 				file_content = file.read()
 
 		except UnicodeDecodeError:
 			binary = True
 	if file_content is None:
-		with open(file_path, "rb") as file:
+		with open(file_src, "rb") as file:
 			content = file.read()
 			return {
 				"formats": set(),

@@ -38,6 +38,9 @@
 		"main_format_overrides": {
 			"data/minecraft/tags/function/tick.json": 1,
 			"data/fetchr/function/tick/tick.mcfunction": 1
+		},
+		"override_data_version": {
+			"exclude": ["data/fetchr/structure/old"]
 		}
 	},
 	"world": {
