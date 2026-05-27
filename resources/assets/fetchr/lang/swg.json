@@ -42,6 +42,7 @@
 	"fetchr.game.switch_gamemode.prevented.click": "Klicke hier",
 	"fetchr.game.switch_gamemode.hint": "Hinweis: Du kannst mit dem Befehl %s jederzeit in den Zuschauermodus wechseln.\nSolltest du diese Funktionalität nicht mögen, kannst du sie in der Lobby in deinen Spielereinstellungen ändern.",
 	"fetchr.dialog.links": "Links",
+	"fetchr.dialog.links.github_issues": "Tracker für Fehler und Verbesserungen",
 	"fetchr.dialog.links.discord": "Discordserver",
 	"fetchr.dialog.links.fetchr_download": "Downloadlink",
 	"fetchr.dialog.links.fetchr_download.modrinth": "Datapack-Version (Modrinth)",
