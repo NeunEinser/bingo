@@ -5,6 +5,10 @@
 # @within tag/function fetchr:new_player
 # @handles #fetchr:new_player
 
+execute \
+	in minecraft:overworld \
+	run teleport 1 1 1
+
 recipe give @s *
 scoreboard players set @s fetchr.card_position 0
 #NEUN_SCRIPT unless {NEUN_SCRIPT:realms}
