@@ -1,4 +1,20 @@
 {
+	"attributes": {
+		"minecraft:audio/background_music": {
+			"creative": {
+				"max_delay": 24000,
+				"min_delay": 12000,
+				"sound": "minecraft:music.creative"
+			},
+			"default": {
+				"max_delay": 24000,
+				"min_delay": 12000,
+				"sound": "minecraft:music.game"
+			}
+		},
+		"minecraft:visual/fog_color": "#c0d8ff",
+		"minecraft:visual/sky_color": "#78a7ff"
+	},
 	"fixed_time": 6000,
 	"has_skylight": true,
 	"has_ceiling": false,

@@ -1,5 +1,16 @@
 {
 	"NEUN_SCRIPT remove_self until 62": null,
+	"attributes": {
+		"minecraft:audio/background_music": {
+			"default": {
+				"max_delay": 24000,
+				"min_delay": 12000,
+				"sound": "minecraft:music.overworld.badlands"
+			}
+		},
+		"minecraft:gameplay/snow_golem_melts": true,
+		"minecraft:visual/sky_color": "#6eb1ff"
+	},
 	"carvers": [
 		"minecraft:cave",
 		"minecraft:cave_extra_underground",
