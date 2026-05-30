@@ -21,9 +21,9 @@ $random reset * $(seed) false
 #gamerule doDaylightCycle false
 #NEUN_SCRIPT end
 #NEUN_SCRIPT since 92
-gamerule minecraft:fire_spread_radius_around_player 0
-gamerule minecraft:random_tick_speed 0
-gamerule minecraft:advance_time false
+gamerule fire_spread_radius_around_player 0
+gamerule random_tick_speed 0
+gamerule advance_time false
 #NEUN_SCRIPT end
 time set 0
 

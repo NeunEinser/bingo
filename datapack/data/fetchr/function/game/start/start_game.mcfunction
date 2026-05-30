@@ -31,9 +31,9 @@ execute \
 #gamerule randomTickSpeed 3
 #NEUN_SCRIPT end
 #NEUN_SCRIPT since 92
-gamerule minecraft:advance_time true
-gamerule minecraft:fire_spread_radius_around_player 128
-gamerule minecraft:random_tick_speed 3
+gamerule advance_time true
+gamerule fire_spread_radius_around_player 128
+gamerule random_tick_speed 3
 #NEUN_SCRIPT end
 
 team modify fetchr.light_blue seeFriendlyInvisibles true

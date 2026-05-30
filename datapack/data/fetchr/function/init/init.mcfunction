@@ -1300,15 +1300,15 @@ execute \
 	#gamerule allowEnteringNetherUsingPortals false
 	#NEUN_SCRIPT end
 	#NEUN_SCRIPT since 92
-	gamerule minecraft:command_block_output false
-	gamerule minecraft:advance_weather false
-	gamerule minecraft:spawn_phantoms false
-	gamerule minecraft:spawn_wandering_traders false
-	gamerule minecraft:elytra_movement_check false
-	gamerule minecraft:spawn_patrols false
-	gamerule minecraft:max_command_sequence_length 262144
+	gamerule command_block_output false
+	gamerule advance_weather false
+	gamerule spawn_phantoms false
+	gamerule spawn_wandering_traders false
+	gamerule elytra_movement_check false
+	gamerule spawn_patrols false
+	gamerule max_command_sequence_length 262144
 	gamerule pvp false
-	gamerule minecraft:allow_entering_nether_using_portals false
+	gamerule allow_entering_nether_using_portals false
 	#NEUN_SCRIPT end
 
 	difficulty easy
