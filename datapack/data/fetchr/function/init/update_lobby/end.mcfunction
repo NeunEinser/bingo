@@ -18,7 +18,7 @@ data \
 #gamerule spawnRadius 10
 #NEUN_SCRIPT end
 #NEUN_SCRIPT since 92
-gamerule minecraft:respawn_radius 10
+gamerule respawn_radius 10
 #NEUN_SCRIPT end
 # This will place all required entities and spawn a new reference
 execute \
