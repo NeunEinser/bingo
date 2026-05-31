@@ -1,3 +1,579 @@
+# 5.3
+
+5.3 Brings compatability with all Minecraft versions from 1.21 to 1.21.10,
+brings support for updating a save file from a previous version, makes use of
+the new dialog system, and as always adds new items available in more recent
+Minecraft versions.
+
+## Changelog
+- Updated to 1.21.10
+  - All versions starting from 1.21 are still supported
+- It is now supported to update old Fetchr installations to the current release
+  - Updating version 5.0.1 and prior is not supported and will print an error
+    message.
+  - 5.1, all its beta versions, and later is supported.
+  - Instructions below.
+  - It is also now always supported to change the Minecraft version without
+    re-downloading Fetchr
+- Updated the item pool
+- Players now receive a spyglass in the spawn preview
+- Added custom Fetchr options to main menu
+- Added Quick Actions dialog
+- Replaced some chat dialogs with new in-game dialogs when playing in 1.21.6 or
+  later.
+- Renamed “Blind Mode” to “Concealed Card”
+- Renamed “Points Race” to “Target Time”
+- Renamed “Preferences” to “Personal Preferences“ to highlight that these are
+  settings that only apply to your player.
+- Improved goal completion announcements
+  - If you win and your team only has one player, all goal announcement title
+    messages now say “You” instead of “Your team” (e.g. “You got a blackout!”)
+  - When another team with only one player wins, all goal announcement title
+    messages now say “<player name>” instead of “The ... team” (e.g. “NeunEinser
+    got a blackout!”)
+  - Target Time and Lockout Mode announcements titles now work like other
+    announcement titles and say the team name if another team wins (or the
+    player name).
+  - Target Time and Lockout Mode now show a yellow title with a special message
+    in case the game was tied (and you got the winning points).
+  - Target time announcemnt titles now show the number of points the winning
+    team achieved.
+  - Target time announcements now have a special title announcement when playing
+    in singleplayer: “You reached xx points” instead of “You won with xx
+    points”.
+- When a team has only a single player, the scoreboard on the right side of the
+  screen will now show the player name instead of the team color.
+- Credits for people that do not have a player head block now have a profile
+  icon next to their name on the sign if their Minecraft in-game name is known.
+- The worldspawn is no longer set in the overworld
+  - During a game, it is set to the game dimension
+  - When the last player returns to the lobby, or when first opening the world,
+    it will be set to the lobby.
+  - This also means compasses will now function like in vanilla and point
+    towards the spawn point
+- The datapack and resourcepack are now packaged in a way that they should
+  always load and be able to spam an error message when trying to play in an
+  unsupported version.
+  - The error messages when playing in an unsupported version now tell you the
+    supported version range exactly.
+- Removed shadow behind icons in custom HUD
+  - Text still has shadow for readability
+  - This only applies for Minecraft version 1.21.4 and later.
+  - This restores the HUD to what it used to look like in 5.0 (1.16)
+- In 1.21.9, pvp is now disabled by default using a gamerule
+- Removed Twitter link from Community & Support book
+- Deactivated random ticks during the spawn preview phase
+- Improved performance with team name calculation in spawn preview, and only
+  update them when it's actually necessary
+- Error logs caused by the datapack have been reduced
+  - Only creating item frames in Minecraft versions 1.21.4 and lower still
+    causes error logs.
+  - Resolves [#294](<https://github.com/NeunEinser/bingo/issues/294>)
+  - Fixed log error on first load due to missing DragonFight compound in
+    level.dat
+- Error message for spigot is changed.
+
+## Updating a previous installation
+Always do a backup of your world before updating! There is a chance of
+corruption
+
+- Make a backup
+- Download the world download
+- Unzip the zip file
+- Copy and replace all files from the world download in your save file
+
+### More information and caveats
+When updating, player-placed blocks are preserved if possible, and dropped if
+the original block has changed compared to the new lobby version. If the part of
+the lobby has been entirely removed (like the machinery), blocks are dropped at
+the lobby spawn, otherwise they are dropped were they used to be placed.
+
+For Fetchr versions that still had the machinery, the lobby will be moved
+slightly. In case there is a player-placed structure that partially intersects
+with the bounding box of a lobby section, the lobby section including that part
+of the player-placed structure will be moved, slicing the player-placed
+structure.
+
+If you create a backup, you can safely test how the lobby update treats your
+lobby.
+
+Entities that were changed will have their changed data updated, while
+preserving any changes that may have been made by the player (like switching the
+armor of an armor stand)
+
+## Dialogs
+
+### Quick Actions
+A static quick actions dialog can now be accessed when pressing `G` by default
+(see “Quick Actions” keybind in the Miscellenaeous section).
+
+The Quick Actions dialog is only available when playing in Minecraft version
+1.21.6 or later.
+
+Quick actions allow:
+- Genreate a random card
+  - A confirmation dialog to end the game will be shown if the player is
+    currently in a game
+- Genreate a card from seed
+  - A confirmation dialog to end the game will be shown if the player is
+    currently in a game
+- Return to Lobby or Join Game
+  - If the player is in the lobby, attempts to join a game, otherwise returns to
+    the lobby
+- Enter Spectator Mode
+  - During the game, allows to enter spectator mode
+- Move Players to Lobby or Spawn Preview
+  - During an active game, moves all players to the lobby
+  - When the spawn preview is ready, moves all players to the spawn preview
+- Reveal Bingo Card
+  - During a Concealed Card run, reveals the Bingo Card.
+- Change Settings (see below)
+- Find links to the issue tracker, Discord, and Map Download sources
+
+Since there is no way to make the Quick Actions screen dynamic, all options will
+always be shown, even if they are not releveant.
+
+You can also access the Quick Actions from the Fetchr Options screen, were they
+will be dynamically adjusted to only show relevant things.
+
+### Fetchr Options
+
+In version 1.21.6 and later, all settings from the lobby have been added as a
+custom main menu entry. You can still change settings in the lobby as well.
+
+[<img src="/images/5.3/main_menu_custom_options.png" width="500">](/images/5.3/main_menu_custom_options.png)
+<!-- TODO: Screenshot of fetchr options including links button -->
+
+### Game Settings
+
+The game settings dialog lets you change all settings you can also access in the
+lobby:
+
+[<img src="/images/5.3/game_settings_dialog.png" width="500">](/images/5.3/game_settings_dialog.png)
+
+The settings screen is be reduced when in single player just like the lobby is.
+
+On a server, you may be prompted to confirm your operator status first before
+being able to access this menu if operator-only controls are enabled.
+
+### Confirm Operator status
+In version 1.21.6 and later, the prompt to confirm your operator status is now
+implemented as a dialog.
+
+Additionally, the game now remembers the action you tried to perform and upon
+successful confirmation executes that action without the need to click the same
+sign again.
+
+[<img src="/images/5.3/confirm_operator_status_dialog.png" width="500">](/images/5.3/confirm_operator_status_dialog.png)
+
+
+### Generate Card from Seed
+
+In version 1.21.6 and later, setting a seed is now done from a dialog. If you
+prefer, you can still directly use `/trigger fetchr.seed set <seed>` as well
+while in the lobby or the spawn preview area.
+
+<!-- TODO: Image including weekly seeds promotion -->
+
+### Target Time
+
+In version 1.21.6 and later, setting a target time (previously “Points Race”)
+now happens through a dialog.
+
+<!-- TODO: Image with updated strings -->
+
+### Pre-generation Radius
+
+In version 1.21.6 and later, the selection of the area to pre-generate is now
+implemented as a dialog.
+
+[<img src="/images/5.3/pre_generation_radius_dialog.png" width="500">](/images/5.3/pre_generation_radius_dialog.png)
+
+## Item Changes
+
+### Leather Items
+- Added Yellow Harness
+  - Only available in 1.21.6 and later
+- Added Saddle
+  - Only available in 1.21.6 and later
+  - Now craftable with 3 leather and 1 iron
+
+### Lodestone
+- New category
+- Only available when playing 1.21.5
+- Added Lodestone
+  - was changed in 1.21.5 to use an iron ingot instead of netherite
+- Added Lodestone compass
+  - Also mutually exclusive with compass and map
+  - Likelihood is split with compass in that category, making map still as
+    likely as before
+
+### Swamp
+- New Category
+- Only available when playing 1.21.5
+- Contains existing items: slime ball, sticky piston, leash and poison arrow
+- Added firefly bush
+
+### Warm Biomes
+- Added dead bush to this category (previously only categorized as "shearable")
+- Added Cactus Flower
+  - Only available when playing 1.21.5
+- Added Short dry grass
+  - Only available when playing 1.21.5
+  - Also added to the shearables category
+
+### Miscellaneous
+- Added bush
+  - Only available when playing 1.21.5
+  - Mutually exclusive with other shearable items
+- Replaced pale moss block with pale moss carpet
+  - This is to make it easier to distinguish from tuff and other gray blocks
+- Replaced moss carpet with moss block
+  - Cannot be found in mangrove swamps, and only shipwreck food chests and lush
+    caves
+- Added copper lantern to the copper category
+  - Only available in 1.21.9 or later
+- Lead categories now depend on the Minecraft version
+  - Moved lead from slime category to spider category in 1.21.6 and later
+  - Now craftable with an additional string instead of slime ball in these MC
+    versions
+- Replaced blue trimmed leather boots with blue trimmed golden boots or blue
+  trimmed copper boots when playing in 1.21.9 or later
+  - This is to offset the leather usage from some of the newly added items
+
+## Worldgen
+- Made armadillos more likely in badlands in 1.21.5
+  - Badlands can now spawn some warm farm animal variations, were previously
+    only armadillos could spawn
+  - This was adjusted the same way as savanna previously, meaning armadillos
+    take up a bit over half the peaceful spawns in these biomes
+- Worldgen is updated to match 1.21.5 when playing in this version
+  - Most notably, pale gardens spawn about twice as often now
+
+## Blind Mode -> Concealed Card
+“Blind Mode” has been renamed to “Concealed Card”. This is to diambiguate it
+with weekly “blind” seed challenges, which are played without knowing the card
+beforehand.
+
+## Bug Fixes
+- Fixed lockout mode when playing with one team causing the colored card
+  backgrounds of unlocked items to not show up properly
+- Fixed players of the yellow team always getting the “Loser” notification when
+  completing a Lockout or reaching the Target Time, even if they won.
+- Fixed error chat spam not showing up when playing in a version that's too old
+- Fixed resource pack check sign when joining a server for the first time with
+  the resourcepack disabled not being lit up properly (mojank)
+  ([#241](<https://github.com/NeunEinser/bingo/issues/241>))
+- Fixed players not being assigned correctly when multiple buttons are pressed
+  by different players in the same game tick
+- Fixed compass player position icon showing colors that are slightly off (due
+  to the image using an outdated palette)
+- Fixed lodestone compass spinning in the spawn preview
+- Fixed github link in the Community & Support book going to NeunEinser/fetchr
+  rather than NeunEinser/bingo
+  ([#266](<https://github.com/NeunEinser/bingo/issues/266>))
+- Fixed additional spaces in configure custom HUD chat menu
+  ([#287](<https://github.com/NeunEinser/bingo/issues/287>))
+- Fixed scaffoldings dropping when reloading (or regenerating the item pool
+  display) if the item pool exceeds a certain size
+  ([#301](<https://github.com/NeunEinser/bingo/issues/301>))
+
+## Technical changes
+- It is now fully supported for extension packs to alter or add to the lobby.
+- During a lobby update, all marker entities inside a lobby structure may be
+  deleted.
+- The topmost item pool display chest is no longer forced to be a double chest,
+  and may be a single chest depending on the item pool now
+- Most of the data and resource pack are now disabled when playing in an
+  unsupported version
+  - The only exception to this is the languages from the resource pack, and the
+    ticking function which is responsible for posting the error message
+  - Everything in the build datapack and resoucepack is now part of an overlay
+    and no longer inside the root `data` and `assets` directories, with the
+    exception of language files.
+- The HUD now updates after every reload and applies changes to selected
+  components of players. New components are currently not automatically added.
+  to existing player's HUDs as of now
+- Images in the resourcepack are saved more efficiently now and have metadata
+  stripped
+- Release files now are generated with consistent meta contents, resulting in
+  verifiable hashes when building locally 
+
+### Registering a lobby structure
+
+- Use fetchr:registries structures
+
+- `id` - (namespaced id) The id of your structure file
+- `override_id` (optional, namespaced id) Should be left empty for structures
+  you define. Can be used to override a structure from a foreign pack (e.g.
+  vanilla Fetchr) with a different structure file you define.
+- `version` (int) The numeric version of the structure. Should be changed
+  when your structure file is updated, so that the lobby can be updated.
+
+  This should be unique for the combination of `id` and `override_id`.
+- `entrance_position` int array of length 3. Indicates the position of this
+  structure's entrance. If the x position is set higher than 1, it is currently
+  not supported to have any blocks in front of the entrance.
+- `after_structure` (optional, namespaced id) The id of the structure to place
+  this structure after. This can be used to insert a structure after another
+  known structure. If set, this structure will be placed after the existing
+  structure, or a structure that has set the same `after_structure`.
+
+  This should _not_ be set to a structure of your own pack. The order of your
+  structures will be preserved. If you want to insert a structure after one of
+  your own structures, simply set it to the same `after_structure` as the other
+  structure and register it later.
+
+Removing a structure after it has been added is fully supported (e.g. if your
+pack is uninstalled).
+
+### `#fetchr:lobby_update/manipulate_special_block` & `#fetchr:has_special_lobby_update_behavior` tags
+
+During a lobby update, if a block was changed in your structure, this change
+will be applied to the existing structure. In case this block has been altered
+by the player, it will be dropped. This will do a strict comparision, including
+nbt data and block states.
+
+In some cases this can be too strict. For example, vanilla fetchr handles doors
+and player heads specially, and makes sure doors that were only opened or
+closed, and player heads that have additional data from a previous minecraft
+version when profile data was still resolved and saved on the block are treated
+equally.
+
+You can add blocks you want to handle specially to the
+`#fetchr:has_special_lobby_update_behavior` block tag. If you do this, in case
+this block is detected altered, functions in the function tag
+`#fetchr:lobby_update/manipulate_special_block` will be called.
+
+`#fetchr:lobby_update/manipulate_special_block` context:
+- location: This function will be executed at the location of the old block that
+  has changed and will be dropped if there is a difference between this block
+  and the previous unaltered structure
+- macro arguments:
+  - `reference_x`: The x location of the reference. The reference is an
+    unaltered version of the lobby. This location will contain the unaltered
+    block
+
+You may alter either the block at the reference or the block that is compared
+against to make them equal, preventing the block in the lobby from being
+dropped.
+
+You should check whether both the block in the reference and the old block are
+a block you want to handle.
+
+### `#fetchr:lobby_update/manipulate_updated_entity`
+
+This function tag can be used to do additional changes to an entity after it
+has been updated.
+
+Context:
+- current entity (@s): The entity that has been updated
+- location: The location of the entity
+- `@e[tag=fetchr.current_new]`: The unaltered new entity as it is defined in
+  your structure
+
+### `#fetchr:lobby_update/add_legacy_structures`
+
+This function tag can be used to update a lobby of an older version of fetchr.
+
+You do not need this for updating structures when using this version of Fetchr
+or beyond. This is only for updating lobbies from 5.1-beta1 - 5.3-beta5.
+
+Add the structures that would have been there in your version configured
+correctly to storage `io.fetchr:structures structures`.
+
+`id` should be the namespaced id of the structure which matches the structure
+file of the new structure.
+
+`entrance_position` should be the entrance position according to the old
+structure
+
+`legacy_id` should be the id of the structure file which produces the structure
+as it has been part of the old lobby
+
+### `#fetchr:lobby/generated`
+
+This function tag is called after the lobby has been genreated either for the
+first time, or a lobby update has been completed.
+
+Use this to e.g. spawn marker entities. Make sure your marker entity doesn't
+exist already from a previous generation.
+
+You should also run this function when your datapack is loaded for the first
+time and the score `$lobby_genreated` in `fetchr.state` equals 4.
+
+### Other new function tags
+
+- `#fetchr:goal_and_item_detection/achieved_goal`: Any goal has been achieved
+  - `@s`: Player who got the last item
+  - `@a[tag=fetchr.in_current_team]`: Players who are in the team achieving the
+    goal
+  - storage `io.fetchr:find_team current_team` the current team data
+- `#fetchr:goal_and_item_detection/achieved_20_no_bingo`
+  - `@s`: Player who got the last item
+  - `@a[tag=fetchr.in_current_team]`: Players who are in the team achieving the
+    20 no bingo
+  - storage `io.fetchr:find_team current_team` the current team data
+- `#fetchr:goal_and_item_detection/achieved_bingo`
+  - `@s`: Player who got the last item
+  - `@a[tag=fetchr.in_current_team]`: Players who are in the team achieving the
+    bingo
+  - storage `io.fetchr:find_team current_team` the current team data
+- `#fetchr:goal_and_item_detection/achieved_blackout`
+  - `@s`: Player who got the last item
+  - `@a[tag=fetchr.in_current_team]`: Players who are in the team achieving the
+    blackout
+  - storage `io.fetchr:find_team current_team` the current team data
+- `#fetchr:goal_and_item_detection/achieved_lockout`
+  - `@s`: Player who got the last item
+  - `@a[tag=fetchr.in_winning_team]`: Players who are in a team winning the
+    lockout race. Maybe players of multiple teams in case of a tie.
+  - storage `io.fetchr:find_team current_team` the current team data
+- `#fetchr:goal_and_item_detection/finished_points_race`: The points race ended.
+  - `@a[tag=fetchr.in_winning_team]`: All players who were in a winning team
+- `#fetchr:goal_and_item_detection/item_detected`: A player got an item that is
+  on the card. The item announcement has not happened yet.
+  - `@s`: The player who got the item
+  - `@a[tag=fetchr.in_current_team]`: All players who are in `@s`' team
+  - `io.fetchr:find_team current_team`: Team id color, and other team data
+  - Macro parameters according to `::fetchr::storages::card::CardSlot`
+  - Slot information also available in storage using a macro as
+    `fetchr:card slots[$(slot_id)]`
+- `#fetchr:goal_and_item_detection/item_get_announced`: Player @s got 
+  an item that is on the card and the announcement has been made.
+  - `@s`: The player who got the item
+  - `@a[tag=fetchr.in_current_team]`: All players who are in `@s`' team
+  - `io.fetchr:find_team current_team`: Team id color, and other team data
+  - Macro parameters according to `::fetchr::storages::card::CardSlot`
+  - Slot information also available in storage using a macro as
+    `fetchr:card slots[$(slot_id)]`
+- `#fetchr:game/tick` Ticking function that is called while a game is in
+  progress
+- `#fetchr:lobby/tick`: Ticking function that is called while the lobby is
+  loaded by at least one player
+- `#fetchr:spawn_preview/tick`: Ticking function that is called while the spawn
+  preview is available
+- `#fetchr:lobby/tick`: Ticking function that is called while the lobby is
+  loaded by at least one player
+- `#fetchr:player_tick`: Ticking function that is called for every player
+  - `@s`: The current player who is in the lobby
+  - Position: Function is executed at the player's location
+- `#fetchr:game/player_tick`: Ticking function that is called for every player
+  in a running game
+  - `@s`: The current player who is playing in the game
+  - Position: Function is executed at the player's location
+- `#fetchr:lobby/player_tick`: Ticking function that is called for every player
+  - `@s`: The current player
+  - Position: Function is executed at the player's location
+- `#fetchr:spawn_preview/player_tick`: Ticking function that is called for every
+    player in the spawn preview
+  - `@s`: The current player who is in the spawn preview
+  - Position: Function is executed at the player's location
+- `#fetchr:spawn_preview/created`: The spawn preview area has been created
+  - Position: Function executed at the center of the spawn preview
+- `#fetchr:spawn_preview/player_entered`: Player entered the spawn preview
+  area
+  - `@s`: Player who entered
+  - Position: Function executed at spawn preview center
+- `#fetchr:spawn_preview/teleported_all_players`: All players have been
+  forcefully teleported to the spawn preview area
+  - `@s`: Player who triggered the teleport
+- `#fetchr:spawn_preview/joined_team`: During the spawn preview phase, a player
+  has joined a team.
+  - `@s`: Player who joined the team
+  - Team color available from @s[team=fetchr.color] from this point onward.
+- `#fetchr:start_sequence/start_sequence`: The “start game” sign has just been
+  activated, and the spawn sequence starts
+  - `@s`: Player who activated the sequence
+  - Position: The center of the spawn preview
+- `#fetchr:start_sequence/players_start_falling`: Players start falling as part
+  of the spawn sequence
+  - @e[type=minecraft:marker, tag=fetchr.spawn, limit=1]: Marker for position
+    at the top of the drop chute
+- `#fetchr:start_sequence/all_players_landed`: Players landed as part of the
+  start sequence
+  - Position: The location on the ground that will become the spawn point.
+- `#fetchr:start_sequence/advance_countdown`: Countdown before a game starts
+  decreases
+  - @e[type=minecraft:marker, tag=fetchr.spawn, limit=1]: Marker at the location
+    of the spawn point.
+- `#fetchr:start_sequence/countdown_ended`: The countdown ended and the game
+  starts
+  - Position: The location on the ground that will become the spawn point.
+- `#fetchr:game/ended`: A card generation was requested, and the current game
+  has ended (players returned to lobby, game state changed, etc). The card
+  generation will take place after this tag has been called.
+- `#fetchr:game/revealed_concealed_card`: While the concealed card setting is
+  active, player `@s` has revealed the card.
+- `#fetchr:game/joined_as_spectator`: Player `@s` has entered a running game as
+  a spectator
+- `#fetchr:dialog/add_to_quick_actions`: The dynamic Quick Actions dialog
+  acessible from the pause menu under Fetchr Options is about to be generated.
+
+  Use this tag to add your own Quick Actions.
+
+  Note that this is not related to the Quick Actions dialog accessible from the
+  `G` hotkey
+  - storage `io.fetchr:dialog dialog`: The dialog to show to the user. This is
+    always a type `multi_action` dialog.
+- `#fetchr:lobby/player_returned`: Player `@s` has returned to the lobby
+- `#fetchr:lobby/teleported_all_players`: All players have been forcefully
+  teleported to the lobby
+  - `@s`: Player who activated the teleport
+- `#fetchr:confirmed_operator_status`: Player `@s` has successfully confirmed
+  their operator status
+- `#fetchr:lobby/before_item_pool_chest_incremented`: During item pool chest
+  generation, a new chest is about to be added
+  - Position: The location at the bottom of the chest stack and the lower z
+    coordinate
+  - Macro parameter `height`: The current height of the chest stack
+- `#fetchr:lobby/item_pool_chest_incremented`: During item pool chest
+  generation, a new chest has been added
+  - Position: The location at the bottom of the chest stack and the lower z
+    coordinate
+  - Macro parameter `height`: The current height of the chest stack
+- `#fetchr:lobby/item_pool_chests_generated`: The item pool chest generation has
+  completed
+  - Position: The location at the bottom of the chest stack and the lower z
+    coordinate
+- `#fetchr:hud_component_updated`: A HUD component has been updated after a
+  reload. You can do custom updates for your components here to support older
+  versions of your pack being updated
+  - storage `io.fetchr:custom_hud custom`: The custom part of the component.
+- `#fetchr:item_pool_changed`: The item pool has changed.
+
+### Item pool registrations
+- Removed `fetchr:negated_component` item_test
+- Added `fetchr:component_exists` item_test also supporting negated funcionality
+- Category lists now support a mixed typed list
+
+#### `fetchr:component_exists` item_test
+New item test that can bes specified in the item pool to check for an item
+component to exist
+
+- Requires the item component to exist on this item, with any contents
+- `id` - The item component id
+- `negated` - Optional. When set to `true`, requires the component to **not**
+	exist (same as previous `fetchr:negated_component`)
+
+### Heterogeneously typed category lists
+When registering items, category lists can now be heterogeneous in 1.21.5 (in
+1.21.4, this would be an SNBT syntax error)
+
+This means instead of specifying a compound with only an id and no weight, you
+can now always specify a string, even when there is another compound in the same
+list
+
+For example, `[ {id: "fetchr:pumpkin" }, {id: "fetchr:egg", weight: 2 } ]` can
+now be written as `[ "fetchr:pumpkin", {id: "fetchr:egg", weight: 2 } ]`
+
+### Text Components
+In accordance with the 1.21.5 changes, text components are now in SNBT format
+and no longer stored as stringified JSON in Minecraft versions 1.21.5 and
+later
+
+This affects all storages that stored text components before.
+
 # 5.2.2
 5.2.2 is released to address yet another critical bug in 5.2.x that can cause
 entities to stay frozen when altering render distance before the game starts.
