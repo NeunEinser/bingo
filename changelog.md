@@ -1,6 +1,6 @@
 # 5.3
 
-5.3 Brings compatability with all Minecraft versions from 1.21 to 1.21.10,
+5.3 brings compatability with all Minecraft versions from 1.21 to 1.21.10,
 brings support for updating a save file from a previous version, makes use of
 the new dialog system, and as always adds new items available in more recent
 Minecraft versions.
@@ -142,7 +142,7 @@ In version 1.21.6 and later, all settings from the lobby have been added as a
 custom main menu entry. You can still change settings in the lobby as well.
 
 [<img src="/images/5.3/main_menu_custom_options.png" width="500">](/images/5.3/main_menu_custom_options.png)
-<!-- TODO: Screenshot of fetchr options including links button -->
+[<img src="/images/5.3/fetchr_options.png" width="500">](/images/5.3/fetchr_options.png)
 
 ### Game Settings
 
@@ -173,14 +173,14 @@ In version 1.21.6 and later, setting a seed is now done from a dialog. If you
 prefer, you can still directly use `/trigger fetchr.seed set <seed>` as well
 while in the lobby or the spawn preview area.
 
-<!-- TODO: Image including weekly seeds promotion -->
+[<img src="/images/5.3/set_seed_dialog_final.png" width="500">](/images/5.3/set_seed_dialog_final.png)
 
 ### Target Time
 
 In version 1.21.6 and later, setting a target time (previously “Points Race”)
 now happens through a dialog.
 
-<!-- TODO: Image with updated strings -->
+[<img src="/images/5.3/target_time_dialog.png" width="500">](/images/5.3/target_time_dialog.png)
 
 ### Pre-generation Radius
 
@@ -272,6 +272,8 @@ beforehand.
 - Fixed github link in the Community & Support book going to NeunEinser/fetchr
   rather than NeunEinser/bingo
   ([#266](<https://github.com/NeunEinser/bingo/issues/266>))
+- Fixed pre-generation and target time signs not updating immediately after
+  changing their value
 - Fixed additional spaces in configure custom HUD chat menu
   ([#287](<https://github.com/NeunEinser/bingo/issues/287>))
 - Fixed scaffoldings dropping when reloading (or regenerating the item pool
