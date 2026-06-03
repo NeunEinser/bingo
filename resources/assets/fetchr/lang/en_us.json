@@ -10,7 +10,7 @@
 	"fetchr.error.incompatible_minecraft_version.single_compatible": "You are using an unsupported version of Minecraft. This pack has been made compatible for Minecraft version %s.",
 	"fetchr.error.incompatible_minecraft_version.single_compatible.with_latest_snapshot": "You are using an unsupported version of Minecraft. This pack has been made compatible for Minecraft version %s, or up to snapshot %s.",
 
-	"fetchr.error.cannot_update": "You are attempting to update a Fetchr version from %s or before. This is currently not supported. Updating is only supported for versions %s and onwards",
+	"fetchr.error.cannot_update": "You are attempting to update a Fetchr version from %s or before. This is currently not supported. Updating is only supported for versions %s and onwards.",
 
 	"fetchr.error.lobby_update.duplicated_entities": "Something went wrong during your lobby upgrade. Please report to %s or %s with any information you can provide.",
 
@@ -420,7 +420,7 @@
 	"fetchr.lobby.card_generation.join_as_spectator.sign.line2": "Join",
 	"fetchr.lobby.card_generation.join_as_spectator.sign.line3": "As Spectator",
 	"fetchr.lobby.card_generation.join_as_spectator.sign.line4": "",
-	"fetchr.game.start_spectating": "%s is now spectating the game",
+	"fetchr.game.start_spectating": "%s is now spectating the game.",
 
 	"fetchr.lobby.card_generation.crafting_table.sign.line1": "Crafting",
 	"fetchr.lobby.card_generation.crafting_table.sign.line2": "Recipe",
@@ -485,7 +485,7 @@
 	"fetchr.lobby.tutorial.basics1.sign.line4": "collecting items.",
 
 	"fetchr.lobby.tutorial.basics2.sign.line1": "A bingo card is",
-	"fetchr.lobby.tutorial.basics2.sign.line2": "a 5x5 grid with",
+	"fetchr.lobby.tutorial.basics2.sign.line2": "a 5×5 grid with",
 	"fetchr.lobby.tutorial.basics2.sign.line3": "each slot",
 	"fetchr.lobby.tutorial.basics2.sign.line4": "picturing an item.",
 
