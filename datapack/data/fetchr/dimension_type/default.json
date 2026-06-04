@@ -91,5 +91,6 @@
 	"piglin_safe": false,
 	"respawn_anchor_works": false,
 	"ultrawarm": false,
-	"timelines": "#minecraft:in_overworld"
+	"timelines": "#minecraft:in_overworld",
+	"has_ender_dragon_fight": false
 }
