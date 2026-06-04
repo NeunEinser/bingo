@@ -3,9 +3,13 @@
 		"interaction": {
 			"trigger": "minecraft:player_interacted_with_entity",
 			"conditions": {
-				"entity": {
+				"NEUN_SCRIPT replace entity until 102": {
 					"type": "minecraft:item_frame",
 					"nbt": "{ Tags: ['fetchr.card_frame'] }"
+				},
+				"entity": {
+					"minecraft:entity_type": "minecraft:item_frame",
+					"minecraft:nbt": "{ Tags: ['fetchr.card_frame'] }"
 				}
 			}
 		}
