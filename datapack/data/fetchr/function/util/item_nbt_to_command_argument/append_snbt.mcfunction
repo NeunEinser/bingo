@@ -12,27 +12,19 @@ data modify storage io.fetchr:util concat_strings.first set from storage io.fetc
 data modify storage io.fetchr:util concat_strings.second set value "="
 function fetchr:util/string/concat_escaped with storage io.fetchr:util concat_strings
 
+data \
+	modify storage tmp.fetchr:util item_component_left_part \
+	set from storage io.fetchr:util string
 data modify storage io.fetchr:util concat_strings.first set from storage io.fetchr:util string
-#NEUN_SCRIPT until 69
-#$data \
-	modify block 7 0 7 front_text.messages[0] \
-	set value '{ "storage": "tmp.fetchr:util", "nbt": "components.$(name)" }'
-
-#data \
-	modify storage tmp.fetchr:util inner_snbt.snbt \
-	set from block 7 0 7 front_text.messages[0]
-#function fetchr:util/string/parse_snbt \
-	with storage tmp.fetchr:util inner_snbt
-
-#data \
-	modify storage io.fetchr:util concat_strings.second \
-	set from storage io.fetchr:util nbt
-#NEUN_SCRIPT end
-#NEUN_SCRIPT since 69
 $data \
-	modify block 7 0 7 front_text.messages[0] \
-	set value { storage: "tmp.fetchr:util", nbt: "components.$(name)" }
-data modify storage io.fetchr:util concat_strings.second set from block 7 0 7 front_text.messages[0]
-#NEUN_SCRIPT end
+	modify storage io.fetchr:util nbt \
+	set from storage tmp.fetchr:util components.$(name)
+function fetchr:util/string/nbt_to_snbt
+data \
+	modify storage io.fetchr:util concat_strings.second \
+	set from storage io.fetchr:util string
+data \
+	modify storage io.fetchr:util concat_strings.first \
+	set from storage tmp.fetchr:util item_component_left_part
 
 function fetchr:util/string/concat

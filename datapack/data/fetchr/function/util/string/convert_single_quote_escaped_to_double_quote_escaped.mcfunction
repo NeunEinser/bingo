@@ -15,8 +15,20 @@ data \
 	append from storage tmp.fetchr:util convert_quote_type.string
 data \
 	modify block 7 0 7 front_text.messages[0] \
-	set value { storage: "tmp.fetchr:util", nbt: "convert_quote_type.list" }
+	set value { storage: "tmp.fetchr:util", nbt: "convert_quote_type.list", plain: true }
 
-data \
+#NEUN_SCRIPT until 98
+#data \
 	modify storage io.fetchr:util string \
 	set string block 7 0 7 front_text.messages[0] 3 -2
+#NEUN_SCRIPT end
+#NEUN_SCRIPT since 98 until 99.2
+#data \
+	modify storage io.fetchr:util string \
+	set from string 7 0 7 front_text.messages[0].extra[3].text 1
+#NEUN_SCRIPT end
+#NEUN_SCRIPT since 99.2
+data \
+	modify storage io.fetchr:util string \
+	set string block 7 0 7 front_text.messages[0].extra[3] 1
+#NEUN_SCRIPT end

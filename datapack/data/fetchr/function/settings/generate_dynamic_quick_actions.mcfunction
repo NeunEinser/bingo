@@ -117,16 +117,16 @@ execute \
 
 function #fetchr:dialog/add_to_quick_actions
 
+
+data \
+	modify storage io.fetchr:util nbt \
+	set from storage io.fetchr:dialog dialog
 execute \
 	in fetchr:lobby \
-	run data \
-		modify block 7 0 7 front_text.messages[0] \
-		set value { storage: "io.fetchr:dialog", nbt: "dialog" }
-execute \
-	in fetchr:lobby \
-	run data \
-		modify storage tmp.fetchr:settings/dialog quick_actions.dialog \
-		set from block 7 0 7 front_text.messages[0]
+	run function fetchr:util/string/nbt_to_snbt
+data \
+	modify storage tmp.fetchr:settings/dialog quick_actions.dialog \
+	set from storage io.fetchr:util string
 
 function fetchr:settings/show_dynamic_dialog with storage tmp.fetchr:settings/dialog quick_actions
 #NEUN_SCRIPT end

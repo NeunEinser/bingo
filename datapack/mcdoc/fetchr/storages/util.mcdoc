@@ -1,3 +1,4 @@
+use ::java::server::util::text::Text
 use ::java::world::item::SingleItem
 use ::java::world::component::DataComponentPatch
 
@@ -48,9 +49,11 @@ dispatch minecraft:storage[tmp.fetchr:util] to struct {
 		list: [string] @ 0..1
 	},
 	forceload_queue_copy: [ForceloadQueue],
+	snbt_stack: [ Text ],
+	text_component: Text,
 }
 
 struct ConcatStringsData {
-	first: any,
-	second: any,
+	first: string,
+	second: string,
 }
