@@ -46,7 +46,9 @@ execute \
 #
 # @private
 #declare score_holder $game/tick.sleeping_players
-execute \
+
+#NEUN_SCRIPT until 97
+#execute \
 	store result score $game/tick.sleeping_players fetchr.tmp \
 	if entity @a[gamemode=survival, scores={fetchr.bed=99..}, predicate=fetchr:is_in_game]
 
@@ -55,6 +57,7 @@ execute \
 	if score $game/tick.player_count fetchr.tmp = $game/tick.sleeping_players fetchr.tmp \
 	if entity @a[scores={fetchr.bed=99}, limit=1] \
 	run function fetchr:game/skip_night
+#NEUN_SCRIPT end
 
 scoreboard players operation $raw 91.timer.io /= $current_percision 91.timer.io
 execute \

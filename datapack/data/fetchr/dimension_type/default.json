@@ -109,6 +109,7 @@
 	"bed_works": true,
 	"cloud_height": 192,
 	"coordinate_scale": 1.0,
+	"default_clock": "minecraft:overworld",
 	"effects": "minecraft:overworld",
 	"has_ceiling": false,
 	"has_raids": true,

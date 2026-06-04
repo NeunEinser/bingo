@@ -722,7 +722,9 @@ execute \
 		#		function fetchr:init/init
 		#		function fetchr:game/tick
 		#		function fetchr:game/player_tick
-		scoreboard objectives add fetchr.bed minecraft.custom:minecraft.sleep_in_bed
+		#NEUN_SCRIPT until 97
+		#scoreboard objectives add fetchr.bed minecraft.custom:minecraft.sleep_in_bed
+		#NEUN_SCRIPT end
 
 		#>
 		# This objective holds the position preference of where a player's card should

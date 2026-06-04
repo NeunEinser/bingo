@@ -21,9 +21,16 @@ data \
 # 	function fetchr:custom_hud/components/timer/update
 # 	function fetchr:custom_hud/components/timer/update/*
 #declare score_holder $custom_hud/timer.daytime
-execute \
+#NEUN_SCRIPT until 97
+#execute \
 	store result score $custom_hud/timer.daytime fetchr.tmp \
 	run time query daytime
+#NEUN_SCRIPT end
+#NEUN_SCRIPT since 97
+execute \
+	store result score $custom_hud/timer.daytime fetchr.tmp \
+	run time query minecraft:day
+#NEUN_SCRIPT end
 
 execute \
 	if score $custom_hud/timer.daytime fetchr.tmp matches ..11894 \

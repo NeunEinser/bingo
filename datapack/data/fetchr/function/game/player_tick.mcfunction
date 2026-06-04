@@ -58,11 +58,13 @@ execute \
 	run tellraw @a { "translate": "fetchr.game.start_spectating", "with": [{ "selector": "@s" }]}
 scoreboard players reset @s[scores={fetchr.spectator=1}] fetchr.spectator
 
-scoreboard players add @s[scores={fetchr.bed=1..}] fetchr.bed 1
-execute \
+#NEUN_SCRIPT until 97
+#scoreboard players add @s[scores={fetchr.bed=1..}] fetchr.bed 1
+#execute \
 	if score @s fetchr.bed matches 99.. \
 	store result score @s fetchr.bed \
 	run data get entity @s SleepTimer
+#NEUN_SCRIPT end
 
 # generate card from seed
 execute \
