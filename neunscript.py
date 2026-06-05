@@ -42,138 +42,144 @@ class VersionInfo(TypedDict):
 	first_unsupported_format: dict | None
 
 def main():
-	config: dict[str, Any] = {}
+	main_config: dict[str, Any] = {}
 	if os.path.exists("neunscript.config.json"):
 		with open("neunscript.config.json", "r") as config_file:
 			config_raw = config_file.read()
 			config_file.close()
 			try:
-				config=json.loads(config_raw)
+				main_config=json.loads(config_raw)
 			except Exception:
 				pass
 
-	target = config.get("target")
+	target = main_config.get("target")
 	if target == None:
 		target="neunscript_out"
 
 	if os.path.exists(target):
 		shutil.rmtree(target)
-
-	resourcepack_config : dict | None = config.get("resourcepack")
-	datapack_config: dict | None = config.get("datapack")
+	os.mkdir(target)
 
 	mc_versions: list[dict] = requests.get("https://raw.githubusercontent.com/misode/mcmeta/refs/heads/summary/versions/data.json").json()
 	mc_versions.reverse()
 
-	name=config.get("name")
-	version=config.get("version")
-	if version == None:
-		version=config.get("versionName")
-
-	if name == None:
-		name = "unnamed"
-	
-	if version == None:
-		version = "1.0.0"
-
-	world_config=config.get("world")
-
-	mc_version_info: VersionInfo = {
-		"initial_supported": None,
-		"latest_supported": None,
-		"lowest_release": None,
-		"current_overlay_version": None,
-	}
-	if resourcepack_config is not None:
-		(mc_version_info["initial_supported"], mc_version_info["latest_supported"]) = get_version(resourcepack_config.get("path"), mc_versions, True)
-	if datapack_config is not None:
-		(data_initial_supported, data_latest_supported) = get_version(datapack_config.get("path"), mc_versions, False)
-		if mc_version_info["initial_supported"] is None or mc_version_info["initial_supported"]["data_version"] < data_initial_supported["data_version"]:
-			mc_version_info["initial_supported"] = data_initial_supported
-		if mc_version_info["latest_supported"] is None or mc_version_info["latest_supported"]["data_version"] > data_latest_supported["data_version"]:
-			mc_version_info["latest_supported"] = data_latest_supported
-
-	if mc_version_info["initial_supported"] is not None:
-		mc_version_info["lowest_release"] = next((
-			v for v in mc_versions \
-				if v["type"] == "release" and v["data_version"] >= mc_version_info["initial_supported"]["data_version"]
-		), mc_versions[-1])
-
-
-	if mc_version_info["latest_supported"] is not None:
-		mc_version_info["latest_release"] = next((
-			v for v in reversed(mc_versions) if v["type"] == "release" and v["data_version"] <= mc_version_info["latest_supported"]["data_version"]
-		), mc_versions[-1])
-
-	vars = config.get("vars")
-	if(vars is None):
-		vars = {}
-	vars["minecraft_latest_release"] = mc_version_info.get("latest_release") and mc_version_info["latest_release"]["name"]
-	vars["minecraft_initial_release"] = mc_version_info.get("lowest_release") and mc_version_info["lowest_release"]["name"]
-	vars["minecraft_latest_snapshot"] = mc_version_info.get("latest_supported") and mc_version_info["latest_supported"]["name"]
-	vars["minecraft_initial_snapshot"] = mc_version_info.get("initial_supported") and mc_version_info["initial_supported"]["name"]
-	config["vars"] = vars
-
-	def get_version_string(pack_format: tuple[int, int] | None):
-		return pack_format and f"{pack_format[0]}.{pack_format[1]}"
-	
-	def set_version_vars(vars: dict, is_rp: bool):
-		first_unsupported = None
-		vars["min_pack_format"] = mc_version_info.get("initial_supported") and get_version_string(get_version_from_version_info(mc_version_info["initial_supported"], is_rp))
-		max_pack_format = mc_version_info.get("latest_supported") and get_version_from_version_info(mc_version_info["latest_supported"], is_rp)
-		vars["max_pack_format"] = get_version_string(max_pack_format)
-		vars["first_unsupported_format"] = None
-		if max_pack_format is not None:
-			first_unsupported = next((get_version_from_version_info(v, is_rp) for v in mc_versions if get_version_from_version_info(v, is_rp) > max_pack_format), (max_pack_format[0] + 1, 0))
-			vars["first_unsupported_format"] = get_version_string(first_unsupported)
-		return first_unsupported
-
-	os.mkdir("dist")
-
-	variantDict: dict | None = config.get("versions")
+	variantDict: dict | None = main_config.get("versions")
 	if variantDict == None:
 		variantDict = {}
 	variants: list[tuple[str,dict|None]] = list(variantDict.items())
 	variants.insert(0, ("", None))
 
 	for variant, override in variants:
-		variant_config = config.copy()
+		config = main_config.copy()
 		if override != None:
-			dict_apply(variant_config, override)
+			dict_apply(config, override)
 		variant_name_part = "-" + variant if variant else ""
 
-		if "resource_pack_sha1" in variant_config["vars"]:
-			del variant_config["resource_pack_sha1"]
-		if "resource_pack_path" in variant_config:
-			del variant_config["resource_pack_path"]
-		if "data_pack_path" in variant_config:
-			del variant_config["data_pack_path"]
+		resourcepack_config : dict | None = config.get("resourcepack")
+		datapack_config: dict | None = config.get("datapack")
+
+		name=config.get("name")
+		version=config.get("version")
+		if version == None:
+			version=config.get("versionName")
+
+		if name == None:
+			name = "unnamed"
+		
+		if version == None:
+			version = "1.0.0"
+
+		world_config=config.get("world")
+
+		mc_version_info: VersionInfo = {
+			"initial_supported": None,
+			"latest_supported": None,
+			"lowest_release": None,
+			"current_overlay_version": None,
+		}
 		if resourcepack_config is not None:
-			mc_version_info["first_unsupported_format"] = set_version_vars(variant_config["vars"], True)
+			(mc_version_info["initial_supported"], mc_version_info["latest_supported"]) = get_version(resourcepack_config.get("path"), mc_versions, True)
+		if datapack_config is not None:
+			(data_initial_supported, data_latest_supported) = get_version(datapack_config.get("path"), mc_versions, False)
+			if mc_version_info["initial_supported"] is None or mc_version_info["initial_supported"]["data_version"] < data_initial_supported["data_version"]:
+				mc_version_info["initial_supported"] = data_initial_supported
+			if mc_version_info["latest_supported"] is None or mc_version_info["latest_supported"]["data_version"] > data_latest_supported["data_version"]:
+				mc_version_info["latest_supported"] = data_latest_supported
+
+		initial_supported_override = config.get("initial_supported")
+		if initial_supported_override != None:
+			mc_version_info["initial_supported"] = next(x for x in mc_versions if x["id"] == initial_supported_override)
+		latest_supported_override = config.get("latest_supported")
+		if latest_supported_override != None:
+			mc_version_info["latest_supported"] = next(x for x in mc_versions if x["id"] == latest_supported_override)
+
+		if mc_version_info["initial_supported"] is not None:
+			mc_version_info["lowest_release"] = next((
+				v for v in mc_versions \
+					if v["type"] == "release" and v["data_version"] >= mc_version_info["initial_supported"]["data_version"]
+			), mc_versions[-1])
+
+
+		if mc_version_info["latest_supported"] is not None:
+			mc_version_info["latest_release"] = next((
+				v for v in reversed(mc_versions) if v["type"] == "release" and v["data_version"] <= mc_version_info["latest_supported"]["data_version"]
+			), mc_versions[-1])
+
+		vars = config.get("vars")
+		if(vars is None):
+			vars = {}
+		vars["minecraft_latest_release"] = mc_version_info.get("latest_release") and mc_version_info["latest_release"]["name"]
+		vars["minecraft_initial_release"] = mc_version_info.get("lowest_release") and mc_version_info["lowest_release"]["name"]
+		vars["minecraft_latest_snapshot"] = mc_version_info.get("latest_supported") and mc_version_info["latest_supported"]["name"]
+		vars["minecraft_initial_snapshot"] = mc_version_info.get("initial_supported") and mc_version_info["initial_supported"]["name"]
+		config["vars"] = vars
+
+		def get_version_string(pack_format: tuple[int, int] | None):
+			return pack_format and f"{pack_format[0]}.{pack_format[1]}"
+		
+		def set_version_vars(vars: dict, is_rp: bool):
+			first_unsupported = None
+			vars["min_pack_format"] = mc_version_info.get("initial_supported") and get_version_string(get_version_from_version_info(mc_version_info["initial_supported"], is_rp))
+			max_pack_format = mc_version_info.get("latest_supported") and get_version_from_version_info(mc_version_info["latest_supported"], is_rp)
+			vars["max_pack_format"] = get_version_string(max_pack_format)
+			vars["first_unsupported_format"] = None
+			if max_pack_format is not None:
+				first_unsupported = next((get_version_from_version_info(v, is_rp) for v in mc_versions if get_version_from_version_info(v, is_rp) > max_pack_format), (max_pack_format[0] + 1, 0))
+				vars["first_unsupported_format"] = get_version_string(first_unsupported)
+			return first_unsupported
+
+		if "resource_pack_sha1" in config["vars"]:
+			del config["vars"]["resource_pack_sha1"]
+		if "resource_pack_path" in config:
+			del config["resource_pack_path"]
+		if "data_pack_path" in config:
+			del config["data_pack_path"]
+		if resourcepack_config is not None:
+			mc_version_info["first_unsupported_format"] = set_version_vars(config["vars"], True)
 
 			rppath = f"{target}{os.sep}{name}-{version}-resourcepack{variant_name_part}.zip"
-			iterate_files(variant_config, resourcepack_config, rppath, mc_versions, mc_version_info, 1)
+			iterate_files(config, resourcepack_config, rppath, mc_versions, mc_version_info, 1)
 
 			sha1 = hashlib.sha1()
 			with open(rppath, 'rb') as f:
 				data = f.read()
 				sha1.update(data)
-			variant_config["vars"]["resource_pack_sha1"] = sha1.hexdigest().upper()
-			variant_config["resource_pack_path"] = rppath
+			config["vars"]["resource_pack_sha1"] = sha1.hexdigest().upper()
+			config["resource_pack_path"] = rppath
 
 		if datapack_config is not None:
 			dppath = f"{target}{os.sep}{name}-{version}-datapack{variant_name_part}.zip"
-			mc_version_info["first_unsupported_format"] = set_version_vars(variant_config["vars"], False)
-			iterate_files(variant_config, datapack_config, dppath, mc_versions, mc_version_info, 0)
-			variant_config["data_pack_path"] = dppath
+			mc_version_info["first_unsupported_format"] = set_version_vars(config["vars"], False)
+			iterate_files(config, datapack_config, dppath, mc_versions, mc_version_info, 0)
+			config["data_pack_path"] = dppath
 
 		if world_config is not None:
-			world_vars = variant_config["vars"]
+			world_vars = config["vars"]
 			world_vars["min_pack_format"] = None
 			world_vars["max_pack_format"] = None
 			world_vars["first_unsupported_format"] = None
 			mc_version_info["first_unsupported_format"] = None
-			iterate_files(variant_config, world_config, f"{target}{os.sep}{name}-{version}{variant_name_part}.zip", mc_versions, mc_version_info, 2)
+			iterate_files(config, world_config, f"{target}{os.sep}{name}-{version}{variant_name_part}.zip", mc_versions, mc_version_info, 2)
 
 		includes = config.get("include")
 		if includes != None:
@@ -201,7 +207,7 @@ def main():
 				out_path = f"{target}{os.sep}{out_path}"
 				result = handle_file("", file_name, path[:-len(file_name)], pack_format,
 					min_pack_format, max_pack_format, mc_versions, format_versions,
-					variant_config, {}, mc_version_info, {})["content"]
+					config, {}, mc_version_info, {})["content"]
 
 				try:
 					if isinstance(result, str):
@@ -288,13 +294,14 @@ def iterate_files(config: dict, pack_config: dict, outpath: str, mc_versions: li
 			for v in mc_versions
 		})
 
-		main_pack_format: tuple[int, int] = (
+		max_pack_format: tuple[int, int] = (
 			version_info["latest_supported"]["resource_pack_version"],
 			version_info["latest_supported"]["resource_pack_version_minor"]
 		) if type == 1 else (
 			version_info["latest_supported"]["data_pack_version"],
 			version_info["latest_supported"]["data_pack_version_minor"]
 		)
+		main_pack_format: tuple[int, int] = max_pack_format
 		min_pack_format: tuple[int, int] = (
 			version_info["initial_supported"]["resource_pack_version"],
 			version_info["initial_supported"]["resource_pack_version_minor"]
@@ -303,13 +310,13 @@ def iterate_files(config: dict, pack_config: dict, outpath: str, mc_versions: li
 			version_info["initial_supported"]["data_pack_version_minor"]
 		)
 
-		max_pack_format: tuple[int, int] = version_info["first_unsupported_format"] or (2**31-1, 2**31-1)
+		first_unsupported_format: tuple[int, int] = version_info["first_unsupported_format"] or (2**31-1, 2**31-1)
 		if os.path.isfile(f"{source}{os.sep}pack.mcmeta"):
 			with open(f"{source}{os.sep}pack.mcmeta") as file:
 				pack_mcmeta: PackFormat = json.loads(file.read())
 				main_format_major = pack_mcmeta["pack"].get("pack_format")
 				if main_pack_format[0] != main_format_major:
-					main_pack_format = (pack_mcmeta["pack"]["pack_format"], next((v[1] for v in reversed(format_versions) if v[0] <= main_format_major), 2**31-1))
+					main_pack_format = min(max_pack_format, (pack_mcmeta["pack"]["pack_format"], next((v[1] for v in reversed(format_versions) if v[0] <= main_format_major), 2**31-1)))
 				if min_pack_format < main_pack_format:
 					min_pack_format = main_pack_format
 				supported_formats = pack_mcmeta["pack"].get("supported_formats")
@@ -358,7 +365,7 @@ def iterate_files(config: dict, pack_config: dict, outpath: str, mc_versions: li
 						default_contents = default_strings
 
 					file_result = handle_file(source, file_name, relative_path, main_format,
-						min_pack_format, max_pack_format, mc_versions, format_versions, config,
+						min_pack_format, first_unsupported_format, mc_versions, format_versions, config,
 						pack_config, version_info, default_contents)
 
 					generate_main_as_overlay = not keep_in_main
@@ -366,12 +373,16 @@ def iterate_files(config: dict, pack_config: dict, outpath: str, mc_versions: li
 					for i in range(0, len(pack_formats) - 1):
 						min_format = pack_formats[i]
 						max_format = max_excl_to_max_inc(pack_formats[i+1], format_versions)
+						if max_format < min_pack_format or min_format > first_unsupported_format:
+							continue
+						min_format = max(min_format, min(min_pack_format, main_format))
+						max_format = min(max_format, max(first_unsupported_format, main_format))
 
 						if main_format >= min_format and main_format <= max_format:
 							continue
 
 						overlay_content = handle_file(source, file_name, relative_path, min_format,
-							min_pack_format, max_pack_format, mc_versions, format_versions, config,
+							min_pack_format, first_unsupported_format, mc_versions, format_versions, config,
 							pack_config, version_info, default_contents)\
 							["content"]
 
@@ -391,7 +402,7 @@ def iterate_files(config: dict, pack_config: dict, outpath: str, mc_versions: li
 						main_path = f"{zip_root_path}{os.sep}{file_path}".strip(os.sep)
 						if generate_main_as_overlay:
 							if len(pack_formats) == 0:
-								pack_formats = [min_pack_format, max_pack_format]
+								pack_formats = [min_pack_format, first_unsupported_format]
 							format_range = get_format_range(pack_formats, main_format, format_versions)
 							pack_format_ranges.add(format_range)
 							overlay_prefix = f"{zip_root_path}{os.sep}{get_overlay_dir_name(format_range, type == 1)}".strip(os.sep)
@@ -438,7 +449,7 @@ def iterate_files(config: dict, pack_config: dict, outpath: str, mc_versions: li
 				
 				overlay_prefix = zip_root_path
 				if not keep_in_main:
-					format_range = get_format_range([min_pack_format, max_pack_format], main_format, format_versions)
+					format_range = get_format_range([min_pack_format, first_unsupported_format], main_format, format_versions)
 					pack_format_ranges.add(format_range)
 					overlay_prefix = f"{zip_root_path}{os.sep}{get_overlay_dir_name(format_range, type == 1)}".strip(os.sep)
 					lang_path = f"{overlay_prefix}{os.sep}{lang_path}"
@@ -451,16 +462,11 @@ def iterate_files(config: dict, pack_config: dict, outpath: str, mc_versions: li
 				print(f"{outpath}: {lang_path}")
 				out.writestr(get_zipinfo(is_repo, source, default_lang_path, lang_path), default_lang_contents, zipfile.ZIP_DEFLATED, 9)
 		elif type == 2:
-			if "region" not in created_directories:
-				region_path = f"{zip_root_path}{os.sep}region"
-				out.mkdir(get_zipinfo(is_repo, source, source, region_path))
-				print(f"{outpath}: {region_path}")
-
 			rppath = config.get("resource_pack_path")
 			dppath = config.get("data_pack_path")
 			zip_rootpath_info = out.getinfo(f"{zip_root_path}{os.sep}")
 			if (rppath != None):
-				rp_filename = f"{zip_root_path}{os.sep}resources.zip"
+				rp_filename = f"{zip_root_path}{'' if min_pack_format < (99,0) else f'{os.sep}resourcepacks'}{os.sep}resources.zip"
 				print(f"{outpath}: {rp_filename}")
 				zipinfo = zipfile.ZipInfo.from_file(rppath, rp_filename)
 				rp_source = config["resourcepack"].get("path")
@@ -471,6 +477,10 @@ def iterate_files(config: dict, pack_config: dict, outpath: str, mc_versions: li
 
 				with open(rppath, "rb") as pack_file:
 					out.writestr(zipinfo, pack_file.read(), zipfile.ZIP_DEFLATED, 9)
+
+				if (min_pack_format >= (99,0)):
+					zipinfo = get_zipinfo(rp_is_repo, rp_source, rp_source, f"{zip_root_path}{os.sep}resourcepacks", True)
+					out.mkdir(zipinfo)
 
 			if (dppath != None):
 				dp_filename = f"{zip_root_path}{os.sep}datapacks{os.sep}Fetchr.zip"
@@ -499,6 +509,15 @@ def iterate_files(config: dict, pack_config: dict, outpath: str, mc_versions: li
 
 			if pack != None:
 				pack["pack_format"] = main_pack_format[0]
+				del pack["supported_formats"]
+				pack["min_format"] = min_pack_format[0] if min_pack_format[1] == 0 else min_pack_format
+				pack["max_format"] = max_pack_format[0] \
+							if max_pack_format[1] == 2**31-1 or (max_pack_format[0] < format_versions[-1][0] \
+								and next(f for f in format_versions if f > max_pack_format)[0] > max_pack_format[0]) \
+							else max_pack_format
+				if (min_pack_format < (65, 0) if type == 1 else min_pack_format < (82, 0)):
+					pack["supported_formats"] = [min_pack_format[0], max_pack_format[0]]
+
 				overlays = pack_def.get("overlays")
 				if overlays is None:
 					overlays = {}
