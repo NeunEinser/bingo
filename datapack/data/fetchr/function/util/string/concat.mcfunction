@@ -106,6 +106,5 @@ data \
 	modify storage tmp.fetchr:util concat_strings.second \
 	set from storage io.fetchr:util string
 #NEUN_SCRIPT end
-#NEUN_SCRIPT end
 
 function fetchr:util/string/concat_escaped with storage tmp.fetchr:util concat_strings
