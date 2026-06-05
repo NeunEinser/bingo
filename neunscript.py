@@ -903,11 +903,18 @@ def minify_function_file(file_content: str, pack_format: tuple[int, int], min_fo
 		if not line or line == "#":
 			continue
 
-		if line.startswith("#NEUN_SCRIPT"):
-			match=re.match(r"#NEUN_SCRIPT\s+(.*)", line)
+		if line.startswith("#NEUN_SCRIPT "):
+			match=re.match(r"""^\#NEUN_SCRIPT\s+((?:\s*(?:[^"'\s]+|"(?:[^"\\]+(?:\\\\)*(?:\\")?)+"|'(?:[^'\\]+(?:\\\\)*(?:\\')?)+'))+)$""", line)
 
 			if match != None:
-				command = re.sub(r"\s+", " ", match.group(1)).lower().split(" ")
+				command: list[str] = re.findall(r"""(?:[^"'\s]+|"(?:[^"\\]+(?:\\\\)*(?:\\")?)+"|'(?:[^'\\]+(?:\\\\)*(?:\\')?)+')""", match.group(1).lower())
+				command = [
+					a[1:-1].replace('\\"', '"').replace("\\\\", "\\") if a.startswith('"')
+					else a[1:-1].replace("\\'", "'").replace("\\\\", "\\") if a.startswith("'")
+					else a
+					for a in command
+				]
+
 				if command[0] == "end":
 					if len(stack) < 1:
 						raise IndexError("Encountered unexpected end instruction")
