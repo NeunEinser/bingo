@@ -754,88 +754,97 @@ def handle_structued(
 						to_replace[key] = new_value
 
 				if new_key.startswith("NEUN_SCRIPT "):
-					match=re.match(r"NEUN_SCRIPT\s+(.*)", new_key)
-					if match != None:
-						should_execute_action = False
-						force_child_evaluation = False
-						command = re.sub(r"\s+", " ", match.group(1)).lower().split(" ")
+					match=re.match(r"""^NEUN_SCRIPT\s+((?:\s*(?:[^"'\s]+|"(?:[^"\\]+(?:\\\\)*(?:\\")?)+"|'(?:[^'\\]+(?:\\\\)*(?:\\')?)+'))+)$""", new_key)
 
-						command_offset = 1 if command[0] not in ["replace", "remove"] else 2
-						if len(command) == command_offset:
-							should_execute_action = True
-						elif len(command) < command_offset:
-							raise ValueError(f"command needs {command_offset} arguments")
-						else:
-							match command[command_offset]:
-								case "if" | "unless":
-									if len(command) != command_offset + 2:
-										raise ValueError("if/unless needs one argument")
-									value = get_variable(command[command_offset + 1], config)
-									value = value != None and (
-										(isinstance(value, bool) and value)
-										or (isinstance(value, str) and value.lower() == "true")
-									)
-									if value == (command[command_offset] == "if"):
-										should_execute_action = True
-									
-								case "since" | "until":
-									force_child_evaluation = True
+					if match == None:
+						raise ValueError("unparsable neunscript line")
+					should_execute_action = False
+					force_child_evaluation = False
 
-									if len(command) < command_offset + 2:
-										raise ValueError("until / since needs at least one argument")
+					command: list[str] = re.findall(r"""(?:[^"'\s]+|"(?:[^"\\]+(?:\\\\)*(?:\\")?)+"|'(?:[^'\\]+(?:\\\\)*(?:\\')?)+')""", match.group(1).lower())
+					command = [
+						a[1:-1].replace('\\"', '"').replace("\\\\", "\\") if a.startswith('"')
+						else a[1:-1].replace("\\'", "'").replace("\\\\", "\\") if a.startswith("'")
+						else a
+						for a in command
+					]
 
-									min_value = min_format
-									max_value = max_format
+					command_offset = 1 if command[0] not in ["replace", "remove"] else 2
+					if len(command) == command_offset:
+						should_execute_action = True
+					elif len(command) < command_offset:
+						raise ValueError(f"command needs {command_offset} arguments")
+					else:
+						match command[command_offset]:
+							case "if" | "unless":
+								if len(command) != command_offset + 2:
+									raise ValueError("if/unless needs one argument")
+								value = get_variable(command[command_offset + 1], config)
+								value = value != None and (
+									(isinstance(value, bool) and value)
+									or (isinstance(value, str) and value.lower() == "true")
+								)
+								if value == (command[command_offset] == "if"):
+									should_execute_action = True
+								
+							case "since" | "until":
+								force_child_evaluation = True
 
-									if command[command_offset] == "since":
-										min_value = to_pack_format_tuple(list(map(lambda v: int(v), command[command_offset + 1].split("."))))
-										if len(command) > command_offset + 2 and command[command_offset + 2] == "until":
-											if len(command) < command_offset + 4:
-												raise ValueError("Syntax: since <pack_format> until <pack_format>")
-											max_value = to_pack_format_tuple(list(map(lambda v: int(v), command[command_offset + 3].split("."))))
-										elif min_value >= max_format:
-											max_value = (2**31 - 1, 2**31 - 1)
+								if len(command) < command_offset + 2:
+									raise ValueError("until / since needs at least one argument")
+
+								min_value = min_format
+								max_value = max_format
+
+								if command[command_offset] == "since":
+									min_value = to_pack_format_tuple(list(map(lambda v: int(v), command[command_offset + 1].split("."))))
+									if len(command) > command_offset + 2 and command[command_offset + 2] == "until":
+										if len(command) < command_offset + 4:
+											raise ValueError("Syntax: since <pack_format> until <pack_format>")
+										max_value = to_pack_format_tuple(list(map(lambda v: int(v), command[command_offset + 3].split("."))))
+									elif min_value >= max_format:
+										max_value = (2**31 - 1, 2**31 - 1)
+								else:
+									max_value = to_pack_format_tuple(list(map(lambda v: int(v), command[command_offset + 1].split("."))))
+									if max_value < max_format:
+										pack_formats.add(max_format)
 									else:
-										max_value = to_pack_format_tuple(list(map(lambda v: int(v), command[command_offset + 1].split("."))))
-										if max_value < max_format:
-											pack_formats.add(max_format)
-										else:
-											pack_formats.add((2**31 - 1, 2**31 - 1))
-										if max_value <= min_format:
-											min_value = (1, 0)
+										pack_formats.add((2**31 - 1, 2**31 - 1))
+									if max_value <= min_format:
+										min_value = (1, 0)
 
-									pack_formats.add(min_value)
-									pack_formats.add(max_value)
+								pack_formats.add(min_value)
+								pack_formats.add(max_value)
 
-									if pack_format >= min_value and pack_format < max_value:
-										should_execute_action = True
-										if min_value > min_format:
-											pack_formats.add(min_format)
+								if pack_format >= min_value and pack_format < max_value:
+									should_execute_action = True
+									if min_value > min_format:
+										pack_formats.add(min_format)
 
-						val_result = None
-						if should_execute_action:
-							match command[0]:
-								case "remove_self":
-									keep_self = False
-								case "remove":
+					val_result = None
+					if should_execute_action:
+						match command[0]:
+							case "remove_self":
+								keep_self = False
+							case "remove":
+								to_remove.add(command[1])
+							case "merge":
+								val_result = handle_structued(value, file_path, config, mc_version_info, pack_format, min_format, max_format, is_nbt, new_key)
+								if val_result[1] and isinstance(value, dict):
+									for k, v in value.items():
+										to_replace[k] = v
+							case "replace":
+								val_result = handle_structued(value, file_path, config, mc_version_info, pack_format, min_format, max_format, is_nbt, new_key)
+								if val_result[1]:
+									to_replace[command[1]] = value
+								else:
 									to_remove.add(command[1])
-								case "merge":
-									val_result = handle_structued(value, file_path, config, mc_version_info, pack_format, min_format, max_format, is_nbt, new_key)
-									if val_result[1] and isinstance(value, dict):
-										for k, v in value.items():
-											to_replace[k] = v
-								case "replace":
-									val_result = handle_structued(value, file_path, config, mc_version_info, pack_format, min_format, max_format, is_nbt, new_key)
-									if val_result[1]:
-										to_replace[command[1]] = value
-									else:
-										to_remove.add(command[1])
 
-						if force_child_evaluation and val_result is None:
-							val_result = handle_structued(value, file_path, config, mc_version_info, pack_format, min_format, max_format, is_nbt, new_key)
-						if val_result is not None:
-							pack_formats.update(val_result[0])
-						to_remove.add(new_key)
+					if force_child_evaluation and val_result is None:
+						val_result = handle_structued(value, file_path, config, mc_version_info, pack_format, min_format, max_format, is_nbt, new_key)
+					if val_result is not None:
+						pack_formats.update(val_result[0])
+					to_remove.add(new_key)
 							
 				else:
 					val_result = handle_structued(value, file_path, config, mc_version_info, pack_format, min_format, max_format, is_nbt, new_key)
@@ -906,112 +915,113 @@ def minify_function_file(file_content: str, pack_format: tuple[int, int], min_fo
 		if line.startswith("#NEUN_SCRIPT "):
 			match=re.match(r"""^\#NEUN_SCRIPT\s+((?:\s*(?:[^"'\s]+|"(?:[^"\\]+(?:\\\\)*(?:\\")?)+"|'(?:[^'\\]+(?:\\\\)*(?:\\')?)+'))+)$""", line)
 
-			if match != None:
-				command: list[str] = re.findall(r"""(?:[^"'\s]+|"(?:[^"\\]+(?:\\\\)*(?:\\")?)+"|'(?:[^'\\]+(?:\\\\)*(?:\\')?)+')""", match.group(1).lower())
-				command = [
-					a[1:-1].replace('\\"', '"').replace("\\\\", "\\") if a.startswith('"')
-					else a[1:-1].replace("\\'", "'").replace("\\\\", "\\") if a.startswith("'")
-					else a
-					for a in command
-				]
+			if match == None:
+				raise ValueError("unparsable neunscript line")
+			command: list[str] = re.findall(r"""(?:[^"'\s]+|"(?:[^"\\]+(?:\\\\)*(?:\\")?)+"|'(?:[^'\\]+(?:\\\\)*(?:\\')?)+')""", match.group(1).lower())
+			command = [
+				a[1:-1].replace('\\"', '"').replace("\\\\", "\\") if a.startswith('"')
+				else a[1:-1].replace("\\'", "'").replace("\\\\", "\\") if a.startswith("'")
+				else a
+				for a in command
+			]
 
-				if command[0] == "end":
-					if len(stack) < 1:
-						raise IndexError("Encountered unexpected end instruction")
-					stack.pop()
+			if command[0] == "end":
+				if len(stack) < 1:
+					raise IndexError("Encountered unexpected end instruction")
+				stack.pop()
 
-				elif command[0] == "uncomment":
-					uncomment = 1
-					remove = stack[-1]["remove"]
-					if (remove > 0):
-						remove = 0
-					if len(command) > 1:
-						try:
-							uncomment = int(command[1])
-						except ValueError:
-							pass
-					stack.append({ "remove": remove, "uncomment": uncomment })
+			elif command[0] == "uncomment":
+				uncomment = 1
+				remove = stack[-1]["remove"]
+				if (remove > 0):
+					remove = 0
+				if len(command) > 1:
+					try:
+						uncomment = int(command[1])
+					except ValueError:
+						pass
+				stack.append({ "remove": remove, "uncomment": uncomment })
 
-				elif command[0] == "remove":
-					remove = 1
-					if len(command) > 1:
-						try:
-							remove = int(command[1])
-						except ValueError:
-							pass
-					stack.append({ "remove": remove, "uncomment": 0 })
+			elif command[0] == "remove":
+				remove = 1
+				if len(command) > 1:
+					try:
+						remove = int(command[1])
+					except ValueError:
+						pass
+				stack.append({ "remove": remove, "uncomment": 0 })
+			
+			elif command[0] == "if" or command[0] == "unless":
+				uncomment = 0
+				remove = stack[-1]["remove"]
+				if (remove > 0):
+					remove = 0
+				if len(command) < 2:
+					raise ValueError("if/unless needs at least one argument")
 				
-				elif command[0] == "if" or command[0] == "unless":
-					uncomment = 0
-					remove = stack[-1]["remove"]
-					if (remove > 0):
-						remove = 0
-					if len(command) < 2:
-						raise ValueError("if/unless needs at least one argument")
-					
-					result = True
-					if len(command) == 2:
-						result = (command[1].lower() == "true") == (command[0] == "if")
-					elif len(command) == 4:
-						match command[2]:
-							case "=":
-								result = command[1] == command[3]
-							case "!=":
-								result = command[1] != command[3]
-							case "<":
-								result = int(command[1]) < int(command[3])
-							case "<=":
-								result = int(command[1]) <= int(command[3])
-							case ">":
-								result = int(command[1]) > int(command[3])
-							case ">=":
-								result = int(command[1]) >= int(command[3])
-							case _:
-								raise ValueError(f"cannot parse conditional {command[2]} in if/unless")
-					else:
-						raise ValueError(f"if/unless needs either 1 or 3 arguments")
-					
-					if result:
-						uncomment = -1
-					else:
-						remove = -1
-
-					stack.append({ "remove": remove, "uncomment": uncomment })
+				result = True
+				if len(command) == 2:
+					result = (command[1].lower() == "true") == (command[0] == "if")
+				elif len(command) == 4:
+					match command[2]:
+						case "=":
+							result = command[1] == command[3]
+						case "!=":
+							result = command[1] != command[3]
+						case "<":
+							result = int(command[1]) < int(command[3])
+						case "<=":
+							result = int(command[1]) <= int(command[3])
+						case ">":
+							result = int(command[1]) > int(command[3])
+						case ">=":
+							result = int(command[1]) >= int(command[3])
+						case _:
+							raise ValueError(f"cannot parse conditional {command[2]} in if/unless")
+				else:
+					raise ValueError(f"if/unless needs either 1 or 3 arguments in {line}")
 				
-				elif command[0] == "until" or command[0] == "since":
-					uncomment = 0
-					remove = stack[-1]["remove"]
-					if (remove > 0):
-						remove = 0
-					if len(command) < 2:
-						raise ValueError("until/since needs at least one argument")
-					min_value = min_format
-					max_value = max_format
-					if command[0] == "since":
-						min_value = to_pack_format_tuple(list(map(lambda v: int(v), command[1].split("."))))
-						if len(command) >= 4 and command[2] == "until":
-							max_value = to_pack_format_tuple(list(map(lambda v: int(v), command[3].split("."))))
-						elif min_value >= max_format:
-							max_value = (2**31 - 1, 2**31 - 1) 
-					else:
-						max_value = to_pack_format_tuple(list(map(lambda v: int(v), command[1].split("."))))
-						if max_value < max_format:
-							pack_formats.add(max_format)
-						else:
-							pack_formats.add((2**31 - 1, 2**31 - 1))
-						if max_value <= min_format and command[0]:
-							min_value = (1, 0)
+				if result:
+					uncomment = -1
+				else:
+					remove = -1
 
-					pack_formats.add(min_value)
-					pack_formats.add(max_value)
-
-					if pack_format >= min_value and pack_format < max_value:
-						uncomment = -1
-						if min_value > min_format:
-							pack_formats.add(min_format)
+				stack.append({ "remove": remove, "uncomment": uncomment })
+			
+			elif command[0] == "until" or command[0] == "since":
+				uncomment = 0
+				remove = stack[-1]["remove"]
+				if (remove > 0):
+					remove = 0
+				if len(command) < 2:
+					raise ValueError("until/since needs at least one argument")
+				min_value = min_format
+				max_value = max_format
+				if command[0] == "since":
+					min_value = to_pack_format_tuple(list(map(lambda v: int(v), command[1].split("."))))
+					if len(command) >= 4 and command[2] == "until":
+						max_value = to_pack_format_tuple(list(map(lambda v: int(v), command[3].split("."))))
+					elif min_value >= max_format:
+						max_value = (2**31 - 1, 2**31 - 1) 
+				else:
+					max_value = to_pack_format_tuple(list(map(lambda v: int(v), command[1].split("."))))
+					if max_value < max_format:
+						pack_formats.add(max_format)
 					else:
-						remove = -1
-					stack.append({ "remove": remove, "uncomment": uncomment })
+						pack_formats.add((2**31 - 1, 2**31 - 1))
+					if max_value <= min_format and command[0]:
+						min_value = (1, 0)
+
+				pack_formats.add(min_value)
+				pack_formats.add(max_value)
+
+				if pack_format >= min_value and pack_format < max_value:
+					uncomment = -1
+					if min_value > min_format:
+						pack_formats.add(min_format)
+				else:
+					remove = -1
+				stack.append({ "remove": remove, "uncomment": uncomment })
 
 		elif stack[-1]["remove"] != 0:
 			if stack[-1]["remove"] > 0:
