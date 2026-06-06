@@ -7,6 +7,14 @@
 		"rp_version": "40",
 		"realms": false
 	},
+	"versions": {
+		"26.1+": {
+			"initial_supported": "26.1-snapshot-6",
+			"world": {
+				"path": "world_26.1+"
+			}
+		}
+	},
 	"remove_file_types": [
 		"xcf", "py", "jsonc"
 	],
