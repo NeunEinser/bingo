@@ -1,10 +1,6 @@
 # 5.3.1
 5.3.1 fixes two overlooked issues in 5.3.
 
-When updating a world opened in 5.3-pre1 or later in Minecraft version
-1.21.5-1.21.10, all armor stand equipment of the armor stands in the tutorial
-area will be replaced in case it has been changed by players.
-
 ## Bug fixes
 - Fixed any tipped arrow being falsely detected as slowness or poison arrow
   after reloading the world under certain conditions
@@ -12,8 +8,10 @@ area will be replaced in case it has been changed by players.
   - In 1.21.9 and 1.21.10 after reloading the world during an active game
   - Or if the worldspawn would not be in the lobby dimension for some other
     reason during a reload
-- Fixed armor stands in the lobby tutorial area spawning without equipment in a
-  fresh install in version 1.21.5-1.21.10
+- Fixed armor stands in the lobby tutorial area spawning without equipment in
+  version 1.21.5-1.21.10, and deleting equipment when doing a world upgrade from
+  earlier Fetchr versions (5.3-beta5 or earlier)
+  - The equipment will be restored when upgrading a world in those cases.
 
 # 5.3
 
