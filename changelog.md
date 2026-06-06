@@ -11,7 +11,7 @@ area will be replaced in case it has been changed by players.
   - In 1.21-1.21.8 after reloading the world at any point
   - In 1.21.9 and 1.21.10 after reloading the world during an active game
   - Or if the worldspawn would not be in the lobby dimension for some other
-    reason
+    reason during a reload
 - Fixed armor stands in the lobby tutorial area spawning without equipment in a
   fresh install in version 1.21.5-1.21.10
 
