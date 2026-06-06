@@ -1494,7 +1494,7 @@ execute \
 
 	execute \
 		if score $lobby_generated fetchr.state matches 3..4 \
-		run schedule function fetchr:init/items/lobby_loaded 1t
+		run schedule function fetchr:init/items/exec 1t
 #endregion
 #region initialize hud components
 	#>
