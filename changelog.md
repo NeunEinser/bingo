@@ -1,3 +1,12 @@
+# 5.3.1
+5.3.1 fixes an overlooked bug mis-detecting any tipped arrow as slowness or
+poison arrow after reloading the game in 1.21-1.21.8; or in 1.21.9 and 1.21.10
+if reloading the world during an active game.
+
+This bug happened when the lobby is not the worldspawn (which is not supported
+in early versions and in 1.21.9 and 1.21.10 will not be the case when a player
+is playing inside an active game)
+
 # 5.3
 
 5.3 brings compatability with all Minecraft versions from 1.21 to 1.21.10,
@@ -455,8 +464,6 @@ time and the score `$lobby_genreated` in `fetchr.state` equals 4.
   loaded by at least one player
 - `#fetchr:spawn_preview/tick`: Ticking function that is called while the spawn
   preview is available
-- `#fetchr:lobby/tick`: Ticking function that is called while the lobby is
-  loaded by at least one player
 - `#fetchr:player_tick`: Ticking function that is called for every player
   - `@s`: The current player who is in the lobby
   - Position: Function is executed at the player's location
