@@ -11,7 +11,9 @@ data modify storage tmp.fetchr:init items set from storage fetchr:registries ite
 data modify storage fetchr:items categories set from storage fetchr:registries categories
 data remove storage fetchr:items items
 
-function fetchr:init/items/first_pass with storage tmp.fetchr:init items[-1]
+execute \
+	in fetchr:lobby \
+	run function fetchr:init/items/first_pass with storage tmp.fetchr:init items[-1]
 function fetchr:init/items/second_pass
 
 execute unless data storage fetchr:items active_tags run data modify storage fetchr:items active_tags set value ["fetchr:default"]
