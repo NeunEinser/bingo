@@ -2674,17 +2674,24 @@ data modify storage fetchr:registries structures append value {\
 	entrance_position: [I; 0, 2, 10]\
 }
 #NEUN_SCRIPT end
-#NEUN_SCRIPT since 62 until 70
+#NEUN_SCRIPT since 62 until 63
 #data modify storage fetchr:registries structures append value {\
 	id: "fetchr:tutorial",\
 	version: 2,\
 	entrance_position: [I; 0, 2, 19]\
 }
 #NEUN_SCRIPT end
+#NEUN_SCRIPT since 63 until 70
+#data modify storage fetchr:registries structures append value {\
+	id: "fetchr:tutorial",\
+	version: 4,\
+	entrance_position: [I; 0, 2, 19]\
+}
+#NEUN_SCRIPT end
 #NEUN_SCRIPT since 70
 data modify storage fetchr:registries structures append value {\
 	id: "fetchr:tutorial",\
-	version: 3,\
+	version: 5,\
 	entrance_position: [I; 0, 2, 19]\
 }
 #NEUN_SCRIPT end
