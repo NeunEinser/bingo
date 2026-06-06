@@ -1,11 +1,19 @@
 # 5.3.1
-5.3.1 fixes an overlooked bug mis-detecting any tipped arrow as slowness or
-poison arrow after reloading the game in 1.21-1.21.8; or in 1.21.9 and 1.21.10
-if reloading the world during an active game.
+5.3.1 fixes two overlooked issues in 5.3.
 
-This bug happened when the lobby is not the worldspawn (which is not supported
-in early versions and in 1.21.9 and 1.21.10 will not be the case when a player
-is playing inside an active game)
+When updating a world opened in 5.3-pre1 or later in Minecraft version
+1.21.5-1.21.10, all armor stand equipment of the armor stands in the tutorial
+area will be replaced in case it has been changed by players.
+
+## Bug fixes
+- Fixed any tipped arrow being falsely detected as slowness or poison arrow
+  after reloading the world under certain conditions
+  - In 1.21-1.21.8 after reloading the world at any point
+  - In 1.21.9 and 1.21.10 after reloading the world during an active game
+  - Or if the worldspawn would not be in the lobby dimension for some other
+    reason
+- Fixed armor stands in the lobby tutorial area spawning without equipment in a
+  fresh install in version 1.21.5-1.21.10
 
 # 5.3
 
