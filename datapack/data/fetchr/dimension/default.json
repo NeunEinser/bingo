@@ -8619,6 +8619,37 @@
 					}
 				},
 				{
+					"NEUN_SCRIPT remove_self until 101.2": null,
+					"biome": "minecraft:sulfur_caves",
+					"parameters": {
+						"NEUN_SCRIPT replace weirdness until 105": [ -1.1, -0.95 ],
+						"weirdness": [ -1.1, -0.85 ],
+						"NEUN_SCRIPT replace continentalness until 105": [ -1, 1 ],
+						"continentalness": [ -0.21, 0.55 ],
+						"NEUN_SCRIPT replace erosion until 105": [ -1, 1 ],
+						"erosion": [ 0.45, 1 ],
+						"temperature": [ -1, 1 ],
+						"humidity": [ -1, 0.7 ],
+						"depth": [ 0.2, 0.9 ],
+						"offset": 0
+					}
+				},
+				{
+					"NEUN_SCRIPT remove_self until 101.2": null,
+					"biome": "minecraft:sulfur_caves",
+					"parameters": {
+						"weirdness": [ -1.1, -1 ],
+						"NEUN_SCRIPT replace continentalness until 105": [ -1, 1 ],
+						"continentalness": [ -0.21, 0.55 ],
+						"NEUN_SCRIPT replace erosion until 105": [ -1, 1 ],
+						"erosion": [ 0.45, 1 ],
+						"temperature": [ -1, 1 ],
+						"humidity": [ 0.7, 1 ],
+						"depth": [ 0.2, 0.9 ],
+						"offset": 0
+					}
+				},
+				{
 					"biome": "minecraft:lush_caves",
 					"parameters": {
 						"weirdness": [ -1, 1 ],
@@ -17262,7 +17293,7 @@
 						"erosion": [ -1, -0.375 ],
 						"temperature": [ -1, 1 ],
 						"humidity": [ -1, 1 ],
-						"depth": [ 1.1, 1.1 ],
+						"depth": 1.1,
 						"offset": 0
 					}
 				}
