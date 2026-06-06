@@ -317,16 +317,8 @@ def iterate_files(config: dict, pack_config: dict, outpath: str, mc_versions: li
 				main_format_major = pack_mcmeta["pack"].get("pack_format")
 				if main_pack_format[0] != main_format_major:
 					main_pack_format = min(max_pack_format, (pack_mcmeta["pack"]["pack_format"], next((v[1] for v in reversed(format_versions) if v[0] <= main_format_major), 2**31-1)))
-				if min_pack_format < main_pack_format:
-					min_pack_format = main_pack_format
-				supported_formats = pack_mcmeta["pack"].get("supported_formats")
-				if supported_formats is not None:
-					if isinstance(supported_formats, dict):
-						min_pack_format = min(min_pack_format, (supported_formats["min_inclusive"], 0))
-					else:
-						min_pack_format = min(min_pack_format, (supported_formats[0], 0))
-					if min_pack_format < (16, 0) and main_pack_format >= (16, 0):
-						main_pack_format = (15, 0)
+				if min_pack_format < (16, 0) and main_pack_format >= (16, 0):
+					main_pack_format = (15, 0)
 
 		if remove_extensions is not None:
 			for i, ext in enumerate(remove_extensions):
@@ -403,7 +395,7 @@ def iterate_files(config: dict, pack_config: dict, outpath: str, mc_versions: li
 						if generate_main_as_overlay:
 							if len(pack_formats) == 0:
 								pack_formats = [min_pack_format, first_unsupported_format]
-							format_range = get_format_range(pack_formats, main_format, format_versions)
+							format_range = get_format_range(pack_formats, main_format, format_versions, min_pack_format, first_unsupported_format)
 							pack_format_ranges.add(format_range)
 							overlay_prefix = f"{zip_root_path}{os.sep}{get_overlay_dir_name(format_range, type == 1)}".strip(os.sep)
 							main_path = f"{overlay_prefix}{os.sep}{file_path}"
@@ -449,7 +441,7 @@ def iterate_files(config: dict, pack_config: dict, outpath: str, mc_versions: li
 				
 				overlay_prefix = zip_root_path
 				if not keep_in_main:
-					format_range = get_format_range([min_pack_format, first_unsupported_format], main_format, format_versions)
+					format_range = get_format_range([min_pack_format, first_unsupported_format], main_format, format_versions, min_pack_format, first_unsupported_format)
 					pack_format_ranges.add(format_range)
 					overlay_prefix = f"{zip_root_path}{os.sep}{get_overlay_dir_name(format_range, type == 1)}".strip(os.sep)
 					lang_path = f"{overlay_prefix}{os.sep}{lang_path}"
@@ -605,17 +597,17 @@ class FileResult(TypedDict):
 	formats: set[tuple[int, int]]
 	content: bytes | str | None
 
-def get_format_range(formats: list[tuple[int, int]], format: tuple[int, int], format_versions: list[tuple[int, int]]):
+def get_format_range(formats: list[tuple[int, int]], format: tuple[int, int], format_versions: list[tuple[int, int]], min_pack_format: tuple[int, int], first_unsupported_format: tuple[int, int]):
 	min_format = (0, 0)
 	max_format = None
 	for i in range(0, len(formats)):
 		min_format = formats[i]
 		max_format = None
 		if len(formats) > i + 1:
-			max_format = max_excl_to_max_inc(formats[i+1], format_versions)
+			max_format = max_excl_to_max_inc(min(formats[i+1], first_unsupported_format), format_versions)
 		if min_format <= format and (max_format is None or max_format >= format):
 			break
-	return (min_format, max_format)
+	return (max(min_format, min_pack_format), max_format)
 
 def max_excl_to_max_inc(max_excl: tuple[int, int], format_versions: list[tuple[int, int]]):
 	max_inc = max_excl
@@ -666,7 +658,7 @@ def handle_file(
 		set_default_values(nbt_result, default_contents)
 
 		formats = sorted(nbt_result[0])
-		min_format = get_format_range(formats, pack_format, format_versions)[0]
+		min_format = get_format_range(formats, pack_format, format_versions, min_pack_format, max_pack_format)[0]
 		min_format = max(min_pack_format, min_format)
 		version = next(v for v in versions if (get_version_from_version_info(v, False)) >= min_format)
 		data_version = version["data_version"]
