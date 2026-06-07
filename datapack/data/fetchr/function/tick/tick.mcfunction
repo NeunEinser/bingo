@@ -13,48 +13,48 @@
 	#return fail
 #NEUN_SCRIPT end
 
-#NEUN_SCRIPT until {NEUN_SCRIPT:min_pack_format}
-	#NEUN_SCRIPT if "{NEUN_SCRIPT:minecraft_initial_release}" = "{NEUN_SCRIPT:minecraft_latest_snapshot}"
+#NEUN_SCRIPT until {NEUN_SCRIPT:builtin.min_pack_format}
+	#NEUN_SCRIPT if "{NEUN_SCRIPT:builtin.minecraft_version_info.initial_release.name}" = "{NEUN_SCRIPT:builtin.minecraft_version_info.latest_supported.name}"
 		#tellraw @a {\
 			"translate": "fetchr.error.incompatible_minecraft_version.single_compatible",\
 			"color": "red",\
-			"with": [ "{NEUN_SCRIPT:minecraft_initial_release}" ]\
+			"with": [ "{NEUN_SCRIPT:builtin.minecraft_version_info.initial_release.name}" ]\
 		}
 	#NEUN_SCRIPT end
 
-	#NEUN_SCRIPT if "{NEUN_SCRIPT:minecraft_initial_release}" != "{NEUN_SCRIPT:minecraft_latest_snapshot}"
-		#NEUN_SCRIPT if "{NEUN_SCRIPT:minecraft_initial_release}" = "{NEUN_SCRIPT:minecraft_latest_release}"
+	#NEUN_SCRIPT if "{NEUN_SCRIPT:builtin.minecraft_version_info.initial_release.name}" != "{NEUN_SCRIPT:builtin.minecraft_version_info.latest_supported.name}"
+		#NEUN_SCRIPT if "{NEUN_SCRIPT:builtin.minecraft_version_info.initial_release.name}" = "{NEUN_SCRIPT:builtin.minecraft_version_info.latest_release.name}"
 			#tellraw @a {\
 				"translate": "fetchr.error.incompatible_minecraft_version.single_compatible.with_latest_snapshot",\
 				"color": "red",\
-				"with": [ "{NEUN_SCRIPT:minecraft_initial_release}", "{NEUN_SCRIPT:minecraft_latest_snapshot}" ]\
+				"with": [ "{NEUN_SCRIPT:builtin.minecraft_version_info.initial_release.name}", "{NEUN_SCRIPT:builtin.minecraft_version_info.latest_supported.name}" ]\
 			}
 		#NEUN_SCRIPT end
 
-		#NEUN_SCRIPT if "{NEUN_SCRIPT:minecraft_initial_release}" != "{NEUN_SCRIPT:minecraft_latest_release}"
-			#NEUN_SCRIPT if "{NEUN_SCRIPT:minecraft_latest_release}" = "{NEUN_SCRIPT:minecraft_latest_snapshot}"
+		#NEUN_SCRIPT if "{NEUN_SCRIPT:builtin.minecraft_version_info.initial_release.name}" != "{NEUN_SCRIPT:builtin.minecraft_version_info.latest_release.name}"
+			#NEUN_SCRIPT if "{NEUN_SCRIPT:builtin.minecraft_version_info.latest_release.name}" = "{NEUN_SCRIPT:builtin.minecraft_version_info.latest_supported.name}"
 				#tellraw @a {\
 					"translate": "fetchr.error.incompatible_minecraft_version.multiple_compatible",\
 					"color": "red",\
-					"with": [ "{NEUN_SCRIPT:minecraft_initial_release}", "{NEUN_SCRIPT:minecraft_latest_release}" ]\
+					"with": [ "{NEUN_SCRIPT:builtin.minecraft_version_info.initial_release.name}", "{NEUN_SCRIPT:builtin.minecraft_version_info.latest_release.name}" ]\
 				}
 			#NEUN_SCRIPT end
 
-			#NEUN_SCRIPT if "{NEUN_SCRIPT:minecraft_latest_release}" != "{NEUN_SCRIPT:minecraft_latest_snapshot}"
+			#NEUN_SCRIPT if "{NEUN_SCRIPT:builtin.minecraft_version_info.latest_release.name}" != "{NEUN_SCRIPT:builtin.minecraft_version_info.latest_supported.name}"
 				#tellraw @a {\
 					"translate": "fetchr.error.incompatible_minecraft_version.multiple_compatible.with_latest_snapshot",\
 					"color": "red",\
 					"with": [\
-						"{NEUN_SCRIPT:minecraft_initial_release}",\
-						"{NEUN_SCRIPT:minecraft_latest_release}",\
-						"{NEUN_SCRIPT:minecraft_latest_snapshot}"\
+						"{NEUN_SCRIPT:builtin.minecraft_version_info.initial_release.name}",\
+						"{NEUN_SCRIPT:builtin.minecraft_version_info.latest_release.name}",\
+						"{NEUN_SCRIPT:builtin.minecraft_version_info.latest_supported.name}"\
 					]\
 				}
 			#NEUN_SCRIPT end
 		#NEUN_SCRIPT end
 	#NEUN_SCRIPT end
 #NEUN_SCRIPT end
-#NEUN_SCRIPT since {NEUN_SCRIPT:min_pack_format} until {NEUN_SCRIPT:first_unsupported_format}
+#NEUN_SCRIPT since {NEUN_SCRIPT:builtin.min_pack_format} until {NEUN_SCRIPT:builtin.first_unsupported_format}
 	execute \
 		in fetchr:lobby \
 		as @e[x=0,y=0,z=0,distance=..1,limit=1] \

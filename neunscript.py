@@ -37,7 +37,7 @@ class PackFormat(TypedDict):
 
 class VersionInfo(TypedDict):
 	initial_supported: dict | None
-	lowest_release: dict | None
+	initial_release: dict | None
 	latest_supported: dict | None
 	first_unsupported_format: dict | None
 
@@ -94,7 +94,7 @@ def main():
 		mc_version_info: VersionInfo = {
 			"initial_supported": None,
 			"latest_supported": None,
-			"lowest_release": None,
+			"initial_release": None,
 			"current_overlay_version": None,
 		}
 		if resourcepack_config is not None:
@@ -114,7 +114,7 @@ def main():
 			mc_version_info["latest_supported"] = next(x for x in mc_versions if x["id"] == latest_supported_override)
 
 		if mc_version_info["initial_supported"] is not None:
-			mc_version_info["lowest_release"] = next((
+			mc_version_info["initial_release"] = next((
 				v for v in mc_versions \
 					if v["type"] == "release" and v["data_version"] >= mc_version_info["initial_supported"]["data_version"]
 			), mc_versions[-1])
@@ -128,10 +128,7 @@ def main():
 		vars = config.get("vars")
 		if(vars is None):
 			vars = {}
-		vars["minecraft_latest_release"] = mc_version_info.get("latest_release") and mc_version_info["latest_release"]["name"]
-		vars["minecraft_initial_release"] = mc_version_info.get("lowest_release") and mc_version_info["lowest_release"]["name"]
-		vars["minecraft_latest_snapshot"] = mc_version_info.get("latest_supported") and mc_version_info["latest_supported"]["name"]
-		vars["minecraft_initial_snapshot"] = mc_version_info.get("initial_supported") and mc_version_info["initial_supported"]["name"]
+		vars["builtin"] = { "minecraft_version_info": mc_version_info }
 		config["vars"] = vars
 
 		def get_version_string(pack_format: tuple[int, int] | None):
@@ -139,17 +136,17 @@ def main():
 		
 		def set_version_vars(vars: dict, is_rp: bool):
 			first_unsupported = None
-			vars["min_pack_format"] = mc_version_info.get("initial_supported") and get_version_string(get_version_from_version_info(mc_version_info["initial_supported"], is_rp))
+			vars["builtin"]["min_pack_format"] = mc_version_info.get("initial_supported") and get_version_string(get_version_from_version_info(mc_version_info["initial_supported"], is_rp))
 			max_pack_format = mc_version_info.get("latest_supported") and get_version_from_version_info(mc_version_info["latest_supported"], is_rp)
-			vars["max_pack_format"] = get_version_string(max_pack_format)
-			vars["first_unsupported_format"] = None
+			vars["builtin"]["max_pack_format"] = get_version_string(max_pack_format)
+			vars["builtin"]["first_unsupported_format"] = None
 			if max_pack_format is not None:
 				first_unsupported = next((get_version_from_version_info(v, is_rp) for v in mc_versions if get_version_from_version_info(v, is_rp) > max_pack_format), (max_pack_format[0] + 1, 0))
-				vars["first_unsupported_format"] = get_version_string(first_unsupported)
+				vars["builtin"]["first_unsupported_format"] = get_version_string(first_unsupported)
 			return first_unsupported
 
-		if "resource_pack_sha1" in config["vars"]:
-			del config["vars"]["resource_pack_sha1"]
+		if "resource_pack_sha1" in config["vars"]["builtin"]:
+			del config["vars"]["builtin"]["resource_pack_sha1"]
 		if "resource_pack_path" in config:
 			del config["resource_pack_path"]
 		if "data_pack_path" in config:
@@ -164,7 +161,7 @@ def main():
 			with open(rppath, 'rb') as f:
 				data = f.read()
 				sha1.update(data)
-			config["vars"]["resource_pack_sha1"] = sha1.hexdigest().upper()
+			config["vars"]["builtin"]["resource_pack_sha1"] = sha1.hexdigest().upper()
 			config["resource_pack_path"] = rppath
 
 		if datapack_config is not None:
@@ -175,9 +172,9 @@ def main():
 
 		if world_config is not None:
 			world_vars = config["vars"]
-			world_vars["min_pack_format"] = None
-			world_vars["max_pack_format"] = None
-			world_vars["first_unsupported_format"] = None
+			world_vars["builtin"]["min_pack_format"] = None
+			world_vars["builtin"]["max_pack_format"] = None
+			world_vars["builtin"]["first_unsupported_format"] = None
 			mc_version_info["first_unsupported_format"] = None
 			iterate_files(config, world_config, f"{target}{os.sep}{name}-{version}{variant_name_part}.zip", mc_versions, mc_version_info, 2)
 
@@ -556,7 +553,7 @@ def iterate_files(config: dict, pack_config: dict, outpath: str, mc_versions: li
 
 def replace_variables(content: str, config):
 	indexDiff = 0
-	for match in re.finditer(r"\{NEUN_SCRIPT:([a-zA-Z0-9_-]+)(?:\s*([+\-*/%])\s*([+-]?\d+))?\}", content):
+	for match in re.finditer(r"\{NEUN_SCRIPT:([a-zA-Z0-9_.-]+)(?:\s*([+\-*/%])\s*([+-]?\d+))?\}", content):
 		variable = match.group(1)
 		replace = get_variable(variable, config)
 		replace = str(replace) if replace is not None else None
@@ -585,13 +582,16 @@ def replace_variables(content: str, config):
 def get_variable(variable: str, config: dict):
 	vars = config.get("vars")
 
-	if variable == "version":
+	if variable == "builtin.version":
 		return config.get("version")
-	elif vars != None:
-		ret = vars.get(variable)
-		if ret != None:
-			return ret
-	return variable
+	for segment in variable.split("."):
+		if not isinstance(vars, dict):
+			return variable
+		vars = vars.get(segment)
+		if vars == None:
+			return variable
+		
+	return vars
 
 class FileResult(TypedDict):
 	formats: set[tuple[int, int]]
@@ -744,9 +744,9 @@ def handle_structued(
 	pack_formats: set[tuple[int, int]] = set()
 	keep_self = True
 	if isinstance(tag, dict):
-		if is_nbt and file_path.endswith("level.dat") and key == "Version" and mc_version_info["lowest_release"] != None:
-			tag["Id"] = nbtlib.Int(mc_version_info["lowest_release"]["data_version"])
-			tag["Name"] = nbtlib.String(mc_version_info["lowest_release"]["id"])
+		if is_nbt and file_path.endswith("level.dat") and key == "Version" and mc_version_info["initial_release"] != None:
+			tag["Id"] = nbtlib.Int(mc_version_info["initial_release"]["data_version"])
+			tag["Name"] = nbtlib.String(mc_version_info["initial_release"]["id"])
 		else:
 			to_remove = set()
 			to_replace = {}

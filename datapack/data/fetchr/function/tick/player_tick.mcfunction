@@ -145,14 +145,14 @@ execute \
 								"action": "open_url",\
 								"value": "\
 									https://github.com/NeunEinser/bingo/releases/download/\
-									{NEUN_SCRIPT:version}/Fetchr-{NEUN_SCRIPT:version}-resourcepack.zip\
+									{NEUN_SCRIPT:builtin.version}/Fetchr-{NEUN_SCRIPT:builtin.version}-resourcepack.zip\
 								"\
 							},\
 							"click_event": {\
 								"action": "open_url",\
 								"url": "\
 									https://github.com/NeunEinser/bingo/releases/download/\
-									{NEUN_SCRIPT:version}/Fetchr-{NEUN_SCRIPT:version}-resourcepack.zip\
+									{NEUN_SCRIPT:builtin.version}/Fetchr-{NEUN_SCRIPT:builtin.version}-resourcepack.zip\
 								"\
 							}\
 						},\
@@ -172,14 +172,14 @@ execute \
 										"action": "open_url",\
 										"value": "\
 											https://github.com/NeunEinser/bingo/releases/download/\
-											{NEUN_SCRIPT:version}/Fetchr-{NEUN_SCRIPT:version}-resourcepack.zip\
+											{NEUN_SCRIPT:builtin.version}/Fetchr-{NEUN_SCRIPT:builtin.version}-resourcepack.zip\
 										"\
 									},\
 									"click_event": {\
 										"action": "open_url",\
 										"url": "\
 											https://github.com/NeunEinser/bingo/releases/download/\
-											{NEUN_SCRIPT:version}/Fetchr-{NEUN_SCRIPT:version}-resourcepack.zip\
+											{NEUN_SCRIPT:builtin.version}/Fetchr-{NEUN_SCRIPT:builtin.version}-resourcepack.zip\
 										"\
 									}\
 								}\

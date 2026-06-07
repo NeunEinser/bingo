@@ -1,7 +1,7 @@
 {
 	"fetchr.technical.detect_multiplayer": "DoNotTranslateThis{NEUN_SCRIPT:rp_version}",
 	"fetchr.technical.resourcepack_version_{NEUN_SCRIPT:rp_version}": "%s",
-	"NEUN_SCRIPT remove fetchr.technical.minecraft_version until {NEUN_SCRIPT:min_pack_format}": "",
+	"NEUN_SCRIPT remove fetchr.technical.minecraft_version until {NEUN_SCRIPT:builtin.min_pack_format}": "",
 	"fetchr.technical.minecraft_version": "%s",
 	
 	"fetchr.error.incompatible_minecraft_version.multiple_compatible": "You are using an unsupported version of Minecraft. This pack has been made compatible for Minecraft versions %s-%s.",
