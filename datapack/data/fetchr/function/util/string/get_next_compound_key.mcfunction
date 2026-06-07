@@ -11,6 +11,7 @@
 	modify block 7 0 7 front_text.messages[0] \
 	set value '{ "storage": "io.fetchr:util", "nbt": "nbt" }'
 #data modify storage tmp.fetchr:util inner_snbt.snbt set from block 7 0 7 front_text.messages[0]
+#function fetchr:util/string/parse_snbt with storage tmp.fetchr:util inner_snbt
 
 #data modify storage tmp.fetchr:util snbt set from storage io.fetchr:util nbt
 #NEUN_SCRIPT end
