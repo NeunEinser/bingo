@@ -1,3 +1,17 @@
+# 5.3.2
+5.3.2 fixes more bugs that didn't get caught before
+
+## Bug fixes
+- Fixed blue trimmed boots and tipped arrows still being mis-detected on
+  servers after a server restart under the same conditions as 5.3
+- Fixed tipped arrows still being always mis-detected in versions 1.21-1.21.4
+- Fixed entities in the lobby being killed during the game start sequence
+  instead of entities that were spawned after world generation in the game
+  dimension
+  - In order to restore the armor stands in the lobby, the tutorial section has
+    updated its version in order to trigger a lobby update. There have been no
+    changes to the structure.
+
 # 5.3.1
 5.3.1 fixes two overlooked issues in 5.3.
 
