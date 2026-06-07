@@ -2,8 +2,9 @@
 5.3.1 fixes two overlooked issues in 5.3.
 
 ## Bug fixes
-- Fixed any tipped arrow being falsely detected as slowness or poison arrow
-  after reloading the world under certain conditions
+- Fixed blue trimmed boots not getting detected and any tipped arrow being
+  falsely detected as slowness or poison arrow after reloading the world under
+  certain conditions
   - In 1.21-1.21.8 after reloading the world at any point
   - In 1.21.9 and 1.21.10 after reloading the world during an active game
   - Or if the worldspawn would not be in the lobby dimension for some other
