@@ -6,36 +6,77 @@
 # @input storage io.fetchr:util string
 # @outputs storage io.fetchr:util string
 
-function fetchr:util/string/nbt_to_snbt
-data \
-	modify storage tmp.fetchr:util snbt \
-	set from storage io.fetchr:util string
-
 data modify storage io.fetchr:util string set value ""
 
 execute \
-	if data storage tmp.fetchr:util { snbt: "{}" } \
+	unless data storage io.fetchr:util nbt{} \
+	run return 0
+execute \
+	store result score $util/next_compound_key.size fetchr.tmp \
+	run data get storage io.fetchr:util nbt
+execute \
+	if score $util/next_compound_key.size fetchr.tmp matches 0 \
 	run return 0
 
-data modify storage tmp.fetchr:util char set string storage tmp.fetchr:util snbt 1 2
-data modify storage io.fetchr:util string set string storage tmp.fetchr:util snbt 2
+#NEUN_SCRIPT until 69
+#data \
+	modify block 7 0 7 front_text.messages[0] \
+	set value '{ "storage": "io.fetchr:util", "nbt": "nbt" }'
+#data modify storage tmp.fetchr:util inner_snbt.snbt set from block 7 0 7 front_text.messages[0]
+#function fetchr:util/string/parse_snbt with storage tmp.fetchr:util inner_snbt
 
-execute \
+#data modify storage tmp.fetchr:util snbt set from storage io.fetchr:util nbt
+#NEUN_SCRIPT end
+#NEUN_SCRIPT since 69
+data \
+	modify block 7 0 7 front_text.messages[0] \
+	set value { storage: "io.fetchr:util", nbt: "nbt", plain: true }
+#NEUN_SCRIPT until 98
+#data modify storage tmp.fetchr:util snbt set from block 7 0 7 front_text.messages[0]
+
+#data modify storage tmp.fetchr:util char set string storage tmp.fetchr:util snbt 1 2
+#data modify storage io.fetchr:util string set string storage tmp.fetchr:util snbt 2
+
+#execute \
 	unless data storage tmp.fetchr:util { char: '"' } \
 	unless data storage tmp.fetchr:util { char: "'" } \
 	run data modify storage io.fetchr:util string set string storage tmp.fetchr:util snbt 1
 
-execute \
+#execute \
 	if data storage tmp.fetchr:util { char: '"' } \
 	run function fetchr:util/string/until_double_quote
-execute \
+#execute \
 	if data storage tmp.fetchr:util { char: "'" } \
 	run function fetchr:util/string/until_single_quote
 
-execute \
+#execute \
 	unless data storage tmp.fetchr:util { char: '"' } \
 	unless data storage tmp.fetchr:util { char: "'" } \
 	run function fetchr:util/string/until_colon
+#NEUN_SCRIPT end
+#NEUN_SCRIPT since 98
+data modify storage tmp.fetchr:util char set value ""
+data modify storage tmp.fetchr:util text_component set from block 7 0 7 front_text.messages[0].extra[2]
+execute \
+	if data storage tmp.fetchr:util text_component.extra \
+	run data modify storage tmp.fetchr:util char set from storage tmp.fetchr:util text_component.text
+execute \
+	if data storage tmp.fetchr:util text_component.extra \
+	run data modify storage io.fetchr:util string set from storage tmp.fetchr:util text_component.extra[0]
+#NEUN_SCRIPT until 99.2
+#execute \
+	unless data storage tmp.fetchr:util text_component.extra \
+	run data modify storage io.fetchr:util string set from storage tmp.fetchr:util text_component.text
+#NEUN_SCRIPT end
+#NEUN_SCRIPT since 99.2
+execute \
+	unless data storage tmp.fetchr:util text_component.extra \
+	run data modify storage io.fetchr:util string set from storage tmp.fetchr:util text_component
+#NEUN_SCRIPT end
+#NEUN_SCRIPT end
+#NEUN_SCRIPT end
+
+tellraw NeunEinser { "storage": "io.fetchr:util", nbt: "string" }
 
 execute \
 	if score $util/string.contains_dot fetchr.io matches 0 \
