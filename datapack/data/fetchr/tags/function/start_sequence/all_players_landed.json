@@ -1,5 +1,6 @@
 {
 	"values": [
+		"fetchr:game/start/pre_gen/schedule_entity_check",
 		"fetchr:game/start/initialize_countdown"
 	]
 }

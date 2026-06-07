@@ -6,6 +6,8 @@
 
 setworldspawn
 
+schedule clear fetchr:game/start/pre_gen/schedule_entity_check
+
 execute \
 	as @e[distance=..10000] \
 	run function fetchr:game/start/unfreeze_entity

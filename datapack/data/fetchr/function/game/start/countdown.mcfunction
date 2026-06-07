@@ -6,9 +6,6 @@
 # 	function fetchr:game/start/initialize_countdown
 # 	function fetchr:game/start/countdown
 
-teleport @e[type=!#fetchr:keep_on_game_start, tag=!fetchr.generated_entity, distance=..10000] ~ -128 ~
-kill @e[y=-128, distance=..1]
-
 execute \
 	if score $start_game.countdown fetchr.tmp matches 1.. \
 	run tellraw @a[predicate=fetchr:is_in_game] {\

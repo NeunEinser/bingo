@@ -53,8 +53,6 @@ execute \
 	if score $team_count fetchr.state matches 1 \
 	run scoreboard players set $lockout_mode fetchr.state 0
 
-teleport @e[type=!#fetchr:keep_on_game_start, tag=!fetchr.generated_entity, distance=..10000] ~ -128 ~
-
 teleport @e[type=minecraft:item, distance=..9] ~ -128 ~
 kill @e[y=-128, distance=..1]
 
@@ -129,5 +127,4 @@ execute \
 	]
 #NEUN_SCRIPT end
 
-schedule clear fetchr:game/start/pre_gen/schedule_entity_check
 schedule function #fetchr:start_sequence/players_start_falling 2s
