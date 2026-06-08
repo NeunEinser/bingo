@@ -8,7 +8,7 @@
 		"realms": false
 	},
 	"versions": {
-		"26.1+": {
+		"26.x": {
 			"initial_supported": "26.1-snapshot-6",
 			"world": {
 				"path": "world_26.x"

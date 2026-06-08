@@ -2140,13 +2140,13 @@ data \
 	categories: [ "fetchr:ruined_portal" ]\
 }
 
-#NEUN_SCRIPT until 101.2
+#NEUN_SCRIPT since 101.2
 # 007d: sulfur_spike
 data \
 	modify storage fetchr:registries items append value {\
 	id: "fetchr:sulfur_spike",\
 	item: { id: "minecraft:sulfur_spike" },\
-	translation: "item.minecraft.sulfur_spike",\
+	translation: "block.minecraft.sulfur_spike",\
 	icon: "007d",\
 	categories: [ "fetchr:sulfur_caves" ]\
 }
