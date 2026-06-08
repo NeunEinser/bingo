@@ -39,12 +39,6 @@
 }
 #data \
 	modify storage fetchr:registries categories append value {\
-	id: "fetchr:book",\
-	name: '{ "translate": "fetchr.category.book" }',\
-	tags: [ "fetchr:default" ]\
-}
-#data \
-	modify storage fetchr:registries categories append value {\
 	id: "fetchr:bow",\
 	name: '{ "translate": "fetchr.category.bow" }',\
 	tags: [ "fetchr:default" ]\
@@ -129,8 +123,14 @@
 }
 #data \
 	modify storage fetchr:registries categories append value {\
-	id: "fetchr:gold_and_ruined_portal",\
-	name: '{ "translate": "fetchr.category.gold_and_ruined_portal" }',\
+	id: "fetchr:gold",\
+	name: '{ "translate": "fetchr.category.gold" }',\
+	tags: [ "fetchr:default" ]\
+}
+#data \
+	modify storage fetchr:registries categories append value {\
+	id: "fetchr:gold_redstone",\
+	name: '{ "translate": "fetchr.category.gold_redstone" }',\
 	tags: [ "fetchr:default" ]\
 }
 #data \
@@ -215,6 +215,12 @@
 #NEUN_SCRIPT end
 #data \
 	modify storage fetchr:registries categories append value {\
+	id: "fetchr:paper",\
+	name: '{ "translate": "fetchr.category.paper" }',\
+	tags: [ "fetchr:default" ]\
+}
+#data \
+	modify storage fetchr:registries categories append value {\
 	id: "fetchr:piston",\
 	name: '{ "translate": "fetchr.category.piston" }',\
 	tags: [ "fetchr:default" ]\
@@ -251,6 +257,12 @@
 }
 #data \
 	modify storage fetchr:registries categories append value {\
+	id: "fetchr:ruined_portal",\
+	name: '{ "translate": "fetchr.category.ruined_portal" }',\
+	tags: [ "fetchr:default" ]\
+}
+#data \
+	modify storage fetchr:registries categories append value {\
 	id: "fetchr:sand",\
 	name: '{ "translate": "fetchr.category.sand" }',\
 	tags: [ "fetchr:default" ]\
@@ -271,6 +283,12 @@
 	modify storage fetchr:registries categories append value {\
 	id: "fetchr:skeleton_drops",\
 	name: '{ "translate": "fetchr.category.skeleton_drops" }',\
+	tags: [ "fetchr:default" ]\
+}
+#data \
+	modify storage fetchr:registries categories append value {\
+	id: "fetchr:snowy_biomes",\
+	name: '{ "translate": "fetchr.category.snowy_biomes" }',\
 	tags: [ "fetchr:default" ]\
 }
 #data \
@@ -321,12 +339,6 @@ data \
 	modify storage fetchr:registries categories append value {\
 	id: "fetchr:basic_iron",\
 	name: { translate: "fetchr.category.basic_iron" },\
-	tags: [ "fetchr:default" ]\
-}
-data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:book",\
-	name: { translate: "fetchr.category.book" },\
 	tags: [ "fetchr:default" ]\
 }
 data \
@@ -415,8 +427,14 @@ data \
 }
 data \
 	modify storage fetchr:registries categories append value {\
-	id: "fetchr:gold_and_ruined_portal",\
-	name: { translate: "fetchr.category.gold_and_ruined_portal" },\
+	id: "fetchr:gold",\
+	name: { translate: "fetchr.category.gold" },\
+	tags: [ "fetchr:default" ]\
+}
+data \
+	modify storage fetchr:registries categories append value {\
+	id: "fetchr:gold_redstone",\
+	name: { translate: "fetchr.category.gold_redstone" },\
 	tags: [ "fetchr:default" ]\
 }
 data \
@@ -505,6 +523,12 @@ data \
 }
 data \
 	modify storage fetchr:registries categories append value {\
+	id: "fetchr:paper",\
+	name: { translate: "fetchr.category.paper" },\
+	tags: [ "fetchr:default" ]\
+}
+data \
+	modify storage fetchr:registries categories append value {\
 	id: "fetchr:piston",\
 	name: { translate: "fetchr.category.piston" },\
 	tags: [ "fetchr:default" ]\
@@ -541,6 +565,12 @@ data \
 }
 data \
 	modify storage fetchr:registries categories append value {\
+	id: "fetchr:ruined_portal",\
+	name: { translate: "fetchr.category.ruined_portal" },\
+	tags: [ "fetchr:default" ]\
+}
+data \
+	modify storage fetchr:registries categories append value {\
 	id: "fetchr:sand",\
 	name: { translate: "fetchr.category.sand" },\
 	tags: [ "fetchr:default" ]\
@@ -565,10 +595,24 @@ data \
 }
 data \
 	modify storage fetchr:registries categories append value {\
+	id: "fetchr:snowy_biomes",\
+	name: { translate: "fetchr.category.snowy_biomes" },\
+	tags: [ "fetchr:default" ]\
+}
+data \
+	modify storage fetchr:registries categories append value {\
 	id: "fetchr:spider",\
 	name: { translate: "fetchr.category.spider" },\
 	tags: [ "fetchr:default" ]\
 }
+#NEUN_SCRIPT since 101.2
+data \
+	modify storage fetchr:registries categories append value {\
+	id: "fetchr:sulfur_caves",\
+	name: { translate: "fetchr.category.sulfur_caves" },\
+	tags: [ "fetchr:default" ]\
+}
+#NEUN_SCRIPT end
 data \
 	modify storage fetchr:registries categories append value {\
 	id: "fetchr:swamp",\
@@ -767,8 +811,7 @@ data \
 	item: { id: "minecraft:powered_rail" },\
 	translation: "block.minecraft.powered_rail",\
 	icon: "000f",\
-	categories: [ "fetchr:gold_and_ruined_portal" ],\
-	weight: 3\
+	categories: [ "fetchr:gold_redstone" ]\
 }
 
 # 0010: flint
@@ -1054,7 +1097,7 @@ data \
 	item: { id: "minecraft:golden_shovel" },\
 	translation: "item.minecraft.golden_shovel",\
 	icon: "0027",\
-	categories: [ "fetchr:gold_and_ruined_portal" ],\
+	categories: [ "fetchr:gold" ],\
 	weight: 2\
 }
 
@@ -1065,7 +1108,7 @@ data \
 	item: { id: "minecraft:golden_sword" },\
 	translation: "item.minecraft.golden_sword",\
 	icon: "0028",\
-	categories: [ "fetchr:gold_and_ruined_portal" ],\
+	categories: [ "fetchr:gold" ],\
 	weight: 2\
 }
 
@@ -1076,8 +1119,7 @@ data \
 	item: { id: "minecraft:clock" },\
 	translation: "item.minecraft.clock",\
 	icon: "0029",\
-	categories: [ "fetchr:gold_and_ruined_portal" ],\
-	weight: 3\
+	categories: [ "fetchr:gold_redstone" ]\
 }
 
 # 002a: repeater
@@ -1117,7 +1159,7 @@ data \
 	item: { id: "minecraft:book" },\
 	translation: "item.minecraft.book",\
 	icon: "002d",\
-	categories: [ "fetchr:book" ]\
+	categories: [ "fetchr:paper" ]\
 }
 
 # 002e: writable_book
@@ -1127,7 +1169,7 @@ data \
 	item: { id: "minecraft:writable_book" },\
 	translation: "item.minecraft.writable_book",\
 	icon: "002e",\
-	categories: [ "fetchr:book" ]\
+	categories: [ "fetchr:paper" ]\
 }
 
 # 002f: enchanted_book
@@ -1537,7 +1579,7 @@ data \
 	item: { id: "minecraft:golden_axe" },\
 	translation: "item.minecraft.golden_axe",\
 	icon: "0052",\
-	categories: [ "fetchr:gold_and_ruined_portal" ],\
+	categories: [ "fetchr:gold" ],\
 	weight: 2\
 }
 
@@ -1666,7 +1708,7 @@ data \
 	},\
 	translation: "item.minecraft.tipped_arrow.effect.slowness",\
 	icon: "005c",\
-	categories: [{ id: "fetchr:skeleton_drops" }, { id: "fetchr:nighttime_mob_drops", weight: 3 }]\
+	categories: [{ id: "fetchr:snowy_biomes" }, { id: "fetchr:skeleton_drops" }, { id: "fetchr:nighttime_mob_drops", weight: 3 }]\
 }
 
 # 005d: glow_ink_sac
@@ -1939,8 +1981,8 @@ data \
 	weight: 3\
 }
 #NEUN_SCRIPT end
-#NEUN_SCRIPT since 75
-data \
+#NEUN_SCRIPT since 75 until 92
+#data \
 	modify storage fetchr:registries items append value {\
 	id: "fetchr:poison_arrow",\
 	item: {\
@@ -2037,6 +2079,87 @@ data \
 }
 #NEUN_SCRIPT end
 
+#NEUN_SCRIPT since 89
+# 0078: iron_spear
+data \
+	modify storage fetchr:registries items append value {\
+	id: "fetchr:iron_spear",\
+	item: { id: "minecraft:iron_spear" },\
+	translation: "item.minecraft.iron_spear",\
+	icon: "0078",\
+	categories: ["fetchr:basic_iron"],\
+	weight: 3,\
+}
+#NEUN_SCRIPT end
+#NEUN_SCRIPT since 92
+# 0079: weakness_arrow
+data \
+	modify storage fetchr:registries items append value {\
+	id: "fetchr:weakness_arrow",\
+	item: {\
+		id: "minecraft:tipped_arrow",\
+		components: { "minecraft:potion_contents": { potion: "minecraft:weakness" }}\
+	},\
+	translation: "item.minecraft.tipped_arrow.effect.weakness",\
+	icon: "0079",\
+	categories: [ "fetchr:skeleton_drops", { id: "fetchr:warm_biome", weight: 6 }, { id: "fetchr:nighttime_mob_drops", weight: 3 }]\
+}
+#NEUN_SCRIPT end
+#NEUN_SCRIPT since 96
+# 007a: name_tag
+data \
+	modify storage fetchr:registries items append value {\
+	id: "fetchr:name_tag",\
+	item: { id: "minecraft:name_tag" },\
+	translation: "item.minecraft.name_tag",\
+	icon: "007a",\
+	categories: [ "fetchr:paper" ],\
+	weight: 4,\
+}
+#NEUN_SCRIPT end
+#NEUN_SCRIPT since 98
+# 007b: golden_dandelion
+data \
+	modify storage fetchr:registries items append value {\
+	id: "fetchr:golden_dandelion",\
+	item: { id: "minecraft:golden_dandelion" },\
+	translation: "block.minecraft.golden_dandelion",\
+	icon: "007b",\
+	categories: [ "fetchr:gold" ],\
+	weight: 6,\
+}
+#NEUN_SCRIPT end
+
+# 007c: nether_brick
+data \
+	modify storage fetchr:registries items append value {\
+	id: "fetchr:nether_brick",\
+	item: { id: "minecraft:nether_brick" },\
+	translation: "item.minecraft.nether_brick",\
+	icon: "007c",\
+	categories: [ "fetchr:ruined_portal" ]\
+}
+
+# 007d: sulfur_spike
+data \
+	modify storage fetchr:registries items append value {\
+	id: "fetchr:sulfur_spike",\
+	item: { id: "minecraft:sulfur_spike" },\
+	translation: "item.minecraft.sulfur_spike",\
+	icon: "007d",\
+	categories: [ "fetchr:sulfur_caves" ]\
+}
+
+# 007e: sulfur_cube_bucket
+data \
+	modify storage fetchr:registries items append value {\
+	id: "fetchr:sulfur_cube_bucket",\
+	item: { id: "minecraft:sulfur_cube_bucket" },\
+	translation: "item.minecraft.sulfur_cube_bucket",\
+	icon: "007e",\
+	categories: [ "fetchr:sulfur_caves" ]\
+}
+
 # 0100: iron_block
 data \
 	modify storage fetchr:registries items append value {\
@@ -2064,7 +2187,7 @@ data \
 	item: { id: "minecraft:bookshelf" },\
 	translation: "block.minecraft.bookshelf",\
 	icon: "0102",\
-	categories: [ "fetchr:book" ]\
+	categories: [ "fetchr:paper" ]\
 }
 
 # 0103: obsidian
@@ -2074,8 +2197,7 @@ data \
 	item: { id: "minecraft:obsidian" },\
 	translation: "block.minecraft.obsidian",\
 	icon: "0103",\
-	categories: [ "fetchr:diamond" ],\
-	weight: 1\
+	categories: [ { id: "fetchr:diamond" }, { id: "fetchr:ruined_portal", weight: 2 } ]\
 }
 
 # 0104: melon
@@ -2117,8 +2239,8 @@ data \
 	item: { id: "minecraft:magma_block" },\
 	translation: "block.minecraft.magma_block",\
 	icon: "0107",\
-	categories: [ "fetchr:gold_and_ruined_portal" ],\
-	weight: 6\
+	categories: [ "fetchr:ruined_portal" ],\
+	weight: 2\
 }
 
 # 0108: bone_block
@@ -2179,7 +2301,7 @@ data \
 	item: { id: "minecraft:snow" },\
 	translation: "block.minecraft.snow",\
 	icon: "010d",\
-	categories: [ "fetchr:taiga" ]\
+	categories: [ "fetchr:snowy_biomes" ]\
 }
 
 # 010e: stonecutter
@@ -2280,7 +2402,7 @@ data \
 	item: { id: "minecraft:lectern" },\
 	translation: "block.minecraft.lectern",\
 	icon: "0117",\
-	categories: [ "fetchr:book" ]\
+	categories: [ "fetchr:paper" ]\
 }
 
 # 0118: raw_gold_block
@@ -2290,7 +2412,7 @@ data \
 	item: { id: "minecraft:raw_gold_block" },\
 	translation: "block.minecraft.raw_gold_block",\
 	icon: "0118",\
-	categories: [ "fetchr:gold_and_ruined_portal" ],\
+	categories: [ "fetchr:gold" ],\
 	weight: 3\
 }
 
@@ -2301,7 +2423,7 @@ data \
 	item: { id: "minecraft:gold_block" },\
 	translation: "block.minecraft.gold_block",\
 	icon: "0119",\
-	categories: [ "fetchr:gold_and_ruined_portal" ],\
+	categories: [ "fetchr:gold" ],\
 	weight: 3\
 }
 
@@ -2630,7 +2752,40 @@ data \
 	item: { id: "minecraft:lodestone" },\
 	translation: "block.minecraft.lodestone",\
 	icon: "0136",\
-	categories: [ "fetchr:lodestone" ]\
+	categories: [ "fetchr:lodestone", { id: "fetchr:ruined_portal", weight: 2 } ]\
+}
+#NEUN_SCRIPT end
+# 0137: netherrack
+data \
+	modify storage fetchr:registries items append value {\
+	id: "fetchr:netherrack",\
+	item: { id: "minecraft:netherrack" },\
+	translation: "block.minecraft.netherrack",\
+	icon: "0137",\
+	categories: [ "fetchr:ruined_portal" ]\
+}
+
+#NEUN_SCRIPT until 101.2
+# 0138: polished_cinnabar
+data \
+	modify storage fetchr:registries items append value {\
+	id: "fetchr:polished_cinnabar",\
+	item: { id: "minecraft:polished_cinnabar" },\
+	translation: "block.minecraft.polished_cinnabar",\
+	icon: "0138",\
+	categories: [ "fetchr:sulfur_caves" ]\
+}
+#NEUN_SCRIPT end
+
+#NEUN_SCRIPT until 101.2
+# 0139: sulfur_bricks
+data \
+	modify storage fetchr:registries items append value {\
+	id: "fetchr:sulfur_bricks",\
+	item: { id: "minecraft:sulfur_bricks" },\
+	translation: "block.minecraft.sulfur_bricks",\
+	icon: "0139",\
+	categories: [ "fetchr:sulfur_caves" ]\
 }
 #NEUN_SCRIPT end
 
