@@ -11,7 +11,7 @@
 					"type": "minecraft:add",
 					"argument1": "fetchr:depth",
 					"argument2": {
-					"type": "minecraft:flat_cache",
+						"type": "minecraft:flat_cache",
 						"argument": {
 							"type": "minecraft:mul",
 							"argument1": "fetchr:jaggedness",

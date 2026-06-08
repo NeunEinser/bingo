@@ -11,7 +11,7 @@
 		"26.1+": {
 			"initial_supported": "26.1-snapshot-6",
 			"world": {
-				"path": "world_26.1+"
+				"path": "world_26.x"
 			}
 		}
 	},
