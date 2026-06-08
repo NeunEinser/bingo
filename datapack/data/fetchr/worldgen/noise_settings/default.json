@@ -70,18 +70,12 @@
 													"argument1": 0.078125,
 													"argument2": {
 														"type": "minecraft:range_choice",
-														"input": {
-															"type": "minecraft:cache_once",
-															"argument": "minecraft:overworld/sloped_cheese"
-														},
+														"input": "fetchr:sloped_cheese",
 														"max_exclusive": 1.5625,
 														"min_inclusive": -1000000.0,
 														"when_in_range": {
 															"type": "minecraft:min",
-															"argument1": {
-																"type": "minecraft:cache_once",
-																"argument": "minecraft:overworld/sloped_cheese"
-															},
+															"argument1": "fetchr:sloped_cheese",
 															"argument2": {
 																"type": "minecraft:mul",
 																"argument1": 5.0,
@@ -134,10 +128,7 @@
 																					"argument2": {
 																						"type": "minecraft:mul",
 																						"argument1": -0.64,
-																						"argument2": {
-																							"type": "minecraft:cache_once",
-																							"argument": "minecraft:overworld/sloped_cheese"
-																						}
+																						"argument2": "fetchr:sloped_cheese"
 																					}
 																				},
 																				"max": 0.5,
@@ -213,7 +204,7 @@
 														"type": "minecraft:range_choice",
 														"input": {
 															"type": "minecraft:cache_once",
-															"argument": "minecraft:overworld/sloped_cheese"
+															"argument": "fetchr:sloped_cheese"
 														},
 														"max_exclusive": 1.5625,
 														"min_inclusive": -1000000.0,
@@ -221,7 +212,7 @@
 															"type": "minecraft:min",
 															"argument1": {
 																"type": "minecraft:cache_once",
-																"argument": "minecraft:overworld/sloped_cheese"
+																"argument": "fetchr:sloped_cheese"
 															},
 															"argument2": {
 																"type": "minecraft:mul",
@@ -277,7 +268,7 @@
 																						"argument1": -0.64,
 																						"argument2": {
 																							"type": "minecraft:cache_once",
-																							"argument": "minecraft:overworld/sloped_cheese"
+																							"argument": "fetchr:sloped_cheese"
 																						}
 																					}
 																				},
