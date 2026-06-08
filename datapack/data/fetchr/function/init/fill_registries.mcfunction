@@ -2140,6 +2140,7 @@ data \
 	categories: [ "fetchr:ruined_portal" ]\
 }
 
+#NEUN_SCRIPT until 101.2
 # 007d: sulfur_spike
 data \
 	modify storage fetchr:registries items append value {\
@@ -2159,6 +2160,7 @@ data \
 	icon: "007e",\
 	categories: [ "fetchr:sulfur_caves" ]\
 }
+#NEUN_SCRIPT end
 
 # 0100: iron_block
 data \
