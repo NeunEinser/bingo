@@ -12,6 +12,14 @@
 			"initial_supported": "26.1-snapshot-6",
 			"world": {
 				"path": "world_26.x"
+			},
+			"datapack": {
+				"override_data_version": {
+					"exclude": [
+						"data/fetchr/structure/old",
+						"data/fetchr/structure/skybox.nbt"
+					]
+				}
 			}
 		}
 	},
