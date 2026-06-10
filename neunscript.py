@@ -357,7 +357,7 @@ def iterate_files(config: dict, pack_config: dict, outpath: str, mc_versions: li
 						min_pack_format, first_unsupported_format, mc_versions, format_versions, config,
 						pack_config, version_info, default_contents)
 
-					generate_main_as_overlay = not keep_in_main
+					generate_main_as_overlay = not keep_in_main and type != 2
 					pack_formats = sorted(file_result["formats"])
 					for i in range(0, len(pack_formats) - 1):
 						min_format = pack_formats[i]
