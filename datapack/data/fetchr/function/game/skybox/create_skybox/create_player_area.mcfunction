@@ -117,6 +117,56 @@ execute \
 	as @a[predicate=fetchr:is_in_game] \
 	positioned ~7 ~1 ~7 \
 	run function fetchr:game/skybox/join_game
+
+execute \
+	as @a[team=fetchr.black,limit=1] \
+	run function fetchr:game/skybox/setup_team_display/black
+execute \
+	as @a[team=fetchr.blue,limit=1] \
+	run function fetchr:game/skybox/setup_team_display/blue
+execute \
+	as @a[team=fetchr.cyan,limit=1] \
+	run function fetchr:game/skybox/setup_team_display/cyan
+execute \
+	as @a[team=fetchr.dark_blue,limit=1] \
+	run function fetchr:game/skybox/setup_team_display/dark_blue
+execute \
+	as @a[team=fetchr.dark_gray,limit=1] \
+	run function fetchr:game/skybox/setup_team_display/dark_gray
+execute \
+	as @a[team=fetchr.dark_red,limit=1] \
+	run function fetchr:game/skybox/setup_team_display/dark_red
+execute \
+	as @a[team=fetchr.gray,limit=1] \
+	run function fetchr:game/skybox/setup_team_display/gray
+execute \
+	as @a[team=fetchr.green,limit=1] \
+	run function fetchr:game/skybox/setup_team_display/green
+execute \
+	as @a[team=fetchr.light_blue,limit=1] \
+	run function fetchr:game/skybox/setup_team_display/light_blue
+execute \
+	as @a[team=fetchr.lime,limit=1] \
+	run function fetchr:game/skybox/setup_team_display/lime
+execute \
+	as @a[team=fetchr.magenta,limit=1] \
+	run function fetchr:game/skybox/setup_team_display/magenta
+execute \
+	as @a[team=fetchr.orange,limit=1] \
+	run function fetchr:game/skybox/setup_team_display/orange
+execute \
+	as @a[team=fetchr.purple,limit=1] \
+	run function fetchr:game/skybox/setup_team_display/purple
+execute \
+	as @a[team=fetchr.red,limit=1] \
+	run function fetchr:game/skybox/setup_team_display/red
+execute \
+	as @a[team=fetchr.white,limit=1] \
+	run function fetchr:game/skybox/setup_team_display/white
+execute \
+	as @a[team=fetchr.yellow,limit=1] \
+	run function fetchr:game/skybox/setup_team_display/yellow
+
 execute \
 	positioned ~7 ~1 ~7 as @a[predicate=fetchr:is_in_lobby, tag=fetchr.automatically_join_game] \
 	run function fetchr:game/skybox/join_game
