@@ -11,7 +11,6 @@
 #
 # @within function fetchr:card_generation/cleanup_and_next_slot
 
-
 data modify storage tmp.fetchr:card_generation category_items set value []
 function fetchr:card_generation/update_affected_item_weights/find_items \
 	with storage tmp.fetchr:card_generation categories_with_removed_item[-1]

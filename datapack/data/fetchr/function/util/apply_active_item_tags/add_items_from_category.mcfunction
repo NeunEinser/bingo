@@ -52,9 +52,9 @@ data \
 		{ text: "  • ", color: "gray", italic: false },\
 		{ storage: "fetchr:items", nbt: "active_items[-1].active_categories[-1].name", interpret: true },\
 		" (",\
-		{ storage: "fetchr:items", nbt: "active_items[-1].active_categories[-1].weight" },\
+		{ storage: "fetchr:items", nbt: "active_items[-1].active_categories[-1].weight", plain: true },\
 		"/",\
-		{ storage: "fetchr:items", nbt: "active_items[-1].active_categories[-1].total_item_weight" },\
+		{ storage: "fetchr:items", nbt: "active_items[-1].active_categories[-1].total_item_weight", plain: true },\
 		")"\
 	]
 #NEUN_SCRIPT end

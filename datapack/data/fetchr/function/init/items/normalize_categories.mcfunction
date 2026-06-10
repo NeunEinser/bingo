@@ -63,8 +63,8 @@ execute \
 		{\
 			"translate": "fetchr.setup.error.item_category_without_id",\
 			"with": [\
-				{ "storage": "tmp.fetchr:init", "nbt": "items[-1].id" },\
-				{ "storage": "tmp.fetchr:init", "nbt": "item_categories[-1]" }\
+				{ "storage": "tmp.fetchr:init", "nbt": "items[-1].id", "interpret": true },\
+				{ "storage": "tmp.fetchr:init", "nbt": "item_categories[-1]", "interpret": true }\
 			]\
 		}\
 	]
@@ -78,8 +78,8 @@ execute \
 		{\
 			"translate": "fetchr.setup.error.item_category_weight_below_1",\
 			"with": [\
-				{ "storage": "tmp.fetchr:init", "nbt": "items[-1].id" },\
-				{ "storage": "tmp.fetchr:init", "nbt": "category.id" },\
+				{ "storage": "tmp.fetchr:init", "nbt": "items[-1].id", "interpret": true },\
+				{ "storage": "tmp.fetchr:init", "nbt": "category.id", "interpret": true },\
 				{ "score": { "name": "$init/items/normalize.weight", "objective": "fetchr.tmp" }}\
 			]\
 		}\

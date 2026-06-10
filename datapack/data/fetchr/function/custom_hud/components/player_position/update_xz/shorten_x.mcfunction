@@ -111,7 +111,7 @@ data \
 	{ score: { name: "$custom_hud/player_pos.int_x", objective: "fetchr.tmp" }},\
 	".", { storage: "tmp.fetchr:custom_hud", nbt: "xFillerZeros", interpret: true },\
 	{ score: { name: "$custom_hud/player_pos.dec_x", objective: "fetchr.tmp" }},\
-	{ storage: "tmp.fetchr:custom_hud", nbt: "xChar" },\
+	{ storage: "tmp.fetchr:custom_hud", nbt: "xChar", interpret: true },\
 	" ",\
 	{ score: { name: "$custom_hud/player_pos.z", objective: "fetchr.tmp" }}\
 ]

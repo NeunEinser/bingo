@@ -76,8 +76,6 @@ execute \
 #NEUN_SCRIPT end
 #NEUN_SCRIPT end
 
-tellraw NeunEinser { "storage": "io.fetchr:util", nbt: "string" }
-
 execute \
 	if score $util/string.contains_dot fetchr.io matches 0 \
 	if score $util/string.contains_quote fetchr.io matches 0 \

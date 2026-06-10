@@ -116,6 +116,6 @@ data \
 	".",\
 	{ storage: "tmp.fetchr:custom_hud", nbt: "zFillerZeros", interpret: true },\
 	{ score: { name: "$custom_hud/player_pos.dec_z", objective: "fetchr.tmp" }},\
-	{ storage: "tmp.fetchr:custom_hud", nbt: "zChar" }\
+	{ storage: "tmp.fetchr:custom_hud", nbt: "zChar", interpret: true }\
 ]
 #NEUN_SCRIPT end

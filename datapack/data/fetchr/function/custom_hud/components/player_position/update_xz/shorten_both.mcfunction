@@ -222,7 +222,7 @@ data \
 	, ".",\
 	{ storage: "tmp.fetchr:custom_hud", nbt: "xFillerZeros", interpret: true },\
 	{ score: { name: "$custom_hud/player_pos.dec_x", objective: "fetchr.tmp" }},\
-	{ storage: "tmp.fetchr:custom_hud", nbt: "xChar" }\
+	{ storage: "tmp.fetchr:custom_hud", nbt: "xChar", interpret: true }\
 ]
 execute \
 	if score $custom_hud/player_pos.abs_x fetchr.tmp matches ..999999 \
@@ -230,7 +230,7 @@ execute \
 	run data \
 		modify storage tmp.fetchr:custom_hud xComp set value [\
 		{ score: { name: "$custom_hud/player_pos.int_x", objective: "fetchr.tmp" }},\
-		{ storage: "tmp.fetchr:custom_hud", nbt: "xChar" }\
+		{ storage: "tmp.fetchr:custom_hud", nbt: "xChar", interpret: true }\
 	]
 #NEUN_SCRIPT end
 execute \
@@ -263,7 +263,7 @@ data \
 	".",\
 	{ storage: "tmp.fetchr:custom_hud", nbt: "zFillerZeros", interpret: true },\
 	{ score: { name: "$custom_hud/player_pos.dec_z", objective: "fetchr.tmp" }},\
-	{ storage: "tmp.fetchr:custom_hud", nbt: "zChar" }\
+	{ storage: "tmp.fetchr:custom_hud", nbt: "zChar", interpret: true }\
 ]
 execute \
 	if score $custom_hud/player_pos.abs_z fetchr.tmp matches ..999999 \
@@ -271,7 +271,7 @@ execute \
 	run data \
 		modify storage tmp.fetchr:custom_hud zComp set value [\
 		{ score: { name: "$custom_hud/player_pos.int_z", objective: "fetchr.tmp" }},\
-		{ storage: "tmp.fetchr:custom_hud", nbt: "zChar" }\
+		{ storage: "tmp.fetchr:custom_hud", nbt: "zChar", interpret: true }\
 	]
 #NEUN_SCRIPT end
 execute \

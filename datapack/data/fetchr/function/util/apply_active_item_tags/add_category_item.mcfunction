@@ -31,7 +31,7 @@ data \
 	set value [\
 		{ translate: "fetchr.item.global_weight", color: "gray", italic: false },\
 		": ",\
-		{ storage: "tmp.fetchr:apply_active_item_tags", nbt: "category_items[-1].weight" }\
+		{ storage: "tmp.fetchr:apply_active_item_tags", nbt: "category_items[-1].weight", plain: true }\
 	]
 #NEUN_SCRIPT end
 
