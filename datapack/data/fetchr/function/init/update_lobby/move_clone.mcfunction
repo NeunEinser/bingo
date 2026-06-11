@@ -62,8 +62,14 @@ $execute \
 #NEUN_SCRIPT end
 $execute \
 	as @e[x=$(clone_x),y=$(y),z=$(z),dx=$(offset_x),dy=$(offset_y),dz=$(offset_z)] \
+	run function fetchr:util/find_root_vehicle
+$execute \
+	as @e[x=$(clone_x),y=$(y),z=$(z),dx=$(offset_x),dy=$(offset_y),dz=$(offset_z),tag=fetchr.root_vehicle] \
 	at @s \
 	run teleport @s ~$(clone_to_new_x_offset) ~ ~
+$execute \
+	as @e[x=$(new_x),y=$(y),z=$(z),dx=$(offset_x),dy=$(offset_y),dz=$(offset_z)] \
+	run tag @s remove fetchr.root_vehicle
 
 data remove storage tmp.fetchr:init/update_lobby structures[0]
 execute \

@@ -114,10 +114,16 @@ $execute \
 
 $kill @e[type=minecraft:marker,x=$(old_x),y=$(y),z=$(z),dx=$(offset_old_x_including_overlap),dy=$(offset_y),dz=$(offset_z)]
 $kill @e[type=minecraft:item_frame,tag=fetchr.card_frame,x=$(old_x),y=$(y),z=$(z),dx=$(offset_old_x_including_overlap),dy=$(offset_y),dz=$(offset_z)]
-$execute as \
-	@e[x=$(old_x),y=$(y),z=$(z),dx=$(offset_x),dy=$(offset_y),dz=$(offset_z)] \
+$execute \
+	as @e[x=$(old_x),y=$(y),z=$(z),dx=$(offset_x),dy=$(offset_y),dz=$(offset_z)] \
+	run function fetchr:util/find_root_vehicle
+$execute \
+	as @e[x=$(old_x),y=$(y),z=$(z),dx=$(offset_x),dy=$(offset_y),dz=$(offset_z),tag=fetchr.root_vehicle] \
 	at @s \
 	run teleport @s ~$(old_to_clone_x_offset) ~ ~
+$execute \
+	as @e[x=$(clone_x),y=$(y),z=$(z),dx=$(offset_x),dy=$(offset_y),dz=$(offset_z)] \
+	run tag @s remove fetchr.root_vehicle
 
 # Reset compare area
 #NEUN_SCRIPT until 62
