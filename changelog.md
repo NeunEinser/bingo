@@ -1,3 +1,8 @@
+# 5.3.3
+5.3.3 fixes an oversight where the team name on the points scoreboard did not
+show up correctly after generating a new card from the spawn preview
+([#317](<https://github.com/NeunEinser/bingo/issues/317>))
+
 # 5.3.2
 5.3.2 fixes more bugs that didn't get caught before
 
