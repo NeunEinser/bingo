@@ -22,30 +22,25 @@ execute \
 effect clear @s
 clear @s minecraft:spyglass[minecraft:custom_data={ fetchr: { skybox_spyglass: true }}]
 
-function fetchr:util/find_leashed_entities
+function fetchr:util/find_connected_entities
 execute \
 	at @s \
-	as @e[distance=..50, tag=fetchr.leashed] \
-	in fetchr:lobby \
-	run teleport @s 7.5 3 7.5 180 0
-function fetchr:util/find_owned_entities
-execute \
-	at @s \
-	as @e[distance=..50, tag=fetchr.owned] \
+	as @e[distance=..50, tag=fetchr.connected] \
 	in fetchr:lobby \
 	run teleport @s 7.5 3 7.5 180 0
 execute \
 	in fetchr:lobby \
 	positioned 7.5 3 7.5 \
-	run tag @e[distance=...1] remove fetchr.owned
+	run tag @e[distance=...1] remove fetchr.connected
+function fetchr:util/find_root_vehicle
 execute \
-	in fetchr:lobby \
-	on vehicle \
-	run teleport @s 7.5 3 7.5 180 0
-execute \
-	unless entity @s[predicate=fetchr:is_in_lobby] \
+	as @e[distance=..20,tag=fetchr.root_vehicle,limit=1] \
 	in fetchr:lobby \
 	run teleport @s 7.5 3 7.5 180 0
+execute \
+	in fetchr:lobby \
+	positioned 7.5 3 7.5 \
+	run tag @e[distance=...1] remove fetchr.root_vehicle
 #NEUN_SCRIPT until 87.1
 #execute \
 	in fetchr:lobby \
