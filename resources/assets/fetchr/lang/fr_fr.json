@@ -310,7 +310,6 @@
 	"fetchr.lobby.team_selection.join_dark_blue": "%s a rejoint l'équipe bleu foncé.",
 	"fetchr.lobby.team_selection.join_purple": "%s a rejoint l'équipe violette.",
 	"fetchr.lobby.team_selection.join_magenta": "%s a rejoint l'équipe magenta.",
-	"fetchr.lobby.tutorial.generate_chests.sign.line1": "Régénérer les",
 	"fetchr.lobby.tutorial.chests.lectern.page_1": "Les coffres à droite affichent tous les items qui se trouvent dans la réserve.\n\nChaque colonne est une catégorie. Un seul item de chaque catégorie peut apparaître en même temps sur une grille donnée.",
 	"fetchr.lobby.tutorial.chests.lectern.page_2": "Une colonne commençant par un emplacement vide est une suite de la précédente catégorie.\n\nUn item peut également avoir plusieurs catégories, qui le restreignent davantage, car l'item ne peut être sélectionné qu'une seule fois.",
 	"fetchr.lobby.tutorial.chests.lectern.page_3": "Les items peuvent également avoir des poids. Plus le poids est élevé, plus il est probable que le jeu choisisse l'item dans la catégorie.\n\nUtilisez le panneau ci-dessus pour recréer les coffres.",
