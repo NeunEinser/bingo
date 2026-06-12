@@ -104,7 +104,8 @@
 	"fetchr.settings.section.advanced_settings.sign.line2": "Paramètres",
 	"fetchr.settings.section.advanced_settings.sign.line3": "Avancés",
 	"fetchr.settings.section.advanced_settings.sign.line4": "",
-	"fetchr.settings.concealed_card.lectern.page_2": "Connaître les objets qui s'excluent mutuellement vous sera d'une aide précieuse.\n\nJetez un coup d'œil aux coffres de catégories aux alentours !",
+	"fetchr.settings.target_time.sign.line3": "",
+	"fetchr.settings.target_time.value.minutes": "%s minutes",
 	"fetchr.settings.lockout_mode.name": "Mode Strict",
 	"fetchr.settings.lockout_mode.sign.line1": "Mode",
 	"fetchr.settings.lockout_mode.sign.line2": "Strict",
@@ -309,11 +310,6 @@
 	"fetchr.lobby.team_selection.join_dark_blue": "%s a rejoint l'équipe bleu foncé.",
 	"fetchr.lobby.team_selection.join_purple": "%s a rejoint l'équipe violette.",
 	"fetchr.lobby.team_selection.join_magenta": "%s a rejoint l'équipe magenta.",
-	"fetchr.lobby.tutorial.generate_chests.sign.line1": "Régénérer les",
-	"fetchr.lobby.tutorial.generate_chests.sign.line2": "Coffres de",
-	"fetchr.lobby.tutorial.generate_chests.sign.line3": "Catégorie",
-	"fetchr.lobby.tutorial.generate_chests.sign.line4": "",
-	"fetchr.lobby.tutorial.chests.lectern.heading": "Coffres de Catégorie",
 	"fetchr.lobby.tutorial.chests.lectern.page_1": "Les coffres à droite affichent tous les items qui se trouvent dans la réserve.\n\nChaque colonne est une catégorie. Un seul item de chaque catégorie peut apparaître en même temps sur une grille donnée.",
 	"fetchr.lobby.tutorial.chests.lectern.page_2": "Une colonne commençant par un emplacement vide est une suite de la précédente catégorie.\n\nUn item peut également avoir plusieurs catégories, qui le restreignent davantage, car l'item ne peut être sélectionné qu'une seule fois.",
 	"fetchr.lobby.tutorial.chests.lectern.page_3": "Les items peuvent également avoir des poids. Plus le poids est élevé, plus il est probable que le jeu choisisse l'item dans la catégorie.\n\nUtilisez le panneau ci-dessus pour recréer les coffres.",
@@ -446,7 +442,6 @@
 	"fetchr.category.flint": "Silex",
 	"fetchr.category.furnace": "Four",
 	"fetchr.category.glow_ink": "Encre Luisante",
-	"fetchr.category.gold_and_ruined_portal": "Portails en Ruines et Or",
 	"fetchr.category.gunpowder": "Poudre à Canon",
 	"fetchr.category.ink": "Encre",
 	"fetchr.category.jungle": "Jungle",
@@ -541,7 +536,5 @@
 	"fetchr.goal.bingo.sniper.triple.bottom_left": "[%s] %s a obtenu un triple sniper bingo dans la colonne %s, la rangée %s et la diagonale du coin inférieur gauche au coin supérieur droit !",
 	"fetchr.goal.bingo.sniper.triple.col_diags": "[%s] %s a obtenu un triple sniper bingo dans la colonne %s et les deux diagonales !",
 	"fetchr.goal.bingo.sniper.triple.row_diags": "[%s] %s a obtenu un triple sniper bingo dans la rangée %s et les deux diagonales !",
-	"fetchr.goal.bingo.sniper.quadruple": "[%s] %s a obtenu un quadruple sniper bingo !",
-	"fetchr.settings.target_time.sign.line3": "",
-	"fetchr.settings.target_time.value.minutes": "%s minutes"
+	"fetchr.goal.bingo.sniper.quadruple": "[%s] %s a obtenu un quadruple sniper bingo !"
 }
