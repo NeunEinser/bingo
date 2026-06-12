@@ -61,6 +61,21 @@ def main():
 	os.mkdir(target)
 
 	mc_versions: list[dict] = requests.get("https://raw.githubusercontent.com/misode/mcmeta/refs/heads/summary/versions/data.json").json()
+	mc_versions.insert(0, {
+		"id": "26.2-rc-2",
+		"name": "26.2 Release Candidate 2",
+		"type": "snapshot",
+		"stable": False,
+		"data_version": 4902,
+		"protocol_version": 1073742146,
+		"data_pack_version": 107,
+		"data_pack_version_minor": 1,
+		"resource_pack_version": 88,
+		"resource_pack_version_minor": 0,
+		"build_time": "2026-06-12T11:41:39+00:00",
+		"release_time": "2026-06-12T11:32:28+00:00",
+		"sha1": "9c01b04a6ffd22f6ef4c1dfa8fab9850648fb9dd",
+	})
 	mc_versions.reverse()
 
 	variantDict: dict | None = main_config.get("versions")
