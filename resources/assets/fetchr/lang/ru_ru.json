@@ -100,7 +100,7 @@
 	"fetchr.preferences.custom_hud.component_settings.player_position.use_text_icon.description": "Меняет иконку координат на текстовое отображение сторон света.",
 	"fetchr.settings.section.advanced_settings.sign.line2": "Продвинутые",
 	"fetchr.settings.section.advanced_settings.sign.line3": "настройки",
-	"fetchr.settings.concealed_card.lectern.page_2": "Знание несовместимых предметов вам очень поможет.\n\nПосмотрите в сундуки с категориями за углом!",
+	"fetchr.settings.target_time.value.minutes": "%s минут",
 	"fetchr.settings.lockout_mode.name": "Режим Lockout",
 	"fetchr.settings.lockout_mode.sign.line1": "Режим",
 	"fetchr.settings.lockout_mode.sign.line2": "Режим",
@@ -261,7 +261,6 @@
 	"fetchr.category.fish": "Рыба",
 	"fetchr.category.flint": "Кремень",
 	"fetchr.category.furnace": "Печь",
-	"fetchr.category.gold_and_ruined_portal": "Руины порталов и Золото",
 	"fetchr.category.gunpowder": "Порох",
 	"fetchr.category.ink": "Чернила",
 	"fetchr.category.jungle": "Джунгли",
@@ -288,6 +287,5 @@
 	"fetchr.goal.blackout.subtitle.blue": "Синяя команда сделала зачистку!",
 	"fetchr.goal.blackout.subtitle.cyan": "Бирюзовая команда сделала зачистку!",
 	"fetchr.goal.blackout.subtitle.dark_blue": "Тёмно-синяя команда сделала зачистку!",
-	"fetchr.goal.blackout.subtitle.dark_gray": "Тёмно-серая команда сделала зачистку!",
-	"fetchr.settings.target_time.value.minutes": "%s минут"
+	"fetchr.goal.blackout.subtitle.dark_gray": "Тёмно-серая команда сделала зачистку!"
 }
