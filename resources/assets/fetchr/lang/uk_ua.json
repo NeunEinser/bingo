@@ -117,10 +117,6 @@
 	"fetchr.settings.concealed_card.lectern.page_2": "Знання взаємно виключних предметів може сильно допомогти!\n\nОгляньте скриню категорій у кутку!",
 	"fetchr.settings.concealed_card.confirmation.toggle_off": "Сліпий режим був вимкнений.",
 	"fetchr.settings.concealed_card.confirmation.toggle_on": "Сліпий режим був увімкнений.",
-	"fetchr.settings.points_goal.sign.line3": "",
-	"fetchr.settings.points_goal.value.minutes": "%s хвилин",
-	"fetchr.settings.points_goal.action.set_time": "Встановити Час",
-	"fetchr.settings.points_goal.action.disable": "Вимкнути",
 	"fetchr.settings.lockout_mode.name": "Режим Блокування",
 	"fetchr.settings.lockout_mode.sign.line1": "Режим",
 	"fetchr.settings.lockout_mode.sign.line2": "Блокування",
@@ -595,5 +591,9 @@
 	"fetchr.goal.bingo.sniper.triple.bottom_left": "[%s] %s виконав потрійне бінго снайпера в стовпці %s, рядку %s та в діагоналі від лівого низу до правої вершини!",
 	"fetchr.goal.bingo.sniper.triple.col_diags": "[%s] %s виконав потрійне бінго снайпера в стовпці %s та обох діагоналях!",
 	"fetchr.goal.bingo.sniper.triple.row_diags": "[%s] %s виконав потрійне бінго снайпера в рядку %s та обох діагоналях!",
-	"fetchr.goal.bingo.sniper.quadruple": "[%s] %s виконав четверне бінго снайпера!"
+	"fetchr.goal.bingo.sniper.quadruple": "[%s] %s виконав четверне бінго снайпера!",
+	"fetchr.settings.target_time.sign.line3": "",
+	"fetchr.settings.target_time.value.minutes": "%s хвилин",
+	"fetchr.settings.target_time.action.set_time": "Встановити Час",
+	"fetchr.settings.target_time.action.disable": "Вимкнути"
 }
