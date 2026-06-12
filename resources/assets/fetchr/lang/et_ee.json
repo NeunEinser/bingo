@@ -393,7 +393,6 @@
 	"fetchr.lobby.team_selection.join_dark_blue": "%s ühines tumesinise tiimiga.",
 	"fetchr.lobby.team_selection.join_purple": "%s ühines lilla tiimiga.",
 	"fetchr.lobby.team_selection.join_magenta": "%s ühines magentapunase tiimiga.",
-	"fetchr.lobby.tutorial.generate_chests.sign.line1": "Regenereeri",
 	"fetchr.lobby.tutorial.chests.lectern.page_1": "Paremal asuvates kirstudes on kõik esemed, mis Fetchr'is ilmuda võivad.\n\nIgas veerus on ühe kategooria esemed. Igast kategooriast saab bingokaardil ilmuda ainult üks ese.",
 	"fetchr.lobby.tutorial.chests.lectern.page_2": "Veerg mis hakkab tühja lahtriga on jätk eelmisest veerust.\n\nEsemel võib olla ka mitu kategooriat, mis vähendab selle ilmumisvõimalust, kuna see saab ainult ilmuda juhul, kui ühestki selle kategooriatest eset pole kaardil.",
 	"fetchr.lobby.tutorial.chests.lectern.page_3": "Esemetel on ka kaal. Suurema kaaluga esemetel on suurem võimalus oma kategooriast valituks saada.\n\nKasuta kohlolevat silti kirstude regenereerimiseks.",
