@@ -13,7 +13,7 @@ execute \
 	run setblock ~ ~ ~ minecraft:air
 execute \
 	at @e[type=minecraft:marker, tag=fetchr.chest_generation_marker] \
-	run function fetchr:init/update_lobby/reset_category_chests
+	run function fetchr:init/update_lobby/reset_item_pool_display
 execute \
 	at @e[type=minecraft:marker, tag=fetchr.lobby_enderchest] \
 	run setblock ~ ~ ~ minecraft:air

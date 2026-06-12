@@ -24,7 +24,7 @@ struct CategroyRegistryData {
 	/// Namespaced id to uniquely identify the category within Fetchr
 	id: #[id] string,
 
-	/// This name is shown in the item tooltip of category chests.
+	/// This name is shown in the item tooltip of item pool display chests.
 	name: (
 		#[until="1.21.5"] #[text_component] string
 		| #[since="1.21.5"] Text

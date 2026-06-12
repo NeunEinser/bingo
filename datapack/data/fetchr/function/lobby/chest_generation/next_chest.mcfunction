@@ -28,10 +28,35 @@ clone ~ ~ ~ ~1 62 ~ ~ ~1 ~ filtered minecraft:chest move
 scoreboard players set $lobby/chest_gen.use_single_chest fetchr.tmp 0
 execute unless data storage tmp.fetchr:chest_generation categories[-1].items[5] unless data storage tmp.fetchr:chest_generation categories[-5].items[3] run scoreboard players set $lobby/chest_gen.use_single_chest fetchr.tmp 1
 
-execute unless score $lobby/chest_gen.use_single_chest fetchr.tmp matches 1 run setblock ~ ~ ~ minecraft:chest[type=left]
-execute unless score $lobby/chest_gen.use_single_chest fetchr.tmp matches 1 run setblock ~1 ~ ~ minecraft:chest[type=right]
-execute if score $lobby/chest_gen.use_single_chest fetchr.tmp matches 1 run setblock ~ ~ ~ minecraft:chest[type=single]
-execute if score $lobby/chest_gen.use_single_chest fetchr.tmp matches 1 run setblock ~1 ~ ~ minecraft:chest[type=single]
+#NEUN_SCRIPT until 69
+#execute \
+	unless score $lobby/chest_gen.use_single_chest fetchr.tmp matches 1 run \
+	setblock ~ ~ ~ minecraft:chest[type=left]{CustomName: {"translate": "fetchr.lobby.tutorial.chests.heading"}}
+#execute \
+	unless score $lobby/chest_gen.use_single_chest fetchr.tmp matches 1 run \
+	setblock ~1 ~ ~ minecraft:chest[type=right]{CustomName: {"translate": "fetchr.lobby.tutorial.chests.heading"}}
+#execute \
+	if score $lobby/chest_gen.use_single_chest fetchr.tmp matches 1 run \
+	setblock ~ ~ ~ minecraft:chest[type=single]{CustomName: {"translate": "fetchr.lobby.tutorial.chests.heading"}}
+#execute \
+	if score $lobby/chest_gen.use_single_chest fetchr.tmp matches 1 run \
+	setblock ~1 ~ ~ minecraft:chest[type=single]{CustomName: {"translate": "fetchr.lobby.tutorial.chests.heading"}}
+#NEUN_SCRIPT end
+
+#NEUN_SCRIPT since 69
+execute \
+	unless score $lobby/chest_gen.use_single_chest fetchr.tmp matches 1 run \
+	setblock ~ ~ ~ minecraft:chest[type=left]{CustomName: {translate: "fetchr.lobby.tutorial.chests.heading"}}
+execute \
+	unless score $lobby/chest_gen.use_single_chest fetchr.tmp matches 1 run \
+	setblock ~1 ~ ~ minecraft:chest[type=right]{CustomName: {translate: "fetchr.lobby.tutorial.chests.heading"}}
+execute \
+	if score $lobby/chest_gen.use_single_chest fetchr.tmp matches 1 run \
+	setblock ~ ~ ~ minecraft:chest[type=single]{CustomName: {translate: "fetchr.lobby.tutorial.chests.heading"}}
+execute \
+	if score $lobby/chest_gen.use_single_chest fetchr.tmp matches 1 run \
+	setblock ~1 ~ ~ minecraft:chest[type=single]{CustomName: {translate: "fetchr.lobby.tutorial.chests.heading"}}
+#NEUN_SCRIPT end
 
 scoreboard players set $chest_generation.column fetchr.tmp 0
 scoreboard players set $chest_generation.row fetchr.tmp 0

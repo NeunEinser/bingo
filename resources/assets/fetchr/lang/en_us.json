@@ -173,7 +173,7 @@
 	"fetchr.settings.concealed_card.sign.line2": "Card",
 	"fetchr.settings.concealed_card.sign.line3": "",
 	"fetchr.settings.concealed_card.lectern.page_1": "When playing with a concealed card, you will not be able to see the card before or during the game.\n\nOnce a team has unlocked an item, the item will be visible to players of all teams.",
-	"fetchr.settings.concealed_card.lectern.page_2": "Knowing mutually exclusive items will help you greatly.\n\nCheck out the category chests around the corner!",
+	"fetchr.settings.concealed_card.lectern.page_2": "Knowing mutually exclusive items will help you greatly.\n\nCheck out the item pool display around the corner!",
 	"fetchr.settings.concealed_card.confirmation.toggle_off": "Concealed card has been disabled.",
 	"fetchr.settings.concealed_card.confirmation.toggle_on": "Concealed card has been enabled.",
 
@@ -466,10 +466,10 @@
 
 
 	"fetchr.lobby.tutorial.generate_chests.sign.line1": "Re-generate",
-	"fetchr.lobby.tutorial.generate_chests.sign.line2": "Category",
-	"fetchr.lobby.tutorial.generate_chests.sign.line3": "Chests",
-	"fetchr.lobby.tutorial.generate_chests.sign.line4": "",
-	"fetchr.lobby.tutorial.chests.lectern.heading": "Category Chests",
+	"fetchr.lobby.tutorial.generate_chests.sign.line2": "",
+	"fetchr.lobby.tutorial.generate_chests.sign.line3": "Item Pool",
+	"fetchr.lobby.tutorial.generate_chests.sign.line4": "Display",
+	"fetchr.lobby.tutorial.chests.heading": "Item Pool Display",
 	"fetchr.lobby.tutorial.chests.lectern.page_1": "The chests to the right display all the items that are in the Fetchr item pool.\n\nEach column is a category. Only one item of each category can appear at the same time on any given card.",
 	"fetchr.lobby.tutorial.chests.lectern.page_2": "A column starting with an empty slot is a continuation of the category in the last column.\n\nAn item can also have multiple categories, which restricts it more, as the item can only be picked when none of the items in any of its categories are on the card.",
 	"fetchr.lobby.tutorial.chests.lectern.page_3": "Items can also have weights. The higher the weight is, the more likely it is for the game to pick the item from the category.\n\nUse the sign above to re-generate the chests.",
