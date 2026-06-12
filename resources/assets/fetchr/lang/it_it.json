@@ -341,7 +341,6 @@
 	"fetchr.lobby.team_selection.join_dark_blue": "%s si è unito alla squadra blu scuro.",
 	"fetchr.lobby.team_selection.join_purple": "%s si è unito alla squadra viola.",
 	"fetchr.lobby.team_selection.join_magenta": "%s si è unito alla squadra magenta.",
-	"fetchr.lobby.tutorial.generate_chests.sign.line1": "Rigenera",
 	"fetchr.lobby.tutorial.chests.lectern.page_1": "I bauli a destra mostrano tutti gli oggetti che sono nella colonna degli oggetti Fetchr.\n\nOgni colonna è una categoria. Solo un elemento di ogni categoria può apparire allo stesso tempo su una determinata carta.",
 	"fetchr.lobby.tutorial.chests.lectern.page_2": "Una colonna che inizia con uno slot vuoto è una continuazione della categoria nell'ultima colonna.\n\nUn oggetto può avere più categorie, il che è limitato, poiché l'oggetto può essere selezionato solo quando nessuno degli oggetti è in nessuna delle sue categorie.",
 	"fetchr.lobby.tutorial.chests.lectern.page_3": "Gli oggetti possono anche avere pesi. Più alto è il peso, più è probabile per il gioco sceglie il prodotto dalla categoria.\n\nUsa il segno qui sopra per rigenerare i bauli.",
