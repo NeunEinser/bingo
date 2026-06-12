@@ -2789,7 +2789,7 @@ data \
 	categories: [ "fetchr:ruined_portal" ]\
 }
 
-#NEUN_SCRIPT until 101.2
+#NEUN_SCRIPT since 101.2
 # 0138: polished_cinnabar
 data \
 	modify storage fetchr:registries items append value {\
@@ -2799,9 +2799,7 @@ data \
 	icon: "0138",\
 	categories: [ "fetchr:sulfur_caves" ]\
 }
-#NEUN_SCRIPT end
 
-#NEUN_SCRIPT until 101.2
 # 0139: sulfur_bricks
 data \
 	modify storage fetchr:registries items append value {\
