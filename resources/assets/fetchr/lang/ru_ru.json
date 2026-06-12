@@ -234,8 +234,6 @@
 	"fetchr.lobby.end.sign.line1": "Внешний Мир",
 	"fetchr.lobby.end.sign.line3": "Опасность!",
 	"fetchr.lobby.end.sign.line4": "Оставайтесь Внутри!",
-	"fetchr.skybox.start_game.sign.line2": "Начать",
-	"fetchr.skybox.start_game.sign.line3": "Игру",
 	"fetchr.team.black": "Чёрная",
 	"fetchr.team.blue": "Синяя",
 	"fetchr.team.cyan": "Бирюзовая",
@@ -289,5 +287,7 @@
 	"fetchr.goal.blackout.subtitle.blue": "Синяя команда сделала зачистку!",
 	"fetchr.goal.blackout.subtitle.cyan": "Бирюзовая команда сделала зачистку!",
 	"fetchr.goal.blackout.subtitle.dark_blue": "Тёмно-синяя команда сделала зачистку!",
-	"fetchr.goal.blackout.subtitle.dark_gray": "Тёмно-серая команда сделала зачистку!"
+	"fetchr.goal.blackout.subtitle.dark_gray": "Тёмно-серая команда сделала зачистку!",
+	"fetchr.spawn_preview.start_game.sign.line2": "Начать",
+	"fetchr.spawn_preview.start_game.sign.line3": "Игру"
 }
