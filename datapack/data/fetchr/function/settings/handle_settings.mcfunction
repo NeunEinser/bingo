@@ -143,7 +143,7 @@ execute \
 execute \
 	if score @s fetchr.settings matches 22 \
 	if score $game_state fetchr.state matches 2 \
-	run function fetchr:game/skybox/teleport_all
+	run function fetchr:game/spawn_preview/teleport_all
 execute \
 	if score @s fetchr.settings matches 22 \
 	if score $game_state fetchr.state matches 0 \

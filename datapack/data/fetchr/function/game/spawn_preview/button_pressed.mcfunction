@@ -1,0 +1,44 @@
+#> fetchr:game/spawn_preview/button_pressed
+#
+# This function is executed during the spawn preview phase
+#
+# @within function fetchr:game/spawn_preview/tick
+# @context
+# 	location The location of the button
+
+execute \
+	if block ~ ~ ~1 minecraft:red_stained_glass \
+	run function fetchr:game/spawn_preview/join_team/red
+execute \
+	if block ~ ~ ~1 minecraft:orange_stained_glass \
+	run function fetchr:game/spawn_preview/join_team/orange
+execute \
+	if block ~ ~ ~1 minecraft:yellow_stained_glass \
+	run function fetchr:game/spawn_preview/join_team/yellow
+execute \
+	if block ~ ~ ~1 minecraft:lime_stained_glass \
+	run function fetchr:game/spawn_preview/join_team/lime
+execute \
+	if block ~ ~ ~1 minecraft:green_stained_glass \
+	run function fetchr:game/spawn_preview/join_team/green
+execute \
+	if block ~ ~ ~1 minecraft:cyan_stained_glass \
+	run function fetchr:game/spawn_preview/join_team/cyan
+execute \
+	if block ~ ~ ~1 minecraft:light_blue_stained_glass \
+	run function fetchr:game/spawn_preview/join_team/light_blue
+execute \
+	if block ~ ~ ~1 minecraft:blue_stained_glass \
+	run function fetchr:game/spawn_preview/join_team/blue
+execute \
+	if block ~ ~ ~1 minecraft:purple_stained_glass \
+	run function fetchr:game/spawn_preview/join_team/purple
+execute \
+	if block ~ ~ ~1 minecraft:magenta_stained_glass \
+	run function fetchr:game/spawn_preview/join_team/magenta
+
+scoreboard players operation @s fetchr.game_id = $current_game_id fetchr.game_id
+
+setblock ~ ~ ~ minecraft:stone_button[facing=north, powered=false]
+
+function #fetchr:spawn_preview/joined_team

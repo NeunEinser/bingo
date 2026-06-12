@@ -6,7 +6,7 @@
 
 execute \
 	positioned ~-151 -64 ~-151 \
-	as @e[type=!#fetchr:skip_processing_in_skybox, tag=!fetchr.generated_entity, dx=304, dy=384, dz=304] \
+	as @e[type=!#fetchr:skip_processing_in_spawn_preview, tag=!fetchr.generated_entity, dx=304, dy=384, dz=304] \
 	run function fetchr:game/start/pre_gen/kill_non_generated_entity
 execute \
 	positioned ~-7 -192 ~-7 \

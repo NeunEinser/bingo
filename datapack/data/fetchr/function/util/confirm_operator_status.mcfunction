@@ -53,7 +53,7 @@ execute \
 	run function fetchr:game/start/start_if_ready
 execute \
 	if score @s fetchr.operator_check_callback_action matches 13 \
-	run function fetchr:game/skybox/teleport_all
+	run function fetchr:game/spawn_preview/teleport_all
 execute \
 	if score @s fetchr.operator_check_callback_action matches 14 \
 	run function fetchr:game/reveal_card

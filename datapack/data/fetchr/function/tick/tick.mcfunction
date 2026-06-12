@@ -127,7 +127,7 @@
 		in fetchr:lobby \
 		run function #fetchr:lobby/tick
 	execute \
-		at @a[tag=fetchr.in_skybox, limit=1] \
+		at @a[tag=fetchr.in_spawn_preview, limit=1] \
 		as @e[type=minecraft:marker, tag=fetchr.spawn, distance=..12, limit=1] \
 		at @s \
 		run function #fetchr:spawn_preview/tick

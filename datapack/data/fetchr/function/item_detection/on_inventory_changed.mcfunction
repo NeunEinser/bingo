@@ -13,10 +13,10 @@ execute \
 
 execute \
 	if score $game_state fetchr.state matches 2 \
-	if entity @s[tag=fetchr.in_skybox] \
+	if entity @s[tag=fetchr.in_spawn_preview] \
 	if score @s fetchr.spyglass_dropped matches 1.. \
 	at @s \
-	run function fetchr:game/skybox/on_spyglass_dropped
+	run function fetchr:game/spawn_preview/on_spyglass_dropped
 
 
 advancement revoke @s only fetchr:inventory_changed

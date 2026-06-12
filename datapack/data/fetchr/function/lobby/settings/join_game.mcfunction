@@ -28,4 +28,4 @@ execute \
 execute \
 	if score $game_state fetchr.state matches 2 \
 	at @e[tag=fetchr.spawn] \
-	run function fetchr:game/skybox/join_game
+	run function fetchr:game/spawn_preview/join_game

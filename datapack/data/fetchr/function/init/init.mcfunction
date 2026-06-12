@@ -68,17 +68,17 @@ execute \
 	# @internal
 	#declare tag fetchr.card_frame
 	#>
-	# Players currently in the skybox.
+	# Players currently in the spawn preview.
 	#
 	# @internal
-	#declare tag fetchr.in_skybox
+	#declare tag fetchr.in_spawn_preview
 	#>
 	# This tag is given to players whose position changed compared to last tick
 	# @internal
 	#declare tag fetchr.position_changed
 	#>
 	# This tag is used to automatically make these players join the game when the
-	# skybox is ready
+	# spawn preview is ready
 	# @internal
 	#declare tag fetchr.automatically_join_game
 	#>
@@ -454,11 +454,11 @@ execute \
 		# @within
 		# 	function fetchr:lobby/**
 		# 	function fetchr:game/**
-		# 	structure fetchr:skybox
-		#declare tag fetchr.skybox_button
+		# 	structure fetchr:spawn_preview
+		#declare tag fetchr.spawn_preview_button
 		#>
 		# @within
-		# 	function fetchr:game/skybox/**
+		# 	function fetchr:game/spawn_preview/**
 		# 	structure fetchr:card_generation
 		#declare tag fetchr.pressed_button
 	#endregion
@@ -773,7 +773,7 @@ execute \
 		# 10 = toggle allow spectating
 		# 11 = toggle gamemode
 		# 12 = start if ready
-		# 13 = teleport all (skybox)
+		# 13 = teleport all (spawn preview)
 		# 14 = reveal card
 		# 15 = teleport all (lobby)
 		# 16 = show game settings dialog
@@ -873,7 +873,7 @@ execute \
 		#
 		# @within
 		#		function fetchr:init/init
-		#		function fetchr:game/skybox/tick
+		#		function fetchr:game/spawn_preview/tick
 		scoreboard objectives add fetchr.spyglass_dropped minecraft.dropped:minecraft.spyglass
 
 		#>
@@ -897,7 +897,7 @@ execute \
 		# The current game state
 		# 0 = Lobby / Not in game
 		# 1 = Starting / chunk pre-gen
-		# 2 = Skybox phase
+		# 2 = Spawn preview phase
 		# 3 = Countdown phase
 		# 4 = Game in progress
 		#

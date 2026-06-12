@@ -20,7 +20,7 @@ execute \
 	run tellraw @a { "translate": "fetchr.lobby.returned", "with": [{ "selector": "@s" }]}
 
 effect clear @s
-clear @s minecraft:spyglass[minecraft:custom_data={ fetchr: { skybox_spyglass: true }}]
+clear @s minecraft:spyglass[minecraft:custom_data={ fetchr: { spawn_preview_spyglass: true }}]
 
 function fetchr:util/find_connected_entities
 execute \
@@ -57,7 +57,7 @@ scoreboard players reset @s fetchr.spectator
 scoreboard players reset @s fetchr.resource_pack_check
 
 tag @s remove fetchr.spectator
-tag @s remove fetchr.in_skybox
+tag @s remove fetchr.in_spawn_preview
 scoreboard players set @s fetchr.update_hud 1
 
 #NEUN_SCRIPT until 49

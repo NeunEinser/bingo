@@ -1,5 +1,5 @@
 {
 	"values": [
-		"fetchr:game/skybox/player_tick"
+		"fetchr:game/spawn_preview/player_tick"
 	]
 }

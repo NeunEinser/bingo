@@ -1,7 +1,6 @@
 #> fetchr:game/start/start_spawn_sequence
 #
-# This function is called when a player starts the game and either starts pre-
-# generating or spawns the skybox.
+# This function is called when a player starts the game from the spawn preview
 #
 # @within function fetchr:game/start/start_if_ready
 
@@ -25,7 +24,7 @@ scoreboard players reset $red_player_count fetchr.state
 scoreboard players reset $white_player_count fetchr.state
 scoreboard players reset $yellow_player_count fetchr.state
 
-kill @e[type=minecraft:marker, tag=fetchr.skybox_button, distance=..9]
+kill @e[type=minecraft:marker, tag=fetchr.spawn_preview_button, distance=..9]
 kill @e[type=minecraft:item_frame, tag=fetchr.card_frame, distance=..9]
 kill @e[type=minecraft:marker, tag=fetchr.card_frame_start, distance=..9]
 kill @e[type=minecraft:item_display, distance=..1]
@@ -41,7 +40,7 @@ execute \
 
 setblock ~ ~-1 ~ minecraft:lime_stained_glass
 teleport @a[predicate=fetchr:is_in_game] ~ ~ ~
-tag @a remove fetchr.in_skybox
+tag @a remove fetchr.in_spawn_preview
 effect give @a[predicate=fetchr:is_in_game] minecraft:invisibility infinite 1 true
 clear @a
 

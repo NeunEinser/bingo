@@ -1,11 +1,11 @@
 #> fetchr:game/start/init_teams
 #
-# Sets teams up for playing and skybox
+# Sets teams up for playing and spawn preview
 #
 # @within function fetchr:game/start/start_spawn_sequence
 # @context location fetchr:lobby
 
-# Make teammates fully invisible in the skybox
+# Make teammates fully invisible in the spawn preview
 team modify fetchr.light_blue seeFriendlyInvisibles false
 team modify fetchr.black seeFriendlyInvisibles false
 team modify fetchr.blue seeFriendlyInvisibles false

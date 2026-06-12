@@ -24,7 +24,7 @@ execute \
 	unless score $game_state fetchr.state matches 4 \
 	as @e[type=minecraft:marker, tag=fetchr.spawn, limit=1] \
 	at @s \
-	run function fetchr:game/black_skybox
+	run function fetchr:game/black_spawn_preview
 
 scoreboard players set $pregen_status fetchr.state 0
 execute \

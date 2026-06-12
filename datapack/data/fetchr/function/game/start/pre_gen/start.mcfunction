@@ -9,7 +9,7 @@
 # The marker cloud used to mark the current last pre-generated line of chunks.
 #
 # @within function fetchr:game/start/pre_gen/*
-# @within function fetchr:game/start/spawn_skybox
+# @within function fetchr:game/start/spawn_preview/*
 
 scoreboard players set $pregen_status fetchr.state 1
 
