@@ -295,7 +295,6 @@
 	"fetchr.lobby.team_selection.join_dark_blue": "Gracz %s dołączył do ciemnoniebieskiej drużyny.",
 	"fetchr.lobby.team_selection.join_purple": "Gracz %s dołączył do fioletowej drużyny.",
 	"fetchr.lobby.team_selection.join_magenta": "Gracz %s dołączył do karmazynowej drużyny.",
-	"fetchr.lobby.tutorial.generate_chests.sign.line1": "Wygeneruj",
 	"fetchr.lobby.tutorial.chests.lectern.page_1": "Skrzynie po prawej stronie pokazują wszystkie przedmioty, które znajdują się w puli przedmiotów Fetchr.\n\nKażda kolumna to kategoria. Jednocześnie tylko jeden przedmiot z każdej kategorii może pojawić się jednocześnie na danej karcie.",
 	"fetchr.lobby.tutorial.chests.lectern.page_2": "Kolumna zaczynająca się pustym miejscem jest kontynuacją kategorii z kolumny poprzedniej.\n\nPrzedmiot może mieć wiele kategorii, co ogranicza go jeszcze bardziej, gdyż może się pojawić na karcie tylko, gdy nie pojawi się żaden z przedmiotów z żadnej z jego kategorii.",
 	"fetchr.lobby.tutorial.chests.lectern.page_3": "Przedmioty mogą mieć również wagi. Im wyższa waga, tym większe prawdopodobieństwo, że gra wybierze dany przedmiot spośród danej kategorii.\n\nUżyj powyższej tabliczki, aby ponownie wygenerować skrzynie.",
