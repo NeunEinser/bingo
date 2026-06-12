@@ -23,14 +23,14 @@ execute \
 		front_text: {\
 			messages: [\
 				'{\
-					"translate": "fetchr.skybox.teleport_all.sign.line1",\
+					"translate": "fetchr.spawn_preview.teleport_all.sign.line1",\
 					"bold": true,\
 					"color": "#8eedeb",\
 					"clickEvent": { "action": "run_command", "value": "function fetchr:game/spawn_preview/teleport_all" }\
 				}',\
-				'{ "translate": "fetchr.skybox.teleport_all.sign.line2", "bold": true, "color": "#8eedeb" }',\
-				'{ "translate": "fetchr.skybox.teleport_all.sign.line3", "bold": true, "color": "#8eedeb" }',\
-				'{ "translate": "fetchr.skybox.teleport_all.sign.line4", "bold": true, "color": "#8eedeb" }'\
+				'{ "translate": "fetchr.spawn_preview.teleport_all.sign.line2", "bold": true, "color": "#8eedeb" }',\
+				'{ "translate": "fetchr.spawn_preview.teleport_all.sign.line3", "bold": true, "color": "#8eedeb" }',\
+				'{ "translate": "fetchr.spawn_preview.teleport_all.sign.line4", "bold": true, "color": "#8eedeb" }'\
 			]\
 		}\
 	}
@@ -40,14 +40,14 @@ execute \
 		front_text: {\
 			messages: [\
 				'{\
-					"translate": "fetchr.skybox.teleport_all.sign.line1",\
+					"translate": "fetchr.spawn_preview.teleport_all.sign.line1",\
 					"bold": true,\
 					"color": "#8eedeb",\
 					"clickEvent": { "action": "run_command", "value": "function fetchr:game/spawn_preview/teleport_all" }\
 				}',\
-				'{ "translate": "fetchr.skybox.teleport_all.sign.line2", "bold": true, "color": "#8eedeb" }',\
-				'{ "translate": "fetchr.skybox.teleport_all.sign.line3", "bold": true, "color": "#8eedeb" }',\
-				'{ "translate": "fetchr.skybox.teleport_all.sign.line4", "bold": true, "color": "#8eedeb" }'\
+				'{ "translate": "fetchr.spawn_preview.teleport_all.sign.line2", "bold": true, "color": "#8eedeb" }',\
+				'{ "translate": "fetchr.spawn_preview.teleport_all.sign.line3", "bold": true, "color": "#8eedeb" }',\
+				'{ "translate": "fetchr.spawn_preview.teleport_all.sign.line4", "bold": true, "color": "#8eedeb" }'\
 			]\
 		}\
 	}
@@ -59,14 +59,14 @@ execute \
 		front_text: {\
 			messages: [\
 				{\
-					translate: "fetchr.skybox.teleport_all.sign.line1",\
+					translate: "fetchr.spawn_preview.teleport_all.sign.line1",\
 					bold: true,\
 					color: "#8eedeb",\
 					click_event: { action: "run_command", command: "function fetchr:game/spawn_preview/teleport_all" }\
 				},\
-				{ translate: "fetchr.skybox.teleport_all.sign.line2", bold: true, color: "#8eedeb" },\
-				{ translate: "fetchr.skybox.teleport_all.sign.line3", bold: true, color: "#8eedeb" },\
-				{ translate: "fetchr.skybox.teleport_all.sign.line4", bold: true, color: "#8eedeb" }\
+				{ translate: "fetchr.spawn_preview.teleport_all.sign.line2", bold: true, color: "#8eedeb" },\
+				{ translate: "fetchr.spawn_preview.teleport_all.sign.line3", bold: true, color: "#8eedeb" },\
+				{ translate: "fetchr.spawn_preview.teleport_all.sign.line4", bold: true, color: "#8eedeb" }\
 			]\
 		}\
 	}
@@ -76,14 +76,14 @@ execute \
 		front_text: {\
 			messages: [\
 				{\
-					translate: "fetchr.skybox.teleport_all.sign.line1",\
+					translate: "fetchr.spawn_preview.teleport_all.sign.line1",\
 					bold: true,\
 					color: "#8eedeb",\
 					click_event: { action: "run_command", command: "function fetchr:game/spawn_preview/teleport_all" }\
 				},\
-				{ translate: "fetchr.skybox.teleport_all.sign.line2", bold: true, color: "#8eedeb" },\
-				{ translate: "fetchr.skybox.teleport_all.sign.line3", bold: true, color: "#8eedeb" },\
-				{ translate: "fetchr.skybox.teleport_all.sign.line4", bold: true, color: "#8eedeb" }\
+				{ translate: "fetchr.spawn_preview.teleport_all.sign.line2", bold: true, color: "#8eedeb" },\
+				{ translate: "fetchr.spawn_preview.teleport_all.sign.line3", bold: true, color: "#8eedeb" },\
+				{ translate: "fetchr.spawn_preview.teleport_all.sign.line4", bold: true, color: "#8eedeb" }\
 			]\
 		}\
 	}
