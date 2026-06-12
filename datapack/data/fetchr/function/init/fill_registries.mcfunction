@@ -2822,7 +2822,7 @@ data \
 }
 #data modify storage fetchr:registries structures append value {\
 	id: "fetchr:card_generation",\
-	version: 1,\
+	version: 3,\
 	entrance_position: [I; 0, 2, 10]\
 }
 #data modify storage fetchr:registries structures append value {\
@@ -2849,7 +2849,7 @@ data modify storage fetchr:registries structures append value {\
 #NEUN_SCRIPT since 62
 data modify storage fetchr:registries structures append value {\
 	id: "fetchr:card_generation",\
-	version: 2,\
+	version: 4,\
 	entrance_position: [I; 0, 2, 10]\
 }
 #NEUN_SCRIPT end
