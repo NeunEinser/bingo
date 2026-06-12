@@ -21,9 +21,9 @@ $dialog show @s {\
 		},\
 		{\
 			label: [\
-				{ translate: "fetchr.settings.points_goal.name" },\
+				{ translate: "fetchr.settings.target_time.name" },\
 				": ",\
-				$(points_goal),\
+				$(target_time),\
 			],\
 			action: { type: "minecraft:run_command", command: "trigger fetchr.settings set 14" },\
 		},\

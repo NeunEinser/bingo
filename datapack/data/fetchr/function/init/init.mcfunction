@@ -659,11 +659,11 @@ execute \
 		#NEUN_SCRIPT end
 
 		#>
-		# Trigger objective used to change the announcement time for the points goal.
+		# Trigger objective used to change the announcement time for the target time.
 		#
 		# @internal
 		# @user
-		scoreboard objectives add fetchr.points_race_minutes trigger
+		scoreboard objectives add fetchr.target_time_minutes trigger
 
 		#>
 		# Trigger objective used to handle changes / clicks in the preferences menu.
@@ -764,7 +764,7 @@ execute \
 		# 1 = generate random card
 		# 2 = set seed
 		# 3 = toggle concealed card
-		# 4 = set points goal
+		# 4 = set target time
 		# 5 = toggle lockout mode
 		# 6 = toggle timer method
 		# 7 = toggle paused time
@@ -988,18 +988,18 @@ execute \
 			unless score $pregeneration_chunks fetchr.setting_values matches 361.. \
 			run scoreboard players set $pregeneration_chunks fetchr.setting_values 361
 		#>
-		# Minutes after which the points goal is announced
+		# Minutes after which the target time is announced
 		# 0 or less means, no announcement
 		#
 		# @internal
-		#declare score_holder $points_goal_announcement_minutes
-		scoreboard players add $points_goal_announcement_minutes fetchr.setting_values 0
+		#declare score_holder $target_time_announcement_minutes
+		scoreboard players add $target_time_announcement_minutes fetchr.setting_values 0
 		#>
-		# Wether the points goal has already been announced this game
+		# Wether the target time has already been announced this game
 		#
 		# @internal
-		#declare score_holder $points_goal_announced
-		scoreboard players add $points_goal_announced fetchr.state 0
+		#declare score_holder $target_time_announced
+		scoreboard players add $target_time_announced fetchr.state 0
 		#>
 		# Whether spectator mode is enabled during games.
 		#
@@ -1602,7 +1602,7 @@ execute \
 		run function fetchr:init/update_lobby/run
 
 # Update lobby sign settings
-	function fetchr:lobby/settings/update_points_goal_sign_string
+	function fetchr:lobby/settings/update_target_time_sign_string
 	function fetchr:lobby/settings/update_pre_gen_radius_sign_string
 	function fetchr:lobby/settings/update_allow_spectating_sign_string
 	function fetchr:lobby/settings/update_concealed_card_sign_string

@@ -121,6 +121,6 @@ execute \
 	at @s run playsound minecraft:entity.wither.spawn voice @a ~ ~ ~ 1 1.5
 
 tag @a[tag=fetchr.in_current_team] add fetchr.spectator
-scoreboard players set $points_goal_announced fetchr.state 1
+scoreboard players set $target_time_announced fetchr.state 1
 
 function #fetchr:goal_and_item_detection/achieved_blackout

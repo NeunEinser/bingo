@@ -14,7 +14,7 @@ execute \
 
 data modify storage tmp.fetchr:settings/dialog custom_options set value {\
 	concealed_card: "off",\
-	points_goal: { translate: "options.off" },\
+	target_time: { translate: "options.off" },\
 	lockout_mode: "off",\
 	timer_method: "real_time",\
 	paused_time: "off",\
@@ -30,16 +30,16 @@ execute \
 	run data modify storage tmp.fetchr:settings/dialog custom_options.concealed_card set value "on"
 
 data modify block 7 0 7 front_text.messages[0] set value {\
-	translate: "fetchr.settings.points_goal.value.minutes",\
+	translate: "fetchr.settings.target_time.value.minutes",\
 	with: [\
-		{ score: { name: "$points_goal_announcement_minutes", objective: "fetchr.setting_values" }}\
+		{ score: { name: "$target_time_announcement_minutes", objective: "fetchr.setting_values" }}\
 	]\
 }
 
 execute \
-	if score $points_goal_announcement_minutes fetchr.setting_values matches 1.. \
+	if score $target_time_announcement_minutes fetchr.setting_values matches 1.. \
 	run data \
-		modify storage tmp.fetchr:settings/dialog custom_options.points_goal \
+		modify storage tmp.fetchr:settings/dialog custom_options.target_time \
 		set from block 7 0 7 front_text.messages[0]
 
 execute \

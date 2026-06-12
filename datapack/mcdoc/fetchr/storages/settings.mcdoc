@@ -3,7 +3,7 @@ use ::java::server::util::text::Text
 dispatch minecraft:storage[tmp.fetchr:settings/dialog] to struct {
 	custom_options: struct {
 		concealed_card: ("on" | "off"),
-		points_goal: Text,
+		target_time: Text,
 		lockout_mode: ("on" | "off"),
 		timer_method: ("real_time" | "in_game_time"),
 		paused_time: ("on" | "off"),
@@ -13,7 +13,7 @@ dispatch minecraft:storage[tmp.fetchr:settings/dialog] to struct {
 		operator_only: ("on" | "off"),
 		gamemode: ("adventure" | "survival"),
 	},
-	points_goal: struct {
+	target_time: struct {
 		game_end: int @ 1..,
 		exit_callback_setting_trigger: int @ 1..,
 		cancel_button_translate: string,

@@ -18,8 +18,8 @@ execute if entity @s[tag=fetchr.danger_sign_east] run setblock ~ ~ ~ minecraft:c
 
 data modify entity @s data.fetchr.pls_send_update set value true
 data \
-	modify entity @s[tag=fetchr.points_goal_sign] data.front_text.messages[3] \
-	set from storage fetchr:settings points_goal
+	modify entity @s[tag=fetchr.target_time_sign] data.front_text.messages[3] \
+	set from storage fetchr:settings target_time
 data \
 	modify entity @s[tag=fetchr.pre_gen_sign] data.front_text.messages[3] \
 	set from storage fetchr:settings pre_gen_radius
