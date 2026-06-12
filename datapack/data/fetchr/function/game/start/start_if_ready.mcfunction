@@ -17,7 +17,7 @@ execute \
 
 execute \
 	unless score $pregen_status fetchr.state matches 2 \
-	run tellraw @s { "translate": "fetchr.skybox.start_game.error.not_ready", "color": "red" }
+	run tellraw @s { "translate": "fetchr.spawn_preview.start_game.error.not_ready", "color": "red" }
 execute \
 	if score $pregen_status fetchr.state matches 2 \
 	at @e[type=minecraft:marker, tag=fetchr.spawn, limit=1] \
