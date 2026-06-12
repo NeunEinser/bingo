@@ -393,7 +393,6 @@
 	"fetchr.lobby.team_selection.join_dark_blue": "%s se unió al equipo azul oscuro.",
 	"fetchr.lobby.team_selection.join_purple": "%s se unió al equipo morado.",
 	"fetchr.lobby.team_selection.join_magenta": "%s se unió al equipo magenta.",
-	"fetchr.lobby.tutorial.generate_chests.sign.line1": "Restablecer",
 	"fetchr.lobby.tutorial.chests.lectern.page_1": "Los cofres de la derecha muestran todos los objetos que están en el grupo de objetos de Fetchr.\n\nCada columna es una categoría. Sólo un objeto de cada categoría puede aparecer al mismo tiempo en un cartón.",
 	"fetchr.lobby.tutorial.chests.lectern.page_2": "Una columna que comienza con un espacio vacío es una continuación de la anterior.\n\nUn objeto también puede tener múltiples categorías, pero sólo puede aparecer cuando ninguno de los objetos en cualquiera de sus categorías está en el cartón.",
 	"fetchr.lobby.tutorial.chests.lectern.page_3": "Los objetos también pueden tener peso. Cuanto mayor sea el peso, más probabilidades habrá de que el juego seleccione el objeto de la categoría.\n\nUtilice el letrero de arriba para regenerar los cofres.",
