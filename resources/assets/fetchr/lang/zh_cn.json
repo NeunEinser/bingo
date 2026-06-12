@@ -349,7 +349,6 @@
 	"fetchr.lobby.team_selection.join_dark_blue": "%s 加入了深蓝队。",
 	"fetchr.lobby.team_selection.join_purple": "%s 加入了紫队。",
 	"fetchr.lobby.team_selection.join_magenta": "%s 加入了品红队。",
-	"fetchr.lobby.tutorial.generate_chests.sign.line1": "再次生成",
 	"fetchr.lobby.tutorial.chests.lectern.page_1": "右侧的箱子显示 Fetchr 物品池中的所有物品。\n\n每一列都是一个类别。每个类别只能有一个物品分别出现在任何给定的卡片上。",
 	"fetchr.lobby.tutorial.chests.lectern.page_2": "以空槽位开头的列是上一列类别的延续。\n\n一个物品还可以有多个类别，这对其限制更大，因为仅当卡片上没有任何该物品所属的类别的物品时才能选择该物品。",
 	"fetchr.lobby.tutorial.chests.lectern.page_3": "物品也可以有权重。权重越高，游戏从类别中选择该物品的可能性就越大。\n\n使用上面的告示牌重新生成箱子。",
