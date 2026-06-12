@@ -26,14 +26,20 @@ execute \
 #function fetchr:util/string/parse_snbt with storage tmp.fetchr:util inner_snbt
 
 #data modify storage tmp.fetchr:util snbt set from storage io.fetchr:util nbt
+
+tellraw NeunEinser { "storage": "tmp.fetchr:util", "nbt": "snbt" }
 #NEUN_SCRIPT end
 #NEUN_SCRIPT since 69
 data \
 	modify block 7 0 7 front_text.messages[0] \
 	set value { storage: "io.fetchr:util", nbt: "nbt", plain: true }
+
 #NEUN_SCRIPT until 98
 #data modify storage tmp.fetchr:util snbt set from block 7 0 7 front_text.messages[0]
+#NEUN_SCRIPT end
+#NEUN_SCRIPT end
 
+#NEUN_SCRIPT until 98
 #data modify storage tmp.fetchr:util char set string storage tmp.fetchr:util snbt 1 2
 #data modify storage io.fetchr:util string set string storage tmp.fetchr:util snbt 2
 
@@ -72,7 +78,6 @@ execute \
 execute \
 	unless data storage tmp.fetchr:util text_component.extra \
 	run data modify storage io.fetchr:util string set from storage tmp.fetchr:util text_component
-#NEUN_SCRIPT end
 #NEUN_SCRIPT end
 #NEUN_SCRIPT end
 
