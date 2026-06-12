@@ -105,8 +105,6 @@
 	"fetchr.settings.section.advanced_settings.sign.line3": "Avancés",
 	"fetchr.settings.section.advanced_settings.sign.line4": "",
 	"fetchr.settings.concealed_card.lectern.page_2": "Connaître les objets qui s'excluent mutuellement vous sera d'une aide précieuse.\n\nJetez un coup d'œil aux coffres de catégories aux alentours !",
-	"fetchr.settings.points_goal.sign.line3": "",
-	"fetchr.settings.points_goal.value.minutes": "%s minutes",
 	"fetchr.settings.lockout_mode.name": "Mode Strict",
 	"fetchr.settings.lockout_mode.sign.line1": "Mode",
 	"fetchr.settings.lockout_mode.sign.line2": "Strict",
@@ -543,5 +541,7 @@
 	"fetchr.goal.bingo.sniper.triple.bottom_left": "[%s] %s a obtenu un triple sniper bingo dans la colonne %s, la rangée %s et la diagonale du coin inférieur gauche au coin supérieur droit !",
 	"fetchr.goal.bingo.sniper.triple.col_diags": "[%s] %s a obtenu un triple sniper bingo dans la colonne %s et les deux diagonales !",
 	"fetchr.goal.bingo.sniper.triple.row_diags": "[%s] %s a obtenu un triple sniper bingo dans la rangée %s et les deux diagonales !",
-	"fetchr.goal.bingo.sniper.quadruple": "[%s] %s a obtenu un quadruple sniper bingo !"
+	"fetchr.goal.bingo.sniper.quadruple": "[%s] %s a obtenu un quadruple sniper bingo !",
+	"fetchr.settings.target_time.sign.line3": "",
+	"fetchr.settings.target_time.value.minutes": "%s minutes"
 }
