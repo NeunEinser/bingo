@@ -221,11 +221,6 @@
 	"fetchr.lobby.end.sign.line1": "Het Buiten",
 	"fetchr.lobby.end.sign.line3": "Gevaar!",
 	"fetchr.lobby.end.sign.line4": "Blijf Binnen!",
-	"fetchr.skybox.start_game.error.not_ready": "Wacht tot de pre-generatie balk bovenaan is voltooid.",
-	"fetchr.skybox.start_game.sign.line2": "Start",
-	"fetchr.skybox.start_game.sign.line3": "Spel",
-	"fetchr.skybox.leave_game.sign.line2": "Verlaat",
-	"fetchr.skybox.leave_game.sign.line3": "Spel",
 	"fetchr.categories.header": "Categorieën:",
 	"fetchr.category.bow": "Boog",
 	"fetchr.category.clay": "Klei",
@@ -324,5 +319,10 @@
 	"fetchr.goal.bingo.sniper.triple.bottom_left": "[%s] %s heeft een drievoudige sniper bingo in kolom %s, rij %s en van linksonder naar rechtsboven diagonaal!",
 	"fetchr.goal.bingo.sniper.triple.col_diags": "[%s] %s heeft een drievoudige sniper bingo in kolom %s en beide diagonalen!",
 	"fetchr.goal.bingo.sniper.triple.row_diags": "[%s] %s heeft een drievoudige sniper bingo in rij %s en beide diagonalen!",
-	"fetchr.goal.bingo.sniper.quadruple": "[%s] %s heeft een viervoudige sniper bingo!"
+	"fetchr.goal.bingo.sniper.quadruple": "[%s] %s heeft een viervoudige sniper bingo!",
+	"fetchr.spawn_preview.start_game.error.not_ready": "Wacht tot de pre-generatie balk bovenaan is voltooid.",
+	"fetchr.spawn_preview.start_game.sign.line2": "Start",
+	"fetchr.spawn_preview.start_game.sign.line3": "Spel",
+	"fetchr.spawn_preview.leave_game.sign.line2": "Verlaat",
+	"fetchr.spawn_preview.leave_game.sign.line3": "Spel"
 }
