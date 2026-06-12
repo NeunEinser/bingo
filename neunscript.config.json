@@ -17,7 +17,7 @@
 				"override_data_version": {
 					"exclude": [
 						"data/fetchr/structure/old",
-						"data/fetchr/structure/skybox.nbt"
+						"data/fetchr/structure/spawn_preview.nbt"
 					]
 				}
 			}

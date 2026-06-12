@@ -251,12 +251,6 @@
 }
 #data \
 	modify storage fetchr:registries categories append value {\
-	id: "fetchr:roots",\
-	name: '{ "translate": "fetchr.category.roots" }',\
-	tags: [ "fetchr:default" ]\
-}
-#data \
-	modify storage fetchr:registries categories append value {\
 	id: "fetchr:ruined_portal",\
 	name: '{ "translate": "fetchr.category.ruined_portal" }',\
 	tags: [ "fetchr:default" ]\
@@ -301,6 +295,12 @@
 	modify storage fetchr:registries categories append value {\
 	id: "fetchr:taiga",\
 	name: '{ "translate": "fetchr.category.taiga" }',\
+	tags: [ "fetchr:default" ]\
+}
+#data \
+	modify storage fetchr:registries categories append value {\
+	id: "fetchr:village",\
+	name: '{ "translate": "fetchr.category.village" }',\
 	tags: [ "fetchr:default" ]\
 }
 #data \
@@ -559,12 +559,6 @@ data \
 }
 data \
 	modify storage fetchr:registries categories append value {\
-	id: "fetchr:roots",\
-	name: { translate: "fetchr.category.roots" },\
-	tags: [ "fetchr:default" ]\
-}
-data \
-	modify storage fetchr:registries categories append value {\
 	id: "fetchr:ruined_portal",\
 	name: { translate: "fetchr.category.ruined_portal" },\
 	tags: [ "fetchr:default" ]\
@@ -623,6 +617,12 @@ data \
 	modify storage fetchr:registries categories append value {\
 	id: "fetchr:taiga",\
 	name: { translate: "fetchr.category.taiga" },\
+	tags: [ "fetchr:default" ]\
+}
+data \
+	modify storage fetchr:registries categories append value {\
+	id: "fetchr:village",\
+	name: { translate: "fetchr.category.village" },\
 	tags: [ "fetchr:default" ]\
 }
 data \
@@ -927,7 +927,7 @@ data \
 	item: { id: "minecraft:carrot" },\
 	translation: "item.minecraft.carrot",\
 	icon: "0018",\
-	categories: [ "fetchr:roots" ]\
+	categories: [ "fetchr:village" ]\
 }
 
 # 0019: golden_carrot
@@ -937,7 +937,7 @@ data \
 	item: { id: "minecraft:golden_carrot" },\
 	translation: "item.minecraft.golden_carrot",\
 	icon: "0019",\
-	categories: [ "fetchr:roots" ]\
+	categories: [ "fetchr:village" ]\
 }
 
 # 001a: painting
@@ -967,7 +967,8 @@ data \
 	item: { id: "minecraft:emerald" },\
 	translation: "item.minecraft.emerald",\
 	icon: "001c",\
-	categories: [ "fetchr:shipwreck" ]\
+	categories: [ "fetchr:village" ],\
+	weight: 3\
 }
 
 #NEUN_SCRIPT since 69
@@ -1895,7 +1896,7 @@ data \
 	item: { id: "minecraft:carrot_on_a_stick" },\
 	translation: "item.minecraft.carrot_on_a_stick",\
 	icon: "006a",\
-	categories: [ "fetchr:roots" ]\
+	categories: [ "fetchr:village" ]\
 }
 
 # 006b: baked_potato
@@ -1905,7 +1906,7 @@ data \
 	item: { id: "minecraft:baked_potato" },\
 	translation: "item.minecraft.baked_potato",\
 	icon: "006b",\
-	categories: [ "fetchr:roots" ],\
+	categories: [ "fetchr:village" ],\
 	weight: 3\
 }
 
@@ -2161,6 +2162,27 @@ data \
 	categories: [ "fetchr:sulfur_caves" ]\
 }
 #NEUN_SCRIPT end
+
+# 007f: prismarine_crystals
+data \
+	modify storage fetchr:registries items append value {\
+	id: "fetchr:prismarine_crystals",\
+	item: { id: "minecraft:prismarine_crystals" },\
+	translation: "item.minecraft.prismarine_crystals",\
+	icon: "007f",\
+	categories: [ "fetchr:shipwreck" ]\
+}
+
+# 0080: bell
+data \
+	modify storage fetchr:registries items append value {\
+	id: "fetchr:bell",\
+	item: { id: "minecraft:bell" },\
+	translation: "block.minecraft.bell",\
+	icon: "0080",\
+	categories: [ "fetchr:village" ],\
+	weight: 3\
+}
 
 # 0100: iron_block
 data \
