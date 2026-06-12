@@ -30,7 +30,7 @@ tellraw @a [\
 			{ "storage": "neun_einser.timer:display", "nbt": "\"hh:mm:ss.ff\"", "interpret": true },\
 			{ "selector": "@a[tag=fetchr.in_winning_team]" },\
 			{ "score": { "name": "$item_detect/announce/points.winning_score", "objective": "fetchr.tmp" }},\
-			{ "score": { "name": "$points_goal_announcement_minutes", "objective": "fetchr.setting_values" }}\
+			{ "score": { "name": "$target_time_announcement_minutes", "objective": "fetchr.setting_values" }}\
 		]\
 	}\
 ]
@@ -346,6 +346,6 @@ execute \
 tag @a[predicate=fetchr:is_in_game] add fetchr.spectator
 tag @a remove fetchr.in_winning_team
 
-scoreboard players set $points_goal_announced fetchr.state 1
+scoreboard players set $target_time_announced fetchr.state 1
 
-function #fetchr:goal_and_item_detection/finished_points_race
+function #fetchr:goal_and_item_detection/finished_target_time

@@ -130,7 +130,7 @@ tag @s add fetchr.in_spawn_preview
 
 scoreboard players reset @s fetchr.pref
 scoreboard players reset @s fetchr.pre_gen_radius
-scoreboard players reset @s fetchr.points_race_minutes
+scoreboard players reset @s fetchr.target_time_minutes
 scoreboard players enable @s fetchr.lobby
 
 gamemode adventure @s

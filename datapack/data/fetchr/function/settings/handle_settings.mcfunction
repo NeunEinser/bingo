@@ -74,7 +74,7 @@ execute \
 execute \
 	if score @s fetchr.settings matches 14 \
 	in fetchr:lobby \
-	run function fetchr:lobby/settings/set_points_goal
+	run function fetchr:lobby/settings/set_target_time
 
 execute \
 	if score @s fetchr.settings matches 15 \

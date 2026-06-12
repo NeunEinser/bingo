@@ -56,7 +56,7 @@ team modify fetchr.white seeFriendlyInvisibles true
 team modify fetchr.yellow seeFriendlyInvisibles true
 
 scoreboard players set $lockout_race_ended fetchr.state 0
-scoreboard players set $points_goal_announced fetchr.state 0
+scoreboard players set $target_time_announced fetchr.state 0
 
 fill ~-1 62 ~-1 ~1 319 ~1 minecraft:air replace minecraft:barrier
 execute \

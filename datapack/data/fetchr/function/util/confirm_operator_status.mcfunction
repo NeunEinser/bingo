@@ -26,7 +26,7 @@ execute \
 	run function fetchr:lobby/settings/toggle_concealed_card
 execute \
 	if score @s fetchr.operator_check_callback_action matches 4 \
-	run function fetchr:lobby/settings/set_points_goal
+	run function fetchr:lobby/settings/set_target_time
 execute \
 	if score @s fetchr.operator_check_callback_action matches 5 \
 	run function fetchr:lobby/settings/toggle_lockout_mode

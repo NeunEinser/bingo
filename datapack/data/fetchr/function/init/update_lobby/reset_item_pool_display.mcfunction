@@ -1,4 +1,4 @@
-#> fetchr:init/update_lobby/reset_category_chests
+#> fetchr:init/update_lobby/reset_item_pool_display
 #
 # Resets category chest area
 #

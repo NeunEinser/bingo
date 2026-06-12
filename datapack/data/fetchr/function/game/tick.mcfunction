@@ -4,9 +4,9 @@
 #
 # @within function fetchr:tick/tick
 execute \
-	if score $points_goal_announcement_minutes fetchr.setting_values matches 1.. \
-	if score $points_goal_announced fetchr.state matches 0 \
-	if score $minutes 91.timer.io >= $points_goal_announcement_minutes fetchr.setting_values \
+	if score $target_time_announcement_minutes fetchr.setting_values matches 1.. \
+	if score $target_time_announced fetchr.state matches 0 \
+	if score $minutes 91.timer.io >= $target_time_announcement_minutes fetchr.setting_values \
 	run function fetchr:item_detection/goals/points/announce
 
 execute \
