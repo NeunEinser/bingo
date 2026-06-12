@@ -6,8 +6,6 @@
 # @context
 # 	entity The entity to check
 
-say connected
-
 execute if entity @s[tag=fetchr.visited_leasher] run return 0
 
 tag @s add fetchr.visited_leasher

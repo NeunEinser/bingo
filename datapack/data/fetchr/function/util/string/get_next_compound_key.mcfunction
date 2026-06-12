@@ -27,7 +27,6 @@ execute \
 
 #data modify storage tmp.fetchr:util snbt set from storage io.fetchr:util nbt
 
-tellraw NeunEinser { "storage": "tmp.fetchr:util", "nbt": "snbt" }
 #NEUN_SCRIPT end
 #NEUN_SCRIPT since 69
 data \
