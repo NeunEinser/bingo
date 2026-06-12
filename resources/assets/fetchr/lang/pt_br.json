@@ -329,7 +329,6 @@
 	"fetchr.lobby.team_selection.join_dark_blue": "%s entrou no time azul-escuro.",
 	"fetchr.lobby.team_selection.join_purple": "%s entrou no time roxo.",
 	"fetchr.lobby.team_selection.join_magenta": "%s entrou no time magenta.",
-	"fetchr.lobby.tutorial.generate_chests.sign.line1": "Baús de",
 	"fetchr.lobby.tutorial.chests.lectern.page_1": "Os baús à direita exibem todos os itens que podem ser gerados na cartela do Fetchr.\n\nCada coluna é uma categoria. Apenas um item de cada categoria pode aparecer ao mesmo tempo em uma cartela.",
 	"fetchr.lobby.tutorial.chests.lectern.page_2": "Uma coluna iniciada com um espaço vazio indica a continuação da categoria na última coluna.\n\nUm item pode ter várias categorias, tornando-o mais restrito, pois ele só será escolhido se nenhum dos itens de suas categorias estiver na cartela.",
 	"fetchr.lobby.tutorial.chests.lectern.page_3": "Os itens também podem ter pesos. Quanto maior for o peso de um item, maiores são as chances do jogo o escolher naquela categoria.\n\nUse a placa acima para gerar novamente os itens dos baús.",
