@@ -136,10 +136,6 @@
 	"fetchr.settings.concealed_card.lectern.page_2": "서로 공유하지 않는 아이템은 매우 큰 도움이 될 것입니다.\n\n구석의 분류 상자를 확인해보세요!",
 	"fetchr.settings.concealed_card.confirmation.toggle_off": "가려진 카드가 비활성화되었습니다.",
 	"fetchr.settings.concealed_card.confirmation.toggle_on": "가려진 카드가 활성화되었습니다.",
-	"fetchr.settings.points_goal.sign.line3": "",
-	"fetchr.settings.points_goal.value.minutes": "%s분",
-	"fetchr.settings.points_goal.action.set_time": "시간 설정",
-	"fetchr.settings.points_goal.action.disable": "비활성화",
 	"fetchr.settings.lockout_mode.name": "선점 모드",
 	"fetchr.settings.lockout_mode.sign.line1": "선점",
 	"fetchr.settings.lockout_mode.sign.line2": "모드",
@@ -620,5 +616,9 @@
 	"fetchr.goal.bingo.sniper.triple.bottom_left": "[%s] %s이(가) %s번째 열과 %s번째 행, 좌측 하단부터 우측 상단까지의 대각선에서 스나이퍼 트리플 빙고를 완성했습니다!",
 	"fetchr.goal.bingo.sniper.triple.col_diags": "[%s] %s이(가) %s번째 열과 두 대각선에서 스나이퍼 트리플 빙고를 완성했습니다!",
 	"fetchr.goal.bingo.sniper.triple.row_diags": "[%s] %s이(가) %s번째 행과 두 대각선에서 스나이퍼 트리플 빙고를 완성했습니다!",
-	"fetchr.goal.bingo.sniper.quadruple": "[%s] %s이(가) 스나이퍼 쿼드러플 빙고를 완성했습니다!"
+	"fetchr.goal.bingo.sniper.quadruple": "[%s] %s이(가) 스나이퍼 쿼드러플 빙고를 완성했습니다!",
+	"fetchr.settings.target_time.sign.line3": "",
+	"fetchr.settings.target_time.value.minutes": "%s분",
+	"fetchr.settings.target_time.action.set_time": "시간 설정",
+	"fetchr.settings.target_time.action.disable": "비활성화"
 }
