@@ -131,9 +131,6 @@
 	"fetchr.settings.concealed_card.lectern.page_2": "Saber os itens exclusivos pode te ajudar.\n\nConfira os baús das categorias ao lado!",
 	"fetchr.settings.concealed_card.confirmation.toggle_off": "A cartela oculta foi desativada.",
 	"fetchr.settings.concealed_card.confirmation.toggle_on": "A cartela oculta foi ativada.",
-	"fetchr.settings.points_goal.value.minutes": "%s minutos",
-	"fetchr.settings.points_goal.action.set_time": "Definir tempo",
-	"fetchr.settings.points_goal.action.disable": "Desativar",
 	"fetchr.settings.lockout_mode.name": "Modo bloqueio",
 	"fetchr.settings.lockout_mode.sign.line1": "Modo",
 	"fetchr.settings.lockout_mode.sign.line2": "bloqueio",
@@ -563,5 +560,8 @@
 	"fetchr.goal.bingo.sniper.triple.bottom_left": "[%s] %s concluiu um bingo certeiro triplo na coluna %s, linha %s e na diagonal da inferior esquerda para superior direita!",
 	"fetchr.goal.bingo.sniper.triple.col_diags": "[%s] %s concluiu um bingo certeiro triplo na coluna %s e em ambas diagonais!",
 	"fetchr.goal.bingo.sniper.triple.row_diags": "[%s] %s concluiu um bingo certeiro triplo na linha %s e em ambas diagonais!",
-	"fetchr.goal.bingo.sniper.quadruple": "[%s] %s concluiu um bingo certeiro quádruplo!"
+	"fetchr.goal.bingo.sniper.quadruple": "[%s] %s concluiu um bingo certeiro quádruplo!",
+	"fetchr.settings.target_time.value.minutes": "%s minutos",
+	"fetchr.settings.target_time.action.set_time": "Definir tempo",
+	"fetchr.settings.target_time.action.disable": "Desativar"
 }
