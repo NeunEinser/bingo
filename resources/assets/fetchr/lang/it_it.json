@@ -116,10 +116,6 @@
 	"fetchr.settings.concealed_card.lectern.page_2": "Conoscere oggetti reciprocamente esclusivi ti aiuterà molto.\n\nScopri i bauli della categoria dietro l'angolo!",
 	"fetchr.settings.concealed_card.confirmation.toggle_off": "La carta occulta è stata disabilitata.",
 	"fetchr.settings.concealed_card.confirmation.toggle_on": "La carta occulta è stata abilitata.",
-	"fetchr.settings.points_goal.sign.line3": "",
-	"fetchr.settings.points_goal.value.minutes": "%s minuti/o",
-	"fetchr.settings.points_goal.action.set_time": "Imposta Tempo",
-	"fetchr.settings.points_goal.action.disable": "Disabilita",
 	"fetchr.settings.lockout_mode.name": "Modalità Blocco",
 	"fetchr.settings.lockout_mode.sign.line1": "Modalità",
 	"fetchr.settings.lockout_mode.sign.line2": "Blocco",
@@ -587,5 +583,9 @@
 	"fetchr.goal.bingo.sniper.triple.bottom_left": "[%s] %s ha ottenuto un bingo triplo cecchino in collona %s, riga %s e in basso a sinistra in alto a destra!",
 	"fetchr.goal.bingo.sniper.triple.col_diags": "[%s] %s ha ottenuto un bingo triplo cecchino in collona %s e entrambe le diagonali!",
 	"fetchr.goal.bingo.sniper.triple.row_diags": "[%s] %s ha ottenuto un bingo triplo cecchino di fila %s e entrambe le diagonali!",
-	"fetchr.goal.bingo.sniper.quadruple": "[%s] %s ha ottenuto un bingo quadruplo cecchino!"
+	"fetchr.goal.bingo.sniper.quadruple": "[%s] %s ha ottenuto un bingo quadruplo cecchino!",
+	"fetchr.settings.target_time.sign.line3": "",
+	"fetchr.settings.target_time.value.minutes": "%s minuti/o",
+	"fetchr.settings.target_time.action.set_time": "Imposta Tempo",
+	"fetchr.settings.target_time.action.disable": "Disabilita"
 }
