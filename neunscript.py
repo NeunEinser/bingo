@@ -143,7 +143,10 @@ def main():
 		vars = config.get("vars")
 		if(vars is None):
 			vars = {}
-		vars["builtin"] = { "minecraft_version_info": mc_version_info }
+		vars["builtin"] = {
+			"minecraft_version_info": mc_version_info,
+			"variant_name": variant if variant else ""
+		}
 		config["vars"] = vars
 
 		def get_version_string(pack_format: tuple[int, int] | None):
