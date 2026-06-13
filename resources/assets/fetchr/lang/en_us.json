@@ -4,9 +4,9 @@
 	"NEUN_SCRIPT remove fetchr.technical.minecraft_version until {NEUN_SCRIPT:builtin.min_pack_format}": "",
 	"fetchr.technical.minecraft_version": "%s",
 	
-	"fetchr.error.incompatible_minecraft_version.multiple_compatible": "You are using an unsupported version of Minecraft. This pack has been made compatible for Minecraft versions %s-%s.",
+	"fetchr.error.incompatible_minecraft_version.multiple_compatible": "You are using an unsupported version of Minecraft. This pack has been made compatible for Minecraft versions %s to %s.",
 	"fetchr.error.incompatible_minecraft_version.multiple_compatible.with_latest_snapshot": "You are using an unsupported version of Minecraft. This pack has been made compatible for Minecraft versions %s-%s, or up to snapshot %s.",
-	"fetchr.error.incompatible_minecraft_version.incompatible_snapshot": "You are using an unsupported snapshot. Snapshots %s-%s are unsupported. Make sure to use snapshot %s or higher.",
+	"fetchr.error.incompatible_minecraft_version.incompatible_snapshot": "You are using an unsupported snapshot. Snapshots %s to %s are unsupported. Make sure to use snapshot %s or higher.",
 	"fetchr.error.incompatible_minecraft_version.single_compatible": "You are using an unsupported version of Minecraft. This pack has been made compatible for Minecraft version %s.",
 	"fetchr.error.incompatible_minecraft_version.single_compatible.with_latest_snapshot": "You are using an unsupported version of Minecraft. This pack has been made compatible for Minecraft version %s, or up to snapshot %s.",
 
