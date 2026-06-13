@@ -1,7 +1,5 @@
 {
-	"fetchr.error.incompatible_minecraft_version.multiple_compatible": "Du verwendest eine nicht unterstützte Version von Minecraft. Dieser Spielmodus unterstützt Minecraft-Versionen %s-%s.",
 	"fetchr.error.incompatible_minecraft_version.multiple_compatible.with_latest_snapshot": "Du verwendest eine nicht unterstützte Version von Minecraft. Dieser Spielmodus unterstützt Minecraft-Versionen %s-%s, oder bis zur Entwicklungsversion %s.",
-	"fetchr.error.incompatible_minecraft_version.incompatible_snapshot": "Du verwendest einen nicht unterstützten Snapshot. Snapshots %s-%s werden nicht unterstützt. Bitte verwende Snapshot %s oder höher.",
 	"fetchr.error.incompatible_minecraft_version.single_compatible": "Du verwendest eine nicht unterstützte Version von Minecraft. Dieser Spielmodus unterstützt Minecraftversion %s.",
 	"fetchr.error.incompatible_minecraft_version.single_compatible.with_latest_snapshot": "Du verwendest eine nicht unterstützte Version von Minecraft. Dieser Spielmodus unterstützt Minecraft-Version %s, oder bis zur Entwicklungsversion %s.",
 	"fetchr.error.cannot_update": "Du versuchst eine Fetchr-Version von %s oder vorher zu aktualisieren. Derzeit wird dies nicht unterstützt. Die Aktualisierung wird nur für Versionen von %s und danach unterstützt.",
