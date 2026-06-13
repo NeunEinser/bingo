@@ -1,7 +1,5 @@
 {
-	"fetchr.error.incompatible_minecraft_version.multiple_compatible": "你正在使用不受支持的 Minecraft 版本。此数据包被设计为仅兼容 Minecraft %s-%s。",
 	"fetchr.error.incompatible_minecraft_version.multiple_compatible.with_latest_snapshot": "你正在使用不受支持的 Minecraft 版本。此数据包被设计为仅兼容 Minecraft %s-%s 或最高至 %s 的快照版本。",
-	"fetchr.error.incompatible_minecraft_version.incompatible_snapshot": "你正在使用不受支持的快照版本。快照 %s-%s 不受支持。请确保使用快照 %s 或更高的版本。",
 	"fetchr.error.incompatible_minecraft_version.single_compatible": "你正在使用不受支持的 Minecraft 版本。此数据包被设计为仅兼容 Minecraft %s。",
 	"fetchr.error.incompatible_minecraft_version.single_compatible.with_latest_snapshot": "你正在使用不受支持的 Minecraft 版本。此数据包被设计为仅兼容 Minecraft %s 或最高至 %s 的快照版本。",
 	"fetchr.error.cannot_update": "你正在尝试从 %s 及以下版本更新 Fetchr。 目前不支持此操作。仅支持从 %s 及以上版本更新",

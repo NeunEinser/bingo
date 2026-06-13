@@ -1,7 +1,5 @@
 {
-	"fetchr.error.incompatible_minecraft_version.multiple_compatible": "Du verwendest eine nicht unterstützte Version von Minecraft. Dieser Spielmodus unterstützt Minecraft-Versionen %s-%s.",
 	"fetchr.error.incompatible_minecraft_version.multiple_compatible.with_latest_snapshot": "Du verwendest eine nicht unterstützte Version von Minecraft. Dieser Spielmodus unterstützt Minecraft-Versionen %s-%s, oder bis zur Entwicklungsversion %s.",
-	"fetchr.error.incompatible_minecraft_version.incompatible_snapshot": "Du verwendest einen nicht unterstützten Snapshot. Snapshots %s-%s werden nicht unterstützt. Bitte verwende Snapshot %s oder höher.",
 	"fetchr.error.incompatible_minecraft_version.single_compatible": "Du verwendest eine nicht unterstützte Version von Minecraft. Dieser Spielmodus unterstützt Minecraftversion %s.",
 	"fetchr.error.incompatible_minecraft_version.single_compatible.with_latest_snapshot": "Du verwendest eine nicht unterstützte Version von Minecraft. Dieser Spielmodus unterstützt Minecraft-Version %s, oder bis zur Entwicklungsversion %s.",
 	"fetchr.error.cannot_update": "Du versuchst eine Fetchr-Version von %s oder vorher zu aktualisieren. Derzeit wird dies nicht unterstützt. Die Aktualisierung wird nur für Versionen von %s und danach unterstützt.",
@@ -394,6 +392,10 @@
 	"fetchr.lobby.team_selection.join_dark_blue": "%s ist dem dunkelblauen Team beigetreten.",
 	"fetchr.lobby.team_selection.join_purple": "%s ist dem violetten Team beigetreten.",
 	"fetchr.lobby.team_selection.join_magenta": "%s ist dem magenta Team beigetreten.",
+	"fetchr.lobby.tutorial.generate_chests.sign.line1": "Generiere",
+	"fetchr.lobby.tutorial.generate_chests.sign.line2": "Truhen mit mö-",
+	"fetchr.lobby.tutorial.generate_chests.sign.line3": "möglichen Gegen-",
+	"fetchr.lobby.tutorial.generate_chests.sign.line4": "ständen neu",
 	"fetchr.lobby.tutorial.chests.heading": "Mögliche Gegenstände",
 	"fetchr.lobby.tutorial.chests.lectern.page_1": "Die Truhen zur Rechten beinhalten alle Gegenstände, die auf einer Bingokarte auftauchen können.\n\nJede Spalte ist eine Kategorie. Es kann immer nur ein Gegenstand je Kategorie gleichzeitig auf einer Karte auftauchen.",
 	"fetchr.lobby.tutorial.chests.lectern.page_2": "Eine Zeile, die mit einem leeren Feld beginnt, ist eine Fortsetzung der vorherigen Kategorie.\n\nEin Gegenstand kann auch mehrere Katego- rien haben. Dann kann er nur auftauchen, wenn keiner der Ge- genstände aus einer seiner Kategorien auf der Karte sind.",
@@ -694,9 +696,5 @@
 	"fetchr.goal.bingo.sniper.triple.bottom_left": "[%s] %s erzielte(n) ein Sniper-Dreifach-Bingo in Spalte %s, Zeile %4$s und diagonal von unten links nach oben rechts!",
 	"fetchr.goal.bingo.sniper.triple.col_diags": "[%s] %s erzielte(n) ein Sniper-Dreifach-Bingo in Spalte %s und beiden Diagonalen!",
 	"fetchr.goal.bingo.sniper.triple.row_diags": "[%s] %s erzielte(n) ein Sniper-Dreifach-Bingo in Zeile %s und beiden Diagonalen!",
-	"fetchr.goal.bingo.sniper.quadruple": "[%s] %s erzielte(n) ein Sniper-Vierfach-Bingo!",
-	"fetchr.lobby.tutorial.generate_chests.sign.line1": "Generiere",
-	"fetchr.lobby.tutorial.generate_chests.sign.line2": "Truhen mit mö-",
-	"fetchr.lobby.tutorial.generate_chests.sign.line3": "möglichen Gegen-",
-	"fetchr.lobby.tutorial.generate_chests.sign.line4": "ständen neu"
+	"fetchr.goal.bingo.sniper.quadruple": "[%s] %s erzielte(n) ein Sniper-Vierfach-Bingo!"
 }
