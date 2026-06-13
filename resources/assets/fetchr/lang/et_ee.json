@@ -1,7 +1,5 @@
 {
-	"fetchr.error.incompatible_minecraft_version.multiple_compatible": "Kasutad mittetoetatud Minecrafti versiooni. See pakk on tehtud Minecrafti versioonidele %s-%s",
 	"fetchr.error.incompatible_minecraft_version.multiple_compatible.with_latest_snapshot": "Kasutad mittetoetatud Minecrafti versiooni. See pakk on tehtud Minecrafti versioonidele %s-%s või kuni ketsetusversioonini %s.",
-	"fetchr.error.incompatible_minecraft_version.incompatible_snapshot": "Kasutate mitte toetatud katsetusversiooni. Katsetusversioonid %s-%s pole toetatud. Kasutage katsetusversiooni %s või uuemat.",
 	"fetchr.error.incompatible_minecraft_version.single_compatible": "Kasutad mittetoetatud Minecrafti versiooni. See pakk on tehtud Minecrafti versioonile %s",
 	"fetchr.error.incompatible_minecraft_version.single_compatible.with_latest_snapshot": "Kasutad mittetoetatud Minecrafti versiooni. See pakk on tehtud Minecrafti versioonile %s või kuni ketsetusversioonini %s.",
 	"fetchr.error.cannot_update": "Proovid uuendada Fetchri versioonilt %s või vanemalt. See ei ole hetkel toetatud. Uuendamine on toetatud ainult alates versioonist %s.",
