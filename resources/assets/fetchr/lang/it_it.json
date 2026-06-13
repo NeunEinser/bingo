@@ -1,7 +1,5 @@
 {
-	"fetchr.error.incompatible_minecraft_version.multiple_compatible": "Stai utilizzando una versione non supportata di Minecraft. Questo pacchetto è stato reso compatibile per le versioni di Minecraft %s-%s",
 	"fetchr.error.incompatible_minecraft_version.multiple_compatible.with_latest_snapshot": "Stai usando una versione non supportata di Minecraft. Questo pacchetto è stato reso compatibile per le versioni di Minecraft %s-%s, o fino allo snapshot %s.",
-	"fetchr.error.incompatible_minecraft_version.incompatible_snapshot": "Stai usando un'istantanea non supportata. Le istantanee %s-%s non sono supportate. Assicurati di utilizzare l'istantanea %s o superiore.",
 	"fetchr.error.incompatible_minecraft_version.single_compatible": "Stai utilizzando una versione non supportata di Minecraft. Questo pacchetto è stato reso compatibile per le versioni di Minecraft %s",
 	"fetchr.error.incompatible_minecraft_version.single_compatible.with_latest_snapshot": "Stai usando una versione non supportata di Minecraft. Questo pacchetto è stato reso compatibile per la versione %s di Minecraft o fino allo snapshot %s.",
 	"fetchr.logging.error": "ERRORE",
