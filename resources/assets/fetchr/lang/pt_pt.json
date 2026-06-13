@@ -1,7 +1,5 @@
 {
-	"fetchr.error.incompatible_minecraft_version.multiple_compatible": "Estás a utilizar uma versão não suportada do Minecraft. Este pacote foi criado para ser compatível com as versões %s a %s do Minecraft.",
 	"fetchr.error.incompatible_minecraft_version.multiple_compatible.with_latest_snapshot": "Estás a utilizar uma versão não suportada do Minecraft. Este pacote foi criado para ser compatível com as versões %s a %s, ou até à snapshot %s do Minecraft.",
-	"fetchr.error.incompatible_minecraft_version.incompatible_snapshot": "Estás a utilizar uma snapshot não suportada. As snapshots %s a %s não são suportadas. Certifica-te que usas a snapshot %s ou superior.",
 	"fetchr.error.incompatible_minecraft_version.single_compatible": "Estás a utilizar uma versão não suportada do Minecraft. Este pacote foi criado para ser compatível com a versão %s do Minecraft.",
 	"fetchr.error.incompatible_minecraft_version.single_compatible.with_latest_snapshot": "Estás a utilizar uma versão não suportada do Minecraft. Este pacote foi criado para ser compatível com a versão %s, ou até à snapshot %s do Minecraft.",
 	"fetchr.logging.error": "ERRO",
