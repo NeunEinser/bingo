@@ -1,5 +1,4 @@
 {
-	"fetchr.error.incompatible_minecraft_version.multiple_compatible": "Vous utilisez une version non supportée de Minecraft. Ce pack est compatible avec les versions de Minecraft %s-%s",
 	"fetchr.error.incompatible_minecraft_version.single_compatible": "Vous utilisez une version non supportée de Minecraft. Ce pack est compatible avec Minecraft version %s",
 	"fetchr.logging.error": "ERREUR",
 	"fetchr.setup.error.unknown_category": "L'item %1$s a la catégorie %2$s, mais la catégorie %2$s est introuvable.",
