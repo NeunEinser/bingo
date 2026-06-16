@@ -3,6 +3,10 @@
 show up correctly after generating a new card from the spawn preview
 ([#317](<https://github.com/NeunEinser/bingo/issues/317>))
 
+**Update**: The server.properties has been re-uploaded after this release to
+include `spawn-protection=0`. This is important to make sure all players can
+mine blocks right at the Fetchr spawn point on a server.
+
 # 5.3.2
 5.3.2 fixes more bugs that didn't get caught before
 
