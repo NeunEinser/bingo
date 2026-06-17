@@ -31,6 +31,8 @@
 	"fetchr.game.switch_gamemode.prevented": "Zmiana trybu gry zablokowana. %s, aby zmienić na tryb widza.\nNastępnie, możesz zmienić na dowolny inny tryb.",
 	"fetchr.game.switch_gamemode.prevented.click": "Kliknij tutaj",
 	"fetchr.game.switch_gamemode.hint": "Wskazówka: W każdej chwili możesz użyć polecenia %s, aby zmienić na tryb widza.\nJeśli nie podoba Ci się ta funkcjonalność, możesz ją zmienić w lobby w preferencjach gracza.",
+	"fetchr.dialog.links": "Linki",
+	"fetchr.dialog.links.discord": "Serwer Discord",
 	"fetchr.preferences.description": "To menu umożliwia skonfigurowanie własnych preferencji.",
 	"fetchr.preferences.back": "Powrót",
 	"fetchr.preferences.previous": "Poprzednia",
