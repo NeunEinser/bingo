@@ -17,7 +17,7 @@ scoreboard players set $util/string.escaped fetchr.tmp 0
 scoreboard players set $util/string.until fetchr.tmp -1
 scoreboard players set $util/string.contains_quote fetchr.io 0
 scoreboard players set $util/string.contains_dot fetchr.io 0
-scoreboard players set $util/string.contains_backslash fetchr.io 0
+scoreboard players set $util/string.contains_space fetchr.io 0
 
 function fetchr:util/string/until_double_quote_iter with storage tmp.fetchr:util until_quote
 

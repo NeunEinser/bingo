@@ -30,8 +30,8 @@ execute \
 	run scoreboard players set $util/string.escaped fetchr.tmp 1
 
 execute \
-	if score $util/string.escaped fetchr.tmp matches 1 \
-	run scoreboard players set $util/string.contains_backslash fetchr.io 1
+	if data storage tmp.fetchr:util until_quote{ char: " " } \
+	run scoreboard players set $util/string.contains_space fetchr.io 1
 
 execute \
 	if data storage tmp.fetchr:util until_quote{ char: "." } \

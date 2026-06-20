@@ -1,4 +1,4 @@
-#> fetchr:util/string/until_double_quote
+#> fetchr:util/string/get_next_compound_key
 #
 # Gets the next compound key of the given compound
 #
@@ -81,10 +81,24 @@ execute \
 #NEUN_SCRIPT end
 
 execute \
+	unless score $quote_for_path_argument fetchr.io matches 1 \
+	run return 0
+
+scoreboard players reset $quote_for_path_argument fetchr.io
+
+#NEUN_SCRIPT until 98
+#execute \
 	if score $util/string.contains_dot fetchr.io matches 0 \
 	if score $util/string.contains_quote fetchr.io matches 0 \
-	if score $util/string.contains_backslash fetchr.io matches 0 \
+	if score $util/string.contains_space fetchr.io matches 0 \
 	run return 0
+#NEUN_SCRIPT end
+#NEUN_SCRIPT since 98
+function fetchr:util/string/check_if_requires_path_parameter_quoting
+execute \
+	if score $util/string.requires_path_parameter_quoting fetchr.io matches 0 \
+	run return 0
+#NEUN_SCRIPT end
 
 execute \
 	if data storage tmp.fetchr:util { char: "'" } \

@@ -21,6 +21,7 @@ $execute \
 
 # Get next subkey and prepend with dot, or stop iteration if empty compound
 data modify storage io.fetchr:util nbt set from storage tmp.fetchr:init/update_lobby entity_data_stack[-1].data
+scoreboard players set $quote_for_path_argument fetchr.io 1
 function fetchr:util/string/get_next_compound_key
 
 execute \
