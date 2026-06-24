@@ -3791,13 +3791,26 @@
 					}
 				},
 				{
-					"biome": "minecraft:plains",
+					"NEUN_SCRIPT replace biome until 108": "minecraft:plains",
+					"biome": "minecraft:dappled_forest",
 					"parameters": {
 						"weirdness": [ -0.05, 0.26666667 ],
 						"continentalness": [ 0.03, 1 ],
 						"erosion": [ -1, -0.375 ],
 						"temperature": [ -0.45, -0.15 ],
-						"humidity": [ -1, -0.1 ],
+						"humidity": [ -1, -0.35 ],
+						"depth": 0,
+						"offset": 0
+					}
+				},
+				{
+					"biome": "minecraft:plains",
+					"parameters": {
+						"weirdness": [ -0.05, 0.26666667 ],
+						"continentalness": [ 0.03, 1 ],
+						"erosion": [ -1, -0.375 ],
+						"temperature": [ -0.45, 0.2 ],
+						"humidity": [ -0.35, -0.1 ],
 						"depth": 0,
 						"offset": 0
 					}
@@ -3846,18 +3859,6 @@
 						"erosion": [ -1, -0.375 ],
 						"temperature": [ -0.15, 0.2 ],
 						"humidity": [ -1, -0.35 ],
-						"depth": 0,
-						"offset": 0
-					}
-				},
-				{
-					"biome": "minecraft:plains",
-					"parameters": {
-						"weirdness": [ -0.05, 0.26666667 ],
-						"continentalness": [ 0.03, 1 ],
-						"erosion": [ -1, -0.375 ],
-						"temperature": [ -0.15, 0.2 ],
-						"humidity": [ -0.35, -0.1 ],
 						"depth": 0,
 						"offset": 0
 					}
@@ -4091,13 +4092,26 @@
 					}
 				},
 				{
+					"NEUN_SCRIPT replace biome until 108": "minecraft:plains",
+					"biome": "minecraft:dappled_forest",
+					"parameters": {
+						"weirdness": [ 0.05, 0.56666667 ],
+						"continentalness": [ -0.21, 0.03 ],
+						"erosion": [ 0.45, 0.55 ],
+						"temperature": [ -0.45, -0.15 ],
+						"humidity": [ -1, -0.35 ],
+						"depth": 0,
+						"offset": 0
+					}
+				},
+				{
 					"biome": "minecraft:plains",
 					"parameters": {
 						"weirdness": [ 0.05, 0.56666667 ],
 						"continentalness": [ -0.21, 0.03 ],
 						"erosion": [ 0.45, 0.55 ],
 						"temperature": [ -0.45, -0.15 ],
-						"humidity": [ -1, -0.1 ],
+						"humidity": [ -0.35, -0.1 ],
 						"depth": 0,
 						"offset": 0
 					}
@@ -4271,13 +4285,26 @@
 					}
 				},
 				{
+					"NEUN_SCRIPT replace biome until 108": "minecraft:plains",
+					"biome": "minecraft:dappled_forest",
+					"parameters": {
+						"weirdness": [ 0.05, 0.26666667 ],
+						"continentalness": [ -0.11, 1 ],
+						"erosion": [ -1, 0.55 ],
+						"temperature": [ -0.45, -0.15 ],
+						"humidity": [ -1, -0.35 ],
+						"depth": 0,
+						"offset": 0
+					}
+				},
+				{
 					"biome": "minecraft:plains",
 					"parameters": {
 						"weirdness": [ 0.05, 0.26666667 ],
 						"continentalness": [ -0.11, 1 ],
 						"erosion": [ -1, 0.55 ],
 						"temperature": [ -0.45, -0.15 ],
-						"humidity": [ -1, -0.1 ],
+						"humidity": [ -0.35, -0.1 ],
 						"depth": 0,
 						"offset": 0
 					}
@@ -4739,13 +4766,26 @@
 					}
 				},
 				{
+					"NEUN_SCRIPT replace biome until 108": "minecraft:plains",
+					"biome": "minecraft:dappled_forest",
+					"parameters": {
+						"weirdness": [ 0.26666667, 0.56666667 ],
+						"continentalness": [ -0.21, -0.11 ],
+						"erosion": [ -0.2225, 1 ],
+						"temperature": [ -0.45, -0.15 ],
+						"humidity": [ -1, -0.35 ],
+						"depth": 0,
+						"offset": 0
+					}
+				},
+				{
 					"biome": "minecraft:plains",
 					"parameters": {
 						"weirdness": [ 0.26666667, 0.56666667 ],
 						"continentalness": [ -0.21, -0.11 ],
 						"erosion": [ -0.2225, 1 ],
 						"temperature": [ -0.45, -0.15 ],
-						"humidity": [ -1, -0.1 ],
+						"humidity": [ -0.35, -0.1 ],
 						"depth": 0,
 						"offset": 0
 					}
@@ -5063,13 +5103,26 @@
 					}
 				},
 				{
+					"NEUN_SCRIPT replace biome until 108": "minecraft:plains",
+					"biome": "minecraft:dappled_forest",
+					"parameters": {
+						"weirdness": [ 0.26666667, 0.56666667 ],
+						"continentalness": [ -0.11, 0.03 ],
+						"erosion": [ -0.78, 0.55 ],
+						"temperature": [ -0.45, -0.15 ],
+						"humidity": [ -1, -0.35 ],
+						"depth": 0,
+						"offset": 0
+					}
+				},
+				{
 					"biome": "minecraft:plains",
 					"parameters": {
 						"weirdness": [ 0.26666667, 0.56666667 ],
 						"continentalness": [ -0.11, 0.03 ],
 						"erosion": [ -0.78, 0.55 ],
 						"temperature": [ -0.45, -0.15 ],
-						"humidity": [ -1, -0.1 ],
+						"humidity": [ -0.35, -0.1 ],
 						"depth": 0,
 						"offset": 0
 					}
@@ -5327,13 +5380,26 @@
 					}
 				},
 				{
-					"biome": "minecraft:plains",
+					"NEUN_SCRIPT replace biome until 108": "minecraft:plains",
+					"biome": "minecraft:dappled_forest",
 					"parameters": {
 						"weirdness": [ 0.26666667, 0.4 ],
 						"continentalness": [ 0.03, 0.3 ],
 						"erosion": [ -0.78, 0.45 ],
 						"temperature": [ -0.45, -0.15 ],
-						"humidity": [ -1, -0.1 ],
+						"humidity": [ -1, -0.35 ],
+						"depth": 0,
+						"offset": 0
+					}
+				},
+				{
+					"biome": "minecraft:plains",
+					"parameters": {
+						"weirdness": [ 0.26666667, 0.4 ],
+						"continentalness": [ 0.03, 0.3 ],
+						"erosion": [ -0.78, 0.45 ],
+						"temperature": [ -0.45, 0.2 ],
+						"humidity": [ -0.35, -0.1 ],
 						"depth": 0,
 						"offset": 0
 					}
@@ -5382,18 +5448,6 @@
 						"erosion": [ -0.78, 0.45 ],
 						"temperature": [ -0.15, 0.2 ],
 						"humidity": [ -1, -0.35 ],
-						"depth": 0,
-						"offset": 0
-					}
-				},
-				{
-					"biome": "minecraft:plains",
-					"parameters": {
-						"weirdness": [ 0.26666667, 0.4 ],
-						"continentalness": [ 0.03, 0.3 ],
-						"erosion": [ -0.78, 0.45 ],
-						"temperature": [ -0.15, 0.2 ],
-						"humidity": [ -0.35, -0.1 ],
 						"depth": 0,
 						"offset": 0
 					}
@@ -5784,13 +5838,26 @@
 					}
 				},
 				{
-					"biome": "minecraft:plains",
+					"NEUN_SCRIPT replace biome until 108": "minecraft:plains",
+					"biome": "minecraft:dappled_forest",
 					"parameters": {
 						"weirdness": [ 0.26666667, 0.4 ],
 						"continentalness": [ 0.3, 1 ],
 						"erosion": [ -0.2225, 0.45 ],
 						"temperature": [ -0.45, -0.15 ],
-						"humidity": [ -1, -0.1 ],
+						"humidity": [ -1, -0.35 ],
+						"depth": 0,
+						"offset": 0
+					}
+				},
+				{
+					"biome": "minecraft:plains",
+					"parameters": {
+						"weirdness": [ 0.26666667, 0.4 ],
+						"continentalness": [ 0.3, 1 ],
+						"erosion": [ -0.2225, 0.45 ],
+						"temperature": [ -0.45, 0.2 ],
+						"humidity": [ -0.35, -0.1 ],
 						"depth": 0,
 						"offset": 0
 					}
@@ -5827,18 +5894,6 @@
 						"erosion": [ -0.2225, 0.45 ],
 						"temperature": [ -0.15, 0.2 ],
 						"humidity": [ -1, -0.35 ],
-						"depth": 0,
-						"offset": 0
-					}
-				},
-				{
-					"biome": "minecraft:plains",
-					"parameters": {
-						"weirdness": [ 0.26666667, 0.4 ],
-						"continentalness": [ 0.3, 1 ],
-						"erosion": [ -0.2225, 0.45 ],
-						"temperature": [ -0.15, 0.2 ],
-						"humidity": [ -0.35, -0.1 ],
 						"depth": 0,
 						"offset": 0
 					}
@@ -5964,13 +6019,26 @@
 					}
 				},
 				{
+					"NEUN_SCRIPT replace biome until 108": "minecraft:plains",
+					"biome": "minecraft:dappled_forest",
+					"parameters": {
+						"weirdness": [ 0.4, 0.56666667 ],
+						"continentalness": [ -0.21, -0.11 ],
+						"erosion": [ -1, 1 ],
+						"temperature": [ -0.45, -0.15 ],
+						"humidity": [ -1, -0.35 ],
+						"depth": 0,
+						"offset": 0
+					}
+				},
+				{
 					"biome": "minecraft:plains",
 					"parameters": {
 						"weirdness": [ 0.4, 0.56666667 ],
 						"continentalness": [ -0.21, -0.11 ],
 						"erosion": [ -1, 1 ],
 						"temperature": [ -0.45, -0.15 ],
-						"humidity": [ -1, -0.1 ],
+						"humidity": [ -0.35, -0.1 ],
 						"depth": 0,
 						"offset": 0
 					}
@@ -6132,13 +6200,26 @@
 					}
 				},
 				{
-					"biome": "minecraft:plains",
+					"NEUN_SCRIPT replace biome until 108": "minecraft:plains",
+					"biome": "minecraft:dappled_forest",
 					"parameters": {
 						"weirdness": [ 0.4, 0.93333333 ],
 						"continentalness": [ -0.11, 1 ],
 						"erosion": [ 0.55, 1 ],
 						"temperature": [ -0.45, -0.15 ],
-						"humidity": [ -1, -0.1 ],
+						"humidity": [ -1, -0.35 ],
+						"depth": 0,
+						"offset": 0
+					}
+				},
+				{
+					"biome": "minecraft:plains",
+					"parameters": {
+						"weirdness": [ 0.4, 0.93333333 ],
+						"continentalness": [ -0.11, 1 ],
+						"erosion": [ 0.55, 1 ],
+						"temperature": [ -0.45, 0.2 ],
+						"humidity": [ -0.35, -0.1 ],
 						"depth": 0,
 						"offset": 0
 					}
@@ -6187,18 +6268,6 @@
 						"erosion": [ 0.55, 1 ],
 						"temperature": [ -0.15, 0.2 ],
 						"humidity": [ -1, -0.35 ],
-						"depth": 0,
-						"offset": 0
-					}
-				},
-				{
-					"biome": "minecraft:plains",
-					"parameters": {
-						"weirdness": [ 0.4, 0.93333333 ],
-						"continentalness": [ -0.11, 1 ],
-						"erosion": [ 0.55, 1 ],
-						"temperature": [ -0.15, 0.2 ],
-						"humidity": [ -0.35, -0.1 ],
 						"depth": 0,
 						"offset": 0
 					}
@@ -6517,13 +6586,26 @@
 					}
 				},
 				{
-					"biome": "minecraft:plains",
+					"NEUN_SCRIPT replace biome until 108": "minecraft:plains",
+					"biome": "minecraft:dappled_forest",
 					"parameters": {
 						"weirdness": [ 0.4, 1 ],
 						"continentalness": [ 0.03, 0.3 ],
 						"erosion": [ -0.2225, 0.45 ],
 						"temperature": [ -0.45, -0.15 ],
-						"humidity": [ -1, -0.1 ],
+						"humidity": [ -1, -0.35 ],
+						"depth": 0,
+						"offset": 0
+					}
+				},
+				{
+					"biome": "minecraft:plains",
+					"parameters": {
+						"weirdness": [ 0.4, 1 ],
+						"continentalness": [ 0.03, 0.3 ],
+						"erosion": [ -0.2225, 0.45 ],
+						"temperature": [ -0.45, 0.2 ],
+						"humidity": [ -0.35, -0.1 ],
 						"depth": 0,
 						"offset": 0
 					}
@@ -6722,13 +6804,26 @@
 					}
 				},
 				{
-					"biome": "minecraft:plains",
+					"NEUN_SCRIPT replace biome until 108": "minecraft:plains",
+					"biome": "minecraft:dappled_forest",
 					"parameters": {
 						"weirdness": [ 0.4, 1 ],
 						"continentalness": [ 0.3, 1 ],
 						"erosion": [ 0.05, 0.45 ],
 						"temperature": [ -0.45, -0.15 ],
-						"humidity": [ -1, -0.1 ],
+						"humidity": [ -1, -0.35 ],
+						"depth": 0,
+						"offset": 0
+					}
+				},
+				{
+					"biome": "minecraft:plains",
+					"parameters": {
+						"weirdness": [ 0.4, 1 ],
+						"continentalness": [ 0.3, 1 ],
+						"erosion": [ 0.05, 0.45 ],
+						"temperature": [ -0.45, 0.2 ],
+						"humidity": [ -0.35, -0.1 ],
 						"depth": 0,
 						"offset": 0
 					}
@@ -6765,18 +6860,6 @@
 						"erosion": [ 0.05, 0.45 ],
 						"temperature": [ -0.15, 0.2 ],
 						"humidity": [ -1, -0.35 ],
-						"depth": 0,
-						"offset": 0
-					}
-				},
-				{
-					"biome": "minecraft:plains",
-					"parameters": {
-						"weirdness": [ 0.4, 1 ],
-						"continentalness": [ 0.3, 1 ],
-						"erosion": [ 0.05, 0.45 ],
-						"temperature": [ -0.15, 0.2 ],
-						"humidity": [ -0.35, -0.1 ],
 						"depth": 0,
 						"offset": 0
 					}
@@ -6938,13 +7021,26 @@
 					}
 				},
 				{
-					"biome": "minecraft:plains",
+					"NEUN_SCRIPT replace biome until 108": "minecraft:plains",
+					"biome": "minecraft:dappled_forest",
 					"parameters": {
 						"weirdness": [ 0.56666667, 0.93333333 ],
 						"continentalness": [ -0.21, 0.03 ],
 						"erosion": [ -0.78, 0.45 ],
 						"temperature": [ -0.45, -0.15 ],
-						"humidity": [ -1, -0.1 ],
+						"humidity": [ -1, -0.35 ],
+						"depth": 0,
+						"offset": 0
+					}
+				},
+				{
+					"biome": "minecraft:plains",
+					"parameters": {
+						"weirdness": [ 0.56666667, 0.93333333 ],
+						"continentalness": [ -0.21, 0.03 ],
+						"erosion": [ -0.78, 0.45 ],
+						"temperature": [ -0.45, 0.2 ],
+						"humidity": [ -0.35, -0.1 ],
 						"depth": 0,
 						"offset": 0
 					}
@@ -6993,18 +7089,6 @@
 						"erosion": [ -0.78, 0.45 ],
 						"temperature": [ -0.15, 0.2 ],
 						"humidity": [ -1, -0.35 ],
-						"depth": 0,
-						"offset": 0
-					}
-				},
-				{
-					"biome": "minecraft:plains",
-					"parameters": {
-						"weirdness": [ 0.56666667, 0.93333333 ],
-						"continentalness": [ -0.21, 0.03 ],
-						"erosion": [ -0.78, 0.45 ],
-						"temperature": [ -0.15, 0.2 ],
-						"humidity": [ -0.35, -0.1 ],
 						"depth": 0,
 						"offset": 0
 					}
@@ -7238,13 +7322,26 @@
 					}
 				},
 				{
-					"biome": "minecraft:plains",
+					"NEUN_SCRIPT replace biome until 108": "minecraft:plains",
+					"biome": "minecraft:dappled_forest",
 					"parameters": {
 						"weirdness": [ 0.56666667, 1 ],
 						"continentalness": [ -0.21, -0.11 ],
 						"erosion": [ 0.55, 1 ],
 						"temperature": [ -0.45, -0.15 ],
-						"humidity": [ -1, -0.1 ],
+						"humidity": [ -1, -0.35 ],
+						"depth": 0,
+						"offset": 0
+					}
+				},
+				{
+					"biome": "minecraft:plains",
+					"parameters": {
+						"weirdness": [ 0.56666667, 1 ],
+						"continentalness": [ -0.21, -0.11 ],
+						"erosion": [ 0.55, 1 ],
+						"temperature": [ -0.45, 0.2 ],
+						"humidity": [ -0.35, -0.1 ],
 						"depth": 0,
 						"offset": 0
 					}
@@ -7406,13 +7503,26 @@
 					}
 				},
 				{
+					"NEUN_SCRIPT replace biome until 108": "minecraft:plains",
+					"biome": "minecraft:dappled_forest",
+					"parameters": {
+						"weirdness": [ 0.7666667, 0.93333333 ],
+						"continentalness": [ -0.21, -0.11 ],
+						"erosion": [ -1, 1 ],
+						"temperature": [ -0.45, -0.15 ],
+						"humidity": [ -1, -0.35 ],
+						"depth": 0,
+						"offset": 0
+					}
+				},
+				{
 					"biome": "minecraft:plains",
 					"parameters": {
 						"weirdness": [ 0.7666667, 0.93333333 ],
 						"continentalness": [ -0.21, -0.11 ],
 						"erosion": [ -1, 1 ],
 						"temperature": [ -0.45, -0.15 ],
-						"humidity": [ -1, -0.1 ],
+						"humidity": [ -0.35, -0.1 ],
 						"depth": 0,
 						"offset": 0
 					}
@@ -7706,13 +7816,26 @@
 					}
 				},
 				{
+					"NEUN_SCRIPT replace biome until 108": "minecraft:plains",
+					"biome": "minecraft:dappled_forest",
+					"parameters": {
+						"weirdness": [ 0.7666667, 0.93333333 ],
+						"continentalness": [ -0.11, 0.03 ],
+						"erosion": [ 0.45, 1 ],
+						"temperature": [ -0.45, -0.15 ],
+						"humidity": [ -1, -0.35 ],
+						"depth": 0,
+						"offset": 0
+					}
+				},
+				{
 					"biome": "minecraft:plains",
 					"parameters": {
 						"weirdness": [ 0.7666667, 0.93333333 ],
 						"continentalness": [ -0.11, 0.03 ],
 						"erosion": [ 0.45, 1 ],
 						"temperature": [ -0.45, -0.15 ],
-						"humidity": [ -1, -0.1 ],
+						"humidity": [ -0.35, -0.1 ],
 						"depth": 0,
 						"offset": 0
 					}
@@ -7910,13 +8033,26 @@
 					}
 				},
 				{
+					"NEUN_SCRIPT replace biome until 108": "minecraft:plains",
+					"biome": "minecraft:dappled_forest",
+					"parameters": {
+						"weirdness": [ 0.93333333, 1 ],
+						"continentalness": [ -0.21, -0.11 ],
+						"erosion": [ -0.2225, 1 ],
+						"temperature": [ -0.45, -0.15 ],
+						"humidity": [ -1, -0.35 ],
+						"depth": 0,
+						"offset": 0
+					}
+				},
+				{
 					"biome": "minecraft:plains",
 					"parameters": {
 						"weirdness": [ 0.93333333, 1 ],
 						"continentalness": [ -0.21, -0.11 ],
 						"erosion": [ -0.2225, 1 ],
 						"temperature": [ -0.45, -0.15 ],
-						"humidity": [ -1, -0.1 ],
+						"humidity": [ -0.35, -0.1 ],
 						"depth": 0,
 						"offset": 0
 					}
@@ -7970,13 +8106,26 @@
 					}
 				},
 				{
+					"NEUN_SCRIPT replace biome until 108": "minecraft:plains",
+					"biome": "minecraft:dappled_forest",
+					"parameters": {
+						"weirdness": [ 0.93333333, 1 ],
+						"continentalness": [ -0.11, 0.03 ],
+						"erosion": [ -0.78, 0.55 ],
+						"temperature": [ -0.45, -0.15 ],
+						"humidity": [ -1, -0.35 ],
+						"depth": 0,
+						"offset": 0
+					}
+				},
+				{
 					"biome": "minecraft:plains",
 					"parameters": {
 						"weirdness": [ 0.93333333, 1 ],
 						"continentalness": [ -0.11, 0.03 ],
 						"erosion": [ -0.78, 0.55 ],
 						"temperature": [ -0.45, -0.15 ],
-						"humidity": [ -1, -0.1 ],
+						"humidity": [ -0.35, -0.1 ],
 						"depth": 0,
 						"offset": 0
 					}
@@ -8186,13 +8335,26 @@
 					}
 				},
 				{
-					"biome": "minecraft:plains",
+					"NEUN_SCRIPT replace biome until 108": "minecraft:plains",
+					"biome": "minecraft:dappled_forest",
 					"parameters": {
 						"weirdness": [ 0.93333333, 1 ],
 						"continentalness": [ 0.03, 0.3 ],
 						"erosion": [ -0.78, 0.45 ],
 						"temperature": [ -0.45, -0.15 ],
-						"humidity": [ -1, -0.1 ],
+						"humidity": [ -1, -0.35 ],
+						"depth": 0,
+						"offset": 0
+					}
+				},
+				{
+					"biome": "minecraft:plains",
+					"parameters": {
+						"weirdness": [ 0.93333333, 1 ],
+						"continentalness": [ 0.03, 0.3 ],
+						"erosion": [ -0.78, 0.45 ],
+						"temperature": [ -0.45, 0.2 ],
+						"humidity": [ -0.35, -0.1 ],
 						"depth": 0,
 						"offset": 0
 					}
@@ -8241,18 +8403,6 @@
 						"erosion": [ -0.78, 0.45 ],
 						"temperature": [ -0.15, 0.2 ],
 						"humidity": [ -1, -0.35 ],
-						"depth": 0,
-						"offset": 0
-					}
-				},
-				{
-					"biome": "minecraft:plains",
-					"parameters": {
-						"weirdness": [ 0.93333333, 1 ],
-						"continentalness": [ 0.03, 0.3 ],
-						"erosion": [ -0.78, 0.45 ],
-						"temperature": [ -0.15, 0.2 ],
-						"humidity": [ -0.35, -0.1 ],
 						"depth": 0,
 						"offset": 0
 					}
@@ -8487,13 +8637,26 @@
 					}
 				},
 				{
-					"biome": "minecraft:plains",
+					"NEUN_SCRIPT replace biome until 108": "minecraft:plains",
+					"biome": "minecraft:dappled_forest",
 					"parameters": {
 						"weirdness": [ 0.93333333, 1 ],
 						"continentalness": [ 0.3, 1 ],
 						"erosion": [ -0.2225, 0.45 ],
 						"temperature": [ -0.45, -0.15 ],
-						"humidity": [ -1, -0.1 ],
+						"humidity": [ -1, -0.35 ],
+						"depth": 0,
+						"offset": 0
+					}
+				},
+				{
+					"biome": "minecraft:plains",
+					"parameters": {
+						"weirdness": [ 0.93333333, 1 ],
+						"continentalness": [ 0.3, 1 ],
+						"erosion": [ -0.2225, 0.45 ],
+						"temperature": [ -0.45, 0.2 ],
+						"humidity": [ -0.35, -0.1 ],
 						"depth": 0,
 						"offset": 0
 					}
@@ -8530,18 +8693,6 @@
 						"erosion": [ -0.2225, 0.45 ],
 						"temperature": [ -0.15, 0.2 ],
 						"humidity": [ -1, -0.35 ],
-						"depth": 0,
-						"offset": 0
-					}
-				},
-				{
-					"biome": "minecraft:plains",
-					"parameters": {
-						"weirdness": [ 0.93333333, 1 ],
-						"continentalness": [ 0.3, 1 ],
-						"erosion": [ -0.2225, 0.45 ],
-						"temperature": [ -0.15, 0.2 ],
-						"humidity": [ -0.35, -0.1 ],
 						"depth": 0,
 						"offset": 0
 					}
@@ -12458,13 +12609,26 @@
 					}
 				},
 				{
-					"biome": "minecraft:plains",
+					"NEUN_SCRIPT replace biome until 108": "minecraft:plains",
+					"biome": "minecraft:dappled_forest",
 					"parameters": {
 						"weirdness": [ -0.05, 0.26666667 ],
 						"continentalness": [ 0.03, 1 ],
 						"erosion": [ -1, -0.375 ],
 						"temperature": [ -0.45, -0.15 ],
-						"humidity": [ -1, -0.1 ],
+						"humidity": [ -1, -0.35 ],
+						"depth": 1,
+						"offset": 0
+					}
+				},
+				{
+					"biome": "minecraft:plains",
+					"parameters": {
+						"weirdness": [ -0.05, 0.26666667 ],
+						"continentalness": [ 0.03, 1 ],
+						"erosion": [ -1, -0.375 ],
+						"temperature": [ -0.45, 0.2 ],
+						"humidity": [ -0.35, -0.1 ],
 						"depth": 1,
 						"offset": 0
 					}
@@ -12513,18 +12677,6 @@
 						"erosion": [ -1, -0.375 ],
 						"temperature": [ -0.15, 0.2 ],
 						"humidity": [ -1, -0.35 ],
-						"depth": 1,
-						"offset": 0
-					}
-				},
-				{
-					"biome": "minecraft:plains",
-					"parameters": {
-						"weirdness": [ -0.05, 0.26666667 ],
-						"continentalness": [ 0.03, 1 ],
-						"erosion": [ -1, -0.375 ],
-						"temperature": [ -0.15, 0.2 ],
-						"humidity": [ -0.35, -0.1 ],
 						"depth": 1,
 						"offset": 0
 					}
@@ -12758,13 +12910,26 @@
 					}
 				},
 				{
+					"NEUN_SCRIPT replace biome until 108": "minecraft:plains",
+					"biome": "minecraft:dappled_forest",
+					"parameters": {
+						"weirdness": [ 0.05, 0.56666667 ],
+						"continentalness": [ -0.21, 0.03 ],
+						"erosion": [ 0.45, 0.55 ],
+						"temperature": [ -0.45, -0.15 ],
+						"humidity": [ -1, -0.35 ],
+						"depth": 1,
+						"offset": 0
+					}
+				},
+				{
 					"biome": "minecraft:plains",
 					"parameters": {
 						"weirdness": [ 0.05, 0.56666667 ],
 						"continentalness": [ -0.21, 0.03 ],
 						"erosion": [ 0.45, 0.55 ],
 						"temperature": [ -0.45, -0.15 ],
-						"humidity": [ -1, -0.1 ],
+						"humidity": [ -0.35, -0.1 ],
 						"depth": 1,
 						"offset": 0
 					}
@@ -12938,13 +13103,26 @@
 					}
 				},
 				{
+					"NEUN_SCRIPT replace biome until 108": "minecraft:plains",
+					"biome": "minecraft:dappled_forest",
+					"parameters": {
+						"weirdness": [ 0.05, 0.26666667 ],
+						"continentalness": [ -0.11, 1 ],
+						"erosion": [ -1, 0.55 ],
+						"temperature": [ -0.45, -0.15 ],
+						"humidity": [ -1, -0.35 ],
+						"depth": 1,
+						"offset": 0
+					}
+				},
+				{
 					"biome": "minecraft:plains",
 					"parameters": {
 						"weirdness": [ 0.05, 0.26666667 ],
 						"continentalness": [ -0.11, 1 ],
 						"erosion": [ -1, 0.55 ],
 						"temperature": [ -0.45, -0.15 ],
-						"humidity": [ -1, -0.1 ],
+						"humidity": [ -0.35, -0.1 ],
 						"depth": 1,
 						"offset": 0
 					}
@@ -13406,13 +13584,26 @@
 					}
 				},
 				{
+					"NEUN_SCRIPT replace biome until 108": "minecraft:plains",
+					"biome": "minecraft:dappled_forest",
+					"parameters": {
+						"weirdness": [ 0.26666667, 0.56666667 ],
+						"continentalness": [ -0.21, -0.11 ],
+						"erosion": [ -0.2225, 1 ],
+						"temperature": [ -0.45, -0.15 ],
+						"humidity": [ -1, -0.35 ],
+						"depth": 1,
+						"offset": 0
+					}
+				},
+				{
 					"biome": "minecraft:plains",
 					"parameters": {
 						"weirdness": [ 0.26666667, 0.56666667 ],
 						"continentalness": [ -0.21, -0.11 ],
 						"erosion": [ -0.2225, 1 ],
 						"temperature": [ -0.45, -0.15 ],
-						"humidity": [ -1, -0.1 ],
+						"humidity": [ -0.35, -0.1 ],
 						"depth": 1,
 						"offset": 0
 					}
@@ -13730,13 +13921,26 @@
 					}
 				},
 				{
+					"NEUN_SCRIPT replace biome until 108": "minecraft:plains",
+					"biome": "minecraft:dappled_forest",
+					"parameters": {
+						"weirdness": [ 0.26666667, 0.56666667 ],
+						"continentalness": [ -0.11, 0.03 ],
+						"erosion": [ -0.78, 0.55 ],
+						"temperature": [ -0.45, -0.15 ],
+						"humidity": [ -1, -0.35 ],
+						"depth": 1,
+						"offset": 0
+					}
+				},
+				{
 					"biome": "minecraft:plains",
 					"parameters": {
 						"weirdness": [ 0.26666667, 0.56666667 ],
 						"continentalness": [ -0.11, 0.03 ],
 						"erosion": [ -0.78, 0.55 ],
 						"temperature": [ -0.45, -0.15 ],
-						"humidity": [ -1, -0.1 ],
+						"humidity": [ -0.35, -0.1 ],
 						"depth": 1,
 						"offset": 0
 					}
@@ -13994,13 +14198,26 @@
 					}
 				},
 				{
-					"biome": "minecraft:plains",
+					"NEUN_SCRIPT replace biome until 108": "minecraft:plains",
+					"biome": "minecraft:dappled_forest",
 					"parameters": {
 						"weirdness": [ 0.26666667, 0.4 ],
 						"continentalness": [ 0.03, 0.3 ],
 						"erosion": [ -0.78, 0.45 ],
 						"temperature": [ -0.45, -0.15 ],
-						"humidity": [ -1, -0.1 ],
+						"humidity": [ -1, -0.35 ],
+						"depth": 1,
+						"offset": 0
+					}
+				},
+				{
+					"biome": "minecraft:plains",
+					"parameters": {
+						"weirdness": [ 0.26666667, 0.4 ],
+						"continentalness": [ 0.03, 0.3 ],
+						"erosion": [ -0.78, 0.45 ],
+						"temperature": [ -0.45, 0.2 ],
+						"humidity": [ -0.35, -0.1 ],
 						"depth": 1,
 						"offset": 0
 					}
@@ -14049,18 +14266,6 @@
 						"erosion": [ -0.78, 0.45 ],
 						"temperature": [ -0.15, 0.2 ],
 						"humidity": [ -1, -0.35 ],
-						"depth": 1,
-						"offset": 0
-					}
-				},
-				{
-					"biome": "minecraft:plains",
-					"parameters": {
-						"weirdness": [ 0.26666667, 0.4 ],
-						"continentalness": [ 0.03, 0.3 ],
-						"erosion": [ -0.78, 0.45 ],
-						"temperature": [ -0.15, 0.2 ],
-						"humidity": [ -0.35, -0.1 ],
 						"depth": 1,
 						"offset": 0
 					}
@@ -14451,13 +14656,26 @@
 					}
 				},
 				{
-					"biome": "minecraft:plains",
+					"NEUN_SCRIPT replace biome until 108": "minecraft:plains",
+					"biome": "minecraft:dappled_forest",
 					"parameters": {
 						"weirdness": [ 0.26666667, 0.4 ],
 						"continentalness": [ 0.3, 1 ],
 						"erosion": [ -0.2225, 0.45 ],
 						"temperature": [ -0.45, -0.15 ],
-						"humidity": [ -1, -0.1 ],
+						"humidity": [ -1, -0.35 ],
+						"depth": 1,
+						"offset": 0
+					}
+				},
+				{
+					"biome": "minecraft:plains",
+					"parameters": {
+						"weirdness": [ 0.26666667, 0.4 ],
+						"continentalness": [ 0.3, 1 ],
+						"erosion": [ -0.2225, 0.45 ],
+						"temperature": [ -0.45, 0.2 ],
+						"humidity": [ -0.35, -0.1 ],
 						"depth": 1,
 						"offset": 0
 					}
@@ -14494,18 +14712,6 @@
 						"erosion": [ -0.2225, 0.45 ],
 						"temperature": [ -0.15, 0.2 ],
 						"humidity": [ -1, -0.35 ],
-						"depth": 1,
-						"offset": 0
-					}
-				},
-				{
-					"biome": "minecraft:plains",
-					"parameters": {
-						"weirdness": [ 0.26666667, 0.4 ],
-						"continentalness": [ 0.3, 1 ],
-						"erosion": [ -0.2225, 0.45 ],
-						"temperature": [ -0.15, 0.2 ],
-						"humidity": [ -0.35, -0.1 ],
 						"depth": 1,
 						"offset": 0
 					}
@@ -14631,13 +14837,26 @@
 					}
 				},
 				{
+					"NEUN_SCRIPT replace biome until 108": "minecraft:plains",
+					"biome": "minecraft:dappled_forest",
+					"parameters": {
+						"weirdness": [ 0.4, 0.56666667 ],
+						"continentalness": [ -0.21, -0.11 ],
+						"erosion": [ -1, 1 ],
+						"temperature": [ -0.45, -0.15 ],
+						"humidity": [ -1, -0.35 ],
+						"depth": 1,
+						"offset": 0
+					}
+				},
+				{
 					"biome": "minecraft:plains",
 					"parameters": {
 						"weirdness": [ 0.4, 0.56666667 ],
 						"continentalness": [ -0.21, -0.11 ],
 						"erosion": [ -1, 1 ],
 						"temperature": [ -0.45, -0.15 ],
-						"humidity": [ -1, -0.1 ],
+						"humidity": [ -0.35, -0.1 ],
 						"depth": 1,
 						"offset": 0
 					}
@@ -14799,13 +15018,26 @@
 					}
 				},
 				{
-					"biome": "minecraft:plains",
+					"NEUN_SCRIPT replace biome until 108": "minecraft:plains",
+					"biome": "minecraft:dappled_forest",
 					"parameters": {
 						"weirdness": [ 0.4, 0.93333333 ],
 						"continentalness": [ -0.11, 1 ],
 						"erosion": [ 0.55, 1 ],
 						"temperature": [ -0.45, -0.15 ],
-						"humidity": [ -1, -0.1 ],
+						"humidity": [ -1, -0.35 ],
+						"depth": 1,
+						"offset": 0
+					}
+				},
+				{
+					"biome": "minecraft:plains",
+					"parameters": {
+						"weirdness": [ 0.4, 0.93333333 ],
+						"continentalness": [ -0.11, 1 ],
+						"erosion": [ 0.55, 1 ],
+						"temperature": [ -0.45, 0.2 ],
+						"humidity": [ -0.35, -0.1 ],
 						"depth": 1,
 						"offset": 0
 					}
@@ -14854,18 +15086,6 @@
 						"erosion": [ 0.55, 1 ],
 						"temperature": [ -0.15, 0.2 ],
 						"humidity": [ -1, -0.35 ],
-						"depth": 1,
-						"offset": 0
-					}
-				},
-				{
-					"biome": "minecraft:plains",
-					"parameters": {
-						"weirdness": [ 0.4, 0.93333333 ],
-						"continentalness": [ -0.11, 1 ],
-						"erosion": [ 0.55, 1 ],
-						"temperature": [ -0.15, 0.2 ],
-						"humidity": [ -0.35, -0.1 ],
 						"depth": 1,
 						"offset": 0
 					}
@@ -15184,13 +15404,26 @@
 					}
 				},
 				{
-					"biome": "minecraft:plains",
+					"NEUN_SCRIPT replace biome until 108": "minecraft:plains",
+					"biome": "minecraft:dappled_forest",
 					"parameters": {
 						"weirdness": [ 0.4, 1 ],
 						"continentalness": [ 0.03, 0.3 ],
 						"erosion": [ -0.2225, 0.45 ],
 						"temperature": [ -0.45, -0.15 ],
-						"humidity": [ -1, -0.1 ],
+						"humidity": [ -1, -0.35 ],
+						"depth": 1,
+						"offset": 0
+					}
+				},
+				{
+					"biome": "minecraft:plains",
+					"parameters": {
+						"weirdness": [ 0.4, 1 ],
+						"continentalness": [ 0.03, 0.3 ],
+						"erosion": [ -0.2225, 0.45 ],
+						"temperature": [ -0.45, 0.2 ],
+						"humidity": [ -0.35, -0.1 ],
 						"depth": 1,
 						"offset": 0
 					}
@@ -15389,13 +15622,26 @@
 					}
 				},
 				{
-					"biome": "minecraft:plains",
+					"NEUN_SCRIPT replace biome until 108": "minecraft:plains",
+					"biome": "minecraft:dappled_forest",
 					"parameters": {
 						"weirdness": [ 0.4, 1 ],
 						"continentalness": [ 0.3, 1 ],
 						"erosion": [ 0.05, 0.45 ],
 						"temperature": [ -0.45, -0.15 ],
-						"humidity": [ -1, -0.1 ],
+						"humidity": [ -1, -0.35 ],
+						"depth": 1,
+						"offset": 0
+					}
+				},
+				{
+					"biome": "minecraft:plains",
+					"parameters": {
+						"weirdness": [ 0.4, 1 ],
+						"continentalness": [ 0.3, 1 ],
+						"erosion": [ 0.05, 0.45 ],
+						"temperature": [ -0.45, 0.2 ],
+						"humidity": [ -0.35, -0.1 ],
 						"depth": 1,
 						"offset": 0
 					}
@@ -15432,18 +15678,6 @@
 						"erosion": [ 0.05, 0.45 ],
 						"temperature": [ -0.15, 0.2 ],
 						"humidity": [ -1, -0.35 ],
-						"depth": 1,
-						"offset": 0
-					}
-				},
-				{
-					"biome": "minecraft:plains",
-					"parameters": {
-						"weirdness": [ 0.4, 1 ],
-						"continentalness": [ 0.3, 1 ],
-						"erosion": [ 0.05, 0.45 ],
-						"temperature": [ -0.15, 0.2 ],
-						"humidity": [ -0.35, -0.1 ],
 						"depth": 1,
 						"offset": 0
 					}
@@ -15605,13 +15839,26 @@
 					}
 				},
 				{
-					"biome": "minecraft:plains",
+					"NEUN_SCRIPT replace biome until 108": "minecraft:plains",
+					"biome": "minecraft:dappled_forest",
 					"parameters": {
 						"weirdness": [ 0.56666667, 0.93333333 ],
 						"continentalness": [ -0.21, 0.03 ],
 						"erosion": [ -0.78, 0.45 ],
 						"temperature": [ -0.45, -0.15 ],
-						"humidity": [ -1, -0.1 ],
+						"humidity": [ -1, -0.35 ],
+						"depth": 1,
+						"offset": 0
+					}
+				},
+				{
+					"biome": "minecraft:plains",
+					"parameters": {
+						"weirdness": [ 0.56666667, 0.93333333 ],
+						"continentalness": [ -0.21, 0.03 ],
+						"erosion": [ -0.78, 0.45 ],
+						"temperature": [ -0.45, 0.2 ],
+						"humidity": [ -0.35, -0.1 ],
 						"depth": 1,
 						"offset": 0
 					}
@@ -15660,18 +15907,6 @@
 						"erosion": [ -0.78, 0.45 ],
 						"temperature": [ -0.15, 0.2 ],
 						"humidity": [ -1, -0.35 ],
-						"depth": 1,
-						"offset": 0
-					}
-				},
-				{
-					"biome": "minecraft:plains",
-					"parameters": {
-						"weirdness": [ 0.56666667, 0.93333333 ],
-						"continentalness": [ -0.21, 0.03 ],
-						"erosion": [ -0.78, 0.45 ],
-						"temperature": [ -0.15, 0.2 ],
-						"humidity": [ -0.35, -0.1 ],
 						"depth": 1,
 						"offset": 0
 					}
@@ -15905,13 +16140,26 @@
 					}
 				},
 				{
-					"biome": "minecraft:plains",
+					"NEUN_SCRIPT replace biome until 108": "minecraft:plains",
+					"biome": "minecraft:dappled_forest",
 					"parameters": {
 						"weirdness": [ 0.56666667, 1 ],
 						"continentalness": [ -0.21, -0.11 ],
 						"erosion": [ 0.55, 1 ],
 						"temperature": [ -0.45, -0.15 ],
-						"humidity": [ -1, -0.1 ],
+						"humidity": [ -1, -0.35 ],
+						"depth": 1,
+						"offset": 0
+					}
+				},
+				{
+					"biome": "minecraft:plains",
+					"parameters": {
+						"weirdness": [ 0.56666667, 1 ],
+						"continentalness": [ -0.21, -0.11 ],
+						"erosion": [ 0.55, 1 ],
+						"temperature": [ -0.45, 0.2 ],
+						"humidity": [ -0.35, -0.1 ],
 						"depth": 1,
 						"offset": 0
 					}
@@ -16073,13 +16321,26 @@
 					}
 				},
 				{
+					"NEUN_SCRIPT replace biome until 108": "minecraft:plains",
+					"biome": "minecraft:dappled_forest",
+					"parameters": {
+						"weirdness": [ 0.7666667, 0.93333333 ],
+						"continentalness": [ -0.21, -0.11 ],
+						"erosion": [ -1, 1 ],
+						"temperature": [ -0.45, -0.15 ],
+						"humidity": [ -1, -0.35 ],
+						"depth": 1,
+						"offset": 0
+					}
+				},
+				{
 					"biome": "minecraft:plains",
 					"parameters": {
 						"weirdness": [ 0.7666667, 0.93333333 ],
 						"continentalness": [ -0.21, -0.11 ],
 						"erosion": [ -1, 1 ],
 						"temperature": [ -0.45, -0.15 ],
-						"humidity": [ -1, -0.1 ],
+						"humidity": [ -0.35, -0.1 ],
 						"depth": 1,
 						"offset": 0
 					}
@@ -16373,13 +16634,26 @@
 					}
 				},
 				{
+					"NEUN_SCRIPT replace biome until 108": "minecraft:plains",
+					"biome": "minecraft:dappled_forest",
+					"parameters": {
+						"weirdness": [ 0.7666667, 0.93333333 ],
+						"continentalness": [ -0.11, 0.03 ],
+						"erosion": [ 0.45, 1 ],
+						"temperature": [ -0.45, -0.15 ],
+						"humidity": [ -1, -0.35 ],
+						"depth": 1,
+						"offset": 0
+					}
+				},
+				{
 					"biome": "minecraft:plains",
 					"parameters": {
 						"weirdness": [ 0.7666667, 0.93333333 ],
 						"continentalness": [ -0.11, 0.03 ],
 						"erosion": [ 0.45, 1 ],
 						"temperature": [ -0.45, -0.15 ],
-						"humidity": [ -1, -0.1 ],
+						"humidity": [ -0.35, -0.1 ],
 						"depth": 1,
 						"offset": 0
 					}
@@ -16577,13 +16851,26 @@
 					}
 				},
 				{
+					"NEUN_SCRIPT replace biome until 108": "minecraft:plains",
+					"biome": "minecraft:dappled_forest",
+					"parameters": {
+						"weirdness": [ 0.93333333, 1 ],
+						"continentalness": [ -0.21, -0.11 ],
+						"erosion": [ -0.2225, 1 ],
+						"temperature": [ -0.45, -0.15 ],
+						"humidity": [ -1, -0.35 ],
+						"depth": 1,
+						"offset": 0
+					}
+				},
+				{
 					"biome": "minecraft:plains",
 					"parameters": {
 						"weirdness": [ 0.93333333, 1 ],
 						"continentalness": [ -0.21, -0.11 ],
 						"erosion": [ -0.2225, 1 ],
 						"temperature": [ -0.45, -0.15 ],
-						"humidity": [ -1, -0.1 ],
+						"humidity": [ -0.35, -0.1 ],
 						"depth": 1,
 						"offset": 0
 					}
@@ -16637,13 +16924,26 @@
 					}
 				},
 				{
+					"NEUN_SCRIPT replace biome until 108": "minecraft:plains",
+					"biome": "minecraft:dappled_forest",
+					"parameters": {
+						"weirdness": [ 0.93333333, 1 ],
+						"continentalness": [ -0.11, 0.03 ],
+						"erosion": [ -0.78, 0.55 ],
+						"temperature": [ -0.45, -0.15 ],
+						"humidity": [ -1, -0.35 ],
+						"depth": 1,
+						"offset": 0
+					}
+				},
+				{
 					"biome": "minecraft:plains",
 					"parameters": {
 						"weirdness": [ 0.93333333, 1 ],
 						"continentalness": [ -0.11, 0.03 ],
 						"erosion": [ -0.78, 0.55 ],
 						"temperature": [ -0.45, -0.15 ],
-						"humidity": [ -1, -0.1 ],
+						"humidity": [ -0.35, -0.1 ],
 						"depth": 1,
 						"offset": 0
 					}
@@ -16853,13 +17153,26 @@
 					}
 				},
 				{
-					"biome": "minecraft:plains",
+					"NEUN_SCRIPT replace biome until 108": "minecraft:plains",
+					"biome": "minecraft:dappled_forest",
 					"parameters": {
 						"weirdness": [ 0.93333333, 1 ],
 						"continentalness": [ 0.03, 0.3 ],
 						"erosion": [ -0.78, 0.45 ],
 						"temperature": [ -0.45, -0.15 ],
-						"humidity": [ -1, -0.1 ],
+						"humidity": [ -1, -0.35 ],
+						"depth": 1,
+						"offset": 0
+					}
+				},
+				{
+					"biome": "minecraft:plains",
+					"parameters": {
+						"weirdness": [ 0.93333333, 1 ],
+						"continentalness": [ 0.03, 0.3 ],
+						"erosion": [ -0.78, 0.45 ],
+						"temperature": [ -0.45, 0.2 ],
+						"humidity": [ -0.35, -0.1 ],
 						"depth": 1,
 						"offset": 0
 					}
@@ -16908,18 +17221,6 @@
 						"erosion": [ -0.78, 0.45 ],
 						"temperature": [ -0.15, 0.2 ],
 						"humidity": [ -1, -0.35 ],
-						"depth": 1,
-						"offset": 0
-					}
-				},
-				{
-					"biome": "minecraft:plains",
-					"parameters": {
-						"weirdness": [ 0.93333333, 1 ],
-						"continentalness": [ 0.03, 0.3 ],
-						"erosion": [ -0.78, 0.45 ],
-						"temperature": [ -0.15, 0.2 ],
-						"humidity": [ -0.35, -0.1 ],
 						"depth": 1,
 						"offset": 0
 					}
@@ -17154,13 +17455,26 @@
 					}
 				},
 				{
-					"biome": "minecraft:plains",
+					"NEUN_SCRIPT replace biome until 108": "minecraft:plains",
+					"biome": "minecraft:dappled_forest",
 					"parameters": {
 						"weirdness": [ 0.93333333, 1 ],
 						"continentalness": [ 0.3, 1 ],
 						"erosion": [ -0.2225, 0.45 ],
 						"temperature": [ -0.45, -0.15 ],
-						"humidity": [ -1, -0.1 ],
+						"humidity": [ -1, -0.35 ],
+						"depth": 1,
+						"offset": 0
+					}
+				},
+				{
+					"biome": "minecraft:plains",
+					"parameters": {
+						"weirdness": [ 0.93333333, 1 ],
+						"continentalness": [ 0.3, 1 ],
+						"erosion": [ -0.2225, 0.45 ],
+						"temperature": [ -0.45, 0.2 ],
+						"humidity": [ -0.35, -0.1 ],
 						"depth": 1,
 						"offset": 0
 					}
@@ -17197,18 +17511,6 @@
 						"erosion": [ -0.2225, 0.45 ],
 						"temperature": [ -0.15, 0.2 ],
 						"humidity": [ -1, -0.35 ],
-						"depth": 1,
-						"offset": 0
-					}
-				},
-				{
-					"biome": "minecraft:plains",
-					"parameters": {
-						"weirdness": [ 0.93333333, 1 ],
-						"continentalness": [ 0.3, 1 ],
-						"erosion": [ -0.2225, 0.45 ],
-						"temperature": [ -0.15, 0.2 ],
-						"humidity": [ -0.35, -0.1 ],
 						"depth": 1,
 						"offset": 0
 					}
