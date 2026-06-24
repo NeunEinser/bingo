@@ -1,4 +1,9 @@
 {
 	"feature": "fetchr:no_op",
-	"placement": []
+	"placement": [
+		{
+			"type": "minecraft:count",
+			"count": 0
+		}
+	]
 }
