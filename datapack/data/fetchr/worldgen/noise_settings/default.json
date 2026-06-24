@@ -11,6 +11,7 @@
 	},
 	"disable_mob_generation": false,
 	"legacy_random_source": false,
+	"material_rule": "minecraft:overworld",
 	"noise": {
 		"height": 384,
 		"min_y": -64,
