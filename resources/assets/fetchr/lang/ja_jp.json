@@ -1,5 +1,4 @@
 {
-	"fetchr.error.incompatible_minecraft_version.multiple_compatible": "サポートされていないバージョンのMinecraftを実行しています。このパックはMinecraftバージョン %s‐%s で互換性があります。",
 	"fetchr.error.incompatible_minecraft_version.single_compatible": "サポートされていないバージョンのMinecraftを実行しています。このパックはMinecraftバージョン %s で互換性があります。",
 	"fetchr.logging.error": "エラー",
 	"fetchr.setup.error.unknown_category": "アイテム%1$sは%2$sに分類されますが、分類%2$sが存在しません。",

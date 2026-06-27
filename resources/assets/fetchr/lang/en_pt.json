@@ -1,5 +1,4 @@
 {
-	"fetchr.error.incompatible_minecraft_version.multiple_compatible": "Ye be usin' an unsupported version o' Minecraft. Dis pack has been made compatible fer Minecraft versions %s-%s",
 	"fetchr.error.incompatible_minecraft_version.single_compatible": "Ye be usin' an unsupported version o' Minecraft. Dis pack has been made compatible fer Minecraft version %s",
 	"fetchr.logging.error": "MISHAP",
 	"fetchr.setup.error.unknown_category": "Arr, item %1$s be in category %2$s, but alas, category %2$s be nowhere to be found!",

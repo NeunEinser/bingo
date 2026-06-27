@@ -1,7 +1,5 @@
 {
-	"fetchr.error.incompatible_minecraft_version.multiple_compatible": "Ви використовуєте непідтримувану версію Minecraft. Цей пакет сумісний з версіями Minecraft %s-%s",
 	"fetchr.error.incompatible_minecraft_version.multiple_compatible.with_latest_snapshot": "Ви використовуєте непідтримувану версію Minecraft. Цей датапак був зроблений для версій: %s-%s, або до снапшоту %s.",
-	"fetchr.error.incompatible_minecraft_version.incompatible_snapshot": "Ви використовуєте непідтримуваний снапшот. Снапшоти %s-%s непідтримувані. Використовуйте снапшот %s або вище.",
 	"fetchr.error.incompatible_minecraft_version.single_compatible": "Ви використовуєте непідтримувану версію Minecraft. Цей пакет сумісний з версією Minecraft %s",
 	"fetchr.error.incompatible_minecraft_version.single_compatible.with_latest_snapshot": "Ви використовуєте непідтримувану версію Minecraft. Цей датапак був зроблений для версії %s, або до снапшоту %s.",
 	"fetchr.logging.error": "ПОМИЛКА",

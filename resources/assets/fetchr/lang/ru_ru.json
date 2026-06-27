@@ -1,5 +1,4 @@
 {
-	"fetchr.error.incompatible_minecraft_version.multiple_compatible": "Вы используете неподдерживаемую версию Minecraft. Этот набор совместим с версиями Minecraft %s-%s",
 	"fetchr.error.incompatible_minecraft_version.single_compatible": "Вы используете неподдерживаемую версию Minecraft. Этот набор совместим с версией Minecraft %s",
 	"fetchr.logging.error": "ОШИБКА",
 	"fetchr.setup.error.unknown_category": "Предмет %1$s имеет категорию %2$s, но категория %2$s не найдена.",

@@ -1,7 +1,5 @@
 {
-	"fetchr.error.incompatible_minecraft_version.multiple_compatible": "Estás usando una versión no compatible de Minecraft. Este paquete ha sido hecho compatible para las versiones de Minecraft %s-%s.",
 	"fetchr.error.incompatible_minecraft_version.multiple_compatible.with_latest_snapshot": "Estás usando una versión no soportada de Minecraft. Este paquete ha sido hecho compatible para las versiones de Minecraft %s-%s, o hasta snapshot %s.",
-	"fetchr.error.incompatible_minecraft_version.incompatible_snapshot": "Estás usando una snapshot no soportada. Las Snapshots %s-%s no son compatibles. Asegúrate de usar snapshot %s o superior.",
 	"fetchr.error.incompatible_minecraft_version.single_compatible": "Estás usando una versión no compatible de Minecraft. Este paquete ha sido hecho compatible para las versiones de Minecraft -%s.",
 	"fetchr.error.incompatible_minecraft_version.single_compatible.with_latest_snapshot": "Estás usando una versión no soportada de Minecraft. Este paquete ha sido hecho compatible para las versiones de Minecraft -%s, o hasta snapshot %s.",
 	"fetchr.error.cannot_update": "Estás intentando actualizar una versión de Fetchr desde %s o anterior. Esto no está soportado actualmente. La actualización sólo es compatible con las versiones %s y posteriores",

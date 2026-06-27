@@ -1,7 +1,5 @@
 {
-	"fetchr.error.incompatible_minecraft_version.multiple_compatible": "Esteu utilitzant una versió de Minecraft incompatible. Aquest pack s'ha fet amb compatibilitat per les versions %s a %s de Minecraft",
 	"fetchr.error.incompatible_minecraft_version.multiple_compatible.with_latest_snapshot": "Esteu utilitzant una versió de Minecraft incompatible. Aquest paquet s'ha fet amb compatibilitat per les versions %s a %s, o fins a la versió de prova %s.",
-	"fetchr.error.incompatible_minecraft_version.incompatible_snapshot": "Esteu utilitzant una versió de prova incompatible. Les versions de prova %s fins a %s no tenen compatibilitat. Assegureu-vos que esteu emprant la versió de prova %s o superior.",
 	"fetchr.error.incompatible_minecraft_version.single_compatible": "Esteu utilitzant una versió de Minecraft incompatible. Aquest pack s'ha fet amb compatibilitat per les versions %s de Minecraft",
 	"fetchr.error.incompatible_minecraft_version.single_compatible.with_latest_snapshot": "Esteu utilitzant una versió de Minecraft incompatible. Aquest paquet s'ha fet amb compatibilitat per la versió %s, o fins a la versió de prova %s.",
 	"fetchr.error.cannot_update": "Esteu intentant actualitzar Fetchr de la versió %s o anterior. Actualment, això no és possible. Només es poden actualitzar la versió %s i posteriors",

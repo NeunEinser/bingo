@@ -1,7 +1,5 @@
 {
-	"fetchr.error.incompatible_minecraft_version.multiple_compatible": "지원되지 않는 버전의 Minecraft를 실행하고 있습니다. 이 팩은 %s-%s 버전의 Minecraft를 위해 제작되었습니다.",
 	"fetchr.error.incompatible_minecraft_version.multiple_compatible.with_latest_snapshot": "지원되지 않는 버전의 Minecraft를 실행하고 있습니다. 이 팩은 %s-%s 버전 또는 %s 스냅샷의 Minecraft를 위해 제작되었습니다.",
-	"fetchr.error.incompatible_minecraft_version.incompatible_snapshot": "지원되지 않는 스냅샷을 사용하고 있습니다. %s-%s 버전의 스냅샷은 지원되지 않습니다. %s 이상의 버전을 사용하십시오.",
 	"fetchr.error.incompatible_minecraft_version.single_compatible": "지원되지 않는 버전의 Minecraft를 실행하고 있습니다. 이 팩은 %s 버전의 Minecraft를 위해 제작되었습니다.",
 	"fetchr.error.incompatible_minecraft_version.single_compatible.with_latest_snapshot": "지원되지 않는 버전의 Minecraft를 실행하고 있습니다. 이 팩은 %s 버전 또는 %s 스냅샷의 Minecraft를 위해 제작되었습니다.",
 	"fetchr.error.cannot_update": "현재 지원되지 않는 버전(%s 버전 또는 그 이전 버전)에서 Fetchr를 업데이트를 시도하고 있습니다.  %s 버전 이상에서만 지원됩니다.",
