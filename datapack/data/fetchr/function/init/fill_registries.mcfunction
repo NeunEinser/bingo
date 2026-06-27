@@ -599,14 +599,6 @@ data \
 	name: { translate: "fetchr.category.spider" },\
 	tags: [ "fetchr:default" ]\
 }
-#NEUN_SCRIPT since 101.2
-data \
-	modify storage fetchr:registries categories append value {\
-	id: "fetchr:sulfur_caves",\
-	name: { translate: "fetchr.category.sulfur_caves" },\
-	tags: [ "fetchr:default" ]\
-}
-#NEUN_SCRIPT end
 data \
 	modify storage fetchr:registries categories append value {\
 	id: "fetchr:swamp",\
@@ -2141,28 +2133,6 @@ data \
 	categories: [ "fetchr:ruined_portal" ]\
 }
 
-#NEUN_SCRIPT since 101.2
-# 007d: sulfur_spike
-data \
-	modify storage fetchr:registries items append value {\
-	id: "fetchr:sulfur_spike",\
-	item: { id: "minecraft:sulfur_spike" },\
-	translation: "block.minecraft.sulfur_spike",\
-	icon: "007d",\
-	categories: [ "fetchr:sulfur_caves" ]\
-}
-
-# 007e: sulfur_cube_bucket
-data \
-	modify storage fetchr:registries items append value {\
-	id: "fetchr:sulfur_cube_bucket",\
-	item: { id: "minecraft:sulfur_cube_bucket" },\
-	translation: "item.minecraft.sulfur_cube_bucket",\
-	icon: "007e",\
-	categories: [ "fetchr:sulfur_caves" ]\
-}
-#NEUN_SCRIPT end
-
 # 007f: prismarine_crystals
 data \
 	modify storage fetchr:registries items append value {\
@@ -2788,28 +2758,6 @@ data \
 	icon: "0137",\
 	categories: [ "fetchr:ruined_portal" ]\
 }
-
-#NEUN_SCRIPT since 101.2
-# 0138: polished_cinnabar
-data \
-	modify storage fetchr:registries items append value {\
-	id: "fetchr:polished_cinnabar",\
-	item: { id: "minecraft:polished_cinnabar" },\
-	translation: "block.minecraft.polished_cinnabar",\
-	icon: "0138",\
-	categories: [ "fetchr:sulfur_caves" ]\
-}
-
-# 0139: sulfur_bricks
-data \
-	modify storage fetchr:registries items append value {\
-	id: "fetchr:sulfur_bricks",\
-	item: { id: "minecraft:sulfur_bricks" },\
-	translation: "block.minecraft.sulfur_bricks",\
-	icon: "0139",\
-	categories: [ "fetchr:sulfur_caves" ]\
-}
-#NEUN_SCRIPT end
 
 # structures
 #NEUN_SCRIPT until 62
