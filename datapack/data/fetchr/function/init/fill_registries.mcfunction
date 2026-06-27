@@ -2217,7 +2217,7 @@ data \
 	id: "fetchr:brown_mushroom",\
 	item: { id: "minecraft:brown_mushroom" },\
 	translation: "block.minecraft.brown_mushroom",\
-	icon: "0082",\
+	icon: "0083",\
 	categories: [ "fetchr:mushroom" ],\
 }
 
@@ -2227,7 +2227,7 @@ data \
 	id: "fetchr:red_mushroom",\
 	item: { id: "minecraft:red_mushroom" },\
 	translation: "block.minecraft.red_mushroom",\
-	icon: "0082",\
+	icon: "0084",\
 	categories: [ "fetchr:mushroom" ],\
 }
 #NEUN_SCRIPT end
@@ -2239,7 +2239,7 @@ data \
 	id: "fetchr:brown_mushroom",\
 	item: { id: "minecraft:brown_mushroom" },\
 	translation: "block.minecraft.brown_mushroom",\
-	icon: "0082",\
+	icon: "0083",\
 	categories: [ "fetchr:mushroom" ],\
 	weight: 2,\
 }
@@ -2250,7 +2250,7 @@ data \
 	id: "fetchr:red_mushroom",\
 	item: { id: "minecraft:red_mushroom" },\
 	translation: "block.minecraft.red_mushroom",\
-	icon: "0082",\
+	icon: "0084",\
 	categories: [ "fetchr:mushroom" ],\
 	weight: 2,\
 }
