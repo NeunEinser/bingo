@@ -377,6 +377,14 @@ data \
 	name: { translate: "fetchr.category.compass" },\
 	tags: [ "fetchr:default" ]\
 }
+#NEUN_SCRIPT since 108
+data \
+	modify storage fetchr:registries categories append value {\
+	id: "fetchr:dappled_forest",\
+	name: { translate: "fetchr.category.dappled_forest" },\
+	tags: [ "fetchr:default" ]\
+}
+#NEUN_SCRIPT end
 data \
 	modify storage fetchr:registries categories append value {\
 	id: "fetchr:deepslate",\
@@ -1044,7 +1052,8 @@ data \
 }
 
 # 0023: mushroom_stew
-data \
+#NEUN_SCRIPT until 108
+#data \
 	modify storage fetchr:registries items append value {\
 	id: "fetchr:mushroom_stew",\
 	item: { id: "minecraft:mushroom_stew" },\
@@ -1052,6 +1061,18 @@ data \
 	icon: "0023",\
 	categories: [ "fetchr:mushroom" ]\
 }
+#NEUN_SCRIPT end
+#NEUN_SCRIPT since 108
+data \
+	modify storage fetchr:registries items append value {\
+	id: "fetchr:mushroom_stew",\
+	item: { id: "minecraft:mushroom_stew" },\
+	translation: "item.minecraft.mushroom_stew",\
+	icon: "0023",\
+	categories: [ "fetchr:mushroom" ],\
+	weight: 3,\
+}
+#NEUN_SCRIPT end
 
 # 0024: mangrove_propagule
 data \
@@ -1342,8 +1363,9 @@ data \
 	weight: 2\
 }
 
+#NEUN_SCRIPT until 108
 # 0040: suspicious_stew
-data \
+#data \
 	modify storage fetchr:registries items append value {\
 	id: "fetchr:suspicious_stew",\
 	item: { id: "minecraft:suspicious_stew" },\
@@ -1351,6 +1373,18 @@ data \
 	icon: "0040",\
 	categories: [ "fetchr:mushroom" ]\
 }
+#NEUN_SCRIPT end
+#NEUN_SCRIPT since 108
+data \
+	modify storage fetchr:registries items append value {\
+	id: "fetchr:suspicious_stew",\
+	item: { id: "minecraft:suspicious_stew" },\
+	translation: "item.minecraft.suspicious_stew",\
+	icon: "0040",\
+	categories: [ "fetchr:mushroom" ],\
+	weight: 3,\
+}
+#NEUN_SCRIPT end
 
 # 0041: glass_bottle
 data \
@@ -2154,6 +2188,74 @@ data \
 	weight: 3\
 }
 
+#NEUN_SCRIPT since 98
+# 0081: poplar_sapling
+data \
+	modify storage fetchr:registries items append value {\
+	id: "fetchr:poplar_sapling",\
+	item: { id: "minecraft:poplar_sapling" },\
+	translation: "block.minecraft.poplar_sapling",\
+	icon: "0081",\
+	categories: [ "fetchr:dappled_forest" ],\
+}
+
+# 0082: red_shrub
+data \
+	modify storage fetchr:registries items append value {\
+	id: "fetchr:red_shrub",\
+	item: { id: "minecraft:red_shrub" },\
+	translation: "block.minecraft.red_shrub",\
+	icon: "0082",\
+	categories: [ "fetchr:dappled_forest" ],\
+}
+#NEUN_SCRIPT end
+
+#NEUN_SCRIPT until 108
+# 0083: brown_mushroom
+#data \
+	modify storage fetchr:registries items append value {\
+	id: "fetchr:brown_mushroom",\
+	item: { id: "minecraft:brown_mushroom" },\
+	translation: "block.minecraft.brown_mushroom",\
+	icon: "0082",\
+	categories: [ "fetchr:mushroom" ],\
+}
+
+# 0084: red_mushroom
+#data \
+	modify storage fetchr:registries items append value {\
+	id: "fetchr:red_mushroom",\
+	item: { id: "minecraft:red_mushroom" },\
+	translation: "block.minecraft.red_mushroom",\
+	icon: "0082",\
+	categories: [ "fetchr:mushroom" ],\
+}
+#NEUN_SCRIPT end
+
+#NEUN_SCRIPT since 108
+# 0083: brown_mushroom
+data \
+	modify storage fetchr:registries items append value {\
+	id: "fetchr:brown_mushroom",\
+	item: { id: "minecraft:brown_mushroom" },\
+	translation: "block.minecraft.brown_mushroom",\
+	icon: "0082",\
+	categories: [ "fetchr:mushroom" ],\
+	weight: 2,\
+}
+
+# 0084: red_mushroom
+data \
+	modify storage fetchr:registries items append value {\
+	id: "fetchr:red_mushroom",\
+	item: { id: "minecraft:red_mushroom" },\
+	translation: "block.minecraft.red_mushroom",\
+	icon: "0082",\
+	categories: [ "fetchr:mushroom" ],\
+	weight: 2,\
+}
+#NEUN_SCRIPT end
+
 # 0100: iron_block
 data \
 	modify storage fetchr:registries items append value {\
@@ -2758,6 +2860,38 @@ data \
 	icon: "0137",\
 	categories: [ "fetchr:ruined_portal" ]\
 }
+
+#NEUN_SCRIPT since 108
+# 013a: poplar_shelf
+data \
+	modify storage fetchr:registries items append value {\
+	id: "fetchr:poplar_shelf",\
+	item: { id: "minecraft:poplar_shelf" },\
+	translation: "block.minecraft.poplar_shelf",\
+	icon: "013a",\
+	categories: [ "fetchr:dappled_forest" ]\
+}
+
+# 013b: yellow_poplar_leaves
+data \
+	modify storage fetchr:registries items append value {\
+	id: "fetchr:yellow_poplar_leaves",\
+	item: { id: "minecraft:yellow_poplar_leaves" },\
+	translation: "block.minecraft.yellow_poplar_leaves",\
+	icon: "013b",\
+	categories: [ "fetchr:dappled_forest", { id: "fetchr:shearable", weight: 2 } ]\
+}
+
+# 013c: shelf_mushroom
+data \
+	modify storage fetchr:registries items append value {\
+	id: "fetchr:shelf_mushroom",\
+	item: { id: "minecraft:shelf_mushroom" },\
+	translation: "block.minecraft.shelf_mushroom",\
+	icon: "013c",\
+	categories: [ "fetchr:dappled_forest", { id: "fetchr:mushroom", weight: 2 } ]\
+}
+#NEUN_SCRIPT end
 
 # structures
 #NEUN_SCRIPT until 62
