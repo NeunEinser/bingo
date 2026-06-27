@@ -1,6 +1,16 @@
 {
 	"providers": [
 		{
+			"NEUN_SCRIPT remove_self since 65.0": null,
+			"type": "bitmap",
+			"file": "fetchr:font/pre_1.21.9_dyes.png",
+			"ascent": -5,
+			"height": 48,
+			"chars": [
+				"\u003a\u003b\u003c\u003e\u003f"
+			]
+		},
+		{
 			"type": "bitmap",
 			"file": "fetchr:font/2d_items.png",
 			"ascent": -5,
