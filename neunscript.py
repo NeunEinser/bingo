@@ -876,9 +876,8 @@ def handle_structued(
 		remove_indices = []
 		for i, value in enumerate(tag):
 			val_result = handle_structued(value, file_path, config, mc_version_info, pack_format, min_format, max_format, is_nbt)
-			if val_result[1]:
-				pack_formats.update(val_result[0])
-			else:
+			pack_formats.update(val_result[0])
+			if not val_result[1]:
 				remove_indices.append(i)
 		remove_indices.reverse()
 		for i in remove_indices:
