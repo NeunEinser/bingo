@@ -4,7 +4,7 @@
 	"target": "dist",
 	"vars": {
 		"version_long_name": "5.4 Beta 2",
-		"rp_version": "41",
+		"rp_version": "42",
 		"realms": false
 	},
 	"versions": {
