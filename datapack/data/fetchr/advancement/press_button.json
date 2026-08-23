@@ -3,7 +3,7 @@
 		"click_button": {
 			"trigger": "minecraft:default_block_use",
 			"conditions": {
-				"location": [
+				"NEUN_SCRIPT replace location until 111": [
 					{
 						"condition": "minecraft:location_check",
 						"predicate": {
@@ -12,7 +12,15 @@
 							}
 						}
 					}
-				]
+				],
+				"location": {
+					"type": "minecraft:location_check",
+					"predicate": {
+						"block": {
+							"blocks": "#minecraft:buttons"
+						}
+					}
+				}
 			}
 		}	
 	},

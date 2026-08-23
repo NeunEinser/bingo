@@ -7,9 +7,17 @@
 					"type": "minecraft:item_frame",
 					"nbt": "{ Tags: ['fetchr.card_frame'] }"
 				},
-				"entity": {
+				"NEUN_SCRIPT replace entity until 111": {
 					"minecraft:entity_type": "minecraft:item_frame",
 					"minecraft:nbt": "{ Tags: ['fetchr.card_frame'] }"
+				},
+				"entity": {
+					"type": "minecraft:entity_properties",
+					"entity": "this",
+					"predicate": {
+						"minecraft:entity_type": "minecraft:item_frame",
+						"minecraft:nbt": "{ Tags: ['fetchr.card_frame'] }"
+					}
 				}
 			}
 		}
