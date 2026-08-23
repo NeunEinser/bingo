@@ -1,6 +1,6 @@
 {
 	"NEUN_SCRIPT remove_self until 62": null,
-	"attributes": {
+	"NEUN_SCRIPT replace attributes until 111": {
 		"minecraft:audio/background_music": {
 			"default": {
 				"max_delay": 24000,
@@ -11,12 +11,124 @@
 		"minecraft:gameplay/snow_golem_melts": true,
 		"minecraft:visual/sky_color": "#6eb1ff"
 	},
+	"attributes": {
+		"minecraft:audio/background_music": {
+			"default": {
+				"max_delay": 24000,
+				"min_delay": 12000,
+				"sound": "minecraft:music.overworld.badlands"
+			}
+		},
+		"minecraft:gameplay/creature_world_gen_spawn_probability": 0.03,
+		"minecraft:gameplay/natural_mob_spawns": {
+			"spawn_costs": {},
+			"spawns_by_category": {
+				"ambient": [
+					{
+						"type": "minecraft:bat",
+						"count": 8,
+						"weight": 10
+					}
+				],
+				"creature": [
+					{
+						"type": "minecraft:sheep",
+						"count": 4,
+						"weight": 12
+					},
+					{
+						"type": "minecraft:pig",
+						"count": 4,
+						"weight": 10
+					},
+					{
+						"type": "minecraft:chicken",
+						"count": 4,
+						"weight": 10
+					},
+					{
+						"type": "minecraft:cow",
+						"count": 4,
+						"weight": 8
+					},
+					{
+						"type": "minecraft:armadillo",
+						"count": {
+							"type": "minecraft:uniform",
+							"max_inclusive": 2,
+							"min_inclusive": 1
+						},
+						"weight": 46
+					}
+				],
+				"monster": [
+					{
+						"type": "minecraft:spider",
+						"count": 4,
+						"weight": 100
+					},
+					{
+						"type": "minecraft:zombie",
+						"count": 4,
+						"weight": 95
+					},
+					{
+						"type": "minecraft:zombie_villager",
+						"count": 1,
+						"weight": 5
+					},
+					{
+						"type": "minecraft:skeleton",
+						"count": 4,
+						"weight": 100
+					},
+					{
+						"type": "minecraft:creeper",
+						"count": 4,
+						"weight": 100
+					},
+					{
+						"type": "minecraft:slime",
+						"count": 4,
+						"weight": 100
+					},
+					{
+						"type": "minecraft:enderman",
+						"count": {
+							"type": "minecraft:uniform",
+							"max_inclusive": 4,
+							"min_inclusive": 1
+						},
+						"weight": 10
+					},
+					{
+						"type": "minecraft:witch",
+						"count": 1,
+						"weight": 5
+					}
+				],
+				"underground_water_creature": [
+					{
+						"type": "minecraft:glow_squid",
+						"count": {
+							"type": "minecraft:uniform",
+							"max_inclusive": 6,
+							"min_inclusive": 4
+						},
+						"weight": 10
+					}
+				]
+			}
+		},
+		"minecraft:gameplay/snow_golem_melts": true,
+		"minecraft:visual/sky_color": "#6eb1ff"
+	},
 	"carvers": [
 		"minecraft:cave",
 		"minecraft:cave_extra_underground",
 		"minecraft:canyon"
 	],
-	"creature_spawn_probability": 0.03,
+	"NEUN_SCRIPT replace creature_spawn_probability until 111": 0.03,
 	"downfall": 0.0,
 	"effects": {
 		"fog_color": 12638463,
@@ -246,8 +358,8 @@
 		]
 	],
 	"has_precipitation": false,
-	"spawn_costs": {},
-	"spawners": {
+	"NEUN_SCRIPT replace spawn_costs until 111": {},
+	"NEUN_SCRIPT replace spawners until 111": {
 		"ambient": [
 			{
 				"type": "minecraft:bat",
