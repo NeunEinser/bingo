@@ -1,4 +1,4 @@
-use ::java::server::util::text::Text
+use ::java::util::text::Text
 use ::fetchr::hud::HudComponentBase
 use ::fetchr::item::ItemConfigurationBase
 

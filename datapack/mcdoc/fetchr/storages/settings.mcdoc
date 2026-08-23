@@ -1,4 +1,4 @@
-use ::java::server::util::text::Text
+use ::java::util::text::Text
 
 dispatch minecraft:storage[tmp.fetchr:settings/dialog] to struct {
 	custom_options: struct {

@@ -1,4 +1,4 @@
-use ::java::world::block::sign::SignText
+use ::java::world::component::block::SignText
 use ::java::world::item::firework::Explosion
 use ::java::world::item::ItemStack
 
