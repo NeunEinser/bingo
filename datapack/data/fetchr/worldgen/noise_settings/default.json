@@ -504,24 +504,8 @@
 			}
 		},
 		"ridges": "fetchr:ridges",
-		"temperature": {
-			"type": "minecraft:shifted_noise",
-			"noise": "fetchr:temperature",
-			"shift_x": "minecraft:shift_x",
-			"shift_y": 0.0,
-			"shift_z": "minecraft:shift_z",
-			"xz_scale": 0.25,
-			"y_scale": 0.0
-		},
-		"vegetation": {
-			"type": "minecraft:shifted_noise",
-			"noise": "fetchr:vegetation",
-			"shift_x": "minecraft:shift_x",
-			"shift_y": 0.0,
-			"shift_z": "minecraft:shift_z",
-			"xz_scale": 0.25,
-			"y_scale": 0.0
-		},
+		"temperature": "fetchr:temperature",
+		"vegetation": "fetchr:vegetation",
 		"vein_gap": {
 			"type": "minecraft:noise",
 			"noise": "minecraft:ore_gap",
@@ -592,7 +576,7 @@
 	},
 	"ore_veins_enabled": true,
 	"sea_level": 63,
-	"spawn_target": [
+	"NEUN_SCRIPT replace spawn_target until 109": [
 		{
 			"continentalness": [
 				-0.11,
@@ -638,6 +622,52 @@
 			],
 			"weirdness": [
 				0.16,
+				1.0
+			]
+		}
+	],
+	"spawn_target": [
+		{
+			"fetchr:continentalness": [
+				-0.11,
+				1.0
+			],
+			"fetchr:erosion": [
+				-1.0,
+				1.0
+			],
+			"fetchr:ridges": [
+				-1.0,
+				-0.16
+			],
+			"fetchr:temperature": [
+				-1.0,
+				1.0
+			],
+			"fetchr:vegetation": [
+				-1.0,
+				1.0
+			]
+		},
+		{
+			"fetchr:continentalness": [
+				-0.11,
+				1.0
+			],
+			"fetchr:erosion": [
+				-1.0,
+				1.0
+			],
+			"fetchr:ridges": [
+				0.16,
+				1.0
+			],
+			"fetchr:temperature": [
+				-1.0,
+				1.0
+			],
+			"fetchr:vegetation": [
+				-1.0,
 				1.0
 			]
 		}
