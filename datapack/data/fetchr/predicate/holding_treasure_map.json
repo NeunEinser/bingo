@@ -1,15 +1,19 @@
 {
 	"condition": "minecraft:any_of",
+	"type": "minecraft:any_of",
 	"terms": [
 		{
 			"condition": "minecraft:entity_properties",
+			"type": "minecraft:entity_properties",
 			"entity": "this",
 			"predicate": {
 				"equipment": {
 					"mainhand": {
 						"items": "minecraft:filled_map",
+						"NEUN_SCRIPT replace components until 62": {
+							"minecraft:item_name": "{ \"translate\": \"filled_map.buried_treasure\" }"
+						},
 						"components": {
-							"NEUN_SCRIPT replace minecraft:item_name until 62": "{ \"translate\": \"filled_map.buried_treasure\" }",
 							"minecraft:item_name": { "translate": "filled_map.buried_treasure" }
 						}
 					}
@@ -18,13 +22,16 @@
 		},
 		{
 			"condition": "minecraft:entity_properties",
+			"type": "minecraft:entity_properties",
 			"entity": "this",
 			"predicate": {
 				"equipment": {
 					"offhand": {
 						"items": "minecraft:filled_map",
+						"NEUN_SCRIPT replace components until 62": {
+							"minecraft:item_name": "{ \"translate\": \"filled_map.buried_treasure\" }"
+						},
 						"components": {
-							"NEUN_SCRIPT replace minecraft:item_name until 62": "{ \"translate\": \"filled_map.buried_treasure\" }",
 							"minecraft:item_name": { "translate": "filled_map.buried_treasure" }
 						}
 					}
