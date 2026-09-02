@@ -9,12 +9,12 @@
 execute if score $is_multiplayer fetchr.state matches 0 if entity @s[tag=fetchr.multiplayer_only] run return 0
 execute if score $is_multiplayer fetchr.state matches 1 if entity @s[tag=fetchr.singleplayer_only] run return 0
 
-execute if entity @s[tag=fetchr.sign_north] run setblock ~ ~ ~ minecraft:warped_wall_sign[facing=north]
-execute if entity @s[tag=fetchr.sign_east] run setblock ~ ~ ~ minecraft:warped_wall_sign[facing=east]
-execute if entity @s[tag=fetchr.sign_south] run setblock ~ ~ ~ minecraft:warped_wall_sign[facing=south]
-execute if entity @s[tag=fetchr.sign_west] run setblock ~ ~ ~ minecraft:warped_wall_sign[facing=west]
-execute if entity @s[tag=fetchr.standing_sign_south] run setblock ~ ~ ~ minecraft:warped_sign[rotation=0]
-execute if entity @s[tag=fetchr.danger_sign_east] run setblock ~ ~ ~ minecraft:crimson_wall_sign[facing=east]
+execute if entity @s[tag=fetchr.sign_north] run setblock ~ ~ ~ minecraft:warped_wall_sign[facing=north]{allow_op_features: true}
+execute if entity @s[tag=fetchr.sign_east] run setblock ~ ~ ~ minecraft:warped_wall_sign[facing=east]{allow_op_features: true}
+execute if entity @s[tag=fetchr.sign_south] run setblock ~ ~ ~ minecraft:warped_wall_sign[facing=south]{allow_op_features: true}
+execute if entity @s[tag=fetchr.sign_west] run setblock ~ ~ ~ minecraft:warped_wall_sign[facing=west]{allow_op_features: true}
+execute if entity @s[tag=fetchr.standing_sign_south] run setblock ~ ~ ~ minecraft:warped_sign[rotation=0]{allow_op_features: true}
+execute if entity @s[tag=fetchr.danger_sign_east] run setblock ~ ~ ~ minecraft:crimson_wall_sign[facing=east]{allow_op_features: true}
 
 data modify entity @s data.fetchr.pls_send_update set value true
 data \
