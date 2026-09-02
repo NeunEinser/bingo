@@ -7,5 +7,13 @@
 		"to_value": -1.5,
 		"to_y": 320
 	},
-	"argument2": "fetchr:offset"
+	"argument2": "fetchr:offset",
+	"left": {
+		"type": "minecraft:y_clamped_gradient",
+		"from_value": 1.5,
+		"from_y": -64,
+		"to_value": -1.5,
+		"to_y": 320
+	},
+	"right": "fetchr:offset"
 }
