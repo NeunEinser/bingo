@@ -42,18 +42,21 @@ data \
 execute \
 	if items block 6 0 7 container.0 *[minecraft:bundle_contents] \
 	run item modify block 6 0 7 container.0 {\
+		type: "minecraft:set_components",\
 		function: "minecraft:set_components",\
 		components: { "minecraft:bundle_contents": [] }\
 	}
 execute \
 	if items block 6 0 7 container.0 *[minecraft:container] \
 	run item modify block 6 0 7 container.0 {\
+		type: "minecraft:set_components",\
 		function: "minecraft:set_components",\
 		components: { "minecraft:container": [] }\
 	}
 execute \
 	if items block 6 0 7 container.0 *[minecraft:charged_projectiles] \
 	run item modify block 6 0 7 container.0 {\
+		type: "minecraft:set_components",\
 		function: "minecraft:set_components",\
 		components: { "minecraft:charged_projectiles": [] }\
 	}
