@@ -1,5 +1,6 @@
 {
-	"type": "minecraft:cache_once",
+	"NEUN_SCRIPT replace type until 118.0": "minecraft:cache_once",
+	"type": "minecraft:cache",
 	"argument": {
 		"type": "minecraft:add",
 		"argument1": {
@@ -47,7 +48,8 @@
 						"type": "minecraft:add",
 						"left": "fetchr:depth",
 						"right": {
-							"type": "minecraft:flat_cache",
+							"NEUN_SCRIPT replace type until 118.0": "minecraft:flat_cache",
+							"type": "minecraft:cache",
 							"input": {
 								"type": "minecraft:mul",
 								"left": "fetchr:jaggedness",

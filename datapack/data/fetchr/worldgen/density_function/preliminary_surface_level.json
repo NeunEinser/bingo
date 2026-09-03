@@ -140,15 +140,9 @@
 											"to_coordinate": 320,
 											"to_value": -1.5
 										},
-										"right": {
-											"type": "minecraft:cache_2d",
-											"input": "fetchr:offset"
-										}
+										"right": "fetchr:offset"
 									},
-									"right": {
-										"type": "minecraft:cache_2d",
-										"input": "fetchr:factor"
-									}
+									"right": "fetchr:factor"
 								}
 							},
 							"right": 4.0
@@ -201,15 +195,9 @@
 					"left": {
 						"type": "minecraft:div",
 						"left": 0.2734375,
-						"right": {
-							"type": "minecraft:cache_2d",
-							"input": "fetchr:factor"
-						}
+						"right": "fetchr:factor"
 					},
-					"right": {
-						"type": "minecraft:cache_2d",
-						"input": "fetchr:offset"
-					}
+					"right": "fetchr:offset"
 				},
 				"right": -128.0
 			},

@@ -44,6 +44,62 @@
 		},
 		"surface_level": "minecraft:overworld/preliminary_surface_level"
 	},
+	"debug_functions": [
+		{
+			"function": "minecraft:overworld/final_density",
+			"label": "N"
+		},
+		{
+			"function": "minecraft:overworld/temperature",
+			"label": "T"
+		},
+		{
+			"function": "minecraft:overworld/vegetation",
+			"label": "V"
+		},
+		{
+			"function": "minecraft:overworld/continents",
+			"label": "C"
+		},
+		{
+			"function": "minecraft:overworld/erosion",
+			"label": "E"
+		},
+		{
+			"function": "minecraft:overworld/depth",
+			"label": "D"
+		},
+		{
+			"function": "minecraft:overworld/ridges",
+			"label": "W"
+		},
+		{
+			"function": {
+				"type": "minecraft:mul",
+				"left": {
+					"type": "minecraft:add",
+					"left": {
+						"type": "minecraft:abs",
+						"input": {
+							"type": "minecraft:add",
+							"left": {
+								"type": "minecraft:abs",
+								"input": "minecraft:overworld/ridges"
+							},
+							"right": -0.6666667
+						}
+					},
+					"right": -0.33333334
+				},
+				"right": -3.0
+			},
+			"label": "PV"
+		},
+		{
+			"function": "minecraft:overworld/preliminary_surface_level",
+			"label": "PS"
+		}
+	],
 	"NEUN_SCRIPT replace default_block until 115": {
 		"Name": "minecraft:stone"
 	},
@@ -65,6 +121,7 @@
 		"size_vertical": 2
 	},
 	"noise_router": {
+		"chunk_surface_level": "fetchr:chunk_surface_level",
 		"barrier": {
 			"type": "minecraft:noise",
 			"noise": "minecraft:aquifer_barrier",
