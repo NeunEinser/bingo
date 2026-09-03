@@ -42,35 +42,35 @@
 			"xz_scale": 1.0,
 			"y_scale": 1.0
 		},
-		"surface_level": "minecraft:overworld/preliminary_surface_level"
+		"surface_level": "fetchr:preliminary_surface_level"
 	},
 	"debug_functions": [
 		{
-			"function": "minecraft:overworld/final_density",
+			"function": "fetchr:final_density",
 			"label": "N"
 		},
 		{
-			"function": "minecraft:overworld/temperature",
+			"function": "fetchr:temperature",
 			"label": "T"
 		},
 		{
-			"function": "minecraft:overworld/vegetation",
+			"function": "fetchr:vegetation",
 			"label": "V"
 		},
 		{
-			"function": "minecraft:overworld/continents",
+			"function": "fetchr:continentalness",
 			"label": "C"
 		},
 		{
-			"function": "minecraft:overworld/erosion",
+			"function": "fetchr:erosion",
 			"label": "E"
 		},
 		{
-			"function": "minecraft:overworld/depth",
+			"function": "fetchr:depth",
 			"label": "D"
 		},
 		{
-			"function": "minecraft:overworld/ridges",
+			"function": "fetchr:ridges",
 			"label": "W"
 		},
 		{
@@ -84,7 +84,7 @@
 							"type": "minecraft:add",
 							"left": {
 								"type": "minecraft:abs",
-								"input": "minecraft:overworld/ridges"
+								"input": "fetchr:ridges"
 							},
 							"right": -0.6666667
 						}
@@ -96,7 +96,7 @@
 			"label": "PV"
 		},
 		{
-			"function": "minecraft:overworld/preliminary_surface_level",
+			"function": "fetchr:preliminary_surface_level",
 			"label": "PS"
 		}
 	],
