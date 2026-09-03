@@ -4,7 +4,8 @@
 		"type": "minecraft:random_spread",
 		"salt": 91231127,
 		"separation": 6,
-		"spacing": 24
+		"NEUN_SCRIPT replace spacing until 116.0": 24,
+		"spacing": 26
 	},
 	"structures": [
 		{
