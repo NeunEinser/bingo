@@ -34,7 +34,7 @@
 		"minecraft:visual/fog_color": "#c0d8ff",
 		"minecraft:visual/sky_color": "#78a7ff"
 	},
-	"NEUN_SCRIPT replace attributes until 95": {
+	"NEUN_SCRIPT replace attributes since 92 until 95": {
 		"minecraft:audio/ambient_sounds": {
 			"mood": {
 				"block_search_extent": 8,
@@ -69,7 +69,7 @@
 		"minecraft:visual/fog_color": "#c0d8ff",
 		"minecraft:visual/sky_color": "#78a7ff"
 	},
-	"NEUN_SCRIPT replace attributes until 110": {
+	"NEUN_SCRIPT replace attributes since 95 until 110": {
 		"minecraft:audio/ambient_sounds": {
 			"mood": {
 				"block_search_extent": 8,
