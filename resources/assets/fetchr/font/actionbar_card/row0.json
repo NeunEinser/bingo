@@ -1,9 +1,29 @@
 {
 	"providers": [
 		{
+			"NEUN_SCRIPT remove_self since 95.0": null,
+			"type": "bitmap",
+			"file": "fetchr:font/pre_95.0_map.png",
+			"ascent": 37,
+			"height": 48,
+			"chars": [
+				"\u002c"
+			]
+		},
+		{
+			"NEUN_SCRIPT remove_self since 92.0": null,
+			"type": "bitmap",
+			"file": "fetchr:font/pre_92.0_hay_bale.png",
+			"ascent": 37,
+			"height": 48,
+			"chars": [
+				"\u0115"
+			]
+		},
+		{
 			"NEUN_SCRIPT remove_self since 65.0": null,
 			"type": "bitmap",
-			"file": "fetchr:font/pre_1.21.9_dyes.png",
+			"file": "fetchr:font/pre_65.0_dyes.png",
 			"ascent": 37,
 			"height": 48,
 			"chars": [
