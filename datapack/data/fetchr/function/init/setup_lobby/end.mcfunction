@@ -50,7 +50,7 @@ execute \
 	run summon minecraft:marker 0 0 0 { Tags: ["fetchr.pos_reader"]}
 
 setblock 6 0 7 minecraft:barrel
-setblock 7 0 7 minecraft:oak_sign{ front_text: { messages: ["", "", "", ""]}}
+setblock 7 0 7 minecraft:oak_sign{ allow_op_features: true, front_text: { messages: ["", "", "", ""]}}
 
 #NEUN_SCRIPT if {NEUN_SCRIPT:realms}
 #tag @e remove fetchr.multiplayer_only

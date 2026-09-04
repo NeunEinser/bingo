@@ -46,7 +46,7 @@ data remove storage tmp.fetchr:init/hud cur.icon_separator
 ]}}
 #NEUN_SCRIPT end
 #NEUN_SCRIPT since 69
-setblock 0 15 0 minecraft:oak_sign{ front_text: { messages: [\
+setblock 0 15 0 minecraft:oak_sign{ allow_op_features: true, front_text: { messages: [\
 	[\
 		"[",\
 			{\
