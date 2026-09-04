@@ -2196,7 +2196,7 @@ data \
 	weight: 3\
 }
 
-#NEUN_SCRIPT since 98
+#NEUN_SCRIPT since 108
 # 0081: poplar_sapling
 data \
 	modify storage fetchr:registries items append value {\
