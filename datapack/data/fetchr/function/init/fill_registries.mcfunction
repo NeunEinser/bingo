@@ -323,6 +323,14 @@
 }
 #NEUN_SCRIPT end
 #NEUN_SCRIPT since 69
+#NEUN_SCRIPT since 115
+data \
+	modify storage fetchr:registries categories append value {\
+	id: "fetchr:abandoned_camp",\
+	name: { translate: "fetchr.category.abandoned_camp" },\
+	tags: [ "fetchr:default" ]\
+}
+#NEUN_SCRIPT end
 data \
 	modify storage fetchr:registries categories append value {\
 	id: "fetchr:amethyst",\
@@ -2256,6 +2264,50 @@ data \
 }
 #NEUN_SCRIPT end
 
+#NEUN_SCRIPT since 110 until 115
+# 0085: magenta_cushion
+#data \
+	modify storage fetchr:registries items append value {\
+	id: "fetchr:magenta_cushion",\
+	item: { id: "minecraft:magenta_cushion" },\
+	translation: "block.minecraft.magenta_cushion",\
+	icon: "0085",\
+	categories: [ "fetchr:wool" ],\
+}
+#NEUN_SCRIPT end
+
+#NEUN_SCRIPT since 115
+# 0085: magenta_cushion
+data \
+	modify storage fetchr:registries items append value {\
+	id: "fetchr:magenta_cushion",\
+	item: { id: "minecraft:magenta_cushion" },\
+	translation: "item.minecraft.magenta_cushion",\
+	icon: "0085",\
+	categories: [ "fetchr:wool", "fetchr:abandoned_camp" ],\
+}
+
+# 0086: buried_treasure_map
+data \
+	modify storage fetchr:registries items append value {\
+	id: "fetchr:buried_treasure_map",\
+	item: { id: "minecraft:buried_treasure_map" },\
+	translation: "item.minecraft.buried_treasure_map",\
+	icon: "0086",\
+	categories: [ "fetchr:shipwreck" ],\
+}
+
+# 0087: abandoned_camp_map
+data \
+	modify storage fetchr:registries items append value {\
+	id: "fetchr:abandoned_camp_map",\
+	item: { id: "minecraft:abandoned_camp_map" },\
+	translation: "item.minecraft.abandoned_camp_map",\
+	icon: "0087",\
+	categories: [ "fetchr:abandoned_camp" ],\
+}
+#NEUN_SCRIPT end
+
 # 0100: iron_block
 data \
 	modify storage fetchr:registries items append value {\
@@ -2890,6 +2942,18 @@ data \
 	translation: "block.minecraft.shelf_mushroom",\
 	icon: "013c",\
 	categories: [ "fetchr:dappled_forest", { id: "fetchr:mushroom", weight: 2 } ]\
+}
+#NEUN_SCRIPT end
+
+#NEUN_SCRIPT since 110
+# 013a: straw_bed
+data \
+	modify storage fetchr:registries items append value {\
+	id: "fetchr:straw_bed",\
+	item: { id: "minecraft:straw_bed" },\
+	translation: "block.minecraft.straw_bed",\
+	icon: "013d",\
+	categories: [ "fetchr:wheat" ]\
 }
 #NEUN_SCRIPT end
 
