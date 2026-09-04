@@ -11,6 +11,7 @@
 		"minecraft:gameplay/snow_golem_melts": true,
 		"minecraft:visual/sky_color": "#6eb1ff"
 	},
+	"NEUN_SCRIPT remove attributes until 69.0": null,
 	"attributes": {
 		"minecraft:audio/background_music": {
 			"default": {
@@ -250,16 +251,18 @@
 	"NEUN_SCRIPT replace creature_spawn_probability until 111": 0.04,
 	"downfall": 0.0,
 	"effects": {
-		"fog_color": 12638463,
-		"foliage_color": 10387789,
-		"grass_color": 9470285,
-		"mood_sound": {
+		"NEUN_SCRIPT replace fog_color until 92.0": 12638463,
+		"NEUN_SCRIPT replace foliage_color until 92.0": 10387789,
+		"foliage_color": "#9e814d",
+		"NEUN_SCRIPT replace grass_color until 92.0": 9470285,
+		"grass_color": "#90814d",
+		"NEUN_SCRIPT replace mood_sound until 92.0": {
 			"block_search_extent": 8,
 			"offset": 2.0,
 			"sound": "minecraft:ambient.cave",
 			"tick_delay": 6000
 		},
-		"music": [
+		"NEUN_SCRIPT replace music until 92.0": [
 			{
 				"data": {
 					"max_delay": 24000,
@@ -270,10 +273,11 @@
 				"weight": 1
 			}
 		],
-		"music_volume": 1.0,
-		"sky_color": 7254527,
-		"water_color": 4159204,
-		"water_fog_color": 329011
+		"NEUN_SCRIPT replace music_volume until 92.0": 1.0,
+		"NEUN_SCRIPT replace sky_color until 92.0": 7254527,
+		"NEUN_SCRIPT replace water_color until 92.0": 4159204,
+		"water_color": "#3f76e4",
+		"NEUN_SCRIPT replace water_fog_color until 92.0": 329011
 	},
 	"NEUN_SCRIPT replace features until 66": [
 		[],
@@ -342,7 +346,7 @@
 			"minecraft:freeze_top_layer"
 		]
 	],
-	"NEUN_SCRIPT replace features until 69": [
+	"NEUN_SCRIPT replace features from 66 until 69": [
 		[],
 		[
 			"minecraft:lake_lava_underground",

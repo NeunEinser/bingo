@@ -3,6 +3,7 @@
 		"minecraft:gameplay/snow_golem_melts": true,
 		"minecraft:visual/sky_color": "#6eb1ff"
 	},
+	"NEUN_SCRIPT remove attributes until 89.0": null,
 	"attributes": {
 		"minecraft:gameplay/natural_mob_spawns": {
 			"NEUN_SCRIPT replace spawn_costs until 116.0": {},
@@ -260,18 +261,18 @@
 	],
 	"downfall": 0.0,
 	"effects": {
-		"fog_color": 12638463,
-		"mood_sound": {
+		"NEUN_SCRIPT replace fog_color until 92.0": 12638463,
+		"NEUN_SCRIPT replace mood_sound until 92.0": {
 			"block_search_extent": 8,
 			"offset": 2.0,
 			"sound": "minecraft:ambient.cave",
 			"tick_delay": 6000
 		},
-		"NEUN_SCRIPT remove music_volume until 58": null,
-		"music_volume": 1.0,
-		"sky_color": 7254527,
-		"water_color": 4159204,
-		"water_fog_color": 329011
+		"NEUN_SCRIPT replace music_volume since 58 until 92.0": 1.0,
+		"NEUN_SCRIPT replace sky_color until 92.0": 7254527,
+		"NEUN_SCRIPT replace water_color until 92.0": 4159204,
+		"water_color": "#3f76e4",
+		"NEUN_SCRIPT replace water_fog_color until 92.0": 329011
 	},
 	"NEUN_SCRIPT replace features until 65": [
 		[],
@@ -524,7 +525,7 @@
 		"water_ambient": [],
 		"water_creature": []
 	},
-	"NEUN_SCRIPT replace spawners until 111": {
+	"NEUN_SCRIPT replace spawners from 89 until 111": {
 		"ambient": [
 			{
 				"type": "minecraft:bat",
