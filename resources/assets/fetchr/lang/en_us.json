@@ -606,6 +606,7 @@
 	"fetchr.team.yellow": "Yellow",
 
 	"fetchr.categories.header": "Categories:",
+	"fetchr.category.abandoned_camp": "Abandoned Camp",
 	"fetchr.category.amethyst": "Amethyst",
 	"fetchr.category.armadillo": "Armadillo",
 	"fetchr.category.basic_iron": "Basic Iron",
