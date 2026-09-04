@@ -565,7 +565,7 @@
 		"water_ambient": [],
 		"water_creature": []
 	},
-	"NEUN_SCRIPT replace spawners from 89 until 111": {
+	"NEUN_SCRIPT replace spawners since 89 until 111": {
 		"ambient": [
 			{
 				"type": "minecraft:bat",

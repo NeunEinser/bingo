@@ -346,7 +346,7 @@
 			"minecraft:freeze_top_layer"
 		]
 	],
-	"NEUN_SCRIPT replace features from 66 until 69": [
+	"NEUN_SCRIPT replace features since 66 until 69": [
 		[],
 		[
 			"minecraft:lake_lava_underground",
