@@ -77,6 +77,7 @@ data \
 #NEUN_SCRIPT end
 
 $item modify entity @s $(slot) {\
+	type: "minecraft:set_count",\
 	function: "minecraft:set_count",\
 	count: -1,\
 	add: true\
