@@ -5,5 +5,12 @@
 		"max_format": 97,
 		"supported_formats": [ 34, 97 ],
 		"description": "Fetchr resources"
+	},
+	"languages": {
+		"fe_en": {
+			"name": "FetchrSpeak",
+			"region": "English",
+			"bidirectional": false
+		}
 	}
 }
